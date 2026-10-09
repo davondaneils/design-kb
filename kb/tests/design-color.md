@@ -192,3 +192,15 @@ Notes: the strong generic answer passes here. The skill still wins on margin, ti
 - **G2** Dark labels on mid-light fills (L 0.65 to 0.75) pass WCAG but score Lc 45 to 50. Not covered. Fixed: rule added to SKILL.md and palette-building.md.
 - **G3** No audit procedure. Fixed: "Reviewing an existing UI" steps added to SKILL.md.
 - **G4** Margin: answers should prefer pairs with margin over 4.5:1 exactly (4.51:1 breaks on hover or thin fonts). Fixed: rule added ("aim for 5:1 or more on text you control").
+
+## Davon's blind ranking (2026-10-09)
+
+| Pair | Davon picked | That was |
+|---|---|---|
+| pair-1, coffee landing, desktop light | B | with skill |
+| pair-2, coffee landing, phone dark | A | with skill |
+| pair-3, dashboard, desktop light | B | with skill |
+
+Result: 3 of 3 for the with-skill version, matching the lint and the judge. Davon's note: "I dont think any of the ones I selected are super special but theyre the better choice."
+
+Verdict: the judge is calibrated on direction. The skill clears the fundamentals floor but the pages are not at the Jordan bar. That matches the slice finding: type, imagery and art direction, not color, are now the bottleneck. design-color stays at v0.2 and is cleared as a component; "special" has to come from the other domains and the director working together.
