@@ -129,7 +129,7 @@ Full skeletons, numbers and worked examples: references/05.
 
 - design-color: tone ramps, contrast values, accent use. design-typography: type scale, line height, measure in type terms.
 - design-ux: navigation, flows, forms behavior. design-motion: layout transitions. design-copy: headings and CTA wording.
-- design-frontend: CSS architecture, container queries, layout shift. design-data: charts inside dashboards. design-graphic: imagery and crops.
+- design-frontend: CSS architecture, container queries, layout shift. dataviz: charts inside dashboards. design-product-ui (planned): tables and dense UI. design-graphic: imagery and crops.
 - website-strategy (positioning before layout), copywriting (sales page message order), sales-funnels (funnel steps and offers): use these for what the page says and sells; this skill decides how it is arranged.
 
 ## Output standard

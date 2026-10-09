@@ -103,4 +103,4 @@ Sources: kb/research/frontend/06-design-to-code.md. Much of this chapter is stud
 - Visual decisions (palette, type, layout grid, imagery): design-color, design-typography, design-layout, design-graphic.
 - Interaction flows and patterns: design-ux. Motion specs: design-motion.
 - Copy on buttons, errors and empty states: design-copy; persuasion copy: copywriting; conversion flow: sales-funnels.
-- Data fetching, auth and API shape behind the UI: design-data. Meta, structured data and rendering for crawlers: design-search.
+- Data fetching, auth and API shape behind the UI: engineering, out of scope for design-kb. Meta, structured data and rendering for crawlers: design-search.

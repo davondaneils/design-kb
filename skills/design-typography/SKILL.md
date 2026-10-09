@@ -121,5 +121,5 @@ Write CSS with foundation token names (`--text-*`, `--space-*`, `--color-text`, 
 - design-color: text and link contrast, muted tokens, dark theme surfaces.
 - design-layout: grids, spacing scale, section rhythm, container widths.
 - design-frontend: token plumbing, build and preload setup, Core Web Vitals.
-- design-data: tables, charts, numeric display. design-ux: forms and readability in flows. design-copy: wording, headlines, microcopy. design-motion: animated type and reduced motion. design-graphic: logos, posters and lettering.
+- design-product-ui (planned): tables and numeric display. dataviz: charts. design-ux: forms and readability in flows. design-copy: wording, headlines, microcopy. design-motion: animated type and reduced motion. design-graphic: logos, posters and lettering.
 - The user's existing skills: website-strategy (brand positioning that should drive font mood), copywriting (headline and sales copy), sales-funnels (conversion page structure).

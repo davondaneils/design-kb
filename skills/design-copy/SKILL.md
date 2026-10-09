@@ -11,7 +11,7 @@ Words are interface. This skill writes and reviews the copy that sits inside lay
 - `copywriting` (the user's direct response skill): awareness levels, big idea, leads, offers, long-form sales pages, VSLs, emails. Call it for persuasion depth.
 - `website-strategy`: positioning, ICP, brand strategy. Its output is this skill's input.
 - `sales-funnels`: funnel steps, offer stacks, plan naming and price framing, A/B test programs. This skill still owns pricing page feature lists, FAQ mechanics and button labels.
-- Sibling design-kb skills: design-layout (hierarchy), design-typography (measure, scale), design-ux (flows, confirm vs undo), design-frontend (aria, i18n code), design-color (danger and success roles), design-motion, design-graphic, design-data, design-search (titles, SERP copy).
+- Sibling design-kb skills: design-layout (hierarchy), design-typography (measure, scale), design-ux (flows, confirm vs undo), design-frontend (aria, i18n code), design-color (danger and success roles), design-motion, design-graphic, design-search (titles, SERP copy).
 
 ## 1. Fundamentals gate (check first; one miss fails the work)
 

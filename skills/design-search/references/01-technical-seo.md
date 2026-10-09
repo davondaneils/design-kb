@@ -83,4 +83,4 @@ Read this report by sitemap (one sitemap per template) so a failing template sta
 ## Hand-offs
 - design-frontend owns implementation of CWV (image sizing, font loading, long tasks, layout shift). Targets here match the shared foundation contract and web.dev.
 - design-ux: infinite scroll and load-more need crawlable paginated fallbacks (see 04).
-- design-data: URL design for API-driven pages, status codes from the server.
+- URL design for API-driven pages and server status codes: engineering, out of scope for design-kb.

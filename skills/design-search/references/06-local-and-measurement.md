@@ -68,5 +68,5 @@ Page 1: outcome (organic and AI-referred leads vs last month and last year). Pag
 
 ## Hand-offs
 - 03 structured data: LocalBusiness schema.
-- design-data: event tracking and UTM conventions.
+- Event tracking and UTM implementation: engineering, out of scope for design-kb.
 - sales-funnels: what happens after the click.

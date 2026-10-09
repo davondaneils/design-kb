@@ -66,4 +66,4 @@ Six to eight styles cover almost every product screen. Material 3 offers 15 role
 ## Hand-offs
 - Grid, spacing and section rhythm: design-layout. Color tokens: design-color.
 - Headline wording, decks, microcopy: design-copy and the copywriting skill.
-- Tables and charts: design-data.
+- Tables: design-product-ui (planned). Charts: dataviz.

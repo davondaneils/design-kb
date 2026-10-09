@@ -124,7 +124,7 @@ A short note listing: the LCP element and how it is prioritized, the token sourc
 
 ## 7. Related skills
 
-- design-color (palettes, contrast pairs), design-typography (faces, scale, measure), design-layout (grids, spacing, hierarchy), design-graphic (imagery, icons), design-ux (patterns and flows), design-motion (durations, easing, choreography), design-copy (UI text, errors, alt text), design-data (APIs, auth, TTFB), design-search (meta, structured data, crawlability).
+- design-color (palettes, contrast pairs), design-typography (faces, scale, measure), design-layout (grids, spacing, hierarchy), design-graphic (imagery, icons), design-ux (patterns and flows), design-motion (durations, easing, choreography), design-copy (UI text, errors, alt text), design-search (meta, structured data, crawlability).
 - website-strategy for positioning and discovery, copywriting for persuasion copy, sales-funnels for conversion paths. This skill builds what they decide.
 
 ## 8. Freshness

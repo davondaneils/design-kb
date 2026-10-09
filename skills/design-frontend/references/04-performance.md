@@ -103,5 +103,5 @@ function yieldToMain() {
 ## Hand-offs
 - Image and font specifics: chapter 05.
 - Loading states, skeleton timing: design-ux, design-motion.
-- Server rendering, caching and API latency (TTFB): design-data.
+- Server rendering, caching and API latency (TTFB): engineering, out of scope for design-kb.
 - Core Web Vitals as a ranking signal and crawlability: design-search.

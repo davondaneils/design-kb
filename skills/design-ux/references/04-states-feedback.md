@@ -64,4 +64,4 @@ Use when success rate is high and the action is reversible (like, archive, reord
 - **Ellipsis grammar:** in-progress labels and menu items that open a further step end in an ellipsis ("Saving...", "Rename...") (Vercel; Apple convention).
 
 ## Hand-offs
-- State wording: design-copy. Loader motion: design-motion. Data viz empty and error states: dataviz and design-data.
+- State wording: design-copy. Loader motion: design-motion. Data viz empty and error states: dataviz.

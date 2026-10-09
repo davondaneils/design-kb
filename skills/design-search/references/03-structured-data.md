@@ -56,6 +56,6 @@ Never: `Review` or `AggregateRating` about your own business on a LocalBusiness 
 **Shopify store with blog.** Theme already outputs Product JSON-LD; audit shows duplicate Product blocks from theme and an app, with mismatched prices on sale items. Fix: disable one source, map `offers.price` to the live variant price, add `BreadcrumbList`, add a single `Organization` with `@id` on home referenced by `BlogPosting` publisher. Validate both tools, watch Merchant listings report. Tell the client: rich results for products and breadcrumbs are realistic; FAQ snippets are gone since 2026-05-07; AI citation uplift from schema is unproven.
 
 ## Hand-offs
-- design-data owns the content model that feeds JSON-LD (single source of truth fields).
+- The content model that feeds JSON-LD (single source of truth fields) is engineering, out of scope for design-kb.
 - design-frontend owns server rendering of the script tag.
 - 06 local: LocalBusiness must match the Business Profile exactly.

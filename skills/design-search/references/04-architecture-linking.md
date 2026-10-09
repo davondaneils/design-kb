@@ -65,5 +65,5 @@ Facts current to 2026-10-09. Sources in `kb/research/search/04-architecture-link
 
 ## Hand-offs
 - design-ux owns navigation labels and IA testing (card sorts, tree tests); this chapter sets the crawl and equity constraints.
-- design-data owns slug generation and redirect tables.
+- Slug generation and redirect tables are engineering, out of scope for design-kb.
 - 01 technical: status codes and canonicals.

@@ -111,7 +111,7 @@ These separate top studios from strong generalists. Use them once the gate passe
 4. Specify all states and the keyboard, touch and screen reader behavior, not just the happy path.
 5. Add the expert moves that apply. Mark opinion as opinion.
 6. Give real numbers (ms, px, counts), real labels and real error text, not placeholders.
-7. Hand off: visuals to design-color, design-typography, design-layout; motion to design-motion; words to design-copy; build to design-frontend; search UI to design-search; data and dashboards to design-data; positioning to website-strategy; persuasion to copywriting; funnel structure to sales-funnels.
+7. Hand off: visuals to design-color, design-typography, design-layout; motion to design-motion; words to design-copy; build to design-frontend; search UI to design-search; charts to dataviz; tables and dense tool UI to design-product-ui (planned); positioning to website-strategy; persuasion to copywriting; funnel structure to sales-funnels.
 
 ## 6. Reference map
 
