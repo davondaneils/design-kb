@@ -1,11 +1,23 @@
-# 03 Accessibility implementation (WCAG 2.2 AA)
+# Accessibility: the cross-cutting floor (WCAG 2.2 AA)
 
-Sources: kb/research/frontend/03-accessibility.md. Opinion is marked (opinion).
+The one place for accessibility in design-kb. Every playbook and every domain reference is checked against this file. Domains keep only the detail that is theirs and link here for the rest (table below). Sources: `kb/research/frontend/03-accessibility.md` (moved here from design-frontend reference 03 in the restructure). Opinion is marked (opinion).
+
+## Where the domain detail lives
+| Topic | Reference |
+|---|---|
+| Contrast math, APCA status, color vision, forced colors palettes | design-color `references/contrast-accessibility.md` |
+| Type floors: measure, zoom, text spacing, heading semantics | design-typography SKILL.md fundamentals F6 to F11 |
+| Reflow, reading order, targets in layouts, sticky bars | design-layout SKILL.md fundamentals 9 to 12, `references/04-responsive-and-adaptive.md` |
+| Usability gate, touch targets per platform, keyboard and modal behavior | design-ux `references/01-fundamentals.md`, `references/06-platforms-touch-systems.md` |
+| Reduced motion matrix, flashes, pause controls | design-motion `references/05-accessibility-performance.md` |
+| Error wording, link text, alt text writing | design-copy `references/02-ux-microcopy.md` |
+| Alt decision tree, text over images, icon contrast | design-graphic SKILL.md fundamentals |
+| Markup that delivers the semantics (elements, dialogs, forms) | design-frontend `references/01-semantic-html.md` |
 
 ## Principles
 1. WCAG 2.2 AA is the floor, not the goal (foundation contract). It is also the law-adjacent baseline: EN 301 549 under the European Accessibility Act (from 28 June 2025) and the ADA Title II rule both reference WCAG 2.1 AA, which 2.2 AA contains (V: check current legal dates).
 2. Most real failures are boring and preventable. On the 2026 WebAIM Million the six failures that appear on the most home pages are low contrast (83.9%), missing alt (53.1%), missing labels (51%), empty links (46.3%), empty buttons (30.6%) and missing lang (13.5%). Get those to zero before anything clever.
-3. Build it in; do not bolt it on. Semantic HTML (chapter 01) delivers most of 4.1.2, 2.1.1 and 1.3.1 for free.
+3. Build it in; do not bolt it on. Semantic HTML (design-frontend reference 01) delivers most of 4.1.2, 2.1.1 and 1.3.1 for free.
 4. Automated tools catch only part of the problems. Keyboard, zoom, screen reader and forced-colors passes are mandatory (consensus; see research).
 
 ## The AA checklist that code controls
@@ -16,7 +28,7 @@ Sources: kb/research/frontend/03-accessibility.md. Opinion is marked (opinion).
 | 1.3.5 | `autocomplete` on personal-data inputs | |
 | 1.4.1 | Never color alone: links in body text get underline; errors get icon and text | |
 | 1.4.3 | Text contrast | 4.5:1; 3:1 at 24px or 18.66px bold and up |
-| 1.4.4 | Text resizes to 200% without loss | see fluid type rule in 02 |
+| 1.4.4 | Text resizes to 200% without loss | see the fluid type rule in design-frontend reference 02 |
 | 1.4.10 | Reflow with no 2D scroll at 320 CSS px wide (1280px at 400%) | tables and code may scroll in their own box |
 | 1.4.11 | UI component boundaries, states and focus indicators | 3:1 against adjacent colors |
 | 1.4.12 | No loss with line-height 1.5, paragraph spacing 2em, letter spacing 0.12em, word spacing 0.16em | never fix heights on text boxes |
@@ -101,3 +113,4 @@ Sources: kb/research/frontend/03-accessibility.md. Opinion is marked (opinion).
 - Error message wording, alt text writing: design-copy.
 - Motion durations and reduced-motion alternatives: design-motion.
 - Interaction choice (should this even be a drag, a modal, a carousel?): design-ux.
+- Building it in HTML and CSS: design-frontend.
