@@ -1,8 +1,8 @@
 # Exemplar set
 
-**Status: draft, pending Davon's approval.** Nothing here is the quality bar until Davon signs it off (editor-in-chief human gate). Source: `exemplars-draft.md` in the project files, copied 2026-10-09.
+**Status: approved by Davon, 2026-10-09.** This is the confirmed quality bar (editor-in-chief human gate; approval relayed to this session by the project coordinator). Source: `exemplars-draft.md` in the project files, copied 2026-10-09.
 
-This list is the quality bar. Test outputs are rendered and judged side by side against the closest exemplar. Add, cut or swap anything; your picks are the standard.
+This list is the quality bar. Test outputs are rendered and judged side by side against the closest exemplar. Changes need Davon's approval.
 
 ## Marketing and landing pages
 1. stripe.com
