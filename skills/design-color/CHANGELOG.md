@@ -1,5 +1,9 @@
 # Changelog: design-color
 
+## 0.2.1 (2026-10-09, editor-in-chief)
+- State overlays: focus and pressed 12% changed to 10% (Material 3 tokens; FOUNDATIONS v0.3, design-polish). Pressed names `--color-primary-active` and must differ from hover.
+- Stale "(planned)" hand-offs removed.
+
 ## 0.2 (2026-10-09)
 Fixes from the rendered vertical slice (`kb/tests/design-color.md`).
 - Fundamentals fix: the ladder rule was off by one. Six positions apart passes body text (worst 4.64:1), five apart passes 3:1 (worst 3.01:1). 600 on 100 fails at 4.37 to 4.39:1. SKILL.md and `references/palette-building.md`.

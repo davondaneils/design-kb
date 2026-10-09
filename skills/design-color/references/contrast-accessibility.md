@@ -70,7 +70,7 @@ Relative luminance per channel: c = v/255; linear = c/12.92 if c <= 0.04045, els
 5. Result: legal pass with margin, and comfortable reading in the theme where WCAG 2 is least reliable.
 
 ## Hand-offs
-- Scales that pass by construction: palette-building.md. Dark mode surfaces and state tokens: ui-tokens-themes.md. Typography sizes and weights: design-typography (planned). Focus and keyboard behavior: design-ux and design-frontend (planned).
+- Scales that pass by construction: palette-building.md. Dark mode surfaces and state tokens: ui-tokens-themes.md. Typography sizes and weights: design-typography. Focus and keyboard behavior: design-ux, design-frontend and design-polish (focus shape, state sheets).
 
 ## Sources
 - W3C, WCAG 2.2 (12 Dec 2024). https://www.w3.org/TR/WCAG22/

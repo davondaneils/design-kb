@@ -71,8 +71,8 @@ Why `primary-hover` goes darker in dark mode too: lightening a 600 fill toward 5
 | State | Default (stepped) | Material alternative (overlay) |
 |---|---|---|
 | Hover | fill one step darker (600 to 700); subtle surfaces neutral-100 | content color overlay at 8% |
-| Focus | 2px `--color-focus-ring`, 2px offset; never remove the outline without replacing it | overlay 12% plus ring |
-| Pressed | two steps darker (800) | overlay 12% |
+| Focus | 2px `--color-focus-ring`, 2px offset; never remove the outline without replacing it | overlay 10% plus ring (Material 3 focus 0.10) |
+| Pressed | two steps darker (800), `--color-primary-active`; never equal to hover | overlay 10% (Material 3 pressed 0.10) |
 | Dragged | raise one elevation level | overlay 16% |
 | Selected | `primary-subtle` (100) background, 800 text, plus a non-color mark (check, bar, weight) | |
 | Disabled | neutral-100 fill, neutral-400 text, no hover; exempt from contrast | container 12% opacity, content 38% opacity |
@@ -113,7 +113,7 @@ Overlay values: material-web tokens. Stepped values: our default because they ke
 6. Verify: run `oklch_scale.py check` on each text role against each surface it can sit on, both themes. Fix anything under 4.5:1 (text) or 3:1 (borders, icons, focus).
 
 ## Hand-offs
-- Ladder and guarantees: palette-building.md. Contrast rules: contrast-accessibility.md. Motion for state changes: design-motion (planned, durations in FOUNDATIONS). Front-end implementation: design-frontend (planned).
+- Ladder and guarantees: palette-building.md. Contrast rules: contrast-accessibility.md. Motion for state changes: design-motion (durations in FOUNDATIONS). Front-end implementation: design-frontend. Shadow and state-layer recipe: FOUNDATIONS v0.3 and design-polish.
 
 ## Sources
 - material-web design tokens (color roles, state opacities, filled button). https://github.com/material-components/material-web/tree/main/tokens

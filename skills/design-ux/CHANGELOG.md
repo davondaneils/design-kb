@@ -1,5 +1,8 @@
 # design-ux changelog
 
+## 0.1.1 (2026-10-09, editor-in-chief)
+- Hand-off to design-product-ui no longer marked planned; finish details hand off to design-polish.
+
 ## 0.1 (2026-10-09)
 - First release. SKILL.md (gate of 12 fundamentals checks, core numbers, decision rules by area, 12 expert moves, answer procedure, reference map) plus 7 references: fundamentals, navigation and IA, forms, states and feedback, onboarding, platforms touch and systems, review template.
 - Built on the shared foundations contract v0.1 (breakpoints, type base 16 px, durations, semantic token names, WCAG 2.2 AA floor). Conflicts logged in `kb/reviews/design-ux-pipeline-notes.md`.

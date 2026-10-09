@@ -35,7 +35,7 @@ A dashboard is "at-a-glance information" people "can act on quickly" and focuses
 | Thing | Value | Source |
 |---|---|---|
 | KPIs per row | 3 to 5 | design-layout 05 |
-| Answer line | one sentence, `--text-base` 16 or `--text-lg` 20, max about 32em | opinion; FOUNDATIONS measure |
+| Answer line | one sentence, `--text-base` 16 or `--text-lg` 20, max about 52ch | opinion; FOUNDATIONS measure |
 | Tile value | 31 to 39px, weight 600, `tabular-nums`, letter-spacing about -0.01 to -0.02em | design-typography; opinion |
 | Abbreviate | 3 significant figures in tiles | opinion, consistent with research 01 T7 |
 | Stale warning | operational 5 to 15 min; analytical 24 h | opinion |

@@ -1,5 +1,8 @@
 # Changelog: design-typography
 
+## 0.2.1 (2026-10-09, editor-in-chief)
+- FOUNDATIONS v0.3 adopts `52ch`, the display ramp and leading 0.95 for display lines; stale "(planned)" hand-offs to design-product-ui removed. Lint now checks straight quotes, number-range hyphens, uppercased units, faked styles, doubled list markers and fallback reflow.
+
 ## 0.2 (2026-10-09)
 - New reference 06, type without a font CDN: three paths (system, self-hosted, mixed), named system stacks by classification, variable system fonts (SF, Segoe UI Variable, Bahnschrift) and their traps, axis pinning with measured sizes, inlining, metric fallbacks per style including italics, testing with the font blocked.
 - New reference 07, type-led pages: making the type carry a landing or brand page with no photography (display ramp, leading 0.95, roman and italic headline, optical margins, numerals as graphics, best available ampersand, editorial set pieces).

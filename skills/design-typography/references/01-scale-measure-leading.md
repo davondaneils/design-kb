@@ -103,4 +103,4 @@ Every max/min ratio here is about 1.6, inside the 2.5x limit. Keep body and UI t
 - Spacing tokens and grid: design-layout.
 - Contrast of muted text and text on images: design-color.
 - Token plumbing, clamp in CSS, container queries: design-frontend.
-- Dense numeric tables: design-product-ui (planned).
+- Dense numeric tables: design-product-ui.

@@ -1,5 +1,9 @@
 # Changelog: design-layout
 
+## 0.1.1 (2026-10-09, editor-in-chief)
+- Measure default `66ch` replaced by `52ch` in SKILL.md and references 01, 04, 05 (FOUNDATIONS v0.3; typography measured 66ch at 81 to 86 characters in every face).
+- Tables and collections link to design-product-ui reference 01 for responsive strategies and table semantics; hand-offs name design-product-ui, design-polish and design-art-direction.
+
 ## 0.1 (2026-10-09)
 - First release. SKILL.md with a 17-rule fundamentals gate (structure, hierarchy, WCAG 2.2 AA, responsive), workflow, core decision tables, 13 expert moves, page skeletons and reference map.
 - References: 01 grids and structure, 02 spacing and rhythm, 03 hierarchy and gestalt (with poster and print composition), 04 responsive and adaptive, 05 page composition and density.

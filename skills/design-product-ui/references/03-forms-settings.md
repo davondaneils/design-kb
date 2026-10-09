@@ -35,7 +35,7 @@ Settings pages fail in three ways: people cannot find the setting, cannot tell i
 |---|---|---|
 | Two-column ratio | about 1:2 (Polaris example code uses 2fr 5fr) | S1 to S3 research notes |
 | Breakpoint to stack | below 768 (md) | FOUNDATIONS |
-| Description text | `--text-sm` 14, `--color-text-muted`, max about 32em | FOUNDATIONS |
+| Description text | `--text-sm` 14, `--color-text-muted`, max about 52ch | FOUNDATIONS |
 | Gap between groups | 32 to 48 (`--space-7` to `--space-8`) | design-layout density table |
 | Field vertical gap | 16 to 24 | FOUNDATIONS |
 | "Saved" confirmation | visible 2 to 4 s, then fades to "All changes saved" timestamp (opinion) | design-ux 04 |

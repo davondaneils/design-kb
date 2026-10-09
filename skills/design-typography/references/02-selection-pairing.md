@@ -64,4 +64,4 @@ Practitioner leads for current taste (opinion, not rules): Brett from Designjoy'
 
 ## Hand-offs
 - Brand voice and positioning that should drive the font mood: use the website-strategy skill.
-- Font color and contrast: design-color. Data tables: design-product-ui (planned). Loading and licenses: reference 03 and design-frontend.
+- Font color and contrast: design-color. Data tables: design-product-ui. Loading and licenses: reference 03 and design-frontend.

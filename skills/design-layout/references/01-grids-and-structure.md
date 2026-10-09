@@ -3,7 +3,7 @@
 Sources: research/layout/01. Defaults follow the shared foundation contract (breakpoints 640, 768, 1024, 1280, 1536; spacing tokens `--space-0` to `--space-11`; measure 45 to 75 characters, 66 ideal).
 
 ## Principles
-1. **The grid serves the content, not the other way round.** Muller-Brockmann derived columns and modules from the text's line height, so type and images share one system. Start from the content's natural widths (a 66ch text column, a 20rem sidebar, a 4:3 image), then pick the grid that holds them.
+1. **The grid serves the content, not the other way round.** Muller-Brockmann derived columns and modules from the text's line height, so type and images share one system. Start from the content's natural widths (a 52ch text column, a 20rem sidebar, a 4:3 image), then pick the grid that holds them.
 2. **Three structures, three jobs.** Column grids compose editorial and marketing pages. Intrinsic algorithms (Every Layout) lay out components. Fixed-plus-fluid shells hold apps. Using one for another's job is the most common structural mistake.
 3. **Alignment is the cheapest form of order.** Every distinct left edge is a decision the eye has to process. Fewer edges, calmer page (opinion, consistent with Apple HIG: aligned items read as related).
 4. **Math first, eyes last.** Snap to the grid, then correct optically where geometry lies (circles, triangles, icons, cap height).
@@ -32,7 +32,7 @@ Sources: research/layout/01. Defaults follow the shared foundation contract (bre
 Cross-checks: Carbon uses 4 / 8 / 16 columns with 32px gutters and an 8px mini unit; Material uses 16dp compact and 24dp wider margins. Our numbers sit inside both.
 
 ### Measure and widths
-- Body text: `max-inline-size: 66ch` default, never above 75ch, never below 45ch except in narrow UI cells.
+- Body text: `max-inline-size: 52ch` default (63 to 68 characters measured in eight faces; `ch` is the zero, wider than the average character, so `66ch` renders 81 to 86). Keep body between about `40ch` and `56ch`; confirm characters per line with the lint.
 - Display headlines: cap at about 20ch so they break into 2 to 3 balanced lines; add `text-wrap: balance` (opinion, common premium practice).
 - Forms: single column, field widths that hint at expected input (postcode short, address long), container about 480 to 560px (opinion).
 - Sidebars: 240 to 280px nav; 320 to 400px for a detail or inspector pane (opinion, matches Every Layout's 20rem example).
@@ -61,7 +61,7 @@ Use named lines so any child can opt into a wider track:
   grid-template-columns:
     [full-start] minmax(var(--gutter), 1fr)
     [popout-start] minmax(0, var(--popout))
-    [content-start] min(66ch, 100% - 2 * var(--gutter)) [content-end]
+    [content-start] min(52ch, 100% - 2 * var(--gutter)) [content-end]
     minmax(0, var(--popout)) [popout-end]
     minmax(var(--gutter), 1fr) [full-end];
 }
@@ -85,7 +85,7 @@ Builds on Comeau's `1fr min(42rem, 100%) 1fr` pattern; the gutter tracks keep te
 - Do count left edges in a view and remove one. Don't center-align body copy longer than 2 lines.
 
 ## Worked examples
-**Long-form article with wide images.** Content grid above; body at 66ch; figures that need detail use `popout`; hero image and data charts use `full`. Pull quotes sit in `popout` on lg and up, and drop to `content` below md so they never squeeze the text. Result: one text edge from top to bottom, media breaks rhythm on purpose.
+**Long-form article with wide images.** Content grid above; body at 52ch; figures that need detail use `popout`; hero image and data charts use `full`. Pull quotes sit in `popout` on lg and up, and drop to `content` below md so they never squeeze the text. Result: one text edge from top to bottom, media breaks rhythm on purpose.
 
 **B2B SaaS marketing site.** 12-column grid, 1280 container, 32 gutter. Hero: copy in columns 1 to 6 (about 560 to 600px, headline capped near 20ch), product shot in 7 to 12 and allowed to bleed off the right edge on xl. Feature rows alternate 5/7 and 7/5 with the copy column on the same left edge throughout (opinion: alternating image side is fine, alternating text edge is not). Logos row: `auto-fit` grid, no breakpoints.
 

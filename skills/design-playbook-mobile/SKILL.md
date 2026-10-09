@@ -15,10 +15,10 @@ On a phone, the platform is half the design. People bring the habits of their sy
 5. **design-typography**: `references/04-hierarchy-ui-editorial.md`; support Dynamic Type and Android font scale up to 200%.
 6. **design-color**: `references/ui-tokens-themes.md`; dark mode is expected on both platforms.
 7. **design-motion**: `references/02-timing-easing.md` (springs), `03-choreography-transitions.md`, `04-micro-interactions.md`.
-8. **design-graphic**: `references/02-icon-systems.md` (app icon, system symbols vs custom icons).
+8. **design-graphic**: `references/02-icon-systems.md` (app icon, system symbols vs custom icons). **design-art-direction** `references/01-concept-and-consistency.md` when the app has illustration or onboarding art.
 9. **design-copy**: `references/02-ux-microcopy.md` (alerts, permission prompts, notifications).
 10. **design-frontend** for mobile web or a web mock; native code follows the platform's own toolkit.
-11. Visual polish (planned), then the self-critique loop in design-director.
+11. **design-polish** after the lint gate passes (`references/06-polish-checklist.md`, state sheet for every control), then the self-critique loop in design-director. App screens with lists, settings or command layers also load design-product-ui `references/03-forms-settings.md` and `05-states-bulk.md`.
 
 ## 2. Non-negotiables for this job
 1. Touch targets 44x44 pt on iOS, 48x48 dp on Android, 44x44 CSS px on mobile web.

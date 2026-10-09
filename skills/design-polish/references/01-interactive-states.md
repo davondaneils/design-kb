@@ -29,7 +29,7 @@ Token names follow `kb/FOUNDATIONS.md`. State colors come from design-color `ref
 
 ### Decision rules
 - **If the fill is a solid brand or primary color**: step the color (600 to 700 hover, 800 pressed) per design-color. Do not overlay; overlays on saturated fills shift hue.
-- **If the element sits on a neutral surface** (ghost button, list row, nav item, menu item): use a state layer of the text color, hover 8%, pressed 10 to 12% (Material 3 tokens: hover 0.08, focus 0.10, pressed 0.10, dragged 0.16). On light themes compose it as `color-mix(in oklch, var(--color-text) 8%, transparent)`. Check the result against the text on top.
+- **If the element sits on a neutral surface** (ghost button, list row, nav item, menu item): use a state layer of the text color, hover 8%, pressed 10% (Material 3 tokens: hover 0.08, focus 0.10, pressed 0.10, dragged 0.16). On light themes compose it as `color-mix(in oklch, var(--color-text) 8%, transparent)`. Check the result against the text on top.
 - **If a control is unavailable because of something the user can fix** (empty required field): keep it enabled, validate on submit, and show the message. Opinion, backed by design-ux forms guidance.
 - **If it is unavailable for a reason outside the user's control right now** (plan limit, offline): `aria-disabled="true"` plus visible reason text next to it or in a tooltip reachable by focus.
 - **If the user has no permission**: hide it (Carbon disabled-states pattern), unless knowing it exists matters (an upgrade path), then aria-disabled with the reason.
@@ -48,7 +48,7 @@ Token names follow `kb/FOUNDATIONS.md`. State colors come from design-color `ref
 | Rest | `--color-primary` | transparent | border `--color-border-strong` 1px |
 | Hover (pointer only) | `--color-primary-hover` | text color at 8% | border `--color-text-muted` |
 | Focus-visible | 2px ring, 2px offset | 2px ring, offset 2px, or inset -2px in dense lists | 2px ring outside the border |
-| Pressed | `--color-primary-active` (800 step) and `scale(0.97)`; 0.98 for buttons wider than about 200px (opinion: same perceived travel) | text color at 12% | n/a |
+| Pressed | `--color-primary-active` (800 step) and `scale(0.97)`; 0.98 for buttons wider than about 200px (opinion: same perceived travel) | text color at 10% | n/a |
 | Selected | n/a | `--color-selected-bg`, `--color-selected-text`, plus a non-color mark (weight, bar or check) | n/a |
 | Disabled | `--color-surface-sunken` fill, `--color-text-muted` label, no shadow, no hover, no press | label `--color-text-muted`, no hover | sunken fill, dashed or muted border |
 | Loading | label at `opacity: 0` in place, 16px spinner centered, `aria-busy` | same | spinner inside the trailing edge |
@@ -89,10 +89,10 @@ Timing (tokens from FOUNDATIONS and design-motion):
 ### Worked examples
 **Subscribe button, coffee landing.** Rest: orange 600 fill, white label 5.64:1, inset top highlight `inset 0 1px 0 rgb(255 255 255 / 0.12)`. Hover (pointer): orange 700, 150ms. Pressed: orange 800, `scale(0.98)` (wide button), 100ms. Focus: 2px orange 600 ring, 2px offset; the pill shape is kept. Loading (after submit): label at opacity 0 in place, 16px spinner in white, `aria-busy`, live region says "Starting your subscription". Reduced motion: no scale; colors still change.
 
-**Sidebar nav item, dashboard.** Rest: muted text, transparent. Hover: 8% text-color layer, 0ms in, 150ms out. Selected: teal 50 background, teal 800 text, weight 600, `aria-current="page"`. Focus: inset ring (`outline-offset: -2px`) so the item above does not clip it. Pressed: 12% layer.
+**Sidebar nav item, dashboard.** Rest: muted text, transparent. Hover: 8% text-color layer, 0ms in, 150ms out. Selected: teal 50 background, teal 800 text, weight 600, `aria-current="page"`. Focus: inset ring (`outline-offset: -2px`) so the item above does not clip it. Pressed: 10% layer.
 
 ### Hand-offs
-- State colors and contrast: design-color `references/ui-tokens-themes.md` (its overlay row lists focus and pressed at 12%; Material 3 tokens are 10%; see pipeline notes).
+- State colors and contrast: design-color `references/ui-tokens-themes.md` (focus and pressed overlays at 10%, Material 3; aligned in FOUNDATIONS v0.3).
 - Motion curves, durations, reduced motion: design-motion `references/04-micro-interactions.md`.
 - What the state says: design-copy `references/02-ux-microcopy.md`.
 - Empty, loading and error screens as content: design-ux `references/04-states-feedback.md`.

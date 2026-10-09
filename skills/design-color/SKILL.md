@@ -139,7 +139,7 @@ python3 assets/oklch_scale.py hex2oklch "#ffc20e"
 - **website-strategy**: positioning and competitor set before choosing a brand hue.
 - **copywriting**: color names and microcopy in brand books.
 - **dataviz**: chart palettes and chart color rules.
-- design-typography, design-layout, design-ux, design-motion, design-frontend (planned): sizes, spacing, focus behavior, state transitions and implementation share `kb/FOUNDATIONS.md`.
+- design-typography, design-layout, design-ux, design-motion, design-frontend: sizes, spacing, focus behavior, state transitions and implementation share `kb/FOUNDATIONS.md`.
 
 ## 10. Before you answer
 

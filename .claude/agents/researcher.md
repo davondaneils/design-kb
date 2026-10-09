@@ -19,6 +19,8 @@ Tiers, strongest first. Use the highest tier that answers the question.
 - Never invent a quote or URL. If you cannot fetch the page, say so and do not quote it.
 - X.com is mostly behind a login and rarely fetches. Use thread exports Davon provides, or the practitioner's own site and portfolio.
 - Derived numbers (for example which OKLCH lightness passes 4.5:1 on white): compute from the published formula, save the script, record method and result.
+- Measure, do not estimate, when a number can be measured in the browser here (example: `kb/research/typography/measure-cpl.mjs` measured characters per line; the earlier estimate "66ch holds 72 to 80" was wrong in both directions).
+- X posts are leads, never the support for a claim: x.com refuses fetches. Find the same claim on the author's site, a talk or a shipped page.
 - Note anything likely to change soon (draft standards, search and AI answer engines).
 
 ## Standing stream: exemplar teardowns

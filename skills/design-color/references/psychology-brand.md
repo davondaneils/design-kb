@@ -54,7 +54,7 @@ What the evidence says, what is convention, what is folklore, and how to choose 
 6. Tell the client which parts are evidence (very little), convention (green in wellness), and our judgment (ownability).
 
 ## Hand-offs
-- Positioning and competitor set: website-strategy skill. Copy that names colors: copywriting skill. Building the scale: palette-building.md. Logo color specifics: design-graphic (planned).
+- Positioning and competitor set: website-strategy skill. Copy that names colors: copywriting skill. Building the scale: palette-building.md. Logo color specifics: design-graphic.
 
 ## Sources
 - Elliot, A. J. (2015). Color and psychological functioning. Frontiers in Psychology 6:368. https://www.frontiersin.org/articles/10.3389/fpsyg.2015.00368/full

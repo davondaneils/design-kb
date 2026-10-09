@@ -12,7 +12,7 @@ You are the art director. You do not hold the deep knowledge; you load the right
 |---|---|---|
 | Foundations | design-foundations | Always, first. Tokens, the 15-item gate, accessibility. |
 | Job playbooks | design-playbook-landing, -dashboard, -mobile, -brand | One per job. It names the references and the exemplars. |
-| Domain references | design-color, design-typography, design-layout, design-graphic, design-ux, design-motion, design-copy, design-frontend, design-search | On demand, in the playbook's order, only the reference files it names. |
+| Domain references | design-color, design-typography, design-layout, design-art-direction, design-graphic, design-ux, design-product-ui, design-polish, design-motion, design-copy, design-frontend, design-search | On demand, in the playbook's order, only the reference files it names. |
 
 The user's own skills plug in where a playbook says: website-strategy, copywriting, sales-funnels, dataviz.
 
@@ -36,16 +36,21 @@ The user's own skills plug in where a playbook says: website-strategy, copywriti
 - If the closest exemplar is on the marketing list in `kb/exemplars.md`, it is not direct response.
 
 ## 4. Build rules
-- One self-contained HTML file per page, tokens as CSS custom properties, no external network assets unless the user's stack provides them. Image and font CDNs are often blocked: plan imagery as inline SVG, CSS, or user-supplied files, and pick a system font stack that suits the brand when web fonts cannot load (say so).
+- One self-contained HTML file per page, tokens as CSS custom properties, no external network assets unless the user's stack provides them. Image and font CDNs are often blocked: plan imagery as inline SVG, CSS, or user-supplied files (design-art-direction `references/04-visuals-without-image-hosts.md`), and follow design-typography `references/06-type-without-web-fonts.md` for type: system stack, self-hosted, or mixed (one pinned display face plus the system sans); say which in the hand-over. The npm registry is often reachable when font CDNs are not: `npm pack @fontsource-variable/<family>` gets OFL fonts into a sandbox, subset with design-typography `assets/font_kit.py`.
 - Light and dark from the start when the brief asks for both: remap roles, never invert.
 - Real content, not lorem ipsum. One primary action per view.
-- Planned domains (visual polish, product and tool UI, art direction and imagery) are not built yet: apply the FOUNDATIONS defaults and the playbook's signature moves, and say so in the hand-over.
+- **Art direction** (landing and brand jobs): load design-art-direction right after design-color. Write the one-sentence concept and its reject test before any layout. Hand over the stand-in list and the photo request (design-art-direction `references/05-requesting-photography.md`).
+- **Product UI** (dashboard and tool jobs): load design-product-ui before layout; every state the screen has is reachable by URL (`?state=`) so it can be rendered and linted.
+- **Polish** (every job): load design-polish after the lint gate passes and before the exemplar comparison (section 5, step 6). The lint now carries its hard checks; `skills/design-polish/assets/polish-audit.mjs` stays as the advisory detail.
+- **State sheet** (any page with interactive controls): one page showing every control in every state (rest, hover, pressed, focus, disabled, loading, error, success), plus empty, loading, error and partial panels for data pages. Lint and render it like the page. Focus ring contrast and pressed-versus-hover are judged here; they are invisible on the default screenshot.
 
 ## 5. Self-critique loop (always, before you hand over)
-1. **Render**: `node tools/render.mjs page.html out/` (390 and 1440px, light and dark). Look at every screenshot.
-2. **Lint**: `node tools/lint.mjs page.html`. Fix every fail. Read every warning and decide.
-3. **Judged items**: walk the `[judged]` rows of the checklist (design-foundations `references/fundamentals-checklist.md`) on the screenshots.
-4. **Compare to the exemplars** side by side, using the playbook's signature moves as the checklist: where is yours busier, flatter, more generic, less aligned? Name the three biggest gaps in plain words.
-5. **Fix** and repeat. **Stop after 3 rounds**; report what is still short of the exemplar instead of claiming it is done.
+1. **Render** every state the page has, not only the default: `node tools/render.mjs page.html out/` (390 and 1440px, light and dark), each `?state=` URL and the state sheet. Look at every screenshot.
+2. **Lint**: `node tools/lint.mjs page.html --states state=a,state=b` and the state sheet. Fix every fail. Read every warning and decide.
+3. **Polish**: design-polish `references/06-polish-checklist.md` on the screenshots and the state sheet.
+4. **Judged items**: walk the `[judged]` rows of the checklist (design-foundations `references/fundamentals-checklist.md`) on the screenshots.
+5. **Concept check** (landing and brand): hide the logo; could the visuals belong to a competitor? If yes, the art direction failed.
+6. **Compare to the exemplars** side by side, using the playbook's signature moves as the checklist: where is yours busier, flatter, more generic, less aligned? Name the three biggest gaps in plain words.
+7. **Fix** and repeat. **Stop after 3 rounds**; report what is still short of the exemplar instead of claiming it is done.
 
-If you cannot run code, say so, and do steps 3 and 4 by reasoning over the code, labelled unverified. A fuller self-critique method (screenshot reading order, gap naming, fix priority) is planned as `references/self-critique.md` in this skill.
+If you cannot run code, say so, and do steps 3 to 6 by reasoning over the code, labelled unverified. A fuller self-critique method (screenshot reading order, gap naming, fix priority) is planned as `references/self-critique.md` in this skill.

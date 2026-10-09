@@ -11,9 +11,9 @@ An identity is a system that has to work at 16px and on a billboard, in one colo
 1. **design-foundations** (always): tokens and the accessibility floor apply to every brand color and type choice used on screen.
 2. **website-strategy**: positioning, audience, competitors. No mark before this.
 3. **design-graphic**: `references/01-logo-identity.md` (concept, competitor wall, mark types, clear space, minimum sizes).
-4. **design-typography**: `references/02-selection-pairing.md`, `03-web-fonts-variable-licensing.md` (licensing for web, app and print).
+4. **design-typography**: `references/02-selection-pairing.md`, `03-web-fonts-variable-licensing.md` (licensing for web, app and print), `07-type-led-pages.md` for the wordmark-scale display moments.
 5. **design-color**: `references/psychology-brand.md`, then `palette-building.md` to turn the brand hue into contrast-locked ramps and `ui-tokens-themes.md` for screen roles.
-6. **design-graphic**: `references/02-icon-systems.md`, `03-photography-direction.md`, `04-illustration.md`; then art direction and imagery (planned).
+6. **design-graphic**: `references/02-icon-systems.md`, `03-photography-direction.md`, `04-illustration.md`; then **design-art-direction**: SKILL.md, `references/01-concept-and-consistency.md` (concept sentence, reject test, one system for every image), `02-photography.md`, `05-requesting-photography.md` for the shoot brief.
 7. **design-copy**: `references/03-voice-and-tone.md`.
 8. **design-graphic**: `references/05-composition-social.md`, `06-export-formats.md` (logo kit, favicon, OG image).
 9. Self-critique loop in design-director, on the rendered guidelines page.

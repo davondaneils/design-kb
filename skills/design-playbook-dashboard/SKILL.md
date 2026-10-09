@@ -10,15 +10,15 @@ Product UI is used for hours, not seconds. Every choice favors scanning speed, d
 ## 1. Load in this order
 1. **design-foundations** (always): tokens, the 15-item gate, `references/accessibility.md`.
 2. **design-ux**: `references/01-fundamentals.md` (the gate), `02-navigation-ia.md`, `03-forms.md`, `04-states-feedback.md`.
-3. Product and tool UI (planned): tables, dense forms, command palettes, settings.
+3. **design-product-ui**: SKILL.md, then `references/01-tables.md`, `05-states-bulk.md` and `06-dashboards.md` for every dashboard; `02-find-and-command.md` and `04-shells-density.md` for multi-screen tools; `03-forms-settings.md` for settings and edit screens.
 4. **design-layout**: `references/05-page-composition-and-density.md`, `01-grids-and-structure.md`, `04-responsive-and-adaptive.md`.
-5. **design-typography**: `references/04-hierarchy-ui-editorial.md`, `05-typographic-detail.md` (tabular numerals).
+5. **design-typography**: `references/04-hierarchy-ui-editorial.md`, `05-typographic-detail.md` (tabular numerals), `06-type-without-web-fonts.md` (system stack or one shipped face, so figures align on every OS).
 6. **design-color**: `references/ui-tokens-themes.md` (roles, status colors, themes).
-7. **dataviz**: every chart, sparkline and KPI tile.
+7. **dataviz**: every chart, sparkline and KPI tile. **design-art-direction** `references/04-visuals-without-image-hosts.md` recipe 3 (sparklines) and the rule "only counts are pictures": product imagery shows a number or the state of a number, nothing decorative.
 8. **design-copy**: `references/02-ux-microcopy.md`.
 9. **design-motion**: `references/04-micro-interactions.md`. Fast, rare, never on keyboard-driven actions.
 10. **design-frontend**: build.
-11. Visual polish (planned), then the self-critique loop in design-director.
+11. **design-polish** after the lint gate passes: SKILL.md, `references/06-polish-checklist.md` and the references each item names. Then the self-critique loop in design-director.
 
 Copy is always design-copy here; direct response copywriting never applies inside a product.
 
@@ -32,7 +32,7 @@ Copy is always design-copy here; direct response copywriting never applies insid
 
 ## 3. Done means
 1. `node tools/lint.mjs page.html` exits 0.
-2. `node tools/render.mjs page.html out/` and every `[judged]` row holds, including state screenshots (empty, loading, error) where the screen has them.
+2. Every state is rendered and linted, not only the ready page: expose states through a `?state=` parameter (or equivalent), run `node tools/lint.mjs page.html --states state=loading,state=empty,...` and render each state URL. Build a state sheet (every control in every state; empty, loading, error and partial panels). Every `[judged]` row holds on those screenshots.
 3. Side by side with the closest exemplar (`references/signature-moves.md`), rated close on density, hierarchy, chrome restraint and craft.
 4. The hand-over names what is still short of the exemplar.
 

@@ -54,7 +54,7 @@ Polish never trades against the FOUNDATIONS gate. Then these hold on every page,
 |---|---|---|---|
 | Hover (pointer) | `--color-primary-hover`, 150ms | text color at 8%; rows and menus 0ms in, 150ms out (opinion) | border one step stronger |
 | Focus-visible | 2px ring, 2px offset | ring; inset (`outline-offset: -2px`) in dense lists | 2px ring outside the border |
-| Pressed | 800 step plus `scale(0.97)` (0.98 above about 200px wide), 100ms | text color at 12% | n/a |
+| Pressed | 800 step plus `scale(0.97)` (0.98 above about 200px wide), 100ms | text color at 10% | n/a |
 | Selected | n/a | selected bg and text plus a non-color mark (weight 600, bar, check) | n/a |
 | Disabled | sunken fill, muted label, no hover or press | muted label | sunken fill |
 | Loading | label `opacity: 0` in place, 16px spinner, `aria-busy` | same | trailing spinner |

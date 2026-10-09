@@ -12,7 +12,10 @@ The one place for accessibility in design-kb. Every playbook and every domain re
 | Touch targets per platform (44 pt iOS, 48 dp Android) | design-playbook-mobile `references/platform-conventions.md` |
 | Reduced motion matrix, flashes, pause controls | design-motion `references/05-accessibility-performance.md` |
 | Error wording, link text, alt text writing | design-copy `references/02-ux-microcopy.md` |
-| Alt decision tree, text over images, icon contrast | design-graphic SKILL.md fundamentals |
+| Alt decision tree, icon contrast | design-graphic SKILL.md fundamentals |
+| Text over images and textures (worst pixel, text hidden), forced-colors overlays | design-art-direction `references/03-composition-and-overlays.md`; `tools/lint.mjs` overlay check |
+| Table semantics, keyboard shortcuts, command palettes, live sort and bulk announcements | design-product-ui `references/01-tables.md`, `02-find-and-command.md`, `05-states-bulk.md` |
+| Focus shape, state sheets, `color-scheme`, sticky headers over focus | design-polish `references/01-interactive-states.md`, `05-scroll-overflow-edges.md` |
 | Markup that delivers the semantics (elements, dialogs, forms) | design-frontend `references/01-semantic-html.md` |
 
 ## Principles
@@ -35,6 +38,7 @@ The one place for accessibility in design-kb. Every playbook and every domain re
 | 1.4.12 | No loss with line-height 1.5, paragraph spacing 2em, letter spacing 0.12em, word spacing 0.16em | never fix heights on text boxes |
 | 1.4.13 | Tooltips and hover cards: dismissible with Esc, hoverable, persistent | |
 | 2.1.1 / 2.1.2 | Everything works by keyboard; no traps | |
+| 2.1.4 | Single-character shortcuts can be turned off or remapped, or only work while the control has focus. This includes `/` and `?`, not only letters (design-product-ui, found in testing) | |
 | 2.2.2 | Auto-moving content over 5s has pause, stop or hide | |
 | 2.4.1 | Skip link to `main` | |
 | 2.4.3 | DOM order equals visual order (watch `order`, `flex-direction: row-reverse`, grid placement) | |
@@ -46,8 +50,16 @@ The one place for accessibility in design-kb. Every playbook and every domain re
 | 3.3.1 / 3.3.3 | Errors identified in text, with how to fix | |
 | 3.3.7 | Do not ask for the same info twice in one process (prefill, "same as shipping") | |
 | 3.3.8 | Login: no puzzles or transcription; allow paste and password managers; offer passkeys, magic links or OAuth | |
-| 4.1.2 | Name, role, value for every control (native elements do this) | |
+| 4.1.2 | Name, role, value for every control (native elements do this). `aria-label` on a generic `span` or `div` is prohibited (axe `aria-prohibited-attr`): use visible text with `aria-hidden="true"` plus an sr-only full value | |
 | 4.1.3 | Status messages announced without focus: `role="status"` (polite) or `role="alert"` (urgent) | |
+
+## Found in testing (2026-10-09 waves)
+- **Safari drops table semantics when `display` changes.** A `table` restyled with `display: grid`, `block` or `flex` (the usual phone reflow) loses its table role in Safari's accessibility tree. Restate `role="table"`, `rowgroup`, `row`, `columnheader`, `cell` on the elements (design-product-ui `references/01-tables.md`, sources T21 to T23 in `kb/research/product-ui/`).
+- **`/` and `?` are single-key shortcuts** under WCAG 2.1.4. Ship a visible "Single-key shortcuts" switch (autosaved) or make them work only with a modifier (design-product-ui `references/02-find-and-command.md`).
+- **`.sr-only` with `margin: -1px`** fails the spacing lint; `margin: 0` plus `clip` hides the same way.
+- **Text over images and textures** is judged on the worst pixel under the text box with the text hidden, not on an average or on axe's "needs review". The tester's curve labels measured 1.74:1 where axe only said "review" (design-art-direction `references/03-composition-and-overlays.md`).
+- **`color-scheme`** on `:root` (or `<meta name="color-scheme">`) whenever the page has a dark theme, so scrollbars and native controls follow it.
+- **A focus ring must not change the control's shape** (radius, border width, padding, weight); low-specificity link rules such as `a:not([class]):focus-visible` can outrank component rules. Use `:where(a:focus-visible)` (design-polish).
 
 ## Focus indicators (expert default)
 ```css

@@ -1,5 +1,8 @@
 # design-polish changelog
 
+## v0.1.1 (2026-10-09, editor-in-chief)
+- Pressed state layer 12% changed to 10% to match FOUNDATIONS v0.3 and design-color. Shadow recipe, `--ring`, `--highlight` and `--color-primary-active` adopted into FOUNDATIONS. Hard checks ported into `tools/lint.mjs`.
+
 ## v0.1 (2026-10-09)
 - First version: SKILL.md, six references (interactive states; depth, borders and shadows; shape, alignment and icons; surface, texture and text rendering; scroll, overflow and edges; the polish pass checklist).
 - Assets: `polish-tokens.css` (shadow, ring, highlight, elevation and state tokens, focus, loading, scroll and truncation recipes) and `polish-audit.mjs` (advisory checks beside `tools/lint.mjs`).

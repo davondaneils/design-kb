@@ -35,7 +35,7 @@ Cross-check for native and Android apps: Material compact under 600dp uses a bot
 | Safe areas | keep controls inside `env(safe-area-inset-*)`; backgrounds may extend | Apple HIG |
 
 ### Very wide screens (1536 and up)
-- Keep text containers capped (66ch body, 1280 content box). Let backgrounds, media and data regions grow.
+- Keep text containers capped (52ch body, 1280 content box). Let backgrounds, media and data regions grow.
 - Apps: add a third pane (inspector, preview) rather than stretching the main column. Dashboards: allow more columns of cards, not wider cards.
 - Do not scale type with the viewport beyond display headings; fluid type belongs to display sizes only (foundation).
 

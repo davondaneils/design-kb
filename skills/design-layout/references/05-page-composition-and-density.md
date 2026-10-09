@@ -38,7 +38,7 @@ Rules:
 
 ## Article and docs
 
-- Content grid with named lines (01-grids): body 66ch, popout for figures, full bleed for heroes and wide charts.
+- Content grid with named lines (01-grids): body 52ch, popout for figures, full bleed for heroes and wide charts.
 - Headings that stand out and front-load key words to produce layer-cake scanning (NN/g).
 - Space above a heading is larger than below it, so the heading binds to its section: about 2:1, for example 48 above and 16 to 24 below (opinion, consistent with the proximity ratio).
 - Table of contents: sticky in a right column on xl and up; collapsible at the top below lg.
@@ -56,6 +56,7 @@ Rules:
 
 ## Tables and collections
 
+- Responsive table strategies (collapse to a list, pin the first column, scroll inside the region) and restoring table semantics after a `display` change: design-product-ui `references/01-tables.md`. Row heights 32/40/48 agree across both skills.
 - Numbers right-aligned in tabular figures (`font-variant-numeric: tabular-nums`); text left-aligned; never center. Header aligns with its column's data (Strom).
 - Rules: light horizontal only, or none if alignment carries the structure. Zebra striping optional (opinion contested).
 - Sticky header row; sticky first column when the table scrolls horizontally.

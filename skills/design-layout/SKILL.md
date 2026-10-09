@@ -15,7 +15,7 @@ Check every layout against these before anything else. One miss fails the work, 
 
 **Structure**
 1. Every spacing value is a foundation token: 0, 2, 4, 8, 12, 16, 24, 32, 48, 64, 96, 128 (`--space-0` to `--space-11`). Component padding 4 to 24; layout gaps 16 and up. Off-scale values only as deliberate optical corrections.
-2. Body text measure 45 to 75 characters, 66 ideal (`max-inline-size: 66ch`). Never full-width paragraphs.
+2. Body text measure 45 to 75 characters, 66 ideal (`max-inline-size: 52ch`, which renders 63 to 68 characters in every text face measured; `66ch` renders 81 to 86, see design-typography reference 01). Never full-width paragraphs.
 3. Components have no outer margins. The parent sets gaps (`gap`, or `.stack > * + *`).
 4. One alignment system per view. Count the distinct left edges; remove any that carry no meaning.
 
@@ -55,7 +55,7 @@ When the brief is a critique ("spacing feels off"), audit in gate order, list ea
 | Screen | Structure |
 |---|---|
 | Marketing, editorial | 12-col grid (4 / 8 / 12 cols), 1280px content box, gutter 16 / 24 / 32 |
-| Long-form reading | Named-line content grid: 66ch body, popout and full-bleed tracks |
+| Long-form reading | Named-line content grid: 52ch body, popout and full-bleed tracks |
 | App | Fixed sidebar 240 to 280px + fluid main (`minmax(0, 1fr)`); rail at md to lg; bottom bar or drawer under md |
 | Collections | `repeat(auto-fit, minmax(min(16rem, 100%), 1fr))` |
 | Media + text pair | Sidebar pattern: wraps when content would drop below 50% |
@@ -112,7 +112,7 @@ Browse mixed content: cards. Search or compare: list or table. Single-type visua
 
 - **Landing:** header (one CTA) > hero (headline about 20ch, one line, CTA, product proof, next section peeking) > proof strip > problem and outcome > 3 to 6 features > deep proof > pricing or teaser > FAQ > closing CTA. One primary action, repeated.
 - **Dashboard:** one job; KPI row (3 to 5 tiles, value is the largest text) > primary trend > breakdowns > detail table; global filters in one toolbar; top-left holds the most important number. KPI row 4 across at lg, 2x2 at md, stacked horizontal tiles under sm; chart cards never under about 320px; compact tables go to default density on touch.
-- **Article:** content grid, 66ch body, headings front-loaded for layer-cake scanning, sticky TOC on xl, wide media in popout or full bleed.
+- **Article:** content grid, 52ch body, headings front-loaded for layer-cake scanning, sticky TOC on xl, wide media in popout or full bleed.
 - **Pricing:** 3 to 4 plans, recommended in the middle with the only filled CTA, subgrid cards with 4 to 6 differentiators, billing toggle above, grouped comparison table with sticky plan header, mobile stacks or tabs with no horizontal scroll.
 
 Full skeletons, numbers and worked examples: references/05.
@@ -131,7 +131,7 @@ Full skeletons, numbers and worked examples: references/05.
 
 - design-color: tone ramps, contrast values, accent use. design-typography: type scale, line height, measure in type terms.
 - design-ux: navigation, flows, forms behavior. design-motion: layout transitions. design-copy: headings and CTA wording.
-- design-frontend: CSS architecture, container queries, layout shift. dataviz: charts inside dashboards. design-product-ui (planned): tables and dense UI. design-graphic: imagery and crops.
+- design-frontend: CSS architecture, container queries, layout shift. dataviz: charts inside dashboards. design-product-ui: tables (responsive strategies and table semantics, `references/01-tables.md`), shells and density. design-polish: shadow recipe, radius nesting, edges. design-art-direction: image crops and text over images. design-graphic: imagery and crops.
 - website-strategy (positioning before layout), copywriting (sales page message order), sales-funnels (funnel steps and offers): use these for what the page says and sells; this skill decides how it is arranged.
 
 ## Output standard
