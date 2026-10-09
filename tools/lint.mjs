@@ -441,6 +441,8 @@ async function lintOne(browser, target, outPath) {
       out.tab = [];
       for (const el of document.querySelectorAll('td, th, [class*=price], [class*=kpi] dd, [class*=value], .num, time, [data-num]')) {
         if (!L.visible(el) || L.skipped(el, 'tabular') || !/\d/.test(el.textContent)) continue;
+        const chars = el.textContent.replace(/\s+/g, '');
+        if ((chars.match(/\d/g) || []).length / chars.length < 0.3) continue; // a label that mentions a number, not a figure
         const s = getComputedStyle(el);
         if (!/tabular-nums/.test(s.fontVariantNumeric) && !/"tnum"(?! 0)/.test(s.fontFeatureSettings)) out.tab.push(L.sel(el));
       }
@@ -451,7 +453,9 @@ async function lintOne(browser, target, outPath) {
       for (const el of els) {
         const sh = getComputedStyle(el).boxShadow;
         if (!sh || sh === 'none') continue;
-        out.shadows[sh] = (out.shadows[sh] || 0) + 1;
+        const layers = sh.split(/,(?![^(]*\))/);
+        const real = layers.some((l) => !/inset/.test(l) && !/^\s*0px 0px 0px/.test(l.replace(/^\s*(rgba?|oklch|color)\([^)]*\)\s*/, '')));
+        if (real) out.shadows[sh] = (out.shadows[sh] || 0) + 1; // rings and inset highlights are edges, not elevation
         for (const layer of sh.split(/,(?![^(]*\))/)) {
           if (/inset/.test(layer)) continue;
           const am = layer.match(/rgba?\(([^)]*)\)/);
@@ -535,7 +539,7 @@ async function lintOne(browser, target, outPath) {
       if (r.tab.length) add('tabular', 'warn', `${r.tab.length} numeric elements without tabular figures`, { examples: r.tab.slice(0, 5) });
       ok('shadows');
       const distinct = Object.keys(r.shadows).length;
-      if (distinct > 5) add('shadows', 'warn', `${distinct} distinct box-shadow values (FOUNDATIONS gives 5 plus rings)`);
+      if (distinct > 5) add('shadows', 'warn', `${distinct} distinct drop shadows, rings and inset highlights not counted (FOUNDATIONS gives 5)`);
       for (const x of r.shadowBad.slice(0, 6)) add('shadows', 'warn', x.why, { sel: x.sel });
       ok('icon-stroke');
       for (const i of r.icon) add('icon-stroke', 'warn', `icon stroke ${i.stroke}px vs text stem ${i.stem}px (${i.text})`, { sel: i.sel });
