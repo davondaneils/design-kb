@@ -22,4 +22,4 @@ Work moves through `kb/` folders in that order: briefs, research, drafts, review
 Paths: briefs, research and drafts use the domain slug (`kb/briefs/color/`); reviews and tests use the skill name (`kb/reviews/design-color.md`). Subtopic files share one name across stages (`01-fundamentals.md` in briefs, research and drafts).
 
 ## Status
-Topic map and status live in `kb/TOPIC_MAP.md`. Index of shipped skills lives in `kb/INDEX.md`.
+Each domain keeps its status in `kb/status/<domain>.md`; `kb/TOPIC_MAP.md` is the librarian's rollup of those files. Index of shipped skills lives in `kb/INDEX.md`.
