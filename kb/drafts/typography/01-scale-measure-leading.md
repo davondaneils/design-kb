@@ -44,10 +44,23 @@ Line heights in the UI and heading columns snap to the 4px grid (Material does t
 - **If** lines are long (approaching 75 to 80 characters) **then** raise line height toward 1.6. **If** short (captions, cards, 30 to 45 characters) **then** 1.3 to 1.4 is fine for non-paragraph UI text, but keep paragraphs at 1.5 or more.
 - **If** text is light on a dark background **then** add about 0.05 to the line height and see the weight note in 03 (opinion: light text on dark reads heavier and tighter).
 
-## Measure in CSS
-- Set `max-width` on the text block, not the page. Start with `max-width: 34em` (about 66 characters at Bringhurst's 0.5em average character width).
-- `66ch` is not 66 characters. `ch` is the width of the digit zero, wider than the average character in most proportional faces, so `66ch` often holds 72 to 80 characters (estimate from the CSS definition; verify per font). If you use `ch`, start near `60ch` and count a real paragraph.
-- Count, do not guess: paste a real paragraph, count characters including spaces on three lines, average.
+## Measure in CSS (measured, resolves the 66ch versus 32em conflict)
+Rule: **`max-inline-size: 52ch` on body text; keep it between about `40ch` and `56ch`; confirm with `tools/lint.mjs`.** Set it on the text block, not the page.
+
+Why, measured with `kb/research/typography/measure-cpl.mjs` (same counting as the lint, a real 600-character paragraph, Chromium; research 06, M1):
+
+| CSS width | Inter | Arial | Times | Calibri | Cambria | Verdana-width (DejaVu) | Range |
+|---|---|---|---|---|---|---|---|
+| `66ch` | 86 | 81 | 81 | 81 | 83 | 81 | 81 to 86: always over 75 |
+| `60ch` | 79 | 74 | 74 | 74 | 76 | 74 | 74 to 79 |
+| `52ch` | 68 | 65 | 63 | 63 | 66 | 65 | **63 to 68: the target** |
+| `32em` | 66 | 70 | 77 | 77 | 77 | 61 | 61 to 77: depends on the face |
+| `34em` | 70 | 75 | 83 | 82 | 82 | 66 | 66 to 83 |
+
+- `ch` is the advance width of the zero. It overstates the average character by a fairly steady 21 to 31 percent across text faces, because a wide face has a wide zero. So `ch` works, with a lower number: 52, not 66.
+- `em` does not track the face. The average character measured 0.40em (Times, Cambria, Calibri) to 0.51em (DejaVu); Bringhurst's 0.5em rule of thumb ("33em is about 66 characters") fits wide faces only. `32em` is right for Inter and gives 77 in a Times-width serif, over the 75 limit.
+- Display cuts are narrower per `ch` (Inter Display: 52ch gave 73). For large text in a display face, start at `46ch` and let the lint confirm.
+- Count, do not guess: the lint measures real characters per rendered line at 390 and 1440.
 
 ## Fluid display sizes
 Formula (Utopia method): slope = (maxPx - minPx) / (maxVw - minVw); intercept = minPx - slope x minVw. Size = `clamp(min, intercept + slope*100vw, max)` with min and max in rem.
@@ -76,7 +89,7 @@ Every max/min ratio here is about 1.6, inside the 2.5x limit. Keep body and UI t
 
 ## Worked examples
 1. **SaaS settings page.** Setting descriptions are paragraphs users read, so they get `--text-base` 16/24, not the tempting 14px. Field labels `--text-sm` 14/20 weight 500. Inputs 16px (iOS zoom). Section titles `--text-lg` 20/24 weight 600, margin-top 48, margin-bottom 16. Result: four styles, every size a token.
-2. **Long-read essay.** Container `max-width: 34em` at 20px body (about 680px wide), `line-height: 1.5`, paragraphs spaced 1.5em. Headline `--text-5xl` fluid, line height 1.1, tracking -0.025em, `text-wrap: balance`. Mobile body falls to 1rem via `clamp(1rem, 0.9rem + 0.45vw, 1.25rem)` (ratio 1.25).
+2. **Long-read essay.** Container `max-inline-size: 52ch` at 20px body (about 650px wide in Inter, 66 to 68 characters), `line-height: 1.5`, paragraphs spaced 1.5em. Headline `--text-5xl` fluid, line height 1.1, tracking -0.025em, `text-wrap: balance`. Mobile body falls to 1rem via `clamp(1rem, 0.9rem + 0.45vw, 1.25rem)` (ratio 1.25).
 3. **iOS app.** Use Dynamic Type styles, not fixed sizes: Body 17/22, Headline 17/22 semibold, Title 2 22/28 (HIG). For a custom font, scale with `UIFontMetrics` or SwiftUI `.font(.custom(_:size:relativeTo:))` so user text size settings apply. On Android, set all text in `sp` (never `dp`) so it follows the user's font scale, and test layouts at 200% font scale.
 
 ## Non-Latin scripts
@@ -90,4 +103,4 @@ Every max/min ratio here is about 1.6, inside the 2.5x limit. Keep body and UI t
 - Spacing tokens and grid: design-layout.
 - Contrast of muted text and text on images: design-color.
 - Token plumbing, clamp in CSS, container queries: design-frontend.
-- Dense numeric tables: design-data.
+- Dense numeric tables: design-product-ui (planned).

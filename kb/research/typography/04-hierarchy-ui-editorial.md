@@ -14,7 +14,7 @@ Status key: **C** consensus, **X** contested, **O** opinion.
 | 6 | text-wrap: balance for headings and captions (6 lines max in Chromium, 10 in Firefox); pretty for body; widely available since March 2024. | MDN text-wrap | C |
 | 7 | WebKit pretty evaluates the whole paragraph (rag, short last lines, fewer hyphens); Chromium adjusts only the last 4 lines. balance can narrow the block; use pretty when text must fill the width beside another element. Do not use balance on long passages. | WebKit blog, Better typography with text-wrap pretty (2025) | C |
 | 8 | text-box: trim-both cap alphabetic removes half-leading so text centers optically in buttons and aligns to grids. | MDN text-box-trim | C |
-| 9 | Make numeric tables scan vertically with tabular figures. | Lee Robinson (Vercel) on X; Soren on X; Wes Bos on X | O (practitioner, consistent with MDN) |
+| 9 | Make numeric tables scan vertically with tabular figures. | MDN font-variant-numeric: tabular-nums is "the set of figures where numbers are all of the same size, allowing them to be easily aligned like in tables" (https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric, accessed 2026-10-09). X posts by Lee Robinson, Soren and Wes Bos are leads only: x.com refused the fetch (robots) on 2026-10-09 | C (mechanism, MDN); practitioner posts unverified |
 | 10 | WCAG 1.3.1: headings must be real heading elements in a logical order; visual style and semantic level are separate decisions. | WCAG 2.2 Understanding 1.3.1 | C |
 
 ## Sources

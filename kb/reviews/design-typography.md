@@ -1,4 +1,53 @@
-# Review: design-typography v0.1 (critic)
+# Review: design-typography v0.2 (critic, 2026-10-09)
+
+**Verdict: approve after fixes** (round 1 revise, round 2 approve). Scope: the whole skill, plus new reference 06 (type without a font CDN), reference 07 (type-led pages), `assets/font_kit.py`, and the measure rule.
+
+## Citation spot check
+Method: all unique URLs in `kb/research/typography/01` to `05` (50), `random.seed(20261009)`, `random.sample(urls, 10)` (20 percent). Re-fetched 2026-10-09.
+
+| # | URL | Claim checked | Result |
+|---|---|---|---|
+| 1 | w3.org/WAI/WCAG22/Understanding/text-spacing | 1.5, 2, 0.12, 0.16 x font size | Confirmed, verbatim |
+| 2 | developer.mozilla.org .../Guides/Fonts/Variable_fonts | registered axes to properties; redeclare every axis; custom axes uppercase; `font-weight` range in `@font-face` | Confirmed |
+| 3 | practicaltypography.com/summary-of-key-rules.html | 15 to 25px web, 120 to 145%, 45 to 90 characters, 5 to 12% caps spacing, bold or italic not together | Confirmed, verbatim |
+| 4 | developer.apple.com HIG typography | Body 17/22, Headline 17/22 semibold, Title 2 22/28, Caption 2 11/13; avoid light weights; iOS default 17, min 11 | Confirmed |
+| 5 | fonts.google.com/knowledge ... superfamily | "shared consistency across every variation" | Confirmed |
+| 6 | chriscoyier.net ... hanging-punctuation | Safari only | Confirmed (a commenter's line, reported by the author) |
+| 7 | x.com/sorenblank/status/2028520200417706017 | tabular-nums default | **Not fetchable** (robots disallowed) |
+| 8 | x.com/wesbos/status/1380612489201717254 | tabular numbers | **Not fetchable** (robots disallowed) |
+| 9 | w3.org/WAI/WCAG22/Understanding/resize-text | 200 percent without loss | Confirmed |
+| 10 | webkit.org/blog/16547 | WebKit whole paragraph, Chromium last four lines, no balance on long passages | Confirmed, verbatim |
+
+Round 1: **batch fails** (7 and 8 cannot be confirmed). Sent back to the researcher. Fix: research 04 claim 9 and 05 claim 5 now rest on MDN font-variant-numeric (re-fetched, quote recorded); the X posts are listed as leads, not support. Reference 05 reworded to cite MDN and label the "default for changing numbers" practice as opinion.
+Round 2: re-fetched MDN font-variant-numeric (confirmed) plus 3 of the new research 06 citations: Microsoft Learn Segoe UI Variable sentence (verbatim), MDN `@font-face` src "user agents may ignore user-installed fonts" (verbatim), caniuse `ui-serif` Safari-only (confirmed). **Pass.**
+
+## Fundamentals gate
+| Area | Result |
+|---|---|
+| Measure rule | **Fail in v0.1**: "Start at `max-width: 34em` (about 66 characters)" and "measure in em, not ch" are wrong for most faces. Measured (research 06 M1): 34em gives 66 to 83, 66ch gives 81 to 86, 52ch gives 63 to 68. Fixed. |
+| `font-size-adjust: from-font` | **Fail in v0.1**: "on inline code" is a no-op (M4). Fixed in SKILL, 02, 04. |
+| Citations | Fail round 1 (X posts); fixed. |
+| Accessibility, contrast, headings, zoom, text spacing | Pass. Reference 07 keeps the CTA-in-first-screen rule, `aria-hidden` on decorative wordmarks, 4.5:1 on brand fills. |
+| FOUNDATIONS conformance | Display leading 0.95 and the display ramp above `--text-5xl` are taught deviations (F5, reference 07), within the contract's "skills may teach when to deviate" and the lint's fluid display allowance. `52ch` conflicts with FOUNDATIONS `32em` and design-layout `66ch`; both proposed for change in `design-typography-pipeline-notes.md`, not edited here. |
+| Em dashes | None (grep U+2014 on every changed file). |
+
+## Expert bar
+New material a top type director would not already have written down: measured CPL per unit across eight faces; axis pinning as the main size lever (132 to 21 KB); CDN builds stripping 33 of 40 Inter features; `from-font` resolving where declared; italic metric fallbacks; side bearings at display size with the correction; static weight snapping on 350; units under caps labels. Reference 07 is opinion and says so; its moves are concrete and were tested on a render. Pass.
+
+## Fix list (round 1)
+| # | File | Change | Status |
+|---|---|---|---|
+| 1 | SKILL.md F6, move 2, step 3; references 01, 04 | Measure rule to `52ch` with the measured table | Done |
+| 2 | SKILL.md move 8; references 02, 04 | `from-font` on the parent, measured | Done |
+| 3 | research 04, 05; reference 05 | Replace unfetchable X support with MDN | Done (researcher) |
+| 4 | SKILL.md section 4, map; references 03, 06; assets | No-CDN rule set and tool | Done |
+| 5 | reference 06 | Label the "resolves to" column as inferred from stack order | Done |
+| 6 | SKILL.md F5 | Name the display leading deviation and point to 07 | Done |
+| 7 | reference 07 | Mark the moves as opinion, tested on renders, exemplars unmeasured | Done |
+
+---
+
+# Review: design-typography v0.1 (critic, earlier round, kept for history)
 
 **Verdict: revise, then approve.** All fixes below were applied before testing (status column).
 
