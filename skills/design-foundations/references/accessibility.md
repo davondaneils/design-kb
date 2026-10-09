@@ -8,7 +8,8 @@ The one place for accessibility in design-kb. Every playbook and every domain re
 | Contrast math, APCA status, color vision, forced colors palettes | design-color `references/contrast-accessibility.md` |
 | Type floors: measure, zoom, text spacing, heading semantics | design-typography SKILL.md fundamentals F6 to F11 |
 | Reflow, reading order, targets in layouts, sticky bars | design-layout SKILL.md fundamentals 9 to 12, `references/04-responsive-and-adaptive.md` |
-| Usability gate, touch targets per platform, keyboard and modal behavior | design-ux `references/01-fundamentals.md`, `references/06-platforms-touch-systems.md` |
+| Usability gate, keyboard and modal behavior | design-ux `references/01-fundamentals.md` |
+| Touch targets per platform (44 pt iOS, 48 dp Android) | design-playbook-mobile `references/platform-conventions.md` |
 | Reduced motion matrix, flashes, pause controls | design-motion `references/05-accessibility-performance.md` |
 | Error wording, link text, alt text writing | design-copy `references/02-ux-microcopy.md` |
 | Alt decision tree, text over images, icon contrast | design-graphic SKILL.md fundamentals |

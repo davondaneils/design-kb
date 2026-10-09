@@ -80,7 +80,7 @@ Gate details, numbers and examples: `references/01-fundamentals.md`.
 - Data products: honest, labeled sample data plus a 3 to 5 step skippable checklist.
 - Define one activation event and measure time to reach it (practitioner consensus).
 
-### Platforms, touch, components (`references/06-platforms-touch-systems.md`)
+### Platforms, touch, components (`references/06-platforms-touch-systems.md`; full platform conventions in design-playbook-mobile `references/platform-conventions.md`)
 - Native first; change visuals, not behavior. Never ship iOS chevrons and switches on Android or vice versa.
 - Primary content in the screen center; secondary actions on top and bottom edges; tertiary in corner menus (Hoober 2017).
 - Modals: only when they help, short, one at a time, obvious dismissal, confirm before discarding user content (Apple HIG).
@@ -124,7 +124,8 @@ These separate top studios from strong generalists. Use them once the gate passe
 | Field rules, validation, errors, passwords, checkout, worked sign-up | `references/03-forms.md` |
 | Loading table, empty state types, error ladder, toasts, AI tasks | `references/04-states-feedback.md` |
 | Onboarding chooser, permissions, sample data, worked data SaaS | `references/05-onboarding.md` |
-| Touch numbers, iOS/Android/web convention table, modals, component spec | `references/06-platforms-touch-systems.md` |
+| Component spec template, touch expert moves | `references/06-platforms-touch-systems.md` |
+| Touch numbers, iOS/Android/web convention table, modality, porting rules | design-playbook-mobile `references/platform-conventions.md` |
 | Review output format and worked review | `references/07-review-template.md` |
 
 ## 7. Where defaults may change
