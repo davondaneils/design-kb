@@ -48,7 +48,7 @@ Six to eight styles cover almost every product screen. Material 3 offers 15 role
 | Headline | `--text-5xl` fluid, line height 1.1, -0.025em, `text-wrap: balance` | Display optical size if available |
 | Dek (standfirst) | `--text-lg` 20/30, muted, max 2 to 3 lines | Sets up the story |
 | Byline and date | `--text-sm`, muted | `<time>` element |
-| Body | `--text-lg` 20, line height 1.5, measure about 66 characters | `text-wrap: pretty`, `hyphens: auto` on narrow screens with `lang` set |
+| Body | `--text-lg` 20, line height 1.5, `max-inline-size: 52ch` (63 to 68 characters) | `text-wrap: pretty`, `hyphens: auto` on narrow screens with `lang` set |
 | Subhead | `--text-xl` 25/30, 600 | 48 above, 12 to 16 below |
 | Pull quote | `--text-2xl`, italic or display face, hanging punctuation | Breaks the measure deliberately |
 | Caption | `--text-sm`, muted, same measure or narrower | |
@@ -61,9 +61,9 @@ Six to eight styles cover almost every product screen. Material 3 offers 15 role
 ## Worked examples
 1. **Analytics dashboard card.** Card title 16/600; KPI 39/600 tabular; delta 14/500 in success or danger color plus an arrow icon (never color alone); label 12/500 caps +0.08em muted. Four styles, ranking: KPI, then title, then delta, then label.
 2. **Pricing page.** Plan name `--text-lg` 600; price `--text-4xl` 600 tabular with currency symbol at `--text-xl` top-aligned; period `--text-sm` muted; features `--text-base`. Recommended plan wins by surface and a badge, not by a third type size. For conversion structure and copy, use the sales-funnels and copywriting skills.
-3. **Docs article.** h1 `--text-3xl`, h2 `--text-xl` with 48 above, h3 `--text-lg`, body `--text-base` 1.5, inline code `font-size-adjust: ex-height from-font` so mono matches the body x-height.
+3. **Docs article.** h1 `--text-3xl`, h2 `--text-xl` with 48 above, h3 `--text-lg`, body `--text-base` 1.5, `font-size-adjust: ex-height from-font` on `body` (it resolves to the body face's ratio there and inherits), so inline code in mono matches the body x-height. Declared on `code` itself it measures the mono and does nothing (measured, research 06 M4).
 
 ## Hand-offs
 - Grid, spacing and section rhythm: design-layout. Color tokens: design-color.
 - Headline wording, decks, microcopy: design-copy and the copywriting skill.
-- Tables and charts: design-data.
+- Tables: design-product-ui (planned). Charts: dataviz.

@@ -43,7 +43,7 @@ House rule note: this knowledge base never uses the long em dash; in product cop
 | Recipes, measurements | `diagonal-fractions` on the fraction span only |
 | 1st, 2nd | `ordinal` only where the face supports it; otherwise plain text |
 
-Tabular figures stop numbers from jittering as they change and keep column edges flush (practitioner consensus on X: Soren, Lee Robinson, Wes Bos; mechanism per MDN).
+Tabular figures stop numbers from jittering as they change and keep column edges flush (MDN: tabular figures "are all of the same size, allowing them to be easily aligned like in tables"; making them the default for changing numbers is common practice, opinion).
 
 ## Caps, small caps and tracking
 - All caps: under one line, +5 to 12% letter spacing (`letter-spacing: 0.06em` to `0.12em`) (Butterick).

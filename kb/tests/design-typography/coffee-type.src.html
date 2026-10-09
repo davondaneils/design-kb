@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Ember &amp; Oak Coffee Roasters, Portland</title>
+<style>
+/* Type: design-typography, rule set for pages without a font CDN (references/06).
+   One self-hosted display face, axes pinned to the one instance used: Newsreader (OFL), opsz 48, wght 400,
+   roman and italic, Latin core subset, 21 + 23 KB WOFF2 (kb/tests/design-typography/fonts/build.sh).
+   Everything else is the visitor's system sans: zero bytes, native rendering.
+   A metric-matched local fallback (Times New Roman or Liberation Serif, size-adjust 105.37%) keeps the swap from moving the layout.
+   Color tokens are unchanged from the design-color pilot (kb/tests/design-color/coffee-with.html). */
+/* @inline newsreader-display-roman.css */
+/* @inline newsreader-display-italic.css */
+/* @inline newsreader-fallback.css */
+/* @inline newsreader-fallback-italic.css */
+:root {
+  --color-brand: #f26b21;
+  --color-orange-100: #ffe3d5; --color-orange-300: #ffa97e; --color-orange-600: #b14500; --color-orange-700: #933701; --color-orange-950: #3f0f00;
+  --color-warm-50: #f9f6f4; --color-warm-100: #eee8e4; --color-warm-200: #dfd5ce; --color-warm-300: #ccbeb3; --color-warm-500: #998779;
+  --color-warm-600: #79685b; --color-warm-800: #4f4238; --color-warm-950: #27201a; --color-warm-975: #1e1813; --color-warm-990: #16100c;
+  --color-red-300: #ffa59e; --color-red-600: #c2272d;
+
+  --color-bg: var(--color-warm-50);
+  --color-surface: #ffffff;
+  --color-surface-sunken: var(--color-warm-100);
+  --color-text: var(--color-warm-950);
+  --color-text-muted: var(--color-warm-600);
+  --color-border: var(--color-warm-200);
+  --color-border-strong: var(--color-warm-500);
+  --color-primary: var(--color-orange-600);
+  --color-primary-hover: var(--color-orange-700);
+  --color-on-primary: #ffffff;
+  --color-accent: var(--color-orange-600);
+  --color-danger: var(--color-red-600);
+  --color-focus-ring: var(--color-orange-600);
+  --color-feature-bg: var(--color-brand);
+  --color-feature-text: var(--color-warm-950);
+  --color-feature-cta: var(--color-warm-950);
+  --color-feature-on-cta: var(--color-warm-50);
+
+  --space-1: 2px; --space-2: 4px; --space-3: 8px; --space-4: 12px; --space-5: 16px; --space-6: 24px;
+  --space-7: 32px; --space-8: 48px; --space-9: 64px; --space-10: 96px; --space-11: 128px;
+
+  /* Type tokens (FOUNDATIONS): 12 14 16 20 25 31 39 49 61. */
+  --text-xs: 0.75rem; --text-sm: 0.875rem; --text-base: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem;
+  --text-2xl: 1.9375rem; --text-3xl: 2.4375rem; --text-4xl: 3.0625rem; --text-5xl: 3.8125rem;
+  /* Display ramp on top of the tokens (design-typography 4: marketing hero), fluid 390 to 1440px, max/min under 2.5x. */
+  --text-display: clamp(3.0625rem, 1.6rem + 6vw, 7rem);  /* 49 to 112px */
+  --text-display-2: clamp(2.4375rem, 1.6rem + 3.4vw, 4.75rem); /* 39 to 76px */
+  --text-numeral: clamp(3.8125rem, 2.3rem + 6.1vw, 9.5rem);    /* 61 to 152px, the price */
+  --leading-display: 0.95;  /* deviation from the 1.1 heading default: at 100px+ a 1.1 line gap reads as two headlines */
+  --leading-tight: 1.1; --leading-snug: 1.25; --leading-normal: 1.5;
+
+  --font-serif: "Newsreader Display", "Newsreader Fallback", "Iowan Old Style", Charter, "Sitka Text", Cambria, Georgia, serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI Variable Text", "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --radius-sm: 4px; --radius-md: 8px; --radius-lg: 12px; --radius-xl: 16px; --radius-full: 9999px;
+  --duration-fast: 150ms; --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: var(--color-warm-990);
+    --color-surface: var(--color-warm-975);
+    --color-surface-sunken: var(--color-warm-975);
+    --color-text: var(--color-warm-50);
+    --color-text-muted: var(--color-warm-300);
+    --color-border: var(--color-warm-800);
+    --color-border-strong: var(--color-warm-500);
+    --color-accent: var(--color-orange-300);
+    --color-danger: var(--color-red-300);
+    --color-focus-ring: var(--color-orange-300);
+    --color-feature-bg: var(--color-orange-950);
+    --color-feature-text: var(--color-warm-50);
+    --color-feature-cta: var(--color-brand);
+    --color-feature-on-cta: var(--color-warm-950);
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--color-bg); color: var(--color-text); font: var(--text-base)/var(--leading-normal) var(--font-sans);
+  font-kerning: normal; font-synthesis: none; text-rendering: optimizeLegibility; }
+h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+a { color: var(--color-accent); text-decoration-thickness: 0.06em; text-underline-offset: 0.2em; }
+a:hover { text-decoration-thickness: 0.12em; }
+:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; border-radius: var(--radius-sm); }
+p { text-wrap: pretty; }
+.wrap { max-width: 1232px; margin: 0 auto; padding: 0 var(--space-5); }
+@media (min-width: 768px) { .wrap { padding: 0 var(--space-8); } }
+
+/* Type roles */
+.display { translate: -0.04em 0; /* optical margin: Newsreader E has a 0.043em left side bearing, 5px at 112px */
+  font-family: var(--font-serif); font-weight: 400; font-size: var(--text-display); line-height: var(--leading-display);
+  letter-spacing: -0.025em; text-wrap: balance; }
+.display em, .serif em { font-style: italic; letter-spacing: -0.01em; } /* the italic is narrower and already tight */
+.serif { font-family: var(--font-serif); font-weight: 400; }
+.label { font: 600 var(--text-xs)/1.333 var(--font-sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); }
+.num { font-variant-numeric: tabular-nums lining-nums; }
+.amp { font-style: italic; font-family: var(--font-serif); } /* use the best available ampersand */
+
+/* Buttons: labels trimmed to cap height and baseline so equal padding looks equal */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-3); min-height: 48px; padding: var(--space-4) var(--space-6);
+  border-radius: var(--radius-full); border: 0; font: 600 var(--text-base)/1.5 var(--font-sans); text-decoration: none; cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-standard); text-box: trim-both cap alphabetic; }
+.btn-primary { background: var(--color-primary); color: var(--color-on-primary); }
+.btn-primary:hover { background: var(--color-primary-hover); }
+.btn-secondary { background: transparent; color: var(--color-text); box-shadow: inset 0 0 0 1px var(--color-border-strong); }
+.btn-secondary:hover { background: var(--color-surface-sunken); }
+.btn-sm { min-height: 40px; padding: var(--space-3) var(--space-5); font-size: var(--text-sm); }
+
+/* Header */
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--space-5); min-height: 72px; }
+.logo { font: 400 var(--text-xl)/1 var(--font-serif); letter-spacing: -0.01em; color: var(--color-text); text-decoration: none; padding: var(--space-3) 0; }
+.nav { display: flex; align-items: center; gap: var(--space-2); }
+.nav a:not(.btn) { color: var(--color-text); text-decoration: none; padding: var(--space-3) var(--space-4); font-size: var(--text-sm); border-radius: var(--radius-full); }
+.nav a:not(.btn):hover { background: var(--color-surface-sunken); }
+.nav .hide-sm { display: none; }
+@media (min-width: 768px) { .nav .hide-sm { display: inline-block; } }
+
+/* Hero: the headline is the image */
+.hero { padding: var(--space-8) 0 var(--space-9); border-top: 1px solid var(--color-border); }
+@media (min-width: 1024px) { .hero { padding: var(--space-9) 0 var(--space-10); } }
+.hero h1 { margin-top: var(--space-6); max-width: 11em; }
+.hero-body { margin-top: var(--space-8); }
+.hero .stage { margin-top: var(--space-8); }
+/* Desktop: headline and copy on 8 columns, the bag on 4, bottom-aligned with the facts row */
+@media (min-width: 1024px) {
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); column-gap: var(--space-9); }
+  .hero .wrap > .label, .hero h1, .hero-body { grid-column: 1; }
+  .hero .stage { grid-column: 2; grid-row: 2 / span 2; align-self: start; margin-top: var(--space-5); aspect-ratio: 4 / 5; }
+}
+.notes { font: italic 400 var(--text-xl)/var(--leading-snug) var(--font-serif); letter-spacing: -0.005em; max-width: 19em; }
+.lead { margin-top: var(--space-5); font-size: var(--text-lg); color: var(--color-text-muted); max-width: 52ch; /* measure in ch: 63 to 68 characters in any text face (design-typography 01) */ }
+.actions { display: flex; flex-wrap: wrap; gap: var(--space-4); margin-top: var(--space-7); }
+.facts { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; column-gap: var(--space-8); row-gap: var(--space-5); margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--color-border); }
+@media (max-width: 639px) { .facts { column-gap: var(--space-6); } }
+.facts dd { font: 400 var(--text-3xl)/var(--leading-tight) var(--font-serif); letter-spacing: -0.02em; margin-top: var(--space-3); }
+.facts dd small { font-size: var(--text-lg); letter-spacing: 0; color: var(--color-text-muted); }
+
+/* Product: the bag, labelled in the same face as the page, so the type system is the brand */
+.stage { background: var(--color-surface-sunken); border-radius: var(--radius-xl); aspect-ratio: 1 / 1; display: grid; place-items: center; position: relative; overflow: hidden; }
+.bag { width: 54%; aspect-ratio: 3 / 4.2; background: var(--color-brand); border-radius: var(--radius-md) var(--radius-md) var(--radius-lg) var(--radius-lg); position: relative;
+  box-shadow: 0 24px 48px rgb(39 32 26 / 0.18); display: flex; flex-direction: column; justify-content: space-between; padding: var(--space-5) var(--space-4); color: var(--color-warm-950); }
+.bag::before { content: ""; position: absolute; inset: 0 0 auto; height: 10%; background: var(--color-orange-700); border-radius: var(--radius-md) var(--radius-md) 0 0; }
+.bag .b-mark { position: relative; margin-top: var(--space-6); font: 400 var(--text-lg)/1 var(--font-serif); text-align: center; } /* warm 950 on brand orange 5.28:1; warm 50 would be 3:1 at 20px */
+.bag .b-origin { font: italic 400 var(--text-3xl)/0.95 var(--font-serif); letter-spacing: -0.02em; }
+.bag .b-meta { margin-top: var(--space-3); font: 600 var(--text-xs)/1.333 var(--font-sans); letter-spacing: 0.08em; text-transform: uppercase; }
+.unit { text-transform: none; letter-spacing: 0.02em; } /* unit symbols keep their case: g, not G */
+.stage-note { position: absolute; left: var(--space-5); right: var(--space-5); bottom: var(--space-5); display: flex; justify-content: space-between; font-size: var(--text-xs); color: var(--color-text); }
+
+/* Subscription band */
+.feature { background: var(--color-feature-bg); color: var(--color-feature-text); }
+.feature .wrap { display: grid; gap: var(--space-8); padding-top: var(--space-9); padding-bottom: var(--space-9); }
+@media (min-width: 1024px) { .feature .wrap { grid-template-columns: 7fr 5fr; gap: var(--space-9); align-items: end; padding-top: var(--space-10); padding-bottom: var(--space-10); } }
+.feature .label { color: inherit; }
+.feature h2 { font: 400 var(--text-display-2)/1 var(--font-serif); letter-spacing: -0.02em; margin-top: var(--space-5); max-width: 12em; text-wrap: balance; }
+.perks { margin-top: var(--space-7); display: grid; gap: var(--space-3); }
+.perks li { display: flex; gap: var(--space-4); align-items: flex-start; }
+.perks svg { flex: none; margin-top: var(--space-1); }
+.price { display: flex; align-items: flex-start; font: 400 var(--text-numeral)/0.85 var(--font-serif); letter-spacing: -0.04em; }
+.price .cur { font-size: var(--text-4xl); line-height: 1; letter-spacing: 0; margin-right: var(--space-2); }
+.price-note { margin-top: var(--space-5); padding-top: var(--space-5); border-top: 1px solid currentColor; }
+.price-note strong { font-weight: 600; }
+.btn-feature { margin-top: var(--space-6); background: var(--color-feature-cta); color: var(--color-feature-on-cta); font-size: var(--text-lg); min-height: 56px; width: 100%; }
+.btn-feature:hover { opacity: 0.92; }
+.feature :focus-visible { outline-color: currentColor; }
+
+/* Shop */
+.section { padding: var(--space-9) 0; }
+@media (min-width: 1024px) { .section { padding: var(--space-11) 0; } }
+.section-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: var(--space-5); margin-bottom: var(--space-8); }
+.section-head h2 { font: 400 var(--text-display-2)/1 var(--font-serif); letter-spacing: -0.02em; margin-top: var(--space-5); max-width: 14em; text-wrap: balance; }
+.cards { display: grid; gap: var(--space-6); }
+@media (min-width: 768px) { .cards { grid-template-columns: repeat(3, 1fr); } }
+.card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-5); }
+.roast { display: flex; align-items: center; gap: var(--space-3); }
+.roast-meter { display: inline-flex; gap: var(--space-1); }
+.roast-meter i { width: 16px; height: 8px; border-radius: var(--radius-full); box-shadow: inset 0 0 0 1px var(--color-border-strong); }
+.roast-meter i.on { background: var(--color-text); box-shadow: none; }
+.card h3 { font: 400 var(--text-2xl)/var(--leading-tight) var(--font-serif); letter-spacing: -0.015em; }
+.card .origin { font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-3); }
+.card .taste { font: italic 400 var(--text-lg)/var(--leading-snug) var(--font-serif); }
+.card-foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding-top: var(--space-5); border-top: 1px solid var(--color-border); }
+.card-foot .p { font-size: var(--text-lg); font-weight: 600; }
+.card-foot .p small { font-size: var(--text-sm); font-weight: 400; color: var(--color-text-muted); }
+
+/* Story: an editorial spread, not a feature grid */
+.story { background: var(--color-surface); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
+.manifesto { font: 400 var(--text-2xl)/var(--leading-snug) var(--font-serif); letter-spacing: -0.015em; margin-top: var(--space-6); max-width: 21em; }
+.manifesto em { font-style: italic; }
+@media (min-width: 768px) { .manifesto { font-size: var(--text-3xl); } .notes { font-size: var(--text-2xl); } }
+.spread { display: grid; gap: var(--space-9); margin-top: var(--space-9); }
+@media (min-width: 1024px) { .spread { grid-template-columns: 7fr 5fr; gap: var(--space-9); } }
+.steps { display: grid; gap: var(--space-7); }
+.steps li { display: grid; grid-template-columns: 64px 1fr; gap: var(--space-5); align-items: start; border-top: 1px solid var(--color-border); padding-top: var(--space-5); }
+.steps .n { font: italic 400 var(--text-5xl)/0.8 var(--font-serif); color: var(--color-accent); }
+.steps h3 { font: 600 var(--text-lg)/var(--leading-snug) var(--font-sans); }
+.steps p { margin-top: var(--space-3); color: var(--color-text-muted); max-width: 52ch; }
+.ledger { border-top: 2px solid var(--color-text); }
+.ledger caption { text-align: left; padding: var(--space-5) 0; }
+.ledger caption span { display: block; margin-top: var(--space-3); font: italic 400 var(--text-xl)/var(--leading-snug) var(--font-serif); color: var(--color-text); text-transform: none; letter-spacing: 0; }
+.ledger table { width: 100%; border-collapse: collapse; }
+.ledger th, .ledger td { padding: var(--space-4) 0; border-bottom: 1px solid var(--color-border); text-align: left; font-weight: 400; }
+.ledger td { text-align: right; font-variant-numeric: tabular-nums lining-nums; }
+.ledger tr.total th, .ledger tr.total td { border-bottom: 0; font-weight: 600; }
+.ledger tr.total td { font: 400 var(--text-3xl)/1 var(--font-serif); letter-spacing: -0.02em; }
+.ledger .src { margin-top: var(--space-4); font-size: var(--text-sm); color: var(--color-text-muted); }
+
+/* Footer */
+.site-footer { padding: var(--space-9) 0 var(--space-7); }
+.site-footer .cols { display: grid; gap: var(--space-8); }
+@media (min-width: 1024px) { .site-footer .cols { grid-template-columns: 6fr 3fr 3fr; } }
+.site-footer h2 { font: 400 var(--text-2xl)/var(--leading-tight) var(--font-serif); letter-spacing: -0.015em; }
+.site-footer .intro { color: var(--color-text-muted); margin-top: var(--space-3); max-width: 52ch; }
+form { margin-top: var(--space-6); max-width: 30em; }
+label { display: block; font-size: var(--text-sm); font-weight: 600; margin-bottom: var(--space-3); }
+.field-row { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+input[type=email] { flex: 1 1 240px; min-height: 48px; padding: var(--space-4) var(--space-5); border-radius: var(--radius-full); border: 1px solid var(--color-border-strong); background: var(--color-surface); color: var(--color-text); font: var(--text-base)/1.5 var(--font-sans); }
+input[aria-invalid=true] { border: 2px solid var(--color-danger); }
+.error { display: flex; gap: var(--space-3); align-items: flex-start; color: var(--color-danger); font-size: var(--text-sm); margin-top: var(--space-3); }
+.error svg { flex: none; margin-top: var(--space-1); }
+.links h3 { margin-bottom: var(--space-4); }
+.links a { display: inline-block; color: var(--color-text); text-decoration: none; padding: var(--space-2) 0; }
+.links a:hover { text-decoration: underline; }
+.signoff { margin-top: var(--space-10); padding-top: var(--space-6); border-top: 1px solid var(--color-border); display: grid; gap: var(--space-5); }
+.signoff .mark { font: 400 var(--text-numeral)/0.85 var(--font-serif); letter-spacing: -0.04em; }
+.signoff .legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-4); font-size: var(--text-sm); color: var(--color-text-muted); }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+@media (forced-colors: active) { .btn, .card, input { border: 1px solid CanvasText; } }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="#">Ember <span class="amp">&amp;</span> Oak</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#shop">Shop</a>
+      <a class="hide-sm" href="#story">Roastery</a>
+      <a class="hide-sm" href="#journal">Journal</a>
+      <a class="btn btn-secondary btn-sm" href="#subscribe">Subscribe</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <p class="label">This week’s single origin · Lot 0412</p>
+      <h1 id="hero-title" class="display">Ethiopia Guji, <em>roasted&nbsp;Tuesday</em> in Portland.</h1>
+      <div class="hero-body">
+        <div>
+          <p class="notes">Peach, jasmine and wildflower honey, from the Hambela Wamena washing station.</p>
+          <p class="lead">Roasted light in small batches and on its way to you within two days.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#subscribe">Start a subscription</a>
+            <a class="btn btn-secondary" href="#shop">Buy a bag, $21</a>
+          </div>
+          <dl class="facts">
+            <div><dt class="label">Altitude</dt><dd class="num">2,100<small>&#8239;m</small></dd></div>
+            <div><dt class="label">Batch</dt><dd class="num">12<small>&#8239;kg</small></dd></div>
+            <div><dt class="label">Roast to door</dt><dd class="num">48<small>&#8239;h</small></dd></div>
+          </dl>
+        </div>
+      </div>
+      <figure class="stage" aria-label="A bag of Ethiopia Guji in Ember and Oak orange">
+          <div class="bag" aria-hidden="true">
+            <div class="b-mark">Ember <span class="amp">&amp;</span> Oak</div>
+            <div><div class="b-origin">Ethiopia Guji</div><div class="b-meta">Washed · Light · <span class="unit">340&#8239;g</span></div></div>
+          </div>
+          <figcaption class="stage-note"><span>Lot 0412</span><span>60 bags this season</span></figcaption>
+        </figure>
+    </div>
+  </section>
+
+  <section class="feature" id="subscribe" aria-labelledby="sub-title">
+    <div class="wrap">
+      <div>
+        <p class="label">The subscription</p>
+        <h2 id="sub-title">Fresh coffee at your door, every <em>two or four</em> weeks.</h2>
+        <ul class="perks">
+          <li><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2"/></svg>Roasted to order, never more than 3 days old when it ships</li>
+          <li><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2"/></svg>Choose a roast, or let us pick a new origin each time</li>
+          <li><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2"/></svg>Skip, swap or cancel in two clicks</li>
+        </ul>
+      </div>
+      <div>
+        <p class="price num"><span class="cur">$</span>18</p>
+        <p class="price-note"><strong>A bag, shipping included.</strong> 15% under shop price. First bag ships this Friday.</p>
+        <a class="btn btn-feature" href="#">Start my subscription</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="shop" aria-labelledby="shop-title">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="label">On the roaster now</p>
+          <h2 id="shop-title">Three coffees we can’t stop <em>drinking</em></h2>
+        </div>
+        <a href="#">See all 9 coffees</a>
+      </div>
+      <ul class="cards">
+        <li class="card">
+          <div class="roast label"><span class="roast-meter" aria-hidden="true"><i class="on"></i><i></i><i></i></span>Light roast</div>
+          <div><h3>Ethiopia Guji</h3><p class="origin">Hambela Wamena, washed</p></div>
+          <p class="taste">Peach, jasmine, wildflower honey</p>
+          <div class="card-foot"><p class="p num">$21 <small>/ 340&#8239;g</small></p><button class="btn btn-secondary btn-sm" type="button">Add to cart</button></div>
+        </li>
+        <li class="card">
+          <div class="roast label"><span class="roast-meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span>Medium roast</div>
+          <div><h3>Colombia Huila</h3><p class="origin">Finca El Mirador, washed</p></div>
+          <p class="taste">Caramel, red apple, cocoa nib</p>
+          <div class="card-foot"><p class="p num">$19 <small>/ 340&#8239;g</small></p><button class="btn btn-secondary btn-sm" type="button">Add to cart</button></div>
+        </li>
+        <li class="card">
+          <div class="roast label"><span class="roast-meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span>Dark roast</div>
+          <div><h3>Oak Fire Espresso</h3><p class="origin">Brazil and Guatemala blend</p></div>
+          <p class="taste">Dark chocolate, molasses, toasted almond</p>
+          <div class="card-foot"><p class="p num">$18 <small>/ 340&#8239;g</small></p><button class="btn btn-secondary btn-sm" type="button">Add to cart</button></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section story" id="story" aria-labelledby="story-title">
+    <div class="wrap">
+      <h2 id="story-title" class="label">How we roast</h2>
+      <p class="manifesto">We roast on a 1962 Probat in Southeast Portland, twelve kilos at a time, and we print <em>what we paid</em> for every lot on the bag.</p>
+      <div class="spread">
+        <ol class="steps">
+          <li><span class="n" aria-hidden="true">1</span><div><h3>Buy direct</h3><p>We pay growers we know by name, and we visit every farm we buy from at least once every two years.</p></div></li>
+          <li><span class="n" aria-hidden="true">2</span><div><h3>Roast in small batches</h3><p>Twelve kilos at a time, profiled for each lot and cupped by two of us before a single bag ships.</p></div></li>
+          <li><span class="n" aria-hidden="true">3</span><div><h3>Ship within 48 hours</h3><p>Your coffee leaves the roastery two days after roasting at most, so it peaks in your kitchen, not ours.</p></div></li>
+        </ol>
+        <div class="ledger">
+          <table>
+            <caption class="label">What we paid, Lot 0412 <span>Per pound of green coffee, 2026 harvest</span></caption>
+            <tbody>
+              <tr><th scope="row">Paid to the washing station</th><td>$4.10</td></tr>
+              <tr><th scope="row">Fairtrade minimum</th><td>$1.80</td></tr>
+              <tr><th scope="row">New York C price, Sept 30</th><td>$2.62</td></tr>
+              <tr class="total"><th scope="row">Over the Fairtrade floor</th><td>2.3&#215;</td></tr>
+            </tbody>
+          </table>
+          <p class="src">Contract and receipts on request. Prices before import and freight.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="journal">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h2>Letters from the roastery</h2>
+        <p class="intro">New lots, brew notes and the odd subscriber-only release. Twice a month, no more.</p>
+        <form novalidate onsubmit="return false">
+          <label for="email">Email address</label>
+          <div class="field-row">
+            <input id="email" type="email" value="dana@" aria-invalid="true" aria-describedby="email-error" autocomplete="email">
+            <button class="btn btn-primary" type="submit">Sign up</button>
+          </div>
+          <p class="error" id="email-error"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 4v5M8 11v1" stroke="currentColor" stroke-width="2"/></svg>Add the rest of your email, for example dana@example.com.</p>
+        </form>
+      </div>
+      <div class="links"><h3 class="label">Shop</h3><ul><li><a href="#">Coffee</a></li><li><a href="#">Subscriptions</a></li><li><a href="#">Brewing gear</a></li><li><a href="#">Gift cards</a></li></ul></div>
+      <div class="links"><h3 class="label">Roastery</h3><ul><li><a href="#">Our story</a></li><li><a href="#">Wholesale</a></li><li><a href="#">Visit the cafe</a></li><li><a href="#">Contact</a></li></ul></div>
+    </div>
+    <div class="signoff">
+      <p class="mark" aria-hidden="true">Ember <span class="amp">&amp;</span> Oak</p>
+      <div class="legal"><p>Ember &amp; Oak Coffee Roasters, 1120 SE Water Ave, Portland, Oregon</p><p>© 2026</p></div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -46,13 +46,15 @@ Numbers from web.dev. You can mix: `swap` for the brand display face, `optional`
 }
 body { font-family: "Brand Sans", "Brand Sans Fallback", system-ui, sans-serif; }
 ```
-Generate the four values with a tool that reads both fonts' metrics: next/font (automatic), Fontaine, or Capsize. `size-adjust` is Baseline widely available since September 2023 (MDN). `font-size-adjust: ex-height from-font` (Baseline 2024) is the simpler tool when you just need x-heights to match across mixed fonts, for example inline code inside body text.
+Generate the four values with a tool that reads both fonts' metrics: next/font (automatic), Fontaine, or Capsize. With no network, `assets/font_kit.py fallback <webfont> <local metric twin> --local-name "Arial,Liberation Sans"` does the same from local files. Build one fallback face per style you use, italic included (`--style italic`); a roman-only fallback renders italics upright or faked (reference 06). `size-adjust` is Baseline widely available since September 2023 (MDN). `font-size-adjust: ex-height from-font` (Baseline 2024) is the simpler tool when you just need x-heights to match across mixed fonts, for example inline code inside body text.
 
 ## Self-host or service
 - Google Fonts: easiest, auto-subset per script, variable axes via the css2 API (`family=Inter:opsz,wght@14..32,400..700&display=swap`). Preconnect to `fonts.googleapis.com` and `fonts.gstatic.com` with `crossorigin`.
 - Self-host: one fewer connection, full control, works with metric fallbacks and preload. You must subset yourself with `unicode-range` and tools such as glyphhanger or subfont (web.dev).
 - Decide by measuring, not belief (web.dev). Web Almanac 2024: 34% of mobile sites now self-host exclusively.
 - Adobe Fonts and most commercial subscription services do not allow self-hosting; the kit must load from their CDN.
+- Font CDN blocked, offline, or one self-contained file: reference 06 (system stacks, self-hosting from local files or npm packages, axis pinning, inlining).
+- CDN-style builds drop OpenType features: the Google Fonts and Fontsource Inter keeps 7 GSUB features, the designer's release 40 (`case`, `zero`, `ss01` and up, small caps). If the design depends on a feature, check the file you ship (research 06, M3).
 
 ## Variable fonts
 - **When:** you use three or more weights or styles of one family, or you need an axis that static files cannot give (optical size, grade, width). For one or two weights, static files are usually smaller (web.dev: a variable file can be larger than one static file). Measure both.

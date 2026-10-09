@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Newsreader Fallback";
+  src: local("Times New Roman Italic"), local("TimesNewRomanPS-ItalicMT"), local("Liberation Serif Italic");
+  size-adjust: 97.07%;
+  ascent-override: 75.72%;
+  descent-override: 27.30%;
+  line-gap-override: 0.00%;
+  font-style: italic;
+}

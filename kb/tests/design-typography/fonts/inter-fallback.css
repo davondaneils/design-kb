@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("Arial"), local("Liberation Sans");
+  size-adjust: 107.59%;
+  ascent-override: 90.04%;
+  descent-override: 22.42%;
+  line-gap-override: 0.00%;
+}
