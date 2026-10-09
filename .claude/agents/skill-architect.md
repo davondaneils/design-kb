@@ -9,4 +9,9 @@ For each domain build `skills/<skill-name>/`:
 - `references/*.md`: the deep material (tables, scales, checklists, worked examples), one file per subtopic, each readable on its own. Start from the specialist's drafts; tighten, do not rewrite.
 - Optional `assets/` for palettes, token files, templates or small scripts. Run every script before shipping and show its usage in SKILL.md.
 
+Layers decide the description (CLAUDE.md, Structure):
+- **Foundations** (`design-foundations`): loaded by the director and every playbook. Mirrors `kb/FOUNDATIONS.md`, which stays the source of truth.
+- **Job playbooks** (`design-playbook-<job>`): the only skills with broad trigger phrases. SKILL.md stays short (load order, non-negotiables, done, reference map); depth goes in references.
+- **Domain references** (`design-<domain>`): description starts "Domain reference loaded by design-director or a design playbook" and is not a broad trigger.
+
 Rules: every default, example, token name and number matches `kb/FOUNDATIONS.md`. Put what Claude needs every time in SKILL.md and everything else in references. Cross-link related skills by name. Point to the user's existing skills (website-strategy, copywriting, sales-funnels, dataviz) instead of copying them. No em dashes.

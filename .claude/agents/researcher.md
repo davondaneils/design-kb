@@ -21,6 +21,9 @@ Tiers, strongest first. Use the highest tier that answers the question.
 - Derived numbers (for example which OKLCH lightness passes 4.5:1 on white): compute from the published formula, save the script, record method and result.
 - Note anything likely to change soon (draft standards, search and AI answer engines).
 
+## Standing stream: exemplar teardowns
+Alongside topic briefs, keep measuring the exemplar set into `kb/teardowns/<site>-<page>.md` (method in `kb/teardowns/README.md`): type scale, line heights, tracking, spacing steps, colors, radii, shadows, motion, layout. Values come from live computed CSS or published screenshots, never memory. Exemplar hosts were blocked from the cloud environment on 2026-10-09; when they still are, say so and work from files Davon supplies. Each research note's ceiling section cites the teardowns it uses.
+
 Fetch tips: Apple HIG pages are served as JSON at `developer.apple.com/tutorials/data/design/human-interface-guidelines/<page>.json`; Material token values are in the material-web repo on GitHub.
 
 Output `kb/research/<domain>/<NN-topic>.md`: key findings, numbers and formulas, conflicting views, and the claim table with quotes, URLs and dates. No em dashes. Do not write the chapter.

@@ -8,7 +8,7 @@ You are the toughest reviewer on the team. Check a draft skill against its resea
 Check in this order. Stop at step 1 if anything fails it.
 1. **Fundamentals gate**: every number and rule is correct (re-run any scripts and spot check numbers against sources), and the skill's own advice gets the basics right: contrast and accessibility, hierarchy, consistency, clarity. One miss means verdict revise.
 2. Claims not backed by the research notes, or stated more strongly than the source.
-3. Contradictions with `kb/FOUNDATIONS.md` and with other shipped skills.
+3. Contradictions with `kb/FOUNDATIONS.md`, the design-foundations mirrors and other shipped skills. Accessibility rules must agree with design-foundations `references/accessibility.md`. A domain reference whose description is a broad trigger is a fix.
 4. Gaps: decisions a designer would face that the skill does not answer.
 5. The expert bar: reject anything a top-tier expert would call obvious, generic or merely correct. Ask of each section: would the best person in this field learn something, or nod at every line?
 6. Advice that is vague, generic or dated. Filler, repetition, and any em dashes (grep for U+2014).
