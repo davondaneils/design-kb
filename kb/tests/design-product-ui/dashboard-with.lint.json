@@ -1,0 +1,254 @@
+{
+  "file": "kb/tests/design-product-ui/dashboard-with.html",
+  "date": "2026-10-09T22:09:46.071Z",
+  "checks": {
+    "axe": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "needs review by eye, color-contrast: Elements must meet minimum color contrast ratio thresholds (7 nodes; axe could not decide, often text over images, gradients or overlapping layers)",
+          "scheme": "light",
+          "width": 390,
+          "targets": [
+            "text[y=\"28\"]",
+            "text[y=\"92\"]",
+            "text[y=\"156\"]"
+          ]
+        },
+        {
+          "message": "needs review by eye, color-contrast: Elements must meet minimum color contrast ratio thresholds (7 nodes; axe could not decide, often text over images, gradients or overlapping layers)",
+          "scheme": "dark",
+          "width": 390,
+          "targets": [
+            "text[y=\"28\"]",
+            "text[y=\"92\"]",
+            "text[y=\"156\"]"
+          ]
+        }
+      ],
+      "pass": true
+    },
+    "targets": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "html > body > a.skip",
+          "w": 123.5,
+          "h": 37
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#menu-btn",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.app > div.main > header.page-head > button.btn.btn-primary",
+          "w": 111,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.app > div.main > div.toolbar > button.chip.active",
+          "w": 236.1,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.app > div.main > div.toolbar > button.chip.active",
+          "w": 218.5,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.app > div.main > div.toolbar > button.chip",
+          "w": 94.8,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#main > section.panel.attention > div.panel-head > a.btn.btn-ghost",
+          "w": 123.4,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "li.alert.danger > div > p.meta > a",
+          "w": 108.4,
+          "h": 26
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "li.alert.warning > div > p.meta > a",
+          "w": 112.5,
+          "h": 26
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.split > section.panel > div.panel-head > a.btn.btn-ghost",
+          "w": 126.5,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.split > section.panel > div.panel-head > a.btn.btn-ghost",
+          "w": 88.5,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "thead > tr > th > button.sort",
+          "w": 53.5,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "thead > tr > th.num > button.sort",
+          "w": 59.5,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "thead > tr > th.num > button.sort",
+          "w": 77.1,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "thead > tr > th.num > button.sort",
+          "w": 76.2,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#pages-body > tr > th.page-cell > a",
+          "w": 51.7,
+          "h": 25
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#pages-body > tr > td.act > button.row-btn",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#pages-body > tr > th.page-cell > a",
+          "w": 24,
+          "h": 25
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#pages-body > tr > td.act > button.row-btn",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#pages-body > tr > th.page-cell > a",
+          "w": 110.8,
+          "h": 25
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#pages-body > tr > td.act > button.row-btn",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#pages-body > tr > th.page-cell > a",
+          "w": 175.4,
+          "h": 25
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#pages-body > tr > td.act > button.row-btn",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#pages-body > tr > th.page-cell > a",
+          "w": 50.4,
+          "h": 25
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#pages-body > tr > td.act > button.row-btn",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#pages-body > tr > th.page-cell > a",
+          "w": 113.7,
+          "h": 25
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#pages-body > tr > td.act > button.row-btn",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#state-select",
+          "w": 222,
+          "h": 32
+        }
+      ],
+      "pass": true
+    },
+    "measure": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "type-scale": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "spacing": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overflow": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "motion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    }
+  },
+  "summary": {
+    "focusables": 40,
+    "motionFound": {
+      "animations": 0,
+      "movingTransitions": 0
+    },
+    "axe": "pass (2 warn)",
+    "targets": "pass (28 warn)",
+    "measure": "pass",
+    "type-scale": "pass",
+    "spacing": "pass",
+    "overflow": "pass",
+    "focus": "pass",
+    "motion": "pass",
+    "result": "PASS",
+    "fails": 0,
+    "warns": 30
+  }
+}
