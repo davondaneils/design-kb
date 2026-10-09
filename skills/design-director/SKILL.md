@@ -1,44 +1,51 @@
 ---
 name: design-director
-description: Entry point for any design job that produces a page, screen or brand: "design a landing page", "build a homepage", "make a dashboard", "design this app screen", "settings page", "brand identity", "make it look like Stripe or Linear", "redesign this UI", "make this look professional". Loads the shared foundation contract, routes the job to the design domain skills in the right order, and ends with a render, lint and compare loop. Not for a single narrow question one domain skill answers alone (for example "check this contrast ratio": use design-color directly).
+description: Entry point for any design job that produces a page, screen or brand: "design a landing page", "build a homepage", "make a dashboard", "design this app screen", "settings page", "internal tool", "brand identity", "make it look like Stripe or Linear", "redesign this UI", "make this look professional". Always loads design-foundations, picks the job playbook, pulls the domain references the playbook names, and ends with a render, lint and compare loop (max 3 rounds). Not for a single narrow question inside one domain (for example "check this contrast ratio").
 ---
 
 # design-director
 
-You are the art director. You do not hold the deep knowledge; you make sure the right skills run in the right order, the parts agree, and the result is checked on real pixels before you hand it over.
+You are the art director. You do not hold the deep knowledge; you load the right layers in the right order, make the parts agree, and check the result on real pixels before you hand it over.
 
-## 1. Always first
-1. Read `kb/FOUNDATIONS.md` (design-kb repo). Its token schema, scales and fundamentals checklist are the contract every domain follows. Use its token names and values; deviate only where a domain skill says how.
-2. Read `kb/exemplars.md` and name the closest exemplar for this job. That is the bar you will compare against.
+## 1. The three layers
+| Layer | Skills | When |
+|---|---|---|
+| Foundations | design-foundations | Always, first. Tokens, the 15-item gate, accessibility. |
+| Job playbooks | design-playbook-landing, -dashboard, -mobile, -brand | One per job. It names the references and the exemplars. |
+| Domain references | design-color, design-typography, design-layout, design-graphic, design-ux, design-motion, design-copy, design-frontend, design-search | On demand, in the playbook's order, only the reference files it names. |
 
-## 2. Route the job
-Run the domain skills in this order. Skip a step only if the job truly has no such part. Domain skills that are not installed yet: apply the FOUNDATIONS defaults for that domain and say so.
+The user's own skills plug in where a playbook says: website-strategy, copywriting, sales-funnels, dataviz.
 
-| Job | Order |
+## 2. Always first
+1. Load **design-foundations**. Use its token names and values; FOUNDATIONS wins any disagreement between domains. Flag the conflict.
+2. Pick the playbook:
+
+| The job | Playbook |
 |---|---|
-| Landing page or marketing site | website-strategy (positioning, if not given) > design-copy (message and structure) > design-layout (grid, sections, rhythm) > design-typography > design-color > design-graphic (imagery) > design-motion (light touch) > design-frontend (build) |
-| Dashboard or SaaS app screen | design-ux (tasks, states, density) > design-layout > design-typography > design-color (roles, status colors) > dataviz (every chart) > design-frontend |
-| Mobile app screen | design-ux (platform conventions) > design-layout > design-typography > design-color > design-motion > design-frontend |
-| Brand identity | website-strategy (positioning) > design-graphic (mark, imagery) > design-color (brand hue, ramps) > design-typography > design-copy (voice) |
+| Marketing site, landing page, product or pricing page, waitlist, sales page | design-playbook-landing |
+| SaaS app screen, dashboard, admin, settings, internal tool, data-heavy UI | design-playbook-dashboard |
+| iOS, Android or mobile web app screen or flow | design-playbook-mobile |
+| Logo, identity, rebrand, brand guidelines | design-playbook-brand |
+| A job that spans two (a brand plus its site) | Run brand first, then landing with the brand's tokens |
 
-Hand-offs: layout owns spacing and radius tokens, color owns color tokens, typography owns type tokens. If two skills disagree, FOUNDATIONS wins; flag the conflict.
+3. Name the two closest exemplars from the playbook's `references/signature-moves.md`. That is the bar.
 
-## 3. When to use the user's existing skills
-- **website-strategy**: any new site or brand without a clear audience, positioning or competitor set. Run it before choosing color or copy.
-- **copywriting**: only for direct response pieces (sales pages, long-form sales letters, VSL pages, ads, promo emails). Not for product UI, premium brand sites, docs or microcopy; those use design-copy.
-- **sales-funnels**: when the job is a funnel (lead magnet, tripwire, webinar, upsell pages) or the page's goal is one step in a funnel.
-- **dataviz**: every chart, sparkline and KPI tile.
+## 3. Copy rule
+- **copywriting** (direct response) only for sales pages, long-form sales letters, VSL pages, advertorials, funnel steps, ads and promo emails. Add **sales-funnels** when the page is one step in a funnel.
+- **design-copy** for everything else: premium product and brand sites, SaaS marketing, studios, pricing pages, all product UI and microcopy.
+- If the closest exemplar is on the marketing list in `kb/exemplars.md`, it is not direct response.
 
 ## 4. Build rules
-- One self-contained HTML file per page, CSS custom properties from the token schema, no external network assets unless the user's stack provides them.
-- Light and dark from day one when the brief asks for both: remap semantic roles, never invert.
+- One self-contained HTML file per page, tokens as CSS custom properties, no external network assets unless the user's stack provides them. Image and font CDNs are often blocked: plan imagery as inline SVG, CSS, or user-supplied files, and pick a system font stack that suits the brand when web fonts cannot load (say so).
+- Light and dark from the start when the brief asks for both: remap roles, never invert.
 - Real content, not lorem ipsum. One primary action per view.
+- Planned domains (visual polish, product and tool UI, art direction and imagery) are not built yet: apply the FOUNDATIONS defaults and the playbook's signature moves, and say so in the hand-over.
 
 ## 5. Self-critique loop (always, before you hand over)
 1. **Render**: `node tools/render.mjs page.html out/` (390 and 1440px, light and dark). Look at every screenshot.
 2. **Lint**: `node tools/lint.mjs page.html`. Fix every fail. Read every warning and decide.
-3. **Judged items**: walk the `[judged]` rows of the FOUNDATIONS checklist on the screenshots (non-text contrast, color alone, hierarchy, consistency, both themes, states).
-4. **Compare to the exemplar** side by side: where does yours look busier, flatter, more generic, less aligned? Name the three biggest gaps in plain words.
-5. **Fix** and repeat. Stop after 3 rounds; report what is still short of the exemplar instead of claiming it is done.
+3. **Judged items**: walk the `[judged]` rows of the checklist (design-foundations `references/fundamentals-checklist.md`) on the screenshots.
+4. **Compare to the exemplars** side by side, using the playbook's signature moves as the checklist: where is yours busier, flatter, more generic, less aligned? Name the three biggest gaps in plain words.
+5. **Fix** and repeat. **Stop after 3 rounds**; report what is still short of the exemplar instead of claiming it is done.
 
-If you cannot run code, say so, and do steps 3 and 4 by reasoning over the code, labelled unverified.
+If you cannot run code, say so, and do steps 3 and 4 by reasoning over the code, labelled unverified. A fuller self-critique method (screenshot reading order, gap naming, fix priority) is planned as `references/self-critique.md` in this skill.
