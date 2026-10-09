@@ -14,7 +14,7 @@ Layers: **foundation** (always loaded), **spine** (design-director), **playbook*
 | 20 | spine | Self-critique loop | design-director (planned `references/self-critique.md`) | none yet | planned | none | `status/critique.md` |
 | 15 | playbook | Job playbooks (landing, dashboard, mobile, brand) | design-playbook-landing, design-playbook-dashboard, design-playbook-mobile, design-playbook-brand | restructure | drafting | none | `status/playbooks.md` |
 | 2 | reference | Color theory and palettes | design-color | merged into restructure (from pilot/design-color, PR #1) | testing | v0.1 (2026-10-09, text-only test; pending re-test) | `status/color.md` |
-| 3 | reference | Typography and font pairing | design-typography | merged into restructure (from wip/design-typography) | paused | none | `status/typography.md` |
+| 3 | reference | Typography and font pairing | design-typography | restructure (merged from wave/typography on 2026-10-09) | testing | none (v0.2 ready, awaiting Davon's blind ranking) | `status/typography.md` |
 | 4 | reference | Layout, grids, spacing, hierarchy | design-layout | merged into restructure (from skill/design-layout) | testing | none | `status/layout.md` |
 | 5 | reference | Graphic design (logos, icons, imagery) | design-graphic | merged into restructure (from wip/design-graphic) | paused | none | `status/graphic.md` |
 | 6 | reference | UX and interaction (web and app) | design-ux | merged into restructure (from skill/design-ux) | testing | none | `status/ux.md` |
@@ -22,9 +22,9 @@ Layers: **foundation** (always loaded), **spine** (design-director), **playbook*
 | 8 | reference | Copywriting and UX writing | design-copy | merged into restructure (from skill/design-copy) | testing | none | `status/copy.md` |
 | 10 | reference | Front-end build, accessibility, performance | design-frontend | merged into restructure (from wip/design-frontend) | paused | none | `status/frontend.md` |
 | 12 | reference | Search: SEO and AEO | design-search | merged into restructure (from wip/design-search) | paused | none | `status/search.md` |
-| 16 | reference | Visual polish and craft details | design-polish (planned) | none yet | planned | none | `status/polish.md` |
-| 18 | reference | Product and tool UI | design-product-ui (planned) | none yet | planned | none | `status/product-ui.md` |
-| 19 | reference | Art direction and imagery | design-art-direction (planned) | none yet | planned | none | `status/art-direction.md` |
+| 16 | reference | Visual polish and craft details | design-polish | restructure (merged from wave/polish on 2026-10-09) | testing | v0.1 (on branch, not merged) | `status/polish.md` |
+| 18 | reference | Product and tool UI | design-product-ui | restructure (merged from wave/product-ui on 2026-10-09) | testing | none (v0.1 built, awaiting Davon's review) | `status/product-ui.md` |
+| 19 | reference | Art direction and imagery | design-art-direction | restructure (merged from wave/art-direction on 2026-10-09) | testing | none (v0.1 ready for review) | `status/art-direction.md` |
 | 1 | linked | Strategy and brand | (existing) website-strategy | n/a | linked | none | `status/strategy.md` |
 | 9 | linked | Conversion and funnels | (existing) sales-funnels | n/a | linked | none | `status/funnels.md` |
 | 11 | archived | Data and backend structure | design-data (dropped) | wip/design-data (archived, not merged) | archived | none | `status/data.md` |

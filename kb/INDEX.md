@@ -18,7 +18,7 @@ Shipped means the librarian set a shipped version in the domain's status file. E
 | [design-playbook-dashboard](../skills/design-playbook-dashboard/SKILL.md) | playbook | SaaS app screens, dashboards, internal tools | drafting |
 | [design-playbook-mobile](../skills/design-playbook-mobile/SKILL.md) | playbook | iOS, Android and mobile web; platform conventions | drafting |
 | [design-playbook-brand](../skills/design-playbook-brand/SKILL.md) | playbook | Brand identity and guidelines | drafting |
-| [design-typography](../skills/design-typography/SKILL.md) | reference | Scale, measure, pairing, web fonts, hierarchy, typographic detail | critic approved, not tested |
+| [design-typography](../skills/design-typography/SKILL.md) | reference | Scale, 52ch measure, pairing, self-hosted web fonts without a CDN, type-led pages, hierarchy, typographic detail | v0.2: rendered test done, combined test passed, awaiting Davon's blind ranking |
 | [design-layout](../skills/design-layout/SKILL.md) | reference | Grids, spacing, hierarchy, responsive and adaptive layout, density | text test passed, render test due |
 | [design-graphic](../skills/design-graphic/SKILL.md) | reference | Logos, icons, photography direction, illustration, social graphics, export | critic approved, not tested |
 | [design-ux](../skills/design-ux/SKILL.md) | reference | Usability gate, navigation, forms, states, onboarding, component specs | text test passed, render test due |
@@ -26,8 +26,11 @@ Shipped means the librarian set a shipped version in the domain's status file. E
 | [design-copy](../skills/design-copy/SKILL.md) | reference | UX writing: page structure, microcopy, voice and tone, readability | text test passed, render test due |
 | [design-frontend](../skills/design-frontend/SKILL.md) | reference | Semantic HTML, modern CSS, performance, images and fonts, design to code | text test passed, render test due |
 | [design-search](../skills/design-search/SKILL.md) | reference | SEO and AEO | text test passed, render test due |
+| [design-product-ui](../skills/design-product-ui/SKILL.md) | reference | Dense app UI: tables, density modes, command palette and shortcuts, loading, empty, partial and permission states | v0.1: rendered test done, combined test passed, awaiting Davon's review |
+| [design-art-direction](../skills/design-art-direction/SKILL.md) | reference | Concept and motif, data-driven art, visuals without image hosts, photography briefs, text over art | v0.1: rendered test done, combined test passed, awaiting Davon's blind ranking |
+| [design-polish](../skills/design-polish/SKILL.md) | reference | Elevation and tinted shadows, state layers, focus, borders and radius, icon strokes, state sheets | v0.1: rendered test done, combined test passed, awaiting Davon's blind ranking |
 
-Planned (no content yet): visual polish (reference), product and tool UI (reference), art direction and imagery (reference), design systems (inside design-foundations), self-critique method (inside design-director).
+Planned (no content yet): design systems (inside design-foundations), self-critique method (inside design-director).
 
 Linked user skills: website-strategy, copywriting (direct response only), sales-funnels, dataviz.
 

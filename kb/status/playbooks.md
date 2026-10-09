@@ -14,5 +14,7 @@
 ## Where it stands
 Four thin playbooks built in the restructure: load order, non-negotiables, what done looks like, and signature moves per job in `references/signature-moves.md` (marked opinion and unmeasured until teardowns land). The mobile playbook holds the platform conventions. Internal tools fold into the dashboard playbook.
 
+Landing and dashboard load orders and signature moves updated on 2026-10-09 for the new skills (photo fallback order, type-led pages, answer-first dashboards). Mobile and brand load orders rewritten. Exercised by the combined test (`kb/tests/combined.md`).
+
 ## Next step
-Replace the unmeasured signature moves with teardown data (`kb/teardowns/`). Test landing and dashboard with the slice briefs (`kb/briefs/color/slice-test-briefs.md`).
+Replace the unmeasured signature moves with teardown data (`kb/teardowns/`) once the exemplar hosts are reachable. Test mobile and brand playbooks with their own briefs.
