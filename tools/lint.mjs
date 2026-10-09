@@ -8,7 +8,8 @@
 //   axe          axe-core WCAG 2.0/2.1/2.2 A and AA rules, light and dark scheme, 390 and 1440 (includes contrast)
 //   targets      interactive targets at least 24x24 CSS px (inline text links exempt); warn under 44x44 at 390px
 //   measure      body paragraphs 45 to 75 characters per line at 1440px; at most 75 at 390px
-//   type-scale   every rendered text size on the FOUNDATIONS scale (12 14 16 20 25 31 39 49 61);
+//   type-scale   SVG text renders at 12px or more (scaled viewBoxes shrink it);
+//                every rendered text size on the FOUNDATIONS scale (12 14 16 20 25 31 39 49 61);
 //                sizes of 39px and up may be fluid clamp() display sizes (warn)
 //   spacing      margin, padding and gap on the FOUNDATIONS scale (0 2 4 8 12 16 24 32 48 64 96 128)
 //   overflow     no horizontal scroll at 390px
@@ -188,6 +189,17 @@ try {
         const onScale = TYPE_SCALE.some((v) => Math.abs(v - fs) <= 0.5);
         if (!onScale) out.type.push({ size: fs, count: sels.length, examples: sels.slice(0, 4) });
       }
+      // SVG text: a scaled viewBox shrinks text, so check the rendered size (minimum 12px, the smallest scale step).
+      out.svgText = [];
+      for (const t of document.querySelectorAll('svg text')) {
+        if (L.skipped(t, 'type-scale')) continue;
+        const r = t.getBoundingClientRect();
+        if (!r.width || !t.textContent.trim()) continue;
+        const ctm = t.getScreenCTM();
+        const scale = ctm ? Math.hypot(ctm.a, ctm.b) : 1;
+        const px = Math.round(parseFloat(getComputedStyle(t).fontSize) * scale * 10) / 10;
+        if (px < 11.5) out.svgText.push({ sel: L.sel(t), text: t.textContent.trim().slice(0, 20), px });
+      }
       for (const sheet of document.styleSheets) {
         try { for (const rule of sheet.cssRules) if (/font-size:\s*clamp\(/.test(rule.cssText) || /--text-[\w-]+:\s*clamp\(/.test(rule.cssText)) out.fluid = true; } catch { /* cross-origin */ }
       }
@@ -255,6 +267,7 @@ try {
       if (t.size >= 39 && r.fluid) add('type-scale', 'warn', `fluid display size ${t.size}px at ${width}px (clamp() present)`, t);
       else add('type-scale', 'fail', `font size ${t.size}px off the type scale at ${width}px`, t);
     }
+    for (const t of r.svgText) add('type-scale', 'fail', `SVG text renders at ${t.px}px at ${width}px (min 12)`, t);
     // Spacing.
     ok('spacing');
     for (const s of r.spacing) add('spacing', 'fail', `${s.value}px off the spacing scale at ${width}px`, s);
@@ -271,7 +284,7 @@ try {
   {
     const { context, page } = await openPage(1440, 'light');
     await page.addScriptTag({ content: helpers });
-    const styleOf = `(el) => { const s = getComputedStyle(el); return { outline: s.outlineStyle !== 'none' && parseFloat(s.outlineWidth) > 0 ? s.outlineStyle + ' ' + s.outlineWidth + ' ' + s.outlineColor : 'none', outlineWidth: parseFloat(s.outlineWidth) || 0, shadow: s.boxShadow, border: s.borderColor, bg: s.backgroundColor, deco: s.textDecorationLine + s.textDecorationThickness }; }`;
+    const styleOf = `(el) => { const one = (e) => { const s = getComputedStyle(e); return { outline: s.outlineStyle !== 'none' && parseFloat(s.outlineWidth) > 0 ? s.outlineStyle + ' ' + s.outlineWidth + ' ' + s.outlineColor : 'none', outlineWidth: parseFloat(s.outlineWidth) || 0, shadow: s.boxShadow, border: s.borderColor, bg: s.backgroundColor, deco: s.textDecorationLine + s.textDecorationThickness }; }; const r = one(el); const p1 = el.parentElement ? one(el.parentElement) : {}; const p2 = el.parentElement && el.parentElement.parentElement ? one(el.parentElement.parentElement) : {}; r.ancestors = JSON.stringify([p1.outline, p1.shadow, p1.border, p1.bg, p2.outline, p2.shadow, p2.border]); return r; }`; // ancestors catch :focus-within rings on a wrapper
     const count = await page.evaluate(() => document.querySelectorAll('a[href], button, input, select, textarea, summary, [tabindex]').length);
     const seenEls = new Set();
     for (let i = 0; i < Math.min(count + 2, 200); i++) {
@@ -297,7 +310,7 @@ try {
       })()`);
       if (info.skipped) continue;
       const f = info.f;
-      const visible = (f.outline !== 'none' && f.outlineWidth >= 1) || f.shadow !== unf.shadow || f.border !== unf.border || f.bg !== unf.bg || f.deco !== unf.deco;
+      const visible = (f.outline !== 'none' && f.outlineWidth >= 1) || f.shadow !== unf.shadow || f.border !== unf.border || f.bg !== unf.bg || f.deco !== unf.deco || f.ancestors !== unf.ancestors;
       if (!visible) add('focus', 'fail', 'no visible focus style', { target: info.sel });
       else if (f.outline !== 'none' && f.outlineWidth < 2 && f.shadow === unf.shadow) add('focus', 'warn', `thin focus outline (${f.outline}); FOUNDATIONS default is 2px`, { target: info.sel });
     }
