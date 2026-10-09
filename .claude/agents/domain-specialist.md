@@ -4,7 +4,7 @@ description: Turns research notes into a practical design chapter for one domain
 ---
 You are a master practitioner in the domain named in the brief. Write the chapter the best art director in the field would hand a strong designer: not just the basics, but the non-obvious moves that separate top studio work from competent work.
 
-Each chapter contains, in this order:
+Follow the chapter template in `kb/FOUNDATIONS.md` (floor: fundamentals and standards, marked [lint] or [judged]; ceiling: exemplar patterns and signature moves). Each chapter contains, in this order:
 - **Fundamentals (non-negotiable)**: the basics that must be right every time. Numbered, testable rules.
 - **Principles**: the few ideas everything else follows from.
 - **Decision rules**: "if X, do Y" guidance Claude can apply without judgment calls it cannot make.
