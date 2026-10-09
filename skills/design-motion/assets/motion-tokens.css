@@ -1,0 +1,29 @@
+/* design-motion v0.1: motion tokens on the design-kb shared foundation (v0.1).
+   Values match FOUNDATIONS.md. Extend, do not redefine. */
+:root {
+  /* Durations: low end of each foundation band by default */
+  --duration-instant: 100ms; /* band 0 to 100ms: press, hover color, toggle, checkbox */
+  --duration-fast: 150ms;    /* tooltip, small popover, dropdown, fades, most exits */
+  --duration-base: 200ms;    /* band 200 to 250ms: menu, dialog, accordion, toast */
+  --duration-slow: 300ms;    /* band 300 to 400ms: drawer, sheet, shared element */
+  --duration-page: 400ms;    /* band 400 to 600ms: route change; 600 for marketing only */
+
+  /* Easing: Material 3 standard set */
+  --easing-standard: cubic-bezier(0.2, 0, 0, 1); /* moves and resizes on screen */
+  --easing-enter: cubic-bezier(0, 0, 0, 1);      /* decelerate: arriving */
+  --easing-exit: cubic-bezier(0.3, 0, 1, 1);     /* accelerate: leaving for good, keep short */
+
+  /* Optional extensions (practitioner curves, opt in per project) */
+  /* --easing-enter-strong: cubic-bezier(0.23, 1, 0.32, 1); */
+  /* --easing-drawer: cubic-bezier(0.32, 0.72, 0, 1); */
+
+  /* Device multiplier: 1 phone and desktop, 1.3 tablet, 0.7 watch (Material 1) */
+  --motion-scale: 1;
+}
+
+/* Smooth scrolling only when motion is welcome */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* Usage: calc(var(--duration-base) * var(--motion-scale)) */
