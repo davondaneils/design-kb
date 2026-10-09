@@ -1,0 +1,88 @@
+{
+  "file": "kb/tests/design-polish/before/dashboard-before.html",
+  "checks": {
+    "radius": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "census: 4px x8, 8px x44, 12px x16, full x40"
+        }
+      ]
+    },
+    "shadow": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "distinct shadows: 0"
+        }
+      ]
+    },
+    "hover-gate": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "icon-stroke": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "icons checked: 12"
+        }
+      ]
+    },
+    "svg-hairline": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "color-scheme": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "tabular": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "heading-wrap": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "heading on 2 lines at 390px without text-wrap: balance",
+          "sel": "#chart-title",
+          "lines": 2,
+          "wrap": "auto"
+        }
+      ],
+      "info": []
+    },
+    "focus-shape": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "elements tested: 20"
+        }
+      ]
+    },
+    "state-shift": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "forced-edge": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    }
+  },
+  "summary": {
+    "result": "PASS",
+    "fails": 0,
+    "warns": 1
+  }
+}

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Tally overview, state sheet</title>
+<style>
+/* Start: kb/tests/design-color/dashboard-with.html (color pilot). This version applies design-polish: themed browser parts,
+   focus without shape change, pressed states declared after hover, instant-in list hovers, icon strokes matched to 500-weight
+   labels with round caps, crisp SVG gridlines at 1x, popover elevation on the tooltip, Inter Display for KPI values,
+   scroll shadows and contained overscroll on the table, middle-truncated long paths, sticky top bar with scroll padding.
+   States (empty, loading, error, disabled, pressed) are on the state sheet: dashboard-states.html. */
+/* Tokens follow kb/FOUNDATIONS.md v0.2. Ramps from skills/design-color/assets/oklch_scale.py:
+   teal: scale --hue 183 --chroma 0.13 (brand #14b8a6 = oklch(70.4% 0.123 182.5), L .70: fill only, never white labels)
+   slate: scale --hue 250 --chroma 0.012 --neutral; green 150/0.15; red 25/0.19; amber 75/0.16 --shift -20.
+   Chart pair validated with the dataviz skill's validate_palette.js (separation passes; the gray is a deliberate benchmark). */
+:root {
+  color-scheme: light dark;
+  --color-brand: #14b8a6;
+  --color-teal-50: #ecfaf8; --color-teal-400: #1ebdac; --color-teal-500: #01a091; --color-teal-600: #027d71;
+  --color-teal-700: #01675c; --color-teal-800: #015148; --color-teal-950: #012824; --color-teal-200: #a8e6db;
+  --color-slate-50: #f6f7f8; --color-slate-100: #e8eaec; --color-slate-200: #d5d8db; --color-slate-300: #bdc1c7;
+  --color-slate-500: #858b92; --color-slate-600: #676c73; --color-slate-800: #41454a; --color-slate-950: #1f2224;
+  --color-slate-975: #181a1c; --color-slate-990: #101214;
+  --color-green-300: #8ad69a; --color-green-700: #026a2e;
+  --color-red-50: #fff4f3; --color-red-200: #ffc8c3; --color-red-300: #ffa59e; --color-red-600: #c2272d; --color-red-800: #840915; --color-red-950: #450407;
+  --color-amber-50: #fdf6e9; --color-amber-200: #f3d39b; --color-amber-600: #926003; --color-amber-800: #623b00; --color-amber-950: #341b00; --color-amber-300: #eab761;
+
+  --color-bg: var(--color-slate-50);              /* app chrome and sidebar */
+  --color-surface: #ffffff;                        /* working area */
+  --color-surface-raised: #ffffff;
+  --color-surface-hover: var(--color-slate-100);
+  --color-text: var(--color-slate-950);
+  --color-text-muted: var(--color-slate-600);      /* 5.29:1 on white, 4.93:1 on bg */
+  --color-border: var(--color-slate-200);          /* dividers only */
+  --color-border-strong: var(--color-slate-500);   /* inputs, 3.44:1 */
+  --color-primary: var(--color-teal-600);          /* white label 5.03:1 */
+  --color-primary-hover: var(--color-teal-700);
+  --color-on-primary: #ffffff;
+  --color-selected-bg: var(--color-teal-50);
+  --color-selected-text: var(--color-teal-800);    /* 8.63:1 */
+  --color-accent: var(--color-teal-700);
+  --color-positive: var(--color-green-700);        /* 6.77:1 */
+  --color-negative: var(--color-red-600);          /* 5.80:1 */
+  --color-warning-subtle: var(--color-amber-50); --color-warning-text: var(--color-amber-800); --color-warning-mark: var(--color-amber-600);
+  --color-danger-subtle: var(--color-red-50); --color-danger-text: var(--color-red-800); --color-danger-mark: var(--color-red-600);
+  --color-chart-current: var(--color-teal-700);    /* 2px line; lightness gap to the gray keeps CVD separation */
+  --color-chart-previous: var(--color-slate-500);  /* dashed benchmark, 3.44:1 */
+  --color-chart-grid: var(--color-slate-100);
+  --color-focus-ring: var(--color-teal-600);
+
+  --space-1: 2px; --space-2: 4px; --space-3: 8px; --space-4: 12px; --space-5: 16px; --space-6: 24px; --space-7: 32px; --space-8: 48px;
+  --text-xs: 12px; --text-sm: 14px; --text-base: 16px; --text-lg: 20px; --text-xl: 25px; --text-2xl: 31px;
+  --radius-sm: 4px; --radius-md: 8px; --radius-lg: 12px; --radius-full: 9999px;
+  --font-sans: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --duration-instant: 100ms; --duration-fast: 150ms; --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --font-display: "Inter Display", Inter, system-ui, sans-serif;
+  --color-primary-active: var(--color-teal-800);
+  /* Elevation (design-polish): slate 950 tint, all shadows fall down. */
+  --shadow-rgb: 31 34 36;
+  --ring: 0 0 0 1px rgb(var(--shadow-rgb) / 0.08);
+  --highlight: inset 0 1px 0 rgb(255 255 255 / 0.14);
+  --shadow-1: 0 1px 2px rgb(var(--shadow-rgb) / 0.06);
+  --shadow-3: 0 2px 4px -1px rgb(var(--shadow-rgb) / 0.08), 0 12px 24px -6px rgb(var(--shadow-rgb) / 0.16);
+  --elevation-popover: var(--ring), var(--shadow-3);
+  --state-hover: color-mix(in oklch, var(--color-text) 6%, transparent);
+  --state-pressed: color-mix(in oklch, var(--color-text) 11%, transparent);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: var(--color-slate-990);
+    --color-surface: var(--color-slate-975);
+    --color-surface-raised: var(--color-slate-950);
+    --color-surface-hover: var(--color-slate-950);
+    --color-text: var(--color-slate-50);
+    --color-text-muted: var(--color-slate-300);    /* 9.65:1, APCA Lc 68 (slate-400 would be Lc 52) */
+    --color-border: var(--color-slate-800);
+    --color-border-strong: var(--color-slate-500); /* 5.07:1 */
+    --color-primary: var(--color-brand);           /* brand teal returns exact: fill behind near-black label, 7.54:1 */
+    --color-primary-hover: var(--color-teal-400);
+    --color-on-primary: var(--color-slate-990);
+    --color-selected-bg: var(--color-teal-950);
+    --color-selected-text: var(--color-teal-200);  /* 11.28:1 */
+    --color-accent: var(--color-teal-200);
+    --color-positive: var(--color-green-300);
+    --color-negative: var(--color-red-300);
+    --color-warning-subtle: #2a2011; /* oklch(25% 0.03 75): the 950 step (C .056) glows on near-black; quiet tint, text 11.1:1 */ --color-warning-text: var(--color-amber-200); --color-warning-mark: var(--color-amber-300);
+    --color-danger-subtle: #311b19; /* oklch(25% 0.035 25), text 11.0:1 */ --color-danger-text: var(--color-red-200); --color-danger-mark: var(--color-red-300);
+    --color-chart-current: var(--color-teal-400);  /* 7.42:1 */
+    --color-chart-previous: var(--color-slate-600);/* 3.30:1 */
+    --color-chart-grid: var(--color-slate-950);
+    --color-focus-ring: var(--color-teal-400);
+    --color-primary-active: var(--color-teal-500);
+    --ring: 0 0 0 1px rgb(255 255 255 / 0.08);
+    --highlight: inset 0 1px 0 rgb(255 255 255 / 0.18);
+    --shadow-1: none; --shadow-3: none;
+    --elevation-popover: var(--ring), inset 0 1px 0 rgb(255 255 255 / 0.05);
+    --state-hover: color-mix(in oklch, var(--color-text) 7%, transparent);
+    --state-pressed: color-mix(in oklch, var(--color-text) 12%, transparent);
+  }
+  body { -webkit-font-smoothing: antialiased; }
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-padding-top: 80px; } /* sticky top bar 64 + 16. scrollbar-gutter: stable was tried here and removed: the empty gutter cut the top bar border short whenever the page did not scroll (round 1) */
+body { margin: 0; background: var(--color-bg); color: var(--color-text); font: var(--text-sm)/1.5 var(--font-sans); font-feature-settings: "tnum" 1, "cv11" 1; -webkit-tap-highlight-color: transparent; }
+::selection { background: var(--color-selected-bg); color: var(--color-selected-text); }
+input { accent-color: var(--color-primary); caret-color: var(--color-focus-ring); }
+.icon { flex: none; fill: none; stroke: currentColor; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+.icon * { vector-effect: non-scaling-stroke; }
+h1, h2, h3, p, ul, ol, dl, dd { margin: 0; padding: 0; }
+h1, h2, h3 { text-wrap: balance; }
+ul, ol { list-style: none; }
+a { color: inherit; }
+button, input { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+:where(a:focus-visible) { border-radius: var(--radius-sm); } /* zero specificity: any component radius wins, so controls never reshape; plain links get soft ring corners */
+svg { display: block; }
+
+.app { display: grid; min-height: 100vh; }
+@media (min-width: 1024px) { .app { grid-template-columns: 240px minmax(0, 1fr); } }
+
+/* Sidebar: same surface as the chrome, no dark slab (Linear and Vercel keep nav quiet) */
+.sidebar { display: none; padding: var(--space-4); border-right: 1px solid var(--color-border); }
+@media (min-width: 1024px) { .sidebar { display: flex; flex-direction: column; gap: var(--space-6); } }
+.workspace { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3); font-weight: 600; }
+.logo { width: 24px; height: 24px; border-radius: var(--radius-sm); background: var(--color-brand); display: grid; place-items: center; }
+.nav-group h2 { font-size: var(--text-xs); font-weight: 500; color: var(--color-text-muted); padding: 0 var(--space-3) var(--space-3); }
+.nav a { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-3); border-radius: var(--radius-md); text-decoration: none; color: var(--color-text-muted); font-weight: 500; transition: background-color var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard); }
+.nav a:focus-visible { outline-offset: -2px; } /* inset ring: neighbors in a dense list cannot clip it */
+@media (hover: hover) { .nav a:hover { background: var(--state-hover); color: var(--color-text); transition-duration: 0ms; } } /* instant in, eased out */
+.nav a:active { background: var(--state-pressed); }
+.nav a[aria-current=page] { background: var(--color-selected-bg); color: var(--color-selected-text); font-weight: 600; }
+.nav svg { flex: none; }
+
+/* Top bar */
+.main { display: flex; flex-direction: column; min-width: 0; }
+.topbar { position: sticky; top: 0; z-index: 5; display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4); padding: var(--space-4) var(--space-5); border-bottom: 1px solid var(--color-border); background: color-mix(in oklch, var(--color-bg) 88%, transparent); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+@media (min-width: 1024px) { .topbar { padding: var(--space-4) var(--space-7); } }
+.btn.menu-btn { padding: 0 var(--space-4); }
+@media (min-width: 1024px) { .btn.menu-btn { display: none; } }
+.topbar h1 { font-size: var(--text-lg); font-weight: 600; line-height: 1.25; margin-right: auto; }
+.search { display: flex; align-items: center; gap: var(--space-3); min-height: 40px; padding: 0 var(--space-4); border: 1px solid var(--color-border-strong); border-radius: var(--radius-md); background: var(--color-surface); color: var(--color-text-muted); flex: 1 1 200px; max-width: 320px; }
+.search input { border: 0; padding: 0; background: transparent; outline: none; width: 100%; min-height: 32px; font-size: var(--text-sm); }
+.search:focus-within { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+.search input::placeholder { color: var(--color-text-muted); }
+.search kbd { font: 500 var(--text-xs)/1.5 var(--font-sans); min-width: 24px; text-align: center; padding: 0 var(--space-2); border: 1px solid var(--color-border); border-radius: var(--radius-sm); box-shadow: inset 0 -1px 0 var(--color-border); color: var(--color-text-muted); }
+@media (hover: hover) { .search:hover { border-color: var(--color-text-muted); } }
+.btn { display: inline-flex; align-items: center; gap: var(--space-3); min-height: 40px; padding: 0 var(--space-4); border-radius: var(--radius-md); border: 1px solid var(--color-border-strong); background: var(--color-surface); cursor: pointer; font-weight: 500; box-shadow: var(--shadow-1); transition: background-color var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard); }
+.btn .chev { color: var(--color-text-muted); }
+@media (hover: hover) { .btn:hover { background: var(--color-surface-hover); } }
+.btn:active { background: color-mix(in oklch, var(--color-surface-hover), var(--color-text) 9%); box-shadow: none; } /* pressed must differ from hover: the state sheet showed them identical (round 2) */
+.btn-primary { background: var(--color-primary); color: var(--color-on-primary); border-color: transparent; font-weight: 600; box-shadow: var(--highlight), var(--shadow-1); }
+@media (hover: hover) { .btn-primary:hover { background: var(--color-primary-hover); } }
+.btn-primary:active { background: var(--color-primary-active); box-shadow: var(--highlight); }
+@media (prefers-reduced-motion: no-preference) { .btn:active { transform: scale(0.97); } .btn { transition: background-color var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard), transform var(--duration-instant) var(--ease-standard); } }
+
+/* Content */
+.content { padding: var(--space-5); display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-5); }
+@media (min-width: 1024px) { .content { padding: var(--space-6) var(--space-7) var(--space-8); gap: var(--space-6); } }
+.panel { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); }
+.panel-head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding: var(--space-4) var(--space-5); border-bottom: 1px solid var(--color-border); }
+.panel-head h2 { font-size: var(--text-sm); font-weight: 600; }
+.panel-head a { color: var(--color-accent); font-weight: 500; padding: var(--space-2) 0; white-space: nowrap; text-decoration-color: color-mix(in oklch, currentColor 40%, transparent); text-underline-offset: 3px; }
+@media (hover: hover) { .panel-head a:hover { text-decoration-color: currentColor; } }
+
+/* KPI row: one panel split by hairlines reads calmer than four floating cards */
+.kpis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 1024px) { .kpis { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.kpi { padding: var(--space-5); border-bottom: 1px solid var(--color-border); }
+.kpi:nth-child(odd) { border-right: 1px solid var(--color-border); }
+.kpi:nth-child(n+3) { border-bottom: 0; }
+@media (min-width: 1024px) { .kpi { border-bottom: 0; border-right: 1px solid var(--color-border); } .kpi:last-child { border-right: 0; } }
+.kpi dt { color: var(--color-text-muted); font-size: var(--text-sm); }
+.kpi dd { margin-top: var(--space-3); }
+.kpi .value { display: block; font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 600; letter-spacing: -0.01em; line-height: 1.1; font-variant-numeric: tabular-nums; } /* display cut at 31px */
+.delta { display: inline-flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); margin-top: var(--space-3); font-size: var(--text-xs); font-weight: 600; }
+.delta.good { color: var(--color-positive); }
+.delta.bad { color: var(--color-negative); }
+.delta span { color: var(--color-text-muted); font-weight: 400; }
+
+.grid-2 { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-5); }
+@media (min-width: 1024px) { .grid-2 { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: var(--space-6); } }
+
+/* Chart */
+.chart-body { padding: var(--space-5); }
+.legend { display: flex; flex-wrap: wrap; gap: var(--space-5); font-size: var(--text-xs); color: var(--color-text-muted); }
+.legend li { display: flex; align-items: center; gap: var(--space-3); }
+.legend svg { overflow: visible; }
+.chart { position: relative; margin-top: var(--space-4); }
+.chart svg { width: 100%; height: 240px; overflow: visible; }
+.chart .grid line { stroke: var(--color-chart-grid); stroke-width: 1; shape-rendering: crispEdges; } /* integer-y 1px lines blur to two gray rows at 1x */
+.chart .axis text { fill: var(--color-text-muted); font-size: 12px; font-family: var(--font-sans); font-variant-numeric: tabular-nums; }
+.line-current { fill: none; stroke: var(--color-chart-current); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.line-previous { fill: none; stroke: var(--color-chart-previous); stroke-width: 2; stroke-dasharray: 4 4; }
+.end-dot { fill: var(--color-chart-current); stroke: var(--color-surface); stroke-width: 2; }
+.label-current { fill: var(--color-text); font-size: 12px; font-weight: 600; font-family: var(--font-sans); }
+.crosshair { stroke: var(--color-border-strong); stroke-width: 1; shape-rendering: crispEdges; }
+.tooltip { position: absolute; top: 0; pointer-events: none; background: var(--color-surface-raised); border: 1px solid transparent; border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); font-size: var(--text-xs); box-shadow: var(--elevation-popover); white-space: nowrap; }
+.tooltip b { font-weight: 600; }
+.tooltip[hidden] { display: none; }
+
+/* Alerts: status = icon + word + color, never color alone */
+.alerts { padding: var(--space-4); display: grid; gap: var(--space-4); }
+.alert { border: 1px solid transparent; display: grid; grid-template-columns: auto 1fr; gap: var(--space-4); padding: var(--space-4); border-radius: var(--radius-md); }
+.alert.warning { background: var(--color-warning-subtle); color: var(--color-warning-text); }
+.alert.danger { background: var(--color-danger-subtle); color: var(--color-danger-text); }
+.alert .icon { color: var(--color-warning-mark); margin-top: var(--space-1); }
+.alert.danger .icon { color: var(--color-danger-mark); }
+.alert strong { display: block; font-weight: 600; }
+.alert p { margin-top: var(--space-2); }
+.alert .meta { font-size: var(--text-xs); margin-top: var(--space-3); }
+.alert a { display: inline-block; padding: var(--space-2) 0; font-weight: 600; }
+
+/* Table */
+.table-wrap { overflow-x: auto; overscroll-behavior-x: contain;
+  /* Scroll shadows only where there is more to see: local covers ride with the content over fixed shadows. */
+  background:
+    linear-gradient(to right, var(--color-surface) 30%, transparent) left / 32px 100% no-repeat local,
+    linear-gradient(to left, var(--color-surface) 30%, transparent) right / 32px 100% no-repeat local,
+    radial-gradient(farthest-side at 0 50%, rgb(var(--shadow-rgb) / 0.16), transparent) left / 12px 100% no-repeat scroll,
+    radial-gradient(farthest-side at 100% 50%, rgb(var(--shadow-rgb) / 0.16), transparent) right / 12px 100% no-repeat scroll; }
+@media (prefers-color-scheme: dark) { .table-wrap { background:
+    linear-gradient(to right, var(--color-surface) 30%, transparent) left / 32px 100% no-repeat local,
+    linear-gradient(to left, var(--color-surface) 30%, transparent) right / 32px 100% no-repeat local,
+    radial-gradient(farthest-side at 0 50%, rgb(0 0 0 / 0.6), transparent) left / 12px 100% no-repeat scroll,
+    radial-gradient(farthest-side at 100% 50%, rgb(0 0 0 / 0.6), transparent) right / 12px 100% no-repeat scroll; } }
+.table-wrap:focus-visible { outline-offset: -2px; border-radius: var(--radius-lg); }
+.panel-table { overflow: clip; } /* the opaque scroll-shadow covers are square; clip them to the panel radius or they poke out of its rounded corners (round 1) */
+
+/* Phone: the table becomes a list (playbook non-negotiable 6); the pilot scrolled sideways. Labels come from data-label. */
+@media (max-width: 639px) {
+  .panel-table table { min-width: 0; }
+  .panel-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .panel-table table, .panel-table tbody, .panel-table td { display: block; }
+  .panel-table tr { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-3) var(--space-4); padding: var(--space-4) var(--space-5); border-bottom: 1px solid var(--color-border); }
+  .panel-table tbody tr:last-child { border-bottom: 0; }
+  .panel-table td, .panel-table td.num { padding: 0; border: 0; white-space: normal; text-align: left; min-width: 0; }
+  .panel-table td a { display: flex; max-width: 100%; min-width: 0; }
+  .panel-table td:first-child { grid-column: 1 / -1; }
+  .panel-table td.num::before { content: attr(data-label); display: block; font-size: var(--text-xs); color: var(--color-text-muted); }
+  .panel-table .share { justify-content: flex-start; }
+  .panel-table .share-bar { width: 48px; }
+  .panel-table .path { max-width: 100%; display: flex; }
+}
+table { width: 100%; border-collapse: collapse; min-width: 560px; }
+th, td { padding: var(--space-4) var(--space-5); text-align: left; border-bottom: 1px solid var(--color-border); white-space: nowrap; }
+th { font-size: var(--text-xs); font-weight: 500; color: var(--color-text-muted); }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr { transition: background-color var(--duration-fast) var(--ease-standard); }
+@media (hover: hover) { tbody tr:hover { background: var(--state-hover); transition-duration: 0ms; } }
+.path { display: inline-flex; max-width: 22ch; min-width: 0; vertical-align: bottom; }
+.path .head { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.path .tail { flex: none; white-space: nowrap; } /* middle truncation: the end of a path is what tells it apart */
+td.num, th.num { text-align: right; }
+td a { display: inline-block; min-width: 24px; padding: var(--space-2) 0; text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 3px; font-weight: 500; }
+@media (hover: hover) { td a:hover { text-decoration-color: currentColor; } }
+.share { display: flex; align-items: center; gap: var(--space-4); justify-content: flex-end; }
+.share-bar { width: 96px; height: 8px; border-radius: var(--radius-full); background: var(--color-chart-grid); overflow: hidden; }
+.share-bar i { display: block; height: 100%; background: var(--color-chart-current); border-radius: var(--radius-full); }
+
+
+@media (forced-colors: active) { .panel, .btn, .alert { border: 1px solid CanvasText; } .nav a[aria-current=page] { outline: 2px solid Highlight; } }
+
+/* State sheet: every control in every state, side by side (design-polish 01, signature move 1).
+   .is-hover / .is-active / .is-focus mirror the real :hover / :active / :focus-visible rules so they can be rendered. */
+.sheet { grid-template-columns: minmax(0, 1fr); max-width: 1200px; margin: 0 auto; padding: var(--space-8) var(--space-5); display: grid; gap: var(--space-8); }
+@media (min-width: 768px) { .sheet { padding: var(--space-8) var(--space-7); } }
+.sheet > header h1 { font-size: var(--text-xl); line-height: 1.25; }
+.sheet > header p { color: var(--color-text-muted); margin-top: var(--space-3); max-width: 32em; }
+.group h2 { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; color: var(--color-text-muted); margin-bottom: var(--space-5); }
+.row { display: flex; flex-wrap: wrap; gap: var(--space-6); align-items: flex-start; }
+.cell { display: grid; gap: var(--space-3); justify-items: start; }
+.cell > span { font-size: var(--text-xs); color: var(--color-text-muted); }
+.spinner { width: 16px; height: 16px; border-radius: var(--radius-full); border: 2px solid currentColor; border-right-color: transparent; }
+@media (prefers-reduced-motion: no-preference) { .spinner { animation: spin 700ms linear infinite; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+.is-loading { color: transparent !important; }
+.is-loading > .label { opacity: 0; } /* not visibility: hidden, which drops the accessible name (caught by axe button-name) */
+.is-loading > .spinner { position: absolute; left: 50%; top: 50%; margin: calc(var(--space-3) * -1) 0 0 calc(var(--space-3) * -1); }
+.skel { display: block; border-radius: var(--radius-sm); background: var(--color-surface-sunken, var(--color-surface-hover)); }
+.is-focus { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+.reason { font-size: var(--text-xs); color: var(--color-text-muted); max-width: 20em; }
+
+.btn.is-hover { background: var(--color-surface-hover); }
+.btn.is-active { background: color-mix(in oklch, var(--color-surface-hover), var(--color-text) 9%); box-shadow: none; transform: scale(0.97); }
+.btn-primary.is-hover { background: var(--color-primary-hover); }
+.btn-primary.is-active { background: var(--color-primary-active); box-shadow: var(--highlight); }
+.btn[aria-disabled=true] { background: var(--color-surface-hover); color: var(--color-text-muted); border-color: transparent; box-shadow: none; cursor: default; }
+.nav a.is-hover { background: var(--state-hover); color: var(--color-text); }
+.nav a.is-focus { outline-offset: -2px; }
+.navdemo { width: 220px; }
+.search.is-hover { border-color: var(--color-text-muted); }
+.search.is-focus { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+.state-panel { width: 100%; }
+.state-body { padding: var(--space-8) var(--space-5); display: grid; justify-items: center; text-align: center; gap: var(--space-3); }
+.state-body h3 { font-size: var(--text-base); font-weight: 600; }
+.state-body p { color: var(--color-text-muted); max-width: 32em; }
+.state-body .actions { display: flex; flex-wrap: wrap; gap: var(--space-3); justify-content: center; margin-top: var(--space-3); }
+.state-body .glyph { width: 40px; height: 40px; border-radius: var(--radius-full); display: grid; place-items: center; background: var(--color-surface-hover); color: var(--color-text-muted); }
+.state-body .glyph.err { background: var(--color-danger-subtle); color: var(--color-danger-mark); }
+.skel-row td { padding-top: var(--space-5); padding-bottom: var(--space-5); }
+.kpis.loading .skel { height: 12px; }
+.kpis.loading .skel.big { height: 32px; margin-top: var(--space-3); width: 60%; }
+.kpis.loading .skel.small { height: 12px; margin-top: var(--space-3); width: 45%; }
+.retry-meta { font-size: var(--text-xs); color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+<main class="sheet">
+  <header><h1>Tally overview, state sheet</h1><p>Every control and every data state of the overview screen. Loading mirrors the final layout; empty and error sit in the same panel frame as the filled view.</p></header>
+  <section class="group" aria-labelledby="g1"><h2 id="g1">Buttons</h2><div class="row">
+    <div class="cell"><span>Rest</span><button class="btn btn-primary" type="button">Share report</button></div>
+    <div class="cell"><span>Hover</span><button class="btn btn-primary is-hover" type="button">Share report</button></div>
+    <div class="cell"><span>Pressed</span><button class="btn btn-primary is-active" type="button">Share report</button></div>
+    <div class="cell"><span>Focus</span><button class="btn btn-primary is-focus" type="button">Share report</button></div>
+    <div class="cell"><span>Loading</span><button class="btn btn-primary is-loading" type="button" aria-busy="true" style="position:relative"><span class="label">Share report</span><span class="spinner" style="color:var(--color-on-primary)" aria-hidden="true"></span></button></div>
+    <div class="cell"><span>Unavailable, says why</span><button class="btn" type="button" aria-disabled="true" aria-describedby="why">Export CSV</button><p class="reason" id="why">Exports are on the Team plan.</p></div>
+  </div><div class="row" style="margin-top:var(--space-6)">
+    <div class="cell"><span>Secondary rest</span><button class="btn" type="button">Jul 21 to Oct 12</button></div>
+    <div class="cell"><span>Hover</span><button class="btn is-hover" type="button">Jul 21 to Oct 12</button></div>
+    <div class="cell"><span>Pressed</span><button class="btn is-active" type="button">Jul 21 to Oct 12</button></div>
+    <div class="cell"><span>Focus</span><button class="btn is-focus" type="button">Jul 21 to Oct 12</button></div>
+  </div></section>
+  <section class="group" aria-labelledby="g2"><h2 id="g2">Navigation item and search</h2><div class="row">
+    <nav class="nav cell navdemo" aria-label="Demo"><span>Rest, hover, selected, focus</span><ul style="width:100%">
+      <li><a href="#"><svg class="icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 13l4-5 3 3 5-7"/></svg>Events</a></li>
+      <li><a class="is-hover" href="#"><svg class="icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12l-4 5v5l-4-2V8z"/></svg>Funnels</a></li>
+      <li><a href="#" aria-current="page"><svg class="icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2h5v5H2zM9 2h5v5H9zM2 9h5v5H2zM9 9h5v5H9z"/></svg>Overview</a></li>
+      <li><a class="is-focus" href="#"><svg class="icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="5" r="3"/><path d="M2 14c1-3 3-4 6-4s5 1 6 4"/></svg>Users</a></li>
+    </ul></nav>
+    <div class="cell"><span>Search rest</span><label class="search" style="width:280px"><svg class="icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5"/><path d="M11 11l3 3"/></svg><input type="search" placeholder="Search pages and events" aria-label="Search, rest"><kbd>/</kbd></label></div>
+    <div class="cell"><span>Search hover</span><label class="search is-hover" style="width:280px"><svg class="icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5"/><path d="M11 11l3 3"/></svg><input type="search" placeholder="Search pages and events" aria-label="Search, hover"><kbd>/</kbd></label></div>
+    <div class="cell"><span>Search focus</span><label class="search is-focus" style="width:280px"><svg class="icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5"/><path d="M11 11l3 3"/></svg><input type="search" value="/pricing" aria-label="Search, focus" tabindex="-1"><kbd>/</kbd></label></div>
+  </div></section>
+  <section class="group" aria-labelledby="g3"><h2 id="g3">KPI row, loading (after 300 ms; same box sizes as the filled row)</h2>
+    <section class="panel" aria-label="Key metrics, loading" aria-busy="true"><dl class="kpis loading">
+      <div class="kpi"><dt>Weekly active users</dt><dd><span class="skel big"></span><span class="skel small"></span></dd></div>
+      <div class="kpi"><dt>Conversion</dt><dd><span class="skel big"></span><span class="skel small"></span></dd></div>
+      <div class="kpi"><dt>Revenue</dt><dd><span class="skel big"></span><span class="skel small"></span></dd></div>
+      <div class="kpi"><dt>Churn</dt><dd><span class="skel big"></span><span class="skel small"></span></dd></div>
+    </dl></section>
+  </section>
+  <section class="group" aria-labelledby="g4"><h2 id="g4">Top pages, empty (a filter matched nothing)</h2>
+    <section class="panel state-panel" aria-labelledby="empty-title"><div class="panel-head"><h3 id="empty-title" style="font-size:var(--text-sm);font-weight:600">Top pages</h3><a href="#">All pages</a></div>
+      <div class="state-body"><span class="glyph" aria-hidden="true"><svg class="icon" width="16" height="16" viewBox="0 0 16 16"><circle cx="7" cy="7" r="5"/><path d="M11 11l3 3"/></svg></span>
+        <h3>No pages match "/careers" from Jul 21 to Oct 12</h3>
+        <p>The path may be new, or it may use a different prefix. Try the whole site or a longer range.</p>
+        <div class="actions"><button class="btn" type="button">Clear filter</button><button class="btn" type="button">Search all dates</button></div></div>
+    </section>
+  </section>
+  <section class="group" aria-labelledby="g5"><h2 id="g5">Chart, error with retry</h2>
+    <section class="panel state-panel" aria-labelledby="err-title"><div class="panel-head"><h3 id="err-title" style="font-size:var(--text-sm);font-weight:600">Weekly active users, last 12 weeks</h3></div>
+      <div class="state-body" role="alert"><span class="glyph err" aria-hidden="true"><svg class="icon" width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5v4M8 11.25v.25"/></svg></span>
+        <h3>Error: the chart did not load</h3>
+        <p>The events service timed out after 10 seconds. Your data is safe; this is a display problem.</p>
+        <div class="actions"><button class="btn btn-primary" type="button">Try again</button></div>
+        <p class="retry-meta">Last loaded 14:02. Status: events API degraded.</p></div>
+    </section>
+  </section>
+  <section class="group" aria-labelledby="g6"><h2 id="g6">Top pages, loading rows</h2>
+    <section class="panel panel-table" aria-label="Top pages, loading" aria-busy="true"><div class="table-wrap" tabindex="0" role="region" aria-label="Top pages table, loading"><table><thead><tr><th scope="col">Page</th><th scope="col" class="num">Views</th><th scope="col" class="num">Avg. time</th><th scope="col" class="num">Share of views</th></tr></thead><tbody>
+      <tr class="skel-row"><td><span class="skel" style="width:120px;height:12px"></span></td><td class="num"><span class="skel" style="width:56px;height:12px;margin-left:auto"></span></td><td class="num"><span class="skel" style="width:48px;height:12px;margin-left:auto"></span></td><td class="num"><span class="skel" style="width:128px;height:8px;margin-left:auto"></span></td></tr>
+      <tr class="skel-row"><td><span class="skel" style="width:64px;height:12px"></span></td><td class="num"><span class="skel" style="width:56px;height:12px;margin-left:auto"></span></td><td class="num"><span class="skel" style="width:48px;height:12px;margin-left:auto"></span></td><td class="num"><span class="skel" style="width:128px;height:8px;margin-left:auto"></span></td></tr>
+      <tr class="skel-row"><td><span class="skel" style="width:96px;height:12px"></span></td><td class="num"><span class="skel" style="width:56px;height:12px;margin-left:auto"></span></td><td class="num"><span class="skel" style="width:48px;height:12px;margin-left:auto"></span></td><td class="num"><span class="skel" style="width:128px;height:8px;margin-left:auto"></span></td></tr>
+    </tbody></table></div></section>
+  </section>
+</main>
+</body>
+</html>

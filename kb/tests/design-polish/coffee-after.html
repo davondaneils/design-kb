@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Ember and Oak Coffee Roasters, Portland</title>
+<style>
+/* Start: kb/tests/design-color/coffee-with.html (color pilot, passed the gate, "not super special").
+   This version applies design-polish: one light source (top), tinted layered shadows as tokens, ring borders,
+   a state system with pressed states and no layout shift, matched icon strokes, grain on the object,
+   text-wrap, tabular figures, themed browser parts, sticky header with scroll padding.
+   Color tokens unchanged from the pilot (design-color). Fonts: system Charter and local Inter (web fonts blocked). */
+:root {
+  color-scheme: light dark;
+  --color-brand: #f26b21;
+  --color-orange-100: #ffe3d5;
+  --color-orange-300: #ffa97e;
+  --color-orange-200: #ffc6aa;
+  --color-orange-600: #b14500;
+  --color-orange-700: #933701;
+  --color-orange-800: #762901;
+  --color-orange-900: #5a1d00;
+  --color-orange-950: #3f0f00;
+  --color-warm-50: #f9f6f4;
+  --color-warm-100: #eee8e4;
+  --color-warm-200: #dfd5ce;
+  --color-warm-300: #ccbeb3;
+  --color-warm-500: #998779;
+  --color-warm-600: #79685b;
+  --color-warm-700: #635449;
+  --color-warm-800: #4f4238;
+  --color-warm-900: #3b3129;
+  --color-warm-950: #27201a;
+  --color-warm-975: #1e1813;
+  --color-warm-990: #16100c;
+  --color-red-300: #ffa59e;
+  --color-red-600: #c2272d;
+
+  --color-bg: var(--color-warm-50);
+  --color-surface: #ffffff;
+  --color-surface-raised: #ffffff;
+  --color-surface-sunken: var(--color-warm-100);
+  --color-text: var(--color-warm-950);
+  --color-text-muted: var(--color-warm-600);
+  --color-border: var(--color-warm-200);
+  --color-border-strong: var(--color-warm-500);
+  --color-primary: var(--color-orange-600);
+  --color-primary-hover: var(--color-orange-700);
+  --color-primary-active: var(--color-orange-800);
+  --color-on-primary: #ffffff;
+  --color-accent: var(--color-orange-600);
+  --color-danger: var(--color-red-600);
+  --color-focus-ring: var(--color-orange-600);
+  --color-selected-bg: var(--color-orange-100);
+  --color-selected-text: var(--color-warm-950);
+  --color-feature-bg: var(--color-brand);
+  --color-feature-lift: #f7884a;        /* brand at +5% OKLCH lightness: the light pool behind the headline, text gets darker contrast, not less */
+  --color-feature-text: var(--color-warm-950);
+  --color-feature-muted: var(--color-warm-950);
+  --color-feature-cta: var(--color-warm-950);
+  --color-feature-cta-hover: var(--color-warm-800);
+  --color-feature-on-cta: var(--color-warm-50);
+  --color-stage-top: #f4ede8;           /* warm-100 lifted 3%: light from above */
+  --color-stage-bottom: var(--color-warm-100);
+
+  --space-1: 2px; --space-2: 4px; --space-3: 8px; --space-4: 12px; --space-5: 16px; --space-6: 24px;
+  --space-7: 32px; --space-8: 48px; --space-9: 64px; --space-10: 96px; --space-11: 128px;
+  --text-xs: 12px; --text-sm: 14px; --text-base: 16px; --text-lg: 20px; --text-xl: 25px;
+  --text-2xl: 31px; --text-3xl: 39px; --text-4xl: 49px; --text-5xl: 61px;
+  --text-display: clamp(39px, 1.6rem + 3.2vw, 61px);
+  --radius-sm: 4px; --radius-md: 8px; --radius-lg: 12px; --radius-xl: 16px; --radius-full: 9999px;
+  --radius-control: var(--radius-full); --radius-card: var(--radius-lg);
+  --font-serif: Charter, "Bitstream Charter", "Iowan Old Style", Georgia, serif;
+  --font-sans: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --duration-instant: 100ms; --duration-fast: 150ms; --duration-base: 200ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1); --ease-enter: cubic-bezier(0, 0, 0, 1);
+
+  /* Elevation (design-polish recipes). Shadows tinted with warm 950, all falling down. */
+  --shadow-rgb: 39 32 26;
+  --ring: 0 0 0 1px rgb(var(--shadow-rgb) / 0.08);
+  --highlight: inset 0 1px 0 rgb(255 255 255 / 0.14);
+  --shadow-1: 0 1px 2px rgb(var(--shadow-rgb) / 0.06);
+  --shadow-2: 0 1px 2px rgb(var(--shadow-rgb) / 0.06), 0 4px 12px -2px rgb(var(--shadow-rgb) / 0.08);
+  --shadow-3: 0 2px 4px -1px rgb(var(--shadow-rgb) / 0.08), 0 12px 24px -6px rgb(var(--shadow-rgb) / 0.16);
+  --elevation-card: var(--ring), var(--shadow-1);
+  --elevation-card-hover: 0 0 0 1px rgb(var(--shadow-rgb) / 0.12), var(--shadow-2);
+  --state-hover: color-mix(in oklch, var(--color-text) 6%, transparent);
+  --state-pressed: color-mix(in oklch, var(--color-text) 12%, transparent);
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: var(--color-warm-990);
+    --color-surface: var(--color-warm-975);
+    --color-surface-raised: var(--color-warm-950);
+    --color-surface-sunken: var(--color-warm-975);
+    --color-text: var(--color-warm-50);
+    --color-text-muted: var(--color-warm-300);
+    --color-border: var(--color-warm-800);
+    --color-border-strong: var(--color-warm-500);
+    --color-accent: var(--color-orange-300);
+    --color-danger: var(--color-red-300);
+    --color-focus-ring: var(--color-orange-300);
+    --color-selected-bg: var(--color-orange-900);
+    --color-selected-text: var(--color-warm-50);
+    --color-feature-bg: var(--color-orange-950);
+    --color-feature-lift: #4c1803;      /* orange 950 lifted 3% */
+    --color-feature-text: var(--color-warm-50);
+    --color-feature-muted: var(--color-orange-100);
+    --color-feature-cta: var(--color-brand);
+    --color-feature-cta-hover: #f7884a;
+    --color-feature-on-cta: var(--color-warm-950);
+    --color-stage-top: #221b16;         /* warm 975 lifted 3% */
+    --color-stage-bottom: var(--color-warm-975);
+    /* Dark elevation: lighter surface plus a ring and a top highlight, no shadows. */
+    --ring: 0 0 0 1px rgb(255 255 255 / 0.07);
+    --highlight: inset 0 1px 0 rgb(255 255 255 / 0.10);
+    --shadow-1: none; --shadow-2: none; --shadow-3: none;
+    --elevation-card: var(--ring), inset 0 1px 0 rgb(255 255 255 / 0.04);
+    --elevation-card-hover: 0 0 0 1px rgb(255 255 255 / 0.14), inset 0 1px 0 rgb(255 255 255 / 0.05);
+    --state-hover: color-mix(in oklch, var(--color-text) 8%, transparent);
+    --state-pressed: color-mix(in oklch, var(--color-text) 14%, transparent);
+  }
+  body { -webkit-font-smoothing: antialiased; } /* light text on dark only (MDN: macOS, renders lighter) */
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 80px; } /* sticky header 64 + 16. No scrollbar-gutter: stable on a page that always scrolls: it leaves an empty strip beside full-bleed bands wherever there is no scrollbar (found in round 1) */
+body { margin: 0; background: var(--color-bg); color: var(--color-text); font: var(--text-base)/1.5 var(--font-sans); -webkit-tap-highlight-color: transparent; } /* replaced by real :active states below */
+h1, h2, h3, p, ul, ol, figure { margin: 0; padding: 0; }
+h1, h2, h3 { text-wrap: balance; }
+p, li { text-wrap: pretty; }
+ul, ol { list-style: none; }
+::selection { background: var(--color-selected-bg); color: var(--color-selected-text); }
+input { accent-color: var(--color-primary); caret-color: var(--color-focus-ring); }
+a { color: var(--color-accent); text-decoration-thickness: 1px; text-underline-offset: 3px; transition: text-decoration-color var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard); }
+@media (hover: hover) { a:hover { text-decoration-thickness: 2px; } }
+/* One ring for everything. No shape change: the outline follows each element's own radius.
+   Plain text links get soft ring corners; declared first so component radii win on ties. */
+:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+:where(a:focus-visible) { border-radius: var(--radius-sm); } /* zero specificity: any component radius wins */
+.num, .price, .facts dd { font-variant-numeric: tabular-nums lining-nums; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-5); }
+@media (min-width: 768px) { .wrap { padding: 0 var(--space-7); } }
+.serif { font-family: var(--font-serif); font-weight: 400; letter-spacing: -0.01em; }
+.eyebrow { font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); }
+.measure { max-width: 32em; }
+.icon { flex: none; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
+.icon * { vector-effect: non-scaling-stroke; }
+
+/* Buttons: rest, hover (pointer), pressed (declared after hover), focus ring, disabled, loading. No state changes the box. */
+.btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: var(--space-3); min-height: 48px; padding: var(--space-4) var(--space-6); border-radius: var(--radius-control); border: 1px solid transparent; font: 600 var(--text-base)/1.5 var(--font-sans); text-decoration: none; cursor: pointer; transition: background-color var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard); }
+.btn-primary { background: var(--color-primary); color: var(--color-on-primary); box-shadow: var(--highlight), var(--shadow-1); }
+.btn-secondary { background: transparent; color: var(--color-text); border-color: var(--color-border-strong); }
+@media (hover: hover) {
+  .btn-primary:hover { background: var(--color-primary-hover); box-shadow: var(--highlight), var(--shadow-2); }
+  .btn-secondary:hover { background: var(--state-hover); }
+}
+.btn-primary:active { background: var(--color-primary-active); box-shadow: var(--highlight); }
+.btn-secondary:active { background: var(--state-pressed); }
+@media (prefers-reduced-motion: no-preference) {
+  .btn { transition: background-color var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard), transform var(--duration-fast) var(--ease-standard); }
+  .btn:active { transform: scale(0.97); transition-duration: var(--duration-instant); }
+  .btn-wide:active { transform: scale(0.98); }
+}
+.btn-sm { min-height: 40px; padding: var(--space-3) var(--space-5); font-size: var(--text-sm); }
+.btn .icon { width: 20px; height: 20px; stroke-width: 1.5px; }
+.btn-icon-start { padding-left: var(--space-5); } /* icon side one step tighter: the glyph fills the gap optically */
+
+/* Header: sticky, translucent, one hairline. No shadow (it would read as a second light source). */
+.site-header { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid var(--color-border); background: color-mix(in oklch, var(--color-bg) 86%, transparent); -webkit-backdrop-filter: saturate(1.4) blur(12px); backdrop-filter: saturate(1.4) blur(12px); }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--space-5); min-height: 64px; }
+.logo { display: inline-flex; align-items: center; gap: var(--space-3); font: 400 var(--text-lg)/1.25 var(--font-serif); color: var(--color-text); text-decoration: none; border-radius: var(--radius-sm); }
+.logo span { color: var(--color-text-muted); }
+.logo-mark { width: 24px; height: 24px; border-radius: var(--radius-full); background: var(--color-brand); display: grid; place-items: center; }
+.nav { display: flex; align-items: center; gap: var(--space-2); }
+.nav a:not(.btn) { color: var(--color-text); text-decoration: none; padding: var(--space-3) var(--space-4); font-size: var(--text-sm); font-weight: 500; border-radius: var(--radius-full); transition: background-color var(--duration-fast) var(--ease-standard); }
+@media (hover: hover) { .nav a:not(.btn):hover { background: var(--state-hover); transition-duration: 0ms; } }
+.nav a:not(.btn):active { background: var(--state-pressed); }
+.nav .hide-sm { display: none; }
+@media (min-width: 768px) { .nav .hide-sm { display: inline-block; } }
+
+/* Hero */
+.hero { padding: var(--space-8) 0 var(--space-9); }
+.hero .wrap { display: grid; gap: var(--space-8); align-items: center; }
+@media (min-width: 1024px) { .hero { padding: var(--space-10) 0; } .hero .wrap { grid-template-columns: 7fr 5fr; gap: var(--space-9); } }
+.hero h1 { font-size: var(--text-display); line-height: 1.1; letter-spacing: -0.02em; margin: var(--space-5) 0 var(--space-6); max-width: 13em; }
+.hero .lead { font-size: var(--text-lg); line-height: 1.5; color: var(--color-text-muted); }
+.actions { display: flex; flex-wrap: wrap; gap: var(--space-4); margin-top: var(--space-7); }
+.facts { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: var(--space-6); margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--color-border); }
+.facts dt { font-size: var(--text-xs); color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+.facts dd { margin: var(--space-2) 0 0; font-size: var(--text-sm); font-weight: 500; }
+
+/* Product stage: the stage gets light (top lighter, 3% OKLCH), the object gets the shadow and the grain. */
+.stage { background: linear-gradient(in oklch to bottom, var(--color-stage-top), var(--color-stage-bottom)); border-radius: var(--radius-xl); aspect-ratio: 4 / 5; display: grid; place-items: center; position: relative; overflow: hidden; }
+.stage::before { content: ""; position: absolute; inset: 0; background: radial-gradient(60% 40% at 50% 0%, rgb(255 255 255 / 0.35), transparent 70%); pointer-events: none; }
+.floor { position: absolute; left: 50%; bottom: 13%; width: 62%; height: 7%; transform: translateX(-50%); border-radius: var(--radius-full); background: radial-gradient(closest-side, rgb(var(--shadow-rgb) / 0.34), rgb(var(--shadow-rgb) / 0.12) 55%, transparent); filter: blur(4px); }
+@media (prefers-color-scheme: dark) { .stage::before { background: radial-gradient(60% 40% at 50% 0%, rgb(255 255 255 / 0.05), transparent 70%); } .floor { background: radial-gradient(closest-side, rgb(0 0 0 / 0.6), rgb(0 0 0 / 0.25) 55%, transparent); } }
+.bag { position: relative; z-index: 1; width: clamp(208px, 54%, 248px); aspect-ratio: 3 / 4.2; margin-bottom: var(--space-6); border-radius: var(--radius-md) var(--radius-md) var(--radius-lg) var(--radius-lg); display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: var(--space-6) var(--space-5);
+  /* Matte paper: grain on top, side shading (light from upper left, folds at both edges), brand orange body. */
+  background:
+    var(--grain),
+    linear-gradient(in oklch to right, rgb(0 0 0 / 0.10), transparent 9%, transparent 82%, rgb(0 0 0 / 0.14)),
+    linear-gradient(in oklch to bottom, rgb(255 255 255 / 0.10), transparent 40%),
+    var(--color-brand);
+  box-shadow: 0 2px 4px -1px rgb(var(--shadow-rgb) / 0.16), 0 16px 32px -8px rgb(var(--shadow-rgb) / 0.22); }
+.bag::before { content: ""; position: absolute; inset: 0 0 auto; height: 12%; border-radius: var(--radius-md) var(--radius-md) 0 0;
+  background: repeating-linear-gradient(to right, rgb(0 0 0 / 0.12) 0 2px, transparent 2px 6px), var(--color-orange-700); } /* crimped seal */
+.bag::after { content: ""; position: absolute; top: 17%; right: 14%; width: 12%; aspect-ratio: 1; border-radius: var(--radius-full); background: radial-gradient(circle at 40% 35%, rgb(255 255 255 / 0.25), rgb(0 0 0 / 0.12)); box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.12); } /* degassing valve */
+@media (prefers-color-scheme: dark) { .bag { box-shadow: none; } }
+.bag-label { width: 100%; background: var(--color-warm-50); color: var(--color-warm-950); border-radius: var(--radius-sm); padding: var(--space-5) var(--space-3); text-align: center; box-shadow: 0 1px 0 rgb(0 0 0 / 0.08); }
+.bag-label .mark { font: 400 var(--text-sm)/1.25 var(--font-serif); letter-spacing: 0.04em; }
+.bag-label .origin { font: 400 var(--text-xl)/1.1 var(--font-serif); margin: var(--space-3) 0; }
+@media (max-width: 639px) { .bag-label .origin { font-size: var(--text-lg); } }
+.bag-label .mark, .bag-label .origin { white-space: nowrap; }
+.bag-label .meta { font-size: var(--text-xs); color: var(--color-warm-600); }
+.stage-note { position: absolute; left: var(--space-5); bottom: var(--space-5); z-index: 1; font-size: var(--text-xs); font-weight: 500; color: var(--color-text); font-variant-numeric: tabular-nums; }
+
+/* Subscription band: a 5% lighter pool of light behind the headline, faint grain to keep the large field from banding. */
+.feature { position: relative; color: var(--color-feature-text); background: radial-gradient(80% 90% at 20% 0%, var(--color-feature-lift), transparent 70%), var(--color-feature-bg); isolation: isolate; }
+.feature::before { content: ""; position: absolute; inset: 0; background: var(--grain); opacity: 0.12; mix-blend-mode: multiply; pointer-events: none; z-index: -1; }
+@media (prefers-color-scheme: dark) { .feature::before { opacity: 0.18; mix-blend-mode: normal; } }
+.feature .wrap { display: grid; gap: var(--space-7); padding-top: var(--space-9); padding-bottom: var(--space-9); }
+@media (min-width: 1024px) { .feature .wrap { grid-template-columns: 7fr 5fr; align-items: end; padding-top: var(--space-10); padding-bottom: var(--space-10); } }
+.feature .eyebrow { color: var(--color-feature-muted); }
+.feature h2 { font-size: clamp(31px, 1.2rem + 2.4vw, 49px); line-height: 1.1; letter-spacing: -0.015em; margin-top: var(--space-4); max-width: 14em; }
+.perks { margin-top: var(--space-6); display: grid; gap: var(--space-3); }
+.perks li { display: flex; gap: var(--space-4); align-items: flex-start; color: var(--color-feature-muted); }
+.perks .icon { width: 20px; height: 20px; margin-top: var(--space-1); stroke-width: 1.5px; } /* 16px text at 400 has 1.40px stems: 1.5 matches, the pilot's 2px shouted */
+.offer { border-top: 1px solid currentColor; padding-top: var(--space-6); }
+.offer .price { font: 400 var(--text-4xl)/1.1 var(--font-serif); }
+.offer .price small { font: 400 var(--text-base)/1.5 var(--font-sans); }
+.offer p { font-size: var(--text-sm); margin-top: var(--space-3); color: var(--color-feature-muted); }
+.btn-feature { margin-top: var(--space-6); background: var(--color-feature-cta); color: var(--color-feature-on-cta); font-size: var(--text-lg); min-height: 56px; width: 100%; box-shadow: var(--highlight); }
+@media (hover: hover) { .btn-feature:hover { background: var(--color-feature-cta-hover); } }
+.btn-feature:active { background: var(--color-feature-cta); box-shadow: none; }
+.feature :focus-visible { outline-color: var(--color-feature-text); } /* the pilot used currentColor: on the CTA that is its own label color, 1.02:1 on the dark band and 2.83:1 on the light one. Found on the state sheet (round 2) */
+
+/* Shop */
+.section { padding: var(--space-9) 0; }
+@media (min-width: 1024px) { .section { padding: var(--space-11) 0; } }
+.section-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: var(--space-5); margin-bottom: var(--space-8); }
+.section-head h2 { font-size: var(--text-3xl); line-height: 1.1; letter-spacing: -0.015em; margin-top: var(--space-4); }
+.more { display: inline-flex; align-items: center; gap: var(--space-2); font-weight: 500; padding: var(--space-3) 0; }
+.more .icon { width: 16px; height: 16px; stroke-width: 1.75px; }
+@media (prefers-reduced-motion: no-preference) { .more .icon { transition: transform var(--duration-fast) var(--ease-standard); } @media (hover: hover) { .more:hover .icon { transform: translateX(2px); } } }
+
+.cards { display: grid; gap: var(--space-6); }
+@media (min-width: 768px) { .cards { grid-template-columns: repeat(3, 1fr); } }
+/* Card = one elevation token (ring + contact shadow) on a surface step. No separate border. Whole card is the link target;
+   the focus ring is drawn on the card via :has, and the add button sits above the stretched link. */
+.card { position: relative; background: var(--color-surface); border-radius: var(--radius-card); box-shadow: var(--elevation-card); display: flex; flex-direction: column; overflow: hidden; border: 1px solid transparent; transition: box-shadow var(--duration-base) var(--ease-standard); }
+@media (hover: hover) and (pointer: fine) { .card:hover { box-shadow: var(--elevation-card-hover); } }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) { .card { transition: box-shadow var(--duration-base) var(--ease-standard), transform var(--duration-base) var(--ease-standard); } .card:hover { transform: translateY(-2px); } }
+.card:has(.card-link:focus-visible) { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+.card-link { color: inherit; text-decoration: none; }
+.card-link:focus-visible { outline: none; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; } /* second cue on the title; the ring sits on the card via :has */
+.card-link::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+/* Thumb is flush with the card's top edge: it takes the card radius through overflow hidden, no separate radius. */
+.thumb { aspect-ratio: 16 / 10; display: grid; place-items: center; position: relative; background: linear-gradient(in oklch to bottom, var(--color-stage-top), var(--color-stage-bottom)); border-bottom: 1px solid var(--color-border); }
+.thumb .floor { bottom: 12%; width: 34%; height: 8%; }
+.mini { position: relative; z-index: 1; width: 26%; aspect-ratio: 3 / 4.2; margin-bottom: var(--space-3); border-radius: var(--radius-sm); display: flex; align-items: flex-end; justify-content: center; padding: var(--space-3) var(--space-2);
+  background: var(--grain), linear-gradient(in oklch to right, rgb(0 0 0 / 0.10), transparent 12%, transparent 80%, rgb(0 0 0 / 0.16)), var(--bag); box-shadow: 0 8px 16px -6px rgb(var(--shadow-rgb) / 0.3); }
+.mini::before { content: ""; position: absolute; inset: 0 0 auto; height: 12%; border-radius: var(--radius-sm) var(--radius-sm) 0 0; background: repeating-linear-gradient(to right, rgb(0 0 0 / 0.14) 0 1px, transparent 1px 4px), rgb(0 0 0 / 0.18); }
+.mini i { display: block; width: 100%; height: 34%; border-radius: var(--radius-sm); background: var(--color-warm-50); }
+@media (prefers-color-scheme: dark) { .mini { box-shadow: none; } }
+.card-body { display: flex; flex-direction: column; gap: var(--space-5); padding: var(--space-6); flex: 1; }
+.roast { display: flex; align-items: center; gap: var(--space-3); font-size: var(--text-xs); color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+.roast-meter { display: inline-flex; gap: var(--space-1); }
+.roast-meter i { width: 16px; height: 8px; border-radius: var(--radius-full); box-shadow: inset 0 0 0 1px var(--color-border-strong); }
+.roast-meter i.on { background: var(--color-text); box-shadow: none; }
+.card h3 { font-size: var(--text-xl); line-height: 1.25; }
+.card .origin { font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-2); }
+.card-foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding-top: var(--space-5); border-top: 1px solid var(--color-border); }
+.card-foot .btn { z-index: 2; }
+.card-foot .price { font-size: var(--text-lg); font-weight: 600; }
+.card-foot .price small { font-size: var(--text-sm); font-weight: 400; color: var(--color-text-muted); }
+
+/* Story: a surface step is the only separation (the pilot also drew borders top and bottom). */
+.story { background: var(--color-surface); }
+.story .wrap { display: grid; gap: var(--space-8); }
+@media (min-width: 1024px) { .story-head { display: grid; grid-template-columns: 5fr 7fr; gap: var(--space-9); align-items: end; } }
+.story h2 { font-size: var(--text-3xl); line-height: 1.1; letter-spacing: -0.015em; margin-top: var(--space-4); }
+.story .intro { margin-top: var(--space-5); color: var(--color-text-muted); }
+@media (min-width: 1024px) { .story .intro { margin-top: 0; } }
+.steps { display: grid; gap: var(--space-7); }
+@media (min-width: 1024px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+.steps li { border-top: 2px solid var(--color-text); padding-top: var(--space-5); }
+.steps .num { font: 400 var(--text-3xl)/1.1 var(--font-serif); color: var(--color-accent); font-variant-numeric: lining-nums tabular-nums; }
+.steps h3 { font-size: var(--text-lg); line-height: 1.25; margin: var(--space-4) 0 var(--space-3); }
+.steps p { color: var(--color-text-muted); }
+
+/* Footer and newsletter */
+.site-footer { padding: var(--space-9) 0 var(--space-7); }
+.site-footer .wrap { display: grid; gap: var(--space-8); }
+@media (min-width: 1024px) { .site-footer .wrap { grid-template-columns: 6fr 3fr 3fr; } }
+.site-footer h2 { font-size: var(--text-xl); line-height: 1.25; }
+.site-footer .intro { color: var(--color-text-muted); margin-top: var(--space-3); }
+form { margin-top: var(--space-6); max-width: 32em; }
+label { display: block; font-size: var(--text-sm); font-weight: 600; margin-bottom: var(--space-3); }
+.field-row { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+/* Input: 3:1 edge at rest, stronger on hover, ring on focus. Error adds the second pixel as an inset shadow: no shift. */
+input[type=email] { flex: 1 1 240px; min-height: 48px; padding: var(--space-4) var(--space-5); border-radius: var(--radius-control); border: 1px solid var(--color-border-strong); background: var(--color-surface); color: var(--color-text); font: var(--text-base)/1.5 var(--font-sans); transition: border-color var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard); }
+@media (hover: hover) { input[type=email]:hover { border-color: var(--color-text-muted); } }
+input[type=email]::placeholder { color: var(--color-text-muted); }
+input[aria-invalid=true], input[aria-invalid=true]:hover { border-color: var(--color-danger); box-shadow: inset 0 0 0 1px var(--color-danger); }
+.error { display: flex; gap: var(--space-3); align-items: flex-start; color: var(--color-danger); font-size: var(--text-sm); margin-top: var(--space-3); }
+.error .icon { width: 16px; height: 16px; margin-top: var(--space-1); stroke-width: 1.5px; } /* 14px text, 1.23px stems */
+.links h3 { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-muted); font-weight: 600; margin-bottom: var(--space-4); }
+.links a { display: inline-block; color: var(--color-text); text-decoration: underline; text-decoration-color: transparent; padding: var(--space-2) 0; }
+@media (hover: hover) { .links a:hover { text-decoration-color: currentColor; } }
+.legal { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-4); border-top: 1px solid var(--color-border); padding-top: var(--space-6); font-size: var(--text-sm); color: var(--color-text-muted); }
+
+@media (forced-colors: active) {
+  .btn, input, .site-header { border: 1px solid CanvasText; }
+  .card { border-color: CanvasText; }
+  .card:has(.card-link:focus-visible) { outline-color: Highlight; }
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="#"><span class="logo-mark" aria-hidden="true"><svg class="icon" width="12" height="12" viewBox="0 0 12 12" style="stroke:#27201a;stroke-width:1.5px"><path d="M6 1.5c2 2 2 4.5 0 6.5M6 1.5c-2 2-2 4.5 0 6.5M6 8v2.5"/></svg></span>Ember <span>and</span> Oak</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#shop">Shop</a>
+      <a class="hide-sm" href="#story">Roastery</a>
+      <a class="hide-sm" href="#journal">Journal</a>
+      <a class="btn btn-secondary btn-sm" href="#subscribe">Subscribe</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">This week's single origin</p>
+        <h1 id="hero-title" class="serif">Ethiopia Guji, roasted Tuesday in Portland.</h1>
+        <p class="lead measure">Peach, jasmine and wildflower honey from the Hambela Wamena washing station. Roasted light in 12&#8239;kilo batches and shipped within 48 hours.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#subscribe">Start a subscription</a>
+          <a class="btn btn-secondary" href="#shop">Buy a bag, $21</a>
+        </div>
+        <dl class="facts">
+          <div><dt>Process</dt><dd>Washed</dd></div>
+          <div><dt>Altitude</dt><dd>2,100&#8239;m</dd></div>
+          <div><dt>Roast</dt><dd>Light</dd></div>
+        </dl>
+      </div>
+      <figure class="stage" aria-label="A bag of Ethiopia Guji in Ember and Oak orange">
+        <div class="floor" aria-hidden="true"></div>
+        <div class="bag" aria-hidden="true">
+          <div class="bag-label">
+            <div class="mark">EMBER AND OAK</div>
+            <div class="origin">Ethiopia Guji</div>
+            <div class="meta">Washed, light roast, 340&#8239;g</div>
+          </div>
+        </div>
+        <figcaption class="stage-note">Lot 0412, 60 bags this season</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="feature" id="subscribe" aria-labelledby="sub-title">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">The subscription</p>
+        <h2 id="sub-title" class="serif">Fresh coffee at your door every two or four weeks.</h2>
+        <ul class="perks">
+          <li><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Roasted to order, never more than 3 days old when it ships</li>
+          <li><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Choose a roast or let us pick a new origin each time</li>
+          <li><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Skip, swap or cancel in two clicks</li>
+        </ul>
+      </div>
+      <div class="offer">
+        <p class="price">$18 <small>a bag, shipping included</small></p>
+        <p>15 percent under shop price. First bag ships this Friday.</p>
+        <a class="btn btn-feature btn-wide" href="#">Start my subscription</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="shop" aria-labelledby="shop-title">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">On the roaster now</p>
+          <h2 id="shop-title" class="serif">Three coffees we can't stop drinking</h2>
+        </div>
+        <a class="more" href="#">See all 9 coffees<svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+      <ul class="cards">
+        <li class="card">
+          <div class="thumb" aria-hidden="true"><div class="floor"></div><div class="mini" style="--bag: var(--color-brand)"><i></i></div></div>
+          <div class="card-body">
+            <div class="roast"><span class="roast-meter" aria-hidden="true"><i class="on"></i><i></i><i></i></span>Light roast</div>
+            <h3 class="serif"><a class="card-link" href="#">Ethiopia Guji</a></h3>
+            <p class="origin">Hambela Wamena, washed</p>
+            <p class="notes">Peach, jasmine, wildflower honey</p>
+            <div class="card-foot"><p class="price">$21 <small>/ 340&#8239;g</small></p><button class="btn btn-secondary btn-sm" type="button">Add to cart</button></div>
+          </div>
+        </li>
+        <li class="card">
+          <div class="thumb" aria-hidden="true"><div class="floor"></div><div class="mini" style="--bag: #8a5a3c"><i></i></div></div>
+          <div class="card-body">
+            <div class="roast"><span class="roast-meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span>Medium roast</div>
+            <h3 class="serif"><a class="card-link" href="#">Colombia Huila</a></h3>
+            <p class="origin">Finca El Mirador, washed</p>
+            <p class="notes">Caramel, red apple, cocoa nib</p>
+            <div class="card-foot"><p class="price">$19 <small>/ 340&#8239;g</small></p><button class="btn btn-secondary btn-sm" type="button">Add to cart</button></div>
+          </div>
+        </li>
+        <li class="card">
+          <div class="thumb" aria-hidden="true"><div class="floor"></div><div class="mini" style="--bag: #2e2520"><i></i></div></div>
+          <div class="card-body">
+            <div class="roast"><span class="roast-meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span>Dark roast</div>
+            <h3 class="serif"><a class="card-link" href="#">Oak Fire Espresso</a></h3>
+            <p class="origin">Brazil and Guatemala blend</p>
+            <p class="notes">Dark chocolate, molasses, toasted almond</p>
+            <div class="card-foot"><p class="price">$18 <small>/ 340&#8239;g</small></p><button class="btn btn-secondary btn-sm" type="button">Add to cart</button></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section story" id="story" aria-labelledby="story-title">
+    <div class="wrap">
+      <div class="story-head">
+        <div><p class="eyebrow">How we roast</p>
+        <h2 id="story-title" class="serif">Slow, small and on a 1962 Probat.</h2></div>
+        <p class="intro measure">We roast in Southeast Portland on a drum roaster older than any of us. No shortcuts, no stale stock.</p>
+      </div>
+      <ol class="steps">
+        <li><span class="num">01</span><h3>Buy direct</h3><p>We pay growers we know by name, on average 2.4 times the Fairtrade minimum.</p></li>
+        <li><span class="num">02</span><h3>Roast in small batches</h3><p>Twelve kilos at a time, profiled for each lot and cupped before it ships.</p></li>
+        <li><span class="num">03</span><h3>Ship within 48 hours</h3><p>Your coffee leaves the roastery two days after roasting, at most.</p></li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="journal">
+  <div class="wrap">
+    <div>
+      <h2 class="serif">Letters from the roastery</h2>
+      <p class="intro measure">New lots, brew notes and the odd subscriber-only release. Twice a month, no more.</p>
+      <form novalidate onsubmit="return false">
+        <label for="email">Email address</label>
+        <div class="field-row">
+          <input id="email" type="email" value="dana@" aria-invalid="true" aria-describedby="email-error" autocomplete="email">
+          <button class="btn btn-primary" type="submit">Sign up</button>
+        </div>
+        <p class="error" id="email-error"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5v4M8 11.25v.25"/></svg>Add the rest of your email, for example dana@example.com.</p>
+      </form>
+    </div>
+    <div class="links"><h3>Shop</h3><ul><li><a href="#">Coffee</a></li><li><a href="#">Subscriptions</a></li><li><a href="#">Brewing gear</a></li><li><a href="#">Gift cards</a></li></ul></div>
+    <div class="links"><h3>Roastery</h3><ul><li><a href="#">Our story</a></li><li><a href="#">Wholesale</a></li><li><a href="#">Visit the cafe</a></li><li><a href="#">Contact</a></li></ul></div>
+    <div class="legal"><p>Ember and Oak Coffee Roasters, 1120 SE Water Ave, Portland, Oregon</p><p>&copy; 2026</p></div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+Inter stem thickness in CSS px (ink width of "l" drawn at 10x, divided by 10):
+  Inter         400 12px  stem 1.05px  ratio 0.088
+  Inter         400 14px  stem 1.23px  ratio 0.088
+  Inter         400 16px  stem 1.4px  ratio 0.087
+  Inter         400 20px  stem 1.76px  ratio 0.088
+  Inter         500 12px  stem 1.29px  ratio 0.107
+  Inter         500 14px  stem 1.5px  ratio 0.107
+  Inter         500 16px  stem 1.72px  ratio 0.107
+  Inter         500 20px  stem 2.15px  ratio 0.107
+  Inter         600 12px  stem 1.52px  ratio 0.127
+  Inter         600 14px  stem 1.78px  ratio 0.127
+  Inter         600 16px  stem 2.03px  ratio 0.127
+  Inter         600 20px  stem 2.54px  ratio 0.127
+  Inter         700 12px  stem 1.76px  ratio 0.147
+  Inter         700 14px  stem 2.05px  ratio 0.146
+  Inter         700 16px  stem 2.34px  ratio 0.146
+  Inter         700 20px  stem 2.93px  ratio 0.147
+  Inter Display 400 12px  stem 0.99px  ratio 0.083
+  Inter Display 400 14px  stem 1.16px  ratio 0.083
+  Inter Display 400 16px  stem 1.33px  ratio 0.083
+  Inter Display 400 20px  stem 1.66px  ratio 0.083
+  Inter Display 500 12px  stem 1.24px  ratio 0.103
+  Inter Display 500 14px  stem 1.44px  ratio 0.103
+  Inter Display 500 16px  stem 1.64px  ratio 0.102
+  Inter Display 500 20px  stem 2.06px  ratio 0.103
+  Inter Display 600 12px  stem 1.48px  ratio 0.123
+  Inter Display 600 14px  stem 1.72px  ratio 0.123
+  Inter Display 600 16px  stem 1.97px  ratio 0.123
+  Inter Display 600 20px  stem 2.46px  ratio 0.123
+  Inter Display 700 12px  stem 1.73px  ratio 0.144
+  Inter Display 700 14px  stem 2.01px  ratio 0.144
+  Inter Display 700 16px  stem 2.3px  ratio 0.144
+  Inter Display 700 20px  stem 2.88px  ratio 0.144
+DPR 1: a: specified 0.5px -> computed 1px; b: specified 1px -> computed 1px; c: specified 0.33px -> computed 1px
+DPR 2: a: specified 0.5px -> computed 1px; b: specified 1px -> computed 1px; c: specified 0.33px -> computed 1px
+DPR 3: a: specified 0.5px -> computed 1px; b: specified 1px -> computed 1px; c: specified 0.33px -> computed 1px
+Hairline colors, composited:
+  black 0.06 on white -> rgb(240,240,240) contrast 1.14:1
+  black 0.08 on white -> rgb(235,235,235) contrast 1.19:1
+  black 0.1 on white -> rgb(230,230,230) contrast 1.25:1
+  black 0.12 on white -> rgb(224,224,224) contrast 1.32:1
+  black 0.16 on white -> rgb(214,214,214) contrast 1.45:1
+  black 0.24 on white -> rgb(194,194,194) contrast 1.78:1
+  black 0.4 on white -> rgb(153,153,153) contrast 2.85:1
+  black 0.45 on white -> rgb(140,140,140) contrast 3.36:1
+  white 0.06 on #101214 -> rgb(30,32,34) contrast 1.15:1
+  white 0.08 on #101214 -> rgb(35,37,39) contrast 1.22:1
+  white 0.1 on #101214 -> rgb(40,42,44) contrast 1.30:1
+  white 0.12 on #101214 -> rgb(45,46,48) contrast 1.38:1
+  white 0.16 on #101214 -> rgb(54,56,58) contrast 1.59:1
+  white 0.24 on #101214 -> rgb(73,75,76) contrast 2.14:1
+  white 0.4 on #101214 -> rgb(112,113,114) contrast 3.84:1
+  white 0.45 on #101214 -> rgb(124,125,126) contrast 4.55:1

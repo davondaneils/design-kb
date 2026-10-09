@@ -1,0 +1,212 @@
+{
+  "file": "kb/tests/design-polish/dashboard-states.html",
+  "date": "2026-10-09T22:17:29.393Z",
+  "checks": {
+    "axe": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "needs review by eye, color-contrast: Elements must meet minimum color contrast ratio thresholds (4 nodes; axe could not decide, often text over images, gradients or overlapping layers)",
+          "scheme": "light",
+          "width": 1440,
+          "targets": [
+            "th:nth-child(1)",
+            "th:nth-child(2)",
+            "th:nth-child(3)"
+          ]
+        },
+        {
+          "message": "needs review by eye, color-contrast: Elements must meet minimum color contrast ratio thresholds (4 nodes; axe could not decide, often text over images, gradients or overlapping layers)",
+          "scheme": "dark",
+          "width": 1440,
+          "targets": [
+            "th:nth-child(1)",
+            "th:nth-child(2)",
+            "th:nth-child(3)"
+          ]
+        }
+      ],
+      "pass": true
+    },
+    "targets": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row > div.cell > button.btn.btn-primary",
+          "w": 111.3,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row > div.cell > button.btn.btn-primary",
+          "w": 111.3,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row > div.cell > button.btn.btn-primary",
+          "w": 107.9,
+          "h": 38.8
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row > div.cell > button.btn.btn-primary",
+          "w": 111.3,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row > div.cell > button.btn.btn-primary",
+          "w": 111.3,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row > div.cell > button.btn",
+          "w": 102.8,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row > div.cell > button.btn",
+          "w": 134,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row > div.cell > button.btn.is-hover",
+          "w": 134,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row > div.cell > button.btn.is-active",
+          "w": 130,
+          "h": 38.8
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row > div.cell > button.btn.is-focus",
+          "w": 134,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "nav.nav.cell > ul > li > a",
+          "w": 220,
+          "h": 37
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "nav.nav.cell > ul > li > a.is-hover",
+          "w": 220,
+          "h": 37
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "nav.nav.cell > ul > li > a",
+          "w": 220,
+          "h": 37
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "nav.nav.cell > ul > li > a.is-focus",
+          "w": 220,
+          "h": 37
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.row > div.cell > label.search > input",
+          "w": 198,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.row > div.cell > label.search.is-hover > input",
+          "w": 198,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.row > div.cell > label.search.is-focus > input",
+          "w": 198,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > section.panel.state-panel > div.panel-head > a",
+          "w": 62.5,
+          "h": 29
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.panel.state-panel > div.state-body > div.actions > button.btn",
+          "w": 96.7,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.panel.state-panel > div.state-body > div.actions > button.btn",
+          "w": 134.5,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.panel.state-panel > div.state-body > div.actions > button.btn.btn-primary",
+          "w": 90.7,
+          "h": 40
+        }
+      ],
+      "pass": true
+    },
+    "measure": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "type-scale": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "spacing": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overflow": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "motion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    }
+  },
+  "summary": {
+    "focusables": 21,
+    "motionFound": {
+      "animations": 1,
+      "movingTransitions": 0
+    },
+    "axe": "pass (2 warn)",
+    "targets": "pass (21 warn)",
+    "measure": "pass",
+    "type-scale": "pass",
+    "spacing": "pass",
+    "overflow": "pass",
+    "focus": "pass",
+    "motion": "pass",
+    "result": "PASS",
+    "fails": 0,
+    "warns": 23
+  }
+}
