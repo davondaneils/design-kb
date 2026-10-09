@@ -32,7 +32,7 @@ Primitives come from the ladder in palette-building.md (neutral at hue 260, chro
 | `warning` | amber-600 `#926003` (text, icon) | amber-300 | 5.36:1 | |
 | `warning` fill | amber-400 with amber-950 text | same | 6.4:1 | |
 | `info` | blue-600 or a cyan ramp | 300 step | | |
-| `*-subtle` (alert background) | 50 or 100 step | 950 step of that hue | text uses 800 (light) or 200 (dark) | |
+| `*-subtle` (alert background) | 50 or 100 step | low-chroma tint, L .25, chroma .03 to .035 of that hue (the 950 step glows on near-black) | text uses 800 (light) or 200 (dark) | |
 | `focus-ring` | blue-600, 2px, 2px offset | blue-300 | 5.46:1 on white | 10.4:1 |
 
 Why the dark theme keeps `primary` at 600 with white text: it passes both WCAG (5.46:1) and APCA (Lc 82). The Material-style alternative, a light primary (400) with dark text, scores 6.5:1 but only Lc 52. (Our measurement; either is legal.)
@@ -107,7 +107,7 @@ Overlay values: material-web tokens. Stepped values: our default because they ke
 ## Worked example: "Set up light and dark tokens for a SaaS dashboard"
 1. Generate primitives: neutral hue 260, chroma 0.015, `--neutral`; primary hue 260, chroma 0.20; red 25, green 150, amber 75 with `--shift -20`.
 2. Map roles with the default mapping table. Sidebar uses `surface`, main canvas `bg`, cards `surface-raised`.
-3. Status pills: `success-subtle` background (green-100), green-800 text, a dot icon; same pattern for warning and danger. Dark: 950 background of the hue, 200 text.
+3. Status pills: `success-subtle` background (green-100), green-800 text, a dot icon; same pattern for warning and danger. Dark: low-chroma tint (L .25, chroma .03 to .035) of the hue, 200 text.
 4. Tables: row hover neutral-100 (light) or neutral-975 to 950 (dark); selected row `primary-subtle` plus a 2px left bar in `primary`.
 5. Charts: hand off to the dataviz skill; categorical palette distinct from status colors.
 6. Verify: run `oklch_scale.py check` on each text role against each surface it can sit on, both themes. Fix anything under 4.5:1 (text) or 3:1 (borders, icons, focus).

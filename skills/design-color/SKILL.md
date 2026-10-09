@@ -34,7 +34,7 @@ If an answer breaks any of these, fix it before adding anything clever.
 | OKLCH L | .975 | .935 | .88 | .81 | .72 | .635 | .53 | .46 | .39 | .32 | .25 |
 | Chroma share | 12% | 28% | 50% | 75% | 95% | 100% | 100% | 92% | 80% | 65% | 50% |
 
-Neutrals add 975 (L .215) and 990 (L .18) for dark surfaces. Worst cases across all hues: 600 on white 4.94:1 (and white on 600); 600 on 50 4.64:1; 700 on 100 5.58:1; 500 on white 3.19:1 (UI and large text only). **Rule: five steps apart passes body text, four steps apart passes 3:1.**
+Neutrals add 975 (L .215) and 990 (L .18) for dark surfaces. Worst cases across all hues: 600 on white 4.94:1 (and white on 600); 600 on 50 4.64:1; 700 on 100 5.58:1; 500 on white 3.19:1 (UI and large text only). **Rule: six ladder positions apart passes body text (worst 4.64:1: 50 to 600, 100 to 700, 200 to 800), five apart passes 3:1 with almost no margin (worst 3.01:1).** Count positions on the 11-step ladder, not hundreds: 600 on 100 is five positions and fails body text at 4.37 to 4.39:1 on every hue (measured 2026-10-09, all hues at 15 degree steps). So `text-muted` (600) passes on `bg` (50) and white, never on a 100 tint: use 700 there.
 
 **Max chroma by personality** (opinion, starting points): calm or premium 0.08 to 0.13, standard 0.14 to 0.20, loud 0.20 to 0.26, neutrals 0.005 to 0.02.
 
@@ -48,7 +48,7 @@ Neutrals add 975 (L .215) and 990 (L .18) for dark surfaces. Worst cases across 
 | primary / hover / pressed / on-primary | 600 / 700 / 800 / white | same |
 | accent (links), focus-ring | primary-600 | primary-300 |
 | success, warning, danger text | 600 of their hue | 300 of their hue |
-| *-subtle backgrounds | 50 or 100, text 800 | 950, text 200 |
+| *-subtle backgrounds | 50 or 100, text 800 | low-chroma tint at L .25 (chroma .03 to .035, for example `oklch(25% 0.035 25)`), text 200. The 950 step (chroma .05 to .1) glows on near-black surfaces |
 
 ## 3. Workflow for any color task
 
@@ -73,6 +73,10 @@ Neutrals add 975 (L .215) and 990 (L .18) for dark surfaces. Worst cases across 
 - **No brand color**: choose hue by category map and ownability (`references/psychology-brand.md`), chroma by personality.
 - **Yellows and oranges**: rotate dark steps toward orange (`--shift -20`) so they read gold, not olive. Never use yellow as text on white.
 - **Dark mode accent text**: 300 step or lighter. 500 fails WCAG on some dark surfaces, and 400 scores only about Lc 53.
+- **Muted text on a tinted or sunken surface** (100 step, image stage, alert): 600 fails there; use 700 for muted text, or full `text`.
+- **Light brand color in dark mode** (L .65 to .75, such as teal `#14b8a6` or orange `#f26b21`): it can return exact as the primary fill in dark mode with a near-black label (`#101214` on `#14b8a6` 7.54:1), so the brand shows true where it is strongest. In light mode the same role uses the 600 step with white.
+- **Full-bleed brand band in dark mode**: a large field of a bright brand color glares on a dark page. Drop the band to the 950 step of the hue (text 50 to 200) and let the exact brand color return only as the one bright fill (the CTA).
+- **Chart series next to a gray benchmark** (this period vs previous): separate them by lightness (at least .15 L), not hue. Teal 500 vs gray 500 measured deutan Delta E 0.3 in the dataviz validator; teal 700 vs gray 500 measured 14.9. Then dash the benchmark and label both.
 - **Hover**: one step darker (600 to 700) in both themes, so white labels keep passing. Pressed: two steps. Disabled: neutral-100 fill, neutral-400 text (exempt, keep recognisable).
 - **Text on color**: tint the text toward the background hue (blue-800 on blue-100), not gray.
 - **Text on images**: scrim or solid band, check the worst pixel.

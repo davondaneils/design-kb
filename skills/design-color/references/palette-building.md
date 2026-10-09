@@ -37,7 +37,7 @@ Derived and tested across every hue and chroma up to 0.26 (design-kb research no
 | 500 on white | 3.19:1 | icons, borders, focus rings, large text only |
 | 400 on 950, 300 on 900 | 5.93:1, 6.92:1 | dark mode text (WCAG). For small accent text in dark mode prefer 300 or lighter: APCA rates 400 on near-black only about Lc 53 |
 
-Rule of thumb from the table: **five steps apart passes body text; four steps apart passes 3:1 for UI** (50 to 600, 100 to 700, 200 to 800, 400 to 950). Stripe reached the same "five levels apart" rule independently (2019).
+Rule of thumb from the table: **six ladder positions apart passes body text (worst 4.64:1: 50 to 600, 100 to 700, 200 to 800, 400 to 950); five apart passes 3:1 for UI with almost no margin (worst 3.01:1).** Count positions on the 11-step ladder, not hundreds: 100 to 600 is five positions and fails body text at 4.37 to 4.39:1 on every hue. Measured 2026-10-09 with `assets/oklch_scale.py` over all hues at 15 degree steps and chroma 0.012 to 0.26. (v0.1 said "five steps apart passes body text"; the color slice test caught it when muted text on a 100 tint failed at 4.38:1.) Stripe describes a similar "five levels apart" rule (2019) on its own scale, which has different steps.
 
 **Chroma shape:** chroma peaks at 500 to 600 and falls toward both ends. Light tints with full chroma look neon; dark shades with full chroma fall out of gamut. Strom-Awn uses the same inverted curve.
 
