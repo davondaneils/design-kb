@@ -1,4 +1,79 @@
-# Tests: design-color v0.1
+# Tests: design-color
+
+## Run 2: rendered vertical slice (2026-10-09)
+
+Briefs and rubric: `kb/briefs/color/slice-test-briefs.md` (editor-in-chief). Skills used for the with-skill pages: design-director, design-color, `kb/FOUNDATIONS.md` v0.2 defaults for layout and type, and the dataviz skill for the chart (routed by the director). Pages, lint JSON and screenshots: `kb/tests/design-color/`.
+
+**Clean-context note.** This session had no subagent tool, so the same agent wrote all four pages. The two without-skill pages were written first, before the with-skill work, in the style of a strong generic answer (common Tailwind-like values, hex colors, no contrast tool), but by an agent that had already read the skill earlier in the session. Treat the without-skill pages as a fair stand-in, not a clean baseline. Re-run them with a fresh subagent that cannot read `skills/` before v1.0.
+
+### Lint results (`node tools/lint.mjs`, final versions)
+
+| Page | Result | axe (WCAG 2.2 AA) | targets | measure | type scale | spacing | overflow | focus | motion |
+|---|---|---|---|---|---|---|---|---|---|
+| `coffee-without.html` | **FAIL** (123 fail, 19 warn) | 15 fail: white on brand orange 3.04:1 on every button, orange outline button 2.88:1, `#777` on cream 4.25:1 | 15 fail (nav and footer links under 24px tall) | 1 fail | 16 fail (13, 15, 17, 18, 22, 36, 40, 48, 56px) | 75 fail (20, 30, 40, 60, 80px) | pass | pass (18 warn: browser default 1px ring) | fail (card lift, no reduced-motion rule) |
+| `coffee-with.html` | **PASS** (0 fail, 17 warn) | pass (2 warn: bag label, judged 14.9:1 and 4.95:1) | pass (15 warn under 44px at 390) | pass | pass | pass | pass | pass | pass |
+| `dashboard-without.html` | **FAIL** (64 fail, 9 warn) | 18 fail: `#94a3b8` labels 2.56:1, green deltas 2.27:1, red 3.76:1, white on teal nav 2.48:1, dark labels 3.07:1 | pass | pass | 6 fail (13, 22, 28px) | 40 fail (10, 14, 20, 30px) | pass | pass (8 warn) | pass |
+| `dashboard-with.html` | **PASS** (0 fail, 16 warn) | pass (2 warn: SVG axis text, judged 5.29:1 light, 9.65:1 dark) | pass (14 warn under 44px at 390) | pass | pass | pass | pass | pass | pass |
+
+Lint fails caught on the with-skill pages during the build, and fixed (the self-critique loop working):
+1. Muted text on the hero image stage (warm 600 on warm 100) at 4.38:1. Traced to a fundamentals error in the skill (see gaps, G1).
+2. "How we roast" step text at 24 to 27 characters per line in a 3 column grid inside an 8/12 column. Relaid out at full width.
+3. Dashboard: `<li role=alert>` invalid list; table link "/" only 5px wide; input with 1px UA padding; page overflow at 390 from a grid track that would not shrink; SVG chart axis text rendering at 6px on phones (scaled viewBox). The last one was invisible to the lint until a check was added (tools section below).
+
+### Judged items (`[judged]` rows of the checklist), with-skill pages
+| Item | Coffee | Dashboard |
+|---|---|---|
+| Non-text contrast 3:1 | Input border warm 500 3.20:1 on bg, 5.10:1 dark; focus ring orange 600 / 300 | Input border slate 500 3.44:1 / 5.07:1; chart lines teal 700 and gray 500 at 3:1+ in both themes |
+| Not color alone | Error has icon, text, 2px border, `aria-invalid`; links underlined | Deltas have arrow, sign, the word "worse" on churn; alerts have icon and "Error:" / "Warning:"; benchmark line dashed and labelled |
+| One primary action | Subscription (orange 600 pill in hero, the one big CTA in the band); cards use secondary buttons | "Share report" only |
+| Consistency | One radius family (pill controls, 12px cards, 16px stage), one serif plus Inter | 8px controls, 12px panels, one icon stroke weight |
+| Both themes designed | Dark is a remap: warm 990/975/950 surfaces, orange 300 accents, band drops to orange 950, brand orange returns as the band CTA | Brand teal returns exact as the dark primary fill with a near-black label (7.54:1); quiet status tints |
+| States | Hover, focus, error shown; no loading state (not needed) | Hover rows, hover chart crosshair and tooltip, selected nav; empty and loading states not built (gap for design-ux) |
+
+All hold. Gate: **pass** on both with-skill pages. Both without-skill pages fail the gate on lint alone.
+
+### Exemplar comparison
+**Limit: no exemplar screenshot could be rendered.** The environment's egress policy denied every exemplar host (see `kb/exemplars.md`). WebFetch returns text only. The comparison below is from the judge's memory of those sites' public pages, not side by side pixels, and must be repeated with real screenshots.
+
+| Page | Nearest exemplar | Rating | Why |
+|---|---|---|---|
+| coffee-with | family.co, mercury.com (restraint, warmth) | **Clearly below** | Color is close: neutrals carry the page, one orange moment per view, a designed dark mode. The gap is outside color: no photography or real product imagery (a CSS bag stands in), a fallback serif instead of a commissioned or licensed face, no motion, a conventional section stack with no signature layout move. A top studio would not ship the hero as is. |
+| dashboard-with | Vercel and Linear dashboards (from memory) | **Close** on color and layout discipline, **clearly below** on craft depth | Quiet neutral chrome, one accent, status colors kept apart from brand, a calm KPI strip, a chart with a real benchmark. Missing: real icon set, density options, empty and loading states, keyboard shortcut layer, table that reflows on phones instead of scrolling. |
+| coffee-without | | Far below | Template look: brand orange on everything (buttons, eyebrow, pills, step circles, price), white labels that fail contrast, dark mode that keeps the light-mode orange and inverts surfaces. |
+| dashboard-without | | Clearly below | Competent layout, but failing gray labels, colored deltas without words, a dark slab sidebar that fights the content, teal used for nav, bars and chart alike. |
+
+### Verdict
+- **design-color inside a page: pass on the color rubric** (items 3 and 5: restraint, dark mode, roles, contrast) and clearly better than the without-skill pages, with zero lint fails against 123 and 64.
+- **Against the exemplar bar: not yet.** The dashboard rates close on color; the landing page rates clearly below because of imagery, typography and art direction, which are other domains. This is the pilot's main finding: color is not the bottleneck; layout, typography and graphic (art direction, imagery) are. The director routed to them, but they are not on this branch.
+- **Ship decision: hold at testing.** design-color moves to v0.2 with the fixes below. It does not ship until Davon's blind ranking agrees with this judge and the exemplar comparison is redone with real screenshots.
+
+### Gaps found and fixed in design-color (2 rounds of 3)
+| # | Gap | Fix |
+|---|---|---|
+| G1 | **Fundamentals error**: "five steps apart passes body text" was off by one. 600 on 100 measures 4.37 to 4.39:1 on every hue. Six positions apart is the true body text rule (worst 4.64:1), five apart passes 3:1 (worst 3.01:1). The text-only test and the critic both missed it; the rendered page caught it. | SKILL.md core numbers and `references/palette-building.md`, with the measurement method. New decision rule: muted text on tinted surfaces uses 700. |
+| G2 | Dark `*-subtle` status backgrounds at the 950 step (chroma .05 to .1) glow on near-black. | Low-chroma tint at L .25, chroma .03 to .035. SKILL.md and `references/ui-tokens-themes.md`. |
+| G3 | No rule for a light brand color in dark mode. | Decision rule: it can return exact as the dark primary fill with a near-black label. |
+| G4 | No rule for full-bleed brand bands in dark mode. | Decision rule: drop the band to the 950 step; the exact brand color returns as the one bright fill. |
+| G5 | Chart series against a gray benchmark: teal 500 vs gray 500 measured deutan Delta E 0.3 (dataviz validator). | Decision rule: separate by at least .15 lightness, dash and label the benchmark. |
+
+Open gaps for other stages: page level art direction and imagery (design-graphic), type pairing without web fonts (design-typography), empty and loading states (design-ux), responsive tables (design-layout or design-frontend).
+
+### Tooling changes made during this run
+- `tools/lint.mjs` now checks SVG text at its rendered size (min 12px), counts `:focus-within` rings on a wrapper as visible focus, and measures real characters per line by grouping words per rendered line.
+- Measured in the lint: `max-width: 66ch` renders about 80 characters in Inter; FOUNDATIONS v0.2 now defaults to `32em`.
+
+### Screenshots
+`kb/tests/design-color/shots/{coffee,dashboard}-{with,without}-{390,1440}-{light,dark}.png` (16 files).
+
+### Blind ranking for Davon
+Three pairs in `kb/tests/design-color/blind/` (`pair-1-A.png` to `pair-3-B.png`, instructions in `blind/README.md`). Key in `kb/tests/design-color/blind-key.md`, kept outside the folder. If Davon's picks disagree with this judge on any pair, fix the judge before scaling (editor-in-chief).
+
+---
+
+## Run 1: text-only test (v0.1, 2026-10-09)
+
+Kept for history. Superseded by run 2: it judged prose, not pixels, and the rubric came from the skill itself.
+
 
 Tester run, 2026-10-09. Rubric from CLAUDE.md quality bar and `.claude/agents/tester.md`.
 

@@ -11,10 +11,10 @@
 | Last updated | 2026-10-09 |
 
 ## Where it stands
-v0.1 passed the old text-only test. Re-running as a rendered vertical slice (landing page and dashboard) under the new tester; see `kb/tests/design-color.md`.
+v0.1 passed the old text-only test. The rendered vertical slice (2026-10-09) passed the fundamentals gate on both with-skill pages and beat the without-skill pages (0 lint fails vs 123 and 64), and found a fundamentals error in the ladder rule, now fixed in the skill (v0.2 in CHANGELOG, not shipped). Against the exemplars: dashboard close on color, landing page clearly below (imagery, type, art direction). Exemplar screenshots could not be rendered here. See `kb/tests/design-color.md`.
 
 ## Next step
-Davon blind-ranks the slice pairs and approves the pilot result before any batch run.
+Davon blind-ranks the 3 pairs in `kb/tests/design-color/blind/` and approves the pilot result before any batch run. Redo the exemplar comparison with real screenshots. Exemplar set: approved by Davon 2026-10-09.
 
 ## Subtopics
 | # | Subtopic | Brief | Reference | Status |
