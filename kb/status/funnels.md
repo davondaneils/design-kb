@@ -3,6 +3,7 @@
 | Field | Value |
 |---|---|
 | Domain number | 9 |
+| Layer | linked |
 | Skill | (existing) sales-funnels |
 | Branch | n/a |
 | Status (editor-in-chief) | linked |

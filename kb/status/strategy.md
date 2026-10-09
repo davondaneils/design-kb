@@ -3,6 +3,7 @@
 | Field | Value |
 |---|---|
 | Domain number | 1 |
+| Layer | linked |
 | Skill | (existing) website-strategy |
 | Branch | n/a |
 | Status (editor-in-chief) | linked |

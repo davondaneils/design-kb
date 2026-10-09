@@ -1,17 +1,18 @@
-# Router across all domains
+# Director (spine across the three layers)
 
 | Field | Value |
 |---|---|
 | Domain number | 13 |
+| Layer | spine |
 | Skill | design-director |
-| Branch | pilot/design-color |
-| Status (editor-in-chief) | testing |
+| Branch | restructure |
+| Status (editor-in-chief) | drafting |
 | Shipped version (librarian) | none |
 | Reuses | all domain skills, website-strategy, copywriting, sales-funnels, dataviz |
 | Last updated | 2026-10-09 |
 
 ## Where it stands
-Thin v0 built during the color pilot. In the slice it routed the dashboard chart to dataviz (whose validator caught a series pair that failed color-blind separation) and its render, lint, compare loop caught 8 fundamentals fails before hand-over. Routing to layout, typography and graphic could not be tested: those skills are not on this branch. Full job playbooks come after the pilot.
+Rebuilt in the restructure as the spine: always loads design-foundations, picks one of four job playbooks, pulls domain references in the playbook's order, applies the copy rule, ends with the render, lint and compare loop (max 3 rounds). The self-critique loop lives here (see `status/critique.md`).
 
 ## Next step
-Judge its routing on the color slice; expand to job playbooks after Davon approves the pilot.
+Test routing with the coffee landing page and the Tally dashboard briefs through the playbooks.
