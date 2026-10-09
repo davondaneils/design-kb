@@ -229,6 +229,7 @@ async function lintOne(browser, target, outPath) {
       for (const el of all.filter((e) => e.matches('p, li, dd, blockquote') && L.visible(e) && !L.skipped(e, 'measure'))) {
         if (el.closest('nav, table, button, [role=table], [role=grid]')) continue;
         if (el.matches('li') && el.querySelector('p')) continue;
+        if (/flex|grid/.test(getComputedStyle(el).display)) continue; // a layout of separate items, not running text
         const text = el.textContent.replace(/\s+/g, ' ').trim();
         if (text.length < 60) continue;
         const counts = L.lines(el).map((l) => l.chars);
