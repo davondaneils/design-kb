@@ -1,0 +1,75 @@
+/* design-polish starter: elevation recipes, state layers, focus, texture, scroll edges.
+   Token names follow kb/FOUNDATIONS.md. Values for --shadow-* are design-polish recommendations (opinion,
+   built on Comeau's layered shadows and the Tailwind v4 scale); see references/02-depth-borders-shadows.md.
+   Assumes the page already defines the FOUNDATIONS color roles (--color-bg, --color-surface, --color-text,
+   --color-border, --color-border-strong, --color-focus-ring, --color-primary, --color-selected-bg/-text). */
+
+:root {
+  color-scheme: light dark;                 /* scrollbars, native inputs and spellcheck follow the theme */
+
+  /* Shadows are tinted with the darkest neutral, as an rgb triplet. Set to your neutral 950. */
+  --shadow-rgb: 31 34 36;
+  --ring: 0 0 0 1px rgb(var(--shadow-rgb) / 0.08);
+  --highlight: inset 0 1px 0 rgb(255 255 255 / 0.12);   /* top edge catch light on filled buttons */
+  --shadow-0: none;
+  --shadow-1: 0 1px 2px rgb(var(--shadow-rgb) / 0.06);
+  --shadow-2: 0 1px 2px rgb(var(--shadow-rgb) / 0.06), 0 4px 12px -2px rgb(var(--shadow-rgb) / 0.08);
+  --shadow-3: 0 2px 4px -1px rgb(var(--shadow-rgb) / 0.08), 0 12px 24px -6px rgb(var(--shadow-rgb) / 0.16);
+  --shadow-4: 0 4px 8px -2px rgb(var(--shadow-rgb) / 0.10), 0 24px 48px -12px rgb(var(--shadow-rgb) / 0.24);
+  --elevation-card: var(--ring), var(--shadow-1);
+  --elevation-card-hover: var(--ring), var(--shadow-2);
+  --elevation-popover: var(--ring), var(--shadow-3);
+  --elevation-modal: var(--ring), var(--shadow-4);
+
+  /* State layers on neutral surfaces (Material 3: hover .08, focus .10, pressed .10, dragged .16). */
+  --state-hover: color-mix(in oklch, var(--color-text) 8%, transparent);
+  --state-pressed: color-mix(in oklch, var(--color-text) 12%, transparent);
+
+  /* Grain: fractal noise tile, no network. Keep it decorative and faint. */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Elevation in dark = lighter surface. Shadows go; a white ring and a top highlight draw the edge. */
+    --ring: 0 0 0 1px rgb(255 255 255 / 0.08);
+    --highlight: inset 0 1px 0 rgb(255 255 255 / 0.06);
+    --shadow-1: none; --shadow-2: none; --shadow-3: none; --shadow-4: none;
+    --elevation-card: var(--ring);
+    --elevation-card-hover: 0 0 0 1px rgb(255 255 255 / 0.14);
+    --elevation-popover: var(--ring), inset 0 1px 0 rgb(255 255 255 / 0.05);
+    --elevation-modal: var(--ring), inset 0 1px 0 rgb(255 255 255 / 0.05);
+  }
+}
+
+/* Focus: one ring, never a shape change. */
+:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+:where(a:focus-visible) { border-radius: 4px; }  /* zero specificity: soft ring corners on links, any component radius wins */
+
+/* Theme the browser's own parts. */
+::selection { background: var(--color-selected-bg); color: var(--color-selected-text); }
+input, select, textarea { accent-color: var(--color-primary); caret-color: var(--color-focus-ring); }
+
+/* Type rendering. */
+h1, h2, h3 { text-wrap: balance; }
+p, li, dd { text-wrap: pretty; }
+table, .num, time, [data-num] { font-variant-numeric: tabular-nums lining-nums; }
+
+/* Edges. */
+html { scroll-padding-top: calc(64px + 16px); } /* sticky header height + --space-5 */
+.scroll-y { overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; } /* gutter on containers, not the root */
+.is-loading > .label { opacity: 0; } /* keeps the accessible name; visibility: hidden would delete it */
+.scroll-x {
+  overflow-x: auto; overscroll-behavior-x: contain;
+  background:
+    linear-gradient(to right, var(--color-surface) 30%, transparent) left / 32px 100% no-repeat local,
+    linear-gradient(to left, var(--color-surface) 30%, transparent) right / 32px 100% no-repeat local,
+    radial-gradient(farthest-side at 0 50%, rgb(var(--shadow-rgb) / 0.14), transparent) left / 12px 100% no-repeat scroll,
+    radial-gradient(farthest-side at 100% 50%, rgb(var(--shadow-rgb) / 0.14), transparent) right / 12px 100% no-repeat scroll;
+}
+.truncate { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Forced colors: shadows are removed, so give lifted surfaces a real edge. */
+@media (forced-colors: active) {
+  .card, .popover, dialog, [role=tooltip] { border: 1px solid CanvasText; }
+}

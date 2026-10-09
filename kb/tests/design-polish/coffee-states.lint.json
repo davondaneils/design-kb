@@ -1,0 +1,107 @@
+{
+  "file": "kb/tests/design-polish/coffee-states.html",
+  "date": "2026-10-09T22:17:22.576Z",
+  "checks": {
+    "axe": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "targets": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row > div.cell > button.btn.btn-secondary",
+          "w": 108.9,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row > div.cell > button.btn.btn-secondary",
+          "w": 108.9,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row > div.cell > button.btn.btn-secondary",
+          "w": 105.7,
+          "h": 38.8
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row > div.cell > button.btn.btn-secondary",
+          "w": 108.9,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row > div.cell > button.btn.btn-secondary",
+          "w": 108.9,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row > div.cell > button.btn.btn-secondary",
+          "w": 106.5,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row > div.cell > button.btn.btn-sm",
+          "w": 89.6,
+          "h": 40
+        }
+      ],
+      "pass": true
+    },
+    "measure": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "type-scale": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "spacing": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overflow": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "motion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    }
+  },
+  "summary": {
+    "focusables": 20,
+    "motionFound": {
+      "animations": 2,
+      "movingTransitions": 18
+    },
+    "axe": "pass",
+    "targets": "pass (7 warn)",
+    "measure": "pass",
+    "type-scale": "pass",
+    "spacing": "pass",
+    "overflow": "pass",
+    "focus": "pass",
+    "motion": "pass",
+    "result": "PASS",
+    "fails": 0,
+    "warns": 7
+  }
+}

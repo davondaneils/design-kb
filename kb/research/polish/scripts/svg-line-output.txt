@@ -1,0 +1,6 @@
+DPR 1 y=20, stroke 1: 2 rows, values 128,127
+DPR 1 y=20.5, stroke 1: 1 rows, values 0
+DPR 1 y=20, stroke 1, crispEdges: 1 rows, values 0
+DPR 2 y=20, stroke 1: 2 rows, values 0,0
+DPR 2 y=20.5, stroke 1: 2 rows, values 0,0
+DPR 2 y=20, stroke 1, crispEdges: 2 rows, values 0,0

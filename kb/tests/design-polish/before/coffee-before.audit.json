@@ -1,0 +1,168 @@
+{
+  "file": "kb/tests/design-polish/before/coffee-before.html",
+  "checks": {
+    "radius": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "census: 4px x4, 8px x2, 12px x14, 16px x4, full x84"
+        }
+      ]
+    },
+    "shadow": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "distinct shadows: 3"
+        }
+      ]
+    },
+    "hover-gate": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "icon-stroke": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "icon stroke 2px vs text stem 1.41px (16px 400)",
+          "sel": "ul.perks > li > svg",
+          "stroke": 2,
+          "stem": 1.41,
+          "text": "16px 400",
+          "caps": "butt"
+        },
+        {
+          "message": "icon stroke 2px vs text stem 1.41px (16px 400)",
+          "sel": "ul.perks > li > svg",
+          "stroke": 2,
+          "stem": 1.41,
+          "text": "16px 400",
+          "caps": "butt"
+        },
+        {
+          "message": "icon stroke 2px vs text stem 1.41px (16px 400)",
+          "sel": "ul.perks > li > svg",
+          "stroke": 2,
+          "stem": 1.41,
+          "text": "16px 400",
+          "caps": "butt"
+        },
+        {
+          "message": "icon stroke 2px vs text stem 1.23px (14px 400)",
+          "sel": "#email-error > svg",
+          "stroke": 2,
+          "stem": 1.23,
+          "text": "14px 400",
+          "caps": "butt"
+        }
+      ],
+      "info": [
+        {
+          "message": "icons checked: 4"
+        }
+      ]
+    },
+    "svg-hairline": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "color-scheme": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "tabular": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "7 numeric cells without tabular figures",
+          "examples": [
+            "div.wrap > div.offer > p.price",
+            "li.card > div.card-foot > p.price",
+            "li.card > div.card-foot > p.price",
+            "li.card > div.card-foot > p.price",
+            "ol.steps > li > span.num"
+          ]
+        }
+      ],
+      "info": []
+    },
+    "heading-wrap": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "heading on 2 lines without text-wrap: balance",
+          "sel": "#hero-title",
+          "lines": 2,
+          "wrap": "auto"
+        },
+        {
+          "message": "heading on 2 lines without text-wrap: balance",
+          "sel": "#sub-title",
+          "lines": 2,
+          "wrap": "auto"
+        },
+        {
+          "message": "heading on 2 lines without text-wrap: balance",
+          "sel": "#story-title",
+          "lines": 2,
+          "wrap": "auto"
+        },
+        {
+          "message": "heading on 2 lines at 390px without text-wrap: balance",
+          "sel": "#hero-title",
+          "lines": 2,
+          "wrap": "auto"
+        },
+        {
+          "message": "heading on 2 lines at 390px without text-wrap: balance",
+          "sel": "#sub-title",
+          "lines": 2,
+          "wrap": "auto"
+        },
+        {
+          "message": "heading on 2 lines at 390px without text-wrap: balance",
+          "sel": "#shop-title",
+          "lines": 2,
+          "wrap": "auto"
+        },
+        {
+          "message": "heading on 2 lines at 390px without text-wrap: balance",
+          "sel": "#story-title",
+          "lines": 2,
+          "wrap": "auto"
+        }
+      ],
+      "info": []
+    },
+    "focus-shape": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "elements tested: 22"
+        }
+      ]
+    },
+    "state-shift": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "forced-edge": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    }
+  },
+  "summary": {
+    "result": "PASS",
+    "fails": 0,
+    "warns": 12
+  }
+}
