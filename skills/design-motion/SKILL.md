@@ -1,9 +1,11 @@
 ---
 name: design-motion
-description: Motion and micro-interaction design for web and app UI. Use whenever a task involves animation, transitions, motion specs, easing curves, durations, springs, hover or press effects, micro-interactions (buttons, toggles, tooltips, toasts, loaders, success and error feedback), page or route transitions, View Transitions, scroll animations, parallax or scroll reveals, stagger and choreography, gestures (drag, swipe, flick to dismiss), prefers-reduced-motion and vestibular accessibility, animation performance and jank, or implementation in CSS transitions and keyframes, the Web Animations API, Motion (Framer Motion) or Lottie. Triggers on phrases like "animate this", "add a transition", "make it feel smoother or snappier", "onboarding animation", "motion spec", "easing", "spring", "micro-interaction", "why is this animation janky", "reduced motion". Do not use for static visual styling with no state change.
+description: Domain reference loaded by design-director or a design playbook (design-playbook-landing, -dashboard, -mobile, -brand); do not trigger on its own for a page, screen or brand job. Covers purpose and restraint, timing and easing, choreography and transitions, micro-interactions, reduced motion and animation performance, and implementation in CSS, WAAPI and Motion. Load it directly only when the user names it or asks a narrow question inside this domain alone.
 ---
 
 # design-motion
+
+> **Layer: domain reference.** Loaded after `design-foundations` by `design-director` or a `design-playbook-*` skill. Accessibility floor for every rule here: design-foundations `references/accessibility.md`.
 
 Motion is information about change: what happened, where it came from, where it went, what to do next. This skill makes Claude decide whether something should move, then specify and build it to the standard of the best interface teams (Apple, Linear, Vercel, Material, Carbon), safely for everyone.
 

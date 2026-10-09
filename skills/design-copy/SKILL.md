@@ -1,9 +1,11 @@
 ---
 name: design-copy
-description: Website copy structure and UX writing for sites and apps. Use when writing or reviewing hero headlines, subheadlines, section copy, CTAs and link labels; page outlines for homepages, landing pages, product and studio sites; UX microcopy such as buttons, form labels and hints, error messages, empty states, confirmation dialogs, success messages, onboarding, notifications and permission prompts; voice and tone guides, tone maps and style mechanics; readability, scannability and plain language rewrites; copy docs, string tables, localization-ready copy, and copy testing. Triggers include "write the copy for this page", "rewrite this headline", "what should this button say", "error message", "empty state", "microcopy", "UX writing", "content design", "voice and tone", "make this easier to read", "fix our homepage copy". For long-form persuasion, sales letters, VSLs and email sequences use the copywriting skill instead; for positioning use website-strategy.
+description: Domain reference loaded by design-director or a design playbook (design-playbook-landing, -dashboard, -mobile, -brand); do not trigger on its own for a page, screen or brand job. Covers UX writing: page copy structure, microcopy (buttons, labels, errors, empty states, notifications), voice and tone, readability and scannability, content design process. Load it directly only when the user names it or asks a narrow question inside this domain alone.
 ---
 
 # design-copy
+
+> **Layer: domain reference.** Loaded after `design-foundations` by `design-director` or a `design-playbook-*` skill. Accessibility floor for every rule here: design-foundations `references/accessibility.md`.
 
 Words are interface. This skill writes and reviews the copy that sits inside layouts: marketing pages and product UI. It leads with a fundamentals gate, then the expert moves.
 

@@ -1,9 +1,11 @@
 ---
 name: design-ux
-description: UX and interaction design for websites, web apps and iOS/Android apps. Use when designing, specifying, reviewing or critiquing user flows, screens, navigation, information architecture, forms, sign-up, checkout, onboarding, first-run, empty/loading/error/success states, toasts, modals, dialogs, confirmations, undo, mobile and touch patterns, gestures, Apple HIG or Material conventions, design system components and their states, or AI and long-running task UX. Triggers on phrases like "UX review", "usability", "user flow", "wireframe", "how should this screen work", "navigation for", "hamburger or tabs", "filters", "infinite scroll or pagination", "form design", "validation", "onboarding", "empty state", "loading state", "error message placement", "is this accessible to use", "port to Android", "component spec". Not for pure visual styling (design-color, design-typography, design-layout) or persuasion copy (copywriting).
+description: Domain reference loaded by design-director or a design playbook (design-playbook-landing, -dashboard, -mobile, -brand); do not trigger on its own for a page, screen or brand job. Covers usability gate, navigation and information architecture, forms, states and feedback, onboarding, touch and platform patterns, component specs and UX reviews. Load it directly only when the user names it or asks a narrow question inside this domain alone.
 ---
 
 # design-ux
+
+> **Layer: domain reference.** Loaded after `design-foundations` by `design-director` or a `design-playbook-*` skill. Accessibility floor for every rule here: design-foundations `references/accessibility.md`.
 
 Make interfaces that people understand on first sight, operate without error, and trust. Standard: what the Apple HIG authors, GOV.UK, Linear or Stripe would ship. Generic, safe or merely competent fails.
 

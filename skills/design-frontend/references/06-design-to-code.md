@@ -91,7 +91,7 @@ Sources: kb/research/frontend/06-design-to-code.md. Much of this chapter is stud
 2. Every value is a token; no off-scale numbers.
 3. State matrix complete for each component.
 4. Stress tests 1 to 7 pass.
-5. Accessibility protocol from chapter 03 passes.
+5. Accessibility testing protocol in design-foundations `references/accessibility.md` passes.
 6. Core Web Vitals lab check under budget; LCP element identified and prioritized.
 7. Visual regression snapshots (Playwright or Storybook with Chromatic) in light and dark at 375, 768 and 1280 widths (opinion).
 

@@ -1,6 +1,6 @@
 # Contrast and accessibility
 
-What is required, what is recommended, and how to pass by construction. Research notes with full citations: `kb/research/color/03-contrast-accessibility.md` in the design-kb repo. Floor for every skill: WCAG 2.2 AA (`kb/FOUNDATIONS.md`).
+What is required, what is recommended, and how to pass by construction. Research notes with full citations: `kb/research/color/03-contrast-accessibility.md` in the design-kb repo. Floor for every skill: WCAG 2.2 AA (`kb/FOUNDATIONS.md`). Cross-cutting accessibility (focus, targets, keyboard, forms, testing): design-foundations `references/accessibility.md`. This file keeps the color-specific part.
 
 ## Fundamentals (non-negotiable)
 1. **Body text 4.5:1.** Large text (at least 24px regular or 18.5px bold; on the shared type scale that is `--text-xl` 25px and up, or `--text-lg` 20px bold and up) **3:1**. WCAG SC 1.4.3, AA.

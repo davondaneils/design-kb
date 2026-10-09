@@ -1,9 +1,11 @@
 ---
 name: design-graphic
-description: Graphic design at top-studio level for logos and identity systems, icon sets, app icons and favicons, photography and art direction, illustration styles, social and marketing graphics (Open Graph images, posts, carousels, ads, posters), composition, and file export (SVG, PNG, WebP, AVIF, print PDF, logo kits). Use when someone asks to design, critique or spec a logo, wordmark, monogram, brand mark, visual identity, brand guidelines, icon or icon set, app icon, favicon, hero image, photo shoot brief, stock photo selection, AI image direction, illustration style, empty state art, social post, link preview, thumbnail, banner, poster, or asks which file formats and sizes to export. Not for palettes (design-color), font choice (design-typography), page layout (design-layout) or positioning (website-strategy).
+description: Domain reference loaded by design-director or a design playbook (design-playbook-landing, -dashboard, -mobile, -brand); do not trigger on its own for a page, screen or brand job. Covers logos and identity systems, icon sets and app icons, photography direction, illustration, social and marketing graphics, composition, and file export. Load it directly only when the user names it or asks a narrow question inside this domain alone.
 ---
 
 # design-graphic
+
+> **Layer: domain reference.** Loaded after `design-foundations` by `design-director` or a `design-playbook-*` skill. Accessibility floor for every rule here: design-foundations `references/accessibility.md`.
 
 Make graphics a top identity studio would sign off on. Run the fundamentals gate first; one miss fails the work no matter how clever the rest is. Then apply the expert moves.
 

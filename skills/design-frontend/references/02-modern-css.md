@@ -141,7 +141,7 @@ Check MDN or webstatus.dev before shipping anything in the middle and right colu
 ## Other user preferences
 - `prefers-contrast: more`: strengthen borders (`--color-border` to a darker step) and drop translucent surfaces.
 - `prefers-reduced-transparency: reduce`: replace frosted or translucent panels with solid surfaces (support is partial; enhancement only, V).
-- `prefers-reduced-motion`: see reference 03 and design-motion.
+- `prefers-reduced-motion`: see design-foundations `references/accessibility.md` and design-motion.
 - Contrast method: WCAG 2.2 ratios are the floor (foundation contract). Some practitioner guides (Vercel) prefer APCA; use it only as an extra check, never as the only pass.
 
 ## Do and don't

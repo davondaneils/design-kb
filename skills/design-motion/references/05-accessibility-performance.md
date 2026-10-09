@@ -1,5 +1,7 @@
 # 05 Reduced motion, accessibility and performance
 
+Cross-cutting accessibility floor: design-foundations `references/accessibility.md`. This file keeps the motion-specific part.
+
 ## Principles
 1. Reduce means replace, not remove. Motion that carries meaning becomes "a dissolve, highlight fade, or color shift"; decorative motion stops (Apple reduced motion criteria; Val Head).
 2. The risk is in how much of the visual field moves and in what way: scaling, spinning, multi-speed layers (parallax), large-area wipes and fast travel through depth are the triggers; small opacity and color changes are low risk (Val Head, A List Apart; Apple).

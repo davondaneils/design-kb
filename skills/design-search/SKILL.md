@@ -1,9 +1,11 @@
 ---
 name: design-search
-description: Search visibility for websites and apps, covering classic SEO and AEO (answer engine optimization for Google AI Overviews, AI Mode, ChatGPT search, Perplexity, Copilot, Claude). Use for technical SEO (crawling, indexing, canonicals, robots.txt, noindex, sitemaps, redirects, JavaScript rendering, hreflang, Core Web Vitals as a ranking input), on-page work (title tags, meta descriptions, headings, content structure, E-E-A-T, helpful content), schema.org structured data and rich results, site architecture, URL design, internal linking, faceted navigation and pagination, getting cited by AI answer engines and LLMs, AI crawler and robots.txt policy (GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended), llms.txt questions, local SEO and Google Business Profile, and SEO or AI visibility measurement and reporting (Search Console, Bing Webmaster Tools, GA4). Trigger on phrases like "SEO", "rank on Google", "show up in ChatGPT", "AI Overviews", "GEO", "AEO", "schema markup", "site migration", "why isn't my page indexed", "meta tags", "local pack", "SEO audit", "SEO report". Not for paid search ads, or for copy persuasion (use copywriting) or funnel design (use sales-funnels).
+description: Domain reference loaded by design-director or a design playbook (design-playbook-landing, -dashboard, -mobile, -brand); do not trigger on its own for a page, screen or brand job. Covers SEO and AEO: technical SEO, on-page content, structured data, site architecture and internal links, AI answer engines and crawler policy, local SEO and measurement. Load it directly only when the user names it or asks a narrow question inside this domain alone.
 ---
 
 # design-search
+
+> **Layer: domain reference.** Loaded after `design-foundations` by `design-director` or a `design-playbook-*` skill. Accessibility floor for every rule here: design-foundations `references/accessibility.md`.
 
 Facts in this skill are current to **2026-10-09**. Search, and AI search especially, changes monthly. Before giving advice that depends on a platform behavior, check the date on the fact in `references/` and say how old it is. Review due 2027-01-09.
 

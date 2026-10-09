@@ -1,9 +1,11 @@
 ---
 name: design-frontend
-description: Front-end build quality for websites and web apps - semantic HTML, modern CSS (design tokens, cascade layers, container queries, logical properties, fluid type, light and dark themes), WCAG 2.2 AA implementation, Core Web Vitals and performance budgets, responsive images and web fonts, and design-to-code fidelity, with notes for React, Next.js and Tailwind v4. Use whenever Claude writes, reviews or fixes HTML, CSS or UI components, builds a landing page, site, dashboard or artifact from a design or brief, converts Figma to code, sets up tokens or a theme switch, audits accessibility (focus, contrast, targets, forms, screen readers, keyboard), or fixes slow LCP, INP or CLS. Triggers include "build this page", "code this design", "make it accessible", "WCAG", "a11y audit", "Lighthouse", "Core Web Vitals", "page is slow", "layout shift", "dark mode", "design tokens", "Tailwind", "Next.js image", "font loading", "srcset", "container queries", "responsive". Not for choosing palettes, typefaces, layouts or copy themselves (use the other design-kb skills).
+description: Domain reference loaded by design-director or a design playbook (design-playbook-landing, -dashboard, -mobile, -brand); do not trigger on its own for a page, screen or brand job. Covers build quality: semantic HTML, modern CSS and token files, performance and Core Web Vitals, images and web fonts, design-to-code fidelity (React, Next.js, Tailwind v4). Load it directly only when the user names it or asks a narrow question inside this domain alone.
 ---
 
 # design-frontend
+
+> **Layer: domain reference.** Loaded after `design-foundations` by `design-director` or a `design-playbook-*` skill. Accessibility floor for every rule here: design-foundations `references/accessibility.md`.
 
 The build layer of design-kb. Every visual decision from design-color, design-typography, design-layout, design-graphic, design-ux and design-motion ends up here as HTML and CSS. This skill makes that code correct, accessible, fast and faithful to the design, at the level a top product studio ships.
 
@@ -22,7 +24,7 @@ A build that misses any of these fails, however good the rest is.
 6. Every image has `alt` (empty for decoration); icon-only buttons have an accessible name; decorative SVGs are `aria-hidden="true"`.
 7. Native before ARIA: `<dialog>`, `popover`, `<details>`, `inert`, real inputs. If you add a `role`, you own its full keyboard pattern.
 
-**Accessibility floor (WCAG 2.2 AA)**
+**Accessibility floor (WCAG 2.2 AA; full rules and testing protocol in design-foundations `references/accessibility.md`)**
 8. Contrast 4.5:1 for body text, 3:1 for large text (24px, or 18.66px bold), UI boundaries, states and focus indicators, in light and dark themes.
 9. Visible `:focus-visible` outline (2px minimum, 3:1), never hidden by sticky headers or banners (`scroll-padding-block-start`). No `outline: none` without a replacement.
 10. Targets at least 24 by 24 CSS px; 44 by 44 for primary touch controls.
@@ -117,7 +119,7 @@ A short note listing: the LCP element and how it is prioritized, the token sourc
 |---|---|
 | Element choice, head order, forms, dialog and popover recipes | `references/01-semantic-html.md` |
 | Token file, layers, container queries, fluid type maths, theming, reset, Baseline table, forced colors | `references/02-modern-css.md` |
-| WCAG 2.2 AA checklist for code, focus, targets, live regions, testing protocol, legal context | `references/03-accessibility.md` |
+| WCAG 2.2 AA checklist for code, focus, targets, live regions, testing protocol, legal context | design-foundations `references/accessibility.md` (moved there as the cross-cutting floor) |
 | Core Web Vitals thresholds, LCP subparts, INP yielding, CLS, bfcache, speculation rules, budgets, measuring | `references/04-performance.md` |
 | Image formats, srcset and sizes maths, lazy loading, font loading and fallback metrics | `references/05-images-fonts.md` |
 | Token mapping from Figma, state matrix, stress tests, craft details, React/Next, Tailwind v4, QA checklist | `references/06-design-to-code.md` |

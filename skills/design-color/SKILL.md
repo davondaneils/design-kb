@@ -1,9 +1,11 @@
 ---
 name: design-color
-description: Color for websites, apps and brand work, at the level of a top studio. Use whenever the task involves choosing, building, checking or explaining color - "pick a palette", "brand colors", "color scheme", "color palette for my landing page", "make this accessible", "check contrast", "WCAG contrast", "APCA", "dark mode colors", "light and dark theme", "design tokens for color", "Tailwind colors", "OKLCH", "hover/disabled state colors", "my brand color fails contrast", "what color should this brand be", "color psychology", or reviewing a UI's colors. Also use when writing CSS custom properties for color or turning a client's hex codes into a system. Not for chart palettes alone (use dataviz), positioning (use website-strategy) or print/CMYK.
+description: Domain reference loaded by design-director or a design playbook (design-playbook-landing, -dashboard, -mobile, -brand); do not trigger on its own for a page, screen or brand job. Covers color models and OKLCH, contrast-locked 50 to 950 ramps, WCAG and APCA contrast checks, semantic color tokens, light and dark themes, state colors, brand color choice and color psychology evidence, plus the oklch_scale.py ramp and contrast tool. Load it directly only when the user names it or asks a narrow question inside this domain alone.
 ---
 
 # design-color
+
+> **Layer: domain reference.** Loaded after `design-foundations` by `design-director` or a `design-playbook-*` skill. Accessibility floor for every rule here: design-foundations `references/accessibility.md`.
 
 Make color decisions that a top studio would sign off on: fundamentals perfect first, then the expert layer. All defaults follow the shared contract in `kb/FOUNDATIONS.md` (design-kb repo): token names `--color-{role}-{variant}`, 50 to 950 primitive ramps, WCAG 2.2 AA floor.
 

@@ -1,9 +1,11 @@
 ---
 name: design-layout
-description: Layout, grids, spacing and visual hierarchy for web, app and graphic work. Use whenever Claude lays out or critiques a page, screen, component or composition, including "lay out", "wireframe", "structure this page", "grid", "columns", "spacing feels off", "too cramped", "too much white space", "make X stand out", "visual hierarchy", "nothing stands out", "responsive", "mobile version", "breakpoints", "sidebar", "dashboard layout", "landing page structure", "pricing page", "article layout", "card grid", "table layout", "density", "compact mode", "align", "full bleed", or when writing HTML/CSS/Tailwind/Figma frames whose arrangement matters. Not for color values (design-color), type choice (design-typography) or copy (design-copy).
+description: Domain reference loaded by design-director or a design playbook (design-playbook-landing, -dashboard, -mobile, -brand); do not trigger on its own for a page, screen or brand job. Covers grids, spacing and rhythm, visual hierarchy and grouping, responsive and adaptive layout (breakpoint plans, container queries), page composition and density. Load it directly only when the user names it or asks a narrow question inside this domain alone.
 ---
 
 # design-layout
+
+> **Layer: domain reference.** Loaded after `design-foundations` by `design-director` or a `design-playbook-*` skill. Accessibility floor for every rule here: design-foundations `references/accessibility.md`.
 
 Layout decides what people see first, what they see as a group, and whether the page holds from 320px to 2560px. This skill gives the rules, numbers and moves a top studio uses. Defaults follow the shared design-kb foundation contract (spacing, breakpoints, type, radius tokens). Deviate only on purpose and say why.
 

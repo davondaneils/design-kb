@@ -1,9 +1,11 @@
 ---
 name: design-typography
-description: Typography and font pairing for web, app and editorial design at top-studio level. Use whenever a task involves choosing or pairing fonts, building a type scale or type tokens, setting font sizes, line height (leading), line length (measure), letter spacing (tracking), heading hierarchy, readable body text, fluid or responsive type with clamp(), web font loading (font-display, preload, layout shift from fonts, FOIT or FOUT), variable fonts and axes (wght, opsz, GRAD), font licensing (OFL, web vs desktop vs app licenses, Google Fonts, Adobe Fonts), or typographic detail (curly quotes, dashes, tabular or oldstyle numerals, small caps, kerning, ligatures, OpenType features, hanging punctuation, text-wrap balance or pretty). Triggers on phrases like "what font should I use", "font pairing", "type scale", "make the text more readable", "headings look off", "typography system", "font loading is slow", "CLS from fonts", "is this font free for commercial use", "numbers jump around", "make it look premium". Not for color contrast math (design-color), grids and spacing systems (design-layout), or copy wording (design-copy).
+description: Domain reference loaded by design-director or a design playbook (design-playbook-landing, -dashboard, -mobile, -brand); do not trigger on its own for a page, screen or brand job. Covers type scale and tokens, measure and leading, font selection and pairing, web font loading and licensing, variable fonts, UI and editorial hierarchy, and typographic detail (numerals, quotes, OpenType features, text-wrap). Load it directly only when the user names it or asks a narrow question inside this domain alone.
 ---
 
 # Design typography
+
+> **Layer: domain reference.** Loaded after `design-foundations` by `design-director` or a `design-playbook-*` skill. Accessibility floor for every rule here: design-foundations `references/accessibility.md`.
 
 Typography is the voice and the reading experience of every interface. This skill sets type the way Bringhurst, the Apple HIG authors, and the type teams at Stripe, Linear and Klim would sign off on: fundamentals perfect first, then the details a strong generalist misses.
 
