@@ -28,8 +28,22 @@ export async function launch() {
   }
 }
 
-// Accepts a local path or an http(s) URL.
+// Accepts a local path (optionally with a ?query, for page states), a file: URL or an http(s) URL.
 export function toUrl(target) {
   if (/^https?:\/\//.test(target) || target.startsWith('file:')) return target;
-  return pathToFileURL(path.resolve(target)).href;
+  const q = target.indexOf('?');
+  if (q === -1) return pathToFileURL(path.resolve(target)).href;
+  return pathToFileURL(path.resolve(target.slice(0, q))).href + target.slice(q);
+}
+
+// Local file path and a file-name-safe slug of the query, for output names.
+// 'page.html?state=loading' or 'file:///x/page.html?state=loading' -> { file: '/x/page.html', slug: 'state-loading' }
+export function splitTarget(target) {
+  let t = target;
+  if (t.startsWith('file:')) t = decodeURIComponent(new URL(t).pathname) + (new URL(t).search || '');
+  const q = t.indexOf('?');
+  const file = q === -1 ? t : t.slice(0, q);
+  const query = q === -1 ? '' : t.slice(q + 1);
+  const slug = query.replace(/[=&]+/g, '-').replace(/[^\w.-]+/g, '').replace(/^-+|-+$/g, '');
+  return { file, slug };
 }

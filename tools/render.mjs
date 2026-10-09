@@ -2,13 +2,13 @@
 // Render a page to full-page screenshots at 390px and 1440px, light and dark.
 //
 // Usage:
-//   node tools/render.mjs <html-or-url> <outdir> [--name base] [--jpeg [quality]]
+//   node tools/render.mjs <html-or-url[?state=x]> <outdir> [--name base] [--jpeg [quality]]
 //          [--widths 390,1440] [--schemes light,dark] [--viewport-only]
 //
 // Output: <outdir>/<base>-<width>-<scheme>.png (or .jpg), plus a list on stdout.
 import fs from 'node:fs';
 import path from 'node:path';
-import { launch, toUrl } from './browser.mjs';
+import { launch, toUrl, splitTarget } from './browser.mjs';
 
 function parseArgs(argv) {
   const opts = { widths: [390, 1440], schemes: ['light', 'dark'], jpeg: false, quality: 70, viewportOnly: false };
@@ -35,7 +35,8 @@ if (!opts.target || !opts.outdir) {
   process.exit(2);
 }
 const isRemote = /^https?:/.test(opts.target);
-const base = opts.name || path.basename(opts.target).replace(/\.html?$/, '') || 'page';
+const split = isRemote ? { file: opts.target, slug: '' } : splitTarget(opts.target);
+const base = opts.name || (path.basename(split.file).replace(/\.html?$/, '') + (split.slug ? '-' + split.slug : '')) || 'page';
 fs.mkdirSync(opts.outdir, { recursive: true });
 
 const browser = await launch();
