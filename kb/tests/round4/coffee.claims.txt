@@ -1,0 +1,102 @@
+Claims inventory: /home/claude/design-kb/.claude/worktrees/agent-aa8f94194e4294d3b/kb/tests/round4/coffee.html (98 strings to check against the data)
+
+  1  Cart 0
+  2  This week’s single-origin coffee · Lot 0412
+  3  Ethiopia Guji, roasted Tuesday in Portland.
+  4  $ 18
+  5  a bag on subscription, shipping included. $21 as a single bag.
+  6  Subscribe, $18 a bag
+  7  Buy this bag, $21
+  8  Order by Mon, Oct 12 for the Oct 13 roast.
+  9  4.7 from 1,284 subscriber reviews
+ 10  Ethiopia Guji 0412
+ 11  Lot 0412 beside the green coffee it started as.
+ 12  60 bags this season
+ 13  2,100 m
+ 14  12 kg
+ 15  1 day
+ 16  See all 9 coffees
+ 17  Three coffees, grown 1,100 to 2,100 meters up
+ 18  Hambela Wamena, washed, 2,100 m
+ 19  $21 / 340 g
+ 20  $18 on subscription
+ 21  1,750 m
+ 22  Finca El Mirador, washed, 1,750 m
+ 23  $19 / 340 g
+ 24  $16 on subscription
+ 25  1,100 and 1,600 m
+ 26  Brazil and Guatemala blend, 1,100 and 1,600 m
+ 27  $18 / 340 g
+ 28  $15 on subscription
+ 29  Single bags ship for $6, free over $40. Subscriptions always ship free.
+ 30  Subscribers pay $3 less a bag, and shipping is included
+ 31  4.7
+ 32  out of 5, from 1,284 subscriber reviews since 2023
+ 33  5 stars
+ 34  1,040
+ 35  4 stars
+ 36  160
+ 37  3 stars
+ 38  44
+ 39  2 stars
+ 40  22
+ 41  1 star
+ 42  18
+ 43  Ines R. , Tacoma · moka pot · 3 of 5 Maya, head roaster: We swapped her next bag for the Huila, which takes the heat better. Tell us how you brew and we will do the same for you.
+ 44  3 questions
+ 45  $18
+ 46  $16
+ 47  $15
+ 48  Pour-over
+ 49  How often? A 340 g bag makes about 20 cups.
+ 50  Every 2 weeks
+ 51  About 10 cups a week
+ 52  Every 4 weeks
+ 53  About 5 cups a week
+ 54  First bag ships Wed, Oct 14
+ 55  $18 every 2 weeks , charged on roast day. First roast Tue, Oct 13; next charge Tue, Oct 27. Skip, pause or cancel online any time before a roast.
+ 56  Subscribe, $18 every 2 weeks
+ 57  Not for you? Tell us within 30 days and your next bag is on us.
+ 58  We roast on a 1962 Probat in Southeast Portland, 12 kilos at a time. Every batch is logged, and we print what we paid for every lot on the bag.
+ 59  10:10 · 207 °C
+ 60  Batch 0412, Ethiopia Guji. Bean temperature over 10 minutes 10 seconds, the bag in your hands. It ends at the moment above.
+ 61  First crack 8:40 at 196 °C · out at 10:10 at 207 °C
+ 62  200 °C
+ 63  150 °C
+ 64  100 °C
+ 65  0:00
+ 66  5:00
+ 67  10:10
+ 68  Turning point 1:30, 92 °C
+ 69  Yellowing 5:30, 160 °C
+ 70  First crack 8:40, 196 °C
+ 71  What we paid, lot 0412
+ 72  2.3 ×
+ 73  We paid 2.3 times the Fairtrade minimum.
+ 74  Per pound of green coffee, 2026 harvest
+ 75  $1.80
+ 76  Commodity price (New York “C”), Sep 30
+ 77  $2.62
+ 78  $4.10
+ 79  Batch 0412
+ 80  1
+ 81  We buy direct and visit every farm we buy from at least once every two years. The ledger above is what lot 0412 cost.
+ 82  2
+ 83  3
+ 84  New lots with their maps, brew notes and the odd subscriber-only release. Twice a month, no more.
+ 85  Ember & Oak Coffee Roasters, 1120 SE Water Ave, Portland, OR 97214. Cafe open daily, 7 am to 3 pm.
+ 86  45.51° N, 122.67° W · 15 m · © 2026
+ 87  $21 a bag, 340 g
+ 88  . Roasted Tue, Oct 13, ships Wed, Oct 14.
+ 89  Add to cart, $21
+ 90  2 items
+ 91  This week’s coffee is Ethiopia Guji, roasted Tue, Oct 13 in Portland and shipped Wed, Oct 14.
+ 92  Check out, $39.00
+ 93  Roaster’s choice every 2 weeks, and one bag of Ethiopia Guji
+ 94  Pay $39.00
+ 95  A bag of Ethiopia Guji, lot 0412, standing on a worn oak table by a window, with a handful of pale green unroasted beans at its foot.
+ 96  A roaster in a gray apron leans over a row of tasting bowls with a spoon, the drum roaster behind her against a brick wall.
+ 97  One bag fewer
+ 98  One bag more
+
+No mechanical flags. Now tick every line above against its source: chart data, price list, policy, log.
