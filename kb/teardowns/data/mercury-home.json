@@ -1,0 +1,1605 @@
+{
+ "url": "https://mercury.com",
+ "measuredAt": "2026-10-10T16:47:48.392Z",
+ "method": "Playwright Chromium, getComputedStyle on visible elements, light scheme, after scroll-through and fonts.ready",
+ "widths": {
+  "390": {
+   "status": 200,
+   "finalUrl": "https://mercury.com/",
+   "width": 390,
+   "h1Style": {
+    "font": "arcadiaDisplay 28px/30.8px w480 ls normal",
+    "color": "#ededf3",
+    "top": 128,
+    "width": 342,
+    "align": "center"
+   },
+   "title": "Online Business Banking For Startups, Small Businesses & Scaling Companies",
+   "description": "Everything you do with money. All in one place. Apply in 10 minutes for business banking that transforms how you operate.",
+   "pageHeight": 15035,
+   "bodyBg": "#000000 a0",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "arcadia 360 500 normal",
+    "arcadiaDisplay 320 480 normal"
+   ],
+   "families": [
+    {
+     "v": "arcadia, \"arcadia Fallback\"",
+     "n": 9069
+    },
+    {
+     "v": "arcadiaDisplay, \"arcadiaDisplay Fallback\"",
+     "n": 926
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "10px / lh 14px / w400 / ls 0.3px",
+     "n": 4335,
+     "ex": "p: Mercury will occasionally send you emails with offers, news,"
+    },
+    {
+     "v": "14px / lh 18.9px / w360 / ls normal",
+     "n": 1491,
+     "ex": "span: Introducing Mercury Books, AI-powered accounting software, b"
+    },
+    {
+     "v": "14px / lh 19.6px / w400 / ls 0.14px",
+     "n": 1288,
+     "ex": "span: Apply for free checking and savings accounts with zero minim"
+    },
+    {
+     "v": "16px / lh 16px / w420 / ls normal",
+     "n": 778,
+     "ex": "button: Products"
+    },
+    {
+     "v": "14px / lh 18.9px / w480 / ls normal",
+     "n": 355,
+     "ex": "span: Create cards in a couple of clicks"
+    },
+    {
+     "v": "14px / lh 19.6px / w480 / ls 0.14px",
+     "n": 292,
+     "ex": "span: Business banking & more"
+    },
+    {
+     "v": "21.008px / lh 25.2096px / w480 / ls 0.42016px",
+     "n": 283,
+     "ex": "span: Everything you do with money. All in one place."
+    },
+    {
+     "v": "10px / lh 14px / w480 / ls 0.3px",
+     "n": 200,
+     "ex": "span: Check this box if you do not want to receive them."
+    },
+    {
+     "v": "28px / lh 33.6px / w480 / ls 0.42px",
+     "n": 166,
+     "ex": "span: Loved by + of themost ambitious entrepreneurs on the planet"
+    },
+    {
+     "v": "24px / lh 28.8px / w480 / ls 0.48px",
+     "n": 165,
+     "ex": "span: Banking’s been a headache. Now, it’s a head start."
+    },
+    {
+     "v": "21.008px / lh 25.2096px / w360 / ls 0.42016px",
+     "n": 147,
+     "ex": "span: Mercury has completely changed my expectations of what banki"
+    },
+    {
+     "v": "10px / lh 14px / w700 / ls 0.3px",
+     "n": 147,
+     "ex": "strong: Treasury accounts are not FDIC insured, are not bank deposit"
+    },
+    {
+     "v": "16px / lh 21.6px / w360 / ls normal",
+     "n": 124,
+     "ex": "span: Apply online in 10 minutes to experience banking unlike anyt"
+    },
+    {
+     "v": "18px / lh 24.3px / w480 / ls 0.54px",
+     "n": 119,
+     "ex": "span: Unlike most financial institutions, Mercury is built on soft"
+    },
+    {
+     "v": "16px / lh 21.6px / w480 / ls normal",
+     "n": 30,
+     "ex": "span: Karri Saarinen"
+    },
+    {
+     "v": "28px / lh 30.8px / w480 / ls normal",
+     "n": 27,
+     "ex": "span: Radically different banking"
+    },
+    {
+     "v": "16px / lh 24px / w400 / ls normal",
+     "n": 25,
+     "ex": "span: Open Menu"
+    },
+    {
+     "v": "36px / lh 39.6px / w480 / ls normal",
+     "n": 19,
+     "ex": "span: +"
+    },
+    {
+     "v": "14px / lh 14px / w420 / ls 0.07px",
+     "n": 4,
+     "ex": "span: SaaS"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#ededf3",
+     "n": 6624
+    },
+    {
+     "v": "#c3c3cc",
+     "n": 3100
+    },
+    {
+     "v": "#f4f5f9",
+     "n": 133
+    },
+    {
+     "v": "#2a2924",
+     "n": 77
+    },
+    {
+     "v": "#ffffff",
+     "n": 36
+    },
+    {
+     "v": "#000000",
+     "n": 25
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#ededf3 on #171721",
+     "n": 6277,
+     "ex": "15.25:1"
+    },
+    {
+     "v": "#c3c3cc on #171721",
+     "n": 2862,
+     "ex": "10.16:1"
+    },
+    {
+     "v": "#ededf3 on #1e1e2a",
+     "n": 303,
+     "ex": "14.13:1"
+    },
+    {
+     "v": "#c3c3cc on #1e1e2a",
+     "n": 238,
+     "ex": "9.42:1"
+    },
+    {
+     "v": "#f4f5f9 on #272735",
+     "n": 133,
+     "ex": "13.5:1"
+    },
+    {
+     "v": "#2a2924 on #f8f8f5",
+     "n": 77,
+     "ex": "13.7:1"
+    },
+    {
+     "v": "#ededf3 on #272735",
+     "n": 44,
+     "ex": "12.61:1"
+    },
+    {
+     "v": "#ffffff on #5266eb",
+     "n": 36,
+     "ex": "4.71:1"
+    },
+    {
+     "v": "#000000 on #171721",
+     "n": 25,
+     "ex": "1.18:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#171721",
+     "n": 8164
+    },
+    {
+     "v": "#272735",
+     "n": 684
+    },
+    {
+     "v": "#1e1e2a",
+     "n": 526
+    },
+    {
+     "v": "linear-gradient(rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0) 100%)",
+     "n": 176
+    },
+    {
+     "v": "#9cb4e8 a0.2",
+     "n": 29
+    },
+    {
+     "v": "#afb2ce a0.2",
+     "n": 28
+    },
+    {
+     "v": "#f8f8f5",
+     "n": 24
+    },
+    {
+     "v": "#5266eb",
+     "n": 19
+    },
+    {
+     "v": "#707393 a0.1",
+     "n": 5
+    },
+    {
+     "v": "#ededf3",
+     "n": 1
+    },
+    {
+     "v": "#cdddff",
+     "n": 0
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #afb2ce a0.36",
+     "n": 17
+    },
+    {
+     "v": "1px #70707d",
+     "n": 9
+    },
+    {
+     "v": "1px #707393 a0.22",
+     "n": 4
+    },
+    {
+     "v": "1px #ededf3",
+     "n": 3
+    },
+    {
+     "v": "1px #c3c3cc",
+     "n": 1
+    }
+   ],
+   "radii": [
+    {
+     "v": "4px",
+     "n": 115,
+     "ex": "span.rounded outline-offset-4 outli"
+    },
+    {
+     "v": "12px",
+     "n": 27,
+     "ex": "div.mx-auto w-fit overflow-hidden "
+    },
+    {
+     "v": "8px",
+     "n": 17,
+     "ex": "div.h-8 max-h-8 w-8 max-w-8 shrink"
+    },
+    {
+     "v": "3.35544e+07px",
+     "n": 10,
+     "ex": "button.group inline-flex w-fit items-"
+    },
+    {
+     "v": "40px",
+     "n": 5,
+     "ex": "a.group items-center justify-cen"
+    },
+    {
+     "v": "32px",
+     "n": 4,
+     "ex": "a.group items-center justify-cen"
+    },
+    {
+     "v": "32px 0px 0px 32px",
+     "n": 1,
+     "ex": "input.h-full w-full rounded-s-4xl bg"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(28, 28, 35, 0.02) 0px 10px 16px 0px, rgba(28, 28, 35, 0.04) 0px 6px 10px 0px, rgba(28, 28, 35, 0.09) 0px 0px 3px 0px",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 3px 0px, rgba(0, 0, 0, 0.05) 0px 8px 12px 0px, rgba(0, 0, 0, 0.05) 0px 12px 20px 0px",
+     "n": 1,
+     "ex": "small"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "color, background-color, border-color, outline-col 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 25,
+     "ex": "button"
+    },
+    {
+     "v": "color, background-color, border-color, outline-col 0.3s cubic-bezier(0, 0, 0.2, 1)",
+     "n": 19,
+     "ex": "a"
+    },
+    {
+     "v": "color, background-color, border-color, outline-col 0.5s cubic-bezier(0, 0, 0.6, 1)",
+     "n": 8,
+     "ex": "div"
+    },
+    {
+     "v": "transform, translate, rotate, opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 3,
+     "ex": "span"
+    },
+    {
+     "v": "grid-template-rows 0.3s cubic-bezier(0, 0, 0.2, 1)",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "transform, translate, scale, rotate 0.3s cubic-bezier(0.2, 1, 0.4, 1)",
+     "n": 1,
+     "ex": "nav"
+    },
+    {
+     "v": "opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 1,
+     "ex": "video"
+    },
+    {
+     "v": "bottom 0.5s cubic-bezier(0.65, 0.05, 0.36, 1)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "padding-bottom, translate 0.5s cubic-bezier(0.65, 0.05, 0.36, 1)",
+     "n": 1,
+     "ex": "small"
+    },
+    {
+     "v": "all 0.8s cubic-bezier(0.76, 0, 0.24, 1)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "opacity 0.2s cubic-bezier(0, 0, 0.2, 1)",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "animations": [
+    {
+     "v": "translateUp, fadeIn 0.67s, 0.67s cubic-bezier(0.28, 1.1, 0.74, 1), cubic-bezier(0.59, 0.41, 0.68, 0.49) x1, 1",
+     "n": 12
+    },
+    {
+     "v": "scroll 45s linear xinfinite",
+     "n": 1
+    },
+    {
+     "v": "fadeInTabTranslate 0.3s ease-in-out x1",
+     "n": 1
+    },
+    {
+     "v": "fadeInTabTranslate 0s ease-in-out x1",
+     "n": 1
+    }
+   ],
+   "maxWidths": [
+    {
+     "v": "1952px (rendered 390px)",
+     "n": 23,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 342px)",
+     "n": 9,
+     "ex": "img"
+    },
+    {
+     "v": "608px (rendered 366px)",
+     "n": 6,
+     "ex": "div"
+    },
+    {
+     "v": "608px (rendered 342px)",
+     "n": 4,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 318px)",
+     "n": 4,
+     "ex": "video"
+    },
+    {
+     "v": "1376px (rendered 342px)",
+     "n": 4,
+     "ex": "img"
+    },
+    {
+     "v": "100% (rendered 390px)",
+     "n": 3,
+     "ex": "img"
+    },
+    {
+     "v": "1320px (rendered 310px)",
+     "n": 3,
+     "ex": "img"
+    },
+    {
+     "v": "448px (rendered 342px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "688px (rendered 342px)",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 15
+    }
+   ],
+   "gaps": [
+    {
+     "v": "16px",
+     "n": 16
+    },
+    {
+     "v": "32px",
+     "n": 13
+    },
+    {
+     "v": "12px",
+     "n": 11
+    },
+    {
+     "v": "4px",
+     "n": 9
+    },
+    {
+     "v": "8px",
+     "n": 5
+    },
+    {
+     "v": "16px / col normal",
+     "n": 4
+    },
+    {
+     "v": "32px / col 16px",
+     "n": 3
+    },
+    {
+     "v": "64px / col 32px",
+     "n": 1
+    },
+    {
+     "v": "64px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "24px",
+     "n": 58
+    },
+    {
+     "v": "12px",
+     "n": 53
+    },
+    {
+     "v": "16px",
+     "n": 46
+    },
+    {
+     "v": "1px",
+     "n": 14
+    },
+    {
+     "v": "32px",
+     "n": 14
+    },
+    {
+     "v": "20px",
+     "n": 9
+    },
+    {
+     "v": "56px",
+     "n": 8
+    },
+    {
+     "v": "2px",
+     "n": 6
+    },
+    {
+     "v": "8px",
+     "n": 4
+    },
+    {
+     "v": "80px",
+     "n": 3
+    },
+    {
+     "v": "96px",
+     "n": 3
+    },
+    {
+     "v": "72px",
+     "n": 2
+    },
+    {
+     "v": "217.375px",
+     "n": 1
+    },
+    {
+     "v": "64px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "12px",
+     "n": 30
+    },
+    {
+     "v": "8px",
+     "n": 10
+    },
+    {
+     "v": "20px",
+     "n": 10
+    },
+    {
+     "v": "32px",
+     "n": 5
+    },
+    {
+     "v": "96px",
+     "n": 4
+    },
+    {
+     "v": "14px",
+     "n": 4
+    },
+    {
+     "v": "24px",
+     "n": 3
+    },
+    {
+     "v": "16px",
+     "n": 1
+    },
+    {
+     "v": "56px",
+     "n": 1
+    }
+   ],
+   "measure": null,
+   "rootVars": {
+    "--font-mono": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
+    "--spacing": "1px",
+    "--leading-tight": "1.25",
+    "--leading-normal": "1.5",
+    "--radius-sm": ".25rem",
+    "--radius-md": ".375rem",
+    "--radius-lg": ".5rem",
+    "--radius-xl": ".75rem",
+    "--radius-2xl": "1rem",
+    "--radius-3xl": "1.5rem",
+    "--radius-4xl": "2rem",
+    "--ease-in": "cubic-bezier(.4,0,1,1)",
+    "--ease-out": "cubic-bezier(0,0,.2,1)",
+    "--ease-in-out": "cubic-bezier(.4,0,.2,1)",
+    "--animate-spin": "spin 1s linear infinite",
+    "--blur-sm": "8px",
+    "--blur-md": "12px",
+    "--aspect-video": "16/9",
+    "--default-transition-duration": ".15s",
+    "--default-transition-timing-function": "cubic-bezier(.4,0,.2,1)",
+    "--default-font-family": "var(--font-arcadia)",
+    "--default-mono-font-family": "var(--font-mono)",
+    "--spacing-0": "0px",
+    "--spacing-1": "1px",
+    "--spacing-2": "2px",
+    "--spacing-4": "4px",
+    "--spacing-8": "8px",
+    "--spacing-12": "12px",
+    "--spacing-16": "16px",
+    "--spacing-20": "20px",
+    "--spacing-24": "24px",
+    "--spacing-32": "32px",
+    "--spacing-40": "40px",
+    "--spacing-48": "48px",
+    "--spacing-56": "56px",
+    "--spacing-64": "64px",
+    "--spacing-72": "72px",
+    "--spacing-80": "80px",
+    "--spacing-96": "96px",
+    "--spacing-112": "112px",
+    "--spacing-128": "128px",
+    "--spacing-144": "144px",
+    "--spacing-160": "160px",
+    "--spacing-192": "192px",
+    "--spacing-224": "224px",
+    "--spacing-240": "240px",
+    "--s0": "var(--spacing-0)",
+    "--s4": "var(--spacing-4)",
+    "--s8": "var(--spacing-8)",
+    "--s12": "var(--spacing-12)",
+    "--s16": "var(--spacing-16)",
+    "--s20": "var(--spacing-20)",
+    "--s7": "var(--spacing-72)",
+    "--s9": "var(--spacing-96)",
+    "--s11": "var(--spacing-160)",
+    "--gap-xs": "var(--spacing-12)",
+    "--gap-sm": "var(--spacing-24)",
+    "--gap-md": "var(--spacing-32)",
+    "--gap-lg": "var(--spacing-32)",
+    "--gap-xl": "var(--spacing-40)",
+    "--gap-2xl": "var(--spacing-80)",
+    "--gap-3xl": "var(--spacing-128)",
+    "--grid-gutters": "var(--gap-md)",
+    "--grid-margins": "var(--gap-lg)",
+    "--stack-gap-sm": "var(--gap-xs)",
+    "--stack-gap-md": "var(--gap-sm)",
+    "--stack-gap-lg": "var(--gap-xl)",
+    "--column-gap-listings": "var(--spacing-32)",
+    "--column-gap-logomash": "var(--spacing-56)",
+    "--perk-bundle-media-padding": "var(--spacing-32)",
+    "--column-gap-sm": "var(--gap-xs)",
+    "--column-gap-md": "var(--gap-sm)",
+    "--column-gap-lg": "var(--gap-lg)",
+    "--layout-padding-sm": "var(--gap-xl)",
+    "--layout-padding-md": "var(--gap-2xl)",
+    "--layout-padding-lg": "var(--gap-3xl)",
+    "--layout-padding-xl": "var(--spacing-144)",
+    "--hero-padding-default": "var(--spacing-80)",
+    "--spacing-fadeIn": "50px",
+    "--spacing-screen-without-navbar": "calc(100dvh - var(--navbar-height))",
+    "--spacing-grid-margins": "var(--grid-margins)",
+    "--text-xxs": ".625rem",
+    "--text-xs": ".75rem",
+    "--text-sm": ".875rem",
+    "--text-base": "1rem",
+    "--text-md": "1.125rem",
+    "--text-lg": "1.313rem",
+    "--text-xl": "1.5rem",
+    "--text-2xl": "1.75rem",
+    "--text-3xl": "2rem",
+    "--text-4xl": "2.25rem",
+    "--text-5xl": "2.625rem",
+    "--text-6xl": "3rem",
+    "--text-7xl": "3.438rem",
+    "--font-weight-300": "300",
+    "--font-weight-360": "360",
+    "--font-weight-400": "400",
+    "--font-weight-420": "420",
+    "--font-weight-480": "480",
+    "--font-weight-500": "500",
+    "--font-weight-medium": "530",
+    "--tracking-normal": "0em",
+    "--tracking-0.5%": ".005em",
+    "--tracking-1%": ".01em",
+    "--tracking-1.5%": ".015em",
+    "--tracking-2%": ".02em",
+    "--tracking-3%": ".03em",
+    "--leading-105%": "105%",
+    "--leading-110%": "110%",
+    "--leading-115%": "115%",
+    "--leading-120%": "120%",
+    "--leading-125%": "125%",
+    "--leading-135%": "135%",
+    "--leading-140%": "140%",
+    "--ease-in-out-cubic": "cubic-bezier(.65,.05,.36,1)",
+    "--radius-5xl": "2.5rem",
+    "--color-red-base-50": "#fefbfc",
+    "--color-red-base-500": "#a4546f",
+    "--color-red-magic-400": "#fc92b4",
+    "--color-red-magic-400-alpha-5": "#fc92b45c",
+    "--color-red-magic-600": "#d03275",
+    "--color-red-magic-600-alpha-5": "#d0327538",
+    "--color-orange-base-0": "#fff",
+    "--color-orange-base-50": "#fffbf9",
+    "--color-orange-base-100": "#fdf3ef",
+    "--color-orange-base-150": "#faeae3",
+    "--color-orange-base-200": "#f8d6c7",
+    "--color-orange-base-300": "#edb69d",
+    "--color-orange-base-500": "#9c6045",
+    "--color-orange-base-600": "#764833",
+    "--color-orange-base-700": "#4e2f21",
+    "--color-orange-base-800": "#38231a",
+    "--color-orange-base-900": "#281c17",
+    "--color-orange-base-950": "#1c1715",
+    "--color-orange-magic-200": "#fecdb7",
+    "--color-orange-magic-300": "#ffb392",
+    "--color-orange-magic-400": "#fc9b6f",
+    "--color-orange-magic-400-alpha-3": "#fc9b6f33",
+    "--color-orange-magic-400-alpha-4": "#fc9b6f47",
+    "--color-orange-magic-400-alpha-5": "#fc9b6f5c",
+    "--color-orange-magic-600": "#c45000",
+    "--color-orange-magic-600-alpha-3": "#c450001a",
+    "--color-orange-magic-600-alpha-4": "#c4500029",
+    "--color-orange-magic-600-alpha-5": "#c4500038",
+    "--color-orange-magic-700": "#a44200",
+    "--color-orange-magic-800": "#863400",
+    "--color-beige-base-0": "#fff",
+    "--color-beige-base-50": "#fcfcfa",
+    "--color-beige-base-100": "#f6f5f2",
+    "--color-beige-base-150": "#efeee9",
+    "--color-beige-base-200": "#e0ded7",
+    "--color-beige-base-300": "#c8c4b8",
+    "--color-beige-base-500": "#767165",
+    "--color-beige-base-600": "#5a5548",
+    "--color-beige-base-700": "#3a3831",
+    "--color-beige-base-800": "#2a2924",
+    "--color-beige-base-900": "#201f1c",
+    "--color-beige-base-950": "#181818",
+    "--color-beige-magic-200": "#e7dab6",
+    "--color-beige-magic-300": "#d5c69f"
+   },
+   "blockedSheets": 0,
+   "reducedMotionRules": 7,
+   "h1": [
+    "Radically different banking"
+   ],
+   "h2": [
+    "Loved by 300K+ of the most ambitious entrepreneurs on the planet",
+    "You’re creating something to stand the test of time. So are we.",
+    "Mercury hits $5.2B valuation",
+    "$650M in annual revenue and profitable",
+    "Mercury lands $300M Series C",
+    "Banking – redesigned from the ground up.",
+    "Mercury for business",
+    "Mercury for personal",
+    "Disclaimers and footnotes"
+   ],
+   "h3": [
+    "Business banking & more",
+    "Cards & expense management",
+    "Payments & invoicing",
+    "Accounting",
+    "Apply online in 10 minutes",
+    "Get a credit card instantly",
+    "Tackle banking tasks in seconds",
+    "Send no-fee USD payments around the globe",
+    "Earn 1.5% cashback on credit spend",
+    "Earn up to 4.00% yield with Mercury Treasury"
+   ],
+   "nav": [
+    "Pricing",
+    "Log in",
+    "Open account"
+   ],
+   "ctas": [
+    "Mercury logoThe logo for Mercury, featur [139x32 bg #000000 a0 fg #ededf3 r 4px pad 0px 16px/400]",
+    "Open Menu [21x24 bg #000000 a0 fg #000000 r 4px pad 0px 16px/400]",
+    "Products [390x48 bg #000000 a0 fg #ededf3 r 4px pad 16px 24px 16px/420]",
+    "Solutions [390x48 bg #000000 a0 fg #ededf3 r 4px pad 16px 24px 16px/420]",
+    "Resources [390x48 bg #000000 a0 fg #ededf3 r 4px pad 16px 24px 16px/420]",
+    "About [390x48 bg #000000 a0 fg #ededf3 r 4px pad 16px 24px 16px/420]",
+    "Pricing [390x48 bg #000000 a0 fg #ededf3 r 4px pad 16px 24px 16px/420]",
+    "Log in [165x40 bg #9cb4e8 a0.2 fg #ededf3 r 40px pad 0px 20px 16px/420]",
+    "Open account [165x40 bg #5266eb fg #ffffff r 32px pad 0px 20px 16px/420]",
+    "Open account [167x40 bg #5266eb fg #ffffff r 32px pad 0px 20px 16px/420]",
+    "Launch demo [167x40 bg #afb2ce a0.2 fg #ededf3 r 40px pad 0px 20px 16px/420]",
+    "Business banking & more [342x33 bg #000000 a0 fg #000000 r 4px pad 0px 16px/400]",
+    "Cards & expense management [342x33 bg #000000 a0 fg #000000 r 4px pad 0px 16px/400]",
+    "Payments & invoicing [342x33 bg #000000 a0 fg #000000 r 4px pad 0px 16px/400]"
+   ],
+   "media": {
+    "img": 45,
+    "svg": 109,
+    "video": 9,
+    "canvas": 0
+   }
+  },
+  "1440": {
+   "status": 200,
+   "finalUrl": "https://mercury.com/",
+   "width": 1440,
+   "h1Style": {
+    "font": "arcadiaDisplay 49.3472px/54.2819px w480 ls normal",
+    "color": "#ededf3",
+    "top": 144,
+    "width": 672,
+    "align": "center"
+   },
+   "title": "Online Business Banking For Startups, Small Businesses & Scaling Companies",
+   "description": "Everything you do with money. All in one place. Apply in 10 minutes for business banking that transforms how you operate.",
+   "pageHeight": 11661,
+   "bodyBg": "#000000 a0",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "arcadia 360 500 normal",
+    "arcadiaDisplay 320 480 normal"
+   ],
+   "families": [
+    {
+     "v": "arcadia, \"arcadia Fallback\"",
+     "n": 9060
+    },
+    {
+     "v": "arcadiaDisplay, \"arcadiaDisplay Fallback\"",
+     "n": 926
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "12px / lh 16.8px / w400 / ls 0.24px",
+     "n": 4335,
+     "ex": "p: Mercury will occasionally send you emails with offers, news,"
+    },
+    {
+     "v": "18px / lh 24.3px / w360 / ls normal",
+     "n": 1491,
+     "ex": "span: Introducing Mercury Books, AI-powered accounting software, b"
+    },
+    {
+     "v": "16px / lh 22.4px / w400 / ls normal",
+     "n": 1288,
+     "ex": "span: Apply for free checking and savings accounts with zero minim"
+    },
+    {
+     "v": "16px / lh 16px / w420 / ls normal",
+     "n": 782,
+     "ex": "button: Products"
+    },
+    {
+     "v": "18px / lh 24.3px / w480 / ls normal",
+     "n": 355,
+     "ex": "span: Create cards in a couple of clicks"
+    },
+    {
+     "v": "16px / lh 21.6px / w480 / ls normal",
+     "n": 292,
+     "ex": "span: Business banking & more"
+    },
+    {
+     "v": "12px / lh 16.8px / w480 / ls 0.24px",
+     "n": 200,
+     "ex": "span: Check this box if you do not want to receive them."
+    },
+    {
+     "v": "42px / lh 48.3px / w480 / ls 0.42px",
+     "n": 166,
+     "ex": "span: Loved by + of themost ambitious entrepreneurs on the planet"
+    },
+    {
+     "v": "32px / lh 36.8px / w480 / ls 0.48px",
+     "n": 165,
+     "ex": "span: Banking’s been a headache. Now, it’s a head start."
+    },
+    {
+     "v": "24px / lh 28.8px / w480 / ls 0.48px",
+     "n": 149,
+     "ex": "span: Everything you do with money. All in one place."
+    },
+    {
+     "v": "28px / lh 33.6px / w360 / ls 0.42px",
+     "n": 147,
+     "ex": "span: Mercury has completely changed my expectations of what banki"
+    },
+    {
+     "v": "12px / lh 16.8px / w700 / ls 0.24px",
+     "n": 147,
+     "ex": "strong: Treasury accounts are not FDIC insured, are not bank deposit"
+    },
+    {
+     "v": "28px / lh 33.6px / w480 / ls 0.42px",
+     "n": 134,
+     "ex": "span: Mercury hits $5.2B valuation"
+    },
+    {
+     "v": "21.008px / lh 28.3608px / w360 / ls normal",
+     "n": 124,
+     "ex": "span: Apply online in 10 minutes to experience banking unlike anyt"
+    },
+    {
+     "v": "21.008px / lh 25.2096px / w480 / ls 0.42016px",
+     "n": 119,
+     "ex": "span: Unlike most financial institutions, Mercury is built on soft"
+    },
+    {
+     "v": "21.008px / lh 25.2096px / w480 / ls normal",
+     "n": 30,
+     "ex": "span: Karri Saarinen"
+    },
+    {
+     "v": "49.3472px / lh 54.2819px / w480 / ls normal",
+     "n": 27,
+     "ex": "span: Radically different banking"
+    },
+    {
+     "v": "65.344px / lh 71.8784px / w480 / ls normal",
+     "n": 19,
+     "ex": "span: +"
+    },
+    {
+     "v": "16px / lh 24px / w400 / ls normal",
+     "n": 16,
+     "ex": "label: Enter your email"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#ededf3",
+     "n": 6624
+    },
+    {
+     "v": "#c3c3cc",
+     "n": 3100
+    },
+    {
+     "v": "#f4f5f9",
+     "n": 133
+    },
+    {
+     "v": "#2a2924",
+     "n": 77
+    },
+    {
+     "v": "#ffffff",
+     "n": 36
+    },
+    {
+     "v": "#000000",
+     "n": 16
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#ededf3 on #171721",
+     "n": 5261,
+     "ex": "15.25:1"
+    },
+    {
+     "v": "#c3c3cc on #181822",
+     "n": 2199,
+     "ex": "10.06:1"
+    },
+    {
+     "v": "#ededf3 on #181822",
+     "n": 1060,
+     "ex": "15.1:1"
+    },
+    {
+     "v": "#c3c3cc on #171721",
+     "n": 663,
+     "ex": "10.16:1"
+    },
+    {
+     "v": "#c3c3cc on #1f1f2b",
+     "n": 238,
+     "ex": "9.31:1"
+    },
+    {
+     "v": "#ededf3 on #1f1f2b",
+     "n": 156,
+     "ex": "13.97:1"
+    },
+    {
+     "v": "#ededf3 on #1e1e2a",
+     "n": 147,
+     "ex": "14.13:1"
+    },
+    {
+     "v": "#f4f5f9 on #272735",
+     "n": 133,
+     "ex": "13.5:1"
+    },
+    {
+     "v": "#2a2924 on #f8f8f5",
+     "n": 77,
+     "ex": "13.7:1"
+    },
+    {
+     "v": "#ffffff on #5266eb",
+     "n": 36,
+     "ex": "4.71:1"
+    },
+    {
+     "v": "#000000 on #171721",
+     "n": 16,
+     "ex": "1.18:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#181822",
+     "n": 16792
+    },
+    {
+     "v": "#171721",
+     "n": 6727
+    },
+    {
+     "v": "#1f1f2b",
+     "n": 686
+    },
+    {
+     "v": "linear-gradient(rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0) 100%)",
+     "n": 648
+    },
+    {
+     "v": "#79797f a0.4",
+     "n": 104
+    },
+    {
+     "v": "#f8f8f5",
+     "n": 71
+    },
+    {
+     "v": "#1e1e2a",
+     "n": 40
+    },
+    {
+     "v": "#afb2ce a0.2",
+     "n": 29
+    },
+    {
+     "v": "#9cb4e8 a0.2",
+     "n": 23
+    },
+    {
+     "v": "#5266eb",
+     "n": 17
+    },
+    {
+     "v": "#707393 a0.1",
+     "n": 5
+    },
+    {
+     "v": "#ededf3",
+     "n": 2
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #afb2ce a0.36",
+     "n": 10
+    },
+    {
+     "v": "1px #707393 a0.22",
+     "n": 4
+    },
+    {
+     "v": "1px #70707d",
+     "n": 4
+    },
+    {
+     "v": "1px #ededf3",
+     "n": 3
+    },
+    {
+     "v": "1px #c3c3cc",
+     "n": 1
+    }
+   ],
+   "radii": [
+    {
+     "v": "4px",
+     "n": 106,
+     "ex": "span.rounded outline-offset-4 outli"
+    },
+    {
+     "v": "12px",
+     "n": 27,
+     "ex": "div.mx-auto w-fit overflow-hidden "
+    },
+    {
+     "v": "8px",
+     "n": 13,
+     "ex": "div.h-8 max-h-8 w-8 max-w-8 shrink"
+    },
+    {
+     "v": "40px",
+     "n": 10,
+     "ex": "button.group inline-flex w-fit items-"
+    },
+    {
+     "v": "3.35544e+07px",
+     "n": 7,
+     "ex": "button.group inline-flex w-fit items-"
+    },
+    {
+     "v": "32px",
+     "n": 4,
+     "ex": "a.group items-center justify-cen"
+    },
+    {
+     "v": "32px 0px 0px 32px",
+     "n": 1,
+     "ex": "input.h-full w-full rounded-s-4xl bg"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 3px 0px, rgba(0, 0, 0, 0.05) 0px 8px 12px 0px, rgba(0, 0, 0, 0.05) 0px 12px 20px 0px",
+     "n": 1,
+     "ex": "small"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "color, background-color, border-color, outline-col 0.3s cubic-bezier(0, 0, 0.2, 1)",
+     "n": 21,
+     "ex": "button"
+    },
+    {
+     "v": "color, background-color, border-color, outline-col 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 20,
+     "ex": "button"
+    },
+    {
+     "v": "color, background-color, border-color, outline-col 0.5s cubic-bezier(0, 0, 0.6, 1)",
+     "n": 8,
+     "ex": "div"
+    },
+    {
+     "v": "transform, translate, scale, rotate 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 8,
+     "ex": "line"
+    },
+    {
+     "v": "grid-template-rows 0.3s cubic-bezier(0, 0, 0.2, 1)",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 1,
+     "ex": "video"
+    },
+    {
+     "v": "bottom 0.5s cubic-bezier(0.65, 0.05, 0.36, 1)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "padding-bottom, translate 0.5s cubic-bezier(0.65, 0.05, 0.36, 1)",
+     "n": 1,
+     "ex": "small"
+    },
+    {
+     "v": "all 0.6s cubic-bezier(0.76, 0, 0.24, 1)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "opacity, filter 0.4s cubic-bezier(0, 0, 0.2, 1)",
+     "n": 1,
+     "ex": "video"
+    },
+    {
+     "v": "opacity 0.2s cubic-bezier(0, 0, 0.2, 1)",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "animations": [
+    {
+     "v": "translateUp, fadeIn 0.67s, 0.67s cubic-bezier(0.28, 1.1, 0.74, 1), cubic-bezier(0.59, 0.41, 0.68, 0.49) x1, 1",
+     "n": 12
+    },
+    {
+     "v": "fadeInTabTranslate 0.3s ease-in-out x1",
+     "n": 1
+    },
+    {
+     "v": "fadeInTabTranslate 0s ease-in-out x1",
+     "n": 1
+    }
+   ],
+   "maxWidths": [
+    {
+     "v": "1952px (rendered 1440px)",
+     "n": 23,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 1440px)",
+     "n": 4,
+     "ex": "img"
+    },
+    {
+     "v": "100% (rendered 1024px)",
+     "n": 3,
+     "ex": "img"
+    },
+    {
+     "v": "688px (rendered 672px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "fit-content (rendered 660px)",
+     "n": 1,
+     "ex": "a"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 14
+    }
+   ],
+   "gaps": [
+    {
+     "v": "12px",
+     "n": 14
+    },
+    {
+     "v": "32px",
+     "n": 11
+    },
+    {
+     "v": "40px",
+     "n": 10
+    },
+    {
+     "v": "4px",
+     "n": 9
+    },
+    {
+     "v": "32px / col normal",
+     "n": 4
+    },
+    {
+     "v": "40px / col 32px",
+     "n": 3
+    },
+    {
+     "v": "24px",
+     "n": 1
+    },
+    {
+     "v": "56px",
+     "n": 1
+    },
+    {
+     "v": "80px / col 40px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "32px",
+     "n": 61
+    },
+    {
+     "v": "12px",
+     "n": 36
+    },
+    {
+     "v": "20px",
+     "n": 14
+    },
+    {
+     "v": "1px",
+     "n": 14
+    },
+    {
+     "v": "40px",
+     "n": 14
+    },
+    {
+     "v": "72px",
+     "n": 9
+    },
+    {
+     "v": "24px",
+     "n": 7
+    },
+    {
+     "v": "2px",
+     "n": 6
+    },
+    {
+     "v": "8px",
+     "n": 4
+    },
+    {
+     "v": "112px",
+     "n": 3
+    },
+    {
+     "v": "128px",
+     "n": 3
+    },
+    {
+     "v": "16px",
+     "n": 2
+    },
+    {
+     "v": "80px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "12px",
+     "n": 29
+    },
+    {
+     "v": "8px",
+     "n": 10
+    },
+    {
+     "v": "20px",
+     "n": 10
+    },
+    {
+     "v": "40px",
+     "n": 5
+    },
+    {
+     "v": "32px",
+     "n": 4
+    },
+    {
+     "v": "128px",
+     "n": 4
+    },
+    {
+     "v": "16px",
+     "n": 4
+    },
+    {
+     "v": "72px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "Level up your personal finances with 3.50% APY on your savings account, joint accounts, unlimited free USD wires, and mo",
+    "chars": 123,
+    "lines": 3,
+    "charsPerLine": 41,
+    "width": 432,
+    "fontSize": "18px",
+    "lineHeight": "24.3px",
+    "color": "#c3c3cc"
+   },
+   "rootVars": {
+    "--font-mono": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
+    "--spacing": "1px",
+    "--leading-tight": "1.25",
+    "--leading-normal": "1.5",
+    "--radius-sm": ".25rem",
+    "--radius-md": ".375rem",
+    "--radius-lg": ".5rem",
+    "--radius-xl": ".75rem",
+    "--radius-2xl": "1rem",
+    "--radius-3xl": "1.5rem",
+    "--radius-4xl": "2rem",
+    "--ease-in": "cubic-bezier(.4,0,1,1)",
+    "--ease-out": "cubic-bezier(0,0,.2,1)",
+    "--ease-in-out": "cubic-bezier(.4,0,.2,1)",
+    "--animate-spin": "spin 1s linear infinite",
+    "--blur-sm": "8px",
+    "--blur-md": "12px",
+    "--aspect-video": "16/9",
+    "--default-transition-duration": ".15s",
+    "--default-transition-timing-function": "cubic-bezier(.4,0,.2,1)",
+    "--default-font-family": "var(--font-arcadia)",
+    "--default-mono-font-family": "var(--font-mono)",
+    "--spacing-0": "0px",
+    "--spacing-1": "1px",
+    "--spacing-2": "2px",
+    "--spacing-4": "4px",
+    "--spacing-8": "8px",
+    "--spacing-12": "12px",
+    "--spacing-16": "16px",
+    "--spacing-20": "20px",
+    "--spacing-24": "24px",
+    "--spacing-32": "32px",
+    "--spacing-40": "40px",
+    "--spacing-48": "48px",
+    "--spacing-56": "56px",
+    "--spacing-64": "64px",
+    "--spacing-72": "72px",
+    "--spacing-80": "80px",
+    "--spacing-96": "96px",
+    "--spacing-112": "112px",
+    "--spacing-128": "128px",
+    "--spacing-144": "144px",
+    "--spacing-160": "160px",
+    "--spacing-192": "192px",
+    "--spacing-224": "224px",
+    "--spacing-240": "240px",
+    "--s0": "var(--spacing-0)",
+    "--s4": "var(--spacing-4)",
+    "--s8": "var(--spacing-8)",
+    "--s12": "var(--spacing-12)",
+    "--s16": "var(--spacing-16)",
+    "--s20": "var(--spacing-20)",
+    "--s7": "var(--spacing-72)",
+    "--s9": "var(--spacing-96)",
+    "--s11": "var(--spacing-160)",
+    "--gap-xs": "var(--spacing-12)",
+    "--gap-sm": "var(--spacing-24)",
+    "--gap-md": "var(--spacing-32)",
+    "--gap-lg": "var(--spacing-32)",
+    "--gap-xl": "var(--spacing-40)",
+    "--gap-2xl": "var(--spacing-80)",
+    "--gap-3xl": "var(--spacing-128)",
+    "--grid-gutters": "var(--gap-md)",
+    "--grid-margins": "var(--gap-lg)",
+    "--stack-gap-sm": "var(--gap-xs)",
+    "--stack-gap-md": "var(--gap-sm)",
+    "--stack-gap-lg": "var(--gap-xl)",
+    "--column-gap-listings": "var(--spacing-32)",
+    "--column-gap-logomash": "var(--spacing-56)",
+    "--perk-bundle-media-padding": "var(--spacing-32)",
+    "--column-gap-sm": "var(--gap-xs)",
+    "--column-gap-md": "var(--gap-sm)",
+    "--column-gap-lg": "var(--gap-lg)",
+    "--layout-padding-sm": "var(--gap-xl)",
+    "--layout-padding-md": "var(--gap-2xl)",
+    "--layout-padding-lg": "var(--gap-3xl)",
+    "--layout-padding-xl": "var(--spacing-144)",
+    "--hero-padding-default": "var(--spacing-80)",
+    "--spacing-fadeIn": "50px",
+    "--spacing-screen-without-navbar": "calc(100dvh - var(--navbar-height))",
+    "--spacing-grid-margins": "var(--grid-margins)",
+    "--text-xxs": ".625rem",
+    "--text-xs": ".75rem",
+    "--text-sm": ".875rem",
+    "--text-base": "1rem",
+    "--text-md": "1.125rem",
+    "--text-lg": "1.313rem",
+    "--text-xl": "1.5rem",
+    "--text-2xl": "1.75rem",
+    "--text-3xl": "2rem",
+    "--text-4xl": "2.25rem",
+    "--text-5xl": "2.625rem",
+    "--text-6xl": "3rem",
+    "--text-7xl": "3.438rem",
+    "--font-weight-300": "300",
+    "--font-weight-360": "360",
+    "--font-weight-400": "400",
+    "--font-weight-420": "420",
+    "--font-weight-480": "480",
+    "--font-weight-500": "500",
+    "--font-weight-medium": "530",
+    "--tracking-normal": "0em",
+    "--tracking-0.5%": ".005em",
+    "--tracking-1%": ".01em",
+    "--tracking-1.5%": ".015em",
+    "--tracking-2%": ".02em",
+    "--tracking-3%": ".03em",
+    "--leading-105%": "105%",
+    "--leading-110%": "110%",
+    "--leading-115%": "115%",
+    "--leading-120%": "120%",
+    "--leading-125%": "125%",
+    "--leading-135%": "135%",
+    "--leading-140%": "140%",
+    "--ease-in-out-cubic": "cubic-bezier(.65,.05,.36,1)",
+    "--radius-5xl": "2.5rem",
+    "--color-red-base-50": "#fefbfc",
+    "--color-red-base-500": "#a4546f",
+    "--color-red-magic-400": "#fc92b4",
+    "--color-red-magic-400-alpha-5": "#fc92b45c",
+    "--color-red-magic-600": "#d03275",
+    "--color-red-magic-600-alpha-5": "#d0327538",
+    "--color-orange-base-0": "#fff",
+    "--color-orange-base-50": "#fffbf9",
+    "--color-orange-base-100": "#fdf3ef",
+    "--color-orange-base-150": "#faeae3",
+    "--color-orange-base-200": "#f8d6c7",
+    "--color-orange-base-300": "#edb69d",
+    "--color-orange-base-500": "#9c6045",
+    "--color-orange-base-600": "#764833",
+    "--color-orange-base-700": "#4e2f21",
+    "--color-orange-base-800": "#38231a",
+    "--color-orange-base-900": "#281c17",
+    "--color-orange-base-950": "#1c1715",
+    "--color-orange-magic-200": "#fecdb7",
+    "--color-orange-magic-300": "#ffb392",
+    "--color-orange-magic-400": "#fc9b6f",
+    "--color-orange-magic-400-alpha-3": "#fc9b6f33",
+    "--color-orange-magic-400-alpha-4": "#fc9b6f47",
+    "--color-orange-magic-400-alpha-5": "#fc9b6f5c",
+    "--color-orange-magic-600": "#c45000",
+    "--color-orange-magic-600-alpha-3": "#c450001a",
+    "--color-orange-magic-600-alpha-4": "#c4500029",
+    "--color-orange-magic-600-alpha-5": "#c4500038",
+    "--color-orange-magic-700": "#a44200",
+    "--color-orange-magic-800": "#863400",
+    "--color-beige-base-0": "#fff",
+    "--color-beige-base-50": "#fcfcfa",
+    "--color-beige-base-100": "#f6f5f2",
+    "--color-beige-base-150": "#efeee9",
+    "--color-beige-base-200": "#e0ded7",
+    "--color-beige-base-300": "#c8c4b8",
+    "--color-beige-base-500": "#767165",
+    "--color-beige-base-600": "#5a5548",
+    "--color-beige-base-700": "#3a3831",
+    "--color-beige-base-800": "#2a2924",
+    "--color-beige-base-900": "#201f1c",
+    "--color-beige-base-950": "#181818",
+    "--color-beige-magic-200": "#e7dab6",
+    "--color-beige-magic-300": "#d5c69f"
+   },
+   "blockedSheets": 0,
+   "reducedMotionRules": 7,
+   "h1": [
+    "Radically different banking"
+   ],
+   "h2": [
+    "Loved by 300K+ of the most ambitious entrepreneurs on the planet",
+    "You’re creating something to stand the test of time. So are we.",
+    "Mercury hits $5.2B valuation",
+    "$650M in annual revenue and profitable",
+    "Mercury lands $300M Series C",
+    "Banking – redesigned from the ground up.",
+    "Mercury for business",
+    "Mercury for personal",
+    "Disclaimers and footnotes"
+   ],
+   "h3": [
+    "Business banking & more",
+    "Cards & expense management",
+    "Payments & invoicing",
+    "Accounting",
+    "Apply online in 10 minutes",
+    "Get a credit card instantly",
+    "Tackle banking tasks in seconds",
+    "Send no-fee USD payments around the globe",
+    "Earn 1.5% cashback on credit spend",
+    "Earn up to 4.00% yield with Mercury Treasury"
+   ],
+   "nav": [
+    "Mercury logoThe logo for Mercury, featuring a circular emblem with abstract, interconnected swirling lines on the left, and the word \"MERCURY\" in clean, uppercase letters to the right.",
+    "Pricing",
+    "Log in",
+    "Open account"
+   ],
+   "ctas": [
+    "Mercury logoThe logo for Mercury, featur [139x32 bg #000000 a0 fg #ededf3 r 4px pad 0px 16px/400]",
+    "Products [125x40 bg #000000 a0 fg #ededf3 r 40px pad 0px 20px 16px/420]",
+    "Solutions [127x40 bg #000000 a0 fg #ededf3 r 40px pad 0px 20px 16px/420]",
+    "Resources [135x40 bg #000000 a0 fg #ededf3 r 40px pad 0px 20px 16px/420]",
+    "About [103x40 bg #000000 a0 fg #ededf3 r 40px pad 0px 20px 16px/420]",
+    "Pricing [90x40 bg #000000 a0 fg #ededf3 r 40px pad 0px 20px 16px/420]",
+    "Log in [83x40 bg #000000 a0 fg #ededf3 r 40px pad 0px 20px 16px/420]",
+    "Open account [145x40 bg #5266eb fg #ffffff r 32px pad 0px 20px 16px/420]",
+    "Open account [145x40 bg #5266eb fg #ffffff r 32px pad 0px 20px 16px/420]",
+    "Launch demo [141x40 bg #afb2ce a0.2 fg #ededf3 r 40px pad 0px 20px 16px/420]",
+    "Business banking & more [496x35 bg #000000 a0 fg #000000 r 4px pad 0px 16px/400]",
+    "Cards & expense management [496x35 bg #000000 a0 fg #000000 r 4px pad 0px 16px/400]",
+    "Payments & invoicing [496x35 bg #000000 a0 fg #000000 r 4px pad 0px 16px/400]",
+    "Accounting [496x35 bg #000000 a0 fg #000000 r 4px pad 0px 16px/400]"
+   ],
+   "media": {
+    "img": 45,
+    "svg": 101,
+    "video": 5,
+    "canvas": 1
+   }
+  }
+ }
+}

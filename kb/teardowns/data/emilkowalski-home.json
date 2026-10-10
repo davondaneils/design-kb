@@ -1,0 +1,486 @@
+{
+ "url": "https://emilkowal.ski",
+ "measuredAt": "2026-10-10T17:00:18.575Z",
+ "method": "Playwright Chromium, getComputedStyle on visible elements, light scheme, after scroll-through and fonts.ready",
+ "widths": {
+  "390": {
+   "status": 200,
+   "finalUrl": "https://emilkowal.ski/",
+   "width": 390,
+   "h1Style": null,
+   "title": "Emil Kowalski",
+   "description": "Design engineer working at Linear.",
+   "pageHeight": 2242,
+   "bodyBg": "#fdfdfc",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "Sans 100 900 normal"
+   ],
+   "families": [
+    {
+     "v": "Sans, \"Sans Fallback\"",
+     "n": 1293
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "16px / lh 24px / w400 / ls normal",
+     "n": 965,
+     "ex": "span: aiforui.dev"
+    },
+    {
+     "v": "16px / lh 26.4px / w400 / ls normal",
+     "n": 205,
+     "ex": "p: I work on the Web team at Linear. I like to build things for"
+    },
+    {
+     "v": "16px / lh 24px / w500 / ls normal",
+     "n": 56,
+     "ex": "a: Emil Kowalski"
+    },
+    {
+     "v": "14px / lh 23.1px / w500 / ls normal",
+     "n": 52,
+     "ex": "a: My new course called aiforui.dev is in early access!"
+    },
+    {
+     "v": "16px / lh 16px / w500 / ls normal",
+     "n": 15,
+     "ex": "span: Design Engineer"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#63635e",
+     "n": 917
+    },
+    {
+     "v": "#21201c",
+     "n": 367
+    },
+    {
+     "v": "#fdfdfc",
+     "n": 9
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#63635e on #fdfdfc",
+     "n": 917,
+     "ex": "5.93:1"
+    },
+    {
+     "v": "#21201c on #fdfdfc",
+     "n": 310,
+     "ex": "16.02:1"
+    },
+    {
+     "v": "#21201c on #f9f9f8",
+     "n": 52,
+     "ex": "15.48:1"
+    },
+    {
+     "v": "#fdfdfc on #21201c",
+     "n": 9,
+     "ex": "16.02:1"
+    },
+    {
+     "v": "#21201c on #ffffff",
+     "n": 5,
+     "ex": "16.3:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#ffffff",
+     "n": 16
+    },
+    {
+     "v": "#21201c",
+     "n": 4
+    }
+   ],
+   "borders": [],
+   "radii": [
+    {
+     "v": "6px",
+     "n": 14,
+     "ex": "a.-mx-3 flex flex-col rounded-md"
+    },
+    {
+     "v": "9999px",
+     "n": 2,
+     "ex": "form.mt-6 flex h-12 items-center  j"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 2px 2px 0px",
+     "n": 1,
+     "ex": "form"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "color, background-color, border-color, text-decora 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 1,
+     "ex": "input"
+    }
+   ],
+   "animations": [],
+   "maxWidths": [
+    {
+     "v": "692px (rendered 390px)",
+     "n": 2,
+     "ex": "div"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 2
+    },
+    {
+     "v": "pt 0px pb 4px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "8px",
+     "n": 2
+    },
+    {
+     "v": "28px",
+     "n": 2
+    }
+   ],
+   "paddings": [
+    {
+     "v": "12px",
+     "n": 14
+    },
+    {
+     "v": "24px",
+     "n": 2
+    },
+    {
+     "v": "48px",
+     "n": 2
+    },
+    {
+     "v": "4px",
+     "n": 1
+    },
+    {
+     "v": "14px",
+     "n": 1
+    },
+    {
+     "v": "6px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "20px",
+     "n": 4
+    },
+    {
+     "v": "64px",
+     "n": 4
+    },
+    {
+     "v": "24px",
+     "n": 2
+    },
+    {
+     "v": "128px",
+     "n": 1
+    },
+    {
+     "v": "16px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "I work on the Web team at Linear. I like to build things for designers and developers, think deeply about the user inter",
+    "chars": 155,
+    "lines": 4,
+    "charsPerLine": 39,
+    "width": 342,
+    "fontSize": "16px",
+    "lineHeight": "26.4px",
+    "color": "#63635e"
+   },
+   "rootVars": {
+    "--font-settings": "\"cv01\",\"ss03\"",
+    "--font-variations": "\"opsz\" auto"
+   },
+   "blockedSheets": 0,
+   "reducedMotionRules": 1,
+   "h1": [],
+   "h2": [],
+   "h3": [],
+   "nav": [
+    "Emil Kowalski"
+   ],
+   "ctas": [
+    "My new course called aiforui.dev is in e [289x40 bg #000000 a0 fg #21201c r 0px pad 0px 14px/500]",
+    "Emil Kowalski [103x24 bg #000000 a0 fg #21201c r 0px pad 0px 16px/500]",
+    "aiforui.devAI for Designers and Engineer [366x48 bg #000000 a0 fg #21201c r 6px pad 0px 12px 16px/400]",
+    "SonnerAn opinionated toast component for [366x48 bg #000000 a0 fg #21201c r 6px pad 0px 12px 16px/400]",
+    "animations.devA course on web animations [366x48 bg #000000 a0 fg #21201c r 6px pad 0px 12px 16px/400]",
+    "VaulA drawer component for React. [366x48 bg #000000 a0 fg #21201c r 6px pad 0px 12px 16px/400]",
+    "Friction as a FeatureA natural filter fo [366x48 bg #000000 a0 fg #21201c r 6px pad 0px 12px 16px/400]",
+    "You Don’t Need AnimationsWhy you are ani [366x72 bg #000000 a0 fg #21201c r 6px pad 0px 12px 16px/400]",
+    "Agents with TasteHow to transfer taste i [366x48 bg #000000 a0 fg #21201c r 6px pad 0px 12px 16px/400]",
+    "Building a Toast ComponentMy experience  [366x72 bg #000000 a0 fg #21201c r 6px pad 0px 12px 16px/400]",
+    "Developing TasteWhy taste matters and ho [366x48 bg #000000 a0 fg #21201c r 6px pad 0px 12px 16px/400]",
+    "The Magic of Clip PathOne of the most un [366x48 bg #000000 a0 fg #21201c r 6px pad 0px 12px 16px/400]",
+    "7 Practical Animation TipsSimple ideas y [366x72 bg #000000 a0 fg #21201c r 6px pad 0px 12px 16px/400]",
+    "Train Your JudgementSettling for good en [366x48 bg #000000 a0 fg #21201c r 6px pad 0px 12px 16px/400]"
+   ],
+   "media": {
+    "img": 0,
+    "svg": 1,
+    "video": 0,
+    "canvas": 0
+   }
+  },
+  "1440": {
+   "status": 200,
+   "finalUrl": "https://emilkowal.ski/",
+   "width": 1440,
+   "h1Style": null,
+   "title": "Emil Kowalski",
+   "description": "Design engineer working at Linear.",
+   "pageHeight": 2480,
+   "bodyBg": "#fdfdfc",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "Sans 100 900 normal"
+   ],
+   "families": [
+    {
+     "v": "Sans, \"Sans Fallback\"",
+     "n": 1317
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "16px / lh 24px / w400 / ls normal",
+     "n": 965,
+     "ex": "span: aiforui.dev"
+    },
+    {
+     "v": "16px / lh 26.4px / w400 / ls normal",
+     "n": 205,
+     "ex": "p: I work on the Web team at Linear. I like to build things for"
+    },
+    {
+     "v": "16px / lh 24px / w500 / ls normal",
+     "n": 56,
+     "ex": "a: Emil Kowalski"
+    },
+    {
+     "v": "14px / lh 23.1px / w500 / ls normal",
+     "n": 52,
+     "ex": "a: My new course called aiforui.dev is in early access!"
+    },
+    {
+     "v": "14px / lh 23.1px / w400 / ls normal",
+     "n": 24,
+     "ex": "span: Early access has closed."
+    },
+    {
+     "v": "16px / lh 16px / w500 / ls normal",
+     "n": 15,
+     "ex": "span: Design Engineer"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#63635e",
+     "n": 917
+    },
+    {
+     "v": "#21201c",
+     "n": 391
+    },
+    {
+     "v": "#fdfdfc",
+     "n": 9
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#63635e on #fdfdfc",
+     "n": 917,
+     "ex": "5.93:1"
+    },
+    {
+     "v": "#21201c on #fdfdfc",
+     "n": 310,
+     "ex": "16.02:1"
+    },
+    {
+     "v": "#21201c on #f9f9f8",
+     "n": 76,
+     "ex": "15.48:1"
+    },
+    {
+     "v": "#fdfdfc on #21201c",
+     "n": 9,
+     "ex": "16.02:1"
+    },
+    {
+     "v": "#21201c on #ffffff",
+     "n": 5,
+     "ex": "16.3:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#ffffff",
+     "n": 31
+    },
+    {
+     "v": "#21201c",
+     "n": 4
+    }
+   ],
+   "borders": [],
+   "radii": [
+    {
+     "v": "6px",
+     "n": 14,
+     "ex": "a.-mx-3 flex flex-col rounded-md"
+    },
+    {
+     "v": "9999px",
+     "n": 2,
+     "ex": "form.mt-6 flex h-12 items-center  j"
+    },
+    {
+     "v": "8px",
+     "n": 1,
+     "ex": "button.absolute right-3 -mr-1 ml-4 hi"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 2px 2px 0px",
+     "n": 1,
+     "ex": "form"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "color, background-color, border-color, text-decora 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 1,
+     "ex": "input"
+    }
+   ],
+   "animations": [],
+   "maxWidths": [
+    {
+     "v": "692px (rendered 692px)",
+     "n": 2,
+     "ex": "div"
+    }
+   ],
+   "sections": [],
+   "gaps": [
+    {
+     "v": "8px",
+     "n": 2
+    },
+    {
+     "v": "16px",
+     "n": 2
+    }
+   ],
+   "paddings": [
+    {
+     "v": "12px",
+     "n": 42
+    },
+    {
+     "v": "24px",
+     "n": 2
+    },
+    {
+     "v": "64px",
+     "n": 2
+    },
+    {
+     "v": "14px",
+     "n": 2
+    },
+    {
+     "v": "4px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "128px",
+     "n": 5
+    },
+    {
+     "v": "24px",
+     "n": 4
+    },
+    {
+     "v": "16px",
+     "n": 3
+    }
+   ],
+   "measure": {
+    "text": "I work on the Web team at Linear. I like to build things for designers and developers, think deeply about the user inter",
+    "chars": 155,
+    "lines": 2,
+    "charsPerLine": 78,
+    "width": 644,
+    "fontSize": "16px",
+    "lineHeight": "26.4px",
+    "color": "#63635e"
+   },
+   "rootVars": {
+    "--font-settings": "\"cv01\",\"ss03\"",
+    "--font-variations": "\"opsz\" auto"
+   },
+   "blockedSheets": 0,
+   "reducedMotionRules": 1,
+   "h1": [],
+   "h2": [],
+   "h3": [],
+   "nav": [
+    "Emil Kowalski"
+   ],
+   "ctas": [
+    "My new course called aiforui.dev is in e [344x17 bg #000000 a0 fg #21201c r 0px pad 0px 14px/500]",
+    "Emil Kowalski [103x24 bg #000000 a0 fg #21201c r 0px pad 0px 16px/500]",
+    "aiforui.devAI for Designers and Engineer [668x72 bg #000000 a0 fg #21201c r 6px pad 12px 16px/400]",
+    "SonnerAn opinionated toast component for [668x72 bg #000000 a0 fg #21201c r 6px pad 12px 16px/400]",
+    "animations.devA course on web animations [668x72 bg #000000 a0 fg #21201c r 6px pad 12px 16px/400]",
+    "VaulA drawer component for React. [668x72 bg #000000 a0 fg #21201c r 6px pad 12px 16px/400]",
+    "Friction as a FeatureA natural filter fo [668x72 bg #000000 a0 fg #21201c r 6px pad 12px 16px/400]",
+    "You Don’t Need AnimationsWhy you are ani [668x72 bg #000000 a0 fg #21201c r 6px pad 12px 16px/400]",
+    "Agents with TasteHow to transfer taste i [668x72 bg #000000 a0 fg #21201c r 6px pad 12px 16px/400]",
+    "Building a Toast ComponentMy experience  [668x72 bg #000000 a0 fg #21201c r 6px pad 12px 16px/400]",
+    "Developing TasteWhy taste matters and ho [668x72 bg #000000 a0 fg #21201c r 6px pad 12px 16px/400]",
+    "The Magic of Clip PathOne of the most un [668x72 bg #000000 a0 fg #21201c r 6px pad 12px 16px/400]",
+    "7 Practical Animation TipsSimple ideas y [668x72 bg #000000 a0 fg #21201c r 6px pad 12px 16px/400]",
+    "Train Your JudgementSettling for good en [668x72 bg #000000 a0 fg #21201c r 6px pad 12px 16px/400]"
+   ],
+   "media": {
+    "img": 0,
+    "svg": 1,
+    "video": 0,
+    "canvas": 0
+   }
+  }
+ }
+}

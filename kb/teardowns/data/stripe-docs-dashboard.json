@@ -1,0 +1,1167 @@
+{
+ "url": "https://docs.stripe.com/dashboard/basics",
+ "measuredAt": "2026-10-10T16:54:49.140Z",
+ "method": "Playwright Chromium, getComputedStyle on visible elements, light scheme, after scroll-through and fonts.ready",
+ "widths": {
+  "390": {
+   "status": 200,
+   "finalUrl": "https://docs.stripe.com/dashboard/basics",
+   "width": 390,
+   "h1Style": {
+    "font": "-apple-system 32px/40px w700 ls normal",
+    "color": "#1a1f36",
+    "top": 152,
+    "width": 257,
+    "align": "start"
+   },
+   "title": "Web Dashboard | Stripe Documentation",
+   "description": "Learn how to use the web version of the Stripe Dashboard.",
+   "pageHeight": 10643,
+   "bodyBg": "#000000 a0",
+   "htmlBg": "#ffffff",
+   "fontsLoaded": [],
+   "families": [
+    {
+     "v": "-apple-system, BlinkMacSystemFont",
+     "n": 10560
+    },
+    {
+     "v": "Menlo, Consolas",
+     "n": 1
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "16px / lh 26px / w400 / ls normal",
+     "n": 7997,
+     "ex": "p: The is the user interface where you manage and configure you"
+    },
+    {
+     "v": "16px / lh 26px / w500 / ls normal",
+     "n": 1079,
+     "ex": "span: Stripe Dashboard"
+    },
+    {
+     "v": "14px / lh 20px / w400 / ls normal",
+     "n": 564,
+     "ex": "a: Home"
+    },
+    {
+     "v": "16px / lh 24px / w500 / ls normal",
+     "n": 136,
+     "ex": "span: Web Dashboard"
+    },
+    {
+     "v": "21px / lh normal / w700 / ls normal",
+     "n": 134,
+     "ex": "span: Primary navigation"
+    },
+    {
+     "v": "16px / lh normal / w700 / ls normal",
+     "n": 132,
+     "ex": "span: Home"
+    },
+    {
+     "v": "14px / lh normal / w400 / ls normal",
+     "n": 104,
+     "ex": "a: Skip to content"
+    },
+    {
+     "v": "14px / lh normal / w600 / ls normal",
+     "n": 85,
+     "ex": "a: Create account"
+    },
+    {
+     "v": "14px / lh 26px / w500 / ls normal",
+     "n": 70,
+     "ex": "p: If you don’t have access to the Dashboard, ."
+    },
+    {
+     "v": "24px / lh 32px / w400 / ls normal",
+     "n": 57,
+     "ex": "h2: Learn how to use the web version of the Stripe Dashboard."
+    },
+    {
+     "v": "14px / lh 20px / w500 / ls normal",
+     "n": 53,
+     "ex": "strong: Customers"
+    },
+    {
+     "v": "12px / lh 16px / w600 / ls normal",
+     "n": 45,
+     "ex": "span: Copy for LLM"
+    },
+    {
+     "v": "13px / lh 20px / w500 / ls normal",
+     "n": 37,
+     "ex": "span: Manual card entry"
+    },
+    {
+     "v": "13px / lh normal / w500 / ls normal",
+     "n": 28,
+     "ex": "th: Payment capability"
+    },
+    {
+     "v": "20px / lh 28px / w700 / ls normal",
+     "n": 22,
+     "ex": "span: Was this page helpful?"
+    },
+    {
+     "v": "32px / lh 40px / w700 / ls normal",
+     "n": 12,
+     "ex": "span: Web"
+    },
+    {
+     "v": "14px / lh 20px / w600 / ls normal",
+     "n": 5,
+     "ex": "a: Yes"
+    },
+    {
+     "v": "14.4px / lh 26px / w400 / ls normal",
+     "n": 1,
+     "ex": "code: ?"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#3c4257",
+     "n": 8281
+    },
+    {
+     "v": "#5469d4",
+     "n": 1291
+    },
+    {
+     "v": "#1a1f36",
+     "n": 420
+    },
+    {
+     "v": "#414552",
+     "n": 366
+    },
+    {
+     "v": "#50617a",
+     "n": 108
+    },
+    {
+     "v": "#2a2f45",
+     "n": 44
+    },
+    {
+     "v": "#596171",
+     "n": 20
+    },
+    {
+     "v": "#ffffff",
+     "n": 15
+    },
+    {
+     "v": "#556cd6",
+     "n": 7
+    },
+    {
+     "v": "#273951",
+     "n": 5
+    },
+    {
+     "v": "#1a2c44",
+     "n": 4
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#3c4257 on #ffffff",
+     "n": 8280,
+     "ex": "9.96:1"
+    },
+    {
+     "v": "#5469d4 on #ffffff",
+     "n": 1260,
+     "ex": "4.83:1"
+    },
+    {
+     "v": "#1a1f36 on #ffffff",
+     "n": 420,
+     "ex": "16.24:1"
+    },
+    {
+     "v": "#414552 on #ffffff",
+     "n": 366,
+     "ex": "9.55:1"
+    },
+    {
+     "v": "#50617a on #ffffff",
+     "n": 108,
+     "ex": "6.3:1"
+    },
+    {
+     "v": "#2a2f45 on #ffffff",
+     "n": 44,
+     "ex": "13.2:1"
+    },
+    {
+     "v": "#5469d4 on #f7fafc",
+     "n": 31,
+     "ex": "4.61:1"
+    },
+    {
+     "v": "#596171 on #ffffff",
+     "n": 20,
+     "ex": "6.23:1"
+    },
+    {
+     "v": "#ffffff on #273951",
+     "n": 15,
+     "ex": "11.73:1"
+    },
+    {
+     "v": "#556cd6 on #ffffff",
+     "n": 7,
+     "ex": "4.66:1"
+    },
+    {
+     "v": "#273951 on #ffffff",
+     "n": 5,
+     "ex": "11.73:1"
+    },
+    {
+     "v": "#1a2c44 on #ffffff",
+     "n": 4,
+     "ex": "14.12:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#ffffff",
+     "n": 8332
+    },
+    {
+     "v": "#f7fafc",
+     "n": 54
+    },
+    {
+     "v": "linear-gradient(120deg, rgba(196, 240, 255, 0.7), rgba(196, 240, 255, 0.9))",
+     "n": 2
+    },
+    {
+     "v": "#273951",
+     "n": 1
+    },
+    {
+     "v": "#f4f7fa",
+     "n": 0
+    },
+    {
+     "v": "#d4dee9",
+     "n": 0
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #ecf1f6",
+     "n": 3
+    },
+    {
+     "v": "1px #d4dee9",
+     "n": 1
+    }
+   ],
+   "radii": [
+    {
+     "v": "4px",
+     "n": 106,
+     "ex": "a.⚙ rs-2 rs-3 rs-3 as-8 as-9 as-"
+    },
+    {
+     "v": "6px",
+     "n": 4,
+     "ex": "code.InlineCode ⚙ rs-3 as-71 as-2i "
+    },
+    {
+     "v": "8px",
+     "n": 1,
+     "ex": "a.⚙ rs-2 rs-3  as-8 as-9 as-a as"
+    },
+    {
+     "v": "4px 0px 0px",
+     "n": 1,
+     "ex": "th.⚙ rs-3 as-8k as-8o as-l as-8p "
+    },
+    {
+     "v": "0px 4px 0px 0px",
+     "n": 1,
+     "ex": "td.⚙  as-8k as-8o as-l as-8p as-5"
+    },
+    {
+     "v": "0px 0px 0px 4px",
+     "n": 1,
+     "ex": "th.⚙ rs-3 as-8k as-8o as-l as-8p "
+    },
+    {
+     "v": "0px 0px 4px",
+     "n": 1,
+     "ex": "td.⚙  as-8k as-8o as-l as-8p as-5"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+     "n": 106,
+     "ex": "a"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(212, 222, 233) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+     "n": 3,
+     "ex": "a"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(227, 232, 238) 0px 0px 0px 1px",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "rgb(227, 232, 238) 0px 0px 0px 1px",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "background-color, box-shadow 0.15s cubic-bezier(0, 0.09, 0.4, 1)",
+     "n": 3,
+     "ex": "a"
+    },
+    {
+     "v": "all 0.15s ease-in-out",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "width 0.15s ease-in-out",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "background-size 0.1s ease",
+     "n": 1,
+     "ex": "a"
+    },
+    {
+     "v": "right 0.1s ease",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "animations": [],
+   "maxWidths": [
+    {
+     "v": "1175px (rendered 390px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 342px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "fit-content (rendered 340px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "calc(100% - 2px) (rendered 338px)",
+     "n": 1,
+     "ex": "table"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "8px",
+     "n": 104
+    },
+    {
+     "v": "4px",
+     "n": 44
+    },
+    {
+     "v": "16px",
+     "n": 9
+    },
+    {
+     "v": "10px",
+     "n": 7
+    },
+    {
+     "v": "6px",
+     "n": 4
+    },
+    {
+     "v": "40px / col normal",
+     "n": 1
+    },
+    {
+     "v": "40px / col 16px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "16px",
+     "n": 66
+    },
+    {
+     "v": "12px",
+     "n": 49
+    },
+    {
+     "v": "32px",
+     "n": 47
+    },
+    {
+     "v": "8px",
+     "n": 27
+    },
+    {
+     "v": "4px",
+     "n": 9
+    },
+    {
+     "v": "1px",
+     "n": 6
+    },
+    {
+     "v": "24px",
+     "n": 4
+    },
+    {
+     "v": "2px",
+     "n": 2
+    }
+   ],
+   "margins": [
+    {
+     "v": "4px",
+     "n": 62
+    },
+    {
+     "v": "18px",
+     "n": 12
+    },
+    {
+     "v": "6px",
+     "n": 6
+    },
+    {
+     "v": "16px",
+     "n": 5
+    },
+    {
+     "v": "12px",
+     "n": 2
+    },
+    {
+     "v": "20px",
+     "n": 2
+    },
+    {
+     "v": "24px",
+     "n": 2
+    },
+    {
+     "v": "8px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "Use Customers to create and manage customer profiles. You can see information about your existing customers, including t",
+    "chars": 344,
+    "lines": 9,
+    "charsPerLine": 38,
+    "width": 342,
+    "fontSize": "16px",
+    "lineHeight": "26px",
+    "color": "#3c4257"
+   },
+   "rootVars": {},
+   "blockedSheets": 3,
+   "reducedMotionRules": 0,
+   "h1": [
+    "Web Dashboard"
+   ],
+   "h2": [
+    "Learn how to use the web version of the Stripe Dashboard.",
+    "Primary navigation",
+    "Shortcuts",
+    "Products",
+    "Dashboard settings",
+    "Monitor and test your integration",
+    "Mobile Dashboard app",
+    "Stripe organizations",
+    "See also"
+   ],
+   "h3": [
+    "Home",
+    "Balances",
+    "Transactions",
+    "Customers",
+    "Product catalog",
+    "Connect",
+    "Payments",
+    "Billing",
+    "Reporting",
+    "Other Stripe products",
+    "Account settings",
+    "Product settings",
+    "Developer resources",
+    "Partner directory",
+    "Stripe Apps",
+    "Support site"
+   ],
+   "nav": [
+    "Home",
+    "Developer resources"
+   ],
+   "ctas": [
+    "Skip to content [32x32 bg #273951 fg #ffffff r 8px pad 16px 14px/400]",
+    "Yes [59x28 bg #ffffff fg #273951 r 6px pad 4px 8px 14px/600]",
+    "No [53x28 bg #ffffff fg #273951 r 6px pad 4px 8px 14px/600]"
+   ],
+   "media": {
+    "img": 1,
+    "svg": 81,
+    "video": 0,
+    "canvas": 0
+   }
+  },
+  "1440": {
+   "status": 200,
+   "finalUrl": "https://docs.stripe.com/dashboard/basics",
+   "width": 1440,
+   "h1Style": {
+    "font": "-apple-system 32px/40px w700 ls normal",
+    "color": "#1a1f36",
+    "top": 180,
+    "width": 257,
+    "align": "start"
+   },
+   "title": "Web Dashboard | Stripe Documentation",
+   "description": "Learn how to use the web version of the Stripe Dashboard.",
+   "pageHeight": 900,
+   "bodyBg": "#000000 a0",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [],
+   "families": [
+    {
+     "v": "-apple-system, BlinkMacSystemFont",
+     "n": 11651
+    },
+    {
+     "v": "\"Source Code Pro\", Menlo",
+     "n": 1
+    },
+    {
+     "v": "Menlo, Consolas",
+     "n": 1
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "16px / lh 26px / w400 / ls normal",
+     "n": 7997,
+     "ex": "p: The is the user interface where you manage and configure you"
+    },
+    {
+     "v": "14px / lh 20px / w400 / ls normal",
+     "n": 1393,
+     "ex": "a: Ask AI"
+    },
+    {
+     "v": "16px / lh 26px / w500 / ls normal",
+     "n": 1079,
+     "ex": "span: Stripe Dashboard"
+    },
+    {
+     "v": "14px / lh 20px / w600 / ls normal",
+     "n": 211,
+     "ex": "label: Search"
+    },
+    {
+     "v": "21px / lh normal / w700 / ls normal",
+     "n": 134,
+     "ex": "span: Primary navigation"
+    },
+    {
+     "v": "16px / lh normal / w700 / ls normal",
+     "n": 132,
+     "ex": "span: Home"
+    },
+    {
+     "v": "16px / lh 24px / w500 / ls normal",
+     "n": 123,
+     "ex": "span: YouTube resources"
+    },
+    {
+     "v": "14px / lh normal / w400 / ls normal",
+     "n": 102,
+     "ex": "a: Skip to content"
+    },
+    {
+     "v": "14px / lh 20px / w500 / ls normal",
+     "n": 98,
+     "ex": "a: Create account"
+    },
+    {
+     "v": "14px / lh 26px / w500 / ls normal",
+     "n": 70,
+     "ex": "p: If you don’t have access to the Dashboard, ."
+    },
+    {
+     "v": "12px / lh 16px / w600 / ls normal",
+     "n": 64,
+     "ex": "button: Ask about this page"
+    },
+    {
+     "v": "14px / lh normal / w600 / ls normal",
+     "n": 64,
+     "ex": "a: Contact Support"
+    },
+    {
+     "v": "24px / lh 32px / w400 / ls normal",
+     "n": 57,
+     "ex": "h2: Learn how to use the web version of the Stripe Dashboard."
+    },
+    {
+     "v": "13px / lh 20px / w500 / ls normal",
+     "n": 49,
+     "ex": "span: Manual card entry"
+    },
+    {
+     "v": "13px / lh normal / w500 / ls normal",
+     "n": 28,
+     "ex": "th: Payment capability"
+    },
+    {
+     "v": "20px / lh 28px / w700 / ls normal",
+     "n": 22,
+     "ex": "span: Was this page helpful?"
+    },
+    {
+     "v": "14px / lh 20px / w700 / ls normal",
+     "n": 16,
+     "ex": "span: Stripe Dashboard"
+    },
+    {
+     "v": "32px / lh 40px / w700 / ls normal",
+     "n": 12,
+     "ex": "span: Web"
+    },
+    {
+     "v": "14px / lh 14px / w400 / ls normal",
+     "n": 1,
+     "ex": "kbd: /"
+    },
+    {
+     "v": "14.4px / lh 26px / w400 / ls normal",
+     "n": 1,
+     "ex": "code: ?"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#3c4257",
+     "n": 8281
+    },
+    {
+     "v": "#5469d4",
+     "n": 1334
+    },
+    {
+     "v": "#1a2c44",
+     "n": 760
+    },
+    {
+     "v": "#414552",
+     "n": 433
+    },
+    {
+     "v": "#1a1f36",
+     "n": 432
+    },
+    {
+     "v": "#50617a",
+     "n": 279
+    },
+    {
+     "v": "#273951",
+     "n": 48
+    },
+    {
+     "v": "#2a2f45",
+     "n": 44
+    },
+    {
+     "v": "#596171",
+     "n": 20
+    },
+    {
+     "v": "#ffffff",
+     "n": 15
+    },
+    {
+     "v": "#556cd6",
+     "n": 7
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#3c4257 on #ffffff",
+     "n": 8280,
+     "ex": "9.96:1"
+    },
+    {
+     "v": "#5469d4 on #ffffff",
+     "n": 1270,
+     "ex": "4.83:1"
+    },
+    {
+     "v": "#1a2c44 on #ffffff",
+     "n": 760,
+     "ex": "14.12:1"
+    },
+    {
+     "v": "#414552 on #ffffff",
+     "n": 433,
+     "ex": "9.55:1"
+    },
+    {
+     "v": "#1a1f36 on #ffffff",
+     "n": 432,
+     "ex": "16.24:1"
+    },
+    {
+     "v": "#50617a on #ffffff",
+     "n": 186,
+     "ex": "6.3:1"
+    },
+    {
+     "v": "#50617a on #f4f7fa",
+     "n": 93,
+     "ex": "5.86:1"
+    },
+    {
+     "v": "#273951 on #ffffff",
+     "n": 48,
+     "ex": "11.73:1"
+    },
+    {
+     "v": "#2a2f45 on #ffffff",
+     "n": 44,
+     "ex": "13.2:1"
+    },
+    {
+     "v": "#5469d4 on #f4f7fa",
+     "n": 33,
+     "ex": "4.49:1"
+    },
+    {
+     "v": "#5469d4 on #f7fafc",
+     "n": 31,
+     "ex": "4.61:1"
+    },
+    {
+     "v": "#596171 on #ffffff",
+     "n": 20,
+     "ex": "6.23:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#ffffff",
+     "n": 9127
+    },
+    {
+     "v": "#f7fafc",
+     "n": 289
+    },
+    {
+     "v": "#f4f7fa",
+     "n": 162
+    },
+    {
+     "v": "linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 50%, rgb(255, 255, 255) 100%)",
+     "n": 20
+    },
+    {
+     "v": "#d4dee9",
+     "n": 3
+    },
+    {
+     "v": "linear-gradient(120deg, rgba(196, 240, 255, 0.7), rgba(196, 240, 255, 0.9))",
+     "n": 2
+    },
+    {
+     "v": "#273951",
+     "n": 1
+    },
+    {
+     "v": "#533afd",
+     "n": 0
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #ecf1f6",
+     "n": 4
+    },
+    {
+     "v": "1px #d4dee9",
+     "n": 2
+    }
+   ],
+   "radii": [
+    {
+     "v": "4px",
+     "n": 106,
+     "ex": "kbd.⚙ rs-3 as-19 as-3e as-3i as-1w"
+    },
+    {
+     "v": "6px",
+     "n": 5,
+     "ex": "input.⚙ rs-2 rs-3 rs-4 rs-7 rs-8  rs"
+    },
+    {
+     "v": "8px",
+     "n": 3,
+     "ex": "a.⚙ rs-2 rs-3  as-8 as-9 as-a as"
+    },
+    {
+     "v": "4px 0px 0px",
+     "n": 1,
+     "ex": "th.⚙ rs-3 as-8k as-8o as-l as-8p "
+    },
+    {
+     "v": "0px 4px 0px 0px",
+     "n": 1,
+     "ex": "td.⚙  as-8k as-8o as-l as-8p as-5"
+    },
+    {
+     "v": "0px 0px 0px 4px",
+     "n": 1,
+     "ex": "th.⚙ rs-3 as-8k as-8o as-l as-8p "
+    },
+    {
+     "v": "0px 0px 4px",
+     "n": 1,
+     "ex": "td.⚙  as-8k as-8o as-l as-8p as-5"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+     "n": 117,
+     "ex": "a"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(212, 222, 233) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+     "n": 4,
+     "ex": "a"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(227, 232, 238) 0px 0px 0px 1px",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(16, 17, 26, 0.16) 0px 1px 1px 0px, rgb(212, 222, 233) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+     "n": 1,
+     "ex": "a"
+    },
+    {
+     "v": "rgb(227, 232, 238) 0px -1px 0px 0px inset",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "rgb(227, 232, 238) 0px 0px 0px 1px",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "color 0.1s cubic-bezier(0, 0, 0.4, 1)",
+     "n": 9,
+     "ex": "a"
+    },
+    {
+     "v": "background-color, box-shadow 0.15s cubic-bezier(0, 0.09, 0.4, 1)",
+     "n": 4,
+     "ex": "a"
+    },
+    {
+     "v": "all 0.15s ease-in-out",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "box-shadow 0.15s ease",
+     "n": 1,
+     "ex": "a"
+    },
+    {
+     "v": "box-shadow 0.24s ease",
+     "n": 1,
+     "ex": "input"
+    },
+    {
+     "v": "transform, opacity 0.15s, 0.15s cubic-bezier(0, 0.09, 0.4, 1), cubic-bezier(0, 0.09, 0.4, 1)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "width 0.15s ease-in-out",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "background-size 0.1s ease",
+     "n": 1,
+     "ex": "a"
+    },
+    {
+     "v": "opacity 0.1s ease",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "animations": [],
+   "maxWidths": [
+    {
+     "v": "1175px (rendered 1145px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 799px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "calc(100% - 2px) (rendered 797px)",
+     "n": 1,
+     "ex": "table"
+    }
+   ],
+   "sections": [],
+   "gaps": [
+    {
+     "v": "8px",
+     "n": 145
+    },
+    {
+     "v": "4px",
+     "n": 47
+    },
+    {
+     "v": "6px",
+     "n": 24
+    },
+    {
+     "v": "16px",
+     "n": 12
+    },
+    {
+     "v": "10px",
+     "n": 7
+    },
+    {
+     "v": "24px",
+     "n": 2
+    },
+    {
+     "v": "4px / col 8px",
+     "n": 1
+    },
+    {
+     "v": "12px",
+     "n": 1
+    },
+    {
+     "v": "40px / col normal",
+     "n": 1
+    },
+    {
+     "v": "40px / col 16px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "16px",
+     "n": 100
+    },
+    {
+     "v": "12px",
+     "n": 62
+    },
+    {
+     "v": "8px",
+     "n": 48
+    },
+    {
+     "v": "32px",
+     "n": 48
+    },
+    {
+     "v": "1px",
+     "n": 24
+    },
+    {
+     "v": "4px",
+     "n": 13
+    },
+    {
+     "v": "2px",
+     "n": 6
+    },
+    {
+     "v": "24px",
+     "n": 5
+    },
+    {
+     "v": "20px",
+     "n": 3
+    },
+    {
+     "v": "6px",
+     "n": 2
+    },
+    {
+     "v": "48px",
+     "n": 2
+    },
+    {
+     "v": "10px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "4px",
+     "n": 63
+    },
+    {
+     "v": "6px",
+     "n": 46
+    },
+    {
+     "v": "8px",
+     "n": 17
+    },
+    {
+     "v": "18px",
+     "n": 12
+    },
+    {
+     "v": "16px",
+     "n": 6
+    },
+    {
+     "v": "20px",
+     "n": 2
+    },
+    {
+     "v": "48px",
+     "n": 2
+    },
+    {
+     "v": "10px",
+     "n": 1
+    },
+    {
+     "v": "12px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "Use Customers to create and manage customer profiles. You can see information about your existing customers, including t",
+    "chars": 344,
+    "lines": 4,
+    "charsPerLine": 86,
+    "width": 799,
+    "fontSize": "16px",
+    "lineHeight": "26px",
+    "color": "#3c4257"
+   },
+   "rootVars": {},
+   "blockedSheets": 3,
+   "reducedMotionRules": 0,
+   "h1": [
+    "Web Dashboard"
+   ],
+   "h2": [
+    "Learn how to use the web version of the Stripe Dashboard.",
+    "Primary navigation",
+    "Shortcuts",
+    "Products",
+    "Dashboard settings",
+    "Monitor and test your integration",
+    "Mobile Dashboard app",
+    "Stripe organizations",
+    "See also"
+   ],
+   "h3": [
+    "Home",
+    "Balances",
+    "Transactions",
+    "Customers",
+    "Product catalog",
+    "Connect",
+    "Payments",
+    "Billing",
+    "Reporting",
+    "Other Stripe products",
+    "Account settings",
+    "Product settings",
+    "Developer resources",
+    "Partner directory",
+    "Stripe Apps",
+    "Support site"
+   ],
+   "nav": [
+    "Get started",
+    "Payments",
+    "Revenue",
+    "Risk",
+    "Data",
+    "Money management",
+    "Stablecoins",
+    "Embedded finance",
+    "Developer resources",
+    "Home",
+    "Developer resources"
+   ],
+   "ctas": [
+    "Skip to content [32x32 bg #273951 fg #ffffff r 8px pad 16px 14px/400]",
+    "Search/ [200x32 bg #ffffff fg #5469d4 r 8px pad 2px 8px 14px/400]",
+    "Ask AI [84x32 bg #ffffff fg #50617a r 8px pad 6px 12px 14px/400]",
+    "Sign in [62x28 bg #ffffff fg #273951 r 6px pad 4px 8px 14px/600]",
+    "Yes [59x28 bg #ffffff fg #273951 r 6px pad 4px 8px 14px/600]",
+    "No [53x28 bg #ffffff fg #273951 r 6px pad 4px 8px 14px/600]"
+   ],
+   "media": {
+    "img": 1,
+    "svg": 81,
+    "video": 0,
+    "canvas": 0
+   }
+  }
+ }
+}

@@ -1,0 +1,1443 @@
+{
+ "url": "https://pitch.com",
+ "measuredAt": "2026-10-10T16:52:44.197Z",
+ "method": "Playwright Chromium, getComputedStyle on visible elements, light scheme, after scroll-through and fonts.ready",
+ "widths": {
+  "390": {
+   "status": 200,
+   "finalUrl": "https://pitch.com/",
+   "width": 390,
+   "h1Style": {
+    "font": "\"Mark Pro Bold\" 82px/65.6px w700 ls -3.28px",
+    "color": "#ffffff",
+    "top": 180,
+    "width": 342,
+    "align": "center"
+   },
+   "title": "The AI presentation workspace",
+   "description": "Pitch is the collaborative presentation platform for teams that want to create, share, and deliver better work.",
+   "pageHeight": 15095,
+   "bodyBg": "#ffffff",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "Space Mono 400 normal",
+    "Mark Pro Bold 700 normal",
+    "Eina 03 Regular 400 normal",
+    "Eina 03 Bold 700 normal",
+    "Mark Pro Regular 400 normal",
+    "Inter 700 normal"
+   ],
+   "families": [
+    {
+     "v": "\"Eina 03 Regular\", \"Eina 03 Regular Placeholder\"",
+     "n": 4892
+    },
+    {
+     "v": "\"Mark Pro Bold\", \"Mark Pro Bold Placeholder\"",
+     "n": 2146
+    },
+    {
+     "v": "\"Eina 03 Bold\", \"Eina 03 Bold Placeholder\"",
+     "n": 151
+    },
+    {
+     "v": "\"Mark Pro Regular\", \"Mark Pro Regular Placeholder\"",
+     "n": 46
+    },
+    {
+     "v": "\"Space Mono\", \"Space Mono Placeholder\"",
+     "n": 45
+    },
+    {
+     "v": "Inter, \"Inter Placeholder\"",
+     "n": 42
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "14px / lh 22.4px / w400 / ls normal",
+     "n": 3271,
+     "ex": "p: From prompt to presentation, 4M+ teams create and deliver wi"
+    },
+    {
+     "v": "20px / lh 24px / w700 / ls -0.4px",
+     "n": 1274,
+     "ex": "p: Our work is highly visual and motion-driven. We know our pre"
+    },
+    {
+     "v": "16px / lh 25.6px / w400 / ls -0.32px",
+     "n": 935,
+     "ex": "p: WHY PITCH"
+    },
+    {
+     "v": "18px / lh 28.8px / w400 / ls -0.36px",
+     "n": 619,
+     "ex": "p: From first slide to final delivery, Pitch is where teams cre"
+    },
+    {
+     "v": "24px / lh 28.8px / w700 / ls -0.48px",
+     "n": 396,
+     "ex": "h6: Make stunning slides"
+    },
+    {
+     "v": "32px / lh 38.4px / w700 / ls -1.28px",
+     "n": 252,
+     "ex": "h2: Pitch is your presentation workspace"
+    },
+    {
+     "v": "14px / lh 16.8px / w700 / ls -0.28px",
+     "n": 119,
+     "ex": "p: Sign up for free"
+    },
+    {
+     "v": "32px / lh 38.4px / w700 / ls normal",
+     "n": 114,
+     "ex": "span: Presentations"
+    },
+    {
+     "v": "14px / lh 19.6px / w400 / ls normal",
+     "n": 56,
+     "ex": "span: Plug Pitch into your AI stack for on-brand presentations"
+    },
+    {
+     "v": "40px / lh 36px / w400 / ls -1.6px",
+     "n": 46,
+     "ex": "p: PITCH DECK"
+    },
+    {
+     "v": "32px / lh 38.4px / w900 / ls -1.28px",
+     "n": 44,
+     "ex": "strong: Create"
+    },
+    {
+     "v": "14px / lh 22.4px / w700 / ls normal",
+     "n": 42,
+     "ex": "strong: ©"
+    },
+    {
+     "v": "14px / lh 19.6px / w700 / ls normal",
+     "n": 41,
+     "ex": "strong: Pitch’s MCP & API are here:"
+    },
+    {
+     "v": "18px / lh 28.8px / w700 / ls -0.36px",
+     "n": 28,
+     "ex": "strong: Product"
+    },
+    {
+     "v": "52px / lh 52px / w700 / ls normal",
+     "n": 25,
+     "ex": "div: 0"
+    },
+    {
+     "v": "82px / lh 65.6px / w700 / ls -3.28px",
+     "n": 20,
+     "ex": "span: C"
+    },
+    {
+     "v": "16px / lh 22.4px / w400 / ls normal",
+     "n": 15,
+     "ex": "a: Cookie Settings"
+    },
+    {
+     "v": "16px / lh 19.2px / w700 / ls -0.64px",
+     "n": 12,
+     "ex": "p: (01)"
+    },
+    {
+     "v": "48px / lh 48px / w700 / ls -0.2px",
+     "n": 9,
+     "ex": "h2: Templates"
+    },
+    {
+     "v": "14px / lh 14px / w700 / ls normal",
+     "n": 4,
+     "ex": "p: 2026"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#ffffff",
+     "n": 3121
+    },
+    {
+     "v": "#0c021c",
+     "n": 2359
+    },
+    {
+     "v": "#363636",
+     "n": 1235
+    },
+    {
+     "v": "#5318eb",
+     "n": 295
+    },
+    {
+     "v": "#666666",
+     "n": 195
+    },
+    {
+     "v": "#c6a5ff",
+     "n": 117
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#ffffff on #280f62",
+     "n": 1951,
+     "ex": "15.73:1"
+    },
+    {
+     "v": "#363636 on #ffffff",
+     "n": 1235,
+     "ex": "12.08:1"
+    },
+    {
+     "v": "#0c021c on #ffffff",
+     "n": 1203,
+     "ex": "20.17:1"
+    },
+    {
+     "v": "#ffffff on #ffffff",
+     "n": 903,
+     "ex": "1:1"
+    },
+    {
+     "v": "#0c021c on #5318eb",
+     "n": 400,
+     "ex": "2.59:1"
+    },
+    {
+     "v": "#0c021c on #c6a5ff",
+     "n": 329,
+     "ex": "9.82:1"
+    },
+    {
+     "v": "#5318eb on #ffffff",
+     "n": 295,
+     "ex": "7.78:1"
+    },
+    {
+     "v": "#ffffff on #5318eb",
+     "n": 267,
+     "ex": "7.78:1"
+    },
+    {
+     "v": "#0c021c on #ebe3fe",
+     "n": 233,
+     "ex": "16.28:1"
+    },
+    {
+     "v": "#666666 on #ffffff",
+     "n": 195,
+     "ex": "5.74:1"
+    },
+    {
+     "v": "#0c021c on #c4ee87",
+     "n": 194,
+     "ex": "15.3:1"
+    },
+    {
+     "v": "#c6a5ff on #280f62",
+     "n": 117,
+     "ex": "7.66:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#ffffff",
+     "n": 7153
+    },
+    {
+     "v": "#280f62",
+     "n": 2032
+    },
+    {
+     "v": "#5318eb",
+     "n": 661
+    },
+    {
+     "v": "#ebe3fe",
+     "n": 173
+    },
+    {
+     "v": "#ffffff a0.2",
+     "n": 163
+    },
+    {
+     "v": "#c6a5ff",
+     "n": 162
+    },
+    {
+     "v": "#c4ee87",
+     "n": 137
+    },
+    {
+     "v": "#ffffff a0.16",
+     "n": 69
+    },
+    {
+     "v": "#f6f6f6",
+     "n": 11
+    },
+    {
+     "v": "#0c021c",
+     "n": 6
+    },
+    {
+     "v": "#ffffff a0.1",
+     "n": 2
+    },
+    {
+     "v": "#ebe3ff a0.27",
+     "n": 0
+    }
+   ],
+   "borders": [],
+   "radii": [
+    {
+     "v": "20px",
+     "n": 31,
+     "ex": "div.framer-ZWwA5 framer-ZtrnA fram"
+    },
+    {
+     "v": "24px",
+     "n": 19,
+     "ex": "div.framer-w83yjh"
+    },
+    {
+     "v": "12px",
+     "n": 13,
+     "ex": "video."
+    },
+    {
+     "v": "40px",
+     "n": 10,
+     "ex": "div.framer-1efdve3"
+    },
+    {
+     "v": "30px",
+     "n": 9,
+     "ex": "div.framer-n73p30"
+    },
+    {
+     "v": "2px",
+     "n": 8,
+     "ex": "img."
+    },
+    {
+     "v": "3px",
+     "n": 6,
+     "ex": "img."
+    },
+    {
+     "v": "70px",
+     "n": 6,
+     "ex": "a.framer-u5h22j framer-sj8gvg"
+    },
+    {
+     "v": "6px",
+     "n": 5,
+     "ex": "img."
+    },
+    {
+     "v": "7.62px",
+     "n": 3,
+     "ex": "div.framer-wvjhc3"
+    },
+    {
+     "v": "12.11px",
+     "n": 3,
+     "ex": "div.framer-1o2t1xo"
+    },
+    {
+     "v": "61.02px",
+     "n": 3,
+     "ex": "div.framer-1566xoy"
+    }
+   ],
+   "shadows": [],
+   "transitions": [
+    {
+     "v": "filter, opacity 0.2s, 0.2s ease-out, ease-out",
+     "n": 21,
+     "ex": "span"
+    },
+    {
+     "v": "transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 3,
+     "ex": "li"
+    },
+    {
+     "v": "filter 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 3,
+     "ex": "img"
+    },
+    {
+     "v": "opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "opacity 0.15s ease",
+     "n": 1,
+     "ex": "button"
+    },
+    {
+     "v": "transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "width 0.05s linear",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "color 0.12s ease",
+     "n": 1,
+     "ex": "a"
+    }
+   ],
+   "animations": [],
+   "maxWidths": [
+    {
+     "v": "1224px (rendered 358px)",
+     "n": 7,
+     "ex": "div"
+    },
+    {
+     "v": "550px (rendered 358px)",
+     "n": 4,
+     "ex": "div"
+    },
+    {
+     "v": "447px (rendered 358px)",
+     "n": 4,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 358px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "304px (rendered 304px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "800px (rendered 264px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 390px)",
+     "n": 2,
+     "ex": "ul"
+    },
+    {
+     "v": "780px (rendered 358px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "414px (rendered 310px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "780px (rendered 390px)",
+     "n": 2,
+     "ex": "div"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 13
+    },
+    {
+     "v": "pt 80px pb 0px",
+     "n": 1
+    },
+    {
+     "v": "pt 80px pb 80px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "10px",
+     "n": 54
+    },
+    {
+     "v": "24px",
+     "n": 34
+    },
+    {
+     "v": "8px",
+     "n": 29
+    },
+    {
+     "v": "16px",
+     "n": 19
+    },
+    {
+     "v": "40px",
+     "n": 17
+    },
+    {
+     "v": "12px",
+     "n": 10
+    },
+    {
+     "v": "32px",
+     "n": 10
+    },
+    {
+     "v": "20px",
+     "n": 9
+    },
+    {
+     "v": "64px",
+     "n": 4
+    },
+    {
+     "v": "52px",
+     "n": 4
+    },
+    {
+     "v": "4px",
+     "n": 2
+    },
+    {
+     "v": "72px",
+     "n": 2
+    },
+    {
+     "v": "48px",
+     "n": 2
+    },
+    {
+     "v": "32px / col 40px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "24px",
+     "n": 73
+    },
+    {
+     "v": "12px",
+     "n": 30
+    },
+    {
+     "v": "8px",
+     "n": 22
+    },
+    {
+     "v": "16px",
+     "n": 21
+    },
+    {
+     "v": "120px",
+     "n": 10
+    },
+    {
+     "v": "80px",
+     "n": 8
+    },
+    {
+     "v": "10px",
+     "n": 5
+    },
+    {
+     "v": "40px",
+     "n": 4
+    },
+    {
+     "v": "7.62481px",
+     "n": 2
+    },
+    {
+     "v": "12.1098px",
+     "n": 2
+    },
+    {
+     "v": "104px",
+     "n": 2
+    },
+    {
+     "v": "44px",
+     "n": 2
+    },
+    {
+     "v": "14px",
+     "n": 2
+    },
+    {
+     "v": "180px",
+     "n": 1
+    },
+    {
+     "v": "70px",
+     "n": 1
+    },
+    {
+     "v": "11.4372px",
+     "n": 1
+    },
+    {
+     "v": "16.1464px",
+     "n": 1
+    },
+    {
+     "v": "32px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "20px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "We don’t offer custom design services, but you’re in good hands. Use Pitch Agent to generate a presentation in seconds, ",
+    "chars": 280,
+    "lines": 7,
+    "charsPerLine": 40,
+    "width": 310,
+    "fontSize": "16px",
+    "lineHeight": "25.6px",
+    "color": "#ffffff"
+   },
+   "rootVars": {
+    "--token-bf6e6ad9-0834-4bf8-9a9b-744c9d5daca8": "#280f62",
+    "--token-07c59440-fc5f-4fb7-9435-a7ff074e0d34": "#5318eb",
+    "--token-4d0d31c7-6f7e-4c6a-a2be-10abc6becf5b": "#c6a5ff",
+    "--token-b5c3b7eb-39a2-45cb-8ff8-5ca6c6129045": "#ebe3fe",
+    "--token-9f3d2b7e-2cad-488a-9e02-167a62e1c960": "#fff",
+    "--token-67863ceb-ad9c-470b-9f8c-f19ab61b5f55": "#fff",
+    "--token-70cecdac-9248-4f38-9d1d-564a7491e69a": "#c4ee87",
+    "--token-a9014e7d-2289-4cfd-ae9b-052fde9e3e48": "#c6a5ff",
+    "--token-d023f303-d032-4951-b3c7-f7176b06c578": "#280f62",
+    "--token-7cd3dd22-9636-4551-ac3e-271ed57898cf": "#0c021c",
+    "--token-2659268f-dfd6-4f33-9625-999d245bc24a": "#363636",
+    "--token-f00c3c0d-390f-4a8d-aee9-60c50c874549": "#5318eb",
+    "--token-ff50ebbc-da2b-4592-9f7a-9978fad0e005": "#c6a5ff",
+    "--token-4fbfc342-89ce-48a8-822c-2888df55a915": "#fff",
+    "--token-7419ce6b-752f-4a7f-acf1-14cf371f4474": "#fff",
+    "--token-9901daa9-338b-443a-abe5-f1d77f5d992c": "#280f62",
+    "--token-46527d5a-f3d9-42a6-9441-45d24cc77dc3": "#5318eb",
+    "--token-eb517067-e467-4a77-b781-a8cf38d12a9a": "#c6a5ff",
+    "--token-d7ed0ca3-f22a-4402-ba2c-8b69989dc17e": "#c4ee87",
+    "--token-8f454f86-5f1a-4457-8cb3-210b70bc92be": "#f9f6ff",
+    "--token-5ac254b1-12f9-4813-84c2-f225d647b190": "#ff2344",
+    "--token-690c6400-3bde-46a8-903a-d02119805b45": "#280f62",
+    "--framer-will-change-override": "transform",
+    "--framer-will-change-filter-override": "filter",
+    "--overflow-clip-fallback": "hidden",
+    "--one-if-corner-shape-supported": "1"
+   },
+   "blockedSheets": 0,
+   "reducedMotionRules": 0,
+   "h1": [
+    "Create slides that win."
+   ],
+   "h2": [
+    "Pitch is your presentation workspace",
+    "THE PAYOFF",
+    "From first draft to closed deal, and beyond",
+    "A complete presentation toolkit",
+    "Generate slides from your existing stack",
+    "Pitch is for people who mean business",
+    "Templates",
+    "Not just another slide tool"
+   ],
+   "h3": [
+    "AI Agent",
+    "Slide editor",
+    "Viewer analytics",
+    "Pitch rooms",
+    "Brand library",
+    "Team organization",
+    "Unrivaled visuals",
+    "Ramp your sales engine",
+    "MARKETING",
+    "DESIGN",
+    "STARTUPS",
+    "SALES",
+    "CREATIVE"
+   ],
+   "nav": [],
+   "ctas": [
+    "Sign up for free [150x44 bg #ffffff fg #0000ee r 30px pad 12px 12px/400]",
+    "Get a demo [100x44 bg #c4ee87 fg #0000ee r 4px pad 10px 12px 12px/400]",
+    "Start creating [139x52 bg #280f62 fg #0000ee r 30px pad 12px 12px/400]",
+    "Sign up for free [150x52 bg #ffffff fg #0000ee r 30px pad 12px 12px/400]",
+    "Get a demo [100x52 bg #c4ee87 fg #0000ee r 4px pad 10px 12px 12px/400]",
+    "Browse templates [167x44 bg #ffffff fg #0000ee r 30px pad 12px 12px/400]"
+   ],
+   "media": {
+    "img": 109,
+    "svg": 8,
+    "video": 1,
+    "canvas": 1
+   }
+  },
+  "1440": {
+   "status": 200,
+   "finalUrl": "https://pitch.com/",
+   "width": 1440,
+   "h1Style": {
+    "font": "\"Mark Pro Bold\" 180px/144px w700 ls -7.2px",
+    "color": "#ffffff",
+    "top": 210,
+    "width": 1060,
+    "align": "center"
+   },
+   "title": "The AI presentation workspace",
+   "description": "Pitch is the collaborative presentation platform for teams that want to create, share, and deliver better work.",
+   "pageHeight": 14350,
+   "bodyBg": "#ffffff",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "Space Mono 400 normal",
+    "Mark Pro Bold 700 normal",
+    "Eina 03 Regular 400 normal",
+    "Eina 03 Bold 700 normal",
+    "Mark Pro Regular 400 normal",
+    "Inter 400 normal",
+    "Inter 700 normal"
+   ],
+   "families": [
+    {
+     "v": "\"Eina 03 Regular\", \"Eina 03 Regular Placeholder\"",
+     "n": 5048
+    },
+    {
+     "v": "\"Mark Pro Bold\", \"Mark Pro Bold Placeholder\"",
+     "n": 2758
+    },
+    {
+     "v": "\"Eina 03 Bold\", \"Eina 03 Bold Placeholder\"",
+     "n": 194
+    },
+    {
+     "v": "\"Mark Pro Regular\", \"Mark Pro Regular Placeholder\"",
+     "n": 46
+    },
+    {
+     "v": "\"Space Mono\", \"Space Mono Placeholder\"",
+     "n": 45
+    },
+    {
+     "v": "\"Mark Pro\", MarkPro",
+     "n": 8
+    },
+    {
+     "v": "\"Eina 03\", Eina03",
+     "n": 7
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "16px / lh 25.6px / w400 / ls normal",
+     "n": 2822,
+     "ex": "p: Your audience sees hundreds of presentations. Use Pitch’s po"
+    },
+    {
+     "v": "20px / lh 24px / w700 / ls -0.4px",
+     "n": 1848,
+     "ex": "p: Our work is highly visual and motion-driven. We know our pre"
+    },
+    {
+     "v": "16px / lh 25.6px / w400 / ls -0.32px",
+     "n": 931,
+     "ex": "p: Product"
+    },
+    {
+     "v": "18px / lh 28.8px / w400 / ls -0.36px",
+     "n": 755,
+     "ex": "h2: From prompt to presentation, 4M+ teams create and deliver wi"
+    },
+    {
+     "v": "14px / lh 22.4px / w400 / ls normal",
+     "n": 473,
+     "ex": "p: Tara Dabir, Director of New Business Development"
+    },
+    {
+     "v": "28px / lh 33.6px / w700 / ls -0.56px",
+     "n": 326,
+     "ex": "p: Intuitive slide creation"
+    },
+    {
+     "v": "48px / lh 57.6px / w700 / ls -1.92px",
+     "n": 247,
+     "ex": "h2: Pitch is your presentation workspace"
+    },
+    {
+     "v": "32px / lh 38.4px / w700 / ls -1.28px",
+     "n": 125,
+     "ex": "h3: Make stunning slides"
+    },
+    {
+     "v": "16px / lh 19.2px / w700 / ls -0.32px",
+     "n": 119,
+     "ex": "p: Log in"
+    },
+    {
+     "v": "48px / lh 57.6px / w700 / ls normal",
+     "n": 114,
+     "ex": "span: Presentations"
+    },
+    {
+     "v": "14px / lh 19.6px / w400 / ls normal",
+     "n": 56,
+     "ex": "span: Plug Pitch into your AI stack for on-brand presentations"
+    },
+    {
+     "v": "16px / lh 22.4px / w700 / ls normal",
+     "n": 47,
+     "ex": "small: ©2026 Pitch Software GmbH. All rights reserved."
+    },
+    {
+     "v": "64px / lh 57.6px / w400 / ls -2.56px",
+     "n": 46,
+     "ex": "p: PITCH DECK"
+    },
+    {
+     "v": "14px / lh 19.6px / w700 / ls normal",
+     "n": 41,
+     "ex": "strong: Pitch’s MCP & API are here:"
+    },
+    {
+     "v": "18px / lh 28.8px / w700 / ls -0.36px",
+     "n": 28,
+     "ex": "strong: Product"
+    },
+    {
+     "v": "60px / lh 60px / w700 / ls normal",
+     "n": 25,
+     "ex": "div: 0"
+    },
+    {
+     "v": "64px / lh 57.6px / w700 / ls -2.56px",
+     "n": 24,
+     "ex": "strong: Create"
+    },
+    {
+     "v": "180px / lh 144px / w700 / ls -7.2px",
+     "n": 20,
+     "ex": "span: C"
+    },
+    {
+     "v": "32px / lh 38.4px / w900 / ls -1.28px",
+     "n": 20,
+     "ex": "strong: Trusted by 4M+ teams"
+    },
+    {
+     "v": "16px / lh 22.4px / w400 / ls normal",
+     "n": 15,
+     "ex": "a: Cookie Settings"
+    },
+    {
+     "v": "92px / lh 82.8px / w700 / ls -0.2px",
+     "n": 9,
+     "ex": "h2: Templates"
+    },
+    {
+     "v": "14px / lh 19.78px / w400 / ls normal",
+     "n": 8,
+     "ex": "span: Generate"
+    },
+    {
+     "v": "14px / lh 21px / w600 / ls normal",
+     "n": 7,
+     "ex": "span: Prompts"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#ffffff",
+     "n": 3580
+    },
+    {
+     "v": "#0c021c",
+     "n": 2695
+    },
+    {
+     "v": "#363636",
+     "n": 1191
+    },
+    {
+     "v": "#5318eb",
+     "n": 295
+    },
+    {
+     "v": "#666666",
+     "n": 195
+    },
+    {
+     "v": "#c6a5ff",
+     "n": 150
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#ffffff on #280f62",
+     "n": 1998,
+     "ex": "15.73:1"
+    },
+    {
+     "v": "#ffffff on #ffffff",
+     "n": 1307,
+     "ex": "1:1"
+    },
+    {
+     "v": "#363636 on #ffffff",
+     "n": 1191,
+     "ex": "12.08:1"
+    },
+    {
+     "v": "#0c021c on #ffffff",
+     "n": 1160,
+     "ex": "20.17:1"
+    },
+    {
+     "v": "#0c021c on #5318eb",
+     "n": 601,
+     "ex": "2.59:1"
+    },
+    {
+     "v": "#0c021c on #c4ee87",
+     "n": 372,
+     "ex": "15.3:1"
+    },
+    {
+     "v": "#0c021c on #c6a5ff",
+     "n": 329,
+     "ex": "9.82:1"
+    },
+    {
+     "v": "#5318eb on #ffffff",
+     "n": 295,
+     "ex": "7.78:1"
+    },
+    {
+     "v": "#ffffff on #5318eb",
+     "n": 275,
+     "ex": "7.78:1"
+    },
+    {
+     "v": "#0c021c on #ebe3fe",
+     "n": 233,
+     "ex": "16.28:1"
+    },
+    {
+     "v": "#666666 on #ffffff",
+     "n": 195,
+     "ex": "5.74:1"
+    },
+    {
+     "v": "#c6a5ff on #280f62",
+     "n": 150,
+     "ex": "7.66:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#ffffff",
+     "n": 24284
+    },
+    {
+     "v": "#280f62",
+     "n": 7921
+    },
+    {
+     "v": "#5318eb",
+     "n": 2001
+    },
+    {
+     "v": "#ebe3fe",
+     "n": 342
+    },
+    {
+     "v": "#c4ee87",
+     "n": 269
+    },
+    {
+     "v": "#ffffff a0.2",
+     "n": 238
+    },
+    {
+     "v": "radial-gradient(rgba(198, 165, 255, 0.35) 0%, rgba(0, 0, 0, 0) 70%)",
+     "n": 228
+    },
+    {
+     "v": "#c6a5ff",
+     "n": 194
+    },
+    {
+     "v": "#ffffff a0.16",
+     "n": 133
+    },
+    {
+     "v": "#f6f6f6",
+     "n": 51
+    },
+    {
+     "v": "#0c021c",
+     "n": 6
+    },
+    {
+     "v": "#ebe3ff a0.27",
+     "n": 1
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #ffffff a0.4",
+     "n": 1
+    }
+   ],
+   "radii": [
+    {
+     "v": "20px",
+     "n": 42,
+     "ex": "div.framer-ZWwA5 framer-ZtrnA fram"
+    },
+    {
+     "v": "40px",
+     "n": 18,
+     "ex": "div.framer-mtjp4p"
+    },
+    {
+     "v": "24px",
+     "n": 17,
+     "ex": "div.framer-w83yjh"
+    },
+    {
+     "v": "4px",
+     "n": 12,
+     "ex": "a.framer-MD0XF framer-Xn0K6 fram"
+    },
+    {
+     "v": "8px",
+     "n": 11,
+     "ex": "button."
+    },
+    {
+     "v": "12px",
+     "n": 8,
+     "ex": "img."
+    },
+    {
+     "v": "30px",
+     "n": 7,
+     "ex": "a.framer-MD0XF framer-Xn0K6 fram"
+    },
+    {
+     "v": "32px",
+     "n": 6,
+     "ex": "div.framer-dF5gC framer-ZtrnA fram"
+    },
+    {
+     "v": "70px",
+     "n": 6,
+     "ex": "a.framer-u5h22j framer-sj8gvg"
+    },
+    {
+     "v": "7.62px",
+     "n": 3,
+     "ex": "div.framer-wvjhc3"
+    },
+    {
+     "v": "10px",
+     "n": 3,
+     "ex": "div.framer-4zrqqy"
+    },
+    {
+     "v": "60px",
+     "n": 1,
+     "ex": "div."
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgba(198, 165, 255, 0.35) 0px 20px 60px -20px",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "filter, opacity 0.2s, 0.2s ease-out, ease-out",
+     "n": 21,
+     "ex": "span"
+    },
+    {
+     "v": "transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 3,
+     "ex": "li"
+    },
+    {
+     "v": "filter 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 3,
+     "ex": "img"
+    },
+    {
+     "v": "opacity 0.15s ease",
+     "n": 2,
+     "ex": "button"
+    },
+    {
+     "v": "opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "outline-color 0.15s ease",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "background-color 0.15s ease",
+     "n": 1,
+     "ex": "button"
+    },
+    {
+     "v": "transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "width 0.05s linear",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "color 0.12s ease",
+     "n": 1,
+     "ex": "a"
+    }
+   ],
+   "animations": [],
+   "maxWidths": [
+    {
+     "v": "1224px (rendered 1224px)",
+     "n": 8,
+     "ex": "div"
+    },
+    {
+     "v": "780px (rendered 780px)",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "1040px (rendered 1040px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "800px (rendered 800px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 1440px)",
+     "n": 2,
+     "ex": "ul"
+    },
+    {
+     "v": "100% (rendered 596px)",
+     "n": 2,
+     "ex": "ul"
+    },
+    {
+     "v": "1060px (rendered 1060px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "1440px (rendered 1060px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "702px (rendered 702px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "702px (rendered 678px)",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 13
+    },
+    {
+     "v": "pt 80px pb 0px",
+     "n": 1
+    },
+    {
+     "v": "pt 120px pb 120px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "10px",
+     "n": 55
+    },
+    {
+     "v": "8px",
+     "n": 34
+    },
+    {
+     "v": "24px",
+     "n": 31
+    },
+    {
+     "v": "20px",
+     "n": 21
+    },
+    {
+     "v": "32px",
+     "n": 17
+    },
+    {
+     "v": "16px",
+     "n": 16
+    },
+    {
+     "v": "40px",
+     "n": 11
+    },
+    {
+     "v": "4px",
+     "n": 7
+    },
+    {
+     "v": "52px",
+     "n": 6
+    },
+    {
+     "v": "64px",
+     "n": 5
+    },
+    {
+     "v": "12px",
+     "n": 4
+    },
+    {
+     "v": "72px",
+     "n": 2
+    },
+    {
+     "v": "80px",
+     "n": 2
+    },
+    {
+     "v": "48px",
+     "n": 2
+    }
+   ],
+   "paddings": [
+    {
+     "v": "24px",
+     "n": 90
+    },
+    {
+     "v": "12px",
+     "n": 52
+    },
+    {
+     "v": "32px",
+     "n": 31
+    },
+    {
+     "v": "120px",
+     "n": 22
+    },
+    {
+     "v": "16px",
+     "n": 9
+    },
+    {
+     "v": "40px",
+     "n": 9
+    },
+    {
+     "v": "8px",
+     "n": 7
+    },
+    {
+     "v": "10px",
+     "n": 6
+    },
+    {
+     "v": "80px",
+     "n": 4
+    },
+    {
+     "v": "20px",
+     "n": 3
+    },
+    {
+     "v": "4px",
+     "n": 2
+    },
+    {
+     "v": "7.62481px",
+     "n": 2
+    },
+    {
+     "v": "104px",
+     "n": 2
+    },
+    {
+     "v": "54px",
+     "n": 2
+    },
+    {
+     "v": "14px",
+     "n": 2
+    },
+    {
+     "v": "210px",
+     "n": 1
+    },
+    {
+     "v": "70px",
+     "n": 1
+    },
+    {
+     "v": "190px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "20px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "We don’t offer custom design services, but you’re in good hands. Use Pitch Agent to generate a presentation in seconds, ",
+    "chars": 280,
+    "lines": 4,
+    "charsPerLine": 70,
+    "width": 556,
+    "fontSize": "16px",
+    "lineHeight": "25.6px",
+    "color": "#ffffff"
+   },
+   "rootVars": {
+    "--token-bf6e6ad9-0834-4bf8-9a9b-744c9d5daca8": "#280f62",
+    "--token-07c59440-fc5f-4fb7-9435-a7ff074e0d34": "#5318eb",
+    "--token-4d0d31c7-6f7e-4c6a-a2be-10abc6becf5b": "#c6a5ff",
+    "--token-b5c3b7eb-39a2-45cb-8ff8-5ca6c6129045": "#ebe3fe",
+    "--token-9f3d2b7e-2cad-488a-9e02-167a62e1c960": "#fff",
+    "--token-67863ceb-ad9c-470b-9f8c-f19ab61b5f55": "#fff",
+    "--token-70cecdac-9248-4f38-9d1d-564a7491e69a": "#c4ee87",
+    "--token-a9014e7d-2289-4cfd-ae9b-052fde9e3e48": "#c6a5ff",
+    "--token-d023f303-d032-4951-b3c7-f7176b06c578": "#280f62",
+    "--token-7cd3dd22-9636-4551-ac3e-271ed57898cf": "#0c021c",
+    "--token-2659268f-dfd6-4f33-9625-999d245bc24a": "#363636",
+    "--token-f00c3c0d-390f-4a8d-aee9-60c50c874549": "#5318eb",
+    "--token-ff50ebbc-da2b-4592-9f7a-9978fad0e005": "#c6a5ff",
+    "--token-4fbfc342-89ce-48a8-822c-2888df55a915": "#fff",
+    "--token-7419ce6b-752f-4a7f-acf1-14cf371f4474": "#fff",
+    "--token-9901daa9-338b-443a-abe5-f1d77f5d992c": "#280f62",
+    "--token-46527d5a-f3d9-42a6-9441-45d24cc77dc3": "#5318eb",
+    "--token-eb517067-e467-4a77-b781-a8cf38d12a9a": "#c6a5ff",
+    "--token-d7ed0ca3-f22a-4402-ba2c-8b69989dc17e": "#c4ee87",
+    "--token-8f454f86-5f1a-4457-8cb3-210b70bc92be": "#f9f6ff",
+    "--token-5ac254b1-12f9-4813-84c2-f225d647b190": "#ff2344",
+    "--token-690c6400-3bde-46a8-903a-d02119805b45": "#280f62",
+    "--framer-will-change-override": "transform",
+    "--framer-will-change-filter-override": "filter",
+    "--overflow-clip-fallback": "hidden",
+    "--one-if-corner-shape-supported": "1"
+   },
+   "blockedSheets": 0,
+   "reducedMotionRules": 0,
+   "h1": [
+    "Create slides that win."
+   ],
+   "h2": [
+    "From prompt to presentation, 4M+ teams create and deliver winning slides together in Pitch.",
+    "Pitch is your presentation workspace",
+    "THE PAYOFF",
+    "From first draft to closed deal, and beyond",
+    "A complete presentation toolkit",
+    "Generate slides from your existing stack",
+    "Pitch is for people who mean business",
+    "Templates",
+    "Not just another slide tool"
+   ],
+   "h3": [
+    "Make stunning slides",
+    "Pitch like a pro",
+    "Showcase your brand",
+    "Stay in control",
+    "Create",
+    "Collaborate",
+    "Deliver",
+    "AI Agent",
+    "Slide editor",
+    "Viewer analytics",
+    "Pitch rooms",
+    "Brand library",
+    "Team organization",
+    "Unrivaled visuals",
+    "Ramp your sales engine",
+    "MARKETING"
+   ],
+   "nav": [
+    "Product",
+    "Use Cases",
+    "Templates",
+    "Resources",
+    "Pricing",
+    "Log in",
+    "Sign up"
+   ],
+   "ctas": [
+    "Log in [97x44 bg #ffffff fg #0000ee r 30px pad 12px 12px/400]",
+    "Sign up [80x44 bg #c4ee87 fg #0000ee r 4px pad 10px 12px 12px/400]",
+    "Generate [117x36 bg #5318eb fg #ffffff r 4px pad 8px 12px 8px 16px 14px/400]",
+    "Start creating [151x52 bg #280f62 fg #0000ee r 30px pad 12px 12px/400]",
+    "Sign up for free [164x52 bg #ffffff fg #0000ee r 30px pad 12px 12px/400]",
+    "Get a demo [111x52 bg #c4ee87 fg #0000ee r 4px pad 10px 12px 12px/400]",
+    "Browse templates [184x44 bg #ffffff fg #0000ee r 30px pad 12px 12px/400]",
+    "Log in [97x44 bg #ffffff fg #0000ee r 30px pad 12px 12px/400]",
+    "Sign up [80x44 bg #c4ee87 fg #0000ee r 4px pad 10px 12px 12px/400]"
+   ],
+   "media": {
+    "img": 100,
+    "svg": 11,
+    "video": 0,
+    "canvas": 1
+   }
+  }
+ }
+}

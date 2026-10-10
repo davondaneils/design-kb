@@ -1,0 +1,1215 @@
+{
+ "url": "https://culturedcode.com/things/",
+ "measuredAt": "2026-10-10T16:57:54.728Z",
+ "method": "Playwright Chromium, getComputedStyle on visible elements, light scheme, after scroll-through and fonts.ready",
+ "widths": {
+  "390": {
+   "status": 200,
+   "finalUrl": "https://culturedcode.com/things/",
+   "width": 390,
+   "h1Style": {
+    "font": "ui-sans-serif 20.25px/25.3125px w400 ls normal",
+    "color": "#303336",
+    "top": 137,
+    "width": 1,
+    "align": "start"
+   },
+   "title": "Things - To-Do List App for Mac & iOS",
+   "description": "Things is the award-winning personal task manager that helps you plan your day, manage your projects, and make real progress toward your goals.",
+   "pageHeight": 11568,
+   "bodyBg": "#f2f5f7",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [],
+   "families": [
+    {
+     "v": "ui-sans-serif, -apple-system",
+     "n": 6780
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "18px / lh 24.3px / w400 / ls normal",
+     "n": 3507,
+     "ex": "div: , Things 3 has been completely re-imagined to improve effici"
+    },
+    {
+     "v": "15.2px / lh 19.76px / w400 / ls normal",
+     "n": 1321,
+     "ex": "div: Things by is the best to-do list app. I don’t get how people"
+    },
+    {
+     "v": "20.25px / lh 26.325px / w400 / ls normal",
+     "n": 785,
+     "ex": "p: Things makes it easy. Within the hour, you’ll have everythin"
+    },
+    {
+     "v": "15.3px / lh 18.36px / w400 / ls normal",
+     "n": 392,
+     "ex": "span: macOS 13.3 or later"
+    },
+    {
+     "v": "20.25px / lh 25.3125px / w400 / ls normal",
+     "n": 149,
+     "ex": "h1: Things"
+    },
+    {
+     "v": "13.5px / lh 16.2px / w400 / ls normal",
+     "n": 105,
+     "ex": "div: Shawn Blanc"
+    },
+    {
+     "v": "13px / lh 15.6px / w700 / ls normal",
+     "n": 100,
+     "ex": "a: Ilia Delin"
+    },
+    {
+     "v": "36px / lh 36px / w700 / ls normal",
+     "n": 91,
+     "ex": "h2: Simply Powerful"
+    },
+    {
+     "v": "14.4px / lh 14.4px / w800 / ls normal",
+     "n": 81,
+     "ex": "div: Apple Design Award Winner"
+    },
+    {
+     "v": "13.5px / lh 16.2px / w700 / ls normal",
+     "n": 66,
+     "ex": "b: The Sweet Setup"
+    },
+    {
+     "v": "13px / lh 15.6px / w400 / ls normal",
+     "n": 45,
+     "ex": "div: Sep 22"
+    },
+    {
+     "v": "20.25px / lh 24.3px / w700 / ls normal",
+     "n": 31,
+     "ex": "h3: Mac"
+    },
+    {
+     "v": "15.3px / lh 18.36px / w700 / ls normal",
+     "n": 26,
+     "ex": "h3: Products"
+    },
+    {
+     "v": "20.25px / lh 20.25px / w600 / ls normal",
+     "n": 24,
+     "ex": "span: Watch Introduction Video"
+    },
+    {
+     "v": "14px / lh 24px / w600 / ls normal",
+     "n": 19,
+     "ex": "span: Features"
+    },
+    {
+     "v": "14.72px / lh normal / w600 / ls normal",
+     "n": 15,
+     "ex": "a: Show More Posts"
+    },
+    {
+     "v": "20.25px / lh 26.325px / w600 / ls normal",
+     "n": 12,
+     "ex": "a: See features"
+    },
+    {
+     "v": "14px / lh 16.8px / w600 / ls normal",
+     "n": 6,
+     "ex": "a: Things"
+    },
+    {
+     "v": "13.68px / lh 17.784px / w400 / ls normal",
+     "n": 5,
+     "ex": "a: More…"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#303336",
+     "n": 4601
+    },
+    {
+     "v": "#44474b",
+     "n": 928
+    },
+    {
+     "v": "#55606e",
+     "n": 257
+    },
+    {
+     "v": "#000f24 a0.46",
+     "n": 215
+    },
+    {
+     "v": "#000712 a0.44",
+     "n": 203
+    },
+    {
+     "v": "#9299a4",
+     "n": 159
+    },
+    {
+     "v": "#8e9196",
+     "n": 145
+    },
+    {
+     "v": "#8792a1",
+     "n": 111
+    },
+    {
+     "v": "#2c3138",
+     "n": 91
+    },
+    {
+     "v": "#5c9cf5",
+     "n": 36
+    },
+    {
+     "v": "#26344a a0.5",
+     "n": 19
+    },
+    {
+     "v": "#000813 a0.74",
+     "n": 15
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#303336 on #f2f5f7",
+     "n": 3550,
+     "ex": "11.61:1"
+    },
+    {
+     "v": "#303336 on #ffffff",
+     "n": 1051,
+     "ex": "12.71:1"
+    },
+    {
+     "v": "#44474b on #f2f5f7",
+     "n": 432,
+     "ex": "8.53:1"
+    },
+    {
+     "v": "#44474b on #ffffff",
+     "n": 300,
+     "ex": "9.34:1"
+    },
+    {
+     "v": "#000f24 a0.46 on #f2f5f7",
+     "n": 215,
+     "ex": "3.14:1"
+    },
+    {
+     "v": "#000712 a0.44 on #f2f5f7",
+     "n": 203,
+     "ex": "3.08:1"
+    },
+    {
+     "v": "#44474b on #fbfcfe",
+     "n": 196,
+     "ex": "9.1:1"
+    },
+    {
+     "v": "#55606e on #ffffff",
+     "n": 171,
+     "ex": "6.39:1"
+    },
+    {
+     "v": "#9299a4 on #f2f5f7",
+     "n": 159,
+     "ex": "2.62:1"
+    },
+    {
+     "v": "#8e9196 on #ffffff",
+     "n": 145,
+     "ex": "3.16:1"
+    },
+    {
+     "v": "#8792a1 on #ffffff",
+     "n": 111,
+     "ex": "3.15:1"
+    },
+    {
+     "v": "#55606e on #f2f5f7",
+     "n": 81,
+     "ex": "5.84:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#f2f5f7",
+     "n": 3046
+    },
+    {
+     "v": "#ffffff",
+     "n": 3017
+    },
+    {
+     "v": "#fbfcfe",
+     "n": 351
+    },
+    {
+     "v": "#cfd8e6",
+     "n": 5
+    },
+    {
+     "v": "#4f91fb",
+     "n": 4
+    },
+    {
+     "v": "#eceef0",
+     "n": 1
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #000000 a0",
+     "n": 2
+    },
+    {
+     "v": "1px #dfe3e8",
+     "n": 1
+    },
+    {
+     "v": "1px #001c46 a0.12",
+     "n": 1
+    }
+   ],
+   "radii": [
+    {
+     "v": "18px",
+     "n": 17,
+     "ex": "div.productcard"
+    },
+    {
+     "v": "3px",
+     "n": 16,
+     "ex": "a."
+    },
+    {
+     "v": "4.5px",
+     "n": 14,
+     "ex": "mark."
+    },
+    {
+     "v": "6px",
+     "n": 10,
+     "ex": "a.navigation-logobutton"
+    },
+    {
+     "v": "12.8px",
+     "n": 8,
+     "ex": "div.tweetgrid-bubble"
+    },
+    {
+     "v": "10.8px",
+     "n": 4,
+     "ex": "div.nicequote-award"
+    },
+    {
+     "v": "8.1px",
+     "n": 1,
+     "ex": "span.remotecontrol is-basic is-init"
+    },
+    {
+     "v": "5.472px",
+     "n": 1,
+     "ex": "a.tweetgrid-link"
+    },
+    {
+     "v": "6.624px",
+     "n": 1,
+     "ex": "a.button is-weak"
+    },
+    {
+     "v": "5px",
+     "n": 1,
+     "ex": "img.nicequote-ada"
+    },
+    {
+     "v": "6.4px",
+     "n": 1,
+     "ex": "input.mailinglist-textfield textfiel"
+    },
+    {
+     "v": "7.632px",
+     "n": 1,
+     "ex": "input.button is-strong is-large"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgba(0, 0, 0, 0.1) 0px 2px 8px 0px, rgba(0, 0, 0, 0.1) 0px 0px 2px 0px",
+     "n": 8,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(38, 52, 74, 0.15) 0px 1px 0px 0px",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.1) 0px 2px 10px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px",
+     "n": 1,
+     "ex": "img"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "transform 0.1s ease-out",
+     "n": 4,
+     "ex": "img"
+    },
+    {
+     "v": "background 0.2s ease-out",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "animations": [],
+   "maxWidths": [
+    {
+     "v": "900px (rendered 390px)",
+     "n": 8,
+     "ex": "div"
+    },
+    {
+     "v": "85% (rendered 305px)",
+     "n": 5,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 157px)",
+     "n": 2,
+     "ex": "img"
+    },
+    {
+     "v": "100% (rendered 359px)",
+     "n": 2,
+     "ex": "img"
+    },
+    {
+     "v": "90% (rendered 323px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "75% (rendered 242px)",
+     "n": 1,
+     "ex": "img"
+    },
+    {
+     "v": "100% (rendered 390px)",
+     "n": 1,
+     "ex": "img"
+    },
+    {
+     "v": "100% (rendered 399px)",
+     "n": 1,
+     "ex": "img"
+    },
+    {
+     "v": "500px (rendered 359px)",
+     "n": 1,
+     "ex": "form"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 81px pb 81px",
+     "n": 3
+    },
+    {
+     "v": "pt 0px pb 0px",
+     "n": 2
+    },
+    {
+     "v": "pt 81px pb 0px",
+     "n": 1
+    },
+    {
+     "v": "pt 81px pb 240px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "18px",
+     "n": 2
+    },
+    {
+     "v": "16px",
+     "n": 1
+    },
+    {
+     "v": "24px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "27px",
+     "n": 39
+    },
+    {
+     "v": "12.8px",
+     "n": 24
+    },
+    {
+     "v": "6.5px",
+     "n": 16
+    },
+    {
+     "v": "4.05px",
+     "n": 12
+    },
+    {
+     "v": "15.5938px",
+     "n": 8
+    },
+    {
+     "v": "81px",
+     "n": 8
+    },
+    {
+     "v": "18px",
+     "n": 8
+    },
+    {
+     "v": "22.8px",
+     "n": 8
+    },
+    {
+     "v": "36px",
+     "n": 8
+    },
+    {
+     "v": "3.25px",
+     "n": 8
+    },
+    {
+     "v": "12.96px",
+     "n": 8
+    },
+    {
+     "v": "2px",
+     "n": 6
+    },
+    {
+     "v": "10.125px",
+     "n": 6
+    },
+    {
+     "v": "5px",
+     "n": 4
+    },
+    {
+     "v": "140px",
+     "n": 4
+    },
+    {
+     "v": "28.8px",
+     "n": 4
+    },
+    {
+     "v": "50px",
+     "n": 3
+    },
+    {
+     "v": "8px",
+     "n": 3
+    }
+   ],
+   "margins": [
+    {
+     "v": "4.59px",
+     "n": 34
+    },
+    {
+     "v": "10.125px",
+     "n": 22
+    },
+    {
+     "v": "9px",
+     "n": 15
+    },
+    {
+     "v": "40px",
+     "n": 11
+    },
+    {
+     "v": "27px",
+     "n": 10
+    },
+    {
+     "v": "2.7px",
+     "n": 8
+    },
+    {
+     "v": "2px",
+     "n": 7
+    },
+    {
+     "v": "6.075px",
+     "n": 4
+    },
+    {
+     "v": "15.3px",
+     "n": 4
+    },
+    {
+     "v": "14.4px",
+     "n": 4
+    },
+    {
+     "v": "6.12px",
+     "n": 4
+    },
+    {
+     "v": "20px",
+     "n": 2
+    },
+    {
+     "v": "18px",
+     "n": 2
+    },
+    {
+     "v": "30.375px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "Things makes it easy. Within the hour, you’ll have everything off your mind and neatly organized – from routine tasks to",
+    "chars": 196,
+    "lines": 7,
+    "charsPerLine": 28,
+    "width": 305,
+    "fontSize": "20.25px",
+    "lineHeight": "26.325px",
+    "color": "#44474b"
+   },
+   "rootVars": {},
+   "blockedSheets": 0,
+   "reducedMotionRules": 1,
+   "h1": [
+    "Things"
+   ],
+   "h2": [
+    "Simply Powerful",
+    "Get Things, Get Done",
+    "What People Are Saying",
+    "Read All About It",
+    "Things Newsletter",
+    "Footer"
+   ],
+   "h3": [
+    "Mac",
+    "iPhone & Watch",
+    "iPad",
+    "Vision Pro",
+    "Products",
+    "Support",
+    "News",
+    "Company"
+   ],
+   "nav": [
+    "Things",
+    "Features",
+    "Support",
+    "Blog"
+   ],
+   "ctas": [
+    "More… [53x18 bg #eceef0 fg #55606e r 5.472px pad 0px 4.104px 13.68px/400]",
+    "Show More Posts [155x32 bg #cfd8e6 fg #000813 a0.74 r 6.624px pad 6.1824px 14.72px 14.72px/600]"
+   ],
+   "media": {
+    "img": 37,
+    "svg": 10,
+    "video": 1,
+    "canvas": 0
+   }
+  },
+  "1440": {
+   "status": 200,
+   "finalUrl": "https://culturedcode.com/things/",
+   "width": 1440,
+   "h1Style": {
+    "font": "ui-sans-serif 23.994px/29.9925px w400 ls normal",
+    "color": "#303336",
+    "top": 137,
+    "width": 1,
+    "align": "start"
+   },
+   "title": "Things - To-Do List App for Mac & iOS",
+   "description": "Things is the award-winning personal task manager that helps you plan your day, manage your projects, and make real progress toward your goals.",
+   "pageHeight": 8227,
+   "bodyBg": "#f2f5f7",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [],
+   "families": [
+    {
+     "v": "ui-sans-serif, -apple-system",
+     "n": 6775
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "18px / lh 24.3px / w400 / ls normal",
+     "n": 3507,
+     "ex": "div: , Things 3 has been completely re-imagined to improve effici"
+    },
+    {
+     "v": "15.2px / lh 19.76px / w400 / ls normal",
+     "n": 1321,
+     "ex": "div: Things by is the best to-do list app. I don’t get how people"
+    },
+    {
+     "v": "20.25px / lh 26.325px / w400 / ls normal",
+     "n": 785,
+     "ex": "p: Things makes it easy. Within the hour, you’ll have everythin"
+    },
+    {
+     "v": "15.3px / lh 18.36px / w400 / ls normal",
+     "n": 392,
+     "ex": "span: macOS 13.3 or later"
+    },
+    {
+     "v": "23.994px / lh 29.9925px / w400 / ls normal",
+     "n": 149,
+     "ex": "h1: Things"
+    },
+    {
+     "v": "13.5px / lh 16.2px / w400 / ls normal",
+     "n": 105,
+     "ex": "div: Shawn Blanc"
+    },
+    {
+     "v": "13px / lh 15.6px / w700 / ls normal",
+     "n": 100,
+     "ex": "a: Ilia Delin"
+    },
+    {
+     "v": "36px / lh 36px / w700 / ls normal",
+     "n": 91,
+     "ex": "h2: Simply Powerful"
+    },
+    {
+     "v": "14.4px / lh 14.4px / w800 / ls normal",
+     "n": 81,
+     "ex": "div: Apple Design Award Winner"
+    },
+    {
+     "v": "13.5px / lh 16.2px / w700 / ls normal",
+     "n": 66,
+     "ex": "b: The Sweet Setup"
+    },
+    {
+     "v": "13px / lh 15.6px / w400 / ls normal",
+     "n": 45,
+     "ex": "div: Sep 22"
+    },
+    {
+     "v": "20.25px / lh 24.3px / w700 / ls normal",
+     "n": 31,
+     "ex": "h3: Mac"
+    },
+    {
+     "v": "15.3px / lh 18.36px / w700 / ls normal",
+     "n": 26,
+     "ex": "h3: Products"
+    },
+    {
+     "v": "23.994px / lh 23.994px / w600 / ls normal",
+     "n": 24,
+     "ex": "span: Watch Introduction Video"
+    },
+    {
+     "v": "15px / lh 24px / w600 / ls normal",
+     "n": 19,
+     "ex": "span: Features"
+    },
+    {
+     "v": "20.25px / lh 26.325px / w600 / ls normal",
+     "n": 12,
+     "ex": "a: See features"
+    },
+    {
+     "v": "16px / lh 20.8px / w400 / ls normal",
+     "n": 10,
+     "ex": "a: Next Posts"
+    },
+    {
+     "v": "15px / lh 18px / w600 / ls normal",
+     "n": 6,
+     "ex": "a: Things"
+    },
+    {
+     "v": "13.68px / lh 17.784px / w400 / ls normal",
+     "n": 5,
+     "ex": "a: More…"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#303336",
+     "n": 4611
+    },
+    {
+     "v": "#44474b",
+     "n": 928
+    },
+    {
+     "v": "#55606e",
+     "n": 257
+    },
+    {
+     "v": "#000f24 a0.46",
+     "n": 215
+    },
+    {
+     "v": "#000712 a0.44",
+     "n": 203
+    },
+    {
+     "v": "#9299a4",
+     "n": 159
+    },
+    {
+     "v": "#8e9196",
+     "n": 145
+    },
+    {
+     "v": "#8792a1",
+     "n": 111
+    },
+    {
+     "v": "#2c3138",
+     "n": 91
+    },
+    {
+     "v": "#5c9cf5",
+     "n": 36
+    },
+    {
+     "v": "#26344a a0.5",
+     "n": 19
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#303336 on #f2f5f7",
+     "n": 3560,
+     "ex": "11.61:1"
+    },
+    {
+     "v": "#303336 on #ffffff",
+     "n": 1051,
+     "ex": "12.71:1"
+    },
+    {
+     "v": "#44474b on #f2f5f7",
+     "n": 432,
+     "ex": "8.53:1"
+    },
+    {
+     "v": "#44474b on #ffffff",
+     "n": 300,
+     "ex": "9.34:1"
+    },
+    {
+     "v": "#000f24 a0.46 on #f2f5f7",
+     "n": 215,
+     "ex": "3.14:1"
+    },
+    {
+     "v": "#000712 a0.44 on #f2f5f7",
+     "n": 203,
+     "ex": "3.08:1"
+    },
+    {
+     "v": "#44474b on #fbfcfe",
+     "n": 196,
+     "ex": "9.1:1"
+    },
+    {
+     "v": "#55606e on #ffffff",
+     "n": 171,
+     "ex": "6.39:1"
+    },
+    {
+     "v": "#9299a4 on #f2f5f7",
+     "n": 159,
+     "ex": "2.62:1"
+    },
+    {
+     "v": "#8e9196 on #ffffff",
+     "n": 145,
+     "ex": "3.16:1"
+    },
+    {
+     "v": "#8792a1 on #ffffff",
+     "n": 111,
+     "ex": "3.15:1"
+    },
+    {
+     "v": "#55606e on #f2f5f7",
+     "n": 81,
+     "ex": "5.84:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#f2f5f7",
+     "n": 6207
+    },
+    {
+     "v": "#ffffff",
+     "n": 5606
+    },
+    {
+     "v": "#fbfcfe",
+     "n": 2035
+    },
+    {
+     "v": "#4f91fb",
+     "n": 4
+    },
+    {
+     "v": "#eceef0",
+     "n": 1
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #dfe3e8",
+     "n": 1
+    },
+    {
+     "v": "1px #000000 a0",
+     "n": 1
+    },
+    {
+     "v": "1px #001c46 a0.12",
+     "n": 1
+    }
+   ],
+   "radii": [
+    {
+     "v": "18px",
+     "n": 17,
+     "ex": "div.productcard"
+    },
+    {
+     "v": "3px",
+     "n": 16,
+     "ex": "a."
+    },
+    {
+     "v": "4.5px",
+     "n": 14,
+     "ex": "mark."
+    },
+    {
+     "v": "6px",
+     "n": 10,
+     "ex": "a.navigation-logobutton"
+    },
+    {
+     "v": "12.8px",
+     "n": 8,
+     "ex": "div.tweetgrid-bubble"
+    },
+    {
+     "v": "10.8px",
+     "n": 4,
+     "ex": "div.nicequote-award"
+    },
+    {
+     "v": "9.5976px",
+     "n": 1,
+     "ex": "span.remotecontrol is-basic is-init"
+    },
+    {
+     "v": "5.472px",
+     "n": 1,
+     "ex": "a.tweetgrid-link"
+    },
+    {
+     "v": "5px",
+     "n": 1,
+     "ex": "img.nicequote-ada"
+    },
+    {
+     "v": "6.4px",
+     "n": 1,
+     "ex": "input.mailinglist-textfield textfiel"
+    },
+    {
+     "v": "7.632px",
+     "n": 1,
+     "ex": "input.button is-strong is-large"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgba(0, 0, 0, 0.1) 0px 2px 8px 0px, rgba(0, 0, 0, 0.1) 0px 0px 2px 0px",
+     "n": 8,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(38, 52, 74, 0.15) 0px 1px 0px 0px",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.1) 0px 2px 10px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px",
+     "n": 1,
+     "ex": "img"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "transform 0.1s ease-out",
+     "n": 4,
+     "ex": "img"
+    },
+    {
+     "v": "background 0.2s ease-out",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "animations": [],
+   "maxWidths": [
+    {
+     "v": "900px (rendered 1015px)",
+     "n": 8,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 900px)",
+     "n": 1,
+     "ex": "img"
+    },
+    {
+     "v": "100% (rendered 1000px)",
+     "n": 1,
+     "ex": "img"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 81px pb 81px",
+     "n": 3
+    },
+    {
+     "v": "pt 0px pb 0px",
+     "n": 2
+    },
+    {
+     "v": "pt 81px pb 0px",
+     "n": 1
+    },
+    {
+     "v": "pt 81px pb 240px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "18px",
+     "n": 2
+    },
+    {
+     "v": "16px",
+     "n": 1
+    },
+    {
+     "v": "24px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "27px",
+     "n": 39
+    },
+    {
+     "v": "12.8px",
+     "n": 24
+    },
+    {
+     "v": "6.5px",
+     "n": 16
+    },
+    {
+     "v": "4.05px",
+     "n": 12
+    },
+    {
+     "v": "18px",
+     "n": 12
+    },
+    {
+     "v": "57.5938px",
+     "n": 8
+    },
+    {
+     "v": "81px",
+     "n": 8
+    },
+    {
+     "v": "22.8px",
+     "n": 8
+    },
+    {
+     "v": "36px",
+     "n": 8
+    },
+    {
+     "v": "3.25px",
+     "n": 8
+    },
+    {
+     "v": "12.96px",
+     "n": 8
+    },
+    {
+     "v": "2px",
+     "n": 6
+    },
+    {
+     "v": "10.125px",
+     "n": 6
+    },
+    {
+     "v": "5px",
+     "n": 4
+    },
+    {
+     "v": "28.8px",
+     "n": 4
+    },
+    {
+     "v": "8px",
+     "n": 3
+    },
+    {
+     "v": "20px",
+     "n": 2
+    },
+    {
+     "v": "50px",
+     "n": 2
+    }
+   ],
+   "margins": [
+    {
+     "v": "4.59px",
+     "n": 34
+    },
+    {
+     "v": "10.125px",
+     "n": 18
+    },
+    {
+     "v": "9px",
+     "n": 15
+    },
+    {
+     "v": "40px",
+     "n": 11
+    },
+    {
+     "v": "27px",
+     "n": 10
+    },
+    {
+     "v": "2.7px",
+     "n": 8
+    },
+    {
+     "v": "2px",
+     "n": 7
+    },
+    {
+     "v": "11.997px",
+     "n": 4
+    },
+    {
+     "v": "6.075px",
+     "n": 4
+    },
+    {
+     "v": "15.3px",
+     "n": 4
+    },
+    {
+     "v": "14.4px",
+     "n": 4
+    },
+    {
+     "v": "6.12px",
+     "n": 4
+    },
+    {
+     "v": "20px",
+     "n": 2
+    },
+    {
+     "v": "18px",
+     "n": 2
+    }
+   ],
+   "measure": {
+    "text": "Things makes it easy. Within the hour, you’ll have everything off your mind and neatly organized – from routine tasks to",
+    "chars": 196,
+    "lines": 5,
+    "charsPerLine": 39,
+    "width": 440,
+    "fontSize": "20.25px",
+    "lineHeight": "26.325px",
+    "color": "#44474b"
+   },
+   "rootVars": {},
+   "blockedSheets": 0,
+   "reducedMotionRules": 1,
+   "h1": [
+    "Things"
+   ],
+   "h2": [
+    "Simply Powerful",
+    "Get Things, Get Done",
+    "What People Are Saying",
+    "Read All About It",
+    "Things Newsletter",
+    "Footer"
+   ],
+   "h3": [
+    "Mac",
+    "iPhone & Watch",
+    "iPad",
+    "Vision Pro",
+    "Products",
+    "Support",
+    "News",
+    "Company"
+   ],
+   "nav": [
+    "Things",
+    "Features",
+    "Support",
+    "Blog"
+   ],
+   "ctas": [
+    "More… [53x18 bg #eceef0 fg #55606e r 5.472px pad 0px 4.104px 13.68px/400]"
+   ],
+   "media": {
+    "img": 37,
+    "svg": 10,
+    "video": 1,
+    "canvas": 0
+   }
+  }
+ }
+}
