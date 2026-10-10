@@ -1,0 +1,311 @@
+{
+  "file": "kb/tests/round4/coffee.html?state=checkout",
+  "date": "2026-10-10T23:09:17.184Z",
+  "checks": {
+    "axe": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overlay": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "targets": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#co-add-line2",
+          "w": 153.5,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.co-form > fieldset.card-block > label.check > input",
+          "w": 326,
+          "h": 24
+        }
+      ],
+      "pass": true
+    },
+    "measure": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "type-scale": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "fluid display size 50.12px at 390px (clamp() present)",
+          "size": 50.12,
+          "count": 3,
+          "examples": [
+            "#hero-title",
+            "#hero-title > em",
+            "#hero-title > em > time"
+          ]
+        },
+        {
+          "message": "fluid display size 77.28px at 1440px (clamp() present)",
+          "size": 77.28,
+          "count": 3,
+          "examples": [
+            "#hero-title",
+            "#hero-title > em",
+            "#hero-title > em > time"
+          ]
+        },
+        {
+          "message": "fluid display size 74.56px at 1440px (clamp() present)",
+          "size": 74.56,
+          "count": 3,
+          "examples": [
+            "#shop-title",
+            "#sub-title",
+            "#promise-title"
+          ]
+        },
+        {
+          "message": "fluid display size 124.64px at 1440px (clamp() present)",
+          "size": 124.64,
+          "count": 1,
+          "examples": [
+            "#paid > div.wrap.g12 > div.ledger-figure > p.big.num"
+          ]
+        }
+      ],
+      "pass": true
+    },
+    "spacing": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overflow": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "heading-wrap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "svg-overlap": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "text \"Checkout\" partly covered by header.site-header > div.wrap.bar > a.logo > svg.wordmark (120x22px) at 390px",
+          "sel": "#co-title"
+        },
+        {
+          "message": "text \"Security code\" partly covered by div.wrap.g12 > figure.hero-photo > div.frame > svg.print (50x17px) at 390px",
+          "sel": "fieldset.card-block > div.pair > div.fld > label"
+        },
+        {
+          "message": "text \"Billing address same as delive\" partly covered by div.wrap.g12 > figure.hero-photo > div.frame > svg.print (111x13px) at 390px",
+          "sel": "#co-form > div.co-form > fieldset.card-block > label.check"
+        },
+        {
+          "message": "text \"Roaster’s choice, every 2 week\" partly covered by figure.hero-photo > div.frame > picture > img (213x6px) at 390px",
+          "sel": "#co-lines > div > dt"
+        },
+        {
+          "message": "text \"$18.00\" partly covered by figure.hero-photo > div.frame > picture > img (49x6px) at 390px",
+          "sel": "#co-lines > div > dd"
+        },
+        {
+          "message": "text \"Checkout\" partly covered by header.site-header > div.wrap.bar > a.logo > svg.wordmark (91x26px) at 1440px",
+          "sel": "#co-title"
+        },
+        {
+          "message": "text \", next on Tue, Oct 27. Skip, p\" partly covered by div.wrap.g12 > figure.hero-photo > div.frame > svg.print (143x10px) at 1440px",
+          "sel": "#co-term"
+        },
+        {
+          "message": "text \"Pay $39.00\" partly covered by div.wrap.g12 > figure.hero-photo > div.frame > svg.print (65x20px) at 1440px",
+          "sel": "#co-pay-lbl"
+        },
+        {
+          "message": "text \"Not for you? Tell us within 30\" partly covered by div.wrap.g12 > figure.hero-photo > div.frame > svg.print (157x17px) at 1440px",
+          "sel": "#co-form > aside.summary > p.fine"
+        }
+      ],
+      "pass": true
+    },
+    "primary": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "radius": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "color-scheme": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "typography": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "tabular": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "shadows": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icons": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icon-stroke": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "weight": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "nav-parity": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus-shape": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "skip-link": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-shift": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "fallback": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "layout moves -81px at 1440px when the web fonts fail (worst: #reviews > blockquote.review > footer); add metric fallbacks (size-adjust, ascent-override). Line count changed in 6 elements: ul.lots > li.lot > div.lot-buy > p.p \"$21 / 340 g\" 1 to 2 lines; div.wrap.g12 > div.in-body > ul.lots > li.lot \"1,750 m Medium roast Colombia Huila Finc\" 8 to 9 lines; ul.lots > li.lot > div.lot-buy > p.p \"$18 / 340 g\" 2 to 1 lines; #sub-title \"A new hill at your door, every two or fo\" 4 to 3 lines; ... (one element near a wrap point is a copy fix; many is a font metrics fix)",
+          "sel": "#reviews > blockquote.review > footer",
+          "shift": -81,
+          "rewrapped": [
+            {
+              "sel": "ul.lots > li.lot > div.lot-buy > p.p",
+              "from": 1,
+              "to": 2,
+              "text": "$21 / 340 g"
+            },
+            {
+              "sel": "div.wrap.g12 > div.in-body > ul.lots > li.lot",
+              "from": 8,
+              "to": 9,
+              "text": "1,750 m Medium roast Colombia Huila Finc"
+            },
+            {
+              "sel": "ul.lots > li.lot > div.lot-buy > p.p",
+              "from": 2,
+              "to": 1,
+              "text": "$18 / 340 g"
+            },
+            {
+              "sel": "#sub-title",
+              "from": 4,
+              "to": 3,
+              "text": "A new hill at your door, every two or fo"
+            },
+            {
+              "sel": "#promise-title",
+              "from": 6,
+              "to": 5,
+              "text": "Bought by name, tasted twice, shipped th"
+            },
+            {
+              "sel": "#promises > div.wrap.g12 > figure.cup > figcaption.caption",
+              "from": 1,
+              "to": 2,
+              "text": "The first cupping, the morning after the"
+            }
+          ]
+        }
+      ],
+      "pass": true
+    },
+    "motion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    }
+  },
+  "summary": {
+    "weightKB": {
+      "html": 192,
+      "svg": 70
+    },
+    "focusables": 15,
+    "fallbackShift390": 1,
+    "fallbackShift1440": -81,
+    "motionFound": {
+      "animations": 1,
+      "movingTransitions": 0
+    },
+    "axe": "pass",
+    "overlay": "pass",
+    "targets": "pass (2 warn)",
+    "measure": "pass",
+    "type-scale": "pass (4 warn)",
+    "spacing": "pass",
+    "overflow": "pass",
+    "heading-wrap": "pass",
+    "svg-overlap": "pass (9 warn)",
+    "primary": "pass",
+    "radius": "pass",
+    "color-scheme": "pass",
+    "typography": "pass",
+    "tabular": "pass",
+    "shadows": "pass",
+    "icons": "pass",
+    "icon-stroke": "pass",
+    "weight": "pass",
+    "nav-parity": "pass",
+    "focus": "pass",
+    "focus-shape": "pass",
+    "sticky-focus": "pass",
+    "skip-link": "pass",
+    "state-shift": "pass",
+    "fallback": "pass (1 warn)",
+    "motion": "pass",
+    "result": "PASS",
+    "fails": 0,
+    "warns": 16
+  }
+}

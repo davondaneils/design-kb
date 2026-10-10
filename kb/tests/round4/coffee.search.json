@@ -1,0 +1,87 @@
+{
+  "file": "kb/tests/round3/coffee.html",
+  "expect": "public",
+  "date": "2026-10-10T21:59:52.394Z",
+  "checks": {
+    "size": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "HTML 179 KB uncompressed (Googlebot cut: 2 MB)"
+        }
+      ]
+    },
+    "head-order": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "search and social tags end by byte 1618, before the first large inline block at byte 4916"
+        }
+      ]
+    },
+    "title": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "\"Ember & Oak: small-batch coffee roasters in Portland, Oregon\" (60 chars)"
+        }
+      ]
+    },
+    "description": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "150 chars"
+        }
+      ]
+    },
+    "headings": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "h1 Ethiopia Guji, roasted Tuesday in Portland.\n  h2 Three coffees, grown 1,100 to 2,100 meters up\n    h3 Ethiopia Guji\n    h3 Colombia Huila\n    h3 Oak Fire Espresso\n  h2 A new hill at your door, every two or four weeks.\n    h3 Build your subscription\n  h2 How we roast\n  h2 What we paid, lot 0412\n  h2 Bought by name, tasted twice, shipped in 48 hours.\n    h3 We know every grower by name\n    h3 Two of us taste every batch\n    h3 It leaves within 48 hours of the roast\n  h2 Letters from the roastery\n  h2 Shop\n  h2 Roastery\n  h2 Ethiopia Guji\n  h2 Your cart\n    h3 Your cart is empty\n  h2 Checkout\n    h3 Order summary"
+        }
+      ]
+    },
+    "links": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "28 links, 18 unique destinations"
+        }
+      ]
+    },
+    "social": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "og:image 1200x630, 438 KB"
+        }
+      ]
+    },
+    "structured-data": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "block 1: JSON-LD 1.1 expansion ok (jsonld.js, safe mode), 42 triples"
+        },
+        {
+          "message": "1 JSON-LD blocks, 6 typed nodes: WebSite, OnlineStore, PostalAddress, CafeOrCoffeeShop, GeoCoordinates, OpeningHoursSpecification"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "fail": 0,
+    "warn": 0,
+    "pass": true
+  }
+}

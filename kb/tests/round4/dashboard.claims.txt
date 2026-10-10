@@ -1,0 +1,66 @@
+Claims inventory: /home/claude/design-kb/.claude/worktrees/agent-aa8f94194e4294d3b/kb/tests/round4/dashboard.html (62 strings to check against the data)
+
+  1  1 of 4
+  2  3.6M of 10M
+  3  On pace for 9.3M
+  4  Updated 2 min ago , times in PT
+  5  Counting since 2:06 pm, times in PT
+  6  Weekly active users are up 8.1%
+  7  Checkout events stopped at 2:05 pm, so today’s conversion and revenue are undercounted
+  8  Tally is counting: 38 page views from 12 visitors since 2:06 pm.
+  9  Weekly comparisons start on Oct 19, once a full week is in.
+ 10  Set up Tally
+ 11  1 of 4 done
+ 12  Acme Inc., created by Dana Ruiz at 1:58 pm.
+ 13  2
+ 14  since 2:02 pm.
+ 15  Open any page on your site in another tab. If nothing arrives by 2:07 pm, we will show what to check here.
+ 16  Checked acme.com and acme.com/pricing at 2:09 pm. Your sample data stays until the first event arrives.
+ 17  3
+ 18  4
+ 19  This week, Oct 6 to 12
+ 20  48,210
+ 21  +8.1%
+ 22  3.8 %
+ 23  +0.6 pts vs last week
+ 24  Partial since 2:05 pm
+ 25  $
+ 26  184.2
+ 27  $184.2k
+ 28  +8.1% vs last week
+ 29  2.9 %
+ 30  +0.4 pts, worse vs last week
+ 31  12
+ 32  Week-on-week from Oct 19
+ 33  Needs 30 days of data, Nov 11
+ 34  Error: checkout events stopped at 2:05 pm
+ 35  Last event 2:05 pm PT · Open in Events
+ 36  Warning: iOS active users down 18%
+ 37  The drop is limited to devices on iOS 26.
+ 38  Started Wed, Oct 7 · Compare platforms
+ 39  Warning: 7.8M of 10M events used this month
+ 40  At this rate you reach the Starter limit on Oct 16. New events then pause until Nov 1; every report and all data you have stay. Growth includes 50M events a month for $149.
+ 41  · Dismiss for 7 days
+ 42  Weekly active users, 12 weeks
+ 43  Last 12 weeks:
+ 44  Jul 21 - Oct 12 , change period
+ 45  vs previous 12 weeks , change comparison
+ 46  This week, partial since 2:05 pm
+ 47  The line starts tomorrow
+ 48  12 visitors so far today. Each day becomes a point once it ends at midnight PT; the dashed line compares with the previous weeks once you have them.
+ 49  Active users appear within a minute of the first event. The dashed line compares with the previous 12 weeks once you have them.
+ 50  31,040
+ 51  +21%
+ 52  9,870
+ 53  18%, down
+ 54  7,300
+ 55  +5%
+ 56  Active users this week, Oct 6 to 12, against last week. The three add up to 48,210; each bar is its share of that total.
+ 57  The query timed out after 30 seconds. Your data is safe; the rest of the overview is current.
+ 58  1 to 6 of 214 pages, 63.7% of 112,560 views
+ 59  12-week trend: up from 31,400 to 48,210
+ 60  12-week trend: up from 3.0% to 3.8%
+ 61  12-week trend: up from $141k to $184.2k
+ 62  12-week trend: up from 2.6% to 2.9%, which is worse
+
+No mechanical flags. Now tick every line above against its source: chart data, price list, policy, log.

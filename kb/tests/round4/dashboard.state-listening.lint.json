@@ -1,0 +1,277 @@
+{
+  "file": "kb/tests/round4/dashboard.html?state=listening",
+  "date": "2026-10-10T23:13:11.464Z",
+  "checks": {
+    "axe": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overlay": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "targets": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "html > body > a.skip",
+          "w": 123.5,
+          "h": 37
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#menu-btn",
+          "w": 38.9,
+          "h": 44
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "dl.kpis.ready > div.kpi.pickable > dt > button.kpi-pick",
+          "w": 40.5,
+          "h": 44
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#chart-panel > div.panel-head > a.btn.btn-ghost",
+          "w": 126.5,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.split > section.panel > div.panel-head > a.btn.btn-ghost",
+          "w": 87.3,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#main > section.panel > div.panel-head > a.btn.btn-ghost",
+          "w": 87.9,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "thead > tr > th > button.sort",
+          "w": 53,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "thead > tr > th.num > button.sort",
+          "w": 59.5,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "thead > tr > th.num > button.sort",
+          "w": 94.8,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "thead > tr > th.num > button.sort",
+          "w": 77.1,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "thead > tr > th.num > button.sort",
+          "w": 108.7,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#pages-body > tr > th.page-cell > a",
+          "w": 24,
+          "h": 44
+        }
+      ],
+      "pass": true
+    },
+    "measure": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "type-scale": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "spacing": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overflow": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "heading-wrap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "svg-overlap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "primary": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "radius": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "color-scheme": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "typography": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "tabular": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "shadows": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icons": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icon-stroke": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "weight": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "nav-parity": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus-shape": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "skip-link": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-shift": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "fallback": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "layout moves 21px at 390px when the web fonts fail (worst: #main > section.panel.kpi-panel); add metric fallbacks (size-adjust, ascent-override). Line count changed in 3 elements: #setup > ol.steps > li.step.done \"Create your workspace (done)Acme Inc., c\" 2 to 3 lines; ol.steps > li.step.done > div > p.why \"Acme Inc., created by Dana Ruiz at 1:58 \" 1 to 2 lines; #step-install \"2 Install the tracking snippet One line \" 15 to 14 lines (one element near a wrap point is a copy fix; many is a font metrics fix)",
+          "sel": "#main > section.panel.kpi-panel",
+          "shift": 21,
+          "rewrapped": [
+            {
+              "sel": "#setup > ol.steps > li.step.done",
+              "from": 2,
+              "to": 3,
+              "text": "Create your workspace (done)Acme Inc., c"
+            },
+            {
+              "sel": "ol.steps > li.step.done > div > p.why",
+              "from": 1,
+              "to": 2,
+              "text": "Acme Inc., created by Dana Ruiz at 1:58 "
+            },
+            {
+              "sel": "#step-install",
+              "from": 15,
+              "to": 14,
+              "text": "2 Install the tracking snippet One line "
+            }
+          ]
+        }
+      ],
+      "pass": true
+    },
+    "motion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    }
+  },
+  "summary": {
+    "weightKB": {
+      "html": 152,
+      "svg": 14
+    },
+    "focusables": 49,
+    "fallbackShift390": 21,
+    "fallbackShift1440": 0,
+    "motionFound": {
+      "animations": 0,
+      "movingTransitions": 6
+    },
+    "axe": "pass",
+    "overlay": "pass",
+    "targets": "pass (12 warn)",
+    "measure": "pass",
+    "type-scale": "pass",
+    "spacing": "pass",
+    "overflow": "pass",
+    "heading-wrap": "pass",
+    "svg-overlap": "pass",
+    "primary": "pass",
+    "radius": "pass",
+    "color-scheme": "pass",
+    "typography": "pass",
+    "tabular": "pass",
+    "shadows": "pass",
+    "icons": "pass",
+    "icon-stroke": "pass",
+    "weight": "pass",
+    "nav-parity": "pass",
+    "focus": "pass",
+    "focus-shape": "pass",
+    "sticky-focus": "pass",
+    "skip-link": "pass",
+    "state-shift": "pass",
+    "fallback": "pass (1 warn)",
+    "motion": "pass",
+    "result": "PASS",
+    "fails": 0,
+    "warns": 13
+  }
+}
