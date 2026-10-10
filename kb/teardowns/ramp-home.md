@@ -65,3 +65,21 @@
 - Spacing 6 and 20 are heavily used; neither is in the FOUNDATIONS set.
 - 680ms blur reveal exceeds the 600ms page duration.
 - Only one weight (400) in use; FOUNDATIONS expects up to four.
+
+## Live capture (2026-10)
+
+Captured 2026-10-10 from the live sites.
+- **Tools:** TinyFish `fetch_content` with `page_metadata` and CSS selector scoping (reached every target), Parallel Search `web_fetch` (reached them, text excerpts only), TinyFish `run_web_automation` (reached them, but could not run JavaScript, report computed CSS or return screenshots; its one visual report gave a 1334px viewport and a hero weight of 700 that contradicts the measured 300, so it is not used). Direct curl and Playwright from this container are blocked (proxy 403). Raw: `live/ramp-home/head.json`.
+- **Not captured:** 1440 and 390 screenshots (no tool here returns an image of a public page) and fresh computed type sizes. Sizes below come from the earlier Playwright run in this file unless marked **live**.
+
+| Item | Live value |
+|---|---|
+| Title | 69 characters, keyword list first and brand last ("Spend Management, Corporate Cards & Accounts Payable Solutions \| Ramp") |
+| Description | 192 characters; Google typically shows about 150 to 160 (opinion based on observed snippet lengths; Google sets no fixed limit, https://developers.google.com/search/docs/appearance/snippet) |
+| og:image | Generic `default-og-image.jpg`, same for twitter; og `site_name` Ramp; no og:url or og:type |
+| JSON-LD | Block present (selector matched); @type **unverified** |
+| Favicons | `.ico` 48x48 and sizes=any, PNG 16 and 32, apple-touch-icon 180x180 |
+| h1 (**live**) | "Time is money. Save both.", classes `headline-xl text-balance max-w-[1050px] leading-trim` (text-box trimmed so the cap height aligns with the grid) |
+| Hero size | 64/64 at 1440, 40/42 at 390, weight 400 (earlier measure) |
+| First-screen CTAs (**live**) | One hero form: email field fused to "Get started for free"; nav "Get started". A live counter "US corporate payments processed by Ramp" sits above the h1 as proof before the claim. |
+| Imagery (**live**) | Hero video with separate files per breakpoint: `homepage-hero-423.webm` and `homepage-hero-mobile-423.webm` |

@@ -70,3 +70,7 @@
 - Radii 9 (cards) and 6 (editor blocks) are off the 0, 4, 8, 12, 16 scale.
 - Gaps of 2, 6 and 7px; FOUNDATIONS has 2 but not 6 or 7. Row heights 24, 28, 40, 44 are all multiples of 4.
 - Single-line meta at line height 1.17 (12/14), below the 1.5 body rule; acceptable for one-line labels, worth a stated exception.
+
+## Live capture (2026-10)
+
+Attempted 2026-10-10 through Mobbin (`search_screens`, `search_flows`) for screens of the logged-in Linear app. Both calls returned "Mobbin MCP requires a paid plan", so no Mobbin screen was retrieved and nothing here is Mobbin-backed. TinyFish and Parallel can reach only public pages, not the app behind its login. The values above marked **estimate** remain estimates; the measured values come from the public surfaces named in the header. To finish: with a Mobbin paid seat, search "Linear issue list view with sidebar" (platform web), and replace each estimate with the screen's value plus its `mobbin_url`.

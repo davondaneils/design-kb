@@ -1,0 +1,45 @@
+{
+  "url": "https://www.apple.com/macbook-air/",
+  "title": "MacBook Air 13-inch and MacBook Air 15-inch",
+  "description": "MacBook Air laptop with the superfast M5 chip. Lightweight, with all-day battery life. Built for AI and Apple Intelligence.",
+  "canonical": "https://www.apple.com/macbook-air/",
+  "viewport": "width=device-width, initial-scale=1, viewport-fit=cover",
+  "theme_color": null,
+  "og": {
+    "title": "same as title",
+    "description": "same as description",
+    "image": "https://www.apple.com/v/macbook-air/z/images/meta/macbook_air_mx__ez5y0k5yy7au_og.png?202608191258",
+    "url": "https://www.apple.com/macbook-air/",
+    "type": "website",
+    "site_name": "Apple",
+    "locale": "en_US"
+  },
+  "twitter": {
+    "card": "summary_large_image",
+    "site": "@Apple"
+  },
+  "jsonld": "selector not reported unmatched (block likely present); contents stripped by the tool, @type not read",
+  "icons": [
+    "no link rel=icon or apple-touch-icon in the head (both selectors unmatched); relies on the root /favicon.ico"
+  ],
+  "h1": "'MacBook Air' as the eyebrow (classes header-eyebrow typography-hero-eyebrow); the large line 'Might takes flight.' is not the h1. Sub: 'Now supercharged by M5.'",
+  "first_screen_ctas": {
+    "nav": [
+      "Buy (local nav)"
+    ],
+    "hero": [
+      "Buy"
+    ],
+    "ribbon": [
+      "Learn more (lease)",
+      "Shop (education)"
+    ]
+  },
+  "other": "og:image carries a cache-busting date query (?202608191258).",
+  "title_chars": 43,
+  "description_chars": 123,
+  "source": {
+    "tool": "TinyFish fetch_content (page_metadata, include_selectors h1 and link[rel~=icon] and script[type=application/ld+json])",
+    "captured": "2026-10-10"
+  }
+}

@@ -61,3 +61,22 @@
 - Display line height 1.0 under 100px.
 - Steps 24, 56, 64 off the 1.25 scale.
 - No borders at all; edges are shadow rings. FOUNDATIONS already defines `--ring` as `0 0 0 1px`, so this matches the elevation recipe.
+
+## Live capture (2026-10)
+
+Captured 2026-10-10 from the live sites.
+- **Tools:** TinyFish `fetch_content` with `page_metadata` and CSS selector scoping (reached every target), Parallel Search `web_fetch` (reached them, text excerpts only), TinyFish `run_web_automation` (reached them, but could not run JavaScript, report computed CSS or return screenshots; its one visual report gave a 1334px viewport and a hero weight of 700 that contradicts the measured 300, so it is not used). Direct curl and Playwright from this container are blocked (proxy 403). Raw: `live/vercel-home/head.json`.
+- **Not captured:** 1440 and 390 screenshots (no tool here returns an image of a public page) and fresh computed type sizes. Sizes below come from the earlier Playwright run in this file unless marked **live**.
+
+| Item | Live value |
+|---|---|
+| Title | "Agentic Infrastructure - Vercel" (31 characters). The page was repositioned since the earlier measure, which recorded the hero "Deploy now" and "Talk to sales" (still present). |
+| Description | "The autonomous stack for every app and agent." (45 characters) |
+| og:image vs twitter:image | **Different files**: `og-home-not-x.png` for og and `og-home-x.png` for X. One card art per platform crop. |
+| Other head | `color-scheme: dark light`, `theme-color #FAFAFA`, `robots: index, max-image-preview:large`, og `site_name` and `locale en_US` set |
+| Viewport | `maximum-scale=1`. **Do not borrow**: it limits pinch zoom in browsers that honor it (WCAG 1.4.4 Resize text, https://www.w3.org/WAI/WCAG22/Understanding/resize-text). |
+| JSON-LD | Block present (selector matched); @type **unverified** |
+| Favicons | One `.ico`, then ten apple-touch-icon sizes from 57 to 256 (legacy; one 180x180 is enough per https://developer.apple.com/design/human-interface-guidelines/app-icons) |
+| h1 (**live**) | "Agentic Infrastructure", classes `text-heading-48 @sm:text-heading-64 font-normal text-balance`: 48 by default, 64 above the `sm` container query, weight 400, balanced wrap |
+| First-screen CTAs (**live**) | Hero: "Deploy now" (filled) and "Talk to sales"; nav: "Get a Demo", "Sign Up" |
+| Imagery | No photo; a rotating three-line sub ("For coding agents...", "To ship apps...", "Automated by agents...") and a drop-to-deploy zone |

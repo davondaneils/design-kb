@@ -1,0 +1,46 @@
+{
+  "url": "https://vercel.com/",
+  "title": "Agentic Infrastructure - Vercel",
+  "description": "The autonomous stack for every app and agent.",
+  "canonical": "https://vercel.com",
+  "viewport": "width=device-width, initial-scale=1, maximum-scale=1",
+  "theme_color": "#FAFAFA",
+  "color_scheme": "dark light",
+  "robots": "index, max-image-preview:large",
+  "og": {
+    "title": "same as title",
+    "description": "same as description",
+    "image": "https://lishhsx6kmthaacj.public.blob.vercel-storage.com/og-home-not-x.png",
+    "url": "https://vercel.com",
+    "type": "website",
+    "site_name": "Vercel",
+    "locale": "en_US"
+  },
+  "twitter": {
+    "card": "summary_large_image",
+    "image": "https://lishhsx6kmthaacj.public.blob.vercel-storage.com/og-home-x.png (a different file from og:image)"
+  },
+  "jsonld": "selector matched (block present); contents stripped by the tool, @type not read",
+  "icons": [
+    "favicon.ico (icon shortcut)",
+    "10 apple-touch-icon PNGs from 57x57 to 256x256"
+  ],
+  "h1": "'Agentic Infrastructure', classes text-heading-48 @sm:text-heading-64 font-normal text-balance (Geist type tokens: 48 below the sm container query, 64 above; weight 400).",
+  "first_screen_ctas": {
+    "nav": [
+      "Get a Demo",
+      "Sign Up"
+    ],
+    "hero": [
+      "Deploy now",
+      "Talk to sales"
+    ]
+  },
+  "other": "Nav CTAs rendered twice in the DOM (desktop and mobile variants).",
+  "title_chars": 31,
+  "description_chars": 45,
+  "source": {
+    "tool": "TinyFish fetch_content (page_metadata, include_selectors h1 and link[rel~=icon] and script[type=application/ld+json])",
+    "captured": "2026-10-10"
+  }
+}

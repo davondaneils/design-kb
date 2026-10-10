@@ -66,3 +66,7 @@
 - `--geist-space` includes 40, which FOUNDATIONS spacing does not; it lacks 2, 48, 96 and 128.
 - Radius 6 is the dominant radius and is not on the FOUNDATIONS scale (4, 8).
 - Color ramps run 100 to 1000 in OKLCH; FOUNDATIONS ramps run 50 to 950.
+
+## Live capture (2026-10)
+
+Attempted 2026-10-10 through Mobbin (`search_screens`, `search_flows`) for screens of the logged-in Vercel dashboard. Both calls returned "Mobbin MCP requires a paid plan", so no Mobbin screen was retrieved and nothing here is Mobbin-backed. TinyFish and Parallel can reach only public pages, not the app behind its login. The values above marked **estimate** remain estimates; the measured values come from the public surfaces named in the header. To finish: with a Mobbin paid seat, search "Vercel dashboard project deployments list" (platform web), and replace each estimate with the screen's value plus its `mobbin_url`.

@@ -1,0 +1,46 @@
+{
+  "url": "https://stripe.com/",
+  "title": "Stripe | Financial Infrastructure to Grow Your Revenue",
+  "description": "Stripe is a financial services platform that helps all types of businesses accept payments, build flexible billing models, and manage money movement.",
+  "canonical": "https://stripe.com/",
+  "viewport": "width=device-width, initial-scale=1, viewport-fit=cover",
+  "theme_color": null,
+  "og": {
+    "title": "same as title",
+    "description": "same as description",
+    "image": "https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/media/stripe.37119086.jpg",
+    "url": "https://stripe.com/",
+    "type": "website"
+  },
+  "twitter": {
+    "card": "summary_large_image",
+    "site": "@stripe",
+    "image": "same as og:image"
+  },
+  "jsonld": "selector matched (block present); contents stripped by the tool, @type not read",
+  "icons": [
+    "favicon.svg (image/svg+xml)",
+    "favicon.png 96x96",
+    "favicon.ico (shortcut icon)",
+    "apple-touch-icon 180x180 png"
+  ],
+  "h1": "Two h1 elements with identical text, one aria-hidden=true (foreground layer over the gradient); classes hds-heading hds-heading--xl hero-section__title. Text: 'Financial infrastructure to grow your revenue.' in <em>, then the continuation sentence in a span.",
+  "first_screen_ctas": {
+    "nav": [
+      "Start now",
+      "Contact sales",
+      "Sign in"
+    ],
+    "hero": [
+      "Get started",
+      "Sign up with Google"
+    ]
+  },
+  "other": "edge-experiment-treatments meta lists 5 live A/B tests (react homepage, curator h2, footer email capture, mobile sticky hamburger, curator input strength)",
+  "title_chars": 54,
+  "description_chars": 149,
+  "source": {
+    "tool": "TinyFish fetch_content (page_metadata, include_selectors h1 and link[rel~=icon] and script[type=application/ld+json])",
+    "captured": "2026-10-10"
+  }
+}

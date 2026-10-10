@@ -1,0 +1,42 @@
+{
+  "url": "https://ramp.com",
+  "title": "Spend Management, Corporate Cards & Accounts Payable Solutions | Ramp",
+  "description": "Make expense management easy with Ramp's spend management platform. Combine global corporate cards, travel, expenses and accounts payable to automate finance operations and improve efficiency.",
+  "canonical": "https://ramp.com",
+  "viewport": "width=device-width, initial-scale=1",
+  "theme_color": null,
+  "og": {
+    "title": "same as title",
+    "description": "same as description",
+    "image": "https://next.ramp.com/assets/images/default-og-image.jpg",
+    "site_name": "Ramp"
+  },
+  "twitter": {
+    "card": "summary_large_image",
+    "image": "same as og:image"
+  },
+  "jsonld": "selector matched (block present); contents stripped by the tool, @type not read",
+  "icons": [
+    "/favicon.ico 48x48",
+    "/favicon.ico sizes=any",
+    "/favicon-16x16.png",
+    "/favicon-32x32.png",
+    "/apple-touch-icon.png 180x180"
+  ],
+  "h1": "'Time is money. Save both.', classes leading-trim headline-xl max-w-[1050px] text-balance.",
+  "first_screen_ctas": {
+    "nav": [
+      "Get started"
+    ],
+    "hero": [
+      "Email input + Get started for free (one fused form)"
+    ]
+  },
+  "other": "Hero media is a video: homepage-hero-423.webm with a separate homepage-hero-mobile-423.webm for phones. A live counter 'US corporate payments processed by Ramp' sits above the h1.",
+  "title_chars": 69,
+  "description_chars": 192,
+  "source": {
+    "tool": "TinyFish fetch_content (page_metadata, include_selectors h1 and link[rel~=icon] and script[type=application/ld+json])",
+    "captured": "2026-10-10"
+  }
+}

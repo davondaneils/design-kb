@@ -63,3 +63,24 @@
 - Display line height 1.03 at 56px (FOUNDATIONS asks 1.1 to 1.25 for headings under 100px).
 - Motion 800ms reveals and a 1.2s color fade exceed the 600ms page duration.
 - No `prefers-reduced-motion` rules were readable (6 stylesheets blocked cross-origin reading), so reduced-motion behavior is unverified.
+
+## Live capture (2026-10)
+
+Captured 2026-10-10 from the live sites.
+- **Tools:** TinyFish `fetch_content` with `page_metadata` and CSS selector scoping (reached every target), Parallel Search `web_fetch` (reached them, text excerpts only), TinyFish `run_web_automation` (reached them, but could not run JavaScript, report computed CSS or return screenshots; its one visual report gave a 1334px viewport and a hero weight of 700 that contradicts the measured 300, so it is not used). Direct curl and Playwright from this container are blocked (proxy 403). Raw: `live/stripe-home/head.json`.
+- **Not captured:** 1440 and 390 screenshots (no tool here returns an image of a public page) and fresh computed type sizes. Sizes below come from the earlier Playwright run in this file unless marked **live**.
+
+| Item | Live value |
+|---|---|
+| Title | "Stripe \| Financial Infrastructure to Grow Your Revenue" (54 characters) |
+| Description | 149 characters, same text in og and twitter |
+| og:image | `stripe.37119086.jpg` on b.stripecdn.com (JPEG, hashed file name); `og:type` website; `twitter:card` summary_large_image, `@stripe` |
+| JSON-LD | Block present (selector matched); @type not readable with this tool, so **unverified** |
+| Favicons | SVG first, then PNG 96x96, `.ico` as shortcut icon, apple-touch-icon 180x180 PNG. Four links, SVG leading. |
+| h1 (**live**) | Two `h1` elements with the same text, the second `aria-hidden="true"`: a background and a foreground layer so the headline can sit over and under the gradient. Lead clause in `<em>`, continuation in a span, class `hds-heading--xl`. Copy unchanged from the earlier measure. |
+| Hero size | 48px/55.2, weight 300, -0.96px at 1440; 34px at 390 (earlier measure, still the same classes) |
+| First-screen CTAs (**live**) | Hero: 2 ("Get started" primary, "Sign up with Google"). Nav: "Start now", "Contact sales", "Sign in". One filled primary in the hero. |
+| Imagery | Animated color gradient behind the headline (confirmed by TinyFish's visual pass); no photo in the first screen |
+| Experiments (**live**) | `edge-experiment-treatments` meta names 5 running tests: homepage React build, curator h2, footer email capture, mobile sticky hamburger, curator input strength |
+
+**Note (opinion):** the duplicate `h1` is a visual trick paid for with an outline smell; one `h1` plus a decorative `div aria-hidden` would give the same effect with a clean outline. Do not copy the duplicate.

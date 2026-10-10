@@ -67,3 +67,7 @@
 - Stripe Apps spacing (2, 4, 8, 16, 24, 32, 48) is a strict subset of FOUNDATIONS spacing; it skips 12.
 - Radius 6 on small buttons is not on the radius scale.
 - System font stack only; FOUNDATIONS has no rule on web font versus system stack for product UI.
+
+## Live capture (2026-10)
+
+Attempted 2026-10-10 through Mobbin (`search_screens`, `search_flows`) for screens of the logged-in Stripe Dashboard. Both calls returned "Mobbin MCP requires a paid plan", so no Mobbin screen was retrieved and nothing here is Mobbin-backed. TinyFish and Parallel can reach only public pages, not the app behind its login. The values above marked **estimate** remain estimates; the measured values come from the public surfaces named in the header. To finish: with a Mobbin paid seat, search "Stripe dashboard payments list" (platform web), and replace each estimate with the screen's value plus its `mobbin_url`.

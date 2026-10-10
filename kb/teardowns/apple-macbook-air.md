@@ -64,3 +64,21 @@
 - Radius 28px is not a FOUNDATIONS radius (0, 4, 8, 12, 16, full).
 - Display line height about 1.05 to 1.09 under 100px.
 - No shadows at all; elevation by surface color and imagery.
+
+## Live capture (2026-10)
+
+Captured 2026-10-10 from the live sites.
+- **Tools:** TinyFish `fetch_content` with `page_metadata` and CSS selector scoping (reached every target), Parallel Search `web_fetch` (reached them, text excerpts only), TinyFish `run_web_automation` (reached them, but could not run JavaScript, report computed CSS or return screenshots; its one visual report gave a 1334px viewport and a hero weight of 700 that contradicts the measured 300, so it is not used). Direct curl and Playwright from this container are blocked (proxy 403). Raw: `live/apple-macbook-air/head.json`.
+- **Not captured:** 1440 and 390 screenshots (no tool here returns an image of a public page) and fresh computed type sizes. Sizes below come from the earlier Playwright run in this file unless marked **live**.
+
+| Item | Live value |
+|---|---|
+| Title | "MacBook Air 13-inch and MacBook Air 15-inch" (43 characters, no brand suffix) |
+| Description | 123 characters |
+| og:image | Product PNG with a date cache-buster `?202608191258`; og url, type, site_name, locale set; twitter only sets card and `@Apple` (inherits og) |
+| JSON-LD | Not reported unmatched, so likely present; @type **unverified** |
+| Favicons | No `link rel=icon` or `apple-touch-icon` in the head; the site relies on the root `/favicon.ico` |
+| h1 (**live**) | The `h1` is the eyebrow "MacBook Air" (`typography-hero-eyebrow`), not the big line. The display line "Might takes flight." and "Now supercharged by M5." sit below it. Search engines get the product name as the h1 while the eye gets the slogan. |
+| Hero size | Eyebrow 28px, headline 64px at 1440; product name 21px at 390 (earlier measure) |
+| First-screen CTAs (**live**) | One "Buy" in the hero, one small "Buy" in the sticky local nav; two ribbon links ("Learn more" lease, "Shop" education) |
+| Imagery | Product photography on a sky gradient matched to the laptop color (earlier measure) |

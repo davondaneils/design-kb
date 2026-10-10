@@ -63,3 +63,22 @@
 - Display line height 1.0 at 48 and 64px (FOUNDATIONS: 1.1 to 1.25 under 100px).
 - Body 15px with 1.6 leading (FOUNDATIONS: 16px root, 1.5).
 - Hover duration 100ms sits at the instant end; matches FOUNDATIONS "instant 0 to 100ms".
+
+## Live capture (2026-10)
+
+Captured 2026-10-10 from the live sites.
+- **Tools:** TinyFish `fetch_content` with `page_metadata` and CSS selector scoping (reached every target), Parallel Search `web_fetch` (reached them, text excerpts only), TinyFish `run_web_automation` (reached them, but could not run JavaScript, report computed CSS or return screenshots; its one visual report gave a 1334px viewport and a hero weight of 700 that contradicts the measured 300, so it is not used). Direct curl and Playwright from this container are blocked (proxy 403). Raw: `live/linear-home/head.json`.
+- **Not captured:** 1440 and 390 screenshots (no tool here returns an image of a public page) and fresh computed type sizes. Sizes below come from the earlier Playwright run in this file unless marked **live**.
+
+| Item | Live value |
+|---|---|
+| Title | "Linear – The system for product development" (43 characters, en dash separator) |
+| Description | "Purpose-built for planning and building products with AI agents." (64 characters, short by choice) |
+| og:image | Generated per page: `/api/og/main?title=Linear&v=4`; no `og:url` or `og:type`; twitter card summary_large_image with site and creator `@linear` |
+| JSON-LD | None (selector unmatched) |
+| Favicons | `/favicon.ico?v=2` sizes=any, `/static/favicon.svg?v=2`, apple-touch-icon 180x180, all with a `?v=2` cache-buster |
+| theme-color | `#08090a`, the page background, so mobile browser chrome blends into the dark page |
+| h1 (**live**) | Visible lines are split spans that animate in from `opacity:0; filter:blur(10px); translateY(20%)`, with separate line breaks for phone (4 lines) and desktop (2 lines), all `aria-hidden`; the accessible name is one visually hidden span. Copy: "The product development system for teams and agents". |
+| Hero size | 64px at 1440, 38px/41.8 weight 510 at 390 (earlier measure) |
+| First-screen CTAs (**live**) | Nav "Contact" and "Sign up" only; the hero has no button, the product UI follows the headline |
+| Imagery | Live app HTML (issue view, board, Slack-style thread) instead of a screenshot |
