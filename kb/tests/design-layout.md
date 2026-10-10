@@ -1,4 +1,87 @@
-# Tester report: design-layout v0.1
+# Tests: design-layout
+
+## Run 2: rendered slice, v0.2 (2026-10-10)
+
+Briefs and rubric: `kb/briefs/layout/06-pacing-signature-and-phone-editing.md` (editor-in-chief). Pages, lint JSON, state sheets and screenshots: `kb/tests/design-layout/`. Build: `node kb/tests/design-layout/build.mjs`. Metrics: `node kb/tests/design-layout/measure-layout.mjs <pages>`.
+
+**Baseline and clean context.** The task was to improve the current best pages, so the baseline is not a without-skill page: it is `kb/tests/combined/coffee.html` and `dashboard.html`, which already had every other domain applied and won Davon's round 2 ranking 3 of 3. The with-layout pages started as byte copies of their sources and changed only layout (grid, order, proportion, phone and tablet edits) plus the smallest content moves those required (one new dashboard pane, one table column, one shortened sentence). The same agent wrote the skill and the pages; no subagent tool was available. Treat the judging below as the builder's opinion.
+
+**Network.** Exemplar hosts still blocked; comparisons are from memory. Google Fonts and npm now work (coordinator note), but this run changed no type: Newsreader and Inter stay as shipped by the typography wave. Photo hosts blocked; no photography.
+
+### What changed (design-director > playbook > design-layout 06)
+**Coffee.** Flatplan before: hero L, band L, cards M, statement Q, chart M, steps Q, ledger Q, footer Q. After: hero L, ruled index M, band L (moved after the prices it undercuts), statement Q, chart L (paper bleeds right, axis labels hang in the gutter), steps Q (numerals hang in the margin column on a subgrid), ledger L (2.3x numeral beside a table whose rules are drawn to scale), footer Q. One 12-column grid with a margin column (1 to 3) and body (4 to 12) in every section; the hero, band and ledger share the 7 + 5 split. Phone: action moved before the art in source order, logistics line hidden as a duplicate, art cropped to 1:1, cards to index rows with 96px thumbnails, chart 240px, footer lists side by side. Tablet: art at half width with facts stacked beside it. Container query on the art drops only repeated annotations.
+**Dashboard.** Alerts as one-line rows in one panel; chart 2fr plus a new "Active users by platform" pane 1fr (the evidence for the iOS warning, beside the trend) from 1280, stacked below; table full width with a Change column (arrow, sign, and the word "down"); content capped at 1600px; phone chips shortened to one line; average time deferred to "All pages" on phone rows.
+
+### Lint (`node tools/lint.mjs`), before and after
+| Target | Before (combined) | After (design-layout) |
+|---|---|---|
+| coffee.html | PASS, 0 fail, 21 warn | PASS, 0 fail, 21 warn |
+| coffee.html `?state=` added, subscribed, error, sending | PASS, 0 fail each (combined.md) | PASS, 0 fail, 21 warn each |
+| coffee-states.html | PASS, 0 fail, 14 warn | PASS, 0 fail, 12 warn |
+| dashboard.html | PASS, 0 fail, 27 warn | PASS, 0 fail, 29 warn |
+| dashboard.html `?state=` loading, empty, partial, viewer, `?density=compact`, `?open=` palette, sheet | PASS, 0 fail each (combined.md) | PASS, 0 fail each (9, 9, 13, 30, 29, 31, 34 warn) |
+| dashboard-states.html | PASS, 0 fail, 35 warn | PASS, 0 fail, 35 warn |
+Warnings are the same families as before: touch targets between 24 and 44px at 390 and fluid display sizes (allowed by FOUNDATIONS). The two extra dashboard warnings (diffed from the JSON): the new Change sort button, and the table's "All pages" link, which the lint now reports under a new selector because the table moved out of the split row.
+
+Fails caught during the build and fixed (the loop working):
+1. `measure`: the ledger's statement ran 35 characters per line over three lines. Shortened to two lines ("the Fairtrade minimum, for every pound of green coffee").
+2. `targets`: alert links at 22px tall after a density squeeze (padding 4 to 2px), failing WCAG 2.5.8 on all 8 dashboard URLs. Padding restored; the lesson is now a decision rule.
+3. Judged, not linted: the container query first hid "60 bags this season", a fact stated nowhere else (critic catch). Now hides only the repeated lot number.
+
+### Measure (52ch), confirmed
+`kb/research/typography/measure-cpl.mjs` re-run: `52ch` = 63 to 68 characters in all eight faces, `66ch` = 81 to 86. Every body paragraph on both pages passes the lint's 45 to 75 band at 1440 and stays under 75 at 390. FOUNDATIONS v0.3 is right; no change proposed.
+
+### Measured layout (`measure-layout.mjs`, light, 900px viewport)
+| Metric | Before | After |
+|---|---|---|
+| Coffee height at 390 | 6,738px | 5,574px (17 percent shorter, no unique fact removed) |
+| Coffee primary action bottom at 390 | 1,078px (second screen) | 476px (first screen) |
+| Coffee primary action bottom at 768 | 1,471px | 591px |
+| Coffee height at 768 | 5,924px | 5,169px |
+| Coffee: next section top at 1440 | 954px (band, below the fold: false floor) | 766px (shop label at about 866px and heading at about 880px peek above 900) |
+| Coffee distinct left text edges at 1440 | 11 (6 used 3+ times) | 8 (5 used 3+ times) |
+| Dashboard 1440: chart row top | 593px, chart only (5fr) next to the table (6fr) | 591px, chart (2fr) plus its explainer pane (1fr) |
+| Dashboard 1440: in the first 900px | answer, KPIs, alerts, top of chart and table | answer, KPIs, alerts, chart and the platforms pane nearly whole |
+| Dashboard height at 390 | 1,954px | 2,236px (one new pane; toolbar one line instead of two) |
+
+### Judged items (fundamentals first)
+- Not color alone: Change column and platform deltas carry an arrow, a sign and, when falling, the word "down"; the iOS row carries a warning icon with sr-only text. Holds.
+- One primary action per view: coffee hero "Start a subscription" (band CTA is its own view); dashboard "Share report". Holds.
+- Reading order: DOM order unchanged in meaning at every width; the hero's source order now puts the actions before the art at every width. Holds.
+- Consistency: one grid, one radius family (lint), edges measured above. Holds.
+- Both themes: dark renders checked (coffee 390 and 1440, dashboard 390 and compact 1440). Rules to scale, the right-bleeding chart paper and pane tints remap correctly. Holds.
+- States: state sheets rebuilt; the coffee sheet now shows index rows in rest, hover and focus. No state shifts layout (lint). Holds.
+
+### Exemplar comparison (from memory; hosts blocked)
+| Page | Closest exemplars | Rating | Why, in the pixels |
+|---|---|---|---|
+| Coffee | apple.com product pages; family.co | **Clearly below, closer than before** | The middle now has three moments a viewer remembers (the ruled index, the right-bleeding roast curve, the 2.3x ledger with rules to scale) and alternates loud and quiet instead of fading. The grid is visible: labels, captions and numerals in one margin. What still separates it from Apple: no photograph of the bag, the roaster or the farm (layout can frame a photo, not replace one); the index rows still look like a well-set list rather than product photography; the band's orange field is still the only color moment. Against family.co the restraint is close; the craft of motion between sections is absent. |
+| Dashboard | Stripe Dashboard home, Vercel overview | **Close** | Answer first, KPI strip, alert rows, a 2:1 trend-plus-explainer row and a full-width table is the exemplar skeleton. The pane turns the iOS warning from a claim into evidence on the same screen. Still short: generic 1.5px icons, no product-specific chart interaction, the pane leaves about 60px of air above its footnote at 1440 (rows stretch to the chart), and the wide table's Page column still holds more white space than data. |
+
+### Verdict
+- **Fundamentals: pass** (lint 0 fails on 2 pages, 11 state URLs and 2 state sheets; judged rows hold).
+- **Layout rubric (brief 06): pass on pacing, signature, grid, phone and dashboard criteria; measurably better than the combined baseline** on every layout metric except dashboard phone length, which grew by the new pane.
+- **Against the exemplar bar: dashboard close; coffee still clearly below,** now for reasons outside layout (photography first, then motion). Ship decision for design-layout v0.2: cleared as a component, pending Davon's blind ranking of `kb/tests/design-layout/blind/` (key: `kb/tests/design-layout-blind-key.md`).
+
+### Gaps sent back (and status)
+| # | Gap | Status |
+|---|---|---|
+| G1 | No tablet rule (768 render: a 700px square bag) | Fixed: reference 06 decision rule, page updated |
+| G2 | Viewport media queries for annotations on art that changes size by column | Fixed: container query rule |
+| G3 | Density squeeze broke a 24px target | Fixed: decision rule and expert move 13 |
+| G4 | Short panel in a stretched row still shows air above its pinned footnote | Open: either distribute rows (`align-content: space-between`) or give the pane a fourth row of real content; judged minor |
+| G5 | Wide tables at 1440 keep a white-space-heavy first column | Open, hand-off to design-product-ui (column width policy for wide panels) |
+| G6 | Motion between sections (Apple's pacing is partly motion) | Out of scope; design-motion |
+
+### Screenshots
+`kb/tests/design-layout/shots/`: `coffee-{390,1440}-{light,dark}.png`, `coffee-state-added-*`, `coffee-states-*`, `dashboard-{390,1440}-{light,dark}.png`, `dashboard-density-compact-*`, `dashboard-state-loading-*`, `dashboard-states-*`. Before: `kb/tests/combined/shots/`. Copies of the four headline shots: `/mnt/project-files/design-kb/wave/layout/`.
+
+---
+
+## Run 1: text-only test (v0.1, 2026-10-09)
+
+Kept for history. Superseded by run 2, which judged rendered pages.
+
 
 Method: three realistic briefs, each answered once as a strong generic assistant would (no skill loaded) and once following skills/design-layout. Scored on a rubric taken from the skill's own rules. The fundamentals gate is scored first; a gate miss caps the total at 5/10.
 

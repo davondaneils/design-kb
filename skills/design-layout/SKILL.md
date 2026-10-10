@@ -1,6 +1,6 @@
 ---
 name: design-layout
-description: Domain reference loaded by design-director or a design playbook (design-playbook-landing, -dashboard, -mobile, -brand); do not trigger on its own for a page, screen or brand job. Covers grids, spacing and rhythm, visual hierarchy and grouping, responsive and adaptive layout (breakpoint plans, container queries), page composition and density. Load it directly only when the user names it or asks a narrow question inside this domain alone.
+description: Domain reference loaded by design-director or a design playbook (design-playbook-landing, -dashboard, -mobile, -brand); do not trigger on its own for a page, screen or brand job. Covers grids, spacing and rhythm, visual hierarchy and grouping, responsive and adaptive layout (breakpoint plans, container queries, editing a page for phones), page composition and density, page pacing and signature layout moves, dashboard grids. Load it directly only when the user names it or asks a narrow question inside this domain alone.
 ---
 
 # design-layout
@@ -15,7 +15,7 @@ Check every layout against these before anything else. One miss fails the work, 
 
 **Structure**
 1. Every spacing value is a foundation token: 0, 2, 4, 8, 12, 16, 24, 32, 48, 64, 96, 128 (`--space-0` to `--space-11`). Component padding 4 to 24; layout gaps 16 and up. Off-scale values only as deliberate optical corrections.
-2. Body text measure 45 to 75 characters, 66 ideal (`max-inline-size: 52ch`, which renders 63 to 68 characters in every text face measured; `66ch` renders 81 to 86, see design-typography reference 01). Never full-width paragraphs.
+2. Body text measure 45 to 75 characters, 66 ideal (`max-inline-size: 52ch`, which renders 63 to 68 characters in every text face measured, re-measured 2026-10-10; `66ch` renders 81 to 86, see design-typography reference 01). Set it on the text element itself: `ch` resolves against that element's font. Never full-width paragraphs.
 3. Components have no outer margins. The parent sets gaps (`gap`, or `.stack > * + *`).
 4. One alignment system per view. Count the distinct left edges; remove any that carry no meaning.
 
@@ -37,15 +37,18 @@ Check every layout against these before anything else. One miss fails the work, 
 **Responsive**
 16. Mobile first, foundation breakpoints for the page shell: sm 640, md 768, lg 1024, xl 1280, 2xl 1536. Components adapt to their container (intrinsic CSS or container queries), not the viewport.
 17. When columns stack, related items stay adjacent and the primary action stays reachable.
+18. A phone layout is edited, not shrunk: the first screen at 390 x 844 shows what it is and the primary action; source order is the phone's reading order; no unique fact is cut (collapse or defer instead; Google mobile-first indexing). See references/06.
+19. At 1440 x 900 the next section peeks above the fold, and every section shares one page grid (count the left edges).
 
 ## 2. Workflow
 
 1. **Name the job.** Page type, the one primary action or decision, the user (first-time or daily expert), main device. This sets density and skeleton.
 2. **Pick the structure** (see table below). Write the shell first: container, columns, navigation per width.
+2b. **Flatplan the page** when it has more than four sections: one line per section with its job, its loudness (loud, medium, quiet) and the kind of loudness (type, color, data, image). No two loud sections of the same kind side by side; the second loud moment lands in the middle third. Name the one signature layout move. See references/06.
 3. **Rank the content.** List elements in priority order; assign position, space, tone, weight, then size, in that order.
 4. **Space it with three tiers**: inside components, between components, between sections. Three values plus the page margin covers most views.
 5. **Run the gate.** Then apply the expert moves in section 4.
-6. **Test the extremes**: 320px, 400% zoom, 1920px, a landscape phone, keyboard tab-through.
+6. **Test the extremes**: 320, 390, 768, 1024, 1440 and 1920px, 400% zoom, a landscape phone, keyboard tab-through. Write the phone edit list (keep, reorder, crop, thumbnail, merge duplicate, shorten label, collapse, defer) section by section.
 
 When the brief is a critique ("spacing feels off"), audit in gate order, list each failure with the exact current and fixed value, then show the fixed version.
 
@@ -106,12 +109,19 @@ Browse mixed content: cards. Search or compare: list or table. Single-type visua
 10. **Groups must survive reflow.** When stacking, re-check proximity: a related link that sat beside its card on desktop can land three blocks away on mobile. Keep button pairs together and order stacked features by importance.
 11. **Optical corrections, deliberately.** Play icons nudge right of center; circles slightly larger than adjacent squares; icon-side button padding about 4px smaller; quotes and bullets hang outside the text edge.
 12. **Un-stick on short screens.** Under about 500px of height (landscape phones) collapse or un-stick headers and footers so content keeps at least two thirds of the screen.
-13. **Density is earned by subtraction.** Before shrinking padding, cut columns, merge fields and remove decorative rules. Then densify vertical padding, never text below 14px.
+13. **Density is earned by subtraction.** Before shrinking padding, cut columns, merge fields and remove decorative rules. Then densify vertical padding, never text below 14px, and re-run the lint: compressed rows are where 24px targets quietly fail.
+14. **Pace by alternation, not by zigzag.** Rhythm comes from changing scale, density and tone on a stable grid. Flipping media left and right slows scanning (NN/g zigzag study). Pages die in the middle: if sections three and four are both quiet, move a loud one there.
+15. **The margin column.** On a 12-column page, columns 1 to 3 hold labels, captions, hanging numerals and axis labels; the body starts at column 4 in every section, so one edge repeats down the page (tested: 11 to 8 left edges at 1440).
+16. **Break the grid once, toward one edge,** for the one artifact that earns it (a chart whose paper bleeds right while its data stays in the body column). Breaks everywhere read as no grid.
+17. **Draw data into the furniture.** Rules drawn to scale, bars inside table rows, a big number beside its ledger: a section gets a picture with no image, which matters when photography is missing.
+18. **Proof next to claim, as layout.** Put the offer after the prices it beats; put the panel that explains a chart beside the chart.
+19. **Ruled index over equal cards** for six or fewer comparable products: hairline rows, thumbnail, name at the row's largest size, price and action at the row end. Half the phone height of cards, and ranking stays visible.
+20. **Supporting pane at 2:1.** A dashboard row with a primary panel and its explainer splits 2fr / 1fr from 1280 (Android canonical layouts: about two thirds, 70/30 expanded) and stacks below, where a third would be under 320px. Rows stretch; the short panel pins its footnote.
 
 ## 5. Page skeletons (summary)
 
 - **Landing:** header (one CTA) > hero (headline about 20ch, one line, CTA, product proof, next section peeking) > proof strip > problem and outcome > 3 to 6 features > deep proof > pricing or teaser > FAQ > closing CTA. One primary action, repeated.
-- **Dashboard:** one job; KPI row (3 to 5 tiles, value is the largest text) > primary trend > breakdowns > detail table; global filters in one toolbar; top-left holds the most important number. KPI row 4 across at lg, 2x2 at md, stacked horizontal tiles under sm; chart cards never under about 320px; compact tables go to default density on touch.
+- **Dashboard:** one job; answer sentence > KPI row (3 to 5 tiles, value is the largest text) > attention rows (one line each, not cards) > primary trend 2fr with its explainer 1fr > detail table full width; global filters in one toolbar; top-left holds the most important number. KPI row 4 across at lg, 2x2 at md, stacked horizontal tiles under sm; chart cards never under about 320px; compact tables go to default density on touch.
 - **Article:** content grid, 52ch body, headings front-loaded for layer-cake scanning, sticky TOC on xl, wide media in popout or full bleed.
 - **Pricing:** 3 to 4 plans, recommended in the middle with the only filled CTA, subgrid cards with 4 to 6 differentiators, billing toggle above, grouped comparison table with sticky plan header, mobile stacks or tabs with no horizontal scroll.
 
@@ -126,6 +136,7 @@ Full skeletons, numbers and worked examples: references/05.
 | references/03-hierarchy-and-gestalt.md | Making something stand out, grouping, scanning patterns, CTA placement, order and accessibility, poster and print composition |
 | references/04-responsive-and-adaptive.md | Breakpoint plans, navigation per width, container queries, WCAG minimums, wide and short screens |
 | references/05-page-composition-and-density.md | Landing, dashboard, article, pricing, tables, density modes |
+| references/06-pacing-signature-and-phone-editing.md | Flatplan and section pacing, signature layout moves, the margin column, editing a page for phones and tablets, the fold, dashboard row proportions, measured before and after numbers |
 
 ## 7. Related skills
 
@@ -136,4 +147,4 @@ Full skeletons, numbers and worked examples: references/05.
 
 ## Output standard
 
-When delivering a layout, state: the structure chosen and why, the grid and breakpoints, the spacing tiers with tokens, the ranked hierarchy, and how it passes the gate. In code, use tokens (`var(--space-6)`), `gap`, intrinsic CSS, logical properties (`margin-inline`, `padding-block`) so RTL mirrors for free, and semantic HTML in reading order.
+When delivering a layout, state: the structure chosen and why, the grid and breakpoints, the spacing tiers with tokens, the ranked hierarchy, the flatplan (for pages over four sections), the phone edit list, and how it passes the gate. In code, use tokens (`var(--space-6)`), `gap`, intrinsic CSS, logical properties (`margin-inline`, `padding-block`) so RTL mirrors for free, and semantic HTML in reading order.
