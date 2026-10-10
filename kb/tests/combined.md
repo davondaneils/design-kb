@@ -47,3 +47,13 @@ Opinion, from the renders, by the agent that built the pages. Not independent.
 - A licensed display face (or a decision to stay with Newsreader).
 - Network access to the exemplar hosts, so the teardowns in `kb/teardowns/` can be measured instead of remembered.
 - The blind ratings on the three pairs above.
+
+## Davon's blind ranking, round 2 (2026-10-10)
+
+| Pair | Davon picked | That was |
+|---|---|---|
+| pair-1, coffee desktop light | B | combined |
+| pair-2, coffee phone dark | A | combined |
+| pair-3, dashboard desktop light | A | combined |
+
+Result: 3 of 3 for the combined pages over the color pilot pages. The four wave skills (typography, art direction, polish, product UI) are validated by Davon's eye. Next: run the remaining domains the same way.
