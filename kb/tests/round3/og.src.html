@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ember &amp; Oak social card</title>
+<style>
+/* Social card for the homepage (design-search 07, "Social cards"), round 3: the photograph now carries the card.
+   Rendered to site/og/home-1200x630.png by build.mjs. Evergreen: the card never names this week's lot (Facebook caches by URL).
+   Safe area: the wordmark and the line sit inside the right 560px, and the bag sits left of centre, so the centred 630 square
+   crop keeps the bag and the wordmark's "Oak", and a 2:1 crop keeps both whole. The green beans stay in frame (README use note). */
+@font-face { font-family: "Inter"; src: url("fonts/inter-var.woff2") format("woff2"); font-weight: 400 700; }
+html, body { margin: 0; }
+body { width: 1200px; height: 630px; overflow: hidden; position: relative; background: #f9f6f4; color: #27201a; font-family: Inter, sans-serif; }
+.photo { position: absolute; left: 0; top: 0; width: 720px; height: 630px; object-fit: cover; object-position: 62% 50%; }
+.panel { position: absolute; right: 0; top: 0; bottom: 0; width: 480px; display: grid; align-content: center; gap: 32px; padding: 0 56px; box-sizing: border-box; }
+.panel svg { width: 100%; height: auto; color: #27201a; }
+.panel .ember { fill: #f26b21; }
+.line { font: 600 31px/1.2 Inter, sans-serif; letter-spacing: -0.015em; margin: 0; }
+.meta { font: 600 16px/1.4 Inter, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; color: #79685b; margin: 0; }
+</style>
+</head>
+<body>
+<img class="photo" src="../../assets/photos/hero-bag-1264.jpg" alt="">
+<div class="panel">
+  {{WM_CARD}}
+  <p class="line">Single-origin coffee, roasted 12&#8239;kg at a time in Portland</p>
+  <p class="meta">Shipped within 48 hours of the roast</p>
+</div>
+</body>
+</html>

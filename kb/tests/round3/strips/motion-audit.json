@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-10T22:04:41.586Z",
+  "tokensMs": [
+    100,
+    150,
+    200,
+    250,
+    300,
+    400,
+    500,
+    600,
+    800
+  ],
+  "scenarios": [
+    {
+      "name": "dash-3-palette-key",
+      "url": "kb/tests/round3/dashboard.html",
+      "strip": "kb/tests/round3/strips/dash-3-palette-key.png",
+      "result": "PASS",
+      "findings": [],
+      "rows": [
+        {
+          "mode": "no-preference",
+          "end": 0,
+          "animations": []
+        },
+        {
+          "mode": "reduce",
+          "end": 0,
+          "animations": []
+        }
+      ]
+    }
+  ]
+}
