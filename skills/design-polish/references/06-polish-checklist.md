@@ -56,6 +56,6 @@ Each item: what to look for, then the fix. A tick needs evidence: a screenshot r
 Implemented now as a separate advisory script, `skills/design-polish/assets/polish-audit.mjs`, so the gate in `tools/lint.mjs` stays unchanged until the editor-in-chief adopts checks. Candidates for promotion to hard gate: focus shape change (item 8), state layout shift (item 9), radius off family (item 1), `color-scheme` missing on a dark-capable page (item 18). Candidates to stay as warnings: shadow count, icon stroke match, heading balance, tabular figures, hover gating.
 
 ## Hand-offs
-- The 15-item gate: design-foundations `references/fundamentals-checklist.md`.
+- The 16-item gate: design-foundations `references/fundamentals-checklist.md`.
 - The loop and its 3-round cap: design-director.
 - Exemplar comparison: the playbook's `references/signature-moves.md`.

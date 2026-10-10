@@ -18,7 +18,7 @@ What a checkout or sign-up needs, in what order, with how few fields. General fo
 - Trust at the card is a design problem even when security is perfect (C23).
 
 ## Field budget
-Baymard: average 11.3 in 2024 (11.8 in 2021, 12.7 in 2019), most checkouts need 8 (C9, C10). design-ux 03 quotes an older Baymard US figure of 14.88; use the 2024 number.
+Baymard: average 11.3 in 2024 (11.8 in 2021, 12.7 in 2019), most checkouts need 8 (C9, C10).
 | Field | Rule |
 |---|---|
 | Email | Required, first. Used for receipt and account later |

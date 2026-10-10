@@ -18,7 +18,7 @@
 //     frames: 6, wait: 1500 }           // optional: frames per row; ms to wait for the first animation to start
 //
 // Checks per animation (fail unless noted):
-//   duration   on the token set 100, 150, 200, 250, 300, 400, 500, 600 ms; loops (infinite) are reported, not judged
+//   duration   on the token set 100, 150, 200, 250, 300, 400, 500, 600, 800 ms (800 only for one hero reveal, FOUNDATIONS v0.4); loops (infinite) are reported, not judged
 //   easing     one of the three token curves or linear; the CSS default `ease` fails
 //   property   transform, translate, scale, rotate and opacity pass; paint-only properties (color, fill, stroke,
 //              stroke-dashoffset) pass on control-sized elements and warn above 200x200 px (40,000 px2); layout and blur properties
@@ -35,7 +35,7 @@ const here = path.dirname(new URL(import.meta.url).pathname);
 const toolsDir = process.env.DESIGN_KB_TOOLS || path.resolve(here, '../../../tools');
 const { launch, toUrl } = await import(pathToFileURL(path.join(toolsDir, 'browser.mjs')).href);
 
-const TOKENS_MS = [100, 150, 200, 250, 300, 400, 500, 600];
+const TOKENS_MS = [100, 150, 200, 250, 300, 400, 500, 600, 800];
 const EASINGS = {
   'cubic-bezier(0.2, 0, 0, 1)': 'standard',
   'cubic-bezier(0, 0, 0, 1)': 'enter',
@@ -123,11 +123,13 @@ async function film(sc, mode) {
   const add = (level, msg, a) => findings.push({ level, msg, target: a ? a.target + ' ' + a.name : '' });
   if (sc.expect === 'none' && anims.length && mode === 'no-preference') add('fail', `expected no animation, found ${anims.length}`);
   if (sc.expect === 'motion' && !anims.length && mode === 'no-preference') add('fail', 'expected motion, found none');
+  const heroReveals = [];
   for (const a of anims) {
     const loop = a.iterations === Infinity || a.iterations === 'Infinity';
     const ms = Math.round(a.duration);
     if (!loop && !TOKENS_MS.includes(ms)) add('fail', `duration ${ms} ms is off the token set`, a);
-    if (!loop && ms > 600) add('fail', `duration ${ms} ms is over the 600 ms ceiling`, a);
+    if (!loop && ms > 800) add('fail', `duration ${ms} ms is over the 800 ms hero ceiling`, a);
+    else if (!loop && ms > 600) heroReveals.push(a);
     const curves = a.easing !== 'linear' ? [a.easing] : a.keyframeEasings;
     a.curve = curves.map((c) => EASINGS[c.replace(/\s+/g, ' ')] || c).join(', ');
     for (const c of curves) if (!EASINGS[c.replace(/\s+/g, ' ')]) add('fail', `easing ${c} is not a token curve`, a);
@@ -144,6 +146,9 @@ async function film(sc, mode) {
       else if (!loop && ms > 150) add('warn', `${ms} ms change under reduced motion; keep crossfades at 150 ms or less`, a);
     }
   }
+  // 601 to 800 ms is allowed only for one unprompted hero reveal per marketing page (FOUNDATIONS v0.4, opinion).
+  for (const a of heroReveals) add('warn', `${Math.round(a.duration)} ms is over 600 ms: allowed only as the page's one hero reveal on load, never on a user action`, a);
+  if (new Set(heroReveals.map((a) => a.name)).size > 1) add('fail', `${new Set(heroReveals.map((a) => a.name)).size} different animations run over 600 ms; one hero reveal per page`);
 
   // Frames: every filmed animation seeked to the same moment, from 0 to the end of the longest one.
   const n = sc.frames || framesDefault;
