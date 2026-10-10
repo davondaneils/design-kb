@@ -91,6 +91,8 @@ Dashboards
 - Load panels in parts, most important first.
 - Partial failure: replace only the failing panel's body with icon, cause and Retry; do not imply data loss.
 - Permission: show the frame and who can grant access, with "Request access"; hide only if the panel's existence is sensitive.
+- Notifications inbox: two tabs, "needs you" (assigned, mentioned, review requested) and everything else, each with a count; every row names its reason; triage by keyboard (Done, snooze, read toggle) with a way back. One channel per event: an item read in the inbox never also arrives by email. Push permission is asked after the first useful moment, not on first sign-in. Examples: `kb/references/patterns/09-notifications.md` (Linear Priority and Other, GitHub reason labels and Done).
+- First run: the real product with labelled sample data, not a tour; permissions (notifications, integrations) are asked when the feature that needs them is first used (design-ux `references/05-onboarding.md`; examples in `kb/references/patterns/01-onboarding.md`).
 - Bulk: tri-state header checkbox (native `indeterminate`), Shift range, `X` toggle, "Select all N matching", verb plus noun actions with the count, row menus disabled while selecting; undo for reversible, confirm with count for irreversible.
 
 ### Dashboards (`references/06-dashboards.md`)
@@ -134,6 +136,7 @@ Dashboards
 | Shell anatomy, tabs vs links, breadcrumbs, scope switcher, density modes | `references/04-shells-density.md` |
 | State matrix, skeletons, partial failure, permission states, bulk selection and actions | `references/05-states-bulk.md` |
 | Answer line, KPI anatomy, operational vs analytical, freshness, alerts | `references/06-dashboards.md` |
+| What the best shipped products do, observed and linked: tables, filters, command palettes, settings, notifications, onboarding, empty, permission and error states | `kb/references/patterns/` (README lists the 11 files and the floor each one extends) |
 
 ## 7. Hand-offs
 - Usability gate, nav chooser, field rules, loading timing, error ladder: design-ux.

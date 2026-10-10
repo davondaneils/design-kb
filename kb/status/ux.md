@@ -5,7 +5,7 @@
 | Domain number | 6 |
 | Layer | reference |
 | Skill | design-ux |
-| Branch | wave/ux (from restructure) |
+| Branch | restructure (merged from wave/ux on 2026-10-10) |
 | Status (editor-in-chief) | testing |
 | Shipped version (librarian) | none (v0.2 in skills/design-ux, awaiting merge) |
 | Reuses | design-product-ui (dense app UI), design-playbook-mobile (platform conventions) |

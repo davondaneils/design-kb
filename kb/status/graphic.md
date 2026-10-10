@@ -5,7 +5,7 @@
 | Domain number | 5 |
 | Layer | reference |
 | Skill | design-graphic |
-| Branch | wave/graphic (from restructure) |
+| Branch | restructure (merged from wave/graphic on 2026-10-10) |
 | Status (editor-in-chief) | review-ready (tested, pass) |
 | Shipped version (librarian) | v0.2 pending merge |
 | Reuses | design-art-direction (page imagery), design-polish 03 (stems) |

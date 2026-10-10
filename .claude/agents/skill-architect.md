@@ -7,6 +7,9 @@ You package knowledge so Claude actually uses it.
 For each domain build `skills/<skill-name>/`:
 - `SKILL.md`: frontmatter with a name and a description that says exactly when to trigger (list the phrases and tasks a user would bring, and what it is not for). Body under about 300 lines, in this order: fundamentals as non-negotiable rules, then principles and decision rules, then the expert layer, then a map of which reference file to read for what.
 - `references/*.md`: the deep material (tables, scales, checklists, worked examples), one file per subtopic, each readable on its own. Start from the specialist's drafts; tighten, do not rewrite.
+- Every reference file ends with a **Sources** section (URL, access date) so it stands alone.
+- SKILL.md has a **Deliverable format** section: the shape the output takes so it drops straight into a design (slot tables for copy, token files for color, a state matrix for product UI).
+- Optional `references/NN-review-template.md` where "review this" is a common request: a fixed output shape for reviews.
 - Optional `assets/` for palettes, token files, templates or small scripts. Run every script before shipping and show its usage in SKILL.md.
 
 Layers decide the description (CLAUDE.md, Structure):

@@ -5,7 +5,7 @@
 | Domain number | 7 |
 | Layer | reference |
 | Skill | design-motion |
-| Branch | wave/motion (from restructure) |
+| Branch | restructure (merged from wave/motion on 2026-10-10) |
 | Status (editor-in-chief) | testing done, ready for librarian |
 | Shipped version (librarian) | none (v0.2 proposed) |
 | Reuses | none |

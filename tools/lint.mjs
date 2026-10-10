@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Fundamentals lint: the automated half of the fundamentals checklist in kb/FOUNDATIONS.md (v0.3).
+// Fundamentals lint: the automated half of the fundamentals checklist in kb/FOUNDATIONS.md (v0.4).
 //
 // Usage:
 //   node tools/lint.mjs <html[?query]> [--json out.json] [--quiet] [--states state=a,state=b] [--no-fallback]
@@ -22,7 +22,17 @@
 //   state-shift  hover never changes a control's size or border width
 //   radius       every border radius on the family 0 4 8 12 16 full (or a nested outer-minus-inset value)
 //   color-scheme a page with dark styles sets color-scheme (property or meta)
-//   motion       if the page animates, prefers-reduced-motion removes movement
+//   motion       if the page animates, prefers-reduced-motion removes movement: under reduce, no animation whose
+//                keyframes move, scale, rotate or resize anything; opacity and color animations up to 150ms are allowed
+//                (FOUNDATIONS Motion and accessibility.md), longer ones warn
+//   skip-link    when focusable elements come before <main>, the first one is a same-page link to main (or a landmark
+//                that holds it) and it is visible when focused (WCAG 2.4.1)
+//   icons        small icons (10 to 28px inline SVG) use one stroke cap and one join across the page, and no icon
+//                hard-codes a fill or stroke color (ported from skills/design-graphic/assets/icon_audit.mjs).
+//                Logos are not icons: SVG inside an element whose class or id names logo, brand or wordmark is skipped
+//   primary      at most one filled call to action per screen height at 390 and 1440, counting only the open modal
+//                when one is open (FOUNDATIONS item 12; ported from design-conversion conversion-audit.mjs).
+//                State sheets are exempt: <html data-lint-page="state-sheet"> or a <title> containing "state sheet"
 //
 // Warnings (judged by a person; each one is a likely defect):
 //   typography   straight quotes, hyphen in number ranges, x between numbers, uppercased units,
@@ -34,11 +44,18 @@
 //   icon-stroke  small inline icons whose stroke is far from the adjacent Inter text stem
 //   weight       inline SVG over 150 KB, page HTML over 1.5 MB
 //   fallback     layout shift when the web fonts are removed (metric fallbacks kept) over 8px
-//   sticky-focus a focused element sits under a sticky or fixed bar (WCAG 2.4.11)
+//   sticky-focus a focused element sits under a sticky or fixed bar that paints above it (WCAG 2.4.11)
+//   nav-parity   a header or nav destination shown at 1440 has no route at 390 (not visible, not in a menu
+//                disclosure, not linked anywhere else on the page)
+//   icons (warn) icons drawn through <use>: colors are read from the referenced symbol, caps cannot be confirmed
 //
+// Content behind an open modal dialog (or under [inert]) is skipped by every per-element check: it is inactive
+// (WCAG 1.4.3 exempts it) and cannot be reached. Every page waits up to 2s for finite entrance animations to finish
+// before anything is measured, so a dialog mid-entrance is not measured at 96 percent scale.
+
 // Exit code: 0 when no check fails, 1 when any check fails, 2 on usage error.
 // Opt out for one element (use sparingly, explain in the test report):
-//   data-lint-skip="measure spacing type-scale targets focus overlay radius typography svg-overlap tabular"
+//   data-lint-skip="measure spacing type-scale targets focus overlay radius typography svg-overlap tabular icons primary"
 import fs from 'node:fs';
 import path from 'node:path';
 import { createRequire } from 'node:module';
@@ -80,6 +97,17 @@ const helpers = `
       const host = el.closest('[data-lint-skip]');
       return !!host && host.getAttribute('data-lint-skip').split(/\\s+/).includes(check);
     },
+    // The open modal dialog, if any: native dialog shown with showModal(), or a visible [aria-modal=true] element.
+    modal() {
+      for (const d of document.querySelectorAll('dialog[open]')) { try { if (d.matches(':modal')) return d; } catch { /* old engines */ } }
+      return [...document.querySelectorAll('[aria-modal="true"]')].find((d) => this.visible(d)) || null;
+    },
+    // Inactive content: behind an open modal, or inside [inert]. Exempt from contrast (WCAG 1.4.3) and unreachable.
+    inactive(el) {
+      if (el.closest('[inert]')) return true;
+      const m = this.modal();
+      return !!m && !m.contains(el);
+    },
     sel(el) {
       if (el.id) return '#' + el.id;
       const parts = [];
@@ -106,6 +134,21 @@ const helpers = `
       }
       return out;
     },
+    // Does bar b paint above el where their boxes intersect? Sample the middle of the intersection with
+    // elementsFromPoint (stacking-aware), so a skip link with a higher z-index over a sticky header is not "under" it.
+    paintsOver(b, el) {
+      const er = el.getBoundingClientRect(), br = b.getBoundingClientRect();
+      const l = Math.max(er.left, br.left, 0), r = Math.min(er.right, br.right, innerWidth - 1);
+      const t = Math.max(er.top, br.top, 0), btm = Math.min(er.bottom, br.bottom, innerHeight - 1);
+      if (r - l <= 1 || btm - t <= 1) return false;
+      for (const [x, y] of [[(l + r) / 2, (t + btm) / 2], [l + 1, t + 1], [r - 1, btm - 1]]) {
+        for (const hit of document.elementsFromPoint(x, y)) {
+          if (hit === el || el.contains(hit) || hit.contains(el)) break;
+          if (b === hit || b.contains(hit)) return true;
+        }
+      }
+      return false;
+    },
     // Simulate an anchor jump or Shift+Tab: scroll the element to the top (scroll-padding is honored), then look for bars over it.
     coveredAtTop(el) {
       if (el.closest('dialog, [role=dialog]')) return null;
@@ -121,7 +164,7 @@ const helpers = `
         if (br.height > innerHeight * 0.5) continue;
         const ix = Math.min(er.right, br.right) - Math.max(er.left, br.left);
         const iy = Math.min(er.bottom, br.bottom) - Math.max(er.top, br.top);
-        if (ix > 1 && iy > 1) { hit = this.sel(b) + ' (scrolled to top)'; break; }
+        if (ix > 1 && iy > 1 && this.paintsOver(b, el)) { hit = this.sel(b) + ' (scrolled to top)'; break; }
       }
       scrollTo(0, y);
       return hit;
@@ -148,6 +191,14 @@ const helpers = `
   };
 `;
 
+// Wait for finite animations (entrances, reveals) to finish, capped at 2s, so nothing is measured mid-transition.
+async function settle(page) {
+  await page.evaluate(() => Promise.race([
+    Promise.all(document.getAnimations().filter((a) => { const t = a.effect && a.effect.getComputedTiming(); return t && Number.isFinite(t.endTime); }).map((a) => a.finished.catch(() => null))),
+    new Promise((r) => setTimeout(r, 2000)),
+  ])).catch(() => null);
+}
+
 async function lintOne(browser, target, outPath) {
   const report = { file: target, date: new Date().toISOString(), checks: {}, summary: {} };
   const add = (check, level, message, detail) => {
@@ -162,6 +213,7 @@ async function lintOne(browser, target, outPath) {
     const page = await context.newPage();
     await page.goto(toUrl(target), { waitUntil: 'load' });
     await page.evaluate(() => document.fonts && document.fonts.ready);
+    await settle(page);
     await page.addScriptTag({ content: helpers });
     return { context, page };
   }
@@ -201,6 +253,7 @@ async function lintOne(browser, target, outPath) {
   }
 
   // 2 to 6 plus static polish and typography checks, at 390 and 1440, light scheme.
+  const navByWidth = {};
   for (const width of [390, 1440]) {
     const { context, page } = await openPage(width, 'light');
     const r = await page.evaluate(({ width, TYPE_SCALE, SPACE_SCALE, RADII, STEM }) => {
@@ -209,7 +262,7 @@ async function lintOne(browser, target, outPath) {
       const all = [...document.body.querySelectorAll('*')].filter((el) => !el.closest('svg, head, script, style, template') || el.tagName.toLowerCase() === 'svg');
 
       // Targets.
-      const interactive = all.filter((el) => el.matches('a[href], button, input:not([type=hidden]), select, textarea, summary, [role=button], [role=link], [role=tab], [role=menuitem], [role=checkbox], [role=switch], [tabindex]:not([tabindex="-1"])') && L.visible(el) && !L.skipped(el, 'targets'));
+      const interactive = all.filter((el) => el.matches('a[href], button, input:not([type=hidden]), select, textarea, summary, [role=button], [role=link], [role=tab], [role=menuitem], [role=checkbox], [role=switch], [tabindex]:not([tabindex="-1"])') && L.visible(el) && !L.skipped(el, 'targets') && !L.inactive(el));
       for (const el of interactive) {
         const rc = el.getBoundingClientRect();
         const s = getComputedStyle(el);
@@ -319,7 +372,7 @@ async function lintOne(browser, target, outPath) {
         const reported = new Set();
         for (const n of L.textNodes()) {
           const el = n.parentElement;
-          if (el.closest('svg') || L.skipped(el, 'svg-overlap')) continue;
+          if (el.closest('svg') || L.skipped(el, 'svg-overlap') || L.inactive(el)) continue;
           const er = el.getBoundingClientRect();
           if (er.width <= 1 || er.height <= 1 || getComputedStyle(el).clip !== 'auto' || getComputedStyle(el).clipPath !== 'none') continue; // visually hidden text
           range.selectNodeContents(n);
@@ -342,9 +395,83 @@ async function lintOne(browser, target, outPath) {
         }
       }
 
+      // Primary per screen: filled, opaque controls that stand off their backdrop by 2:1 or more, grouped by screen
+      // height. Only the open modal counts when one is open. Same rule as design-conversion conversion-audit.mjs.
+      out.primary = [];
+      out.stateSheet = document.documentElement.dataset.lintPage === 'state-sheet' || /state sheet/i.test(document.title);
+      if (!out.stateSheet) {
+        const rgb = (c) => { const m = c.match(/rgba?\(([^)]+)\)/); if (!m) return null; const v = m[1].split(/[ ,/]+/).filter(Boolean).map(Number); return { r: v[0], g: v[1], b: v[2], a: v.length > 3 ? v[3] : 1 }; };
+        const lumc = ({ r, g, b }) => { const f = (x) => { x /= 255; return x <= 0.04045 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4; }; return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b); };
+        const ratio = (a, b) => { const [x, y] = [lumc(a), lumc(b)].sort((p, q) => q - p); return (x + 0.05) / (y + 0.05); };
+        const bgOf = (el) => { for (let n = el.parentElement; n; n = n.parentElement) { const c = rgb(getComputedStyle(n).backgroundColor); if (c && c.a > 0.5) return c; } return { r: 255, g: 255, b: 255, a: 1 }; };
+        const ctas = [...document.querySelectorAll('a[href], button, [role=button], input[type=submit]')].filter((el) => L.visible(el) && !L.inactive(el) && !L.skipped(el, 'primary') && !el.closest('[hidden], dialog:not([open])')).filter((el) => {
+          const c = rgb(getComputedStyle(el).backgroundColor); if (!c || c.a < 0.9) return false;
+          const rc = el.getBoundingClientRect(); if (rc.width < 96 || rc.height < 36) return false;
+          return ratio(c, bgOf(el)) >= 2;
+        });
+        const slices = {};
+        for (const el of ctas) { const k = Math.floor((el.getBoundingClientRect().top + scrollY) / innerHeight); (slices[k] ||= []).push(el); }
+        for (const [k, list] of Object.entries(slices)) if (list.length > 1) out.primary.push({ screen: +k + 1, labels: list.map((e) => (e.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 24)), sel: L.sel(list[1]) });
+      }
+
+      // Navigation destinations: header and nav links, and whether each is reachable at this width.
+      const hrefOf = (a) => { try { const u = new URL(a.getAttribute('href'), location.href); return u.pathname === location.pathname && u.search === location.search ? (u.hash || '/') : u.pathname.split('/').slice(-2).join('/') + u.search + u.hash; } catch { return a.getAttribute('href'); } };
+      const disclosed = (a) => { // inside a closed menu that a visible control opens
+        if (a.closest('details')) return L.visible(a.closest('details'));
+        for (let n = a.parentElement; n && n !== document.body; n = n.parentElement) {
+          if (n.id && [...document.querySelectorAll('[aria-controls]')].some((b) => b.getAttribute('aria-controls').split(/\s+/).includes(n.id) && L.visible(b))) return true;
+          if (n.matches('dialog, [popover]') && n.id && document.querySelector(`[popovertarget="${n.id}"], [aria-controls~="${n.id}"]`)) return true;
+        }
+        return false;
+      };
+      out.nav = { shown: [], reachable: [] };
+      for (const a of document.querySelectorAll('header a[href], nav a[href]')) {
+        const h = hrefOf(a);
+        if (!h || /^#?$/.test(h) || a.closest('[data-lint-skip~="nav-parity"]')) continue;
+        if (L.visible(a)) out.nav.shown.push({ href: h, text: a.textContent.trim().slice(0, 30) });
+      }
+      for (const a of document.querySelectorAll('a[href]')) {
+        if (L.visible(a) || disclosed(a)) out.nav.reachable.push(hrefOf(a));
+        // A same-page anchor whose section is on the page at this width is reachable by scrolling.
+        const h = a.getAttribute('href') || '';
+        if (h.startsWith('#') && h.length > 1) { let t = null; try { t = document.getElementById(decodeURIComponent(h.slice(1))); } catch { /* bad id */ } if (t && L.visible(t)) out.nav.reachable.push(hrefOf(a)); }
+      }
+
       if (width !== 1440) return out;
 
       // ---- 1440-only static checks ----
+      // Icon set: one cap and one join for small stroked icons; no hard-coded colors (icon_audit.mjs hard checks).
+      out.icons = { caps: {}, joins: {}, colors: [], use: [] };
+      const okColor = (v) => /^(none|currentcolor|inherit|transparent|url\(.*\)|var\(.*\))$/i.test(v.trim());
+      for (const svg of document.querySelectorAll('svg')) {
+        if (svg.parentElement && svg.parentElement.closest('svg')) continue;
+        if (!L.visible(svg) || L.skipped(svg, 'icons')) continue;
+        // Logos and brand marks are not icons: exempt from the set rules (FOUNDATIONS, logo exemption).
+        if (svg.closest('[class*=logo], [id*=logo], [class*=brand], [class*=wordmark], [data-logo]')) continue;
+        const r = svg.getBoundingClientRect();
+        if (r.width < 10 || r.width > 28 || r.height < 10 || r.height > 28) continue;
+        const where = L.sel(svg);
+        const use = svg.querySelector('use');
+        const parts = [...svg.querySelectorAll('*')];
+        if (use) {
+          const ref = (use.getAttribute('href') || use.getAttribute('xlink:href') || '').replace(/^#/, '');
+          const sym = ref && document.getElementById(ref);
+          if (sym) parts.push(...sym.querySelectorAll('*'));
+          out.icons.use.push(where);
+        }
+        for (const el of parts) {
+          for (const a of ['fill', 'stroke']) {
+            const v = el.getAttribute(a);
+            if (v && !okColor(v) && r.width >= 12) out.icons.colors.push({ sel: where, text: `${el.tagName.toLowerCase()} ${a}="${v}"` });
+          }
+          if (!(el instanceof SVGGeometryElement) || el.closest('symbol, defs')) continue;
+          const cs = getComputedStyle(el);
+          if (cs.stroke === 'none' || !(parseFloat(cs.strokeWidth) > 0)) continue;
+          const isClosed = el.matches('circle, ellipse, rect, polygon');
+          if (!isClosed) (out.icons.caps[cs.strokeLinecap] ||= []).push(where);
+          if (!el.matches('circle, ellipse, line')) (out.icons.joins[cs.strokeLinejoin] ||= []).push(where);
+        }
+      }
       // Radius family.
       out.radius = [];
       const els = all.filter((e) => !e.closest('svg') && L.visible(e) && !L.skipped(e, 'radius'));
@@ -442,6 +569,7 @@ async function lintOne(browser, target, outPath) {
       out.tab = [];
       for (const el of document.querySelectorAll('td, th, [class*=price], [class*=kpi] dd, [class*=value], .num, time, [data-num]')) {
         if (!L.visible(el) || L.skipped(el, 'tabular') || !/\d/.test(el.textContent)) continue;
+      if (el.matches('time') && el.closest('th')) continue; // a date as a row label is read, not compared (design-search note 10)
         const chars = el.textContent.replace(/\s+/g, '');
         if ((chars.match(/\d/g) || []).length / chars.length < 0.3) continue; // a label that mentions a number, not a figure
         const s = getComputedStyle(el);
@@ -522,6 +650,10 @@ async function lintOne(browser, target, outPath) {
     for (const h of r.headings) add('heading-wrap', 'warn', `heading ends on a one-word line at ${width}px ("${h.text}")`, h);
     ok('svg-overlap');
     for (const o of r.overlap) add('svg-overlap', 'warn', `text "${o.text}" partly covered by ${o.art} (${o.px}px) at ${width}px`, { sel: o.sel });
+    ok('primary');
+    for (const x of r.primary) add('primary', 'fail', `${x.labels.length} filled calls to action in screen ${x.screen} at ${width}px (${x.labels.map((l) => '"' + l + '"').join(', ')}); one primary per view`, { sel: x.sel });
+    if (r.stateSheet) report.summary.stateSheet = true;
+    navByWidth[width] = r.nav;
 
     if (width === 1440) {
       ok('radius');
@@ -542,6 +674,13 @@ async function lintOne(browser, target, outPath) {
       const distinct = Object.keys(r.shadows).length;
       if (distinct > 5) add('shadows', 'warn', `${distinct} distinct drop shadows, rings and inset highlights not counted (FOUNDATIONS gives 5)`);
       for (const x of r.shadowBad.slice(0, 6)) add('shadows', 'warn', x.why, { sel: x.sel });
+      ok('icons');
+      const capKinds = Object.keys(r.icons.caps), joinKinds = Object.keys(r.icons.joins);
+      if (capKinds.length > 1) add('icons', 'fail', `icons mix stroke caps: ${capKinds.map((k) => `${k} (${r.icons.caps[k].length}, e.g. ${r.icons.caps[k][0]})`).join(', ')}; one cap per set`);
+      if (joinKinds.length > 1) add('icons', 'fail', `icons mix stroke joins: ${joinKinds.map((k) => `${k} (${r.icons.joins[k].length}, e.g. ${r.icons.joins[k][0]})`).join(', ')}; one join per set`);
+      const colorSeen = new Set();
+      for (const c of r.icons.colors) { const k = c.sel + c.text; if (colorSeen.has(k)) continue; colorSeen.add(k); add('icons', 'fail', `icon hard-codes a color: ${c.text} (use currentColor or a token)`, { sel: c.sel }); }
+      if (r.icons.use.length) add('icons', 'warn', `${r.icons.use.length} icons drawn with <use>: colors read from the symbol, caps and joins not confirmed (run skills/design-graphic/assets/icon_audit.mjs)`, { examples: [...new Set(r.icons.use)].slice(0, 3) });
       ok('icon-stroke');
       for (const i of r.icon) add('icon-stroke', 'warn', `icon stroke ${i.stroke}px vs text stem ${i.stem}px (${i.text})`, { sel: i.sel });
       ok('weight');
@@ -550,6 +689,18 @@ async function lintOne(browser, target, outPath) {
       report.summary.weightKB = { html: Math.round(r.weight.html / 1000), svg: Math.round(r.weight.svg / 1000) };
     }
     await context.close();
+  }
+
+  // Nav parity: a header or nav destination shown at 1440 needs a route at 390.
+  ok('nav-parity');
+  if (navByWidth[1440] && navByWidth[390]) {
+    const reach = new Set(navByWidth[390].reachable);
+    const seenHref = new Set();
+    for (const l of navByWidth[1440].shown) {
+      if (seenHref.has(l.href)) continue;
+      seenHref.add(l.href);
+      if (!reach.has(l.href)) add('nav-parity', 'warn', `nav destination "${l.text}" (${l.href}) shown at 1440 has no route at 390 (not visible, not in a menu, not linked elsewhere)`);
+    }
   }
 
   // Dark: drop shadows on dark surfaces.
@@ -563,6 +714,10 @@ async function lintOne(browser, target, outPath) {
         if (!sh || sh === 'none') continue;
         for (const layer of sh.split(/,(?![^(]*\))/)) {
           if (/inset/.test(layer)) continue;
+          // Transparent layers paint nothing (FOUNDATIONS v0.4 dark shadows are transparent, not none, so lists compose).
+          if (/transparent/.test(layer)) continue;
+          const am = layer.match(/rgba?\(([^)]*)\)/);
+          if (am) { const parts = am[1].split(/[\s,/]+/).filter(Boolean); if (parts.length >= 4 && parseFloat(parts[3]) === 0) continue; }
           const nums = (layer.replace(/rgba?\([^)]*\)|oklch\([^)]*\)/g, '').match(/-?[\d.]+px/g) || []).map(parseFloat);
           if ((nums[2] || 0) > 4) { out.push(window.__lint.sel(el)); break; }
         }
@@ -574,7 +729,7 @@ async function lintOne(browser, target, outPath) {
   }
 
   // Focus visible, focus shape, sticky bars over focus: tab through the page.
-  ok('focus'); ok('focus-shape'); ok('sticky-focus');
+  ok('focus'); ok('focus-shape'); ok('sticky-focus'); ok('skip-link');
   {
     const { context, page } = await openPage(1440, 'light', 'reduce');
     await page.addStyleTag({ content: '*,*::before,*::after{transition:none!important;animation:none!important}' });
@@ -591,8 +746,34 @@ async function lintOne(browser, target, outPath) {
     }`;
     const count = await page.evaluate(() => document.querySelectorAll('a[href], button, input, select, textarea, summary, [tabindex]').length);
     const seenEls = new Set();
+    // Skip link (WCAG 2.4.1): needed when something focusable comes before main.
+    const before = await page.evaluate(() => {
+      const main = document.querySelector('main, [role=main]');
+      if (!main || window.__lint.modal()) return { main: !!main, count: 0 }; // an open modal owns the first Tab
+      const f = [...document.querySelectorAll('a[href], button, input:not([type=hidden]), select, textarea, summary, [tabindex]:not([tabindex="-1"])')]
+        .filter((e) => window.__lint.visible(e) || e.matches('a[href^="#"]'))
+        .filter((e) => !main.contains(e) && (main.compareDocumentPosition(e) & Node.DOCUMENT_POSITION_PRECEDING));
+      return { main: true, count: f.length };
+    });
     for (let i = 0; i < Math.min(count + 2, 200); i++) {
       await page.keyboard.press('Tab');
+      if (i === 0 && before.count > 0) {
+        const sk = await page.evaluate(() => {
+          const el = document.activeElement;
+          if (!el || el === document.body) return { ok: false, why: 'nothing takes focus on the first Tab' };
+          const sel = window.__lint.sel(el);
+          if (!el.matches('a[href^="#"]') || el.getAttribute('href').length < 2) return { ok: false, why: `first focusable is ${sel}, not a same-page link` };
+          let target = null; try { target = document.getElementById(decodeURIComponent(el.getAttribute('href').slice(1))); } catch { /* bad id */ }
+          const main = document.querySelector('main, [role=main]');
+          if (!target) return { ok: false, why: `skip link ${sel} points at a missing id` };
+          if (!(target === main || target.contains(main) || main.contains(target))) return { ok: false, why: `skip link ${sel} does not lead to main` };
+          const r = el.getBoundingClientRect(); const cs = getComputedStyle(el);
+          const shown = r.width > 1 && r.height > 1 && r.bottom > 0 && r.top < innerHeight && r.right > 0 && r.left < innerWidth && cs.clip === 'auto' && cs.clipPath === 'none' && cs.opacity !== '0';
+          if (!shown) return { ok: false, why: `skip link ${sel} stays hidden when focused` };
+          return { ok: true };
+        });
+        if (!sk.ok) add('skip-link', 'fail', `${before.count} focusable elements before main and no working skip link: ${sk.why}`);
+      }
       const info = await page.evaluate(`(() => {
         const el = document.activeElement;
         if (!el || el === document.body) return null;
@@ -610,7 +791,7 @@ async function lintOne(browser, target, outPath) {
           if (br.height > window.innerHeight * 0.5) continue; // side rails and drawers, not bars
           const ix = Math.min(er.right, br.right) - Math.max(er.left, br.left);
           const iy = Math.min(er.bottom, br.bottom) - Math.max(er.top, br.top);
-          if (ix > 1 && iy > 1) { covered = window.__lint.sel(b); break; }
+          if (ix > 1 && iy > 1 && window.__lint.paintsOver(b, el)) { covered = window.__lint.sel(b); break; }
         }
         return { sel: window.__lint.sel(el), key: el.dataset.lintFocusIndex, f, skipped: window.__lint.skipped(el, 'focus'), covered: covered || window.__lint.coveredAtTop(el) };
       })()`);
@@ -674,8 +855,12 @@ async function lintOne(browser, target, outPath) {
       const { context, page } = await openPage(width, 'light');
       const res = await page.evaluate(async () => {
         const pick = () => [...document.querySelectorAll('header, main > *, section, footer, h1, h2')].filter((e) => window.__lint.visible(e)).map((e) => ({ sel: window.__lint.sel(e), top: e.getBoundingClientRect().top + scrollY }));
+        // Text blocks and their rendered line counts, to say which element re-wrapped (copy fix vs font fix).
+        const texts = [...document.querySelectorAll('h1, h2, h3, h4, p, li, dt, dd, figcaption, label, button, blockquote, td, th')].filter((e) => window.__lint.visible(e) && e.textContent.trim().length > 2);
+        const countLines = () => texts.map((e) => window.__lint.lines(e).length);
         let removed = 0;
         const before = pick();
+        const linesBefore = countLines();
         const docH = document.documentElement.scrollHeight;
         for (const sheet of document.styleSheets) {
           let rules; try { rules = sheet.cssRules; } catch { continue; }
@@ -687,13 +872,17 @@ async function lintOne(browser, target, outPath) {
         for (const f of [...document.fonts]) if (f.status === 'loaded' && !/local/.test(String(f.family))) { /* faces from deleted rules drop out of the set on their own */ }
         await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
         const after = pick();
+        const linesAfter = countLines();
+        const rewrapped = [];
+        texts.forEach((e, i) => { if (linesAfter[i] !== linesBefore[i]) rewrapped.push({ sel: window.__lint.sel(e), from: linesBefore[i], to: linesAfter[i], text: e.textContent.trim().replace(/\s+/g, ' ').slice(0, 40) }); });
         let worst = { shift: 0 };
         before.forEach((b, i) => { const a = after[i]; if (a && Math.abs(a.top - b.top) > Math.abs(worst.shift)) worst = { sel: b.sel, shift: Math.round(a.top - b.top) }; });
-        return { removed, worst, docShift: document.documentElement.scrollHeight - docH };
+        return { removed, worst, rewrapped, docShift: document.documentElement.scrollHeight - docH };
       });
       if (res) {
         report.summary[`fallbackShift${width}`] = res.worst.shift;
-        if (Math.abs(res.worst.shift) > 8) add('fallback', 'warn', `layout moves ${res.worst.shift}px at ${width}px when the web fonts fail (worst: ${res.worst.sel}); add metric fallbacks (size-adjust, ascent-override)`, res.worst);
+        const rw = res.rewrapped.slice(0, 4).map((x) => `${x.sel} "${x.text}" ${x.from} to ${x.to} lines`).join('; ');
+        if (Math.abs(res.worst.shift) > 8) add('fallback', 'warn', `layout moves ${res.worst.shift}px at ${width}px when the web fonts fail (worst: ${res.worst.sel}); add metric fallbacks (size-adjust, ascent-override)${res.rewrapped.length ? `. Line count changed in ${res.rewrapped.length} elements: ${rw}${res.rewrapped.length > 4 ? '; ...' : ''} (one element near a wrap point is a copy fix; many is a font metrics fix)` : ''}`, { ...res.worst, rewrapped: res.rewrapped.slice(0, 12) });
       }
       await context.close();
     }
@@ -707,12 +896,27 @@ async function lintOne(browser, target, outPath) {
       await page.waitForTimeout(300);
       const res = await page.evaluate(() => {
         const moving = /transform|translate|scale|rotate|top|left|right|bottom|margin|width|height|all/;
+        // Properties a keyframe may change under reduced motion: opacity and color only (FOUNDATIONS v0.4, Motion).
+        const moveProp = /^(transform|translate|scale|rotate|offset|offset-.*|top|left|right|bottom|inset.*|margin.*|padding.*|width|height|inline-size|block-size|min-.*|max-.*|clip-path|perspective|background-position|zoom)$/;
+        const keyframeProps = new Map();
+        const walk = (rules) => { for (const ru of rules) { if (ru instanceof CSSKeyframesRule) { const props = new Set(); for (const k of ru.cssRules) for (let i = 0; i < k.style.length; i++) props.add(k.style[i]); keyframeProps.set(ru.name, [...props]); } else if (ru.cssRules) walk(ru.cssRules); } };
+        for (const sheet of document.styleSheets) { try { walk(sheet.cssRules); } catch { /* cross-origin */ } }
         const anims = [];
         const trans = [];
         for (const el of document.querySelectorAll('*')) {
           const s = getComputedStyle(el);
           const durs = s.animationDuration.split(',').map(parseFloat);
-          if (s.animationName !== 'none' && Math.max(...durs) > 0.1) anims.push({ name: s.animationName, dur: s.animationDuration, iter: s.animationIterationCount });
+          if (s.animationName === 'none') continue;
+          s.animationName.split(',').map((x) => x.trim()).forEach((name, i) => {
+            const d = durs[i % durs.length];
+            if (!(d > 0.02)) return; // the common 0.01ms reduced-motion reset is not motion
+            const props = keyframeProps.get(name) || ['unknown'];
+            const moves = props.some((p) => moveProp.test(p) || p === 'unknown');
+            if (d > 0.1 || moves) anims.push({ name, dur: d * 1000, iter: s.animationIterationCount, moves, props: props.slice(0, 6).join(' ') });
+          });
+        }
+        for (const el of document.querySelectorAll('*')) {
+          const s = getComputedStyle(el);
           const tdurs = s.transitionDuration.split(',').map(parseFloat);
           const tprops = s.transitionProperty.split(',').map((x) => x.trim());
           tprops.forEach((p, i) => { const d = tdurs[i % tdurs.length]; if (d > 0.1 && moving.test(p)) trans.push({ prop: p, dur: d }); });
@@ -732,7 +936,10 @@ async function lintOne(browser, target, outPath) {
     if (normal.anims.length || normal.trans.length) {
       const reduced = await probe('reduce');
       if (!normal.mediaRule) add('motion', 'fail', 'page animates but has no prefers-reduced-motion rule');
-      for (const a of reduced.anims) add('motion', 'fail', `animation still runs with reduced motion: ${a.name} ${a.dur}`, a);
+      for (const a of reduced.anims) {
+        if (a.moves) add('motion', 'fail', `animation still moves with reduced motion: ${a.name} ${a.dur}ms (${a.props})`, a);
+        else if (a.dur > 150 || a.iter === 'infinite') add('motion', 'warn', `opacity or color animation under reduced motion: ${a.name} ${a.dur}ms${a.iter === 'infinite' ? ', looping' : ''}; keep it at --duration-fast (150ms) or less, once`, a);
+      }
       if (reduced.trans.length) add('motion', 'warn', `${reduced.trans.length} movement transitions still over 100ms with reduced motion`, { examples: reduced.trans.slice(0, 4) });
     }
   }
@@ -771,7 +978,7 @@ async function overlayCheck(page, targets, scheme, width, add) {
     const out = [];
     for (const t of targets) {
       let el; try { el = document.querySelector(t); } catch { continue; }
-      if (!el || window.__lint.skipped(el, 'overlay')) continue;
+      if (!el || window.__lint.skipped(el, 'overlay') || window.__lint.inactive(el)) continue;
       if (el.closest('[disabled], [aria-disabled="true"]')) continue; // exempt from 1.4.3
       const s = getComputedStyle(el);
       const isSvgText = el instanceof SVGElement;

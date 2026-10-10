@@ -1,5 +1,8 @@
 # Changelog: design-product-ui
 
+## v0.1.2 (2026-10-10, editor-in-chief)
+- Notifications inbox and first-run rules added to the states decision rules, linking `kb/references/patterns/09-notifications.md` and `01-onboarding.md`; reference map links `kb/references/patterns/`.
+
 ## v0.1.1 (2026-10-09, editor-in-chief)
 - Answer line and description text measure changed from about 32em to about 52ch (FOUNDATIONS v0.3). Safari table semantics and `/` `?` shortcuts added to the foundations accessibility file; the dashboard playbook now loads this skill.
 

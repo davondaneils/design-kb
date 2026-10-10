@@ -14,7 +14,7 @@ Where to go deeper on when to animate, timing and easing, gestures, and reduced 
 - **Why it meets the bar:** his libraries are open source and inspectable; animations.dev says they are downloaded over 90 million times per week. emilkowal.ski is on the exemplar list (kb/exemplars.md, #22) and Linear is #1 and #13. Matt Perry (creator of Motion) endorses the course on its page. Already used in kb/research/motion/01, 02, 04.
 - **Link:** https://emilkowal.ski ; https://emilkowal.ski/ui/you-dont-need-animations ; https://animations.dev ; his agent skill: https://emilkowal.ski/skill (X: https://x.com/emilkowalski, lead only, tier 5)
 - **Tier:** 2 (exemplar, when measured); 4 otherwise
-- **Checked:** home page (current role at Linear), essay, course page, Sonner and Vaul sites, GitHub profile linking @emilkowalski. Note: kb/research/ux/01-fundamentals.md lists @emilkowalski_, which looks like his old handle; the current one is @emilkowalski. Accessed 2026-10-10.
+- **Checked:** home page (current role at Linear), essay, course page, Sonner and Vaul sites, GitHub profile linking @emilkowalski. The old handle @emilkowalski_ in kb/research/ux/01 and 06 was corrected to @emilkowalski on 2026-10-10. Accessed 2026-10-10.
 
 ### Rauno Freiberg (practitioner, essay, course)
 - **Who / what:** Estonian interaction designer, Staff Design Engineer at Vercel, previously at The Browser Company on Arc; author of the cmdk command menu library and Devouring Details.
@@ -38,7 +38,7 @@ Where to go deeper on when to animate, timing and easing, gestures, and reduced 
 - **Why it meets the bar:** official platform standard with published tokens; it also states that easing and duration is now legacy and no longer maintained, which matters for anything citing it.
 - **Link:** https://m3.material.io/styles/motion/overview/how-it-works ; https://m3.material.io/styles/motion/easing-and-duration
 - **Tier:** 1
-- **Checked:** both pages and the tokens and specs page. Accessed 2026-10-10. Note: kb/research/motion/02 cites the old m1.material.io page; prefer M3.
+- **Checked:** both pages and the tokens and specs page. Accessed 2026-10-10. kb/research/motion/02 now cites M3 and marks its m1.material.io rows outdated (fixed 2026-10-10).
 
 ### NN/g on animation (research articles)
 - **Who / what:** Nielsen Norman Group articles, chiefly Page Laubheimer's "Executing UX Animations: Duration and Motion Characteristics" (2020).

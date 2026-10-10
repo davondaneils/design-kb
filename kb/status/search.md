@@ -5,7 +5,7 @@
 | Domain number | 12 |
 | Layer | reference |
 | Skill | design-search |
-| Branch | wave/search (from restructure) |
+| Branch | restructure (merged from wave/search on 2026-10-10) |
 | Status (editor-in-chief) | testing |
 | Shipped version (librarian) | none |
 | Reuses | website-strategy, design-copy, design-frontend |

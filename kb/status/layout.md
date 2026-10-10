@@ -5,7 +5,7 @@
 | Domain number | 4 |
 | Layer | reference |
 | Skill | design-layout |
-| Branch | wave/layout (from restructure) |
+| Branch | restructure (merged from wave/layout on 2026-10-10) |
 | Status (editor-in-chief) | testing |
 | Shipped version (librarian) | none |
 | Reuses | none |

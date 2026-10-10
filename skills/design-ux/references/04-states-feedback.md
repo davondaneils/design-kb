@@ -41,6 +41,14 @@ Rules: no static "Loading..." text alone (NN/g). Shimmer animation is optional a
 - Auto-dismiss only if the content is non-critical; if it holds an action (Undo, Retry), give at least 5 s and pause on hover and focus, and make the action reachable another way (WCAG 2.2.1, 2.1.1). Opinion: 5 to 8 s base, plus about 1 s per 10 words.
 - Announced with `aria-live="polite"`; errors that block work use `role="alert"` sparingly (WCAG 4.1.3).
 
+## Notifications (permission, channels, inbox)
+Floor rules; the shipped examples with links are in `kb/references/patterns/09-notifications.md`.
+- **Ask after the first useful moment.** Never request push at first launch. Apple: request "after the person schedules a first task"; Android 13+ notifications are off by default, and good moments are a bell tap, a follow or an order. Use a pre-prompt ("Get notified?" with "I'm in" and "Skip") before the system dialog.
+- **One channel per event.** Skip the email when the inbox item was read (Linear); hold mobile push while the desktop is active (Slack); never send two notifications for the same thing (Apple HIG).
+- **Split the inbox.** "Needs you" (assigned, mentioned, review requested) apart from everything else, each tab with a count; every row names its reason. Triage with Done, snooze and save, each undoable (Linear, GitHub).
+- **Honest urgency.** Time-sensitive only for events within the hour; never for marketing (Apple HIG interruption levels).
+- **Badges** count unread notifications only and clear when read (Apple HIG).
+
 ## Success states
 - Confirm in place when the change is visible (row updates, checkmark on the button for 1 to 2 s).
 - Use a success page only for transactions (orders, applications): reference number, what happens next, when, and how to change it.

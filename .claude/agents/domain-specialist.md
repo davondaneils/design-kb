@@ -12,7 +12,10 @@ Follow the chapter template in `kb/FOUNDATIONS.md` (floor: fundamentals and stan
 - **Expert moves**: what a top practitioner does that a generalist misses, each with its reason.
 - **Do and don't**: short paired examples.
 - **Worked examples**: two or three real scenarios taken from brief to finished choice, with the reasoning.
+- **Where this domain is usually wrong**: the myths and stale numbers the field still repeats (for example retracted thumb-zone heatmaps, the 14.88-field checkout average replaced by Baymard's 11.3), each with the correction and its source.
 - **Hand-offs**: where this domain depends on or conflicts with another (motion vs accessibility, brand color vs contrast, copy length vs layout).
+
+Every example and code block uses FOUNDATIONS token names (`--space-5`, `--color-text-muted`, `--motion-enter`), never raw values, except inside the token definitions themselves.
 
 Use the defaults and token names in `kb/FOUNDATIONS.md`. Stay inside the research notes for facts. Mark opinion as opinion. Plain language, no em dashes. Write each chapter so it can stand alone: the skill-architect will reuse it as a reference file with light edits, not rewrite it.
 
