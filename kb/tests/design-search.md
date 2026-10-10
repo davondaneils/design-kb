@@ -38,7 +38,18 @@ Warnings are the pre-existing ones (touch targets 24 to 44px at 390, fluid displ
 `kb/tests/design-search/shots/`: `coffee-{390,1440}-{light,dark}.png`, `dashboard-{390,1440}-{light,dark}.png`, `coffee-states-1440-light.png`, `coffee-before-1440-light.png`, `preview-1440-light.png` (result, card at feed size, 2:1 crop, centered square crop, favicon at 16 and 32px). Card and icons: `site/og/home-1200x630.png`, `site/icon-192.png`, `site/apple-touch-icon.png`, `site/logo-512.png`.
 
 ### Exemplar comparison (honest)
-Exemplar hosts were refused again on 2026-10-10, so nobody could read their `<head>`, cards or JSON-LD today. Comparison from memory, labelled opinion.
+Measured where possible: the exemplar teardowns on branch `claude/exemplar-library-xfa3bl` (`kb/teardowns/data/*.json`, measured 2026-10-10 16:51 to 16:53 UTC from the live pages; not copied into this branch) record each homepage's title and meta description. They do not record og tags, JSON-LD, favicons or head order, so those parts of the comparison stay from memory, labelled opinion.
+
+| Exemplar | Title (characters) | Meta description |
+|---|---|---|
+| stripe.com | "Stripe \| Financial Infrastructure to Grow Your Revenue" (54) | 149 characters, a full sentence of scope |
+| linear.app | "Linear – The system for product development" (43) | 64 characters |
+| vercel.com | "Agentic Infrastructure - Vercel" (31) | 45 characters |
+| apple.com/macbook-air | "MacBook Air 13-inch and MacBook Air 15-inch - Apple" (51) | **none** (empty) |
+| raycast.com | "Raycast - Your shortcut to everything" (37) | 78 characters |
+| Ember & Oak (this run) | "Ember & Oak: small-batch coffee roasters in Portland, Oregon" (60) | 157 characters, fact-led |
+
+What the measurement says: every exemplar title is 31 to 54 characters and names brand plus one category or promise; ours is in the same pattern, 6 characters longer because it carries a place (a local business needs it; opinion). Descriptions vary from none (Apple) to 149: these teams treat the description as optional because Google writes most snippets from page text (research 07 row 16). Ours is longer and more factual than any exemplar's; that suits a shop with prices, and is not something the exemplars prove. Our checker's "under 70 characters" warning would fire on Linear and Vercel: it stays a warning, never a fail.
 - **The page itself** (apple.com product pages, family.co): unchanged by design, so the verdict from combined.md stands: clearly better than the pilot, still below the bar on photography and a signature display face. Search work cannot close that gap and did not try.
 - **Search and share layer** (stripe.com, linear.app, apple.com): **close.** Title, description, canonical, one entity graph with `@id` links, the right type on the right page, a designed evergreen card, PNG icons. What the exemplars have that this does not: per-page cards for every product (only the homepage card and the lot card's file name exist here), real photography in the card (Apple's are product photos), product pages that actually exist behind the links, a login page with its own card, and verified results in Google's Rich Results Test and Search Console, which need a public URL.
 - **The dashboard**: pass for its one question. There is nothing for an app behind login to gain from search; the work is keeping it out, and it now is.

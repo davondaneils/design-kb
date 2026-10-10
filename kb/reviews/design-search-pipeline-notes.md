@@ -22,5 +22,5 @@ From wave 2 (2026-10-10). This branch does not edit the files below; the editor-
 
 ## Research gaps (carry forward)
 11. X card and LinkedIn image specs could not be fetched (docs refused or robots disallowed on 2026-10-10). Fetch from an environment that can.
-12. Exemplar heads (title patterns, og images, JSON-LD) are unmeasured; add to `kb/teardowns/` when hosts are reachable.
+12. Exemplar heads: titles and descriptions are now measured (teardown branch claude/exemplar-library-xfa3bl); og images, JSON-LD, favicons and head order are not. Extend `kb/teardowns/measure.mjs` to capture them.
 13. ChatGPT search's index and partners remain undocumented (carried from v0.1).

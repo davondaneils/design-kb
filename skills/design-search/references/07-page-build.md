@@ -56,6 +56,7 @@ Tags: `[check]` = search-check.mjs fails the page; `[lint]` = tools/lint.mjs; `[
 | Googlebot HTML cut | first 2 MB, uncompressed | R21 |
 | Title | no limit; distinguishing words in the first 50 to 60 characters | R14; practitioner (chapter 02) |
 | Meta description | no limit; about 120 to 160 characters shows whole | R16; practitioner |
+| Exemplar homepages (measured 2026-10-10) | titles 31 to 54 characters, brand plus one promise; descriptions 0 to 149 (Apple MacBook Air ships none) | research 07, M5 |
 | Organization logo | at least 112x112 px | R6 |
 | Favicon | square, larger than 48x48; PNG for Google | R22 |
 | geo precision | at least 5 decimal places | R7 |
@@ -64,7 +65,7 @@ Tags: `[check]` = search-check.mjs fails the page; `[lint]` = tools/lint.mjs; `[
 | Carousels beta | at least 3 items, summary page, EEA, Turkiye, South Africa | R12 |
 
 ## Ceiling: exemplar patterns
-Not measured. Every exemplar host was refused from this environment on 2026-10-10 (curl through the egress proxy), and WebFetch returns page text, not the `<head>`. What to measure when access exists, for each marketing exemplar: title pattern on home and one inner page, meta description length, og:image size and composition (evergreen or per page), presence of JSON-LD types, favicon formats, head order. Record in `kb/teardowns/`. Until then, the patterns below are opinion from the craft, not measurement.
+Partly measured: titles and descriptions of five exemplar homepages (research 07, M5). The rest is not measured. Every exemplar host was refused from this environment on 2026-10-10 (curl through the egress proxy), and WebFetch returns page text, not the `<head>`. What to measure when access exists, for each marketing exemplar: title pattern on home and one inner page, meta description length, og:image size and composition (evergreen or per page), presence of JSON-LD types, favicon formats, head order. Record in `kb/teardowns/`. Until then, the patterns below are opinion from the craft, not measurement.
 
 ## Signature moves
 1. **The card is a designed object, not a screenshot.** Build it from the page's own signature (here: the brand-orange band, its contour field, the display face) as an HTML template rendered to PNG at build time, so it updates with the brand and costs nothing. Generic: a cropped hero screenshot, unreadable at 500px.
