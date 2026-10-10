@@ -1,4 +1,82 @@
-# Tests: design-copy v0.1
+# Tests: design-copy
+
+## Run 2: rendered, through design-director (v0.2, 2026-10-10)
+
+Brief and rubric: `kb/briefs/copy/06-copy-in-context.md` (editor-in-chief). Pages, lint JSON, screenshots: `kb/tests/design-copy/`.
+
+**Method.** The baseline is the pair Davon picked 3 of 3 (`kb/tests/combined/coffee.html`, `dashboard.html`), copied to `kb/tests/design-copy/before/` and linted again here. The with-skill pages start from the same sources and change only strings, plus one CSS rule the dashboard caveat needs (`.kpi .caveat`, `--space-2`, `--text-xs`). Every change is a scripted, asserted replacement (`kb/tests/design-copy/rewrite.py`: 19 coffee, 14 dashboard, 7 state sheet), so the diff between before and after is the copy and nothing else. Build: `node kb/tests/design-copy/build.mjs` (same inlined Newsreader and Inter subsets as the combined pages; copy needed no new face, so the news that Google Fonts is now reachable changed nothing here). Routing: design-director, design-playbook-landing and design-playbook-dashboard, design-copy for both (premium brand site and product UI); `copywriting` deliberately not used, per the director's copy rule. **Clean context:** the "without" page is the existing combined page, written by another session before v0.2 existed.
+
+Three critic/tester rounds were used. Round 1: the rewrite. Round 2, after the first render: an italic turn on a filler word ("*grown*"), a date split across lines ("Tue, Oct / 13"), a 3-line answer sentence that repeated the KPI value, an alert body that said the undercount a third time. Round 3, after the phone render: the KPI caveat wrapping in the 2-column grid at 390, a range split inside "1,100 to / 2,100", the category word missing from the first phone screen.
+
+### Lint (`node tools/lint.mjs`, any fail = fail)
+| Target | Before (combined) | After (design-copy) |
+|---|---|---|
+| coffee.html and `?state=` added, subscribed, error, sending | 0 fail, 21 warn each (18 targets under 44px at 390, 3 fluid display sizes) | 0 fail, 21 warn each (same) |
+| coffee-states.html | 0 fail, 14 warn | 0 fail, 14 warn |
+| dashboard.html, `?density=compact`, `?open=palette`, `?open=sheet` | 0 fail; 27, 27, 28, 34 warn | 0 fail; 28, 28, 29, 34 warn |
+| dashboard `?state=` loading, empty, partial, viewer | 0 fail; 8, 8, 12, 28 warn | 0 fail; 8, 8, 13, 28 warn |
+| dashboard-states.html | 0 fail, 35 warn | 0 fail, 35 warn |
+
+The one new warning is the lint's `fallback` check: at 390 the overview shifts 21px if the web fonts fail, because the new KPI caveats and alert text wrap differently in Liberation Sans (the stand-in for Arial here; the metric overrides were tuned for Arial). The before page shows the same check on its viewer state (14px at 1440). Warning, not fail; logged as gap 3.
+
+### Claims inventory (`skills/design-copy/assets/claims_inventory.mjs`, new in v0.2)
+- Before coffee: exit 1, RELATIVE "this Friday" in shipping copy. After coffee: exit 0; 54 claims listed, each ticked against the card prices, the roast log in `build.mjs` and the ledger.
+- Before and after dashboard: exit 0 mechanically. The false numbers were found by the reconciliation step (recomputing from the chart array), which the script cannot do. That is why fundamental 13 is `[judged]`.
+
+### What changed, and why (gate misses on the before pages)
+| Page | Before | After | Rule |
+|---|---|---|---|
+| Dashboard | "Weekly active users are up 12.4%, the third rise in a row." | "Weekly active users are up 8.1%, the eighth rise in a row." (chart data: 44,600 to 48,210; eight rises) | 13 truth |
+| Dashboard | KPI "+12.4% vs last week" | "+8.1% vs last week" | 13 |
+| Coffee | "15% under shop price." ($18 against $18, $19, $21) | "Shop price is $18 to $21 plus shipping." | 13; 16 CFR 233 |
+| Coffee | Freshness said four ways: "within two days of the roast", "never more than three days old when it ships", "Roast to door 48 h", "two days after roasting at most" | "ships within 48 hours of its roast" everywhere; facts row "Roast to ship 48 h" | 14 one promise |
+| Coffee | "Your first bag ships this Friday." | "Order by Mon, Oct 12 for the Tue, Oct 13 roast." (no-break inside dates) | absolute dates |
+| Coffee | "Start a subscription", "Start my subscription", "Subscribe", newsletter "Sign up" | "Subscribe, $18 a bag", "Subscribe for $18 a bag", "Subscribe", newsletter "Get the letters" | one verb per action, one perspective, price-paired CTAs |
+| Coffee | Secondary "Buy a bag, $21" | "Buy this bag, $21" (the hero shows one bag) | 5 |
+| Coffee | Label "This week's single origin" (no category word on the first phone screen; the lead line falls below 844px) | "This week's single-origin coffee" | 1 clarity |
+| Coffee | Lead "Roasted light in small batches and on its way to you within two days of the roast." | "Single-origin coffee, roasted in Portland every Tuesday and Friday. Every bag ships within 48 hours of its roast." | 1, 14 |
+| Coffee | "Three coffees we can't stop *drinking*" | "Three coffees, grown 1,100 to 2,100 *meters up*" (the page's altitude concept; true for all three; no-break inside the range) | 2 nobody else could say it |
+| Coffee | Steps "Buy direct / Roast in small batches / Ship within 48 hours" (labels; step 2 repeated the manifesto's 12 kilos) | "We know every grower by name / Two of us taste every batch / It leaves within 48 hours of the roast"; step 1 points to the ledger beside it | statement headings, proof next to claim |
+| Coffee | "dropped at 10:10", "New York C price, Sept 30", "Over the Fairtrade floor" | "Out at 10:10", "Commodity price (New York "C"), Sep 30", "Times the Fairtrade minimum" | 3 jargon, mechanics |
+| Coffee | "metres", "twelve kilos" mid-sentence | "meters", "12 kilos" | 15 mechanics |
+| Coffee state sheet | Sold out: "Next roast Tuesday. We will email you." (no email captured) | "Back after the Tue, Oct 13 roast." | honesty, absolute dates |
+| Dashboard | "since 14:05", "for 2 hours" (actually 2 h 53 min at 16:58) | "stopped at 2:05 pm", "since then" | 13, 15 clock |
+| Dashboard | Warning "since Tuesday" plus "Since Oct 7" (a Wednesday) | "Started Wed, Oct 7" | 15 weekday |
+| Dashboard | Conversion and revenue tiles looked healthy during the outage | Caveat "Partial since 2:05 pm" on both tiles | caveat at the point of reading |
+| Dashboard | Alert body repeated the undercount (third time on screen) | "No checkout_completed events since then. Other events are still arriving." plus "Open in Events" (the page's one label for that destination) | say it once; 7 glossary |
+| Dashboard | "Compared to: previous period", legend "This period" | "previous 12 weeks", legend "Last 12 weeks" (the date chip's words) | 7 glossary |
+| Dashboard | "Retry"; row menu announced "Hide from report: done"; "Export started" | "Try again"; "/pricing hidden from this report"; "Exporting top pages as CSV" | announcements are copy |
+| Dashboard | Viewer: "Ask Priya Shah" | "Ask Priya Shah for access" | 6 link says what it does |
+
+### Judged items
+- Checklist rows 3, 11, 12, 13, 14 and 15 hold on the after renders and state sheets as on the before (copy did not touch color, icons or radius). Row 11 is stronger: the data caveats are words, not only alert color.
+- Every string in every state passes the 16 design-copy fundamentals (read on `shots/*-state-*.png` and both state sheets).
+
+### Exemplar comparison
+Made against **measured teardowns** this time (the coordinator's exemplar library branch: `kb/teardowns/apple-macbook-air.md`, `stripe-home.md`, `linear-home.md` and their screenshots; read, not committed here), not memory.
+- **Coffee vs the Apple MacBook Air product page** (teardown: "one number per claim", footnote markers on every claim, price and Buy on the first screen, a short headline over the product name): the copy is now **close**. Price is in both first-screen buttons; every number is single and true; the H1 is the product plus one fresh fact, as Apple's is the product plus a pun. Short of Apple: no footnote system for claims that need one (48-hour shipping, "2.3x"), and the hero carries two supporting paragraphs where the Linear teardown measures one 10-word supporting line. The page as a whole stays **clearly below** Apple, as in the combined test, because of photography, not copy.
+- **Dashboard vs Stripe and Linear** (teardowns: Stripe's proof numbers are exact and dated, "$1.9T in payments volume processed in 2025"; case studies in one line; Linear's hero is one headline and one 10-word line): copy is **close**. The answer sentence, caveats and alerts are as exact as Stripe's proof numbers and each says one thing once. Product UI copy cannot be compared pixel to pixel: the teardowns cover marketing pages; Linear's app UI appears only as a hero mock-up with issue titles, not states.
+- **The gain is measurable but quiet.** On a thumbnail the after pages look like the before pages. The gain is that a reader who checks the numbers now finds them true and no promise contradicts another. A blind visual rank cannot see that, so no blind pairs were prepared; a fact check can.
+
+### Verdict
+**Pass on the copy rubric.** Gate 100 percent: lint 0 fails on all 15 targets, claims inventory clean, every claim ticked. Clearly better than the before pages: 7 truth or consistency misses and 10 mechanics, glossary or clarity misses fixed, no new fails. Against the exemplar bar the copy is close; the coffee page as a whole remains clearly below Apple on imagery (other domains).
+
+### Gaps (v0.3 or other domains)
+1. Footnote or source markers for claims that need substantiation (Apple pattern) are not taught. design-copy v0.3.
+2. Hero density: two supporting paragraphs against one 10-word line in the Linear teardown. Test a single supporting line on the coffee hero.
+3. `fallback` lint warning at 390 on the dashboard: strings near a wrap boundary shift when the web font fails. design-frontend (metric overrides for Liberation Sans) plus a copy rule to keep tile strings well under their wrap length.
+4. The claims inventory reads static HTML; JavaScript-built strings (success messages, announcements) must be checked from a string table. A string table export for test pages would close this (design-frontend).
+5. Practitioner sources (Stratton, Shleyner, Yifrah) still not reached as primary material.
+
+### Screenshots
+`kb/tests/design-copy/shots/`: coffee and dashboard at 390 and 1440, light and dark; both state sheets in both themes; `coffee-state-subscribed`, `dashboard-state-partial`, `dashboard-state-empty`, `dashboard-state-viewer`. Before: `kb/tests/combined/shots/`. Copies of the four final shots: `/mnt/project-files/design-kb/wave/copy/`.
+
+---
+
+## Run 1: text-only test (v0.1, 2026-10-09)
+
+Kept for history. Superseded by run 2.
+
 
 Method: each brief answered twice by the same model, once as a strong generic assistant (no skill) and once following `skills/design-copy/SKILL.md` and the matching reference. Scored 0 to 10 on five criteria drawn from the skill's own rules. **Gate** is pass/fail first: any fundamentals miss caps the total at 20/50.
 
