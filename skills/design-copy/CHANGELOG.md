@@ -1,5 +1,8 @@
 # design-copy changelog
 
+## 0.2.1 (2026-10-10, editor-in-chief)
+- `assets/claims_inventory.mjs`: PROMISE warning (one promise said with two values or units, with label-and-value pairs and date intervals read together) and PERIOD warning (two comparison bases on one page); `--render` reads the rendered text through `tools/browser.mjs`, so script-built strings and `?state=` URLs are inventoried; `--strict` turns the warnings into exit 1. From the round 3 critic: "48h", "next day" and "ships by Thu" for one promise passed with exit 0 (`kb/reviews/round3-critic.md`).
+
 ## 0.2 (2026-10-10)
 - **Render-tested.** Both slice pages (Ember & Oak coffee landing page, Tally analytics overview) rewritten through design-director and linted and rendered at 390 and 1440, light and dark, every state and both state sheets: 0 lint fails before and after (`kb/tests/design-copy.md` run 2).
 - **New reference `references/06-copy-in-context.md`:** the render pass. Copy-to-data reconciliation, the promise ledger, one verb per action, caveat at the point of reading, price-paired CTAs, no-break spaces inside dates, prices and ranges, announcements as copy, mechanics sheet (clock, weekday-checked dates, numerals, spelling, perspective). Worked examples for the pricing feature table and the settings screen (v0.1 ticket 3).

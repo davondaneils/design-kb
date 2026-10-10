@@ -1,5 +1,8 @@
 # Changelog: design-art-direction
 
+## v0.1.2 (2026-10-10, editor-in-chief)
+- Expert move 15: print the live HTML label onto the product photo (the move the round 3 clean-context critic named the most non-obvious on either page, `kb/reviews/round3-critic.md` section 4), with its limits.
+
 ## v0.1.1 (2026-10-09, editor-in-chief)
 - Illustration tokens adopted into FOUNDATIONS v0.3; overlay check promoted into `tools/lint.mjs`; landing, brand and dashboard playbooks and design-director now load this skill.
 

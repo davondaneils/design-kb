@@ -1,11 +1,16 @@
 #!/usr/bin/env node
-// Fundamentals lint: the automated half of the fundamentals checklist in kb/FOUNDATIONS.md (v0.4).
+// Fundamentals lint: the automated half of the fundamentals checklist in kb/FOUNDATIONS.md (v0.4.1).
 //
 // Usage:
-//   node tools/lint.mjs <html[?query]> [--json out.json] [--quiet] [--states state=a,state=b] [--no-fallback]
+//   node tools/lint.mjs <html[?query]> [--json out.json] [--out-dir dir] [--quiet] [--states state=a,state=b]
+//                       [--widths 390,768,1024,1440] [--ticks 3] [--tick-ms 61000] [--no-fallback] [--no-truth]
 //
 //   --states   also lint each query variant of the page (one report per variant): page.html?state=a, ...
 //   --json     JSON path (single target only). Default: <page>.lint.json, or <page>.<query-slug>.lint.json
+//   --out-dir  write the JSON reports into this folder instead of beside the page
+//   --widths   widths for the layout checks below (default 390,768,1024,1440: tablet collisions are invisible
+//              at 390 and 1440, round 3 critic)
+//   --ticks    live updates the truth check drives (fake clock advanced by --tick-ms each time); 0 skips them
 //
 // Hard gates (fail):
 //   axe          axe-core WCAG 2.0/2.1/2.2 A and AA rules, light and dark, 390 and 1440 (includes contrast)
@@ -30,6 +35,17 @@
 //   icons        small icons (10 to 28px inline SVG) use one stroke cap and one join across the page, and no icon
 //                hard-codes a fill or stroke color (ported from skills/design-graphic/assets/icon_audit.mjs).
 //                Logos are not icons: SVG inside an element whose class or id names logo, brand or wordmark is skipped
+//   occlusion, squash, sticky-header, overflow, run-together, word-break, grid-edge   layout at every --widths
+//                width: controls covered by other elements, fixed-size flex children squashed, sticky top bars
+//                taller than scroll-padding-top, text in separate boxes touching ("Sep 30$2.62"), words broken
+//                inside controls and cells, sibling columns off a shared edge (tools/lint-layout.mjs)
+//   hidden-content  a control whose text is transparent and that paints nothing inside (tools/lint-layout.mjs)
+//   state-sheet  a state sheet shows a disabled, a busy and (with fields) an invalid control
+//   truth        numbers stay true across states and live updates: repeated numbers change together, empty
+//                states carry no numbers from the default state, caveated or stopped sources do not tick, and
+//                the data-attribute contract (data-sum-of, data-derived-from, data-monotonic, data-source,
+//                data-data="none") holds after each update (tools/lint-truth.mjs)
+//   proportion   share columns do not sum to 100 over a subset; bars beside a percent are on a 0 to 100 scale
 //   primary      at most one filled call to action per screen height at 390 and 1440, counting only the open modal
 //                when one is open (FOUNDATIONS item 12; ported from design-conversion conversion-audit.mjs).
 //                State sheets are exempt: <html data-lint-page="state-sheet"> or a <title> containing "state sheet"
@@ -55,11 +71,14 @@
 
 // Exit code: 0 when no check fails, 1 when any check fails, 2 on usage error.
 // Opt out for one element (use sparingly, explain in the test report):
-//   data-lint-skip="measure spacing type-scale targets focus overlay radius typography svg-overlap tabular icons primary"
+//   data-lint-skip="measure spacing type-scale targets focus overlay radius typography svg-overlap tabular icons primary
+//                   occlusion squash sticky-header run-together word-break grid-edge hidden-content"
 import fs from 'node:fs';
 import path from 'node:path';
 import { createRequire } from 'node:module';
 import { launch, toUrl, splitTarget } from './browser.mjs';
+import { layoutChecks, reportLayout, pageChecks } from './lint-layout.mjs';
+import { truthPass } from './lint-truth.mjs';
 
 const require = createRequire(import.meta.url);
 const axeSource = fs.readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
@@ -72,13 +91,19 @@ const AXE_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
 const STEM = { 300: 0.07, 400: 0.088, 500: 0.107, 600: 0.127, 700: 0.147, 800: 0.165 };
 
 const args = process.argv.slice(2);
-const valueFlags = new Set(['--json', '--states']);
+const valueFlags = new Set(['--json', '--states', '--widths', '--ticks', '--tick-ms', '--out-dir']);
 const positional = args.filter((a, i) => !a.startsWith('--') && !valueFlags.has(args[i - 1]));
 const target = positional[0];
 const jsonOut = args.includes('--json') ? args[args.indexOf('--json') + 1] : null;
 const quiet = args.includes('--quiet');
 const noFallback = args.includes('--no-fallback');
 const states = args.includes('--states') ? args[args.indexOf('--states') + 1].split(',').filter(Boolean) : [];
+const flag = (name, dflt) => (args.includes(name) ? args[args.indexOf(name) + 1] : dflt);
+const layoutWidths = flag('--widths', '390,768,1024,1440').split(',').map(Number).filter((n) => n > 0);
+const ticks = Number(flag('--ticks', '3'));
+const tickMs = Number(flag('--tick-ms', '61000'));
+const outDir = flag('--out-dir', null);
+const noTruth = args.includes('--no-truth');
 if (!target) {
   console.error('Usage: node tools/lint.mjs <html[?query]> [--json out.json] [--quiet] [--states state=a,state=b] [--no-fallback]');
   process.exit(2);
@@ -691,6 +716,24 @@ async function lintOne(browser, target, outPath) {
     await context.close();
   }
 
+  // Layout at every width (default 390, 768, 1024, 1440): collisions, squashed children, sticky bars, text running
+  // together, broken words, edges (tools/lint-layout.mjs; round 3 critic found these by eye at 768 and 1024).
+  for (const c of ['occlusion', 'squash', 'sticky-header', 'run-together', 'word-break', 'grid-edge', 'hidden-content']) ok(c);
+  for (const width of layoutWidths) {
+    const { context, page } = await openPage(width, 'light');
+    const r = await layoutChecks(page, width);
+    reportLayout(r, width, add);
+    if (width === 1440 || (width === layoutWidths[layoutWidths.length - 1] && !layoutWidths.includes(1440))) await pageChecks(page, add);
+    await context.close();
+  }
+  if (report.summary.stateSheet || report.checks['state-sheet']) ok('state-sheet');
+
+  // State truth and proportion: numbers across states and live updates (tools/lint-truth.mjs).
+  if (!noTruth) {
+    ok('truth'); ok('proportion');
+    await truthPass(browser, target, helpers, toUrl, { ticks, tickMs }, add);
+  }
+
   // Nav parity: a header or nav destination shown at 1440 needs a route at 390.
   ok('nav-parity');
   if (navByWidth[1440] && navByWidth[390]) {
@@ -1062,6 +1105,7 @@ try {
       else {
         const { file, slug } = splitTarget(t);
         outPath = file.replace(/\.html?$/, '') + (slug ? '.' + slug : '') + '.lint.json';
+        if (outDir) { fs.mkdirSync(outDir, { recursive: true }); outPath = path.join(outDir, path.basename(outPath)); }
       }
     }
     total += await lintOne(browser, t, outPath);
