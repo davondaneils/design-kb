@@ -39,3 +39,7 @@ Status key: C = consensus, P = practitioner opinion, S = single source.
 - https://web.dev/articles/animations-guide
 - https://web.dev/articles/lcp
 - https://web.dev/articles/inp
+
+## Quotes added by the critic's spot check (2026-10-10)
+- WCAG 2.3.1: "Web pages do not contain anything that flashes more than three times in any one second period"; "the combined area of flashing becomes 341 x 256 CSS pixels, or a flashing area of 87,296 CSS pixels." https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold.html
+- v0.1 claims not listed here still lack a quote (open item).

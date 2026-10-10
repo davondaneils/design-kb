@@ -37,7 +37,7 @@
 ## Worked examples
 1. **Dev tool command palette (Cmd+K, used 100+ times a day).** Job: none beyond showing it. Decision: no open or close animation; the results list updates instantly; only the selection highlight moves, instantly. Reason: frequency ladder and keyboard rule.
 2. **Fitness app, first workout completed.** Job: reward and orientation to the streak feature. Decision: one expressive moment (checkmark draw plus streak counter), under 1.2 s total, tappable to skip, never repeated for later workouts beyond a 150 ms checkmark. Reduced motion: static badge plus haptic. Reason: rare moment, expressive budget, never blocks.
-3. **SaaS settings toggle.** Job: feedback and state change. Decision: thumb slides at `--duration-instant` with `--easing-standard`, track color changes in the same time. Reason: tens of times per month, needs only confirmation.
+3. **SaaS settings toggle.** Job: feedback and state change. Decision: thumb slides at `--duration-instant` with `--ease-standard`, track color changes in the same time. Reason: tens of times per month, needs only confirmation.
 
 ## Hand-offs
 - design-ux owns which states exist; this chapter decides whether the change between them moves.

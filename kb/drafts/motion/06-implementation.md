@@ -21,13 +21,13 @@ Never use Lottie or a JS library for something CSS does (a fade, a press, a chev
 :root {
   --duration-instant: 100ms; --duration-fast: 150ms; --duration-base: 200ms;
   --duration-slow: 300ms; --duration-page: 400ms;
-  --easing-standard: cubic-bezier(0.2, 0, 0, 1);
-  --easing-enter: cubic-bezier(0, 0, 0, 1);
-  --easing-exit: cubic-bezier(0.3, 0, 1, 1);
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-enter: cubic-bezier(0, 0, 0, 1);
+  --ease-exit: cubic-bezier(0.3, 0, 1, 1);
 }
 
 /* Color feedback is low risk (Val Head), so it stays on under reduced motion */
-.button { transition: background-color var(--duration-instant) var(--easing-standard); }
+.button { transition: background-color var(--duration-instant) var(--ease-standard); }
 @media (hover: hover) and (pointer: fine) {
   .button:hover { background-color: var(--color-primary-hover); }
 }
@@ -35,8 +35,8 @@ Never use Lottie or a JS library for something CSS does (a fade, a press, a chev
 @media (prefers-reduced-motion: no-preference) {
   .button {
     transition:
-      background-color var(--duration-instant) var(--easing-standard),
-      transform var(--duration-instant) var(--easing-standard);
+      background-color var(--duration-instant) var(--ease-standard),
+      transform var(--duration-instant) var(--ease-standard);
   }
   .button:active { transform: scale(0.97); }
 }
@@ -49,7 +49,7 @@ Note: `--color-primary-hover` is illustrative; color tokens come from design-col
 dialog {
   opacity: 0;
   transition:
-    opacity var(--duration-fast) var(--easing-standard),
+    opacity var(--duration-fast) var(--ease-standard),
     display var(--duration-fast) allow-discrete,
     overlay var(--duration-fast) allow-discrete;
 }
@@ -61,15 +61,15 @@ dialog[open] { opacity: 1; transition-duration: var(--duration-base); }
   dialog {
     transform: scale(0.97);
     transition:
-      opacity var(--duration-fast) var(--easing-standard),
-      transform var(--duration-fast) var(--easing-standard),
+      opacity var(--duration-fast) var(--ease-standard),
+      transform var(--duration-fast) var(--ease-standard),
       display var(--duration-fast) allow-discrete,
       overlay var(--duration-fast) allow-discrete;
   }
   dialog[open] {
     transform: scale(1);
     transition-duration: var(--duration-base);
-    transition-timing-function: var(--easing-enter);
+    transition-timing-function: var(--ease-enter);
   }
   @starting-style { dialog[open] { transform: scale(0.95); } }
 }
@@ -77,7 +77,7 @@ dialog[open] { opacity: 1; transition-duration: var(--duration-base); }
 dialog::backdrop {
   background-color: rgb(0 0 0 / 0);
   transition:
-    background-color var(--duration-fast) var(--easing-standard),
+    background-color var(--duration-fast) var(--ease-standard),
     display var(--duration-fast) allow-discrete,
     overlay var(--duration-fast) allow-discrete;
 }
@@ -92,7 +92,7 @@ How it works: opening uses the transition declared on `dialog[open]` (the after-
 .panel[data-open] { grid-template-rows: 1fr; }
 .panel > .inner { overflow: hidden; }
 @media (prefers-reduced-motion: no-preference) {
-  .panel { transition: grid-template-rows var(--duration-base) var(--easing-standard); }
+  .panel { transition: grid-template-rows var(--duration-base) var(--ease-standard); }
 }
 ```
 This animates layout, so keep it to one panel at a time and small content. Where supported, `interpolate-size: allow-keywords` with `height: auto` is the native alternative (MDN: not Baseline).
@@ -118,7 +118,7 @@ const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const anim = panel.animate(
   reduce ? [{ opacity: 0 }, { opacity: 1 }]
          : [{ opacity: 0, transform: 'translateY(8px)' }, { opacity: 1, transform: 'none' }],
-  { duration: 200, easing: 'cubic-bezier(0, 0, 0, 1)' } // --duration-base, --easing-enter
+  { duration: 200, easing: 'cubic-bezier(0, 0, 0, 1)' } // --duration-base, --ease-enter
 );
 await anim.finished;
 anim.commitStyles(); // write final values, then drop the animation
@@ -140,12 +140,12 @@ function navigate(update) {
 @view-transition { navigation: auto; } /* MPA, both pages */
 ::view-transition-old(root), ::view-transition-new(root) {
   animation-duration: var(--duration-base);
-  animation-timing-function: var(--easing-standard);
+  animation-timing-function: var(--ease-standard);
 }
 .product-hero { view-transition-name: product-hero; }
 ::view-transition-group(product-hero) {
   animation-duration: var(--duration-slow);
-  animation-timing-function: var(--easing-standard);
+  animation-timing-function: var(--ease-standard);
 }
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) {
@@ -162,7 +162,7 @@ function navigate(update) {
 import { MotionConfig, AnimatePresence, motion } from "motion/react";
 
 const spatial = { type: "spring", stiffness: 700, damping: 48, mass: 1 }; // M3 default spatial
-const effects = { duration: 0.2, ease: [0.2, 0, 0, 1] };                  // --duration-base, --easing-standard
+const effects = { duration: 0.2, ease: [0.2, 0, 0, 1] };                  // --duration-base, --ease-standard
 
 <MotionConfig reducedMotion="user">
   <AnimatePresence>
