@@ -55,7 +55,7 @@ For awareness-level selection beyond this table, use `copywriting` (Schwartz).
 | Low (read) | Specific destination | "Read the Acme case study" |
 - One primary CTA style per view; the secondary is visibly quieter (hand-off: design-layout).
 - Same verb for the same action everywhere on the site.
-- First-person ("Start my trial") vs second-person: one widely cited test showed a large lift (Aagaard, ContentVerve); it is unreplicated. Treat as a test, not a rule.
+- First-person ("Start my trial") vs second-person: one widely cited test showed a large lift (Aagaard, ContentVerve); it is unreplicated. Treat as a test, not a rule. Whichever you use, keep one perspective on the page; "Start my subscription" next to "Your first bag ships" switches twice (Apple HIG, Writing, 2025: "try not to switch perspectives").
 
 ### Links
 - 4 Ss: specific, sincere, substantial, succinct (NN/g). The first 2 words carry it (NN/g first 2 words study: 35% of links unpredictable from first 11 characters).

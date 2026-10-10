@@ -1,6 +1,6 @@
 ---
 name: design-copy
-description: Domain reference loaded by design-director or a design playbook (design-playbook-landing, -dashboard, -mobile, -brand); do not trigger on its own for a page, screen or brand job. Covers UX writing: page copy structure, microcopy (buttons, labels, errors, empty states, notifications), voice and tone, readability and scannability, content design process. Load it directly only when the user names it or asks a narrow question inside this domain alone.
+description: Domain reference loaded by design-director or a design playbook (design-playbook-landing, -dashboard, -mobile, -brand); do not trigger on its own for a page, screen or brand job. Covers UX writing: page copy structure, microcopy (buttons, labels, errors, empty states, notifications), voice and tone, readability and scannability, content design process, and the render pass that checks every number and promise on a laid-out page against its source. Load it directly only when the user names it or asks a narrow question inside this domain alone.
 ---
 
 # design-copy
@@ -36,10 +36,12 @@ Words are interface. This skill writes and reviews the copy that sits inside lay
 **Honesty**
 11. No confirmshaming ("No, I hate saving money"). Decline options are neutral: "No thanks", "Not now".
 12. No invented numbers, testimonials or logos. If a proof point is not supplied, write a bracketed placeholder `[number of customers]` and say so.
+13. Every number is true against its source. Recompute every derived figure ("up 8.1%", "the eighth rise", "X% under") from the chart data, price list or log it describes; a savings claim needs a real regular price (FTC; 16 CFR 233.1). Fluent copy is often wrong here: the render test found three false numbers that every earlier review had passed.
+14. One promise, one wording. A fact repeated in the hero, facts row, perks and steps uses the same number, unit and verb every time.
 
 **Mechanics**
-13. Sentence case for headings, buttons, tabs and menus. Numerals for numbers. One mechanics sheet everywhere. No em dashes (house rule).
-14. Real copy in every layout; test the longest realistic string.
+15. Sentence case for headings, buttons, tabs and menus. Numerals except at the start of a sentence. One clock (US: "2:05 pm"), dates as "Tue, Oct 13" with the weekday checked, one spelling system, one perspective ("your", not "my" and "your" on one page). One mechanics sheet everywhere. No em dashes (house rule).
+16. Real copy in every layout and every state, at 390 and 1440 px; test the longest realistic string, and never let a line break inside a date, price, range or number and unit (`&nbsp;`, `&#8239;`).
 
 ## 2. Page copy: the decision rules (deep: references/01-page-copy-structure.md)
 
@@ -57,7 +59,7 @@ Words are interface. This skill writes and reviews the copy that sits inside lay
 
 **Feature block:** header is a benefit with a concrete noun or number ("Matches 9 in 10 invoices automatically", only if true), not a label ("Smart matching"). Body 15 to 40 words: what it does, then the objection it kills.
 
-**CTA ladder:** high commitment "Start free trial"; medium "See pricing", "Watch 2 minute demo"; low "Read the Acme case study". One primary per view. First-person CTAs ("Start my trial") are a test idea from a single unreplicated study, not a rule.
+**CTA ladder:** high commitment "Start free trial"; medium "See pricing", "Watch 2 minute demo"; low "Read the Acme case study". One primary per view. First-person CTAs ("Start my trial") are a test idea from a single unreplicated study, not a rule; if you test one, keep one perspective on the whole page (Apple HIG: possessives sparingly, never switch).
 
 ## 3. Microcopy: the decision rules (deep: references/02-ux-microcopy.md)
 
@@ -68,9 +70,12 @@ Words are interface. This skill writes and reviews the copy that sits inside lay
 - **Validate on blur**, then live once an error shows so it clears immediately.
 - **Empty states by type:** first use (value + one action), cleared (confirm, light tone), no results (echo the query, suggest a fix), not permitted (why and who can help). Never "No data" while loading (NN/g).
 - **Success:** the specific outcome plus next step: "Sent. M. Okafor will get $250 by Fri, Oct 10."
-- **Money buttons show the amount:** "Pay $48.00".
+- **Money buttons show the amount:** "Pay $48.00". Two offers side by side: price in both labels ("Subscribe, $18 a bag" / "Buy this bag, $21"); the gap persuades and no percent claim can go stale.
+- **Reserve the money verb.** Subscribe, Buy and Pay belong to one action each. The newsletter on a subscription site is "Get the letters", not "Subscribe" or "Sign up".
+- **Announcements are copy.** Live region text names the outcome and the object ("/pricing hidden from this report"), never "done".
+- **Product UI never says "we" in an error;** the subject is the thing that failed ("Top pages didn't load"). Apple HIG, Writing. A brand marketing page may speak as "we".
 - **Absolute dates for money, deadlines and legal timing** ("Arrives by Fri, Oct 10"; "Cancel before 5 pm ET today"). Relative words ("Friday", "tomorrow") break across time zones and late-night sessions. Relative is fine for low-stakes recency ("2 hours ago").
-- **Toggles and checkboxes:** the label names the setting, positively, and the control shows the state ("Email me receipts", not "Disable receipt emails" and never "Turn on/off").
+- **Toggles and checkboxes:** the label names the setting, positively, and the control shows the state ("Email me receipts", not "Disable receipt emails" and never "Turn on/off"). The description says what happens when it is on (Apple HIG). To send someone to a setting, link to it; never describe the path.
 - **Onboarding:** default to none; teach in context at the moment of need. NN/g found card tutorials did not improve performance. Justified only to collect needed info, set preferences, or explain a genuinely unfamiliar feature.
 - **Permission prompts:** explain the benefit before the system dialog; buttons "Turn on" / "Not now".
 - **Notifications:** lead with the news, not the app name.
@@ -92,7 +97,17 @@ Words are interface. This skill writes and reviews the copy that sits inside lay
 - Sentences 15 to 20 words average, 25 maximum. Paragraphs one idea, 1 to 3 sentences on the web, 5 maximum.
 - Marketing and help headings say something ("Refunds take 5 to 10 days"), not label ("Refunds"). App chrome is the exception: screen titles, nav, tabs and settings groups are short nouns naming the place ("Invoices"), because they are wayfinding.
 - Answers start with the answer ("Yes. Go to Settings, then Billing.").
-- Measure 45 to 75 characters, 66 ideal; body line-height 1.5 (shared foundation; detail in design-typography).
+- Measure 45 to 75 characters, 66 ideal, set as `max-inline-size: 52ch` (FOUNDATIONS v0.3; never `66ch`, which renders 81 to 86); body line-height 1.5 (detail in design-typography).
+
+## 5a. Copy in context: the render pass (deep: references/06-copy-in-context.md)
+
+Run after the layout exists, on the screenshots and every `?state=`, before the exemplar comparison.
+1. `node skills/design-copy/assets/claims_inventory.mjs page.html --year 2026` lists every string with a number, date or comparison (and flags wrong weekdays, relative dates in money or shipping copy, and mixed clocks). Tick each line against its source. JavaScript-built strings are not seen: check them in the string table.
+2. Promise ledger: write each promise once, then find every restatement and make it identical.
+3. A summary sentence above a number does not repeat the number; it adds the streak, cause or caveat.
+4. A data problem gets a caveat on the affected number ("Partial since 2:05 pm"), not only an alert. Answer, caveat and alert each say something new.
+5. Read the 390 and 1440 renders for breaks inside dates, prices and ranges, and for italic turns on filler words. Shorten a string that wraps in a tight slot rather than letting it wrap (a 2-column KPI tile at 390 holds about 21 characters at `--text-xs`).
+6. Re-run `tools/lint.mjs` with every state: copy changes can break targets, measure and fallback wrap.
 
 ## 6. Process, localization, testing (deep: references/05-content-design-process.md)
 
@@ -116,10 +131,11 @@ Words are interface. This skill writes and reviews the copy that sits inside lay
 | FAQ answer | 20 to 80, answer first | |
 
 ## 8. Workflow for any copy task
-1. Identify the slot type (page, UI element, system) and load the matching reference.
+1. Identify the slot type (page, UI element, system) and load the matching reference (01 page, 02 microcopy, 03 voice, 04 readability, 05 process, 06 render pass).
 2. Collect inputs: who, what, the one thing they must understand, the action, proof available, top objections, voice chart if one exists. If proof is missing, use bracketed placeholders, never invent.
 3. Draft against the slot budget.
 4. Run the fundamentals gate (section 1). Fix every miss.
+4a. Once the copy is in a layout: the render pass (section 5a), including the claims inventory.
 5. Run the expert pass: layer order, echo pattern, adaptive errors, tone dials, translation growth.
 6. Deliver: the copy laid out by slot (element, string, notes), the 1 to 3 decisions a reviewer should know, and a test to validate it. For a review, list fixes in gate-first order with before and after.
 
