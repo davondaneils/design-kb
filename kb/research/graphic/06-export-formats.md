@@ -41,5 +41,5 @@ Status key: **C** consensus, **X** contested, **O** opinion, **V** volatile.
 - [E9] https://www.pip.com/FSIPMG.PIP/media/add/PrepareDocumentForPrinting_PIP_2026.pdf
 - [E10] https://www.mediatryck.lu.se/en/material-requirements
 - [E11] https://a11y-guidelines.orange.com/en/articles/accessible-svg/
-- [E12] https://brand.wwu.edu/accessibility/guide/name-svgs-proper-semantics
+- [E12] https://marcom.wwu.edu/accessibility/guide/name-svgs-proper-semantics
 - [E13] https://lucide.dev/guide/design/icon-design-guide

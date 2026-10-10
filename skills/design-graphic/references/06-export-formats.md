@@ -46,7 +46,10 @@ Include a one page PDF spec: colors (HEX, RGB, CMYK, Pantone), clear space, mini
 <link rel="apple-touch-icon" href="/apple-touch-icon.png"><!-- 180x180 -->
 <link rel="manifest" href="/manifest.webmanifest">
 ```
-Manifest icons: 192 PNG, 512 PNG, 512 maskable PNG with the logo inside the central 409x409. The SVG can switch colors with `@media (prefers-color-scheme: dark)` inside a `<style>` block. Use the Tier 4 small mark (see 01). apple-touch-icon: about 20 px padding and an opaque background.
+Manifest icons: 192 PNG, 512 PNG, 512 maskable PNG with the logo inside the central 409x409. Use the Tier 4 small mark (see 01). apple-touch-icon: about 20 px padding and an opaque background.
+
+**Favicon contrast.** The SVG can switch colors with `@media (prefers-color-scheme: dark)` inside a `<style>` block [E5], but inside an SVG image that query follows the OS or the embedding element's scheme (MDN), not the tab strip a themed browser paints. Measure the bare mark with `assets/tab_contrast.py` against light, gray and dark strips; if any is under 3:1, put the mark on its own rounded field in the darkest brand neutral (Ember & Oak: bare orange 2.32:1 on a gray strip; on the field, ring 14.9:1 and ember 5.3:1). (opinion on the choice; numbers measured, research 07 M4)
+Inline data URIs work for single-file pages: `<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,...">` (URL-encode the SVG).
 
 ## Responsive image essentials [E3][E4]
 ```html
@@ -98,6 +101,6 @@ Use `<picture>` with `type` sources when you need format fallbacks or art-direct
 - [E9] PIP, preparing documents for print (2026): https://www.pip.com/FSIPMG.PIP/media/add/PrepareDocumentForPrinting_PIP_2026.pdf
 - [E10] Lund University, print material requirements: https://www.mediatryck.lu.se/en/material-requirements
 - [E11] Orange, accessible SVG: https://a11y-guidelines.orange.com/en/articles/accessible-svg/
-- [E12] WWU, name SVGs with proper semantics: https://brand.wwu.edu/accessibility/guide/name-svgs-proper-semantics
+- [E12] WWU, name SVGs with proper semantics: https://marcom.wwu.edu/accessibility/guide/name-svgs-proper-semantics
 - [E13] Lucide guide (SVG rules): https://lucide.dev/guide/design/icon-design-guide
 - [S2] X card image rules: https://dev.twitter.com/cards/types/summary-large-image.html

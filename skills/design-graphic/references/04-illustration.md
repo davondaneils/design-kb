@@ -2,6 +2,8 @@
 
 Sources: research/graphic/04-illustration.md (L-numbers). Opinion is marked (opinion).
 
+**Scope.** This file holds illustration tiers and the style spec for commissioned or drawn illustration systems. Choosing between photo, illustration, data art and type for a page, and drawing visuals in code when image hosts are blocked (contours, data curves, sparklines, grain, CSS objects), is design-art-direction (SKILL.md section 3 and `references/04-visuals-without-image-hosts.md`). Illustration tokens: `--color-illustration-{surface,line,accent,accent-fill}` (FOUNDATIONS v0.3).
+
 ## Principles
 1. **Illustration explains what a camera cannot.** Use it for abstract, complex or dry concepts and to soften errors; use photography for proof [L2].
 2. **It supports the message, never replaces it.** The words carry the meaning; the illustration adds clarity or warmth [L1].
@@ -17,14 +19,7 @@ Sources: research/graphic/04-illustration.md (L-numbers). Opinion is marked (opi
 - **No text baked into illustrations** that needs translation or must be read (use live text).
 
 ## Choose the visual
-| Need | Use |
-|---|---|
-| Show proof, real people, real product | Photography (see 03) |
-| Explain an abstract concept or process | Illustration (spot or hero) |
-| Label an action or object in UI | Icon (see 02) |
-| Show how a UI works without real data | Low-fidelity UI illustration: basic shapes, mostly gray [L1] |
-| Add texture behind a promo | Ambient pattern [L1] |
-| Routine task, no emotion needed | Nothing, or a neutral spot [L1] |
+Use the medium table in design-art-direction SKILL.md. Two rules it does not repeat: a low-fidelity UI illustration (basic shapes, mostly gray) shows how a UI works without real data; a routine task with no emotion gets nothing, or a neutral spot [L1].
 
 ## Tiers and detail budget
 Tier names from Dropbox and Atlassian [L1][L2]; sizes and budgets are opinion, set on the 4 px scale.
@@ -60,7 +55,7 @@ Tier names from Dropbox and Atlassian [L1][L2]; sizes and budgets are opinion, s
 - **Design the empty state with the illustration as the smallest element**: headline and action first, spot second, so the illustration never competes. (opinion, consistent with [L1])
 - **Avoid the interchangeable flat people style** (large limbs, tiny heads, purple skin) unless you can push it somewhere ownable; it signals "template." (opinion, broad practitioner consensus)
 - **Build illustrations from the icon grid at Mini tier** so icons and minis feel like one family. (opinion)
-- **Ship dark mode palettes as tokens** (for example `--color-illustration-accent`), so illustrations recolor with the theme. (opinion; token naming per foundation contract)
+- **Ship dark mode palettes as tokens** (`--color-illustration-accent` and the other FOUNDATIONS illustration roles), so illustrations recolor with the theme.
 
 ## Worked example: B2B product empty, error and onboarding states
 1. Empty projects list: neutral Spot (stack of folders with a seed), 120 px, above "No projects yet" and a primary button. alt="" because the heading carries the meaning.
@@ -77,7 +72,7 @@ Tier names from Dropbox and Atlassian [L1][L2]; sizes and budgets are opinion, s
 ## Sources
 - [L1] Atlassian Design, Illustrations: https://atlassian.design/foundations/illustrations
 - [L2] Dropbox brand imagery: https://brand.dropbox.com/imagery
-- [L3] Animade, Dropbox spot illustration library: https://animade.tv/work/dropbox-smalls-illustration-library
+- [L3] Animade, Dropbox spot illustration library: https://archive.animade.tv/work/dropbox-smalls-illustration-library
 - [L4] W3C WAI, alt decision tree: https://www.w3.org/WAI/tutorials/images/decision-tree/
 - [L5] W3C, Understanding 1.4.11: https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html
 - [L6] Standards.site, Mailchimp guidelines: https://standards.site/examples/mailchimp

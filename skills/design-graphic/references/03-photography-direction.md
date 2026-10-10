@@ -2,6 +2,8 @@
 
 Sources: research/graphic/03-photography-direction.md (P-numbers). Opinion is marked (opinion).
 
+**Scope.** This file holds the professional shot brief, stock selection and the AI imagery rules. Everything about using photos on a page lives in design-art-direction: accept or reject, crops per breakpoint, grading and duotone, sequencing a set (`references/02-photography.md`), text over images and the worst-pixel check (`03-composition-and-overlays.md`), and the phone-friendly photo request with slot code (`05-requesting-photography.md`).
+
 ## Principles
 1. **Information earns attention; decoration is ignored.** Users scrutinize images with task-relevant content and skip "feel-good" filler [P1].
 2. **Real beats generic.** Real staff portraits got about 10% more viewing time than text bios 316% larger; generic stock was ignored [P1].
@@ -36,10 +38,7 @@ Fill every field; a vague brief returns stock-looking results. Fields match comm
 ## Decision rules
 - **Custom vs stock vs AI.** Custom for people, product and place that represent the brand. Stock only for context shots without identifiable "our customer" claims, and only after grading to the house look. AI imagery for concepts, moodboards, abstract backgrounds and comps; not for real people, real products, real places presented as real, or testimonials. (opinion; trust and provenance reasons [P6][P7])
 - **Selecting from stock.** Reject on sight: handshakes, pointing at screens, headset call center smiles, models looking into camera with no context, perfect desks. Prefer: specific action, real environment, imperfect light. (opinion)
-- **Hero image.** Use one only if it shows the product, the outcome or the people; otherwise use a product UI shot or a strong typographic hero (see design-layout). [P1]
-- **Crops.** Choose crops per breakpoint as art direction (different crops via picture sources), not a single CSS cover crop; mark a focal point. (see design-frontend)
-- **Text on photos.** Place copy in planned negative space. If contrast fails anywhere, add a gradient scrim behind the text from about 60 percent opacity of black or `--color-bg` to 0, sized to the text block; verify the worst pixel. (opinion on values; requirement from [P3])
-- **Making a mixed set consistent.** Same grade (one LUT or preset), same crop ratios, same subject-to-frame scale, same light direction where possible, same color cast of neutrals. A duotone or monochrome treatment is the fastest way to unify unmatched sources. (opinion)
+- **Hero image, crops, text on photos, unifying a mixed set:** design-art-direction 02 and 03.
 
 ## AI generated imagery
 - Disclose and preserve provenance: keep Content Credentials (C2PA) where tools attach them; regulators are moving toward mandatory labeling (EU AI Act transparency duties apply from August 2026) [P6][P8].
@@ -53,16 +52,13 @@ Fill every field; a vague brief returns stock-looking results. Fields match comm
 - **Shoot tethered with the layout as an overlay** (most tethering software can show a transparent overlay), so headline space and crops are checked on set, not in post. (opinion)
 - **Shoot every hero in three ratios** (16:9, 4:5, 1:1) at the same moment; social and responsive layouts need them. (opinion)
 - **Cast real people and show them working**: NN/g's FreshBooks result shows real people out-earn text [P1].
-- **Grade toward the brand color without tinting skin.** Push brand color into shadows or environment, protect skin tones. (opinion)
-- **Use the image as information:** product photos that support comparison (same angle, same background, same scale) get scrutinized; lifestyle thumbnails get skipped [P1].
+- **Use the image as information:** product photos that support comparison (same angle, same background, same scale) get scrutinized; lifestyle thumbnails get skipped [P1]. Grading and treatment: design-art-direction 02.
 
 ## Do and don't
 | Do | Don't |
 |---|---|
 | Real team on real work | Stock models at a whiteboard |
 | One grade across a set | Mix warm, cold and HDR looks |
-| Art-directed crops per breakpoint | One crop that cuts heads on mobile |
-| Scrim tested at the worst pixel | White text on a busy sky |
 | alt describes meaning in context | alt="image of people" |
 
 ## Worked example: fintech landing page imagery
@@ -70,13 +66,12 @@ Brief: calm, trustworthy B2B forecasting tool for finance teams.
 1. Job of each image: hero shows the product in use by a real finance team (proof); a customer story shows the CFO of a real customer (proof); feature sections use product UI, not photos (information).
 2. Shot brief: real customer team, moment "walking the board through next quarter," soft window light camera left, 35 mm at eye level, left third clear for headline, grade slightly cool neutrals with warm skin, brand teal only in environment.
 3. Ratios: 16:9 desktop hero, 4:5 mobile hero, 1:1 for social.
-4. Text over hero: headline sits in clear left third on a wall at about 85 percent luminance; dark text passes 4.5:1 without a scrim.
+4. Text over hero: headline in the clear left third; check the worst pixel per design-art-direction 03.
 5. Alt: "Finance team at Acme reviewing a quarterly forecast on a large screen."
 
 ## Hand-offs
-- design-frontend: responsive image markup, focal points, lazy loading.
-- design-layout: hero composition, text and image placement.
-- design-color: grading toward brand palette, scrim colors.
+- design-art-direction: page concept, picking, cropping, treating and sequencing photos, text over images, the photo request.
+- design-frontend: responsive image markup, lazy loading.
 - design-copy and copywriting: captions and alt text voice.
 - 05 for social crops; 06 for formats.
 

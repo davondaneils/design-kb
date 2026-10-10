@@ -1,0 +1,152 @@
+{
+  "file": "kb/tests/design-graphic/icon-sheet.html",
+  "date": "2026-10-10T17:00:33.583Z",
+  "checks": {
+    "axe": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overlay": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "targets": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "measure": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "type-scale": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "spacing": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overflow": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "heading-wrap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "svg-overlap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "radius": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "color-scheme": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "typography": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "tabular": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "shadows": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icon-stroke": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "weight": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus-shape": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-shift": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "fallback": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "motion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    }
+  },
+  "summary": {
+    "weightKB": {
+      "html": 35,
+      "svg": 28
+    },
+    "focusables": 0,
+    "motionFound": {
+      "animations": 0,
+      "movingTransitions": 0
+    },
+    "axe": "pass",
+    "overlay": "pass",
+    "targets": "pass",
+    "measure": "pass",
+    "type-scale": "pass",
+    "spacing": "pass",
+    "overflow": "pass",
+    "heading-wrap": "pass",
+    "svg-overlap": "pass",
+    "radius": "pass",
+    "color-scheme": "pass",
+    "typography": "pass",
+    "tabular": "pass",
+    "shadows": "pass",
+    "icon-stroke": "pass",
+    "weight": "pass",
+    "focus": "pass",
+    "focus-shape": "pass",
+    "sticky-focus": "pass",
+    "state-shift": "pass",
+    "fallback": "pass",
+    "motion": "pass",
+    "result": "PASS",
+    "fails": 0,
+    "warns": 0
+  }
+}
