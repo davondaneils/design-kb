@@ -15,7 +15,7 @@ Status key: **C** consensus, **X** contested, **O** opinion.
 | 7 | Alt text: informative images get a brief alt conveying meaning; images that repeat nearby text or are decorative get alt=""; functional images describe the action. | W3C WAI alt decision tree [P4] | C |
 | 8 | Google: use descriptive file names, useful alt, high quality sharp images, img elements (CSS backgrounds are not indexed); avoid generic logos, images with text and extreme aspect ratios as the preferred page image. | Google Search Central, image SEO [P5] | C |
 | 9 | Content Credentials (C2PA) attach provenance to images; Adobe Firefly and others attach them to generated output; regulation (EU AI Act transparency duties from August 2026) is pushing disclosure of AI generated content. | Adobe Experience League [P6]; c2paviewer [P7]; Davies Meyer blog [P8] | C on direction, X on exact legal scope by jurisdiction |
-| 10 | Shoot briefs in practice specify objectives, shot list, subjects and casting, location, lighting, style references, deliverables and usage rights. | Contently shoot brief guide [P9]; Ocus brand photography guidelines [P10]; Penn State Smeal photography standards [P11] | C |
+| 10 | Shoot briefs in practice specify objectives, shot list, subjects and casting, location, lighting and style references, and deliverables (Contently [P9], re-checked 2026-10-10: "This should outline what the project aims to achieve"); Contently covers releases, not usage rights, so usage rights rest on Ocus and Penn State Smeal [P10][P11]. | Contently shoot brief guide [P9]; Ocus brand photography guidelines [P10]; Penn State Smeal photography standards [P11] | C |
 
 ## Numbers
 - 10% more attention to real staff portraits vs 316% larger text bios [P1].

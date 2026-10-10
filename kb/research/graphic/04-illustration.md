@@ -24,7 +24,7 @@ Status key: **C** consensus, **X** contested, **O** opinion.
 ## Sources
 - [L1] https://atlassian.design/foundations/illustrations
 - [L2] https://brand.dropbox.com/imagery
-- [L3] https://animade.tv/work/dropbox-smalls-illustration-library
+- [L3] https://archive.animade.tv/work/dropbox-smalls-illustration-library
 - [L4] https://www.w3.org/WAI/tutorials/images/decision-tree/
 - [L5] https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html
 - [L6] https://standards.site/examples/mailchimp

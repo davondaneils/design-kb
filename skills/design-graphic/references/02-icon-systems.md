@@ -1,6 +1,6 @@
 # Icon systems
 
-Sources: research/graphic/02-icon-systems.md (I-numbers). Opinion is marked (opinion).
+Sources: research/graphic/02-icon-systems.md (I-numbers) and 07-marks-icons-rendered.md (G and M numbers). Stem widths: design-polish 03. Opinion is marked (opinion).
 
 ## Principles
 1. **Icons are vocabulary, not decoration.** Only a few are universal (home, print, search); the rest need labels [I6].
@@ -14,7 +14,8 @@ Sources: research/graphic/02-icon-systems.md (I-numbers). Opinion is marked (opi
 - **Targets:** interactive icons have a hit area of at least **24x24 CSS px**, 44x44 preferred for touch, even when the glyph is 16 or 20 px.
 - **Accessible name:** icon-only buttons have an accessible name; decorative icons beside text are `aria-hidden="true"` (see 06).
 - **One set:** never mix libraries in one interface.
-- **Pixel clean at 1x:** strokes land on the pixel grid at the primary size [I1].
+- **Pixel clean:** straight stems land on device pixels at the primary size and density (placement table below) [I1][M1].
+- **No hard-coded colors:** shapes use `currentColor` and CSS; nothing white or black inside a status icon. `assets/icon_audit.mjs` fails the set otherwise [M2].
 - **Not color alone:** state changes (selected, error) are carried by shape or fill as well as color.
 
 ## Default spec (use unless a brand reason overrides)
@@ -30,24 +31,40 @@ Sources: research/graphic/02-icon-systems.md (I-numbers). Opinion is marked (opi
 | Color | `currentColor`, inheriting `--color-text` or `--color-text-muted` | foundation contract |
 | Delivery | SVG components or a sprite; viewBox `0 0 24 24`; paths at 2 decimals | [I1] |
 
-## Size pairing with text (foundation type scale)
-| Text token | Text size | Icon size token | Icon size | Gap to label |
-|---|---|---|---|---|
-| `--text-xs` / `--text-sm` | 12 / 14 | `--size-icon-sm` | 16 | 4 |
-| `--text-base` | 16 | `--size-icon-md` | 20 | 8 |
-| `--text-lg` | 20 | `--size-icon-lg` | 24 | 8 |
-| standalone, toolbar | n/a | `--size-icon-lg` | 24 | n/a |
-| feature or empty state | n/a | `--size-icon-xl` | 32 | n/a |
-| large display | n/a | `--size-icon-2xl` | 48 | n/a |
-Rule: the icon is about 1.25 times the text size, and never taller than the line height (16 x 1.5 = 24). Icon sizes and gaps sit on the 4 px scale. Token names follow the `--{category}-{role}-{variant}` contract. (pairing ratio is opinion)
+## Size, grid and stroke paired with text
+| Text | Icon box, drawn on | Stroke (Inter stems, design-polish 03) | Gap to label |
+|---|---|---|---|
+| `--text-xs` 12px, 500 / 600 | 12, 12 grid | 1.25 / 1.5px | 4 |
+| `--text-sm` 14px, 500 / 600 | 16, 16 grid | 1.5 / 1.75px | 8 inline, 12 in nav rows |
+| `--text-base` 16px, 400 to 500 | 20, 20 grid | 1.5 to 1.75px | 8 |
+| `--text-lg` 20px, or a standalone toolbar | 24, 24 grid | 2px | 8 |
+| Feature or empty state | 32 or 48 | design-art-direction line weight | n/a |
+Rules: the icon is about 1.15 to 1.25 times the text size and never taller than the line height (14 x 1.5 = 21). Sizes and gaps sit on the spacing scale. Icon sizes are plain px here: FOUNDATIONS has no icon size token yet (proposal in `kb/reviews/design-graphic-pipeline-notes.md`). Labels at 400 beside 1.5px icons are a quarter pixel light: move UI labels to 500 or drop the stroke to 1.25 (design-polish 03). (pairing is opinion built on measured stems)
+
+## Where strokes land (measured)
+A straight stem is crisp when both edges, centre plus and minus half the stroke, fall on device-pixel boundaries. Measured in Chromium (`kb/research/graphic/scripts/stroke-snap.mjs`) [M1]:
+| Stroke | Centre on .0 | .25 or .75 | .5 |
+|---|---|---|---|
+| 1px | soft at 1x, crisp at 2x | soft | crisp at 1x and 2x |
+| 1.5px | 2 soft columns at 1x and 2x | crisp at 2x, 1 soft column at 1x | 2 soft columns |
+| 2px | crisp at 1x and 2x | soft | soft at 1x, crisp at 2x |
+So a 16-grid set at 1.5px puts every straight stem on .25 or .75 (`M2.25 8h11.5`, a rect at `x="2.25" width="4"`). Diagonals and curves always antialias; budget for that. A 24-grid icon shown at 16px lands on 0.67px steps and no stem is crisp at any density: draw the small grid.
 
 ## Decision rules
 - **Library vs custom.** If the product is not icon-led and the brand is not distinctive through iconography, use a mature library (Lucide, Phosphor, Material Symbols, SF Symbols on Apple platforms). Go custom only when you can draw at least the full needed set plus 20 percent headroom in one style, or when the brand needs owned metaphors. (opinion)
 - **Extending a library.** Draw new icons on that library's grid with its exact stroke, caps and radius; blur-compare against 3 existing icons before shipping [I1].
 - **Outline vs filled.** Default outline in navigation and toolbars; filled for the selected state of the same icon (tab bars), and for 16 px use where outlines fill in (platform practice; opinion as a rule).
-- **Stroke at small sizes.** If you scale a 24 px, 2 px stroke icon down to 16 px, the stroke becomes 1.33 px and blurs. Either draw 16 and 20 px variants on their own grids with 1.5 px strokes, or keep absolute stroke width (Lucide offers an absoluteStrokeWidth option) and simplify detail. A 1.5 px stroke is 3 device pixels on 2x screens and renders crisp; if the product targets 1x desktop screens, use integer strokes (1 or 2 px) at those sizes instead. (derived arithmetic; opinion on fix)
+- **Stroke at small sizes.** If you scale a 24 px, 2 px stroke icon down to 16 px, the stroke becomes 1.33 px and blurs. Either draw 16 and 20 px variants on their own grids with 1.5 px strokes, or keep absolute stroke width (Lucide offers an absoluteStrokeWidth option) and simplify detail. A 1.5 px stroke is 3 device pixels on 2x screens and renders crisp only when its straight stems sit on .25 or .75 (measured, table below); if the product targets 1x desktop screens, use 1px on .5 or 2px on whole pixels instead. (measured [M1]; opinion on the fix)
 - **Metaphor choice.** If you cannot think of an icon in 5 seconds, use a text label instead [I6]. Test new metaphors: show the icon alone and ask what it does; then check recall a couple of weeks later [I6].
 - **Directional icons** (arrows, chevrons, send, undo) mirror in right-to-left layouts; clocks, media play and checkmarks do not. (opinion, platform convention)
+
+## Building a product icon set (code)
+- **One source module.** Each icon defined once (shapes only, no stroke-width, no colors), expanded inline at build (`{{i:name}}`). Inline beats a `<use>` sprite while you rely on DOM checks: sprite shapes sit in a shadow tree that `tools/lint.mjs` and `icon_audit.mjs` cannot read [M2].
+- **One CSS rule draws the whole set:** `.i { fill: none; stroke: currentColor; stroke-width: var(--icon-stroke, 1.5px); stroke-linecap: round; stroke-linejoin: round }` and `.i .solid { fill: currentColor; stroke: none }`.
+- **Stroke follows label weight per state:** set `--icon-stroke` where font-weight is set (`.nav a[aria-current] { font-weight: 600; --icon-stroke: 1.75px }`, sortable header 500 at 1.25px and 600 at 1.5px).
+- **Status icons are solid with the mark knocked out**: one evenodd path, e.g. a circle plus an exclamation bar and dot as inner subpaths. One color, mass at 16px, both themes and forced colors work, nothing hard-coded.
+- **Brand mark** (the product logo in the shell) may sit one weight step above the UI set (1.75 vs 1.5px) on its own field.
+- **Audit**: `node skills/design-graphic/assets/icon_audit.mjs page.html` must exit 0; read every "volume" flag (ink share more than 35 percent off the median for that size) and decide.
 
 ## App icons and favicons are derivations
 - Never shrink the full lockup into an app icon. Use the symbol or monogram, larger, centered, on a brand color field. (opinion grounded in [I8][I10])
@@ -61,6 +78,8 @@ Rule: the icon is about 1.25 times the text size, and never taller than the line
 - **Match icon weight to text weight.** A 2 px stroke at 24 px matches regular to medium text at 16; with light or thin brand type, switch to 1.5 px strokes across the set rather than letting icons shout. (opinion)
 - **Design the hard icons first:** settings, filter, sync, share, analytics. They define how much detail the set allows. (opinion)
 - **Write a metaphor table:** each concept, its chosen metaphor, rejected alternatives and why. It stops drift when the set grows. (opinion)
+- **Draw the small grid; never trust a 24 library at 16.** Lucide's own rule is a 2px stroke on its 24 canvas, aiming to be "pixel perfect so that they will be sharp on low DPI displays" [G8]. That promise holds at 24px only [M1].
+- **The lint is not an icon review.** On the combined Tally page `tools/lint.mjs` and the polish audit both passed a set with round and butt caps, round and miter joins, and `#ffffff` and `#000000` inside status icons; `icon_audit.mjs` failed it [M2].
 - **Avoid icons that encode old objects nobody uses unless universal** (floppy save is fine because it is learned; a clock for "history" was never clicked in NN/g testing [I6]).
 
 ## Do and don't
@@ -84,6 +103,12 @@ Rule: the icon is about 1.25 times the text size, and never taller than the line
 1. Wordmark is 9 letters: unusable at 60 pt. Take the first letter, redraw it heavier, add the brand's one quirk.
 2. iOS: background layer = brand color gradient set in Icon Composer, foreground = letter as SVG; check Mono has a near-white element. Android: same letter at 60 dp inside the 66 dp safe zone, monochrome layer from the letter.
 
+### C. Tally analytics, rendered (wave 2 test, `kb/tests/design-graphic/icons.mjs`)
+1. Labels are Inter 14px; moved from 400 to 500 so a 1.5px stroke matches the 1.50px stem; selected nav 600 with 1.75px; sort headers 12px on a 12 grid at 1.25 and 1.5px.
+2. 16 icons on a 16 grid plus 2 arrows on a 12 grid and the tally brand mark: overview tiles, activity trace, funnel, return arrow, person, 6-tooth gear (the most a 16px gear survives, opinion), command key, keyboard, menu, search, calendar, plus, close, lock, more, solid error and warning.
+3. Metaphor table in the module header (funnels: outline, rejected stepped bars which read as "align center"; retention: return arrow, rejected calendar which is the date picker).
+4. Result: audit 0 fails (before: mixed caps and joins, 3 hard-coded colors, 3 icons touching the box edge); partial pixels at 2x fell from 39 to 51 percent of ink to 10 to 42 percent.
+
 ## Hand-offs
 - design-ux: when icons need labels in navigation patterns.
 - design-frontend: SVG component delivery, sprite vs inline, RTL mirroring.
@@ -98,4 +123,6 @@ Rule: the icon is about 1.25 times the text size, and never taller than the line
 - [I7] W3C, Understanding 1.4.11: https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html
 - [I8] WWDC25 session 361, Create icons with Icon Composer: https://developer.apple.com/videos/play/wwdc2025/361 (notes: https://wwdcnotes.com/documentation/wwdc25-361-create-icons-with-icon-composer/)
 - [I10] Android adaptive icons: https://developer.android.com/develop/ui/views/launch/icon_design_adaptive
+- [G8] Lucide icon design guide (stroke, pixel perfect): https://lucide.dev/guide/design/icon-design-guide
+- [M1][M2] Measured, `kb/research/graphic/07-marks-icons-rendered.md`
 - [I11] Evil Martians, How to Favicon: https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs

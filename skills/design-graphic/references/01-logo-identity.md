@@ -1,6 +1,6 @@
 # Logo and identity
 
-Sources: research/graphic/01-logo-identity.md (R-numbers below). Opinion is marked (opinion).
+Sources: research/graphic/01-logo-identity.md (R-numbers) and 07-marks-icons-rendered.md (G and M numbers). Opinion is marked (opinion).
 
 ## Principles
 1. **A logo identifies; it does not explain.** Rand: "A logo doesn't sell (directly), it identifies" and is "rarely a description of a business" [R1]. Do not try to show what the company does.
@@ -54,6 +54,18 @@ Run every candidate through all of these, side by side, before presenting:
 - **Color versions:** full color, one color dark, one color light (reversed artwork), and if needed a version for photography backgrounds.
 - **Misuse page:** do not stretch, recolor, outline, add effects, rotate, or place on busy images without the approved treatment.
 
+### The wordmark is artwork: outlining it (on a page, always)
+A wordmark set as live text in a web font changes with font loading, fallback metrics, user font settings and the next font update; the mark must not. Outline it.
+1. **License.** OFL fonts may be used for logos, and artwork made with them is not under the OFL ("creating any kind of graphic using a font under the OFL does not make the resulting artwork subject to the OFL", OFL FAQ 1.13) [G1][G2]. Commercial fonts: check the EULA's logo clause.
+2. **Instance.** For a variable font, instance it at the size the mark lives at: optical size at its display end, weight by eye (Ember & Oak: Newsreader opsz 72, wght 480, between the page's 400 display and 600).
+3. **Measure, do not read, the metrics.** Cap and x height come from the H and x of that instance; OS/2 values describe the default instance only (Newsreader: OS/2 1340, measured 1430 at opsz 72) [M3]. Cap height is the clear-space unit.
+4. **Space the word.** Tracking for display (about -0.5 to -1 percent of the em, opinion), then pairs by eye on the real word: the spaces around an ampersand are always too wide; round letters beside a space need less.
+5. **Best ampersand.** Try the italic ampersand in the roman word ("In heads and titles, use the best available ampersand", Bringhurst 5.1.3) [G3][G4].
+6. **One detail, inside the letter.** Keep the chosen letter's own outline and draw the detail inside its counter at the letter's hairline weight, so it reads as type, not as a sticker.
+7. **Ship it as one inline SVG** with `fill: currentColor` for the ink and one token for the accent (`--color-logo-ember`), so both themes remap it.
+
+`assets/wordmark.py` does steps 2 to 4 and leaves the detail letter's outline in the JSON (`--slot`).
+
 ### Responsive logo tiers
 Simplify as space shrinks until "only the essence remains" [R6]:
 - Tier 1 (large, 200 px and up): full lockup with any tagline.
@@ -61,6 +73,7 @@ Simplify as space shrinks until "only the essence remains" [R6]:
 - Tier 3 (32 to 80 px): symbol or monogram alone.
 - Tier 4 (16 to 32 px): a specially drawn small version with thicker strokes, fewer parts and opened counters.
 Tier boundaries are opinion; the principle is from Harrison's work [R6].
+Drop detail one step at each tier (Ember & Oak: two rings at tier 1, one ring at tier 2 and 3, a monoline ring and dot at tier 4). The favicon is tier 4 on its own field when the bare mark fails any tab strip (`assets/tab_contrast.py`; see 06).
 
 ## Expert moves (what a generalist misses)
 - **Design the smallest version first.** Sketch the 16 px favicon and the 40 px avatar crop before refining the large lockup; it forces the essential idea early. (opinion, consistent with Haviv on tiny sizes [R2])
@@ -75,6 +88,9 @@ Tier boundaries are opinion; the principle is from Harrison's work [R6].
 - **Own a color, not a palette.** Recognition attaches to one dominant color used at scale (see design-color for ramps and contrast).
 - **Write the rationale in one sentence per direction.** Present 2 or 3 directions maximum, each with one sentence of idea, shown in 3 real contexts. Chermayeff and Geismar pick "the best by common agreement, and throw out the seconds" before the client sees anything [R2].
 - **Avoid trend effects in the master.** Gradients, glass, 3D can be applied as treatments later; Haviv notes a simple mark can take "fashionable" treatments without losing recognition [R2].
+
+- **Give the favicon its own ground.** A bare brand color is judged against strips you do not control: Ember & Oak orange measures 3.04:1 on white, 2.32:1 on a gray inactive tab, 5.29:1 on a dark one [M4]. A `prefers-color-scheme` rule inside the SVG follows the OS, not a themed browser's strip [G7]. The darkest brand neutral as a rounded field, mark in the lightest neutral, accent kept, fixes it everywhere. (opinion on the choice)
+- **Close the page with the mark at full measure.** A full-width outlined wordmark as the footer sign-off costs about 15 KB and gives a type-led page its second loud moment. (opinion)
 
 ## Do and don't
 | Do | Don't |
@@ -103,6 +119,13 @@ Old mark: wordmark with a thin gradient swoosh. At 16 px it is a smudge.
 2. Build a Tier 4 favicon: the first letter alone, heavier, wedge cut, on a solid brand color square.
 3. Update the app icon as a derivation (see 02), not by shrinking the lockup.
 
+### C. Ember & Oak, rendered (wave 2 test, `kb/tests/design-graphic/`)
+Brief: specialty roaster, concept "the hill and the fire" (design-art-direction). Before: the logo was "Ember & Oak" in live Newsreader text.
+1. Wordmark: Newsreader opsz 72, wght 480, italic ampersand, tracking -16 units on a 2000-unit em, pairs `r ` -24, ` &` -20, `& ` -8, ` O` -10.
+2. Detail: the O keeps its outline; inside it, two eccentric rings at the O's hairline weight (contour lines around a summit, or an oak's growth rings) and an ember dot in brand orange, up and right of centre. Blur test: still one ring with a hot point.
+3. Tiers: sign-off full width (two rings); header 24px tall on phones and 28px on desktop (one ring); bag label 32px symbol (one ring); favicon on a warm 950 field (ring 14.9:1, ember 5.3:1); apple-touch 180 on the same field.
+4. Stress sheet: `mark-sheet.html` (one color on the brand field, both polarities, 16 and 32px, tabs, avatar circle, blur, clear space).
+
 ## Hand-offs
 - design-color: owned color, ramps, contrast when brand color is used in UI.
 - design-typography: wordmark base typeface and brand type system.
@@ -122,5 +145,10 @@ Old mark: wordmark with a thin gradient swoosh. At 16 px it is a smudge.
 - [R8] Pentagram, MIT Media Lab: https://www.pentagram.com/work/mit-media-lab/story
 - [R10] Bank of Canada corporate identifier: https://design.bankofcanada.ca/design/corporate-identifier/
 - [R11] NinjaOne brand, clear space and minimum size: https://ninjaone.com/brand
+- [G1][G2] SIL Open Font License FAQ (1.1, 1.13): https://openfontlicense.org/ofl-faq/
+- [G3] Bringhurst 5.1.3 as quoted by Dan Cederholm: https://retro.simplebits.com/posts/ampersands-2.html
+- [G4] Typefacts, The ampersand: https://typefacts.com/en/articles/the-ampersand
+- [G7] MDN, prefers-color-scheme (SVG inherits from the OS or the embedding element): https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme
+- [M3][M4] Measured, `kb/research/graphic/07-marks-icons-rendered.md`
 - [R19] US Copyright Office, Part 2 report announcement (Jan 2025): https://www.copyright.gov/newsnet/2025/1060.html
 - Practitioner references (opinion tier, for inspiration and current practice, not specs): LogoArchive by Richard Baird, Brand New by UnderConsideration, Standards.site, David Airey's resource list https://www.davidairey.com/resources
