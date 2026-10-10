@@ -1,0 +1,51 @@
+      <p class="answer answer-sample"><strong>This is sample data from a demo store,</strong> so you can see what Tally will show. Your own numbers replace it within a minute of your first event.</p>
+      <p class="answer answer-first"><strong>Tally is counting: 38 page views from 12 visitors since 14:06.</strong> Weekly comparisons start on Oct 19, once a full week is in.</p>
+
+      <section class="panel setup" id="setup" aria-labelledby="setup-title">
+        <div class="setup-head">
+          <h2 id="setup-title">Set up Tally</h2>
+          <span class="setup-count"><span class="meter" aria-hidden="true"><i id="setup-meter" style="width:25%"></i></span><span id="setup-count">1 of 4 done</span></span>
+          <button class="btn btn-ghost" type="button" id="hide-guide">Hide guide</button>
+        </div>
+        <ol class="steps">
+          <li class="step done">
+            <span class="mark" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2.5 6.5l2.5 2.5 4.5-6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
+            <div><h3>Create your workspace <span class="sr-only">(done)</span></h3><p class="why">Acme Inc., created by Dana Ruiz at 13:58.</p></div>
+          </li>
+          <li class="step current s2" id="step-install">
+            <span class="mark" aria-hidden="true">2</span>
+            <div><h3>Install the tracking snippet <span class="sr-only st-done-sr">(done)</span></h3><p class="why">One line in the <code>&lt;head&gt;</code> of every page on acme.com. Nothing else on this screen needs it.</p></div>
+            <div class="acts"></div>
+            <div class="step-body">
+              <div class="snippet"><code id="snippet">&lt;script defer src="https://t.tally.so/t.js" data-site="acme.com"&gt;&lt;/script&gt;</code><button class="btn" type="button" data-copy="snippet">Copy</button></div>
+              <div class="step-state st-idle">
+                <div class="row-acts"><button class="btn" type="button" id="check-btn">Check installation</button><a class="text-link" href="#">Send to a developer</a><a class="text-link" href="#">Next.js, WordPress and Shopify guides</a></div>
+                <p class="step-note">Once it is on the page, Tally listens for the first event. You can keep exploring the sample data meanwhile.</p>
+              </div>
+              <div class="step-state st-listen">
+                <div class="live"><span class="pulse" aria-hidden="true"></span><div><p><strong>Listening for the first event from acme.com</strong> since 14:02.</p><p>Open any page on your site in another tab. If nothing arrives by 14:07, we will show what to check here.</p></div></div>
+                <div class="row-acts"><a class="text-link" href="#">Send to a developer</a></div>
+              </div>
+              <div class="step-state st-failed">
+                <div class="problem" role="group" aria-labelledby="problem-title">
+                  <svg class="icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="currentColor"/><path d="M8 4v5M8 11v1" stroke="#ffffff" stroke-width="2"/></svg>
+                  <div><strong id="problem-title">Snippet found on acme.com, but the browser blocked it</strong><p>Your Content-Security-Policy does not allow scripts from t.tally.so. Add <code id="csp">script-src https://t.tally.so</code> to the policy, usually set by whoever manages your hosting or CDN.</p></div>
+                </div>
+                <div class="row-acts"><button class="btn" type="button" data-copy="csp">Copy the policy line</button><a class="text-link" href="#">Send to a developer</a><button class="btn btn-ghost" type="button" id="recheck-btn">Check again</button></div>
+                <p class="step-note">Checked acme.com and acme.com/pricing at 14:09. Your sample data stays until the first event arrives.</p>
+              </div>
+              <p class="status-line" role="status" id="copy-status"></p>
+            </div>
+          </li>
+          <li class="step s3">
+            <span class="mark" aria-hidden="true">3</span>
+            <div><h3>Connect Stripe for revenue <span class="tag" style="display:inline-flex">Optional</span></h3><p class="why">Adds revenue and churn. Read-only access; Tally never moves money.</p></div>
+            <div class="acts"><button class="btn btn-ghost" type="button">Skip for now</button><button class="btn" type="button">Connect Stripe</button></div>
+          </li>
+          <li class="step s4">
+            <span class="mark" aria-hidden="true">4</span>
+            <div><h3>Invite a teammate</h3><p class="why">Weekly reports go to everyone on the workspace.</p></div>
+            <div class="acts"><button class="btn" type="button">Invite</button></div>
+          </li>
+        </ol>
+      </section>

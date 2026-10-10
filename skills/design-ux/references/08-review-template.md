@@ -38,4 +38,6 @@ Brief as given: a settings page with a left list of sections, a form for profile
 2. Autosave low-risk toggles (notifications) instantly with an inline "Saved", keep explicit Save only for the profile form (opinion: mixing is fine when grouped clearly).
 3. Danger zone visually separated and placed last, never next to Save.
 
-**Hand-offs:** dialog copy to design-copy; `<dialog>` and live region implementation to design-frontend.
+**Hand-offs:** dialog copy to design-copy; `<dialog>` and live region implementation to design-frontend; settings layout and save models to design-product-ui `references/03-forms-settings.md`.
+
+A second worked review, of a shop's purchase flow, is in `kb/tests/design-ux.md` (run 2, the baseline audit).

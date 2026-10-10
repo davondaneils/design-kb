@@ -1,0 +1,51 @@
+<dialog id="quick" aria-labelledby="q-title" aria-describedby="q-meta">
+  <div class="dlg-head">
+    <div><p class="label">Add to cart</p><h2 id="q-title" tabindex="-1">Ethiopia Guji</h2><p class="meta num" id="q-meta">$21 a bag, <span class="unit">340&#8239;g</span>. Roasted Tuesday, ships within 48 hours.</p></div>
+    <button class="close" type="button" data-close aria-label="Close"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15"/></svg></button>
+  </div>
+  <form id="quick-form" novalidate>
+    <fieldset class="opt-group" id="q-brew" aria-describedby="q-error">
+      <legend>How do you brew?<span class="hint">We grind it for your brewer the morning it ships.</span></legend>
+      <p class="error" id="q-error" hidden><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5v4M8 11v.5"/></svg>Choose how you brew, so we grind it right.</p>
+      <div class="opts cols-2">
+        <label class="opt stack"><input type="radio" name="qbrew" value="pourover" data-name="Pour-over"><span><span class="name">Pour-over</span><span class="sub">Medium-fine</span><span class="usual" hidden>Your usual</span></span></label>
+        <label class="opt stack"><input type="radio" name="qbrew" value="espresso" data-name="Espresso"><span><span class="name">Espresso</span><span class="sub">Fine</span><span class="usual" hidden>Your usual</span></span></label>
+        <label class="opt stack"><input type="radio" name="qbrew" value="drip" data-name="Drip machine"><span><span class="name">Drip machine</span><span class="sub">Medium</span><span class="usual" hidden>Your usual</span></span></label>
+        <label class="opt stack"><input type="radio" name="qbrew" value="press" data-name="French press"><span><span class="name">French press</span><span class="sub">Coarse</span><span class="usual" hidden>Your usual</span></span></label>
+        <label class="opt stack"><input type="radio" name="qbrew" value="whole" data-name="Whole bean"><span><span class="name">Whole bean</span><span class="sub">You grind it</span><span class="usual" hidden>Your usual</span></span></label>
+      </div>
+    </fieldset>
+    <div class="qty-row">
+      <span class="lbl" id="q-qty-lbl">Bags</span>
+      <div class="stepper" role="group" aria-labelledby="q-qty-lbl">
+        <button type="button" id="q-minus" aria-label="One bag fewer" aria-disabled="true"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8h9"/></svg></button>
+        <output id="q-qty" aria-live="polite">1</output>
+        <button type="button" id="q-plus" aria-label="One bag more"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8h9M8 3.5v9"/></svg></button>
+      </div>
+    </div>
+    <button class="btn btn-primary btn-wide" type="submit" id="q-add" style="width:100%">Add to cart, $21</button>
+  </form>
+</dialog>
+
+<dialog id="cart" aria-labelledby="cart-title">
+  <div class="dlg-head">
+    <div><h2 id="cart-title" tabindex="-1">Your cart</h2><p class="meta" id="cart-meta">2 items</p></div>
+    <button class="close" type="button" data-close aria-label="Close cart"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15"/></svg></button>
+  </div>
+  <div class="cart-body">
+    <div class="cart-groups" id="cart-groups"></div>
+    <div class="cart-empty">
+      <svg width="56" height="56" viewBox="0 0 56 56" aria-hidden="true" class="thumb-empty"><rect x="14" y="10" width="28" height="38" rx="4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 4"/></svg>
+      <h3>Your cart is empty</h3>
+      <p>This week’s coffee is Ethiopia Guji, roasted Tuesday in Portland and on its way within two days of the roast.</p>
+      <button class="btn btn-primary" type="button" data-quick="guji">Buy a bag, $21</button>
+      <a class="more" href="#shop" data-close-link>See all 9 coffees<svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+  </div>
+  <div class="cart-sum">
+    <dl id="cart-totals"></dl>
+    <button class="btn btn-primary" type="button" id="checkout-btn"><span class="spinner" aria-hidden="true"></span><span id="checkout-lbl">Check out, $39.00</span></button>
+    <p class="fine">Guest checkout. You’ll review your order before you pay.</p>
+  </div>
+  <p class="sr-only" role="status" id="cart-status"></p>
+</dialog>

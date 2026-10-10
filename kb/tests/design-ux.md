@@ -122,3 +122,61 @@ Note: with-skill accessibility scored 4 because the skill did not say how to mak
 | 3 Long AI report | 10 (gate fail) | 24 | Yes, after gap 2 fix |
 
 Gap list sent to domain-specialist: both fixed in this version (filters; streaming text accessibility). Open item for v0.2: data tables (sorting, bulk actions, column density) are only touched; coordinate with design-data.
+
+
+---
+
+# Run 2 (v0.2, 2026-10-10): rendered slice test
+
+**Briefs:** `kb/briefs/ux/slice-test-briefs.md` (UX-A coffee purchase and subscription; UX-B dashboard first run). **Method:** baseline is `kb/tests/combined/coffee.html` and `dashboard.html` (copied to `kb/tests/design-ux/before/`). Same agent built and judged; no clean-context tester, so judged rows below are self-scored and should be read with that bias. Pages are built from the baseline sources plus `kb/tests/design-ux/parts/` by `parts/assemble.py`, then `build.mjs` (state sheets from `states.mjs`). Shots: `kb/tests/design-ux/shots/` (rendered by `parts/render-all.sh`).
+
+## Baseline UX audit (gate misses the lint cannot see)
+Both baselines lint PASS, yet each fails the design-ux gate:
+1. Coffee: "Start a subscription" went to `#`: a dead end, with no choice of coffee, grind or cadence. (Gate: no dead ends.)
+2. Coffee: "Add to cart" guessed the grind; a whole-bean buyer gets the wrong product with no chance to say so.
+3. Coffee: the header Cart link pointed at a missing `#cart`. (Dead end.)
+4. Coffee: Roastery, Journal and Subscriptions vanished below 768 px with no route to them. (Navigation parity.)
+5. Coffee: the two calls to action used different verbs for the same job.
+6. Dashboard: the empty state had no sample data, no guide and no live wait: a new user saw a blank product and one button.
+
+## Lint (tools/lint.mjs, any fail = fail)
+| Target | Before | After |
+|---|---|---|
+| coffee.html | PASS, 0 fail, 21 warn | PASS, 0 fail, 22 warn |
+| coffee states menu, quick, sub-error, cart, cart-empty, removed, checkout, error, sending, subscribed | n/a | all PASS, 0 fail, 22 to 29 warn |
+| coffee-states.html (state sheet, with option cards, stepper, close, remove, undo, menu toggle) | n/a | PASS, 0 fail, 17 warn |
+| dashboard.html | PASS, 0 fail, 27 warn | PASS, 0 fail, 27 warn |
+| dashboard first-run, listening, check-failed, first-data | n/a | all PASS, 0 fail, 26 to 33 warn |
+| dashboard loading, empty, partial, viewer, compact, palette, sheet | PASS | all PASS, 0 fail, 8 to 34 warn |
+| dashboard-states.html | PASS | PASS, 0 fail, 35 warn |
+
+Failures fixed during the build (each now taught or noted): radio inputs and icon buttons at the 13.33 px UA font (type scale); text behind an open modal flagged for contrast (inactive content, WCAG 1.4.3 exception; handled with `data-lint-skip="overlay"` on `<main>` while a dialog is open, lint change suggested); a horizontally scrolling code snippet not keyboard reachable (axe scrollable-region-focusable; fixed by wrapping); guide and problem copy at 78 and 141 characters per line; the "Connect Stripe" inline link under 24 px tall.
+
+## Judged rows
+| Check | Result |
+|---|---|
+| Every purchase path ends somewhere real (subscription form, quick add dialog, cart drawer, checkout entry) | Pass |
+| Grind asked in the buyer's words ("How do you brew?"), never guessed; the answer remembered as "Your usual" | Pass |
+| Missing answer: one error at the group, linked by `aria-describedby` on the fieldset, focus moved to the group, shown only after submit | Pass (state sub-error) |
+| Button is the summary ("Add subscription, $18 every 2 weeks"), terms in one sentence under it, ship date shown | Pass |
+| Cart: subscription and one-time grouped, due today versus then every 2 weeks, free shipping reason stated, remove with undo in place | Pass (states cart, removed) |
+| Empty cart has a next step, not a sentence | Pass |
+| Announcements made from a live region inside the open dialog (content behind is inert) | Pass |
+| Phone nav: every desktop destination reachable through Menu | Pass (state menu) |
+| Dashboard first run: sample data marked where it is read (bar, panel tags, neutral deltas), guide with a true count (1 of 4), current step open | Pass |
+| Listening: a bounded wait with a time and what happens if nothing arrives | Pass |
+| Check failed: cause named, exact fix, copyable, who can do it, "Check again" | Pass |
+| First data: real numbers replace the sample; metrics that cannot compute say when ("Needs 30 days of data, Nov 11"), never 0 | Pass |
+| Guide can be hidden and found again (sidebar "Setup guide 1 of 4"), focus moved on hide | Pass |
+| Both themes, 390 and 1440 | Pass by render review |
+
+## Exemplar comparison (teardowns on `claude/exemplar-library-xfa3bl`, not committed here)
+- **Apple MacBook Air (measured teardown):** price and Buy reachable from the first screen and a sticky local nav with a Buy pill. Ours: price is in the first screen and the subscription builder is one band down; there is no sticky buy affordance once the builder scrolls away. Apple's configurator then asks one question per step with an always-visible running total; our builder asks three questions on one card with the total in the button, which is the better fit for three small choices (opinion) but has no persistent total while choosing. Verdict on flow: close. Craft: clearly below; Apple's option tiles, spacing rhythm and photography are a level above, and we have no photography (hosts blocked).
+- **Vercel and Stripe onboarding (from memory, not measured):** Vercel's first deploy shows a live log and a bounded wait; Stripe's dashboard runs test-mode data with a persistent marker. Our listening and sample states match the pattern and add the failure path (CSP named, copyable fix) that neither shows on its home page. Verdict on states: close. Visual calm of the guide panel: close; chart and table polish inherited from the baseline.
+- **Honest summary:** flows and states now reach the exemplar pattern level; visual craft of the purchase UI is clearly below Apple. Brief pass rule: gate 100 percent, flow and states close, calm close, craft close on the dashboard and clearly below on the coffee option tiles. **Verdict: pass on UX (the domain under test); craft gap logged for design-graphic and design-product-ui.**
+
+## Gaps (for v0.3)
+1. No sticky buy affordance on the coffee page once the builder scrolls off (Apple pattern). Teach when a sticky local nav earns its place.
+2. The phone code snippet wraps mid-attribute; a copy-only snippet could truncate with a fade and rely on Copy. Teach the trade-off.
+3. The dashboard state sheet does not yet cover the guide controls (step marks, problem box, tags); they are linted only in page states.
+4. Self-judged run. A clean-context tester should re-score the judged rows.

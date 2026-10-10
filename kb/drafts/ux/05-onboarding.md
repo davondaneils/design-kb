@@ -50,3 +50,21 @@
 - Positioning and the promise onboarding must deliver on: website-strategy.
 - Onboarding emails and lifecycle sequences: behavioral-email-sequencing (user skill) and copywriting.
 - Motion for tips and checklists: design-motion.
+
+## First run as states (data products)
+Rendered in `kb/tests/design-ux/dashboard.html` (`?state=first-run`, `listening`, `check-failed`, `first-data`). Research: NN/g empty states (C19, C20 in `kb/research/ux/07-commerce-flows.md`), Nunes and Dreze 2006 (C21).
+
+| State | What the screen shows | Primary action | Announced |
+|---|---|---|---|
+| First run | Setup guide panel above the KPIs; every panel filled with sample data, each marked "Sample" in text, not color alone | Install snippet | nothing (page load) |
+| Listening | The install step shows "Waiting for the first event from acme.com" with the time it started; troubleshooting appears after a stated delay | Copy snippet (already done), then Check installation | "Listening for events" once, politely |
+| Check failed | The cause, named ("Snippet found, but blocked by your Content-Security-Policy"), the exact fix, and who can do it | Copy the fix, or Send to a developer | the cause, politely, not as an alert |
+| First data | One-line success in the guide ("First events arrived: 38 page views from 12 visitors"), real numbers replace sample, metrics that need more data say when they will compute | Next step in the guide | the success line |
+
+Rules
+- **Sample data is labelled where it is read**, on every panel ("Sample data" chip plus an answer line that says so), and never mixed with real numbers in one panel.
+- **"Not enough data yet" is not zero.** A metric that cannot compute shows a muted dash and the condition ("Needs 7 days of data, Oct 17"), never 0 or 0% (opinion; NN/g C19 system status).
+- **The guide has a finish line and a count** ("1 of 4 done"), each step skippable, the guide hideable and findable again from the sidebar. Count only steps that are truly done (workspace created counts; endowed progress, C21). Never fake progress.
+- **The person who signs up is often not the one who installs** (opinion, common in B2B analytics): every technical step offers "Send to a developer" with a prefilled email, not only a code block.
+- **The wait is live and bounded.** Say what is being waited for and since when, and when troubleshooting will appear; never a spinner without words (NN/g progress indicators in 04).
+- **Success swaps in place, once.** The KPI row changes from sample to real without a page reload, the guide ticks the step, and nothing celebrates again on later visits.

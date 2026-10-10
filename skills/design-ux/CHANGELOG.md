@@ -1,5 +1,12 @@
 # design-ux changelog
 
+## 0.2 (2026-10-10, wave 2)
+- New `references/07-commerce-flows.md`: purchase and subscription flows (options as radio cards, grind asked as "How do you brew?", cadence, the button as the summary, terms under it, cart drawer as a modal dialog, remove with undo, checkout entry). Sourced claims C1 to C21 in `kb/research/ux/07-commerce-flows.md` (Baymard, Shopify, W3C, APG, NN/g, California ARL, Nunes and Dreze).
+- `05-onboarding.md`: first run as states for data products (sample, setup guide, listening, check failed, first data; "not enough data yet is not zero").
+- Overlap trimmed: dense app UI links to design-product-ui; platform conventions link to design-playbook-mobile. Review template renumbered to `08-review-template.md`.
+- SKILL.md: "What lives elsewhere" table, commerce and first-run rules, 14 expert moves.
+- Critic: round 1 revise (6 fixes), round 2 approve; citation re-fetch 18 of 92, all passed. Tester: first rendered run on the coffee and dashboard pages, every page, state and state sheet lint PASS; see `kb/tests/design-ux.md` run 2.
+
 ## 0.1.1 (2026-10-09, editor-in-chief)
 - Hand-off to design-product-ui no longer marked planned; finish details hand off to design-polish.
 

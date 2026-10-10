@@ -12,20 +12,19 @@
 |---|---|---|---|
 | Marketing site, desktop | up to about 7 | Visible top bar | Mega menu only if sections have 10+ children each |
 | Marketing site, mobile | any | Visible key links or priority+ plus menu | Pure hamburger is the weakest option |
-| Web app, desktop (lg 1024 and up) | 5 to 15 | Left sidebar, collapsible to icons | Group with section headings; pin search or Cmd+K at top |
-| Web app, tablet (md 768 to 1023) | 3 to 7 primary | Icon rail with labels, or collapsible sidebar | Mirrors Android rail at 600 to 839 dp |
-| Native iOS | 3 to 5 | Tab bar (floating in iOS 26) | Never hide or disable tabs; no "More" overflow if avoidable; sidebar-convertible on iPad |
-| Native Android compact | 3 to 5 | Navigation bar | Rail at medium and up; drawer optional at expanded (840 dp+) |
+| Small shop, phone | 4 to 6 | Shop and Cart visible, the rest behind a labelled "Menu" | Never drop links at a breakpoint without a route to them (found in the design-ux render test) |
+| Web app shell | 5 to 15 | Sidebar at lg, rail at md, drawer below | Full rules: design-product-ui `references/04-shells-density.md` |
+| Native iOS and Android | 3 to 5 | Tab bar / navigation bar | Full rules: design-playbook-mobile `references/platform-conventions.md` |
 | Deep content (docs, settings) | many | Sidebar tree plus in-page table of contents plus search | Breadcrumbs on deep pages |
 
 ## Decision rules
-- **If there are more than 5 primary destinations on mobile:** cut or regroup to 5. Overflow goes to a "More" or profile tab, ranked by usage data. Never put actions (Create, Share) in the tab bar; use a toolbar or floating button.
+- **If there are more than 5 primary destinations on mobile:** cut or regroup to 5, ranked by usage data; overflow to "More". Never put actions in navigation. Native details: design-playbook-mobile.
 - **If the brand wants a hamburger on desktop:** decline. Desktops have room; NN/g recommends showing top-level nav across the top or down the left.
 - **If items exceed width:** priority+ (show most used, rest behind "More") rather than collapsing everything (Brad Frost).
 - **If a section is temporarily empty:** keep its tab or link enabled and explain inside (Apple HIG).
 - **If list browsing is goal-less and homogeneous (feed):** infinite scroll is acceptable, with position restored on Back.
 - **If users search, compare, or need the footer (shops, docs, search results):** load more or pagination. Baymard ranges: categories 10 to 30 lazy-loaded to 50 to 100, then "Load more"; search 25 to 75; mobile 15 to 30 before "Load more". Restore position with `history.pushState()`.
-- **If the app has more than about 20 destinations or power users:** add a command palette (Cmd/Ctrl+K) as an accelerator, never as the only path (Nielsen H7 flexibility; opinion on threshold).
+- **If the app has more than about 20 destinations or power users:** add a command palette as an accelerator, never the only path (Nielsen H7; opinion on threshold). How: design-product-ui `references/02-find-and-command.md`.
 - **If a page is deeper than 2 levels:** breadcrumbs, with the current page unlinked.
 
 ## Filters (faceted navigation)
@@ -45,8 +44,7 @@
 ## Numbers
 | Thing | Value | Source |
 |---|---|---|
-| iOS tabs | 5 or fewer default | Apple HIG |
-| Android width classes | compact under 600 dp, medium 600 to 839, expanded 840 to 1199, large 1200 to 1599, xl 1600+ | Android |
+| Native tabs and width classes | see design-playbook-mobile `references/platform-conventions.md` | Apple HIG; Android |
 | Web breakpoints | sm 640, md 768, lg 1024, xl 1280, 2xl 1536 | FOUNDATIONS |
 | Load more batch (e-commerce) | see decision rules | Baymard |
 

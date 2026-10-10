@@ -1,0 +1,127 @@
+
+/* ===== design-ux wave 2: the purchase flow (kb/briefs/ux/slice-test-briefs.md, brief UX-A) =====
+   design-ux 07: options are native radios in fieldsets, asked in the buyer's words; no default for what would ship wrong;
+   the button is the summary; terms sit under it; the cart is a modal dialog with totals before checkout; undo, not confirm.
+   design-ux 02: phones keep Shop and Cart visible plus a labelled Menu (combo nav); nothing vanishes at a breakpoint. */
+
+/* Navigation: combo nav on phones */
+.menu-toggle { display: inline-flex; align-items: center; gap: var(--space-2); min-height: 40px; padding: var(--space-3) var(--space-4); border: 1px solid var(--color-border-strong); border-radius: var(--radius-full); background: none; color: var(--color-text); font: 500 var(--text-sm)/1.5 var(--font-sans); cursor: pointer; }
+@media (hover: hover) { .menu-toggle:hover { background: var(--state-hover); } }
+.menu-toggle:active { background: var(--state-pressed); }
+.menu-toggle .icon { width: 16px; height: 16px; }
+@media (min-width: 768px) { .menu-toggle { display: none; } }
+.mobile-menu[hidden] { display: none; }
+@media (min-width: 768px) { .mobile-menu { display: none; } }
+.mobile-menu ul { display: grid; padding: 0 0 var(--space-5); }
+.mobile-menu a { display: flex; align-items: center; justify-content: space-between; min-height: 56px; color: var(--color-text); text-decoration: none; font: 400 var(--text-xl)/1.25 var(--font-serif); border-bottom: 1px solid var(--color-border); }
+.mobile-menu a .icon { width: 16px; height: 16px; color: var(--color-text-muted); }
+.nav a.cart-link { gap: var(--space-3); }
+
+/* The order slip: a paper form laid on the band. Surface, ring and one soft shadow; dark: lighter surface and a ring. */
+@media (min-width: 1024px) { .feature .wrap.has-slip { grid-template-columns: 6fr 6fr; align-items: start; } }
+.price-block { margin-top: var(--space-8); }
+.slip { margin: 0; max-width: none; background: var(--color-surface); color: var(--color-text); border-radius: var(--radius-card); box-shadow: var(--ring), var(--shadow-3); padding: var(--space-6) var(--space-5); display: grid; gap: var(--space-6); }
+@media (min-width: 640px) { .slip { padding: var(--space-7); } }
+.slip-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: var(--space-2) var(--space-4); padding-bottom: var(--space-5); border-bottom: 1px solid var(--color-border); }
+.slip-head h3 { font: 400 var(--text-2xl)/var(--leading-tight) var(--font-serif); letter-spacing: -0.015em; }
+.opt-group { border: 0; margin: 0; padding: 0; min-width: 0; }
+.opt-group legend { padding: 0; margin-bottom: var(--space-4); font: 600 var(--text-base)/1.5 var(--font-sans); }
+.opt-group legend .hint { display: block; font-weight: 400; font-size: var(--text-sm); color: var(--color-text-muted); }
+.opts { display: grid; gap: var(--space-3); }
+.opts.cols-2, .opts.cols-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 640px) { .opts.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.opt { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; column-gap: var(--space-4); min-height: 56px; margin: 0; padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); box-shadow: inset 0 0 0 1px var(--color-border-strong); background: var(--color-surface); cursor: pointer; font-weight: 400; font-size: var(--text-sm); line-height: 1.25; }
+.opt.stack { grid-template-columns: auto minmax(0, 1fr); column-gap: var(--space-3); }
+.opt input { font-size: var(--text-sm); margin: 0; width: 16px; height: 16px; accent-color: var(--color-primary); }
+.opt .name { display: block; font-weight: 600; }
+.opt .sub { display: block; color: var(--color-text-muted); font-size: var(--text-xs); line-height: 1.333; margin-top: var(--space-1); }
+.opt .amt { font-variant-numeric: tabular-nums lining-nums; font-weight: 600; }
+.usual[hidden] { display: none; }
+.usual { display: inline-block; margin-top: var(--space-1); font-size: var(--text-xs); font-weight: 600; color: var(--color-accent); }
+@media (hover: hover) { .opt:hover { background: color-mix(in oklch, var(--color-text) 4%, var(--color-surface)); } }
+.opt:has(input:checked) { box-shadow: inset 0 0 0 2px var(--color-primary); background: color-mix(in oklch, var(--color-selected-bg) 50%, var(--color-surface)); }
+@media (prefers-color-scheme: dark) { .opt:has(input:checked) { box-shadow: inset 0 0 0 2px var(--color-orange-300); } }
+.opt:has(input:focus-visible) { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+.opt input:focus-visible { outline: none; }
+.opt-group.invalid .opts { padding-left: var(--space-4); box-shadow: inset 2px 0 0 var(--color-danger); }
+.opt-group .error { margin: 0 0 var(--space-4); }
+.slip-sum { display: grid; gap: var(--space-4); padding-top: var(--space-5); border-top: 1px solid var(--color-border); }
+.slip-sum .ships { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-2) var(--space-4); font-size: var(--text-sm); color: var(--color-text-muted); }
+.slip-sum .ships b { color: var(--color-text); font-weight: 600; }
+.slip .btn-primary { width: 100%; min-height: 56px; }
+.terms { font-size: var(--text-sm); color: var(--color-text-muted); }
+
+/* Dialogs: quick add (a sheet on phones) and the cart drawer. Modal elevation; dark = lighter surface, ring and highlight. */
+dialog { padding: 0; border: 0; color: var(--color-text); background: var(--color-surface); box-shadow: var(--ring), var(--shadow-4); max-height: 100dvh; overscroll-behavior: contain; }
+dialog::backdrop { background: rgb(var(--shadow-rgb) / 0.48); }
+@media (prefers-color-scheme: dark) { dialog { background: var(--color-warm-950); box-shadow: var(--ring), var(--highlight); } dialog::backdrop { background: rgb(0 0 0 / 0.6); } }
+.dlg-head { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-4); padding: var(--space-5) var(--space-4) var(--space-5) var(--space-6); border-bottom: 1px solid var(--color-border); }
+.dlg-head h2 { font: 400 var(--text-2xl)/var(--leading-tight) var(--font-serif); letter-spacing: -0.015em; border-radius: var(--radius-sm); }
+.dlg-head h2:focus { outline: none; }
+.dlg-head .meta { margin-top: var(--space-2); font-size: var(--text-sm); color: var(--color-text-muted); }
+.close, .stepper button { font: inherit; }
+.close { flex: none; display: inline-grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: var(--radius-full); background: none; color: var(--color-text); cursor: pointer; }
+@media (hover: hover) { .close:hover { background: var(--state-hover); } }
+.close:active { background: var(--state-pressed); }
+.close .icon { width: 20px; height: 20px; }
+#quick { width: min(480px, calc(100vw - 32px)); margin: auto; border-radius: var(--radius-xl); }
+#quick form { margin: 0; max-width: none; padding: var(--space-6); display: grid; gap: var(--space-6); }
+@media (max-width: 639px) { #quick { margin: auto 0 0; width: 100vw; max-width: 100vw; border-radius: var(--radius-xl) var(--radius-xl) 0 0; } }
+.qty-row { display: flex; align-items: center; justify-content: space-between; gap: var(--space-5); }
+.qty-row .lbl { font-weight: 600; }
+.stepper { display: inline-flex; align-items: center; border-radius: var(--radius-full); box-shadow: inset 0 0 0 1px var(--color-border-strong); }
+.stepper button { display: inline-grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: var(--radius-full); background: none; color: var(--color-text); cursor: pointer; }
+@media (hover: hover) { .stepper button:hover { background: var(--state-hover); } }
+.stepper button:active { background: var(--state-pressed); }
+.stepper button[aria-disabled=true] { color: var(--color-text-muted); cursor: not-allowed; }
+.stepper .icon { width: 16px; height: 16px; }
+.stepper output { min-width: 32px; text-align: center; font-weight: 600; font-variant-numeric: tabular-nums lining-nums; }
+.fine { font-size: var(--text-sm); color: var(--color-text-muted); }
+
+#cart { margin: 0 0 0 auto; width: min(448px, 100vw); height: 100dvh; max-width: 100vw; border-radius: 0; }
+#cart[open] { display: flex; flex-direction: column; }
+.cart-body { flex: 1; overflow-y: auto; padding: 0 var(--space-6) var(--space-6); }
+.cart-group h3 { padding: var(--space-5) 0 var(--space-3); }
+.line { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: var(--space-2) var(--space-5); padding: var(--space-5) 0; border-top: 1px solid var(--color-border); }
+.thumb { grid-row: span 2; width: 56px; height: 56px; border-radius: var(--radius-md); background: var(--color-illustration-surface); position: relative; overflow: hidden; }
+.thumb svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.thumb .c { fill: none; stroke: var(--color-illustration-line); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.thumb .bag { fill: var(--color-brand); }
+.line .nm { font: 400 var(--text-lg)/var(--leading-snug) var(--font-serif); }
+.line .meta { font-size: var(--text-sm); color: var(--color-text-muted); }
+.line .amt { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums lining-nums; }
+.line .amt small { display: block; font-weight: 400; font-size: var(--text-xs); color: var(--color-text-muted); }
+.line .ctrl { grid-column: 2 / -1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3); }
+.line .terms { grid-column: 2 / -1; font-size: var(--text-xs); }
+.link-btn { min-height: 44px; padding: 0 var(--space-3); margin: 0 calc(var(--space-3) * -1); border: 0; background: none; color: var(--color-text-muted); font: 500 var(--text-sm)/1.5 var(--font-sans); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; cursor: pointer; border-radius: var(--radius-sm); }
+@media (hover: hover) { .link-btn:hover { color: var(--color-text); } }
+.line.removed { grid-template-columns: minmax(0, 1fr) auto; align-items: center; padding: var(--space-3) 0; color: var(--color-text-muted); font-size: var(--text-sm); }
+.line.removed .link-btn { margin: 0; color: var(--color-text); font-weight: 600; }
+.cart-sum { border-top: 1px solid var(--color-border); padding: var(--space-5) var(--space-6) var(--space-6); display: grid; gap: var(--space-4); }
+.cart-sum dl { display: grid; gap: var(--space-2); }
+.cart-sum dl div { display: flex; justify-content: space-between; gap: var(--space-4); font-size: var(--text-sm); }
+.cart-sum dd { font-variant-numeric: tabular-nums lining-nums; }
+.cart-sum dl div.total { font-size: var(--text-base); font-weight: 600; padding-top: var(--space-3); border-top: 1px solid var(--color-border); }
+.cart-sum dl div.then { color: var(--color-text-muted); }
+.cart-sum .btn-primary { width: 100%; min-height: 56px; }
+.cart-sum .fine { text-align: center; }
+.cart-empty { display: grid; justify-items: start; gap: var(--space-4); padding: var(--space-8) 0; }
+.cart-empty h3 { font: 400 var(--text-xl)/var(--leading-tight) var(--font-serif); }
+.cart-empty p { color: var(--color-text-muted); max-inline-size: var(--size-measure); }
+#cart[data-empty] .cart-sum, #cart[data-empty] .cart-groups { display: none; }
+#cart:not([data-empty]) .cart-empty { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  #cart[open] { animation: drawer-in var(--duration-slow) var(--ease-enter); }
+  #quick[open] { animation: fade var(--duration-base) var(--ease-enter); }
+  @keyframes drawer-in { from { translate: 24px 0; opacity: 0; } to { translate: 0 0; opacity: 1; } }
+}
+@media (forced-colors: active) { .opt, .stepper, dialog { border: 1px solid CanvasText; } .opt:has(input:checked) { outline: 2px solid Highlight; } }
+@media (max-width: 767px) {
+  .site-header .wrap { gap: var(--space-3); }
+  .logo { white-space: nowrap; font-size: var(--text-lg); }
+  .nav a:not(.btn) { padding: var(--space-3); }
+  .menu-toggle { padding: var(--space-3) var(--space-4); }
+}
+.site-header .mobile-menu:not([hidden]) { display: block; min-height: 0; }
+@media (min-width: 768px) { .site-header .mobile-menu:not([hidden]) { display: none; } }
+.menu-toggle[aria-expanded=true] { background: var(--state-pressed); }
