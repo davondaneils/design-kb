@@ -1,7 +1,7 @@
 # Forms and input
 
 ## Principles
-1. **The best field is the one you delete.** Every question needs a reason, an owner and a use (GOV.UK question protocol). Baymard's ideal checkout is 7 to 8 fields; the US average is 14.88.
+1. **The best field is the one you delete.** Every question needs a reason, an owner and a use (GOV.UK question protocol). Baymard's ideal checkout is 7 to 8 fields; the average checkout had 11.3 fields in 2024 (11.8 in 2021, 12.7 in 2019; Baymard, "the average in 2024 was 11.3 form fields", baymard.com/blog/checkout-flow-average-form-fields, C9 in `kb/research/conversion/04-checkout-and-forms.md`).
 2. **Labels stay visible.** Placeholder-only labels fail in eight documented ways (NN/g) and caused problems in every Baymard test.
 3. **Validate when the person is done, clear errors the moment they are fixed** (Baymard; Etre study via Wroblewski).
 4. **Never punish:** keep input after errors, accept paste, accept formats people naturally type (spaces in card numbers, +44 or 0 in phones).
@@ -35,7 +35,7 @@
 | Thing | Value | Source |
 |---|---|---|
 | Ideal checkout | 12 to 14 elements, 7 to 8 fields | Baymard |
-| Average US checkout | 23.48 elements, 14.88 fields | Baymard |
+| Average checkout (2024) | 11.3 fields (11.8 in 2021, 12.7 in 2019); the older 14.88 US figure is outdated | Baymard, baymard.com/blog/checkout-flow-average-form-fields (accessed 2026-10-10 via design-conversion research C9) |
 | Inline validation gain | success +22%, time -42%, errors -22% | Etre via Wroblewski (small study) |
 | Mobile input font | 16 px minimum | Vercel; FOUNDATIONS `--text-base` |
 | Field to label gap | 4 to 8 px; field to next label 16 to 24 px | FOUNDATIONS spacing (opinion on exact pick) |

@@ -1,4 +1,4 @@
-# Shared foundation contract (v0.3)
+# Shared foundation contract (v0.4)
 
 Every design-kb skill builds on this. Skills may teach when and how to deviate, but every default, example, token name and cross-reference uses these values so the skills never contradict each other.
 
@@ -18,10 +18,15 @@ Display ramp above `--text-5xl`: `--text-display` and `--text-display-2` are flu
 Measure in CSS: `max-inline-size: 52ch` (63 to 68 characters in every one of the eight text faces measured); keep body between about `40ch` and `56ch`; never `66ch`, which renders 81 to 86 characters in every face. `em` does not track the face: `32em` gives 61 to 77 characters depending on the face (Inter 66, Times-width serifs 77). Source: `kb/research/typography/measure-cpl.mjs`, counted the same way as the lint; design-typography `references/01-scale-measure-leading.md`. Confirm with the lint. Optional token: `--size-measure: 52ch`.
 
 ## Color roles (semantic)
-`bg`, `surface`, `surface-raised`, `text`, `text-muted`, `border`, `primary`, `on-primary`, `accent`, `success`, `warning`, `danger`, `info`, `focus-ring`. Primitives are 50 to 950 ramps per hue. Light and dark themes map the same roles. Minimums: WCAG 2.2 AA (4.5:1 body text, 3:1 large text and UI components and focus indicators).
+`bg`, `surface`, `surface-raised`, `surface-sunken`, `text`, `text-muted`, `text-muted-on-tint`, `border`, `primary`, `on-primary`, `accent`, `success`, `warning`, `danger`, `info`, `focus-ring`. Primitives are 50 to 950 ramps per hue. Light and dark themes map the same roles. Minimums: WCAG 2.2 AA (4.5:1 body text, 3:1 large text and UI components and focus indicators).
+
+- `surface-sunken`: a well below the page (inputs on a surface, code blocks, table zebra, disabled fills, the track of a meter). One step darker than `bg` in light, one step darker than `surface` in dark.
+- `text-muted-on-tint`: muted text on any tinted or sunken surface (`surface-sunken`, every `*-subtle` status fill, feature bands). `text-muted` is tuned for `bg` and `surface` only and often fails on a tint: the combined pages measured 4.38:1 and 4.24:1 there (`kb/tests/design-conversion.md`). Rule: measure every muted-text and tint pair in both themes; it reaches 4.5:1, or the text uses `text-muted-on-tint` (one ramp step darker in light, lighter in dark) or `text`.
 
 ## Breakpoints (mobile first, min-width)
 sm 640, md 768, lg 1024, xl 1280, 2xl 1536. Prefer container queries for components.
+
+Container query conditions are written in `rem` (40rem = 640px at the 16px root), never `em`: the spec evaluates relative units in a container condition against the query container's own computed values (W3C css-contain-3), so `44em` inside a 14px dashboard content area fired at 616px, not 704px (`kb/research/frontend/07-measured-build-quality.md` finding 7). `px` is allowed; `rem` is the default so media and container numbers read the same.
 
 ## Radius and elevation
 Radius: 0, 4, 8, 12, 16, full. Elevation: 0 to 4 shadow levels; dark themes express elevation with lighter surfaces, not darker shadows.
@@ -31,21 +36,54 @@ Shadow recipe (design-polish `assets/polish-tokens.css`, adopted here; the value
 | Token | Light | Dark |
 |---|---|---|
 | `--shadow-rgb` | the neutral 950 as an RGB triplet, for example `31 34 36` | same |
-| `--shadow-0` | `none` | `none` |
-| `--shadow-1` | `0 1px 2px rgb(var(--shadow-rgb) / 0.06)` | `none` |
-| `--shadow-2` | `0 1px 2px rgb(var(--shadow-rgb) / 0.06), 0 4px 12px -2px rgb(var(--shadow-rgb) / 0.08)` | `none` |
-| `--shadow-3` | `0 2px 4px -1px rgb(var(--shadow-rgb) / 0.08), 0 12px 24px -6px rgb(var(--shadow-rgb) / 0.16)` | `none` |
-| `--shadow-4` | `0 4px 8px -2px rgb(var(--shadow-rgb) / 0.10), 0 24px 48px -12px rgb(var(--shadow-rgb) / 0.24)` | `none` |
+| `--shadow-0` | `0 0 0 0 transparent` | `0 0 0 0 transparent` |
+| `--shadow-1` | `0 1px 2px rgb(var(--shadow-rgb) / 0.06)` | `0 0 0 0 transparent` |
+| `--shadow-2` | `0 1px 2px rgb(var(--shadow-rgb) / 0.06), 0 4px 12px -2px rgb(var(--shadow-rgb) / 0.08)` | `0 0 0 0 transparent` |
+| `--shadow-3` | `0 2px 4px -1px rgb(var(--shadow-rgb) / 0.08), 0 12px 24px -6px rgb(var(--shadow-rgb) / 0.16)` | `0 0 0 0 transparent` |
+| `--shadow-4` | `0 4px 8px -2px rgb(var(--shadow-rgb) / 0.10), 0 24px 48px -12px rgb(var(--shadow-rgb) / 0.24)` | `0 0 0 0 transparent` |
 | `--ring` | `0 0 0 1px rgb(var(--shadow-rgb) / 0.08)` | `0 0 0 1px rgb(255 255 255 / 0.08)` |
 | `--highlight` | `inset 0 1px 0 rgb(255 255 255 / 0.12)` (filled buttons) | `inset 0 1px 0 rgb(255 255 255 / 0.06)` |
 | `--elevation-card` | `var(--ring), var(--shadow-1)` | `var(--ring)` |
 | `--elevation-popover` | `var(--ring), var(--shadow-3)` | `var(--ring), var(--highlight)` |
 | `--elevation-modal` | `var(--ring), var(--shadow-4)` | `var(--ring), var(--highlight)` |
 
+Never `none` inside a shadow token: tokens get composed into lists (`box-shadow: var(--highlight), var(--shadow-1)`), a list that contains `none` is invalid, so the whole declaration computes to `none` and the dark-theme highlight never renders (measured with getComputedStyle on both combined pages; `kb/research/frontend/07-measured-build-quality.md` finding 5). A transparent zero layer composes and paints nothing; the lint ignores it.
+
 State layers on neutral surfaces (Material 3, m3.material.io "States", accessed 2026-10-09): hover 8 percent, focus 10 percent, pressed 10 percent, dragged 16 percent of the content color. Pressed must still differ from hover: on filled controls use `--color-primary-active`, one ramp step past hover.
 
 ## Motion
 Durations: instant 0 to 100ms, fast 150ms, base 200 to 250ms, slow 300 to 400ms, page 400 to 600ms. Easing: standard `cubic-bezier(0.2, 0, 0, 1)`, enter (decelerate) `cubic-bezier(0, 0, 0, 1)`, exit (accelerate) `cubic-bezier(0.3, 0, 1, 1)`. Always honor `prefers-reduced-motion`.
+
+- **Semantic pairs** (a duration plus a curve, for transition shorthands; design-motion `assets/motion-tokens.css`): `--motion-hover: var(--duration-instant) var(--ease-standard)`, `--motion-enter: var(--duration-base) var(--ease-enter)`, `--motion-exit: var(--duration-fast) var(--ease-exit)`. Use: `transition: background-color var(--motion-hover)`.
+- **`linear` is allowed** for loops (spinners, marquees), scroll-linked motion (the scroll is the easing) and reveals whose x axis is time (a chart drawing on along a date axis). Never on an object that starts and stops (design-motion SKILL.md fundamental 6 and signature move 17).
+- **Marketing reveal ceiling (opinion).** Anything a person triggers stays at 600ms or less. A marketing page may give **one hero reveal per page** up to **800ms**, on `--ease-enter` or a strong ease-out, played once on load and removed under reduced motion. Measured exemplars do this: Stripe reveal transforms `.8s cubic-bezier(.165,.84,.44,1)` (`kb/teardowns/stripe-home.md`) and Raycast extension cards `.7s cubic-bezier(.215,.61,.355,1)` (`kb/teardowns/raycast-home.md`). NN/g puts most UI animation at 100 to 500ms and says about 500ms starts to "feel like a drag" (`kb/research/motion/02-timing-easing.md`), which is why the exception covers one unprompted entrance only. Everywhere else, 600ms is the ceiling.
+- **Reduced motion** (`prefers-reduced-motion: reduce`): nothing moves, scales, rotates or resizes. Opacity and color changes may stay at `--duration-fast` (150ms) or less, played once; loops stop. The lint fails any animation whose keyframes change position, size or transform under reduce, and warns on opacity or color animations over 150ms or looping. This replaces the v0.3 lint's flat 100ms threshold, which failed the 150ms fades that `accessibility.md` allows.
+- Scripts read motion tokens from CSS (`getComputedStyle`); no millisecond literals in JS (design-motion).
+
+## Icons
+Owner: design-graphic with design-polish. One icon set per product: one grid, one stroke width, one cap, one join, `currentColor` for ink.
+
+| Token | Value | Use |
+|---|---|---|
+| `--size-icon-sm` | 12px | inline with `--text-xs` meta text |
+| `--size-icon-md` | 16px | default, beside 14 and 16px text |
+| `--size-icon-lg` | 20px | beside 20px text, list leading icons |
+| `--size-icon-xl` | 24px | toolbars, tab bars, touch-first screens |
+| `--icon-stroke` | 1.5px | set beside font weight: heavier text gets a heavier stroke; keep it constant across sizes with `vector-effect: non-scaling-stroke` or redraw per size (design-graphic `references/02-icon-systems.md`) |
+
+Rules: one `stroke-linecap` and one `stroke-linejoin` per page; no hard-coded `fill` or `stroke` colors inside icons (use `currentColor` or a token); ink stays at least 1px inside a 16px box. The lint checks caps, joins and colors (`icons`); `skills/design-graphic/assets/icon_audit.mjs` adds ink volume and pixel blur as prompts to look. Measured case for the rule: the combined dashboard passed the v0.3 lint with round and butt caps, round and miter joins, and `#ffffff` inside status icons (design-graphic pipeline notes).
+
+## Sizes
+Control and row heights (design-layout, design-product-ui): `--size-control-sm` 32px, `--size-control-md` 40px, `--size-control-lg` 48px. 40 is a size, not a spacing step; padding and gaps still come from the spacing scale. Touch: 44px minimum on iOS and the web, 48dp on native Android (Material).
+
+## Content mechanics
+One sheet for every skill's examples and every test page (design-copy `references/06-copy-in-context.md`; quotes and dates in `kb/research/copy/06-copy-in-context.md`):
+- **Clock:** US English uses the 12-hour clock, "2:05 pm", "3 pm" (no ":00"). Polaris: "Use the 12-hour clock, followed by am or pm"; Mailchimp: "Use numerals and am or pm, with a space in between." One clock per page.
+- **Dates:** "Tue, Oct 13" in UI; absolute dates for money, shipping and deadlines, never "this Friday". Check every weekday against the year (`claims_inventory.mjs` flags a wrong one).
+- **No line breaks inside** a date, a time, a price, a range or a number and its unit: no-break spaces inside "Tue,&nbsp;Oct&nbsp;13", "2:05&nbsp;pm", "1,100&nbsp;to&nbsp;2,100"; a narrow no-break space before units ("340&#8239;g").
+- **Numbers:** numerals, commas from 1,000, spelled out only at the start of a sentence (Polaris, Mailchimp); a true minus for negatives in data.
+- **Case and spelling:** sentence case for headings, buttons, menus and tabs (Microsoft, GOV.UK); US spelling for US brands ("meters").
+- **Truth:** every number in copy matches the data or source it summarises; each promise has one wording; one verb per action across the page. The combined pages carried three false numbers past the critic, the tester and a blind rank (design-copy pipeline notes); only a claim-by-claim check catches them.
 
 ## Accessibility (cross-cutting)
 WCAG 2.2 AA is the floor in every skill: contrast as above, visible focus, 24x24 CSS px minimum target (44x44 preferred for touch), keyboard operable, no information by color alone, reduced motion respected.
@@ -56,22 +94,32 @@ Findings every domain must know (details in design-foundations `references/acces
 - `aria-label` on a generic `span` or `div` is prohibited; use visible `aria-hidden` text plus an sr-only full value.
 - Text over images, textures and art: judge the worst pixel on a render with the text hidden, not the average (design-art-direction `references/03-composition-and-overlays.md`; `tools/lint.mjs` overlay check).
 - Pages with a dark theme set `color-scheme` on `:root` so native controls and scrollbars follow.
+- Logos and logotypes are exempt from contrast (WCAG 2.2, 1.4.3: "Text that is part of a logo or brand name has no contrast requirement"; W3C Understanding 1.4.11). The exemption ends where the logo is a link or control (it needs a contrasting variant), and it does not cover a favicon's job: **favicon ink reaches 3:1 against light, gray and dark tab strips, or the mark sits on its own field** (opinion; design-graphic SKILL.md fundamental 11, measured with `assets/tab_contrast.py`: a mid-orange mark measured 3.04:1 on white and 2.32:1 on a gray tab).
+- WCAG 2.2.2 covers auto-updating content too: a live KPI or ticker beside other content needs pause, stop, hide or a frequency control (W3C Understanding 2.2.2, quoted in `kb/research/motion/07-motion-on-real-pages.md`).
+- Announcements while a modal is open come from a live region inside the dialog; a page-level region is inert and silent (design-ux wave 2 test).
+- Skip link (2.4.1): when anything focusable sits before `main`, the first Tab lands on a same-page link to `main` that is visible on focus. The lint checks it.
+
+Delivery findings every page must know (design-search `references/07-page-build.md`, facts checked 2026-10-10):
+- Googlebot reads only the first 2 MB of uncompressed HTML; self-contained pages with inlined fonts stay well under it (warn at 1 MB).
+- Google Search's favicon formats exclude SVG: ship a PNG (larger than 48px) beside any SVG icon.
+- Raster assets (social cards, icons) are outside the type scale gate; a 104px wordmark on a social card is deliberate.
 
 ## Token schema
 One schema for every domain. Primitives hold raw values; semantic tokens point at primitives; components use semantic tokens only.
 
 | Category | Primitive tokens | Semantic tokens | Owner domain |
 |---|---|---|---|
-| Color | `--color-{hue}-{50..950}`, neutrals add `975`, `990`; `--color-brand` (exact brand value) | `--color-{role}` and `--color-{role}-{variant}` for the roles above, for example `--color-text-muted`, `--color-primary-hover`, `--color-primary-active` (pressed: one step past hover, never equal to it), `--color-danger-subtle` | design-color |
+| Color | `--color-{hue}-{50..950}`, neutrals add `975`, `990`; `--color-brand` (exact brand value) | `--color-{role}` and `--color-{role}-{variant}` for the roles above, for example `--color-text-muted`, `--color-text-muted-on-tint`, `--color-surface-sunken`, `--color-primary-hover`, `--color-primary-active` (pressed: one step past hover, never equal to it), `--color-danger-subtle` | design-color |
 | Illustration | (uses the color primitives) | `--color-illustration-surface`, `--color-illustration-line`, `--color-illustration-accent`, `--color-illustration-accent-fill`; remapped per theme like any role | design-art-direction with design-color |
 | Space | `--space-0` to `--space-11` (0, 2, 4, 8, 12, 16, 24, 32, 48, 64, 96, 128) | `--space-gap-{sm,md,lg}`, `--space-section` (map to steps, never raw px) | design-layout |
 | Type size | `--text-xs` to `--text-5xl` (12 to 61) | `--text-body`, `--text-label`, `--text-heading-{1..4}`, `--text-display`, `--text-display-2` (fluid, may exceed 61, max at most 2.5x min) | design-typography |
-| Measure | | `--size-measure` (52ch) | design-typography |
 | Type other | `--font-{sans,serif,mono}`, `--weight-{regular,medium,semibold,bold}`, `--leading-{tight,snug,normal}` (1.1, 1.25, 1.5) | | design-typography |
 | Radius | `--radius-{none,sm,md,lg,xl,full}` (0, 4, 8, 12, 16, 9999px) | `--radius-control`, `--radius-card` | design-layout |
 | Elevation | `--shadow-{0..4}`, `--shadow-rgb` (tint, as space-separated RGB) | `--elevation-{card,popover,modal}` (ring plus shadow), `--ring` (1px edge), `--highlight` (dark-theme top edge) | design-layout with design-polish (recipe above) |
-| Motion | `--duration-{instant,fast,base,slow,page}`, `--ease-{standard,enter,exit}` | `--motion-{hover,enter,exit}` | design-motion |
-| Breakpoint | sm 640, md 768, lg 1024, xl 1280, 2xl 1536 (media and container queries cannot read custom properties, so use the numbers) | | design-layout |
+| Motion | `--duration-{instant,fast,base,slow,page}`, `--ease-{standard,enter,exit}`; the `linear` keyword for loops, scroll-linked and time-axis motion | `--motion-{hover,enter,exit}` (values in Motion above) | design-motion |
+| Icon | `--size-icon-{sm,md,lg,xl}` (12, 16, 20, 24) | `--icon-stroke` (1.5px) | design-graphic with design-polish |
+| Size | `--size-control-{sm,md,lg}` (32, 40, 48) | `--size-measure` (52ch) | design-layout; measure: design-typography |
+| Breakpoint | sm 640, md 768, lg 1024, xl 1280, 2xl 1536 (media and container queries cannot read custom properties, so use the numbers; container conditions in `rem`: 40rem, 48rem, 64rem, 80rem, 96rem) | | design-layout |
 
 Rules: light and dark themes remap the same semantic names; a component never names a primitive; a new token needs a role no existing token covers.
 
@@ -92,7 +140,7 @@ Every domain chapter (draft and reference file) uses two layers, in this order.
 Opinion is labelled opinion. Facts carry a source with a short quote, URL and access date (see the researcher's source policy).
 
 ## Fundamentals checklist
-Every rendered test page must pass every item. One miss fails the page, however good the rest is. `[lint]` items are hard gates enforced by `node tools/lint.mjs <page.html>` (nonzero exit on any fail); `[judged]` items are checked by the tester on the screenshots from `node tools/render.mjs`.
+Every rendered test page must pass every item. One miss fails the page, however good the rest is. `[lint]` items are hard gates enforced by `node tools/lint.mjs <page.html>` (nonzero exit on any fail); `[judged]` items are checked by the tester on the screenshots from `node tools/render.mjs` at 390, 768, 1024 and 1440px.
 
 | # | Item | How |
 |---|---|---|
@@ -104,15 +152,27 @@ Every rendered test page must pass every item. One miss fails the page, however 
 | 6 | Every font size on the type scale (fluid display sizes of 39px and up allowed with `clamp()`) | [lint] |
 | 7 | Every margin, padding and gap on the spacing scale | [lint] |
 | 8 | No horizontal scroll at 390px | [lint] |
-| 9 | Visible focus on every element in the tab order (2px ring, 2px offset by default); focus never changes an element's shape or size | [lint] presence and shape (`focus`, `focus-shape`); [judged] 3:1 contrast of the ring, on the state sheet |
-| 10 | If anything moves, `prefers-reduced-motion: reduce` removes the movement | [lint] |
+| 9 | Visible focus on every element in the tab order (2px ring, 2px offset by default); focus never changes an element's shape or size; a skip link when anything focusable precedes `main` | [lint] presence and shape (`focus`, `focus-shape`), skip link (`skip-link`); [judged] 3:1 contrast of the ring, on the state sheet |
+| 10 | If anything moves, `prefers-reduced-motion: reduce` removes the movement (opacity and color up to 150ms may stay); keyboard shortcuts do not animate | [lint] moving keyframes under reduce (`motion`); [judged] keyboard paths, filmed with design-motion `motion-audit.mjs` (`expect: 'none'`) |
 | 11 | No information by color alone (errors have icon plus text, links underlined in body copy, charts labelled) | [judged] |
-| 12 | Hierarchy: one clear primary action per view, headings in order, scan path obvious | [judged] (heading order partly by axe) |
-| 13 | Consistency: tokens from the schema, one radius family, one icon style, aligned edges | [lint] radius family (`radius`); [judged] the rest |
+| 12 | Hierarchy: one clear primary action per view, headings in order, scan path obvious | [lint] one filled call to action per screen height (`primary`); [judged] the rest (heading order partly by axe) |
+| 13 | Consistency: tokens from the schema, one radius family, one icon style, aligned edges | [lint] radius family (`radius`); one icon style as one cap, one join and no hard-coded icon colors (`icons`, ported from `skills/design-graphic/assets/icon_audit.mjs`); [judged] the rest |
 | 14 | Both themes designed (not inverted) when the brief asks for dark mode; `color-scheme` set | [lint] `color-scheme`; [judged] the design |
 | 15 | States: hover, focus, active, disabled, error, empty and loading exist where the page needs them; no state shifts layout | [lint] layout shift (`state-shift`) and every `?state=` URL linted; [judged] on a state sheet (every control in every state) |
+| 16 | Copy is true and consistent: every number matches its source; each promise has one wording; one verb per action; content mechanics as above (one clock, weekday-checked dates, no breaks inside dates, prices, ranges and units) | `node skills/design-copy/assets/claims_inventory.mjs page.html --year <year>` exits 0 (its WEEKDAY, CLOCK and RELATIVE flags); [judged] every listed claim ticked against its data, price list or log |
 
 ## Change log
+- v0.4 (2026-10-10, editor-in-chief, from the wave 2 pipeline notes of all twelve domains, PR #6 patterns and PR #7 teardowns):
+  - Color roles added: `surface-sunken`, `text-muted-on-tint`, with the rule that every muted-text and tint pair is measured (conversion found 4.38:1 and 4.24:1).
+  - Dark shadow tokens are `0 0 0 0 transparent`, not `none`, so composed lists keep the highlight (frontend finding 5); `--shadow-0` likewise.
+  - Container query conditions in `rem`, never `em` (frontend finding 7).
+  - Motion: `--motion-{hover,enter,exit}` values adopted from design-motion; `linear` allowed for loops, scroll-linked and time-axis motion; one hero reveal per marketing page may run to 800ms (opinion; Stripe 800ms and Raycast 700ms measured), 600ms elsewhere; the reduced-motion rule is now precise (no movement; opacity and color up to 150ms), which resolves the conflict between the v0.3 lint (100ms) and `accessibility.md` (150ms).
+  - Icons: `--size-icon-{sm,md,lg,xl}` (12, 16, 20, 24) and `--icon-stroke` (1.5px); one cap, one join, no hard-coded colors, linted.
+  - Sizes: `--size-control-{sm,md,lg}` (32, 40, 48); 48dp touch on native Android.
+  - Content mechanics section: US 12-hour clock, weekday-checked dates, no line breaks inside dates, times, prices, ranges and number-unit pairs, numerals, sentence case, US spelling for US brands, copy matches its data.
+  - Accessibility findings: the logo contrast exemption and its limits, favicon contrast (opinion), 2.2.2 for auto-updating content, live regions inside modals, skip link; delivery findings (2 MB Googlebot limit, PNG favicon, raster assets outside the type scale).
+  - Checklist: item 16 "copy is true and consistent" (claims inventory plus judged); item 13 backs "one icon style" with the lint `icons` check; item 12 gains the `primary` lint; item 9 gains `skip-link`; item 10 states the reduce rule and the keyboard-path rule; judged rows are read at 390, 768, 1024 and 1440.
+  - Not adopted, still open: `--space-12` 160 and `--size-container` (design-layout; the combined pages disagree on 1232 and 1280), a `states` cascade layer (design-frontend), the search gate as a checklist row (kept in the director's loop).
 - v0.3 (2026-10-09, editor-in-chief, from the typography, product UI, art direction and polish waves' pipeline notes):
   - Measure default `32em` replaced by `max-inline-size: 52ch` (typography measured eight faces: 66ch gives 81 to 86 characters, 32em gives 61 to 77, 52ch gives 63 to 68). Optional `--size-measure`.
   - Display ramp named above `--text-5xl`: `--text-display`, `--text-display-2`, fluid, max at most 2.5x min; display lines of 100px and up may use leading 0.95.

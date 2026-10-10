@@ -8,7 +8,7 @@ Three layers, all shipped as Claude skills in `skills/`:
 
 | Layer | Skills | Role |
 |---|---|---|
-| Foundations | `design-foundations` | Always loaded first. Token system, the 15-item fundamentals gate, accessibility (WCAG 2.2 AA) as the cross-cutting floor. Mirrors `kb/FOUNDATIONS.md`, the source of truth. |
+| Foundations | `design-foundations` | Always loaded first. Token system, the 16-item fundamentals gate, accessibility (WCAG 2.2 AA) as the cross-cutting floor. Mirrors `kb/FOUNDATIONS.md`, the source of truth. |
 | Job playbooks | `design-playbook-landing`, `design-playbook-dashboard`, `design-playbook-mobile`, `design-playbook-brand` | What triggers. Each says which references to load in what order, what done looks like, and the signature moves of the closest exemplars. |
 | Domain references | `design-color`, `design-typography`, `design-layout`, `design-graphic`, `design-ux`, `design-motion`, `design-copy`, `design-frontend`, `design-search` | Depth, loaded on demand by the director or a playbook. Not triggered on their own. |
 

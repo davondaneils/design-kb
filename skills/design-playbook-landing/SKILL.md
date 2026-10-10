@@ -8,17 +8,18 @@ description: Job playbook for a marketing site or landing page at the level of s
 A landing page has one job: make the right visitor understand the offer and take one action. Everything below serves that.
 
 ## 1. Load in this order
-1. **design-foundations** (always): tokens, the 15-item gate, `references/accessibility.md`.
+1. **design-foundations** (always): tokens, the 16-item gate, `references/accessibility.md`.
 2. **website-strategy** if audience, positioning or competitors are not given. No visual decisions before this.
-3. **Copy**, by the rule in section 2: design-copy `references/01-page-copy-structure.md` and `03-voice-and-tone.md`, or copywriting.
-4. **design-layout**: `references/05-page-composition-and-density.md`, `01-grids-and-structure.md`, `04-responsive-and-adaptive.md`.
+3. **Copy**, by the rule in section 2: design-copy `references/01-page-copy-structure.md`, `03-voice-and-tone.md` and `06-copy-in-context.md` (every number is a claim; content mechanics), or copywriting.
+4. **design-layout**: `references/05-page-composition-and-density.md`, `01-grids-and-structure.md`, `04-responsive-and-adaptive.md`, and `06-pacing-signature-and-phone-editing.md` for any page over four sections (write the flatplan before layout and the phone edit list before the 390 build).
 5. **design-typography**: `references/02-selection-pairing.md`, `01-scale-measure-leading.md`, `05-typographic-detail.md`; `06-type-without-web-fonts.md` (system stack, self-hosted or mixed, decided before layout); `07-type-led-pages.md` when type carries the page (display 49 to 112px, leading 0.95, optical margin).
 6. **design-color**: `references/palette-building.md`, `ui-tokens-themes.md`.
-7. **design-art-direction**, right after color: SKILL.md, then `references/01-concept-and-consistency.md` and `04-visuals-without-image-hosts.md` (always); `02-photography.md` and `03-composition-and-overlays.md` when photos exist or text sits on images or textures; `05-requesting-photography.md` at hand-over. Write the one-sentence concept and its reject test before layout. design-graphic `references/03-photography-direction.md` and `04-illustration.md` for the craft of each image.
-8. **design-motion**: `references/01-purpose-restraint.md`, `04-micro-interactions.md`. Light touch.
-9. **design-frontend**: build; `references/05-images-fonts.md` for LCP and font loading.
-10. **design-search**: `references/02-on-page-content.md`, `03-structured-data.md`.
-11. **design-polish** after the lint gate passes and before the exemplar comparison: SKILL.md, `references/06-polish-checklist.md`, and the reference each failing item names. Build a state sheet for every interactive control. Then the self-critique loop in design-director.
+7. **design-art-direction**, right after color: SKILL.md, then `references/01-concept-and-consistency.md` and `04-visuals-without-image-hosts.md` (always); `02-photography.md` and `03-composition-and-overlays.md` when photos exist or text sits on images or textures; `05-requesting-photography.md` at hand-over. Write the one-sentence concept and its reject test before layout. design-graphic `references/03-photography-direction.md` and `04-illustration.md` for the craft of each image; `references/01-logo-identity.md` (outlining workflow, responsive tiers, favicon) when the brief supplies no logo files.
+8. **When the page sells** (pricing, subscription, shop, booking, checkout): **design-conversion** SKILL.md, then the references its section names (`01-cta-hierarchy.md`, `02-proof-and-trust.md`, `03-pricing-and-plans.md`, `04-checkout-and-forms.md`); then **design-ux** `references/07-commerce-flows.md`, `03-forms.md` and `02-navigation-ia.md` (purchase flow, field budget, no dead ends). Funnel step order and offers stay with sales-funnels.
+9. **design-motion**: `references/01-purpose-restraint.md`, `04-micro-interactions.md`; add `03-choreography-transitions.md` (reveals and LCP) and `07-motion-on-real-pages.md` when the page shows data or a drawing that could reveal. Light touch: one hero reveal may run to 800ms, everything else 600ms or less (FOUNDATIONS Motion).
+10. **design-frontend**: build; `references/05-images-fonts.md` for LCP and font loading, `07-measured-build-quality.md` for the proof step.
+11. **design-search**: `references/07-page-build.md` first (it applies the rest to a built page), then `02-on-page-content.md` and `03-structured-data.md`.
+12. **design-polish** after the lint gate passes and before the exemplar comparison: SKILL.md, `references/06-polish-checklist.md`, and the reference each failing item names. Build a state sheet for every interactive control. Then the self-critique loop in design-director.
 
 ## 2. Which copy skill
 - **copywriting (direct response)** when the page sells in one sitting through a long argument: sales pages, long-form sales letters, VSL pages, advertorials, funnel steps (opt-in, order form, upsell), promo emails and ads. Pair with sales-funnels when the page is one step in a funnel.
@@ -28,19 +29,24 @@ A landing page has one job: make the right visitor understand the offer and take
 
 ## 3. Non-negotiables for this job
 1. One primary action per view, the same verb everywhere it appears.
-2. The hero says what it is, for whom, and why now, in the visible first screen at 390px and 1440px.
+2. The hero says what it is, for whom, and why now, in the visible first screen at 390px and 1440px. Check the 390 first screen (390x844) for the category word ("coffee subscription", "invoicing software"): a lead paragraph that does the clarity job falls below the first phone screen when an image sits between it and the H1.
 3. Proof sits next to the claim it proves.
 4. Real content and real product imagery; never lorem ipsum, never a generic stock hero.
 5. Light and dark designed when asked; every section passes the gate in both.
 
 ## 4. Done means
-1. `node tools/lint.mjs page.html` exits 0.
-2. `node tools/render.mjs page.html out/` and every `[judged]` row holds on the screenshots, plus the state sheet (every control in every state) rendered and linted.
-3. Side by side with the named closest exemplars, rated close (not clearly below) on hierarchy, type, imagery, rhythm and craft. Pick them from `references/signature-moves.md` by site type.
-4. The hand-over names what is still short of the exemplar.
+1. `node tools/lint.mjs page.html` exits 0, and so does every state URL and the state sheet.
+2. `node tools/render.mjs page.html out/ --widths 390,768,1024,1440` and every `[judged]` row holds on the screenshots, plus the state sheet (every control in every state) rendered and linted.
+3. `claims_inventory.mjs` exits 0 and every claim is ticked against its source; `search-check.mjs` exits 0; `conversion-audit.mjs` exits 0 when the page sells (design-director section 5).
+4. At 390: the category word and the primary action sit in the first 844px; when the page sells, the price and the primary action are both there. At 1440: the next section peeks above 900px. Measure with `kb/tests/design-layout/measure-layout.mjs`.
+5. A term line (renews when, at what price, how to cancel online) sits beside any renewal or subscription CTA (design-conversion).
+6. Side by side with the named closest exemplars, rated close (not clearly below) on hierarchy, type, imagery, rhythm and craft. Pick them from `kb/teardowns/INDEX.md` (Stripe first, then Linear, Vercel, Ramp for product and SaaS) and `references/signature-moves.md`; compare measured numbers, not impressions.
+7. The hand-over names what is still short of the exemplar.
 
 ## 5. Reference map
 | Need | Read |
 |---|---|
 | Closest exemplar by site type, and the moves the marketing exemplars share | `references/signature-moves.md` |
+| Measured exemplar values (type steps, colors, radii, durations) and the contrast misses not to copy | `kb/teardowns/INDEX.md`, then `stripe-home.md`, `linear-home.md`, `vercel-home.md`, `ramp-home.md` |
+| Checkout and upgrade UI examples | `kb/references/patterns/11-checkout-and-upgrade.md` |
 | Section order for common landing page types | design-copy `references/01-page-copy-structure.md`, design-layout `references/05-page-composition-and-density.md` |

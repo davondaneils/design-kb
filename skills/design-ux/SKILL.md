@@ -48,7 +48,7 @@ Gate details, numbers and examples: `references/01-fundamentals.md`.
 | Undo toast | at least 5 s, pauses on hover and focus (WCAG 2.2.1) | opinion on length |
 | Visible options before a select | 4 | Shopify storefront guidelines |
 | Mobile input text | 16 px (`--text-base`) so iOS does not zoom | Vercel; FOUNDATIONS |
-| Ideal checkout | 7 to 8 fields (12 to 14 elements); US average 14.88 | Baymard |
+| Ideal checkout | 7 to 8 fields (12 to 14 elements); average 11.3 fields in 2024 | Baymard (`references/03-forms.md`) |
 | Abandonment to design against | extra costs 40%, forced account 18%, total not shown upfront 12% | Baymard |
 | Setup checklist | 3 to 5 steps, count only steps truly done | opinion; Nunes and Dreze 2006 |
 
@@ -75,9 +75,17 @@ Gate details, numbers and examples: `references/01-fundamentals.md`.
 - Optimistic UI for high-success reversible actions; never for payments or sends to others.
 - Panel-level states inside dashboards (skeletons, partial failure, stale data, permissions): design-product-ui `05-states-bulk.md`.
 
+### Notifications (`references/04-states-feedback.md`; examples in `kb/references/patterns/09-notifications.md`)
+- Ask for push permission after the first useful moment, never at first launch: after the person schedules a first task (Apple), taps a bell or places an order (Android), through a pre-prompt so a "no" does not burn the system dialog.
+- One channel per event: if the person read it in the inbox, skip the email (Linear digests); hold mobile push while they are active on desktop (Slack, 1 min after lock or 10 min idle). Apple: "Avoid sending multiple notifications for the same thing."
+- Split the inbox into what needs the person and everything else, with counts (Linear "Priority 4", "Other 12"); each row says why it arrived ("Lena mentioned you", GitHub reason labels). Triage is Done, snooze or save, with a way back, not delete only.
+- Never put an error in a toast (Polaris); action toasts stay at least 10 s (Polaris) or until dismissed (Material, Carbon).
+
 ### Onboarding and first run (`references/05-onboarding.md`)
 - Default is no tour (NN/g, 70 users: tutorials did not help). The first screen is the tutorial.
+- Let people use the real product first: a demo or sample workspace before sign-up (Linear `linear.app/demo`), a lesson before the account (Duolingo), a test mode the minute the account exists (Stripe). Fold sign-up into the first real action (Vercel `/new`). Examples and links: `kb/references/patterns/01-onboarding.md`.
 - Defer account, settings, permissions, ratings and payment until after first value.
+- Ask for a permission only when a feature needs it, at the moment the person reaches for that feature ("only prompt for microphone access when a user clicks on the microphone button", Android). iOS primer: one "Continue" button, no exit; Android primer: always a cancel. One cross-platform primer breaks one of the two rules (`kb/references/patterns/01-onboarding.md` items 10 and 11).
 - Data products: labelled sample data, a 3 to 5 step guide with a count, a live and bounded wait for the first data, a named cause and fix on failure, metrics that cannot compute yet say when they will. Each is a designed state (table in reference 05).
 
 ### Purchase and subscription flows (`references/07-commerce-flows.md`)
@@ -131,6 +139,7 @@ When building: render and lint every state (`node tools/lint.mjs page.html --sta
 | Field rules, validation, errors, passwords, checkout fields | `references/03-forms.md` |
 | Loading table, empty state types, error ladder, toasts, AI tasks | `references/04-states-feedback.md` |
 | Onboarding chooser, permissions, sample data, first run as states | `references/05-onboarding.md` |
+| What the best shipped onboarding, notifications, empty states, forms and checkout do (observed, linked) | `kb/references/patterns/01-onboarding.md`, `09-notifications.md`, `02-empty-states.md`, `06-forms-and-validation.md`, `11-checkout-and-upgrade.md` |
 | Component spec template, touch expert moves | `references/06-platforms-touch-systems.md` |
 | Options, one-time vs subscription, cadence, cart, checkout entry | `references/07-commerce-flows.md` |
 | Review output format and worked review | `references/08-review-template.md` |

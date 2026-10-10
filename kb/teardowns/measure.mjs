@@ -2,15 +2,22 @@
 // Measure a live page's computed CSS for an exemplar teardown.
 //
 // Usage: node kb/teardowns/measure.mjs <url> <out.json> [--widths 1440,390]
+//   Works on a local file too (a path or file: URL), which is how the head capture was tested while exemplar hosts
+//   were blocked.
 //
 // Reads getComputedStyle on every visible element at each width (light scheme,
 // motion allowed so transitions are reported), and writes one JSON file:
 // type scale by characters set, colors by characters and by area, contrast of
 // the main text pairs, radii, shadows, transitions, container widths, section
 // padding, spacing values, root custom properties, headings and CTA copy.
+// Head (once per URL, from the first width): Open Graph and Twitter card tags, JSON-LD blocks (parsed, with
+// @type and parse errors), favicons and touch icons, canonical, robots, lang, viewport, theme-color, and the
+// head order twice: as rendered (DOM after scripts) and as served (raw HTML, the crawler's first read), with the
+// position of the title, description, canonical, first og tag, first JSON-LD, first stylesheet, first script and
+// first inline block over 10 KB. Feeds design-search reference 07 (head order, social cards, favicons).
 import fs from 'node:fs';
 import path from 'node:path';
-import { launch } from '../../tools/browser.mjs';
+import { launch, toUrl, splitTarget } from '../../tools/browser.mjs';
 
 const args = process.argv.slice(2);
 const url = args[0];
@@ -101,6 +108,76 @@ function collect() {
   };
 }
 
+// Head tags as rendered. Runs in the page.
+function collectHead() {
+  const h = document.head;
+  const attr = (el, a) => el.getAttribute(a) || '';
+  const meta = (sel) => [...h.querySelectorAll(sel)].map((m) => ({ key: attr(m, 'property') || attr(m, 'name'), content: attr(m, 'content').slice(0, 300) }));
+  const og = meta('meta[property^="og:"], meta[name^="og:"]');
+  const twitter = meta('meta[name^="twitter:"], meta[property^="twitter:"]');
+  const jsonld = [...document.querySelectorAll('script[type="application/ld+json"]')].map((s, i) => {
+    const raw = s.textContent.trim();
+    try {
+      const data = JSON.parse(raw);
+      const types = [];
+      const walk = (n) => { if (Array.isArray(n)) n.forEach(walk); else if (n && typeof n === 'object') { if (n['@type']) types.push([].concat(n['@type']).join('+')); Object.values(n).forEach(walk); } };
+      walk(data);
+      return { index: i, inHead: h.contains(s), bytes: raw.length, types: [...new Set(types)].slice(0, 20), context: (data && data['@context']) || null };
+    } catch (err) { return { index: i, inHead: h.contains(s), bytes: raw.length, error: String(err).slice(0, 120) }; }
+  });
+  const icons = [...document.querySelectorAll('link[rel~="icon"], link[rel="apple-touch-icon"], link[rel="apple-touch-icon-precomposed"], link[rel="mask-icon"], link[rel="manifest"]')]
+    .map((l) => ({ rel: attr(l, 'rel'), type: attr(l, 'type'), sizes: attr(l, 'sizes'), media: attr(l, 'media'), href: l.href.startsWith('data:') ? l.href.slice(0, 40) + '... (data URI)' : l.href }));
+  const order = [...h.children].map((el, i) => {
+    const t = el.tagName.toLowerCase();
+    let label = t;
+    if (t === 'meta') label += attr(el, 'charset') ? ' charset' : ` ${attr(el, 'name') || attr(el, 'property') || attr(el, 'http-equiv')}`;
+    else if (t === 'link') label += ` ${attr(el, 'rel')}${attr(el, 'as') ? ' as=' + attr(el, 'as') : ''}`;
+    else if (t === 'script') label += el.src ? ` src${el.async ? ' async' : ''}${el.defer ? ' defer' : ''}${el.type === 'module' ? ' module' : ''}` : ` inline${el.type ? ' ' + el.type : ''} ${el.textContent.length}B`;
+    else if (t === 'style') label += ` ${el.textContent.length}B`;
+    return `${i} ${label}`;
+  });
+  const idx = (pred) => { const i = [...h.children].findIndex(pred); return i < 0 ? null : i; };
+  const kids = [...h.children];
+  const positions = {
+    count: kids.length,
+    title: idx((e) => e.tagName === 'TITLE'),
+    description: idx((e) => e.matches('meta[name=description]')),
+    canonical: idx((e) => e.matches('link[rel=canonical]')),
+    firstOg: idx((e) => e.matches('meta[property^="og:"]')),
+    firstJsonLd: idx((e) => e.matches('script[type="application/ld+json"]')),
+    firstStylesheet: idx((e) => e.matches('link[rel=stylesheet], style')),
+    firstScript: idx((e) => e.matches('script:not([type="application/ld+json"])')),
+    firstLargeInline: idx((e) => e.matches('style, script:not([src])') && e.textContent.length > 10000),
+  };
+  return {
+    lang: document.documentElement.lang || null,
+    title: document.title,
+    description: h.querySelector('meta[name=description]')?.content || null,
+    canonical: h.querySelector('link[rel=canonical]')?.href || null,
+    robots: h.querySelector('meta[name=robots]')?.content || null,
+    viewport: h.querySelector('meta[name=viewport]')?.content || null,
+    themeColor: [...h.querySelectorAll('meta[name=theme-color]')].map((m) => ({ content: m.content, media: m.media || null })),
+    colorScheme: h.querySelector('meta[name=color-scheme]')?.content || null,
+    og, twitter, jsonld, icons, order: order.slice(0, 80), positions,
+    headBytes: h.outerHTML.length, htmlBytes: document.documentElement.outerHTML.length,
+  };
+}
+
+// Head order as served: the raw HTML before any script runs (what a crawler parses first).
+function rawHeadOrder(html) {
+  const head = (html.match(/<head[^>]*>([\s\S]*?)<\/head>/i) || [])[1] || '';
+  const tags = [...head.matchAll(/<(title|meta|link|script|style|base|noscript)\b([^>]*)>/gi)].map((m, i) => {
+    const a = m[2];
+    const get = (n) => (a.match(new RegExp(`${n}\\s*=\\s*["']([^"']*)["']`, 'i')) || [])[1] || '';
+    const t = m[1].toLowerCase();
+    if (t === 'meta') return `${i} meta ${get('charset') ? 'charset' : get('name') || get('property') || get('http-equiv')}`;
+    if (t === 'link') return `${i} link ${get('rel')}`;
+    if (t === 'script') return `${i} script ${get('src') ? 'src' : 'inline'}${get('type') ? ' ' + get('type') : ''}`;
+    return `${i} ${t}`;
+  });
+  return { bytes: html.length, headBytes: head.length, order: tags.slice(0, 80), over2MB: html.length > 2 * 1024 * 1024 };
+}
+
 const browser = await launch();
 const result = { url, measuredAt: new Date().toISOString(), method: 'Playwright Chromium, getComputedStyle on visible elements, light scheme, after scroll-through and fonts.ready', widths: {} };
 try {
@@ -109,13 +186,19 @@ try {
       userAgent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36' });
     const page = await ctx.newPage();
     try {
-      const resp = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45000 });
+      const resp = await page.goto(toUrl(url), { waitUntil: 'domcontentloaded', timeout: 45000 });
       await page.waitForLoadState('networkidle', { timeout: 15000 }).catch(() => {});
       await page.evaluate(async () => { const step = innerHeight; const max = Math.min(document.body.scrollHeight, 20000); for (let y = 0; y < max; y += step) { scrollTo(0, y); await new Promise((r) => setTimeout(r, 150)); } scrollTo(0, 0); }).catch(() => {});
       await page.waitForTimeout(1000);
       await page.evaluate(() => document.fonts && document.fonts.ready).catch(() => {});
       const data = await page.evaluate(collect);
       result.widths[width] = { status: resp ? resp.status() : null, finalUrl: page.url(), ...data };
+      if (!result.head) {
+        result.head = await page.evaluate(collectHead).catch((err) => ({ error: String(err).slice(0, 200) }));
+        let raw = /^https?:/.test(url) && resp ? await resp.text().catch(() => null) : null;
+        if (!/^https?:/.test(url)) { try { raw = fs.readFileSync(splitTarget(url).file, 'utf8'); } catch { raw = null; } }
+        result.head.served = raw ? rawHeadOrder(raw) : { error: 'no response body' };
+      }
       console.log(`measured ${url} at ${width}: status ${resp && resp.status()}`);
     } catch (err) {
       result.widths[width] = { error: String(err).slice(0, 300) };

@@ -4,7 +4,7 @@
 |---|---|
 | Layer | reference |
 | Skill | design-conversion |
-| Branch | wave/conversion (from restructure) |
+| Branch | restructure (merged from wave/conversion on 2026-10-10) |
 | Status (editor-in-chief) | testing |
 | Shipped version (librarian) | v0.1 (2026-10-10, on branch, not merged) |
 | Reuses | sales-funnels, copywriting, website-strategy, design-ux `references/03-forms.md` |

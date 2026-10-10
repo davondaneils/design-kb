@@ -43,7 +43,7 @@ Status key: C = consensus, S = standard (normative), P = practitioner opinion, R
 9. https://www.nngroup.com/articles/confirmation-dialog/
 10. https://developer.apple.com/design/human-interface-guidelines/alerts
 11. https://vercel.com/design/guidelines (practitioner tier; authors include Rauno Freiberg and Paco Coursey, active on X)
-12. https://emilkowal.ski/ui/you-dont-need-animations (Emil Kowalski, @emilkowalski_ on X)
+12. https://emilkowal.ski/ui/you-dont-need-animations (Emil Kowalski, @emilkowalski on X)
 13. https://rauno.me/craft/interaction-design (Rauno Freiberg, @raunofreiberg on X)
 14. https://www.nngroup.com/articles/how-to-rate-the-severity-of-usability-problems/
 15. https://eur-lex.europa.eu/eli/reg/2022/2065/oj

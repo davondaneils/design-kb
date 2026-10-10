@@ -5,7 +5,7 @@
 | # | Claim | Source | Status |
 |---|---|---|---|
 | 1 | Average cart abandonment 70.22% (50 studies). Reasons: extra costs 40%, slow delivery 20%, distrust with card 19%, required account 18%, too long or complicated checkout 17%, errors or crashes 17%. | Baymard, updated Sep 2025 [1] | R (survey) |
-| 2 | Average US checkout shows 23.48 form elements (14.88 fields); ideal 12 to 14 elements (7 to 8 fields). | Baymard [1] | R |
+| 2 | Average US checkout shows 23.48 form elements (14.88 fields); ideal 12 to 14 elements (7 to 8 fields). Outdated: Baymard's 2024 average is 11.3 fields (`kb/research/conversion/04-checkout-and-forms.md` C9); the ideal stands. | Baymard [1] | R |
 | 3 | 14% of sites mark both required and optional fields (Baymard recommends marking both). 14% of users abandon when phone is required without explanation. 42% do not defer account creation to confirmation step. 47% do not make guest checkout most prominent. | Baymard [2] | R |
 | 4 | Inline validation (Etre, 22 users): success +22%, errors -22%, satisfaction +31%, completion time -42%, fixations -47%. Validate after the field (on blur); keystroke validation only for strict-rule fields like passwords; "before and while" was worst. Persistent success messages beat fading ones. | Wroblewski, A List Apart 2009 [3] | R (small sample, caveated) |
 | 5 | Baymard inline validation rules: no premature validation (validate on blur, or when a fixed-length field reaches its length); remove the error on the keystroke that fixes it; show positive validation. 31% of sites lack inline validation. | Baymard [4] | R |

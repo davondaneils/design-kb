@@ -5,7 +5,7 @@
 | Domain number | 8 |
 | Layer | reference |
 | Skill | design-copy |
-| Branch | wave/copy (from restructure) |
+| Branch | restructure (merged from wave/copy on 2026-10-10) |
 | Status (editor-in-chief) | testing |
 | Shipped version (librarian) | none (v0.2 built and render-tested 2026-10-10, awaiting Davon) |
 | Reuses | copywriting (direct response only, never on these pages), sales-funnels (plan naming, price framing) |

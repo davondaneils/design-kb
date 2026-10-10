@@ -90,7 +90,8 @@ A dashboard spends most of its life in states other than the screenshot: loading
 
 ## Hand-offs
 - Timing, error ladder, toasts, optimistic UI: design-ux `references/04-states-feedback.md`.
-- Sample data and first-run checklists: design-ux `references/05-onboarding.md`.
+- Sample data and first-run checklists: design-ux `references/05-onboarding.md`; shipped examples in `kb/references/patterns/01-onboarding.md`.
+- Notification inbox (needs-you vs everything else, one channel per event, ask for push after the first useful moment): design-ux `references/04-states-feedback.md`; shipped examples in `kb/references/patterns/09-notifications.md`. Empty, permission and error examples: `kb/references/patterns/02-empty-states.md`, `10-permission-and-error-states.md`.
 - State wording: design-copy `references/02-ux-microcopy.md`.
 - Shimmer motion: design-motion `references/04-micro-interactions.md`.
 - Chart empty and error states: dataviz.

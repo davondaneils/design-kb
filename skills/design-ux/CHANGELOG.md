@@ -1,5 +1,9 @@
 # design-ux changelog
 
+## 0.2.1 (2026-10-10, editor-in-chief)
+- Checkout field average updated from the outdated 14.88 to Baymard's 2024 figure of 11.3 (via `kb/research/conversion/04-checkout-and-forms.md` C9; baymard.com was blocked from this environment, so the quote was not re-fetched).
+- PR #6 findings folded in with links to `kb/references/patterns/`: onboarding (real product first, permission only when a feature needs it, per-platform primers) and notifications (ask after the first useful moment, one channel per event, needs-you inbox split).
+
 ## 0.2 (2026-10-10, wave 2)
 - New `references/07-commerce-flows.md`: purchase and subscription flows (options as radio cards, grind asked as "How do you brew?", cadence, the button as the summary, terms under it, cart drawer as a modal dialog, remove with undo, checkout entry). Sourced claims C1 to C21 in `kb/research/ux/07-commerce-flows.md` (Baymard, Shopify, W3C, APG, NN/g, California ARL, Nunes and Dreze).
 - `05-onboarding.md`: first run as states for data products (sample, setup guide, listening, check failed, first data; "not enough data yet is not zero").

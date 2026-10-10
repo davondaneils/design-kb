@@ -30,7 +30,7 @@ Copy for brand work is design-copy (voice), not direct response copywriting.
 ## 3. Done means
 1. Deliverables: the mark as SVG (primary, reversed, one color, small-size version), a token file for color and type, and a guidelines page in HTML.
 2. `node tools/lint.mjs guidelines.html` exits 0; `node tools/render.mjs guidelines.html out/` renders light and dark.
-3. The mark is rendered at 16, 32 and 512px and on light, dark and photo backgrounds; it reads at every size.
+3. The mark is rendered at 16, 32 and 512px and on light, dark and photo backgrounds; it reads at every size. The favicon reaches 3:1 on light, gray and dark tab strips or sits on its own field (design-graphic `assets/tab_contrast.py`; FOUNDATIONS accessibility findings). The logo itself is exempt from contrast; any version used as a link is not.
 4. Compared with the closest exemplar (`references/signature-moves.md`), rated close on idea, system and presentation.
 5. The hand-over names what is still short of the exemplar.
 

@@ -5,7 +5,7 @@
 | Domain number | 10 |
 | Layer | reference |
 | Skill | design-frontend |
-| Branch | wave/frontend (from restructure) |
+| Branch | restructure (merged from wave/frontend on 2026-10-10) |
 | Status (editor-in-chief) | review (render test passed; ready to merge) |
 | Shipped version (librarian) | 0.2 on wave/frontend, not merged |
 | Reuses | design-foundations (accessibility floor), tools/lint.mjs |

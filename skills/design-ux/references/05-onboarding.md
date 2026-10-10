@@ -62,6 +62,8 @@ Rules
 - **Sample data with an honest label** is the strongest empty-state move for data products: it shows the payoff before the work.
 - **Pre-permission context in the flow**, triggered by intent: ask at the moment the feature needs it, so the reason is self-evident (Apple HIG Privacy). Do not quote practitioner "opt-in uplift" percentages; none were verified.
 - **Progressive disclosure across sessions**, not in session one: tip 2 appears on the second relevant encounter, not in a tour.
+- **Real product before the account.** A demo workspace that resets on refresh (Linear), a full lesson before sign-up (Duolingo), a test mode on day one with activation as a later checklist (Stripe). The sample workspace teaches itself with one pinned README, not a tour overlay (Linear). Linked examples: `kb/references/patterns/01-onboarding.md`.
+- **Per-platform permission primers.** iOS: one button titled "Continue" or "Next" that opens the system alert, no way out (Apple HIG Privacy). Android: "Always provide the option to cancel an educational UI flow" (developer.android.com). Build two button sets, not one (`kb/references/patterns/01-onboarding.md` items 10 and 11).
 - **Measure tutorial cost in total time**, including the tutorial itself (NN/g excluded it from task times, so real burden is higher).
 
 ## Hand-offs

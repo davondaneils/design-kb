@@ -12,7 +12,7 @@ The one place for accessibility in design-kb. Every playbook and every domain re
 | Touch targets per platform (44 pt iOS, 48 dp Android) | design-playbook-mobile `references/platform-conventions.md` |
 | Reduced motion matrix, flashes, pause controls | design-motion `references/05-accessibility-performance.md` |
 | Error wording, link text, alt text writing | design-copy `references/02-ux-microcopy.md` |
-| Alt decision tree, icon contrast | design-graphic SKILL.md fundamentals |
+| Alt decision tree, icon contrast, logo exemption, favicon contrast | design-graphic SKILL.md fundamentals (11 for logos and favicons) |
 | Text over images and textures (worst pixel, text hidden), forced-colors overlays | design-art-direction `references/03-composition-and-overlays.md`; `tools/lint.mjs` overlay check |
 | Table semantics, keyboard shortcuts, command palettes, live sort and bulk announcements | design-product-ui `references/01-tables.md`, `02-find-and-command.md`, `05-states-bulk.md` |
 | Focus shape, state sheets, `color-scheme`, sticky headers over focus | design-polish `references/01-interactive-states.md`, `05-scroll-overflow-edges.md` |
@@ -59,6 +59,10 @@ The one place for accessibility in design-kb. Every playbook and every domain re
 - **`.sr-only` with `margin: -1px`** fails the spacing lint; `margin: 0` plus `clip` hides the same way.
 - **Text over images and textures** is judged on the worst pixel under the text box with the text hidden, not on an average or on axe's "needs review". The tester's curve labels measured 1.74:1 where axe only said "review" (design-art-direction `references/03-composition-and-overlays.md`).
 - **`color-scheme`** on `:root` (or `<meta name="color-scheme">`) whenever the page has a dark theme, so scrollbars and native controls follow it.
+- **Logos are exempt from contrast, favicons are not off the hook.** WCAG 1.4.3: "Text that is part of a logo or brand name has no contrast requirement" (also W3C Understanding 1.4.11). A logo that is a link or control needs a contrasting variant. Favicon ink reaches 3:1 against light, gray and dark tab strips, or the mark sits on its own field (opinion; design-graphic `assets/tab_contrast.py` measured a mid-orange mark at 3.04:1 on white and 2.32:1 on a gray tab).
+- **Skip link.** When anything focusable comes before `main`, the first Tab lands on a same-page link to `main` that is visible on focus (2.4.1). The combined coffee page shipped without one and the v0.3 lint passed it; the lint now checks (`skip-link`).
+- **Live regions inside modals.** While a modal dialog is open the rest of the page is inert, so a page-level `role="status"` announces nothing. Put the region inside the dialog (design-ux wave 2).
+- **Inactive content is exempt.** Text behind an open modal dialog is exempt from 1.4.3; the lint skips it (no `data-lint-skip` workaround needed).
 - **A focus ring must not change the control's shape** (radius, border width, padding, weight); low-specificity link rules such as `a:not([class]):focus-visible` can outrank component rules. Use `:where(a:focus-visible)` (design-polish).
 
 ## Focus indicators (expert default)
@@ -85,8 +89,9 @@ The one place for accessibility in design-kb. Every playbook and every domain re
 - Inline links in a sentence are exempt from 2.5.8; stacked link lists are not.
 
 ## Motion and reduced motion
-- Default motion is opt-in: wrap animations in `@media (prefers-reduced-motion: no-preference)`. Reduced does not mean none: keep opacity fades at `--duration-fast`, remove movement, parallax, zoom and autoplay (opinion, aligned with design-motion and foundation contract).
-- Autoplaying video or carousels over 5 seconds need a visible pause control (2.2.2).
+- Default motion is opt-in: wrap animations in `@media (prefers-reduced-motion: no-preference)`. Reduced does not mean none: opacity and color fades may stay at `--duration-fast` (150ms) or less, played once; remove movement, scaling, parallax, zoom, loops and autoplay (FOUNDATIONS v0.4 Motion; the lint fails moving keyframes under reduce and warns on fades over 150ms).
+- Keyboard shortcuts and keyboard navigation do not animate (design-motion `motion-audit.mjs` scenarios with `expect: 'none'`).
+- Autoplaying video or carousels over 5 seconds need a visible pause control (2.2.2). 2.2.2 also covers **auto-updating** content: a live KPI, feed or ticker beside other content needs pause, stop, hide or a control for its update frequency (W3C Understanding 2.2.2, quoted in `kb/research/motion/07-motion-on-real-pages.md`).
 
 ## Live regions and dynamic UI
 - The live region must exist in the DOM before its text changes. Inject the text, not the container.

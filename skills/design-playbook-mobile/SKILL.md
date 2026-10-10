@@ -8,9 +8,9 @@ description: Job playbook for mobile app screens and flows on iOS, Android and m
 On a phone, the platform is half the design. People bring the habits of their system apps; break them only when the brand gains something measurable.
 
 ## 1. Load in this order
-1. **design-foundations** (always): tokens, the 15-item gate, `references/accessibility.md`.
+1. **design-foundations** (always): tokens, the 16-item gate, `references/accessibility.md`.
 2. **This playbook's** `references/platform-conventions.md`: touch numbers, the iOS vs Android vs web table, modality, porting rules. Decide the platform first.
-3. **design-ux**: `references/01-fundamentals.md`, `02-navigation-ia.md`, `04-states-feedback.md`, `05-onboarding.md`, `03-forms.md`, `06-platforms-touch-systems.md` (component specs).
+3. **design-ux**: `references/01-fundamentals.md`, `02-navigation-ia.md`, `04-states-feedback.md` (notifications: ask after the first useful moment, one channel per event), `05-onboarding.md` (real product first, per-platform permission primers), `03-forms.md`, `06-platforms-touch-systems.md` (component specs). Shipped examples: `kb/references/patterns/01-onboarding.md`, `09-notifications.md`, `10-permission-and-error-states.md`.
 4. **design-layout**: `references/04-responsive-and-adaptive.md` (safe areas, width classes), `03-hierarchy-and-gestalt.md`.
 5. **design-typography**: `references/04-hierarchy-ui-editorial.md`; support Dynamic Type and Android font scale up to 200%.
 6. **design-color**: `references/ui-tokens-themes.md`; dark mode is expected on both platforms.
@@ -28,7 +28,7 @@ On a phone, the platform is half the design. People bring the habits of their sy
 5. Text survives 200% system text size without clipping.
 
 ## 3. Done means
-1. The screen is built as a 390px HTML mock (or native code with screenshots). For HTML: `node tools/lint.mjs page.html` exits 0 and `node tools/render.mjs page.html out/ --widths 390` renders light and dark.
+1. The screen is built as a 390px HTML mock (or native code with screenshots). For HTML: `node tools/lint.mjs page.html` exits 0, `node tools/render.mjs page.html out/ --widths 390,768` renders light and dark (768 for tablet layouts), and `claims_inventory.mjs` exits 0.
 2. Every `[judged]` row holds on the screenshots, plus the platform conventions table.
 3. Compared with the closest exemplar: Things 3 (calm task and list apps), Cash App (money, bold single action), Arc (navigation-heavy tools), Family (wallets and onboarding warmth). The exemplar set has no Android-first app yet; propose one to Davon when the job is Android-first.
 4. The hand-over names what is still short of the exemplar.
