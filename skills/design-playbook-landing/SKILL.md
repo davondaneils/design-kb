@@ -33,15 +33,25 @@ A landing page has one job: make the right visitor understand the offer and take
 3. Proof sits next to the claim it proves.
 4. Real content and real product imagery; never lorem ipsum, never a generic stock hero.
 5. Light and dark designed when asked; every section passes the gate in both.
+6. One promise, one number: shipping time, trial length, refund window and every count are said one way across the hero facts, headings, steps, slip and footer (`claims_inventory.mjs` warns `PROMISE`). A store-wide rating sits beside a product only with its scope ("4.7 from 1,284 subscriber reviews"), never as that product's rating (`kb/reviews/round3-critic.md`, coffee item 16).
+
+## 3a. Head and markup facts from the live exemplars (captured 2026-10-10)
+From the "Live capture (2026-10)" sections of the teardowns (TinyFish `fetch_content`, raw in `kb/teardowns/live/<slug>/head.json`):
+1. **One filled primary in the hero.** Stripe: "Get started" filled beside "Sign up with Google"; Vercel: "Deploy now" filled beside "Talk to sales"; Ramp: one email field fused to "Get started for free" (`stripe-home.md`, `vercel-home.md`, `ramp-home.md`). The nav may repeat the action; it never adds a second filled button in the same screen.
+2. **On a product page the `h1` is the product name**, and the slogan is the big line below it. Apple's `h1` is the eyebrow "MacBook Air"; "Might takes flight." is not the heading (`apple-macbook-air.md`). On a home page the `h1` is the value line (Stripe, Linear, Vercel, Ramp). One `h1`, as live text: do not copy Stripe's duplicate `aria-hidden` `h1` or Linear's split, hidden heading; both make the outline harder to audit (opinion, `stripe-home.md`, `linear-home.md`).
+3. **`theme-color` matches the page background**, one per scheme with `media="(prefers-color-scheme: dark)"`, so mobile browser chrome blends into the page: Linear `#08090a` is its page background, Vercel `#FAFAFA` (`linear-home.md`, `vercel-home.md`).
+4. **Separate `og:image` and `twitter:image` when the crops differ.** Vercel ships `og-home-not-x.png` for Open Graph and `og-home-x.png` for X: one card art per platform crop (`vercel-home.md`). Ramp reuses one generic `default-og-image.jpg` for both (`ramp-home.md`); that is the floor, not the bar (opinion).
+5. **Never `maximum-scale=1` or `user-scalable=no`** in the viewport tag. Vercel ships `maximum-scale=1`; do not borrow it: it blocks pinch zoom in browsers that honor it (WCAG 1.4.4 Resize text, https://www.w3.org/WAI/WCAG22/Understanding/resize-text, cited in `vercel-home.md`).
 
 ## 4. Done means
-1. `node tools/lint.mjs page.html` exits 0, and so does every state URL and the state sheet.
+1. `node tools/lint.mjs page.html` exits 0 at its default widths (390, 768, 1024, 1440), and so does every state URL and the state sheet. `claims_inventory.mjs` `PROMISE` warnings are fixed or named in the hand-over.
 2. `node tools/render.mjs page.html out/ --widths 390,768,1024,1440` and every `[judged]` row holds on the screenshots, plus the state sheet (every control in every state) rendered and linted.
 3. `claims_inventory.mjs` exits 0 and every claim is ticked against its source; `search-check.mjs` exits 0; `conversion-audit.mjs` exits 0 when the page sells (design-director section 5).
 4. At 390: the category word and the primary action sit in the first 844px; when the page sells, the price and the primary action are both there. At 1440: the next section peeks above 900px. Measure with `kb/tests/design-layout/measure-layout.mjs`.
 5. A term line (renews when, at what price, how to cancel online) sits beside any renewal or subscription CTA (design-conversion).
 6. Side by side with the named closest exemplars, rated close (not clearly below) on hierarchy, type, imagery, rhythm and craft. Pick them from `kb/teardowns/INDEX.md` (Stripe first, then Linear, Vercel, Ramp for product and SaaS) and `references/signature-moves.md`; compare measured numbers, not impressions.
-7. The hand-over names what is still short of the exemplar.
+7. A fresh-context critic has judged the gate (design-director section 5, step 13); a self-review alone does not claim it.
+8. The hand-over names what is still short of the exemplar.
 
 ## 5. Reference map
 | Need | Read |
