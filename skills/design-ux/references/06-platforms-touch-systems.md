@@ -22,7 +22,7 @@ Platform conventions (touch numbers, iOS vs Android vs web table, modality, port
 - **Disabled is a last resort.** Prefer enabled plus explanation; if disabled is unavoidable, provide the reason nearby (Silver; Apple: do not disable tabs).
 - **Style, not size, marks the preferred choice** in a button group (Apple HIG Buttons).
 - **Hit area decoupled from visual size:** a 20 px icon gets 44 px of invisible padding; layouts plan for it.
-- **Safe areas and floating bars.** iOS 26 tab bars float over content; reserve bottom padding with `env(safe-area-inset-bottom)` plus bar height so the last item is reachable and focus is not obscured (WCAG 2.4.11).
+- **Floating bars cover the last item.** Reserve bottom padding equal to the bar plus the safe area so the last item and its focus stay visible (WCAG 2.4.11); platform specifics in design-playbook-mobile.
 - **Tokens follow the DTCG 2025.10 format** so Figma variables, code and docs stay in sync (design-frontend).
 - **Atomic thinking for scope, not for naming:** atoms to pages helps decide where state lives; teams name components by purpose ("Combobox"), not by atomic level (opinion).
 

@@ -58,8 +58,7 @@ Use when success rate is high and the action is reversible (like, archive, reord
 ## Expert moves
 - **Anti-flicker timing** (show delay plus minimum display) is what makes fast apps feel calm; React Suspense does it by default (Vercel).
 - **Skeleton equals final layout to the pixel**, including image ratios, so nothing shifts (also protects CLS; see design-frontend).
-- **Stale-while-revalidate UI:** show cached content immediately with a quiet "Updated 2 min ago" and refresh in place, instead of blocking.
-- **Partial failure is a state.** A dashboard with 1 of 6 cards failed shows 5 cards and one in-card error with Retry, never a full-page error.
+- **Partial failure and stale data are states.** One failed panel shows its own Retry while the rest stays live; cached content shows "Updated 2 min ago" and refreshes in place. Panel-level detail for app screens: design-product-ui `references/05-states-bulk.md`.
 - **Undo window as the save button.** For sending messages or emails, a 5 to 10 s delayed send with Undo turns an irreversible act into a reversible one (Gmail "Undo send"; opinion on window).
 - **Ellipsis grammar:** in-progress labels and menu items that open a further step end in an ellipsis ("Saving...", "Rename...") (Vercel; Apple convention).
 

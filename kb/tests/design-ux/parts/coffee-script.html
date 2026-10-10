@@ -1,0 +1,208 @@
+<script>
+// Purchase flow (design-ux 07) and phone navigation (design-ux 02). Every state is reachable by URL for review:
+//   ?state=menu | quick | sub-error | cart | cart-empty | removed | checkout | error | sending | subscribed
+// Motion: the roast curve draws once on first view; the drawer slides 24px at --duration-slow; nothing moves under reduced motion.
+(function () {
+  document.documentElement.classList.add('js');
+  const state = new URLSearchParams(location.search).get('state');
+  const $ = (id) => document.getElementById(id);
+  const money = (n) => '$' + n.toFixed(2);
+  const icon = { check: '<svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>',
+    minus: '<svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8h9"/></svg>',
+    plus: '<svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8h9M8 3.5v9"/></svg>' };
+  const thumb = '<span class="thumb" aria-hidden="true"><svg viewBox="0 0 56 56"><path class="c" d="M-4 40 C12 30 20 44 34 34 S52 24 60 30"/><path class="c" d="M-4 28 C10 18 22 30 36 20 S52 12 60 16"/><path class="c" d="M-4 52 C14 44 26 56 40 48 S54 40 60 44"/><rect class="bag" x="19" y="14" width="18" height="26" rx="2"/></svg></span>';
+
+  // Announce from inside an open modal: content outside a showModal() dialog is inert, so its live region is not read.
+  function say(t) {
+    const open = document.querySelector('dialog[open]');
+    const r = open && open.querySelector('[role=status]') || $('announce');
+    r.textContent = ''; setTimeout(() => { r.textContent = t; }, 50);
+  }
+
+  // While a modal is open the page behind it is inert and dimmed: WCAG 1.4.3 exempts inactive content from contrast, so the
+  // lint's text-over-art check is switched off for <main> only while a dialog is open (tools/lint.mjs does not know inert yet;
+  // see kb/reviews/design-ux-pipeline-notes.md). The check still runs on the dialog itself and on every closed state.
+  const mainEl = document.querySelector('main');
+  const syncInert = () => { if (document.querySelector('dialog[open]')) mainEl.setAttribute('data-lint-skip', 'overlay'); else mainEl.removeAttribute('data-lint-skip'); };
+  new MutationObserver(syncInert).observe(document.body, { subtree: true, attributes: true, attributeFilter: ['open'] });
+
+  // --- Phone menu: a disclosure, not a modal. Escape closes and returns focus. ---
+  const toggle = $('menu-toggle'), menu = $('mobile-menu');
+  function setMenu(open, focusBack) { menu.hidden = !open; toggle.setAttribute('aria-expanded', String(open)); if (!open && focusBack) toggle.focus(); }
+  toggle.addEventListener('click', () => setMenu(menu.hidden));
+  menu.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) setMenu(false, true); });
+
+  // --- Cart model ---
+  const coffees = { guji: { name: 'Ethiopia Guji', price: 21 }, huila: { name: 'Colombia Huila', price: 19 }, oak: { name: 'Oak Fire Espresso', price: 18 } };
+  let lines = [], nextId = 1;
+  const FREE_OVER = 40, SHIP = 6;
+  function count() { return lines.filter((l) => !l.removed).reduce((n, l) => n + l.qty, 0); }
+  function totals() {
+    const live = lines.filter((l) => !l.removed);
+    const once = live.filter((l) => l.kind === 'once').reduce((s, l) => s + l.price * l.qty, 0);
+    const subs = live.filter((l) => l.kind === 'sub');
+    const subToday = subs.reduce((s, l) => s + l.price, 0);
+    const ship = once === 0 || subs.length || once >= FREE_OVER ? 0 : SHIP;
+    return { once, subs, subToday, ship, today: once + subToday + ship };
+  }
+  function setCount() {
+    const n = count();
+    $('cart-n').textContent = n;
+    $('cart-label').textContent = n ? n + (n === 1 ? ' item' : ' items') : 'empty';
+    $('cart-count').classList.toggle('has', n > 0);
+  }
+  const cart = $('cart');
+  function renderCart() {
+    setCount();
+    const t = totals(), n = count();
+    cart.toggleAttribute('data-empty', n === 0 && !lines.some((l) => l.removed));
+    $('cart-meta').textContent = n ? n + (n === 1 ? ' item' : ' items') : 'Nothing in it yet';
+    const groups = [];
+    const subs = lines.filter((l) => l.kind === 'sub'), once = lines.filter((l) => l.kind === 'once');
+    if (subs.length) groups.push(['Every ' + subs[0].every + ' weeks', subs]);
+    if (once.length) groups.push(['Once', once]);
+    $('cart-groups').innerHTML = groups.map(([title, ls]) => '<section class="cart-group"><h3 class="label">' + title + '</h3><ul>' + ls.map(lineHtml).join('') + '</ul></section>').join('');
+    let dl = '<div><dt>Coffee today</dt><dd>' + money(t.once + t.subToday) + '</dd></div>';
+    dl += '<div><dt>Shipping</dt><dd>' + (t.ship ? money(t.ship) : (t.subs.length && t.once ? 'Free, with your subscription' : 'Included')) + '</dd></div>';
+    if (t.ship) dl += '<div class="then"><dt>Free shipping over $40</dt><dd>' + money(FREE_OVER - t.once) + ' to go</dd></div>';
+    dl += '<div class="total"><dt>Due today</dt><dd>' + money(t.today) + '</dd></div>';
+    if (t.subs.length) dl += '<div class="then"><dt>Then, every ' + t.subs[0].every + ' weeks</dt><dd>' + money(t.subToday) + '</dd></div>';
+    $('cart-totals').innerHTML = dl;
+    $('checkout-lbl').textContent = 'Check out, ' + money(t.today);
+  }
+  function lineHtml(l) {
+    if (l.removed) return '<li class="line removed" data-id="' + l.id + '"><span>Removed ' + l.name + '.</span><button class="link-btn" type="button" data-undo="' + l.id + '">Undo</button></li>';
+    const meta = l.brew + (l.kind === 'sub' ? ', every ' + l.every + ' weeks' : ', 340 g');
+    const amt = l.kind === 'sub' ? money(l.price) + '<small>a delivery</small>' : money(l.price * l.qty) + (l.qty > 1 ? '<small>' + money(l.price) + ' each</small>' : '');
+    const ctrl = l.kind === 'once'
+      ? '<div class="stepper" role="group" aria-label="Bags of ' + l.name + '"><button type="button" data-dec="' + l.id + '" aria-label="One bag fewer"' + (l.qty === 1 ? ' aria-disabled="true"' : '') + '>' + icon.minus + '</button><output aria-live="polite">' + l.qty + '</output><button type="button" data-inc="' + l.id + '" aria-label="One bag more">' + icon.plus + '</button></div>'
+      : '<span class="terms">Skip, pause or cancel online</span>';
+    return '<li class="line" data-id="' + l.id + '">' + thumb + '<div><p class="nm">' + l.name + '</p><p class="meta">' + meta + '</p></div><p class="amt num">' + amt + '</p>' +
+      '<div class="ctrl">' + ctrl + '<button class="link-btn" type="button" data-remove="' + l.id + '">Remove<span class="sr-only"> ' + l.name + '</span></button></div></li>';
+  }
+  $('cart-groups').addEventListener('click', (e) => {
+    const b = e.target.closest('button'); if (!b) return;
+    const id = +(b.dataset.remove || b.dataset.undo || b.dataset.inc || b.dataset.dec);
+    const l = lines.find((x) => x.id === id); if (!l) return;
+    if (b.dataset.remove) { l.removed = true; renderCart(); say('Removed ' + l.name + '. Undo is next to it.'); cart.querySelector('[data-undo="' + id + '"]').focus(); }
+    else if (b.dataset.undo) { l.removed = false; renderCart(); say(l.name + ' is back in your cart.'); cart.querySelector('[data-remove="' + id + '"]').focus(); }
+    else if (b.dataset.inc) { l.qty++; renderCart(); cart.querySelector('[data-inc="' + id + '"]').focus(); say(l.qty + ' bags of ' + l.name + '. Due today ' + money(totals().today) + '.'); }
+    else if (b.dataset.dec && l.qty > 1) { l.qty--; renderCart(); cart.querySelector('[data-dec="' + id + '"]').focus(); say(l.qty + (l.qty === 1 ? ' bag of ' : ' bags of ') + l.name + '.'); }
+  });
+  function openCart(opener) {
+    renderCart(); cart._opener = opener || document.activeElement;
+    if (!cart.open) cart.showModal();
+    $('cart-title').focus();
+  }
+  $('cart-link').addEventListener('click', (e) => { e.preventDefault(); setMenu(false); openCart($('cart-link')); });
+  cart.addEventListener('close', () => { lines = lines.filter((l) => !l.removed); setCount(); const o = cart._opener; if (o && document.contains(o)) o.focus(); });
+  document.querySelectorAll('dialog [data-close]').forEach((b) => b.addEventListener('click', () => b.closest('dialog').close()));
+  cart.querySelector('[data-close-link]').addEventListener('click', () => cart.close());
+  const checkout = $('checkout-btn');
+  checkout.addEventListener('click', () => {
+    if (checkout.getAttribute('aria-busy')) return;
+    checkout.setAttribute('aria-busy', 'true'); checkout.setAttribute('aria-disabled', 'true');
+    say('Opening secure checkout. You will review your order before you pay.');
+  });
+
+  // --- Quick add: asks the one question with no safe default; remembers the answer. ---
+  const quick = $('quick'), qForm = $('quick-form');
+  let qCoffee = 'guji', qQty = 1, usual = null;
+  try { usual = localStorage.getItem('eo-brew'); } catch (e) {}
+  function qLabel() { const c = coffees[qCoffee]; $('q-add').textContent = qQty === 1 ? 'Add to cart, $' + c.price : 'Add ' + qQty + ' bags, $' + c.price * qQty; }
+  function openQuick(id, opener) {
+    qCoffee = id; qQty = 1; quick._opener = opener;
+    const c = coffees[id];
+    $('q-title').textContent = c.name;
+    $('q-meta').innerHTML = '$' + c.price + ' a bag, <span class="unit">340 g</span>. Roasted this week, ships within 48 hours.';
+    $('q-qty').textContent = '1'; $('q-minus').setAttribute('aria-disabled', 'true');
+    clearError('q-brew', 'q-error');
+    qForm.querySelectorAll('input[name=qbrew]').forEach((r) => { r.checked = r.value === usual; r.closest('.opt').querySelector('.usual').hidden = r.value !== usual; });
+    if (cart.open) cart.close();
+    quick.showModal();
+    const pre = qForm.querySelector('input[name=qbrew]:checked');
+    (pre ? $('q-add') : $('q-title')).focus();
+    qLabel();
+  }
+  quick.addEventListener('close', () => { if (quick._opener && document.contains(quick._opener) && !cart.open) quick._opener.focus(); });
+  $('q-plus').addEventListener('click', () => { qQty = Math.min(qQty + 1, 12); $('q-qty').textContent = qQty; $('q-minus').removeAttribute('aria-disabled'); qLabel(); });
+  $('q-minus').addEventListener('click', () => { if (qQty === 1) return; qQty--; $('q-qty').textContent = qQty; if (qQty === 1) $('q-minus').setAttribute('aria-disabled', 'true'); qLabel(); });
+  document.querySelectorAll('[data-quick]').forEach((b) => b.addEventListener('click', () => openQuick(b.dataset.quick, b)));
+
+  function showError(groupId, errId, review) { const g = $(groupId); g.classList.add('invalid'); $(errId).hidden = false; g.querySelector('input').focus({ preventScroll: !!review }); }
+  function clearError(groupId, errId) { $(groupId).classList.remove('invalid'); $(errId).hidden = true; }
+  qForm.addEventListener('change', (e) => { if (e.target.name === 'qbrew') clearError('q-brew', 'q-error'); });
+  qForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const brew = qForm.querySelector('input[name=qbrew]:checked');
+    if (!brew) { showError('q-brew', 'q-error'); return; }
+    remember(brew.value);
+    const c = coffees[qCoffee];
+    const same = lines.find((l) => l.kind === 'once' && l.coffee === qCoffee && l.brew === brew.dataset.name && !l.removed);
+    if (same) same.qty += qQty; else lines.push({ id: nextId++, kind: 'once', coffee: qCoffee, name: c.name, brew: brew.dataset.name, price: c.price, qty: qQty });
+    const opener = quick._opener; quick._opener = null; quick.close();
+    openCart(opener);
+    say('Added ' + c.name + ', ' + brew.dataset.name.toLowerCase() + '. ' + count() + ' items, due today ' + money(totals().today) + '.');
+  });
+  function remember(v) { usual = v; try { localStorage.setItem('eo-brew', v); } catch (e) {} }
+
+  // --- Subscription slip: the button is the summary; the brew question has no default. ---
+  const sub = $('sub-form');
+  function subValues() {
+    const c = sub.querySelector('input[name=coffee]:checked'), b = sub.querySelector('input[name=brew]:checked'), ev = sub.querySelector('input[name=every]:checked');
+    return { c, b, every: +ev.value, price: +c.dataset.price };
+  }
+  function subLabel() { const v = subValues(); $('sub-btn').textContent = 'Add subscription, $' + v.price + ' every ' + v.every + ' weeks'; $('sub-terms').textContent = 'Renews every ' + v.every + ' weeks until you stop it. Skip, pause or cancel online before the next roast; you’ll confirm everything at checkout.'; }
+  sub.addEventListener('change', (e) => { subLabel(); if (e.target.name === 'brew') clearError('g-brew', 'brew-error'); });
+  sub.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const v = subValues();
+    if (!v.b) { showError('g-brew', 'brew-error'); return; }
+    remember(v.b.value);
+    lines = lines.filter((l) => l.kind !== 'sub');
+    lines.unshift({ id: nextId++, kind: 'sub', name: v.c.dataset.name, brew: v.b.dataset.name, every: v.every, price: v.price, qty: 1 });
+    openCart($('sub-btn'));
+    say('Added a subscription: ' + v.c.dataset.name + ', every ' + v.every + ' weeks, $' + v.price + ' a delivery.');
+  });
+  subLabel();
+
+  // --- Newsletter (unchanged from the combined page) ---
+  const form = $('news'), email = $('email'), btn = $('news-btn'), err = $('email-error'), ok = $('news-ok');
+  const valid = () => email.validity.valid && /\S+@\S+\.\S+/.test(email.value);
+  function newsError() { email.setAttribute('aria-invalid', 'true'); err.hidden = false; }
+  function done(addr) {
+    form.setAttribute('data-done', '');
+    ok.innerHTML = icon.check + '<span>You’re on the list. The first letter goes to ' + addr.replace(/[<>&]/g, '') + ' on Oct 22.</span>';
+  }
+  email.addEventListener('input', () => { if (valid()) { email.removeAttribute('aria-invalid'); err.hidden = true; } });
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!valid()) { newsError(); email.focus(); return; }
+    btn.setAttribute('aria-busy', 'true'); btn.setAttribute('aria-disabled', 'true');
+    setTimeout(() => { btn.removeAttribute('aria-busy'); btn.removeAttribute('aria-disabled'); done(email.value); }, 900);
+  });
+
+  // --- Review states by URL ---
+  const seed = () => { lines = [
+    { id: nextId++, kind: 'sub', name: 'Roaster’s choice', brew: 'Pour-over', every: 2, price: 18, qty: 1 },
+    { id: nextId++, kind: 'once', coffee: 'guji', name: 'Ethiopia Guji', brew: 'Pour-over', price: 21, qty: 1 } ]; };
+  if (state === 'menu') setMenu(true);
+  if (state === 'quick') { usual = 'pourover'; openQuick('guji', document.querySelector('.card [data-quick]')); }
+  if (state === 'sub-error') { showError('g-brew', 'brew-error', true); } // review render: same state, without scrolling the page
+  if (state === 'cart' || state === 'added') { seed(); openCart($('cart-link')); }
+  if (state === 'cart-empty') openCart($('cart-link'));
+  if (state === 'removed') { seed(); lines.push({ id: nextId++, kind: 'once', coffee: 'huila', name: 'Colombia Huila', brew: 'Pour-over', price: 19, qty: 1, removed: true }); openCart($('cart-link')); }
+  if (state === 'checkout') { seed(); openCart($('cart-link')); checkout.click(); }
+  if (state === 'error') { email.value = 'dana@'; newsError(); }
+  if (state === 'sending') { email.value = 'dana@example.com'; btn.setAttribute('aria-busy', 'true'); btn.setAttribute('aria-disabled', 'true'); }
+  if (state === 'subscribed') done('dana@example.com');
+  setCount();
+
+  const curve = document.querySelector('.curve');
+  if ('IntersectionObserver' in window && matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { curve.classList.add('seen'); io.disconnect(); } }, { threshold: 0.4 });
+    io.observe(curve);
+  } else curve.classList.add('seen');
+})();
+</script>
