@@ -1,0 +1,86 @@
+[
+ {
+  "w": 12,
+  "h": 12,
+  "stroke": 0,
+  "caps": [],
+  "joins": [],
+  "colors": [],
+  "solid": true,
+  "where": "star",
+  "count": 1,
+  "ink1": 0.22903050108932468,
+  "soft1": 0.5652173913043478,
+  "ink2": 0.23034449891067535,
+  "soft2": 0.3116883116883117,
+  "pad": 1.5,
+  "flags": []
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "arrow-right",
+  "count": 1,
+  "ink1": 0.13224571078431377,
+  "soft1": 0.9074074074074074,
+  "ink2": 0.13308440563725488,
+  "soft2": 0.4327485380116959,
+  "pad": 1.5,
+  "flags": []
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "truck",
+  "count": 2,
+  "ink1": 0.27745098039215693,
+  "soft1": 0.5106382978723404,
+  "ink2": 0.28244102328431414,
+  "soft2": 0.1728395061728395,
+  "pad": 1,
+  "flags": [
+   "volume"
+  ]
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "check",
+  "count": 3,
+  "ink1": 0.08226102941176472,
+  "soft1": 0.8974358974358975,
+  "ink2": 0.08277420343137254,
+  "soft2": 0.4174757281553398,
+  "pad": 2.5,
+  "flags": [
+   "volume"
+  ]
+ }
+]
