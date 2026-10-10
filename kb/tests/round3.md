@@ -101,3 +101,15 @@ The order was drawn with an OS random source and redrawn until the three pairs d
 - **tools/render.mjs**: lazy images below about 2,500px never load for `file://` targets, because the scroll pass runs only for remote URLs. Run the scroll pass for local files too, or document serving over HTTP.
 - **design-copy claims_inventory**: it cannot see numbers in chart `points`. Have it list sparkline end values beside the tile deltas, so a reviewer ticks them together.
 - **design-frontend**: a flex or inline-flex button drops a leading space in a child span ("Pauseupdates"). Add this to the polish checklist.
+
+## Davon's blind ranking (2026-10-10)
+
+Davon answered "1a, 2b, 3b". Against the key (now revealed in `kb/tests/round3/blind-key.md`), he picked round 3 in all three pairs:
+
+| Pair | View | Picked | Round 3 was | Result |
+|---|---|---|---|---|
+| 1 | Coffee, 1440 light | A | A | Round 3 |
+| 2 | Dashboard, 1440 light | B | B | Round 3 |
+| 3 | Coffee, 390 dark, full page | B | B | Round 3 |
+
+Pair 2 is the fully blind one (both sides lack photos). Pairs 1 and 3 were not fully blind because only round 3 has photographs.
