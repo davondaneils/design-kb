@@ -1,0 +1,57 @@
+{
+  "file": "kb/tests/design-search/dashboard.html",
+  "expect": "private",
+  "date": "2026-10-10T16:55:09.143Z",
+  "checks": {
+    "size": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "HTML 109 KB uncompressed (Googlebot cut: 2 MB)"
+        }
+      ]
+    },
+    "head-order": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "search and social tags end by byte 211, before the first large inline block at byte 595"
+        }
+      ]
+    },
+    "robots": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "robots: noindex, nofollow"
+        }
+      ]
+    },
+    "title": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "title \"Overview, Tally\" (shows in tabs, history and shared bookmarks; keep workspace secrets out of it)"
+        }
+      ]
+    },
+    "structured-data": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "0 JSON-LD blocks, 0 typed nodes: "
+        }
+      ]
+    }
+  },
+  "summary": {
+    "fail": 0,
+    "warn": 0,
+    "pass": true
+  }
+}

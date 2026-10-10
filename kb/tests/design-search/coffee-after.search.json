@@ -1,0 +1,87 @@
+{
+  "file": "kb/tests/design-search/coffee.html",
+  "expect": "public",
+  "date": "2026-10-10T16:55:07.997Z",
+  "checks": {
+    "size": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "HTML 202 KB uncompressed (Googlebot cut: 2 MB)"
+        }
+      ]
+    },
+    "head-order": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "search and social tags end by byte 1423, before the first large inline block at byte 3704"
+        }
+      ]
+    },
+    "title": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "\"Ember & Oak: small-batch coffee roasters in Portland, Oregon\" (60 chars)"
+        }
+      ]
+    },
+    "description": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "157 chars"
+        }
+      ]
+    },
+    "headings": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "h1 Ethiopia Guji, roasted Tuesday in Portland.\n  h2 A new hill at your door, every two or four weeks.\n  h2 Three coffees we can’t stop drinking\n    h3 Ethiopia Guji\n    h3 Colombia Huila\n    h3 Oak Fire Espresso\n  h2 How we roast\n    h3 Buy direct\n    h3 Roast in small batches\n    h3 Ship within 48 hours\n  h2 Letters from the roastery\n  h2 Shop\n  h2 Roastery"
+        }
+      ]
+    },
+    "links": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "22 links, 16 unique destinations"
+        }
+      ]
+    },
+    "social": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "og:image 1200x630, 351 KB"
+        }
+      ]
+    },
+    "structured-data": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "block 1: JSON-LD 1.1 expansion ok (jsonld.js, safe mode), 42 triples"
+        },
+        {
+          "message": "1 JSON-LD blocks, 6 typed nodes: WebSite, OnlineStore, PostalAddress, CafeOrCoffeeShop, GeoCoordinates, OpeningHoursSpecification"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "fail": 0,
+    "warn": 0,
+    "pass": true
+  }
+}

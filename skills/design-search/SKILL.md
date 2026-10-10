@@ -7,7 +7,7 @@ description: Domain reference loaded by design-director or a design playbook (de
 
 > **Layer: domain reference.** Loaded after `design-foundations` by `design-director` or a `design-playbook-*` skill. Accessibility floor for every rule here: design-foundations `references/accessibility.md`.
 
-Facts in this skill are current to **2026-10-09**. Search, and AI search especially, changes monthly. Before giving advice that depends on a platform behavior, check the date on the fact in `references/` and say how old it is. Review due 2027-01-09.
+Version 0.2. Facts current to **2026-10-09** (references 01 to 06) and **2026-10-10** (reference 07, rechecked against Google's docs that day). Search, and AI search especially, changes monthly. Before giving advice that depends on a platform behavior, check the date on the fact in `references/` and say how old it is. Review due 2027-01-10.
 
 ## How to use this skill
 1. Pass the fundamentals gate below. Any failure is reported first and fixed first; nothing else earns credit until the gate passes.
@@ -45,6 +45,11 @@ Never present Correlational, Practitioner or Speculation as fact. Never promise 
 11. Structured data, where used, is valid and matches visible content. No self-serving review markup.
 12. No spam patterns: no scaled near-duplicate pages, doorway city pages, keyword stuffing, fake date refreshes, fabricated authors, hidden text, or bought links (Official, Google spam policies, 2026-08).
 13. Measurement baseline exists before changes: Search Console and Bing Webmaster Tools verified, analytics capturing conversions.
+
+**Built page (run on the HTML, not on prose)**
+14. `node skills/design-search/assets/search-check.mjs page.html --base https://<origin>/ --assets <dir>` exits 0 for a public page, and `--expect private` exits 0 for an app screen behind login. It checks title, description, canonical, robots, H1 and heading levels, real link URLs, JSON-LD (parse, schema.org types and properties, Google's required properties, visible-content match, optional JSON-LD 1.1 expansion), Open Graph, favicon format, head order and the 2 MB cut. Details: `references/07-page-build.md`.
+15. Search work never costs a fundamentals miss: `node tools/lint.mjs` is no worse after the search pass than before.
+16. Private app pages: auth first, `noindex` meta plus `X-Robots-Tag` on every response, no robots.txt Disallow on them, no JSON-LD, no social tags (Official, Google block-indexing and control-what-you-share docs, 2025-12-10).
 
 Performance: Core Web Vitals at the 75th percentile, LCP 2.5 s or less, INP 200 ms or less, CLS 0.1 or less (Official, web.dev). Report misses, but treat CWV as a ranking tiebreaker, not a growth plan (Official, Google page experience doc, 2026-09). Implementation belongs to design-frontend.
 
@@ -95,11 +100,18 @@ Business Profile name equals the real-world name (no keywords, Official), most s
 9. **Link from pages that already earn links.** Add contextual internal links from top pages by referring domains to the money page needing lift.
 10. **Agents read the accessibility tree** (Official, 2026-05). Semantic HTML, labeled controls and accessible forms make the site usable by browser agents; this is the WCAG 2.2 AA work design-frontend already owns.
 11. **Prompt panels, not screenshots.** 30 to 50 prompts across journey stages, each run 3 to 5 times in a 24 to 72 hour window, logged by engine, location, language and login state (Practitioner, Aleyda Solis 2026-09). Single answers vary.
-12. **Avoid the 2026 traps.** Self-promotional "best X" listicles at scale saw visibility drops of 29 to 49% from 2026-01-20 (Practitioner, Lily Ray). "Summarize with AI" buttons that steer the model are prompt injection and treated as spam (Practitioner report, 2026-05). Keywords in a Business Profile name correlate with rank in surveys but violate guidelines.
+12. **Avoid the 2026 traps.** Sites with many self-promotional "best X" listicles saw visibility drops of 29 to 49% from about 2026-01-20 (Practitioner, Lily Ray, Sistrix data; she names listicles as one possible factor among scaled and AI-written content). "Summarize with AI" buttons that steer the model are prompt injection and treated as spam (Practitioner report, 2026-05). Keywords in a Business Profile name correlate with rank in surveys but violate guidelines.
+
+13. **Product markup where the shopper can buy, never on the homepage grid.** Product rich results only support pages about a single product (Official, 2026-09-08). Homepage: WebSite plus Organization (OnlineStore for a shop) plus the LocalBusiness subtype when its address and hours are visible. Global shipping and returns once on Organization, Offer only overrides (Official). The one list exception is the carousels beta: ItemList of Product, LocalBusiness or Event on a category page, EEA, Turkiye and South Africa only (Official, 2026-09-11).
+14. **Design the social card for its crops and its cache.** Render it from the page's own type and art at 1200x630 with every line inside the centered 630x630 square (measure it); keep the homepage card evergreen because unfurlers cache images by URL (Official, Facebook); per-item cards get per-item file names.
+15. **Head order and size for lazy readers.** Slackbot reads as little as it can with Range requests (Official); Googlebot reads the first 2 MB of uncompressed HTML (Official, 2026-02-03), and inlined fonts and SVG count. Title, description, canonical, robots and social tags go first in `<head>`, before any large inline block.
+16. **llms.txt: two true statements.** Google Search does not use it (Official, 2026-07-10), and Chrome Lighthouse's Agentic Browsing audit fails a site whose `/llms.txt` returns a server error while a 404 is Not Applicable (Official, Chrome docs, 2026-05-05). So never let the path 5xx; build the file only for a named non-Google reason.
 
 ## Workflows
 
 **SEO audit:** gate items 1 to 13 in order, using Search Console Pages report, URL Inspection, a crawl (Screaming Frog or Sitebulb), curl as GPTBot, Rich Results Test, and server logs. Output: fundamentals failures first, ranked by traffic at risk, then expert opportunities, each with owner and evidence label.
+
+**Build step (design-director, every public page and app screen):** run the page through `references/07-page-build.md`, then search-check (gate 14) and the fundamentals lint (gate 15), before the self-critique loop.
 
 **New site or redesign launch:** URL map and redirects (one-to-one, one hop), SSR, titles and H1 per template, schema per template, sitemap, robots.txt (production, not staging), canonical host, analytics and Search Console before launch, crawl the staging build behind auth, post-launch check of 404s and indexing for 4 weeks.
 
@@ -118,6 +130,8 @@ Business Profile name equals the real-world name (no keywords, Official), most s
 | IA, URLs, internal links, facets, pagination | `references/04-architecture-linking.md` |
 | AI crawlers, AEO decisions, evidence on citations and clicks, what not to sell | `references/05-aeo-ai-search.md` |
 | Business Profile, local pages, reporting stack, GA4 AI channel, KPIs | `references/06-local-and-measurement.md` |
+| Applying all of it to one built page: head tags, graph placement, social card, icons, quotable passages, app pages behind login, worked examples (coffee landing, Tally dashboard, product page) | `references/07-page-build.md` |
+| Checking a built page | `assets/search-check.mjs` (usage in its header); `assets/schemaorg-vocab.json` (schema.org vocabulary, rebuilt by `assets/build-vocab.mjs`); `npm ci` in `assets/` adds the jsonld.js expansion check |
 
 ## Hand-offs
 - **website-strategy**: positioning, audience, and which intents the business should own. Search follows strategy.

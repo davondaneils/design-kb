@@ -1,0 +1,254 @@
+diff --git a/kb/tests/combined/coffee.src.html b/kb/tests/design-search/coffee.src.html
+index 58f861c..f56d0ea 100644
+--- a/kb/tests/combined/coffee.src.html
++++ b/kb/tests/design-search/coffee.src.html
+@@ -4,8 +4,103 @@
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="color-scheme" content="light dark">
+-<title>Ember &amp; Oak Coffee Roasters, Portland</title>
+-<meta name="description" content="Single-origin coffee roasted in small batches on a 1962 Probat in Southeast Portland. This week: Ethiopia Guji, lot 0412.">
++<title>Ember &amp; Oak: small-batch coffee roasters in Portland, Oregon</title>
++<meta name="description" content="Single-origin coffee roasted 12 kg at a time on a 1962 Probat in Southeast Portland, shipped within 48 hours. Bags from $18; subscriptions $18 with shipping.">
++<link rel="canonical" href="https://emberandoak.example/">
++<meta name="robots" content="max-image-preview:large">
++<meta property="og:type" content="website">
++<meta property="og:site_name" content="Ember &amp; Oak">
++<meta property="og:title" content="Ember &amp; Oak: small-batch coffee roasters in Portland">
++<meta property="og:description" content="Single-origin coffee, roasted twelve kilos at a time and shipped within 48 hours. Every bag prints what we paid for it.">
++<meta property="og:url" content="https://emberandoak.example/">
++<meta property="og:locale" content="en_US">
++<meta property="og:image" content="https://emberandoak.example/og/home-1200x630.png">
++<meta property="og:image:type" content="image/png">
++<meta property="og:image:width" content="1200">
++<meta property="og:image:height" content="630">
++<meta property="og:image:alt" content="The Ember &amp; Oak wordmark over orange contour lines, with the line: single-origin coffee, roasted in Portland.">
++<meta name="twitter:card" content="summary_large_image">
++<link rel="icon" href="/icon-192.png" sizes="192x192" type="image/png">
++<link rel="apple-touch-icon" href="/apple-touch-icon.png">
++<script type="application/ld+json">
++{
++ "@context": "https://schema.org",
++ "@graph": [
++  {
++   "@type": "WebSite",
++   "@id": "https://emberandoak.example/#website",
++   "url": "https://emberandoak.example/",
++   "name": "Ember & Oak",
++   "alternateName": [
++    "Ember & Oak Coffee Roasters"
++   ],
++   "publisher": {
++    "@id": "https://emberandoak.example/#org"
++   },
++   "inLanguage": "en-US"
++  },
++  {
++   "@type": "OnlineStore",
++   "@id": "https://emberandoak.example/#org",
++   "name": "Ember & Oak Coffee Roasters",
++   "url": "https://emberandoak.example/",
++   "logo": "https://emberandoak.example/logo-512.png",
++   "image": "https://emberandoak.example/og/home-1200x630.png",
++   "description": "Specialty coffee roaster in Southeast Portland, Oregon. Single-origin coffee roasted twelve kilos at a time on a 1962 Probat and shipped within 48 hours of roasting.",
++   "address": {
++    "@id": "https://emberandoak.example/#address"
++   },
++   "subOrganization": {
++    "@id": "https://emberandoak.example/visit/#cafe"
++   }
++  },
++  {
++   "@type": "PostalAddress",
++   "@id": "https://emberandoak.example/#address",
++   "streetAddress": "1120 SE Water Ave",
++   "addressLocality": "Portland",
++   "addressRegion": "OR",
++   "postalCode": "97214",
++   "addressCountry": "US"
++  },
++  {
++   "@type": "CafeOrCoffeeShop",
++   "@id": "https://emberandoak.example/visit/#cafe",
++   "name": "Ember & Oak Coffee Roasters",
++   "url": "https://emberandoak.example/visit/",
++   "parentOrganization": {
++    "@id": "https://emberandoak.example/#org"
++   },
++   "address": {
++    "@id": "https://emberandoak.example/#address"
++   },
++   "geo": {
++    "@type": "GeoCoordinates",
++    "latitude": 45.51216,
++    "longitude": -122.66534
++   },
++   "openingHoursSpecification": [
++    {
++     "@type": "OpeningHoursSpecification",
++     "dayOfWeek": [
++      "Monday",
++      "Tuesday",
++      "Wednesday",
++      "Thursday",
++      "Friday",
++      "Saturday",
++      "Sunday"
++     ],
++     "opens": "07:00",
++     "closes": "15:00"
++    }
++   ],
++   "servesCuisine": "Coffee",
++   "image": "https://emberandoak.example/og/home-1200x630.png"
++  }
++ ]
++}
++</script>
+ <style>
+ /* Combined page (kb/tests/combined.md). Built through design-director > design-playbook-landing with every domain applied:
+    color (design-color pilot tokens), typography (Newsreader display, system sans, 52ch measure, display ramp, real characters),
+@@ -358,7 +453,7 @@ em { font-style: italic; letter-spacing: -0.01em; }
+ .site-footer { padding: var(--space-9) 0 var(--space-7); }
+ .site-footer .cols { display: grid; gap: var(--space-8); }
+ @media (min-width: 1024px) { .site-footer .cols { grid-template-columns: 6fr 3fr 3fr; } }
+-.site-footer h2 { font: 400 var(--text-2xl)/var(--leading-tight) var(--font-serif); letter-spacing: -0.015em; }
++.site-footer h2:not(.label) { font: 400 var(--text-2xl)/var(--leading-tight) var(--font-serif); letter-spacing: -0.015em; }
+ .site-footer .intro { color: var(--color-text-muted); margin-top: var(--space-3); max-inline-size: var(--size-measure); }
+ form { margin-top: var(--space-6); max-width: 480px; }
+ label { display: block; font-size: var(--text-sm); font-weight: 600; margin-bottom: var(--space-3); }
+@@ -373,7 +468,8 @@ input[aria-invalid=true] { border-color: var(--color-danger); box-shadow: inset
+ .ok .icon { color: var(--color-success); }
+ .error .icon, .ok .icon { width: 16px; height: 16px; margin-top: var(--space-1); }
+ form[data-done] .field-row, form[data-done] > label { display: none; }
+-.links h3 { margin-bottom: var(--space-4); }
++.ledger time { font-variant-numeric: tabular-nums; } /* scoped: on the hero label and offer note the feature shifted the letters too */
++.links h2 { margin-bottom: var(--space-4); }
+ .links a { display: inline-block; color: var(--color-text); text-decoration: none; padding: var(--space-2) 0; }
+ @media (hover: hover) { .links a:hover { text-decoration: underline; } }
+ .signoff { margin-top: var(--space-10); padding-top: var(--space-6); border-top: 1px solid var(--color-border); display: grid; gap: var(--space-5); }
+@@ -388,13 +484,13 @@ form[data-done] .field-row, form[data-done] > label { display: none; }
+ <body>
+ <header class="site-header">
+   <div class="wrap">
+-    <a class="logo" href="#">Ember <span class="amp">&amp;</span> Oak</a>
++    <a class="logo" href="/">Ember <span class="amp">&amp;</span> Oak</a>
+     <nav class="nav" aria-label="Main">
+-      <a href="#shop">Shop</a>
+-      <a class="hide-sm" href="#story">Roastery</a>
+-      <a class="hide-sm" href="#journal">Journal</a>
+-      <a href="#cart" aria-describedby="cart-label">Cart <span class="cart-count" id="cart-count"><span aria-hidden="true" id="cart-n">0</span></span><span class="sr-only" id="cart-label">empty</span></a>
+-      <a class="btn btn-secondary btn-sm hide-sm" href="#subscribe">Subscribe</a>
++      <a href="/coffee/">Shop</a>
++      <a class="hide-sm" href="/roastery/">Roastery</a>
++      <a class="hide-sm" href="/journal/">Journal</a>
++      <a href="/cart/" aria-describedby="cart-label">Cart <span class="cart-count" id="cart-count"><span aria-hidden="true" id="cart-n">0</span></span><span class="sr-only" id="cart-label">empty</span></a>
++      <a class="btn btn-secondary btn-sm hide-sm" href="/subscriptions/">Subscribe</a>
+     </nav>
+   </div>
+ </header>
+@@ -402,8 +498,8 @@ form[data-done] .field-row, form[data-done] > label { display: none; }
+ <main>
+   <section class="hero" aria-labelledby="hero-title">
+     <div class="wrap">
+-      <p class="label">This week’s single origin · Lot 0412</p>
+-      <h1 id="hero-title" class="display">Ethiopia Guji, <em>roasted&nbsp;Tuesday</em> in Portland.</h1>
++      <p class="label"><time datetime="2026-W41">This week’s single origin</time> · Lot 0412</p>
++      <h1 id="hero-title" class="display">Ethiopia Guji, <em><time datetime="2026-10-06">roasted&nbsp;Tuesday</time></em> in Portland.</h1>
+       <figure class="stage" role="img" aria-label="A bag of Ethiopia Guji, lot 0412, printed with the contour map of the Hambela Wamena hills where it grew. The map continues off the bag to the summit at 2,100 metres.">
+         <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+           <defs>
+@@ -450,7 +546,7 @@ form[data-done] .field-row, form[data-done] > label { display: none; }
+         <p class="lead">Roasted light in small batches and on its way to you within two days of the roast.</p>
+         <div class="actions">
+           <a class="btn btn-primary" href="#subscribe">Start a subscription</a>
+-          <a class="btn btn-secondary" href="#shop">Buy a bag, $21</a>
++          <a class="btn btn-secondary" href="/coffee/ethiopia-guji-hambela-wamena/">Buy a bag, $21</a>
+         </div>
+         <dl class="facts">
+           <div><dt class="label">Altitude</dt><dd class="num">2,100<small>&#8239;m</small></dd></div>
+@@ -475,8 +571,8 @@ form[data-done] .field-row, form[data-done] > label { display: none; }
+       </div>
+       <div>
+         <p class="price num"><span class="cur" aria-hidden="true">$</span><span aria-hidden="true">18</span><span class="sr-only">$18</span></p>
+-        <p class="offer-note"><strong>A bag, shipping included.</strong> 15% under shop price. Your first bag ships this Friday.</p>
+-        <a class="btn btn-feature btn-wide" href="#">Start my subscription</a>
++        <p class="offer-note"><strong>A bag, shipping included.</strong> 15% under shop price. <time datetime="2026-10-16">Your first bag ships this Friday.</time></p>
++        <a class="btn btn-feature btn-wide" href="/subscriptions/">Start my subscription</a>
+       </div>
+     </div>
+   </section>
+@@ -488,14 +584,14 @@ form[data-done] .field-row, form[data-done] > label { display: none; }
+           <p class="label">On the roaster now</p>
+           <h2 id="shop-title">Three coffees we can’t stop <em>drinking</em></h2>
+         </div>
+-        <a class="more" href="#">See all 9 coffees<svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
++        <a class="more" href="/coffee/">See all 9 coffees<svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+       </div>
+       <ul class="cards">
+         <li class="card">
+           <div class="tile" aria-hidden="true"><svg viewBox="0 0 320 240" preserveAspectRatio="xMidYMid slice">{{GUJI}}</svg><span class="chip anno">Guji · 2,100&#8239;m · 14 lines</span></div>
+           <div class="card-body">
+             <div class="roast label"><span class="roast-meter" aria-hidden="true"><i class="on"></i><i></i><i></i></span>Light roast</div>
+-            <div><h3><a class="card-link" href="#">Ethiopia Guji</a></h3><p class="origin">Hambela Wamena, washed, 2,100&#8239;m</p></div>
++            <div><h3><a class="card-link" href="/coffee/ethiopia-guji-hambela-wamena/">Ethiopia Guji</a></h3><p class="origin">Hambela Wamena, washed, 2,100&#8239;m</p></div>
+             <p class="taste">Peach, jasmine, wildflower honey</p>
+             <div class="card-foot"><p class="p num">$21 <small>/ <span class="unit">340&#8239;g</span></small></p><button class="btn btn-secondary btn-sm add-btn" type="button"><span class="idle">Add to cart<span class="sr-only">: Ethiopia Guji</span></span><span class="done"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>Added<span class="sr-only">: Ethiopia Guji</span></span></button></div>
+           </div>
+@@ -504,7 +600,7 @@ form[data-done] .field-row, form[data-done] > label { display: none; }
+           <div class="tile" aria-hidden="true"><svg viewBox="0 0 320 240" preserveAspectRatio="xMidYMid slice">{{HUILA}}</svg><span class="chip anno">Huila · 1,750&#8239;m · 12 lines</span></div>
+           <div class="card-body">
+             <div class="roast label"><span class="roast-meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span>Medium roast</div>
+-            <div><h3><a class="card-link" href="#">Colombia Huila</a></h3><p class="origin">Finca El Mirador, washed, 1,750&#8239;m</p></div>
++            <div><h3><a class="card-link" href="/coffee/colombia-huila-finca-el-mirador/">Colombia Huila</a></h3><p class="origin">Finca El Mirador, washed, 1,750&#8239;m</p></div>
+             <p class="taste">Caramel, red apple, cocoa nib</p>
+             <div class="card-foot"><p class="p num">$19 <small>/ <span class="unit">340&#8239;g</span></small></p><button class="btn btn-secondary btn-sm add-btn" type="button"><span class="idle">Add to cart<span class="sr-only">: Colombia Huila</span></span><span class="done"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>Added<span class="sr-only">: Colombia Huila</span></span></button></div>
+           </div>
+@@ -513,7 +609,7 @@ form[data-done] .field-row, form[data-done] > label { display: none; }
+           <div class="tile" aria-hidden="true"><svg viewBox="0 0 320 240" preserveAspectRatio="xMidYMid slice">{{BLEND}}</svg><span class="chip anno">Two farms · 1,100 and 1,600&#8239;m</span></div>
+           <div class="card-body">
+             <div class="roast label"><span class="roast-meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span>Dark roast</div>
+-            <div><h3><a class="card-link" href="#">Oak Fire Espresso</a></h3><p class="origin">Brazil and Guatemala blend</p></div>
++            <div><h3><a class="card-link" href="/coffee/oak-fire-espresso/">Oak Fire Espresso</a></h3><p class="origin">Brazil and Guatemala blend</p></div>
+             <p class="taste">Dark chocolate, molasses, toasted almond</p>
+             <div class="card-foot"><p class="p num">$18 <small>/ <span class="unit">340&#8239;g</span></small></p><button class="btn btn-secondary btn-sm add-btn" type="button"><span class="idle">Add to cart<span class="sr-only">: Oak Fire Espresso</span></span><span class="done"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>Added<span class="sr-only">: Oak Fire Espresso</span></span></button></div>
+           </div>
+@@ -525,7 +621,7 @@ form[data-done] .field-row, form[data-done] > label { display: none; }
+   <section class="section story" id="story" aria-labelledby="story-title">
+     <div class="wrap">
+       <h2 id="story-title" class="label">How we roast</h2>
+-      <p class="manifesto">We roast on a 1962 Probat in Southeast Portland, twelve kilos at a time. Every batch is logged, and we print <em>what we paid</em> for every lot on the bag.</p>
++      <p class="manifesto">Ember &amp; Oak roasts on a 1962 Probat in Southeast Portland, twelve kilos at a time. Every batch is logged, and we print <em>what we paid</em> for every lot on the bag.</p>
+       <figure class="curve" aria-labelledby="curve-cap">
+         <figcaption id="curve-cap" class="curve-head"><span><b>Batch 0412, Ethiopia Guji.</b> Bean temperature over 10 minutes 10 seconds, the bag in your hands.</span><span class="anno">First crack at 8:40 and 196&#8239;°C, dropped at 10:10 and 207&#8239;°C</span></figcaption>
+         <div class="plot" aria-hidden="true">
+@@ -561,11 +657,11 @@ form[data-done] .field-row, form[data-done] > label { display: none; }
+             <tbody>
+               <tr><th scope="row">Paid to the washing station</th><td>$4.10</td></tr>
+               <tr><th scope="row">Fairtrade minimum</th><td>$1.80</td></tr>
+-              <tr><th scope="row">New York C price, Sept 30</th><td>$2.62</td></tr>
++              <tr><th scope="row"><time datetime="2026-09-30">New York C price, Sept 30</time></th><td>$2.62</td></tr>
+               <tr class="total"><th scope="row">Over the Fairtrade floor</th><td>2.3&#215;</td></tr>
+             </tbody>
+           </table>
+-          <p class="src">Contract and receipts on request. Prices before import and freight.</p>
++          <p class="src">Prices before import and freight. Contract and receipts on request, and <a href="/transparency/">what we paid for every lot</a> we roast.</p>
+         </div>
+       </div>
+     </div>
+@@ -588,12 +684,12 @@ form[data-done] .field-row, form[data-done] > label { display: none; }
+           <p class="ok" role="status" id="news-ok"></p>
+         </form>
+       </div>
+-      <div class="links"><h3 class="label">Shop</h3><ul><li><a href="#">Coffee</a></li><li><a href="#">Subscriptions</a></li><li><a href="#">Brewing gear</a></li><li><a href="#">Gift cards</a></li></ul></div>
+-      <div class="links"><h3 class="label">Roastery</h3><ul><li><a href="#">Our story</a></li><li><a href="#">Wholesale</a></li><li><a href="#">Visit the cafe</a></li><li><a href="#">Contact</a></li></ul></div>
++      <div class="links"><h2 class="label">Shop</h2><ul><li><a href="/coffee/">Coffee</a></li><li><a href="/subscriptions/">Subscriptions</a></li><li><a href="/brewing-gear/">Brewing gear</a></li><li><a href="/gift-cards/">Gift cards</a></li></ul></div>
++      <div class="links"><h2 class="label">Roastery</h2><ul><li><a href="/roastery/">Our story</a></li><li><a href="/wholesale/">Wholesale</a></li><li><a href="/visit/">Visit the cafe</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+     </div>
+     <div class="signoff">
+       <p class="mark" aria-hidden="true">Ember <span class="amp">&amp;</span> Oak</p>
+-      <div class="legal"><p>Ember &amp; Oak Coffee Roasters, 1120 SE Water Ave, Portland, Oregon</p><p class="anno"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 2l4 7H2z" fill="currentColor"/></svg>45.51° N, 122.67° W · 15&#8239;m · © 2026</p></div>
++      <div class="legal"><p>Ember &amp; Oak Coffee Roasters, 1120 SE Water Ave, Portland, OR 97214. Cafe and roastery open every day, 7am to 3pm.</p><p class="anno"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 2l4 7H2z" fill="currentColor"/></svg>45.51° N, 122.67° W · 15&#8239;m · © 2026</p></div>
+     </div>
+   </div>
+ </footer>

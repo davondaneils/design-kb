@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ember &amp; Oak icon</title>
+<style>
+/* Favicon, touch icon and Organization logo (design-search reference 07, "Icons and logo").
+   Google Search shows the favicon at about 16 to 32px next to every result and lists PNG, not SVG, among its formats
+   (doc updated 2026-08-28), so the mark is one glyph: the italic ampersand from the wordmark, warm 950 on brand orange.
+   Square, full bleed, no transparency: Google and iOS put it on their own backgrounds and masks. Size from ?size=. */
+/* @inline newsreader-display-italic.css */
+html, body { margin: 0; }
+body { width: var(--s); height: var(--s); overflow: hidden; display: grid; place-items: center; background: #f26b21; color: #27201a; }
+.amp { font: italic 400 calc(var(--s) * 0.92)/1 "Newsreader Display", serif; translate: 0 -4%; }
+</style>
+</head>
+<body>
+<span class="amp">&amp;</span>
+<script>document.body.style.setProperty('--s', (new URLSearchParams(location.search).get('size') || '192') + 'px');</script>
+</body>
+</html>

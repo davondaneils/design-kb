@@ -1,4 +1,63 @@
-# Tester report: design-search v0.1
+# Tests: design-search
+
+## Run 2: rendered, on the combined pages (v0.2, 2026-10-10)
+
+Briefs and rubric: `kb/briefs/search/07-page-build.md` (editor-in-chief). Route: design-director > design-foundations > design-playbook-landing (coffee) or design-playbook-dashboard (Tally) > design-search SKILL.md and `references/07-page-build.md`, `03-structured-data.md`, `02-on-page-content.md`. Starting pages: `kb/tests/combined/coffee.html` and `dashboard.html` (Davon picked them 3 of 3). Outputs: `kb/tests/design-search/`.
+
+**What "without" means here.** The combined pages are the without-search baseline: the same pages, built by every other skill, with no search pass. That is a fairer baseline than a fresh generic page, because it isolates this skill's gain. Clean context: not applicable; the same session built both, and the baseline predates this session.
+
+### Build
+`cp kb/tests/combined/coffee.src.html kb/tests/design-search/` then `python3 kb/tests/design-search/apply-search.py kb/tests/design-search/coffee.src.html` (every change asserted and commented) then `node kb/tests/design-search/build.mjs` (same art seeds and fonts as the combined build; also writes the dashboard, the coffee state sheet, the social card and the icons into `site/`). Full source diff: `coffee.src.diff`.
+
+### Gate 1: fundamentals lint (`node tools/lint.mjs`), before and after
+| Page | Before (combined) | After (design-search) |
+|---|---|---|
+| coffee.html | 0 fail, 21 warn | 0 fail, 21 warn |
+| coffee `?state=` added, subscribed, error, sending | 0 fail each (combined.md) | 0 fail, 21 warn each |
+| coffee-states.html | 0 fail, 14 warn | 0 fail, 14 warn |
+| dashboard.html | 0 fail, 27 warn | 0 fail, 27 warn |
+| dashboard `?state=` loading, empty, partial, viewer | 0 fail (combined.md) | 0 fail; 8, 8, 12, 28 warn |
+
+Warnings are the pre-existing ones (touch targets 24 to 44px at 390, fluid display sizes). No regression. One regression appeared mid-build and was fixed: a `tabular` warning from a `<time>` in the ledger row header; fixed with a rule scoped to the ledger.
+
+### Gate 2: search (`node skills/design-search/assets/search-check.mjs`), before and after
+| Page | Before | After |
+|---|---|---|
+| coffee.html (public, `--base https://emberandoak.example/ --assets site`) | **6 fail**: no canonical; 14 links to `#` (logo, both subscription CTAs, all three product names, "See all 9 coffees", eight footer links); og:title, og:type, og:image, og:url missing. **6 warn**: no max-image-preview, three relative dates, five header links to `#fragments`, no twitter:card, no icon, no JSON-LD | **0 fail, 0 warn**. 1 JSON-LD block, 6 typed nodes, jsonld.js expansion 42 triples (safe mode); 22 links to 16 destinations; og:image 1200x630, 351 KB; head tags end at byte 1,423 of 202 KB |
+| dashboard.html (`--expect private`) | **1 fail**: no noindex | **0 fail, 0 warn**: `noindex, nofollow`, no JSON-LD, no social tags, no canonical |
+| fixtures/product-guji.html | | 0 fail, 1 warn (69-character title) |
+| fixtures/bad-markup.html (negative) | | 19 fail, 11 warn: catches the 3-Product homepage graph, `"price": "$21"`, missing image, unknown `CoffeeShop`, unknown `brandName`, `openingHours` on Product, trailing-comma JSON, FAQPage (warn), markup not visible, `#` and `javascript:` links, skipped heading level |
+
+### Gate 3: judged rows on the renders
+- **Visual parity:** pixel diff against the combined page's render (1440 light): zero changed pixels from the top through the product cards (y 0 to 2,600). Changes below: the manifesto names the roaster (one more line), the ledger note gains a link, the footer gains ZIP and hours. Dashboard: zero changed pixels at 390 and 1440, light and dark.
+- All 15 FOUNDATIONS rows hold as in combined.md (nothing visual changed above the story section; the footer link labels changed element, h3 to h2, not style).
+- Mid-build catch (round 1): wrapping only "Tuesday" in `<time>` plus a global `time { tabular-nums }` moved "Tuesday" 3px in the H1 and reshaped the eyebrow and the offer note. Found by the pixel diff, not by the lint. Fixed by wrapping whole phrases and scoping the rule. Now a signature move in reference 07.
+- Round 2 catch: the first social card's 172px wordmark was 935px wide and lost "Em" and "ak" in a centered square crop. Resized to fit the 630px square (measured 565px). Preview sheet: `shots/preview-1440-light.png`.
+
+### Screenshots
+`kb/tests/design-search/shots/`: `coffee-{390,1440}-{light,dark}.png`, `dashboard-{390,1440}-{light,dark}.png`, `coffee-states-1440-light.png`, `coffee-before-1440-light.png`, `preview-1440-light.png` (result, card at feed size, 2:1 crop, centered square crop, favicon at 16 and 32px). Card and icons: `site/og/home-1200x630.png`, `site/icon-192.png`, `site/apple-touch-icon.png`, `site/logo-512.png`.
+
+### Exemplar comparison (honest)
+Exemplar hosts were refused again on 2026-10-10, so nobody could read their `<head>`, cards or JSON-LD today. Comparison from memory, labelled opinion.
+- **The page itself** (apple.com product pages, family.co): unchanged by design, so the verdict from combined.md stands: clearly better than the pilot, still below the bar on photography and a signature display face. Search work cannot close that gap and did not try.
+- **Search and share layer** (stripe.com, linear.app, apple.com): **close.** Title, description, canonical, one entity graph with `@id` links, the right type on the right page, a designed evergreen card, PNG icons. What the exemplars have that this does not: per-page cards for every product (only the homepage card and the lot card's file name exist here), real photography in the card (Apple's are product photos), product pages that actually exist behind the links, a login page with its own card, and verified results in Google's Rich Results Test and Search Console, which need a public URL.
+- **The dashboard**: pass for its one question. There is nothing for an app behind login to gain from search; the work is keeping it out, and it now is.
+
+### Verdict
+Pass on the rubric: lint unchanged at 0 fails, search-check 0 fails on both pages, every structured data node earned and placed, quotable facts dated, card survives its crops. design-search moves to v0.2, status testing. Not shipped: the search layer has not been checked against live engines (needs a deployed URL), and the AEO moves (dated phrases, named subjects) are speculation that only a prompt panel on a live site could measure.
+
+### Gaps for the next round
+1. Build one real product page and the login page through the playbooks, so Product, Offer, the per-lot card and the app's public card are tested on designed pages, not fixtures.
+2. Run Google's Rich Results Test and the Schema Markup Validator on a deployed copy; the local checker approximates both and is not either.
+3. When exemplar hosts are reachable: record each exemplar's head (title pattern, og image, JSON-LD types) in `kb/teardowns/`.
+4. Prompt panel (reference 05) once the site is live, to measure whether named-subject sentences and dated phrases are ever quoted.
+
+### Blind pairs
+None for this run. The coffee page differs from the combined page only below the product cards, and the dashboard not at all; a blind visual ranking would measure nothing this skill did. The preview sheet is the visual artifact to judge.
+
+---
+
+## Run 1: text-only test (v0.1, 2026-10-09)
 
 Tested 2026-10-09. Each brief answered twice: (A) as a strong generic assistant would without the skill, (B) following `skills/design-search/`. Outputs are condensed to their decisions; every decision that differs is shown.
 
