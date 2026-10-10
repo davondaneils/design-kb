@@ -11,3 +11,7 @@ These images are AI-generated, not real photography. They were made with Figma A
 JPG files are quality 82, progressive. WebP files are quality 80.
 
 Known AI artifacts: the beans beside the bag in hero-bag are green (unroasted), and the handwritten cup labels and the roaster badge in cupping are partly garbled text.
+
+## Use notes
+- hero-bag: the green (unroasted) beans were asked for on purpose; they point to origin. Keep them.
+- cupping: the card labels on the table are garbled AI text. Crop above the table edge or keep the image small enough that the labels cannot be read.
