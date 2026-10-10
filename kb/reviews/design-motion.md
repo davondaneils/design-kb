@@ -38,3 +38,51 @@ Items a strong generalist usually does not know and the skill carries: Material 
 
 ## Contradictions with other skills
 None found. Color values in code are marked illustrative and deferred to design-color. CTA content deferred to copywriting and sales-funnels.
+
+---
+
+# Review round 2: design-motion v0.2 (critic, 2026-10-10)
+
+Reviewed: the v0.2 changes (SKILL.md, new `references/07-motion-on-real-pages.md`, `assets/motion-tokens.css`, new `assets/motion-audit.mjs`, reference 04 edits) against `kb/research/motion/*`, FOUNDATIONS v0.3 and design-foundations `references/accessibility.md`.
+
+## Citation spot check (before step 1)
+Method: every unique URL in `kb/research/motion/*.md` (53), random sample of 20 percent rounded up (11), Python `random.seed(20261010)`, `random.sample`. Each re-fetched with WebFetch on 2026-10-10.
+
+| # | URL | Claim it supports | Result |
+|---|---|---|---|
+| 1 | emilkowal.ski/ui/great-animations | Transitions retarget, keyframes restart (06); compositor animations stay smooth (05) | **Partly wrong.** Transitions and smoothness confirmed verbatim. "Keyframes restart" is not on the page. |
+| 2 | developer.mozilla.org/.../@starting-style | Entry from display none; Baseline Aug 2024 (06) | Confirmed verbatim |
+| 3 | buildmvpfast.com/...scroll-driven... | Chrome 115, Safari 26, Firefox flag (03) | Quote confirmed, but tier 5 is the **sole** support for Safari and Firefox status: policy breach |
+| 4 | cdn.jsdelivr.net/gh/kylezantos/... | Three lenses, anti-patterns, no scale(0) (01, 04) | Confirmed (tier 5, already labelled P) |
+| 5 | nngroup.com/articles/animation-purpose-ux/ | Five purposes; dark pattern (01) | Confirmed verbatim |
+| 6 | developer.mozilla.org/.../easing-function/linear | `linear()` approximates springs; Baseline Dec 2023 (02, 06) | **Overstated.** MDN says "approximate any curve"; it never names springs. Baseline date confirmed. |
+| 7 | docs.lottiefiles.com/.../why-dotlottie | "often up to 80% smaller" (06) | Confirmed verbatim |
+| 8 | github.com/material-components/material-components-android | Fade through 0.92 and 0.35 (03) | **URL imprecise**: the repository root has no motion text. Values confirmed in `MaterialFadeThrough.java` (0.92f) and `FadeThroughProvider.java` (0.35F). |
+| 9 | developer.mozilla.org/.../transition-timing-function | Initial value `ease`, lists repeat (07) | Confirmed verbatim |
+| 10 | w3.org/.../three-flashes-or-below-threshold | 3 flashes, 341 x 256, 87,296 px (05) | Confirmed verbatim |
+| 11 | nngroup.com/videos/3-response-time-limits... | Meaning of 0.1, 1, 10 s (02) | **URL does not support the meaning**: the video page lists the limits only. Confirmed on nngroup.com/articles/response-times-3-important-limits/. |
+
+Also found: the v0.1 research notes (01 to 06) store claims without a per-claim quote, which the source policy requires.
+
+**Result: batch fails, sent back to the researcher.** Fixed the same day (researcher): wording of claims 1 and 6 narrowed to what the sources say, the rest marked derived; precise URLs with quotes for 8 and 11; claim 3 marked tier 5 lead, Safari and Firefox status unverified; verified quotes added to notes 01, 02, 05 and 06 under "Quotes added by the critic's spot check". SKILL.md expert move 4 re-attributed (keyframes part derived). Re-check of the five corrected entries: all now match their sources. **Open item:** about 40 v0.1 claims still have no stored quote; logged in `kb/status/motion.md` for a researcher pass before v1.0. The new note 07 has quotes for all 23 claims.
+
+## Fundamentals gate
+| Check | Result |
+|---|---|
+| Token names match FOUNDATIONS | **Fail in v0.1, fixed.** The skill, references, drafts and token file used `--easing-*`; FOUNDATIONS, design-frontend, design-polish and design-foundations use `--ease-*`. The FOUNDATIONS semantic tokens `--motion-{hover,enter,exit}` were never defined, and `--motion-scale` squatted on that namespace. Renamed everywhere (`--ease-*`, `--duration-multiplier`), `--motion-*` pairs defined in `assets/motion-tokens.css` and SKILL.md. This was missed by the round 1 critic ("contract names no easing tokens"), which was true of FOUNDATIONS v0.1 but not of v0.3. |
+| Numbers | Durations, curves and the 600 ms marketing ceiling match FOUNDATIONS. 07's derived numbers (contour step 23 ms, marker delays 90, 318, 498 ms) re-computed from the formulas: correct. |
+| Accessibility vs design-foundations | Consistent: reduce keeps fades at 150 ms or less (accessibility.md says `--duration-fast`). New 2.2.2 auto-updating rule agrees with W3C. Modality-aware dialogs keep focus moving at the start. |
+| Code | `motion-audit.mjs` run on 16 scenarios; it caught two real defects in the test pages (visibility entries on `ease`; a reduced-motion double exposure), so it does what it claims. |
+| Em dashes | None (grep U+2014 over skill, briefs, research, drafts, tests). |
+
+## Contradictions
+1. Reference 04 said add-to-cart labels "crossfade", and under reduce "an opacity crossfade only". The rendered test showed a crossfade double-exposes two labels in one box. Fixed in 04 (skill and draft) to fade-through.
+2. Reference 04 specifies skeleton shimmer `linear` 1.5 to 2 s; the dashboard page pulsed at 1.4 s on `--ease-standard`. Page fixed to 1600 ms linear.
+3. SKILL.md fundamental 6 ("never linear on an object that starts and stops") versus 07's linear time-axis reveal: clarified in the rule (a reveal edge whose x axis is time is a clock, not an object).
+4. **Exemplar teardowns** (branch `claude/exemplar-library-xfa3bl`, `kb/teardowns/*.md`, measured live CSS): Linear hover color 100 ms, Vercel 100 ms, both on ease-out curves, match `--motion-hover`. Stripe reveals run 800 ms with a strong ease-out and a 1.2 s color fade; Raycast cards slide in at 700 ms. The marketing exemplars exceed the 600 ms FOUNDATIONS ceiling. Not a contradiction inside this skill, but a question for the contract: sent to `kb/reviews/design-motion-pipeline-notes.md`.
+
+## Expert bar
+New material a strong generalist would not know: WCAG 2.2.2 applying to live KPIs; linear for time-axis reveals and marker sync by multiplication; the two-transform wipe; `clip-path` digit slots instead of `overflow: hidden` under negative tracking; transition list entries silently defaulting to `ease`; fade-through also under reduce; modality-aware dialogs; freezing animations in-page with a rAF loop because a polled check misses a 100 ms transition; the lint measuring mid-entrance. Passes. "Nod along" lines kept only where they are gate items.
+
+## Verdict
+First pass: **revise** (token names, contradictions 1 to 3, citation batch). After the fixes above: **approve** for testing, with the v0.1 quote debt as an open item.

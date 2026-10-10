@@ -29,3 +29,9 @@ Status key: C = consensus, P = practitioner opinion, S = single source or vendor
 - https://rauno.me/craft/interaction-design
 - https://cdn.jsdelivr.net/gh/kylezantos/design-motion-principles@main/README.md
 - Practitioner X accounts used as leads (opinion tier): @emilkowalski, @raunofreiberg, @jh3yy (Jhey Tompkins), Jakub Krehel (krehel.com). X pages do not fetch; their published sites and skills were read instead.
+
+## Quotes added by the critic's spot check (2026-10-10)
+- NN/g, The Role of Animation and Motion in UX: "Animation in UX must be unobtrusive, brief, and subtle."; "using animation to hijack the users' attention or create a fear of loss is a dark pattern." https://www.nngroup.com/articles/animation-purpose-ux/
+- kylezantos compilation (tier 5, lead only): lenses "Should this animate at all?" (Kowalski), "Is this subtle enough?" (Krehel), "What could this become?" (Tompkins); tells "hover-scale-on-everything", "stagger-spam", "bouncy springs on utility actions". https://cdn.jsdelivr.net/gh/kylezantos/design-motion-principles@main/README.md
+- Kowalski, Great Animations: "A hardware-accelerated animation will remain smooth, no matter how busy the main thread is." https://emilkowal.ski/ui/great-animations
+- v0.1 of this note stored claims without per-claim quotes. Claims not listed here still lack a quote (open item in kb/status/motion.md).

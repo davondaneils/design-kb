@@ -14,9 +14,9 @@
   --duration-base: 200ms;     /* 200 to 250ms band: menus, modals, accordions, toasts */
   --duration-slow: 300ms;     /* 300 to 400ms band: drawers, sheets, shared-element moves */
   --duration-page: 400ms;     /* 400 to 600ms band: route and page transitions */
-  --easing-standard: cubic-bezier(0.2, 0, 0, 1); /* on-screen moves, resizes */
-  --easing-enter: cubic-bezier(0, 0, 0, 1);      /* decelerate: arriving */
-  --easing-exit: cubic-bezier(0.3, 0, 1, 1);     /* accelerate: leaving for good */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1); /* on-screen moves, resizes */
+  --ease-enter: cubic-bezier(0, 0, 0, 1);      /* decelerate: arriving */
+  --ease-exit: cubic-bezier(0.3, 0, 1, 1);     /* accelerate: leaving for good */
 }
 ```
 The three curves are the Material 3 standard set (material-components-android Motion.md). Use the low end of each band by default; move up the band only for larger surfaces, longer travel or larger screens.
@@ -39,15 +39,15 @@ The three curves are the Material 3 standard set (material-components-android Mo
 **Pick easing**
 | Situation | Token |
 |---|---|
-| Element enters the view (menu, toast, dialog) | `--easing-enter` |
-| Element leaves the view for good (drawer closes off-screen, toast flies out) | `--easing-exit`, one token shorter than its entrance (drawer: slow in, base out; toast: base in, fast out). The accelerate curve has a slow start, so never use it above `--duration-base` |
-| Element closes in place (menu, popover, tooltip) | Opacity with `--easing-standard` at `--duration-fast` or less (opinion: an accelerate curve on an in-place close reads as lag; Kowalski: "ease-in is discouraged for UI") |
-| Element moves or resizes while staying on screen | `--easing-standard` |
-| Hover color or background shift | `--easing-standard` (or CSS `ease`) |
+| Element enters the view (menu, toast, dialog) | `--ease-enter` |
+| Element leaves the view for good (drawer closes off-screen, toast flies out) | `--ease-exit`, one token shorter than its entrance (drawer: slow in, base out; toast: base in, fast out). The accelerate curve has a slow start, so never use it above `--duration-base` |
+| Element closes in place (menu, popover, tooltip) | Opacity with `--ease-standard` at `--duration-fast` or less (opinion: an accelerate curve on an in-place close reads as lag; Kowalski: "ease-in is discouraged for UI") |
+| Element moves or resizes while staying on screen | `--ease-standard` |
+| Hover color or background shift | `--ease-standard` (or CSS `ease`) |
 | Continuous motion: progress bars, spinners, marquees, hold-to-confirm fill | `linear` |
 | Anything the user drags, flicks or can interrupt mid-flight | Spring (below) |
 
-Never use `linear` for a moving object that starts or stops (NN/g). Never use the browser default `ease` as an unexamined default for entrances; it starts slower than `--easing-enter` (opinion, Kowalski).
+Never use `linear` for a moving object that starts or stops (NN/g). Never use the browser default `ease` as an unexamined default for entrances; it starts slower than `--ease-enter` (opinion, Kowalski).
 
 **Pick a spring**
 - Default: no bounce. Apple: "Most animations should use a damping value of 1." Material 3 spatial springs use damping ratio 0.9 (tiny overshoot); effects springs use 1.
@@ -69,7 +69,7 @@ Never use `linear` for a moving object that starts or stops (NN/g). Never use th
 - Shared tokens: 100, 150, 200 (to 250), 300 (to 400), 400 (to 600) ms.
 - Reference systems: Material 3 durations 50 to 1000 ms in 50 ms steps; Carbon 70, 110, 150, 240, 400, 700 ms.
 - Carbon productive easing (0.2,0,0.38,0.9) and expressive (0.4,0.14,0.3,1) are useful when a client is on Carbon; otherwise stay on the shared set.
-- Practitioner extension curves (opinion, Kowalski): strong ease-out `cubic-bezier(0.23, 1, 0.32, 1)` for snappy UI entrances; drawer `cubic-bezier(0.32, 0.72, 0, 1)` for iOS-like sheets. If a project adopts them, add them as `--easing-enter-strong` and `--easing-drawer`; do not redefine the shared tokens.
+- Practitioner extension curves (opinion, Kowalski): strong ease-out `cubic-bezier(0.23, 1, 0.32, 1)` for snappy UI entrances; drawer `cubic-bezier(0.32, 0.72, 0, 1)` for iOS-like sheets. If a project adopts them, add them as `--ease-enter-strong` and `--ease-drawer`; do not redefine the shared tokens.
 
 ## Native platform mapping
 - SwiftUI: `.spring(response: 0.35, dampingFraction: 1)` is the no-bounce default; use `.spring(response: 0.3, dampingFraction: 0.8)` only for a thrown sheet (Apple WWDC18 demo values). Gate with `@Environment(\.accessibilityReduceMotion)` and swap to `.easeInOut(duration: 0.15)` opacity changes.
@@ -77,12 +77,12 @@ Never use `linear` for a moving object that starts or stops (NN/g). Never use th
 - Durations and cubic-bezier curves are the same numbers on every platform; only the API differs. Keep one token source and generate platform files (design-frontend owns the pipeline).
 
 ## Do and don't
-- Do: dialog enters at 200 ms `--easing-enter`, exits at 150 ms with opacity. Don't: same 300 ms ease-in-out both ways.
+- Do: dialog enters at 200 ms `--ease-enter`, exits at 150 ms with opacity. Don't: same 300 ms ease-in-out both ways.
 - Do: a bottom sheet flicked closed keeps the finger's velocity in a spring. Don't: restart a 300 ms bezier from zero speed after release.
 - Do: opacity on a spring with ratio 1. Don't: let opacity overshoot (it clamps and looks like a stall).
 
 ## Worked examples
-1. **Modal and drawer spec for a B2B dashboard (desktop first).** Dialog: overlay opacity 0 to 1 at `--duration-base`, `--easing-standard`; panel opacity 0 to 1 and scale 0.95 to 1 at `--duration-base`, `--easing-enter`; exit opacity to 0 and scale to 0.97 at `--duration-fast`, `--easing-standard`. Drawer from right: translateX(100%) to 0 at `--duration-slow`, `--easing-enter`; exit at `--duration-base`, `--easing-exit`. Reason: desktop wants the low end; drawer travels further than the dialog so it gets the next token.
+1. **Modal and drawer spec for a B2B dashboard (desktop first).** Dialog: overlay opacity 0 to 1 at `--duration-base`, `--ease-standard`; panel opacity 0 to 1 and scale 0.95 to 1 at `--duration-base`, `--ease-enter`; exit opacity to 0 and scale to 0.97 at `--duration-fast`, `--ease-standard`. Drawer from right: translateX(100%) to 0 at `--duration-slow`, `--ease-enter`; exit at `--duration-base`, `--ease-exit`. Reason: desktop wants the low end; drawer travels further than the dialog so it gets the next token.
 2. **Drag-to-dismiss bottom sheet (mobile web).** While dragging: transform follows the finger 1:1, no transition. On release: if velocity above about 0.11 px/ms downward or more than 40 percent dragged (opinion threshold; Vaul uses the velocity rule), dismiss with a spring carrying release velocity; otherwise return with `{ stiffness: 700, damping: 48 }`. Reduced motion: dismiss with a 150 ms opacity fade.
 
 ## Hand-offs

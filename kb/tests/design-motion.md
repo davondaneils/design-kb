@@ -1,4 +1,74 @@
-# Tests: design-motion v0.1
+# Tests: design-motion
+
+## Run 2: v0.2, rendered (2026-10-10)
+
+**Method.** Rendered, not text. The two combined test pages (`kb/tests/combined/coffee.html`, `dashboard.html`) were copied to `kb/tests/design-motion/before/` and linted as the baseline, then rebuilt following SKILL.md and references 01 to 07 (`coffee.src.html`, `dashboard.src.html`, built by `build.mjs` with the shared state sheets). Every page and state was linted with `tools/lint.mjs` (any fail = fail) and rendered with `tools/render.mjs` at 390 and 1440 px, light and dark (`shots/`). Screenshots cannot show motion (render.mjs runs with reduced motion, so they show end states), so every animation was also filmed with the new `skills/design-motion/assets/motion-audit.mjs`: 16 scenarios (`scenarios.mjs`), each filmed under no-preference and reduce, 6 frames per row, timings read from the browser (`document.getAnimations()`), not from the source (`strips/`, `strips/motion-audit.json`). Frame times at 4x CPU throttle in `perf.txt`. Exemplar values come from the measured teardowns (`kb/teardowns/*.md` on `claude/exemplar-library-xfa3bl`, not copied here). Limit: exemplar sites are blocked, so no exemplar was filmed; photo hosts are blocked, so the pages keep their generated SVG imagery.
+
+Clean-context note: the same agent wrote the before and after pages and judged them. The lint, the audit and the frame times are mechanical; the judged items below are not, so treat them as a strong self-review, not an independent one.
+
+### Lint, before and after
+| Page | Before | After |
+|---|---|---|
+| coffee.html | PASS, 0 fail, 21 warn (motion: 0 animations, 11 moving transitions) | PASS, 0 fail, 21 warn |
+| coffee states (added, subscribed, error, sending) | not run | each PASS, 0 fail, 21 warn |
+| coffee-states.html | not run | PASS, 0 fail, 14 warn |
+| dashboard.html | PASS, 0 fail, 27 warn | PASS, 0 fail, 28 warn |
+| dashboard states (loading, empty, partial, viewer, compact, open palette, open sheet) | not run | each PASS, 0 fail (8 to 35 warn) |
+| dashboard-states.html | not run | PASS, 0 fail, 35 warn |
+
+Warn delta: the one new dashboard warn is the "Pause" button at 42.8 x 24 px on phone (meets WCAG 2.5.8 at 24 px; under the 44 px touch target, like the 40 px buttons that already warn on both pages). Two fails were hit on the way and fixed: `?open=sheet` measured a 24 px switch at 23 px because the lint ran mid-entrance (fix: review hooks open settled), and a reduce-row warn for three `transform` transitions declared outside the no-preference block (fix: transform transitions moved inside it).
+
+### Motion added and filmed
+| Scenario | What moves | Filmed timing | Audit |
+|---|---|---|---|
+| coffee-1 roast curve | two-transform wipe, linear, markers pop as the pen passes, labels one instant later | 600 ms linear; markers 150 ms enter at share x 600 ms | pass |
+| coffee-2 contour rise | 37 contour lines fade up, one wave | step min(40, 300/levels) ms, last start under 300 ms | pass |
+| coffee-3a add to cart | press, fade-through label, check draws | out 100 ms exit, in 200 ms enter after 100 ms | pass |
+| coffee-3b cart badge | changed digit rolls, badge bumps once | out 150 exit, in 200 enter, bump 200 standard | pass |
+| coffee-4 card hover | lift 2 px, shadow on `::before` opacity | 150 ms standard | pass |
+| coffee-5 newsletter | success line rises 4 px | 200 ms enter | pass |
+| dash-1 live KPI | only changed digits roll, by direction | 150 exit, 200 enter; reduce: 100 ms crossfade | pass |
+| dash-2 row menu | scale 0.95 plus fade from the trigger corner | 150 enter, 100 exit | pass |
+| dash-3 / 4 shortcut sheet | pointer: scale 0.96 plus fade; keyboard: nothing | 200 enter, 150 exit; `?`: 0 animations | pass |
+| dash-5 / 6 palette | pointer: 100 ms fade; Ctrl K: nothing | 100 ms; 0 animations | pass |
+| dash-7 phone drawer | slide plus scrim, `@starting-style`, `allow-discrete` | 300 enter, 200 exit | pass |
+| dash-8 retry rows | first appearance stagger | 30 ms per row, opacity only | pass |
+| dash-9 sort arrow, dash-10 switch | rotate; thumb on transform, not `left` | 150 ms; 100 ms | pass |
+
+Audit verdict: "PASS: every filmed animation is on the motion tokens", 16 of 16, both rows. No movement under reduce in any scenario.
+
+Frame times at 4x CPU throttle (headless, so relative only): roast curve wipe median 16.7 ms, 3 frames over 25 ms, against 10 for the old `clip-path` draw; contour rise p95 33.4 ms, 6 over 25 ms (the heaviest, 37 paths); live digits 2; drawer 2.
+
+### Motion rubric (brief 07, judged)
+| # | Item | Result |
+|---|---|---|
+| 1 | Every animation has a job (feedback, orientation, attention, state change) | pass: each scenario names its job in the strip caption |
+| 2 | Tokens only, CSS and scripts | pass (audit); scripts read tokens with `getComputedStyle` |
+| 3 | Compositor properties only | pass (audit): no shadow, layout or clip-path animation |
+| 4 | Reduced motion designed per element, no global reset | pass: reduce row of every strip; matrix comment in both sources |
+| 5 | First paint static; numbers and charts never animate on arrival | pass: hero, KPIs and dashboard chart static; curve below the fold |
+| 6 | Keyboard paths instant | pass: dash-4 and dash-6 film 0 animations |
+| 7 | Auto-updating content can be paused (WCAG 2.2.2) | pass: "Pause updates" (phone: "Pause"), mutes the live dot |
+
+7 of 7.
+
+### Exemplar comparison (honest)
+- Close on product UI. Linear and Vercel ship 100 ms hover colors (teardowns); both pages hover at `--duration-instant` (100 ms). Vercel fades at 300 ms; ours sit at 150 to 300 ms. Linear's buttons run 160 ms, between our fast and base.
+- Different on marketing reveals. Stripe reveals run 800 ms on `cubic-bezier(.165,.84,.44,1)` with 1.2 s heading color fades; Raycast cards slide in 700 ms. The coffee curve stops at 600 ms (the FOUNDATIONS page ceiling), so the page reads quicker and less cinematic than Stripe. Whether to allow 800 ms for one below-the-fold reveal is an editor question (pipeline notes item 10).
+- Reduced motion: all five exemplars ship explicit reduced-motion rules (Apple 40, Vercel 16, Linear 14, Raycast 10). Ours is per element with a written matrix, at least on par in intent; the count is not comparable.
+- Clearly below in craft that a strip cannot show: spring physics on drag (none on these pages), and Stripe-grade choreography across a whole scroll. Not tested: real devices, 120 Hz, and filming the exemplars themselves (hosts blocked).
+
+### Verdict
+Pass. Both pages now move with purpose, every animation is filmed and on the tokens, and the fundamentals gate holds in lint and in the audit. Ships as v0.2 for the librarian.
+
+### Gaps sent back
+- The lint motion check is too weak to gate motion (pipeline notes 1 to 3); until it changes, the audit is the evidence.
+- v0.1 research notes 01 to 06: about 40 claims still lack a per-claim quote (critic, open).
+- No native (SwiftUI, Compose) render test; motion was filmed on web only.
+
+---
+
+## Run 1: v0.1, text only (2026-10-09, kept for history)
 
 Method: each brief answered twice, once as a strong generic assistant would (no skill), once following SKILL.md and the references. Answers are condensed to the decisions that matter. Scored 0 to 10 per criterion. The fundamentals gate is pass or fail and is checked first; a gate fail caps the total at 50 percent (30 of 60) and means the answer is not shippable regardless of score.
 

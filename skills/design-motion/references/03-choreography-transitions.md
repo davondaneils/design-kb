@@ -10,7 +10,7 @@
 **Pick the transition pattern** (Material motion system)
 | Relationship between the two views | Pattern | Spec on the shared tokens |
 |---|---|---|
-| One element becomes the next view (card to detail, FAB to sheet, row to page) | Container transform (shared element) | Bounds morph at `--duration-slow`, `--easing-standard`; content inside crossfades in the middle third |
+| One element becomes the next view (card to detail, FAB to sheet, row to page) | Container transform (shared element) | Bounds morph at `--duration-slow`, `--ease-standard`; content inside crossfades in the middle third |
 | Sibling or sequential steps (wizard step 2 to 3, tabs with order, back and forward) | Shared axis | Outgoing slides 30 px and fades out, incoming slides 30 px in from the opposite side; X for lateral, Y for vertical stacks, Z (scale 0.92 to 1) for parent to child; `--duration-slow` (Material default is 450 ms; opinion: 300 ms on web) |
 | Unrelated peers (bottom nav, top-level destinations, swapping a list) | Fade through | Outgoing fades out in the first 35 percent; incoming fades in and scales 0.92 to 1 over the remaining 65 percent; `--duration-base` |
 | An element appears or leaves inside the current view (dialog, menu, snackbar) | Fade (plus small scale) | See 04 component specs |
@@ -45,7 +45,7 @@ The 30 px slide distance is an opinion consistent with Material's small-offset a
 - Do: reveal mid-page feature blocks on scroll once. Don't: animate the hero headline in from opacity 0.
 
 ## Worked examples
-1. **E-commerce grid to product detail (Next.js app router).** Pattern: container transform. The tapped card image gets `view-transition-name: product-hero` just before navigation (set by click handler, then removed), the root crossfades at `--duration-base`, and the image group animates bounds at `--duration-slow` with `--easing-standard`. Back navigation reverses through the same name. Reduced motion: drop the named element so only the root crossfade runs, and shorten it to `--duration-fast`.
+1. **E-commerce grid to product detail (Next.js app router).** Pattern: container transform. The tapped card image gets `view-transition-name: product-hero` just before navigation (set by click handler, then removed), the root crossfades at `--duration-base`, and the image group animates bounds at `--duration-slow` with `--ease-standard`. Back navigation reverses through the same name. Reduced motion: drop the named element so only the root crossfade runs, and shorten it to `--duration-fast`.
 2. **Marketing landing page.** Hero: no entrance animation, fully visible at first paint (protects LCP). Sections below the fold: one reveal each (opacity plus 12 px rise) via `view()` timeline with `@supports` guard. Logo marquee: `linear`, pauses on hover and focus, has a visible pause button because it runs more than 5 seconds next to other content (WCAG 2.2.2). Reduced motion: no reveals, marquee becomes a static wrapped row.
 
 ## Hand-offs

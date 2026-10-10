@@ -1,6 +1,6 @@
 ---
 name: design-motion
-description: Domain reference loaded by design-director or a design playbook (design-playbook-landing, -dashboard, -mobile, -brand); do not trigger on its own for a page, screen or brand job. Covers purpose and restraint, timing and easing, choreography and transitions, micro-interactions, reduced motion and animation performance, and implementation in CSS, WAAPI and Motion. Load it directly only when the user names it or asks a narrow question inside this domain alone.
+description: Domain reference loaded by design-director or a design playbook (design-playbook-landing, -dashboard, -mobile, -brand); do not trigger on its own for a page, screen or brand job. Covers purpose and restraint, timing and easing, choreography and transitions, micro-interactions, reduced motion and animation performance, implementation in CSS, WAAPI and Motion, motion on data and live numbers, and filming and timing every animation on a rendered page (motion-audit). Load it directly only when the user names it or asks a narrow question inside this domain alone.
 ---
 
 # design-motion
@@ -18,13 +18,14 @@ A motion proposal that misses any one of these fails, however polished the rest 
 1. **Purpose.** Each animation does one named job: feedback, state change, spatial orientation, signifier, or attention (NN/g). No job, no motion.
 2. **Frequency.** Actions done 100+ times a day, keyboard shortcuts and keyboard navigation (arrowing through lists, tabs, palettes) do not animate. Pressing Enter on a button that opens a dialog is not a shortcut; the dialog animates normally. Tooltips after the first open instantly (Kowalski, practitioner; Apple HIG: avoid motion on frequent interactions).
 3. **Never block.** Input stays live during every animation; any animation can be interrupted and retargeted (Apple HIG: "let people cancel motion").
-4. **Tokens only.** Durations and easing come from the shared tokens (section 2). No ad hoc `0.35s ease-in-out`.
+4. **Tokens only, in CSS and in scripts.** Durations and easing come from the shared tokens (section 2); scripts read them with `getComputedStyle`. No ad hoc `0.35s ease-in-out`. Every entry of a `transition` list names a curve: an entry without one runs on `ease`, the initial value (MDN), even `visibility`.
 5. **Within the band.** UI people trigger stays between 100 and 400 ms; nothing repeated exceeds 500 ms (NN/g); only marketing storytelling reaches 600 ms. Exits are one token shorter than entrances.
-6. **Right curve.** Enter decelerates, permanent exit accelerates, on-screen moves use standard, continuous motion is linear, anything dragged or flicked is a spring. Never `linear` on an object that starts and stops.
+6. **Right curve.** Enter decelerates, permanent exit accelerates, on-screen moves use standard, continuous motion is linear, anything dragged or flicked is a spring. Never `linear` on an object that starts and stops. A reveal whose x axis is time (a log, a price history) is a clock, not an object: linear (reference 07).
 7. **Reduced motion is designed, not deleted.** Under `prefers-reduced-motion: reduce`, movement (translate, scale, rotate, parallax, zoom) is replaced by a crossfade or instant change at the same or shorter token; decorative loops stop; meaning survives (Apple reduced-motion criteria; WCAG 2.3.3).
-8. **WCAG floor.** Auto-playing motion over 5 s beside content has a pause control (2.2.2, A). Never more than 3 flashes per second (2.3.1, A). Hover or focus content stays dismissible and hoverable (1.4.13, AA). Drag has a non-drag alternative (2.5.7, AA). Motion is never the only carrier of meaning.
+8. **WCAG floor.** Auto-playing motion over 5 s beside content has a pause control (2.2.2, A), and so does auto-updating content such as a live KPI (2.2.2 covers both). Never more than 3 flashes per second (2.3.1, A). Hover or focus content stays dismissible and hoverable (1.4.13, AA). Drag has a non-drag alternative (2.5.7, AA). Motion is never the only carrier of meaning.
 9. **Compositor only.** Animate `transform` and `opacity`. Never `width`, `height`, `top`, `left`, `margin`, `padding` or `box-shadow` directly (web.dev).
-10. **First paint is sacred.** Never fade in above-the-fold content or the LCP element from opacity 0; content must be visible if JS or the animation never runs (web.dev LCP).
+10. **First paint is sacred.** Never fade in above-the-fold content or the LCP element from opacity 0; content must be visible if JS or the animation never runs (web.dev LCP). Numbers and charts never animate on arrival: no count-up, no draw-on on analytic screens.
+11. **Filmed, not assumed.** Screenshots render end states only. Before hand-over, film every animation in both motion settings and read its real timings from the browser: `assets/motion-audit.mjs` (reference 07). Any off-token duration or curve, animated layout or shadow, movement under reduce, or animated keyboard path fails.
 
 ## 2. Tokens (shared foundation)
 
@@ -34,11 +35,15 @@ A motion proposal that misses any one of these fails, however polished the rest 
 --duration-base:    200ms;  /* 200 to 250: menu, dialog, accordion, toast */
 --duration-slow:    300ms;  /* 300 to 400: drawer, sheet, shared element */
 --duration-page:    400ms;  /* 400 to 600: route change; above 400 only for marketing */
---easing-standard: cubic-bezier(0.2, 0, 0, 1);  /* on-screen move or resize */
---easing-enter:    cubic-bezier(0, 0, 0, 1);    /* decelerate: arriving */
---easing-exit:     cubic-bezier(0.3, 0, 1, 1);  /* accelerate: leaving for good */
+--ease-standard: cubic-bezier(0.2, 0, 0, 1);  /* on-screen move or resize */
+--ease-enter:    cubic-bezier(0, 0, 0, 1);    /* decelerate: arriving */
+--ease-exit:     cubic-bezier(0.3, 0, 1, 1);  /* accelerate: leaving for good */
+/* Semantic pairs (FOUNDATIONS --motion-*), for transition shorthands */
+--motion-hover: var(--duration-instant) var(--ease-standard);
+--motion-enter: var(--duration-base) var(--ease-enter);
+--motion-exit:  var(--duration-fast) var(--ease-exit);
 ```
-Ready-to-use file: `assets/motion-tokens.css`. Use the low end of a band by default; move up for larger area, longer travel or larger screens (tablet about x1.3, watch about x0.7, desktop pointer UI at the low end: Material 1).
+Names follow FOUNDATIONS (`--ease-*`; v0.1 of this skill said `--easing-*`, now fixed). Ready-to-use file: `assets/motion-tokens.css`. Use the low end of a band by default; move up for larger area, longer travel or larger screens (tablet about x1.3, watch about x0.7, desktop pointer UI at the low end: Material 1).
 
 ## 3. Decision rules
 
@@ -71,7 +76,7 @@ Ready-to-use file: `assets/motion-tokens.css`. Use the low end of a band by defa
 1. **Velocity first, distance second.** On release of a drag, a flick above about 0.11 px/ms dismisses regardless of distance (Vaul). Project the landing point with distance = (v / 1000) x 0.998 / (1 - 0.998), about half the px/s velocity, snap to the nearest valid target, and start the spring at the release velocity (Apple WWDC18 "Designing Fluid Interfaces").
 2. **Track 1:1, ease only on release.** No CSS transition on a property the finger is moving. Light actions commit mid-gesture; destructive ones commit on release (Rauno Freiberg, practitioner).
 3. **Spatial vs effects split.** In one transition, position and scale may use a spring with slight overshoot while opacity and color use a ratio-1 spring or tween. Overshooting opacity clamps and reads as a stall (Material 3 tokens).
-4. **Transitions over keyframes for state.** CSS transitions retarget from the current value when interrupted; keyframes restart from frame 0. Use keyframes only for loops and one-shot sequences (Kowalski, practitioner).
+4. **Transitions over keyframes for state.** CSS transitions retarget from the current value when interrupted (Kowalski, practitioner); a keyframe animation that is replaced starts its new run from its first keyframe (derived from how CSS animations start). Use keyframes only for loops and one-shot sequences.
 5. **Origin follows cause.** Popovers and menus grow from their trigger via the library's origin variable (Radix `--radix-*-content-transform-origin`); centered modals grow from center. Enter from scale 0.95, never 0.
 6. **Asymmetric timing.** Slow where the person is deciding, fast where the system is responding. A dialog enters at base and leaves at fast; a toast arrives at base and flies out at fast.
 7. **Fade through without double exposure.** Outgoing content is fully gone by 35 percent of the duration before incoming fades in from 0.92 scale, so two full-opacity layers never overlap (Material source code).
@@ -84,6 +89,15 @@ Ready-to-use file: `assets/motion-tokens.css`. Use the low end of a band by defa
 14. **Tabular numbers.** Animated counts and prices use `font-variant-numeric: tabular-nums` so the width does not jitter while digits change.
 15. **Delay the loader.** Show nothing for the first 300 to 400 ms of a wait, then a skeleton; fast responses never flash a spinner (opinion, built on Nielsen's 0.1 s and 1 s limits).
 16. **Review slowed down, then fresh.** Play at 10 to 25 percent speed in the DevTools Animations panel, step frames, test on a throttled mid-range phone, and look again the next day (Kowalski).
+
+Learned on rendered pages (reference 07, `kb/tests/design-motion.md`):
+
+17. **Linear for time axes.** A chart reveal whose x axis is time runs linear: an ease shows the early data racing and the late data crawling, and each marker's delay is simply its share of the axis x the duration. Marketing evidence only; analytic charts never draw on (animation is "the least effective form for analysis", Robertson et al.).
+18. **The two-transform wipe.** Reveal a drawing with an outer `overflow: hidden` box sliding in and an inner box sliding out by the same amount: the drawing stays still, only the edge moves, all on the compositor. Overhang 8 px so round caps are not cut. Not `clip-path`, not `stroke-dashoffset` on large paths.
+19. **Animate the change, not the arrival.** Live numbers roll only their changed digits (each in a slot clipped top and bottom with `clip-path: inset(0 -0.25em)`; `overflow: hidden` cuts side bearings under negative tracking), up for a rise and down for a fall, with `tabular-nums`. First load is static. A timer-driven update needs a pause control (WCAG 2.2.2).
+20. **Fade-through in one box, also under reduce.** Two labels sharing a cell (Add to cart, Added) must not crossfade: the reduced-motion strip showed "Add to cartAdded". Out at `--duration-instant`, in at `--duration-base` after it, in both settings; reduce drops only the travel.
+21. **Modality-aware dialogs.** Track `keydown` and `pointerdown` in the capture phase; set `data-via` before `showModal()` and `close()` (and on `cancel`); `[data-via=key]` gets no transition. The palette from Ctrl K is simply there; from a click it fades for 100 ms.
+22. **Review hooks open settled.** A state opened by URL for review (`?open=sheet`) skips its entrance, or the lint measures it mid-scale (a 24 px switch measured 23 px at scale 0.96).
 
 ## 5. How to deliver a motion spec
 
@@ -105,6 +119,8 @@ Then: the job each row does (section 1, rule 1), interruption behavior, WCAG not
 - [ ] Only transform and opacity animated; `will-change` only where measured
 - [ ] No fade-in on the LCP element or above the fold; content visible without JS
 - [ ] Tested at 4x CPU throttle; no dropped frames visible at slowed playback
+- [ ] `motion-audit.mjs` passes on every scenario (one per user action, `expect: 'none'` on keyboard paths); every strip looked at, both rows
+- [ ] Numbers and charts static on arrival; live values roll only changed digits and can be paused
 
 ## 7. Reference map
 
@@ -116,7 +132,9 @@ Then: the job each row does (section 1, rule 1), interruption behavior, WCAG not
 | `references/04-micro-interactions.md` | Component-level specs (press, hover, toggle, tooltip, popover, toast, loaders, success, error, drag), gesture physics |
 | `references/05-accessibility-performance.md` | Reduced-motion matrix, WCAG detail, vestibular triggers, performance rules, audits |
 | `references/06-implementation.md` | Code: CSS, `@starting-style`, WAAPI, View Transitions, Motion (React), Lottie and dotLottie |
-| `assets/motion-tokens.css` | Drop-in token file |
+| `references/07-motion-on-real-pages.md` | Charts, live numbers, label swaps, modality-aware dialogs, and how to film and time motion on a rendered page |
+| `assets/motion-tokens.css` | Drop-in token file, with the `--motion-*` pairs and the script pattern for reading tokens |
+| `assets/motion-audit.mjs` | Films each animation (no-preference and reduce rows) and checks durations, curves, properties and reduce against the tokens. Usage: `node skills/design-motion/assets/motion-audit.mjs <scenarios.mjs> <outdir>`; example scenarios `kb/tests/design-motion/scenarios.mjs` |
 
 ## 8. Related skills
 

@@ -1,0 +1,5 @@
+coffee roast curve wipe                          frames  77  median 16.7 ms  p95 16.8 ms  max 83.2 ms  over 25 ms: 3
+coffee contour rise (37 paths)                   frames  74  median 16.7 ms  p95 33.4 ms  max 83.3 ms  over 25 ms: 6
+coffee before: clip-path draw (combined page)    frames  74  median 16.7 ms  p95 33.4 ms  max 50.0 ms  over 25 ms: 10
+dashboard live digits                            frames  83  median 16.7 ms  p95 16.8 ms  max 33.3 ms  over 25 ms: 2
+dashboard phone drawer                           frames  81  median 16.7 ms  p95 16.8 ms  max 66.7 ms  over 25 ms: 2

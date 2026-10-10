@@ -31,7 +31,7 @@ Status key: C = consensus, P = practitioner opinion, S = single source.
 | Apple: describe springs by damping ratio and response, not duration. "Most animations should use a damping value of 1." Demo values: drawer 0.8/0.3 s, rotation 0.8/0.4, PiP 1/0.4. Conversion (mass 1): stiffness = (2 pi / response)^2, damping coefficient = 4 pi x ratio / response. | WWDC18 "Designing Fluid Interfaces", via Nathan Gitter | C (Apple) via secondary |
 | Motion (Framer Motion): `bounce` default 0.25 for duration-based springs, `visualDuration` overrides duration; setting stiffness, damping or mass overrides bounce and duration. Tween default duration 0.3 s. | motion.dev transitions docs | C |
 | Apple-style spring in Motion `{type:"spring", duration:0.5, bounce:0.2}`; bounce 0.1 to 0.3 when used, avoided in most UI. | Kowalski skill | P |
-| CSS `linear()` approximates springs and bounces; Baseline widely available since Dec 2023. | MDN linear() | C |
+| CSS `linear()` approximates any curve by many points ("A typical use of the linear() function is to provide many points to approximate any curve"), so it can approximate a spring or bounce (derived; MDN does not name springs). Baseline widely available, "available across browsers since December 2023". | MDN linear() (re-fetched 2026-10-10) | C (curve approximation); derived (springs) |
 | Damping coefficient c = 2 x ratio x sqrt(stiffness x mass) (standard damped oscillator physics), used to convert M3 tokens to Motion params. | Physics identity | C |
 
 ## Sources
@@ -43,5 +43,10 @@ Status key: C = consensus, P = practitioner opinion, S = single source.
 - https://motion.dev/docs/react-transitions
 - https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function/linear
 - https://web.dev/articles/inp
-- https://www.nngroup.com/videos/3-response-time-limits-interaction-design/
+- https://www.nngroup.com/articles/response-times-3-important-limits/ (replaces the NN/g video page, which lists the three limits without their meanings; critic 2026-10-10)
 - https://tessl.io/registry/skills/github/emilkowalski/skill/emil-design-eng
+
+## Quotes added by the critic's spot check (2026-10-10)
+- MDC Motion.md: "motionDurationShort1" "50ms" ... "motionDurationExtraLong4" "1000ms"; "motionEasingStandardInterpolator" "cubic-bezier: 0.2, 0, 0, 1"; "motionSpringDefaultSpatial" "damping: 0.9, stiffness: 700". https://github.com/material-components/material-components-android/blob/master/docs/theming/Motion.md
+- NN/g response times: 0.1 s is "the limit for having the user feel that the system is reacting instantaneously"; 1.0 s "the limit for the user's flow of thought to stay uninterrupted"; 10 s "the limit for keeping the user's attention focused on the dialogue." https://www.nngroup.com/articles/response-times-3-important-limits/
+- v0.1 claims not listed here still lack a quote (open item).
