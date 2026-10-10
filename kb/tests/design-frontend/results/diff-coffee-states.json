@@ -1,0 +1,159 @@
+{
+  "before": "kb/tests/design-frontend/before/coffee-states.html",
+  "after": "kb/tests/design-frontend/coffee-states.html",
+  "tolerance": 0,
+  "results": [
+    {
+      "name": "coffee-states-390-light",
+      "query": "",
+      "scheme": "light",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        3361
+      ],
+      "sizeAfter": [
+        390,
+        3361
+      ],
+      "pixels": 1310790,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-states-768-light",
+      "query": "",
+      "scheme": "light",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        2180
+      ],
+      "sizeAfter": [
+        768,
+        2180
+      ],
+      "pixels": 1674240,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-states-1024-light",
+      "query": "",
+      "scheme": "light",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        2180
+      ],
+      "sizeAfter": [
+        1024,
+        2180
+      ],
+      "pixels": 2232320,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-states-1440-light",
+      "query": "",
+      "scheme": "light",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        1664
+      ],
+      "sizeAfter": [
+        1440,
+        1664
+      ],
+      "pixels": 2396160,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-states-390-dark",
+      "query": "",
+      "scheme": "dark",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        3361
+      ],
+      "sizeAfter": [
+        390,
+        3361
+      ],
+      "pixels": 1310790,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-states-768-dark",
+      "query": "",
+      "scheme": "dark",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        2180
+      ],
+      "sizeAfter": [
+        768,
+        2180
+      ],
+      "pixels": 1674240,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-states-1024-dark",
+      "query": "",
+      "scheme": "dark",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        2180
+      ],
+      "sizeAfter": [
+        1024,
+        2180
+      ],
+      "pixels": 2232320,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-states-1440-dark",
+      "query": "",
+      "scheme": "dark",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        1664
+      ],
+      "sizeAfter": [
+        1440,
+        1664
+      ],
+      "pixels": 2396160,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    }
+  ]
+}

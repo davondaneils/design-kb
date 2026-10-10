@@ -1,0 +1,82 @@
+{
+  "file": "kb/tests/design-frontend/./dashboard.html",
+  "layers": [
+    "reset",
+    "tokens",
+    "base",
+    "layout",
+    "components",
+    "states",
+    "utilities"
+  ],
+  "layerRules": {
+    "reset": 9,
+    "tokens": 4,
+    "base": 13,
+    "layout": 12,
+    "components": 208,
+    "states": 32,
+    "utilities": 3
+  },
+  "unlayered": 0,
+  "styleRules": 281,
+  "decls": 1009,
+  "tokens": 126,
+  "media": {
+    "(prefers-reduced-motion: reduce)": 1,
+    "(forced-colors: active)": 1,
+    "(pointer: coarse)": 1,
+    "(prefers-color-scheme: dark)": 1,
+    "(width >= 48em)": 4,
+    "(width >= 64em)": 4,
+    "(hover: hover)": 6,
+    "(48em <= width < 64em)": 1,
+    "(width < 40em)": 3,
+    "(prefers-reduced-motion: no-preference)": 2,
+    "(width < 48em)": 1,
+    "(hover: hover) and (width >= 40em)": 1
+  },
+  "containerRules": 4,
+  "containers": 2,
+  "has": 2,
+  "important": [
+    "reset :: *, ::before, ::after { transition }",
+    "reset :: *, ::before, ::after { animation }",
+    "reset :: .panel, .btn, .alert, .chip, dialog { border }",
+    "reset :: .nav a[aria-current=\"page\"], .pal-opt[aria-selected=\"true\"] { outline }"
+  ],
+  "findings": {},
+  "inlineStyleAttrs": 16,
+  "counts": {
+    "raw-color": 0,
+    "primitive-in-component": 0,
+    "raw-space": 0,
+    "font-size-px": 0,
+    "type-token-px": 0,
+    "transition-all": 0,
+    "id-selector": 0,
+    "hover-unguarded": 0,
+    "physical-property": 0,
+    "vh-unit": 0,
+    "motion-unguarded": 0,
+    "media-min-max-syntax": 0,
+    "component-token-primitive": 0
+  },
+  "levels": {
+    "raw-color": "fail",
+    "primitive-in-component": "fail",
+    "raw-space": "fail",
+    "font-size-px": "fail",
+    "type-token-px": "fail",
+    "transition-all": "fail",
+    "id-selector": "warn",
+    "hover-unguarded": "fail",
+    "physical-property": "warn",
+    "vh-unit": "warn",
+    "motion-unguarded": "warn",
+    "media-min-max-syntax": "warn",
+    "component-token-primitive": "warn"
+  },
+  "layered": true,
+  "verdict": "pass"
+}

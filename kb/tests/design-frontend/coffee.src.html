@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Ember &amp; Oak Coffee Roasters, Portland</title>
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9f6f4">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#16100c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23f26b21'/%3E%3C/svg%3E">
+<meta name="description" content="Single-origin coffee roasted in small batches on a 1962 Probat in Southeast Portland. This week: Ethiopia Guji, lot 0412.">
+<style>
+/* Ember & Oak, combined page refactored to the design-frontend standard (kb/tests/design-frontend.md). Same pixels as
+   kb/tests/combined/coffee.html (proved by assets/pixel-diff.mjs); the code underneath changed:
+   - one cascade-layer order; user-preference overrides are !important in the FIRST layer, because important
+     declarations reverse layer order (MDN @layer), so they beat every component without a specificity fight;
+   - colors are single tokens with both themes side by side via light-dark(); shadows route their color through it too
+     (a transparent layer paints nothing), so only three non-color values still need the scheme media query;
+   - components use semantic tokens only (the bag art got illustration roles instead of naming orange-700);
+   - breakpoints in em range syntax (48em = 768px at the default 16px), inline-axis logical properties for flow,
+     physical properties kept only for art and chart coordinates, which do not mirror in right-to-left text.
+   Design notes from the combined page: concept "The hill and the fire" (design-art-direction), Newsreader display
+   inlined as base64 (OFL subsets, kb/tests/design-typography/fonts), metric-matched fallbacks, states by ?state=. */
+@layer reset, tokens, base, layout, components, utilities;
+
+/* @inline newsreader-display-roman.css */
+/* @inline newsreader-display-italic.css */
+/* @inline newsreader-fallback.css */
+/* @inline newsreader-fallback-italic.css */
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body, h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
+  ul, ol, dd, figure { padding: 0; }
+  ul, ol { list-style: none; } /* lists keep their semantics; numerals are typed where they are design */
+  /* User preferences win over everything: important declarations in the first layer beat important and normal
+     declarations in every later layer. */
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+  @media (forced-colors: active) {
+    .btn, .card, input, .chip { border: 1px solid CanvasText !important; }
+    .stage::after { display: none !important; }
+  }
+}
+
+@layer tokens {
+  :root {
+    color-scheme: light dark;
+    /* Primitives: the only raw values on the page. */
+    --color-white: #ffffff;
+    --color-brand: #f26b21;
+    --color-brand-lift: #f7884a;        /* brand lifted 5% OKLCH lightness: the light pool behind the band headline */
+    --color-brand-lift-dark: #4c1803;   /* the same pool on the dark band */
+    --color-orange-100: #ffe3d5; --color-orange-300: #ffa97e; --color-orange-600: #b14500; --color-orange-700: #933701;
+    --color-orange-800: #762901; --color-orange-900: #5a1d00; --color-orange-950: #3f0f00;
+    --color-warm-50: #f9f6f4; --color-warm-100: #eee8e4; --color-warm-200: #dfd5ce; --color-warm-300: #ccbeb3; --color-warm-500: #998779;
+    --color-warm-600: #79685b; --color-warm-800: #4f4238; --color-warm-900: #3b3129; --color-warm-950: #27201a; --color-warm-975: #1e1813; --color-warm-990: #16100c;
+    --color-red-300: #ffa59e; --color-red-600: #c2272d;
+    --color-green-300: #8fd6a6; --color-green-700: #1e6b3a;
+    --shadow-rgb: 39 32 26;             /* warm 950, the shadow tint (FOUNDATIONS v0.3) */
+
+    /* Semantic colors: light-dark(light, dark). One line per role, so each contrast pair is reviewed in one place. */
+    --color-bg: light-dark(var(--color-warm-50), var(--color-warm-990));
+    --color-surface: light-dark(var(--color-white), var(--color-warm-975));
+    --color-surface-sunken: light-dark(var(--color-warm-100), var(--color-warm-975));
+    --color-text: light-dark(var(--color-warm-950), var(--color-warm-50));
+    --color-text-muted: light-dark(var(--color-warm-600), var(--color-warm-300));
+    --color-border: light-dark(var(--color-warm-200), var(--color-warm-800));
+    --color-border-strong: var(--color-warm-500);
+    --color-primary: var(--color-orange-600);
+    --color-primary-hover: var(--color-orange-700);
+    --color-primary-active: var(--color-orange-800);
+    --color-on-primary: var(--color-white);
+    --color-accent: light-dark(var(--color-orange-600), var(--color-orange-300));
+    --color-success: light-dark(var(--color-green-700), var(--color-green-300));
+    --color-danger: light-dark(var(--color-red-600), var(--color-red-300));
+    --color-focus-ring: light-dark(var(--color-orange-600), var(--color-orange-300));
+    --color-selected-bg: light-dark(var(--color-orange-100), var(--color-orange-900));
+    --color-selected-text: light-dark(var(--color-warm-950), var(--color-warm-50));
+    --color-feature-bg: light-dark(var(--color-brand), var(--color-orange-950));
+    --color-feature-lift: light-dark(var(--color-brand-lift), var(--color-brand-lift-dark));
+    --color-feature-text: light-dark(var(--color-warm-950), var(--color-warm-50));
+    --color-feature-cta: light-dark(var(--color-warm-950), var(--color-brand));
+    --color-feature-cta-hover: light-dark(var(--color-warm-800), var(--color-brand-lift));
+    --color-feature-cta-active: light-dark(var(--color-warm-900), var(--color-orange-300));
+    --color-feature-on-cta: light-dark(var(--color-warm-50), var(--color-warm-950));
+
+    /* Illustration roles (FOUNDATIONS v0.3, design-art-direction 01). Lines are quiet; the roast curve is the one loud
+       stroke. The bag is product art: its colors are the same in both themes, like a photographed object. */
+    --color-illustration-surface: light-dark(var(--color-warm-100), var(--color-warm-975));
+    --color-illustration-surface-lift: color-mix(in oklch, var(--color-illustration-surface), var(--color-white) 3%);
+    --color-illustration-line: light-dark(var(--color-warm-300), var(--color-warm-800));
+    --color-illustration-accent: light-dark(var(--color-orange-600), var(--color-orange-300));
+    --color-illustration-accent-fill: light-dark(rgb(242 107 33 / 0.12), rgb(255 169 126 / 0.07));
+    --color-illustration-print: var(--color-orange-700);
+    --color-illustration-object: var(--color-brand);
+    --color-illustration-object-shade: var(--color-orange-700);
+    --color-illustration-object-edge: var(--color-orange-800);
+    --color-illustration-label: var(--color-warm-50);
+    --color-illustration-label-text: var(--color-warm-950);
+    --color-illustration-label-muted: var(--color-warm-600);
+    --color-illustration-label-curve: var(--color-orange-600);
+    --color-band-line: light-dark(rgb(255 255 255 / 0.22), rgb(0 0 0 / 0.35)); /* lighter than the band under dark text: it can only raise contrast */
+
+    /* Elevation (FOUNDATIONS v0.3 recipe). Dark has no drop shadow: the shadow color goes transparent there, and the
+       dark-only top highlight is transparent in light, so one token serves both themes. */
+    --ring: 0 0 0 1px light-dark(rgb(var(--shadow-rgb) / 0.08), rgb(255 255 255 / 0.08));
+    --highlight: inset 0 1px 0 light-dark(rgb(255 255 255 / 0.14), rgb(255 255 255 / 0.08));
+    --shadow-1: 0 1px 2px light-dark(rgb(var(--shadow-rgb) / 0.06), transparent);
+    --shadow-2: var(--shadow-1), 0 4px 12px -2px light-dark(rgb(var(--shadow-rgb) / 0.08), transparent);
+    --shadow-label: 0 1px 0 rgb(var(--shadow-rgb) / 0.12);
+    --elevation-card: var(--ring), var(--shadow-1), inset 0 1px 0 light-dark(transparent, rgb(255 255 255 / 0.04));
+    --elevation-card-hover: 0 0 0 1px light-dark(rgb(var(--shadow-rgb) / 0.12), rgb(255 255 255 / 0.14)), var(--shadow-2), inset 0 1px 0 light-dark(transparent, rgb(255 255 255 / 0.05));
+    --state-hover: color-mix(in oklch, var(--color-text) 8%, transparent);
+    --state-pressed: color-mix(in oklch, var(--color-text) 10%, transparent);
+    --grain-opacity: 0.1; --grain-blend: multiply;   /* not colors: these two follow the scheme media query below */
+
+    --space-1: 2px; --space-2: 4px; --space-3: 8px; --space-4: 12px; --space-5: 16px; --space-6: 24px;
+    --space-7: 32px; --space-8: 48px; --space-9: 64px; --space-10: 96px; --space-11: 128px;
+    --text-xs: 0.75rem; --text-sm: 0.875rem; --text-base: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem;
+    --text-2xl: 1.9375rem; --text-3xl: 2.4375rem; --text-4xl: 3.0625rem; --text-5xl: 3.8125rem;
+    --text-display: clamp(3.0625rem, 1.6rem + 5.2vw, 6rem);        /* 49 to 96px, one hero line */
+    --text-display-2: clamp(2.4375rem, 1.6rem + 3.4vw, 4.75rem);   /* 39 to 76px, section statements */
+    --text-numeral: clamp(3.8125rem, 2.3rem + 6.1vw, 9.5rem);      /* 61 to 152px, the price and the sign-off */
+    --leading-display: 0.95; --leading-tight: 1.1; --leading-snug: 1.25; --leading-normal: 1.5;
+    --size-measure: 52ch;
+    --size-page: 77rem;                 /* 1232px content cap at the default font size */
+    --size-target: 44px;                /* primary touch target (FOUNDATIONS accessibility floor) */
+    --size-header: 64px;                /* sticky header height; also the scroll-padding that keeps focus visible */
+    --font-serif: "Newsreader Display", "Newsreader Fallback", "Iowan Old Style", Charter, "Sitka Text", Cambria, Georgia, serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI Variable Text", "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+    --radius-sm: 4px; --radius-md: 8px; --radius-lg: 12px; --radius-xl: 16px; --radius-full: 9999px;
+    --radius-control: var(--radius-full); --radius-card: var(--radius-lg);
+    --duration-instant: 100ms; --duration-fast: 150ms; --duration-base: 200ms; --duration-page: 600ms;
+    --ease-standard: cubic-bezier(0.2, 0, 0, 1); --ease-enter: cubic-bezier(0, 0, 0, 1);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --grain-opacity: 0.06; --grain-blend: screen; }
+  }
+}
+
+@layer base {
+  html { scroll-padding-block-start: calc(var(--size-header) + var(--space-5)); } /* WCAG 2.4.11: focus never lands under the sticky header */
+  body { background: var(--color-bg); color: var(--color-text); font: var(--text-base)/var(--leading-normal) var(--font-sans);
+    font-kerning: normal; font-synthesis: none; -webkit-tap-highlight-color: transparent; }
+  @media (prefers-color-scheme: dark) { body { -webkit-font-smoothing: antialiased; } }
+  h1, h2, h3 { text-wrap: balance; }
+  p, li { text-wrap: pretty; }
+  ::selection { background: var(--color-selected-bg); color: var(--color-selected-text); }
+  input { accent-color: var(--color-primary); caret-color: var(--color-focus-ring); }
+  a { color: var(--color-accent); text-decoration-thickness: 0.06em; text-underline-offset: 0.2em; }
+  @media (hover: hover) { a:hover { text-decoration-thickness: 0.12em; } }
+  :focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+  :where(a:focus-visible) { border-radius: var(--radius-sm); } /* zero specificity: component radii win */
+  em { font-style: italic; letter-spacing: -0.01em; }
+  label { display: block; font-size: var(--text-sm); font-weight: 600; margin-block-end: var(--space-3); }
+}
+
+@layer layout {
+  .wrap { max-inline-size: var(--size-page); margin-inline: auto; padding-inline: var(--space-5); }
+  @media (width >= 48em) { .wrap { padding-inline: var(--space-8); } }
+
+  /* Hero: the headline is the image; the bag carries the concept. Phone: headline, bag, then the details. */
+  .hero { padding-block: var(--space-8) var(--space-9); }
+  .hero .wrap { display: grid; grid-template-areas: "label" "title" "stage" "body"; }
+  .hero .label { grid-area: label; }
+  .hero h1 { grid-area: title; margin-block-start: var(--space-5); max-inline-size: 11em; }
+  .hero .stage { grid-area: stage; margin-block-start: var(--space-7); }
+  .hero-body { grid-area: body; margin-block-start: var(--space-7); }
+  @media (width >= 64em) {
+    .hero { padding-block: var(--space-9) var(--space-10); }
+    .hero .wrap { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); grid-template-areas: "label stage" "title stage" "body stage"; grid-template-rows: auto auto 1fr; column-gap: var(--space-9); }
+    .hero .stage { margin-block-start: 0; align-self: start; }
+    .hero-body { margin-block-start: var(--space-8); }
+  }
+
+  .feature .wrap { display: grid; gap: var(--space-8); padding-block: var(--space-9); }
+  @media (width >= 64em) { .feature .wrap { grid-template-columns: 7fr 5fr; gap: var(--space-9); align-items: end; padding-block: var(--space-10); } }
+
+  .section { padding-block: var(--space-9); }
+  @media (width >= 64em) { .section { padding-block: var(--space-11); } }
+  .section-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: var(--space-5); margin-block-end: var(--space-8); }
+  .cards { display: grid; gap: var(--space-6); }
+  @media (width >= 48em) { .cards { grid-template-columns: repeat(3, 1fr); } }
+  .spread { display: grid; gap: var(--space-9); margin-block-start: var(--space-9); }
+  @media (width >= 64em) { .spread { grid-template-columns: 7fr 5fr; } }
+
+  .site-footer { padding-block: var(--space-9) var(--space-7); }
+  .site-footer .cols { display: grid; gap: var(--space-8); }
+  @media (width >= 64em) { .site-footer .cols { grid-template-columns: 6fr 3fr 3fr; } }
+}
+
+@layer components {
+  /* Type roles */
+  .display { font-family: var(--font-serif); font-weight: 400; font-size: var(--text-display); line-height: var(--leading-display); letter-spacing: -0.025em;
+    translate: -0.04em 0; } /* optical margin: the E's side bearing */
+  .label { font: 600 var(--text-xs)/1.333 var(--font-sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); }
+  .unit { text-transform: none; letter-spacing: 0.02em; }   /* units keep their case: g, not G */
+  .num { font-variant-numeric: tabular-nums lining-nums; }
+  .amp { font-family: var(--font-serif); font-style: italic; }
+  .anno { font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.02em; line-height: 1.5; font-variant-numeric: tabular-nums; }
+  .chip { display: inline-flex; align-items: center; gap: var(--space-2); background: var(--color-surface); color: var(--color-text); padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm); box-shadow: var(--ring); }
+  .icon { flex: none; fill: none; stroke: currentColor; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+  .icon * { vector-effect: non-scaling-stroke; }
+
+  /* Buttons: rest, hover (fine pointer), pressed (a step past hover), focus ring, busy. No state changes the box. */
+  .btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: var(--space-3); min-block-size: 48px; padding: var(--space-4) var(--space-6);
+    border-radius: var(--radius-control); border: 1px solid transparent; font: 600 var(--text-base)/1.5 var(--font-sans); text-decoration: none; cursor: pointer; touch-action: manipulation; }
+  .btn-primary { background: var(--color-primary); color: var(--color-on-primary); box-shadow: var(--highlight), var(--shadow-1); }
+  .btn-secondary { background: transparent; color: var(--color-text); border-color: var(--color-border-strong); }
+  @media (hover: hover) {
+    .btn-primary:hover { background: var(--color-primary-hover); box-shadow: var(--highlight), var(--shadow-2); }
+    .btn-secondary:hover { background: var(--state-hover); }
+  }
+  .btn-primary:active { background: var(--color-primary-active); box-shadow: var(--highlight); }
+  .btn-secondary:active { background: var(--state-pressed); }
+  .btn-sm { min-block-size: 40px; padding: var(--space-3) var(--space-5); font-size: var(--text-sm); }
+  .btn .icon { inline-size: 16px; block-size: 16px; }
+  .btn[aria-busy=true] { cursor: progress; }
+  .btn .spinner { display: none; inline-size: 16px; block-size: 16px; border-radius: var(--radius-full); border: 2px solid currentColor; border-inline-end-color: transparent; }
+  .btn[aria-busy=true] .spinner { display: inline-block; }
+  @media (prefers-reduced-motion: no-preference) {
+    .btn { transition: background-color var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard), transform var(--duration-fast) var(--ease-standard); }
+    .btn:active { transform: scale(0.97); transition-duration: var(--duration-instant); }
+    .btn-wide:active { transform: scale(0.98); }
+    .btn[aria-busy=true] .spinner { animation: spin 0.8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  }
+
+  /* Header: sticky, translucent, one hairline, no shadow (it would be a second light source). */
+  .site-header { position: sticky; inset-block-start: 0; z-index: 10; border-block-end: 1px solid var(--color-border); background: color-mix(in oklch, var(--color-bg) 88%, transparent);
+    -webkit-backdrop-filter: saturate(1.4) blur(12px); backdrop-filter: saturate(1.4) blur(12px); }
+  .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--space-5); min-block-size: var(--size-header); }
+  .logo { font: 400 var(--text-xl)/1 var(--font-serif); letter-spacing: -0.01em; color: var(--color-text); text-decoration: none; padding-block: var(--space-3); }
+  .nav { display: flex; align-items: center; gap: var(--space-2); }
+  .nav a:not(.btn) { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--color-text); text-decoration: none; padding: var(--space-3) var(--space-4); font-size: var(--text-sm); font-weight: 500; border-radius: var(--radius-full); }
+  @media (hover: hover) { .nav a:not(.btn):hover { background: var(--state-hover); } }
+  .nav a:not(.btn):active { background: var(--state-pressed); }
+  .nav a.hide-sm { display: none; }
+  @media (width >= 48em) { .nav a.hide-sm { display: inline-flex; } }
+  .cart-count { display: inline-grid; place-items: center; min-inline-size: 24px; block-size: 24px; padding-inline: var(--space-2); border-radius: var(--radius-full); background: var(--color-surface-sunken); font-size: var(--text-xs); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .cart-count.has { background: var(--color-text); color: var(--color-bg); }
+
+  .notes { font: italic 400 var(--text-xl)/var(--leading-snug) var(--font-serif); letter-spacing: -0.005em; max-inline-size: 19em; }
+  @media (width >= 48em) { .notes { font-size: var(--text-2xl); } }
+  .lead { margin-block-start: var(--space-5); font-size: var(--text-lg); color: var(--color-text-muted); max-inline-size: var(--size-measure); }
+  .actions { display: flex; flex-wrap: wrap; gap: var(--space-4); margin-block-start: var(--space-7); }
+  .facts { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; column-gap: var(--space-8); margin-block-start: var(--space-8); padding-block-start: var(--space-6); border-block-start: 1px solid var(--color-border); }
+  @media (width < 40em) { .facts { column-gap: var(--space-6); } }
+  .facts dd { font: 400 var(--text-3xl)/var(--leading-tight) var(--font-serif); font-variant-numeric: tabular-nums lining-nums; letter-spacing: -0.02em; margin-block-start: var(--space-3); }
+  .facts dd small { font-size: var(--text-lg); letter-spacing: 0; color: var(--color-text-muted); }
+
+  /* The stage: one contour field drawn twice, as ground and printed on the bag, so the hill runs across the bag edge.
+     Positions inside the art are physical (left, top): art does not mirror in right-to-left text. */
+  .stage { position: relative; aspect-ratio: 4 / 5; border-radius: var(--radius-xl); overflow: hidden; background: linear-gradient(in oklch to bottom, var(--color-illustration-surface-lift), var(--color-illustration-surface)); }
+  .stage > svg { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; }
+  .stage use { fill: none; stroke-width: 1; }
+  .stage .c.major { stroke-width: 1.5; }
+  .stage use.ground { stroke: var(--color-illustration-line); }
+  .stage use.print { stroke: var(--color-illustration-print); stroke-opacity: 0.5; }
+  .stage .bag-body { fill: var(--color-illustration-object); }
+  .stage .bag-seal, .stage .valve { fill: var(--color-illustration-object-shade); }
+  .stage .bag-crimp { stroke: var(--color-illustration-object-edge); stroke-width: 1; vector-effect: non-scaling-stroke; }
+  .stage .valve-ring { fill: none; stroke: var(--color-illustration-object-edge); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+  .stage .summit { fill: var(--color-text); }
+  .stage::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: var(--grain-opacity); mix-blend-mode: var(--grain-blend);
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+  .bag-label { position: absolute; left: 27%; width: 46%; top: 47%; z-index: 1; background: var(--color-illustration-label); color: var(--color-illustration-label-text); border-radius: var(--radius-sm); padding: var(--space-4) var(--space-3) var(--space-3); text-align: center; box-shadow: var(--shadow-label); }
+  .bag-label .mark { font: 400 var(--text-sm)/1.25 var(--font-serif); white-space: nowrap; }
+  .bag-label .origin { font: italic 400 var(--text-xl)/var(--leading-tight) var(--font-serif); letter-spacing: -0.01em; margin-block: var(--space-2) var(--space-3); white-space: nowrap; }
+  .bag-label .meta { font: 600 var(--text-xs)/1.333 var(--font-sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-illustration-label-muted); }
+  @media (width < 40em) { .bag-label .hide-xs { display: none; } }
+  .bag-label svg { display: block; inline-size: 100%; block-size: 24px; margin-block-start: var(--space-3); }
+  .bag-label polyline { fill: none; stroke: var(--color-illustration-label-curve); stroke-width: 1.5; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+  .summit-chip { position: absolute; left: 80%; top: 17%; transform: translate(-50%, calc(-100% - var(--space-3))); z-index: 1; }
+  .stage-note { position: absolute; left: var(--space-5); bottom: var(--space-5); z-index: 1; display: grid; gap: var(--space-2); justify-items: start; }
+
+  /* Subscription band: contour texture, a pool of light behind the headline, grain so the field does not band. */
+  .feature { position: relative; overflow: hidden; isolation: isolate; color: var(--color-feature-text);
+    background: radial-gradient(80% 90% at 20% 0%, var(--color-feature-lift), transparent 70%), var(--color-feature-bg); }
+  .feature > svg { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; z-index: -1; }
+  .feature .c { fill: none; stroke: var(--color-band-line); stroke-width: 1; vector-effect: non-scaling-stroke; }
+  .feature .label { color: inherit; }
+  .feature h2 { font: 400 var(--text-display-2)/1 var(--font-serif); letter-spacing: -0.02em; margin-block-start: var(--space-5); max-inline-size: 12em; }
+  .perks { margin-block-start: var(--space-7); display: grid; gap: var(--space-3); }
+  .perks li { display: flex; gap: var(--space-4); align-items: flex-start; }
+  .perks .icon { inline-size: 20px; block-size: 20px; margin-block-start: var(--space-1); }
+  .price { display: flex; align-items: flex-start; font: 400 var(--text-numeral)/0.85 var(--font-serif); font-variant-numeric: tabular-nums lining-nums; letter-spacing: -0.04em; }
+  .price .cur { font-size: var(--text-4xl); line-height: 1; letter-spacing: 0; margin-inline-end: var(--space-2); }
+  .offer-note { margin-block-start: var(--space-5); padding-block-start: var(--space-5); border-block-start: 1px solid currentColor; }
+  .offer-note strong { font-weight: 600; }
+  .btn-feature { margin-block-start: var(--space-6); inline-size: 100%; min-block-size: 56px; font-size: var(--text-lg); background: var(--color-feature-cta); color: var(--color-feature-on-cta); box-shadow: var(--highlight); }
+  @media (hover: hover) { .btn-feature:hover { background: var(--color-feature-cta-hover); } }
+  .btn-feature:active { background: var(--color-feature-cta-active); box-shadow: none; }
+  .feature :focus-visible { outline-color: var(--color-feature-text); } /* never currentColor: on the CTA that is its own label (1.02:1) */
+
+  /* Shop */
+  .section-head h2 { font: 400 var(--text-display-2)/1 var(--font-serif); letter-spacing: -0.02em; margin-block-start: var(--space-5); max-inline-size: 13em; }
+  .more { display: inline-flex; align-items: center; gap: var(--space-2); font-weight: 500; padding-block: var(--space-3); }
+  .more .icon { inline-size: 16px; block-size: 16px; }
+  .card { position: relative; display: flex; flex-direction: column; background: var(--color-surface); border-radius: var(--radius-card); box-shadow: var(--elevation-card); overflow: hidden; }
+  @media (hover: hover) and (pointer: fine) { .card:hover { box-shadow: var(--elevation-card-hover); } }
+  @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) { .card { transition: box-shadow var(--duration-base) var(--ease-standard), transform var(--duration-base) var(--ease-standard); } .card:hover { transform: translateY(-2px); } }
+  .card:has(.card-link:focus-visible) { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+  .card-link { color: inherit; text-decoration: none; }
+  .card-link:focus-visible { outline: none; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  .card-link::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+  .tile { position: relative; aspect-ratio: 16 / 10; background: var(--color-illustration-surface); border-block-end: 1px solid var(--color-border); }
+  .tile svg { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; }
+  .tile .c { fill: none; stroke: var(--color-illustration-line); stroke-width: 1; vector-effect: non-scaling-stroke; }
+  .tile .c.major { stroke-width: 1.5; }
+  .tile .chip { position: absolute; inset-inline-start: var(--space-4); inset-block-end: var(--space-4); }
+  .card-body { display: flex; flex-direction: column; gap: var(--space-5); padding: var(--space-6); flex: 1; }
+  .roast { display: flex; align-items: center; gap: var(--space-3); }
+  .roast-meter { display: inline-flex; gap: var(--space-1); }
+  .roast-meter i { inline-size: 16px; block-size: 8px; border-radius: var(--radius-full); box-shadow: inset 0 0 0 1px var(--color-border-strong); }
+  .roast-meter i.on { background: var(--color-text); box-shadow: none; }
+  .card h3 { font: 400 var(--text-2xl)/var(--leading-tight) var(--font-serif); letter-spacing: -0.015em; }
+  .card .origin { font-size: var(--text-sm); color: var(--color-text-muted); margin-block-start: var(--space-3); }
+  .card .taste { font: italic 400 var(--text-lg)/var(--leading-snug) var(--font-serif); }
+  .card-foot { margin-block-start: auto; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding-block-start: var(--space-5); border-block-start: 1px solid var(--color-border); }
+  .card-foot .btn { z-index: 2; }
+  .card-foot .p { font-size: var(--text-lg); font-weight: 600; }
+  .card-foot .p small { font-size: var(--text-sm); font-weight: 400; color: var(--color-text-muted); }
+  .add-btn { min-inline-size: 128px; }
+  .add-btn .done { display: none; }
+  .add-btn[data-added] .idle { display: none; }
+  .add-btn[data-added] .done { display: inline-flex; align-items: center; gap: var(--space-2); }
+
+  /* Story: an editorial spread with one big piece of evidence, the roast curve. Chart coordinates are physical and
+     come from the data as custom properties (--x, --y) set in the markup; CSS keeps the placement rules. */
+  .story { background: var(--color-surface); }
+  .manifesto { font: 400 var(--text-xl)/var(--leading-snug) var(--font-serif); letter-spacing: -0.015em; margin-block-start: var(--space-6); max-inline-size: 21em; }
+  @media (width >= 48em) { .manifesto { font-size: var(--text-3xl); } }
+  @media (40em <= width < 48em) { .manifesto { font-size: var(--text-2xl); } }
+  .curve { display: grid; gap: var(--space-4); margin-block-start: var(--space-9); }
+  .curve-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-3); color: var(--color-text-muted); }
+  .curve-head b { color: var(--color-text); font-weight: 600; }
+  .plot { position: relative; block-size: 240px; margin: var(--space-8) 0 var(--space-7) var(--space-8); }
+  @media (width >= 48em) { .plot { block-size: 320px; } }
+  .plot svg { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; overflow: visible; }
+  .plot .grid { stroke: var(--color-border); stroke-width: 1; vector-effect: non-scaling-stroke; shape-rendering: crispEdges; }
+  .plot .crack { stroke: var(--color-border-strong); stroke-width: 1; stroke-dasharray: 4 4; vector-effect: non-scaling-stroke; }
+  .plot .area { fill: var(--color-illustration-accent-fill); }
+  .plot .line { fill: none; stroke: var(--color-illustration-accent); stroke-width: 2; vector-effect: non-scaling-stroke; stroke-linejoin: round; stroke-linecap: round; }
+  .ylab { position: absolute; left: calc(-1 * var(--space-8)); top: var(--y); transform: translateY(-50%); color: var(--color-text-muted); }
+  .xlab { position: absolute; left: var(--x); top: 100%; margin-block-start: var(--space-3); transform: translateX(-50%); color: var(--color-text-muted); }
+  .xlab.start { transform: none; }
+  .xlab.end { transform: translateX(-100%); }
+  .pt { position: absolute; left: var(--x); top: var(--y); width: 8px; height: 8px; translate: -50% -50%; border-radius: var(--radius-full); background: var(--color-illustration-accent); box-shadow: 0 0 0 2px var(--color-surface); }
+  .ptlab { position: absolute; left: var(--x); top: var(--y); white-space: nowrap; color: var(--color-text); background: var(--color-surface); padding: var(--space-1) var(--space-2); border-radius: var(--radius-sm); } /* solid backplate: the curve may pass behind a label */
+  .ptlab b { font-weight: 600; }
+  .ptlab.above { transform: translate(-100%, calc(-100% - var(--space-4))); }
+  .ptlab.below { transform: translate(calc(-1 * var(--space-6)), var(--space-4)); }
+  .ptlab.optional { display: none; }
+  @media (width >= 48em) { .ptlab.optional { display: block; } }
+  /* Motion, the one move: the curve draws left to right once, the way the log was written. Never under reduced motion. */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .curve:not(.seen) .plot .draw { clip-path: inset(0 100% 0 0); }
+    .js .curve:not(.seen) .plot :is(.pt, .ptlab) { opacity: 0; }
+    .js .curve.seen .plot .draw { animation: draw 1800ms var(--ease-standard) both; }
+    .js .curve.seen .plot :is(.pt, .ptlab) { animation: fade var(--duration-base) var(--ease-enter) both; animation-delay: calc(var(--at) * 1800ms); }
+    @keyframes draw { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+    @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+  }
+  .steps { display: grid; gap: var(--space-7); }
+  .steps li { display: grid; grid-template-columns: 64px 1fr; gap: var(--space-5); align-items: start; border-block-start: 1px solid var(--color-border); padding-block-start: var(--space-5); }
+  .steps .n { font: italic 400 var(--text-5xl)/0.8 var(--font-serif); color: var(--color-accent); }
+  .steps h3 { font: 600 var(--text-lg)/var(--leading-snug) var(--font-sans); }
+  .steps p { margin-block-start: var(--space-3); color: var(--color-text-muted); max-inline-size: var(--size-measure); }
+  .ledger { border-block-start: 2px solid var(--color-text); }
+  .ledger table { inline-size: 100%; border-collapse: collapse; }
+  .ledger caption { text-align: start; padding-block: var(--space-5); }
+  .ledger caption span { display: block; margin-block-start: var(--space-3); font: italic 400 var(--text-xl)/var(--leading-snug) var(--font-serif); color: var(--color-text); text-transform: none; letter-spacing: 0; }
+  .ledger :is(th, td) { padding: var(--space-4) 0; border-block-end: 1px solid var(--color-border); text-align: start; font-weight: 400; }
+  .ledger td { text-align: end; font-variant-numeric: tabular-nums lining-nums; }
+  .ledger tr.total :is(th, td) { border-block-end: 0; font-weight: 600; }
+  .ledger tr.total td { font: 400 var(--text-3xl)/1 var(--font-serif); font-variant-numeric: tabular-nums lining-nums; letter-spacing: -0.02em; }
+  .ledger .src { margin-block-start: var(--space-4); font-size: var(--text-sm); color: var(--color-text-muted); }
+
+  /* Footer and newsletter */
+  .site-footer h2 { font: 400 var(--text-2xl)/var(--leading-tight) var(--font-serif); letter-spacing: -0.015em; }
+  .site-footer .intro { color: var(--color-text-muted); margin-block-start: var(--space-3); max-inline-size: var(--size-measure); }
+  .news { margin-block-start: var(--space-6); max-inline-size: 30rem; }
+  .field-row { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+  input[type=email] { flex: 1 1 240px; min-block-size: 48px; padding: var(--space-4) var(--space-5); border-radius: var(--radius-full); border: 1px solid var(--color-border-strong); background: var(--color-surface); color: var(--color-text); font: var(--text-base)/1.5 var(--font-sans); }
+  @media (hover: hover) { input[type=email]:hover { border-color: var(--color-text-muted); } }
+  input[aria-invalid=true] { border-color: var(--color-danger); box-shadow: inset 0 0 0 1px var(--color-danger); } /* the second pixel is inset: no layout shift */
+  .error, .ok { display: flex; gap: var(--space-3); align-items: flex-start; font-size: var(--text-sm); margin-block-start: var(--space-3); }
+  .error { color: var(--color-danger); }
+  .error[hidden], .ok[hidden] { display: none; }
+  .ok { font-size: var(--text-base); color: var(--color-text); }
+  .ok .icon { color: var(--color-success); }
+  .error .icon, .ok .icon { inline-size: 16px; block-size: 16px; margin-block-start: var(--space-1); }
+  .news[data-done] :is(.field-row, label) { display: none; }
+  .links h3 { margin-block-end: var(--space-4); }
+  .links a { display: inline-block; color: var(--color-text); text-decoration: none; padding-block: var(--space-2); }
+  @media (hover: hover) { .links a:hover { text-decoration: underline; } }
+  .signoff { margin-block-start: var(--space-10); padding-block-start: var(--space-6); border-block-start: 1px solid var(--color-border); display: grid; gap: var(--space-5); }
+  .signoff .mark { font: 400 var(--text-numeral)/0.85 var(--font-serif); letter-spacing: -0.04em; translate: -0.04em 0; }
+  .signoff .legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-4); font-size: var(--text-sm); color: var(--color-text-muted); }
+  .signoff .legal .anno { font-size: var(--text-sm); display: inline-flex; align-items: center; gap: var(--space-3); }
+}
+
+@layer utilities {
+  .sr-only { position: absolute; inline-size: 1px; block-size: 1px; margin: 0; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+  .skip-link { position: absolute; inset-inline-start: var(--space-3); inset-block-start: var(--space-3); z-index: 20; display: inline-flex; align-items: center; min-block-size: var(--size-target); padding: 0 var(--space-4); border-radius: var(--radius-md);
+    background: var(--color-surface); color: var(--color-text); box-shadow: var(--ring); translate: 0 calc(-100% - var(--space-6)); }
+  .skip-link:focus { translate: none; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="#">Ember <span class="amp">&amp;</span> Oak</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#shop">Shop</a>
+      <a class="hide-sm" href="#story">Roastery</a>
+      <a class="hide-sm" href="#journal">Journal</a>
+      <a href="#cart" aria-describedby="cart-label">Cart <span class="cart-count" id="cart-count"><span aria-hidden="true" id="cart-n">0</span></span><span class="sr-only" id="cart-label">empty</span></a>
+      <a class="btn btn-secondary btn-sm hide-sm" href="#subscribe">Subscribe</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <p class="label">This week’s single origin · Lot 0412</p>
+      <h1 id="hero-title" class="display">Ethiopia Guji, <em>roasted&nbsp;Tuesday</em> in Portland.</h1>
+      <figure class="stage" role="img" aria-label="A bag of Ethiopia Guji, lot 0412, printed with the contour map of the Hambela Wamena hills where it grew. The map continues off the bag to the summit at 2,100 metres.">
+        <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <clipPath id="bag-clip"><path d="M92 112 Q92 100 104 100 H296 Q308 100 308 112 V402 Q308 414 296 414 H104 Q92 414 92 402 Z"/></clipPath>
+            <linearGradient id="bag-shade" x1="0" x2="1" y1="0" y2="0">
+              <stop offset="0" stop-color="#000" stop-opacity="0.16"/><stop offset="0.12" stop-color="#000" stop-opacity="0"/>
+              <stop offset="0.82" stop-color="#fff" stop-opacity="0.06"/><stop offset="1" stop-color="#000" stop-opacity="0.2"/>
+            </linearGradient>
+            <linearGradient id="bag-top" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0.12"/><stop offset="0.4" stop-color="#fff" stop-opacity="0"/></linearGradient>
+            <filter id="paper" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="412" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.35 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+            <g id="guji-map">{{STAGE}}</g>
+            <radialGradient id="bag-floor" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#000" stop-opacity="0.24"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+            <filter id="soft" x="-50%" width="200%"><feGaussianBlur stdDeviation="6"/></filter>
+          </defs>
+          <use href="#guji-map" class="ground"/>
+          <ellipse cx="200" cy="420" rx="128" ry="12" fill="url(#bag-floor)"/>
+          <path class="bag-body" d="M92 112 Q92 100 104 100 H296 Q308 100 308 112 V402 Q308 414 296 414 H104 Q92 414 92 402 Z"/>
+          <use href="#guji-map" class="print" clip-path="url(#bag-clip)"/>
+          <path class="bag-seal" d="M92 112 Q92 100 104 100 H296 Q308 100 308 112 V128 H92 Z"/>
+          <path class="bag-crimp" d="M98 106 H302 M98 110 H302 M98 114 H302 M98 118 H302 M98 122 H302"/>
+          <circle class="valve" cx="200" cy="158" r="9"/><circle class="valve-ring" cx="200" cy="158" r="5"/>
+          <rect x="92" y="100" width="216" height="314" rx="12" fill="url(#bag-shade)"/>
+          <rect x="92" y="100" width="216" height="314" rx="12" fill="url(#bag-top)"/>
+          <rect x="92" y="100" width="216" height="314" rx="12" fill="#000" filter="url(#paper)" clip-path="url(#bag-clip)"/>
+          <path d="M104 128 V404" stroke="#000" stroke-opacity="0.12" stroke-width="1"/>
+          <path d="M296 128 V404" stroke="#000" stroke-opacity="0.14" stroke-width="1"/>
+          <path d="M232 140 C236 220 230 320 236 396" stroke="#fff" stroke-opacity="0.16" stroke-width="14" fill="none" filter="url(#soft)" clip-path="url(#bag-clip)"/>
+          <path d="M96 382 Q200 368 304 382" stroke="#000" stroke-opacity="0.16" stroke-width="1" fill="none"/>
+          <path d="M92 382 Q200 368 308 382 V402 Q308 414 296 414 H104 Q92 414 92 402 Z" fill="#000" fill-opacity="0.06"/>
+          <rect x="92" y="128" width="216" height="6" fill="#000" fill-opacity="0.1"/>
+          <path class="summit" d="M320 84 l6 10 h-12 z"/>
+        </svg>
+        <div class="bag-label" aria-hidden="true">
+          <div class="mark">Ember <span class="amp">&amp;</span> Oak</div>
+          <div class="origin">Ethiopia Guji</div>
+          <div class="meta"><span class="hide-xs">Washed · </span>Light · <span class="unit">340&#8239;g</span></div>
+          <svg viewBox="0 0 96 24" preserveAspectRatio="none"><polyline points="{{SPARK}}"/></svg>
+        </div>
+        <span class="summit-chip chip anno" aria-hidden="true">2,100&#8239;m</span>
+        <figcaption class="stage-note" aria-hidden="true"><span class="chip anno">Lot 0412 · 60 bags this season</span><span class="chip anno">One contour every 150&#8239;m</span></figcaption>
+      </figure>
+      <div class="hero-body">
+        <p class="notes">Peach, jasmine and wildflower honey, from the Hambela Wamena washing station.</p>
+        <p class="lead">Roasted light in small batches and on its way to you within two days of the roast.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#subscribe">Start a subscription</a>
+          <a class="btn btn-secondary" href="#shop">Buy a bag, $21</a>
+        </div>
+        <dl class="facts">
+          <div><dt class="label">Altitude</dt><dd class="num">2,100<small>&#8239;m</small></dd></div>
+          <div><dt class="label">Batch</dt><dd class="num">12<small>&#8239;kg</small></dd></div>
+          <div><dt class="label">Roast to door</dt><dd class="num">48<small>&#8239;h</small></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature" id="subscribe" aria-labelledby="sub-title">
+    <svg viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">{{BAND}}</svg>
+    <div class="wrap">
+      <div>
+        <p class="label">The subscription</p>
+        <h2 id="sub-title">A new hill at your door, every <em>two or four</em> weeks.</h2>
+        <ul class="perks">
+          <li><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8.5"/></svg>Roasted to order, never more than three days old when it ships</li>
+          <li><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8.5"/></svg>Every bag comes with its farm’s map and its roast curve</li>
+          <li><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8.5"/></svg>Skip, swap or cancel in two clicks</li>
+        </ul>
+      </div>
+      <div>
+        <p class="price num"><span class="cur" aria-hidden="true">$</span><span aria-hidden="true">18</span><span class="sr-only">$18</span></p>
+        <p class="offer-note"><strong>A bag, shipping included.</strong> 15% under shop price. Your first bag ships this Friday.</p>
+        <a class="btn btn-feature btn-wide" href="#">Start my subscription</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="shop" aria-labelledby="shop-title">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="label">On the roaster now</p>
+          <h2 id="shop-title">Three coffees we can’t stop <em>drinking</em></h2>
+        </div>
+        <a class="more" href="#">See all 9 coffees<svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+      <ul class="cards">
+        <li class="card">
+          <div class="tile" aria-hidden="true"><svg viewBox="0 0 320 240" preserveAspectRatio="xMidYMid slice">{{GUJI}}</svg><span class="chip anno">Guji · 2,100&#8239;m · 14 lines</span></div>
+          <div class="card-body">
+            <div class="roast label"><span class="roast-meter" aria-hidden="true"><i class="on"></i><i></i><i></i></span>Light roast</div>
+            <div><h3><a class="card-link" href="#">Ethiopia Guji</a></h3><p class="origin">Hambela Wamena, washed, 2,100&#8239;m</p></div>
+            <p class="taste">Peach, jasmine, wildflower honey</p>
+            <div class="card-foot"><p class="p num">$21 <small>/ <span class="unit">340&#8239;g</span></small></p><button class="btn btn-secondary btn-sm add-btn" type="button"><span class="idle">Add to cart<span class="sr-only">: Ethiopia Guji</span></span><span class="done"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>Added<span class="sr-only">: Ethiopia Guji</span></span></button></div>
+          </div>
+        </li>
+        <li class="card">
+          <div class="tile" aria-hidden="true"><svg viewBox="0 0 320 240" preserveAspectRatio="xMidYMid slice">{{HUILA}}</svg><span class="chip anno">Huila · 1,750&#8239;m · 12 lines</span></div>
+          <div class="card-body">
+            <div class="roast label"><span class="roast-meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span>Medium roast</div>
+            <div><h3><a class="card-link" href="#">Colombia Huila</a></h3><p class="origin">Finca El Mirador, washed, 1,750&#8239;m</p></div>
+            <p class="taste">Caramel, red apple, cocoa nib</p>
+            <div class="card-foot"><p class="p num">$19 <small>/ <span class="unit">340&#8239;g</span></small></p><button class="btn btn-secondary btn-sm add-btn" type="button"><span class="idle">Add to cart<span class="sr-only">: Colombia Huila</span></span><span class="done"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>Added<span class="sr-only">: Colombia Huila</span></span></button></div>
+          </div>
+        </li>
+        <li class="card">
+          <div class="tile" aria-hidden="true"><svg viewBox="0 0 320 240" preserveAspectRatio="xMidYMid slice">{{BLEND}}</svg><span class="chip anno">Two farms · 1,100 and 1,600&#8239;m</span></div>
+          <div class="card-body">
+            <div class="roast label"><span class="roast-meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span>Dark roast</div>
+            <div><h3><a class="card-link" href="#">Oak Fire Espresso</a></h3><p class="origin">Brazil and Guatemala blend</p></div>
+            <p class="taste">Dark chocolate, molasses, toasted almond</p>
+            <div class="card-foot"><p class="p num">$18 <small>/ <span class="unit">340&#8239;g</span></small></p><button class="btn btn-secondary btn-sm add-btn" type="button"><span class="idle">Add to cart<span class="sr-only">: Oak Fire Espresso</span></span><span class="done"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>Added<span class="sr-only">: Oak Fire Espresso</span></span></button></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section story" id="story" aria-labelledby="story-title">
+    <div class="wrap">
+      <h2 id="story-title" class="label">How we roast</h2>
+      <p class="manifesto">We roast on a 1962 Probat in Southeast Portland, twelve kilos at a time. Every batch is logged, and we print <em>what we paid</em> for every lot on the bag.</p>
+      <figure class="curve" aria-labelledby="curve-cap">
+        <figcaption id="curve-cap" class="curve-head"><span><b>Batch 0412, Ethiopia Guji.</b> Bean temperature over 10 minutes 10 seconds, the bag in your hands.</span><span class="anno">First crack at 8:40 and 196&#8239;°C, dropped at 10:10 and 207&#8239;°C</span></figcaption>
+        <div class="plot" aria-hidden="true">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+            <line class="grid" x1="0" x2="100" y1="12.5" y2="12.5"/><line class="grid" x1="0" x2="100" y1="43.75" y2="43.75"/><line class="grid" x1="0" x2="100" y1="75" y2="75"/>
+            <line class="crack" x1="82.54" x2="82.54" y1="0" y2="100"/>
+            <g class="draw"><polygon class="area" points="{{CURVE_AREA}}"/><polyline class="line" points="{{CURVE}}"/></g>
+          </svg>
+          <span class="ylab anno" style="--y:12.5%">200&#8239;°C</span>
+          <span class="ylab anno" style="--y:43.75%">150&#8239;°C</span>
+          <span class="ylab anno" style="--y:75%">100&#8239;°C</span>
+          <span class="xlab anno start" style="--x:0%">0:00</span>
+          <span class="xlab anno" style="--x:47.62%">5:00</span>
+          <span class="xlab anno end" style="--x:96.83%">10:10</span>
+          <i class="pt" style="--x:14.29%; --y:80%; --at:0.15"></i>
+          <span class="ptlab anno below" style="--x:14.29%; --y:80%; --at:0.15"><b>Turning point</b> 1:30, 92&#8239;°C</span>
+          <i class="pt" style="--x:52.38%; --y:37.5%; --at:0.53"></i>
+          <span class="ptlab anno above optional" style="--x:52.38%; --y:37.5%; --at:0.53"><b>Yellowing</b> 5:30, 160&#8239;°C</span>
+          <i class="pt" style="--x:82.54%; --y:15.13%; --at:0.83"></i>
+          <span class="ptlab anno above" style="--x:82.54%; --y:15.13%; --at:0.83"><b>First crack</b> 8:40, 196&#8239;°C</span>
+          <i class="pt" style="--x:96.83%; --y:8.31%; --at:0.97"></i>
+        </div>
+      </figure>
+      <div class="spread">
+        <ol class="steps">
+          <li><span class="n" aria-hidden="true">1</span><div><h3>Buy direct</h3><p>We pay growers we know by name, and we visit every farm we buy from at least once every two years.</p></div></li>
+          <li><span class="n" aria-hidden="true">2</span><div><h3>Roast in small batches</h3><p>Twelve kilos at a time, profiled for each lot and cupped by two of us before a single bag ships.</p></div></li>
+          <li><span class="n" aria-hidden="true">3</span><div><h3>Ship within 48 hours</h3><p>Your coffee leaves the roastery two days after roasting at most, so it peaks in your kitchen, not ours.</p></div></li>
+        </ol>
+        <div class="ledger">
+          <table>
+            <caption class="label">What we paid, lot 0412 <span>Per pound of green coffee, 2026 harvest</span></caption>
+            <tbody>
+              <tr><th scope="row">Paid to the washing station</th><td>$4.10</td></tr>
+              <tr><th scope="row">Fairtrade minimum</th><td>$1.80</td></tr>
+              <tr><th scope="row">New York C price, Sept 30</th><td>$2.62</td></tr>
+              <tr class="total"><th scope="row">Over the Fairtrade floor</th><td>2.3&#215;</td></tr>
+            </tbody>
+          </table>
+          <p class="src">Contract and receipts on request. Prices before import and freight.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="journal">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h2>Letters from the roastery</h2>
+        <p class="intro">New lots with their maps, brew notes and the odd subscriber-only release. Twice a month, no more.</p>
+        <form class="news" id="news" action="/newsletter" method="post" novalidate>
+          <label for="email">Email address</label>
+          <div class="field-row">
+            <input id="email" name="email" type="email" required placeholder="you@example.com" aria-describedby="email-error" autocomplete="email" enterkeyhint="send">
+            <button class="btn btn-primary" type="submit" id="news-btn"><span class="spinner" aria-hidden="true"></span>Sign up</button>
+          </div>
+          <p class="error" id="email-error" hidden><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5v4M8 11v.5"/></svg>Add the rest of your email, for example dana@example.com.</p>
+          <p class="ok" role="status" id="news-ok"></p>
+        </form>
+      </div>
+      <div class="links"><h3 class="label">Shop</h3><ul><li><a href="#">Coffee</a></li><li><a href="#">Subscriptions</a></li><li><a href="#">Brewing gear</a></li><li><a href="#">Gift cards</a></li></ul></div>
+      <div class="links"><h3 class="label">Roastery</h3><ul><li><a href="#">Our story</a></li><li><a href="#">Wholesale</a></li><li><a href="#">Visit the cafe</a></li><li><a href="#">Contact</a></li></ul></div>
+    </div>
+    <div class="signoff">
+      <p class="mark" aria-hidden="true">Ember <span class="amp">&amp;</span> Oak</p>
+      <div class="legal"><p>Ember &amp; Oak Coffee Roasters, 1120 SE Water Ave, Portland, Oregon</p><p class="anno"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 2l4 7H2z" fill="currentColor"/></svg>45.51° N, 122.67° W · 15&#8239;m · © 2026</p></div>
+    </div>
+  </div>
+</footer>
+<div class="sr-only" role="status" aria-live="polite" id="announce"></div>
+<!-- End of body on purpose: the js class only gates the below-the-fold roast-curve animation, so painting before it runs
+     changes nothing visible, and the same script in the head cost 20 to 50 ms of desktop first paint (kb/tests/design-frontend.md). -->
+<script>document.documentElement.classList.add('js')</script>
+<script>
+// Product UI states (design-product-ui 03, 05): optimistic add to cart with visible and announced feedback; async newsletter.
+// Review states by URL: ?state=added | subscribed | error | sending. Motion: the roast curve draws once on first view.
+(function () {
+  const state = new URLSearchParams(location.search).get('state');
+  const $ = (id) => document.getElementById(id);
+  const say = (t) => { const a = $('announce'); a.textContent = ''; setTimeout(() => { a.textContent = t; }, 50); };
+  let bags = 0;
+  function setCart(n) {
+    bags = n;
+    $('cart-n').textContent = n;
+    $('cart-label').textContent = n ? n + (n === 1 ? ' bag' : ' bags') : 'empty';
+    $('cart-count').classList.toggle('has', n > 0);
+  }
+  function add(btn, hold) {
+    setCart(bags + 1);
+    btn.setAttribute('data-added', '');
+    const name = btn.closest('.card').querySelector('h3').textContent;
+    if (!hold) say(name + ' added. Your cart has ' + bags + (bags === 1 ? ' bag.' : ' bags.'));
+    clearTimeout(btn._t);
+    if (!hold) btn._t = setTimeout(() => btn.removeAttribute('data-added'), 2000);
+  }
+  document.querySelectorAll('.add-btn').forEach((b) => b.addEventListener('click', () => add(b)));
+  if (state === 'added') add(document.querySelector('.add-btn'), true);
+
+  const form = $('news'), email = $('email'), btn = $('news-btn'), err = $('email-error'), ok = $('news-ok');
+  const valid = () => email.validity.valid && /\S+@\S+\.\S+/.test(email.value);
+  function showError() { email.setAttribute('aria-invalid', 'true'); err.hidden = false; }
+  function done(addr) {
+    form.setAttribute('data-done', '');
+    ok.innerHTML = '<svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg><span>You’re on the list. The first letter goes to ' + addr.replace(/[<>&]/g, '') + ' on Oct 22.</span>';
+  }
+  email.addEventListener('input', () => { if (valid()) { email.removeAttribute('aria-invalid'); err.hidden = true; } });
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!valid()) { showError(); email.focus(); return; }
+    btn.setAttribute('aria-busy', 'true'); btn.setAttribute('aria-disabled', 'true');
+    setTimeout(() => { btn.removeAttribute('aria-busy'); btn.removeAttribute('aria-disabled'); done(email.value); }, 900);
+  });
+  if (state === 'error') { email.value = 'dana@'; showError(); }
+  if (state === 'sending') { email.value = 'dana@example.com'; btn.setAttribute('aria-busy', 'true'); btn.setAttribute('aria-disabled', 'true'); }
+  if (state === 'subscribed') done('dana@example.com');
+
+  const curve = document.querySelector('.curve');
+  if ('IntersectionObserver' in window && matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { curve.classList.add('seen'); io.disconnect(); } }, { threshold: 0.4 });
+    io.observe(curve);
+  } else curve.classList.add('seen');
+})();
+</script>
+</body>
+</html>

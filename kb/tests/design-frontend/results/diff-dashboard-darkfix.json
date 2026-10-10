@@ -1,0 +1,29 @@
+{
+  "before": "kb/tests/design-frontend/before/dashboard.html",
+  "after": "kb/tests/design-frontend/dashboard.html",
+  "tolerance": 0,
+  "results": [
+    {
+      "name": "dashboard-1440-dark",
+      "query": "",
+      "scheme": "dark",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        1029
+      ],
+      "sizeAfter": [
+        1440,
+        1029
+      ],
+      "pixels": 1481760,
+      "diffPixels": 165,
+      "maxDelta": 13,
+      "rows": [
+        12,
+        51
+      ],
+      "identical": false
+    }
+  ]
+}

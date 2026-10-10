@@ -1,0 +1,91 @@
+{
+  "page": "/tmp/claude-0/-home-claude-design-kb/7d54560a-30fa-5288-8002-e57a005c7126/scratchpad/bis/merged.html",
+  "profile": "desktop",
+  "runs": 7,
+  "encoding": "gzip",
+  "lcp": 184,
+  "fcp": 184,
+  "cls": 0.03502772086507311,
+  "inp": 0,
+  "tbt": 0,
+  "ttfb": 126.79999999981374,
+  "fontsReady": 241.20000000018626,
+  "load": 239.80000000074506,
+  "bytes": 47037,
+  "docBytes": 47037,
+  "requests": 1,
+  "dom": 513,
+  "mainThread": {
+    "script": 24.464,
+    "style": 6.691,
+    "layout": 31.913999999999998,
+    "task": 97.28699999999999,
+    "styleCount": 5,
+    "layoutCount": 4
+  },
+  "lcpElement": "p.answer.answer-ready \"Weekly active users are up 12.4%, the th\"",
+  "worstInteractions": [],
+  "interactions": 0,
+  "shifts": [
+    {
+      "t": 235.29999999981374,
+      "value": 0.0350278609578846,
+      "input": false,
+      "src": [
+        "div.title-block \"Overview Updated 2 min ago, times in PTL\"",
+        "div.toolbar \"Last 12 weeks: Jul 21 – Oct 12 Compared \"",
+        "input#search"
+      ]
+    }
+  ],
+  "steps": [],
+  "verdict": {
+    "lcp": "good",
+    "cls": "good",
+    "inp": "good"
+  },
+  "perRun": [
+    {
+      "lcp": 184,
+      "cls": 0.03503584624813939,
+      "inp": 0,
+      "tbt": 0
+    },
+    {
+      "lcp": 184,
+      "cls": 0.07444218982575956,
+      "inp": 0,
+      "tbt": 0
+    },
+    {
+      "lcp": 260,
+      "cls": 0.03502772086507311,
+      "inp": 0,
+      "tbt": 0
+    },
+    {
+      "lcp": 228,
+      "cls": 0.006823108126842366,
+      "inp": 0,
+      "tbt": 0
+    },
+    {
+      "lcp": 180,
+      "cls": 0.000007985290254793801,
+      "inp": 0,
+      "tbt": 16
+    },
+    {
+      "lcp": 176,
+      "cls": 0.000007985290254793801,
+      "inp": 0,
+      "tbt": 0
+    },
+    {
+      "lcp": 176,
+      "cls": 0.03503584624813939,
+      "inp": 0,
+      "tbt": 0
+    }
+  ]
+}

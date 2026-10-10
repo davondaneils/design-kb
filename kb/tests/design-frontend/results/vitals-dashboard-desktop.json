@@ -1,0 +1,122 @@
+{
+  "page": "kb/tests/design-frontend/./dashboard.html",
+  "profile": "desktop",
+  "runs": 7,
+  "encoding": "gzip",
+  "lcp": 228,
+  "fcp": 228,
+  "cls": 0.0038012433237019526,
+  "inp": 48,
+  "tbt": 0,
+  "ttfb": 127.8999999994412,
+  "fontsReady": 262.59999999962747,
+  "load": 261,
+  "bytes": 47477,
+  "docBytes": 47477,
+  "requests": 1,
+  "dom": 514,
+  "mainThread": {
+    "script": 26.28,
+    "style": 6.101999999999999,
+    "layout": 43.479,
+    "task": 119.11,
+    "styleCount": 5,
+    "layoutCount": 4
+  },
+  "lcpElement": "p.answer.answer-ready \"Weekly active users are up 12.4%, the th\"",
+  "worstInteractions": [
+    {
+      "name": "pointerdown",
+      "d": 48,
+      "input": 1,
+      "proc": 0
+    },
+    {
+      "name": "keydown",
+      "d": 48,
+      "input": 1,
+      "proc": 10
+    },
+    {
+      "name": "pointerdown",
+      "d": 40,
+      "input": 1,
+      "proc": 0
+    }
+  ],
+  "interactions": 9,
+  "shifts": [
+    {
+      "t": 270.09999999962747,
+      "value": 0.0038012433237019526,
+      "input": false,
+      "src": [
+        "label.search \"/\""
+      ]
+    }
+  ],
+  "steps": [
+    "click thead .sort",
+    "click thead .sort",
+    "click thead .sort",
+    "click thead .sort",
+    "click #density label:nth-child(3)",
+    "click #density label:nth-child(2)",
+    "press Control+k",
+    "click #pal-q",
+    "key s",
+    "key e",
+    "press Escape",
+    "hover #chart-svg",
+    "hover #chart-svg"
+  ],
+  "verdict": {
+    "lcp": "good",
+    "cls": "good",
+    "inp": "good"
+  },
+  "perRun": [
+    {
+      "lcp": 252,
+      "cls": 0.0038012433237019526,
+      "inp": 48,
+      "tbt": 0
+    },
+    {
+      "lcp": 232,
+      "cls": 0.0038012433237019526,
+      "inp": 64,
+      "tbt": 0
+    },
+    {
+      "lcp": 224,
+      "cls": 0.0038012433237019526,
+      "inp": 56,
+      "tbt": 0
+    },
+    {
+      "lcp": 220,
+      "cls": 0.0038012433237019526,
+      "inp": 40,
+      "tbt": 0
+    },
+    {
+      "lcp": 228,
+      "cls": 0.0038012433237019526,
+      "inp": 48,
+      "tbt": 0
+    },
+    {
+      "lcp": 216,
+      "cls": 0.0038012433237019526,
+      "inp": 48,
+      "tbt": 0
+    },
+    {
+      "lcp": 240,
+      "cls": 0.0038012433237019526,
+      "inp": 48,
+      "tbt": 0
+    }
+  ]
+}

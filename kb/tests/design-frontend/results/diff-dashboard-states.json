@@ -1,0 +1,159 @@
+{
+  "before": "kb/tests/design-frontend/before/dashboard-states.html",
+  "after": "kb/tests/design-frontend/dashboard-states.html",
+  "tolerance": 0,
+  "results": [
+    {
+      "name": "dashboard-states-390-light",
+      "query": "",
+      "scheme": "light",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        2521
+      ],
+      "sizeAfter": [
+        390,
+        2521
+      ],
+      "pixels": 983190,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-states-768-light",
+      "query": "",
+      "scheme": "light",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        1929
+      ],
+      "sizeAfter": [
+        768,
+        1929
+      ],
+      "pixels": 1481472,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-states-1024-light",
+      "query": "",
+      "scheme": "light",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        1687
+      ],
+      "sizeAfter": [
+        1024,
+        1687
+      ],
+      "pixels": 1727488,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-states-1440-light",
+      "query": "",
+      "scheme": "light",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        1509
+      ],
+      "sizeAfter": [
+        1440,
+        1509
+      ],
+      "pixels": 2172960,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-states-390-dark",
+      "query": "",
+      "scheme": "dark",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        2521
+      ],
+      "sizeAfter": [
+        390,
+        2521
+      ],
+      "pixels": 983190,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-states-768-dark",
+      "query": "",
+      "scheme": "dark",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        1929
+      ],
+      "sizeAfter": [
+        768,
+        1929
+      ],
+      "pixels": 1481472,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-states-1024-dark",
+      "query": "",
+      "scheme": "dark",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        1687
+      ],
+      "sizeAfter": [
+        1024,
+        1687
+      ],
+      "pixels": 1727488,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-states-1440-dark",
+      "query": "",
+      "scheme": "dark",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        1509
+      ],
+      "sizeAfter": [
+        1440,
+        1509
+      ],
+      "pixels": 2172960,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    }
+  ]
+}

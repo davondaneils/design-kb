@@ -1,0 +1,15 @@
+coffee-states.lint.json                      fail   0  warn  15   | warn: targets 14, shadows 1
+coffee.lint.json                             fail   0  warn  22   | warn: targets 18, type-scale 3, sticky-focus 1
+coffee.state-added.lint.json                 fail   0  warn  22   | warn: targets 18, type-scale 3, sticky-focus 1
+coffee.state-error.lint.json                 fail   0  warn  22   | warn: targets 18, type-scale 3, sticky-focus 1
+coffee.state-sending.lint.json               fail   0  warn  22   | warn: targets 18, type-scale 3, sticky-focus 1
+coffee.state-subscribed.lint.json            fail   0  warn  22   | warn: targets 18, type-scale 3, sticky-focus 1
+dashboard-states.lint.json                   fail   0  warn  35   | warn: targets 35
+dashboard.density-compact.lint.json          fail   0  warn  27   | warn: targets 27
+dashboard.lint.json                          fail   0  warn  27   | warn: targets 27
+dashboard.open-palette.lint.json             fail   0  warn  28   | warn: targets 27, svg-overlap 1
+dashboard.open-sheet.lint.json               fail   0  warn  34   | warn: targets 29, svg-overlap 5
+dashboard.state-empty.lint.json              fail   0  warn   8   | warn: targets 8
+dashboard.state-loading.lint.json            fail   0  warn   8   | warn: targets 8
+dashboard.state-partial.lint.json            fail   0  warn  12   | warn: targets 12
+dashboard.state-viewer.lint.json             fail   0  warn  28   | warn: targets 27, fallback 1

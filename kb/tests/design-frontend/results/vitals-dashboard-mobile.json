@@ -1,0 +1,110 @@
+{
+  "page": "kb/tests/design-frontend/./dashboard.html",
+  "profile": "mobile",
+  "runs": 7,
+  "encoding": "gzip",
+  "lcp": 816,
+  "fcp": 816,
+  "cls": 0,
+  "inp": 88,
+  "tbt": 122,
+  "ttfb": 459.69999999925494,
+  "fontsReady": 1107.7999999998137,
+  "load": 1095.0999999996275,
+  "bytes": 47477,
+  "docBytes": 47477,
+  "requests": 1,
+  "dom": 514,
+  "mainThread": {
+    "script": 118.253,
+    "style": 30.421,
+    "layout": 156.577,
+    "task": 552.6659999999999,
+    "styleCount": 6,
+    "layoutCount": 5
+  },
+  "lcpElement": "p.answer.answer-ready \"Weekly active users are up 12.4%, the th\"",
+  "worstInteractions": [
+    {
+      "name": "keydown",
+      "d": 88,
+      "input": 2,
+      "proc": 3
+    },
+    {
+      "name": "keydown",
+      "d": 80,
+      "input": 1,
+      "proc": 44
+    },
+    {
+      "name": "keydown",
+      "d": 40,
+      "input": 1,
+      "proc": 1
+    }
+  ],
+  "interactions": 6,
+  "shifts": [],
+  "steps": [
+    "clickall thead .sort (skipped: locator.click: Timeout 5000ms exceeded.)",
+    "click #density label:nth-child(3) (skipped: locator.click: Timeout 5000ms exceeded.)",
+    "click #density label:nth-child(2) (skipped: locator.click: Timeout 5000ms exceeded.)",
+    "press Control+k",
+    "click #pal-q",
+    "key s",
+    "key e",
+    "press Escape",
+    "hover #chart-svg",
+    "hover #chart-svg"
+  ],
+  "verdict": {
+    "lcp": "good",
+    "cls": "good",
+    "inp": "good"
+  },
+  "perRun": [
+    {
+      "lcp": 808,
+      "cls": 0,
+      "inp": 72,
+      "tbt": 88
+    },
+    {
+      "lcp": 836,
+      "cls": 0,
+      "inp": 96,
+      "tbt": 71.70000000018626
+    },
+    {
+      "lcp": 900,
+      "cls": 0,
+      "inp": 112,
+      "tbt": 141
+    },
+    {
+      "lcp": 816,
+      "cls": 0,
+      "inp": 96,
+      "tbt": 116.8999999994412
+    },
+    {
+      "lcp": 756,
+      "cls": 0,
+      "inp": 72,
+      "tbt": 186.29999999981374
+    },
+    {
+      "lcp": 868,
+      "cls": 0,
+      "inp": 72,
+      "tbt": 160.09999999962747
+    },
+    {
+      "lcp": 812,
+      "cls": 0,
+      "inp": 88,
+      "tbt": 122
+    }
+  ]
+}
