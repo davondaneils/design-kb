@@ -1,0 +1,1792 @@
+{
+ "url": "https://www.framer.com",
+ "measuredAt": "2026-10-10T17:13:38.053Z",
+ "method": "Playwright Chromium, getComputedStyle on visible elements, light scheme, after scroll-through and fonts.ready",
+ "widths": {
+  "390": {
+   "status": 200,
+   "finalUrl": "https://www.framer.com/",
+   "width": 390,
+   "h1Style": {
+    "font": "\"GT Walsheim Medium\" 36px/36px w500 ls -1.44px",
+    "color": "#ffffff",
+    "top": 124,
+    "width": 350,
+    "align": "start"
+   },
+   "title": "Framer: AI design agent",
+   "description": "Go from idea to launch with an agent that designs and builds on the canvas. Keep each change editable, with hosting, security, analytics, CMS, and SEO built in.",
+   "pageHeight": 10855,
+   "bodyBg": "#000000",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "GT Walsheim Medium 500 normal",
+    "Inter Variable 400 normal",
+    "Inter Medium 500 normal",
+    "Inter 400 normal",
+    "Inter 700 normal",
+    "Inter 500 normal"
+   ],
+   "families": [
+    {
+     "v": "\"Inter Variable\", \"Inter Variable Placeholder\"",
+     "n": 2038
+    },
+    {
+     "v": "\"GT Walsheim Medium\", \"GT Walsheim Medium Placeholder\"",
+     "n": 280
+    },
+    {
+     "v": "Inter, \"Inter Placeholder\"",
+     "n": 155
+    },
+    {
+     "v": "\"Inter Medium\", \"Inter Medium Placeholder\"",
+     "n": 19
+    },
+    {
+     "v": "sans-serif",
+     "n": 15
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "14px / lh 19.6px / w400 / ls -0.1px",
+     "n": 881,
+     "ex": "a: Log in"
+    },
+    {
+     "v": "18px / lh 24.3px / w400 / ls -0.2px",
+     "n": 827,
+     "ex": "h3: Design with an agent"
+    },
+    {
+     "v": "28px / lh 30.8px / w500 / ls -1.12px",
+     "n": 181,
+     "ex": "h2: Agents that work alongside you, not instead of you"
+    },
+    {
+     "v": "14px / lh 21px / w400 / ls -0.1px",
+     "n": 128,
+     "ex": "p: We use cookies to enhance your experience, analyze site traf"
+    },
+    {
+     "v": "13px / lh 13px / w400 / ls -0.26px",
+     "n": 97,
+     "ex": "p: Get started for free"
+    },
+    {
+     "v": "36px / lh 36px / w500 / ls -1.44px",
+     "n": 87,
+     "ex": "h1: Framer is the design agent for every step from idea to launc"
+    },
+    {
+     "v": "15px / lh 20.25px / w400 / ls -0.1px",
+     "n": 80,
+     "ex": "p: Read story"
+    },
+    {
+     "v": "15px / lh 20.25px / w400 / ls -0.2px",
+     "n": 51,
+     "ex": "p: Start with Agents"
+    },
+    {
+     "v": "12px / lh 15px / w400 / ls normal",
+     "n": 25,
+     "ex": "p: All services online"
+    },
+    {
+     "v": "18px / lh 21.6px / w400 / ls -0.01px",
+     "n": 23,
+     "ex": "p: https://www.framer.com/"
+    },
+    {
+     "v": "14px / lh 14px / w400 / ls -0.28px",
+     "n": 20,
+     "ex": "p: Get started for free"
+    },
+    {
+     "v": "12px / lh 14.4px / w500 / ls normal",
+     "n": 19,
+     "ex": "p: Dutch"
+    },
+    {
+     "v": "12px / lh normal / w400 / ls normal",
+     "n": 15,
+     "ex": "label: Select Language"
+    },
+    {
+     "v": "54px / lh 43.2px / w500 / ls -2.16px",
+     "n": 12,
+     "ex": "h4: 99.99%"
+    },
+    {
+     "v": "10px / lh 12px / w500 / ls normal",
+     "n": 10,
+     "ex": "p: 35%"
+    },
+    {
+     "v": "14px / lh 14px / w400 / ls -0.56px",
+     "n": 7,
+     "ex": "p: Sign up"
+    },
+    {
+     "v": "12px / lh 14.4px / w400 / ls normal",
+     "n": 7,
+     "ex": "p: Locales"
+    },
+    {
+     "v": "12px / lh 18px / w500 / ls normal",
+     "n": 7,
+     "ex": "div: English"
+    },
+    {
+     "v": "14px / lh 14px / w400 / ls -0.01px",
+     "n": 6,
+     "ex": "p: Framer"
+    },
+    {
+     "v": "9px / lh 10.8px / w700 / ls normal",
+     "n": 6,
+     "ex": "p: NL"
+    },
+    {
+     "v": "7px / lh 7px / w400 / ls 0.21px",
+     "n": 6,
+     "ex": "p: New"
+    },
+    {
+     "v": "12px / lh 16.8px / w400 / ls -0.1px",
+     "n": 4,
+     "ex": "p: 0:36"
+    },
+    {
+     "v": "6px / lh 6px / w400 / ls normal",
+     "n": 4,
+     "ex": "p: CCPA"
+    },
+    {
+     "v": "12px / lh 15px / w500 / ls -0.7px",
+     "n": 4,
+     "ex": "p: 2026"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#ffffff a0.6",
+     "n": 1471
+    },
+    {
+     "v": "#ffffff",
+     "n": 830
+    },
+    {
+     "v": "#222222",
+     "n": 115
+    },
+    {
+     "v": "#000000",
+     "n": 62
+    },
+    {
+     "v": "#0099ff",
+     "n": 13
+    },
+    {
+     "v": "#999999",
+     "n": 10
+    },
+    {
+     "v": "#050505",
+     "n": 6
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#ffffff a0.6 on #000000",
+     "n": 1471,
+     "ex": "7.37:1"
+    },
+    {
+     "v": "#ffffff on #000000",
+     "n": 825,
+     "ex": "21:1"
+    },
+    {
+     "v": "#222222 on #ffffff",
+     "n": 115,
+     "ex": "15.91:1"
+    },
+    {
+     "v": "#000000 on #ffffff",
+     "n": 47,
+     "ex": "21:1"
+    },
+    {
+     "v": "#000000 on #000000",
+     "n": 15,
+     "ex": "1:1"
+    },
+    {
+     "v": "#0099ff on #ffffff",
+     "n": 13,
+     "ex": "3:1"
+    },
+    {
+     "v": "#999999 on #000000",
+     "n": 7,
+     "ex": "7.37:1"
+    },
+    {
+     "v": "#050505 on #878787",
+     "n": 6,
+     "ex": "5.67:1"
+    },
+    {
+     "v": "#ffffff on #121212",
+     "n": 5,
+     "ex": "18.73:1"
+    },
+    {
+     "v": "#999999 on #121212",
+     "n": 3,
+     "ex": "6.58:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#000000",
+     "n": 8045
+    },
+    {
+     "v": "linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 96.7656%)",
+     "n": 147
+    },
+    {
+     "v": "#111111",
+     "n": 89
+    },
+    {
+     "v": "linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%)",
+     "n": 78
+    },
+    {
+     "v": "#ffffff",
+     "n": 66
+    },
+    {
+     "v": "#ffffff a0.1",
+     "n": 19
+    },
+    {
+     "v": "linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%)",
+     "n": 18
+    },
+    {
+     "v": "linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%)",
+     "n": 17
+    },
+    {
+     "v": "linear-gradient(90deg, rgba(0, 153, 255, 0.1) 0%, rgba(28, 28, 28, 0.5) 61%)",
+     "n": 14
+    },
+    {
+     "v": "linear-gradient(173deg, rgb(255, 255, 255) 32%, rgba(0, 0, 0, 0.1) 74%)",
+     "n": 13
+    },
+    {
+     "v": "#121212",
+     "n": 8
+    },
+    {
+     "v": "#dedede",
+     "n": 5
+    }
+   ],
+   "borders": [],
+   "radii": [
+    {
+     "v": "8px",
+     "n": 111,
+     "ex": "a.framer-16mrjhl framer-enysp5"
+    },
+    {
+     "v": "6px",
+     "n": 38,
+     "ex": "div.framer-jp78hk"
+    },
+    {
+     "v": "10px",
+     "n": 17,
+     "ex": "div.framer-cw6b3u"
+    },
+    {
+     "v": "18px",
+     "n": 9,
+     "ex": "a.framer-UMlO7 framer-0k2u9 fram"
+    },
+    {
+     "v": "3px",
+     "n": 5,
+     "ex": "div.framer-3qh2ek"
+    },
+    {
+     "v": "15px",
+     "n": 4,
+     "ex": "div.framer-1gidngg"
+    },
+    {
+     "v": "7px",
+     "n": 2,
+     "ex": "div.framer-y4e3jb"
+    },
+    {
+     "v": "25px",
+     "n": 2,
+     "ex": "div.framer-imdnr5"
+    },
+    {
+     "v": "12px",
+     "n": 1,
+     "ex": "mark.framer-text"
+    },
+    {
+     "v": "14px",
+     "n": 1,
+     "ex": "div.framer-1ifcpxw"
+    },
+    {
+     "v": "30px",
+     "n": 1,
+     "ex": "div.framer-ax4p4c"
+    },
+    {
+     "v": "9px",
+     "n": 1,
+     "ex": "div.framer-1uqhmys"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgba(0, 0, 0, 0.1) 0px 1px 2px 0px",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(255, 255, 255, 0.08) 0px 0px 0px 1px",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.25) 0px 2px 4px 0px",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.1) 0px 10px 20px 0px, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.25) 0px 0px 0px 0px",
+     "n": 1,
+     "ex": "input"
+    }
+   ],
+   "transitions": [],
+   "animations": [
+    {
+     "v": "betterGrainWebpFramesV22 0.75s steps(12) xinfinite",
+     "n": 1
+    }
+   ],
+   "maxWidths": [
+    {
+     "v": "1200px (rendered 350px)",
+     "n": 11,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 350px)",
+     "n": 6,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 300px)",
+     "n": 5,
+     "ex": "div"
+    },
+    {
+     "v": "1200px (rendered 390px)",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 390px)",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 330px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 180px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 220px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 310px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "1500px (rendered 390px)",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 60px pb 60px",
+     "n": 4
+    },
+    {
+     "v": "pt 0px pb 0px",
+     "n": 1
+    },
+    {
+     "v": "pt 60px pb 20px",
+     "n": 1
+    },
+    {
+     "v": "pt 20px pb 60px",
+     "n": 1
+    },
+    {
+     "v": "pt 80px pb 60px",
+     "n": 1
+    },
+    {
+     "v": "pt 20px pb 0px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "5px",
+     "n": 121
+    },
+    {
+     "v": "10px",
+     "n": 69
+    },
+    {
+     "v": "20px",
+     "n": 18
+    },
+    {
+     "v": "25px",
+     "n": 11
+    },
+    {
+     "v": "4px",
+     "n": 10
+    },
+    {
+     "v": "6px",
+     "n": 9
+    },
+    {
+     "v": "7px",
+     "n": 8
+    },
+    {
+     "v": "11px",
+     "n": 7
+    },
+    {
+     "v": "40px",
+     "n": 7
+    },
+    {
+     "v": "15px",
+     "n": 5
+    },
+    {
+     "v": "8px",
+     "n": 5
+    },
+    {
+     "v": "44px",
+     "n": 2
+    },
+    {
+     "v": "20px / col normal",
+     "n": 2
+    },
+    {
+     "v": "10px / col 15px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "20px",
+     "n": 39
+    },
+    {
+     "v": "25px",
+     "n": 30
+    },
+    {
+     "v": "40px",
+     "n": 25
+    },
+    {
+     "v": "1px",
+     "n": 22
+    },
+    {
+     "v": "5px",
+     "n": 15
+    },
+    {
+     "v": "8px",
+     "n": 14
+    },
+    {
+     "v": "60px",
+     "n": 12
+    },
+    {
+     "v": "10px",
+     "n": 10
+    },
+    {
+     "v": "3px",
+     "n": 10
+    },
+    {
+     "v": "15px",
+     "n": 7
+    },
+    {
+     "v": "12px",
+     "n": 6
+    },
+    {
+     "v": "13.5px",
+     "n": 3
+    },
+    {
+     "v": "80px",
+     "n": 3
+    },
+    {
+     "v": "45px",
+     "n": 2
+    },
+    {
+     "v": "64px",
+     "n": 1
+    },
+    {
+     "v": "6px",
+     "n": 1
+    },
+    {
+     "v": "16px",
+     "n": 1
+    },
+    {
+     "v": "14px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "16px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "Take action on your site from anywhere. Update copy from Slack. Trigger CMS changes from the terminal. Ship from a GitHu",
+    "chars": 209,
+    "lines": 7,
+    "charsPerLine": 30,
+    "width": 270,
+    "fontSize": "18px",
+    "lineHeight": "24.3px",
+    "color": "#ffffff a0.6"
+   },
+   "rootVars": {
+    "--token-c534b380-e14e-4ddc-9802-ad88d1f94f8e": "#ffffff1a",
+    "--token-6ecb0037-dab8-4348-b657-00f38b638028": "#cbff00",
+    "--token-1ef30da2-9620-422c-b321-d10088e14610": "#000",
+    "--token-3d980185-7d0f-4837-b1d0-e3a68e16a293": "#0000001a",
+    "--token-5e0b3b72-9a97-43f8-96f2-85d741f3d8ca": "#1a1a1a",
+    "--token-958e2cd1-b113-4aa3-9235-7a2b959c8feb": "#000",
+    "--token-26e3cb56-8447-4a64-9b7d-37f16a9909d4": "#fff",
+    "--token-289cb3ad-ad59-4cce-aee5-0850b842d9c8": "#fffc",
+    "--token-8f5eb515-7a13-452b-a4ab-f35e2208a3f3": "#fff9",
+    "--token-f5637926-8ee6-41cb-a320-ec3462d62cd5": "#fff6",
+    "--token-bd71055c-0a2c-4476-8cc9-4310acba652d": "#09f",
+    "--token-eb0d9e00-7216-491c-99d5-7c1c2f3d0dbe": "#05f",
+    "--token-0245ad54-dffa-4280-9b49-9d43ad68acaa": "#60f",
+    "--token-66dfdba2-b084-43a3-a18d-237c2893b6a7": "#90f",
+    "--token-0c4c4e00-f4fc-4e6a-9a97-509a95a3e5d4": "#f06",
+    "--token-88cad303-8ee5-4c22-877f-e434faf14eee": "#f02",
+    "--token-61e699c7-742b-47d0-bb16-f42065b06637": "#fd7702",
+    "--token-be530db7-18b2-4273-89ab-17e94ce4aa9f": "#fb0",
+    "--token-ee053477-e115-4fec-a5f5-cdc637ed6ddc": "#0cf",
+    "--token-893b117c-1037-4f46-becb-94bc264ede3a": "#2dd",
+    "--token-2fbf5c4b-adb8-4940-91a4-ad94f8d791ba": "#141414",
+    "--token-281f665e-69f0-4f4c-a171-f40f50fe70d5": "#4cd963",
+    "--token-81eeded8-7d17-49fd-8f9d-4b09d4083be5": "#ffffff12",
+    "--token-5e2a9781-f258-43f3-ae02-0a76276a5519": "#111",
+    "--token-94a5bf9a-16a4-4639-b671-271526647eef": "#333",
+    "--token-a1269b3c-6c48-45d9-9f35-32a6df13b5e0": "#383838",
+    "--token-0670237f-f1ec-47e8-98e0-ecdf93f4467c": "#888",
+    "--token-ea0a2ab8-ce16-4a61-995f-9a3f03b39cf7": "#fff3",
+    "--token-5964e09d-3671-4c80-a557-31c1772b6c22": "#999",
+    "--token-4a5ab9b5-071f-4390-82c0-81f9558f671f": "#fff",
+    "--token-8015ce2b-ef6f-4fe0-944b-b61f872d0501": "#999",
+    "--token-e0051992-b662-4a7c-a4c8-9cd5b5125f7a": "#171717",
+    "--token-1ff51228-9678-411c-9a08-00381f0fc70b": "#fff",
+    "--token-3ead4217-f562-484f-ae35-d367de8b213a": "#09f",
+    "--token-e6ff4111-cae9-48d6-82e5-a990cf837703": "#ffffff12",
+    "--token-bed18f81-9cf1-4e2e-871f-69719f53f1d4": "#ffffff1a",
+    "--token-d4634443-ffec-443d-a754-10b0a24f2eba": "#fff",
+    "--token-c728f732-7c78-48e8-94a1-513a91a25137": "#fff6",
+    "--token-70c17056-82cb-4934-97c9-7213cf77c853": "#ffffff1a",
+    "--token-f6d5743a-73c0-417f-973c-02f663387ec8": "#ffffff80",
+    "--token-393d758b-714b-4628-a487-3e2609e109b7": "#242424",
+    "--token-ef3d81b5-78dc-4f92-b13e-1e8b0e28ba8c": "#212121",
+    "--token-bf566e33-485f-437d-9c8a-97c626fb8093": "#ffffff12",
+    "--token-1073b3db-8e72-4239-ada0-89e67ba85817": "#171717",
+    "--token-50d3edc6-ca3e-4e24-b5b6-95a9ef291fd3": "#00000012",
+    "--token-373c4b2f-375a-4a63-bd70-20575308a06b": "#303030",
+    "--token-a90119e0-cc91-4f7c-8117-a4827837d154": "#242424",
+    "--token-3326ab02-a399-4a0a-90ca-823d3eeec36a": "#404040",
+    "--token-023e584d-eb9f-45d0-a9bf-d481c0b53395": "#bbb",
+    "--token-e81b27a0-dbec-444a-a842-619222fcd818": "#999",
+    "--token-0d3c4e1f-33e0-4ebe-bdfa-af3c0ffb2b6e": "#ffffff1a",
+    "--token-ea7f6847-c578-4b96-834f-9880ebd5b2c8": "#ffffffa6",
+    "--token-565b745b-c313-43ee-aacc-dc06f90a5494": "#888",
+    "--token-1765427e-22ca-4432-9e46-90123c5bd8b0": "#0000000d",
+    "--token-3211d3ed-e082-412d-bec4-c06fb5bda768": "#666",
+    "--token-41903ea9-af7f-499e-a111-2c021ff53f36": "#fff",
+    "--token-7caf96a9-3685-4995-95cd-92a16705da21": "#09f",
+    "--token-8829ab2d-0ef5-4f78-a903-5d4c901eec75": "#333",
+    "--token-b8a0b4cf-70ff-4994-abad-931092f52d53": "#222",
+    "--token-e79b6732-da94-4bb4-b89e-c6c710bf538f": "#0000000a",
+    "--token-e2c6fd82-c978-4415-a4b5-37700001c928": "#09f",
+    "--token-86436fc2-2fa7-4338-9d69-653ef2fe605e": "#212121",
+    "--token-d127865a-b3de-47e9-b49b-fec1a4c5c097": "#0000001a",
+    "--token-df2a444d-c73c-41a8-b32b-15a8977e2f19": "#000",
+    "--token-224bfd43-9bd7-4029-a74c-dfb7dcb6da6e": "#cbff00",
+    "--token-08cb9138-e90e-4825-9f55-0aaa0c506cd8": "#000",
+    "--token-d8cf0a03-9d51-4c74-8f74-1ce6a40b7a93": "#1d1d1d",
+    "--token-7e405047-a8f7-4a29-ba60-27706f8aef99": "#ffffff0d",
+    "--token-f2ab3b7f-4a45-442b-ac7e-6535e4f5eaa4": "#1d1d1d",
+    "--token-34da55f6-98ee-406d-9f22-8bd807975463": "#141414",
+    "--token-e20050d3-1c28-4712-bab1-33daddb2d8d3": "#1d1d1d",
+    "--token-dfb83e06-5dc9-4927-841f-fa3a5687bbf5": "#0006",
+    "--token-ab22db3f-51d4-457b-b74d-36a1761e9043": "#f2f2f2",
+    "--token-1e7cee86-5b3c-4a5e-b650-927c556a0730": "#000",
+    "--token-494c7bf8-981d-4262-955c-7770a66e4aca": "#999",
+    "--token-f4d7f1ab-60e4-4112-93dc-10fa3370595e": "#0d6",
+    "--token-3636b58d-af99-4283-ab2c-55c8fcdd5b26": "#1f1f1f",
+    "--token-28fd9ca0-18c8-4b2c-b240-cbd29f83e8a5": "#666",
+    "--token-80b6d9ee-6797-4273-85d5-55a0c0e39c2c": "#666",
+    "--token-81dfd308-4a2d-423f-8ca6-7e503f3bc16a": "#333",
+    "--token-05c8a71b-796d-4e89-a88a-1fd7fb02e1c7": "#303030",
+    "--token-b5069c63-5952-4d18-89d9-c83e27c8dd95": "#fff",
+    "--token-3fe3801c-504b-4fed-bd23-95e1ceda4e02": "#000",
+    "--token-0ba2e88a-a3f7-47fb-83b9-ad2eb0f68dc9": "#f2f2f2",
+    "--token-7f1bc6d9-a60f-42df-8ff7-6d27d47209c5": "#000",
+    "--token-4e252111-446f-4e7a-b1c3-2cceb89b901b": "#000",
+    "--token-13ec5eb2-95cb-4f68-8622-21c1e5841f91": "#000",
+    "--token-3c51c799-b594-40bb-870a-2ecb57426fb5": "#212121",
+    "--token-66b4c800-8615-4d3f-b022-5740b5e73cff": "#1f1f1f",
+    "--token-5381f6a2-4123-4833-9f15-ece3362235bb": "#242424",
+    "--token-bd6e9b1d-d923-4381-a016-9ee35fa74d19": "#ffffff1a",
+    "--token-8dfe056b-123a-4b56-a293-a075f1447a42": "#09f",
+    "--token-ca716543-ec0e-4610-b24d-c4a813b8ab12": "#212121",
+    "--token-c8276e30-1f1d-4733-800f-3191605cbcc2": "#ffffff12",
+    "--token-7c6a6dd2-0dfd-431a-a4ce-82949a34d083": "#222",
+    "--token-18266cfa-4b92-4fbe-9260-6d874055f250": "#999",
+    "--token-4c236017-9c6f-4d47-8335-0eb6d859d1e3": "#242424",
+    "--token-501e078c-c5fb-4b79-9d3e-94a6d60e5388": "#212121",
+    "--token-c98b4872-09a5-4eef-84b0-cd9f352143db": "#ffffff1a",
+    "--token-b009d8a3-9fb6-47e5-ad22-64acdc1a43f1": "#999",
+    "--token-a55687bf-10ec-448e-8cff-7a38a8062829": "#fff",
+    "--token-c835256c-69c7-49f6-9ab5-223f8754be0b": "#242424",
+    "--token-75b23a6a-47c8-47c8-8583-14f60f534fa2": "#666",
+    "--token-43a73b1e-92dd-495c-9878-9ee05c726b8e": "#999",
+    "--token-7ca37c50-53e8-42ec-a9b7-a23785ef18d6": "#212121",
+    "--token-a5b679c7-75b3-4b56-b5ee-f7c78fdf6f09": "#242424",
+    "--token-753822fb-42c0-4245-bbf8-87bc278da308": "#242424",
+    "--token-648a89d7-4ba7-4aff-9f56-fe6a4791adfb": "#212121",
+    "--token-65257a2f-9705-4b8e-acce-914c518786ec": "#242424",
+    "--token-0d914219-51db-44da-9371-684daa097890": "#212121",
+    "--token-a798bd82-d3ed-489b-8536-bb5e3a370ab3": "#242424",
+    "--token-4ea7ddaa-edb2-4693-a52c-c8fbc21f91fd": "#212121",
+    "--token-c905498e-0f4e-46df-944f-7d0973c4d925": "#999",
+    "--token-1cfbd6a8-40d4-44a3-93b8-de4d8158716c": "#999",
+    "--token-242d6a6e-dcf9-428f-b28f-32484d98060a": "#242424",
+    "--token-626f3ee6-1979-4092-a33f-88f7cbf2b731": "#ffffff12",
+    "--token-79709539-c81c-4174-9647-38ce6b9aeb22": "#212121",
+    "--token-02d1ef49-b467-4c62-87d7-eec15dc1a1de": "#f3f3f3",
+    "--token-96473f7f-70c6-40df-9ce1-470c37694121": "#333",
+    "--token-8d5359f3-e2ba-4ea9-9e51-1eb2188326fa": "#000",
+    "--token-4343cc19-b41f-4b68-9f5e-46d190564c09": "#fff",
+    "--token-000292f1-e507-4938-9285-b0287d36c378": "#ffffff12",
+    "--token-49807cf3-be08-4d49-9536-d1deca93118a": "#242424",
+    "--token-9571e89f-c28f-4739-8163-f9a065ce86a7": "#fff",
+    "--token-027226a5-8d98-4e06-a4be-55361aa36010": "#242424",
+    "--token-7834935c-e4af-46fb-833b-c2e350356f85": "#ffffff12",
+    "--token-617907aa-d471-4e39-87ed-c88bddebc177": "#212121",
+    "--token-546c196d-1ff6-4c86-a518-b2a2f5cbd2bb": "#242424",
+    "--token-c2089353-c369-4b83-8aa0-ff14317d1378": "#ffffff12",
+    "--token-cf95d1fa-935c-4802-82e7-f14ff5b21f9c": "#303030",
+    "--token-2d8c2e40-9efe-42db-a854-852777e7a2fc": "#ffffff12",
+    "--token-0cc75308-4a6e-4bce-8d10-0b6ce313edb1": "#303030",
+    "--token-7d3f58d6-793b-4d75-98be-0f2ed1e5f289": "#242424",
+    "--token-842dd220-1af7-4cc5-88d9-f2b4719740c1": "#242424",
+    "--token-77053a7b-2b3a-40d3-8369-531af7b2d32b": "#212121",
+    "--token-a71eef55-e834-401a-b229-185b571b72fe": "#404040",
+    "--token-b493e89b-3e4a-4705-a618-7c7974b79464": "#303030",
+    "--token-0b3b53eb-3e91-4e9f-8bbe-cd6e24bede36": "#242424",
+    "--token-435ba6e6-7923-46aa-8bf0-2df8f639cb7d": "#ffffff12",
+    "--token-0eb29f98-94fb-47ef-acd3-f229c7741cbb": "#303030",
+    "--token-82346dff-d87f-4879-b2ef-71536504402c": "#ffffff12",
+    "--token-17f1922c-cbe7-4c12-8333-9a3fab854edf": "#303030",
+    "--token-b41e1c3f-a0f3-493d-bc17-25bd75dc184b": "#ffffff12",
+    "--token-36711a7c-92c6-4d69-94bf-123a35539aba": "#303030",
+    "--token-caf55c22-32a8-47d6-94dc-4333837c3b93": "#242424",
+    "--token-7ca336c6-1ed7-4269-b216-cbbdf5dca770": "#666",
+    "--token-34256e1b-6dc6-46bd-a1e5-879f0d9ce55f": "#303030",
+    "--token-ab6d2aa6-07fc-4f90-a49d-b710eba59a3f": "#242424",
+    "--token-a05b8143-c6cc-4243-bf33-e52c9e59bbd1": "#242424",
+    "--token-883ec69e-717f-4933-bc04-075e58e23acd": "#ccc",
+    "--token-ded025fa-15dd-4c1c-94f4-aee06d7d238a": "#9993",
+    "--token-30fd6b0d-9c3a-4ed1-b7e6-4bdbb9d0fff9": "#fff3",
+    "--token-29c58965-f89d-45e9-b6f4-01367c7eaffe": "#ffffff12",
+    "--token-2bc01aec-fd2e-41cc-af66-3246e2cbfd9c": "#303030",
+    "--token-7192a4a3-6f81-4ee7-8165-5646666e3478": "#242424",
+    "--token-aaee07a2-1f0b-4f9f-b40b-c0b000d5b462": "#242424",
+    "--token-a84bba7f-b874-4efe-85db-9b067724f56f": "#ffffff12",
+    "--token-bd800cdf-6bee-41d4-8f0c-903419cbf38c": "#303030",
+    "--token-9cf68d00-0d54-48b8-a5d0-b8f04a7ab3e9": "#ffffff12",
+    "--token-d6bcb53c-4b19-4a51-acaa-9de4375a33e2": "#242424"
+   },
+   "blockedSheets": 0,
+   "reducedMotionRules": 0,
+   "h1": [
+    "Framer is the design agent for every step from idea to launch"
+   ],
+   "h2": [
+    "Agents that work alongside you, not instead of you",
+    "Not just vibes, a full platform",
+    "Shipped with Framer",
+    "Trusted by teams shipping big sites",
+    "Built on a community that isn’t going anywhere",
+    "Your next idea starts here"
+   ],
+   "h3": [
+    "Design with an agent",
+    "Run your CMS with an agent",
+    "Code with an agent",
+    "Performance",
+    "CMS",
+    "SEO",
+    "Collaboration",
+    "Localization",
+    "Hosting",
+    "Security",
+    "Analytics",
+    "A/B Testing"
+   ],
+   "nav": [
+    "Framer",
+    "Log in",
+    "Sign up",
+    "Get started for free",
+    "Download app",
+    "New:Skills",
+    "Start with agents",
+    "See Framer sites",
+    "Read stories",
+    "Browse the community",
+    "Get started for free"
+   ],
+   "ctas": [
+    "Sign up [66x30 bg #ffffff fg #0000ee r 8px pad 8px 10px 12px/400]",
+    "Get started for free [137x29 bg #ffffff fg #0000ee r 8px pad 8px 12px 12px/400]",
+    "Read story [250x319 bg #000000 fg #0000ee r 18px pad 40px 12px/400]",
+    "Read story [250x319 bg #000000 fg #0000ee r 18px pad 40px 12px/400]",
+    "Read story [250x319 bg #000000 fg #0000ee r 18px pad 40px 12px/400]",
+    "Read story [250x319 bg #000000 fg #0000ee r 18px pad 40px 12px/400]",
+    "Read story [250x319 bg #000000 fg #0000ee r 18px pad 40px 12px/400]",
+    "Read story [250x319 bg #000000 fg #0000ee r 18px pad 40px 12px/400]",
+    "Read story [250x319 bg #000000 fg #0000ee r 18px pad 40px 12px/400]",
+    "Read story [250x319 bg #000000 fg #0000ee r 18px pad 40px 12px/400]",
+    "Get started for free [149x34 bg #ffffff fg #0000ee r 8px pad 10px 14px 12px/400]",
+    "Product [52x22 bg #000000 fg #000000 r 8px pad 0px 12px/400]",
+    "Solutions [61x22 bg #000000 fg #000000 r 8px pad 0px 12px/400]",
+    "Marketplace [83x22 bg #000000 fg #000000 r 8px pad 0px 12px/400]"
+   ],
+   "media": {
+    "img": 42,
+    "svg": 102,
+    "video": 1,
+    "canvas": 0
+   }
+  },
+  "1440": {
+   "status": 200,
+   "finalUrl": "https://www.framer.com/",
+   "width": 1440,
+   "h1Style": {
+    "font": "\"GT Walsheim Medium\" 54px/54px w500 ls -2.16px",
+    "color": "#ffffff",
+    "top": 164,
+    "width": 721,
+    "align": "start"
+   },
+   "title": "Framer: AI design agent",
+   "description": "Go from idea to launch with an agent that designs and builds on the canvas. Keep each change editable, with hosting, security, analytics, CMS, and SEO built in.",
+   "pageHeight": 10741,
+   "bodyBg": "#000000",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "GT Walsheim Medium 500 normal",
+    "Input Mono Regular 400 normal",
+    "Inter 600 normal",
+    "Inter Variable 400 normal",
+    "JetBrains Mono 400 normal",
+    "Azeret Mono 400 normal",
+    "Inter Medium 500 normal",
+    "Input Mono Bold 700 normal",
+    "Inter 400 normal",
+    "Inter 700 normal",
+    "Inter 500 normal"
+   ],
+   "families": [
+    {
+     "v": "Inter, \"Inter Placeholder\"",
+     "n": 2825
+    },
+    {
+     "v": "\"Inter Variable\", \"Inter Variable Placeholder\"",
+     "n": 2187
+    },
+    {
+     "v": "\"Input Mono Regular\", \"Input Mono Regular Placeholder\"",
+     "n": 510
+    },
+    {
+     "v": "\"GT Walsheim Medium\", \"GT Walsheim Medium Placeholder\"",
+     "n": 280
+    },
+    {
+     "v": "\"Input Mono Bold\", \"Input Mono Bold Placeholder\"",
+     "n": 70
+    },
+    {
+     "v": "\"JetBrains Mono\", \"JetBrains Mono Placeholder\"",
+     "n": 19
+    },
+    {
+     "v": "\"Inter Medium\", \"Inter Medium Placeholder\"",
+     "n": 19
+    },
+    {
+     "v": "sans-serif",
+     "n": 15
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "18px / lh 24.3px / w400 / ls -0.2px",
+     "n": 912,
+     "ex": "h3: Design with an agent"
+    },
+    {
+     "v": "14px / lh 19.6px / w400 / ls -0.1px",
+     "n": 878,
+     "ex": "p: Platform"
+    },
+    {
+     "v": "13px / lh 20.8px / w500 / ls normal",
+     "n": 663,
+     "ex": "p: Title"
+    },
+    {
+     "v": "12px / lh 16px / w400 / ls normal",
+     "n": 479,
+     "ex": "p: cursor"
+    },
+    {
+     "v": "12px / lh 14.4px / w500 / ls normal",
+     "n": 439,
+     "ex": "p: Fields"
+    },
+    {
+     "v": "13px / lh 19.5px / w500 / ls normal",
+     "n": 398,
+     "ex": "p: 7m"
+    },
+    {
+     "v": "12px / lh 16.8px / w500 / ls normal",
+     "n": 395,
+     "ex": "p: Desktop"
+    },
+    {
+     "v": "12px / lh 15.6px / w500 / ls normal",
+     "n": 225,
+     "ex": "p: Recraft"
+    },
+    {
+     "v": "44px / lh 48.4px / w500 / ls -1.76px",
+     "n": 181,
+     "ex": "h2: Agents that work alongside you, not instead of you"
+    },
+    {
+     "v": "14px / lh 21px / w400 / ls -0.1px",
+     "n": 128,
+     "ex": "p: We use cookies to enhance your experience, analyze site traf"
+    },
+    {
+     "v": "14px / lh 14px / w400 / ls -0.28px",
+     "n": 104,
+     "ex": "p: Get started for free"
+    },
+    {
+     "v": "12px / lh 14.4px / w600 / ls normal",
+     "n": 101,
+     "ex": "p: Exploration"
+    },
+    {
+     "v": "12px / lh 16px / w700 / ls normal",
+     "n": 101,
+     "ex": "p: framer-agent"
+    },
+    {
+     "v": "54px / lh 54px / w500 / ls -2.16px",
+     "n": 87,
+     "ex": "h1: Framer is the design agent for every step from idea to launc"
+    },
+    {
+     "v": "12px / lh 15.6px / w600 / ls normal",
+     "n": 76,
+     "ex": "p: Billie ·"
+    },
+    {
+     "v": "12px / lh 14.4px / w400 / ls normal",
+     "n": 71,
+     "ex": "p: CMS"
+    },
+    {
+     "v": "15px / lh 20.25px / w400 / ls -0.2px",
+     "n": 69,
+     "ex": "p: Meet our customers"
+    },
+    {
+     "v": "12px / lh 12px / w600 / ls normal",
+     "n": 61,
+     "ex": "p: Publish"
+    },
+    {
+     "v": "12px / lh 12px / w500 / ls normal",
+     "n": 52,
+     "ex": "p: Thinking..."
+    },
+    {
+     "v": "12px / lh 18px / w500 / ls normal",
+     "n": 46,
+     "ex": "p: Can this be built in Framer?"
+    },
+    {
+     "v": "15px / lh 20.25px / w400 / ls -0.1px",
+     "n": 36,
+     "ex": "p: Core Web Vitals"
+    },
+    {
+     "v": "12px / lh 14.4px / w500 / ls -0.6px",
+     "n": 35,
+     "ex": "p: 4,916"
+    },
+    {
+     "v": "10px / lh 12px / w500 / ls normal",
+     "n": 34,
+     "ex": "p: 320"
+    },
+    {
+     "v": "13px / lh 19.5px / w600 / ls normal",
+     "n": 34,
+     "ex": "p: Lee Black"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#ffffff",
+     "n": 2202
+    },
+    {
+     "v": "#ffffff a0.6",
+     "n": 1409
+    },
+    {
+     "v": "#999999",
+     "n": 1326
+    },
+    {
+     "v": "#cccccc",
+     "n": 273
+    },
+    {
+     "v": "#666666",
+     "n": 206
+    },
+    {
+     "v": "#222222",
+     "n": 115
+    },
+    {
+     "v": "#d67a5c",
+     "n": 104
+    },
+    {
+     "v": "#0099ff",
+     "n": 48
+    },
+    {
+     "v": "#ffffff a0.5",
+     "n": 45
+    },
+    {
+     "v": "#ffffff a0.8",
+     "n": 43
+    },
+    {
+     "v": "#000000",
+     "n": 42
+    },
+    {
+     "v": "#00bb88",
+     "n": 40
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#ffffff a0.6 on #000000",
+     "n": 1409,
+     "ex": "7.37:1"
+    },
+    {
+     "v": "#ffffff on #000000",
+     "n": 976,
+     "ex": "21:1"
+    },
+    {
+     "v": "#999999 on #111111",
+     "n": 813,
+     "ex": "6.63:1"
+    },
+    {
+     "v": "#ffffff on #111111",
+     "n": 650,
+     "ex": "18.88:1"
+    },
+    {
+     "v": "#ffffff on #242424",
+     "n": 363,
+     "ex": "15.52:1"
+    },
+    {
+     "v": "#cccccc on #111111",
+     "n": 273,
+     "ex": "11.76:1"
+    },
+    {
+     "v": "#666666 on #111111",
+     "n": 204,
+     "ex": "3.29:1"
+    },
+    {
+     "v": "#999999 on #000000",
+     "n": 174,
+     "ex": "7.37:1"
+    },
+    {
+     "v": "#999999 on #171717",
+     "n": 164,
+     "ex": "6.29:1"
+    },
+    {
+     "v": "#ffffff on #171717",
+     "n": 153,
+     "ex": "17.93:1"
+    },
+    {
+     "v": "#222222 on #ffffff",
+     "n": 115,
+     "ex": "15.91:1"
+    },
+    {
+     "v": "#d67a5c on #111111",
+     "n": 104,
+     "ex": "6.11:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#000000",
+     "n": 29010
+    },
+    {
+     "v": "#111111",
+     "n": 3801
+    },
+    {
+     "v": "#171717",
+     "n": 950
+    },
+    {
+     "v": "#0099ff a0.22",
+     "n": 424
+    },
+    {
+     "v": "#ffffff a0.15",
+     "n": 411
+    },
+    {
+     "v": "linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%)",
+     "n": 288
+    },
+    {
+     "v": "#0099ff a0.21",
+     "n": 160
+    },
+    {
+     "v": "linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 96.7656%)",
+     "n": 147
+    },
+    {
+     "v": "linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%)",
+     "n": 145
+    },
+    {
+     "v": "#0099ff",
+     "n": 116
+    },
+    {
+     "v": "#242424",
+     "n": 111
+    },
+    {
+     "v": "#1a1a1a",
+     "n": 108
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #ffffff a0.06",
+     "n": 8
+    },
+    {
+     "v": "1px #0099ff",
+     "n": 4
+    },
+    {
+     "v": "1px #0099ff a0.41",
+     "n": 2
+    },
+    {
+     "v": "1px #0099ff a0.42",
+     "n": 2
+    }
+   ],
+   "radii": [
+    {
+     "v": "8px",
+     "n": 231,
+     "ex": "a.framer-16mrjhl framer-enysp5"
+    },
+    {
+     "v": "15px",
+     "n": 71,
+     "ex": "div.framer-3iubu6 hidden-rjquzb hi"
+    },
+    {
+     "v": "6px",
+     "n": 34,
+     "ex": "div.framer-1m7d6g"
+    },
+    {
+     "v": "20px",
+     "n": 28,
+     "ex": "div.framer-vex8h8"
+    },
+    {
+     "v": "4px",
+     "n": 24,
+     "ex": "div.framer-bz4567"
+    },
+    {
+     "v": "100px",
+     "n": 17,
+     "ex": "div.framer-u9k64n"
+    },
+    {
+     "v": "18px",
+     "n": 15,
+     "ex": "div.framer-xTRid framer-QLujN fram"
+    },
+    {
+     "v": "10px",
+     "n": 11,
+     "ex": "div.framer-1HiD7 framer-u9b4zg fra"
+    },
+    {
+     "v": "5px",
+     "n": 10,
+     "ex": "div.framer-Qor7G framer-i4cvab fra"
+    },
+    {
+     "v": "25px",
+     "n": 9,
+     "ex": "div.framer-1gidngg"
+    },
+    {
+     "v": "3px",
+     "n": 5,
+     "ex": "div.framer-3qh2ek"
+    },
+    {
+     "v": "50px",
+     "n": 3,
+     "ex": "div.framer-qkbwrc"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgba(0, 0, 0, 0.2) 0px 2px 6px 0px",
+     "n": 6,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.1) 0px 1px 2px 0px",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(255, 255, 255, 0.08) 0px 0px 0px 1px",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 153, 255, 0.15) 0px 1px 2px 0px, rgba(0, 153, 255, 0.2) 0px 2px 4px 0px",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.2) 0px 27.2717px 43.6347px 0px",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.2) 0px 36.7578px 58.8125px 0px",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.2) 0px 39.9421px 63.9074px 0px",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.2) 0px 34.9593px 55.9349px 0px",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "transitions": [],
+   "animations": [
+    {
+     "v": "betterGrainWebpFramesV22 0.75s steps(12) xinfinite",
+     "n": 1
+    }
+   ],
+   "maxWidths": [
+    {
+     "v": "1200px (rendered 1200px)",
+     "n": 15,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 1200px)",
+     "n": 5,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 640px)",
+     "n": 4,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 721px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "660px (rendered 600px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 732px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 620px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 616px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 1400px)",
+     "n": 1,
+     "ex": "ul"
+    },
+    {
+     "v": "1240px (rendered 1200px)",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 120px pb 120px",
+     "n": 3
+    },
+    {
+     "v": "pt 0px pb 0px",
+     "n": 1
+    },
+    {
+     "v": "pt 100px pb 40px",
+     "n": 1
+    },
+    {
+     "v": "pt 100px pb 100px",
+     "n": 1
+    },
+    {
+     "v": "pt 20px pb 120px",
+     "n": 1
+    },
+    {
+     "v": "pt 120px pb 102px",
+     "n": 1
+    },
+    {
+     "v": "pt 20px pb 20px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "10px",
+     "n": 241
+    },
+    {
+     "v": "5px",
+     "n": 180
+    },
+    {
+     "v": "15px",
+     "n": 77
+    },
+    {
+     "v": "6px",
+     "n": 57
+    },
+    {
+     "v": "8px",
+     "n": 33
+    },
+    {
+     "v": "20px",
+     "n": 16
+    },
+    {
+     "v": "30px",
+     "n": 11
+    },
+    {
+     "v": "4px",
+     "n": 10
+    },
+    {
+     "v": "25px",
+     "n": 10
+    },
+    {
+     "v": "7px",
+     "n": 9
+    },
+    {
+     "v": "40px",
+     "n": 7
+    },
+    {
+     "v": "11px",
+     "n": 5
+    },
+    {
+     "v": "60px",
+     "n": 4
+    },
+    {
+     "v": "3px",
+     "n": 3
+    }
+   ],
+   "paddings": [
+    {
+     "v": "10px",
+     "n": 138
+    },
+    {
+     "v": "15px",
+     "n": 109
+    },
+    {
+     "v": "1px",
+     "n": 67
+    },
+    {
+     "v": "20px",
+     "n": 47
+    },
+    {
+     "v": "25px",
+     "n": 40
+    },
+    {
+     "v": "8px",
+     "n": 38
+    },
+    {
+     "v": "40px",
+     "n": 27
+    },
+    {
+     "v": "5px",
+     "n": 24
+    },
+    {
+     "v": "3px",
+     "n": 16
+    },
+    {
+     "v": "120px",
+     "n": 9
+    },
+    {
+     "v": "2px",
+     "n": 8
+    },
+    {
+     "v": "14px",
+     "n": 7
+    },
+    {
+     "v": "47px",
+     "n": 7
+    },
+    {
+     "v": "30px",
+     "n": 6
+    },
+    {
+     "v": "12px",
+     "n": 5
+    },
+    {
+     "v": "4px",
+     "n": 5
+    },
+    {
+     "v": "100px",
+     "n": 3
+    },
+    {
+     "v": "26px",
+     "n": 3
+    }
+   ],
+   "margins": [
+    {
+     "v": "16px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "Take action on your site from anywhere. Update copy from Slack. Trigger CMS changes from the terminal. Ship from a GitHu",
+    "chars": 217,
+    "lines": 3,
+    "charsPerLine": 72,
+    "width": 616,
+    "fontSize": "18px",
+    "lineHeight": "24.3px",
+    "color": "#ffffff a0.6"
+   },
+   "rootVars": {
+    "--token-c534b380-e14e-4ddc-9802-ad88d1f94f8e": "#ffffff1a",
+    "--token-6ecb0037-dab8-4348-b657-00f38b638028": "#cbff00",
+    "--token-1ef30da2-9620-422c-b321-d10088e14610": "#000",
+    "--token-3d980185-7d0f-4837-b1d0-e3a68e16a293": "#0000001a",
+    "--token-5e0b3b72-9a97-43f8-96f2-85d741f3d8ca": "#1a1a1a",
+    "--token-958e2cd1-b113-4aa3-9235-7a2b959c8feb": "#000",
+    "--token-26e3cb56-8447-4a64-9b7d-37f16a9909d4": "#fff",
+    "--token-289cb3ad-ad59-4cce-aee5-0850b842d9c8": "#fffc",
+    "--token-8f5eb515-7a13-452b-a4ab-f35e2208a3f3": "#fff9",
+    "--token-f5637926-8ee6-41cb-a320-ec3462d62cd5": "#fff6",
+    "--token-bd71055c-0a2c-4476-8cc9-4310acba652d": "#09f",
+    "--token-eb0d9e00-7216-491c-99d5-7c1c2f3d0dbe": "#05f",
+    "--token-0245ad54-dffa-4280-9b49-9d43ad68acaa": "#60f",
+    "--token-66dfdba2-b084-43a3-a18d-237c2893b6a7": "#90f",
+    "--token-0c4c4e00-f4fc-4e6a-9a97-509a95a3e5d4": "#f06",
+    "--token-88cad303-8ee5-4c22-877f-e434faf14eee": "#f02",
+    "--token-61e699c7-742b-47d0-bb16-f42065b06637": "#fd7702",
+    "--token-be530db7-18b2-4273-89ab-17e94ce4aa9f": "#fb0",
+    "--token-ee053477-e115-4fec-a5f5-cdc637ed6ddc": "#0cf",
+    "--token-893b117c-1037-4f46-becb-94bc264ede3a": "#2dd",
+    "--token-2fbf5c4b-adb8-4940-91a4-ad94f8d791ba": "#141414",
+    "--token-281f665e-69f0-4f4c-a171-f40f50fe70d5": "#4cd963",
+    "--token-81eeded8-7d17-49fd-8f9d-4b09d4083be5": "#ffffff12",
+    "--token-5e2a9781-f258-43f3-ae02-0a76276a5519": "#111",
+    "--token-94a5bf9a-16a4-4639-b671-271526647eef": "#333",
+    "--token-a1269b3c-6c48-45d9-9f35-32a6df13b5e0": "#383838",
+    "--token-0670237f-f1ec-47e8-98e0-ecdf93f4467c": "#888",
+    "--token-ea0a2ab8-ce16-4a61-995f-9a3f03b39cf7": "#fff3",
+    "--token-5964e09d-3671-4c80-a557-31c1772b6c22": "#999",
+    "--token-4a5ab9b5-071f-4390-82c0-81f9558f671f": "#fff",
+    "--token-8015ce2b-ef6f-4fe0-944b-b61f872d0501": "#999",
+    "--token-e0051992-b662-4a7c-a4c8-9cd5b5125f7a": "#171717",
+    "--token-1ff51228-9678-411c-9a08-00381f0fc70b": "#fff",
+    "--token-3ead4217-f562-484f-ae35-d367de8b213a": "#09f",
+    "--token-e6ff4111-cae9-48d6-82e5-a990cf837703": "#ffffff12",
+    "--token-bed18f81-9cf1-4e2e-871f-69719f53f1d4": "#ffffff1a",
+    "--token-d4634443-ffec-443d-a754-10b0a24f2eba": "#fff",
+    "--token-c728f732-7c78-48e8-94a1-513a91a25137": "#fff6",
+    "--token-70c17056-82cb-4934-97c9-7213cf77c853": "#ffffff1a",
+    "--token-f6d5743a-73c0-417f-973c-02f663387ec8": "#ffffff80",
+    "--token-393d758b-714b-4628-a487-3e2609e109b7": "#242424",
+    "--token-ef3d81b5-78dc-4f92-b13e-1e8b0e28ba8c": "#212121",
+    "--token-bf566e33-485f-437d-9c8a-97c626fb8093": "#ffffff12",
+    "--token-1073b3db-8e72-4239-ada0-89e67ba85817": "#171717",
+    "--token-50d3edc6-ca3e-4e24-b5b6-95a9ef291fd3": "#00000012",
+    "--token-373c4b2f-375a-4a63-bd70-20575308a06b": "#303030",
+    "--token-a90119e0-cc91-4f7c-8117-a4827837d154": "#242424",
+    "--token-3326ab02-a399-4a0a-90ca-823d3eeec36a": "#404040",
+    "--token-023e584d-eb9f-45d0-a9bf-d481c0b53395": "#bbb",
+    "--token-e81b27a0-dbec-444a-a842-619222fcd818": "#999",
+    "--token-0d3c4e1f-33e0-4ebe-bdfa-af3c0ffb2b6e": "#ffffff1a",
+    "--token-ea7f6847-c578-4b96-834f-9880ebd5b2c8": "#ffffffa6",
+    "--token-565b745b-c313-43ee-aacc-dc06f90a5494": "#888",
+    "--token-1765427e-22ca-4432-9e46-90123c5bd8b0": "#0000000d",
+    "--token-3211d3ed-e082-412d-bec4-c06fb5bda768": "#666",
+    "--token-41903ea9-af7f-499e-a111-2c021ff53f36": "#fff",
+    "--token-7caf96a9-3685-4995-95cd-92a16705da21": "#09f",
+    "--token-8829ab2d-0ef5-4f78-a903-5d4c901eec75": "#333",
+    "--token-b8a0b4cf-70ff-4994-abad-931092f52d53": "#222",
+    "--token-e79b6732-da94-4bb4-b89e-c6c710bf538f": "#0000000a",
+    "--token-e2c6fd82-c978-4415-a4b5-37700001c928": "#09f",
+    "--token-86436fc2-2fa7-4338-9d69-653ef2fe605e": "#212121",
+    "--token-d127865a-b3de-47e9-b49b-fec1a4c5c097": "#0000001a",
+    "--token-df2a444d-c73c-41a8-b32b-15a8977e2f19": "#000",
+    "--token-224bfd43-9bd7-4029-a74c-dfb7dcb6da6e": "#cbff00",
+    "--token-08cb9138-e90e-4825-9f55-0aaa0c506cd8": "#000",
+    "--token-d8cf0a03-9d51-4c74-8f74-1ce6a40b7a93": "#1d1d1d",
+    "--token-7e405047-a8f7-4a29-ba60-27706f8aef99": "#ffffff0d",
+    "--token-f2ab3b7f-4a45-442b-ac7e-6535e4f5eaa4": "#1d1d1d",
+    "--token-34da55f6-98ee-406d-9f22-8bd807975463": "#141414",
+    "--token-e20050d3-1c28-4712-bab1-33daddb2d8d3": "#1d1d1d",
+    "--token-dfb83e06-5dc9-4927-841f-fa3a5687bbf5": "#0006",
+    "--token-ab22db3f-51d4-457b-b74d-36a1761e9043": "#f2f2f2",
+    "--token-1e7cee86-5b3c-4a5e-b650-927c556a0730": "#000",
+    "--token-494c7bf8-981d-4262-955c-7770a66e4aca": "#999",
+    "--token-f4d7f1ab-60e4-4112-93dc-10fa3370595e": "#0d6",
+    "--token-3636b58d-af99-4283-ab2c-55c8fcdd5b26": "#1f1f1f",
+    "--token-28fd9ca0-18c8-4b2c-b240-cbd29f83e8a5": "#666",
+    "--token-80b6d9ee-6797-4273-85d5-55a0c0e39c2c": "#666",
+    "--token-81dfd308-4a2d-423f-8ca6-7e503f3bc16a": "#333",
+    "--token-05c8a71b-796d-4e89-a88a-1fd7fb02e1c7": "#303030",
+    "--token-b5069c63-5952-4d18-89d9-c83e27c8dd95": "#fff",
+    "--token-3fe3801c-504b-4fed-bd23-95e1ceda4e02": "#000",
+    "--token-0ba2e88a-a3f7-47fb-83b9-ad2eb0f68dc9": "#f2f2f2",
+    "--token-7f1bc6d9-a60f-42df-8ff7-6d27d47209c5": "#000",
+    "--token-4e252111-446f-4e7a-b1c3-2cceb89b901b": "#000",
+    "--token-13ec5eb2-95cb-4f68-8622-21c1e5841f91": "#000",
+    "--token-3c51c799-b594-40bb-870a-2ecb57426fb5": "#212121",
+    "--token-66b4c800-8615-4d3f-b022-5740b5e73cff": "#1f1f1f",
+    "--token-5381f6a2-4123-4833-9f15-ece3362235bb": "#242424",
+    "--token-bd6e9b1d-d923-4381-a016-9ee35fa74d19": "#ffffff1a",
+    "--token-8dfe056b-123a-4b56-a293-a075f1447a42": "#09f",
+    "--token-ca716543-ec0e-4610-b24d-c4a813b8ab12": "#212121",
+    "--token-c8276e30-1f1d-4733-800f-3191605cbcc2": "#ffffff12",
+    "--token-7c6a6dd2-0dfd-431a-a4ce-82949a34d083": "#222",
+    "--token-18266cfa-4b92-4fbe-9260-6d874055f250": "#999",
+    "--token-4c236017-9c6f-4d47-8335-0eb6d859d1e3": "#242424",
+    "--token-501e078c-c5fb-4b79-9d3e-94a6d60e5388": "#212121",
+    "--token-c98b4872-09a5-4eef-84b0-cd9f352143db": "#ffffff1a",
+    "--token-b009d8a3-9fb6-47e5-ad22-64acdc1a43f1": "#999",
+    "--token-a55687bf-10ec-448e-8cff-7a38a8062829": "#fff",
+    "--token-c835256c-69c7-49f6-9ab5-223f8754be0b": "#242424",
+    "--token-75b23a6a-47c8-47c8-8583-14f60f534fa2": "#666",
+    "--token-43a73b1e-92dd-495c-9878-9ee05c726b8e": "#999",
+    "--token-7ca37c50-53e8-42ec-a9b7-a23785ef18d6": "#212121",
+    "--token-a5b679c7-75b3-4b56-b5ee-f7c78fdf6f09": "#242424",
+    "--token-753822fb-42c0-4245-bbf8-87bc278da308": "#242424",
+    "--token-648a89d7-4ba7-4aff-9f56-fe6a4791adfb": "#212121",
+    "--token-65257a2f-9705-4b8e-acce-914c518786ec": "#242424",
+    "--token-0d914219-51db-44da-9371-684daa097890": "#212121",
+    "--token-a798bd82-d3ed-489b-8536-bb5e3a370ab3": "#242424",
+    "--token-4ea7ddaa-edb2-4693-a52c-c8fbc21f91fd": "#212121",
+    "--token-c905498e-0f4e-46df-944f-7d0973c4d925": "#999",
+    "--token-1cfbd6a8-40d4-44a3-93b8-de4d8158716c": "#999",
+    "--token-242d6a6e-dcf9-428f-b28f-32484d98060a": "#242424",
+    "--token-626f3ee6-1979-4092-a33f-88f7cbf2b731": "#ffffff12",
+    "--token-79709539-c81c-4174-9647-38ce6b9aeb22": "#212121",
+    "--token-02d1ef49-b467-4c62-87d7-eec15dc1a1de": "#f3f3f3",
+    "--token-96473f7f-70c6-40df-9ce1-470c37694121": "#333",
+    "--token-8d5359f3-e2ba-4ea9-9e51-1eb2188326fa": "#000",
+    "--token-4343cc19-b41f-4b68-9f5e-46d190564c09": "#fff",
+    "--token-000292f1-e507-4938-9285-b0287d36c378": "#ffffff12",
+    "--token-49807cf3-be08-4d49-9536-d1deca93118a": "#242424",
+    "--token-9571e89f-c28f-4739-8163-f9a065ce86a7": "#fff",
+    "--token-027226a5-8d98-4e06-a4be-55361aa36010": "#242424",
+    "--token-7834935c-e4af-46fb-833b-c2e350356f85": "#ffffff12",
+    "--token-617907aa-d471-4e39-87ed-c88bddebc177": "#212121",
+    "--token-546c196d-1ff6-4c86-a518-b2a2f5cbd2bb": "#242424",
+    "--token-c2089353-c369-4b83-8aa0-ff14317d1378": "#ffffff12",
+    "--token-cf95d1fa-935c-4802-82e7-f14ff5b21f9c": "#303030",
+    "--token-2d8c2e40-9efe-42db-a854-852777e7a2fc": "#ffffff12",
+    "--token-0cc75308-4a6e-4bce-8d10-0b6ce313edb1": "#303030",
+    "--token-7d3f58d6-793b-4d75-98be-0f2ed1e5f289": "#242424",
+    "--token-842dd220-1af7-4cc5-88d9-f2b4719740c1": "#242424",
+    "--token-77053a7b-2b3a-40d3-8369-531af7b2d32b": "#212121",
+    "--token-a71eef55-e834-401a-b229-185b571b72fe": "#404040",
+    "--token-b493e89b-3e4a-4705-a618-7c7974b79464": "#303030",
+    "--token-0b3b53eb-3e91-4e9f-8bbe-cd6e24bede36": "#242424",
+    "--token-435ba6e6-7923-46aa-8bf0-2df8f639cb7d": "#ffffff12",
+    "--token-0eb29f98-94fb-47ef-acd3-f229c7741cbb": "#303030",
+    "--token-82346dff-d87f-4879-b2ef-71536504402c": "#ffffff12",
+    "--token-17f1922c-cbe7-4c12-8333-9a3fab854edf": "#303030",
+    "--token-b41e1c3f-a0f3-493d-bc17-25bd75dc184b": "#ffffff12",
+    "--token-36711a7c-92c6-4d69-94bf-123a35539aba": "#303030",
+    "--token-caf55c22-32a8-47d6-94dc-4333837c3b93": "#242424",
+    "--token-7ca336c6-1ed7-4269-b216-cbbdf5dca770": "#666",
+    "--token-34256e1b-6dc6-46bd-a1e5-879f0d9ce55f": "#303030",
+    "--token-ab6d2aa6-07fc-4f90-a49d-b710eba59a3f": "#242424",
+    "--token-a05b8143-c6cc-4243-bf33-e52c9e59bbd1": "#242424",
+    "--token-883ec69e-717f-4933-bc04-075e58e23acd": "#ccc",
+    "--token-ded025fa-15dd-4c1c-94f4-aee06d7d238a": "#9993",
+    "--token-30fd6b0d-9c3a-4ed1-b7e6-4bdbb9d0fff9": "#fff3",
+    "--token-29c58965-f89d-45e9-b6f4-01367c7eaffe": "#ffffff12",
+    "--token-2bc01aec-fd2e-41cc-af66-3246e2cbfd9c": "#303030",
+    "--token-7192a4a3-6f81-4ee7-8165-5646666e3478": "#242424",
+    "--token-aaee07a2-1f0b-4f9f-b40b-c0b000d5b462": "#242424",
+    "--token-a84bba7f-b874-4efe-85db-9b067724f56f": "#ffffff12",
+    "--token-bd800cdf-6bee-41d4-8f0c-903419cbf38c": "#303030",
+    "--token-9cf68d00-0d54-48b8-a5d0-b8f04a7ab3e9": "#ffffff12",
+    "--token-d6bcb53c-4b19-4a51-acaa-9de4375a33e2": "#242424"
+   },
+   "blockedSheets": 1,
+   "reducedMotionRules": 0,
+   "h1": [
+    "Framer is the design agent for every step from idea to launch"
+   ],
+   "h2": [
+    "Agents that work alongside you, not instead of you",
+    "Not just vibes, a full platform",
+    "Shipped with Framer",
+    "Trusted by teams shipping big sites",
+    "Built on a community that isn’t going anywhere",
+    "Your next idea starts here"
+   ],
+   "h3": [
+    "Design with an agent",
+    "Run your CMS with an agent",
+    "Code with an agent",
+    "Connect to any AI",
+    "Performance",
+    "CMS",
+    "SEO",
+    "Collaboration",
+    "Localization",
+    "Hosting",
+    "Security",
+    "Analytics",
+    "A/B Testing"
+   ],
+   "nav": [
+    "Framer",
+    "Platform",
+    "Solutions",
+    "Resources",
+    "Enterprise",
+    "Pricing",
+    "Log in",
+    "Sign up",
+    "Copy logo SVG",
+    "Brand guidelines",
+    "Get started for free",
+    "Download app",
+    "New:Skills",
+    "Start with agents",
+    "See Framer sites",
+    "Read stories"
+   ],
+   "ctas": [
+    "Sign up [66x30 bg #ffffff fg #0000ee r 8px pad 8px 10px 12px/400]",
+    "Get started for free [149x34 bg #ffffff fg #0000ee r 8px pad 10px 14px 12px/400]",
+    "CopyCopy [16x16 bg #0066ff fg #ffffff r 0px pad 0px 16px/500]",
+    "Read story [360x460 bg #000000 fg #0000ee r 18px pad 40px 12px/400]",
+    "Read story [360x460 bg #000000 fg #0000ee r 18px pad 40px 12px/400]",
+    "Read story [360x460 bg #000000 fg #0000ee r 18px pad 40px 12px/400]",
+    "Read story [360x460 bg #000000 fg #0000ee r 18px pad 40px 12px/400]",
+    "Read story [360x460 bg #000000 fg #0000ee r 18px pad 40px 12px/400]",
+    "Read story [360x460 bg #000000 fg #0000ee r 18px pad 40px 12px/400]",
+    "Read story [360x460 bg #000000 fg #0000ee r 18px pad 40px 12px/400]",
+    "Read story [360x460 bg #000000 fg #0000ee r 18px pad 40px 12px/400]",
+    "Copy [50x30 bg #1f1f1f fg #000000 r 8px pad 0px 10px 12px/400]",
+    "Copy [50x30 bg #1f1f1f fg #000000 r 8px pad 0px 10px 12px/400]",
+    "Copy [50x30 bg #1f1f1f fg #000000 r 8px pad 0px 10px 12px/400]"
+   ],
+   "media": {
+    "img": 90,
+    "svg": 140,
+    "video": 7,
+    "canvas": 0
+   }
+  }
+ }
+}

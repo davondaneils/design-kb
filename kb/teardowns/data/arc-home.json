@@ -1,0 +1,1275 @@
+{
+ "url": "https://arc.net",
+ "measuredAt": "2026-10-10T16:58:50.003Z",
+ "method": "Playwright Chromium, getComputedStyle on visible elements, light scheme, after scroll-through and fonts.ready",
+ "widths": {
+  "390": {
+   "status": 200,
+   "finalUrl": "https://arc.net/",
+   "width": 390,
+   "h1Style": {
+    "font": "\"Marlin Soft SQ\" 32px/31.2px w700 ls -1.6px",
+    "color": "#fffcec",
+    "top": 646,
+    "width": 351,
+    "align": "center"
+   },
+   "title": "Arc from The Browser Company",
+   "description": "Experience a calmer, more personal internet in this browser designed for you. Let go of the clicks, the clutter, the distractions with the Arc browser.",
+   "pageHeight": 3639,
+   "bodyBg": "#fffcec",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "Marlin 800 normal",
+    "Inter 500 normal",
+    "Inter 600 normal",
+    "Inter 700 normal",
+    "InterVariable 100 900 normal",
+    "ABC Favorit Mono 700 normal",
+    "Marlin Soft SQ 700 normal",
+    "Marlin Soft SQ 700 italic",
+    "ABC Oracle 400 normal",
+    "Exposure VAR 700 normal",
+    "Exposure VAR 750 normal"
+   ],
+   "families": [
+    {
+     "v": "\"Marlin Soft SQ\", -apple-system",
+     "n": 951
+    },
+    {
+     "v": "InterVariable, Inter",
+     "n": 518
+    },
+    {
+     "v": "Marlin, -apple-system",
+     "n": 123
+    },
+    {
+     "v": "\"ABC Oracle\", Helvetica",
+     "n": 89
+    },
+    {
+     "v": "-apple-system, BlinkMacSystemFont",
+     "n": 68
+    },
+    {
+     "v": "\"Exposure VAR\", Helvetica",
+     "n": 35
+    },
+    {
+     "v": "\"ABC Favorit Mono\", Menlo",
+     "n": 16
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "13px / lh normal / w700 / ls normal",
+     "n": 720,
+     "ex": "a: “Rethinking the fundamentals of how we use the web.”"
+    },
+    {
+     "v": "17px / lh 25.5px / w500 / ls normal",
+     "n": 320,
+     "ex": "div: Clean and calm, Arc shapes itself to how you use the interne"
+    },
+    {
+     "v": "27.2px / lh 26.52px / w700 / ls -1.6px",
+     "n": 145,
+     "ex": "p: A browser that doesn’t just meet your needs — it anticipates"
+    },
+    {
+     "v": "12px / lh normal / w600 / ls 0.4px",
+     "n": 135,
+     "ex": "a: Download"
+    },
+    {
+     "v": "13px / lh normal / w400 / ls normal",
+     "n": 123,
+     "ex": "div: FYI: Arc receives Chromium updates only. For active security"
+    },
+    {
+     "v": "16px / lh 19.2px / w400 / ls normal",
+     "n": 82,
+     "ex": "p: Weekly security updates, SOC 2 certification, and the Arc DN"
+    },
+    {
+     "v": "14px / lh 29px / w600 / ls -0.14px",
+     "n": 68,
+     "ex": "button: Download Arc for Windows"
+    },
+    {
+     "v": "17px / lh 25.5px / w700 / ls normal",
+     "n": 63,
+     "ex": "strong: Spaces"
+    },
+    {
+     "v": "32px / lh 31.2px / w700 / ls -1.6px",
+     "n": 52,
+     "ex": "h1: Arc is the Chrome replacement I've been waiting for."
+    },
+    {
+     "v": "30px / lh 30px / w700 / ls -0.72px",
+     "n": 35,
+     "ex": "span: Meet Dia, the next evolution of Arc"
+    },
+    {
+     "v": "28px / lh 30.8px / w700 / ls -1.4px",
+     "n": 34,
+     "ex": "div: Enter new home on the internet"
+    },
+    {
+     "v": "12px / lh normal / w700 / ls 0.4px",
+     "n": 16,
+     "ex": "div: Product"
+    },
+    {
+     "v": "20px / lh 24px / w400 / ls normal",
+     "n": 7,
+     "ex": "span: Try Dia"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#3139fb",
+     "n": 898
+    },
+    {
+     "v": "#696969",
+     "n": 350
+    },
+    {
+     "v": "#fffcec",
+     "n": 237
+    },
+    {
+     "v": "#fffadd",
+     "n": 123
+    },
+    {
+     "v": "#000000 a0.65",
+     "n": 82
+    },
+    {
+     "v": "#2702c2",
+     "n": 48
+    },
+    {
+     "v": "#000000",
+     "n": 35
+    },
+    {
+     "v": "#ffffff",
+     "n": 27
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#3139fb on #fffcec",
+     "n": 720,
+     "ex": "6.56:1"
+    },
+    {
+     "v": "#696969 on #ffffff",
+     "n": 350,
+     "ex": "5.49:1"
+    },
+    {
+     "v": "#fffcec on #3139fb",
+     "n": 237,
+     "ex": "6.56:1"
+    },
+    {
+     "v": "#3139fb on #ffffff",
+     "n": 178,
+     "ex": "6.75:1"
+    },
+    {
+     "v": "#fffadd on #3139fb",
+     "n": 123,
+     "ex": "6.42:1"
+    },
+    {
+     "v": "#000000 a0.65 on #fffcec",
+     "n": 82,
+     "ex": "6.9:1"
+    },
+    {
+     "v": "#2702c2 on #ffffff",
+     "n": 48,
+     "ex": "11.21:1"
+    },
+    {
+     "v": "#000000 on #fffcec",
+     "n": 35,
+     "ex": "20.39:1"
+    },
+    {
+     "v": "#ffffff on #2702c2",
+     "n": 20,
+     "ex": "11.21:1"
+    },
+    {
+     "v": "#ffffff on #000000",
+     "n": 7,
+     "ex": "21:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#ffffff",
+     "n": 1003
+    },
+    {
+     "v": "#3139fb",
+     "n": 775
+    },
+    {
+     "v": "#fffcec",
+     "n": 184
+    },
+    {
+     "v": "#2702c2",
+     "n": 12
+    },
+    {
+     "v": "#000000 a0.85",
+     "n": 10
+    }
+   ],
+   "borders": [],
+   "radii": [
+    {
+     "v": "10px",
+     "n": 3,
+     "ex": "button.c-bCeQxv c-bCeQxv-jbZBFp-size-"
+    },
+    {
+     "v": "16px",
+     "n": 1,
+     "ex": "a.c-koCplY"
+    },
+    {
+     "v": "4px",
+     "n": 1,
+     "ex": "a.c-iYqNMZ"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgba(0, 0, 0, 0.1) 0px 5px 5px 0px",
+     "n": 3,
+     "ex": "button"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.25) 0px 2px 8px 0px",
+     "n": 1,
+     "ex": "a"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "transform, box-shadow 0.15s, 0.15s ease, ease-out",
+     "n": 3,
+     "ex": "button"
+    },
+    {
+     "v": "background 0.2s ease-in-out",
+     "n": 1,
+     "ex": "a"
+    }
+   ],
+   "animations": [
+    {
+     "v": "scroll 67.745s linear xinfinite",
+     "n": 2
+    }
+   ],
+   "maxWidths": [
+    {
+     "v": "390px (rendered 390px)",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "1344px (rendered 390px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "1200px (rendered 390px)",
+     "n": 1,
+     "ex": "img"
+    },
+    {
+     "v": "351px (rendered 351px)",
+     "n": 1,
+     "ex": "h1"
+    },
+    {
+     "v": "440px (rendered 390px)",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 6
+    },
+    {
+     "v": "pt 72px pb 0px",
+     "n": 1
+    },
+    {
+     "v": "pt 64px pb 64px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "12px",
+     "n": 19
+    },
+    {
+     "v": "16px",
+     "n": 5
+    },
+    {
+     "v": "8px",
+     "n": 4
+    },
+    {
+     "v": "10px",
+     "n": 3
+    },
+    {
+     "v": "32px",
+     "n": 2
+    },
+    {
+     "v": "14px",
+     "n": 1
+    },
+    {
+     "v": "24px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "24px",
+     "n": 53
+    },
+    {
+     "v": "8px",
+     "n": 39
+    },
+    {
+     "v": "32px",
+     "n": 9
+    },
+    {
+     "v": "64px",
+     "n": 3
+    },
+    {
+     "v": "20px",
+     "n": 2
+    },
+    {
+     "v": "16px",
+     "n": 2
+    },
+    {
+     "v": "72px",
+     "n": 1
+    },
+    {
+     "v": "2px",
+     "n": 1
+    },
+    {
+     "v": "150px",
+     "n": 1
+    },
+    {
+     "v": "80px",
+     "n": 1
+    },
+    {
+     "v": "40px",
+     "n": 1
+    },
+    {
+     "v": "48px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "16px",
+     "n": 3
+    },
+    {
+     "v": "8px",
+     "n": 2
+    },
+    {
+     "v": "90px",
+     "n": 1
+    },
+    {
+     "v": "20px",
+     "n": 1
+    },
+    {
+     "v": "26px",
+     "n": 1
+    },
+    {
+     "v": "25px",
+     "n": 1
+    },
+    {
+     "v": "32px",
+     "n": 1
+    },
+    {
+     "v": "24px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "Weekly security updates, SOC 2 certification, and the Arc DNA you know (and love).",
+    "chars": 82,
+    "lines": 2,
+    "charsPerLine": 41,
+    "width": 390,
+    "fontSize": "16px",
+    "lineHeight": "19.2px",
+    "color": "#000000 a0.65"
+   },
+   "rootVars": {
+    "--colors-primary1": "rgb(255, 234, 231)",
+    "--colors-primary2": "rgb(255, 201, 195)",
+    "--colors-primary3": "rgb(252, 163, 159)",
+    "--colors-primary4": "rgb(252, 130, 121)",
+    "--colors-primary5": "rgb(253, 105, 88)",
+    "--colors-primary6": "rgb(250, 69, 49)",
+    "--colors-primary7": "rgb(207, 56, 40)",
+    "--colors-primary8": "rgb(162, 43, 31)",
+    "--colors-primary9": "rgb(116, 30, 21)",
+    "--colors-primary10": "rgb(71, 17, 12)",
+    "--colors-primary11": "rgb(26, 4, 2)",
+    "--colors-primary12": "rgb(9, 2, 1)",
+    "--colors-secondary1": "rgb(0, 234, 231)",
+    "--colors-secondary2": "rgb(0, 201, 195)",
+    "--colors-secondary3": "rgb(0, 163, 159)",
+    "--colors-secondary4": "rgb(0, 130, 121)",
+    "--colors-secondary5": "rgb(0, 105, 88)",
+    "--colors-secondary6": "rgb(0, 69, 49)",
+    "--colors-secondary7": "rgb(0, 56, 40)",
+    "--colors-secondary8": "rgb(0, 43, 31)",
+    "--colors-secondary9": "rgb(0, 30, 21)",
+    "--colors-secondary10": "rgb(0, 17, 12)",
+    "--colors-secondary11": "rgb(0, 4, 2)",
+    "--colors-secondary12": "rgb(0, 2, 1)",
+    "--colors-students-arc_blue": "rgb(12, 80, 255)",
+    "--colors-students-arc_blue_pale": "rgb(69, 138, 255)",
+    "--colors-students-deep_blue": "rgb(36, 4, 170)",
+    "--colors-students-arc_pinkish": "rgb(242, 94, 107)",
+    "--colors-students-off_white": "rgb(245, 244, 226)",
+    "--colors-students-dark_grey": "rgb(60, 59, 58)",
+    "--colors-students-light_grey": "rgb(225, 224, 206)",
+    "--colors-students-light_grey-hover": "rgb(215, 214, 196)",
+    "--colors-students-text_light": "rgb(151, 146, 143)",
+    "--colors-students-text_dark": "rgb(118, 110, 106)",
+    "--colors-students-dark_blue": "rgb(39, 2, 194)",
+    "--colors-students-light_blue": "rgb(205, 204, 223)",
+    "--colors-students-light_green": "rgb(211, 224, 129)",
+    "--colors-students-salmon": "rgb(242, 194, 172)",
+    "--colors-lowContrast": "#FFF",
+    "--colors-highContrast": "#000",
+    "--colors-brandDarkBlue": "#000354",
+    "--colors-brandDeepBlue": "#2404AA",
+    "--colors-brandBlue": "#3139FB",
+    "--colors-brandRed": "#FB3A4D",
+    "--colors-brandOffwhite": "#FFFCEC",
+    "--colors-focusOutline": "#96C4FF",
+    "--space-4": "4px",
+    "--space-8": "8px",
+    "--space-12": "12px",
+    "--space-16": "16px",
+    "--space-24": "24px",
+    "--space-32": "32px",
+    "--space-40": "40px",
+    "--space-48": "48px",
+    "--space-56": "56px",
+    "--space-64": "64px",
+    "--space-72": "72px",
+    "--sizes-4": "4px",
+    "--sizes-8": "8px",
+    "--sizes-12": "12px",
+    "--sizes-16": "16px",
+    "--sizes-24": "24px",
+    "--sizes-32": "32px",
+    "--sizes-40": "40px",
+    "--sizes-48": "48px",
+    "--sizes-56": "56px",
+    "--sizes-64": "64px",
+    "--sizes-72": "72px",
+    "--fontSizes-10": "10px",
+    "--fontSizes-12": "12px",
+    "--fontSizes-14": "14px",
+    "--fontSizes-16": "16px",
+    "--fontSizes-20": "20px",
+    "--fontSizes-24": "24px",
+    "--fontSizes-32": "32px",
+    "--fontSizes-36": "36px",
+    "--fontSizes-40": "40px",
+    "--fontSizes-48": "48px",
+    "--fonts-boostSans": "-apple-system, BlinkMacSystemFont, sans-serif",
+    "--fonts-boostsSoft": "Marlin Soft Basic, -apple-system, BlinkMacSystemFont, sans-serif",
+    "--fonts-referralSans": "-apple-system, BlinkMacSystemFont, sans-serif",
+    "--fonts-referralCode": "\"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid S",
+    "--fonts-sans": "Marlin, -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sa",
+    "--fonts-cta": "\"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid S",
+    "--fonts-body": "\"InterVariable\", \"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fir",
+    "--fonts-mono": "ABC Favorit Mono, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier Ne",
+    "--fonts-softSans": "Marlin Soft SQ, -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"",
+    "--fonts-oracle": "\"ABC Oracle\", \"Helvetica\", sans-serif",
+    "--fonts-exposure": "\"Exposure VAR\", \"Helvetica\", sans-serif",
+    "--fontWeights-400": "400",
+    "--fontWeights-500": "500",
+    "--fontWeights-600": "600",
+    "--fontWeights-700": "700",
+    "--fontWeights-800": "800",
+    "--lineHeights-12": "12px",
+    "--lineHeights-16": "16px",
+    "--lineHeights-20": "20px",
+    "--lineHeights-24": "24px",
+    "--lineHeights-32": "32px",
+    "--lineHeights-40": "40px",
+    "--lineHeights-48": "48px",
+    "--lineHeights-56": "56px",
+    "--radii-2": "2px",
+    "--radii-4": "4px",
+    "--radii-8": "8px",
+    "--radii-12": "12px",
+    "--radii-16": "16px",
+    "--radii-32": "32px",
+    "--radii-round": "9999px",
+    "--shadows-small": "0 5px 10px rgba(0, 0, 0, 0.12)",
+    "--shadows-medium": "0 8px 30px rgba(0, 0, 0, 0.12)",
+    "--shadows-large": "0 30px 60px rgba(0, 0, 0, 0.12)",
+    "--padding": "32px",
+    "--page-padding-left": "max(env(safe-area-inset-left), var(--padding))",
+    "--page-padding-right": "max(env(safe-area-inset-right), var(--padding))",
+    "--max-width": "1280px",
+    "--navbar-height": "64px",
+    "--mobile-cta-height": "56px",
+    "--announcement-banner-height": "0px",
+    "--announcement-banner-height-desktop": "0px"
+   },
+   "blockedSheets": 0,
+   "reducedMotionRules": 0,
+   "h1": [
+    "Arc is the Chrome replacement I've been waiting for."
+   ],
+   "h2": [],
+   "h3": [],
+   "nav": [],
+   "ctas": [
+    "Try Dia [175x58 bg #000000 a0.85 fg #ffffff r 16px pad 8px 18px 8px 8px 20px/400]",
+    "Download Arc for Windows [273x45 bg #ffffff fg #2702c2 r 10px pad 8px 0px 14px/600]",
+    "Download Arc for Mac [273x45 bg #2702c2 fg #ffffff r 10px pad 8px 0px 14px/600]",
+    "Download Arc for Windows [273x45 bg #ffffff fg #2702c2 r 10px pad 8px 0px 14px/600]"
+   ],
+   "media": {
+    "img": 3,
+    "svg": 35,
+    "video": 4,
+    "canvas": 0
+   }
+  },
+  "1440": {
+   "status": 200,
+   "finalUrl": "https://arc.net/",
+   "width": 1440,
+   "h1Style": {
+    "font": "\"Marlin Soft SQ\" 32px/31.2px w700 ls -1.6px",
+    "color": "#fffcec",
+    "top": 0,
+    "width": 0,
+    "align": "center"
+   },
+   "title": "Arc from The Browser Company",
+   "description": "Experience a calmer, more personal internet in this browser designed for you. Let go of the clicks, the clutter, the distractions with the Arc browser.",
+   "pageHeight": 6125,
+   "bodyBg": "#fffcec",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "Marlin 800 normal",
+    "Inter 500 normal",
+    "Inter 600 normal",
+    "Inter 700 normal",
+    "InterVariable 100 900 normal",
+    "ABC Favorit Mono 700 normal",
+    "ABC Favorit Mono 400 normal",
+    "Marlin Soft SQ 500 normal",
+    "Marlin Soft SQ 700 normal",
+    "Marlin Soft SQ 700 italic",
+    "ABC Oracle 400 normal",
+    "Exposure VAR 700 normal",
+    "Exposure VAR 750 normal"
+   ],
+   "families": [
+    {
+     "v": "\"Marlin Soft SQ\", -apple-system",
+     "n": 1251
+    },
+    {
+     "v": "InterVariable, Inter",
+     "n": 518
+    },
+    {
+     "v": "Marlin, -apple-system",
+     "n": 123
+    },
+    {
+     "v": "\"ABC Oracle\", Helvetica",
+     "n": 89
+    },
+    {
+     "v": "\"ABC Favorit Mono\", Menlo",
+     "n": 77
+    },
+    {
+     "v": "-apple-system, BlinkMacSystemFont",
+     "n": 68
+    },
+    {
+     "v": "\"Exposure VAR\", Helvetica",
+     "n": 35
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "16px / lh normal / w700 / ls normal",
+     "n": 720,
+     "ex": "a: “Rethinking the fundamentals of how we use the web.”"
+    },
+    {
+     "v": "17px / lh 25.5px / w500 / ls normal",
+     "n": 320,
+     "ex": "div: Clean and calm, Arc shapes itself to how you use the interne"
+    },
+    {
+     "v": "28px / lh 30px / w700 / ls -1.4px",
+     "n": 269,
+     "ex": "div: Way more powerful than Chrome. Arc looks like the future of "
+    },
+    {
+     "v": "40px / lh 39px / w700 / ls -1.6px",
+     "n": 145,
+     "ex": "p: A browser that doesn’t just meet your needs — it anticipates"
+    },
+    {
+     "v": "12px / lh normal / w600 / ls 0.4px",
+     "n": 135,
+     "ex": "a: Download"
+    },
+    {
+     "v": "13px / lh normal / w400 / ls normal",
+     "n": 123,
+     "ex": "div: FYI: Arc receives Chromium updates only. For active security"
+    },
+    {
+     "v": "20px / lh 24px / w400 / ls normal",
+     "n": 82,
+     "ex": "p: Weekly security updates, SOC 2 certification, and the Arc DN"
+    },
+    {
+     "v": "14px / lh 29px / w600 / ls -0.14px",
+     "n": 68,
+     "ex": "button: Download Arc for Windows"
+    },
+    {
+     "v": "17px / lh 25.5px / w700 / ls normal",
+     "n": 63,
+     "ex": "strong: Spaces"
+    },
+    {
+     "v": "45.51px / lh 42.25px / w700 / ls -1.8204px",
+     "n": 52,
+     "ex": "h1: Arc is the Chrome replacement I've been waiting for."
+    },
+    {
+     "v": "12px / lh normal / w700 / ls 0.6px",
+     "n": 49,
+     "ex": "div: @beebomco"
+    },
+    {
+     "v": "36px / lh 36px / w700 / ls -0.72px",
+     "n": 35,
+     "ex": "span: Meet Dia, the next evolution of Arc"
+    },
+    {
+     "v": "28px / lh 30.8px / w700 / ls -1.4px",
+     "n": 34,
+     "ex": "div: Enter new home on the internet"
+    },
+    {
+     "v": "14px / lh normal / w500 / ls -0.28px",
+     "n": 31,
+     "ex": "span: Max"
+    },
+    {
+     "v": "12px / lh normal / w700 / ls 0.4px",
+     "n": 16,
+     "ex": "div: Product"
+    },
+    {
+     "v": "12px / lh normal / w400 / ls 1.8px",
+     "n": 12,
+     "ex": "div: More Details"
+    },
+    {
+     "v": "24px / lh 28.8px / w400 / ls normal",
+     "n": 7,
+     "ex": "span: Try Dia"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#3139fb",
+     "n": 1216
+    },
+    {
+     "v": "#696969",
+     "n": 350
+    },
+    {
+     "v": "#fffcec",
+     "n": 249
+    },
+    {
+     "v": "#fffadd",
+     "n": 123
+    },
+    {
+     "v": "#000000 a0.65",
+     "n": 82
+    },
+    {
+     "v": "#ffffff",
+     "n": 58
+    },
+    {
+     "v": "#2702c2",
+     "n": 48
+    },
+    {
+     "v": "#000000",
+     "n": 35
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#3139fb on #fffcec",
+     "n": 989,
+     "ex": "6.56:1"
+    },
+    {
+     "v": "#696969 on #ffffff",
+     "n": 350,
+     "ex": "5.49:1"
+    },
+    {
+     "v": "#fffcec on #3139fb",
+     "n": 249,
+     "ex": "6.56:1"
+    },
+    {
+     "v": "#3139fb on #ffffff",
+     "n": 227,
+     "ex": "6.75:1"
+    },
+    {
+     "v": "#fffadd on #3139fb",
+     "n": 123,
+     "ex": "6.42:1"
+    },
+    {
+     "v": "#000000 a0.65 on #fffcec",
+     "n": 82,
+     "ex": "6.9:1"
+    },
+    {
+     "v": "#2702c2 on #ffffff",
+     "n": 48,
+     "ex": "11.21:1"
+    },
+    {
+     "v": "#000000 on #fffcec",
+     "n": 35,
+     "ex": "20.39:1"
+    },
+    {
+     "v": "#ffffff on #3139fb",
+     "n": 31,
+     "ex": "6.75:1"
+    },
+    {
+     "v": "#ffffff on #2702c2",
+     "n": 20,
+     "ex": "11.21:1"
+    },
+    {
+     "v": "#ffffff on #000000",
+     "n": 7,
+     "ex": "21:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#ffffff",
+     "n": 7470
+    },
+    {
+     "v": "#3139fb",
+     "n": 2517
+    },
+    {
+     "v": "#fffcec",
+     "n": 1522
+    },
+    {
+     "v": "#000000 a0.85",
+     "n": 16
+    },
+    {
+     "v": "#2702c2",
+     "n": 12
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #000000 a0",
+     "n": 5
+    },
+    {
+     "v": "2px #3139fb",
+     "n": 4
+    }
+   ],
+   "radii": [
+    {
+     "v": "8px",
+     "n": 9,
+     "ex": "a.c-bsQNRu c-bsQNRu-iifBZxa-css"
+    },
+    {
+     "v": "10px",
+     "n": 3,
+     "ex": "button.c-bCeQxv c-bCeQxv-jbZBFp-size-"
+    },
+    {
+     "v": "22px",
+     "n": 1,
+     "ex": "a.c-koCplY"
+    },
+    {
+     "v": "4px",
+     "n": 1,
+     "ex": "a.c-iYqNMZ"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgba(0, 0, 0, 0.1) 0px 5px 5px 0px",
+     "n": 3,
+     "ex": "button"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.25) 0px 2px 8px 0px",
+     "n": 1,
+     "ex": "a"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "transform, background 0.15s, 0.15s ease, ease",
+     "n": 5,
+     "ex": "a"
+    },
+    {
+     "v": "transform, box-shadow 0.15s, 0.15s ease, ease-out",
+     "n": 3,
+     "ex": "button"
+    },
+    {
+     "v": "background 0.2s ease-in-out",
+     "n": 1,
+     "ex": "a"
+    },
+    {
+     "v": "opacity 0.1s ease-out",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "animations": [
+    {
+     "v": "scroll 78.5225s linear xinfinite",
+     "n": 2
+    }
+   ],
+   "maxWidths": [
+    {
+     "v": "1440px (rendered 1440px)",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "1344px (rendered 1344px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "1400px (rendered 1400px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "1200px (rendered 1200px)",
+     "n": 1,
+     "ex": "img"
+    },
+    {
+     "v": "700px (rendered 659px)",
+     "n": 1,
+     "ex": "h1"
+    },
+    {
+     "v": "900px (rendered 760px)",
+     "n": 1,
+     "ex": "p"
+    },
+    {
+     "v": "900px (rendered 712px)",
+     "n": 1,
+     "ex": "p"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 5
+    },
+    {
+     "v": "pt 72px pb 0px",
+     "n": 1
+    },
+    {
+     "v": "pt 128px pb 128px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "12px",
+     "n": 19
+    },
+    {
+     "v": "16px",
+     "n": 8
+    },
+    {
+     "v": "8px",
+     "n": 8
+    },
+    {
+     "v": "6px",
+     "n": 5
+    },
+    {
+     "v": "24px",
+     "n": 5
+    },
+    {
+     "v": "10px",
+     "n": 3
+    },
+    {
+     "v": "32px",
+     "n": 2
+    },
+    {
+     "v": "43.2px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "24px",
+     "n": 52
+    },
+    {
+     "v": "8px",
+     "n": 19
+    },
+    {
+     "v": "32px",
+     "n": 12
+    },
+    {
+     "v": "4px",
+     "n": 8
+    },
+    {
+     "v": "16px",
+     "n": 6
+    },
+    {
+     "v": "10px",
+     "n": 5
+    },
+    {
+     "v": "3px",
+     "n": 5
+    },
+    {
+     "v": "48px",
+     "n": 3
+    },
+    {
+     "v": "20px",
+     "n": 2
+    },
+    {
+     "v": "128px",
+     "n": 2
+    },
+    {
+     "v": "72px",
+     "n": 1
+    },
+    {
+     "v": "2px",
+     "n": 1
+    },
+    {
+     "v": "150px",
+     "n": 1
+    },
+    {
+     "v": "80px",
+     "n": 1
+    },
+    {
+     "v": "40px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "8px",
+     "n": 2
+    },
+    {
+     "v": "90px",
+     "n": 1
+    },
+    {
+     "v": "20px",
+     "n": 1
+    },
+    {
+     "v": "37px",
+     "n": 1
+    },
+    {
+     "v": "25px",
+     "n": 1
+    },
+    {
+     "v": "16px",
+     "n": 1
+    },
+    {
+     "v": "160px",
+     "n": 1
+    },
+    {
+     "v": "155px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "Weekly security updates, SOC 2 certification, and the Arc DNA you know (and love).",
+    "chars": 82,
+    "lines": 1,
+    "charsPerLine": 82,
+    "width": 805,
+    "fontSize": "20px",
+    "lineHeight": "24px",
+    "color": "#000000 a0.65"
+   },
+   "rootVars": {
+    "--colors-primary1": "rgb(255, 234, 231)",
+    "--colors-primary2": "rgb(255, 201, 195)",
+    "--colors-primary3": "rgb(252, 163, 159)",
+    "--colors-primary4": "rgb(252, 130, 121)",
+    "--colors-primary5": "rgb(253, 105, 88)",
+    "--colors-primary6": "rgb(250, 69, 49)",
+    "--colors-primary7": "rgb(207, 56, 40)",
+    "--colors-primary8": "rgb(162, 43, 31)",
+    "--colors-primary9": "rgb(116, 30, 21)",
+    "--colors-primary10": "rgb(71, 17, 12)",
+    "--colors-primary11": "rgb(26, 4, 2)",
+    "--colors-primary12": "rgb(9, 2, 1)",
+    "--colors-secondary1": "rgb(0, 234, 231)",
+    "--colors-secondary2": "rgb(0, 201, 195)",
+    "--colors-secondary3": "rgb(0, 163, 159)",
+    "--colors-secondary4": "rgb(0, 130, 121)",
+    "--colors-secondary5": "rgb(0, 105, 88)",
+    "--colors-secondary6": "rgb(0, 69, 49)",
+    "--colors-secondary7": "rgb(0, 56, 40)",
+    "--colors-secondary8": "rgb(0, 43, 31)",
+    "--colors-secondary9": "rgb(0, 30, 21)",
+    "--colors-secondary10": "rgb(0, 17, 12)",
+    "--colors-secondary11": "rgb(0, 4, 2)",
+    "--colors-secondary12": "rgb(0, 2, 1)",
+    "--colors-students-arc_blue": "rgb(12, 80, 255)",
+    "--colors-students-arc_blue_pale": "rgb(69, 138, 255)",
+    "--colors-students-deep_blue": "rgb(36, 4, 170)",
+    "--colors-students-arc_pinkish": "rgb(242, 94, 107)",
+    "--colors-students-off_white": "rgb(245, 244, 226)",
+    "--colors-students-dark_grey": "rgb(60, 59, 58)",
+    "--colors-students-light_grey": "rgb(225, 224, 206)",
+    "--colors-students-light_grey-hover": "rgb(215, 214, 196)",
+    "--colors-students-text_light": "rgb(151, 146, 143)",
+    "--colors-students-text_dark": "rgb(118, 110, 106)",
+    "--colors-students-dark_blue": "rgb(39, 2, 194)",
+    "--colors-students-light_blue": "rgb(205, 204, 223)",
+    "--colors-students-light_green": "rgb(211, 224, 129)",
+    "--colors-students-salmon": "rgb(242, 194, 172)",
+    "--colors-lowContrast": "#FFF",
+    "--colors-highContrast": "#000",
+    "--colors-brandDarkBlue": "#000354",
+    "--colors-brandDeepBlue": "#2404AA",
+    "--colors-brandBlue": "#3139FB",
+    "--colors-brandRed": "#FB3A4D",
+    "--colors-brandOffwhite": "#FFFCEC",
+    "--colors-focusOutline": "#96C4FF",
+    "--space-4": "4px",
+    "--space-8": "8px",
+    "--space-12": "12px",
+    "--space-16": "16px",
+    "--space-24": "24px",
+    "--space-32": "32px",
+    "--space-40": "40px",
+    "--space-48": "48px",
+    "--space-56": "56px",
+    "--space-64": "64px",
+    "--space-72": "72px",
+    "--sizes-4": "4px",
+    "--sizes-8": "8px",
+    "--sizes-12": "12px",
+    "--sizes-16": "16px",
+    "--sizes-24": "24px",
+    "--sizes-32": "32px",
+    "--sizes-40": "40px",
+    "--sizes-48": "48px",
+    "--sizes-56": "56px",
+    "--sizes-64": "64px",
+    "--sizes-72": "72px",
+    "--fontSizes-10": "10px",
+    "--fontSizes-12": "12px",
+    "--fontSizes-14": "14px",
+    "--fontSizes-16": "16px",
+    "--fontSizes-20": "20px",
+    "--fontSizes-24": "24px",
+    "--fontSizes-32": "32px",
+    "--fontSizes-36": "36px",
+    "--fontSizes-40": "40px",
+    "--fontSizes-48": "48px",
+    "--fonts-boostSans": "-apple-system, BlinkMacSystemFont, sans-serif",
+    "--fonts-boostsSoft": "Marlin Soft Basic, -apple-system, BlinkMacSystemFont, sans-serif",
+    "--fonts-referralSans": "-apple-system, BlinkMacSystemFont, sans-serif",
+    "--fonts-referralCode": "\"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid S",
+    "--fonts-sans": "Marlin, -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sa",
+    "--fonts-cta": "\"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid S",
+    "--fonts-body": "\"InterVariable\", \"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fir",
+    "--fonts-mono": "ABC Favorit Mono, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier Ne",
+    "--fonts-softSans": "Marlin Soft SQ, -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"",
+    "--fonts-oracle": "\"ABC Oracle\", \"Helvetica\", sans-serif",
+    "--fonts-exposure": "\"Exposure VAR\", \"Helvetica\", sans-serif",
+    "--fontWeights-400": "400",
+    "--fontWeights-500": "500",
+    "--fontWeights-600": "600",
+    "--fontWeights-700": "700",
+    "--fontWeights-800": "800",
+    "--lineHeights-12": "12px",
+    "--lineHeights-16": "16px",
+    "--lineHeights-20": "20px",
+    "--lineHeights-24": "24px",
+    "--lineHeights-32": "32px",
+    "--lineHeights-40": "40px",
+    "--lineHeights-48": "48px",
+    "--lineHeights-56": "56px",
+    "--radii-2": "2px",
+    "--radii-4": "4px",
+    "--radii-8": "8px",
+    "--radii-12": "12px",
+    "--radii-16": "16px",
+    "--radii-32": "32px",
+    "--radii-round": "9999px",
+    "--shadows-small": "0 5px 10px rgba(0, 0, 0, 0.12)",
+    "--shadows-medium": "0 8px 30px rgba(0, 0, 0, 0.12)",
+    "--shadows-large": "0 30px 60px rgba(0, 0, 0, 0.12)",
+    "--padding": "32px",
+    "--page-padding-left": "max(env(safe-area-inset-left), var(--padding))",
+    "--page-padding-right": "max(env(safe-area-inset-right), var(--padding))",
+    "--max-width": "1280px",
+    "--navbar-height": "64px",
+    "--mobile-cta-height": "56px",
+    "--announcement-banner-height": "0px",
+    "--announcement-banner-height-desktop": "0px"
+   },
+   "blockedSheets": 0,
+   "reducedMotionRules": 0,
+   "h1": [
+    "Arc is the Chrome replacement I've been waiting for."
+   ],
+   "h2": [],
+   "h3": [],
+   "nav": [
+    "Max",
+    "Mobile",
+    "Developers",
+    "Students",
+    "Blog"
+   ],
+   "ctas": [
+    "Max [69x36 bg #000000 a0 fg #ffffff r 8px pad 8px 10px 14px/500]",
+    "Mobile [84x36 bg #000000 a0 fg #ffffff r 8px pad 8px 10px 14px/500]",
+    "Developers [95x36 bg #000000 a0 fg #ffffff r 8px pad 8px 10px 14px/500]",
+    "Students [79x36 bg #000000 a0 fg #ffffff r 8px pad 8px 10px 14px/500]",
+    "Blog [50x36 bg #000000 a0 fg #ffffff r 8px pad 8px 10px 14px/500]",
+    "Try Dia [214x76 bg #000000 a0.85 fg #ffffff r 22px pad 8px 22px 8px 8px 24px/400]",
+    "Download Arc for Windows [273x45 bg #ffffff fg #2702c2 r 10px pad 8px 0px 14px/600]",
+    "Download Arc for Mac [273x45 bg #2702c2 fg #ffffff r 10px pad 8px 0px 14px/600]",
+    "Download Arc for Windows [273x45 bg #ffffff fg #2702c2 r 10px pad 8px 0px 14px/600]"
+   ],
+   "media": {
+    "img": 3,
+    "svg": 35,
+    "video": 4,
+    "canvas": 0
+   }
+  }
+ }
+}

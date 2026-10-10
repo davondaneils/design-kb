@@ -1,0 +1,1795 @@
+{
+ "url": "https://www.apple.com/macbook-air/",
+ "measuredAt": "2026-10-10T16:52:48.039Z",
+ "method": "Playwright Chromium, getComputedStyle on visible elements, light scheme, after scroll-through and fonts.ready",
+ "widths": {
+  "390": {
+   "status": 200,
+   "finalUrl": "https://www.apple.com/macbook-air/",
+   "width": 390,
+   "h1Style": {
+    "font": "\"SF Pro Display\" 21px/25px w600 ls 0.231px",
+    "color": "#1d1d1f",
+    "top": 480,
+    "width": 341,
+    "align": "left"
+   },
+   "title": "MacBook Air 13-inch and MacBook Air 15-inch - Apple",
+   "description": "",
+   "pageHeight": 34415,
+   "bodyBg": "#ffffff",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "SF Pro Display 400 normal",
+    "SF Pro Display 600 normal",
+    "SF Pro Display 800 normal",
+    "SF Pro Text 300 normal",
+    "SF Pro Text 400 normal",
+    "SF Pro Text 500 normal",
+    "SF Pro Text 600 normal",
+    "SF Pro Icons 300 normal",
+    "SF Pro Icons 400 normal",
+    "SF Pro Icons 600 normal"
+   ],
+   "families": [
+    {
+     "v": "\"SF Pro Text\", \"Myriad Set Pro\"",
+     "n": 22984
+    },
+    {
+     "v": "\"SF Pro Text\", \"SF Pro Icons\"",
+     "n": 6655
+    },
+    {
+     "v": "\"SF Pro Display\", \"SF Pro Icons\"",
+     "n": 5897
+    },
+    {
+     "v": "\"SF Pro Display\", \"Myriad Set Pro\"",
+     "n": 83
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "12px / lh 16.0005px / w400 / ls -0.12px",
+     "n": 22663,
+     "ex": "a: Buy"
+    },
+    {
+     "v": "19px / lh 23px / w600 / ls 0.228px",
+     "n": 4743,
+     "ex": "span: Apple"
+    },
+    {
+     "v": "14px / lh 18.0008px / w600 / ls -0.224px",
+     "n": 2991,
+     "ex": "span: From $1299"
+    },
+    {
+     "v": "17px / lh 25px / w600 / ls -0.374px",
+     "n": 1375,
+     "ex": "h3: AI apps on Mac. Born to run."
+    },
+    {
+     "v": "14px / lh 20.0003px / w400 / ls -0.224px",
+     "n": 1075,
+     "ex": "p: Lease a new Mac with low monthly payments for 24 or 36 month"
+    },
+    {
+     "v": "17px / lh 25px / w400 / ls -0.374px",
+     "n": 824,
+     "ex": "span: color picker"
+    },
+    {
+     "v": "14px / lh 18.0008px / w400 / ls -0.224px",
+     "n": 550,
+     "ex": "a: Buy"
+    },
+    {
+     "v": "21px / lh 25px / w600 / ls 0.231px",
+     "n": 369,
+     "ex": "h1: MacBook Air"
+    },
+    {
+     "v": "32px / lh 36px / w600 / ls 0.128px",
+     "n": 269,
+     "ex": "p: Might takes flight."
+    },
+    {
+     "v": "48px / lh 52.0077px / w600 / ls -0.144px",
+     "n": 209,
+     "ex": "p: Built to go places."
+    },
+    {
+     "v": "28px / lh 32px / w600 / ls 0.196px",
+     "n": 75,
+     "ex": "h2: Get the highlights."
+    },
+    {
+     "v": "28px / lh 32px / w800 / ls 0.196px",
+     "n": 68,
+     "ex": "span: Raised-hands emoji, text reads: Yep, Mac does that"
+    },
+    {
+     "v": "19px / lh 23px / w400 / ls 0.228px",
+     "n": 62,
+     "ex": "span: Learn more about Apple Intelligence"
+    },
+    {
+     "v": "17px / lh 21.0012px / w400 / ls -0.374px",
+     "n": 52,
+     "ex": "span: MagSafe"
+    },
+    {
+     "v": "19px / lh 27.0009px / w600 / ls 0.228px",
+     "n": 46,
+     "ex": "h3: MacBook Air 13” and 15”"
+    },
+    {
+     "v": "40px / lh 44px / w600 / ls normal",
+     "n": 41,
+     "ex": "h2: New to Mac?"
+    },
+    {
+     "v": "19px / lh 27.0009px / w400 / ls 0.228px",
+     "n": 36,
+     "ex": "span: Compare all Mac models"
+    },
+    {
+     "v": "24px / lh 28px / w600 / ls 0.216px",
+     "n": 35,
+     "ex": "h3: Great powers comewith great"
+    },
+    {
+     "v": "14px / lh 20.0003px / w500 / ls -0.224px",
+     "n": 33,
+     "ex": "span: M5 chip"
+    },
+    {
+     "v": "12px / lh 16.0005px / w600 / ls -0.12px",
+     "n": 23,
+     "ex": "strong: Now supercharged by M5."
+    },
+    {
+     "v": "14px / lh 14px / w400 / ls -0.28px",
+     "n": 19,
+     "ex": "span: Local Nav Open Menu"
+    },
+    {
+     "v": "48px / lh 48px / w600 / ls -0.144px",
+     "n": 16,
+     "ex": "span: 9.5"
+    },
+    {
+     "v": "17px / lh 20.0002px / w400 / ls -0.374px",
+     "n": 16,
+     "ex": "button: Go inside M5"
+    },
+    {
+     "v": "17px / lh 25px / w400 / ls normal",
+     "n": 15,
+     "ex": "span: Additional help"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#000000 a0.56",
+     "n": 22165
+    },
+    {
+     "v": "#86868b",
+     "n": 6497
+    },
+    {
+     "v": "#1d1d1f",
+     "n": 3725
+    },
+    {
+     "v": "#6e6e73",
+     "n": 1332
+    },
+    {
+     "v": "#000000 a0.88",
+     "n": 544
+    },
+    {
+     "v": "#0066cc",
+     "n": 508
+    },
+    {
+     "v": "#ffffff",
+     "n": 449
+    },
+    {
+     "v": "#000000 a0.72",
+     "n": 226
+    },
+    {
+     "v": "#d2d2d7",
+     "n": 45
+    },
+    {
+     "v": "#00a1b3",
+     "n": 27
+    },
+    {
+     "v": "#ed6300",
+     "n": 26
+    },
+    {
+     "v": "#bf4800",
+     "n": 23
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#000000 a0.56 on #f5f5f7",
+     "n": 22165,
+     "ex": "4.83:1"
+    },
+    {
+     "v": "#86868b on #ffffff",
+     "n": 5547,
+     "ex": "3.62:1"
+    },
+    {
+     "v": "#1d1d1f on #ffffff",
+     "n": 2870,
+     "ex": "16.83:1"
+    },
+    {
+     "v": "#6e6e73 on #ffffff",
+     "n": 1231,
+     "ex": "5.07:1"
+    },
+    {
+     "v": "#86868b on #f5f5f7",
+     "n": 950,
+     "ex": "3.33:1"
+    },
+    {
+     "v": "#1d1d1f on #f5f5f7",
+     "n": 819,
+     "ex": "15.46:1"
+    },
+    {
+     "v": "#000000 a0.88 on #f5f5f7",
+     "n": 544,
+     "ex": "15.41:1"
+    },
+    {
+     "v": "#0066cc on #ffffff",
+     "n": 262,
+     "ex": "5.57:1"
+    },
+    {
+     "v": "#0066cc on #f5f5f7",
+     "n": 246,
+     "ex": "5.11:1"
+    },
+    {
+     "v": "#ffffff on #ffffff",
+     "n": 229,
+     "ex": "1:1"
+    },
+    {
+     "v": "#000000 a0.72 on #f5f5f7",
+     "n": 226,
+     "ex": "8.86:1"
+    },
+    {
+     "v": "#ffffff on #f5f5f7",
+     "n": 193,
+     "ex": "1.09:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#f5f5f7",
+     "n": 9016
+    },
+    {
+     "v": "#ffffff",
+     "n": 4632
+    },
+    {
+     "v": "linear-gradient(90deg, rgb(2, 38, 64), rgb(87, 134, 171))",
+     "n": 379
+    },
+    {
+     "v": "linear-gradient(rgb(212, 234, 246), rgb(249, 249, 249) 75%, rgb(255, 255, 255))",
+     "n": 187
+    },
+    {
+     "v": "#fafafc a0.8",
+     "n": 37
+    },
+    {
+     "v": "#e8e8ed",
+     "n": 16
+    },
+    {
+     "v": "url(\"https://www.apple.com/v/macbook-air/z/images/overview/apple-intelligence/apple_intelligence_privacy_gradient__fwor1tjecwy2_small.jpg\")",
+     "n": 12
+    },
+    {
+     "v": "#333336",
+     "n": 11
+    },
+    {
+     "v": "#0071e3",
+     "n": 8
+    },
+    {
+     "v": "#1d1d1f",
+     "n": 4
+    },
+    {
+     "v": "#00ff00",
+     "n": 2
+    },
+    {
+     "v": "#c8d8e0",
+     "n": 1
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #000000 a0",
+     "n": 5
+    },
+    {
+     "v": "2px #000000 a0",
+     "n": 3
+    },
+    {
+     "v": "2px #0071e3",
+     "n": 1
+    },
+    {
+     "v": "2px #1d1d1f",
+     "n": 1
+    },
+    {
+     "v": "1px #d2d2d7",
+     "n": 1
+    },
+    {
+     "v": "1px #86868b",
+     "n": 1
+    },
+    {
+     "v": "1px #000000 a0.16",
+     "n": 1
+    }
+   ],
+   "radii": [
+    {
+     "v": "28px",
+     "n": 57,
+     "ex": "div.media-block-container"
+    },
+    {
+     "v": "50%",
+     "n": 23,
+     "ex": "button.paddlenav-arrow paddles-previo"
+    },
+    {
+     "v": "980px",
+     "n": 6,
+     "ex": "a.ac-ln-button"
+    },
+    {
+     "v": "8px",
+     "n": 3,
+     "ex": "span.gallery-item-caption typograph"
+    },
+    {
+     "v": "0px 0px 18px 18px",
+     "n": 1,
+     "ex": "div.dropdown upgraders-dropdown la"
+    },
+    {
+     "v": "190px",
+     "n": 1,
+     "ex": "select.form-dropdown-select typograph"
+    }
+   ],
+   "shadows": [],
+   "transitions": [
+    {
+     "v": "background, opacity 0.1s, 0.1s linear, linear",
+     "n": 15,
+     "ex": "button"
+    },
+    {
+     "v": "transform 0.3s ease",
+     "n": 11,
+     "ex": "span"
+    },
+    {
+     "v": "transform 0.3s cubic-bezier(0, 0, 0.5, 1)",
+     "n": 6,
+     "ex": "li"
+    },
+    {
+     "v": "opacity, visibility 0.24s, 0.24s cubic-bezier(0.4, 0, 0.6, 1), steps(1, start)",
+     "n": 4,
+     "ex": "a"
+    },
+    {
+     "v": "color 0.32s cubic-bezier(0.4, 0, 0.6, 1)",
+     "n": 3,
+     "ex": "li"
+    },
+    {
+     "v": "color 0.24s cubic-bezier(0.28, 0.11, 0.32, 1)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "opacity 0.15s ease",
+     "n": 2,
+     "ex": "p"
+    },
+    {
+     "v": "background 0.45s cubic-bezier(0.4, 0, 0.6, 1)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "opacity, color 0.32s, 0.32s cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1)",
+     "n": 1,
+     "ex": "button"
+    },
+    {
+     "v": "transform 0.23s ease",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "background 0.32s cubic-bezier(0.4, 0, 0.6, 1)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "opacity 1.83s ease-out",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "animations": [
+    {
+     "v": "animate-background-f5f5f7-f5f5f7 1s cubic-bezier(0.42, 0, 0.58, 1) x1",
+     "n": 1
+    },
+    {
+     "v": "animate-color-1d1d1f-1d1d1f 1s cubic-bezier(0.42, 0, 0.58, 1) x1",
+     "n": 1
+    },
+    {
+     "v": "animate-color-06c-06c 1s cubic-bezier(0.42, 0, 0.58, 1) x1",
+     "n": 1
+    }
+   ],
+   "maxWidths": [
+    {
+     "v": "100% (rendered 341px)",
+     "n": 40,
+     "ex": "div"
+    },
+    {
+     "v": "375px (rendered 341px)",
+     "n": 23,
+     "ex": "div"
+    },
+    {
+     "v": "420px (rendered 341px)",
+     "n": 7,
+     "ex": "picture"
+    },
+    {
+     "v": "500px (rendered 294px)",
+     "n": 6,
+     "ex": "p"
+    },
+    {
+     "v": "410px (rendered 358px)",
+     "n": 4,
+     "ex": "section"
+    },
+    {
+     "v": "980px (rendered 390px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "min(1680px, 87.5%) (rendered 341px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "min(1260px, 87.5%) (rendered 341px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "1024px (rendered 390px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "562px (rendered 341px)",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 16
+    },
+    {
+     "v": "pt 72px pb 78px",
+     "n": 1
+    },
+    {
+     "v": "pt 77px pb 0px",
+     "n": 1
+    },
+    {
+     "v": "pt 0px pb 75px",
+     "n": 1
+    },
+    {
+     "v": "pt 100px pb 100px",
+     "n": 1
+    },
+    {
+     "v": "pt 96px pb 96px",
+     "n": 1
+    },
+    {
+     "v": "pt 0px pb 96px",
+     "n": 1
+    },
+    {
+     "v": "pt 17px pb 11px",
+     "n": 1
+    },
+    {
+     "v": "pt 17px pb 9px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "20px",
+     "n": 13
+    },
+    {
+     "v": "16px",
+     "n": 7
+    },
+    {
+     "v": "82px / col 0px",
+     "n": 4
+    },
+    {
+     "v": "5px / col 28px",
+     "n": 2
+    },
+    {
+     "v": "40px",
+     "n": 1
+    },
+    {
+     "v": "18px / col 20px",
+     "n": 1
+    },
+    {
+     "v": "30px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "9.6px",
+     "n": 38
+    },
+    {
+     "v": "10px",
+     "n": 35
+    },
+    {
+     "v": "4px",
+     "n": 30
+    },
+    {
+     "v": "2px",
+     "n": 22
+    },
+    {
+     "v": "30px",
+     "n": 21
+    },
+    {
+     "v": "24px",
+     "n": 21
+    },
+    {
+     "v": "16px",
+     "n": 19
+    },
+    {
+     "v": "6px",
+     "n": 15
+    },
+    {
+     "v": "9px",
+     "n": 15
+    },
+    {
+     "v": "20px",
+     "n": 13
+    },
+    {
+     "v": "5px",
+     "n": 12
+    },
+    {
+     "v": "24.375px",
+     "n": 12
+    },
+    {
+     "v": "28px",
+     "n": 12
+    },
+    {
+     "v": "1px",
+     "n": 11
+    },
+    {
+     "v": "48px",
+     "n": 10
+    },
+    {
+     "v": "3px",
+     "n": 9
+    },
+    {
+     "v": "8px",
+     "n": 7
+    },
+    {
+     "v": "40px",
+     "n": 7
+    }
+   ],
+   "margins": [
+    {
+     "v": "11.2px",
+     "n": 22
+    },
+    {
+     "v": "5px",
+     "n": 20
+    },
+    {
+     "v": "12px",
+     "n": 14
+    },
+    {
+     "v": "2px",
+     "n": 13
+    },
+    {
+     "v": "20px",
+     "n": 12
+    },
+    {
+     "v": "33px",
+     "n": 9
+    },
+    {
+     "v": "40px",
+     "n": 9
+    },
+    {
+     "v": "13.6px",
+     "n": 8
+    },
+    {
+     "v": "4px",
+     "n": 8
+    },
+    {
+     "v": "11px",
+     "n": 8
+    },
+    {
+     "v": "16px",
+     "n": 8
+    },
+    {
+     "v": "8px",
+     "n": 7
+    },
+    {
+     "v": "35px",
+     "n": 7
+    },
+    {
+     "v": "154px",
+     "n": 6
+    }
+   ],
+   "measure": {
+    "text": "AI in the fast lane. MacBook Air delivers blazing‑fast AI performance thanks to the powerful combination of the GPU, Neu",
+    "chars": 366,
+    "lines": 10,
+    "charsPerLine": 37,
+    "width": 341,
+    "fontSize": "19px",
+    "lineHeight": "23px",
+    "color": "#86868b"
+   },
+   "rootVars": {
+    "--r-globalnav-background-opened": "#fafafc",
+    "--r-globalnav-background-opened-dark": "#161617",
+    "--sk-focus-color": "#0071e3",
+    "--sk-focus-color-alt": "rgb(0, 0, 0)",
+    "--sk-focus-offset": "1px",
+    "--sk-focus-offset-container": "3px",
+    "--r-globalnav-height": "48px",
+    "--r-globalmessage-segment-height": "44px",
+    "--r-globalnav-segmentbar-height": "44px",
+    "--r-globalheader-start": "var(--r-sk-start, right)",
+    "--r-globalheader-end": "var(--r-sk-end, left)",
+    "--r-globalheader-safe-area-inset-start": "var(--r-sk-safe-area-inset-start, env(safe-area-inset-right))",
+    "--r-globalheader-safe-area-inset-end": "var(--r-sk-safe-area-inset-end, env(safe-area-inset-left))",
+    "--r-localnav-height": "calc(48px * var(--r-localnav-text-zoom-factor))",
+    "--r-localnav-stacked-height": "calc(63px * var(--r-localnav-text-zoom-factor))",
+    "--r-localnav-gn-height": "calc(var(--r-globalnav-height, 48px) * var(--r-localnav-text-zoom-factor))",
+    "--r-localnav-viewport-large-min-width": "1024px",
+    "--r-localnav-viewport-large-query": "min-width(1024px)",
+    "--r-localnav-viewport-medium-min-width": "834px",
+    "--r-localnav-viewport-medium-max-width": "1023px",
+    "--r-localnav-viewport-medium-query": "min-width(834px)",
+    "--r-localnav-viewport-small-min-width": "320px",
+    "--r-localnav-viewport-small-max-width": "833px",
+    "--r-localnav-viewport-small-query": "min-width(320px)",
+    "--r-localnav-text-zoom-factor": "1",
+    "--nav-height": "44px",
+    "--localnav-height": "52px",
+    "--inset-top-offset": "16px",
+    "--inset-border-radius": "10px",
+    "--inset-ribbon-width": "87.5%",
+    "--inset-content-width": "80%",
+    "--locale-switcher-height": "135px",
+    "--reduced-inset-ribbon-width": "75%",
+    "--reduced-inset-content-width": "80%",
+    "--hero-video-button-small-margin": "160px",
+    "--airpods-video-button-small-margin": "125px",
+    "--airpods-pro-video-button-small-margin": "75px",
+    "--airpods-pro-reduced-motion-video-button-small-margin": "95px",
+    "--watch-se-3-video-button-small-margin": "70px",
+    "--watch-series-11-video-button-small-margin": "87px",
+    "--apple-tv-4k-video-button-small-margin": "78px",
+    "--apple-tv-4k-ls-video-button-small-margin": "53px",
+    "--airpods-video-button-xsmall-margin": "165px",
+    "--ribbon-background-color": "swatch(fill)",
+    "--ax-contrast-color": "swatch(glyph-gray-secondary)",
+    "--sk-link-disabled-opacity": "0.42",
+    "--enhanced-xp-css-token": "\"enhance-xp\"",
+    "--tile-background-color": "#F5F5F7",
+    "--enhanced-media-query": "\"(min-height: 415px) and (max-height: 850px)\"",
+    "--router-gutter": "20px",
+    "--router-grid-max-viewport": "1420px",
+    "--router-grid-max-width": "374px",
+    "--router-wrapper-bg-color": "white",
+    "--router-wrapper-padding": "50px",
+    "--router-item-bg-color": "black",
+    "--router-item-border-radius": "0px",
+    "--router-item-column-padding": "8%",
+    "--router-columns": "2",
+    "--router-split-remainder": "calc(var(--router-grid-max-width) - 980px)",
+    "--router-split-image-spacing": "calc(var(--router-split-remainder)/2*-1)",
+    "--router-split-content-spacing": "65px 50px 65px 0",
+    "--router-item-text-color": "white",
+    "--global-section-padding": "96px",
+    "--grid-gutter": "15px",
+    "--grid-max-width": "480px",
+    "--grid-background-color": "#f5f5f7",
+    "--tile-padding-top": "30px",
+    "--tile-padding-bottom": "30px",
+    "--tile-padding-left": "var(--tile-padding-bottom)",
+    "--tile-padding-right": "var(--tile-padding-left)",
+    "--tile-body-padding-top": "50px",
+    "--tile-body-padding-bottom": "var(--tile-padding-bottom)",
+    "--tile-overlay-background-color": "#fbfbfd",
+    "--tile-overlay-copy-max-width": "550px",
+    "--tile-overlay-image-padding": "17px",
+    "--tile-button-size": "30px",
+    "--tile-height": "auto",
+    "--tile-button-background": "black",
+    "--tile-button-color": "var(--tile-background-color)",
+    "--tile-button-color-hover": "black",
+    "--pin-length": "-50px",
+    "--prong-length": "12px",
+    "--prong-span": "48px",
+    "--adjusted-pin-height": "calc(var(--smart-pin-length) + var(--prong-length))",
+    "--pin-prong-scale": "1",
+    "--item-width": "450px",
+    "--p-width": "100%",
+    "--modal-close-button-offset-inline-start": "max(16px, env(safe-area-inset-right))"
+   },
+   "blockedSheets": 0,
+   "reducedMotionRules": 40,
+   "h1": [
+    "MacBook Air"
+   ],
+   "h2": [
+    "Get the highlights.",
+    "Design",
+    "Performance",
+    "AI",
+    "macOS",
+    "Continuity",
+    "New to Mac?",
+    "Display",
+    "Camera and Audio",
+    "Ports and+ Connectivity",
+    "Security",
+    "There’s never been a better time to upgrade.",
+    "Which laptop is right for you?",
+    "Accessories",
+    "Apple Upgrade",
+    "Apple Trade In"
+   ],
+   "h3": [
+    "Two perfectly portable sizes.",
+    "Four beautiful colors will have you on cloud nine.",
+    "AI apps on Mac. Born to run.",
+    "AI tools in apps. Mac makes magic.",
+    "Apple Intelligence.Do more. Effort less.",
+    "Great powers comewith great privacy.",
+    "Setup is a breeze.",
+    "Access files anywhere with iCloud.",
+    "Packed with powerful apps.",
+    "Mac is built to last.",
+    "Never used a Mac?",
+    "Three‑mic array.",
+    "Immersive sound system.",
+    "Touch ID",
+    "MacBook Air 13” and 15” M5 chip",
+    "MacBook Pro 14” and 16” M5, M5 Pro, or M5 Max chip"
+   ],
+   "nav": [
+    "Apple",
+    "0+",
+    "MacBook Air",
+    "Local Nav Open Menu",
+    "BuyMacBook Air",
+    " Apple",
+    "Mac"
+   ],
+   "ctas": [
+    "BuyMacBook Air [45x24 bg #0071e3 fg #ffffff r 980px pad 3px 10px 12px/400]",
+    "Buy [72x32 bg #0071e3 fg #ffffff r 980px pad 6px 21px 14px/400]",
+    "Go inside M5 [145x44 bg #000000 a0 fg #1d1d1f r 980px pad 10px 20px 17px/400]",
+    "Buy [47x24 bg #0071e3 fg #ffffff r 980px pad 3px 10px 12px/400]",
+    "Buy [47x24 bg #0071e3 fg #ffffff r 980px pad 3px 10px 12px/400]",
+    "Shop [72x36 bg #0071e3 fg #ffffff r 980px pad 7px 15px 17px/400]",
+    "Shop and Learn [358x36 bg #f5f5f7 fg #000000 a0.88 r 0px pad 10px 0px 12px/400]",
+    "Apple Wallet [358x36 bg #f5f5f7 fg #000000 a0.88 r 0px pad 10px 0px 12px/400]",
+    "Account [358x36 bg #f5f5f7 fg #000000 a0.88 r 0px pad 10px 0px 12px/400]",
+    "Entertainment [358x36 bg #f5f5f7 fg #000000 a0.88 r 0px pad 10px 0px 12px/400]",
+    "Apple Store [358x36 bg #f5f5f7 fg #000000 a0.88 r 0px pad 10px 0px 12px/400]",
+    "For Business [358x36 bg #f5f5f7 fg #000000 a0.88 r 0px pad 10px 0px 12px/400]",
+    "For Education [358x36 bg #f5f5f7 fg #000000 a0.88 r 0px pad 10px 0px 12px/400]",
+    "For Healthcare [358x36 bg #f5f5f7 fg #000000 a0.88 r 0px pad 10px 0px 12px/400]"
+   ],
+   "media": {
+    "img": 114,
+    "svg": 98,
+    "video": 8,
+    "canvas": 0
+   }
+  },
+  "1440": {
+   "status": 200,
+   "finalUrl": "https://www.apple.com/macbook-air/",
+   "width": 1440,
+   "h1Style": {
+    "font": "\"SF Pro Display\" 28px/32px w600 ls 0.196px",
+    "color": "#1d1d1f",
+    "top": 695,
+    "width": 1260,
+    "align": "left"
+   },
+   "title": "MacBook Air 13-inch and MacBook Air 15-inch - Apple",
+   "description": "",
+   "pageHeight": 32271,
+   "bodyBg": "#ffffff",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "SF Pro Display 400 normal",
+    "SF Pro Display 600 normal",
+    "SF Pro Display 800 normal",
+    "SF Pro Text 300 normal",
+    "SF Pro Text 400 normal",
+    "SF Pro Text 500 normal",
+    "SF Pro Text 600 normal",
+    "SF Pro Icons 300 normal",
+    "SF Pro Icons 400 normal",
+    "SF Pro Icons 600 normal"
+   ],
+   "families": [
+    {
+     "v": "\"SF Pro Text\", \"Myriad Set Pro\"",
+     "n": 23842
+    },
+    {
+     "v": "\"SF Pro Text\", \"SF Pro Icons\"",
+     "n": 6482
+    },
+    {
+     "v": "\"SF Pro Display\", \"SF Pro Icons\"",
+     "n": 5889
+    },
+    {
+     "v": "\"SF Pro Display\", \"Myriad Set Pro\"",
+     "n": 83
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "12px / lh 16.0005px / w400 / ls -0.12px",
+     "n": 23388,
+     "ex": "a: Buy"
+    },
+    {
+     "v": "21px / lh 29.001px / w600 / ls 0.231px",
+     "n": 3781,
+     "ex": "p: MacBook Air is remarkably light at just 2.7 pounds, and less"
+    },
+    {
+     "v": "17px / lh 25px / w600 / ls -0.374px",
+     "n": 2847,
+     "ex": "p: Incredibly thin and light, MacBook Air fits easily in your b"
+    },
+    {
+     "v": "17px / lh 21.0012px / w600 / ls -0.374px",
+     "n": 2044,
+     "ex": "span: Apple"
+    },
+    {
+     "v": "14px / lh 20.0003px / w400 / ls -0.224px",
+     "n": 1061,
+     "ex": "p: Lease a new Mac with low monthly payments for 24 or 36 month"
+    },
+    {
+     "v": "21px / lh 29.001px / w400 / ls 0.231px",
+     "n": 777,
+     "ex": "span: Learn more about Apple Intelligence"
+    },
+    {
+     "v": "17px / lh 21.0012px / w400 / ls -0.374px",
+     "n": 472,
+     "ex": "a: Buy"
+    },
+    {
+     "v": "21px / lh 25px / w600 / ls 0.231px",
+     "n": 461,
+     "ex": "p: MacBook Air has up to 18 hours of battery life. And it suppo"
+    },
+    {
+     "v": "28px / lh 32px / w600 / ls 0.196px",
+     "n": 228,
+     "ex": "h1: MacBook Air"
+    },
+    {
+     "v": "48px / lh 52.0077px / w600 / ls -0.144px",
+     "n": 221,
+     "ex": "h2: New to Mac?"
+    },
+    {
+     "v": "14px / lh 18.0008px / w600 / ls -0.224px",
+     "n": 142,
+     "ex": "span: Up to"
+    },
+    {
+     "v": "12px / lh 16.0005px / w600 / ls -0.12px",
+     "n": 133,
+     "ex": "span: Shop and Learn"
+    },
+    {
+     "v": "56px / lh 60px / w600 / ls normal",
+     "n": 115,
+     "ex": "h2: Get the highlights."
+    },
+    {
+     "v": "24px / lh 28px / w600 / ls 0.216px",
+     "n": 106,
+     "ex": "span: and"
+    },
+    {
+     "v": "19px / lh 23px / w600 / ls 0.228px",
+     "n": 83,
+     "ex": "h3: Lease with Apple Upgrade"
+    },
+    {
+     "v": "12px / lh 12px / w400 / ls -0.12px",
+     "n": 76,
+     "ex": "span: Store"
+    },
+    {
+     "v": "32px / lh 36px / w800 / ls 0.128px",
+     "n": 68,
+     "ex": "span: Raised-hands emoji, text reads: Yep, Mac does that"
+    },
+    {
+     "v": "17px / lh 25px / w400 / ls -0.374px",
+     "n": 49,
+     "ex": "span: Watch the film"
+    },
+    {
+     "v": "32px / lh 36px / w600 / ls 0.128px",
+     "n": 49,
+     "ex": "span: display"
+    },
+    {
+     "v": "12px / lh 22px / w400 / ls -0.12px",
+     "n": 46,
+     "ex": "span: Overview"
+    },
+    {
+     "v": "14px / lh 20.0003px / w500 / ls -0.224px",
+     "n": 33,
+     "ex": "span: M5 chip"
+    },
+    {
+     "v": "64px / lh 68px / w600 / ls -0.576px",
+     "n": 30,
+     "ex": "h2: Which laptop is right for you?"
+    },
+    {
+     "v": "64px / lh 70px / w600 / ls normal",
+     "n": 19,
+     "ex": "p: Might takes flight."
+    },
+    {
+     "v": "48px / lh 48px / w600 / ls -0.144px",
+     "n": 16,
+     "ex": "span: 9.5"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#000000 a0.56",
+     "n": 22165
+    },
+    {
+     "v": "#86868b",
+     "n": 6497
+    },
+    {
+     "v": "#1d1d1f",
+     "n": 3441
+    },
+    {
+     "v": "#6e6e73",
+     "n": 1332
+    },
+    {
+     "v": "#000000 a0.72",
+     "n": 1084
+    },
+    {
+     "v": "#000000 a0.88",
+     "n": 544
+    },
+    {
+     "v": "#0066cc",
+     "n": 489
+    },
+    {
+     "v": "#ffffff",
+     "n": 449
+    },
+    {
+     "v": "#000000 a0.8",
+     "n": 81
+    },
+    {
+     "v": "#000000",
+     "n": 57
+    },
+    {
+     "v": "#d2d2d7",
+     "n": 45
+    },
+    {
+     "v": "#00a1b3",
+     "n": 27
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#000000 a0.56 on #f5f5f7",
+     "n": 22165,
+     "ex": "4.83:1"
+    },
+    {
+     "v": "#86868b on #ffffff",
+     "n": 5547,
+     "ex": "3.62:1"
+    },
+    {
+     "v": "#1d1d1f on #ffffff",
+     "n": 2586,
+     "ex": "16.83:1"
+    },
+    {
+     "v": "#6e6e73 on #ffffff",
+     "n": 1231,
+     "ex": "5.07:1"
+    },
+    {
+     "v": "#000000 a0.72 on #f5f5f7",
+     "n": 1084,
+     "ex": "8.86:1"
+    },
+    {
+     "v": "#86868b on #f5f5f7",
+     "n": 950,
+     "ex": "3.33:1"
+    },
+    {
+     "v": "#1d1d1f on #f5f5f7",
+     "n": 819,
+     "ex": "15.46:1"
+    },
+    {
+     "v": "#000000 a0.88 on #f5f5f7",
+     "n": 544,
+     "ex": "15.41:1"
+    },
+    {
+     "v": "#0066cc on #f5f5f7",
+     "n": 246,
+     "ex": "5.11:1"
+    },
+    {
+     "v": "#0066cc on #ffffff",
+     "n": 243,
+     "ex": "5.57:1"
+    },
+    {
+     "v": "#ffffff on #ffffff",
+     "n": 229,
+     "ex": "1:1"
+    },
+    {
+     "v": "#ffffff on #f5f5f7",
+     "n": 193,
+     "ex": "1.09:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#f5f5f7",
+     "n": 24676
+    },
+    {
+     "v": "#ffffff",
+     "n": 16032
+    },
+    {
+     "v": "linear-gradient(rgb(212, 234, 246), rgb(249, 249, 249) 75%, rgb(255, 255, 255))",
+     "n": 1310
+    },
+    {
+     "v": "#fafafc a0.8",
+     "n": 138
+    },
+    {
+     "v": "linear-gradient(90deg, rgb(2, 38, 64), rgb(87, 134, 171))",
+     "n": 79
+    },
+    {
+     "v": "#e8e8ed a0.5",
+     "n": 44
+    },
+    {
+     "v": "url(\"https://www.apple.com/v/macbook-air/z/images/overview/apple-intelligence/apple_intelligence_privacy_gradient__fwor1tjecwy2_large.jpg\")",
+     "n": 35
+    },
+    {
+     "v": "#333336",
+     "n": 15
+    },
+    {
+     "v": "#e8e8ed",
+     "n": 10
+    },
+    {
+     "v": "#0071e3",
+     "n": 9
+    },
+    {
+     "v": "#1d1d1f",
+     "n": 4
+    },
+    {
+     "v": "#00ff00",
+     "n": 3
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #000000 a0",
+     "n": 5
+    },
+    {
+     "v": "2px #000000 a0",
+     "n": 3
+    },
+    {
+     "v": "2px #0071e3",
+     "n": 1
+    },
+    {
+     "v": "3px #1d1d1f",
+     "n": 1
+    },
+    {
+     "v": "1px #d2d2d7",
+     "n": 1
+    },
+    {
+     "v": "1px #86868b",
+     "n": 1
+    },
+    {
+     "v": "1px #000000 a0.16",
+     "n": 1
+    }
+   ],
+   "radii": [
+    {
+     "v": "28px",
+     "n": 62,
+     "ex": "div.media-block-container"
+    },
+    {
+     "v": "50%",
+     "n": 20,
+     "ex": "button.paddlenav-arrow paddles-previo"
+    },
+    {
+     "v": "980px",
+     "n": 6,
+     "ex": "a.ac-ln-button"
+    },
+    {
+     "v": "8px",
+     "n": 3,
+     "ex": "span.gallery-item-caption typograph"
+    },
+    {
+     "v": "1440px",
+     "n": 1,
+     "ex": "div.marquee-detail"
+    },
+    {
+     "v": "0px 0px 18px 18px",
+     "n": 1,
+     "ex": "div.dropdown upgraders-dropdown la"
+    },
+    {
+     "v": "210px",
+     "n": 1,
+     "ex": "select.form-dropdown-select typograph"
+    }
+   ],
+   "shadows": [],
+   "transitions": [
+    {
+     "v": "color 0.32s cubic-bezier(0.4, 0, 0.6, 1)",
+     "n": 14,
+     "ex": "a"
+    },
+    {
+     "v": "background, opacity 0.1s, 0.1s linear, linear",
+     "n": 11,
+     "ex": "button"
+    },
+    {
+     "v": "transform 0.3s cubic-bezier(0, 0, 0.5, 1)",
+     "n": 6,
+     "ex": "li"
+    },
+    {
+     "v": "opacity 0.5s ease-in",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "color 0.24s cubic-bezier(0.28, 0.11, 0.32, 1)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "opacity 0.15s ease",
+     "n": 2,
+     "ex": "p"
+    },
+    {
+     "v": "opacity, visibility 0.24s, 0.24s cubic-bezier(0.4, 0, 0.6, 1), steps(1, start)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "transform 0.23s ease",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "background 0.24s cubic-bezier(0.28, 0.11, 0.32, 1)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "opacity 1.83s ease-out",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "background-color, color 0.35s, 0.35s ease-in-out, ease-in-out",
+     "n": 1,
+     "ex": "button"
+    },
+    {
+     "v": "opacity 0.15s ease-out",
+     "n": 1,
+     "ex": "button"
+    }
+   ],
+   "animations": [
+    {
+     "v": "animate-background-f5f5f7-f5f5f7 1s cubic-bezier(0.42, 0, 0.58, 1) x1",
+     "n": 1
+    },
+    {
+     "v": "animate-color-1d1d1f-1d1d1f 1s cubic-bezier(0.42, 0, 0.58, 1) x1",
+     "n": 1
+    },
+    {
+     "v": "animate-color-06c-06c 1s cubic-bezier(0.42, 0, 0.58, 1) x1",
+     "n": 1
+    }
+   ],
+   "maxWidths": [
+    {
+     "v": "83.3333% (rendered 817px)",
+     "n": 22,
+     "ex": "div"
+    },
+    {
+     "v": "66.6667% (rendered 653px)",
+     "n": 6,
+     "ex": "div"
+    },
+    {
+     "v": "980px (rendered 1180px)",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "980px (rendered 1024px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 980px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "91.6667% (rendered 898px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "680px (rendered 680px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "min(1260px, 87.5%) (rendered 1260px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "1024px (rendered 1024px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "min(1680px, 87.5%) (rendered 1260px)",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 11
+    },
+    {
+     "v": "pt 110px pb 120px",
+     "n": 1
+    },
+    {
+     "v": "pt 119px pb 0px",
+     "n": 1
+    },
+    {
+     "v": "pt 0px pb 110px",
+     "n": 1
+    },
+    {
+     "v": "pt 162px pb 162px",
+     "n": 1
+    },
+    {
+     "v": "pt 160px pb 160px",
+     "n": 1
+    },
+    {
+     "v": "pt 0px pb 160px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "20px",
+     "n": 16
+    },
+    {
+     "v": "6px / col 34px",
+     "n": 2
+    },
+    {
+     "v": "82px / col 40px",
+     "n": 2
+    },
+    {
+     "v": "20px / col 80px",
+     "n": 2
+    },
+    {
+     "v": "20px / col 0px",
+     "n": 1
+    },
+    {
+     "v": "22px",
+     "n": 1
+    },
+    {
+     "v": "16px / col 0px",
+     "n": 1
+    },
+    {
+     "v": "30px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "4px",
+     "n": 146
+    },
+    {
+     "v": "9.6px",
+     "n": 38
+    },
+    {
+     "v": "3px",
+     "n": 21
+    },
+    {
+     "v": "8px",
+     "n": 18
+    },
+    {
+     "v": "30px",
+     "n": 18
+    },
+    {
+     "v": "6px",
+     "n": 18
+    },
+    {
+     "v": "27px",
+     "n": 16
+    },
+    {
+     "v": "16px",
+     "n": 14
+    },
+    {
+     "v": "9px",
+     "n": 12
+    },
+    {
+     "v": "10px",
+     "n": 11
+    },
+    {
+     "v": "28px",
+     "n": 11
+    },
+    {
+     "v": "40px",
+     "n": 10
+    },
+    {
+     "v": "50px",
+     "n": 7
+    },
+    {
+     "v": "24px",
+     "n": 7
+    },
+    {
+     "v": "22px",
+     "n": 6
+    },
+    {
+     "v": "230px",
+     "n": 6
+    },
+    {
+     "v": "70px",
+     "n": 6
+    },
+    {
+     "v": "32px",
+     "n": 6
+    }
+   ],
+   "margins": [
+    {
+     "v": "9.6px",
+     "n": 64
+    },
+    {
+     "v": "13.6px",
+     "n": 14
+    },
+    {
+     "v": "5px",
+     "n": 13
+    },
+    {
+     "v": "12px",
+     "n": 12
+    },
+    {
+     "v": "30px",
+     "n": 10
+    },
+    {
+     "v": "16.8px",
+     "n": 10
+    },
+    {
+     "v": "11.2px",
+     "n": 10
+    },
+    {
+     "v": "10px",
+     "n": 9
+    },
+    {
+     "v": "48px",
+     "n": 7
+    },
+    {
+     "v": "20px",
+     "n": 7
+    },
+    {
+     "v": "6px",
+     "n": 7
+    },
+    {
+     "v": "2px",
+     "n": 7
+    },
+    {
+     "v": "4px",
+     "n": 7
+    },
+    {
+     "v": "23px",
+     "n": 7
+    }
+   ],
+   "measure": {
+    "text": "AI in the fast lane. MacBook Air delivers blazing‑fast AI performance thanks to the powerful combination of the GPU, Neu",
+    "chars": 366,
+    "lines": 5,
+    "charsPerLine": 73,
+    "width": 817,
+    "fontSize": "21px",
+    "lineHeight": "29.001px",
+    "color": "#86868b"
+   },
+   "rootVars": {
+    "--r-globalnav-background-opened": "#fafafc",
+    "--r-globalnav-background-opened-dark": "#161617",
+    "--sk-focus-color": "#0071e3",
+    "--sk-focus-color-alt": "rgb(0, 0, 0)",
+    "--sk-focus-offset": "1px",
+    "--sk-focus-offset-container": "3px",
+    "--r-globalnav-height": "48px",
+    "--r-globalmessage-segment-height": "44px",
+    "--r-globalnav-segmentbar-height": "44px",
+    "--r-globalheader-start": "var(--r-sk-start, right)",
+    "--r-globalheader-end": "var(--r-sk-end, left)",
+    "--r-globalheader-safe-area-inset-start": "var(--r-sk-safe-area-inset-start, env(safe-area-inset-right))",
+    "--r-globalheader-safe-area-inset-end": "var(--r-sk-safe-area-inset-end, env(safe-area-inset-left))",
+    "--r-localnav-height": "calc(48px * var(--r-localnav-text-zoom-factor))",
+    "--r-localnav-stacked-height": "calc(63px * var(--r-localnav-text-zoom-factor))",
+    "--r-localnav-gn-height": "calc(var(--r-globalnav-height, 48px) * var(--r-localnav-text-zoom-factor))",
+    "--r-localnav-viewport-large-min-width": "1024px",
+    "--r-localnav-viewport-large-query": "min-width(1024px)",
+    "--r-localnav-viewport-medium-min-width": "834px",
+    "--r-localnav-viewport-medium-max-width": "1023px",
+    "--r-localnav-viewport-medium-query": "min-width(834px)",
+    "--r-localnav-viewport-small-min-width": "320px",
+    "--r-localnav-viewport-small-max-width": "833px",
+    "--r-localnav-viewport-small-query": "min-width(320px)",
+    "--r-localnav-text-zoom-factor": "1",
+    "--nav-height": "44px",
+    "--localnav-height": "52px",
+    "--inset-top-offset": "16px",
+    "--inset-border-radius": "10px",
+    "--inset-ribbon-width": "87.5%",
+    "--inset-content-width": "80%",
+    "--locale-switcher-height": "135px",
+    "--reduced-inset-ribbon-width": "75%",
+    "--reduced-inset-content-width": "80%",
+    "--hero-video-button-small-margin": "160px",
+    "--airpods-video-button-small-margin": "125px",
+    "--airpods-pro-video-button-small-margin": "75px",
+    "--airpods-pro-reduced-motion-video-button-small-margin": "95px",
+    "--watch-se-3-video-button-small-margin": "70px",
+    "--watch-series-11-video-button-small-margin": "87px",
+    "--apple-tv-4k-video-button-small-margin": "78px",
+    "--apple-tv-4k-ls-video-button-small-margin": "53px",
+    "--airpods-video-button-xsmall-margin": "165px",
+    "--ribbon-background-color": "swatch(fill)",
+    "--ax-contrast-color": "swatch(glyph-gray-secondary)",
+    "--sk-link-disabled-opacity": "0.42",
+    "--enhanced-xp-css-token": "\"enhance-xp\"",
+    "--tile-background-color": "#F5F5F7",
+    "--enhanced-media-query": "\"(min-height: 415px) and (max-height: 850px)\"",
+    "--router-gutter": "20px",
+    "--router-grid-max-viewport": "1420px",
+    "--router-grid-max-width": "374px",
+    "--router-wrapper-bg-color": "white",
+    "--router-wrapper-padding": "50px",
+    "--router-item-bg-color": "black",
+    "--router-item-border-radius": "0px",
+    "--router-item-column-padding": "8%",
+    "--router-columns": "2",
+    "--router-split-remainder": "calc(var(--router-grid-max-width) - 980px)",
+    "--router-split-image-spacing": "calc(var(--router-split-remainder)/2*-1)",
+    "--router-split-content-spacing": "65px 50px 65px 0",
+    "--router-item-text-color": "white",
+    "--global-section-padding": "96px",
+    "--grid-gutter": "15px",
+    "--grid-max-width": "480px",
+    "--grid-background-color": "#f5f5f7",
+    "--tile-padding-top": "30px",
+    "--tile-padding-bottom": "30px",
+    "--tile-padding-left": "var(--tile-padding-bottom)",
+    "--tile-padding-right": "var(--tile-padding-left)",
+    "--tile-body-padding-top": "50px",
+    "--tile-body-padding-bottom": "var(--tile-padding-bottom)",
+    "--tile-overlay-background-color": "#fbfbfd",
+    "--tile-overlay-copy-max-width": "550px",
+    "--tile-overlay-image-padding": "17px",
+    "--tile-button-size": "30px",
+    "--tile-height": "auto",
+    "--tile-button-background": "black",
+    "--tile-button-color": "var(--tile-background-color)",
+    "--tile-button-color-hover": "black",
+    "--pin-length": "-50px",
+    "--prong-length": "12px",
+    "--prong-span": "48px",
+    "--adjusted-pin-height": "calc(var(--smart-pin-length) + var(--prong-length))",
+    "--pin-prong-scale": "1",
+    "--item-width": "450px",
+    "--p-width": "100%",
+    "--modal-close-button-offset-inline-start": "max(16px, env(safe-area-inset-right))"
+   },
+   "blockedSheets": 0,
+   "reducedMotionRules": 40,
+   "h1": [
+    "MacBook Air"
+   ],
+   "h2": [
+    "Get the highlights.",
+    "New to Mac?",
+    "There’s never been a better time to upgrade.",
+    "Which laptop is right for you?",
+    "Accessories",
+    "Apple Upgrade",
+    "Apple Trade In",
+    "Apple Card",
+    "Education",
+    "Apple at Work",
+    "Apple and Education",
+    "MacBook Air and the environment.",
+    "Our values lead the way.",
+    "Apple Footer"
+   ],
+   "h3": [
+    "Two perfectly portable sizes.",
+    "Four beautiful colors will have you on cloud nine.",
+    "AI apps on Mac. Born to run.",
+    "AI tools in apps. Mac makes magic.",
+    "Apple Intelligence.Do more. Effort less.",
+    "Great powers comewith great privacy.",
+    "Setup is a breeze.",
+    "Access files anywhere with iCloud.",
+    "Packed with powerful apps.",
+    "Mac is built to last.",
+    "Never used a Mac?",
+    "Three‑mic array.",
+    "Immersive sound system.",
+    "Touch ID",
+    "MacBook Air 13” and 15” M5 chip",
+    "MacBook Pro 14” and 16” M5, M5 Pro, or M5 Max chip"
+   ],
+   "nav": [
+    "Apple",
+    "Store",
+    "Mac",
+    "iPad",
+    "iPhone",
+    "Watch",
+    "Vision",
+    "AirPods",
+    "TV & Home",
+    "Entertainment",
+    "Accessories",
+    "Support",
+    "0+",
+    "MacBook Air",
+    "Tech Specs",
+    "Compare"
+   ],
+   "ctas": [
+    "BuyMacBook Air [45x24 bg #0071e3 fg #ffffff r 980px pad 3px 10px 12px/400]",
+    "Buy [73x45 bg #0071e3 fg #ffffff r 980px pad 11px 21px 17px/400]",
+    "Go inside M5 [151x54 bg #000000 a0 fg #1d1d1f r 980px pad 14px 22px 17px/400]",
+    "Buy [47x24 bg #0071e3 fg #ffffff r 980px pad 3px 10px 12px/400]",
+    "Buy [47x24 bg #0071e3 fg #ffffff r 980px pad 3px 10px 12px/400]",
+    "Shop [72x36 bg #0071e3 fg #ffffff r 980px pad 7px 15px 17px/400]"
+   ],
+   "media": {
+    "img": 114,
+    "svg": 98,
+    "video": 8,
+    "canvas": 0
+   }
+  }
+ }
+}

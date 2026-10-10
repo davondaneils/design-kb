@@ -1,0 +1,959 @@
+{
+ "url": "https://the-brandidentity.com",
+ "measuredAt": "2026-10-10T17:00:54.869Z",
+ "method": "Playwright Chromium, getComputedStyle on visible elements, light scheme, after scroll-through and fonts.ready",
+ "widths": {
+  "390": {
+   "status": 200,
+   "finalUrl": "https://the-brandidentity.com/",
+   "width": 390,
+   "h1Style": {
+    "font": "\"NB International Pro\" 26px/31.2px w400 ls normal",
+    "color": "#000000",
+    "top": 370,
+    "width": 290,
+    "align": "center"
+   },
+   "title": "The Brand Identity – Home of the Greatest in Graphic & Brand Design",
+   "description": "A curated platform for the world’s best brand and graphic design, seen 20 million times a month. Case studies, interviews, design assets and jobs.",
+   "pageHeight": 11854,
+   "bodyBg": "#000000 a0",
+   "htmlBg": "#f5f5f5",
+   "fontsLoaded": [
+    "Times Now 400 normal",
+    "NB International Pro 300 normal",
+    "NB International Pro 400 normal"
+   ],
+   "families": [
+    {
+     "v": "\"Times Now\"",
+     "n": 1834
+    },
+    {
+     "v": "\"NB International Pro\"",
+     "n": 1422
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "18px / lh 20.88px / w400 / ls normal",
+     "n": 1207,
+     "ex": "h2: Branded objects are handed out as client gifts, at trade sho"
+    },
+    {
+     "v": "16px / lh 20.8px / w400 / ls 0.16px",
+     "n": 468,
+     "ex": "h3: Freelance Creator – Template Bundle"
+    },
+    {
+     "v": "36px / lh 37.8px / w400 / ls -0.72px",
+     "n": 328,
+     "ex": "h1: Why Field of Practice treats branding as a practice of chang"
+    },
+    {
+     "v": "18px / lh 22.5px / w400 / ls normal",
+     "n": 299,
+     "ex": "h6: Plus X creates an elegant identity for South Korean actor ma"
+    },
+    {
+     "v": "16px / lh 20.8px / w300 / ls 0.16px",
+     "n": 185,
+     "ex": "p: This site uses cookies."
+    },
+    {
+     "v": "20px / lh 25.4px / w300 / ls -0.4px",
+     "n": 183,
+     "ex": "a: Instagram"
+    },
+    {
+     "v": "26px / lh 31.2px / w400 / ls normal",
+     "n": 179,
+     "ex": "h1: The psychology of stuff: why people get attached to branded "
+    },
+    {
+     "v": "22px / lh 25.3px / w400 / ls normal",
+     "n": 140,
+     "ex": "h4: Interview"
+    },
+    {
+     "v": "11px / lh 14.85px / w300 / ls 0.055px",
+     "n": 107,
+     "ex": "h5: Free products + inbox insights"
+    },
+    {
+     "v": "16px / lh 20.32px / w300 / ls normal",
+     "n": 106,
+     "ex": "span: Project"
+    },
+    {
+     "v": "11px / lh 14.85px / w300 / ls normal",
+     "n": 28,
+     "ex": "h5: Project"
+    },
+    {
+     "v": "11px / lh 14.85px / w300 / ls -0.4px",
+     "n": 26,
+     "ex": "h5: Social"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#000000",
+     "n": 2883
+    },
+    {
+     "v": "#0a0a0a",
+     "n": 316
+    },
+    {
+     "v": "#ffffff",
+     "n": 29
+    },
+    {
+     "v": "#a0a0a0",
+     "n": 28
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#000000 on #f5f5f5",
+     "n": 2883,
+     "ex": "19.26:1"
+    },
+    {
+     "v": "#0a0a0a on #ffffff",
+     "n": 316,
+     "ex": "19.8:1"
+    },
+    {
+     "v": "#ffffff on #0a0a0a",
+     "n": 29,
+     "ex": "19.8:1"
+    },
+    {
+     "v": "#a0a0a0 on #f5f5f5",
+     "n": 28,
+     "ex": "2.4:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#f5f5f5",
+     "n": 4291
+    },
+    {
+     "v": "#000000",
+     "n": 1021
+    },
+    {
+     "v": "#eeeeee",
+     "n": 935
+    },
+    {
+     "v": "#ffffff",
+     "n": 287
+    },
+    {
+     "v": "#0651a1",
+     "n": 84
+    },
+    {
+     "v": "#bab5ad",
+     "n": 82
+    },
+    {
+     "v": "#dbb495",
+     "n": 82
+    },
+    {
+     "v": "#48443d",
+     "n": 82
+    },
+    {
+     "v": "#d2c4be",
+     "n": 82
+    },
+    {
+     "v": "#253d5d",
+     "n": 82
+    },
+    {
+     "v": "#272728",
+     "n": 82
+    },
+    {
+     "v": "#ebebeb",
+     "n": 82
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #0a0a0a",
+     "n": 6
+    }
+   ],
+   "radii": [
+    {
+     "v": "5px",
+     "n": 4,
+     "ex": "input.ff-6890b73cf1ea86827d8cedfe__c"
+    }
+   ],
+   "shadows": [],
+   "transitions": [
+    {
+     "v": "color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)",
+     "n": 46,
+     "ex": "a"
+    },
+    {
+     "v": "opacity 0.3s ease-in-out",
+     "n": 38,
+     "ex": "img"
+    },
+    {
+     "v": "stroke 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)",
+     "n": 1,
+     "ex": "circle"
+    },
+    {
+     "v": "opacity 0.3s cubic-bezier(0.77, 0, 0.175, 1)",
+     "n": 1,
+     "ex": "input"
+    }
+   ],
+   "animations": [],
+   "maxWidths": [
+    {
+     "v": "290.375px (rendered 290px)",
+     "n": 2,
+     "ex": "h1"
+    },
+    {
+     "v": "239.875px (rendered 240px)",
+     "n": 2,
+     "ex": "h2"
+    },
+    {
+     "v": "0px (rendered 348px)",
+     "n": 2,
+     "ex": "h1"
+    },
+    {
+     "v": "0px (rendered 336px)",
+     "n": 2,
+     "ex": "h1"
+    },
+    {
+     "v": "0px (rendered 347px)",
+     "n": 2,
+     "ex": "h1"
+    },
+    {
+     "v": "296.625px (rendered 297px)",
+     "n": 1,
+     "ex": "h1"
+    },
+    {
+     "v": "0px (rendered 307px)",
+     "n": 1,
+     "ex": "h1"
+    },
+    {
+     "v": "349.625px (rendered 350px)",
+     "n": 1,
+     "ex": "h1"
+    },
+    {
+     "v": "0px (rendered 312px)",
+     "n": 1,
+     "ex": "h1"
+    },
+    {
+     "v": "337.875px (rendered 338px)",
+     "n": 1,
+     "ex": "h1"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 5
+    },
+    {
+     "v": "pt 0px pb 50px",
+     "n": 1
+    },
+    {
+     "v": "pt 70px pb 20px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "20px / col 34px",
+     "n": 21
+    },
+    {
+     "v": "34px",
+     "n": 1
+    },
+    {
+     "v": "50px / col 34px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "20px",
+     "n": 43
+    },
+    {
+     "v": "197.328px",
+     "n": 16
+    },
+    {
+     "v": "233.328px",
+     "n": 7
+    },
+    {
+     "v": "196.844px",
+     "n": 6
+    },
+    {
+     "v": "24px",
+     "n": 5
+    },
+    {
+     "v": "10px",
+     "n": 4
+    },
+    {
+     "v": "186.656px",
+     "n": 4
+    },
+    {
+     "v": "6px",
+     "n": 4
+    },
+    {
+     "v": "5px",
+     "n": 3
+    },
+    {
+     "v": "233.016px",
+     "n": 2
+    },
+    {
+     "v": "232.859px",
+     "n": 2
+    },
+    {
+     "v": "60px",
+     "n": 1
+    },
+    {
+     "v": "50px",
+     "n": 1
+    },
+    {
+     "v": "233.484px",
+     "n": 1
+    },
+    {
+     "v": "239.719px",
+     "n": 1
+    },
+    {
+     "v": "233.172px",
+     "n": 1
+    },
+    {
+     "v": "218.75px",
+     "n": 1
+    },
+    {
+     "v": "70px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "72px",
+     "n": 53
+    },
+    {
+     "v": "6px",
+     "n": 16
+    },
+    {
+     "v": "13px",
+     "n": 8
+    },
+    {
+     "v": "20px",
+     "n": 5
+    },
+    {
+     "v": "15px",
+     "n": 5
+    },
+    {
+     "v": "30px",
+     "n": 1
+    },
+    {
+     "v": "5px",
+     "n": 1
+    }
+   ],
+   "measure": null,
+   "rootVars": {
+    "--z1": "1",
+    "--z2": "10",
+    "--z3": "15",
+    "--black": "#0a0a0a",
+    "--grey-1": "#e5e5e5",
+    "--grey-2": "#a0a0a0",
+    "--off-white": "#f5f5f5",
+    "--white": "#fff",
+    "--blue": "#00f",
+    "--red": "red",
+    "--body-pad": "2rem",
+    "--body-pad-top": "6rem",
+    "--body-pad-bottom": "5rem",
+    "--space-top": "calc(var(--body-pad-top) + 8.3rem)",
+    "--grid-cols": "4",
+    "--grid-gap-h": "3.4rem",
+    "--grid-gap-v": "3.4rem",
+    "--border-radius": "5px",
+    "--grid-gap": "1rem"
+   },
+   "blockedSheets": 0,
+   "reducedMotionRules": 1,
+   "h1": [
+    "The psychology of stuff: why people get attached to branded objects",
+    "Why Field of Practice treats branding as a practice of change",
+    "The idea of home shapes Base Design’s identity for Ray’s Waterfront"
+   ],
+   "h2": [
+    "Branded objects are handed out as client gifts, at trade shows, to new hires and at dinners, or sold, like the products that Displaay makes from its own typefaces. Some of those objects, from caps (...)",
+    "Daily case studies → your inbox",
+    "Presentation decks",
+    "More templates",
+    "Motion templates",
+    "More templates",
+    "ebooks + guides",
+    "Explore",
+    "Curated mockups",
+    "More mockups",
+    "More case studies",
+    "See more"
+   ],
+   "h3": [
+    "Freelance Creator – Template Bundle",
+    "Brand Strategy Template",
+    "Brand Presentation Template",
+    "Content Strategy Template",
+    "Grid: Origin – After Effects Template",
+    "Recap Collection (01) – Jitter Templates",
+    "The Type Animation Presets – Move",
+    "Poster Showcase – After Effects Template",
+    "The Process Four – Digital Edition",
+    "5-Pack Brand Workbooks Bundle",
+    "The Process Two – Digital Edition",
+    "The Process Digital Bundle",
+    "City Screen Mockup – 06",
+    "Sign Mockup 20",
+    "Wax Seal Envelope Mockup 02",
+    "Acte iPhone Mockup 007"
+   ],
+   "nav": [],
+   "ctas": [],
+   "media": {
+    "img": 38,
+    "svg": 33,
+    "video": 19,
+    "canvas": 0
+   }
+  },
+  "1440": {
+   "status": 200,
+   "finalUrl": "https://the-brandidentity.com/",
+   "width": 1440,
+   "h1Style": {
+    "font": "\"NB International Pro\" 47.952px/57.5424px w400 ls normal",
+    "color": "#000000",
+    "top": 505,
+    "width": 767,
+    "align": "center"
+   },
+   "title": "The Brand Identity – Home of the Greatest in Graphic & Brand Design",
+   "description": "A curated platform for the world’s best brand and graphic design, seen 20 million times a month. Case studies, interviews, design assets and jobs.",
+   "pageHeight": 21793,
+   "bodyBg": "#000000 a0",
+   "htmlBg": "#f5f5f5",
+   "fontsLoaded": [
+    "Times Now 400 normal",
+    "NB International Pro 300 normal",
+    "NB International Pro 400 normal"
+   ],
+   "families": [
+    {
+     "v": "\"Times Now\"",
+     "n": 1833
+    },
+    {
+     "v": "\"NB International Pro\"",
+     "n": 1494
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "31.968px / lh 37.0829px / w400 / ls normal",
+     "n": 1207,
+     "ex": "h2: Branded objects are handed out as client gifts, at trade sho"
+    },
+    {
+     "v": "16px / lh 20.8px / w400 / ls 0.16px",
+     "n": 512,
+     "ex": "h3: TMS Portfolio – Presentation Template"
+    },
+    {
+     "v": "69.984px / lh 73.4832px / w400 / ls -1.39968px",
+     "n": 328,
+     "ex": "h1: Why Field of Practice treats branding as a practice of chang"
+    },
+    {
+     "v": "18px / lh 22.5px / w400 / ls normal",
+     "n": 298,
+     "ex": "h6: TRY Design bring a fresh update to Norway’s Peer Gynt festiv"
+    },
+    {
+     "v": "20.016px / lh 25.4203px / w300 / ls -0.40032px",
+     "n": 200,
+     "ex": "a: Features"
+    },
+    {
+     "v": "16px / lh 20.8px / w300 / ls 0.16px",
+     "n": 196,
+     "ex": "p: This site uses cookies."
+    },
+    {
+     "v": "47.952px / lh 57.5424px / w400 / ls normal",
+     "n": 179,
+     "ex": "h1: The psychology of stuff: why people get attached to branded "
+    },
+    {
+     "v": "26.064px / lh 29.9736px / w400 / ls normal",
+     "n": 140,
+     "ex": "h4: Interview"
+    },
+    {
+     "v": "11px / lh 14.85px / w300 / ls 0.055px",
+     "n": 107,
+     "ex": "h5: Free products + inbox insights"
+    },
+    {
+     "v": "20.016px / lh 25.4203px / w300 / ls normal",
+     "n": 106,
+     "ex": "span: Project"
+    },
+    {
+     "v": "11px / lh 14.85px / w300 / ls normal",
+     "n": 28,
+     "ex": "h5: Project"
+    },
+    {
+     "v": "11px / lh 14.85px / w300 / ls -0.40032px",
+     "n": 26,
+     "ex": "h5: Social"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#000000",
+     "n": 2945
+    },
+    {
+     "v": "#0a0a0a",
+     "n": 316
+    },
+    {
+     "v": "#ffffff",
+     "n": 38
+    },
+    {
+     "v": "#a0a0a0",
+     "n": 28
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#000000 on #f5f5f5",
+     "n": 2945,
+     "ex": "19.26:1"
+    },
+    {
+     "v": "#0a0a0a on #ffffff",
+     "n": 316,
+     "ex": "19.8:1"
+    },
+    {
+     "v": "#ffffff on #0a0a0a",
+     "n": 38,
+     "ex": "19.8:1"
+    },
+    {
+     "v": "#a0a0a0 on #f5f5f5",
+     "n": 28,
+     "ex": "2.4:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#f5f5f5",
+     "n": 30488
+    },
+    {
+     "v": "#000000",
+     "n": 4597
+    },
+    {
+     "v": "#eeeeee",
+     "n": 1092
+    },
+    {
+     "v": "#ffffff",
+     "n": 644
+    },
+    {
+     "v": "#0651a1",
+     "n": 567
+    },
+    {
+     "v": "#48443d",
+     "n": 552
+    },
+    {
+     "v": "#d2c4be",
+     "n": 552
+    },
+    {
+     "v": "#253d5d",
+     "n": 552
+    },
+    {
+     "v": "#272728",
+     "n": 552
+    },
+    {
+     "v": "#ebebeb",
+     "n": 552
+    },
+    {
+     "v": "#f0eee4",
+     "n": 551
+    },
+    {
+     "v": "#141414",
+     "n": 137
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #0a0a0a",
+     "n": 6
+    }
+   ],
+   "radii": [
+    {
+     "v": "5px",
+     "n": 4,
+     "ex": "input.ff-6890b73cf1ea86827d8cedfe__c"
+    }
+   ],
+   "shadows": [],
+   "transitions": [
+    {
+     "v": "color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)",
+     "n": 50,
+     "ex": "a"
+    },
+    {
+     "v": "opacity 0.3s ease-in-out",
+     "n": 36,
+     "ex": "img"
+    },
+    {
+     "v": "stroke 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)",
+     "n": 2,
+     "ex": "circle"
+    },
+    {
+     "v": "opacity 0.3s cubic-bezier(0.77, 0, 0.175, 1)",
+     "n": 1,
+     "ex": "input"
+    }
+   ],
+   "animations": [],
+   "maxWidths": [
+    {
+     "v": "766.938px (rendered 767px)",
+     "n": 1,
+     "ex": "h1"
+    },
+    {
+     "v": "863.125px (rendered 863px)",
+     "n": 1,
+     "ex": "h2"
+    },
+    {
+     "v": "850.668px (rendered 851px)",
+     "n": 1,
+     "ex": "h1"
+    },
+    {
+     "v": "0px (rendered 612px)",
+     "n": 1,
+     "ex": "h1"
+    },
+    {
+     "v": "938.871px (rendered 939px)",
+     "n": 1,
+     "ex": "h1"
+    },
+    {
+     "v": "0px (rendered 600px)",
+     "n": 1,
+     "ex": "h1"
+    },
+    {
+     "v": "982.957px (rendered 983px)",
+     "n": 1,
+     "ex": "h1"
+    },
+    {
+     "v": "0px (rendered 624px)",
+     "n": 1,
+     "ex": "h1"
+    },
+    {
+     "v": "0px (rendered 667px)",
+     "n": 1,
+     "ex": "h1"
+    },
+    {
+     "v": "0px (rendered 660px)",
+     "n": 1,
+     "ex": "h1"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 6
+    },
+    {
+     "v": "pt 0px pb 100px",
+     "n": 1
+    },
+    {
+     "v": "pt 150px pb 29px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "20px / col 34px",
+     "n": 15
+    },
+    {
+     "v": "40px / col 34px",
+     "n": 6
+    },
+    {
+     "v": "34px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "29px",
+     "n": 31
+    },
+    {
+     "v": "213.328px",
+     "n": 20
+    },
+    {
+     "v": "511.797px",
+     "n": 6
+    },
+    {
+     "v": "10px",
+     "n": 5
+    },
+    {
+     "v": "40px",
+     "n": 5
+    },
+    {
+     "v": "606.656px",
+     "n": 5
+    },
+    {
+     "v": "20px",
+     "n": 5
+    },
+    {
+     "v": "6px",
+     "n": 4
+    },
+    {
+     "v": "5px",
+     "n": 3
+    },
+    {
+     "v": "291.984px",
+     "n": 2
+    },
+    {
+     "v": "291.406px",
+     "n": 2
+    },
+    {
+     "v": "90px",
+     "n": 1
+    },
+    {
+     "v": "100px",
+     "n": 1
+    },
+    {
+     "v": "291.609px",
+     "n": 1
+    },
+    {
+     "v": "292.188px",
+     "n": 1
+    },
+    {
+     "v": "605.844px",
+     "n": 1
+    },
+    {
+     "v": "623.281px",
+     "n": 1
+    },
+    {
+     "v": "606.25px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "180px",
+     "n": 53
+    },
+    {
+     "v": "10px",
+     "n": 16
+    },
+    {
+     "v": "13px",
+     "n": 8
+    },
+    {
+     "v": "80px",
+     "n": 5
+    },
+    {
+     "v": "15px",
+     "n": 5
+    },
+    {
+     "v": "40px",
+     "n": 1
+    },
+    {
+     "v": "5px",
+     "n": 1
+    }
+   ],
+   "measure": null,
+   "rootVars": {
+    "--z1": "1",
+    "--z2": "10",
+    "--z3": "15",
+    "--black": "#0a0a0a",
+    "--grey-1": "#e5e5e5",
+    "--grey-2": "#a0a0a0",
+    "--off-white": "#f5f5f5",
+    "--white": "#fff",
+    "--blue": "#00f",
+    "--red": "red",
+    "--body-pad": "2rem",
+    "--body-pad-top": "6rem",
+    "--body-pad-bottom": "5rem",
+    "--space-top": "calc(var(--body-pad-top) + 8.3rem)",
+    "--grid-cols": "4",
+    "--grid-gap-h": "3.4rem",
+    "--grid-gap-v": "3.4rem",
+    "--border-radius": "5px",
+    "--grid-gap": "1rem"
+   },
+   "blockedSheets": 0,
+   "reducedMotionRules": 1,
+   "h1": [
+    "The psychology of stuff: why people get attached to branded objects",
+    "Why Field of Practice treats branding as a practice of change",
+    "The idea of home shapes Base Design’s identity for Ray’s Waterfront"
+   ],
+   "h2": [
+    "Branded objects are handed out as client gifts, at trade shows, to new hires and at dinners, or sold, like the products that Displaay makes from its own typefaces. Some of those objects, from caps (...)",
+    "Daily case studies → your inbox",
+    "Presentation decks",
+    "More templates",
+    "Motion templates",
+    "More templates",
+    "ebooks + guides",
+    "Explore",
+    "Curated mockups",
+    "More mockups",
+    "More case studies",
+    "See more"
+   ],
+   "h3": [
+    "TMS Portfolio – Presentation Template",
+    "Client Starter – Template Bundle",
+    "Freelance Creator – Template Bundle",
+    "TMS Pitch – Presentation Template",
+    "Reel 04 – After Effects Template",
+    "Stack of Projects Collection – After Effects Templates",
+    "Slideshow: Deck – After Effects Template",
+    "The Grid – After Effects Templates",
+    "The Process Three – Digital Edition",
+    "6-Pack Brand Workbooks Bundle",
+    "The Process Four – Digital Edition",
+    "The Process – Digital Edition",
+    "Posters Mockup 9",
+    "iPhone 14 Pro Max Mockup 1",
+    "Large Banner Mockup 992960",
+    "iPhone Mockup DS_001"
+   ],
+   "nav": [
+    "Features",
+    "Store",
+    "Jobs"
+   ],
+   "ctas": [],
+   "media": {
+    "img": 36,
+    "svg": 33,
+    "video": 21,
+    "canvas": 0
+   }
+  }
+ }
+}

@@ -1,0 +1,1205 @@
+{
+ "url": "https://superhuman.com",
+ "measuredAt": "2026-10-10T16:56:36.029Z",
+ "method": "Playwright Chromium, getComputedStyle on visible elements, light scheme, after scroll-through and fonts.ready",
+ "widths": {
+  "390": {
+   "status": 200,
+   "finalUrl": "https://superhuman.com/",
+   "width": 390,
+   "h1Style": null,
+   "title": "Superhuman: Docs, Mail, and AI That Work Everywhere",
+   "description": "Superhuman is the AI productivity suite that gives you superpowers everywhere you work. So you can be more creative, strategic, and impactful.",
+   "pageHeight": 10232,
+   "bodyBg": "#ffffff",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "Super Sans VF 100 900 normal"
+   ],
+   "families": [
+    {
+     "v": "\"Super Sans VF\", system-ui",
+     "n": 3034
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "20px / lh 24px / w460 / ls -0.55px",
+     "n": 820,
+     "ex": "p: As you type, your agents underline what needs your attention"
+    },
+    {
+     "v": "18px / lh 27px / w540 / ls -0.135px",
+     "n": 668,
+     "ex": "p: Go is the AI assistant that brings your agents into the tool"
+    },
+    {
+     "v": "16px / lh 24px / w540 / ls -0.12px",
+     "n": 328,
+     "ex": "p: Trusted by the most innovative organizations in the world"
+    },
+    {
+     "v": "16px / lh 24px / w460 / ls normal",
+     "n": 313,
+     "ex": "a: Superhuman Go"
+    },
+    {
+     "v": "32px / lh 38.4px / w460 / ls -0.88px",
+     "n": 247,
+     "ex": "h2: Superhuman Mail"
+    },
+    {
+     "v": "14px / lh 16.8px / w540 / ls normal",
+     "n": 144,
+     "ex": "p: Mail"
+    },
+    {
+     "v": "16px / lh 16px / w600 / ls normal",
+     "n": 112,
+     "ex": "span: Try Go"
+    },
+    {
+     "v": "28px / lh 33.6px / w460 / ls -0.77px",
+     "n": 112,
+     "ex": "h2: “Go helps me stay in one tab and . Before, I was always boun"
+    },
+    {
+     "v": "20px / lh 24px / w700 / ls -0.55px",
+     "n": 76,
+     "ex": "span: Perfect your writing"
+    },
+    {
+     "v": "16px / lh 19.2px / w460 / ls normal",
+     "n": 73,
+     "ex": "video: Sorry, your browser doesn't support embedded videos."
+    },
+    {
+     "v": "14px / lh 16.8px / w460 / ls normal",
+     "n": 38,
+     "ex": "p: Looking for Superhuman Mail?"
+    },
+    {
+     "v": "18px / lh 20px / w540 / ls normal",
+     "n": 36,
+     "ex": "h3: Builders of Superhuman Platform apps"
+    },
+    {
+     "v": "18.72px / lh 28.08px / w700 / ls normal",
+     "n": 27,
+     "ex": "h3: Products"
+    },
+    {
+     "v": "28px / lh 33.6px / w700 / ls -0.77px",
+     "n": 22,
+     "ex": "span: actually finish things"
+    },
+    {
+     "v": "14px / lh 18px / w600 / ls normal",
+     "n": 18,
+     "ex": "span: Get Mail"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "color(srgb 0.0784314 0.0784314 0.0745098 / 0.65)",
+     "n": 919
+    },
+    {
+     "v": "#292827",
+     "n": 850
+    },
+    {
+     "v": "#ffffff",
+     "n": 589
+    },
+    {
+     "v": "color(srgb 1 1 1 / 0.8)",
+     "n": 562
+    },
+    {
+     "v": "#714cb6",
+     "n": 55
+    },
+    {
+     "v": "#d4c7ff",
+     "n": 31
+    },
+    {
+     "v": "color(srgb 1 1 1 / 0.65)",
+     "n": 28
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#292827 on #dedbd5",
+     "n": 295,
+     "ex": "10.65:1"
+    },
+    {
+     "v": "#292827 on #e8e0ff",
+     "n": 245,
+     "ex": "11.59:1"
+    },
+    {
+     "v": "#ffffff on #421d24",
+     "n": 196,
+     "ex": "14.66:1"
+    },
+    {
+     "v": "#ffffff on #281647",
+     "n": 148,
+     "ex": "16.2:1"
+    },
+    {
+     "v": "#292827 on #f2f0eb",
+     "n": 127,
+     "ex": "12.92:1"
+    },
+    {
+     "v": "#ffffff on #714cb6",
+     "n": 124,
+     "ex": "6.16:1"
+    },
+    {
+     "v": "#ffffff on #0c4243",
+     "n": 102,
+     "ex": "11.19:1"
+    },
+    {
+     "v": "#292827 on #f7f5f2",
+     "n": 88,
+     "ex": "13.52:1"
+    },
+    {
+     "v": "#292827 on #ffffff",
+     "n": 73,
+     "ex": "14.72:1"
+    },
+    {
+     "v": "#714cb6 on #f7f5f2",
+     "n": 30,
+     "ex": "5.66:1"
+    },
+    {
+     "v": "#714cb6 on #e8e0ff",
+     "n": 25,
+     "ex": "4.85:1"
+    },
+    {
+     "v": "#292827 on #d4c7ff",
+     "n": 22,
+     "ex": "9.4:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#f7f5f2",
+     "n": 3919
+    },
+    {
+     "v": "#421d24",
+     "n": 991
+    },
+    {
+     "v": "#dedbd5",
+     "n": 442
+    },
+    {
+     "v": "#281647",
+     "n": 440
+    },
+    {
+     "v": "#e8e0ff",
+     "n": 317
+    },
+    {
+     "v": "#f2f0eb",
+     "n": 299
+    },
+    {
+     "v": "linear-gradient(rgb(20, 20, 19), rgb(40, 22, 71))",
+     "n": 183
+    },
+    {
+     "v": "#714cb6",
+     "n": 161
+    },
+    {
+     "v": "#0c4243",
+     "n": 153
+    },
+    {
+     "v": "#ffffff",
+     "n": 26
+    },
+    {
+     "v": "#d4c7ff",
+     "n": 11
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px color(srgb 0.988235 0.980392 0.968627 / 0.2)",
+     "n": 1
+    },
+    {
+     "v": "1px color(srgb 1 1 1 / 0.65)",
+     "n": 1
+    },
+    {
+     "v": "1px color(srgb 0.45098 0.443137 0.427451 / 0.2)",
+     "n": 1
+    }
+   ],
+   "radii": [
+    {
+     "v": "12px",
+     "n": 21,
+     "ex": "a.link_link__5Knfc button_button"
+    },
+    {
+     "v": "8px",
+     "n": 7,
+     "ex": "a.link_link__5Knfc button_button"
+    },
+    {
+     "v": "999px",
+     "n": 2,
+     "ex": "button.button_button__RzPSK button_se"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "color(srgb 0.278431 0.270588 0.262745 / 0.04) 0px 0px 0px 1px, color(srgb 0.278431 0.270588 0.262745 / 0.06) 0px 4px 8px -2px, color(srgb 0.278431 0.270588 0.262745 / 0.04) 0px 2px 4px 0px, color(srgb 0.278431 0.270588 0.262745 / 0.04) 0px 1px 2px 0px, color(srgb 0.870588 0.858824 0.835294 / 0.2) 0px 0px 0px 1px",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "rgb(212, 199, 255) 0px 0px 0px 1px inset",
+     "n": 1,
+     "ex": "a"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "color 0.2s ease",
+     "n": 35,
+     "ex": "a"
+    },
+    {
+     "v": "background-color 0.2s ease-in-out",
+     "n": 17,
+     "ex": "button"
+    },
+    {
+     "v": "box-shadow 0.2s ease-in-out",
+     "n": 1,
+     "ex": "a"
+    }
+   ],
+   "animations": [
+    {
+     "v": "asset-grid_asset-grid-fade-in__VxhEj 0.5s ease-in-out x1",
+     "n": 6
+    },
+    {
+     "v": "carousel-layout_carousel-slide-dissolve-in__1vybG 0.5s ease x1",
+     "n": 2
+    },
+    {
+     "v": "progress-bar_progress-bar-fill__IquIf 10s cubic-bezier(0.25, 1, 0.5, 1) x1",
+     "n": 1
+    }
+   ],
+   "maxWidths": [
+    {
+     "v": "100% (rendered 358px)",
+     "n": 33,
+     "ex": "video"
+    },
+    {
+     "v": "351px (rendered 351px)",
+     "n": 18,
+     "ex": "h2"
+    },
+    {
+     "v": "351px (rendered 294px)",
+     "n": 18,
+     "ex": "p"
+    },
+    {
+     "v": "100% (rendered 294px)",
+     "n": 3,
+     "ex": "picture"
+    },
+    {
+     "v": "351px (rendered 286px)",
+     "n": 2,
+     "ex": "p"
+    },
+    {
+     "v": "100% (rendered 195px)",
+     "n": 2,
+     "ex": "picture"
+    },
+    {
+     "v": "100% (rendered 204px)",
+     "n": 2,
+     "ex": "picture"
+    },
+    {
+     "v": "100% (rendered 211px)",
+     "n": 2,
+     "ex": "picture"
+    },
+    {
+     "v": "100% (rendered 390px)",
+     "n": 2,
+     "ex": "picture"
+    },
+    {
+     "v": "max-content (rendered 209px)",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 16
+    }
+   ],
+   "gaps": [
+    {
+     "v": "4px",
+     "n": 52
+    },
+    {
+     "v": "16px",
+     "n": 33
+    },
+    {
+     "v": "24px",
+     "n": 9
+    },
+    {
+     "v": "12px",
+     "n": 7
+    },
+    {
+     "v": "8px",
+     "n": 6
+    },
+    {
+     "v": "32px",
+     "n": 2
+    },
+    {
+     "v": "40px",
+     "n": 1
+    },
+    {
+     "v": "5px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "16px",
+     "n": 42
+    },
+    {
+     "v": "32px",
+     "n": 36
+    },
+    {
+     "v": "6px",
+     "n": 24
+    },
+    {
+     "v": "40px",
+     "n": 14
+    },
+    {
+     "v": "20px",
+     "n": 7
+    },
+    {
+     "v": "80px",
+     "n": 3
+    },
+    {
+     "v": "64px",
+     "n": 1
+    },
+    {
+     "v": "36px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "24px",
+     "n": 4
+    },
+    {
+     "v": "20px",
+     "n": 4
+    },
+    {
+     "v": "36px",
+     "n": 2
+    },
+    {
+     "v": "16px",
+     "n": 1
+    },
+    {
+     "v": "78.4219px",
+     "n": 1
+    },
+    {
+     "v": "48px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "Superhuman Docs does way more than hold text. It’s your home base for projects, workflows, data, and tools, so your team",
+    "chars": 176,
+    "lines": 5,
+    "charsPerLine": 35,
+    "width": 351,
+    "fontSize": "18px",
+    "lineHeight": "27px",
+    "color": "color(srgb 0.0784314 0.0784314 0.0745098 / 0.65)"
+   },
+   "rootVars": {},
+   "blockedSheets": 11,
+   "reducedMotionRules": 0,
+   "h1": [],
+   "h2": [
+    "Save 4+ hours each week with Superhuman Mail",
+    "Get help from agents right where you work",
+    "“Go helps me stay in one tab and actually finish things. Before, I was always bouncing between tabs and tools, and it slowed me down.”",
+    "Save 4+ hours every week on email and scheduling",
+    "Align your team with collaborative AI documents",
+    "Designed for humans, built for enterprise",
+    "Make it your best workday yet"
+   ],
+   "h3": [
+    "Perfect your writing with Grammarly",
+    "Put your inbox on autopilot with Email Assistant",
+    "Start every day fully briefed with Daily Briefs",
+    "Emails write themselves. Get automatic drafts based on context from your inbox, calendar, and the web.",
+    "Avoid double booking and back-and-forth. Booking links always stay up-to-date.",
+    "Focus on what matters most. Your inbox surfaces important messages and filters out distractions. Automatically.",
+    "Builders of Superhuman Platform apps",
+    "Products",
+    "Company",
+    "Legal",
+    "Connect"
+   ],
+   "nav": [
+    "Superhuman Go",
+    "Agents",
+    "Mail",
+    "Calendar",
+    "Docs",
+    "Databases",
+    "Superhuman Store",
+    "Contact Us",
+    "About",
+    "We Stand with Ukraine",
+    "Mission & Values",
+    "Careers",
+    "Blog",
+    "Superhuman Academy",
+    "Help Center",
+    "Status"
+   ],
+   "ctas": [
+    "Get Mail [85x36 bg #d4c7ff fg #292827 r 8px pad 6px 16px 14px/600]",
+    "Try Go [87x52 bg #714cb6 fg #ffffff r 12px pad 6px 20px 16px/600]",
+    "Get Mail [100x52 bg #714cb6 fg #ffffff r 12px pad 6px 20px 16px/600]",
+    "Try Docs [103x52 bg #714cb6 fg #ffffff r 12px pad 6px 20px 16px/600]",
+    "Request a demo [156x52 bg #d4c7ff fg #292827 r 12px pad 6px 20px 16px/600]"
+   ],
+   "media": {
+    "img": 54,
+    "svg": 47,
+    "video": 2,
+    "canvas": 0
+   }
+  },
+  "1440": {
+   "status": 200,
+   "finalUrl": "https://superhuman.com/",
+   "width": 1440,
+   "h1Style": {
+    "font": "\"Super Sans VF\" 64px/61.44px w540 ls normal",
+    "color": "#ffffff",
+    "top": 155,
+    "width": 900,
+    "align": "center"
+   },
+   "title": "Superhuman: Docs, Mail, and AI That Work Everywhere",
+   "description": "Superhuman is the AI productivity suite that gives you superpowers everywhere you work. So you can be more creative, strategic, and impactful.",
+   "pageHeight": 6446,
+   "bodyBg": "#ffffff",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "Super Sans VF 100 900 normal",
+    "Super Sans VF 100 900 italic"
+   ],
+   "families": [
+    {
+     "v": "\"Super Sans VF\", system-ui",
+     "n": 3868
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "14px / lh 21px / w460 / ls normal",
+     "n": 1338,
+     "ex": "span: Looks like you're chatting with Antonio and Laura in the and"
+    },
+    {
+     "v": "20px / lh 30px / w460 / ls -0.15px",
+     "n": 606,
+     "ex": "li: Respond faster to what matters most"
+    },
+    {
+     "v": "18px / lh 27px / w540 / ls -0.135px",
+     "n": 380,
+     "ex": "p: Fly through your inbox twice as fast as before, never drop t"
+    },
+    {
+     "v": "16px / lh 24px / w460 / ls normal",
+     "n": 352,
+     "ex": "span: Products"
+    },
+    {
+     "v": "16px / lh 19.2px / w460 / ls normal",
+     "n": 273,
+     "ex": "video: Sorry, your browser doesn't support embedded videos."
+    },
+    {
+     "v": "20px / lh 26px / w460 / ls normal",
+     "n": 228,
+     "ex": "p: When AI works everywhere you work, it starts to change you w"
+    },
+    {
+     "v": "49px / lh 58.8px / w460 / ls -1.3475px",
+     "n": 168,
+     "ex": "h2: The most productive email app ever made"
+    },
+    {
+     "v": "20px / lh 30px / w540 / ls -0.15px",
+     "n": 87,
+     "ex": "span: Learn more about Mail"
+    },
+    {
+     "v": "20px / lh 24px / w460 / ls normal",
+     "n": 53,
+     "ex": "p: Trusted by the most innovative companies in the world"
+    },
+    {
+     "v": "26px / lh 33.8px / w460 / ls normal",
+     "n": 50,
+     "ex": "h2: Mail, Docs, and AI that works in every app and tab"
+    },
+    {
+     "v": "16px / lh 16px / w600 / ls normal",
+     "n": 48,
+     "ex": "span: Get the suite"
+    },
+    {
+     "v": "48px / lh 46.08px / w460 / ls normal",
+     "n": 41,
+     "ex": "h2: Your Superhuman suite"
+    },
+    {
+     "v": "20px / lh 22px / w460 / ls -0.55px",
+     "n": 38,
+     "ex": "h2: Mail"
+    },
+    {
+     "v": "28px / lh 32px / w540 / ls -0.63px",
+     "n": 36,
+     "ex": "h3: Builders of Superhuman Platform apps"
+    },
+    {
+     "v": "64px / lh 57.6px / w540 / ls normal",
+     "n": 33,
+     "ex": "h2: AI that works everywhere you work"
+    },
+    {
+     "v": "64px / lh 61.44px / w540 / ls normal",
+     "n": 32,
+     "ex": "h1: Superpowers, everywhere you work"
+    },
+    {
+     "v": "22px / lh 16.8px / w460 / ls -0.315px",
+     "n": 28,
+     "ex": "span: Looking for Superhuman Mail?"
+    },
+    {
+     "v": "18.72px / lh 28.08px / w700 / ls normal",
+     "n": 27,
+     "ex": "h3: Products"
+    },
+    {
+     "v": "12px / lh 18px / w700 / ls normal",
+     "n": 19,
+     "ex": "span: Team workspace"
+    },
+    {
+     "v": "16px / lh 16px / w700 / ls normal",
+     "n": 14,
+     "ex": "span: Get Superhuman"
+    },
+    {
+     "v": "14px / lh 16.8px / w500 / ls -0.315px",
+     "n": 10,
+     "ex": "span: Learn more"
+    },
+    {
+     "v": "14px / lh 18px / w600 / ls normal",
+     "n": 7,
+     "ex": "span: Sign in"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#ffffff",
+     "n": 1587
+    },
+    {
+     "v": "#292827",
+     "n": 1193
+    },
+    {
+     "v": "color(srgb 1 1 1 / 0.8)",
+     "n": 541
+    },
+    {
+     "v": "color(srgb 0.0784314 0.0784314 0.0745098 / 0.65)",
+     "n": 380
+    },
+    {
+     "v": "#714cb6",
+     "n": 100
+    },
+    {
+     "v": "color(srgb 1 1 1 / 0.9)",
+     "n": 67
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#ffffff on #ffffff",
+     "n": 1466,
+     "ex": "1:1"
+    },
+    {
+     "v": "#292827 on #f7f5f2",
+     "n": 1001,
+     "ex": "13.52:1"
+    },
+    {
+     "v": "#ffffff on #421d24",
+     "n": 101,
+     "ex": "14.66:1"
+    },
+    {
+     "v": "#292827 on #ffffff",
+     "n": 99,
+     "ex": "14.72:1"
+    },
+    {
+     "v": "#292827 on #f2f0eb",
+     "n": 93,
+     "ex": "12.92:1"
+    },
+    {
+     "v": "#714cb6 on #f7f5f2",
+     "n": 87,
+     "ex": "5.66:1"
+    },
+    {
+     "v": "#ffffff on #0c4243",
+     "n": 20,
+     "ex": "11.19:1"
+    },
+    {
+     "v": "#714cb6 on #f2f0eb",
+     "n": 13,
+     "ex": "5.41:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#f2f0eb",
+     "n": 9623
+    },
+    {
+     "v": "repeating-linear-gradient(45deg, color(srgb 0.45098 0.443137 0.427451 / 0.2), color(srgb 0.45098 0.443137 0.427451 / 0.2) 1px, rgba(255, 255",
+     "n": 3784
+    },
+    {
+     "v": "#f7f5f2",
+     "n": 3540
+    },
+    {
+     "v": "#421d24",
+     "n": 1339
+    },
+    {
+     "v": "linear-gradient(to left bottom, rgba(168, 164, 216, 0.5), rgba(107, 165, 232, 0.5), rgba(176, 112, 192, 0.6), rgba(144, 136, 208, 0.5)), lin",
+     "n": 1296
+    },
+    {
+     "v": "#0c4243",
+     "n": 800
+    },
+    {
+     "v": "none, linear-gradient(270deg, rgb(85, 77, 203) 9.04%, rgb(134, 203, 249) 84.36%, rgb(247, 219, 255) 100%)",
+     "n": 691
+    },
+    {
+     "v": "linear-gradient(210deg, color(srgb 1 1 1 / 0.15) 0px, rgba(0, 0, 0, 0) 30%), linear-gradient(color(srgb 0.156863 0.0862745 0.278431 / 0.3) 0",
+     "n": 405
+    },
+    {
+     "v": "repeating-linear-gradient(90deg, color(srgb 0.45098 0.443137 0.427451 / 0.2), color(srgb 0.45098 0.443137 0.427451 / 0.2) 4px, rgba(0, 0, 0,",
+     "n": 164
+    },
+    {
+     "v": "linear-gradient(rgb(27, 25, 56) 0px, rgb(27, 25, 56) 100%)",
+     "n": 11
+    },
+    {
+     "v": "linear-gradient(color(srgb 1 1 1 / 0.08) 0px, color(srgb 1 1 1 / 0.07) 100%)",
+     "n": 7
+    },
+    {
+     "v": "linear-gradient(rgba(255, 255, 255, 0.12) 0px, rgba(255, 255, 255, 0) 100%), radial-gradient(circle at 68% 50%, rgba(133, 125, 250, 0.6) 0px",
+     "n": 2
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px color(srgb 0.45098 0.443137 0.427451 / 0.2)",
+     "n": 7
+    },
+    {
+     "v": "1px color(srgb 1 1 1 / 0.2)",
+     "n": 4
+    },
+    {
+     "v": "1px #ffffff",
+     "n": 1
+    },
+    {
+     "v": "1px color(srgb 1 1 1 / 0.12)",
+     "n": 1
+    },
+    {
+     "v": "1px #000000 a0",
+     "n": 1
+    }
+   ],
+   "radii": [
+    {
+     "v": "8px",
+     "n": 7,
+     "ex": "span.banner_actionLink__OoXpl"
+    },
+    {
+     "v": "16px",
+     "n": 5,
+     "ex": "a.link_link__5Knfc banner_banner"
+    },
+    {
+     "v": "12px",
+     "n": 4,
+     "ex": "a.hero-button_heroButton__LEsDD"
+    },
+    {
+     "v": "24px",
+     "n": 3,
+     "ex": "div.hero-card_card__SIZev agents_a"
+    },
+    {
+     "v": "999px",
+     "n": 2,
+     "ex": "div.agents_selected__1z99W"
+    },
+    {
+     "v": "999px 999px 0px",
+     "n": 1,
+     "ex": "span.text_text__RO8_0 homepage-text"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "color(srgb 0.988235 0.980392 0.968627 / 0.2) 0px 0px 0px 1px inset",
+     "n": 1,
+     "ex": "button"
+    },
+    {
+     "v": "color(srgb 0.0784314 0.0784314 0.0745098 / 0.24) 0px 1px 2px 0px, rgb(53, 48, 136) 0px 0px 0px 1px",
+     "n": 1,
+     "ex": "a"
+    },
+    {
+     "v": "color(srgb 0.0784314 0.0784314 0.0745098 / 0.08) 0px 1px 2px 0px",
+     "n": 1,
+     "ex": "span"
+    },
+    {
+     "v": "rgb(255, 255, 255) 0px -5px 0px 0px, rgb(255, 255, 255) 0px 5px 0px 0px",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "rgb(113, 76, 182) 0px 0px 0px 1px inset",
+     "n": 1,
+     "ex": "a"
+    },
+    {
+     "v": "color(srgb 1 1 1 / 0.9) 0px 0px 0px 1px inset",
+     "n": 1,
+     "ex": "a"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "color 0.2s ease",
+     "n": 41,
+     "ex": "a"
+    },
+    {
+     "v": "box-shadow 0.2s ease-in-out",
+     "n": 3,
+     "ex": "button"
+    },
+    {
+     "v": "opacity 1s ease-in-out",
+     "n": 1,
+     "ex": "video"
+    },
+    {
+     "v": "background-color 0.2s ease",
+     "n": 1,
+     "ex": "span"
+    },
+    {
+     "v": "background-color 0.2s ease-in-out",
+     "n": 1,
+     "ex": "a"
+    }
+   ],
+   "animations": [
+    {
+     "v": "hero_fade-in-to-opaque__MbHsG 0.3s cubic-bezier(0.191, 0.703, 0.704, 0.952) x1",
+     "n": 7
+    },
+    {
+     "v": "asset-grid_asset-grid-fade-in__VxhEj 0.5s ease-in-out x1",
+     "n": 6
+    },
+    {
+     "v": "hero_fade-slide-down-from-transparent__jh95y 0.5s cubic-bezier(0.191, 0.703, 0.704, 0.952) x1",
+     "n": 2
+    },
+    {
+     "v": "page_header-fade-in__8qyII, page_header-remove-blur__aUK5_ auto, auto cubic-bezier(0.7, 0, 0.84, 0), steps(1) x1, 1",
+     "n": 1
+    },
+    {
+     "v": "hero-button_hero-button-gradient-angle-rotate__T0Sui 10s linear xinfinite",
+     "n": 1
+    },
+    {
+     "v": "hero_fade-slide-up-from-transparent__jEBb0 0.5s cubic-bezier(0.191, 0.703, 0.704, 0.952) x1",
+     "n": 1
+    }
+   ],
+   "maxWidths": [
+    {
+     "v": "100% (rendered 639px)",
+     "n": 4,
+     "ex": "video"
+    },
+    {
+     "v": "100% (rendered 1440px)",
+     "n": 3,
+     "ex": "video"
+    },
+    {
+     "v": "100% (rendered 822px)",
+     "n": 2,
+     "ex": "picture"
+    },
+    {
+     "v": "100% (rendered 676px)",
+     "n": 2,
+     "ex": "picture"
+    },
+    {
+     "v": "900px (rendered 900px)",
+     "n": 1,
+     "ex": "h1"
+    },
+    {
+     "v": "100% (rendered 1312px)",
+     "n": 1,
+     "ex": "figure"
+    },
+    {
+     "v": "100% (rendered 1376px)",
+     "n": 1,
+     "ex": "canvas"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 8
+    }
+   ],
+   "gaps": [
+    {
+     "v": "4px",
+     "n": 50
+    },
+    {
+     "v": "8px",
+     "n": 16
+    },
+    {
+     "v": "32px",
+     "n": 14
+    },
+    {
+     "v": "16px",
+     "n": 11
+    },
+    {
+     "v": "12px",
+     "n": 9
+    },
+    {
+     "v": "2px",
+     "n": 6
+    },
+    {
+     "v": "24px",
+     "n": 5
+    },
+    {
+     "v": "36px",
+     "n": 1
+    },
+    {
+     "v": "80px",
+     "n": 1
+    },
+    {
+     "v": "40px",
+     "n": 1
+    },
+    {
+     "v": "5px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "8px",
+     "n": 28
+    },
+    {
+     "v": "26px",
+     "n": 16
+    },
+    {
+     "v": "12px",
+     "n": 14
+    },
+    {
+     "v": "16px",
+     "n": 14
+    },
+    {
+     "v": "36px",
+     "n": 12
+    },
+    {
+     "v": "6px",
+     "n": 10
+    },
+    {
+     "v": "32px",
+     "n": 9
+    },
+    {
+     "v": "40px",
+     "n": 9
+    },
+    {
+     "v": "4px",
+     "n": 7
+    },
+    {
+     "v": "2px",
+     "n": 6
+    },
+    {
+     "v": "20px",
+     "n": 3
+    },
+    {
+     "v": "48px",
+     "n": 2
+    },
+    {
+     "v": "96px",
+     "n": 2
+    },
+    {
+     "v": "24px",
+     "n": 1
+    },
+    {
+     "v": "72px",
+     "n": 1
+    },
+    {
+     "v": "80px",
+     "n": 1
+    },
+    {
+     "v": "64px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "28px",
+     "n": 12
+    },
+    {
+     "v": "32px",
+     "n": 5
+    },
+    {
+     "v": "24px",
+     "n": 5
+    },
+    {
+     "v": "36px",
+     "n": 4
+    },
+    {
+     "v": "20px",
+     "n": 4
+    },
+    {
+     "v": "4px",
+     "n": 1
+    },
+    {
+     "v": "8px",
+     "n": 1
+    },
+    {
+     "v": "16px",
+     "n": 1
+    },
+    {
+     "v": "40px",
+     "n": 1
+    },
+    {
+     "v": "64px",
+     "n": 1
+    },
+    {
+     "v": "48px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "When AI works everywhere you work, it starts to change how you work. At first, you think faster and more deeply. Before ",
+    "chars": 229,
+    "lines": 5,
+    "charsPerLine": 46,
+    "width": 500,
+    "fontSize": "20px",
+    "lineHeight": "26px",
+    "color": "color(srgb 1 1 1 / 0.8)"
+   },
+   "rootVars": {},
+   "blockedSheets": 8,
+   "reducedMotionRules": 0,
+   "h1": [
+    "Superpowers, everywhere you work"
+   ],
+   "h2": [
+    "Mail, Docs, and AI that works in every app and tab",
+    "Your Superhuman suite",
+    "Mail",
+    "Grammarly",
+    "Docs",
+    "Go",
+    "Mail",
+    "The most productive email app ever made",
+    "Grammarly",
+    "Everyone’s favorite AI writing partner",
+    "Docs",
+    "The best place for teams and AI to work together",
+    "Go",
+    "AI that actually works in every app you use",
+    "Becoming Superhuman.",
+    "AI that works everywhere you work"
+   ],
+   "h3": [
+    "Builders of Superhuman Platform apps",
+    "Products",
+    "Company",
+    "Legal",
+    "Connect"
+   ],
+   "nav": [
+    "Love",
+    "Contact sales",
+    "Get the suite",
+    "Superhuman Go",
+    "Agents",
+    "Mail",
+    "Calendar",
+    "Docs",
+    "Databases",
+    "Superhuman Store",
+    "Contact Us",
+    "About",
+    "We Stand with Ukraine",
+    "Mission & Values",
+    "Careers",
+    "Blog"
+   ],
+   "ctas": [
+    "Looking for Superhuman Mail?Learn more [1376x64 bg #421d24 fg #ffffff r 16px pad 12px 14px/460]",
+    "Get Superhuman [212x50 bg #000000 a0 fg #ffffff r 12px pad 6px 6px 6px 16px 16px/460]"
+   ],
+   "media": {
+    "img": 13,
+    "svg": 68,
+    "video": 5,
+    "canvas": 1
+   }
+  }
+ }
+}

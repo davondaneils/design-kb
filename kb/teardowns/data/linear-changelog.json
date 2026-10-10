@@ -1,0 +1,1127 @@
+{
+ "url": "https://linear.app/changelog",
+ "measuredAt": "2026-10-10T16:53:48.714Z",
+ "method": "Playwright Chromium, getComputedStyle on visible elements, light scheme, after scroll-through and fonts.ready",
+ "widths": {
+  "390": {
+   "status": 200,
+   "finalUrl": "https://linear.app/changelog",
+   "width": 390,
+   "h1Style": {
+    "font": "\"Inter Variable\" 48px/48px w510 ls -1.056px",
+    "color": "#f7f8f8",
+    "top": 147,
+    "width": 95,
+    "align": "start"
+   },
+   "title": "Changelog – Linear",
+   "description": "New updates and improvements to Linear.",
+   "pageHeight": 24077,
+   "bodyBg": "#08090a",
+   "htmlBg": "#08090a",
+   "fontsLoaded": [
+    "Inter Variable 100 900 normal",
+    "Inter Variable 100 900 italic",
+    "Berkeley Mono 100 900 normal"
+   ],
+   "families": [
+    {
+     "v": "\"Inter Variable\", \"SF Pro Display\"",
+     "n": 50152
+    },
+    {
+     "v": "\"Berkeley Mono\", ui-monospace",
+     "n": 315
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "15px / lh 24px / w400 / ls -0.165px",
+     "n": 45300,
+     "ex": "p: Stacked pull requests are now displayed in Linear Diffs. Mov"
+    },
+    {
+     "v": "13px / lh 20.8px / w510 / ls -0.165px",
+     "n": 2294,
+     "ex": "div: Asks"
+    },
+    {
+     "v": "24px / lh 31.92px / w590 / ls -0.288px",
+     "n": 867,
+     "ex": "h2: Stacked pull requests"
+    },
+    {
+     "v": "15px / lh 24px / w510 / ls -0.165px",
+     "n": 367,
+     "ex": "button: Fixes"
+    },
+    {
+     "v": "13.125px / lh 17.0625px / w400 / ls -0.165px",
+     "n": 315,
+     "ex": "code: list_customer_needs"
+    },
+    {
+     "v": "13px / lh 19.5px / w400 / ls -0.13px",
+     "n": 264,
+     "ex": "a: Intake"
+    },
+    {
+     "v": "13px / lh 19.5px / w510 / ls -0.13px",
+     "n": 243,
+     "ex": "time: 00:00"
+    },
+    {
+     "v": "14px / lh 21px / w400 / ls -0.182px",
+     "n": 213,
+     "ex": "span: All"
+    },
+    {
+     "v": "12px / lh normal / w510 / ls -0.165px",
+     "n": 209,
+     "ex": "kbd: Backspace"
+    },
+    {
+     "v": "20px / lh 26.6px / w590 / ls -0.24px",
+     "n": 148,
+     "ex": "span: Adaptive routing"
+    },
+    {
+     "v": "17px / lh 23.8px / w590 / ls -0.204px",
+     "n": 127,
+     "ex": "span: Trigger from across your workspace"
+    },
+    {
+     "v": "15px / lh 24px / w590 / ls -0.165px",
+     "n": 91,
+     "ex": "strong: Priority"
+    },
+    {
+     "v": "15px / lh 40px / w510 / ls normal",
+     "n": 13,
+     "ex": "a: Older updates"
+    },
+    {
+     "v": "13px / lh 32px / w510 / ls normal",
+     "n": 7,
+     "ex": "a: Sign up"
+    },
+    {
+     "v": "13px / lh 19.5px / w400 / ls normal",
+     "n": 6,
+     "ex": "a: Log in"
+    },
+    {
+     "v": "48px / lh 48px / w510 / ls -1.056px",
+     "n": 3,
+     "ex": "a: Now"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#d0d6e0",
+     "n": 47800
+    },
+    {
+     "v": "#f7f8f8",
+     "n": 2322
+    },
+    {
+     "v": "#8a8f98",
+     "n": 338
+    },
+    {
+     "v": "#08090a",
+     "n": 7
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#d0d6e0 on #08090a",
+     "n": 47485,
+     "ex": "13.64:1"
+    },
+    {
+     "v": "#f7f8f8 on #08090a",
+     "n": 2322,
+     "ex": "18.73:1"
+    },
+    {
+     "v": "#8a8f98 on #08090a",
+     "n": 338,
+     "ex": "6.13:1"
+    },
+    {
+     "v": "#d0d6e0 on #1c1c1f",
+     "n": 315,
+     "ex": "11.64:1"
+    },
+    {
+     "v": "#08090a on #e5e5e6",
+     "n": 7,
+     "ex": "15.83:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#08090a",
+     "n": 10762
+    },
+    {
+     "v": "#1c1c1f",
+     "n": 82
+    },
+    {
+     "v": "linear-gradient(rgba(11, 11, 11, 0.8) 0%, oklab(0.149574 0.00000683218 0.00000298768 / 0.761905) 100%)",
+     "n": 25
+    },
+    {
+     "v": "#e5e5e6",
+     "n": 2
+    },
+    {
+     "v": "#ffffff a0.16",
+     "n": 2
+    },
+    {
+     "v": "#18191a",
+     "n": 1
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #34343a",
+     "n": 382
+    },
+    {
+     "v": "1px #ffffff a0.05",
+     "n": 34
+    },
+    {
+     "v": "1px #e5e5e6",
+     "n": 1
+    },
+    {
+     "v": "1px #23252a",
+     "n": 1
+    }
+   ],
+   "radii": [
+    {
+     "v": "9999px",
+     "n": 371,
+     "ex": "a.TZTsQG_anchor I_mUeq_root"
+    },
+    {
+     "v": "8px",
+     "n": 65,
+     "ex": "img.Sz_9La_root"
+    },
+    {
+     "v": "3.9375px",
+     "n": 42,
+     "ex": "code."
+    },
+    {
+     "v": "5px",
+     "n": 35,
+     "ex": "kbd."
+    },
+    {
+     "v": "6px",
+     "n": 1,
+     "ex": "a.TZTsQG_logoLink I_mUeq_root"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(62, 62, 68) 0px 0px 0px 1px",
+     "n": 35,
+     "ex": "kbd"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0) 0px 8px 2px 0px, rgba(0, 0, 0, 0.01) 0px 5px 2px 0px, rgba(0, 0, 0, 0.04) 0px 3px 2px 0px, rgba(0, 0, 0, 0.07) 0px 1px 1px 0px, rgba(0, 0, 0, 0.08) 0px 0px 1px 0px",
+     "n": 1,
+     "ex": "a"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "color 0.1s ease",
+     "n": 43,
+     "ex": "a"
+    },
+    {
+     "v": "transform 0.12s ease",
+     "n": 39,
+     "ex": "span"
+    },
+    {
+     "v": "color, text-decoration-color, background 0.25s ease",
+     "n": 36,
+     "ex": "a"
+    },
+    {
+     "v": "border, background-color, color, box-shadow, opaci 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 18,
+     "ex": "a"
+    },
+    {
+     "v": "height 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 5,
+     "ex": "div"
+    },
+    {
+     "v": "all 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 2,
+     "ex": "rect"
+    },
+    {
+     "v": "border-color, background 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 1,
+     "ex": "header"
+    },
+    {
+     "v": "color, background 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 1,
+     "ex": "a"
+    }
+   ],
+   "animations": [],
+   "maxWidths": [
+    {
+     "v": "100% (rendered 342px)",
+     "n": 21,
+     "ex": "img"
+    },
+    {
+     "v": "100% (rendered 340px)",
+     "n": 5,
+     "ex": "video"
+    },
+    {
+     "v": "1376px (rendered 390px)",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 157px)",
+     "n": 1,
+     "ex": "a"
+    },
+    {
+     "v": "100% (rendered 390px)",
+     "n": 1,
+     "ex": "footer"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 2
+    },
+    {
+     "v": "pt 80px pb 40px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "6px",
+     "n": 342
+    },
+    {
+     "v": "8px",
+     "n": 22
+    },
+    {
+     "v": "32px",
+     "n": 10
+    },
+    {
+     "v": "2px",
+     "n": 6
+    },
+    {
+     "v": "16px",
+     "n": 2
+    },
+    {
+     "v": "18px",
+     "n": 1
+    },
+    {
+     "v": "48px / col 16px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "8px",
+     "n": 348
+    },
+    {
+     "v": "1.3125px",
+     "n": 84
+    },
+    {
+     "v": "16px",
+     "n": 82
+    },
+    {
+     "v": "3px",
+     "n": 70
+    },
+    {
+     "v": "24px",
+     "n": 47
+    },
+    {
+     "v": "3.28125px",
+     "n": 42
+    },
+    {
+     "v": "6px",
+     "n": 35
+    },
+    {
+     "v": "12px",
+     "n": 18
+    },
+    {
+     "v": "23px",
+     "n": 1
+    },
+    {
+     "v": "64px",
+     "n": 1
+    },
+    {
+     "v": "80px",
+     "n": 1
+    },
+    {
+     "v": "40px",
+     "n": 1
+    },
+    {
+     "v": "56px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "8px",
+     "n": 333
+    },
+    {
+     "v": "20px",
+     "n": 71
+    },
+    {
+     "v": "32px",
+     "n": 44
+    },
+    {
+     "v": "56px",
+     "n": 28
+    },
+    {
+     "v": "12px",
+     "n": 24
+    },
+    {
+     "v": "16px",
+     "n": 14
+    },
+    {
+     "v": "31px",
+     "n": 10
+    },
+    {
+     "v": "10px",
+     "n": 5
+    },
+    {
+     "v": "28px",
+     "n": 4
+    },
+    {
+     "v": "64px",
+     "n": 1
+    },
+    {
+     "v": "95px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "As companies grow, it can become challenging to accommodate every team’s workflow within a single workspace-wide system.",
+    "chars": 321,
+    "lines": 8,
+    "charsPerLine": 40,
+    "width": 342,
+    "fontSize": "15px",
+    "lineHeight": "24px",
+    "color": "#d0d6e0"
+   },
+   "rootVars": {},
+   "blockedSheets": 48,
+   "reducedMotionRules": 18,
+   "h1": [
+    "Now"
+   ],
+   "h2": [
+    "Stacked pull requests",
+    "View code changes as the agent works⁠",
+    "AI credit usage explorer and spend limits⁠",
+    "Guided Reviews on Basic⁠",
+    "New controls for Linear coding agent",
+    "Team organization at scale⁠",
+    "Loops for product management",
+    "Callout components⁠",
+    "Priority inbox",
+    "Draft projects with Linear Agent⁠",
+    "Document editing on mobile⁠",
+    "Rich previews in diffs⁠",
+    "Third-party app approvals⁠",
+    "Coding sessions: environments, browser use, and updated pricing",
+    "Configurable environments⁠",
+    "Browser testing⁠"
+   ],
+   "h3": [
+    "Adaptive routing⁠",
+    "Environment secrets⁠",
+    "Open-weight models⁠",
+    "Team project labels and statuses⁠",
+    "Project lead teams⁠",
+    "Team loops triggers⁠",
+    "Project and initiative IDs⁠",
+    "Product",
+    "Features",
+    "Company",
+    "Resources",
+    "Connect",
+    "Legal"
+   ],
+   "nav": [
+    "Log in",
+    "Sign up",
+    "Now",
+    "All",
+    "Changelog",
+    "Product launches",
+    "From the team",
+    "From the community",
+    "Press"
+   ],
+   "ctas": [
+    "Sign up [73x32 bg #e5e5e6 fg #08090a r 9999px pad 0px 12px 13px/510]"
+   ],
+   "media": {
+    "img": 16,
+    "svg": 109,
+    "video": 5,
+    "canvas": 0
+   }
+  },
+  "1440": {
+   "status": 200,
+   "finalUrl": "https://linear.app/changelog",
+   "width": 1440,
+   "h1Style": {
+    "font": "\"Inter Variable\" 48px/48px w510 ls -1.056px",
+    "color": "#f7f8f8",
+    "top": 152,
+    "width": 95,
+    "align": "start"
+   },
+   "title": "Changelog – Linear",
+   "description": "New updates and improvements to Linear.",
+   "pageHeight": 25042,
+   "bodyBg": "#08090a",
+   "htmlBg": "#08090a",
+   "fontsLoaded": [
+    "Inter Variable 100 900 normal",
+    "Inter Variable 100 900 italic",
+    "Berkeley Mono 100 900 normal"
+   ],
+   "families": [
+    {
+     "v": "\"Inter Variable\", \"SF Pro Display\"",
+     "n": 50205
+    },
+    {
+     "v": "\"Berkeley Mono\", ui-monospace",
+     "n": 315
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "17px / lh 27.2px / w400 / ls normal",
+     "n": 45300,
+     "ex": "p: Stacked pull requests are now displayed in Linear Diffs. Mov"
+    },
+    {
+     "v": "13px / lh 20.8px / w510 / ls normal",
+     "n": 2294,
+     "ex": "div: Asks"
+    },
+    {
+     "v": "24px / lh 31.92px / w590 / ls -0.288px",
+     "n": 731,
+     "ex": "span: View code changes as the agent works"
+    },
+    {
+     "v": "15px / lh 24px / w510 / ls -0.165px",
+     "n": 367,
+     "ex": "button: Fixes"
+    },
+    {
+     "v": "14.875px / lh 19.3375px / w400 / ls normal",
+     "n": 315,
+     "ex": "code: list_customer_needs"
+    },
+    {
+     "v": "32px / lh 36px / w590 / ls -0.704px",
+     "n": 284,
+     "ex": "h2: Stacked pull requests"
+    },
+    {
+     "v": "13px / lh 19.5px / w400 / ls -0.13px",
+     "n": 273,
+     "ex": "a: Intake"
+    },
+    {
+     "v": "13px / lh 19.5px / w510 / ls -0.13px",
+     "n": 238,
+     "ex": "time: 00:00"
+    },
+    {
+     "v": "13.6px / lh normal / w510 / ls normal",
+     "n": 209,
+     "ex": "kbd: Backspace"
+    },
+    {
+     "v": "14px / lh 21px / w400 / ls -0.182px",
+     "n": 149,
+     "ex": "span: October 8, 2026"
+    },
+    {
+     "v": "17px / lh 23.8px / w590 / ls -0.204px",
+     "n": 127,
+     "ex": "span: Trigger from across your workspace"
+    },
+    {
+     "v": "17px / lh 27.2px / w590 / ls normal",
+     "n": 91,
+     "ex": "strong: Priority"
+    },
+    {
+     "v": "15px / lh 24px / w400 / ls -0.165px",
+     "n": 64,
+     "ex": "span: All"
+    },
+    {
+     "v": "13px / lh 19.5px / w400 / ls normal",
+     "n": 48,
+     "ex": "button: Product"
+    },
+    {
+     "v": "15px / lh 40px / w510 / ls normal",
+     "n": 13,
+     "ex": "a: Older updates"
+    },
+    {
+     "v": "13px / lh 32px / w510 / ls normal",
+     "n": 7,
+     "ex": "a: Sign up"
+    },
+    {
+     "v": "14px / lh 40px / w400 / ls normal",
+     "n": 7,
+     "ex": "button: Search…"
+    },
+    {
+     "v": "48px / lh 48px / w510 / ls -1.056px",
+     "n": 3,
+     "ex": "a: Now"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#d0d6e0",
+     "n": 47800
+    },
+    {
+     "v": "#f7f8f8",
+     "n": 2317
+    },
+    {
+     "v": "#8a8f98",
+     "n": 378
+    },
+    {
+     "v": "#62666d",
+     "n": 18
+    },
+    {
+     "v": "#08090a",
+     "n": 7
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#d0d6e0 on #08090a",
+     "n": 47485,
+     "ex": "13.64:1"
+    },
+    {
+     "v": "#f7f8f8 on #08090a",
+     "n": 2317,
+     "ex": "18.73:1"
+    },
+    {
+     "v": "#8a8f98 on #08090a",
+     "n": 371,
+     "ex": "6.13:1"
+    },
+    {
+     "v": "#d0d6e0 on #1c1c1f",
+     "n": 315,
+     "ex": "11.64:1"
+    },
+    {
+     "v": "#62666d on #08090a",
+     "n": 18,
+     "ex": "3.45:1"
+    },
+    {
+     "v": "#08090a on #e5e5e6",
+     "n": 7,
+     "ex": "15.83:1"
+    },
+    {
+     "v": "#8a8f98 on #141516",
+     "n": 7,
+     "ex": "5.63:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#08090a",
+     "n": 38642
+    },
+    {
+     "v": "linear-gradient(rgba(11, 11, 11, 0.8) 0%, oklab(0.149574 0.00000683218 0.00000298768 / 0.761905) 100%)",
+     "n": 105
+    },
+    {
+     "v": "#1c1c1f",
+     "n": 74
+    },
+    {
+     "v": "#23252a",
+     "n": 22
+    },
+    {
+     "v": "#141516",
+     "n": 11
+    },
+    {
+     "v": "#ffffff a0.16",
+     "n": 8
+    },
+    {
+     "v": "#18191a",
+     "n": 3
+    },
+    {
+     "v": "#e5e5e6",
+     "n": 2
+    },
+    {
+     "v": "#28282c",
+     "n": 1
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #34343a",
+     "n": 382
+    },
+    {
+     "v": "1px #ffffff a0.05",
+     "n": 34
+    },
+    {
+     "v": "1px #23252a",
+     "n": 2
+    },
+    {
+     "v": "1px #e5e5e6",
+     "n": 1
+    }
+   ],
+   "radii": [
+    {
+     "v": "9999px",
+     "n": 377,
+     "ex": "button.TZTsQG_anchor TZTsQG_trigger h"
+    },
+    {
+     "v": "8px",
+     "n": 66,
+     "ex": "img.Sz_9La_root"
+    },
+    {
+     "v": "4.4625px",
+     "n": 42,
+     "ex": "code."
+    },
+    {
+     "v": "5px",
+     "n": 38,
+     "ex": "kbd."
+    },
+    {
+     "v": "6px",
+     "n": 1,
+     "ex": "a.TZTsQG_logoLink I_mUeq_root"
+    },
+    {
+     "v": "100px",
+     "n": 1,
+     "ex": "button.RTm11a_openSearchButton show-h"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(62, 62, 68) 0px 0px 0px 1px",
+     "n": 35,
+     "ex": "kbd"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0) 0px 8px 2px 0px, rgba(0, 0, 0, 0.01) 0px 5px 2px 0px, rgba(0, 0, 0, 0.04) 0px 3px 2px 0px, rgba(0, 0, 0, 0.07) 0px 1px 1px 0px, rgba(0, 0, 0, 0.08) 0px 0px 1px 0px",
+     "n": 1,
+     "ex": "a"
+    },
+    {
+     "v": "rgba(255, 255, 255, 0.03) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.04) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.6) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 4px 4px 0px",
+     "n": 1,
+     "ex": "button"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "color 0.1s ease",
+     "n": 40,
+     "ex": "a"
+    },
+    {
+     "v": "transform 0.12s ease",
+     "n": 39,
+     "ex": "span"
+    },
+    {
+     "v": "color, text-decoration-color, background 0.25s ease",
+     "n": 36,
+     "ex": "a"
+    },
+    {
+     "v": "border, background-color, color, box-shadow, opaci 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 19,
+     "ex": "a"
+    },
+    {
+     "v": "color, background 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 7,
+     "ex": "button"
+    },
+    {
+     "v": "height 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 5,
+     "ex": "div"
+    },
+    {
+     "v": "color 0.2s ease",
+     "n": 2,
+     "ex": "button"
+    },
+    {
+     "v": "border-color, background 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 1,
+     "ex": "header"
+    }
+   ],
+   "animations": [],
+   "maxWidths": [
+    {
+     "v": "100% (rendered 624px)",
+     "n": 21,
+     "ex": "img"
+    },
+    {
+     "v": "100% (rendered 622px)",
+     "n": 5,
+     "ex": "video"
+    },
+    {
+     "v": "1436px (rendered 1436px)",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "620px (rendered 620px)",
+     "n": 1,
+     "ex": "li"
+    },
+    {
+     "v": "100% (rendered 1440px)",
+     "n": 1,
+     "ex": "footer"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 2
+    },
+    {
+     "v": "pt 80px pb 40px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "6px",
+     "n": 342
+    },
+    {
+     "v": "8px",
+     "n": 24
+    },
+    {
+     "v": "32px",
+     "n": 10
+    },
+    {
+     "v": "2px",
+     "n": 5
+    },
+    {
+     "v": "18px",
+     "n": 1
+    },
+    {
+     "v": "16px",
+     "n": 1
+    },
+    {
+     "v": "10px",
+     "n": 1
+    },
+    {
+     "v": "20px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "8px",
+     "n": 341
+    },
+    {
+     "v": "1.4875px",
+     "n": 84
+    },
+    {
+     "v": "16px",
+     "n": 81
+    },
+    {
+     "v": "3px",
+     "n": 70
+    },
+    {
+     "v": "24px",
+     "n": 55
+    },
+    {
+     "v": "3.71875px",
+     "n": 42
+    },
+    {
+     "v": "6px",
+     "n": 35
+    },
+    {
+     "v": "12px",
+     "n": 23
+    },
+    {
+     "v": "32px",
+     "n": 8
+    },
+    {
+     "v": "2px",
+     "n": 3
+    },
+    {
+     "v": "46px",
+     "n": 2
+    },
+    {
+     "v": "56px",
+     "n": 2
+    },
+    {
+     "v": "77px",
+     "n": 1
+    },
+    {
+     "v": "72px",
+     "n": 1
+    },
+    {
+     "v": "80px",
+     "n": 1
+    },
+    {
+     "v": "40px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "8px",
+     "n": 333
+    },
+    {
+     "v": "20px",
+     "n": 71
+    },
+    {
+     "v": "48px",
+     "n": 32
+    },
+    {
+     "v": "56px",
+     "n": 28
+    },
+    {
+     "v": "12px",
+     "n": 24
+    },
+    {
+     "v": "32px",
+     "n": 12
+    },
+    {
+     "v": "71px",
+     "n": 10
+    },
+    {
+     "v": "9px",
+     "n": 9
+    },
+    {
+     "v": "16px",
+     "n": 8
+    },
+    {
+     "v": "10px",
+     "n": 5
+    },
+    {
+     "v": "24px",
+     "n": 5
+    },
+    {
+     "v": "28px",
+     "n": 4
+    },
+    {
+     "v": "80px",
+     "n": 2
+    },
+    {
+     "v": "64px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "As companies grow, it can become challenging to accommodate every team’s workflow within a single workspace-wide system.",
+    "chars": 321,
+    "lines": 5,
+    "charsPerLine": 64,
+    "width": 624,
+    "fontSize": "17px",
+    "lineHeight": "27.2px",
+    "color": "#d0d6e0"
+   },
+   "rootVars": {},
+   "blockedSheets": 48,
+   "reducedMotionRules": 21,
+   "h1": [
+    "Now"
+   ],
+   "h2": [
+    "Stacked pull requests",
+    "View code changes as the agent works⁠",
+    "AI credit usage explorer and spend limits⁠",
+    "Guided Reviews on Basic⁠",
+    "New controls for Linear coding agent",
+    "Team organization at scale⁠",
+    "Loops for product management",
+    "Callout components⁠",
+    "Priority inbox",
+    "Draft projects with Linear Agent⁠",
+    "Document editing on mobile⁠",
+    "Rich previews in diffs⁠",
+    "Third-party app approvals⁠",
+    "Coding sessions: environments, browser use, and updated pricing",
+    "Configurable environments⁠",
+    "Browser testing⁠"
+   ],
+   "h3": [
+    "Adaptive routing⁠",
+    "Environment secrets⁠",
+    "Open-weight models⁠",
+    "Team project labels and statuses⁠",
+    "Project lead teams⁠",
+    "Team loops triggers⁠",
+    "Project and initiative IDs⁠",
+    "Product",
+    "Features",
+    "Company",
+    "Resources",
+    "Connect"
+   ],
+   "nav": [
+    "Customers",
+    "Pricing",
+    "Now",
+    "Contact",
+    "Log in",
+    "Sign up",
+    "Now",
+    "All",
+    "Changelog",
+    "Product launches",
+    "From the team",
+    "From the community",
+    "Press"
+   ],
+   "ctas": [
+    "Sign up [73x32 bg #e5e5e6 fg #08090a r 9999px pad 0px 12px 13px/510]",
+    "Search… [280x40 bg #141516 fg #8a8f98 r 100px pad 0px 16px 14px/400]"
+   ],
+   "media": {
+    "img": 16,
+    "svg": 109,
+    "video": 5,
+    "canvas": 0
+   }
+  }
+ }
+}
