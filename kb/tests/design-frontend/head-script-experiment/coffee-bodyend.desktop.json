@@ -1,0 +1,80 @@
+{
+  "page": "/tmp/claude-0/-home-claude-design-kb/7d54560a-30fa-5288-8002-e57a005c7126/scratchpad/bis/cbefore.html",
+  "profile": "desktop",
+  "runs": 7,
+  "encoding": "gzip",
+  "lcp": 248,
+  "fcp": 248,
+  "cls": 0,
+  "inp": 0,
+  "tbt": 0,
+  "ttfb": 131.29999999981374,
+  "fontsReady": 220.09999999962747,
+  "load": 250.1000000005588,
+  "bytes": 96274,
+  "docBytes": 96274,
+  "requests": 1,
+  "dom": 395,
+  "mainThread": {
+    "script": 2.575,
+    "style": 17.582,
+    "layout": 35.155,
+    "task": 106.891,
+    "styleCount": 3,
+    "layoutCount": 3
+  },
+  "lcpElement": "h1#hero-title.display \"Ethiopia Guji, roasted Tuesday in Portla\"",
+  "worstInteractions": [],
+  "interactions": 0,
+  "shifts": [],
+  "steps": [],
+  "verdict": {
+    "lcp": "good",
+    "cls": "good",
+    "inp": "good"
+  },
+  "perRun": [
+    {
+      "lcp": 244,
+      "cls": 0,
+      "inp": 0,
+      "tbt": 0
+    },
+    {
+      "lcp": 260,
+      "cls": 0,
+      "inp": 0,
+      "tbt": 0
+    },
+    {
+      "lcp": 288,
+      "cls": 0,
+      "inp": 0,
+      "tbt": 0
+    },
+    {
+      "lcp": 280,
+      "cls": 0,
+      "inp": 0,
+      "tbt": 0
+    },
+    {
+      "lcp": 248,
+      "cls": 0,
+      "inp": 0,
+      "tbt": 0
+    },
+    {
+      "lcp": 216,
+      "cls": 0,
+      "inp": 0,
+      "tbt": 0
+    },
+    {
+      "lcp": 236,
+      "cls": 0,
+      "inp": 0,
+      "tbt": 0
+    }
+  ]
+}

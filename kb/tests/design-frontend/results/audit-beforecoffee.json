@@ -1,0 +1,98 @@
+{
+  "file": "kb/tests/design-frontend/before/coffee.html",
+  "layers": [],
+  "layerRules": {},
+  "unlayered": 224,
+  "styleRules": 224,
+  "decls": 850,
+  "tokens": 140,
+  "media": {
+    "(prefers-color-scheme: dark)": 1,
+    "(hover: hover)": 6,
+    "(min-width: 768px)": 7,
+    "(prefers-reduced-motion: no-preference)": 2,
+    "(min-width: 1024px)": 5,
+    "(max-width: 639px)": 2,
+    "(hover: hover) and (pointer: fine)": 1,
+    "(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)": 1,
+    "(min-width: 640px) and (max-width: 767px)": 1,
+    "(prefers-reduced-motion: reduce)": 1,
+    "(forced-colors: active)": 1
+  },
+  "containerRules": 0,
+  "containers": 0,
+  "has": 1,
+  "important": [
+    "unlayered :: *, ::before, ::after { transition }",
+    "unlayered :: *, ::before, ::after { animation }"
+  ],
+  "findings": {
+    "raw-color": [
+      ".stage { background: linear-gradient(in oklch to bottom, color-mix(in oklch, var(--color-illustration-surface), white 3%), var(--color-illustration-surface)) }"
+    ],
+    "primitive-in-component": [
+      ".stage .bag-body { fill: var(--color-brand) }",
+      ".stage .bag-seal { fill: var(--color-orange-700) }",
+      ".stage .bag-crimp { stroke: var(--color-orange-800) }",
+      ".stage .valve { fill: var(--color-orange-700) }",
+      ".stage .valve-ring { stroke: var(--color-orange-800) }",
+      ".bag-label { background: var(--color-warm-50) }",
+      ".bag-label { color: var(--color-warm-950) }",
+      ".bag-label .meta { color: var(--color-warm-600) }",
+      ".bag-label polyline { stroke: var(--color-orange-600) }"
+    ],
+    "physical-property": [
+      ".bag-label { left: 27% }",
+      ".summit-chip { left: 80% }",
+      ".stage-note { left: var(--space-5) }",
+      ".price .cur { margin-right: var(--space-2) }",
+      ".tile .chip { left: var(--space-4) }",
+      ".ylab { left: calc(-1 * var(--space-8)) }",
+      ".ledger caption { text-align: left }",
+      ".ledger th, .ledger td { text-align: left }",
+      ".ledger td { text-align: right }"
+    ],
+    "raw-space": [
+      ".pt { margin: -4px 0px 0px -4px }"
+    ],
+    "media-min-max-syntax": [
+      "@media (min-width: 768px)",
+      "@media (min-width: 1024px)",
+      "@media (max-width: 639px)",
+      "@media (min-width: 640px) and (max-width: 767px)"
+    ]
+  },
+  "inlineStyleAttrs": 13,
+  "counts": {
+    "raw-color": 1,
+    "primitive-in-component": 9,
+    "raw-space": 1,
+    "font-size-px": 0,
+    "type-token-px": 0,
+    "transition-all": 0,
+    "id-selector": 0,
+    "hover-unguarded": 0,
+    "physical-property": 9,
+    "vh-unit": 0,
+    "motion-unguarded": 0,
+    "media-min-max-syntax": 4,
+    "component-token-primitive": 0
+  },
+  "levels": {
+    "raw-color": "fail",
+    "primitive-in-component": "fail",
+    "raw-space": "fail",
+    "font-size-px": "fail",
+    "type-token-px": "fail",
+    "transition-all": "fail",
+    "id-selector": "warn",
+    "hover-unguarded": "fail",
+    "physical-property": "warn",
+    "vh-unit": "warn",
+    "motion-unguarded": "warn",
+    "media-min-max-syntax": "warn",
+    "component-token-primitive": "warn"
+  },
+  "layered": false,
+  "verdict": "fail"
+}

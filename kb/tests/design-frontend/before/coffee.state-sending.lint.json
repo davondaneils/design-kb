@@ -1,0 +1,295 @@
+{
+  "file": "kb/tests/design-frontend/before/coffee.html?state=sending",
+  "date": "2026-10-10T18:06:27.937Z",
+  "checks": {
+    "axe": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overlay": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "targets": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "body > header.site-header > div.wrap > a.logo",
+          "w": 142.7,
+          "h": 41
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "header.site-header > div.wrap > nav.nav > a",
+          "w": 58.6,
+          "h": 37
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "header.site-header > div.wrap > nav.nav > a",
+          "w": 80.6,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#shop > div.wrap > div.section-head > a.more",
+          "w": 146.5,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.card-body > div > h3 > a.card-link",
+          "w": 171.2,
+          "h": 31
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "li.card > div.card-body > div.card-foot > button.btn.btn-secondary",
+          "w": 128,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.card-body > div > h3 > a.card-link",
+          "w": 203,
+          "h": 31
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "li.card > div.card-body > div.card-foot > button.btn.btn-secondary",
+          "w": 128,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.card-body > div > h3 > a.card-link",
+          "w": 231,
+          "h": 31
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "li.card > div.card-body > div.card-foot > button.btn.btn-secondary",
+          "w": 128,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.links > ul > li > a",
+          "w": 50.7,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.links > ul > li > a",
+          "w": 103.7,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.links > ul > li > a",
+          "w": 100.3,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.links > ul > li > a",
+          "w": 73.2,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.links > ul > li > a",
+          "w": 70.6,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.links > ul > li > a",
+          "w": 78.7,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.links > ul > li > a",
+          "w": 98.6,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.links > ul > li > a",
+          "w": 59.4,
+          "h": 32
+        }
+      ],
+      "pass": true
+    },
+    "measure": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "type-scale": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "fluid display size 96px at 1440px (clamp() present)",
+          "size": 96,
+          "count": 2,
+          "examples": [
+            "#hero-title",
+            "#hero-title > em"
+          ]
+        },
+        {
+          "message": "fluid display size 74.56px at 1440px (clamp() present)",
+          "size": 74.56,
+          "count": 4,
+          "examples": [
+            "#sub-title",
+            "#sub-title > em",
+            "#shop-title",
+            "#shop-title > em"
+          ]
+        },
+        {
+          "message": "fluid display size 124.64px at 1440px (clamp() present)",
+          "size": 124.64,
+          "count": 4,
+          "examples": [
+            "div.wrap > div > p.price.num > span",
+            "div.wrap > div > p.price.num > span.sr-only",
+            "#journal > div.wrap > div.signoff > p.mark",
+            "div.wrap > div.signoff > p.mark > span.amp"
+          ]
+        }
+      ],
+      "pass": true
+    },
+    "spacing": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overflow": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "heading-wrap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "svg-overlap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "radius": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "color-scheme": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "typography": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "tabular": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "shadows": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icon-stroke": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "weight": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus-shape": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-shift": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "fallback": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "motion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    }
+  },
+  "summary": {
+    "weightKB": {
+      "html": 207,
+      "svg": 96
+    },
+    "focusables": 26,
+    "fallbackShift390": 0,
+    "fallbackShift1440": 0,
+    "motionFound": {
+      "animations": 1,
+      "movingTransitions": 11
+    },
+    "axe": "pass",
+    "overlay": "pass",
+    "targets": "pass (18 warn)",
+    "measure": "pass",
+    "type-scale": "pass (3 warn)",
+    "spacing": "pass",
+    "overflow": "pass",
+    "heading-wrap": "pass",
+    "svg-overlap": "pass",
+    "radius": "pass",
+    "color-scheme": "pass",
+    "typography": "pass",
+    "tabular": "pass",
+    "shadows": "pass",
+    "icon-stroke": "pass",
+    "weight": "pass",
+    "focus": "pass",
+    "focus-shape": "pass",
+    "sticky-focus": "pass",
+    "state-shift": "pass",
+    "fallback": "pass",
+    "motion": "pass",
+    "result": "PASS",
+    "fails": 0,
+    "warns": 21
+  }
+}

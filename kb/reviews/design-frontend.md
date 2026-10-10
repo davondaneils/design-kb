@@ -34,3 +34,44 @@ Yes, on these items a strong generalist typically misses: LCP subpart diagnosis 
 ## Remaining risks (accepted for v0.1)
 - Practitioner-tier X.com threads were not fetched directly (X does not fetch, and the search budget ran out). Practitioner claims come from those practitioners' own sites and are labelled.
 - Legal dates (EAA, ADA Title II) are flagged V and kept out of SKILL.md.
+
+# Round 3: design-frontend v0.2 (critic, 2026-10-10)
+
+Scope: brief 07, research 07, draft 07, `references/07-measured-build-quality.md`, the SKILL.md changes, the reference 02 edits and the tools in `assets/`.
+
+## Verdict
+**Approve**, with the three fixes below done before the tester run.
+
+## Citation spot check (20 percent, random)
+Research 07 has 34 cited claims (C1 to C34); 20 percent is 7. Sample drawn with Python `random.seed(20261010); random.sample(range(1, 35), 7)` = C3, C9, C11, C15, C23, C24, C27. Re-fetched 2026-10-10 (MDN and web.dev through WebFetch; curl from this container got 403 on those hosts, the Lighthouse file came by curl from raw.githubusercontent.com).
+
+| Claim | Source | Result |
+|---|---|---|
+| C3 mobile viewport 412x823, DPR 1.75 | lighthouse `core/config/constants.js` | match (`width: 412`, `height: 823`, `deviceScaleFactor: 1.75`) |
+| C9 durationThreshold floor 16 ms | MDN PerformanceObserver.observe | match, verbatim |
+| C11 LCP stops at input | web.dev/articles/lcp | match; the full sentence adds "(via a tap, scroll, or keypress)". Scroll also stops LCP: the vitals script must not scroll before LCP settles. It does not (interactions run after load). Noted in the reference. |
+| C15 continuous input is not recent input | web.dev/articles/cls | match, verbatim |
+| C23 unlayered beats layered | MDN @layer | match, verbatim |
+| C24 important reverses layer order | MDN @layer | match ("However, the priority is reversed when the !important flag is used") |
+| C27 inline-size computed in isolation | MDN container-type | match, verbatim |
+
+7 of 7 match. No misquotes. C10 (SVG not an LCP candidate) was confirmed on the same fetch, with the nuance that `<img src="x.svg">` and `<image>` inside an SVG are candidates; added to the reference.
+
+## Fundamentals gate check
+- Correct: every rule in reference 07 is either cited (C) or measured (M) with its script; opinion is marked (font delivery rule, inline-axis logical properties, head script robustness).
+- No em dashes (grep U+2014: 0).
+- Consistent with FOUNDATIONS except where the skill deliberately deviates and says so: transparent dark shadows instead of `none` (deviation with a measured reason; change proposed in `kb/reviews/design-frontend-pipeline-notes.md`), and a `states` layer added to the layer order.
+- Reuse: accessibility rules stay in design-foundations; image pipeline stays in reference 05.
+
+## Fix list
+1. Gate item 22 said "no sync scripts in head" while the refactored pages added an inline head script. The tester then measured that head script costing 20 to 50 ms of desktop first paint on both pages; a follow-up with seeded storage showed the end-of-body placement shifts the page (CLS up to 0.074). Final: the dashboard keeps its head script (layout state), coffee's paint-only `js` class moved to the end of body; item 22, the decision rules and expert move 10 now state that split with the numbers. **Done.**
+2. Item 18 (logical properties by default) contradicted the measured UA-padding finding. Narrowed to asymmetric inline-axis values, marked opinion. Reference 02 aligned (and its container query examples moved from em to rem). **Done.**
+3. Reference 07 move 1 should say SVG files in `<img>` are LCP candidates, so the rule is about inline `<svg>` only. **Done.**
+
+## Critic test: would a top practitioner learn something?
+Yes. Items a strong front-end lead is unlikely to know cold: `none` in a shadow token silently killing a composed list (and a FOUNDATIONS token doing it on both shipped pages); em in container conditions resolving to the container's font size; `:is()` lifting a type selector to class weight and breaking a later reset; `padding-inline` reviving UA button padding; hover-driven `left` counting as CLS; the rail inverting available width below a breakpoint; and a measured first-view versus repeat-view font delivery table instead of the blanket "never inline fonts". Nodding lines: the thresholds and the 14 KB rule of thumb, kept only as context for the numbers.
+
+## Remaining risks
+- Lab numbers come from one machine and Chromium 141; LCP varied about 200 ms between sessions on the same file. The reference says lab numbers are a regression check.
+- Exemplar sites could not be measured (403), so no exemplar byte or font-loading baseline exists.
+- The tools depend on playwright-core internals that are stable but not versioned here.

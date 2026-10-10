@@ -1,0 +1,167 @@
+{
+  "page": "kb/tests/design-frontend/before/dashboard.html",
+  "profile": "mobile",
+  "runs": 7,
+  "encoding": "gzip",
+  "lcp": 856,
+  "fcp": 856,
+  "cls": 0.022624036691713558,
+  "inp": 80,
+  "tbt": 116,
+  "ttfb": 458.5,
+  "fontsReady": 1143.0999999996275,
+  "load": 1123.7999999998137,
+  "bytes": 47442,
+  "docBytes": 47442,
+  "requests": 1,
+  "dom": 510,
+  "mainThread": {
+    "script": 139.953,
+    "style": 43.967,
+    "layout": 150.281,
+    "task": 589.0790000000001,
+    "styleCount": 5,
+    "layoutCount": 5
+  },
+  "lcpElement": "p.answer.answer-ready \"Weekly active users are up 12.4%, the th\"",
+  "worstInteractions": [
+    {
+      "name": "keydown",
+      "d": 80,
+      "input": 1,
+      "proc": 44
+    },
+    {
+      "name": "keydown",
+      "d": 48,
+      "input": 1,
+      "proc": 2
+    },
+    {
+      "name": "keydown",
+      "d": 40,
+      "input": 2,
+      "proc": 2
+    }
+  ],
+  "interactions": 6,
+  "shifts": [
+    {
+      "t": 20507.099999999627,
+      "value": 0.0002458225331892245,
+      "input": false,
+      "src": [
+        "div#tooltip.tooltip \"Sep 22: 42,400 (previous 33,200)\""
+      ]
+    },
+    {
+      "t": 20861.099999999627,
+      "value": 0.01191552134241972,
+      "input": false,
+      "src": [
+        "div#tooltip.tooltip \"Jul 21: 31,400 (previous 29,800)\""
+      ]
+    },
+    {
+      "t": 20905.799999999814,
+      "value": 0.0029673313892488637,
+      "input": false,
+      "src": [
+        "div#tooltip.tooltip \"Aug 18: 34,800 (previous 31,400)\""
+      ]
+    },
+    {
+      "t": 20923.200000000186,
+      "value": 0.0018011276754450987,
+      "input": false,
+      "src": [
+        "div#tooltip.tooltip \"Aug 25: 35,600 (previous 31,600)\""
+      ]
+    },
+    {
+      "t": 20940,
+      "value": 0.002117319766012808,
+      "input": false,
+      "src": [
+        "div#tooltip.tooltip \"Sep 1: 37,000 (previous 32,000)\""
+      ]
+    },
+    {
+      "t": 20956.5,
+      "value": 0.001665545726104308,
+      "input": false,
+      "src": [
+        "div#tooltip.tooltip \"Sep 8: 38,800 (previous 32,600)\""
+      ]
+    },
+    {
+      "t": 20972.099999999627,
+      "value": 0.0002458225331892245,
+      "input": false,
+      "src": [
+        "div#tooltip.tooltip \"Sep 22: 42,400 (previous 33,200)\""
+      ]
+    }
+  ],
+  "steps": [
+    "clickall thead .sort (skipped: locator.click: Timeout 5000ms exceeded.)",
+    "click #density label:nth-child(3) (skipped: locator.click: Timeout 5000ms exceeded.)",
+    "click #density label:nth-child(2) (skipped: locator.click: Timeout 5000ms exceeded.)",
+    "press Control+k",
+    "click #pal-q",
+    "key s",
+    "key e",
+    "press Escape",
+    "hover #chart-svg",
+    "hover #chart-svg"
+  ],
+  "verdict": {
+    "lcp": "good",
+    "cls": "good",
+    "inp": "good"
+  },
+  "perRun": [
+    {
+      "lcp": 856,
+      "cls": 0.02095849096560925,
+      "inp": 120,
+      "tbt": 80.29999999981374
+    },
+    {
+      "lcp": 792,
+      "cls": 0.024741356457726363,
+      "inp": 72,
+      "tbt": 179
+    },
+    {
+      "lcp": 784,
+      "cls": 0.020712668432420027,
+      "inp": 96,
+      "tbt": 116
+    },
+    {
+      "lcp": 776,
+      "cls": 0.024741356457726363,
+      "inp": 80,
+      "tbt": 251
+    },
+    {
+      "lcp": 856,
+      "cls": 0.02654248413317146,
+      "inp": 72,
+      "tbt": 213.79999999981374
+    },
+    {
+      "lcp": 896,
+      "cls": 0.022624036691713558,
+      "inp": 72,
+      "tbt": 98
+    },
+    {
+      "lcp": 864,
+      "cls": 0.02095849096560925,
+      "inp": 120,
+      "tbt": 101.09999999962747
+    }
+  ]
+}

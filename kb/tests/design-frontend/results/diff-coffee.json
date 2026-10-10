@@ -1,0 +1,767 @@
+{
+  "before": "kb/tests/design-frontend/before/coffee.html",
+  "after": "kb/tests/design-frontend/coffee.html",
+  "tolerance": 0,
+  "results": [
+    {
+      "name": "coffee-390-light",
+      "query": "",
+      "scheme": "light",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        6738
+      ],
+      "sizeAfter": [
+        390,
+        6738
+      ],
+      "pixels": 2627820,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-768-light",
+      "query": "",
+      "scheme": "light",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        5924
+      ],
+      "sizeAfter": [
+        768,
+        5924
+      ],
+      "pixels": 4549632,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-1024-light",
+      "query": "",
+      "scheme": "light",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        4428
+      ],
+      "sizeAfter": [
+        1024,
+        4428
+      ],
+      "pixels": 4534272,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-1440-light",
+      "query": "",
+      "scheme": "light",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        4442
+      ],
+      "sizeAfter": [
+        1440,
+        4442
+      ],
+      "pixels": 6396480,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-390-dark",
+      "query": "",
+      "scheme": "dark",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        6738
+      ],
+      "sizeAfter": [
+        390,
+        6738
+      ],
+      "pixels": 2627820,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-768-dark",
+      "query": "",
+      "scheme": "dark",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        5924
+      ],
+      "sizeAfter": [
+        768,
+        5924
+      ],
+      "pixels": 4549632,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-1024-dark",
+      "query": "",
+      "scheme": "dark",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        4428
+      ],
+      "sizeAfter": [
+        1024,
+        4428
+      ],
+      "pixels": 4534272,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-1440-dark",
+      "query": "",
+      "scheme": "dark",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        4442
+      ],
+      "sizeAfter": [
+        1440,
+        4442
+      ],
+      "pixels": 6396480,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-added-390-light",
+      "query": "?state=added",
+      "scheme": "light",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        6738
+      ],
+      "sizeAfter": [
+        390,
+        6738
+      ],
+      "pixels": 2627820,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-added-768-light",
+      "query": "?state=added",
+      "scheme": "light",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        5924
+      ],
+      "sizeAfter": [
+        768,
+        5924
+      ],
+      "pixels": 4549632,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-added-1024-light",
+      "query": "?state=added",
+      "scheme": "light",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        4428
+      ],
+      "sizeAfter": [
+        1024,
+        4428
+      ],
+      "pixels": 4534272,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-added-1440-light",
+      "query": "?state=added",
+      "scheme": "light",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        4442
+      ],
+      "sizeAfter": [
+        1440,
+        4442
+      ],
+      "pixels": 6396480,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-added-390-dark",
+      "query": "?state=added",
+      "scheme": "dark",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        6738
+      ],
+      "sizeAfter": [
+        390,
+        6738
+      ],
+      "pixels": 2627820,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-added-768-dark",
+      "query": "?state=added",
+      "scheme": "dark",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        5924
+      ],
+      "sizeAfter": [
+        768,
+        5924
+      ],
+      "pixels": 4549632,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-added-1024-dark",
+      "query": "?state=added",
+      "scheme": "dark",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        4428
+      ],
+      "sizeAfter": [
+        1024,
+        4428
+      ],
+      "pixels": 4534272,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-added-1440-dark",
+      "query": "?state=added",
+      "scheme": "dark",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        4442
+      ],
+      "sizeAfter": [
+        1440,
+        4442
+      ],
+      "pixels": 6396480,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-subscribed-390-light",
+      "query": "?state=subscribed",
+      "scheme": "light",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        6641
+      ],
+      "sizeAfter": [
+        390,
+        6641
+      ],
+      "pixels": 2589990,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-subscribed-768-light",
+      "query": "?state=subscribed",
+      "scheme": "light",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        5885
+      ],
+      "sizeAfter": [
+        768,
+        5885
+      ],
+      "pixels": 4519680,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-subscribed-1024-light",
+      "query": "?state=subscribed",
+      "scheme": "light",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        4389
+      ],
+      "sizeAfter": [
+        1024,
+        4389
+      ],
+      "pixels": 4494336,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-subscribed-1440-light",
+      "query": "?state=subscribed",
+      "scheme": "light",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        4403
+      ],
+      "sizeAfter": [
+        1440,
+        4403
+      ],
+      "pixels": 6340320,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-subscribed-390-dark",
+      "query": "?state=subscribed",
+      "scheme": "dark",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        6641
+      ],
+      "sizeAfter": [
+        390,
+        6641
+      ],
+      "pixels": 2589990,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-subscribed-768-dark",
+      "query": "?state=subscribed",
+      "scheme": "dark",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        5885
+      ],
+      "sizeAfter": [
+        768,
+        5885
+      ],
+      "pixels": 4519680,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-subscribed-1024-dark",
+      "query": "?state=subscribed",
+      "scheme": "dark",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        4389
+      ],
+      "sizeAfter": [
+        1024,
+        4389
+      ],
+      "pixels": 4494336,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-subscribed-1440-dark",
+      "query": "?state=subscribed",
+      "scheme": "dark",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        4403
+      ],
+      "sizeAfter": [
+        1440,
+        4403
+      ],
+      "pixels": 6340320,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-error-390-light",
+      "query": "?state=error",
+      "scheme": "light",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        6788
+      ],
+      "sizeAfter": [
+        390,
+        6788
+      ],
+      "pixels": 2647320,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-error-768-light",
+      "query": "?state=error",
+      "scheme": "light",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        5953
+      ],
+      "sizeAfter": [
+        768,
+        5953
+      ],
+      "pixels": 4571904,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-error-1024-light",
+      "query": "?state=error",
+      "scheme": "light",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        4478
+      ],
+      "sizeAfter": [
+        1024,
+        4478
+      ],
+      "pixels": 4585472,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-error-1440-light",
+      "query": "?state=error",
+      "scheme": "light",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        4471
+      ],
+      "sizeAfter": [
+        1440,
+        4471
+      ],
+      "pixels": 6438240,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-error-390-dark",
+      "query": "?state=error",
+      "scheme": "dark",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        6788
+      ],
+      "sizeAfter": [
+        390,
+        6788
+      ],
+      "pixels": 2647320,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-error-768-dark",
+      "query": "?state=error",
+      "scheme": "dark",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        5953
+      ],
+      "sizeAfter": [
+        768,
+        5953
+      ],
+      "pixels": 4571904,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-error-1024-dark",
+      "query": "?state=error",
+      "scheme": "dark",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        4478
+      ],
+      "sizeAfter": [
+        1024,
+        4478
+      ],
+      "pixels": 4585472,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-error-1440-dark",
+      "query": "?state=error",
+      "scheme": "dark",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        4471
+      ],
+      "sizeAfter": [
+        1440,
+        4471
+      ],
+      "pixels": 6438240,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-sending-390-light",
+      "query": "?state=sending",
+      "scheme": "light",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        6738
+      ],
+      "sizeAfter": [
+        390,
+        6738
+      ],
+      "pixels": 2627820,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-sending-768-light",
+      "query": "?state=sending",
+      "scheme": "light",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        5924
+      ],
+      "sizeAfter": [
+        768,
+        5924
+      ],
+      "pixels": 4549632,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-sending-1024-light",
+      "query": "?state=sending",
+      "scheme": "light",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        4486
+      ],
+      "sizeAfter": [
+        1024,
+        4486
+      ],
+      "pixels": 4593664,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-sending-1440-light",
+      "query": "?state=sending",
+      "scheme": "light",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        4442
+      ],
+      "sizeAfter": [
+        1440,
+        4442
+      ],
+      "pixels": 6396480,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-sending-390-dark",
+      "query": "?state=sending",
+      "scheme": "dark",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        6738
+      ],
+      "sizeAfter": [
+        390,
+        6738
+      ],
+      "pixels": 2627820,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-sending-768-dark",
+      "query": "?state=sending",
+      "scheme": "dark",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        5924
+      ],
+      "sizeAfter": [
+        768,
+        5924
+      ],
+      "pixels": 4549632,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-sending-1024-dark",
+      "query": "?state=sending",
+      "scheme": "dark",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        4486
+      ],
+      "sizeAfter": [
+        1024,
+        4486
+      ],
+      "pixels": 4593664,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "coffee-state-sending-1440-dark",
+      "query": "?state=sending",
+      "scheme": "dark",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        4442
+      ],
+      "sizeAfter": [
+        1440,
+        4442
+      ],
+      "pixels": 6396480,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    }
+  ]
+}

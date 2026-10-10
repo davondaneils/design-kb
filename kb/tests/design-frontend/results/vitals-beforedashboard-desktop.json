@@ -1,0 +1,162 @@
+{
+  "page": "kb/tests/design-frontend/before/dashboard.html",
+  "profile": "desktop",
+  "runs": 7,
+  "encoding": "gzip",
+  "lcp": 200,
+  "fcp": 200,
+  "cls": 0.009431862139917695,
+  "inp": 56,
+  "tbt": 0,
+  "ttfb": 127.8999999994412,
+  "fontsReady": 263.80000000074506,
+  "load": 262.80000000074506,
+  "bytes": 47442,
+  "docBytes": 47442,
+  "requests": 1,
+  "dom": 510,
+  "mainThread": {
+    "script": 29.321,
+    "style": 14.602,
+    "layout": 30.668999999999997,
+    "task": 117.268,
+    "styleCount": 4,
+    "layoutCount": 3
+  },
+  "lcpElement": "p.answer.answer-ready \"Weekly active users are up 12.4%, the th\"",
+  "worstInteractions": [
+    {
+      "name": "pointerdown",
+      "d": 56,
+      "input": 1,
+      "proc": 0
+    },
+    {
+      "name": "pointerdown",
+      "d": 40,
+      "input": 1,
+      "proc": 0
+    },
+    {
+      "name": "keydown",
+      "d": 40,
+      "input": 0,
+      "proc": 10
+    }
+  ],
+  "interactions": 10,
+  "shifts": [
+    {
+      "t": 5826,
+      "value": 0.005755735596707819,
+      "input": false,
+      "src": [
+        "div#tooltip.tooltip \"Jul 21: 31,400 (previous 29,800)\""
+      ]
+    },
+    {
+      "t": 5843.4000000003725,
+      "value": 0.0006513828875171467,
+      "input": false,
+      "src": [
+        "div#tooltip.tooltip \"Aug 11: 32,800 (previous 30,400)\""
+      ]
+    },
+    {
+      "t": 5860.299999999814,
+      "value": 0.0005766778120713306,
+      "input": false,
+      "src": [
+        "div#tooltip.tooltip \"Aug 18: 34,800 (previous 31,400)\""
+      ]
+    },
+    {
+      "t": 5876.100000000559,
+      "value": 0.0005782921810699588,
+      "input": false,
+      "src": [
+        "div#tooltip.tooltip \"Aug 25: 35,600 (previous 31,600)\""
+      ]
+    },
+    {
+      "t": 5893.299999999814,
+      "value": 0.0006522916666666667,
+      "input": false,
+      "src": [
+        "div#tooltip.tooltip \"Sep 1: 37,000 (previous 32,000)\""
+      ]
+    },
+    {
+      "t": 5910,
+      "value": 0.0012174819958847736,
+      "input": false,
+      "src": [
+        "div#tooltip.tooltip \"Sep 15: 39,600 (previous 32,200)\""
+      ]
+    }
+  ],
+  "steps": [
+    "click thead .sort",
+    "click thead .sort",
+    "click thead .sort",
+    "click thead .sort",
+    "click #density label:nth-child(3)",
+    "click #density label:nth-child(2)",
+    "press Control+k",
+    "click #pal-q",
+    "key s",
+    "key e",
+    "press Escape",
+    "hover #chart-svg",
+    "hover #chart-svg"
+  ],
+  "verdict": {
+    "lcp": "good",
+    "cls": "good",
+    "inp": "good"
+  },
+  "perRun": [
+    {
+      "lcp": 200,
+      "cls": 0.009431862139917695,
+      "inp": 48,
+      "tbt": 5
+    },
+    {
+      "lcp": 188,
+      "cls": 0.009431862139917695,
+      "inp": 72,
+      "tbt": 0
+    },
+    {
+      "lcp": 200,
+      "cls": 0.009431862139917695,
+      "inp": 56,
+      "tbt": 30.09999999962747
+    },
+    {
+      "lcp": 188,
+      "cls": 0.009431862139917695,
+      "inp": 56,
+      "tbt": 0
+    },
+    {
+      "lcp": 204,
+      "cls": 0.009431862139917695,
+      "inp": 56,
+      "tbt": 0
+    },
+    {
+      "lcp": 192,
+      "cls": 0.009431862139917695,
+      "inp": 64,
+      "tbt": 0
+    },
+    {
+      "lcp": 208,
+      "cls": 0.009431862139917695,
+      "inp": 64,
+      "tbt": 0
+    }
+  ]
+}

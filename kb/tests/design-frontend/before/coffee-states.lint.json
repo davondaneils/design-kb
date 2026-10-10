@@ -1,0 +1,239 @@
+{
+  "file": "kb/tests/design-frontend/before/coffee-states.html",
+  "date": "2026-10-10T18:08:30.789Z",
+  "checks": {
+    "axe": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overlay": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "targets": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row > div.cell > button.btn.btn-secondary",
+          "w": 128,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row > div.cell > button.btn.btn-secondary",
+          "w": 128,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row > div.cell > button.btn.btn-secondary",
+          "w": 124.2,
+          "h": 38.8
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row > div.cell > button.btn.btn-secondary",
+          "w": 128,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row > div.cell > button.btn.btn-secondary",
+          "w": 128,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row > div.cell > button.btn.btn-secondary",
+          "w": 128,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row.nav-demo > div.cell > a",
+          "w": 58.6,
+          "h": 37
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row.nav-demo > div.cell > a.is-hover",
+          "w": 58.6,
+          "h": 37
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row.nav-demo > div.cell > a.is-active",
+          "w": 58.6,
+          "h": 37
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row.nav-demo > div.cell > a.is-focus",
+          "w": 58.6,
+          "h": 37
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row.nav-demo > div.cell > a",
+          "w": 80.4,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section.group > div.row.nav-demo > div.cell > a",
+          "w": 80.4,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "li.card.card-demo > div.card-body > h3 > a.card-link",
+          "w": 171.2,
+          "h": 31
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "li.card.card-demo > div.card-body > h3 > a.card-link",
+          "w": 171.2,
+          "h": 31
+        }
+      ],
+      "pass": true
+    },
+    "measure": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "type-scale": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "spacing": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overflow": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "heading-wrap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "svg-overlap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "radius": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "color-scheme": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "typography": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "tabular": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "shadows": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icon-stroke": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "weight": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus-shape": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-shift": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "fallback": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "motion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    }
+  },
+  "summary": {
+    "weightKB": {
+      "html": 105,
+      "svg": 0
+    },
+    "focusables": 27,
+    "fallbackShift390": 0,
+    "fallbackShift1440": 0,
+    "motionFound": {
+      "animations": 1,
+      "movingTransitions": 18
+    },
+    "axe": "pass",
+    "overlay": "pass",
+    "targets": "pass (14 warn)",
+    "measure": "pass",
+    "type-scale": "pass",
+    "spacing": "pass",
+    "overflow": "pass",
+    "heading-wrap": "pass",
+    "svg-overlap": "pass",
+    "radius": "pass",
+    "color-scheme": "pass",
+    "typography": "pass",
+    "tabular": "pass",
+    "shadows": "pass",
+    "icon-stroke": "pass",
+    "weight": "pass",
+    "focus": "pass",
+    "focus-shape": "pass",
+    "sticky-focus": "pass",
+    "state-shift": "pass",
+    "fallback": "pass",
+    "motion": "pass",
+    "result": "PASS",
+    "fails": 0,
+    "warns": 14
+  }
+}

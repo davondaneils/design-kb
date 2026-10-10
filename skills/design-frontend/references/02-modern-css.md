@@ -6,7 +6,7 @@ Sources: kb/research/frontend/02-modern-css.md and the design-kb foundation cont
 1. Tokens are the contract between design and code. Primitives hold raw values, semantic tokens hold meaning, components use only semantic tokens (foundation contract).
 2. Control the cascade by architecture, not by specificity. `@layer` decides who wins; selectors stay flat (MDN `@layer`).
 3. Components respond to their container, pages respond to the viewport. Media queries for page layout, container queries for components (foundation contract, MDN).
-4. Write for every writing direction. Logical properties by default.
+4. Write for every writing direction. Logical properties for asymmetric inline-axis values; symmetric shorthands are already direction safe (reference 07).
 5. Users own their settings: font size, zoom, color scheme, contrast, motion. CSS adapts to them; it never overrides them.
 
 ## Token file (default, matches the foundation contract)
@@ -79,7 +79,7 @@ Rules for this file:
 ## Breakpoints and queries
 - Foundation breakpoints, mobile first: sm 640, md 768, lg 1024, xl 1280, 2xl 1536.
 - Write media queries in `em` so they move with the user's default font size: `@media (width >= 48em)` is 768px at default settings (opinion, common expert practice). Reason: relative units in media queries resolve against the initial font size (the browser setting), not your root CSS, so a user who sets 20px default text gets the narrower layout their larger text needs.
-- Components: `container: card / inline-size;` then `@container card (width >= 30em) { ... }`.
+- Components: `container: card / inline-size;` then `@container card (width >= 30rem) { ... }`. Use rem or px in container conditions, never em: em there resolves against the container's own font size (CSS Containment 3), so a 14px panel turns `44em` into 616px instead of 704px (measured, reference 07).
 - Container trap: an `inline-size` container cannot take its width from its content. Inside a shrink-to-fit parent (auto grid column, flex item with no basis, `inline-block`, absolutely positioned box) it collapses toward zero. Give the container a definite width from its parent (`width: 100%`, `flex: 1`, `minmax(0, 1fr)`).
 - `cqi` units size type and spacing to the component: `font-size: clamp(var(--text-lg), 4cqi, var(--text-2xl));`. Without a container they silently fall back to viewport units.
 - Container style queries are still an Interop 2026 focus area (V): enhancement only.
@@ -93,7 +93,7 @@ Rules for this file:
 - Test: zoom to 200% and 400% in Chrome and 300% in Firefox at 1280px wide; text must reach 2x its unzoomed size.
 - Never set `html { font-size: 62.5% }` or any px root. Root stays 100% (16px default) so user preferences apply.
 
-## Logical properties (default)
+## Logical properties (inline axis, asymmetric values)
 | Physical | Logical |
 |---|---|
 | `margin-left/right` | `margin-inline-start/end`, `margin-inline` |
@@ -102,7 +102,7 @@ Rules for this file:
 | `left / right` | `inset-inline-start / end` |
 | `border-top-left-radius` | `border-start-start-radius` |
 | `text-align: left` | `text-align: start` |
-Keep physical properties only for things that are physical (a shadow cast down-right, a drop of light from above).
+Keep physical properties only for things that are physical (a shadow cast down-right, a drop of light from above, art and chart coordinates). Do not convert `padding: 0 X` to `padding-inline: X`: the block value is lost and a button's UA `padding-block` (1px in Chromium) comes back, 2px taller (measured, reference 07).
 
 ## Viewport units
 - `100vh` on mobile includes the area under the browser toolbar. Use `100svh` for hero sections (stable, never covered) and `100dvh` only for app shells that must track the toolbar (it relayouts as the toolbar moves) (opinion, based on unit definitions).
@@ -123,6 +123,10 @@ Keep physical properties only for things that are physical (a shadow cast down-r
   p { text-wrap: pretty; }
   h1, h2, h3, h4, h5, h6 { text-wrap: balance; line-height: var(--leading-heading, 1.15); }
   [hidden] { display: none !important; }
+  /* User preferences: !important in the FIRST layer wins over every later layer (important declarations reverse layer order, MDN @layer). */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  }
 }
 ```
 `img { height: auto }` keeps the aspect ratio when `width` and `height` attributes are set and CSS changes the width.
@@ -154,7 +158,7 @@ Check MDN or webstatus.dev before shipping anything in the middle and right colu
 | one container query per component | media queries inside a reusable card |
 
 ## Worked examples
-1. Card in a 3-column grid and a 280px sidebar. `.card-wrap { container: card / inline-size; }`. Default layout stacks (image above text). `@container card (width >= 30em)` switches to a side-by-side grid. Grid columns use `repeat(auto-fill, minmax(min(100%, 18rem), 1fr))`, so the wrapper always has a definite width. Result: one component, two contexts, no breakpoint coupling.
+1. Card in a 3-column grid and a 280px sidebar. `.card-wrap { container: card / inline-size; }`. Default layout stacks (image above text). `@container card (width >= 30rem)` switches to a side-by-side grid. Grid columns use `repeat(auto-fill, minmax(min(100%, 18rem), 1fr))`, so the wrapper always has a definite width. Result: one component, two contexts, no breakpoint coupling.
 2. Theme switch with system default. Three-option control (System, Light, Dark). System removes `data-theme`; the others set it. A 3-line inline script in `<head>` reads the stored choice before first paint to avoid a flash. All colors already flip through `light-dark()`, so the switch touches one attribute.
 3. Overriding a date-picker library that ships `.dp .dp-day.selected { ... }`. Import it into `layer(vendor)`; write `.dp-day[aria-selected="true"] { background: var(--color-primary); }` in `components`. It wins at lower specificity. No `!important`.
 

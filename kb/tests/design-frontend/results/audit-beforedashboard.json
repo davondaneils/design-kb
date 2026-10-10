@@ -1,0 +1,146 @@
+{
+  "file": "kb/tests/design-frontend/before/dashboard.html",
+  "layers": [],
+  "layerRules": {},
+  "unlayered": 278,
+  "styleRules": 278,
+  "decls": 1000,
+  "tokens": 145,
+  "media": {
+    "(pointer: coarse)": 1,
+    "(prefers-color-scheme: dark)": 1,
+    "(min-width: 768px)": 4,
+    "(min-width: 1024px)": 7,
+    "(min-width: 768px) and (max-width: 1023px)": 1,
+    "(max-width: 639px)": 3,
+    "(prefers-reduced-motion: no-preference)": 2,
+    "(max-width: 767px)": 1,
+    "(min-width: 1280px)": 1,
+    "(hover: hover) and (min-width: 640px)": 1,
+    "(prefers-reduced-motion: reduce)": 1,
+    "(forced-colors: active)": 1
+  },
+  "containerRules": 1,
+  "containers": 1,
+  "has": 2,
+  "important": [
+    "unlayered :: * { transition }",
+    "unlayered :: * { animation }"
+  ],
+  "findings": {
+    "type-token-px": [
+      ":root { --text-xs: 12px }",
+      ":root { --text-sm: 14px }",
+      ":root { --text-base: 16px }",
+      ":root { --text-lg: 20px }",
+      ":root { --text-xl: 25px }",
+      ":root { --text-2xl: 31px }",
+      ":root { --text-3xl: 39px }"
+    ],
+    "physical-property": [
+      ".skip { left: var(--space-3) }",
+      ".workspace { text-align: left }",
+      ".side-btn { text-align: left }",
+      ".sidebar:not(.open) [data-tip]:hover::after, .sidebar:not(.open) [data-tip]:focus-visible::after { left: calc(100% + 12px) }",
+      ".main { border-left: 1px solid var(--color-border) }",
+      ".btn kbd { margin-left: var(--space-2) }",
+      ".kpi:nth-child(2n+1) { border-right: 1px solid var(--color-border) }",
+      ".kpi { border-right: 1px solid var(--color-border) }",
+      ".kpi .u { margin-left: var(--space-1) }",
+      ".kpi .u.pre { margin-right: var(--space-1) }",
+      "th, td { text-align: left }",
+      ".num { text-align: right }",
+      "th.num { text-align: right }",
+      "td.act, th.act { padding-right: var(--space-3) }",
+      "td.act, th.act { text-align: right }",
+      ".menu button { text-align: left }",
+      ".switch::after { left: 2px }",
+      ".switch:checked::after { left: 18px }"
+    ],
+    "vh-unit": [
+      ".app { min-height: 100vh }",
+      ".sidebar { height: 100vh }"
+    ],
+    "hover-unguarded": [
+      ".workspace:hover { hover outside (hover: hover) }",
+      ".nav a:hover { hover outside (hover: hover) }",
+      ".nav a:hover kbd, .nav a:focus-visible kbd { hover outside (hover: hover) }",
+      ".side-btn:hover { hover outside (hover: hover) }",
+      ".sidebar:not(.open) [data-tip]:hover::after, .sidebar:not(.open) [data-tip]:focus-visible::after { hover outside (hover: hover) }",
+      ".icon-btn:hover { hover outside (hover: hover) }",
+      ".btn:hover { hover outside (hover: hover) }",
+      ".btn-primary:hover { hover outside (hover: hover) }",
+      ".chip:hover { hover outside (hover: hover) }",
+      "tbody tr:hover { hover outside (hover: hover) }",
+      ".sort:hover { hover outside (hover: hover) }",
+      ".page-cell a:hover { hover outside (hover: hover) }",
+      ".row-btn:hover { hover outside (hover: hover) }",
+      ".menu button:hover { hover outside (hover: hover) }"
+    ],
+    "primitive-in-component": [
+      ".logo { background: var(--color-brand) }",
+      ".sidebar:not(.open) [data-tip]:hover::after, .sidebar:not(.open) [data-tip]:focus-visible::after { background: var(--color-slate-950) }",
+      ".sidebar:not(.open) [data-tip]:hover::after, .sidebar:not(.open) [data-tip]:focus-visible::after { color: var(--color-slate-50) }"
+    ],
+    "raw-space": [
+      ".sidebar:not(.open) [data-tip]:hover::after, .sidebar:not(.open) [data-tip]:focus-visible::after { left: calc(100% + 12px) }",
+      "#palette { margin: 96px auto auto }",
+      ".switch:checked::after { left: 18px }"
+    ],
+    "motion-unguarded": [
+      ".btn { transition: background-color var(--duration-fast) var(--ease-standard) }"
+    ],
+    "font-size-px": [
+      ".chart .axis text { font-size: 12px }",
+      ".label-current { font-size: 12px }"
+    ],
+    "id-selector": [
+      "#palette {  }"
+    ],
+    "raw-color": [
+      ".switch::after { background: rgb(255, 255, 255) }"
+    ],
+    "media-min-max-syntax": [
+      "@media (min-width: 768px)",
+      "@media (min-width: 1024px)",
+      "@media (min-width: 768px) and (max-width: 1023px)",
+      "@media (max-width: 639px)",
+      "@media (max-width: 767px)",
+      "@media (min-width: 1280px)",
+      "@media (hover: hover) and (min-width: 640px)"
+    ]
+  },
+  "inlineStyleAttrs": 16,
+  "counts": {
+    "raw-color": 1,
+    "primitive-in-component": 3,
+    "raw-space": 3,
+    "font-size-px": 2,
+    "type-token-px": 7,
+    "transition-all": 0,
+    "id-selector": 1,
+    "hover-unguarded": 14,
+    "physical-property": 18,
+    "vh-unit": 2,
+    "motion-unguarded": 1,
+    "media-min-max-syntax": 7,
+    "component-token-primitive": 0
+  },
+  "levels": {
+    "raw-color": "fail",
+    "primitive-in-component": "fail",
+    "raw-space": "fail",
+    "font-size-px": "fail",
+    "type-token-px": "fail",
+    "transition-all": "fail",
+    "id-selector": "warn",
+    "hover-unguarded": "fail",
+    "physical-property": "warn",
+    "vh-unit": "warn",
+    "motion-unguarded": "warn",
+    "media-min-max-syntax": "warn",
+    "component-token-primitive": "warn"
+  },
+  "layered": false,
+  "verdict": "fail"
+}

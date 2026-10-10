@@ -1,0 +1,29 @@
+{
+  "before": "kb/tests/design-frontend/before/coffee.html",
+  "after": "kb/tests/design-frontend/coffee.html",
+  "tolerance": 0,
+  "results": [
+    {
+      "name": "coffee-1440-dark",
+      "query": "",
+      "scheme": "dark",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        4442
+      ],
+      "sizeAfter": [
+        1440,
+        4442
+      ],
+      "pixels": 6396480,
+      "diffPixels": 704,
+      "maxDelta": 20,
+      "rows": [
+        668,
+        4136
+      ],
+      "identical": false
+    }
+  ]
+}
