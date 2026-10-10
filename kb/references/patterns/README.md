@@ -23,3 +23,12 @@ What the best shipped dashboard and mobile products actually do, pattern by patt
 | 09 | [Notifications](09-notifications.md) | `skills/design-ux/references/04-states-feedback.md` |
 | 10 | [Permission and error states](10-permission-and-error-states.md) | `skills/design-ux/references/04-states-feedback.md`, `skills/design-product-ui/references/05-states-bulk.md` |
 | 11 | [Checkout and upgrade](11-checkout-and-upgrade.md) | `anthropic-skills:sales-funnels` for offer logic; this file covers the UI |
+
+## Where the gap is widest (opinion)
+Gap score 1 to 5: how far the average shipped product sits below the best example. Each file explains its score in its "Gap" section.
+
+| Score | Patterns |
+|---|---|
+| 5 | Notifications |
+| 4 | Onboarding, settings, filters and search, command palettes, permission and error states |
+| 3 | Empty states, navigation, tables and lists, forms and validation, checkout and upgrade |
