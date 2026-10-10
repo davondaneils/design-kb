@@ -283,7 +283,7 @@ kbd { white-space: nowrap; display: inline-flex; align-items: center; justify-co
 /* Disabled and busy keep the box: no state changes size (FOUNDATIONS 15). Busy draws its spinner over the hidden label. */
 .btn[aria-disabled=true]:not([aria-busy=true]) { background: var(--color-surface-sunken); color: var(--color-text-muted-on-tint); border-color: transparent; box-shadow: none; cursor: not-allowed; }
 .btn[aria-busy=true] { position: relative; cursor: progress; }
-.btn[aria-busy=true] > :not(.spinner) { visibility: hidden; }
+.btn[aria-busy=true] > :not(.spinner) { opacity: 0; } /* opacity, not visibility: the label stays the button's name */
 .btn .spinner { display: none; position: absolute; inset: 0; margin: auto; width: 16px; height: 16px; border-radius: var(--radius-full); border: 2px solid currentColor; border-right-color: transparent; }
 .btn[aria-busy=true] .spinner { display: block; }
 @media (prefers-reduced-motion: no-preference) {
@@ -326,6 +326,7 @@ kbd { white-space: nowrap; display: inline-flex; align-items: center; justify-co
 @container main (width >= 48rem) { .content { padding: var(--space-6) var(--space-7) var(--space-8); } }
 .answer { max-width: 32em; font-size: var(--text-base); line-height: 1.5; color: var(--color-text-muted); }
 .answer strong { color: var(--color-text); font-weight: 600; }
+/* the answer is two sentences in two spans: the live number and the stopped source never share a sentence */
 .answer a { color: var(--color-text); text-underline-offset: 3px; text-decoration-color: var(--color-border-strong); }
 /* Sections, not cards (round 4, after the Linear app): a 40px head bar with one hairline under it, content on the page's
    own left edge, space between sections. Only the alert list and the setup guide keep a bordered surface (.boxed). */
@@ -553,7 +554,9 @@ td.act, th.act { width: 1%; padding-left: 0; padding-right: 0; text-align: right
 .empty p, .failed p { max-width: 32em; color: var(--color-text-muted); }
 .empty h3, .failed h3 { font-size: var(--text-sm); font-weight: 600; }
 .failed .icon { color: var(--color-warning); }
-.empty svg { margin-bottom: var(--space-3); }
+.empty svg { margin-top: var(--space-3); }
+html[data-state=empty] .kpi-dates { display: none; } /* no data yet: the week is named, its dates wait for numbers */
+.split .empty { align-content: start; padding-top: var(--space-10); } /* side by side, the two empty messages share one top edge; the sketch follows its words */
 .ill-grid { stroke: var(--color-chart-grid); stroke-width: 1; shape-rendering: crispEdges; }
 .ill-line { fill: none; stroke: var(--color-illustration-line); stroke-width: 1.5; stroke-dasharray: 4 4; }
 .ill-mark { fill: none; stroke: var(--color-illustration-accent); stroke-width: 2; stroke-linecap: round; }
@@ -692,6 +695,13 @@ html[data-state=first-data] .fresh-first { display: inline; }
 .step.done h3 { color: var(--color-text-muted); font-weight: 500; }
 .step .why { color: var(--color-text-muted); margin-top: var(--space-1); max-inline-size: 52ch; }
 .step .acts { display: flex; flex-wrap: wrap; gap: var(--space-3); justify-content: flex-end; align-items: center; }
+.invite-form { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+.field { flex: 1 1 14rem; max-width: 22rem; min-width: 0; min-height: var(--size-control); padding: 0 var(--space-4); border: 1px solid var(--color-border-strong); border-radius: var(--radius-md); background: var(--color-surface); color: var(--color-text); font: inherit; font-size: var(--text-sm); }
+.field::placeholder { color: var(--color-text-muted); }
+.field[aria-invalid=true] { border-color: var(--color-danger); box-shadow: inset 0 0 0 1px var(--color-danger); }
+.field-msg { flex-basis: 100%; display: flex; gap: var(--space-2); align-items: center; font-size: var(--text-xs); color: var(--color-text-muted); }
+.field-msg:empty { display: none; }
+.field-msg.err { color: var(--color-danger); }
 .step-body { grid-column: 2 / -1; display: grid; gap: var(--space-4); margin-top: var(--space-4); }
 .snippet { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-3) var(--space-3) var(--space-3) var(--space-4); border-radius: var(--radius-md); background: var(--color-bg); box-shadow: inset 0 0 0 1px var(--color-border); min-width: 0; }
 .snippet code { flex: 1; min-width: 0; overflow-wrap: anywhere; font-size: var(--text-xs); color: var(--color-text); padding: var(--space-2) 0; }
@@ -745,7 +755,8 @@ html[data-state=loading] .pick-hint, html[data-state=empty] .pick-hint, html[dat
 html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display: none; }
 /* Touch: under 40rem of work area every control reaches 44px (round 3 left 34 targets between 24 and 40px). */
 @container main (width < 40rem) {
-  .page-head, .toolbar, .content { --size-control: 44px; }
+  .page-head, .toolbar, .content > * { --size-control: 44px; } /* .content is itself a container, so its children carry the size */
+  .panel-head .btn-ghost { min-height: 44px; }
   .chip, .kpi-pick { min-height: 44px; }
   .pick-hint { display: none; }
   .alert a, .text-link, .dismiss, .page-cell a { display: inline-flex; align-items: center; min-height: 44px; }
@@ -781,7 +792,7 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
       <a class="usage" href="#" id="usage">
         <span class="usage-row"><span id="usage-label">Events this month</span><span class="plan">Starter</span></span>
         <span class="meter" role="meter" aria-labelledby="usage-label" aria-valuemin="0" aria-valuemax="10000000" aria-valuenow="3600000" aria-valuetext="3.6 million of 10 million events" id="usage-meter"><i id="usage-fill"></i></span>
-        <span class="usage-row num"><span id="usage-num">3.6M of 10M</span><span id="usage-proj">On pace for 9.3M</span></span>
+        <span class="usage-row num"><span id="usage-num" data-num data-value="3600000">3.6M of 10M</span><span id="usage-proj">On pace for 9.3M</span></span>
       </a>
       <button class="side-btn" type="button" data-tip="Commands" data-open="palette"><svg class="i" data-icon="commands" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.25 4v8A1.75 1.75 0 1 0 12 10.25H4A1.75 1.75 0 1 0 5.75 12V4A1.75 1.75 0 1 0 4 5.75h8A1.75 1.75 0 1 0 10.25 4z"/></svg><span class="label">Commands</span><kbd class="mod-k" aria-hidden="true">Ctrl K</kbd></button>
       <button class="side-btn" type="button" data-tip="Keyboard shortcuts" data-open="sheet"><svg class="i" data-icon="keyboard" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.75" y="3.75" width="12.5" height="8.5" rx="1.5"/><path d="M4.75 6.75h.01M8 6.75h.01M11.25 6.75h.01M5.25 9.25h5.5"/></svg><span class="label">Keyboard shortcuts</span><kbd aria-hidden="true">?</kbd></button>
@@ -813,7 +824,7 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
     </div>
 
     <main class="content" id="main" tabindex="-1" aria-busy="false">
-      <p class="answer answer-ready"><strong>Weekly active users are up <span id="ans-pct">8.1%</span>, the eighth rise in a row.</strong> Checkout events stopped at 2:05&nbsp;pm, so <a href="#attention-title">today’s conversion and revenue are undercounted</a>.</p>
+      <p class="answer answer-ready"><span><strong>Weekly active users are up <span id="ans-pct" class="num" data-num data-derived-from="same #wau-pct">8.1%</span>, the eighth rise in a row.</strong></span> <span>Checkout events stopped at 2:05&nbsp;pm, so <a href="#attention-title">today’s conversion and revenue are undercounted</a>.</span></p>
       <p class="answer answer-loading">Loading this week’s overview.</p>
       <p class="answer answer-empty"><strong>No events yet.</strong> Install the tracking snippet and your first numbers appear here within a minute.</p>
 
@@ -864,27 +875,34 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
           <li class="step s4">
             <span class="mark" aria-hidden="true">4</span>
             <div><h3>Invite a teammate</h3><p class="why">Weekly reports go to everyone on the workspace.</p></div>
-            <div class="acts"><button class="btn" type="button">Invite</button></div>
+            <div class="step-body">
+              <form class="invite-form" id="invite-form" novalidate>
+                <label class="sr-only" for="invite-email">Teammate’s work email</label>
+                <input class="field" id="invite-email" type="email" autocomplete="off" spellcheck="false" placeholder="name@acme.com" aria-describedby="invite-msg">
+                <button class="btn" type="submit">Invite</button>
+                <p class="field-msg" id="invite-msg" role="status"></p>
+              </form>
+            </div>
           </li>
         </ol>
       </section>
 
       <section class="panel kpi-panel" aria-labelledby="kpi-title">
-        <div class="panel-head"><h2 id="kpi-title">This week, Oct&nbsp;6 to 12</h2><span class="pick-hint">Choose a tile to chart it</span></div>
+        <div class="panel-head"><h2 id="kpi-title">This week<span class="kpi-dates">, Oct&nbsp;6 to 12</span></h2><span class="pick-hint">Choose a tile to chart it</span></div>
         <p class="sample-bar"><span class="tag" style="display:inline-flex">Sample</span>Demo store numbers. Yours replace them after the first event.</p>
-        <dl class="kpis ready">
-          <div class="kpi pickable" data-metric="wau"><dt><button class="kpi-pick" type="button" aria-pressed="true" aria-controls="chart-panel" data-metric="wau">Weekly active users<span class="sr-only">, show in chart</span></button></dt><dd><span class="value"><span class="live" data-live="wau" aria-hidden="true">48,210</span><span class="sr-only" id="wau-sr">48,210</span></span><svg class="spark" id="wau-spark" viewBox="0 0 96 32" preserveAspectRatio="none" role="img" aria-label="12-week trend: up from 31,400 to 48,210"><polyline points="4,28.0 12,27.1 20,25.4 28,26.0 36,23.1 44,22.0 52,20.0 60,17.4 68,16.3 76,12.3 84,9.2 92,4.0" vector-effect="non-scaling-stroke"/><circle cx="92" cy="4.0" r="2.5"/></svg><span class="delta good"><svg class="i i-12" data-icon="arrow-up" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 10V2.5M3 5.75l3.25-3.25 3.25 3.25"/></svg><span id="wau-pct">+8.1%</span> <span class="vs">vs last week</span></span></dd></div>
-          <div class="kpi pickable" data-metric="conv"><dt><button class="kpi-pick" type="button" aria-pressed="false" aria-controls="chart-panel" data-metric="conv">Conversion<span class="sr-only">, show in chart</span></button></dt><dd><span class="value">3.8<span class="u">%</span></span><svg class="spark" viewBox="0 0 96 32" preserveAspectRatio="none" role="img" aria-label="12-week trend: up from 3.0% to 3.8%"><polyline points="4,28.0 12,25.0 20,25.0 28,22.0 36,22.0 44,19.0 52,16.0 60,19.0 68,13.0 76,10.0 84,22.0 92,4.0" vector-effect="non-scaling-stroke"/><circle cx="92" cy="4.0" r="2.5"/></svg><span class="delta good"><svg class="i i-12" data-icon="arrow-up" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 10V2.5M3 5.75l3.25-3.25 3.25 3.25"/></svg>+0.6 pts <span class="vs">vs last week</span></span><span class="caveat">Partial since 2:05&nbsp;pm</span></dd></div>
-          <div class="kpi pickable" data-metric="rev"><dt><button class="kpi-pick" type="button" aria-pressed="false" aria-controls="chart-panel" data-metric="rev">Revenue<span class="sr-only">, show in chart</span></button></dt><dd><span class="rev-value"><span class="value"><span class="u pre" aria-hidden="true">$</span><span aria-hidden="true">184.2</span><span class="u" aria-hidden="true">k</span><span class="sr-only">$184.2k</span></span><svg class="spark" viewBox="0 0 96 32" preserveAspectRatio="none" role="img" aria-label="12-week trend: up from $141k to $184.2k"><polyline points="4,28.0 12,26.3 20,25.2 28,23.6 36,21.9 44,20.2 52,18.6 60,15.8 68,13.6 76,10.8 84,11.0 92,4.0" vector-effect="non-scaling-stroke"/><circle cx="92" cy="4.0" r="2.5"/></svg><span class="delta good"><svg class="i i-12" data-icon="arrow-up" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 10V2.5M3 5.75l3.25-3.25 3.25 3.25"/></svg>+8.1% <span class="vs">vs last week</span></span><span class="caveat">Partial since 2:05&nbsp;pm</span></span><span class="rev-restricted"><span class="value" aria-hidden="true"><svg class="i i-lock" data-icon="lock" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.25" y="7.25" width="9.5" height="6.5" rx="1.5"/><path d="M5.25 7.25v-2a2.75 2.75 0 0 1 5.5 0v2"/></svg></span><span class="restricted">Visible to Finance admins. <a href="#">Ask Priya Shah for access</a></span></span></dd></div>
+        <dl class="kpis ready" data-lint-skip="grid-edge">
+          <div class="kpi pickable" data-metric="wau"><dt><button class="kpi-pick" type="button" aria-pressed="true" aria-controls="chart-panel" data-metric="wau">Weekly active users<span class="sr-only">, show in chart</span></button></dt><dd><span class="value"><span class="live" data-live="wau" aria-hidden="true" id="wau-val" data-num data-value="48210" data-monotonic="up" data-sum-of="#plat-list .b-val">48,210</span><span class="sr-only" id="wau-sr">48,210</span></span><svg class="spark" id="wau-spark" viewBox="0 0 96 32" preserveAspectRatio="none" role="img" aria-label="12-week trend: up from 31,400 to 48,210"><polyline points="4,28.0 12,27.1 20,25.4 28,26.0 36,23.1 44,22.0 52,20.0 60,17.4 68,16.3 76,12.3 84,9.2 92,4.0" vector-effect="non-scaling-stroke"/><circle cx="92" cy="4.0" r="2.5"/></svg><span class="delta good"><svg class="i i-12" data-icon="arrow-up" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 10V2.5M3 5.75l3.25-3.25 3.25 3.25"/></svg><span id="wau-pct" data-num data-derived-from="pct-change #wau-val #wau-prev">+8.1%</span> <span class="vs">vs last week</span></span></dd></div>
+          <div class="kpi pickable" data-metric="conv"><dt><button class="kpi-pick" type="button" aria-pressed="false" aria-controls="chart-panel" data-metric="conv">Conversion<span class="sr-only">, show in chart</span></button></dt><dd><span class="value" data-num data-source="checkout">3.8<span class="u">%</span></span><svg class="spark" viewBox="0 0 96 32" preserveAspectRatio="none" role="img" aria-label="12-week trend: up from 3.0% to 3.8%"><polyline points="4,28.0 12,25.0 20,25.0 28,22.0 36,22.0 44,19.0 52,16.0 60,19.0 68,13.0 76,10.0 84,22.0 92,4.0" vector-effect="non-scaling-stroke"/><circle cx="92" cy="4.0" r="2.5"/></svg><span class="delta good"><svg class="i i-12" data-icon="arrow-up" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 10V2.5M3 5.75l3.25-3.25 3.25 3.25"/></svg>+0.6 pts <span class="vs">vs last week</span></span><span class="caveat">Partial since 2:05&nbsp;pm</span></dd></div>
+          <div class="kpi pickable" data-metric="rev"><dt><button class="kpi-pick" type="button" aria-pressed="false" aria-controls="chart-panel" data-metric="rev">Revenue<span class="sr-only">, show in chart</span></button></dt><dd><span class="rev-value"><span class="value" data-num data-value="184200" data-source="checkout"><span class="u pre" aria-hidden="true">$</span><span aria-hidden="true">184.2</span><span class="u" aria-hidden="true">k</span><span class="sr-only">$184.2k</span></span><svg class="spark" viewBox="0 0 96 32" preserveAspectRatio="none" role="img" aria-label="12-week trend: up from $141k to $184.2k"><polyline points="4,28.0 12,26.3 20,25.2 28,23.6 36,21.9 44,20.2 52,18.6 60,15.8 68,13.6 76,10.8 84,11.0 92,4.0" vector-effect="non-scaling-stroke"/><circle cx="92" cy="4.0" r="2.5"/></svg><span class="delta good"><svg class="i i-12" data-icon="arrow-up" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 10V2.5M3 5.75l3.25-3.25 3.25 3.25"/></svg>+8.1% <span class="vs">vs last week</span></span><span class="caveat">Partial since 2:05&nbsp;pm</span></span><span class="rev-restricted"><span class="value" aria-hidden="true"><svg class="i i-lock" data-icon="lock" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.25" y="7.25" width="9.5" height="6.5" rx="1.5"/><path d="M5.25 7.25v-2a2.75 2.75 0 0 1 5.5 0v2"/></svg></span><span class="restricted">Visible to Finance admins. <a href="#">Ask Priya Shah for access</a></span></span></dd></div>
           <div class="kpi pickable" data-metric="churn"><dt><button class="kpi-pick" type="button" aria-pressed="false" aria-controls="chart-panel" data-metric="churn">Churn<span class="sr-only">, show in chart</span></button></dt><dd><span class="value">2.9<span class="u">%</span></span><svg class="spark bad" viewBox="0 0 96 32" preserveAspectRatio="none" role="img" aria-label="12-week trend: up from 2.6% to 2.9%, which is worse"><polyline points="4,23.2 12,28.0 20,23.2 28,23.2 36,18.4 44,18.4 52,23.2 60,13.6 68,13.6 76,8.8 84,28.0 92,4.0" vector-effect="non-scaling-stroke"/><circle cx="92" cy="4.0" r="2.5"/></svg><span class="delta bad"><svg class="i i-12" data-icon="arrow-up" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 10V2.5M3 5.75l3.25-3.25 3.25 3.25"/></svg>+0.4 pts, worse <span class="vs">vs last week</span></span></dd></div>
         </dl>
-        <dl class="kpis first">
+        <dl class="kpis first" data-lint-skip="grid-edge">
           <div class="kpi"><dt>Weekly active users</dt><dd><span class="value">12</span><span class="pending">Week-on-week from Oct 19</span></dd></div>
           <div class="kpi"><dt>Conversion</dt><dd><span class="value" aria-hidden="true">&ndash;</span><span class="pending">Needs a <code>checkout_completed</code> event</span></dd></div>
           <div class="kpi"><dt>Revenue</dt><dd><span class="value" aria-hidden="true">&ndash;</span><span class="pending"><a href="#">Connect Stripe</a> to see revenue</span></dd></div>
           <div class="kpi"><dt>Churn</dt><dd><span class="value" aria-hidden="true">&ndash;</span><span class="pending">Needs 30 days of data, Nov 11</span></dd></div>
         </dl>
-        <dl class="kpis state empty-st">
+        <dl class="kpis state empty-st" data-lint-skip="grid-edge">
           <div class="kpi"><dt>Weekly active users</dt><dd><span class="value" aria-hidden="true">&ndash;</span><span class="restricted">No data yet</span></dd></div>
           <div class="kpi"><dt>Conversion</dt><dd><span class="value" aria-hidden="true">&ndash;</span><span class="restricted">No data yet</span></dd></div>
           <div class="kpi"><dt>Revenue</dt><dd><span class="value" aria-hidden="true">&ndash;</span><span class="restricted">No data yet</span></dd></div>
@@ -901,7 +919,7 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
       <section class="panel boxed attention ready-attention" aria-labelledby="attention-title">
         <div class="panel-head"><h2 id="attention-title">Needs attention</h2><a class="btn btn-ghost" href="#">Manage alerts</a></div>
         <ul class="alerts">
-          <li class="alert danger">
+          <li class="alert danger" data-source-stopped="checkout">
             <svg class="i icon" data-icon="error" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path class="solid" fill-rule="evenodd" d="M8 1.25a6.75 6.75 0 1 1 0 13.5A6.75 6.75 0 0 1 8 1.25zM7.25 4.75v4a.75.75 0 0 0 1.5 0v-4a.75.75 0 0 0-1.5 0zM8 10.4a.9.9 0 1 0 0 1.8.9.9 0 0 0 0-1.8z"/></svg>
             <div><strong>Error: checkout events stopped at 2:05&nbsp;pm</strong><p>No <code>checkout_completed</code> events since then. Other events are still arriving.</p><p class="meta">Last event 2:05&nbsp;pm PT &middot; <a href="#">Open in Events</a></p></div>
           </li>
@@ -948,13 +966,13 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
           </div>
           <div class="chart-body state loading" aria-hidden="true"><div class="skel-chart"><i></i><i></i><i></i><i></i></div></div>
           <div class="state empty-st empty">
+            <h3>Your first week will draw here</h3>
+            <p>Active users appear within a minute of the first event. The dashed line compares with the previous 12 weeks once you have them.</p>
             <svg width="160" height="96" viewBox="0 0 160 96" aria-hidden="true">
               <path class="ill-grid" d="M0 16.5h160M0 40.5h160M0 64.5h160M0 88.5h160"/>
               <path class="ill-line" d="M4 76 C40 72 64 66 96 58 S140 44 156 40"/>
               <path class="ill-mark" d="M62 30v24M70 30v24M78 30v24M86 30v24M58 50l32-16"/>
             </svg>
-            <h3>Your first week will draw here</h3>
-            <p>Active users appear within a minute of the first event. The dashed line compares with the previous 12 weeks once you have them.</p>
           </div>
         </section>
         <section class="panel" aria-labelledby="plat-title">
@@ -970,14 +988,14 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
             <div class="skel-row"><span class="skel" style="width:35%"></span><span class="skel" style="width:20%"></span></div>
           </div>
           <div class="state empty-st empty"><h3>No platforms yet</h3><p>Each platform gets a bar once it sends its first event.</p></div>
-          <p class="pane-note" id="plat-note">Active users this week, Oct&nbsp;6 to 12, against last week. The three add up to 48,210; each bar is its share of that total.</p>
+          <p class="pane-note" id="plat-note">Active users this week, Oct&nbsp;6 to 12, against last week’s <span id="wau-prev" class="num" data-num>44,600</span>. The three add up to <span class="num" data-num data-sum-of="#plat-list .b-val" data-monotonic="up">48,210</span>; each bar is its share of that total.</p>
         </section>
       </div>
 
       <section class="panel" aria-labelledby="pages-title">
           <div class="panel-head"><div class="title"><h2 id="pages-title">Top pages this week</h2><span class="tag fr-sample">Sample</span></div><a class="btn btn-ghost" href="#">All pages</a></div>
           <div class="table-wrap ready ready-table">
-            <table role="table" aria-labelledby="pages-title" aria-describedby="pages-sort">
+            <table role="table" aria-labelledby="pages-title" aria-describedby="pages-sort" data-share-base="214" id="pages-table">
               <thead role="rowgroup"><tr role="row">
                 <th role="columnheader" scope="col" aria-sort="none" data-key="page"><button class="sort" type="button">Page<svg class="i i-12" data-icon="arrow-down" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 2v7.5M3 6.25l3.25 3.25 3.25-3.25"/></svg></button></th>
                 <th role="columnheader" scope="col" class="num" aria-sort="descending" data-key="views"><button class="sort" type="button">Views<svg class="i i-12" data-icon="arrow-down" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 2v7.5M3 6.25l3.25 3.25 3.25-3.25"/></svg></button></th>
@@ -1073,6 +1091,8 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
     root.dataset.state = s;
     root.dataset.phase = ['first-run', 'listening', 'check-failed'].includes(s) ? 'setup sample' : s === 'first-data' ? 'setup' : '';
     document.getElementById('main').setAttribute('aria-busy', s === 'loading' ? 'true' : 'false');
+    if (['empty', 'first-run', 'listening', 'check-failed'].includes(s)) root.dataset.data = 'none'; else delete root.dataset.data;
+    if (/sample/.test(root.dataset.phase)) document.getElementById('main').dataset.sample = ''; else delete document.getElementById('main').dataset.sample;
   }
   setState(params.get('state') || 'ready');
   // Plan usage (design-conversion 05). Ready: 3.6M by Oct 12, 0.3M a day, on pace for 9.3M. Limit: 7.8M, crosses 10M during Oct 16.
@@ -1080,7 +1100,7 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
   // data state counts its 38 page views; loading shows no number at all.
   function setUsage(now, num, proj, text) {
     document.getElementById('usage-fill').style.setProperty('--w', (now / 1e7 * 100).toFixed(1) + '%');
-    document.getElementById('usage-num').textContent = num;
+    document.getElementById('usage-num').textContent = num; document.getElementById('usage-num').dataset.value = String(now);
     document.getElementById('usage-proj').textContent = proj;
     const m = document.getElementById('usage-meter');
     m.setAttribute('aria-valuenow', String(now)); m.setAttribute('aria-valuetext', text);
@@ -1088,7 +1108,7 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
   const S0 = root.dataset.state;
   if (/^limit/.test(S0)) setUsage(7800000, '7.8M of 10M', 'Limit Oct\u00a016', '7.8 million of 10 million events, limit reached on Oct 16 at this rate');
   else if (S0 === 'loading') setUsage(0, 'Loading usage\u2026', '', 'Loading');
-  else if (['empty', 'first-run', 'listening', 'check-failed'].includes(S0)) setUsage(0, '0 of 10M', 'From the first event', 'No events yet, 0 of 10 million');
+  else if (['empty', 'first-run', 'listening', 'check-failed'].includes(S0)) setUsage(0, 'No events yet', '', 'No events yet, 0 of 10 million');
   else if (S0 === 'first-data') setUsage(38, '38 of 10M', 'First event 2:06\u00a0pm', '38 events of 10 million');
   document.querySelectorAll('#limit-alert .dismiss').forEach((b) => b.addEventListener('click', () => { document.getElementById('limit-alert').hidden = true; announce('Usage warning dismissed for 7 days'); }));
   // Retry: the rows are a set appearing for the first time, so they fade in once, 30 ms apart (6 rows: the last starts at 150 ms).
@@ -1159,9 +1179,10 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
   if (params.get('state') === 'first-data') { PAGES = { total: 38, count: 4 }; rows.splice(0, rows.length,
     { page: '/', views: 21, time: 41 }, { page: '/pricing', views: 9, time: 73 },
     { page: '/docs/quickstart', views: 5, time: 128 }, { page: '/signup', views: 3, time: 52 }); }
-  rows.forEach((r) => { r.share = Math.round(r.views / PAGES.total * 1000) / 10; });
+  rows.forEach((r, i) => { r.i = i; r.share = Math.round(r.views / PAGES.total * 1000) / 10; });
+  document.getElementById('pages-table').dataset.shareBase = String(PAGES.count);
   const shown6 = rows.reduce((s, r) => s + r.views, 0);
-  document.getElementById('pages-range').textContent = '1 to ' + rows.length + ' of ' + PAGES.count + ' pages, ' + (shown6 === PAGES.total ? 'all ' : (Math.round(shown6 / PAGES.total * 1000) / 10) + '% of ') + PAGES.total.toLocaleString('en-US') + ' views';
+  document.getElementById('pages-range').innerHTML = '1 to ' + rows.length + ' of ' + PAGES.count + ' pages, ' + (shown6 === PAGES.total ? 'all ' : (Math.round(shown6 / PAGES.total * 1000) / 10) + '% of ') + '<span id="views-total" class="num" data-num>' + PAGES.total.toLocaleString('en-US') + '</span> views';
   // Change vs last week: arrow plus sign plus, when it falls, the word, never color alone. No comparison yet: a dash, named.
   const chg = (v) => v === undefined ? '<span class="chg none">&ndash;<span class="sr-only">no comparison until Oct 19</span></span>' : '<span class="chg ' + (v < 0 ? 'down' : 'up') + '">' + (v < 0 ? '<svg class="i i-12" data-icon="arrow-down" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 2v7.5M3 6.25l3.25 3.25 3.25-3.25"/></svg>' : '<svg class="i i-12" data-icon="arrow-up" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 10V2.5M3 5.75l3.25-3.25 3.25 3.25"/></svg>') + '' + (v < 0 ? '&minus;' + (-v) + '%, down' : '+' + v + '%') + '</span>';
   const tbody = document.getElementById('pages-body');
@@ -1179,10 +1200,10 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
     tbody.innerHTML = list.map((r) =>
       '<tr role="row" style="--s:' + r.share + '%">' +
       '<th role="rowheader" scope="row" class="page-cell"><a href="#" title="' + r.page + '">' + mid(r.page) + '</a></th>' +
-      '<td role="cell" class="num key">' + fmtNum(r.views) + '</td>' +
+      '<td role="cell" class="num key" id="pv-' + r.i + '" data-num>' + fmtNum(r.views) + '</td>' +
       '<td role="cell" class="num secondary t-chg" data-label="vs last week">' + chg(r.chg) + '</td>' +
       '<td role="cell" class="num secondary t-time" data-label="Avg. time">' + fmtTime(r.time) + '</td>' +
-      '<td role="cell" class="num secondary t-share" data-label="Share of views">' + r.share.toFixed(1) + '%</td>' +
+      '<td role="cell" class="num secondary t-share" data-label="Share of views" data-num data-derived-from="share #pv-' + r.i + ' #views-total">' + r.share.toFixed(1) + '%</td>' +
       '<td role="cell" class="act"><button class="row-btn" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Actions for ' + r.page + '">' + dots + '</button></td>' +
       '</tr>').join('');
     document.querySelectorAll('thead th[data-key]').forEach((th) => {
@@ -1381,17 +1402,18 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
     // Platform rows: bars are each platform's share of the total, on a true 0 to 100 scale
     document.getElementById('plat-list').innerHTML = PLAT.map((p) =>
       '<li data-plat="' + p.key + '"><span class="b-name">' + p.name + (p.warn ? '<svg class="i i-12 icon" data-icon="warning-12" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path class="solid" fill-rule="evenodd" d="M5.05 1.85a1.1 1.1 0 0 1 1.9 0l4.15 7.45a1.1 1.1 0 0 1-.95 1.65H1.85a1.1 1.1 0 0 1-.95-1.65zM5.4 4.5v2.4a.6.6 0 0 0 1.2 0V4.5a.6.6 0 0 0-1.2 0zM6 8.15a.65.65 0 1 0 0 1.3.65.65 0 0 0 0-1.3z"/></svg><span class="sr-only">, has a warning</span>' : '') + '</span>' +
-      '<span class="b-val num">' + fmtN(p.now) + '</span><span class="b-bar" aria-hidden="true"><i style="width:' + (p.now / wau * 100).toFixed(1) + '%"></i></span>' +
+      '<span class="b-val num" data-num data-monotonic="up">' + fmtN(p.now) + '</span><span class="b-bar" aria-hidden="true"><i data-bar="' + (p.now / wau * 100).toFixed(2) + '" data-bar-max="100" style="width:' + (p.now / wau * 100).toFixed(2) + '%"></i></span>' +
       (first ? '' : delta(pct1(p.now, p.prev), 0)) + '</li>').join('');
     const sample = /sample/.test(root.dataset.phase || '');
     document.getElementById('plat-note').innerHTML = first
-      ? 'Visitors since 2:06&nbsp;pm. The three add up to ' + fmtN(wau) + '; each bar is its share of that total. Week-on-week from Oct&nbsp;19.'
-      : (sample ? 'Sample data. ' : '') + 'Active users this week, Oct&nbsp;6 to 12, against last week. The three add up to ' + fmtN(wau) + '; each bar is its share of that total.';
+      ? 'Visitors since 2:06&nbsp;pm. The three add up to <span class="num" data-num data-sum-of="#plat-list .b-val">' + fmtN(wau) + '</span>; each bar is its share of that total. Week-on-week from Oct&nbsp;19.'
+      : (sample ? 'Sample data. ' : '') + 'Active users this week, Oct&nbsp;6 to 12, against last week\u2019s <span id="wau-prev" class="num" data-num>' + fmtN(WAU_PREV) + '</span>. The three add up to <span class="num" data-num data-sum-of="#plat-list .b-val" data-monotonic="up">' + fmtN(wau) + '</span>; each bar is its share of that total.';
     if (first) return;
     const ios = PLAT.find((p) => p.key === 'ios');
     document.getElementById('ios-pct').textContent = Math.abs(Math.round(pct1(ios.now, ios.prev))) + '%';
     const pct = '+' + pct1(wau, WAU_PREV).toFixed(1) + '%';
     const live = document.querySelector('[data-live="wau"]');
+    live.dataset.value = String(wau);
     if (animate) rollTo(live, fmtN(wau)); else live.textContent = fmtN(wau);
     document.getElementById('wau-sr').textContent = fmtN(wau);
     document.getElementById('wau-pct').textContent = pct;
@@ -1410,6 +1432,17 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
     const t = document.querySelector('.fresh-ready time'); t.textContent = 'just now'; t.setAttribute('datetime', new Date().toISOString());
   }
   setInterval(tick, 60000);
+  // Invite: checked on submit, not while typing; the message names the fix (design-ux forms).
+  document.getElementById('invite-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const f = document.getElementById('invite-email'), m = document.getElementById('invite-msg'), v = f.value.trim();
+    const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    f.setAttribute('aria-invalid', ok ? 'false' : 'true');
+    m.className = 'field-msg' + (ok ? '' : ' err');
+    m.textContent = ok ? 'Invite sent to ' + v + '.' : v ? 'Add the rest of the address, for example ' + (v.split('@')[0] || 'sam') + '@acme.com.' : 'Enter a work email to send the invite.';
+    if (ok) f.value = ''; else f.focus();
+  });
+  window.__designKbTick = tick; // one live update on demand, for tools/lint-truth.mjs
   if (params.get('demo') === 'live') setTimeout(tick, 700);
   // WCAG 2.2.2: auto-updating content shown beside other content needs a way to pause it.
   const liveBtn = document.getElementById('live-btn');

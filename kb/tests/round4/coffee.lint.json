@@ -1,6 +1,6 @@
 {
   "file": "kb/tests/round4/coffee.html",
-  "date": "2026-10-10T23:16:39.510Z",
+  "date": "2026-10-10T23:33:25.313Z",
   "checks": {
     "axe": {
       "fail": [],
@@ -150,6 +150,51 @@
       "warn": [],
       "pass": true
     },
+    "occlusion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "squash": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-header": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "run-together": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "word-break": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "grid-edge": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "hidden-content": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "truth": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "proportion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
     "nav-parity": {
       "fail": [],
       "warn": [],
@@ -189,7 +234,7 @@
       "fail": [],
       "warn": [
         {
-          "message": "layout moves -81px at 1440px when the web fonts fail (worst: #reviews > blockquote.review > footer); add metric fallbacks (size-adjust, ascent-override). Line count changed in 6 elements: ul.lots > li.lot > div.lot-buy > p.p \"$21 / 340 g\" 1 to 2 lines; div.wrap.g12 > div.in-body > ul.lots > li.lot \"1,750 m Medium roast Colombia Huila Finc\" 8 to 9 lines; ul.lots > li.lot > div.lot-buy > p.p \"$18 / 340 g\" 2 to 1 lines; #sub-title \"A new hill at your door, every two or fo\" 4 to 3 lines; ... (one element near a wrap point is a copy fix; many is a font metrics fix)",
+          "message": "layout moves -81px at 1440px when the web fonts fail (worst: #reviews > blockquote.review > footer); add metric fallbacks (size-adjust, ascent-override). Line count changed in 5 elements: ul.lots > li.lot > div.lot-buy > p.p \"$21 / 340 g\" 1 to 2 lines; div.wrap.g12 > div.in-body > ul.lots > li.lot \"1,750 m Medium roast Colombia Huila Finc\" 8 to 9 lines; ul.lots > li.lot > div.lot-buy > p.p \"$18 / 340 g\" 2 to 1 lines; #sub-title \"A new hill at your door, every two or fo\" 4 to 3 lines; ... (one element near a wrap point is a copy fix; many is a font metrics fix)",
           "sel": "#reviews > blockquote.review > footer",
           "shift": -81,
           "rewrapped": [
@@ -222,12 +267,6 @@
               "from": 5,
               "to": 4,
               "text": "Bought by name, tasted twice, shipped th"
-            },
-            {
-              "sel": "#promises > div.wrap.g12 > figure.cup > figcaption.caption",
-              "from": 1,
-              "to": 2,
-              "text": "The first cupping, the morning after the"
             }
           ]
         }
@@ -242,7 +281,7 @@
   },
   "summary": {
     "weightKB": {
-      "html": 191,
+      "html": 192,
       "svg": 70
     },
     "focusables": 32,
@@ -270,6 +309,15 @@
     "icons": "pass",
     "icon-stroke": "pass",
     "weight": "pass",
+    "occlusion": "pass",
+    "squash": "pass",
+    "sticky-header": "pass",
+    "run-together": "pass",
+    "word-break": "pass",
+    "grid-edge": "pass",
+    "hidden-content": "pass",
+    "truth": "pass",
+    "proportion": "pass",
     "nav-parity": "pass",
     "focus": "pass",
     "focus-shape": "pass",

@@ -267,7 +267,7 @@ kbd { white-space: nowrap; display: inline-flex; align-items: center; justify-co
 /* Disabled and busy keep the box: no state changes size (FOUNDATIONS 15). Busy draws its spinner over the hidden label. */
 .btn[aria-disabled=true]:not([aria-busy=true]) { background: var(--color-surface-sunken); color: var(--color-text-muted-on-tint); border-color: transparent; box-shadow: none; cursor: not-allowed; }
 .btn[aria-busy=true] { position: relative; cursor: progress; }
-.btn[aria-busy=true] > :not(.spinner) { visibility: hidden; }
+.btn[aria-busy=true] > :not(.spinner) { opacity: 0; } /* opacity, not visibility: the label stays the button's name */
 .btn .spinner { display: none; position: absolute; inset: 0; margin: auto; width: 16px; height: 16px; border-radius: var(--radius-full); border: 2px solid currentColor; border-right-color: transparent; }
 .btn[aria-busy=true] .spinner { display: block; }
 @media (prefers-reduced-motion: no-preference) {
@@ -310,6 +310,7 @@ kbd { white-space: nowrap; display: inline-flex; align-items: center; justify-co
 @container main (width >= 48rem) { .content { padding: var(--space-6) var(--space-7) var(--space-8); } }
 .answer { max-width: 32em; font-size: var(--text-base); line-height: 1.5; color: var(--color-text-muted); }
 .answer strong { color: var(--color-text); font-weight: 600; }
+/* the answer is two sentences in two spans: the live number and the stopped source never share a sentence */
 .answer a { color: var(--color-text); text-underline-offset: 3px; text-decoration-color: var(--color-border-strong); }
 /* Sections, not cards (round 4, after the Linear app): a 40px head bar with one hairline under it, content on the page's
    own left edge, space between sections. Only the alert list and the setup guide keep a bordered surface (.boxed). */
@@ -537,7 +538,9 @@ td.act, th.act { width: 1%; padding-left: 0; padding-right: 0; text-align: right
 .empty p, .failed p { max-width: 32em; color: var(--color-text-muted); }
 .empty h3, .failed h3 { font-size: var(--text-sm); font-weight: 600; }
 .failed .icon { color: var(--color-warning); }
-.empty svg { margin-bottom: var(--space-3); }
+.empty svg { margin-top: var(--space-3); }
+html[data-state=empty] .kpi-dates { display: none; } /* no data yet: the week is named, its dates wait for numbers */
+.split .empty { align-content: start; padding-top: var(--space-10); } /* side by side, the two empty messages share one top edge; the sketch follows its words */
 .ill-grid { stroke: var(--color-chart-grid); stroke-width: 1; shape-rendering: crispEdges; }
 .ill-line { fill: none; stroke: var(--color-illustration-line); stroke-width: 1.5; stroke-dasharray: 4 4; }
 .ill-mark { fill: none; stroke: var(--color-illustration-accent); stroke-width: 2; stroke-linecap: round; }
@@ -676,6 +679,13 @@ html[data-state=first-data] .fresh-first { display: inline; }
 .step.done h3 { color: var(--color-text-muted); font-weight: 500; }
 .step .why { color: var(--color-text-muted); margin-top: var(--space-1); max-inline-size: 52ch; }
 .step .acts { display: flex; flex-wrap: wrap; gap: var(--space-3); justify-content: flex-end; align-items: center; }
+.invite-form { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+.field { flex: 1 1 14rem; max-width: 22rem; min-width: 0; min-height: var(--size-control); padding: 0 var(--space-4); border: 1px solid var(--color-border-strong); border-radius: var(--radius-md); background: var(--color-surface); color: var(--color-text); font: inherit; font-size: var(--text-sm); }
+.field::placeholder { color: var(--color-text-muted); }
+.field[aria-invalid=true] { border-color: var(--color-danger); box-shadow: inset 0 0 0 1px var(--color-danger); }
+.field-msg { flex-basis: 100%; display: flex; gap: var(--space-2); align-items: center; font-size: var(--text-xs); color: var(--color-text-muted); }
+.field-msg:empty { display: none; }
+.field-msg.err { color: var(--color-danger); }
 .step-body { grid-column: 2 / -1; display: grid; gap: var(--space-4); margin-top: var(--space-4); }
 .snippet { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-3) var(--space-3) var(--space-3) var(--space-4); border-radius: var(--radius-md); background: var(--color-bg); box-shadow: inset 0 0 0 1px var(--color-border); min-width: 0; }
 .snippet code { flex: 1; min-width: 0; overflow-wrap: anywhere; font-size: var(--text-xs); color: var(--color-text); padding: var(--space-2) 0; }
@@ -729,7 +739,8 @@ html[data-state=loading] .pick-hint, html[data-state=empty] .pick-hint, html[dat
 html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display: none; }
 /* Touch: under 40rem of work area every control reaches 44px (round 3 left 34 targets between 24 and 40px). */
 @container main (width < 40rem) {
-  .page-head, .toolbar, .content { --size-control: 44px; }
+  .page-head, .toolbar, .content > * { --size-control: 44px; } /* .content is itself a container, so its children carry the size */
+  .panel-head .btn-ghost { min-height: 44px; }
   .chip, .kpi-pick { min-height: 44px; }
   .pick-hint { display: none; }
   .alert a, .text-link, .dismiss, .page-cell a { display: inline-flex; align-items: center; min-height: 44px; }
@@ -836,10 +847,12 @@ body { background: var(--color-surface); }
     <div class="cell demo-wide"><span>Error, with retry</span><section class="panel" aria-label="Top pages, error demo"><div class="panel-head"><h3>Top pages this week</h3></div><div class="failed"><svg class="i icon i-20" data-icon="warning" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path class="solid" fill-rule="evenodd" d="M6.7 2.1a1.5 1.5 0 0 1 2.6 0l5.55 9.65a1.5 1.5 0 0 1-1.3 2.25H2.45a1.5 1.5 0 0 1-1.3-2.25zM7.25 5.75v3.25a.75.75 0 0 0 1.5 0V5.75a.75.75 0 0 0-1.5 0zM8 10.6a.85.85 0 1 0 0 1.7.85.85 0 0 0 0-1.7z"/></svg><h3>Top pages didn’t load</h3><p>The query timed out after 30 seconds. Your data is safe; the rest of the overview is current.</p><button class="btn" type="button"><span class="spinner" aria-hidden="true"></span><span>Try again</span></button></div></section></div>
     <div class="cell demo-wide"><span>Empty, before the first event</span><section class="panel" aria-label="Top pages, empty demo"><div class="panel-head"><h3>Top pages this week</h3></div><div class="empty"><h3>No pages tracked yet</h3><p>Pages are ranked by views once the snippet sends <code>page_view</code> events.</p></div></section></div>
     <div class="cell demo-wide"><span>Loading rows</span><section class="panel" aria-label="Top pages, loading demo"><div class="panel-head"><h3>Top pages this week</h3></div><div class="skel-row"><span class="skel" style="width:40%"></span><span class="skel" style="width:15%"></span></div><div class="skel-row"><span class="skel" style="width:25%"></span><span class="skel" style="width:15%"></span></div><div class="skel-row"><span class="skel" style="width:45%"></span><span class="skel" style="width:15%"></span></div></section></div>
-    <div class="cell demo-wide"><span>Search, no match (the field's only failure: it cannot be invalid)</span><label class="search" style="display:flex"><input type="search" value="/pricng" aria-label="Search pages, no match"><kbd aria-hidden="true">/</kbd></label><table><tbody><tr class="search-miss"><td colspan="6">No pages this week match “/pricng”. <button class="text-link dismiss" type="button">Clear search</button></td></tr></tbody></table></div>
+    <div class="cell demo-wide"><span>Invite field, error (checked on submit)</span><form class="invite-form" novalidate><input class="field" type="email" value="sam@" aria-invalid="true" aria-label="Teammate’s work email, error" aria-describedby="inv-err"><button class="btn" type="button">Invite</button><p class="field-msg err" id="inv-err">Add the rest of the address, for example sam@acme.com.</p></form></div>
+    <div class="cell demo-wide"><span>Invite field, rest</span><form class="invite-form" novalidate><input class="field" type="email" placeholder="name@acme.com" aria-label="Teammate’s work email"><button class="btn" type="button">Invite</button></form></div>
+    <div class="cell demo-wide"><span>Search, no match (the field’s only failure: it cannot be invalid)</span><label class="search" style="display:flex"><input type="search" value="/pricng" aria-label="Search pages, no match"><kbd aria-hidden="true">/</kbd></label><table><tbody><tr class="search-miss"><td colspan="6">No pages this week match “/pricng”. <button class="text-link dismiss" type="button">Clear search</button></td></tr></tbody></table></div>
   </div></section>
   <section class="group" aria-labelledby="d8"><h2 id="d8">Plan usage meter (design-conversion 05)</h2><div class="row">
-    <div class="cell usage-demo"><span>Setup and empty: nothing counted yet</span><a class="usage" href="#"><span class="usage-row"><span id="u0">Events this month</span><span class="plan">Starter</span></span><span class="meter" role="meter" aria-labelledby="u0" aria-valuemin="0" aria-valuemax="10000000" aria-valuenow="0" aria-valuetext="No events yet, 0 of 10 million"><i style="--w:0%"></i></span><span class="usage-row num"><span>0 of 10M</span><span>From the first event</span></span></a></div>
+    <div class="cell usage-demo"><span>Setup and empty: nothing counted yet</span><a class="usage" href="#"><span class="usage-row"><span id="u0">Events this month</span><span class="plan">Starter</span></span><span class="meter" role="meter" aria-labelledby="u0" aria-valuemin="0" aria-valuemax="10000000" aria-valuenow="0" aria-valuetext="No events yet, 0 of 10 million"><i style="--w:0%"></i></span><span class="usage-row num"><span>No events yet</span><span></span></span></a></div>
     <div class="cell usage-demo"><span>Under 75%: quiet</span><a class="usage" href="#"><span class="usage-row"><span id="u1">Events this month</span><span class="plan">Starter</span></span><span class="meter" role="meter" aria-labelledby="u1" aria-valuemin="0" aria-valuemax="10000000" aria-valuenow="3600000" aria-valuetext="3.6 million of 10 million events"><i style="--w:36%"></i></span><span class="usage-row num"><span>3.6M of 10M</span><span>On pace for 9.3M</span></span></a></div>
     <div class="cell usage-demo"><span>Hover</span><a class="usage is-hover" href="#"><span class="usage-row"><span id="u2">Events this month</span><span class="plan">Starter</span></span><span class="meter" role="meter" aria-labelledby="u2" aria-valuemin="0" aria-valuemax="10000000" aria-valuenow="3600000" aria-valuetext="3.6 million of 10 million events"><i style="--w:36%"></i></span><span class="usage-row num"><span>3.6M of 10M</span><span>On pace for 9.3M</span></span></a></div>
     <div class="cell usage-demo"><span>Focus</span><a class="usage is-focus" href="#"><span class="usage-row"><span id="u3">Events this month</span><span class="plan">Starter</span></span><span class="meter" role="meter" aria-labelledby="u3" aria-valuemin="0" aria-valuemax="10000000" aria-valuenow="3600000" aria-valuetext="3.6 million of 10 million events"><i style="--w:36%"></i></span><span class="usage-row num"><span>3.6M of 10M</span><span>On pace for 9.3M</span></span></a></div>

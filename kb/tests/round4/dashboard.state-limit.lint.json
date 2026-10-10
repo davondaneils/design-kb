@@ -1,6 +1,6 @@
 {
   "file": "kb/tests/round4/dashboard.html?state=limit",
-  "date": "2026-10-10T23:13:52.252Z",
+  "date": "2026-10-10T23:50:17.899Z",
   "checks": {
     "axe": {
       "fail": [],
@@ -32,30 +32,6 @@
           "sel": "dl.kpis.ready > div.kpi.pickable > dt > button.kpi-pick",
           "w": 40.5,
           "h": 44
-        },
-        {
-          "message": "touch target under 44x44 at 390px",
-          "sel": "#main > section.panel.boxed > div.panel-head > a.btn.btn-ghost",
-          "w": 121.3,
-          "h": 32
-        },
-        {
-          "message": "touch target under 44x44 at 390px",
-          "sel": "#chart-panel > div.panel-head > a.btn.btn-ghost",
-          "w": 126.5,
-          "h": 32
-        },
-        {
-          "message": "touch target under 44x44 at 390px",
-          "sel": "div.split > section.panel > div.panel-head > a.btn.btn-ghost",
-          "w": 87.3,
-          "h": 32
-        },
-        {
-          "message": "touch target under 44x44 at 390px",
-          "sel": "#main > section.panel > div.panel-head > a.btn.btn-ghost",
-          "w": 87.9,
-          "h": 32
         },
         {
           "message": "touch target under 44x44 at 390px",
@@ -171,6 +147,51 @@
       "warn": [],
       "pass": true
     },
+    "occlusion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "squash": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-header": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "run-together": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "word-break": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "grid-edge": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "hidden-content": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "truth": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "proportion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
     "nav-parity": {
       "fail": [],
       "warn": [],
@@ -205,9 +226,9 @@
       "fail": [],
       "warn": [
         {
-          "message": "layout moves 65px at 390px when the web fonts fail (worst: #main > div.split); add metric fallbacks (size-adjust, ascent-override). Line count changed in 6 elements: #limit-alert \"Warning: 7.8M of 10M events used this mo\" 7 to 9 lines; #limit-alert > div > p \"At this rate you reach the Starter limit\" 4 to 5 lines; #limit-alert > div > p.meta.limit-admin \"Billing is yours · Compare plans · Dismi\" 1 to 2 lines; #plat-list > li \"Web31,040+21%\" 1 to 2 lines; ... (one element near a wrap point is a copy fix; many is a font metrics fix)",
-          "sel": "#main > div.split",
-          "shift": 65,
+          "message": "layout moves 83px at 390px when the web fonts fail (worst: #main > section.panel); add metric fallbacks (size-adjust, ascent-override). Line count changed in 4 elements: #limit-alert \"Warning: 7.8M of 10M events used this mo\" 7 to 9 lines; #limit-alert > div > p \"At this rate you reach the Starter limit\" 4 to 5 lines; #limit-alert > div > p.meta.limit-admin \"Billing is yours · Compare plans · Dismi\" 1 to 2 lines; #plat-note \"Active users this week, Oct 6 to 12, aga\" 2 to 3 lines (one element near a wrap point is a copy fix; many is a font metrics fix)",
+          "sel": "#main > section.panel",
+          "shift": 83,
           "rewrapped": [
             {
               "sel": "#limit-alert",
@@ -228,22 +249,10 @@
               "text": "Billing is yours · Compare plans · Dismi"
             },
             {
-              "sel": "#plat-list > li",
-              "from": 1,
-              "to": 2,
-              "text": "Web31,040+21%"
-            },
-            {
-              "sel": "#plat-list > li",
+              "sel": "#plat-note",
               "from": 2,
-              "to": 1,
-              "text": "iOS, has a warning9,870−18%, down"
-            },
-            {
-              "sel": "#plat-list > li",
-              "from": 1,
-              "to": 2,
-              "text": "Android7,300+5%"
+              "to": 3,
+              "text": "Active users this week, Oct 6 to 12, aga"
             }
           ]
         },
@@ -271,11 +280,11 @@
   },
   "summary": {
     "weightKB": {
-      "html": 152,
+      "html": 157,
       "svg": 14
     },
     "focusables": 49,
-    "fallbackShift390": 65,
+    "fallbackShift390": 83,
     "fallbackShift1440": -25,
     "motionFound": {
       "animations": 0,
@@ -283,7 +292,7 @@
     },
     "axe": "pass",
     "overlay": "pass",
-    "targets": "pass (13 warn)",
+    "targets": "pass (9 warn)",
     "measure": "pass",
     "type-scale": "pass",
     "spacing": "pass",
@@ -299,6 +308,15 @@
     "icons": "pass",
     "icon-stroke": "pass",
     "weight": "pass",
+    "occlusion": "pass",
+    "squash": "pass",
+    "sticky-header": "pass",
+    "run-together": "pass",
+    "word-break": "pass",
+    "grid-edge": "pass",
+    "hidden-content": "pass",
+    "truth": "pass",
+    "proportion": "pass",
     "nav-parity": "pass",
     "focus": "pass",
     "focus-shape": "pass",
@@ -309,6 +327,6 @@
     "motion": "pass",
     "result": "PASS",
     "fails": 0,
-    "warns": 15
+    "warns": 11
   }
 }

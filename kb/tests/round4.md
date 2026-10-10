@@ -1,0 +1,120 @@
+# Round 4: the round 3 critic's gate failures, fixed and proved
+
+Tester report, 2026-10-10. Branch `round4/build`, cut from `origin/restructure` and merged again with it before the final gates (FOUNDATIONS v0.4.1, `tools/lint-layout.mjs`, `tools/lint-truth.mjs`, claims_inventory PROMISE and PERIOD warnings, director step 13). Pages, sources and evidence live in `kb/tests/round4/`, copied from `kb/tests/round3/` and improved in place. Review: `kb/reviews/round3-critic.md`.
+
+## Proof first: `check.mjs`
+`node kb/tests/round4/check.mjs` (repo served on `127.0.0.1:8765`) opens the built pages in Chromium and tests each failure the critic named, at the widths where it failed. It prints one line per check: **91 of 91 pass**. Each row below is one of the critic's gate failures (section 2 of the review) and the check that now holds.
+
+| Critic gate failure | Fix | Proof in `check.mjs` |
+|---|---|---|
+| Coffee, gate 16: three shipping promises ("48 hours", "ships by Thu", "next day") and two tasting claims | One promise everywhere: "the day after the roast" (H2, step 3, both meta descriptions, JSON-LD, social card). Hero fact "Roast to ship 1 day". First bag "ships Wed, Oct 14" (Tue roast + 1). One tasting claim: "tasted twice" and "We taste every batch twice". The hero rating names its base: "4.7 from 1,284 subscriber reviews". | No "48 h", "ships by", "within 48", "Thu, Oct 15", "next day" or "Two of us" in the page, the state sheet or the card; the promise phrase found twice; Oct 14 is Oct 13 + 1 |
+| Coffee, gate 13: promise columns 12px off | `.steps li { align-content: start }` | the three columns share one top edge at 1024 and 1440 |
+| Coffee, gate 13: ledger numbers touching labels at 390 | `td { padding-inline-start: var(--space-6); white-space: nowrap }` | label to price gutter at least 16px at 390, 768, 1024, 1440 (24, 78, 24, 38px) |
+| Coffee, gate 13: grind options sized by the window | `.slip { container: slip / inline-size }`, `@container slip (width >= 26rem)` for 3 columns | 2 columns for a 304 to 391px slip, 3 for 608px; every name and grind on one line |
+| Coffee, gate 15: the state sheet's "Sending" button showed nothing | `.is-loading` trick deleted; the cell uses the page's own `aria-busy` rule | spinner drawn beside the visible label "Get the letters" |
+| Dashboard, gates 12 and 13: header overlaps at 768 and 1024 | Header rebuilt on the `main` container in rem: one 64px row, title over the freshness line, time zone from 48rem, search from 64rem, "updates" and "a teammate" sr-only under 40rem | 64px, no overlaps, "Pause updates" hit-tests to itself, dot 8x8, freshness one line: default at 390, 640, 768, 900, 1024, 1280, 1440 and all 10 states at 390 and 768 |
+| Dashboard: scroll-padding vs header | header fixed at 64px, `scroll-padding-top` 80px | scroll-padding at least head + 16 at every width and state |
+| Dashboard, gate 16: states showing numbers they cannot have | `setUsage()` per state; sample states read "No events yet"; first-data counts its own 38 events and 12 visitors | loading and empty show no usage, total or KPI number; setup states show "No events yet"; first-data shows 38 and 12 on every surface |
+| Dashboard, gate 16: live feed raised revenue while checkout was stopped | Revenue's live hook removed; one data model (`PLAT`, `WAU_PREV`) feeds KPI, delta, sentence, sparkline name, platform rows, total and chart point in one frame | 5 updates: users only rise, +8.2% and +8.3% agree everywhere, revenue held at $184.2k; paused, two polls change nothing |
+| Dashboard, gate 16: shares summed to 100 over 6 of 214 pages; bars scaled to the max | Share = views / 112,560 (all pages); foot "1 to 6 of 214 pages, 63.7% of 112,560 views"; share drawn as a row background on 0 to 100 (Vercel's pattern); platform bars are share of the total | six rows sum to 63.7%; each bar width equals its share |
+| Dashboard, gate 16: "Compared to previous 12 weeks" chip vs "vs last week" deltas | Chip moved into the chart legend as "vs previous 12 weeks" (it drives only the dashed line); every delta reads "vs last week" | KPIs and table say "vs last week"; the 12-week basis appears only in the legend |
+| Dashboard, gate 15: state sheet incomplete, duplicate id | Busy, primary busy and disabled buttons; partial and loading KPI tiles; error, empty, loading and no-match panels; invite field in error; `d7` duplicate renamed | busy 2, disabled 1, every panel state present, no duplicate ids |
+
+## Also from the critic's ranked list
+- **Tokens to v0.4** (dashboard fix 8): success, warning, danger and info roles with `-subtle`; `surface-sunken`; `text-muted-on-tint`; `size-control-{sm,md,lg}`; `size-icon-*`; `shadow-2`; `elevation-card`.
+- **Boxes off** (dashboard fix 7): panels are 40px head bars over a hairline; only "Needs attention" and the setup guide keep a box. The KPI strip is one ruled row with flush outer edges.
+- **"Good" apart from "ours"** (dashboard fix 9): the chart series is ink (`--color-chart-current: var(--color-text)`), so teal marks only the selected tile's 2px rule and the primary button.
+- **Phone targets** (dashboard fix 10): under 40rem of main width, controls are 44px.
+- **Italic spent once per screen** (coffee fix 8): italic stays on the H1's second line, the lead and the taste notes; the shop, band and manifesto heads, the review and the step numerals are roman.
+- **Display leading inside the contract** (coffee fix 9): headings at 1.1; 0.95 only on the 1440 ledger numeral, which is over 100px.
+- **Roast chart** (coffee fix 10): gridlines stop at the plot edge; from 1024 to 1279px the caption sits above the plot.
+- **Subscription band hole** (coffee fix 6): `.proof { align-self: start }` replaces a 280px hole in the middle of the column with a 159px ragged bottom (left column ends at 2,918px, the slip at 3,077px at 1440).
+- **Product JSON-LD** (coffee fix 7): one `Product` with an `Offer` ($21.00, USD, in stock) for Ethiopia Guji, named as the page names it. The critic asked for all three lots; `search-check` fails a page with three `Product` nodes (a product page carries one), so the two others stay out. This conflict is listed under suggestions.
+- **Kept, as the critic asked**: the live HTML label on the bag photo, and 14px dashboard type.
+
+## Round 4 changes beyond the list (opinion unless a source is named)
+1. **Promise statement on six columns.** The longer one-promise H2 set in six lines on five columns at 1440; on columns 7 to 12 it sets in five and ends level with the photo (5,460 to 5,902px beside 5,451 to 5,912px).
+2. **Narrow KPI tiles keep one sparkline row.** Under 15rem a tile puts "vs last week" on its own line, so a delta that wraps ("+0.4 pts, worse") no longer pushes its sparkline 24px below its neighbours (seen at 1024 and 390).
+3. **Sample data has nothing to pause.** "Pause updates" is hidden in the sample states; the lint found it pushed under the header's edge at 390.
+4. **Invite in the setup guide is a field.** Step 4 takes the teammate's email inline, checks it on submit, and names the fix ("Add the rest of the address, for example sam@acme.com"). It is the one field on the page that can be wrong, so the state sheet now shows its error state.
+5. **Busy buttons keep their name.** The label under the spinner fades with `opacity`, not `visibility`, so a screen reader still hears "Try again" while it runs (axe `button-name` caught it on the sheet).
+6. **The coffee menu does not cover the page.** Open, the phone menu is 305px tall; the header stops being sticky while it is open, so anchors and focus are never under it (WCAG 2.4.11).
+7. **Stacked options align to the top.** In quick add, "Your usual" adds a line to one option; names now share a top edge across the row (a real 9px miss found by `grid-edge`, not noise).
+8. **Frequency options are parallel**: "About 10 cups a week" and "About 5 cups a week" (20 cups a bag over 14 or 28 days), one line each.
+
+## Truth contract (tools/lint-truth.mjs)
+The dashboard carries the data-attribute contract, so the truth pass verifies it after every live update:
+- `#wau-val`: `data-num`, `data-value`, `data-monotonic="up"`, `data-sum-of="#plat-list .b-val"`.
+- Platform values: `data-num data-monotonic="up"`; the footnote total: `data-sum-of` the same rows; bars: `data-bar` with `data-bar-max="100"`.
+- `#wau-pct`: `data-derived-from="pct-change #wau-val #wau-prev"`. Last week's 44,600 is now printed in the platform footnote, so the delta can be checked against a number the reader can see. `#ans-pct`: `same #wau-pct`.
+- Table: `data-share-base="214"` (4 in first-data); each share `data-derived-from="share #pv-N #views-total"`.
+- Conversion and revenue: `data-source="checkout"`; the error alert: `data-source-stopped="checkout"`.
+- `data-data="none"` on `html` in empty, first-run, listening and check-failed; `main` carries `data-sample` in the three sample states.
+- `window.__designKbTick()` runs one live update.
+
+## Gates
+All runs on the merged tools. Lint: `node kb/tests/round4/lint-all.mjs` (JSON beside each page), widths 390, 768, 1024, 1440, light and dark, layout and truth passes included.
+
+| Gate | Coffee | Dashboard |
+|---|---|---|
+| `tools/lint.mjs` page | PASS, 0 fail, 9 warn | PASS, 0 fail, 10 warn |
+| every `?state=` URL | 12 of 12 PASS | 14 of 14 PASS (10 states, compact, palette, sheet, metric=conv) |
+| state sheet | PASS, 0 fail, 3 warn | PASS, 0 fail, 45 warn (all targets: a sheet of 24 to 40px desktop controls) |
+| `check.mjs` | 91 of 91 checks pass (both pages) | |
+| `claims_inventory.mjs --year 2026` | exit 0, no flags, every line ticked | exit 0; 1 PERIOD warning, named below; every line ticked |
+| `search-check.mjs` | PASS public, 0 fail, 0 warn | PASS private, 0 fail, 0 warn |
+| `conversion-audit.mjs` | no fails (page, quick, cart); 1 warn | no fails (page, limit) |
+| `icon_audit.mjs` | PASS | PASS |
+| `motion-audit.mjs` (9 scenarios) | 6 of 6 pass | 3 of 3 pass; the live roll raises users only, revenue holds |
+| renders | 390, 768, 1024, 1440, light and dark; 12 states at 390 and 1440; sheet | same; 14 states; sheet |
+
+Warnings, all read:
+- **Coffee targets** (3): stretched card links whose hit area is the whole row; the element itself is under 44px.
+- **Coffee type-scale** (4): fluid display sizes inside `clamp()`.
+- **Coffee sticky-focus** (1): the skip link, fixed above the header; likely a false positive (round 3 said the same).
+- **Coffee fallback** (1): the layout moves 81px at 1440 when the web fonts fail (round 3: 38px), because the longer promise H2 and the review footer rewrap in Liberation. Open.
+- **Coffee svg-overlap** (cart and checkout states): text in the open drawer over the page's logo and photo. The drawer is a modal over the page; the overlap is the stacking, not a collision. False positive for dialog states.
+- **Coffee conversion** (1): no shipping note beside the add-to-cart buttons at 390. Shipping sits once under the lots list; advisory.
+- **Dashboard PERIOD** (claims_inventory): two bases on one page, "vs last week" (every delta) and "vs previous 12 weeks" (the chart's dashed line, named in the chart legend that controls it). Kept on purpose: the weekly delta and the 12-week shape answer different questions, and each names its basis where it is read.
+- **Dashboard first-data shares** sum to 100.1 over 4 of 4 pages: rounding of 21, 9, 5 and 3 over 38 (55.3 + 23.7 + 13.2 + 7.9).
+- **Dashboard targets** (9 at 390, round 3 had 34): the skip link; "Pause" (24px, kept so the header stays one 64px row); the Churn tile's label button, whose real hit area is the whole tile; five sort buttons in the table head, which the phone list layout hides visually; the "/" page link (24px wide, 44px tall). Every one is at least 24px (WCAG 2.5.8).
+- **Dashboard fallback** (1): 18px at 390 when the web fonts fail (the platform footnote rewraps).
+
+Opt-outs and false positives in the new lint (named so a reviewer can disagree):
+- `data-lint-skip="grid-edge"` on the KPI grids. Their outer tiles are flush with the content edge and the inner tiles sit one 16px step off their divider, the Stripe and Linear divided-row pattern, so the first column's labels are 16px further left in their boxes than the second's. The offset is a full spacing step and deliberate; it is the only skip on either page (the state sheets keep round 3's `focus` and `primary` skips, which let a sheet show several focus rings and primaries side by side).
+- The coordinator's known noise (grid-edge on vertically centred names in the coffee option cards) turned out to be real in quick add and was fixed (change 7), not skipped.
+
+Claims ticked against their sources (new or changed this round):
+- Coffee: Tue, Oct 13 roast, Wed, Oct 14 ship (2026-10-13 is a Tuesday); next charge Tue, Oct 27 (+14 days); 1,040 + 160 + 44 + 22 + 18 = 1,284, mean 4.70; $4.10 / $1.80 = 2.28, shown 2.3x; subscription $3 less on all three lots; cart $18 + $21 = $39.00; 20 cups over 14 days is 10 a week, over 28 days 5 a week.
+- Dashboard: 31,040 + 9,870 + 7,300 = 48,210; 25,600 + 12,040 + 6,960 = 44,600; 48,210 / 44,600 = +8.1%; Web +21.25%, iOS −18.0%, Android +4.9%; table shares over 112,560, six rows 63.7%; usage 0.3M a day x 12 = 3.6M, pace 9.3M; limit state 7.8M at 0.65M a day crosses 10M on Oct 16; first data 9 + 2 + 1 = 12 visitors, 38 views; "Oct 6 to 12" and "Jul 21 to Oct 12" are rolling windows ending on the day shown (84 days); "Week-on-week from Oct 19" is 7 days after the first event on Oct 12; churn "Nov 11" is 30 days after Oct 12.
+
+## Exemplar comparison (self-review, unverified)
+No subagent tool is available in this session, so a clean-context re-score could not be run. The judged rows and ratings below are **self-scored, unverified**; the round 3 critic found the builder over-rated itself, so discount them. Shots: `kb/tests/round4/shots/`. Exemplars: `kb/exemplars/shots/` (Apple MacBook Air, Stripe, Linear, Ramp; Stripe and Vercel dashboards) and `kb/teardowns/linear-app.md`, `stripe-dashboard.md`, `vercel-dashboard.md`.
+
+Judged fundamentals, by eye on every shot: hierarchy, spacing, alignment, contrast in both schemes and copy truth hold on both pages at all four widths, in every state I looked at (default, 768 and 1024 for both, phone dark, coffee subscription band, promises, dashboard first-run, first-data, empty, both sheets). I found and fixed four misses this way and through the new lint (KPI sparkline rows, promise H2 measure, header Pause in first-data, quick-add option tops), which is the reason to trust the rows less than a fresh critic would.
+
+**Coffee: clearly below Apple MacBook Air on photography; close to Stripe, Linear and Ramp on type, hierarchy and rhythm** (opinion).
+- Close: one true promise and one true rating, the price and primary in the first phone screen (CTA bottom 587px at 390, lots peek at 878px at 1440), ruled data sections nobody else has (lots index, ledger to scale, roast curve), italic now a signal.
+- Below: AI stand-in photos lit by one window; the label print is flat on a curved pouch; the band still ends 159px ragged; the fallback shift grew to 81px.
+
+**Dashboard: close to the Stripe and Vercel dashboards on truth, density and restraint; still below the Linear app on craft** (opinion).
+- Close: every number on screen is derived from one model and survives live updates (lint-truth verifies it); hairline panels; ink series; a row-background share bar on a true scale; caveats where the number is read.
+- Below: Linear's 13px type and 32px rows are denser; the chart has no keyboard path to its points; the setup guide is still a boxed card; the busy button is a spinner with an invisible label, which Linear does not need because its actions are optimistic.
+
+## Still below the bar
+1. **Photography**: real photographs of the bag and room (`kb/tests/design-art-direction/photo-request.md`). Unsplash is blocked here; the Figma photos in `kb/assets/photos/` stay.
+2. **Font fallback shift**: 81px at 1440 with Liberation standing in.
+3. **No clean-context critic** for this round.
+4. **Dashboard chart keyboard access** to points.
+5. **Mobbin-backed dashboard values** are still estimates (the capture attempt is recorded in the teardowns).
+
+## Suggestions for skills and tools (not edited here; another worker owns them)
+- **design-search vs critic**: the critic asked for `Product` JSON-LD for all three lots; `search-check` fails a page with more than one `Product`. Decide the rule for a store home that sells several products (an `ItemList` of `Product`s, or one featured product) and teach it once in design-search and the landing playbook.
+- **lint targets**: still measures the element, not a stretched `::after` hit area (coffee cards, dashboard KPI tiles).
+- **lint-truth empty-state check**: a plan limit ("of 10M") and a date range ("Oct 6 to 12") count as numbers carried from the default state. Exempt `<time>` and numbers marked `data-limit`, or the check pushes pages to hide true context.
+- **lint-truth caveat check**: it reads context by text distance, so a live number and an unrelated "stopped" sentence in one paragraph fail together; pages have to split sentences into sibling spans to pass. An explicit `data-source` on the number should override the heuristic.
+- **lint-layout grid-edge**: a divided row with flush outer tiles is a standard pattern; teach the check that offsets of one spacing step toward a divider are intended, instead of requiring a skip.
+- **lint svg-overlap**: skip text inside an open modal or drawer.
+- **lint measure**: two inline paragraphs set as one line read as a short measure on the second; measure the containing block's lines.
+- **design-frontend**: busy buttons hide their label with `opacity`, never `visibility`, or they lose their accessible name.
+- **design-ux / sticky headers**: a disclosure menu inside a sticky header makes it tall; unstick it while open.

@@ -1,6 +1,6 @@
 {
   "file": "kb/tests/round4/dashboard.html?state=empty",
-  "date": "2026-10-10T23:12:24.617Z",
+  "date": "2026-10-10T23:48:36.285Z",
   "checks": {
     "axe": {
       "fail": [],
@@ -20,24 +20,6 @@
           "sel": "html > body > a.skip",
           "w": 123.5,
           "h": 37
-        },
-        {
-          "message": "touch target under 44x44 at 390px",
-          "sel": "#chart-panel > div.panel-head > a.btn.btn-ghost",
-          "w": 126.5,
-          "h": 32
-        },
-        {
-          "message": "touch target under 44x44 at 390px",
-          "sel": "div.split > section.panel > div.panel-head > a.btn.btn-ghost",
-          "w": 87.3,
-          "h": 32
-        },
-        {
-          "message": "touch target under 44x44 at 390px",
-          "sel": "#main > section.panel > div.panel-head > a.btn.btn-ghost",
-          "w": 87.9,
-          "h": 32
         }
       ],
       "pass": true
@@ -117,6 +99,51 @@
       "warn": [],
       "pass": true
     },
+    "occlusion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "squash": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-header": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "run-together": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "word-break": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "grid-edge": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "hidden-content": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "truth": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "proportion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
     "nav-parity": {
       "fail": [],
       "warn": [],
@@ -174,7 +201,7 @@
   },
   "summary": {
     "weightKB": {
-      "html": 150,
+      "html": 156,
       "svg": 13
     },
     "focusables": 19,
@@ -186,7 +213,7 @@
     },
     "axe": "pass",
     "overlay": "pass",
-    "targets": "pass (4 warn)",
+    "targets": "pass (1 warn)",
     "measure": "pass",
     "type-scale": "pass",
     "spacing": "pass",
@@ -202,6 +229,15 @@
     "icons": "pass",
     "icon-stroke": "pass",
     "weight": "pass",
+    "occlusion": "pass",
+    "squash": "pass",
+    "sticky-header": "pass",
+    "run-together": "pass",
+    "word-break": "pass",
+    "grid-edge": "pass",
+    "hidden-content": "pass",
+    "truth": "pass",
+    "proportion": "pass",
     "nav-parity": "pass",
     "focus": "pass",
     "focus-shape": "pass",
@@ -212,6 +248,6 @@
     "motion": "pass",
     "result": "PASS",
     "fails": 0,
-    "warns": 5
+    "warns": 2
   }
 }

@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-10T23:05:18.642Z",
+  "date": "2026-10-10T23:55:17.490Z",
   "tokensMs": [
     100,
     150,
@@ -1488,7 +1488,7 @@
               "keyframeEasings": [
                 "linear"
               ],
-              "area": 12910,
+              "area": 10714,
               "offset": 0,
               "curve": "standard",
               "paint": true,
@@ -1508,27 +1508,7 @@
               "keyframeEasings": [
                 "linear"
               ],
-              "area": 12909,
-              "offset": 0,
-              "curve": "standard",
-              "paint": true,
-              "props": [
-                "backgroundColor"
-              ]
-            },
-            {
-              "i": 2,
-              "type": "CSSTransition",
-              "name": "background-color",
-              "target": "label.opt.stack",
-              "duration": 100,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.2, 0, 0, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 12910,
+              "area": 10715,
               "offset": 0,
               "curve": "standard",
               "paint": true,
@@ -1554,7 +1534,7 @@
               "keyframeEasings": [
                 "linear"
               ],
-              "area": 12909,
+              "area": 10714,
               "offset": 0,
               "curve": "standard",
               "paint": true,
@@ -1574,7 +1554,7 @@
               "keyframeEasings": [
                 "linear"
               ],
-              "area": 12910,
+              "area": 10715,
               "offset": 0,
               "curve": "standard",
               "paint": true,

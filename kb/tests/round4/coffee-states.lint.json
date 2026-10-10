@@ -1,6 +1,6 @@
 {
   "file": "kb/tests/round4/coffee-states.html",
-  "date": "2026-10-10T23:11:43.069Z",
+  "date": "2026-10-10T23:42:14.424Z",
   "checks": {
     "axe": {
       "fail": [],
@@ -83,12 +83,7 @@
     },
     "typography": {
       "fail": [],
-      "warn": [
-        {
-          "message": "straight quote or apostrophe: \"Sending (the page's own aria-busy r\" (use ’ ‘ “ ”)",
-          "sel": "section.group > div.row > div.cell > span"
-        }
-      ],
+      "warn": [],
       "pass": true
     },
     "tabular": {
@@ -112,6 +107,56 @@
       "pass": true
     },
     "weight": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "occlusion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "squash": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-header": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "run-together": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "word-break": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "grid-edge": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "hidden-content": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-sheet": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "truth": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "proportion": {
       "fail": [],
       "warn": [],
       "pass": true
@@ -160,7 +205,7 @@
   "summary": {
     "stateSheet": true,
     "weightKB": {
-      "html": 80,
+      "html": 81,
       "svg": 3
     },
     "focusables": 49,
@@ -182,12 +227,22 @@
     "primary": "pass",
     "radius": "pass",
     "color-scheme": "pass",
-    "typography": "pass (1 warn)",
+    "typography": "pass",
     "tabular": "pass",
     "shadows": "pass",
     "icons": "pass",
     "icon-stroke": "pass",
     "weight": "pass",
+    "occlusion": "pass",
+    "squash": "pass",
+    "sticky-header": "pass",
+    "run-together": "pass",
+    "word-break": "pass",
+    "grid-edge": "pass",
+    "hidden-content": "pass",
+    "state-sheet": "pass",
+    "truth": "pass",
+    "proportion": "pass",
     "nav-parity": "pass",
     "focus": "pass",
     "focus-shape": "pass",
@@ -198,6 +253,6 @@
     "motion": "pass",
     "result": "PASS",
     "fails": 0,
-    "warns": 4
+    "warns": 3
   }
 }

@@ -1,6 +1,6 @@
 {
   "file": "kb/tests/round4/dashboard.html?state=first-run",
-  "date": "2026-10-10T23:12:57.560Z",
+  "date": "2026-10-10T23:49:15.370Z",
   "checks": {
     "axe": {
       "fail": [],
@@ -32,24 +32,6 @@
           "sel": "dl.kpis.ready > div.kpi.pickable > dt > button.kpi-pick",
           "w": 40.5,
           "h": 44
-        },
-        {
-          "message": "touch target under 44x44 at 390px",
-          "sel": "#chart-panel > div.panel-head > a.btn.btn-ghost",
-          "w": 126.5,
-          "h": 32
-        },
-        {
-          "message": "touch target under 44x44 at 390px",
-          "sel": "div.split > section.panel > div.panel-head > a.btn.btn-ghost",
-          "w": 87.3,
-          "h": 32
-        },
-        {
-          "message": "touch target under 44x44 at 390px",
-          "sel": "#main > section.panel > div.panel-head > a.btn.btn-ghost",
-          "w": 87.9,
-          "h": 32
         },
         {
           "message": "touch target under 44x44 at 390px",
@@ -165,6 +147,51 @@
       "warn": [],
       "pass": true
     },
+    "occlusion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "squash": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-header": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "run-together": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "word-break": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "grid-edge": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "hidden-content": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "truth": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "proportion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
     "nav-parity": {
       "fail": [],
       "warn": [],
@@ -199,7 +226,7 @@
       "fail": [],
       "warn": [
         {
-          "message": "layout moves 21px at 390px when the web fonts fail (worst: #main > section.panel.kpi-panel); add metric fallbacks (size-adjust, ascent-override). Line count changed in 7 elements: #setup > ol.steps > li.step.done \"Create your workspace (done)Acme Inc., c\" 2 to 3 lines; ol.steps > li.step.done > div > p.why \"Acme Inc., created by Dana Ruiz at 1:58 \" 1 to 2 lines; #step-install \"2 Install the tracking snippet One line \" 14 to 13 lines; #setup > ol.steps > li.step.s4 \"4 Invite a teammateWeekly reports go to \" 5 to 4 lines; ... (one element near a wrap point is a copy fix; many is a font metrics fix)",
+          "message": "layout moves 21px at 390px when the web fonts fail (worst: #main > section.panel.kpi-panel); add metric fallbacks (size-adjust, ascent-override). Line count changed in 4 elements: #setup > ol.steps > li.step.done \"Create your workspace (done)Acme Inc., c\" 2 to 3 lines; ol.steps > li.step.done > div > p.why \"Acme Inc., created by Dana Ruiz at 1:58 \" 1 to 2 lines; #step-install \"2 Install the tracking snippet One line \" 14 to 13 lines; #setup > ol.steps > li.step.s4 \"4 Invite a teammateWeekly reports go to \" 6 to 5 lines (one element near a wrap point is a copy fix; many is a font metrics fix)",
           "sel": "#main > section.panel.kpi-panel",
           "shift": 21,
           "rewrapped": [
@@ -223,27 +250,9 @@
             },
             {
               "sel": "#setup > ol.steps > li.step.s4",
-              "from": 5,
-              "to": 4,
+              "from": 6,
+              "to": 5,
               "text": "4 Invite a teammateWeekly reports go to "
-            },
-            {
-              "sel": "#plat-list > li",
-              "from": 1,
-              "to": 2,
-              "text": "Web31,040+21%"
-            },
-            {
-              "sel": "#plat-list > li",
-              "from": 2,
-              "to": 1,
-              "text": "iOS, has a warning9,870−18%, down"
-            },
-            {
-              "sel": "#plat-list > li",
-              "from": 1,
-              "to": 2,
-              "text": "Android7,300+5%"
             }
           ]
         }
@@ -258,10 +267,10 @@
   },
   "summary": {
     "weightKB": {
-      "html": 152,
+      "html": 157,
       "svg": 14
     },
-    "focusables": 51,
+    "focusables": 52,
     "fallbackShift390": 21,
     "fallbackShift1440": 0,
     "motionFound": {
@@ -270,7 +279,7 @@
     },
     "axe": "pass",
     "overlay": "pass",
-    "targets": "pass (12 warn)",
+    "targets": "pass (9 warn)",
     "measure": "pass",
     "type-scale": "pass",
     "spacing": "pass",
@@ -286,6 +295,15 @@
     "icons": "pass",
     "icon-stroke": "pass",
     "weight": "pass",
+    "occlusion": "pass",
+    "squash": "pass",
+    "sticky-header": "pass",
+    "run-together": "pass",
+    "word-break": "pass",
+    "grid-edge": "pass",
+    "hidden-content": "pass",
+    "truth": "pass",
+    "proportion": "pass",
     "nav-parity": "pass",
     "focus": "pass",
     "focus-shape": "pass",
@@ -296,6 +314,6 @@
     "motion": "pass",
     "result": "PASS",
     "fails": 0,
-    "warns": 13
+    "warns": 10
   }
 }

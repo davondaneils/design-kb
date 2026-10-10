@@ -1,6 +1,6 @@
 {
   "file": "kb/tests/round4/dashboard.html?state=partial",
-  "date": "2026-10-10T23:12:33.171Z",
+  "date": "2026-10-10T23:48:47.500Z",
   "checks": {
     "axe": {
       "fail": [],
@@ -32,30 +32,6 @@
           "sel": "dl.kpis.ready > div.kpi.pickable > dt > button.kpi-pick",
           "w": 40.5,
           "h": 44
-        },
-        {
-          "message": "touch target under 44x44 at 390px",
-          "sel": "#main > section.panel.boxed > div.panel-head > a.btn.btn-ghost",
-          "w": 121.3,
-          "h": 32
-        },
-        {
-          "message": "touch target under 44x44 at 390px",
-          "sel": "#chart-panel > div.panel-head > a.btn.btn-ghost",
-          "w": 126.5,
-          "h": 32
-        },
-        {
-          "message": "touch target under 44x44 at 390px",
-          "sel": "div.split > section.panel > div.panel-head > a.btn.btn-ghost",
-          "w": 87.3,
-          "h": 32
-        },
-        {
-          "message": "touch target under 44x44 at 390px",
-          "sel": "#main > section.panel > div.panel-head > a.btn.btn-ghost",
-          "w": 87.9,
-          "h": 32
         }
       ],
       "pass": true
@@ -135,6 +111,51 @@
       "warn": [],
       "pass": true
     },
+    "occlusion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "squash": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-header": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "run-together": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "word-break": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "grid-edge": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "hidden-content": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "truth": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "proportion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
     "nav-parity": {
       "fail": [],
       "warn": [],
@@ -167,7 +188,21 @@
     },
     "fallback": {
       "fail": [],
-      "warn": [],
+      "warn": [
+        {
+          "message": "layout moves 18px at 390px when the web fonts fail (worst: #main > section.panel); add metric fallbacks (size-adjust, ascent-override). Line count changed in 1 elements: #plat-note \"Active users this week, Oct 6 to 12, aga\" 2 to 3 lines (one element near a wrap point is a copy fix; many is a font metrics fix)",
+          "sel": "#main > section.panel",
+          "shift": 18,
+          "rewrapped": [
+            {
+              "sel": "#plat-note",
+              "from": 2,
+              "to": 3,
+              "text": "Active users this week, Oct 6 to 12, aga"
+            }
+          ]
+        }
+      ],
       "pass": true
     },
     "motion": {
@@ -178,11 +213,11 @@
   },
   "summary": {
     "weightKB": {
-      "html": 152,
+      "html": 157,
       "svg": 14
     },
     "focusables": 31,
-    "fallbackShift390": 0,
+    "fallbackShift390": 18,
     "fallbackShift1440": 0,
     "motionFound": {
       "animations": 0,
@@ -190,7 +225,7 @@
     },
     "axe": "pass",
     "overlay": "pass",
-    "targets": "pass (7 warn)",
+    "targets": "pass (3 warn)",
     "measure": "pass",
     "type-scale": "pass",
     "spacing": "pass",
@@ -206,16 +241,25 @@
     "icons": "pass",
     "icon-stroke": "pass",
     "weight": "pass",
+    "occlusion": "pass",
+    "squash": "pass",
+    "sticky-header": "pass",
+    "run-together": "pass",
+    "word-break": "pass",
+    "grid-edge": "pass",
+    "hidden-content": "pass",
+    "truth": "pass",
+    "proportion": "pass",
     "nav-parity": "pass",
     "focus": "pass",
     "focus-shape": "pass",
     "sticky-focus": "pass",
     "skip-link": "pass",
     "state-shift": "pass",
-    "fallback": "pass",
+    "fallback": "pass (1 warn)",
     "motion": "pass",
     "result": "PASS",
     "fails": 0,
-    "warns": 7
+    "warns": 4
   }
 }

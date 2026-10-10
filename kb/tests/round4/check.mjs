@@ -71,7 +71,7 @@ for (const s of ['loading', 'empty', 'first-run', 'listening', 'check-failed', '
   if (['loading', 'empty'].includes(s)) {
     ok(!/48,210|3\.6M|31,040|184\.2|9\.3M/.test(t), `dashboard ?state=${s}: no usage, total or KPI number on screen`, usage);
   } else if (['first-run', 'listening', 'check-failed'].includes(s)) {
-    ok(usage === '0 of 10M' && !/3\.6M|9\.3M/.test(t), `dashboard ?state=${s}: usage reads 0 of 10M (sample data is not usage)`, usage);
+    ok(usage === 'No events yet' && !/3\.6M|9\.3M/.test(t), `dashboard ?state=${s}: usage reads "No events yet" (sample data is not usage)`, usage);
     ok(/Sample data\. Active users/.test(t), `dashboard ?state=${s}: the platform total is labelled sample`);
   } else if (s === 'first-data') {
     const r = await p.evaluate(() => ({

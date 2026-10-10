@@ -1,10 +1,10 @@
-Claims inventory: /home/claude/design-kb/.claude/worktrees/agent-aa8f94194e4294d3b/kb/tests/round4/dashboard.html (62 strings to check against the data)
+Claims inventory: /home/claude/design-kb/.claude/worktrees/agent-aa8f94194e4294d3b/kb/tests/round4/dashboard.html (63 strings to check against the data)
 
   1  1 of 4
   2  3.6M of 10M
   3  On pace for 9.3M
   4  Updated 2 min ago , times in PT
-  5  Counting since 2:06 pm, times in PT
+  5  Counting since 2:06 pm , times in PT
   6  Weekly active users are up 8.1%
   7  Checkout events stopped at 2:05 pm, so today’s conversion and revenue are undercounted
   8  Tally is counting: 38 page views from 12 visitors since 2:06 pm.
@@ -18,7 +18,7 @@ Claims inventory: /home/claude/design-kb/.claude/worktrees/agent-aa8f94194e4294d
  16  Checked acme.com and acme.com/pricing at 2:09 pm. Your sample data stays until the first event arrives.
  17  3
  18  4
- 19  This week, Oct 6 to 12
+ 19  This week , Oct 6 to 12
  20  48,210
  21  +8.1%
  22  3.8 %
@@ -55,12 +55,15 @@ Claims inventory: /home/claude/design-kb/.claude/worktrees/agent-aa8f94194e4294d
  53  18%, down
  54  7,300
  55  +5%
- 56  Active users this week, Oct 6 to 12, against last week. The three add up to 48,210; each bar is its share of that total.
- 57  The query timed out after 30 seconds. Your data is safe; the rest of the overview is current.
- 58  1 to 6 of 214 pages, 63.7% of 112,560 views
- 59  12-week trend: up from 31,400 to 48,210
- 60  12-week trend: up from 3.0% to 3.8%
- 61  12-week trend: up from $141k to $184.2k
- 62  12-week trend: up from 2.6% to 2.9%, which is worse
+ 56  Active users this week, Oct 6 to 12, against last week’s 44,600
+ 57  . The three add up to 48,210
+ 58  The query timed out after 30 seconds. Your data is safe; the rest of the overview is current.
+ 59  1 to 6 of 214 pages, 63.7% of 112,560 views
+ 60  12-week trend: up from 31,400 to 48,210
+ 61  12-week trend: up from 3.0% to 3.8%
+ 62  12-week trend: up from $141k to $184.2k
+ 63  12-week trend: up from 2.6% to 2.9%, which is worse
 
-No mechanical flags. Now tick every line above against its source: chart data, price list, policy, log.
+PERIOD   2 comparison bases on one page: "vs last week", "vs previous 12 weeks". Name the basis beside every delta, and make the comparison control drive all of them.
+
+No mechanical flags (1 judged warning above: fix each or name it in the hand-over). Now tick every line above against its source: chart data, price list, policy, log.

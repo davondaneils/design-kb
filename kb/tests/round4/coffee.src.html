@@ -269,6 +269,7 @@
   @media (hover: hover) { .menu-toggle:hover { background: var(--state-hover); } }
   .menu-toggle:active, .menu-toggle[aria-expanded=true] { background: var(--state-pressed); }
   @media (min-width: 768px) { .menu-toggle, .mobile-menu { display: none !important; } }
+  .site-header:has(#menu-toggle[aria-expanded=true]) { position: relative; } /* open, the menu is 305px tall: it scrolls away with the page instead of covering every anchor and focus target (WCAG 2.4.11) */
   .mobile-menu ul { display: grid; padding: 0 0 var(--space-5); }
   .mobile-menu a { display: flex; align-items: center; justify-content: space-between; min-height: 56px; color: var(--color-text); text-decoration: none;
     font: 400 var(--text-xl)/1.25 var(--font-serif); border-bottom: 1px solid var(--color-border); }
@@ -418,7 +419,8 @@
   .opt { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; column-gap: var(--space-4); min-height: 56px; margin: 0;
     padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); box-shadow: inset 0 0 0 1px var(--color-border-strong); background: var(--color-surface);
     cursor: pointer; font-size: var(--text-sm); line-height: 1.25; transition: background-color var(--motion-hover); } /* the ring snaps: box-shadow never animates (design-motion) */
-  .opt.stack { grid-template-columns: auto minmax(0, 1fr); column-gap: var(--space-3); }
+  .opt.stack { grid-template-columns: auto minmax(0, 1fr); column-gap: var(--space-3); align-items: start; } /* names share one top edge across a row, even when one option carries "Your usual" */
+  .opt.stack input { margin-top: calc((1.25em - 16px) / 2); }
   .opt input { margin: 0; width: 16px; height: 16px; font-size: var(--text-sm); }
   .opt .name { display: block; font-weight: 600; }
   .opt .sub { display: block; color: var(--color-text-muted); font-size: var(--text-xs); line-height: 1.333; margin-top: var(--space-1); }

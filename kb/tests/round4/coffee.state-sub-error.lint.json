@@ -1,6 +1,6 @@
 {
   "file": "kb/tests/round4/coffee.html?state=sub-error",
-  "date": "2026-10-10T23:06:28.539Z",
+  "date": "2026-10-10T23:34:56.876Z",
   "checks": {
     "axe": {
       "fail": [],
@@ -150,6 +150,51 @@
       "warn": [],
       "pass": true
     },
+    "occlusion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "squash": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-header": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "run-together": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "word-break": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "grid-edge": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "hidden-content": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "truth": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "proportion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
     "nav-parity": {
       "fail": [],
       "warn": [],
@@ -219,8 +264,8 @@
             },
             {
               "sel": "#promise-title",
-              "from": 6,
-              "to": 5,
+              "from": 5,
+              "to": 4,
               "text": "Bought by name, tasted twice, shipped th"
             }
           ]
@@ -236,7 +281,7 @@
   },
   "summary": {
     "weightKB": {
-      "html": 191,
+      "html": 192,
       "svg": 70
     },
     "focusables": 32,
@@ -264,6 +309,15 @@
     "icons": "pass",
     "icon-stroke": "pass",
     "weight": "pass",
+    "occlusion": "pass",
+    "squash": "pass",
+    "sticky-header": "pass",
+    "run-together": "pass",
+    "word-break": "pass",
+    "grid-edge": "pass",
+    "hidden-content": "pass",
+    "truth": "pass",
+    "proportion": "pass",
     "nav-parity": "pass",
     "focus": "pass",
     "focus-shape": "pass",
