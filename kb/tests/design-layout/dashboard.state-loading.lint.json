@@ -1,0 +1,209 @@
+{
+  "file": "dashboard.html?state=loading",
+  "date": "2026-10-10T16:44:57.962Z",
+  "checks": {
+    "axe": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overlay": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "targets": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "html > body > a.skip",
+          "w": 123.5,
+          "h": 37
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#menu-btn",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.app > div.main > header.page-head > button.btn.btn-primary",
+          "w": 110.3,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.app > div.main > div.toolbar > button.chip.active",
+          "w": 126.2,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.app > div.main > div.toolbar > button.chip.active",
+          "w": 96,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.app > div.main > div.toolbar > button.chip",
+          "w": 94.8,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.split > section.panel > div.panel-head > a.btn.btn-ghost",
+          "w": 126.5,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.split > section.panel > div.panel-head > a.btn.btn-ghost",
+          "w": 87.3,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#main > section.panel > div.panel-head > a.btn.btn-ghost",
+          "w": 87.9,
+          "h": 40
+        }
+      ],
+      "pass": true
+    },
+    "measure": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "type-scale": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "spacing": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overflow": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "heading-wrap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "svg-overlap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "radius": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "color-scheme": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "typography": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "tabular": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "shadows": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icon-stroke": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "weight": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus-shape": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-shift": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "fallback": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "motion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    }
+  },
+  "summary": {
+    "weightKB": {
+      "html": 128,
+      "svg": 11
+    },
+    "focusables": 20,
+    "fallbackShift390": 0,
+    "fallbackShift1440": 0,
+    "motionFound": {
+      "animations": 28,
+      "movingTransitions": 0
+    },
+    "axe": "pass",
+    "overlay": "pass",
+    "targets": "pass (9 warn)",
+    "measure": "pass",
+    "type-scale": "pass",
+    "spacing": "pass",
+    "overflow": "pass",
+    "heading-wrap": "pass",
+    "svg-overlap": "pass",
+    "radius": "pass",
+    "color-scheme": "pass",
+    "typography": "pass",
+    "tabular": "pass",
+    "shadows": "pass",
+    "icon-stroke": "pass",
+    "weight": "pass",
+    "focus": "pass",
+    "focus-shape": "pass",
+    "sticky-focus": "pass",
+    "state-shift": "pass",
+    "fallback": "pass",
+    "motion": "pass",
+    "result": "PASS",
+    "fails": 0,
+    "warns": 9
+  }
+}

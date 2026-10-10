@@ -1,4 +1,59 @@
-# Critic review: design-layout v0.1 (pre-release)
+# Critic review: design-layout
+
+## Run 2: v0.2, reference 06 and the rendered slice (2026-10-10)
+
+Reviewed: `skills/design-layout/SKILL.md` (gate rules 18 and 19, workflow 2b, expert moves 14 to 20), `references/06-pacing-signature-and-phone-editing.md`, its draft and research note, and the two test pages in `kb/tests/design-layout/`. Same agent as the specialist and tester (no subagent tool in this session); treat this as a self-review with a written trail, not an independent one.
+
+### Citation spot check (before the gate)
+Method: research 06 has 15 sourced claims (1 to 15; 16 and 17 are derived and were re-run instead). 20 percent is 3, minimum 5, so 5 were drawn with `random.seed(20261010); random.sample(range(1, 16), 5)` = claims 1, 4, 5, 6, 11. Each URL re-fetched on 2026-10-10 and the quote checked verbatim.
+| Claim | URL | Result |
+|---|---|---|
+| 1 | developers.google.com mobile-first indexing | Pass, verbatim |
+| 4 | bigmedium.com, Clark quoting Nielsen | Pass, verbatim (a bullet in the post) |
+| 5 | bigmedium.com, Clark | **Fail**: the quote ended at "paperback." but the sentence continues "just because it's smaller." A truncated sentence presented as complete. |
+| 6 | nngroup.com accordions on mobile | Pass, both fragments verbatim |
+| 11 | developer.android.com canonical layouts | Pass, verbatim |
+
+The batch failed on claim 5 and went back to the researcher. Fix: quote completed in the claim table. Round 2 re-fetch: claim 5 now verbatim (pass); two extra claims checked for good measure, 7 (NN/g zigzag, pass) and 9 (Offscreen, pass; the quote is a fragment and is shown without a closing period). Derived claims: `measure-cpl.mjs` re-run (52ch = 63 to 68, 66ch = 81 to 86, matches FOUNDATIONS v0.3); `measure-layout.mjs` run on both before and after pages.
+
+### Verdict
+**Revise, then approve** (round 1 of 3). The gate held on numbers and standards; one rule in the test page broke the skill's own new gate rule 18, and one fact was missing. Both fixed; second pass: **approve** for testing.
+
+### Gate (fundamentals first)
+- Measure: `52ch` matches FOUNDATIONS v0.3; the new note that `ch` resolves on the element's own font is correct (MDN: `ch` is the advance of "0" "in the element's font", research 06 claim 18, added during this review) and is a real failure mode. Pass.
+- Spacing, breakpoints, radius: every value in the reference's Numbers table is on the FOUNDATIONS scales; 1232, 1136 and 1600 are container sizes, not spacing. Pass.
+- Accessibility: DOM order = reading order is restated as gate rule 18 and agrees with design-foundations `references/accessibility.md` (1.3.2). Supporting-pane stacking keeps reflow (1.4.10). Pass.
+- **Fail, fixed:** the test page's container query hid the whole "Lot 0412 · 60 bags this season" chip on small stages. "60 bags this season" appears nowhere else on the page, so the page cut a unique fact, against the reference's own rule 3. Fix: hide only the repeated "Lot 0412 ·" span; the reference's phone table now records this as the example.
+- **Fail, fixed:** round 1 of the dashboard shaved alert link padding from 4 to 2px for density; the lint failed it at 22px tall (WCAG 2.5.8). Fixed in the page; the lesson became a decision rule ("compress rows, then re-run the lint") and expert move 13 now says so.
+
+### Claims versus research
+- "Pages die in the middle" and the alternation rule are opinion; both are labelled as resting on editorial practice (Offscreen) plus the tested page, not on a controlled study. Correct strength.
+- Exemplar patterns are from memory (hosts blocked) and say so. Correct strength.
+- "844px phone height" is labelled a working assumption. Correct.
+
+### Contradictions
+- None with FOUNDATIONS. SKILL.md page skeleton for dashboards updated to the new row order so SKILL.md and reference 06 agree. design-playbook-dashboard non-negotiable 6 (tables reflow at 390) is honoured: rows reflow and one column is deferred to "All pages", which the new phone-editing rule allows (defer, never cut).
+- design-product-ui owns table internals; reference 06 only adds which column a phone row defers. Hand-off stated. No conflict.
+
+### Gaps
+- Tablet (640 to 1023) had no rule in v0.1; added (art at half width, facts beside it) after the tester's 768 render showed a 700px-tall square bag.
+- Container queries for annotations on art: added after the 1024 render showed chips crowding the bag label.
+- Still open: a print or poster equivalent of pacing (reference 03 covers poster composition, not multi-page pacing). Low priority.
+
+### Expert bar
+Would the best person in the field learn something? The flatplan with kinds of loudness, the zigzag evidence as the reason rhythm must not come from side-flipping, rules drawn to scale, the `gap` shorthand overriding a utility's `column-gap`, `ch` resolving on the element's font, and the supporting-pane 70/30 with a 320px floor are each specific and non-obvious. The margin column itself is classic Swiss practice and a strong practitioner would nod; it stays because the measured edge count makes it testable. Pass.
+
+### Fix list (all done)
+1. Research 06 claim 5: complete the quote. Done (researcher).
+2. Test page: container query hides only the repeated span. Done (tester), reference 06 phone table updated.
+3. Test page: alert link padding back to 4px. Done; reference 06 decision rule and SKILL.md expert move 13 updated.
+4. SKILL.md: dashboard skeleton row order matches reference 06. Done.
+5. Em dash grep on every changed file: none found.
+
+---
+
+## Run 1: v0.1 (2026-10-09)
+
 
 Reviewed: skills/design-layout/SKILL.md and references/01 to 05, against kb/research/layout/01 to 05 and the shared foundation contract.
 
