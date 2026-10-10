@@ -1,0 +1,10 @@
+{
+  "name": "design-search-assets",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Optional: with jsonld installed (npm ci here), search-check.mjs also runs a JSON-LD 1.1 expansion of every block, offline, with the schema.org context stubbed to @vocab.",
+  "dependencies": {
+    "jsonld": "9.0.0"
+  }
+}

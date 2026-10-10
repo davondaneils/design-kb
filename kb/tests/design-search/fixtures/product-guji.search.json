@@ -1,0 +1,85 @@
+{
+  "file": "kb/tests/design-search/fixtures/product-guji.html",
+  "expect": "public",
+  "date": "2026-10-10T16:46:42.532Z",
+  "checks": {
+    "size": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "HTML 3 KB uncompressed (Googlebot cut: 2 MB)"
+        }
+      ]
+    },
+    "head-order": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "search and social tags end by byte 1165"
+        }
+      ]
+    },
+    "title": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "title is 69 characters; Google truncates to the device width (no fixed limit), so put the distinguishing words first"
+        }
+      ],
+      "info": [
+        {
+          "message": "\"Ethiopia Guji, Hambela Wamena, washed: light roast, $21 | Ember & Oak\" (69 chars)"
+        }
+      ]
+    },
+    "description": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "153 chars"
+        }
+      ]
+    },
+    "headings": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "h1 Ethiopia Guji, Hambela Wamena"
+        }
+      ]
+    },
+    "links": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "2 links, 2 unique destinations"
+        }
+      ]
+    },
+    "structured-data": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "block 1: JSON-LD 1.1 expansion ok (jsonld.js, safe mode), 35 triples"
+        },
+        {
+          "message": "block1[0].offers.seller: reference https://emberandoak.example/#org is defined on another page"
+        },
+        {
+          "message": "1 JSON-LD blocks, 8 typed nodes: Product, Brand, QuantitativeValue, Country, Offer, BreadcrumbList, ListItem, ListItem"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "fail": 0,
+    "warn": 1,
+    "pass": true
+  }
+}

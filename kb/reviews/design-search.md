@@ -1,4 +1,68 @@
-# Critic review: design-search v0.1 (draft)
+# Critic review: design-search
+
+## v0.2 review (2026-10-10): reference 07, search-check.mjs, SKILL.md gate 14 to 16
+
+Reviewed against `kb/research/search/07-page-build.md`, research 01 to 06, `kb/FOUNDATIONS.md` v0.3, design-foundations `references/accessibility.md` and the Jordan bar.
+
+### Citation spot check (done first)
+Method: the 54 unique URLs in `kb/research/search/01` to `06`, shuffled with a linear congruential generator seeded 20261010 (`s = (s*1103515245 + 12345) mod 2^31`), first 11 taken (20 percent). Each re-fetched on 2026-10-10 with WebFetch and checked against the claim it supports.
+
+| # | URL | Claim checked | Result |
+|---|---|---|---|
+| 1 | developers.google.com/search/docs/appearance/ai-features | No extra requirements for AI Overviews and AI Mode; fan-out; nosnippet, data-nosnippet, max-snippet, noindex controls | Pass (quote present, page updated 2025-12-10) |
+| 2 | developers.google.com/.../ecommerce/pagination-and-incremental-page-loading | rel next/prev unused; each page its own canonical; `<a href>` links between pages | Pass ("Google no longer uses these tags") |
+| 3 | apiserpent.com/blog/ai-overview-citations-vs-rankings-overlap | Overlap 76% (Ahrefs Jul 2025), 38% (Mar 2026), 17% (BrightEdge) | Pass (tier 5 compilation, labelled correlational) |
+| 4 | developers.google.com/.../sitemaps/build-sitemap | 50,000 URLs or 50 MB; priority and changefreq ignored; lastmod only when accurate | Pass |
+| 5 | searchengineland.com/...-456969 | Seven rich result types dropped, announced 2025-06-12 | Pass |
+| 6 | searchinfluence.com/blog/bing-ai-performance-report-copilot-citations/ | AI Performance preview Feb 2026; grounding queries; one page 69% of 19,717 citations | Pass |
+| 7 | support.claude.com/en/articles/8896518 | ClaudeBot, Claude-User, Claude-SearchBot roles; robots.txt honored; Crawl-delay | Pass |
+| 8 | searchenginejournal.com/...566529/ | Listicle sites down 29 to 49% from about 2026-01-20 | Pass on numbers; **overstated in SKILL.md**: Ray names listicles as one possible factor among scaled and AI-written content (fix 1) |
+| 9 | developers.google.com/.../crawling-managing-faceted-navigation | Disallow facets; `&` separator; 404 empty combos; canonical weaker long term | Pass (updated 2025-12-18) |
+| 10 | techwyse.com/news/ai-search/google-faq-rich-results-deprecated-2026 | FAQ rich results removed for all sites 2026-05-07 | Pass (also confirmed on Google's FAQPage doc today) |
+| 11 | remoteworkeurope.eu/news/2026/conductor-... | AI referrals 1.08%; ChatGPT 87.4%; 13,770 domains, 3.3B sessions | Pass |
+
+Batch result: **pass** (no wrong quote or URL; one strength-of-claim fix). New research 07 rows were fetched today by the same session; the critic re-read four of them independently with different prompts (favicon formats, Googlebot 2 MB, carousels beta, product snippet single-product rule): all four hold. The favicon format list was asked twice because it contradicts the common belief that SVG works in Google; the exact sentence came back both times.
+
+### 1. Fundamentals gate
+- Numbers re-run: search-check on both pages, both fixtures; lint on both pages and all states (results in `kb/tests/design-search.md`). The gate's own advice gets the basics right: alt, link text, outline and labels are tied to WCAG 2.2 AA and agree with design-foundations `references/accessibility.md` (no conflicting rule).
+- **Miss found and fixed:** the checker failed any og:image over 5 MB, a number from memory with no fetchable source. Changed to a warning at 1 MB, labelled opinion (fix 2).
+- **Miss found and fixed:** the worked example states a ZIP, hours and 5-decimal coordinates the combined page never had. Fine for a fictional test, but the chapter must say they are stand-ins, or a reader copies the move "add hours to match the markup" without "from the client" (fix 3).
+- Result after fixes: pass.
+
+### 2. Claims vs research
+- "Head order matters for unfurlers": supported by Slackbot's own doc (Range requests). No byte budget is documented, so the chapter states none. Pass.
+- "Evergreen homepage card": supported by Facebook's caching sentence. Pass.
+- Social card numbers (1200x630, safe square, type sizes): convention plus measurement here; labelled. Pass.
+- Absolute dates and entity-named sentences: labelled Speculation with the zero-cost argument. Pass.
+- X and LinkedIn specs: correctly left out as unverified. Pass.
+
+### 3. Contradictions
+- FOUNDATIONS: no token or scale touched. The card's 104px wordmark and 20px footnote are off the type scale; it is a raster image, not page text, and the lint does not see it. Acceptable; noted in pipeline notes as a rule FOUNDATIONS could state.
+- Reference 03 said "optionally ItemList for a carousel where eligible" for category pages; vague and, for products, wrong outside three regions. Fixed in 03 (fix 4).
+- Description stays a domain-reference description, not a broad trigger. Pass.
+
+### 4. Gaps
+- Checker false positives on weekday names (opening hours). Documented as a known limit (fix 5). Not worth a parser.
+- Login page social card is described but not built (no login page in the test set). Left as a gap for design-product-ui.
+
+### 5. Expert bar
+Would a top practitioner learn something? Yes: the Googlebot 2 MB cut (updated 2026-02-03; many still quote 15 MB) applied to self-contained pages with inlined fonts; Google's favicon format list excluding SVG; the carousels beta as the only legitimate list-of-products markup; Lighthouse's llms.txt audit sitting next to Google Search ignoring the file; the measured square-crop failure of the first card. The weekly-H1 rule and keep-the-brand-headings rule are labelled opinion.
+
+### 6. Style
+Em dash grep (U+2014) on every changed file: zero. SKILL.md 143 lines (limit about 300). Reference 07 stands alone.
+
+### Fix list (all applied)
+1. `skills/design-search/SKILL.md` expert move 12: listicle claim now says "one possible factor" with the Sistrix source.
+2. `skills/design-search/assets/search-check.mjs`: og:image size rule is a 1 MB warning labelled opinion.
+3. `kb/drafts/search/07-page-build.md` and `references/07-page-build.md`: stand-in note in worked example 1.
+4. `skills/design-search/references/03-structured-data.md`: homepage row and carousels beta scope.
+5. Reference 07: known limit of the relative-date warning.
+
+Verdict: **approve for rendered testing.**
+
+---
+
+## v0.1 review (2026-10-09)
 
 Reviewed 2026-10-09 against `kb/research/search/*`, the shared foundation contract, and the quality bar (fundamentals gate first, then expert moves a top practitioner would learn from).
 
