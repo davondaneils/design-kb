@@ -1,6 +1,6 @@
 # Fundamentals checklist
 
-Mirror of `kb/FOUNDATIONS.md` v0.4. FOUNDATIONS is the source of truth.
+Mirror of `kb/FOUNDATIONS.md` v0.4.1. FOUNDATIONS is the source of truth.
 
 Every rendered test page must pass every item. One miss fails the page, however good the rest is. `[lint]` items are hard gates enforced by `node tools/lint.mjs <page.html>` (nonzero exit on any fail); `[judged]` items are checked by the tester on the screenshots from `node tools/render.mjs` at 390, 768, 1024 and 1440px.
 
@@ -13,30 +13,33 @@ Every rendered test page must pass every item. One miss fails the page, however 
 | 5 | Body line length 45 to 75 characters at 1440px, at most 75 at 390px | [lint] |
 | 6 | Every font size on the type scale (fluid display sizes of 39px and up allowed with `clamp()`) | [lint] |
 | 7 | Every margin, padding and gap on the spacing scale | [lint] |
-| 8 | No horizontal scroll at 390px | [lint] |
-| 9 | Visible focus on every element in the tab order (2px ring, 2px offset by default); focus never changes an element's shape or size; a skip link when anything focusable precedes `main` | [lint] presence and shape (`focus`, `focus-shape`), skip link (`skip-link`); [judged] 3:1 contrast of the ring, on the state sheet |
+| 8 | No horizontal scroll at 390px (or at any lint width) | [lint] at 390, 768, 1024 and 1440 (`overflow`) |
+| 9 | Visible focus on every element in the tab order (2px ring, 2px offset by default); focus never changes an element's shape or size; a skip link when anything focusable precedes `main`; a sticky header never taller than `scroll-padding-top` | [lint] presence and shape (`focus`, `focus-shape`), skip link (`skip-link`), sticky bar height against `scroll-padding-top` at every lint width (`sticky-header`); [judged] 3:1 contrast of the ring, on the state sheet |
 | 10 | If anything moves, `prefers-reduced-motion: reduce` removes the movement (opacity and color up to 150ms may stay); keyboard shortcuts do not animate | [lint] moving keyframes under reduce (`motion`); [judged] keyboard paths, filmed with design-motion `motion-audit.mjs` (`expect: 'none'`) |
 | 11 | No information by color alone (errors have icon plus text, links underlined in body copy, charts labelled) | [judged] |
-| 12 | Hierarchy: one clear primary action per view, headings in order, scan path obvious | [lint] one filled call to action per screen height (`primary`); [judged] the rest (heading order partly by axe) |
-| 13 | Consistency: tokens from the schema, one radius family, one icon style, aligned edges | [lint] radius family (`radius`); one icon style as one cap, one join and no hard-coded icon colors (`icons`, ported from `skills/design-graphic/assets/icon_audit.mjs`); [judged] the rest |
+| 12 | Hierarchy: one clear primary action per view, headings in order, scan path obvious; nothing covers a control and no line of text is crushed to one word per line, at 390, 768, 1024 and 1440 | [lint] one filled call to action per screen height (`primary`); controls hit-tested for anything covering them (`occlusion`); squashed flex children and one-word-per-line text (`squash`); [judged] the rest (heading order partly by axe) |
+| 13 | Consistency: tokens from the schema, one radius family, one icon style, aligned edges; separate items never run together; words never break inside a control | [lint] radius family (`radius`); one icon style as one cap, one join and no hard-coded icon colors (`icons`, ported from `skills/design-graphic/assets/icon_audit.mjs`); sibling columns sharing top and left edges within 2px (`grid-edge`); text in separate boxes touching (`run-together`); words broken or text in the padding inside controls, labels and cells (`word-break`); [judged] the rest (token names, state layer values) |
 | 14 | Both themes designed (not inverted) when the brief asks for dark mode; `color-scheme` set | [lint] `color-scheme`; [judged] the design |
-| 15 | States: hover, focus, active, disabled, error, empty and loading exist where the page needs them; no state shifts layout | [lint] layout shift (`state-shift`) and every `?state=` URL linted; [judged] on a state sheet (every control in every state) |
-| 16 | Copy is true and consistent: every number matches its source; each promise has one wording; one verb per action; content mechanics as above (one clock, weekday-checked dates, no breaks inside dates, prices, ranges and units) | `node skills/design-copy/assets/claims_inventory.mjs page.html --year <year>` exits 0 (its WEEKDAY, CLOCK and RELATIVE flags); [judged] every listed claim ticked against its data, price list or log |
+| 15 | States: hover, focus, active, disabled, error, empty and loading exist where the page needs them; no state shifts layout; no state rule hides a control's content | [lint] layout shift (`state-shift`), every `?state=` URL linted, blank controls measured on pixels (`hidden-content`), a state sheet shows disabled, busy and invalid controls (`state-sheet`; panels warn); [judged] on the state sheet (every control in every state) |
+| 16 | Copy is true and consistent: every number matches its source, in every state and after every live update; each promise has one wording; one verb per action; one comparison basis, named; shares and bars proportional; content mechanics as above (one clock, weekday-checked dates, no breaks inside dates, prices, ranges and units) | `node skills/design-copy/assets/claims_inventory.mjs page.html --year <year>` exits 0 (its WEEKDAY, CLOCK and RELATIVE flags) and its PROMISE and PERIOD warnings are fixed or named; [lint] `truth` (repeated numbers change together over 3 live updates, empty states carry no default-state numbers, stopped sources do not tick, the data-attribute contract in `tools/lint-truth.mjs` holds) and `proportion` (share columns, 0 to 100 bars); [judged] every listed claim ticked against its data, price list or log, then a fresh-context critic's judged pass |
 
 ## How to run it
 From the design-kb repo root (`tools/` needs Node and the Chromium that Playwright finds; see `tools/package.json`):
 
 ```sh
-node tools/lint.mjs page.html            # [lint] items; exit 1 on any fail
+node tools/lint.mjs page.html            # [lint] items; exit 1 on any fail; layout checks at 390, 768, 1024, 1440
 node tools/render.mjs page.html out/ --widths 390,768,1024,1440   # light and dark screenshots
 node tools/lint.mjs page.html --states state=loading,state=empty   # lint each ?state= variant too
-node skills/design-copy/assets/claims_inventory.mjs page.html --year 2026   # item 16: exit 0, then tick every claim
+node skills/design-copy/assets/claims_inventory.mjs page.html --year 2026   # item 16: exit 0, read PROMISE and PERIOD, tick every claim
+node skills/design-copy/assets/claims_inventory.mjs "page.html?state=empty" --year 2026 --render   # strings built by script, per state
 ```
 
 A state sheet is exempt from the `primary` check: mark it `<html data-lint-page="state-sheet">` (a `<title>` containing "state sheet" also counts).
 
 Pages with interactive controls also get a state sheet: one page showing every control in every state (rest, hover, pressed, focus, disabled, loading, error, success), plus empty, loading and error panels for data pages. Lint and render it like any page (design-polish `references/06-polish-checklist.md`).
 
-Then walk the `[judged]` rows on the screenshots, in order. Accessibility detail behind items 1 to 4, 9 to 11: `accessibility.md`. Content mechanics behind item 16: `tokens.md`, Content mechanics.
+Pages with live numbers, totals or shares carry the data-attribute contract the `truth` and `proportion` checks read (`data-sum-of`, `data-derived-from`, `data-monotonic`, `data-source` and `data-source-stopped`, `data-data="none"`, `data-bar`, `data-share-base`; documented at the top of `tools/lint-truth.mjs`). Without it the checks still run their heuristics, but a stale delta or a sentence that no longer matches its KPI is invisible to them.
+
+Then walk the `[judged]` rows on the screenshots, in order, at 768 and 1024 and on every state render as well as 390 and 1440. The gate is claimed only after a fresh-context critic's judged pass (design-director section 5): on round 3 every lint check passed and a self-review ticked every row, while a clean-context critic found 7 judged fails (`kb/reviews/round3-critic.md`). Accessibility detail behind items 1 to 4, 9 to 11: `accessibility.md`. Content mechanics behind item 16: `tokens.md`, Content mechanics.
 
 If you cannot run code: say so, check every item by reading the code, and label the result unverified.

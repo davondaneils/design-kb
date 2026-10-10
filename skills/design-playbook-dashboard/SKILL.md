@@ -35,14 +35,19 @@ Copy is always design-copy here; direct response copywriting never applies insid
 7. A data-quality problem is marked on every number it affects ("Partial since 2:05 pm" on the tile), not only in an alert. The alert explains; the caveat stops the misread where the number is read.
 8. Alerts are rows, not cards. A panel that explains another sits beside it at 2:1 from 1280px and stacks below it under that.
 9. Upgrade is never the header primary unless the user is blocked by a limit (design-conversion `references/05-in-product-upgrades.md`).
-10. Notifications and first run follow design-ux: an inbox split into needs-you and everything else, one channel per event, permissions asked when a feature needs them, the real product with labelled sample data instead of a tour (`kb/references/patterns/09-notifications.md`, `01-onboarding.md`).
+10. **State truth.** Every number is true in every state and after every live update: empty and setup states show no number they cannot have (the sidebar usage meter and footnote totals included); a live update recomputes the delta, the answer sentence and every total that contains the number in the same frame; a source the page says stopped does not tick; a distinct count over an open window never falls. Mark the relations with the lint's data-attribute contract (design-director section 4, "State truth contract"; `tools/lint-truth.mjs`).
+11. **Proportion honesty.** A share column is a share of all items, or its header says "share of rows shown"; shares of 6 rows of 214 never sum to 100 under a label that reads as share of all. Bars that encode a percent run 0 to 100 of the track; scaling them to the maximum makes 64 percent look like all (`kb/reviews/round3-critic.md`, dashboard fix 5; a full-row fill is the Vercel pattern, `kb/teardowns/vercel-dashboard.md`).
+12. **One comparison basis, named where it is read.** The "Compared to" control drives every delta, chart and table column, or each names its own basis ("Change vs prev. 12 weeks"). Stripe's Dashboard pairs every delta with its period (`kb/reviews/round3-critic.md`, dashboard fix 4). `claims_inventory.mjs --render` warns `PERIOD` when a page carries two bases.
+13. **The page header responds to the content container** and stays one row at every width, or `scroll-padding-top` covers it; under about 64rem of content width the search field folds into the command button (Linear has no standing search box; opinion, `kb/reviews/round3-critic.md`, dashboard fix 1).
+14. Notifications and first run follow design-ux: an inbox split into needs-you and everything else, one channel per event, permissions asked when a feature needs them, the real product with labelled sample data instead of a tour (`kb/references/patterns/09-notifications.md`, `01-onboarding.md`).
 
 ## 3. Done means
 1. `node tools/lint.mjs page.html` exits 0.
 2. Every state is rendered and linted, not only the ready page: expose states through a `?state=` parameter (or equivalent), run `node tools/lint.mjs page.html --states state=loading,state=empty,...` and render each state URL. Build a state sheet (every control in every state; empty, loading, error and partial panels). Every `[judged]` row holds on those screenshots.
-3. `search-check.mjs --expect private` exits 0 (the page carries `noindex`); `claims_inventory.mjs` exits 0 and every number in copy matches the data on screen; renders at 390, 768, 1024 and 1440.
+3. `search-check.mjs --expect private` exits 0 (the page carries `noindex`); `claims_inventory.mjs --render` exits 0, every `PERIOD` warning is fixed, and every number in copy matches the data on screen in every state and after one live update; the lint's `truth` and `proportion` checks pass with the data-attribute contract in place; renders at 390, 768, 1024 and 1440, and the 768 and 1024 shots are read, not only taken.
 4. Side by side with the closest exemplar, rated close on density, hierarchy, chrome restraint and craft: the Linear app first, then the Stripe and Vercel dashboards (`kb/teardowns/INDEX.md`, `linear-app.md`, `stripe-dashboard.md`, `vercel-dashboard.md`; `references/signature-moves.md`).
-5. The hand-over names what is still short of the exemplar.
+5. A fresh-context critic has judged the gate (design-director section 5, step 13).
+6. The hand-over names what is still short of the exemplar.
 
 ## 4. Reference map
 | Need | Read |
