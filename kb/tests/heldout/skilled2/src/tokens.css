@@ -1,0 +1,84 @@
+@font-face { font-family: 'Archivo Fallback'; src: local('Arial'), local('Liberation Sans'); size-adjust: 102.3%; ascent-override: 85.83%; descent-override: 20.53%; line-gap-override: 0%; }
+@layer reset, tokens, base, components;
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  [hidden] { display: none !important; }
+  button, input { font: inherit; color: inherit; }
+}
+@layer tokens {
+  :root {
+    /* primitives. Sandstone: Glasgow red sandstone (Locharbriggs and Mauchline, the tenement stone), five stone tones
+       for the ashlar plus the lime joint. Every ink pair measured: cream #f4f0e8 on the darkest stone 7.76:1, on the
+       lightest 5.61:1; paper-950 on cream 14.11:1; paper-700 on cream 6.27:1. */
+    --color-cream: #f4f0e8;
+    --color-paper-100: #ece9e5; --color-paper-200: #dbd7d0; --color-paper-300: #c7c0b7; --color-paper-400: #aca398;
+    --color-paper-500: #92897e; --color-paper-600: #736a5f; --color-paper-700: #5e574d; --color-paper-800: #4a443c;
+    --color-paper-900: #37322c; --color-paper-950: #24211c; --color-paper-975: #1c1915; --color-paper-990: #14110e;
+    --color-sandstone-300: #f9aa96; --color-sandstone-400: #e7876f; --color-sandstone-600: #a94b34;
+    --color-sandstone-700: #8e3a25; --color-sandstone-800: #722c1a; --color-sandstone-900: #561f12;
+    --color-stone-a: #8e3a25; --color-stone-b: #873421; --color-stone-c: #963f29; --color-stone-d: #7f3220; --color-stone-e: #9a4630;
+    --color-lime: #e2c6b0;
+
+    /* roles (light) */
+    --color-bg: var(--color-cream);
+    --color-surface: var(--color-cream);
+    --color-surface-sunken: var(--color-paper-100);
+    --color-text: var(--color-paper-950);
+    --color-text-muted: var(--color-paper-700);
+    --color-text-muted-on-tint: var(--color-paper-800);
+    --color-border: var(--color-paper-300);
+    --color-border-strong: var(--color-paper-950);
+    --color-primary: var(--color-sandstone-700);
+    --color-primary-hover: var(--color-sandstone-800);
+    --color-primary-active: var(--color-sandstone-900);
+    --color-on-primary: var(--color-cream);
+    --color-accent: var(--color-sandstone-700);
+    --color-focus-ring: var(--color-paper-950);
+    /* the wall keeps its colours in both schemes: it is the identity, not a surface */
+    --color-wall-ink: var(--color-cream);
+    --color-wall-joint: var(--color-lime);
+    --color-wall-focus: var(--color-cream);
+    --color-wall-hover: rgb(244 240 232 / 0.14);
+    --state-hover: rgb(36 33 28 / 0.08);
+    --state-pressed: rgb(36 33 28 / 0.12);
+
+    --space-0: 0; --space-1: 2px; --space-2: 4px; --space-3: 8px; --space-4: 12px; --space-5: 16px;
+    --space-6: 24px; --space-7: 32px; --space-8: 48px; --space-9: 64px; --space-10: 96px; --space-11: 128px;
+    --text-xs: 0.75rem; --text-sm: 0.875rem; --text-base: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem;
+    --text-2xl: 1.9375rem; --text-3xl: 2.4375rem; --text-4xl: 3.0625rem; --text-5xl: 3.8125rem;
+    --leading-tight: 1.1; --leading-snug: 1.25; --leading-normal: 1.5; --leading-display: 0.95;
+    --radius-none: 0; --radius-sm: 4px; --radius-full: 9999px;
+    --radius-control: var(--radius-sm);
+    --size-control-lg: 48px; --size-touch: 44px; --size-measure: 52ch;
+    --duration-instant: 100ms; --duration-fast: 150ms;
+    --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+    --motion-hover: var(--duration-instant) var(--ease-standard);
+    --font-sans: 'Archivo', 'Archivo Fallback', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, Roboto, sans-serif;
+
+    /* the coursed wordmark: em widths of each word in Archivo 900 (measure.mjs), per width axis setting */
+    --wall-wdth: 62%;
+    --k-set: 1.406; --k-in: 0.781; --k-stone: 2.438;
+  }
+}
+@layer base {
+  html { background: var(--color-bg); color: var(--color-text); font-family: var(--font-sans); line-height: var(--leading-normal); font-kerning: normal; -webkit-text-size-adjust: 100%; }
+  body { background: var(--color-bg); }
+  .num { font-variant-numeric: tabular-nums lining-nums; }
+  .nb { white-space: nowrap; }
+  .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  :focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+
+  /* the ashlar wall: courses of stones laid with lime joints; every word fills its stone */
+  .wall { container-type: inline-size; display: grid; gap: var(--joint); background: var(--color-wall-joint); color: var(--color-wall-ink); --joint: 8px; --pad: 40px; }
+  .course { display: grid; gap: var(--joint); grid-template-columns: var(--cols, 1fr); }
+  .stone { background: var(--tone, var(--color-stone-a)); padding: var(--pad); position: relative; min-width: 0; }
+  .stone::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.22; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.1 0 0 0 0 0.05 0 0 0 1.4 -0.35'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23g)'/%3E%3C/svg%3E"); }
+  .stone > * { position: relative; z-index: 1; }
+  .tone-a { --tone: var(--color-stone-a); } .tone-b { --tone: var(--color-stone-b); } .tone-c { --tone: var(--color-stone-c); }
+  .tone-d { --tone: var(--color-stone-d); } .tone-e { --tone: var(--color-stone-e); }
+  .words { display: grid; gap: var(--joint); font-weight: 900; font-stretch: var(--wall-wdth); text-transform: uppercase; line-height: 1; letter-spacing: 0; }
+  .words .course-1 { --cols: auto 1fr; font-size: clamp(3.0625rem, (100cqi - 4 * var(--pad) - var(--joint)) / (var(--k-set) + var(--k-in)), 32rem); }
+  .words .course-2 { --cols: 1fr; font-size: clamp(3.0625rem, (100cqi - 2 * var(--pad)) / var(--k-stone), 32rem); }
+  .words .w { display: block; text-box: trim-both cap alphabetic; white-space: nowrap; }
+}

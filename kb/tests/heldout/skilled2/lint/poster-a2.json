@@ -1,0 +1,263 @@
+{
+  "file": "kb/tests/heldout/skilled2/poster-a2.html",
+  "date": "2026-10-11T02:37:51.358Z",
+  "checks": {
+    "axe": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overlay": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "targets": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "canvas-text": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "spacing": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overflow": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "heading-wrap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "svg-overlap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "primary": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "radius": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "color-scheme": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "typography": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "tabular": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "shadows": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icons": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icon-stroke": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "weight": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "occlusion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "squash": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-header": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "run-together": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "word-break": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "grid-edge": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "hidden-content": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "double-space": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "undefined-var": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-layer": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "primitive-in-component": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "error-icon": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "truth": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "proportion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "nav-parity": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus-shape": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "skip-link": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-shift": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "fallback": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "layout moves 16px at 1191px when the web fonts fail (worst: html > body > main.wall.poster > div.course.course-info); add metric fallbacks (size-adjust, ascent-override)",
+          "sel": "html > body > main.wall.poster > div.course.course-info",
+          "shift": 16,
+          "rewrapped": []
+        }
+      ],
+      "pass": true
+    },
+    "motion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    }
+  },
+  "summary": {
+    "canvas": "1191x1684, print 420x594 mm read at 150 cm; skipped: measure, type-scale, heading-wrap, nav-parity, 390 overflow and touch warnings",
+    "weightKB": {
+      "html": 124,
+      "svg": 0
+    },
+    "focusables": 0,
+    "fallbackShift1191": 16,
+    "motionFound": {
+      "animations": 0,
+      "movingTransitions": 0
+    },
+    "axe": "pass",
+    "overlay": "pass",
+    "targets": "pass",
+    "canvas-text": "pass",
+    "spacing": "pass",
+    "overflow": "pass",
+    "heading-wrap": "pass",
+    "svg-overlap": "pass",
+    "primary": "pass",
+    "radius": "pass",
+    "color-scheme": "pass",
+    "typography": "pass",
+    "tabular": "pass",
+    "shadows": "pass",
+    "icons": "pass",
+    "icon-stroke": "pass",
+    "weight": "pass",
+    "occlusion": "pass",
+    "squash": "pass",
+    "sticky-header": "pass",
+    "run-together": "pass",
+    "word-break": "pass",
+    "grid-edge": "pass",
+    "hidden-content": "pass",
+    "double-space": "pass",
+    "undefined-var": "pass",
+    "state-layer": "pass",
+    "primitive-in-component": "pass",
+    "error-icon": "pass",
+    "truth": "pass",
+    "proportion": "pass",
+    "nav-parity": "pass",
+    "focus": "pass",
+    "focus-shape": "pass",
+    "sticky-focus": "pass",
+    "skip-link": "pass",
+    "state-shift": "pass",
+    "fallback": "pass (1 warn)",
+    "motion": "pass",
+    "result": "PASS",
+    "fails": 0,
+    "warns": 1
+  }
+}

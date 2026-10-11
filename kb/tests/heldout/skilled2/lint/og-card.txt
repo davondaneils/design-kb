@@ -1,0 +1,45 @@
+
+Fundamentals lint: og-card.html  ->  PASS (0 fail, 1 warn)
+
+  pass  axe
+  pass  overlay
+  pass  targets
+  pass  canvas-text
+  pass  spacing
+  pass  overflow
+  pass  heading-wrap
+  pass  svg-overlap
+  pass  primary
+  pass  radius
+  pass  color-scheme
+  pass  typography
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke
+  pass  weight
+  pass  occlusion
+  pass  squash
+  pass  sticky-header
+  pass  run-together
+  pass  word-break
+  pass  grid-edge
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback  (1 warn)
+        ! layout moves 9px at 1200px when the web fonts fail (worst: html > body > main.wall.card > div.course.info); add metric fallbacks (size-adjust, ascent-override). Line count changed in 1 elements: body > main.wall.card > div.course.info > p.stone.tone-e "Sat 17 & Sun 18 April 2027" 1 to 2 lines (one element near a wrap point is a copy fix; many is a font metrics fix)  [html > body > main.wall.card > div.course.info]
+  pass  motion
+
+  JSON: kb/tests/heldout/skilled2/lint/og-card.json
