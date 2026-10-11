@@ -9,6 +9,7 @@ Read this for a landing, product or brand page that must feel special, especiall
 2. One h1, headings in order; a giant wordmark or numeral that is decoration is `aria-hidden` or a `<p>`, never a heading. `[judged]`
 3. Body stays calm: `--text-base` or `--text-lg`, 1.5, system or text face. Drama lives in display only. `[judged]`
 4. The primary action is still in the first screen at 390 and 1440. A headline big enough to push the CTA below the fold has failed, however good it looks. `[judged]`
+5. A high-contrast display face (Didone, fashion serif) keeps its hairline at 0.5 CSS px or more at the size it is seen, at 390 as well as 1440: on a phone the display clamp minimum is the binding size. Measure with `assets/hairline.py`; reference 08. `[judged]`
 
 ## The moves (each: what, why, how)
 

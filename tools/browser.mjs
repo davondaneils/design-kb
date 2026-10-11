@@ -47,3 +47,30 @@ export function splitTarget(target) {
   const slug = query.replace(/[=&]+/g, '-').replace(/[^\w.-]+/g, '').replace(/^-+|-+$/g, '');
   return { file, slug };
 }
+
+// Fixed-canvas artifacts (posters, social images, OG cards) are one size, not responsive pages. The canvas comes from
+// a --canvas WxH flag, or from data-canvas="1080x1350" on any element in the file (the first one wins). Optional, as a
+// flag or an attribute on the same element:
+//   --canvas-view N    / data-canvas-view="N"      CSS px wide the canvas is seen at. Default 390: a phone feed shows a
+//                                                   1080 post at about 360 to 430px (design-graphic 05, thumbnail math)
+//   --print WxH        / data-canvas-print="WxH"   physical size in mm (A2 is 420x594); text is then judged in points
+//   --distance CM      / data-canvas-distance="CM" print viewing distance in cm (default 100 for a poster)
+// Returns null for a responsive page.
+export function readCanvas(file, flags = {}) {
+  let html = '';
+  if (file && !/^https?:/.test(file)) {
+    try { html = fs.readFileSync(file.startsWith('file:') ? new URL(file) : file, 'utf8'); } catch { /* missing */ }
+  }
+  const tag = (html.match(/<[a-z][^>]*\sdata-canvas="[^"]*"[^>]*>/i) || [''])[0];
+  const attr = (name) => { const m = tag.match(new RegExp('\\s' + name + '="([^"]*)"', 'i')); return m ? m[1] : null; };
+  const pair = (v) => { const m = String(v || '').match(/^\s*(\d+(?:\.\d+)?)\s*[x×]\s*(\d+(?:\.\d+)?)/); return m ? { w: Number(m[1]), h: Number(m[2]) } : null; };
+  const size = pair(flags.canvas) || pair(attr('data-canvas'));
+  if (!size) return null;
+  return {
+    w: Math.round(size.w),
+    h: Math.round(size.h),
+    view: Number(flags.view || attr('data-canvas-view') || 390),
+    print: pair(flags.print) || pair(attr('data-canvas-print')),
+    distance: Number(flags.distance || attr('data-canvas-distance') || 100),
+  };
+}

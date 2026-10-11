@@ -7,7 +7,7 @@ Copy that reads well in a doc can still fail on the page: a number that disagree
 1. **Every number is a claim, and it is true.** Each number, percent, price, date, duration and comparison in the copy matches the data, price list, log or policy it describes. Recompute any derived figure (percent change, "Nth in a row", "X% under") from its source. Advertising must be "truthful, not misleading" (FTC); a savings claim needs a real regular price (16 CFR 233.1). `[judged]`, with `assets/claims_inventory.mjs` listing every claim to tick.
 2. **One promise, one wording.** A fact stated in more than one place (hero, facts row, perks, steps, footer) uses the same number, unit and verb everywhere. "Ships within 48 hours of its roast" in all four places, never "two days", "three days old" and "roast to door" on one page. `[judged]`
 3. **One verb per action, one action per verb.** The primary action's verb appears on every control that does it and on no control that does something else. `[judged]`
-4. **Mechanics are one sheet.** One clock (US: 12-hour, "2:05 pm"; Polaris, Mailchimp), dates as "Tue, Oct 13" with the weekday checked against the year, numerals except at the start of a sentence (Mailchimp), one spelling system (US brand: "meters"), one perspective ("your", never "my" and "your" on one page; Apple HIG). `[judged]`; WEEKDAY and CLOCK are flagged by `claims_inventory.mjs`.
+4. **Mechanics are one sheet, in the audience's locale.** `<html lang>` picks the row of the FOUNDATIONS locale table: en-US one 12-hour clock "2:05 pm" and dates as "Tue, Oct 13" (Polaris, Mailchimp); en-GB "5:30pm" and "Friday 15 January 2027", no comma, no ordinals (GOV.UK); the weekday checked against the year the date is in, numerals except at the start of a sentence (Mailchimp), one spelling system (US: "meters"; UK: "metres"), one perspective ("your", never "my" and "your" on one page; Apple HIG). `[judged]`; WEEKDAY, LOCALE and CLOCK are flagged by `claims_inventory.mjs`, which reads the page's `lang` (STYLE warns on am/pm spacing and weekday commas in the other locale's style).
 5. **No split units.** No line break inside a date, a price, a range, or a number and its unit. Use `&nbsp;` or `&#8239;` (narrow no-break space before units: "340&#8239;g"). `[judged]` on the 390 and 1440 renders.
 6. **Every state string passes the gate,** including empty, loading, error, partial, not-permitted, success, toast and screen-reader-only announcements. A live region that says "done" fails rule 6 of v0.1's gate the same way a "Click here" link does. `[judged]`
 7. **Copy changes never break the page.** Re-run `node tools/lint.mjs` with every `?state=` after a copy pass; longer strings can create overflow, target and measure fails. `[lint]`
@@ -37,7 +37,7 @@ Copy that reads well in a doc can still fail on the page: a number that disagree
 | KPI caveat at 390 px, 2-column grid, `--text-xs` | 21 characters or fewer stays on one line (measured: 26 wrapped) | M6, this run |
 | Phone headline at `--text-display-2` (39 px min) | about 14 to 16 characters per line in Newsreader | read from the 390 render |
 | Times | "2:05 pm", "3 pm" (no ":00") | Mailchimp |
-| Dates | "Tue, Oct 13"; full month name when space allows | Polaris |
+| Dates | en-US "Tue, Oct 13"; en-GB "Tue 13 Oct", "Friday 15 January 2027"; full month name when space allows | Polaris; GOV.UK A to Z |
 | Numbers | numerals; commas from 1,000; spelled out at sentence start | Polaris, Mailchimp |
 
 ## Ceiling: exemplar patterns

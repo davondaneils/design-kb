@@ -3,12 +3,15 @@
 //
 // Usage:
 //   node tools/render.mjs <html-or-url[?state=x]> <outdir> [--name base] [--jpeg [quality]]
-//          [--widths 390,1440] [--schemes light,dark] [--viewport-only]
+//          [--widths 390,1440] [--schemes light,dark] [--viewport-only] [--canvas 1080x1350]
+//
+// Fixed canvas (poster, social image, OG card): --canvas WxH, or data-canvas="WxH" on any element of the page, renders
+// that one size, viewport only, and ignores --widths (tools/browser.mjs readCanvas).
 //
 // Output: <outdir>/<base>-<width>-<scheme>.png (or .jpg), plus a list on stdout.
 import fs from 'node:fs';
 import path from 'node:path';
-import { launch, toUrl, splitTarget } from './browser.mjs';
+import { launch, toUrl, splitTarget, readCanvas } from './browser.mjs';
 
 function parseArgs(argv) {
   const opts = { widths: [390, 1440], schemes: ['light', 'dark'], jpeg: false, quality: 70, viewportOnly: false };
@@ -23,6 +26,7 @@ function parseArgs(argv) {
     else if (a === '--schemes') opts.schemes = argv[++i].split(',');
     else if (a === '--viewport-only') opts.viewportOnly = true;
     else if (a === '--max-height') opts.maxHeight = Number(argv[++i]);
+    else if (a === '--canvas') opts.canvas = argv[++i];
     else pos.push(a);
   }
   [opts.target, opts.outdir] = pos;
@@ -37,6 +41,8 @@ if (!opts.target || !opts.outdir) {
 const isRemote = /^https?:/.test(opts.target);
 const split = isRemote ? { file: opts.target, slug: '' } : splitTarget(opts.target);
 const base = opts.name || (path.basename(split.file).replace(/\.html?$/, '') + (split.slug ? '-' + split.slug : '')) || 'page';
+const canvas = isRemote ? null : readCanvas(split.file, { canvas: opts.canvas });
+if (canvas) { opts.widths = [canvas.w]; opts.viewportOnly = true; }
 fs.mkdirSync(opts.outdir, { recursive: true });
 
 const browser = await launch();
@@ -46,7 +52,7 @@ try {
   for (const scheme of opts.schemes) {
     for (const width of opts.widths) {
       const context = await browser.newContext({
-        viewport: { width, height: 900 },
+        viewport: { width, height: canvas ? canvas.h : 900 },
         deviceScaleFactor: 1,
         colorScheme: scheme,
         reducedMotion: 'reduce',

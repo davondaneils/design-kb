@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Fundamentals lint: the automated half of the fundamentals checklist in kb/FOUNDATIONS.md (v0.4.3).
+// Fundamentals lint: the automated half of the fundamentals checklist in kb/FOUNDATIONS.md (v0.4.4).
 //
 // Usage:
 //   node tools/lint.mjs <html[?query]> [--json out.json] [--out-dir dir] [--quiet] [--states state=a,state=b]
@@ -11,6 +11,18 @@
 //   --widths   widths for the layout checks below (default 390,768,1024,1440: tablet collisions are invisible
 //              at 390 and 1440, round 3 critic)
 //   --ticks    live updates the truth check drives (fake clock advanced by --tick-ms each time); 0 skips them
+//   --canvas   fixed canvas WxH (posters, social images, OG cards), or data-canvas="1080x1350" on any element of the
+//              page. Every check runs at that one size (viewport W x H); measure, type-scale, heading-wrap, nav-parity
+//              and the 390 overflow and touch checks are skipped; canvas-text replaces type-scale. --canvas-view N
+//              (data-canvas-view) sets the width the canvas is seen at (default 390, a phone feed); --print WxH in mm
+//              (data-canvas-print) judges text in printed points, --distance CM (data-canvas-distance, default 100)
+//   canvas-text  (canvas mode) text seen under 14 CSS px in the feed fails (40px on a 1080 canvas); in print, under 7pt
+//              fails and under 7pt x distance / 40cm warns. Sources in canvasText() below
+//
+// Rotated, mirrored and vertical text (rotate, transform, scale -1, writing-mode) is exempt from the geometry checks
+// (measure, squash, run-together, word-break, grid-edge, heading-wrap, svg-overlap, double-space): its client rects
+// are the turned box, not the lines. Contrast, overlay, canvas-text and focus still run on it. A skip link parked off
+// screen or clipped is not counted by primary.
 //
 // Hard gates (fail):
 //   axe          axe-core WCAG 2.0/2.1/2.2 A and AA rules, light and dark, 390 and 1440 (includes contrast)
@@ -81,12 +93,12 @@
 
 // Exit code: 0 when no check fails, 1 when any check fails, 2 on usage error.
 // Opt out for one element (use sparingly, explain in the test report):
-//   data-lint-skip="measure spacing type-scale targets focus overlay radius typography svg-overlap tabular icons primary
+//   data-lint-skip="canvas-text measure spacing type-scale targets focus overlay radius typography svg-overlap tabular icons primary
 //                   occlusion squash sticky-header run-together word-break grid-edge hidden-content double-space"
 import fs from 'node:fs';
 import path from 'node:path';
 import { createRequire } from 'node:module';
-import { launch, toUrl, splitTarget } from './browser.mjs';
+import { launch, toUrl, splitTarget, readCanvas } from './browser.mjs';
 import { layoutChecks, reportLayout, pageChecks } from './lint-layout.mjs';
 import { truthPass } from './lint-truth.mjs';
 import { tokenChecks, errorIconChecks } from './lint-tokens.mjs';
@@ -102,7 +114,7 @@ const AXE_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
 const STEM = { 300: 0.07, 400: 0.088, 500: 0.107, 600: 0.127, 700: 0.147, 800: 0.165 };
 
 const args = process.argv.slice(2);
-const valueFlags = new Set(['--json', '--states', '--widths', '--ticks', '--tick-ms', '--out-dir']);
+const valueFlags = new Set(['--json', '--states', '--widths', '--ticks', '--tick-ms', '--out-dir', '--canvas', '--canvas-view', '--print', '--distance']);
 const positional = args.filter((a, i) => !a.startsWith('--') && !valueFlags.has(args[i - 1]));
 const target = positional[0];
 const jsonOut = args.includes('--json') ? args[args.indexOf('--json') + 1] : null;
@@ -115,8 +127,9 @@ const ticks = Number(flag('--ticks', '3'));
 const tickMs = Number(flag('--tick-ms', '61000'));
 const outDir = flag('--out-dir', null);
 const noTruth = args.includes('--no-truth');
+const canvasFlags = { canvas: flag('--canvas', null), view: flag('--canvas-view', null), print: flag('--print', null), distance: flag('--distance', null) };
 if (!target) {
-  console.error('Usage: node tools/lint.mjs <html[?query]> [--json out.json] [--quiet] [--states state=a,state=b] [--no-fallback]');
+  console.error('Usage: node tools/lint.mjs <html[?query]> [--json out.json] [--quiet] [--states state=a,state=b] [--no-fallback] [--canvas 1080x1350 [--canvas-view 390] [--print 420x594 --distance 100]]');
   process.exit(2);
 }
 
@@ -131,7 +144,28 @@ const helpers = `
     },
     skipped(el, check) {
       const host = el.closest('[data-lint-skip]');
-      return !!host && host.getAttribute('data-lint-skip').split(/\\s+/).includes(check);
+      if (host && host.getAttribute('data-lint-skip').split(/\\s+/).includes(check)) return true;
+      // Rotated, mirrored or vertical text: its client rects are the axis-aligned box of the turned text, so line
+      // counts, widths and edges read wrong (the held-out poster's -1.2deg sheet reported 9 characters per line on
+      // one-line text). Geometry checks skip it; contrast, overlay, canvas-text and focus still run.
+      if (this.GEOMETRY.includes(check) && this.transformed(el)) return true;
+      return false;
+    },
+    GEOMETRY: ['measure', 'squash', 'run-together', 'word-break', 'grid-edge', 'heading-wrap', 'svg-overlap', 'double-space'],
+    // 'rotated', 'mirrored' or 'vertical' when the element or an ancestor turns or flips its text, else null.
+    transformed(el) {
+      for (let n = el; n && n.nodeType === 1; n = n.parentElement) {
+        const s = getComputedStyle(n);
+        if (s.rotate && s.rotate !== 'none' && parseFloat(s.rotate.trim().split(/\\s+/).pop())) return 'rotated';
+        if (s.scale && s.scale !== 'none' && s.scale.split(/\\s+/).map(parseFloat).some((v) => v < 0)) return 'mirrored';
+        if (s.transform && s.transform !== 'none') {
+          const m = new DOMMatrixReadOnly(s.transform);
+          if (Math.abs(m.b) > 1e-3 || Math.abs(m.c) > 1e-3) return 'rotated';
+          if (m.a < 0 || m.d < 0) return 'mirrored';
+        }
+        if (/vertical|sideways/.test(s.writingMode)) return 'vertical';
+      }
+      return null;
     },
     // The open modal dialog, if any: native dialog shown with showModal(), or a visible [aria-modal=true] element.
     modal() {
@@ -235,8 +269,67 @@ async function settle(page) {
   ])).catch(() => null);
 }
 
+// Canvas text: the size each run of text is SEEN at, not its canvas px.
+//   Feed (default): seen px = canvas px x view / canvas width. Floor 14 CSS px, the foundation's smallest readable step
+//   (--text-sm; design-graphic 05: 39 to 42px on a 1080 canvas shown at about 390px wide). A 1080 post is shown about
+//   360 to 430px wide in a phone feed; Instagram feed sizes 1080x1080 and 1080x1350 (design-graphic 05 [S5]).
+//   Print (--print WxH mm): printed pt = canvas px x (print width mm / canvas width) / 0.3528. Hard floor 7pt, the
+//   prepress minimum for serif and light text (ePrinting Service, "Hairlines, small text and fine detail", 2025: sans
+//   6pt, serif and light weights 7 to 8pt). The floor scales with viewing distance (a 7pt line read at 40cm subtends the
+//   same angle as 7 x distance / 40 pt at the poster's distance; derived arithmetic): text under that size warns.
+// Visually hidden text (clipped or 1px boxes) and data-lint-skip="canvas-text" are exempt.
+async function canvasText(page, canvas) {
+  const found = await page.evaluate(() => {
+    const L = window.__lint;
+    const out = [];
+    const scaleOf = (el) => {
+      let k = 1;
+      for (let n = el; n && n.nodeType === 1; n = n.parentElement) {
+        const s = getComputedStyle(n);
+        if (s.transform && s.transform !== 'none') { const m = new DOMMatrixReadOnly(s.transform); k *= Math.sqrt(Math.abs(m.a * m.d - m.b * m.c)); }
+        if (s.scale && s.scale !== 'none') { const v = s.scale.split(/\s+/).map(parseFloat); k *= Math.sqrt(Math.abs(v[0] * (v.length > 1 ? v[1] : v[0]))); }
+        if (s.zoom && s.zoom !== 'normal' && Number(s.zoom) > 0) k *= Number(s.zoom);
+      }
+      return k;
+    };
+    const hidden = (el) => { const r = el.getBoundingClientRect(); const s = getComputedStyle(el); return r.width <= 2 || r.height <= 2 || (s.clipPath && s.clipPath !== 'none' && /inset\(50%/.test(s.clipPath)) || (s.clip && s.clip !== 'auto'); };
+    const seen = new Set();
+    for (const n of L.textNodes()) {
+      const el = n.parentElement;
+      if (seen.has(el) || L.skipped(el, 'canvas-text') || hidden(el)) continue;
+      seen.add(el);
+      const px = el.closest('svg') && el.getScreenCTM
+        ? parseFloat(getComputedStyle(el).fontSize) * Math.hypot(el.getScreenCTM().a, el.getScreenCTM().b)
+        : parseFloat(getComputedStyle(el).fontSize) * scaleOf(el);
+      out.push({ sel: L.sel(el), px: Math.round(px * 10) / 10, text: n.textContent.trim().replace(/\s+/g, ' ').slice(0, 40) });
+    }
+    return out;
+  });
+  const res = [];
+  for (const t of found) {
+    if (canvas.print) {
+      const pt = Math.round((t.px * (canvas.print.w / canvas.w) / 0.3528) * 10) / 10;
+      const far = Math.round(7 * canvas.distance / 40 * 10) / 10;
+      if (pt < 7) res.push({ ...t, level: 'fail', message: `"${t.text}" prints at ${pt}pt on ${canvas.print.w}x${canvas.print.h} mm (min 7pt)` });
+      else if (pt < far) res.push({ ...t, level: 'warn', message: `"${t.text}" prints at ${pt}pt; read at ${canvas.distance} cm it needs ${far}pt to match 7pt at 40 cm` });
+    } else {
+      const seenPx = Math.round(t.px * canvas.view / canvas.w * 10) / 10;
+      if (seenPx < 14) res.push({ ...t, level: 'fail', message: `"${t.text}" is ${t.px}px on the ${canvas.w}px canvas, seen at ${seenPx}px in a ${canvas.view}px feed (min 14; ${Math.ceil(14 * canvas.w / canvas.view)}px on this canvas)` });
+    }
+  }
+  return res;
+}
+
 async function lintOne(browser, target, outPath) {
   const report = { file: target, date: new Date().toISOString(), checks: {}, summary: {} };
+  // Fixed canvas (poster, social image, OG card): one size, no responsive checks (see readCanvas in browser.mjs).
+  const canvas = readCanvas(target.split('?')[0], canvasFlags);
+  const NARROW = canvas ? canvas.w : 390;
+  const WIDE = canvas ? canvas.w : 1440;
+  const MAIN = canvas ? [canvas.w] : [390, 1440];
+  const LAYOUT = canvas ? [canvas.w] : layoutWidths;
+  const VH = canvas ? canvas.h : 900;
+  if (canvas) report.summary.canvas = `${canvas.w}x${canvas.h}, ${canvas.print ? `print ${canvas.print.w}x${canvas.print.h} mm read at ${canvas.distance} cm` : `seen at ${canvas.view}px wide`}; skipped: measure, type-scale, heading-wrap, nav-parity, 390 overflow and touch warnings`;
   const add = (check, level, message, detail) => {
     report.checks[check] ??= { fail: [], warn: [], pass: true };
     if (level === 'fail') report.checks[check].pass = false;
@@ -245,7 +338,7 @@ async function lintOne(browser, target, outPath) {
   const ok = (check) => { report.checks[check] ??= { fail: [], warn: [], pass: true }; };
 
   async function openPage(width, scheme, reducedMotion = 'no-preference', extra = {}) {
-    const context = await browser.newContext({ viewport: { width, height: 900 }, colorScheme: scheme, reducedMotion, deviceScaleFactor: 1, ...extra });
+    const context = await browser.newContext({ viewport: { width, height: VH }, colorScheme: scheme, reducedMotion, deviceScaleFactor: 1, ...extra });
     const page = await context.newPage();
     await page.goto(toUrl(target), { waitUntil: 'load' });
     await page.evaluate(() => document.fonts && document.fonts.ready);
@@ -258,7 +351,7 @@ async function lintOne(browser, target, outPath) {
   ok('axe'); ok('overlay');
   const seen = new Set();
   for (const scheme of ['light', 'dark']) {
-    for (const width of [390, 1440]) {
+    for (const width of MAIN) {
       const { context, page } = await openPage(width, scheme);
       await page.addScriptTag({ content: axeSource });
       const res = await page.evaluate(async (tags) => {
@@ -288,11 +381,11 @@ async function lintOne(browser, target, outPath) {
     }
   }
 
-  // 2 to 6 plus static polish and typography checks, at 390 and 1440, light scheme.
+  // 2 to 6 plus static polish and typography checks, at 390 and 1440 (or the canvas size), light scheme.
   const navByWidth = {};
-  for (const width of [390, 1440]) {
+  for (const width of MAIN) {
     const { context, page } = await openPage(width, 'light');
-    const r = await page.evaluate(({ width, TYPE_SCALE, SPACE_SCALE, RADII, STEM }) => {
+    const r = await page.evaluate(({ width, WIDE, TYPE_SCALE, SPACE_SCALE, RADII, STEM }) => {
       const L = window.__lint;
       const out = { targets: [], measure: [], type: [], spacing: [], overflow: null, fluid: false, headings: [] };
       const all = [...document.body.querySelectorAll('*')].filter((el) => !el.closest('svg, head, script, style, template') || el.tagName.toLowerCase() === 'svg');
@@ -395,7 +488,7 @@ async function lintOne(browser, target, outPath) {
 
       // Heading wrap: last line holds one word.
       for (const h of document.querySelectorAll('h1, h2, h3')) {
-        if (!L.visible(h)) continue;
+        if (!L.visible(h) || L.skipped(h, 'heading-wrap')) continue;
         const ls = L.lines(h);
         if (ls.length >= 2 && ls[ls.length - 1].words === 1) out.headings.push({ sel: L.sel(h), lines: ls.length, text: h.textContent.trim().replace(/\s+/g, ' ').slice(0, 60) });
       }
@@ -440,7 +533,9 @@ async function lintOne(browser, target, outPath) {
         const lumc = ({ r, g, b }) => { const f = (x) => { x /= 255; return x <= 0.04045 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4; }; return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b); };
         const ratio = (a, b) => { const [x, y] = [lumc(a), lumc(b)].sort((p, q) => q - p); return (x + 0.05) / (y + 0.05); };
         const bgOf = (el) => { for (let n = el.parentElement; n; n = n.parentElement) { const c = rgb(getComputedStyle(n).backgroundColor); if (c && c.a > 0.5) return c; } return { r: 255, g: 255, b: 255, a: 1 }; };
-        const ctas = [...document.querySelectorAll('a[href], button, [role=button], input[type=submit]')].filter((el) => L.visible(el) && !L.inactive(el) && !L.skipped(el, 'primary') && !el.closest('[hidden], dialog:not([open])')).filter((el) => {
+        // A skip link parked off screen or clipped until focus is not a call to action in any screen (held-out test).
+        const offscreen = (el) => { const rc = el.getBoundingClientRect(); const cs = getComputedStyle(el); return rc.right <= 0 || rc.bottom + scrollY <= 0 || rc.left >= document.documentElement.scrollWidth || (cs.clipPath !== 'none' && /inset\(50%|inset\(100%/.test(cs.clipPath)) || (cs.clip && cs.clip !== 'auto') || rc.width <= 2 || rc.height <= 2; };
+        const ctas = [...document.querySelectorAll('a[href], button, [role=button], input[type=submit]')].filter((el) => L.visible(el) && !L.inactive(el) && !L.skipped(el, 'primary') && !el.closest('[hidden], dialog:not([open])') && !offscreen(el)).filter((el) => {
           const c = rgb(getComputedStyle(el).backgroundColor); if (!c || c.a < 0.9) return false;
           const rc = el.getBoundingClientRect(); if (rc.width < 96 || rc.height < 36) return false;
           return ratio(c, bgOf(el)) >= 2;
@@ -473,7 +568,7 @@ async function lintOne(browser, target, outPath) {
         if (h.startsWith('#') && h.length > 1) { let t = null; try { t = document.getElementById(decodeURIComponent(h.slice(1))); } catch { /* bad id */ } if (t && L.visible(t)) out.nav.reachable.push(hrefOf(a)); }
       }
 
-      if (width !== 1440) return out;
+      if (width !== WIDE) return out;
 
       // ---- 1440-only static checks ----
       // Icon set: one cap and one join for small stroked icons; no hard-coded colors (icon_audit.mjs hard checks).
@@ -659,31 +754,37 @@ async function lintOne(browser, target, outPath) {
       for (const svg of document.querySelectorAll('svg')) if (!svg.parentElement.closest('svg')) svgBytes += svg.outerHTML.length;
       out.weight = { html: document.documentElement.outerHTML.length, svg: svgBytes };
       return out;
-    }, { width, TYPE_SCALE, SPACE_SCALE, RADII, STEM });
+    }, { width, WIDE, TYPE_SCALE, SPACE_SCALE, RADII, STEM });
 
     ok('targets');
     for (const t of r.targets) {
       if (t.w < 24 || t.h < 24) add('targets', 'fail', `target under 24x24 at ${width}px`, t);
-      else if (width === 390 && (t.w < 44 || t.h < 44)) add('targets', 'warn', 'touch target under 44x44 at 390px', t);
+      else if (width === NARROW && !canvas && (t.w < 44 || t.h < 44)) add('targets', 'warn', 'touch target under 44x44 at 390px', t);
     }
-    ok('measure');
-    for (const m of r.measure) {
+    if (!canvas) ok('measure');
+    for (const m of canvas ? [] : r.measure) {
       if (m.cpl > 75) add('measure', 'fail', `line length ${m.cpl} characters at ${width}px (max 75)`, m);
-      else if (width === 1440 && m.cpl < 45 && m.lines >= 3) add('measure', 'fail', `line length ${m.cpl} characters at 1440px (min 45)`, m);
-      else if (width === 390 && m.cpl < 30 && m.lines >= 3) add('measure', 'warn', `short line length ${m.cpl} characters at 390px`, m);
+      else if (width === WIDE && m.cpl < 45 && m.lines >= 3) add('measure', 'fail', `line length ${m.cpl} characters at 1440px (min 45)`, m);
+      else if (width === NARROW && m.cpl < 30 && m.lines >= 3) add('measure', 'warn', `short line length ${m.cpl} characters at 390px`, m);
     }
-    ok('type-scale');
-    for (const t of r.type) {
-      if (t.size >= 39 && r.fluid) add('type-scale', 'warn', `fluid display size ${t.size}px at ${width}px (clamp() present)`, t);
-      else add('type-scale', 'fail', `font size ${t.size}px off the type scale at ${width}px`, t);
+    if (canvas) {
+      // A fixed canvas is not read at its own size: the UI type scale does not apply, the size it is seen at does.
+      ok('canvas-text');
+      for (const t of await canvasText(page, canvas)) add('canvas-text', t.level, t.message, { sel: t.sel, px: t.px });
+    } else {
+      ok('type-scale');
+      for (const t of r.type) {
+        if (t.size >= 39 && r.fluid) add('type-scale', 'warn', `fluid display size ${t.size}px at ${width}px (clamp() present)`, t);
+        else add('type-scale', 'fail', `font size ${t.size}px off the type scale at ${width}px`, t);
+      }
+      for (const t of r.svgText) add('type-scale', 'fail', `SVG text renders at ${t.px}px at ${width}px (min 12)`, t);
     }
-    for (const t of r.svgText) add('type-scale', 'fail', `SVG text renders at ${t.px}px at ${width}px (min 12)`, t);
     ok('spacing');
     for (const s of r.spacing) add('spacing', 'fail', `${s.value}px off the spacing scale at ${width}px`, s);
     ok('overflow');
-    if (width === 390 && r.overflow.scrollWidth > r.overflow.clientWidth + 1) add('overflow', 'fail', `horizontal overflow at 390px: page is ${r.overflow.scrollWidth}px wide`, { offenders: r.overflow.offenders });
+    if (width === NARROW && !canvas && r.overflow.scrollWidth > r.overflow.clientWidth + 1) add('overflow', 'fail', `horizontal overflow at 390px: page is ${r.overflow.scrollWidth}px wide`, { offenders: r.overflow.offenders });
     ok('heading-wrap');
-    for (const h of r.headings) add('heading-wrap', 'warn', `heading ends on a one-word line at ${width}px ("${h.text}")`, h);
+    for (const h of canvas ? [] : r.headings) add('heading-wrap', 'warn', `heading ends on a one-word line at ${width}px ("${h.text}")`, h);
     ok('svg-overlap');
     for (const o of r.overlap) add('svg-overlap', 'warn', `text "${o.text}" partly covered by ${o.art} (${o.px}px) at ${width}px`, { sel: o.sel });
     ok('primary');
@@ -691,7 +792,7 @@ async function lintOne(browser, target, outPath) {
     if (r.stateSheet) report.summary.stateSheet = true;
     navByWidth[width] = r.nav;
 
-    if (width === 1440) {
+    if (width === WIDE) {
       ok('radius');
       for (const x of r.radius) add('radius', 'fail', `radius ${x.value}px off the family (0 4 8 12 16 full, or outer minus inset)`, x);
       ok('color-scheme');
@@ -730,11 +831,11 @@ async function lintOne(browser, target, outPath) {
   // Layout at every width (default 390, 768, 1024, 1440): collisions, squashed children, sticky bars, text running
   // together, broken words, edges (tools/lint-layout.mjs; round 3 critic found these by eye at 768 and 1024).
   for (const c of ['occlusion', 'squash', 'sticky-header', 'run-together', 'word-break', 'grid-edge', 'hidden-content', 'double-space']) ok(c);
-  for (const width of layoutWidths) {
+  for (const width of LAYOUT) {
     const { context, page } = await openPage(width, 'light');
     const r = await layoutChecks(page, width);
     reportLayout(r, width, add);
-    if (width === 1440 || (width === layoutWidths[layoutWidths.length - 1] && !layoutWidths.includes(1440))) { await pageChecks(page, add); ok('undefined-var'); ok('state-layer'); ok('primitive-in-component'); ok('error-icon'); await tokenChecks(page, add); await errorIconChecks(page, add); }
+    if (width === WIDE || (width === LAYOUT[LAYOUT.length - 1] && !LAYOUT.includes(WIDE))) { await pageChecks(page, add); ok('undefined-var'); ok('state-layer'); ok('primitive-in-component'); ok('error-icon'); await tokenChecks(page, add); await errorIconChecks(page, add); }
     await context.close();
   }
   if (report.summary.stateSheet || report.checks['state-sheet']) ok('state-sheet');
@@ -742,12 +843,12 @@ async function lintOne(browser, target, outPath) {
   // State truth and proportion: numbers across states and live updates (tools/lint-truth.mjs).
   if (!noTruth) {
     ok('truth'); ok('proportion');
-    await truthPass(browser, target, helpers, toUrl, { ticks, tickMs }, add);
+    await truthPass(browser, target, helpers, toUrl, { ticks, tickMs, viewport: { width: WIDE, height: VH } }, add);
   }
 
   // Nav parity: a header or nav destination shown at 1440 needs a route at 390.
   ok('nav-parity');
-  if (navByWidth[1440] && navByWidth[390]) {
+  if (!canvas && navByWidth[1440] && navByWidth[390]) {
     const reach = new Set(navByWidth[390].reachable);
     const seenHref = new Set();
     for (const l of navByWidth[1440].shown) {
@@ -759,7 +860,7 @@ async function lintOne(browser, target, outPath) {
 
   // Dark: drop shadows on dark surfaces.
   {
-    const { context, page } = await openPage(1440, 'dark');
+    const { context, page } = await openPage(WIDE, 'dark');
     const heavy = await page.evaluate(() => {
       const out = [];
       for (const el of document.querySelectorAll('body *')) {
@@ -785,7 +886,7 @@ async function lintOne(browser, target, outPath) {
   // Focus visible, focus shape, sticky bars over focus: tab through the page.
   ok('focus'); ok('focus-shape'); ok('sticky-focus'); ok('skip-link');
   {
-    const { context, page } = await openPage(1440, 'light', 'reduce');
+    const { context, page } = await openPage(WIDE, 'light', 'reduce');
     await page.addStyleTag({ content: '*,*::before,*::after{transition:none!important;animation:none!important}' });
     const styleOf = `(el) => {
       const one = (e) => { const s = getComputedStyle(e); return { outline: s.outlineStyle !== 'none' && parseFloat(s.outlineWidth) > 0 ? s.outlineStyle + ' ' + s.outlineWidth + ' ' + s.outlineColor : 'none', outlineWidth: parseFloat(s.outlineWidth) || 0, shadow: s.boxShadow, border: s.borderColor, bg: s.backgroundColor, deco: s.textDecorationLine + s.textDecorationThickness + s.textDecorationColor }; };
@@ -882,7 +983,7 @@ async function lintOne(browser, target, outPath) {
   // State shift: hover must not change a control's size or border.
   ok('state-shift');
   {
-    const { context, page } = await openPage(1440, 'light', 'reduce');
+    const { context, page } = await openPage(WIDE, 'light', 'reduce');
     await page.addStyleTag({ content: '*,*::before,*::after{transition:none!important;animation:none!important}' });
     const n = await page.evaluate(() => {
       const els = [...document.querySelectorAll('a[href], button, input:not([type=hidden]), select, textarea, summary, [role=button], [tabindex]:not([tabindex="-1"])')].filter((e) => window.__lint.visible(e));
@@ -905,7 +1006,7 @@ async function lintOne(browser, target, outPath) {
   // Fallback reflow: remove web font faces (url() sources), keep local metric fallbacks, compare section tops.
   if (!noFallback) {
     ok('fallback');
-    for (const width of [390, 1440]) {
+    for (const width of MAIN) {
       const { context, page } = await openPage(width, 'light');
       const res = await page.evaluate(async () => {
         const pick = () => [...document.querySelectorAll('header, main > *, section, footer, h1, h2')].filter((e) => window.__lint.visible(e)).map((e) => ({ sel: window.__lint.sel(e), top: e.getBoundingClientRect().top + scrollY }));
@@ -946,7 +1047,7 @@ async function lintOne(browser, target, outPath) {
   ok('motion');
   {
     const probe = async (reducedMotion) => {
-      const { context, page } = await openPage(1440, 'light', reducedMotion);
+      const { context, page } = await openPage(WIDE, 'light', reducedMotion);
       await page.waitForTimeout(300);
       const res = await page.evaluate(() => {
         const moving = /transform|translate|scale|rotate|top|left|right|bottom|margin|width|height|all/;
