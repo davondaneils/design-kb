@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Set in Stone poster, 1080 × 1350</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg">
+<style>
+/*@FONTS Bodoni Moda=bodoni-roman.woff2;700;normal*/
+/*@INCLUDE fest-tokens.css*/
+/*@INCLUDE poster.css*/
+:root { --w: 1080px; --h: 1350px; --m: 64px; --stone-h: 560px; --stone-pad: 64px; --stone-wm: 600px;
+  --sheet-x: 88px; --sheet-top: 548px; --sheet-wm: 720px; --info: var(--text-4xl); color-scheme: light; }
+</style>
+<script>
+  // The poster is a fixed 1080 × 1350 canvas; narrower windows see it scaled to fit.
+  (function () { var fit = function () { document.documentElement.style.zoom = Math.min(1, innerWidth / 1080); }; fit(); addEventListener('resize', fit); })();
+</script>
+</head>
+<body>
+<main class="poster" aria-label="Poster: Set in Stone, Glasgow type and print festival, 17 to 18 April 2027, setinstone.scot">
+  <div class="grain bed-grain" aria-hidden="true"></div>
+  <div class="stone" aria-hidden="true">
+    <div class="grain"></div>
+    /*@INCLUDE wm-stack.html*/
+  </div>
+  <div class="sheet" data-lint-skip="measure squash">
+    <div class="grain" aria-hidden="true"></div>
+    <span class="reg" aria-hidden="true">/*@INCLUDE reg.html*/</span>
+    <h1 class="visually-hidden">Set in Stone</h1>
+    /*@INCLUDE wm-stack.html*/
+    <div class="info">
+      <p>Glasgow type &amp; print festival</p>
+      <div class="row"><p class="red num">17–18 April&nbsp;2027</p><p>setinstone.scot</p></div>
+    </div>
+  </div>
+</main>
+</body>
+</html>

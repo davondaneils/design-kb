@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Set in Stone poster, A2</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg">
+<style>
+/*@FONTS Bodoni Moda=bodoni-roman.woff2;700;normal*/
+/*@INCLUDE fest-tokens.css*/
+/*@INCLUDE poster.css*/
+/* A2 is 420 × 594 mm (1 : 1.414); drawn at 1191 × 1684 CSS px, export at 300 dpi = 4961 × 7016 px with 3 mm bleed. */
+:root { --w: 1191px; --h: 1684px; --m: 64px; --stone-h: 700px; --stone-pad: 128px; --stone-wm: 600px;
+  --sheet-x: 96px; --sheet-top: 676px; --sheet-wm: 820px; --info: var(--text-3xl); color-scheme: light; }
+.stone-note { font-size: var(--text-lg); bottom: auto; top: var(--space-7); max-inline-size: 24ch; }
+.lineup { font-size: var(--text-2xl); }
+.stone-note span { display: block; font-size: var(--text-base); font-weight: 400; letter-spacing: 0; text-transform: none; margin-top: var(--space-2); }
+</style>
+<script>
+  (function () { var fit = function () { document.documentElement.style.zoom = Math.min(1, innerWidth / 1191); }; fit(); addEventListener('resize', fit); })();
+</script>
+</head>
+<body>
+<main class="poster" aria-label="Poster: Set in Stone, Glasgow type and print festival, 17 to 18 April 2027">
+  <div class="grain bed-grain" aria-hidden="true"></div>
+  <div class="stone">
+    <div class="grain" aria-hidden="true"></div>
+    <div aria-hidden="true">/*@INCLUDE wm-stack.html*/</div>
+    <p class="stone-note caps" data-lint-skip="measure">Lithography<span>From the Greek: writing on stone. The stone carries the image in reverse.</span></p>
+  </div>
+  <div class="sheet" data-lint-skip="measure squash">
+    <div class="grain" aria-hidden="true"></div>
+    <span class="reg" aria-hidden="true">/*@INCLUDE reg.html*/</span>
+    <h1 class="visually-hidden">Set in Stone</h1>
+    /*@INCLUDE wm-stack.html*/
+    <p class="lineup">Talks, workshops and a type fair with <b>Morag Lennox</b>, <b>Ewan Baird</b>, <b>Nadia Haddad</b>, <b>Ruth Ogilvie</b> and <b>Sam&nbsp;Okoro</b>.</p>
+    <div class="info">
+      <p>Glasgow type &amp; print festival · Trongate&nbsp;103</p>
+      <div class="row"><p class="red num">Sat&nbsp;17 &amp; Sun&nbsp;18 April&nbsp;2027</p><p>setinstone.scot</p></div>
+    </div>
+  </div>
+</main>
+</body>
+</html>
