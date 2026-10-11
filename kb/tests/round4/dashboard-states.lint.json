@@ -1,6 +1,6 @@
 {
   "file": "kb/tests/round4/dashboard-states.html",
-  "date": "2026-10-10T23:52:43.762Z",
+  "date": "2026-10-11T00:45:05.452Z",
   "checks": {
     "axe": {
       "fail": [],
@@ -252,7 +252,7 @@
         {
           "message": "touch target under 44x44 at 390px",
           "sel": "div.row > div.cell.demo-wide > form.invite-form > input.field",
-          "w": 291.3,
+          "w": 287.5,
           "h": 40
         },
         {
@@ -398,6 +398,21 @@
       "warn": [],
       "pass": true
     },
+    "double-space": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "undefined-var": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-layer": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
     "state-sheet": {
       "fail": [],
       "warn": [],
@@ -457,7 +472,7 @@
   "summary": {
     "stateSheet": true,
     "weightKB": {
-      "html": 93,
+      "html": 94,
       "svg": 5
     },
     "focusables": 48,
@@ -492,6 +507,9 @@
     "word-break": "pass",
     "grid-edge": "pass",
     "hidden-content": "pass",
+    "double-space": "pass",
+    "undefined-var": "pass",
+    "state-layer": "pass",
     "state-sheet": "pass",
     "truth": "pass",
     "proportion": "pass",

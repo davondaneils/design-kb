@@ -1,6 +1,6 @@
 {
   "file": "kb/tests/round4/coffee.html?state=quick",
-  "date": "2026-10-10T23:34:03.933Z",
+  "date": "2026-10-11T00:46:48.476Z",
   "checks": {
     "axe": {
       "fail": [],
@@ -93,7 +93,7 @@
           "sel": "#q-qty"
         },
         {
-          "message": "text \". Roasted Tue, Oct 13, ships W\" partly covered by figure.hero-photo > div.frame > picture > img (28x17px) at 1440px",
+          "message": "text \". Roasts Tue, Oct 13, ships We\" partly covered by figure.hero-photo > div.frame > picture > img (148x17px) at 1440px",
           "sel": "#q-meta"
         },
         {
@@ -183,6 +183,21 @@
       "pass": true
     },
     "hidden-content": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "double-space": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "undefined-var": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-layer": {
       "fail": [],
       "warn": [],
       "pass": true
@@ -278,7 +293,7 @@
   },
   "summary": {
     "weightKB": {
-      "html": 192,
+      "html": 193,
       "svg": 70
     },
     "focusables": 5,
@@ -313,6 +328,9 @@
     "word-break": "pass",
     "grid-edge": "pass",
     "hidden-content": "pass",
+    "double-space": "pass",
+    "undefined-var": "pass",
+    "state-layer": "pass",
     "truth": "pass",
     "proportion": "pass",
     "nav-parity": "pass",

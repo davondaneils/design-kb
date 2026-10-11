@@ -118,3 +118,65 @@ Judged fundamentals, by eye on every shot: hierarchy, spacing, alignment, contra
 - **lint measure**: two inline paragraphs set as one line read as a short measure on the second; measure the containing block's lines.
 - **design-frontend**: busy buttons hide their label with `opacity`, never `visibility`, or they lose their accessible name.
 - **design-ux / sticky headers**: a disclosure menu inside a sticky header makes it tall; unstick it while open.
+
+## Round 4.1: the round 4 critic's judged fails, fixed and proved
+
+Tester report, 2026-10-11. Branch `round4/fixes`, cut from `origin/restructure`. Review: `kb/reviews/round4-critic.md` (fresh critic, clean context: 5 judged gate fails, all 31 lint runs passing). The pages were fixed in place in `kb/tests/round4/`; the blind pairs Davon is ranking were not touched.
+
+### Proof: `check.mjs`, 114 of 114
+`KB_PORT=8777 node kb/tests/round4/check.mjs` (the port is now an environment variable; another session's server held 8765). The 91 round 3 checks still pass; 23 new rows prove the round 4 findings.
+
+| Critic finding | Fix | Proof in `check.mjs` |
+|---|---|---|
+| Coffee 13a: option hover a raw 4 percent `color-mix` | `.opt:hover` and the sheet's `.opt.is-hover` paint `linear-gradient(var(--state-hover), var(--state-hover)), var(--color-surface)`; muted text still switches to `text-muted-on-tint` | no `color-mix` hover in page or sheet; the hovered option computes a gradient; `--state-hover` is 8 percent |
+| Coffee 13b: raw 48, 40, 32px control heights | `--size-control-{sm,md,lg}` and `--size-icon-*` on the coffee root (they already exist in FOUNDATIONS v0.4.1, so FOUNDATIONS is unchanged); `.btn`, `.btn-sm`, the email and checkout fields and `.linkish` use them; the 44px touch minimums stay literal with a comment; motion comment says v0.4.1 | no raw `min-height: 32/40/48px` in the source; tokens compute 32, 40, 48, 16; buttons compute 48 and 40 |
+| Coffee 16: "charged on roast day" against "Due today $39" | One rule everywhere: the first bag is paid at checkout, then every 2 or 4 weeks on roast day. Slip: "$18 at checkout, then every 2 weeks on roast day: next charge Tue, Oct 27." Cart: "Then every 2 weeks on roast day, from Tue, Oct 27 $18.00". Checkout: "Then $18 every 2 weeks on roast day, next on Tue, Oct 27." ("at checkout", not "today": search-check flags a bare relative date) | the phrase is gone from page and sheet; slip (2 and 4 weeks), cart ($39.00 due today, $18 from Oct 27) and checkout (Pay $39.00, same renewal) each read and matched |
+| Coffee 16 (also): past tense for future dates; a third shipping rule | "It roasts Tue, Oct 13 in Portland and ships Wed, Oct 14" (empty cart, page and sheet); quick add "Roasts Tue, Oct 13"; lots note: "Single bags ship for $6, free over $40 or with a subscription" | no "roasted Tue" or "shipped Wed" left; the shipping rule is printed |
+| Coffee band hole (fix 4): 343px at 1024, 159px at 1440 | The slip is 1,130 to 1,210px, taller than a laptop screen, so a sticky slip cannot work; the 441px proof column sticks instead (`position: sticky; top: 112px`, band `overflow: clip` so the band is not the scroller). It rides down beside the order form and ends level with the slip | at 1024 and 1440, scrolled to the slip's end, proof and slip bottoms differ by 0px, proof top clear of the 64px header |
+| Dashboard 13a: "Invite&nbsp;&nbsp;&nbsp;a teammate" | the label is one flex item: `<span>Invite<span class="live-more">&nbsp;a teammate</span></span>` | in first-data at 1440 the gap between "Invite" and "a" equals one word space |
+| Dashboard 15: empty 75 percent meter on the sheet | `states.mjs` uses `--color-warning` for fill and ring (the `*-mark` names were folded in round 4) | the sheet's warning meter fills 78 percent of its track in the warning color, ring drawn; no `warning-mark` left |
+| Dashboard 16: outage caveats and the iOS glyph on sample data | Caveats and the glyph name their alert (`data-explained-by="#alert-checkout"`, `"#alert-ios"`); `html[data-phase~=setup]` hides `.kpi .caveat`, `.warn-mark` and the partial legend; the chart drops its dotted partial point and "partial since" from its description in sample states | default state keeps 2 caveats, the glyph and the dotted point beside visible alerts; first-run, listening and check-failed show none, and no visible element points at a hidden alert |
+| Dashboard (fix 4): "This week, Oct 6 to 12" on a Tuesday to Monday window | Relabelled as rolling: "Last 7 days, Oct 6 to 12", "vs prior 7 days" on every delta and the table, "Top pages, last 7 days", iOS "down 18% in the last 7 days"; first comparisons on Oct 26 ("once two full weeks are in": Oct 12 to 18 and 19 to 25) | default shows "Last 7 days, Oct 6 to 12" and never "this week" or "vs last week"; first-data says Oct 26 twice and Oct 19 nowhere |
+| Dashboard (fix 5): Pause 43x24 under a coarse pointer | `@media (pointer: coarse)`: `min-width: 44px` and a `::after` hit area 12px up and 8px down, so the label stays on the freshness line and the head stays 64px | hit area probed point by point: 44x44 at 390 with `hasTouch`, inside the 64px head |
+
+### Further down the critic's list
+- **Coffee fix 5, promise columns on a subgrid**: numeral, heading and body share three rows across the columns, so "We know every grower by name" wrapping at 1024 moves all three bodies down together. The `check.mjs` row now compares heading tops and body tops (the old row measured the wrapping `div`, which is now `display: contents`).
+- **Coffee fix 10**: below 1024 "See all 9 coffees" follows the three lots instead of preceding their heading (checked at 390 and 768); the state sheet renders the menu toggle's states at 1440 (inside `@layer components`, because the page's `display: none !important` sits in that layer and a layered `!important` beats an unlayered one).
+- **Dashboard fix 7**: the platform panel ends with its footnote (`align-self: start`).
+- **Dashboard fix 9**: durations under a minute read "58s"; the palette's "Workspace settings" is "Settings", as in the sidebar and the shortcuts sheet.
+- **Found by the new lint, fixed**: `--space-10` was used by `.split .empty` and declared nowhere in the dashboard (the empty panels lost their 96px top offset; it now applies, and the empty state reads balanced at 1440); the legend chip "Last 12 weeks:&nbsp;" sat beside an 8px gap (now one inline label); the phone table's no-match row sat in a max-content grid column and pushed the dashboard sheet to 427px at 390 (now `display: block`).
+- **Not done (opinion items)**: coffee fix 6 (cap section H2s under the H1) and fix 7 (a dark-graded hero photo, needs a new asset), fix 9 (Newsreader metric fallback); dashboard fix 6 (busy buttons keep their label: the kept box has no room for a spinner beside the label without a width shift), fix 8 (table right edge), fix 10 (a denser compact mode), the time zone on the phone header (the first-data freshness line would wrap at 390).
+
+### New tool checks (each fails `tools/fixtures/bad-tokens.html`; `good.html` passes)
+- `undefined-var` (new `tools/lint-tokens.mjs`): a `var(--x)` with no fallback whose property is declared in no rule, no inline style and no `@property`, in a rule that matches at least one element. Fails the fixture's `--color-warning-mark` meter. It found `--space-10` on the dashboard.
+- `state-layer` (`tools/lint-tokens.mjs`): hover and pressed backgrounds (`:hover`, `:active`, `.is-hover`, `.is-active`, `.is-pressed`) must be tokens, never a raw `color-mix()` or color; `--state-hover` must be 8 percent and `--state-pressed` 10.
+- `double-space` (`tools/lint-layout.mjs`, every lint width): a flex or grid gap beside a no-break space at an item's edge, or two uncollapsible spaces in a row. It found the legend chip.
+- `truth`, explained-by contract (`tools/lint-truth.mjs`): an element with `data-explained-by="<selector>"` fails when it is visible and its alert is hidden or missing; with no markup, a "partial since" caveat on a page with no visible alert naming a cause warns.
+- `proportion`, meters (`tools/lint-truth.mjs`): a `role=meter` or `progressbar` above its minimum must paint a fill, to scale within 3 percent (fills under 2px are exempt: "38 of 10M" is an empty track to scale).
+- `lint-all.mjs` takes `LINT_JOBS=4` to run four lints at once.
+
+### Gates (round 4.1)
+| Gate | Coffee | Dashboard |
+|---|---|---|
+| `tools/lint.mjs` page, 390/768/1024/1440, light and dark | PASS, 0 fail, 9 warn | PASS, 0 fail, 9 warn |
+| every `?state=` URL | 12 of 12 PASS | 14 of 14 PASS |
+| state sheet | PASS, 0 fail, 3 warn | PASS, 0 fail, 45 warn (targets on a desktop control sheet, as before) |
+| `check.mjs` | 114 of 114 (both pages) | |
+| `claims_inventory.mjs --year 2026` | exit 0, no flags; cart state exit 0 | exit 0; the named PERIOD warning ("vs prior 7 days" and "vs previous 12 weeks", each beside what it drives) |
+| `search-check.mjs` | PASS public, 0 fail, 0 warn | PASS private, 0 fail, 0 warn |
+| `conversion-audit.mjs` | no fails (page, quick, cart) | no fails (page, limit) |
+| `icon_audit.mjs` | PASS | PASS |
+| `motion-audit.mjs` (9 scenarios) | 6 of 6 | 3 of 3 |
+| renders | `kb/tests/round4/shots/`: pages at 390, 768, 1024, 1440, light and dark; every state at 390 and 1440; both sheets | |
+
+Claims ticked again for what changed: Oct 26, 2026 is a Monday, the day after the second full 7-day window (Oct 12 to 18, 19 to 25); Oct 6 is a Tuesday and Oct 12 a Monday, so "Last 7 days, Oct 6 to 12" is right on Oct 12; cart $18 + $21 = $39.00 due at checkout, next $18 on Tue, Oct 27 (+14) or $16 on Tue, Nov 10 (+28).
+
+### Judged rows: self-scored, unverified
+No subagent tool is available in this session, so no clean-context critic re-scored round 4.1. I looked at the new renders for each fixed item (listed below); the judged rows are **self-scored, unverified** until a fresh critic reads them.
+
+Read by eye on the new renders: dashboard first-run at 1440 (no caveat under Conversion or Revenue, no iOS glyph, "Last 7 days, Oct 6 to 12", "58s"), first-data head ("Invite a teammate" with one space), empty at 1440 (the 96px offset now applies; both empty messages share one top edge), the dashboard sheet's warning meter (amber fill to 78 percent, amber ring), the coffee cart at 1440 ("Due today $39.00", "Then every 2 weeks on roast day, from Tue, Oct 27 $18.00"), the 1024 band in dark (the term line in the slip; at rest the proof sits under the perks, and it rides down as the reader scrolls, which a full-page render cannot show, so `check.mjs` measures it scrolled), the 1024 promises (headings and bodies on shared rows) and the shop at 768 ("See all 9 coffees" after the lots).
+
+### Still open after round 4.1
+1. A clean-context critic for round 4.1 (none available here); until then the judged rows are unverified.
+2. The critic's opinion items listed above (coffee 6, 7, 9; dashboard 6, 8, 10; phone time zone), plus everything in "Still below the bar" (photography, font fallback shift, chart keyboard access).
+3. FOUNDATIONS item 13, 15 and 16 rows do not yet name the new lint checks (`undefined-var`, `state-layer`, `double-space`, explained-by, meters); that is an editor-in-chief change, proposed here. design-director's state truth contract should add `data-explained-by`.

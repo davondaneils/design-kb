@@ -1,6 +1,6 @@
 {
   "file": "kb/tests/round4/coffee.html?state=cart",
-  "date": "2026-10-10T23:35:37.489Z",
+  "date": "2026-10-11T00:47:13.270Z",
   "checks": {
     "axe": {
       "fail": [],
@@ -93,7 +93,7 @@
           "sel": "#cart-totals > div > dd"
         },
         {
-          "message": "text \"Then every 2 weeks, from Tue, \" partly covered by figure.hero-photo > div.frame > picture > img (253x15px) at 1440px",
+          "message": "text \"Then every 2 weeks on roast da\" partly covered by figure.hero-photo > div.frame > picture > img (272x15px) at 1440px",
           "sel": "#cart-totals > div.then > dt"
         }
       ],
@@ -175,6 +175,21 @@
       "pass": true
     },
     "hidden-content": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "double-space": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "undefined-var": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-layer": {
       "fail": [],
       "warn": [],
       "pass": true
@@ -270,7 +285,7 @@
   },
   "summary": {
     "weightKB": {
-      "html": 193,
+      "html": 195,
       "svg": 70
     },
     "focusables": 6,
@@ -305,6 +320,9 @@
     "word-break": "pass",
     "grid-edge": "pass",
     "hidden-content": "pass",
+    "double-space": "pass",
+    "undefined-var": "pass",
+    "state-layer": "pass",
     "truth": "pass",
     "proportion": "pass",
     "nav-parity": "pass",

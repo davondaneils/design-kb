@@ -28,8 +28,9 @@ const coffee = {
 .nav-demo a.is-hover, .menu-toggle.is-hover, .close.is-hover, .stepper button.is-hover { background: var(--state-hover); }
 .nav-demo a.is-active, .close.is-active, .stepper button.is-active { background: var(--state-pressed); }
 .nav-demo { display: flex; }
-.opt.is-hover { background: color-mix(in oklch, var(--color-text) 4%, var(--color-surface)); }
+.opt.is-hover { background: linear-gradient(var(--state-hover), var(--state-hover)), var(--color-surface); }
 .opt.is-hover .sub { color: var(--color-text-muted-on-tint); }
+@layer components { .sheet .menu-toggle { display: inline-flex !important; } } /* the page hides it from 768 up with !important in components; the sheet shows its states at every width */
 .opt.is-focus { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
 .news input.is-hover { border-color: var(--color-text-muted); }
 .demo-w { width: 320px; max-width: 100%; }
@@ -93,7 +94,7 @@ const coffee = {
   </div>
   <div class="row" style="margin-top:var(--space-6)">
     <div class="cell demo-slip"><span>Brew question, error</span><fieldset class="opt-group invalid"><legend>How do you brew?<span class="hint">We grind each bag for your brewer the morning it ships.</span></legend><p class="error">{{c:error}}Choose how you brew, so we grind it right.</p><div class="opts cols-2"><label class="opt stack"><input type="radio" name="d7"><span><span class="name">Pour-over</span><span class="sub">Medium-fine</span></span></label><label class="opt stack"><input type="radio" name="d7"><span><span class="name">Espresso</span><span class="sub">Fine</span></span></label></div></fieldset></div>
-    <div class="cell demo-slip"><span>Term line, 4 weeks</span><p class="terms"><b>$16 every 4 weeks</b>, charged on roast day. First roast Tue,&nbsp;Oct&nbsp;13; next charge Tue,&nbsp;Nov&nbsp;10. Skip, pause or cancel online any time before a roast.</p></div>
+    <div class="cell demo-slip"><span>Term line, 4 weeks</span><p class="terms"><b>$16 at checkout, then every 4 weeks</b> on roast day: next charge Tue,&nbsp;Nov&nbsp;10. First roast Tue,&nbsp;Oct&nbsp;13. Skip, pause or cancel online any time before a roast.</p></div>
   </div>
 </section>
 
@@ -119,7 +120,7 @@ const coffee = {
 
 <section class="group" aria-labelledby="s-cart"><h2 id="s-cart">Cart panel</h2>
   <div class="row">
-    <div class="cell panel-demo"><div class="cart-body"><div class="cart-empty"><h3>Your cart is empty</h3><p>This week’s coffee is Ethiopia Guji, roasted Tue,&nbsp;Oct&nbsp;13 in Portland and shipped Wed,&nbsp;Oct&nbsp;14.</p><a class="more" href="#main">See all 9 coffees{{c:arrow-right}}</a></div></div></div>
+    <div class="cell panel-demo"><div class="cart-body"><div class="cart-empty"><h3>Your cart is empty</h3><p>This week’s coffee is Ethiopia Guji. It roasts Tue,&nbsp;Oct&nbsp;13 in Portland and ships Wed,&nbsp;Oct&nbsp;14.</p><a class="more" href="#main">See all 9 coffees{{c:arrow-right}}</a></div></div></div>
     <div class="cell panel-demo"><div class="cart-body"><ul><li class="line removed"><span>Removed Colombia Huila.</span><button class="link-btn" type="button">Undo</button></li></ul></div></div>
   </div>
 </section>
@@ -205,8 +206,8 @@ body { background: var(--color-surface); }
     <th scope="col"><button class="sort is-focus" type="button">Focus${sortIcon}</button></th>
   </tr></thead><tbody><tr><td>/pricing</td><td class="num">24,180</td><td class="num">24,180</td><td class="num">1,488</td><td>/</td></tr></tbody></table></div></section>
   <section class="group" aria-labelledby="d6"><h2 id="d6">KPI tile</h2><div class="row">
-    <div class="cell"><span>Ready, with sparkline</span><dl class="demo-kpi"><div class="kpi"><dt>Conversion</dt><dd><span class="value">3.8<span class="u">%</span></span><svg class="spark" viewBox="0 0 96 32" preserveAspectRatio="none" role="img" aria-label="12-week trend: up from 3.0% to 3.8%"><polyline points="4,28 12,25 20,25 28,22 36,22 44,19 52,16 60,19 68,13 76,10 84,22 92,4" vector-effect="non-scaling-stroke"/><circle cx="92" cy="4" r="2.5"/></svg><span class="delta good">${up}+0.6 pts <span class="vs">vs last week</span></span></dd></div></dl></div>
-    <div class="cell"><span>Partial (data problem marked where it is read)</span><dl class="demo-kpi"><div class="kpi"><dt>Revenue</dt><dd><span class="value"><span class="u pre">$</span>184.2<span class="u">k</span></span><span class="delta good">${up}+8.1% <span class="vs">vs last week</span></span><span class="caveat">Partial since 2:05&nbsp;pm</span></dd></div></dl></div>
+    <div class="cell"><span>Ready, with sparkline</span><dl class="demo-kpi"><div class="kpi"><dt>Conversion</dt><dd><span class="value">3.8<span class="u">%</span></span><svg class="spark" viewBox="0 0 96 32" preserveAspectRatio="none" role="img" aria-label="12-week trend: up from 3.0% to 3.8%"><polyline points="4,28 12,25 20,25 28,22 36,22 44,19 52,16 60,19 68,13 76,10 84,22 92,4" vector-effect="non-scaling-stroke"/><circle cx="92" cy="4" r="2.5"/></svg><span class="delta good">${up}+0.6 pts <span class="vs">vs prior 7 days</span></span></dd></div></dl></div>
+    <div class="cell"><span>Partial (data problem marked where it is read)</span><dl class="demo-kpi"><div class="kpi"><dt>Revenue</dt><dd><span class="value"><span class="u pre">$</span>184.2<span class="u">k</span></span><span class="delta good">${up}+8.1% <span class="vs">vs prior 7 days</span></span><span class="caveat">Partial since 2:05&nbsp;pm</span></dd></div></dl></div>
     <div class="cell"><span>Loading (skeleton after 300 ms)</span><div class="demo-kpi"><div class="kpi"><span class="skel label"></span><span class="skel value"></span><span class="skel delta"></span></div></div></div>
     <div class="cell"><span>No data yet</span><dl class="demo-kpi"><div class="kpi"><dt>Conversion</dt><dd><span class="value" aria-hidden="true">&ndash;</span><span class="restricted">No data yet</span></dd></div></dl></div>
     <div class="cell"><span>Viewer role</span><dl class="demo-kpi"><div class="kpi"><dt>Revenue</dt><dd><span class="value" aria-hidden="true">{{i:lock:i-lock}}</span><span class="restricted">Visible to Finance admins. <a href="#">Ask Priya Shah for access</a></span></dd></div></dl></div>
@@ -216,12 +217,12 @@ body { background: var(--color-surface); }
     <div class="cell"><span>Palette option, active</span><div class="demo-pal" role="listbox" aria-label="Commands demo"><div class="pal-opt" role="option" aria-selected="true">Share report</div><div class="pal-opt" role="option" aria-selected="false">Events<span class="kbds" aria-hidden="true"><kbd>G</kbd><kbd>E</kbd></span></div></div></div>
   </div></section>
   <section class="group" aria-labelledby="d9"><h2 id="d9">Panels: error, empty, loading, no match</h2><div class="row">
-    <div class="cell demo-wide"><span>Error, with retry</span><section class="panel" aria-label="Top pages, error demo"><div class="panel-head"><h3>Top pages this week</h3></div><div class="failed">{{i:warning:icon i-20}}<h3>Top pages didn’t load</h3><p>The query timed out after 30 seconds. Your data is safe; the rest of the overview is current.</p><button class="btn" type="button"><span class="spinner" aria-hidden="true"></span><span>Try again</span></button></div></section></div>
-    <div class="cell demo-wide"><span>Empty, before the first event</span><section class="panel" aria-label="Top pages, empty demo"><div class="panel-head"><h3>Top pages this week</h3></div><div class="empty"><h3>No pages tracked yet</h3><p>Pages are ranked by views once the snippet sends <code>page_view</code> events.</p></div></section></div>
-    <div class="cell demo-wide"><span>Loading rows</span><section class="panel" aria-label="Top pages, loading demo"><div class="panel-head"><h3>Top pages this week</h3></div><div class="skel-row"><span class="skel" style="width:40%"></span><span class="skel" style="width:15%"></span></div><div class="skel-row"><span class="skel" style="width:25%"></span><span class="skel" style="width:15%"></span></div><div class="skel-row"><span class="skel" style="width:45%"></span><span class="skel" style="width:15%"></span></div></section></div>
+    <div class="cell demo-wide"><span>Error, with retry</span><section class="panel" aria-label="Top pages, error demo"><div class="panel-head"><h3>Top pages, last 7 days</h3></div><div class="failed">{{i:warning:icon i-20}}<h3>Top pages didn’t load</h3><p>The query timed out after 30 seconds. Your data is safe; the rest of the overview is current.</p><button class="btn" type="button"><span class="spinner" aria-hidden="true"></span><span>Try again</span></button></div></section></div>
+    <div class="cell demo-wide"><span>Empty, before the first event</span><section class="panel" aria-label="Top pages, empty demo"><div class="panel-head"><h3>Top pages, last 7 days</h3></div><div class="empty"><h3>No pages tracked yet</h3><p>Pages are ranked by views once the snippet sends <code>page_view</code> events.</p></div></section></div>
+    <div class="cell demo-wide"><span>Loading rows</span><section class="panel" aria-label="Top pages, loading demo"><div class="panel-head"><h3>Top pages, last 7 days</h3></div><div class="skel-row"><span class="skel" style="width:40%"></span><span class="skel" style="width:15%"></span></div><div class="skel-row"><span class="skel" style="width:25%"></span><span class="skel" style="width:15%"></span></div><div class="skel-row"><span class="skel" style="width:45%"></span><span class="skel" style="width:15%"></span></div></section></div>
     <div class="cell demo-wide"><span>Invite field, error (checked on submit)</span><form class="invite-form" novalidate><input class="field" type="email" value="sam@" aria-invalid="true" aria-label="Teammate’s work email, error" aria-describedby="inv-err"><button class="btn" type="button">Invite</button><p class="field-msg err" id="inv-err">Add the rest of the address, for example sam@acme.com.</p></form></div>
     <div class="cell demo-wide"><span>Invite field, rest</span><form class="invite-form" novalidate><input class="field" type="email" placeholder="name@acme.com" aria-label="Teammate’s work email"><button class="btn" type="button">Invite</button></form></div>
-    <div class="cell demo-wide"><span>Search, no match (the field’s only failure: it cannot be invalid)</span><label class="search" style="display:flex"><input type="search" value="/pricng" aria-label="Search pages, no match"><kbd aria-hidden="true">/</kbd></label><table><tbody><tr class="search-miss"><td colspan="6">No pages this week match “/pricng”. <button class="text-link dismiss" type="button">Clear search</button></td></tr></tbody></table></div>
+    <div class="cell demo-wide"><span>Search, no match (the field’s only failure: it cannot be invalid)</span><label class="search" style="display:flex"><input type="search" value="/pricng" aria-label="Search pages, no match"><kbd aria-hidden="true">/</kbd></label><table><tbody><tr class="search-miss"><td colspan="6">No pages in the last 7 days match “/pricng”. <button class="text-link dismiss" type="button">Clear search</button></td></tr></tbody></table></div>
   </div></section>
   <section class="group" aria-labelledby="d8"><h2 id="d8">Plan usage meter (design-conversion 05)</h2><div class="row">
     <div class="cell usage-demo"><span>Setup and empty: nothing counted yet</span><a class="usage" href="#"><span class="usage-row"><span id="u0">Events this month</span><span class="plan">Starter</span></span><span class="meter" role="meter" aria-labelledby="u0" aria-valuemin="0" aria-valuemax="10000000" aria-valuenow="0" aria-valuetext="No events yet, 0 of 10 million"><i style="--w:0%"></i></span><span class="usage-row num"><span>No events yet</span><span></span></span></a></div>
@@ -233,7 +234,7 @@ body { background: var(--color-surface); }
 </main>`,
 };
 
-const _usageCss = `.usage-demo { width: 220px; } .usage-demo .usage { margin: 0; } .usage.is-hover { background: var(--state-hover); color: var(--color-text); } .usage.warn { box-shadow: inset 0 0 0 1px var(--color-warning-mark); } .usage.warn .meter i { background: var(--color-warning-mark); }`;
+const _usageCss = `.usage-demo { width: 220px; } .usage-demo .usage { margin: 0; } .usage.is-hover { background: var(--state-hover); color: var(--color-text); } .usage.warn { box-shadow: inset 0 0 0 1px var(--color-warning); } .usage.warn .meter i { background: var(--color-warning); }`;
 dashboard.css += _usageCss;
 export const sheets = { coffee, dashboard };
 export { SHEET_CSS };

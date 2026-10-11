@@ -1,6 +1,6 @@
 {
   "file": "kb/tests/round4/coffee.html?state=cart-empty",
-  "date": "2026-10-10T23:36:27.143Z",
+  "date": "2026-10-11T00:47:13.903Z",
   "checks": {
     "axe": {
       "fail": [],
@@ -89,7 +89,7 @@
           "sel": "#cart-title"
         },
         {
-          "message": "text \"coffee is Ethiopia Guji, roast\" partly covered by figure.hero-photo > div.frame > picture > img (185x20px) at 1440px",
+          "message": "text \"coffee is Ethiopia Guji. It ro\" partly covered by figure.hero-photo > div.frame > picture > img (185x20px) at 1440px",
           "sel": "#cart > div.cart-body > div.cart-empty > p"
         }
       ],
@@ -171,6 +171,21 @@
       "pass": true
     },
     "hidden-content": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "double-space": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "undefined-var": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-layer": {
       "fail": [],
       "warn": [],
       "pass": true
@@ -266,7 +281,7 @@
   },
   "summary": {
     "weightKB": {
-      "html": 192,
+      "html": 193,
       "svg": 70
     },
     "focusables": 3,
@@ -301,6 +316,9 @@
     "word-break": "pass",
     "grid-edge": "pass",
     "hidden-content": "pass",
+    "double-space": "pass",
+    "undefined-var": "pass",
+    "state-layer": "pass",
     "truth": "pass",
     "proportion": "pass",
     "nav-parity": "pass",

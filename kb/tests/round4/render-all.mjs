@@ -9,7 +9,7 @@ import path from 'node:path';
 
 const here = path.dirname(new URL(import.meta.url).pathname);
 const rel = path.relative(process.cwd(), here);
-const base = 'http://127.0.0.1:8765/' + rel + '/';
+const base = 'http://127.0.0.1:' + (process.env.KB_PORT || 8765) + '/' + rel + '/';
 const out = path.join(rel, 'shots');
 const run = (url, widths, dir = out) => {
   fs.mkdirSync(dir, { recursive: true });

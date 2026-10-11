@@ -133,7 +133,7 @@
     /* Radius: one family */
     --radius-sm: 4px; --radius-md: 8px; --radius-lg: 12px; --radius-xl: 16px; --radius-full: 9999px;
     --radius-control: var(--radius-full); --radius-card: var(--radius-lg);
-    /* Motion (FOUNDATIONS v0.3; design-motion tokens). Page 600 is for one below-the-fold reveal only. */
+    /* Motion (FOUNDATIONS v0.4.1; design-motion tokens). Page 600 is for one below-the-fold reveal only. */
     --duration-instant: 100ms; --duration-fast: 150ms; --duration-base: 200ms; --duration-slow: 300ms; --duration-page: 600ms;
     --ease-standard: cubic-bezier(0.2, 0, 0, 1); --ease-enter: cubic-bezier(0, 0, 0, 1); --ease-exit: cubic-bezier(0.3, 0, 1, 1);
     --motion-hover: var(--duration-instant) var(--ease-standard);
@@ -154,6 +154,9 @@
     --state-hover: color-mix(in oklch, var(--color-text) 8%, transparent);
     --state-pressed: color-mix(in oklch, var(--color-text) 10%, transparent);
     --icon-stroke: 1.5px;
+    /* Sizes (FOUNDATIONS v0.4.1). 44px touch heights below stay literal: they are WCAG 2.5.5 minimums, not sizes. */
+    --size-control-sm: 32px; --size-control-md: 40px; --size-control-lg: 48px;
+    --size-icon-sm: 12px; --size-icon-md: 16px; --size-icon-lg: 20px; --size-icon-xl: 24px;
   }
 }
 
@@ -215,7 +218,7 @@
   main:focus { outline: none; }
 
   /* ---------- Buttons: rest, hover (fine pointer), pressed (a step past hover), focus ring, busy. No state changes the box. ---------- */
-  .btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: var(--space-3); min-height: 48px; padding: var(--space-4) var(--space-6);
+  .btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: var(--space-3); min-height: var(--size-control-lg); padding: var(--space-4) var(--space-6);
     border-radius: var(--radius-control); border: 1px solid transparent; font: 600 var(--text-base)/1.5 var(--font-sans); text-decoration: none; cursor: pointer; white-space: nowrap;
     transition: background-color var(--motion-hover), border-color var(--motion-hover), color var(--motion-hover); }
   .btn-primary { background: var(--color-primary); color: var(--color-on-primary); box-shadow: var(--highlight), var(--shadow-1); }
@@ -226,7 +229,7 @@
   }
   .btn-primary:active { background: var(--color-primary-active); box-shadow: var(--highlight); }
   .btn-secondary:active { background: var(--state-pressed); }
-  .btn-sm { min-height: 40px; padding: var(--space-3) var(--space-5); font-size: var(--text-sm); }
+  .btn-sm { min-height: var(--size-control-md); padding: var(--space-3) var(--space-5); font-size: var(--text-sm); }
   .btn-wide { width: 100%; min-height: 56px; }
   .btn[aria-busy=true] { cursor: progress; }
   .btn .spinner { display: none; width: 16px; height: 16px; border-radius: var(--radius-full); border: 2px solid currentColor; border-right-color: transparent; }
@@ -337,6 +340,8 @@
   /* ---------- Shop: a ruled index (design-layout 06). Rows a reader compares down one edge; the contour tile is data:
      one line per 150 m of altitude. ---------- */
   .margin-label { display: grid; gap: var(--space-4); align-content: start; justify-items: start; }
+  /* round 4.1: one column, the shop's "See all 9 coffees" follows the three lots instead of preceding their heading */
+  @media (max-width: 1023.98px) { .shop .margin-label { display: contents; } .shop .margin-label .label { margin-bottom: var(--space-4); } .shop .margin-label .more { order: 1; justify-self: start; margin-top: var(--space-5); } }
   .lots { margin-top: var(--space-8); border-top: 2px solid var(--color-text); }
   .lot { position: relative; display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: var(--space-5); padding: var(--space-6) 0; border-bottom: 1px solid var(--color-border); }
   @media (min-width: 768px) { .lot { grid-template-columns: 176px minmax(0, 1fr) auto; column-gap: var(--space-7); align-items: center; } }
@@ -373,7 +378,7 @@
   }
 
   /* ---------- Subscription band: contour texture, a pool of light behind the headline, the order slip on paper ---------- */
-  .feature { position: relative; overflow: hidden; isolation: isolate; color: var(--color-feature-text);
+  .feature { position: relative; overflow: hidden; overflow: clip; isolation: isolate; /* clip, not hidden: hidden would make the band the sticky scroller */ color: var(--color-feature-text);
     background: radial-gradient(80% 90% at 20% 0%, var(--color-feature-lift), transparent 70%), var(--color-feature-bg); }
   .feature > svg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; }
   .feature .c { fill: none; stroke: var(--color-band-line); stroke-width: 1; vector-effect: non-scaling-stroke; }
@@ -382,7 +387,9 @@
   @media (min-width: 1024px) {
     .feature-grid { padding-top: var(--space-11); padding-bottom: var(--space-11); grid-template-areas: none; grid-template-rows: auto 1fr; }
     .feature-head { grid-column: 1 / 7; grid-row: 1; }
-    .proof { grid-column: 1 / 7; grid-row: 2; align-self: start; } /* round 4: pinned under the perks; the slip runs long instead of a 220px hole mid-column */
+    /* round 4.1: the slip (1,130 to 1,210px) is taller than any laptop screen, so it cannot stick; the proof (441px) does.
+       It rides down row 2 beside the order form and ends level with the slip's last line, closing the hole as the reader scrolls. */
+    .proof { grid-column: 1 / 7; grid-row: 2; align-self: start; position: sticky; top: calc(64px + var(--space-8)); }
     .slip { grid-column: 8 / -1; grid-row: 1 / 3; align-self: start; }
   }
   .feature .label { color: inherit; }
@@ -428,7 +435,7 @@
   .opt .sub { display: block; color: var(--color-text-muted); font-size: var(--text-xs); line-height: 1.333; margin-top: var(--space-1); }
   .opt .amt { font-variant-numeric: tabular-nums lining-nums; font-weight: 600; }
   .usual { display: inline-block; margin-top: var(--space-1); font-size: var(--text-xs); font-weight: 600; color: var(--color-accent); }
-  @media (hover: hover) { .opt:hover { background: color-mix(in oklch, var(--color-text) 4%, var(--color-surface)); } .opt:hover .sub { color: var(--color-text-muted-on-tint); } }
+  @media (hover: hover) { .opt:hover { background: linear-gradient(var(--state-hover), var(--state-hover)), var(--color-surface); } .opt:hover .sub { color: var(--color-text-muted-on-tint); } }
   .opt:has(input:checked) { box-shadow: inset 0 0 0 2px var(--color-selected-ring); background: color-mix(in oklch, var(--color-selected-bg) 50%, var(--color-surface)); }
   .opt:has(input:checked) .sub { color: var(--color-text-muted-on-tint); }
   .opt:has(input:focus-visible) { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
@@ -534,6 +541,12 @@
     .promises .promise-head { grid-column: 7 / -1; grid-row: 1; align-self: center; padding-inline-start: var(--space-7); } /* six columns: the four-clause promise sets in four lines, not six */
     .promises .steps { grid-column: 1 / -1; grid-row: 2; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--space-7); margin-top: var(--space-10); }
     .promises .steps li { grid-template-columns: minmax(0, 1fr); gap: var(--space-4); border-top: 2px solid var(--color-text); } /* numeral above: the text keeps a 45+ character measure */
+    /* round 4.1: numeral, heading and body share three rows across the columns (subgrid), so a heading that wraps
+       ("We know every grower by name" at 1024) moves every body down with it instead of leaving its own 25px low. */
+    .promises .steps { grid-template-rows: auto auto auto; }
+    .promises .steps li { grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; }
+    .promises .steps li > div { display: contents; }
+    .promises .steps li h3 { margin-top: var(--space-4); }
   }
   @media (max-width: 639px) { .promises .cup .frame { margin-inline: calc(var(--space-5) * -1); border-radius: 0; } }
   .steps { margin-top: var(--space-8); display: grid; }
@@ -553,7 +566,7 @@
   .news { margin-top: var(--space-6); max-width: 480px; }
   .news label, .fld label { display: block; font-size: var(--text-sm); font-weight: 600; margin-bottom: var(--space-3); }
   .field-row { display: flex; flex-wrap: wrap; gap: var(--space-3); }
-  .news input { flex: 1 1 240px; min-height: 48px; padding: var(--space-4) var(--space-5); border-radius: var(--radius-full); border: 1px solid var(--color-border-strong);
+  .news input { flex: 1 1 240px; min-height: var(--size-control-lg); padding: var(--space-4) var(--space-5); border-radius: var(--radius-full); border: 1px solid var(--color-border-strong);
     background: var(--color-surface); font: var(--text-base)/1.5 var(--font-sans); }
   @media (hover: hover) { .news input:hover, .co-form input:hover { border-color: var(--color-text-muted); } }
   input[aria-invalid=true] { border-color: var(--color-danger) !important; box-shadow: inset 0 0 0 1px var(--color-danger); } /* the second pixel is inset: no shift */
@@ -637,9 +650,9 @@
   .fld label { margin: 0; }
   .hint { font-size: var(--text-sm); color: var(--color-text-muted); }
   .pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
-  .co-form input:not([type=checkbox]) { width: 100%; min-height: 48px; padding: var(--space-4) var(--space-5); border: 1px solid var(--color-border-strong); border-radius: var(--radius-md);
+  .co-form input:not([type=checkbox]) { width: 100%; min-height: var(--size-control-lg); padding: var(--space-4) var(--space-5); border: 1px solid var(--color-border-strong); border-radius: var(--radius-md);
     background: var(--color-surface); font: var(--text-base)/1.5 var(--font-sans); }
-  .linkish { justify-self: start; display: inline-flex; align-items: center; min-height: 32px; padding: 0; border: 0; background: none; color: var(--color-text);
+  .linkish { justify-self: start; display: inline-flex; align-items: center; min-height: var(--size-control-sm); padding: 0; border: 0; background: none; color: var(--color-text);
     font: 500 var(--text-sm)/1.5 var(--font-sans); text-decoration: underline; text-decoration-thickness: 0.06em; text-underline-offset: 0.2em; cursor: pointer; }
   .card-block { padding: var(--space-5); border-radius: var(--radius-lg); background: var(--color-surface-sunken); box-shadow: inset 0 0 0 1px var(--color-border); }
   .card-block legend, .card-block .lock { color: var(--color-text); }
@@ -681,8 +694,9 @@
 .nav-demo a.is-hover, .menu-toggle.is-hover, .close.is-hover, .stepper button.is-hover { background: var(--state-hover); }
 .nav-demo a.is-active, .close.is-active, .stepper button.is-active { background: var(--state-pressed); }
 .nav-demo { display: flex; }
-.opt.is-hover { background: color-mix(in oklch, var(--color-text) 4%, var(--color-surface)); }
+.opt.is-hover { background: linear-gradient(var(--state-hover), var(--state-hover)), var(--color-surface); }
 .opt.is-hover .sub { color: var(--color-text-muted-on-tint); }
+@layer components { .sheet .menu-toggle { display: inline-flex !important; } } /* the page hides it from 768 up with !important in components; the sheet shows its states at every width */
 .opt.is-focus { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
 .news input.is-hover { border-color: var(--color-text-muted); }
 .demo-w { width: 320px; max-width: 100%; }
@@ -748,7 +762,7 @@
   </div>
   <div class="row" style="margin-top:var(--space-6)">
     <div class="cell demo-slip"><span>Brew question, error</span><fieldset class="opt-group invalid"><legend>How do you brew?<span class="hint">We grind each bag for your brewer the morning it ships.</span></legend><p class="error"><svg class="i" data-icon="error" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path class="solid" fill-rule="evenodd" d="M8 1.25a6.75 6.75 0 1 1 0 13.5A6.75 6.75 0 0 1 8 1.25zM7.25 4.75v4a.75.75 0 0 0 1.5 0v-4a.75.75 0 0 0-1.5 0zM8 10.4a.9.9 0 1 0 0 1.8.9.9 0 0 0 0-1.8z"/></svg>Choose how you brew, so we grind it right.</p><div class="opts cols-2"><label class="opt stack"><input type="radio" name="d7"><span><span class="name">Pour-over</span><span class="sub">Medium-fine</span></span></label><label class="opt stack"><input type="radio" name="d7"><span><span class="name">Espresso</span><span class="sub">Fine</span></span></label></div></fieldset></div>
-    <div class="cell demo-slip"><span>Term line, 4 weeks</span><p class="terms"><b>$16 every 4 weeks</b>, charged on roast day. First roast Tue,&nbsp;Oct&nbsp;13; next charge Tue,&nbsp;Nov&nbsp;10. Skip, pause or cancel online any time before a roast.</p></div>
+    <div class="cell demo-slip"><span>Term line, 4 weeks</span><p class="terms"><b>$16 at checkout, then every 4 weeks</b> on roast day: next charge Tue,&nbsp;Nov&nbsp;10. First roast Tue,&nbsp;Oct&nbsp;13. Skip, pause or cancel online any time before a roast.</p></div>
   </div>
 </section>
 
@@ -774,7 +788,7 @@
 
 <section class="group" aria-labelledby="s-cart"><h2 id="s-cart">Cart panel</h2>
   <div class="row">
-    <div class="cell panel-demo"><div class="cart-body"><div class="cart-empty"><h3>Your cart is empty</h3><p>This week’s coffee is Ethiopia Guji, roasted Tue,&nbsp;Oct&nbsp;13 in Portland and shipped Wed,&nbsp;Oct&nbsp;14.</p><a class="more" href="#main">See all 9 coffees<svg class="i" data-icon="arrow-right" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.75 8h10.5M9.25 3.75L13.5 8l-4.25 4.25"/></svg></a></div></div></div>
+    <div class="cell panel-demo"><div class="cart-body"><div class="cart-empty"><h3>Your cart is empty</h3><p>This week’s coffee is Ethiopia Guji. It roasts Tue,&nbsp;Oct&nbsp;13 in Portland and ships Wed,&nbsp;Oct&nbsp;14.</p><a class="more" href="#main">See all 9 coffees<svg class="i" data-icon="arrow-right" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.75 8h10.5M9.25 3.75L13.5 8l-4.25 4.25"/></svg></a></div></div></div>
     <div class="cell panel-demo"><div class="cart-body"><ul><li class="line removed"><span>Removed Colombia Huila.</span><button class="link-btn" type="button">Undo</button></li></ul></div></div>
   </div>
 </section>

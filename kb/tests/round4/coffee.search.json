@@ -1,14 +1,14 @@
 {
-  "file": "kb/tests/round3/coffee.html",
+  "file": "kb/tests/round4/coffee.html",
   "expect": "public",
-  "date": "2026-10-10T21:59:52.394Z",
+  "date": "2026-10-11T00:42:50.324Z",
   "checks": {
     "size": {
       "fail": [],
       "warn": [],
       "info": [
         {
-          "message": "HTML 179 KB uncompressed (Googlebot cut: 2 MB)"
+          "message": "HTML 184 KB uncompressed (Googlebot cut: 2 MB)"
         }
       ]
     },
@@ -17,7 +17,7 @@
       "warn": [],
       "info": [
         {
-          "message": "search and social tags end by byte 1618, before the first large inline block at byte 4916"
+          "message": "search and social tags end by byte 1634, before the first large inline block at byte 5808"
         }
       ]
     },
@@ -35,7 +35,7 @@
       "warn": [],
       "info": [
         {
-          "message": "150 chars"
+          "message": "158 chars"
         }
       ]
     },
@@ -44,7 +44,7 @@
       "warn": [],
       "info": [
         {
-          "message": "h1 Ethiopia Guji, roasted Tuesday in Portland.\n  h2 Three coffees, grown 1,100 to 2,100 meters up\n    h3 Ethiopia Guji\n    h3 Colombia Huila\n    h3 Oak Fire Espresso\n  h2 A new hill at your door, every two or four weeks.\n    h3 Build your subscription\n  h2 How we roast\n  h2 What we paid, lot 0412\n  h2 Bought by name, tasted twice, shipped in 48 hours.\n    h3 We know every grower by name\n    h3 Two of us taste every batch\n    h3 It leaves within 48 hours of the roast\n  h2 Letters from the roastery\n  h2 Shop\n  h2 Roastery\n  h2 Ethiopia Guji\n  h2 Your cart\n    h3 Your cart is empty\n  h2 Checkout\n    h3 Order summary"
+          "message": "h1 Ethiopia Guji, roasted Tuesday in Portland.\n  h2 Three coffees, grown 1,100 to 2,100 meters up\n    h3 Ethiopia Guji\n    h3 Colombia Huila\n    h3 Oak Fire Espresso\n  h2 A new hill at your door, every two or four weeks.\n    h3 Build your subscription\n  h2 How we roast\n  h2 What we paid, lot 0412\n  h2 Bought by name, tasted twice, shipped the day after the roast.\n    h3 We know every grower by name\n    h3 We taste every batch twice\n    h3 It ships the day after the roast\n  h2 Letters from the roastery\n  h2 Shop\n  h2 Roastery\n  h2 Ethiopia Guji\n  h2 Your cart\n    h3 Your cart is empty\n  h2 Checkout\n    h3 Order summary"
         }
       ]
     },
@@ -57,24 +57,15 @@
         }
       ]
     },
-    "social": {
-      "fail": [],
-      "warn": [],
-      "info": [
-        {
-          "message": "og:image 1200x630, 438 KB"
-        }
-      ]
-    },
     "structured-data": {
       "fail": [],
       "warn": [],
       "info": [
         {
-          "message": "block 1: JSON-LD 1.1 expansion ok (jsonld.js, safe mode), 42 triples"
+          "message": "jsonld.js not installed: run npm ci in skills/design-search/assets for the expansion check"
         },
         {
-          "message": "1 JSON-LD blocks, 6 typed nodes: WebSite, OnlineStore, PostalAddress, CafeOrCoffeeShop, GeoCoordinates, OpeningHoursSpecification"
+          "message": "1 JSON-LD blocks, 9 typed nodes: WebSite, OnlineStore, Product, QuantitativeValue, Offer, PostalAddress, CafeOrCoffeeShop, GeoCoordinates, OpeningHoursSpecification"
         }
       ]
     }

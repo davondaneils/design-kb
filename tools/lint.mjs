@@ -39,6 +39,12 @@
 //                width: controls covered by other elements, fixed-size flex children squashed, sticky top bars
 //                taller than scroll-padding-top, text in separate boxes touching ("Sep 30$2.62"), words broken
 //                inside controls and cells, sibling columns off a shared edge (tools/lint-layout.mjs)
+//   double-space a flex or grid gap plus a no-break space at an item's edge, or two uncollapsible spaces in a row
+//                ("Invite&nbsp;&nbsp;&nbsp;a teammate"; tools/lint-layout.mjs)
+//   undefined-var  a var(--name) with no fallback whose property is declared nowhere: the declaration paints nothing
+//                (the sheet's empty warning meter, round 4 critic; tools/lint-tokens.mjs)
+//   state-layer  hover and pressed backgrounds use --state-hover and --state-pressed (8 and 10 percent) or a
+//                --color-*-hover token, never a raw color-mix() or color (tools/lint-tokens.mjs)
 //   hidden-content  a control whose text is transparent and that paints nothing inside (tools/lint-layout.mjs)
 //   state-sheet  a state sheet shows a disabled, a busy and (with fields) an invalid control
 //   truth        numbers stay true across states and live updates: repeated numbers change together, empty
@@ -72,13 +78,14 @@
 // Exit code: 0 when no check fails, 1 when any check fails, 2 on usage error.
 // Opt out for one element (use sparingly, explain in the test report):
 //   data-lint-skip="measure spacing type-scale targets focus overlay radius typography svg-overlap tabular icons primary
-//                   occlusion squash sticky-header run-together word-break grid-edge hidden-content"
+//                   occlusion squash sticky-header run-together word-break grid-edge hidden-content double-space"
 import fs from 'node:fs';
 import path from 'node:path';
 import { createRequire } from 'node:module';
 import { launch, toUrl, splitTarget } from './browser.mjs';
 import { layoutChecks, reportLayout, pageChecks } from './lint-layout.mjs';
 import { truthPass } from './lint-truth.mjs';
+import { tokenChecks } from './lint-tokens.mjs';
 
 const require = createRequire(import.meta.url);
 const axeSource = fs.readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
@@ -718,12 +725,12 @@ async function lintOne(browser, target, outPath) {
 
   // Layout at every width (default 390, 768, 1024, 1440): collisions, squashed children, sticky bars, text running
   // together, broken words, edges (tools/lint-layout.mjs; round 3 critic found these by eye at 768 and 1024).
-  for (const c of ['occlusion', 'squash', 'sticky-header', 'run-together', 'word-break', 'grid-edge', 'hidden-content']) ok(c);
+  for (const c of ['occlusion', 'squash', 'sticky-header', 'run-together', 'word-break', 'grid-edge', 'hidden-content', 'double-space']) ok(c);
   for (const width of layoutWidths) {
     const { context, page } = await openPage(width, 'light');
     const r = await layoutChecks(page, width);
     reportLayout(r, width, add);
-    if (width === 1440 || (width === layoutWidths[layoutWidths.length - 1] && !layoutWidths.includes(1440))) await pageChecks(page, add);
+    if (width === 1440 || (width === layoutWidths[layoutWidths.length - 1] && !layoutWidths.includes(1440))) { await pageChecks(page, add); ok('undefined-var'); ok('state-layer'); await tokenChecks(page, add); }
     await context.close();
   }
   if (report.summary.stateSheet || report.checks['state-sheet']) ok('state-sheet');
