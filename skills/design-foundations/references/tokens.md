@@ -1,6 +1,6 @@
 # Tokens and scales
 
-Mirror of `kb/FOUNDATIONS.md` v0.4.2 (token sections, icons, sizes and content mechanics). FOUNDATIONS is the source of truth: if this file and FOUNDATIONS differ, FOUNDATIONS wins and the librarian re-syncs this file. Only the editor-in-chief changes the values.
+Mirror of `kb/FOUNDATIONS.md` v0.4.3 (token sections, icons, sizes and content mechanics). FOUNDATIONS is the source of truth: if this file and FOUNDATIONS differ, FOUNDATIONS wins and the librarian re-syncs this file. Only the editor-in-chief changes the values.
 
 ## Token naming
 `--{category}-{role}-{variant}`, for example `--color-text-muted`, `--space-4`, `--text-lg`, `--radius-md`, `--duration-fast`. Semantic tokens reference primitive tokens; components only use semantic tokens.

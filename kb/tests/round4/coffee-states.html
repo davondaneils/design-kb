@@ -112,6 +112,9 @@
     --color-illustration-line: light-dark(var(--color-warm-300), var(--color-warm-800));
     --color-illustration-accent: light-dark(var(--color-orange-600), var(--color-orange-300));
     --color-illustration-accent-fill: light-dark(rgb(242 107 33 / 0.12), rgb(255 169 126 / 0.08));
+    /* Ink printed on the bag label in the photograph: a physical object, so one value in both themes (not remapped). */
+    --color-illustration-ink: #2a221b;                          /* label ink, a printed black warmed toward the kraft */
+    --color-illustration-ink-accent: var(--color-orange-700);  /* the roast curve, printed in the house orange */
     --color-logo-ember: var(--color-brand);
     --color-scrim: light-dark(rgb(39 32 26 / 0.48), rgb(0 0 0 / 0.6));
     --photo-dim: light-dark(1, 0.9); /* not a color: read by the dim rule below through a registered fallback */
@@ -323,14 +326,14 @@
   .print { position: absolute; left: var(--l); top: var(--t); width: var(--w); height: var(--h); mix-blend-mode: multiply; pointer-events: none; }
   .hero-photo .print { --l: 35.99%; --t: 42.92%; --w: 28.47%; --h: 29.95%; }
   @media (min-width: 640px) and (max-width: 1023.98px) { .hero-photo .print { --l: 57.36%; --w: 15.27%; } }
-  .print text { fill: #2a221b; }
+  .print text { fill: var(--color-illustration-ink); }
   .print .serif { font-family: var(--font-serif); font-style: italic; }
   .print .sans { font-family: var(--font-sans); font-weight: 600; letter-spacing: 0.12em; }
   .print .mono { font-family: var(--font-mono); font-weight: 500; }
-  .print .rule { stroke: #2a221b; stroke-width: 0.75; }
-  .print .lcurve { fill: none; stroke: var(--color-orange-700); stroke-width: 1.25; stroke-linejoin: round; stroke-linecap: round; }
+  .print .rule { stroke: var(--color-illustration-ink); stroke-width: 0.75; }
+  .print .lcurve { fill: none; stroke: var(--color-illustration-ink-accent); stroke-width: 1.25; stroke-linejoin: round; stroke-linecap: round; }
   .print .ember { fill: var(--color-brand); }
-  .print .symbol { color: #2a221b; }
+  .print .symbol { color: var(--color-illustration-ink); }
   .caption { margin-top: var(--space-4); display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-2) var(--space-5); font-size: var(--text-sm); color: var(--color-text-muted); }
   .caption .mono { font-size: var(--text-xs); }
   @media (max-width: 639px) {
@@ -762,7 +765,7 @@
   </div>
   <div class="row" style="margin-top:var(--space-6)">
     <div class="cell demo-slip"><span>Brew question, error</span><fieldset class="opt-group invalid"><legend>How do you brew?<span class="hint">We grind each bag for your brewer the morning it ships.</span></legend><p class="error"><svg class="i" data-icon="error" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path class="solid" fill-rule="evenodd" d="M8 1.25a6.75 6.75 0 1 1 0 13.5A6.75 6.75 0 0 1 8 1.25zM7.25 4.75v4a.75.75 0 0 0 1.5 0v-4a.75.75 0 0 0-1.5 0zM8 10.4a.9.9 0 1 0 0 1.8.9.9 0 0 0 0-1.8z"/></svg>Choose how you brew, so we grind it right.</p><div class="opts cols-2"><label class="opt stack"><input type="radio" name="d7"><span><span class="name">Pour-over</span><span class="sub">Medium-fine</span></span></label><label class="opt stack"><input type="radio" name="d7"><span><span class="name">Espresso</span><span class="sub">Fine</span></span></label></div></fieldset></div>
-    <div class="cell demo-slip"><span>Term line, 4 weeks</span><p class="terms"><b>$16 at checkout, then every 4 weeks</b> on roast day: next charge Tue,&nbsp;Nov&nbsp;10. First roast Tue,&nbsp;Oct&nbsp;13. Skip, pause or cancel online any time before a roast.</p></div>
+    <div class="cell demo-slip"><span>Term line, 4 weeks</span><p class="terms"><b>$16 at checkout, then every 4 weeks</b> on roast day: next charge Tue,&nbsp;Nov&nbsp;10. First roast Tue,&nbsp;Oct&nbsp;13. Skip, swap, pause or cancel online any time before a roast.</p></div>
   </div>
 </section>
 

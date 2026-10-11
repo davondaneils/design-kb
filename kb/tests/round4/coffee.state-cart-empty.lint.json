@@ -1,6 +1,6 @@
 {
   "file": "kb/tests/round4/coffee.html?state=cart-empty",
-  "date": "2026-10-11T00:47:13.903Z",
+  "date": "2026-10-11T01:34:02.744Z",
   "checks": {
     "axe": {
       "fail": [],
@@ -190,6 +190,16 @@
       "warn": [],
       "pass": true
     },
+    "primitive-in-component": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "error-icon": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
     "truth": {
       "fail": [],
       "warn": [],
@@ -281,7 +291,7 @@
   },
   "summary": {
     "weightKB": {
-      "html": 193,
+      "html": 194,
       "svg": 70
     },
     "focusables": 3,
@@ -319,6 +329,8 @@
     "double-space": "pass",
     "undefined-var": "pass",
     "state-layer": "pass",
+    "primitive-in-component": "pass",
+    "error-icon": "pass",
     "truth": "pass",
     "proportion": "pass",
     "nav-parity": "pass",

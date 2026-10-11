@@ -1,6 +1,6 @@
 {
   "file": "kb/tests/round4/coffee-states.html",
-  "date": "2026-10-11T00:48:33.434Z",
+  "date": "2026-10-11T01:35:23.550Z",
   "checks": {
     "axe": {
       "fail": [],
@@ -161,6 +161,16 @@
       "warn": [],
       "pass": true
     },
+    "primitive-in-component": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "error-icon": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
     "state-sheet": {
       "fail": [],
       "warn": [],
@@ -258,6 +268,8 @@
     "double-space": "pass",
     "undefined-var": "pass",
     "state-layer": "pass",
+    "primitive-in-component": "pass",
+    "error-icon": "pass",
     "state-sheet": "pass",
     "truth": "pass",
     "proportion": "pass",

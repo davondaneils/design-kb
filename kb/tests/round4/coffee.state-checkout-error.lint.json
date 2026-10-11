@@ -1,6 +1,6 @@
 {
   "file": "kb/tests/round4/coffee.html?state=checkout-error",
-  "date": "2026-10-11T00:48:05.559Z",
+  "date": "2026-10-11T01:34:54.789Z",
   "checks": {
     "axe": {
       "fail": [],
@@ -223,6 +223,16 @@
       "warn": [],
       "pass": true
     },
+    "primitive-in-component": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "error-icon": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
     "truth": {
       "fail": [],
       "warn": [],
@@ -352,6 +362,8 @@
     "double-space": "pass",
     "undefined-var": "pass",
     "state-layer": "pass",
+    "primitive-in-component": "pass",
+    "error-icon": "pass",
     "truth": "pass",
     "proportion": "pass",
     "nav-parity": "pass",

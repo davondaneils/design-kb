@@ -1,6 +1,6 @@
 {
   "file": "kb/tests/round4/dashboard.html?open=sheet",
-  "date": "2026-10-11T00:44:58.361Z",
+  "date": "2026-10-11T01:36:39.534Z",
   "checks": {
     "axe": {
       "fail": [],
@@ -164,6 +164,16 @@
       "warn": [],
       "pass": true
     },
+    "primitive-in-component": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "error-icon": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
     "truth": {
       "fail": [],
       "warn": [],
@@ -217,7 +227,7 @@
   },
   "summary": {
     "weightKB": {
-      "html": 159,
+      "html": 160,
       "svg": 14
     },
     "focusables": 2,
@@ -255,6 +265,8 @@
     "double-space": "pass",
     "undefined-var": "pass",
     "state-layer": "pass",
+    "primitive-in-component": "pass",
+    "error-icon": "pass",
     "truth": "pass",
     "proportion": "pass",
     "nav-parity": "pass",

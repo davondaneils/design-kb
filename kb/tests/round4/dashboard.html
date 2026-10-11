@@ -100,6 +100,11 @@
   --color-share: color-mix(in oklch, var(--color-text) 6%, transparent);
   --color-focus-ring: var(--color-teal-600);
   --color-scrim: rgb(16 18 20 / 0.4);
+  --color-on-brand: var(--color-slate-990);         /* the logo glyph on the brand teal, which is the same in both themes */
+  /* Tooltip: an inverse chip in light; in dark it lifts one step above the surfaces it floats over and takes an edge */
+  --color-tooltip-bg: var(--color-slate-950);
+  --color-tooltip-text: var(--color-slate-50);
+  --color-tooltip-edge: transparent;
   --color-illustration-line: var(--color-border-strong);
   --color-illustration-accent: var(--color-chart-current);
   color-scheme: light dark;
@@ -167,6 +172,9 @@
     --color-chart-bar: var(--color-slate-300);
     --color-focus-ring: var(--color-teal-400);
     --color-scrim: rgb(0 0 0 / 0.6);
+    --color-tooltip-bg: var(--color-slate-800);
+    --color-tooltip-text: var(--color-slate-50);
+    --color-tooltip-edge: var(--color-slate-500);
     /* Dark: elevation is a lighter surface plus a white ring and a top catch light, not a darker shadow */
     --ring: 0 0 0 1px rgb(255 255 255 / 0.08);
     --highlight: inset 0 1px 0 rgb(255 255 255 / 0.06);
@@ -227,7 +235,7 @@ kbd { white-space: nowrap; display: inline-flex; align-items: center; justify-co
 .workspace .meta { display: flex; flex-direction: column; line-height: 1.25; }
 .workspace strong { font-weight: 600; }
 .workspace small { font-size: var(--text-xs); color: var(--color-text-muted); }
-.logo { width: 24px; height: 24px; border-radius: var(--radius-sm); background: var(--color-brand); color: var(--color-slate-990); display: grid; place-items: center; flex: none; }
+.logo { width: 24px; height: 24px; border-radius: var(--radius-sm); background: var(--color-brand); color: var(--color-on-brand); display: grid; place-items: center; flex: none; }
 /* Icon set (icons.mjs): stroke is a type property. It is set where font-weight is set, so icon and label change weight together. */
 .i { flex: none; display: block; fill: none; stroke: currentColor; stroke-width: var(--icon-stroke, 1.5px); stroke-linecap: round; stroke-linejoin: round; }
 .i .solid { fill: currentColor; stroke: none; }
@@ -253,7 +261,7 @@ kbd { white-space: nowrap; display: inline-flex; align-items: center; justify-co
   .sidebar:not(.open) { padding: var(--space-4) var(--space-3); align-items: center; }
   .sidebar:not(.open) .label, .sidebar:not(.open) .meta, .sidebar:not(.open) .nav-group h2, .sidebar:not(.open) kbd { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .sidebar:not(.open) .nav a, .sidebar:not(.open) .side-btn, .sidebar:not(.open) .workspace { justify-content: center; padding: 0; width: 40px; min-height: 40px; }
-  .sidebar:not(.open) [data-tip]:hover::after, .sidebar:not(.open) [data-tip]:focus-visible::after { content: attr(data-tip); position: absolute; left: calc(100% + 12px); top: 50%; transform: translateY(-50%); padding: var(--space-2) var(--space-3); background: var(--color-slate-950); color: var(--color-slate-50); border-radius: var(--radius-sm); font-size: var(--text-xs); white-space: nowrap; z-index: 20; }
+  .sidebar:not(.open) [data-tip]:hover::after, .sidebar:not(.open) [data-tip]:focus-visible::after { content: attr(data-tip); position: absolute; left: calc(100% + 12px); top: 50%; transform: translateY(-50%); padding: var(--space-2) var(--space-3); background: var(--color-tooltip-bg); color: var(--color-tooltip-text); box-shadow: 0 0 0 1px var(--color-tooltip-edge), var(--shadow-2); border-radius: var(--radius-sm); font-size: var(--text-xs); white-space: nowrap; z-index: 20; }
 }
 
 .main { display: flex; flex-direction: column; min-width: 0; background: var(--color-surface); container: main / inline-size; }
@@ -888,6 +896,7 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
                 <input class="field" id="invite-email" type="email" autocomplete="off" spellcheck="false" placeholder="name@acme.com" aria-describedby="invite-msg">
                 <button class="btn" type="submit">Invite</button>
                 <p class="field-msg" id="invite-msg" role="status"></p>
+                <template id="err-icon"><svg class="i i-12" data-icon="error-12" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path class="solid" fill-rule="evenodd" d="M6 .75a5.25 5.25 0 1 1 0 10.5A5.25 5.25 0 0 1 6 .75zM5.4 3.5v3.1a.6.6 0 0 0 1.2 0V3.5a.6.6 0 0 0-1.2 0zM6 8.05a.7.7 0 1 0 0 1.4.7.7 0 0 0 0-1.4z"/></svg></template>
               </form>
             </div>
           </li>
@@ -1446,7 +1455,9 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
     const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
     f.setAttribute('aria-invalid', ok ? 'false' : 'true');
     m.className = 'field-msg' + (ok ? '' : ' err');
-    m.textContent = ok ? 'Invite sent to ' + v + '.' : v ? 'Add the rest of the address, for example ' + (v.split('@')[0] || 'sam') + '@acme.com.' : 'Enter a work email to send the invite.';
+    const msg = ok ? 'Invite sent to ' + v + '.' : v ? 'Add the rest of the address, for example ' + (v.split('@')[0] || 'sam') + '@acme.com.' : 'Enter a work email to send the invite.';
+    // Error anatomy shared with the alerts: icon plus text, never color alone (FOUNDATIONS item 11).
+    m.replaceChildren(...(ok ? [] : [document.getElementById('err-icon').content.cloneNode(true)]), msg);
     if (ok) f.value = ''; else f.focus();
   });
   window.__designKbTick = tick; // one live update on demand, for tools/lint-truth.mjs

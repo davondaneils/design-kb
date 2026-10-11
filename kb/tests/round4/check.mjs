@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Proves each gate failure the round 3 critic found is fixed (kb/reviews/round3-critic.md, section 2), and, from
-// round 4.1, each judged fail of the round 4 critic (kb/reviews/round4-critic.md). Port: KB_PORT (default 8765).
+// round 4.1, each judged fail of the round 4 critic (kb/reviews/round4-critic.md), and from round 4.2 each judged fail
+// of the round 4.1 critic (kb/reviews/round4.1-critic.md). Port: KB_PORT (default 8765).
 // Run from the repo root with the repo served over HTTP:
 //   python3 -m http.server 8765 --bind 127.0.0.1 &   node kb/tests/round4/check.mjs
 // Prints one line per check, PASS or FAIL, and exits 1 on any fail.
@@ -432,6 +433,121 @@ for (const w of [390, 768]) {
   ok(/--color-warning-mark/.test(msgs('undefined-var')) && /raw color/.test(msgs('state-layer')) && /4%/.test(msgs('state-layer')) && /gap plus a no-break space/.test(msgs('double-space')) && /two spaces in a row/.test(msgs('double-space'))
     && /alert that explains it, is hidden/.test(msgs('truth')) && /paints no fill/.test(msgs('proportion')) && good.summary.fails === 0,
     'tools: lint fails bad-tokens.html on undefined-var, state-layer (raw and 4%), double-space (gap and spaces), truth (explained-by) and proportion (empty meter); good.html passes');
+}
+
+// ---------- Round 4.2: the round 4.1 critic's judged fails (kb/reviews/round4.1-critic.md, section 4) ----------
+// Coffee 16: one cancel promise, one wording, in band, slip (2 and 4 weeks), cart, checkout and the sheet.
+{
+  const PROMISE = 'Skip, swap, pause or cancel online any time before a roast';
+  const seen = new Map();
+  const grab = async (url, w = 1440) => {
+    const p = await open(url, w);
+    const t = (await visibleText(p)).replace(/ /g, ' ');
+    for (const m of t.matchAll(/Skip, [a-z, ]*?or cancel[a-z ,]*?roast/g)) seen.set(m[0].trim(), (seen.get(m[0].trim()) || []).concat(url));
+    await p.context().close();
+    return t;
+  };
+  const band = await grab('coffee.html');
+  const cart = await grab('coffee.html?state=cart');
+  const co = await grab('coffee.html?state=checkout');
+  const plan4 = await grab('coffee.html?state=plan-4');
+  const sheet = await grab('coffee-states.html');
+  const where = [band, cart, co, plan4, sheet].map((t) => t.includes(PROMISE));
+  ok(seen.size === 1 && seen.has(PROMISE) && where.every(Boolean), `coffee 16: one cancel promise ("${PROMISE}") on page, cart, checkout, 4-week slip and sheet`, JSON.stringify({ variants: [...seen.keys()], where }));
+  const src = fs.readFileSync(path.join(here, 'coffee.src.html'), 'utf8') + fs.readFileSync(path.join(here, 'states.mjs'), 'utf8');
+  const variants = new Set([...src.matchAll(/Skip, [a-z, ]*?or cancel[a-z ,]*/g)].map((m) => m[0]));
+  ok(variants.size === 1, 'coffee 16: the source holds one "Skip, ... or cancel" wording', JSON.stringify([...variants]));
+}
+// Coffee 13: the label curve reads a semantic illustration token, fixed in both themes (printed ink on a photo).
+{
+  const r = {};
+  for (const scheme of ['light', 'dark']) {
+    const p = await open('coffee.html', 1440, { scheme });
+    r[scheme] = await p.evaluate(() => ({ stroke: getComputedStyle(document.querySelector('.print .lcurve')).stroke }));
+    await p.context().close();
+  }
+  const src = fs.readFileSync(path.join(here, 'coffee.src.html'), 'utf8');
+  ok(/\.print \.lcurve \{[^}]*stroke: var\(--color-illustration-ink-accent\)/.test(src) && !/\.print[^{]*\{[^}]*(?:--color-orange-|#2a221b)/.test(src) && r.light.stroke === r.dark.stroke && r.light.stroke === 'rgb(147, 55, 1)',
+    'coffee 13: the label curve and ink use --color-illustration-ink(-accent), no primitive or raw hex in .print rules; the curve is the same orange in both themes', JSON.stringify(r));
+}
+// Dashboard 11: the invite error is icon plus text, on the page (after a bad submit) and on the sheet.
+{
+  const p = await open('dashboard.html?state=first-run', 1440);
+  const shown = await p.evaluate(() => !!document.getElementById('invite-email').getClientRects().length);
+  const r = { shown };
+  if (shown) {
+    await p.fill('#invite-email', 'sam@');
+    await p.click('#invite-form button[type=submit]');
+    r.err = await p.evaluate(() => { const m = document.getElementById('invite-msg'); const i = m.querySelector('svg[data-icon=error-12]'); const b = i && i.getBoundingClientRect(); return { text: m.textContent, icon: !!i && b.width === 12 && b.height === 12, color: i && getComputedStyle(i).color, msg: getComputedStyle(m).color, invalid: document.getElementById('invite-email').getAttribute('aria-invalid') }; });
+    await p.fill('#invite-email', 'sam@acme.com');
+    await p.click('#invite-form button[type=submit]');
+    r.okMsg = await p.evaluate(() => { const m = document.getElementById('invite-msg'); return { text: m.textContent, icons: m.querySelectorAll('svg').length }; });
+  }
+  await p.context().close();
+  ok(shown && r.err.icon && r.err.color === r.err.msg && /Add the rest of the address/.test(r.err.text) && r.err.invalid === 'true' && r.okMsg.icons === 0 && /Invite sent/.test(r.okMsg.text),
+    'dashboard 11: the invite error carries the 12px error icon in the error color beside its text; the success line has none', JSON.stringify(r));
+  const s = await open('dashboard-states.html', 1440);
+  const sr = await s.evaluate(() => { const m = document.getElementById('inv-err'); return { icon: !!m.querySelector('svg[data-icon=error-12]'), text: m.textContent }; });
+  ok(sr.icon, 'dashboard 11: the sheet\'s "Invite field, error" cell shows the same icon plus text', JSON.stringify(sr));
+  await s.context().close();
+}
+// Dashboard 13: logo and rail tooltip on semantic tokens; the dark tooltip has a visible edge against what it floats over.
+{
+  const lin = (c) => { c /= 255; return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; };
+  const L = ([r, g, b]) => 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b);
+  const cr = (a, b) => { const x = L(a), y = L(b); return Math.round((Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05) * 100) / 100; };
+  const res = {};
+  for (const scheme of ['light', 'dark']) {
+    const p = await open('dashboard.html', 900, { scheme });
+    await p.locator('.sidebar .nav a[data-tip="Events"]').hover();
+    const box = await p.evaluate(() => {
+      const a = document.querySelector('.sidebar .nav a[data-tip="Events"]'), cs = getComputedStyle(a, '::after'), r = a.getBoundingClientRect();
+      const w = parseFloat(cs.width), h = parseFloat(cs.height);
+      return { x: r.right + 12, y: r.top + r.height / 2 - h / 2, w, h, logo: getComputedStyle(document.querySelector('.logo')).color };
+    });
+    const png = await p.screenshot({ clip: { x: Math.round(box.x) - 8, y: Math.round(box.y) - 8, width: Math.round(box.w) + 16, height: Math.round(box.h) + 16 } });
+    const px = await p.evaluate(async ({ b64 }) => {
+      const img = new Image(); img.src = 'data:image/png;base64,' + b64; await img.decode();
+      const c = document.createElement('canvas'); c.width = img.width; c.height = img.height; const g = c.getContext('2d'); g.drawImage(img, 0, 0);
+      const at = (x, y) => [...g.getImageData(x, y, 1, 1).data].slice(0, 3);
+      const my = Math.round(img.height / 2);
+      return { outside: at(3, my), edge: at(7, my), inside: at(14, my), outsideR: at(img.width - 3, my) };
+    }, { b64: png.toString('base64') });
+    res[scheme] = { ...px, w: box.w, logo: box.logo, boxVsOutside: cr(px.inside, px.outside), edgeVsOutside: cr(px.edge, px.outside), edgeVsOutsideR: cr(px.edge, px.outsideR) };
+    await p.context().close();
+  }
+  const src = fs.readFileSync(path.join(here, 'dashboard.src.html'), 'utf8');
+  ok(/\.logo \{[^}]*color: var\(--color-on-brand\)/.test(src) && /\[data-tip\]:hover::after[^{]*\{[^}]*background: var\(--color-tooltip-bg\); color: var\(--color-tooltip-text\)/.test(src),
+    'dashboard 13: .logo uses --color-on-brand and the rail tooltip --color-tooltip-bg and -text (no primitives in either rule)');
+  ok(res.light.boxVsOutside >= 3 && res.dark.edgeVsOutside >= 3 && res.dark.edgeVsOutsideR >= 3 && res.light.logo === res.dark.logo,
+    `dashboard 13: the rail tooltip stands off its surface (light box ${res.light.boxVsOutside}:1; dark edge ${res.dark.edgeVsOutside}:1 and ${res.dark.edgeVsOutsideR}:1, box ${res.dark.boxVsOutside}:1); logo glyph one color in both themes`, JSON.stringify(res));
+}
+// Tools (round 4.2): primitive-in-component and error-icon fail tools/fixtures/bad-semantic.html, good.html passes;
+// --states replaces the target's query; claims_inventory flags two rights lists.
+{
+  const { execFileSync } = await import('node:child_process');
+  const root = path.resolve(here, '../../..');
+  const out = path.join(process.env.TMPDIR || '/tmp', 'r42-lint');
+  fs.rmSync(out, { recursive: true, force: true }); fs.mkdirSync(out, { recursive: true });
+  const run = (f, extra = []) => { try { execFileSync('node', [path.join(root, 'tools/lint.mjs'), f, '--out-dir', out, '--quiet', '--no-fallback', ...extra], { stdio: 'pipe', cwd: root }); } catch { /* exit 1 on fail */ } };
+  run('tools/fixtures/bad-semantic.html'); run('tools/fixtures/good.html');
+  const bad = JSON.parse(fs.readFileSync(path.join(out, 'bad-semantic.lint.json'), 'utf8')), good = JSON.parse(fs.readFileSync(path.join(out, 'good.lint.json'), 'utf8'));
+  const prim = (bad.checks['primitive-in-component'] || { fail: [] }).fail.map((x) => x.message).join(' | ');
+  const err = (bad.checks['error-icon'] || { fail: [] }).fail.map((x) => x.message);
+  const others = Object.entries(bad.checks).filter(([k, v]) => !['primitive-in-component', 'error-icon'].includes(k) && v.fail.length).map(([k]) => k);
+  ok(/--color-orange-700/.test(prim) && /--color-slate-950/.test(prim) && /--color-slate-50\b/.test(prim) && /--color-red-600/.test(prim) && !/":root/.test(prim)
+    && err.length === 2 && err.some((m) => /Add the rest/.test(m)) && err.some((m) => /Payment did not/.test(m)) && others.length === 0 && good.summary.fails === 0,
+    'tools: lint fails bad-semantic.html on primitive-in-component (curve, tooltip, inline; not the :root or dark token blocks) and error-icon (2 text-only errors; the icon and "Error:" ones pass), nothing else; good.html passes', JSON.stringify({ err: err.length, others }));
+  run('kb/tests/round4/coffee.html?state=removed', ['--states', 'state=checkout', '--no-truth', '--widths', '1440']);
+  const st = JSON.parse(fs.readFileSync(path.join(out, 'coffee.state-checkout.lint.json'), 'utf8')).file;
+  ok(st === 'kb/tests/round4/coffee.html?state=checkout', 'tools: lint --states replaces state= in a target that already has a query', st);
+  const tmp = path.join(out, 'rights.html');
+  fs.writeFileSync(tmp, '<!doctype html><title>x</title><p>Skip, swap or cancel online, any time before the next roast.</p><p>Skip, pause or cancel online any time before a roast.</p>');
+  const inv = (a) => { try { return execFileSync('node', [path.join(root, 'skills/design-copy/assets/claims_inventory.mjs'), ...a], { encoding: 'utf8' }); } catch (e) { return String(e.stdout); } };
+  const txt = inv([tmp, '--year', '2026']);
+  const page = inv([path.join(here, 'coffee.html'), '--year', '2026', '--render']);
+  ok(/PROMISE\s+subscription rights has 2 different values: cancel, skip, swap.*cancel, pause, skip/.test(txt) && !/subscription rights/.test(page),
+    'tools: claims_inventory PROMISE flags "skip, swap or cancel" against "skip, pause or cancel"; the coffee page has one rights list');
 }
 
 

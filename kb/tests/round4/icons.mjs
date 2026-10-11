@@ -58,6 +58,8 @@ const I12 = {
   'arrow-down': '<path d="M6.25 2v7.5M3 6.25l3.25 3.25 3.25-3.25"/>',
   // Round 3: the setup checklist tick and the inline platform warning, drawn on the 12 grid (were ad hoc, butt caps and white).
   'check-12': '<path d="M2.75 6.25l2.25 2.25 4.25-4.5"/>',
+  // Round 4.2: the field error glyph (the invite error was text and color only), the 12px twin of error.
+  'error-12': '<path class="solid" fill-rule="evenodd" d="M6 .75a5.25 5.25 0 1 1 0 10.5A5.25 5.25 0 0 1 6 .75zM5.4 3.5v3.1a.6.6 0 0 0 1.2 0V3.5a.6.6 0 0 0-1.2 0zM6 8.05a.7.7 0 1 0 0 1.4.7.7 0 0 0 0-1.4z"/>',
   'warning-12': '<path class="solid" fill-rule="evenodd" d="M5.05 1.85a1.1 1.1 0 0 1 1.9 0l4.15 7.45a1.1 1.1 0 0 1-.95 1.65H1.85a1.1 1.1 0 0 1-.95-1.65zM5.4 4.5v2.4a.6.6 0 0 0 1.2 0V4.5a.6.6 0 0 0-1.2 0zM6 8.15a.65.65 0 1 0 0 1.3.65.65 0 0 0 0-1.3z"/>',
   // Setup guide progress: ring plus a filled quarter (one of four steps), stroke from CSS like the set.
   'progress-16': '<circle cx="8" cy="8" r="5.75"/><path class="solid" d="M8 2.25A5.75 5.75 0 0 1 13.75 8H8z"/>',

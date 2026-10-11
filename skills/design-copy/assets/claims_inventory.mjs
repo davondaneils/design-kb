@@ -10,7 +10,8 @@
 // Two warnings (judged; added after the round 3 critic, kb/reviews/round3-critic.md, gate item 16):
 //   PROMISE  one promise said with different values or units: shipping time ("48 h", "shipped in 48 hours", "ship
 //            the next day", "roasted Tue, Oct 13, ships by Thu, Oct 15"), tasting or checking counts ("tasted twice"
-//            against "Two of us taste"), trial, refund and reply windows, free-shipping thresholds. Each promise
+//            against "Two of us taste"), trial, refund and reply windows, free-shipping thresholds, and subscription
+//            rights said as a verb list ("Skip, swap or cancel" against "Skip, pause or cancel"). Each promise
 //            gets one wording and one number (FOUNDATIONS Content mechanics, Truth)
 //   PERIOD   more than one comparison basis on one page ("Compared to: previous 12 weeks" on the control, "vs last
 //            week" on every KPI): name the basis beside each delta and make the control drive them
@@ -118,6 +119,9 @@ const TOPICS = [
   { name: 'reply time', key: /\b(?:reply|replies|respond|responds|response)\b/i, qty: timeOf },
   { name: 'free-shipping threshold', key: /free (?:shipping |delivery )?(?:over|on orders over|above|from)/i, qty: moneyOf },
 ];
+const RIGHT_VERB = /\b(?:skip|swap|pause|cancel|resume|change|edit|delay|move|return|exchange)\b/gi;
+const RV = '(?:skip|swap|pause|cancel|resume|change|edit|delay|move|return|exchange)';
+const RIGHTS = new RegExp('\\b' + RV + '(?:(?:\\s*,\\s*|\\s+)(?:(?:or|and)\\s+)?' + RV + ')+\\b', 'gi');
 const DATE = /\b(Mon|Tue|Wed|Thu|Fri|Sat|Sun),\s+([A-Z][a-z]{2,3})\s+(\d{1,2})\b/g;
 const promises = {};
 const note = (topic, value, text) => { ((promises[topic] ||= {})[value] ||= new Set()).add(text.slice(0, 90)); };
@@ -137,6 +141,10 @@ for (let i = 0; i < blocks.length; i++) {
     if (days > 0 && days < 60) note('shipping time', days * 24 + ' h', b);
     rest = b.replace(DATE, ' ');
   }
+  // Account rights said as a verb list ("Skip, swap or cancel online" against "Skip, pause or cancel online"): the
+  // set of verbs is the promise, so two lists with different verbs are two promises (round 4.1 critic, coffee item 16).
+  // Read before the comma split below, which would cut the list apart.
+  for (const m of b.matchAll(RIGHTS)) note('subscription rights', [...new Set(m[0].toLowerCase().match(RIGHT_VERB))].sort().join(', '), b);
   // Clauses: split on commas, semicolons and "and", so "roast on Tuesdays and Fridays and ship the next day" keeps
   // "ship the next day" apart from the roast days.
   for (const c of rest.split(/[,;:.](?!\d)|\s+and\s+|\s+but\s+|\s+then\s+/i)) {
