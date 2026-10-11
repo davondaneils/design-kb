@@ -5,7 +5,7 @@ description: Foundation layer of design-kb, always loaded first by design-direct
 
 # design-foundations
 
-The floor under every design job. Nothing a playbook or domain reference teaches earns credit until this layer passes. Source of truth: `kb/FOUNDATIONS.md` (contract v0.4.3) in the design-kb repo. The reference files here mirror it; if they ever differ, FOUNDATIONS wins.
+The floor under every design job. Nothing a playbook or domain reference teaches earns credit until this layer passes. Source of truth: `kb/FOUNDATIONS.md` (contract v0.4.4) in the design-kb repo. The reference files here mirror it; if they ever differ, FOUNDATIONS wins.
 
 ## 1. Non-negotiable rules
 1. **Tokens only.** Components use semantic tokens (`--color-text-muted`, `--space-gap-md`, `--radius-control`), never raw values or primitives. Names follow `--{category}-{role}-{variant}`.
@@ -14,7 +14,7 @@ The floor under every design job. Nothing a playbook or domain reference teaches
 4. **The checklist is a gate.** Every rendered page passes all 16 items in `references/fundamentals-checklist.md`. One miss fails the page, however good the rest is.
 5. **Light and dark remap the same roles.** Never invert; dark surfaces get lighter as they rise.
 6. **Body measure** 45 to 75 characters; default `max-inline-size: 52ch` (63 to 68 characters in every text face measured), then confirm with the lint. Never `66ch` (81 to 86 characters).
-7. **Copy is a fundamental.** Every number matches its source, one clock (US: "2:05 pm"), weekday-checked dates, no line break inside a date, price, range or number and unit. Run `skills/design-copy/assets/claims_inventory.mjs` and tick every claim (item 16).
+7. **Copy is a fundamental.** Every number matches its source; the audience's locale on `<html lang>` picks dates, clock, money and spelling (en-US "Tue, Oct 13", "2:05 pm", "$75.50"; en-GB "Fri 15 January 2027", "5:30pm", "£75.50"; others through `Intl`); one clock; weekday-checked dates; no line break inside a date, price, range or number and unit. Run `skills/design-copy/assets/claims_inventory.mjs` and tick every claim (item 16).
 8. **Never `none` inside a shadow token** (dark levels are `0 0 0 0 transparent`) and never `em` in a container query (use `rem`): both silently break.
 
 ## 2. Defaults at a glance
@@ -28,13 +28,13 @@ The floor under every design job. Nothing a playbook or domain reference teaches
 | Sizes | controls and rows 32, 40, 48 (`--size-control-sm` to `-lg`) |
 | Elevation | ring plus tinted two-layer shadow, levels 0 to 4 (`references/tokens.md`); dark themes lift with lighter surfaces, a ring and a top highlight |
 | Motion | fast 150ms, base 200 to 250ms, slow 300 to 400ms, page ceiling 600ms (one hero reveal per marketing page may reach 800ms, opinion); `--motion-hover`, `-enter`, `-exit` pairs; `linear` only for loops, scroll and time axes; under reduce no movement, fades up to 150ms |
-| Content | US 12-hour clock "2:05 pm", "Tue, Oct 13" with the weekday checked, numerals, sentence case, no breaks inside dates, prices and units |
+| Content | locale from `<html lang>`: en-US "Tue, Oct 13", "2:05 pm", "$1,250"; en-GB "Tue 13 Oct", "Friday 15 January 2027" (no comma, no ordinals), "10am", "5:30pm", "£75.50"; weekday checked against the year in the date; numerals, sentence case, no breaks inside dates, prices and units |
 | Focus | 2px solid `--color-focus-ring`, 2px offset, on `:focus-visible` |
 
 ## 3. Reference map
 | Need | Read |
 |---|---|
-| Every token name and value, the token schema, icons, sizes, content mechanics, a starter token file | `references/tokens.md` |
+| Every token name and value, the token schema, icons, sizes, content mechanics and the locale table, a starter token file | `references/tokens.md` |
 | The 16-item gate and how to run lint, render and the claims inventory | `references/fundamentals-checklist.md` |
 | WCAG 2.2 AA checklist, focus, targets, live regions, forms, testing protocol, and where each domain keeps its own accessibility detail | `references/accessibility.md` |
 | Design systems: component contracts, token tiers, theming, versioning | planned (`references/design-systems.md`; see `kb/status/systems.md`) |

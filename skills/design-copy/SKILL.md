@@ -40,7 +40,7 @@ Words are interface. This skill writes and reviews the copy that sits inside lay
 14. One promise, one wording. A fact repeated in the hero, facts row, perks and steps uses the same number, unit and verb every time.
 
 **Mechanics**
-15. Sentence case for headings, buttons, tabs and menus. Numerals except at the start of a sentence. One clock (US: "2:05 pm"), dates as "Tue, Oct 13" with the weekday checked, one spelling system, one perspective ("your", not "my" and "your" on one page). One mechanics sheet everywhere. No em dashes (house rule).
+15. Sentence case for headings, buttons, tabs and menus. Numerals except at the start of a sentence. The locale on `<html lang>` picks the mechanics (FOUNDATIONS locale table): one clock (en-US "2:05 pm", en-GB "5:30pm"), dates as "Tue, Oct 13" (en-US) or "Fri 15 January 2027" (en-GB) with the weekday checked, one spelling system, one perspective ("your", not "my" and "your" on one page). One mechanics sheet everywhere. No em dashes (house rule).
 16. Real copy in every layout and every state, at 390 and 1440 px; test the longest realistic string, and never let a line break inside a date, price, range or number and unit (`&nbsp;`, `&#8239;`).
 
 ## 2. Page copy: the decision rules (deep: references/01-page-copy-structure.md)
@@ -102,7 +102,7 @@ Words are interface. This skill writes and reviews the copy that sits inside lay
 ## 5a. Copy in context: the render pass (deep: references/06-copy-in-context.md)
 
 Run after the layout exists, on the screenshots and every `?state=`, before the exemplar comparison.
-1. `node skills/design-copy/assets/claims_inventory.mjs page.html --year 2026` lists every string with a number, date or comparison (and flags wrong weekdays, relative dates in money or shipping copy, and mixed clocks). Tick each line against its source. JavaScript-built strings are not seen: check them in the string table.
+1. `node skills/design-copy/assets/claims_inventory.mjs page.html --year 2026` lists every string with a number, date or comparison (and flags wrong weekdays, in US or en-GB order and honouring a year written in the date, dates in the other locale's order for the page's `lang`, relative dates in money or shipping copy, and mixed clocks; `--self-test` runs its date cases). Tick each line against its source. JavaScript-built strings are not seen: check them in the string table.
 2. Promise ledger: write each promise once, then find every restatement and make it identical.
 3. A summary sentence above a number does not repeat the number; it adds the streak, cause or caveat.
 4. A data problem gets a caveat on the affected number ("Partial since 2:05 pm"), not only an alert. Answer, caveat and alert each say something new.

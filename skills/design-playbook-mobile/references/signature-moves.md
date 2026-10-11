@@ -1,6 +1,6 @@
 # Mobile apps: signature moves
 
-**Status of this file: opinion, unmeasured.** From the judge's knowledge of the shipped apps (Things 3, Cash App, Arc, Family), not from measurements; app internals cannot be fetched here. Teardowns in `kb/teardowns/` use published screenshots, press kits or screenshots Davon supplies.
+**Status of this file: opinion, unmeasured.** From the judge's knowledge of the shipped apps (Things 3, Cash App, Arc, Family), not from measurements; app internals cannot be fetched here. Teardowns in `kb/teardowns/` use published screenshots, press kits or screenshots Davon supplies. Per-app moves with evidence: `exemplars.md`.
 
 1. **System first, brand in the details.** Things 3 uses standard navigation, lists and sheets, and puts its personality into one accent color, custom checkboxes and small, precise motion. Brand lives in content and a few controls, not in replacing the system chrome.
 2. **One bold action per screen.** Cash App gives the main action the whole screen (a large numeric keypad and one primary button). On money and commerce screens, the primary action is the largest thing after the content.

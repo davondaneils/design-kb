@@ -25,7 +25,7 @@ Canvas text size = desired on-screen size / scale.
 | 16 px (body, `--text-base`) | 44 to 48 px | about 39 px |
 | 25 px (headline, `--text-xl`) | about 70 px | about 60 px |
 | 39 px (display, `--text-3xl`) | about 108 px | about 94 px |
-Derived arithmetic; on-screen targets come from the foundation type scale. Default floor: nothing below 40 px on a 1080 canvas. Word budget for a static post: 12 words or fewer in the main message (opinion).
+Derived arithmetic; on-screen targets come from the foundation type scale. Default floor: nothing below 40 px on a 1080 canvas. Linted: put `data-canvas="1080x1350"` on the page (or run `tools/lint.mjs --canvas 1080x1350`) and `canvas-text` fails any text seen under 14 CSS px; the canvas renders at its own size only, with the responsive checks skipped. High-contrast display faces also need their hairline checked at the seen size (design-typography `references/08-high-contrast-faces.md`). Word budget for a static post: 12 words or fewer in the main message (opinion).
 
 ## Placement specs
 | Placement | Canvas | Ratio | Safe area and notes | Source |

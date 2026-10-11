@@ -74,6 +74,7 @@ Run this list on every answer, spec or review before anything else. State any ru
 - **Under 640px:** cap headings at `--text-3xl` or use fluid tokens; a 61px headline on a 360px screen fits about 8 to 10 characters per line.
 - **Caps:** labels under one line only, +0.06 to +0.12em, `text-transform`, `case` feature on.
 - **Pairing:** match x-height and construction, contrast on one axis (serif vs sans, width or weight). Similar-but-different faces conflict; use one family in two weights instead.
+- **High-contrast serifs (Didones: Bodoni, Didot, Bodoni Moda, Playfair; any face over about 8:1 stem to hairline):** size the hairline, not the font. Hairline seen = hairline per em x size x display scale (1 on a page, view / canvas on a poster: 0.361 for a 1080 post in a 390 feed). Floors: 0.5 CSS px seen on screen (1 CSS px for 1x desktop and for reversed type, opinion), 0.25 pt in print (0.5 pt reversed; prepress shops). Pick opsz by the size seen, not the canvas or the CSS size: about a third to a quarter of the font size on screen for Didones, the point size in print. Bodoni Moda measured: opsz 48 needs 139px on a page and 388px on a 1080 canvas; opsz 24 needs 56 and 156; opsz 11 needs 26 and 72. Run `assets/hairline.py`; reference 08.
 - **Condensed faces:** headlines only; never for numbers people glance at (condensed read about 11% slower, NN/g).
 - **Non-Latin scripts:** pick faces with native script support, raise line height for scripts with tall marks (Vietnamese, Thai, Devanagari, CJK; opinion: 1.6 to 1.8), never letter-space connected scripts such as Arabic, and do not fake italics in scripts that have none.
 
@@ -101,6 +102,7 @@ Run this list on every answer, spec or review before anything else. State any ru
 20. **Side bearings grow with size.** At 112px a serif E sits 5px inside the margin while the 12px label above it sits 1px in; pull display lines out by the first glyph's bearing (`translate: -0.04em 0`).
 21. **In-between weights snap down on static fonts.** `font-weight: 350` on a stack that resolves to a static family with a Light cut renders Light 300 (CSS weight fallback). Use 350 or 450 only on faces whose `@font-face` declares a weight range.
 22. **Units keep their case.** A caps label turns `340 g` into `340 G` (a different unit). Wrap units in `text-transform: none`; join number and unit with U+202F.
+23. **Weight does not save a hairline; optical size does.** In Bodoni Moda the hairline is identical at wght 400 and 700 (3.6/1000 em at opsz 48) while the stem grows 50 percent, so bolding a Didone raises contrast and dazzle. Lower `opsz` instead: the hairline grows 18 times from opsz 96 to 6. On a canvas, `font-optical-sizing: auto` maps opsz to canvas px, so a 200px poster line seen at 72px gets opsz 96: pin it by hand (reference 08).
 
 ## 6. Output format for type specs
 
@@ -126,6 +128,8 @@ Write CSS with foundation token names (`--text-*`, `--space-*`, `--color-text`, 
 | `references/05-typographic-detail.md` | Character table, numerals, caps and small caps, OpenType CSS, alignment, links |
 | `references/06-type-without-web-fonts.md` | Font CDN blocked or one self-contained file: system stacks by classification, self-hosting from local files or npm, axis pinning, inlining, metric fallbacks with italics, testing with the font blocked |
 | `references/07-type-led-pages.md` | Making the type carry a landing or brand page with no photography: display ramp, roman and italic headline, numerals as graphics, optical margins, editorial set pieces |
+| `references/08-high-contrast-faces.md` | Didones and other high-contrast faces: hairline at the seen size, screen and print floors, opsz by viewing size, Bodoni Moda measured, outlined wordmarks, the held-out poster worked through |
+| `assets/hairline.py` | Measures a face's thinnest stroke per opsz and prints the smallest safe size on a page, a canvas or in print; exits 1 when your size is too thin. Example: `python3 hairline.py BodoniModa.woff2 --axes wght=700 --size 200 --canvas 1080` |
 | `assets/font_kit.py` | `subset` (subset, pin axes, WOFF2, print `@font-face`, optional `--inline` base64) and `fallback` (size-adjust and metric overrides against a local font). Needs `pip install fonttools brotli`. Example: `python3 font_kit.py subset Newsreader.woff2 out.woff2 --axes wght=400,opsz=48 --inline` |
 
 ## 8. Related skills

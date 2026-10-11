@@ -1,6 +1,6 @@
 # Tokens and scales
 
-Mirror of `kb/FOUNDATIONS.md` v0.4.3 (token sections, icons, sizes and content mechanics). FOUNDATIONS is the source of truth: if this file and FOUNDATIONS differ, FOUNDATIONS wins and the librarian re-syncs this file. Only the editor-in-chief changes the values.
+Mirror of `kb/FOUNDATIONS.md` v0.4.4 (token sections, icons, sizes and content mechanics). FOUNDATIONS is the source of truth: if this file and FOUNDATIONS differ, FOUNDATIONS wins and the librarian re-syncs this file. Only the editor-in-chief changes the values.
 
 ## Token naming
 `--{category}-{role}-{variant}`, for example `--color-text-muted`, `--space-4`, `--text-lg`, `--radius-md`, `--duration-fast`. Semantic tokens reference primitive tokens; components only use semantic tokens.
@@ -76,11 +76,20 @@ Control and row heights (design-layout, design-product-ui): `--size-control-sm` 
 
 ## Content mechanics
 One sheet for every skill's examples and every test page (design-copy `references/06-copy-in-context.md`; quotes and dates in `kb/research/copy/06-copy-in-context.md`):
-- **Clock:** US English uses the 12-hour clock, "2:05 pm", "3 pm" (no ":00"). Polaris: "Use the 12-hour clock, followed by am or pm"; Mailchimp: "Use numerals and am or pm, with a space in between." One clock per page.
-- **Dates:** "Tue, Oct 13" in UI; absolute dates for money, shipping and deadlines, never "this Friday". Check every weekday against the year (`claims_inventory.mjs` flags a wrong one).
+- **Locale first.** The audience picks the locale, never the house default: a Glasgow festival is en-GB, a US freelancer app is en-US. Set it on `<html lang>` (`en-US`, `en-GB`); that attribute picks the row below for dates, clock, currency and spelling, and `claims_inventory.mjs` reads it (no `lang`, or plain `en`, reads as en-US). One locale per page. The held-out test built a Glasgow festival with US-only rules and nudged a UK budgeting app into US quarterly tax for no design reason (`kb/tests/heldout.md` section 6).
+- **Clock:** one clock per page, in the locale's style (table below). US English: "2:05 pm", "3 pm" (no ":00"). Polaris: "Use the 12-hour clock, followed by am or pm"; Mailchimp: "Use numerals and am or pm, with a space in between."
+- **Dates:** absolute dates for money, shipping and deadlines, never "this Friday". Check every weekday against the year the date is in: a year written in the date wins ("Fri, Jan 15, 2027" is right on a 2026 page); `claims_inventory.mjs` flags a wrong weekday in either order and a date in the other locale's order (`LOCALE`).
+
+| Locale (`lang`) | Date in UI | Date in running copy | Range | Clock | Money |
+|---|---|---|---|---|---|
+| en-US (default) | "Tue, Oct 13" | "Tuesday, October 13, 2026" | "Oct 13 to 15" | 12-hour, space: "2:05 pm", "3 pm" (Polaris, Mailchimp) | "$1,250", "$75.50" |
+| en-GB | "Tue 13 Oct" | "Friday 15 January 2027": day before month, no comma after the weekday or before the year, no ordinals | "17 to 18 April 2027", "Sat 17 to Sun 18 April" | 12-hour, no space: "10am", "5:30pm", "midday", "midnight" (GOV.UK); 24-hour "17:30" only for timetables, transport and columns of times scanned at a glance (opinion; CLDR's en-GB default) | "£1,250", "£75.50", never "£75.00" (GOV.UK) |
+| any other | `Intl.DateTimeFormat(lang)` output, house rules on top | same | "to" or the locale's word | `Intl` default: 24-hour in de, fr, es, it, nl and the Nordic locales ("14:05") | `Intl.NumberFormat(lang, { style: 'currency' })`: "1.250,00 €" (de-DE), "1 250,00 €" (fr-FR) |
+
+Sources: GOV.UK A to Z style guide (Dates: "do not use ordinal numbers", "do not use a comma between the month and year", "use 'to' in date ranges"; Times: "5:30pm (not 1730hrs)", "midday (not 12 noon, noon or 12pm)", "by 11:59pm on Tuesday 14 June"; money: "£75.50 but not £75.00"), https://guidance.publishing.service.gov.uk/writing-to-gov-uk-standards/style-guides/a-to-z-style-guide; ONS content style guide, dates and time ("Do not use the 24-hour clock": "9am 10:30am midday"); CLDR 47 through Node 22 ICU 77: `Intl.DateTimeFormat('en-GB', { hour: 'numeric', minute: '2-digit' })` gives "14:05", and with weekday and year it gives "Fri, 15 January 2027": drop that comma by hand. Currency: the symbol comes from the currency, the format from the locale; when the symbol is ambiguous on the page write the code or the prefixed symbol `Intl` prints ("US$1,250.00" under en-GB, "CA$" under en-US).
 - **No line breaks inside** a date, a time, a price, a range or a number and its unit: no-break spaces inside "Tue,&nbsp;Oct&nbsp;13", "2:05&nbsp;pm", "1,100&nbsp;to&nbsp;2,100"; a narrow no-break space before units ("340&#8239;g").
 - **Numbers:** numerals, commas from 1,000, spelled out only at the start of a sentence (Polaris, Mailchimp); a true minus for negatives in data.
-- **Case and spelling:** sentence case for headings, buttons, menus and tabs (Microsoft, GOV.UK); US spelling for US brands ("meters").
+- **Case and spelling:** sentence case for headings, buttons, menus and tabs (Microsoft, GOV.UK); spelling follows the locale: US for en-US ("meters", "program"), UK for en-GB ("metres", "programme", "colour").
 - **Truth:** every number in copy matches the data or source it summarises; each promise has one wording; one verb per action across the page. The combined pages carried three false numbers past the critic, the tester and a blind rank (design-copy pipeline notes); only a claim-by-claim check catches them.
 
 ## Token schema

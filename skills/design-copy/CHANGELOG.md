@@ -1,5 +1,9 @@
 # design-copy changelog
 
+## 2026-10-11 (held-out test fixes)
+- `assets/claims_inventory.mjs`: a year written in the date wins over `--year` ("Fri, Jan 15, 2027" under `--year 2026` was a false WEEKDAY flag, `kb/tests/heldout.md`); reads en-GB dates ("Fri 15 January 2027", "Saturday 17 April") and weekday ranges ("Sat 17 & Sun 18 April 2027"); a WEEKDAY flag that fits a year the page writes says which `--year` to pass; new LOCALE flag (a date in the other locale's order for `<html lang>`, an ordinal on en-GB) and STYLE warning (am/pm spacing, weekday comma); `--lang` override; `--self-test` with 17 date cases.
+- `references/06-copy-in-context.md` rule 4 and SKILL rule 15 follow the FOUNDATIONS v0.4.4 locale table.
+
 ## 0.2.1 (2026-10-10, editor-in-chief)
 - `assets/claims_inventory.mjs`: PROMISE warning (one promise said with two values or units, with label-and-value pairs and date intervals read together) and PERIOD warning (two comparison bases on one page); `--render` reads the rendered text through `tools/browser.mjs`, so script-built strings and `?state=` URLs are inventoried; `--strict` turns the warnings into exit 1. From the round 3 critic: "48h", "next day" and "ships by Thu" for one promise passed with exit 0 (`kb/reviews/round3-critic.md`).
 

@@ -3,10 +3,20 @@
 // Lists every visible sentence on a page that carries a checkable claim (a number, percent, price, date,
 // weekday, duration or comparison) so a reviewer can tick each one against the data it summarises.
 // It also flags three mechanical errors on its own:
-//   WEEKDAY  a "Wed, Oct 7" style date whose weekday is wrong for --year
+//   WEEKDAY  a date with a weekday whose weekday is wrong: "Wed, Oct 7", "Friday, January 15, 2027" (US order) and
+//            "Fri 15 January 2027", "Sat 17 April" (en-GB order) are all read. A year written in the date wins over
+//            --year ("Fri, Jan 15, 2027" on a page checked with --year 2026 is a Friday, not a flag); a weekday-and-day
+//            range borrows the month and year of its partner ("Sat 17 & Sun 18 April 2027"). A date with no year uses
+//            --year; when its weekday fits a year the page writes elsewhere, the flag says so (pass that --year)
+//   LOCALE   a date in the other locale's order for the page's <html lang> (FOUNDATIONS Content mechanics, Locale):
+//            month-first ("Jan 15", "Fri, 15 Jan") or an ordinal ("15th") on an en-GB page, day-first ("15 January")
+//            on an en-US page. No lang, or plain "en", reads as en-US. --lang en-GB overrides the attribute
 //   RELATIVE a relative day word ("this Friday", "tomorrow") in money, shipping or deadline copy (schedules such as
 //            "every Tuesday" pass; low-stakes recency such as "roasted Tuesday" passes unless the sentence names money or shipping)
 //   CLOCK    a 24-hour time ("14:05") when the page also uses am/pm, or vice versa (one clock per page)
+// A third warning, STYLE (judged): a date or time written in another locale's style: "10 am" or "Fri, 15 January" on
+// en-GB (GOV.UK writes "10am", "5:30pm" and "by 11:59pm on Tuesday 14 June"), "10am" or "14:05" on en-US (house
+// style "10 am", "2:05 pm"). Intl.DateTimeFormat('en-GB') prints "Fri, 15 January 2027" with a comma: drop it.
 // Two warnings (judged; added after the round 3 critic, kb/reviews/round3-critic.md, gate item 16):
 //   PROMISE  one promise said with different values or units: shipping time ("48 h", "shipped in 48 hours", "ship
 //            the next day", "roasted Tue, Oct 13, ships by Thu, Oct 15"), tasting or checking counts ("tasted twice"
@@ -19,20 +29,24 @@
 // Strings built by JavaScript at runtime are not seen unless you pass --render (Chromium via tools/browser.mjs reads
 // the rendered text, so ?state= URLs work too).
 //
-// Usage: node skills/design-copy/assets/claims_inventory.mjs page.html[?state=x] [--year 2026] [--render] [--strict]
-// Exit code: 0 when nothing is flagged, 1 when a WEEKDAY, RELATIVE or CLOCK flag fires (or, with --strict, a PROMISE
+// Usage: node skills/design-copy/assets/claims_inventory.mjs page.html[?state=x] [--year 2026] [--lang en-GB] [--render] [--strict]
+//        node skills/design-copy/assets/claims_inventory.mjs --self-test   (runs the date parser's test cases)
+// Exit code: 0 when nothing is flagged, 1 when a WEEKDAY, LOCALE, RELATIVE or CLOCK flag fires (or, with --strict, a PROMISE
 // or PERIOD warning), 2 on usage error.
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const args = process.argv.slice(2);
-const file = args.find((a, i) => !a.startsWith('--') && args[i - 1] !== '--year');
+const file = args.find((a, i) => !a.startsWith('--') && args[i - 1] !== '--year' && args[i - 1] !== '--lang');
+const li = args.indexOf('--lang');
+let lang = li >= 0 ? args[li + 1] : null;
 const yi = args.indexOf('--year');
 const year = yi >= 0 ? Number(args[yi + 1]) : new Date().getFullYear();
 const render = args.includes('--render');
 const strict = args.includes('--strict');
 const filePath = file ? file.split('?')[0] : '';
+if (args.includes('--self-test')) selfTest();
 if (!file || !fs.existsSync(filePath)) { console.error('Usage: node claims_inventory.mjs page.html[?state=x] [--year 2026] [--render] [--strict]'); process.exit(2); }
 
 const decode = (s) => s.replace(/&nbsp;|&#8239;|&thinsp;| | | /g, ' ').replace(/&ndash;/g, '-').replace(/&middot;/g, '·')
@@ -47,12 +61,14 @@ if (render) {
     const page = await (await browser.newContext({ viewport: { width: 1440, height: 900 } })).newPage();
     await page.goto(toUrl(file), { waitUntil: 'load' });
     await page.waitForTimeout(300);
+    if (!lang) lang = await page.evaluate(() => document.documentElement.lang);
     blocks = await page.evaluate(() => document.body.innerText.split(/\n+/)
       .concat([...document.querySelectorAll('[aria-label], [alt], [placeholder]')].map((e) => e.getAttribute('aria-label') || e.getAttribute('alt') || e.getAttribute('placeholder'))));
   } finally { await browser.close(); }
   blocks = blocks.map((b) => decode(b || '').replace(/\s+/g, ' ').trim()).filter(Boolean);
 } else {
   let html = fs.readFileSync(filePath, 'utf8');
+  if (!lang) lang = (html.match(/<html[^>]*\slang="([^"]+)"/i) || [])[1];
   const attrs = [...html.matchAll(/\s(?:aria-label|alt|placeholder)="([^"]+)"/g)].map((m) => m[1]);
   html = html.replace(/<(script|style|svg)[\s\S]*?<\/\1>/gi, ' ');
   blocks = html.split(/<\/(?:p|li|h[1-6]|td|th|dt|dd|caption|figcaption|button|a|label|strong|span|div)>/i)
@@ -60,27 +76,42 @@ if (render) {
     .concat(attrs.map(decode));
 }
 
-const MONTHS = { Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5, Jul: 6, Aug: 7, Sep: 8, Sept: 8, Oct: 9, Nov: 10, Dec: 11 };
+// Day-first English locales; en-US (or no lang, or plain "en") is month-first. Clock style is checked for en-GB and en-US.
+const us = !lang || /^en(?:-US)?$/i.test(lang);
+const ukClock = /^en-GB/i.test(lang || '');
+const gb = /^en-(?:GB|IE|AU|NZ|IN|ZA)\b/i.test(lang || '');
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const claim = /\d|%|\$|×|\b(?:Mon|Tues?|Wed|Thu|Fri|Sat|Sun)[a-z]*day\b|\btomorrow\b|\btoday\b|\byesterday\b|\b(?:under|over|faster|cheaper|more|less|fewer|up|down)\b/i;
 const stakes = /\$|ship|deliver|arriv|order|pay|charge|renew|cancel|deadline|due|expire|refund/i;
 // A bare or this/next weekday is relative; "every Tuesday" and "Tuesdays" are schedules and pass.
 const relative = /(?<!every\s)\b(?:this\s|next\s|last\s)?(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\b(?!s)|\btomorrow\b|\byesterday\b/i;
 
+// Years the page writes in its dates: a weekday that is wrong for --year but right for one of them gets a hint.
+const pageYears = [...new Set(blocks.flatMap((b) => parseDates(b, year).filter((d) => d.yearWritten).map((d) => d.y)))];
 const seen = new Set();
 const flags = [];
 const rows = [];
 let has24 = false, has12 = false;
+const clockStyle = new Set();
 for (const b of blocks) {
   if (seen.has(b) || !claim.test(b)) continue;
   seen.add(b);
   rows.push(b);
-  for (const m of b.matchAll(/\b(Mon|Tue|Wed|Thu|Fri|Sat|Sun),\s+([A-Z][a-z]{2,3})\s+(\d{1,2})\b/g)) {
-    const mo = MONTHS[m[2]];
-    if (mo === undefined) continue;
-    const real = DAYS[new Date(Date.UTC(year, mo, Number(m[3]))).getUTCDay()];
-    if (real !== m[1]) flags.push(`WEEKDAY  "${m[0]}" is a ${real} in ${year}: ${b}`);
+  for (const d of parseDates(b, year)) {
+    if (d.wd !== undefined && d.wd !== d.real) {
+      const fits = d.yearWritten ? [] : pageYears.filter((y) => y !== d.y && new Date(Date.UTC(y, d.mo, d.d)).getUTCDay() === d.wd);
+      flags.push(`WEEKDAY  "${d.text}" is a ${DAYS[d.real]} in ${d.y}${fits.length ? ` (right in ${fits[0]}, which the page writes: if that is the year, run with --year ${fits[0]})` : ''}: ${b}`);
+    }
+    const wd = d.wd !== undefined ? DAYS[d.real] : '';
+    if (ukClock && d.order === 'gb' && d.wd !== undefined && /^[A-Za-z]+,/.test(d.text)) clockStyle.add(`"${d.text}" (en-GB: no comma after the weekday, "Tuesday 14 June"; GOV.UK)`);
+    if (gb && d.order === 'us') flags.push(`LOCALE   "${d.text}" is month-first; with lang="${lang}" write "${wd ? wd + ' ' : ''}${d.d} ${MONTH_NAMES[d.mo]}${d.yearWritten ? ' ' + d.y : ''}": ${b}`);
+    if (us && d.order === 'gb') flags.push(`LOCALE   "${d.text}" is day-first; with lang="${lang || 'en-US'}" write "${wd ? wd + ', ' : ''}${MONTH_NAMES[d.mo].slice(0, 3)} ${d.d}${d.yearWritten ? ', ' + d.y : ''}", or set lang="en-GB" if the audience is British: ${b}`);
   }
+  if (gb) for (const m of b.matchAll(/\b\d{1,2}(?:st|nd|rd|th)\s+(?:of\s+)?(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*/g)) flags.push(`LOCALE   "${m[0]}" uses an ordinal; en-GB dates take none (GOV.UK, "17 April"): ${b}`);
+  if (ukClock && /\b\d{1,2}(?::\d\d)?\s(?:am|pm)\b/i.test(b)) clockStyle.add(`"${b.match(/\b\d{1,2}(?::\d\d)?\s(?:am|pm)\b/i)[0]}" (en-GB writes "10am", "5:30pm", no space; GOV.UK)`);
+  if (us && /\b\d{1,2}(?::\d\d)?(?:am|pm)\b/i.test(b)) clockStyle.add(`"${b.match(/\b\d{1,2}(?::\d\d)?(?:am|pm)\b/i)[0]}" (en-US house style is "10 am", "2:05 pm"; Mailchimp)`);
+  if (us && /\b(?:1[3-9]|2[0-3]):[0-5]\d\b/.test(b)) clockStyle.add(`"${b.match(/\b(?:1[3-9]|2[0-3]):[0-5]\d\b/)[0]}" (en-US uses the 12-hour clock; Polaris)`);
   const unscheduled = b.replace(/\bevery\s+\w+day(?:s)?(?:(?:,\s*|\s+and\s+|\s+or\s+)\w+day(?:s)?)*/gi, ' ');
   if (relative.test(unscheduled) && stakes.test(b)) flags.push(`RELATIVE "${unscheduled.match(relative)[0].trim()}" in stakes copy, use an absolute date: ${b}`);
   if (/\b(?:1[3-9]|2[0-3]):[0-5]\d\b/.test(b)) has24 = true;
@@ -122,7 +153,6 @@ const TOPICS = [
 const RIGHT_VERB = /\b(?:skip|swap|pause|cancel|resume|change|edit|delay|move|return|exchange)\b/gi;
 const RV = '(?:skip|swap|pause|cancel|resume|change|edit|delay|move|return|exchange)';
 const RIGHTS = new RegExp('\\b' + RV + '(?:(?:\\s*,\\s*|\\s+)(?:(?:or|and)\\s+)?' + RV + ')+\\b', 'gi');
-const DATE = /\b(Mon|Tue|Wed|Thu|Fri|Sat|Sun),\s+([A-Z][a-z]{2,3})\s+(\d{1,2})\b/g;
 const promises = {};
 const note = (topic, value, text) => { ((promises[topic] ||= {})[value] ||= new Set()).add(text.slice(0, 90)); };
 const seenP = new Set();
@@ -133,13 +163,13 @@ for (let i = 0; i < blocks.length; i++) {
   if (seenP.has(b)) continue;
   seenP.add(b);
   // Two dates around a shipping verb: the interval is the promise ("roasted Tue, Oct 13, ships by Thu, Oct 15").
-  const dates = [...b.matchAll(DATE)];
+  const dates = parseDates(b, year).filter((d) => d.wd !== undefined);
   let rest = b;
   if (dates.length >= 2 && TOPICS[0].key.test(b.slice(dates[0].index, dates[dates.length - 1].index))) {
-    const d = (m) => Date.UTC(year, MONTHS[m[2]], Number(m[3]));
-    const days = Math.round((d(dates[dates.length - 1]) - d(dates[0])) / 864e5);
+    const at = (d) => Date.UTC(d.y, d.mo, d.d);
+    const days = Math.round((at(dates[dates.length - 1]) - at(dates[0])) / 864e5);
     if (days > 0 && days < 60) note('shipping time', days * 24 + ' h', b);
-    rest = b.replace(DATE, ' ');
+    for (const d of [...dates].reverse()) rest = rest.slice(0, d.index) + ' ' + rest.slice(d.index + d.text.length);
   }
   // Account rights said as a verb list ("Skip, swap or cancel online" against "Skip, pause or cancel online"): the
   // set of verbs is the promise, so two lists with different verbs are two promises (round 4.1 critic, coffee item 16).
@@ -155,6 +185,7 @@ for (let i = 0; i < blocks.length; i++) {
   }
 }
 const warns = [];
+if (clockStyle.size) warns.push(`STYLE    dates or times written in another locale's style for ${lang || 'en-US'}: ${[...clockStyle].slice(0, 4).join('; ')}. FOUNDATIONS Content mechanics, Locale.`);
 for (const [topic, vals] of Object.entries(promises)) {
   const keys = Object.keys(vals);
   if (keys.length < 2) continue;
@@ -179,3 +210,73 @@ if (warns.length) { warns.forEach((w) => console.log(w)); console.log(''); }
 if (flags.length) { flags.forEach((f) => console.log(f)); process.exit(1); }
 if (strict && warns.length) process.exit(1);
 console.log(`No mechanical flags${warns.length ? ` (${warns.length} judged warning${warns.length > 1 ? 's' : ''} above: fix each or name it in the hand-over)` : ''}. Now tick every line above against its source: chart data, price list, policy, log.`);
+
+// ---- Dates: US order ("Fri, Jan 15, 2027", "Friday, January 15") and en-GB order ("Fri 15 January 2027", "Sat 17 Apr") ----
+function parseDates(text, fallbackYear) {
+  const WD = '(Mon(?:day)?|Tue(?:s|sday)?|Wed(?:nesday)?|Thu(?:r|rs|rsday)?|Fri(?:day)?|Sat(?:urday)?|Sun(?:day)?)';
+  const MO = '(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|June?|July?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)';
+  const ORD = '(?:st|nd|rd|th)?';
+  const out = [];
+  const taken = [];
+  const free = (i, len) => !taken.some(([a, b]) => i < b && i + len > a);
+  const push = (index, str, o) => {
+    if (!free(index, str.length)) return;
+    taken.push([index, index + str.length]);
+    const mo = monthIndex(o.mo);
+    const y = o.year ? Number(o.year) : fallbackYear;
+    const d = Number(o.day);
+    if (mo === undefined || d < 1 || d > 31) return;
+    out.push({ index, text: str.trim(), wd: o.wd ? dayIndex(o.wd) : undefined, mo, d, y, yearWritten: !!o.year, order: o.order, real: new Date(Date.UTC(y, mo, d)).getUTCDay() });
+  };
+  // A weekday-and-day range borrows its partner's month and year: "Sat 17 & Sun 18 April 2027", "Sat 17 to Sun 18 April".
+  const range = new RegExp(`\\b${WD}\\s+(\\d{1,2})${ORD}\\s*(?:&|and|to|-|–|/)\\s*${WD}\\s+(\\d{1,2})${ORD}\\s+${MO}\\b\\.?(?:,?\\s+(\\d{4})\\b)?`, 'dg');
+  for (const m of text.matchAll(range)) {
+    const end = m.index + m[0].length, second = m.indices[3][0];
+    if (!free(m.index, m[0].length)) continue;
+    const o = { mo: m[5], year: m[6], order: 'gb' };
+    push(m.index, text.slice(m.index, m.indices[2][1]), { ...o, wd: m[1], day: m[2] });
+    push(second, text.slice(second, end), { ...o, wd: m[3], day: m[4] });
+  }
+  // US: weekday, month day[, year]
+  for (const m of text.matchAll(new RegExp(`\\b${WD},?\\s+${MO}\\.?\\s+(\\d{1,2})${ORD}\\b(?:,?\\s+(\\d{4})\\b)?`, 'g'))) push(m.index, m[0], { wd: m[1], mo: m[2], day: m[3], year: m[4], order: 'us' });
+  // en-GB: weekday[,] day month[ year]  (a comma after the weekday is still day-first)
+  for (const m of text.matchAll(new RegExp(`\\b${WD},?\\s+(\\d{1,2})${ORD}\\s+(?:of\\s+)?${MO}\\b\\.?(?:,?\\s+(\\d{4})\\b)?`, 'g'))) push(m.index, m[0], { wd: m[1], day: m[2], mo: m[3], year: m[4], order: 'gb' });
+  // No weekday: "January 15, 2027", "Jan 15" (US) and "15 January 2027", "15 Jan" (en-GB). Checked for order only.
+  for (const m of text.matchAll(new RegExp(`\\b${MO}\\.?\\s+(\\d{1,2})${ORD}\\b(?!\\s*(?:%|:|\\d))(?:,?\\s+(\\d{4})\\b)?`, 'g'))) push(m.index, m[0], { mo: m[1], day: m[2], year: m[3], order: 'us' });
+  for (const m of text.matchAll(new RegExp(`\\b(\\d{1,2})${ORD}\\s+${MO}\\b\\.?(?:,?\\s+(\\d{4})\\b)?`, 'g'))) push(m.index, m[0], { day: m[1], mo: m[2], year: m[3], order: 'gb' });
+  return out.sort((a, b) => a.index - b.index);
+}
+function monthIndex(name) { return ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'].indexOf(String(name).slice(0, 3).toLowerCase()) === -1 ? undefined : ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'].indexOf(String(name).slice(0, 3).toLowerCase()); }
+function dayIndex(name) { return ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'].indexOf(String(name).slice(0, 3).toLowerCase()); }
+
+function selfTest() {
+  // [text, fallback year, expected list of {d, mo, y, order, ok}] where ok = weekday matches the date.
+  const cases = [
+    ['Due Fri, Jan 15, 2027', 2026, [{ d: 15, mo: 0, y: 2027, order: 'us', ok: true }]], // the held-out false positive
+    ['Due Fri, Jan 15', 2027, [{ d: 15, mo: 0, y: 2027, order: 'us', ok: true }]],
+    ['Due Fri, Jan 15', 2026, [{ d: 15, mo: 0, y: 2026, order: 'us', ok: false }]], // no year written: --year applies
+    ['Friday, January 15, 2027', 2026, [{ d: 15, mo: 0, y: 2027, order: 'us', ok: true }]],
+    ['Tue, Oct 13', 2026, [{ d: 13, mo: 9, y: 2026, order: 'us', ok: true }]],
+    ['Fri 15 January 2027', 2026, [{ d: 15, mo: 0, y: 2027, order: 'gb', ok: true }]],
+    ['Fri 15 Jan', 2027, [{ d: 15, mo: 0, y: 2027, order: 'gb', ok: true }]],
+    ['Saturday 17 April', 2027, [{ d: 17, mo: 3, y: 2027, order: 'gb', ok: true }]],
+    ['Sun 18 April 2027', 2026, [{ d: 18, mo: 3, y: 2027, order: 'gb', ok: true }]],
+    ['Sat 17 April 2027', 2026, [{ d: 17, mo: 3, y: 2027, order: 'gb', ok: true }]],
+    ['Fri 17 April 2027', 2026, [{ d: 17, mo: 3, y: 2027, order: 'gb', ok: false }]],
+    ['Sat 17 & Sun 18 April 2027', 2026, [{ d: 17, mo: 3, y: 2027, order: 'gb', ok: true }, { d: 18, mo: 3, y: 2027, order: 'gb', ok: true }]],
+    ['Sat 17 to Mon 18 April 2027', 2026, [{ d: 17, mo: 3, y: 2027, order: 'gb', ok: true }, { d: 18, mo: 3, y: 2027, order: 'gb', ok: false }]],
+    ['Doors 17 April 2027', 2026, [{ d: 17, mo: 3, y: 2027, order: 'gb' }]],
+    ['Ships January 15', 2026, [{ d: 15, mo: 0, y: 2026, order: 'us' }]],
+    ['Fri, 15 Jan 2027', 2026, [{ d: 15, mo: 0, y: 2027, order: 'gb', ok: true }]],
+    ['Up 12% in May 2026', 2026, []],
+  ];
+  let bad = 0;
+  for (const [text, yr, want] of cases) {
+    const got = parseDates(text, yr).map((x) => ({ d: x.d, mo: x.mo, y: x.y, order: x.order, ...(x.wd !== undefined ? { ok: x.wd === x.real } : {}) }));
+    const pass = JSON.stringify(got) === JSON.stringify(want);
+    if (!pass) bad++;
+    console.log(`${pass ? 'pass' : 'FAIL'}  ${text} (--year ${yr})${pass ? '' : `\n      want ${JSON.stringify(want)}\n      got  ${JSON.stringify(got)}`}`);
+  }
+  console.log(bad ? `${bad} of ${cases.length} date cases failed` : `all ${cases.length} date cases pass`);
+  process.exit(bad ? 1 : 0);
+}

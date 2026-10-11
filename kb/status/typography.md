@@ -16,6 +16,8 @@ v0.2 on branch `wave/typography`. Critic approved after 2 rounds (citation batch
 
 Merged into `restructure` on 2026-10-09; the shared-file changes from its pipeline notes are applied (FOUNDATIONS v0.3, director, playbooks, lint). Combined test on 2026-10-09 (`kb/tests/combined.md`): both pages built through design-director with every skill pass the lint with 0 fails in every state.
 
+2026-10-11 (fix/heldout-gaps): reference 08 high-contrast faces and `assets/hairline.py` (Bodoni Moda measured at opsz 6 to 96). Needs a critic pass.
+
 ## Next step
 1. Davon ranks the combined blind pairs (`kb/tests/combined/blind/`) and this wave's own pairs, if any.
 2. Librarian ships on approval and re-runs `node tools/rollup.mjs`.

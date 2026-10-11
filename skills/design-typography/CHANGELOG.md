@@ -1,5 +1,9 @@
 # Changelog: design-typography
 
+## 0.3.0 (2026-10-11, editor-in-chief, from the held-out test)
+- New `references/08-high-contrast-faces.md` and `assets/hairline.py`: Didone and high-contrast rule (hairline at the seen size; 0.5 CSS px screen and 0.25 pt print floors, doubled reversed; opsz by viewing size; Bodoni Moda measured at opsz 6 to 96; outlined wordmarks freeze opsz). The held-out poster's Bodoni Moda wordmark at opsz 48 rendered a 0.36 CSS px hairline in a 390 feed (`kb/tests/heldout.md`).
+- SKILL section 4 gains the high-contrast decision rule; section 5 gains move 23 (weight does not save a hairline).
+
 ## 0.2.1 (2026-10-09, editor-in-chief)
 - FOUNDATIONS v0.3 adopts `52ch`, the display ramp and leading 0.95 for display lines; stale "(planned)" hand-offs to design-product-ui removed. Lint now checks straight quotes, number-range hyphens, uppercased units, faked styles, doubled list markers and fallback reflow.
 
