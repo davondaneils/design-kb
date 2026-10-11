@@ -1,0 +1,223 @@
+{
+  "file": "kb/tests/design-search/fixtures/bad-markup.html",
+  "expect": "public",
+  "date": "2026-10-10T16:46:41.260Z",
+  "checks": {
+    "size": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "HTML 1 KB uncompressed (Googlebot cut: 2 MB)"
+        }
+      ]
+    },
+    "head-order": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "search and social tags end by byte 133"
+        }
+      ]
+    },
+    "title": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "repeated words in title: coffee"
+        }
+      ],
+      "info": [
+        {
+          "message": "\"Coffee | Coffee Roasters | Best Coffee Portland Coffee\" (54 chars)"
+        }
+      ]
+    },
+    "description": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "meta description is 7 characters; about 120 to 160 shows whole on most results (practitioner, Google sets no limit)"
+        },
+        {
+          "message": "no number in the description: lead with comparable facts (price, place, date, spec)"
+        }
+      ],
+      "info": [
+        {
+          "message": "7 chars"
+        }
+      ]
+    },
+    "robots": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "no max-image-preview:large: Google may show only a small thumbnail from this page"
+        }
+      ],
+      "info": []
+    },
+    "canonical": {
+      "fail": [
+        {
+          "message": "0 canonical links, want exactly 1"
+        }
+      ],
+      "warn": [],
+      "info": []
+    },
+    "headings": {
+      "fail": [
+        {
+          "message": "heading level skips from h1 to h3: \"Ethiopia Guji\""
+        }
+      ],
+      "warn": [
+        {
+          "message": "text \"Welcome\" (49px) is bigger than the h1 (32px) in the first screen"
+        }
+      ],
+      "info": [
+        {
+          "message": "h1 Coffee\n    h3 Ethiopia Guji\n    h3 Colombia Huila"
+        }
+      ]
+    },
+    "links": {
+      "fail": [
+        {
+          "message": "2 links with no real destination (href \"#\", empty or javascript:). Crawlers follow only real <a href> URLs",
+          "examples": [
+            "Read more",
+            "Shop"
+          ]
+        }
+      ],
+      "warn": [
+        {
+          "message": "1 vague anchors: Read more"
+        }
+      ],
+      "info": [
+        {
+          "message": "2 links, 2 unique destinations"
+        }
+      ]
+    },
+    "dates": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "1 relative dates outside <time datetime>: a quoted passage loses its week. \"Roasted Tuesday\""
+        }
+      ],
+      "info": []
+    },
+    "social": {
+      "fail": [
+        {
+          "message": "missing og:title (one of the four required Open Graph properties)"
+        },
+        {
+          "message": "missing og:type (one of the four required Open Graph properties)"
+        },
+        {
+          "message": "missing og:image (one of the four required Open Graph properties)"
+        },
+        {
+          "message": "missing og:url (one of the four required Open Graph properties)"
+        }
+      ],
+      "warn": [
+        {
+          "message": "no twitter:card; X falls back to a small summary card"
+        }
+      ],
+      "info": []
+    },
+    "favicon": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "no icon link; Google shows a favicon next to every result"
+        }
+      ],
+      "info": []
+    },
+    "structured-data": {
+      "fail": [
+        {
+          "message": "block 2: JSON parse error: Expected double-quoted property name in JSON at position 83 (line 2 column 83)"
+        },
+        {
+          "message": "3 Product nodes on one page: Google product rich results only support pages that focus on a single product. Mark up each product page instead"
+        },
+        {
+          "message": "block1[2]: unknown property \"brandName\" on Product"
+        },
+        {
+          "message": "block1[2]: \"openingHours\" is not a property of Product"
+        },
+        {
+          "message": "block1[4]: unknown type CoffeeShop"
+        }
+      ],
+      "warn": [],
+      "info": [
+        {
+          "message": "block 1: JSON-LD 1.1 expansion ok (jsonld.js, safe mode), 21 triples"
+        },
+        {
+          "message": "2 JSON-LD blocks, 7 typed nodes: Product, Offer, Product, Offer, Product, FAQPage, CoffeeShop"
+        }
+      ]
+    },
+    "google": {
+      "fail": [
+        {
+          "message": "block1[0]: Product with offers (merchant listing): `image` is required"
+        },
+        {
+          "message": "block1[0].offers: Offer: merchant listings need a price greater than zero"
+        },
+        {
+          "message": "block1[0].offers: Offer: `price` must be a number with a dot decimal, no currency symbol"
+        },
+        {
+          "message": "block1[2]: Product: needs `offers`, `review` or `aggregateRating`"
+        }
+      ],
+      "warn": [
+        {
+          "message": "block1[0].offers: Offer: `availability` recommended"
+        },
+        {
+          "message": "block1[3]: FAQPage: FAQ rich results were removed from Google Search on 2026-05-07. Keep only if the visible page is a real FAQ; it earns no rich result"
+        }
+      ],
+      "info": []
+    },
+    "visible-match": {
+      "fail": [
+        {
+          "message": "block1[0].offers.price \"$21\" does not appear in the visible page text"
+        },
+        {
+          "message": "block1[1].offers.price \"19\" does not appear in the visible page text"
+        },
+        {
+          "message": "block1[2].name \"Mystery Blend\" does not appear in the visible page text"
+        }
+      ],
+      "warn": [],
+      "info": []
+    }
+  },
+  "summary": {
+    "fail": 19,
+    "warn": 11,
+    "pass": false
+  }
+}

@@ -1,0 +1,1984 @@
+{
+ "url": "https://linear.app",
+ "measuredAt": "2026-10-10T16:52:00.211Z",
+ "method": "Playwright Chromium, getComputedStyle on visible elements, light scheme, after scroll-through and fonts.ready",
+ "widths": {
+  "390": {
+   "status": 200,
+   "finalUrl": "https://linear.app/",
+   "width": 390,
+   "h1Style": {
+    "font": "\"Inter Variable\" 38px/41.8px w510 ls -0.836px",
+    "color": "#f7f8f8",
+    "top": 196,
+    "width": 343,
+    "align": "start"
+   },
+   "title": "Linear – The system for product development",
+   "description": "Purpose-built for planning and building products with AI agents.",
+   "pageHeight": 5876,
+   "bodyBg": "#08090a",
+   "htmlBg": "#08090a",
+   "fontsLoaded": [
+    "Inter Variable 100 900 normal",
+    "Berkeley Mono 100 900 normal"
+   ],
+   "families": [
+    {
+     "v": "\"Inter Variable\", \"SF Pro Display\"",
+     "n": 3499
+    },
+    {
+     "v": "\"Berkeley Mono\", ui-monospace",
+     "n": 55
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "15px / lh 24px / w400 / ls -0.165px",
+     "n": 913,
+     "ex": "span: Purpose-built for planning and building products. Designed f"
+    },
+    {
+     "v": "12px / lh 19.2px / w300 / ls -0.048px",
+     "n": 378,
+     "ex": "span: Has anyone been looking into the iOS startup performance iss"
+    },
+    {
+     "v": "13px / lh 19.5px / w400 / ls -0.13px",
+     "n": 271,
+     "ex": "span: Loops →"
+    },
+    {
+     "v": "24px / lh 31.92px / w400 / ls -0.288px",
+     "n": 249,
+     "ex": "blockquote: You’ll probably build a better product, just because of the "
+    },
+    {
+     "v": "24px / lh 31.92px / w510 / ls -0.288px",
+     "n": 237,
+     "ex": "h2: Purpose-built for modern teams with AI workflows at its core"
+    },
+    {
+     "v": "12px / lh 14px / w400 / ls normal",
+     "n": 231,
+     "ex": "span: created the issue via on behalf of"
+    },
+    {
+     "v": "13px / lh 20px / w400 / ls -0.039px",
+     "n": 156,
+     "ex": "p: Fix the dimmed ride rows that never reset and open a PR"
+    },
+    {
+     "v": "38px / lh 41.8px / w510 / ls -0.836px",
+     "n": 137,
+     "ex": "span: The product"
+    },
+    {
+     "v": "14px / lh 21px / w400 / ls -0.182px",
+     "n": 135,
+     "ex": "p: Render UI before sync when minimum required state is present"
+    },
+    {
+     "v": "12px / lh 16.8px / w400 / ls normal",
+     "n": 122,
+     "ex": "span: ·"
+    },
+    {
+     "v": "13px / lh 16px / w400 / ls -0.13px",
+     "n": 120,
+     "ex": "span: Right now we show a spinner forever, which makes it look lik"
+    },
+    {
+     "v": "12px / lh 14px / w510 / ls normal",
+     "n": 113,
+     "ex": "button: Workspace"
+    },
+    {
+     "v": "13px / lh normal / w510 / ls normal",
+     "n": 101,
+     "ex": "span: Pulse"
+    },
+    {
+     "v": "13px / lh 19.5px / w510 / ls -0.13px",
+     "n": 52,
+     "ex": "span: New"
+    },
+    {
+     "v": "15px / lh 24px / w510 / ls -0.165px",
+     "n": 48,
+     "ex": "span: Purpose-built"
+    },
+    {
+     "v": "12px / lh 19.2px / w400 / ls -0.165px",
+     "n": 37,
+     "ex": "span: @Linear"
+    },
+    {
+     "v": "14px / lh 21px / w510 / ls -0.182px",
+     "n": 34,
+     "ex": "span: Gabriel Peal"
+    },
+    {
+     "v": "12px / lh 16px / w400 / ls normal",
+     "n": 28,
+     "ex": "span: / 84"
+    },
+    {
+     "v": "11px / lh 17.6px / w510 / ls normal",
+     "n": 28,
+     "ex": "span: 4:52 PM"
+    },
+    {
+     "v": "16px / lh 44px / w510 / ls normal",
+     "n": 24,
+     "ex": "a: Get started"
+    },
+    {
+     "v": "12px / lh 19.2px / w590 / ls -0.132px",
+     "n": 23,
+     "ex": "span: didier"
+    },
+    {
+     "v": "12px / lh 16.8px / w510 / ls normal",
+     "n": 19,
+     "ex": "span: Jori"
+    },
+    {
+     "v": "20px / lh 26.6px / w590 / ls -0.24px",
+     "n": 17,
+     "ex": "h3: Faster app launch"
+    },
+    {
+     "v": "12px / lh 20px / w400 / ls -0.182px",
+     "n": 13,
+     "ex": "code: vehicle_state"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#8a8f98",
+     "n": 1654
+    },
+    {
+     "v": "#d0d6e0",
+     "n": 851
+    },
+    {
+     "v": "#62666d",
+     "n": 362
+    },
+    {
+     "v": "#f7f8f8",
+     "n": 361
+    },
+    {
+     "v": "#08090a",
+     "n": 319
+    },
+    {
+     "v": "#6d78d5",
+     "n": 7
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#8a8f98 on #08090a",
+     "n": 1070,
+     "ex": "6.13:1"
+    },
+    {
+     "v": "#d0d6e0 on #08090a",
+     "n": 440,
+     "ex": "13.64:1"
+    },
+    {
+     "v": "#8a8f98 on #0f1011",
+     "n": 383,
+     "ex": "5.86:1"
+    },
+    {
+     "v": "#f7f8f8 on #08090a",
+     "n": 306,
+     "ex": "18.73:1"
+    },
+    {
+     "v": "#d0d6e0 on #090a0b",
+     "n": 237,
+     "ex": "13.56:1"
+    },
+    {
+     "v": "#62666d on #090a0b",
+     "n": 186,
+     "ex": "3.44:1"
+    },
+    {
+     "v": "#8a8f98 on #090a0b",
+     "n": 165,
+     "ex": "6.1:1"
+    },
+    {
+     "v": "#08090a on #08090a",
+     "n": 124,
+     "ex": "1:1"
+    },
+    {
+     "v": "#d0d6e0 on #161718",
+     "n": 107,
+     "ex": "12.29:1"
+    },
+    {
+     "v": "#08090a on #1c85e8",
+     "n": 105,
+     "ex": "5.29:1"
+    },
+    {
+     "v": "#62666d on #0f1011",
+     "n": 80,
+     "ex": "3.3:1"
+    },
+    {
+     "v": "#62666d on #08090a",
+     "n": 74,
+     "ex": "3.45:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#08090a",
+     "n": 2634
+    },
+    {
+     "v": "#0f1011",
+     "n": 473
+    },
+    {
+     "v": "#090a0b",
+     "n": 238
+    },
+    {
+     "v": "#101112",
+     "n": 238
+    },
+    {
+     "v": "#ffffff a0.01",
+     "n": 189
+    },
+    {
+     "v": "radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, rgba(0, 0, 0, 0) 50%)",
+     "n": 160
+    },
+    {
+     "v": "radial-gradient(52.53% 57.5% at 50% 100%, rgba(8, 9, 10, 0) 0%, rgba(8, 9, 10, 0.5) 100%), linear-gradient(rgb(8, 9, 10) 10%, rgb(208, 214, ",
+     "n": 156
+    },
+    {
+     "v": "linear-gradient(0deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.4) 100%), linear-gradient(rgb(178, 213, 255) 0%, rgb(223, 209, 255)",
+     "n": 115
+    },
+    {
+     "v": "#e4f222",
+     "n": 115
+    },
+    {
+     "v": "#1c85e8",
+     "n": 115
+    },
+    {
+     "v": "#161718",
+     "n": 57
+    },
+    {
+     "v": "#ffffff a0.02",
+     "n": 41
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #ffffff a0.08",
+     "n": 6
+    },
+    {
+     "v": "1px #ffffff a0.05",
+     "n": 6
+    },
+    {
+     "v": "1px #e5e5e6",
+     "n": 2
+    },
+    {
+     "v": "1px #2e2e32",
+     "n": 2
+    },
+    {
+     "v": "1px #24282c",
+     "n": 1
+    },
+    {
+     "v": "1px #ffffff a0.12",
+     "n": 1
+    },
+    {
+     "v": "1px #000000 a0",
+     "n": 1
+    },
+    {
+     "v": "1px #23252a",
+     "n": 1
+    }
+   ],
+   "radii": [
+    {
+     "v": "8px",
+     "n": 21,
+     "ex": "button.Mmx1Wq_switchWorkspaceButton"
+    },
+    {
+     "v": "9999px",
+     "n": 14,
+     "ex": "a.TZTsQG_anchor I_mUeq_root"
+    },
+    {
+     "v": "4px",
+     "n": 12,
+     "ex": "code.KFZpfa_code"
+    },
+    {
+     "v": "6px",
+     "n": 9,
+     "ex": "a.TZTsQG_logoLink I_mUeq_root"
+    },
+    {
+     "v": "50%",
+     "n": 7,
+     "ex": "img.sx-16rqkct sx-h8yej3 sx-5yr21d"
+    },
+    {
+     "v": "16px",
+     "n": 6,
+     "ex": "button._1uFtza_labelButton"
+    },
+    {
+     "v": "12px",
+     "n": 4,
+     "ex": "div.WS84WW_frame"
+    },
+    {
+     "v": "5px",
+     "n": 3,
+     "ex": "span._8Qm5kG_skillsButton"
+    },
+    {
+     "v": "9px",
+     "n": 2,
+     "ex": "div.KFZpfa_commentCard Fzcv4W_edge"
+    },
+    {
+     "v": "999px",
+     "n": 2,
+     "ex": "span.NN4GVa_avatar"
+    },
+    {
+     "v": "2px",
+     "n": 1,
+     "ex": "span.Mmx1Wq_logoWrapper"
+    },
+    {
+     "v": "400px",
+     "n": 1,
+     "ex": "div.WS84WW_glow"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset",
+     "n": 4,
+     "ex": "button"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.2) 0px 0px 0px 1px",
+     "n": 4,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0) 0px 8px 2px 0px, rgba(0, 0, 0, 0.01) 0px 5px 2px 0px, rgba(0, 0, 0, 0.04) 0px 3px 2px 0px, rgba(0, 0, 0, 0.07) 0px 1px 1px 0px, rgba(0, 0, 0, 0.08) 0px 0px 1px 0px",
+     "n": 2,
+     "ex": "a"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.2) 0px 0px 0px 2px",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.25) 0px 2px 32px 0px",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(255, 255, 255, 0.08) 0px 0px 0px 0.5px inset",
+     "n": 1,
+     "ex": "span"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.06) 0px 4px 4px -1px, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px",
+     "n": 1,
+     "ex": "span"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.4) 0px 1px 0px 0px",
+     "n": 1,
+     "ex": "header"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "color 0.1s ease",
+     "n": 37,
+     "ex": "a"
+    },
+    {
+     "v": "transform 0.7s cubic-bezier(0.32, 0.72, 0, 1)",
+     "n": 5,
+     "ex": "g"
+    },
+    {
+     "v": "filter 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 4,
+     "ex": "a"
+    },
+    {
+     "v": "background, color 0.16s, 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 4,
+     "ex": "button"
+    },
+    {
+     "v": "filter 0.2s cubic-bezier(0.165, 0.84, 0.44, 1)",
+     "n": 4,
+     "ex": "a"
+    },
+    {
+     "v": "border, background-color, color, box-shadow, opaci 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 3,
+     "ex": "a"
+    },
+    {
+     "v": "background 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 3,
+     "ex": "button"
+    },
+    {
+     "v": "all 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 2,
+     "ex": "rect"
+    },
+    {
+     "v": "transform 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 2,
+     "ex": "button"
+    },
+    {
+     "v": "filter, transform 0.16s, 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 2,
+     "ex": "button"
+    },
+    {
+     "v": "border-color, background 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 1,
+     "ex": "header"
+    },
+    {
+     "v": "color, background 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 1,
+     "ex": "a"
+    }
+   ],
+   "animations": [
+    {
+     "v": "xt7VyG_scroll 30s linear xinfinite",
+     "n": 1
+    },
+    {
+     "v": "xt7VyG_scroll-abs 30s linear xinfinite",
+     "n": 1
+    },
+    {
+     "v": "grid-dot-0-0-upDown 2.8s steps(1) xinfinite",
+     "n": 1
+    },
+    {
+     "v": "grid-dot-0-1-upDown 2.8s steps(1) xinfinite",
+     "n": 1
+    },
+    {
+     "v": "grid-dot-0-2-upDown 2.8s steps(1) xinfinite",
+     "n": 1
+    },
+    {
+     "v": "grid-dot-0-3-upDown 2.8s steps(1) xinfinite",
+     "n": 1
+    },
+    {
+     "v": "grid-dot-0-4-upDown 2.8s steps(1) xinfinite",
+     "n": 1
+    },
+    {
+     "v": "grid-dot-1-0-upDown 2.8s steps(1) xinfinite",
+     "n": 1
+    }
+   ],
+   "maxWidths": [
+    {
+     "v": "1376px (rendered 358px)",
+     "n": 5,
+     "ex": "div"
+    },
+    {
+     "v": "274.641px (rendered 275px)",
+     "n": 4,
+     "ex": "h2"
+    },
+    {
+     "v": "359.033px (rendered 342px)",
+     "n": 4,
+     "ex": "p"
+    },
+    {
+     "v": "100% (rendered 390px)",
+     "n": 4,
+     "ex": "img"
+    },
+    {
+     "v": "1376px (rendered 390px)",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "250px (rendered 250px)",
+     "n": 3,
+     "ex": "p"
+    },
+    {
+     "v": "250px (rendered 232px)",
+     "n": 3,
+     "ex": "blockquote"
+    },
+    {
+     "v": "calc(100% + 32px) (rendered 331px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "360px (rendered 343px)",
+     "n": 1,
+     "ex": "h1"
+    },
+    {
+     "v": "276px (rendered 276px)",
+     "n": 1,
+     "ex": "span"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 7
+    }
+   ],
+   "gaps": [
+    {
+     "v": "8px",
+     "n": 35
+    },
+    {
+     "v": "6px",
+     "n": 24
+    },
+    {
+     "v": "2px",
+     "n": 11
+    },
+    {
+     "v": "4px",
+     "n": 10
+    },
+    {
+     "v": "12px",
+     "n": 9
+    },
+    {
+     "v": "40px",
+     "n": 3
+    },
+    {
+     "v": "16px",
+     "n": 2
+    },
+    {
+     "v": "24px",
+     "n": 2
+    },
+    {
+     "v": "20px",
+     "n": 1
+    },
+    {
+     "v": "10px",
+     "n": 1
+    },
+    {
+     "v": "48px / col 16px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "8px",
+     "n": 35
+    },
+    {
+     "v": "7px",
+     "n": 22
+    },
+    {
+     "v": "4px",
+     "n": 21
+    },
+    {
+     "v": "30px",
+     "n": 13
+    },
+    {
+     "v": "16px",
+     "n": 12
+    },
+    {
+     "v": "12px",
+     "n": 11
+    },
+    {
+     "v": "6px",
+     "n": 10
+    },
+    {
+     "v": "28px",
+     "n": 10
+    },
+    {
+     "v": "5px",
+     "n": 9
+    },
+    {
+     "v": "10px",
+     "n": 8
+    },
+    {
+     "v": "1px",
+     "n": 8
+    },
+    {
+     "v": "3px",
+     "n": 8
+    },
+    {
+     "v": "20px",
+     "n": 7
+    },
+    {
+     "v": "24px",
+     "n": 5
+    },
+    {
+     "v": "40px",
+     "n": 5
+    },
+    {
+     "v": "14px",
+     "n": 4
+    },
+    {
+     "v": "48px",
+     "n": 4
+    },
+    {
+     "v": "23px",
+     "n": 2
+    }
+   ],
+   "margins": [
+    {
+     "v": "24px",
+     "n": 8
+    },
+    {
+     "v": "16px",
+     "n": 6
+    },
+    {
+     "v": "19px",
+     "n": 5
+    },
+    {
+     "v": "15px",
+     "n": 4
+    },
+    {
+     "v": "2px",
+     "n": 4
+    },
+    {
+     "v": "11px",
+     "n": 3
+    },
+    {
+     "v": "7px",
+     "n": 3
+    },
+    {
+     "v": "35px",
+     "n": 2
+    },
+    {
+     "v": "39px",
+     "n": 2
+    },
+    {
+     "v": "96px",
+     "n": 2
+    },
+    {
+     "v": "131px",
+     "n": 1
+    },
+    {
+     "v": "23px",
+     "n": 1
+    },
+    {
+     "v": "33px",
+     "n": 1
+    },
+    {
+     "v": "47px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "Automatically turn conversations and customer feedback into actionable issues that are instantly routed, labeled, and pr",
+    "chars": 149,
+    "lines": 3,
+    "charsPerLine": 50,
+    "width": 342,
+    "fontSize": "15px",
+    "lineHeight": "24px",
+    "color": "#8a8f98"
+   },
+   "rootVars": {
+    "--btn-highlight-bg": "transparent",
+    "--btn-highlight-color": "inherit",
+    "--btn-overlay-shadow": "none",
+    "--btn-overlay-shadow-hover": "none",
+    "--sx-1a798ef": "6px",
+    "--sx-ds2y8i": "5px",
+    "--editor-hairline": "var(--sx-1ele6il)",
+    "--editor-bg-border-thin": "var(--sx-1o1lnwn)",
+    "--editor-block-spacing": "1rem",
+    "--editor-block-spacing-large": "calc(1.375 * var(--editor-block-spacing))",
+    "--editor-block-spacing-small": "calc(.375 * var(--editor-block-spacing))",
+    "--editor-block-radius": "6px",
+    "--editor-block-menu-size": "20px",
+    "--editor-block-menu-offset": "28px",
+    "--editor-last-invisible-paragraph-spacing": "10px",
+    "--editor-line-height": "1.6",
+    "--editor-font-weight": "var(--font-weight-normal)",
+    "--editor-letter-spacing": "-.00666667em",
+    "--editor-list-inset": "1.5rem",
+    "--editor-bullet-disc-width": ".5em",
+    "--editor-bullet-disc-offset": ".5em",
+    "--editor-todolist-checkbox-width": "14px",
+    "--editor-font-size": "var(--font-size-regular)",
+    "--editor-text-color": "var(--sx-3zwjav)",
+    "--editor-surface-background": "var(--sx-1ubxoo9)",
+    "--editor-safe-area": "16px",
+    "--focus-ring-color": "var(--sx-ch85qk)",
+    "--focus-ring-width": "1px",
+    "--focus-ring-outline": "var(--focus-ring-width) solid var(--focus-ring-color)",
+    "--icon-color": "initial",
+    "--icon-default-color": "initial",
+    "--icon-replacement-color": "initial",
+    "--link-text-decoration": "none",
+    "--pointer": "default",
+    "--external": "pointer",
+    "--zoom-in": "zoom-in",
+    "--zoom-out": "zoom-out",
+    "--scrollbar-width": "12px",
+    "--selection-bg": "",
+    "--selection-bg-active": "",
+    "--sx-18pfyxa": "6px 12px",
+    "--sx-x8afrf": "6px",
+    "--sx-1uu732i": "12px",
+    "--sx-1mc3c6y": "",
+    "--sx-6zt3z6": "",
+    "--sx-ykavoc": "5px",
+    "--sx-11lpf43": ".8125rem",
+    "--sx-1ele6il": "",
+    "--sx-138rywl": "13vh",
+    "--sx-1fj52yw": "inherit",
+    "--sx-1m4y240": "",
+    "--sx-g52i5g": "",
+    "--sx-1ubxoo9": "",
+    "--sx-1gxylln": "",
+    "--sx-1gm0lru": "",
+    "--sx-1gcjx5j": "",
+    "--sx-1gakdvt": "",
+    "--sx-1rsaf4u": "",
+    "--sx-7jk47a": "",
+    "--sx-1qdowq0": "",
+    "--sx-142jeir": "",
+    "--sx-k68kma": "",
+    "--sx-1o1lnwn": "",
+    "--sx-d29rh7": "",
+    "--sx-1uv3w6h": "",
+    "--sx-15wwovl": "",
+    "--sx-cx2ark": "",
+    "--sx-138kmyo": "",
+    "--sx-w1p5jj": "",
+    "--sx-1d2fpwc": "",
+    "--sx-13epfux": "",
+    "--sx-9pdekr": "",
+    "--sx-5igtf4": "",
+    "--sx-1ospiv4": "",
+    "--sx-1jmjcvw": "",
+    "--sx-1n1r1h9": "",
+    "--sx-irmyh9": "",
+    "--sx-1urpf9d": "",
+    "--sx-193njt9": "",
+    "--sx-1uztw8p": "",
+    "--sx-1ikf7kw": "",
+    "--sx-18yrgu8": "",
+    "--sx-1ub7w50": "",
+    "--sx-9jlh1t": "",
+    "--sx-pqiwo2": "",
+    "--sx-35jz1e": "",
+    "--sx-ys2i3t": "",
+    "--sx-16143rj": "",
+    "--sx-3zwjav": "",
+    "--sx-1awr4hy": "",
+    "--sx-1dd5bcf": "",
+    "--sx-f6abet": "",
+    "--sx-1eapsa9": "",
+    "--sx-1xaoi8i": "",
+    "--sx-n8xqcl": "",
+    "--sx-ickszr": "",
+    "--sx-1jffjrl": "",
+    "--sx-hfmm6c": "",
+    "--sx-10o0rs5": "",
+    "--sx-13kjjc4": "",
+    "--sx-1ccqs4f": "",
+    "--sx-1fphd1n": "",
+    "--sx-j1ai0m": "",
+    "--sx-629164": "",
+    "--sx-ljw4h1": "",
+    "--sx-1qlh175": "",
+    "--sx-1uoekal": "",
+    "--sx-9o00jb": "",
+    "--sx-ot17o6": "",
+    "--sx-1cxqmhc": "",
+    "--sx-10845vo": "",
+    "--sx-1ps2i54": "",
+    "--sx-18uyzu6": "",
+    "--sx-wsz0k3": "",
+    "--sx-jw5zf4": "",
+    "--sx-8gevfv": "",
+    "--sx-ciqj87": "",
+    "--sx-180qi0f": "",
+    "--sx-14ggo8w": "",
+    "--sx-129bhjt": "",
+    "--sx-1h56kua": "",
+    "--sx-91u3ar": "",
+    "--sx-ugsh4": "",
+    "--sx-105wzx7": "",
+    "--sx-1k7nh0l": "",
+    "--sx-msgncm": "",
+    "--sx-fwc8so": "",
+    "--sx-11vg3qk": "",
+    "--sx-1hz3utq": "",
+    "--sx-1ijrdvx": "",
+    "--sx-183dfpr": "",
+    "--sx-1vyp3gc": "",
+    "--sx-ikq9iy": "",
+    "--sx-34xdpc": "",
+    "--sx-i20l48": "",
+    "--sx-17ckey5": "",
+    "--sx-1q6smeb": "",
+    "--sx-1bu05id": "",
+    "--sx-tw6awd": "",
+    "--sx-1dcvabv": "",
+    "--sx-13m9wh7": "",
+    "--sx-or1tl7": "",
+    "--sx-1vqca58": "",
+    "--sx-1stx5uy": "",
+    "--sx-5t1vcl": "",
+    "--sx-6od1kq": "",
+    "--sx-1em7oyp": "",
+    "--sx-bpgheo": "",
+    "--sx-1yxqotz": "",
+    "--sx-kthb5v": "",
+    "--sx-7ide1": "",
+    "--sx-19hxmp1": "",
+    "--sx-ws85c5": "",
+    "--sx-1glqxor": "",
+    "--sx-1fh23cp": "",
+    "--sx-74qs5": "",
+    "--sx-ch85qk": "",
+    "--sx-d1bcc1": "",
+    "--sx-16hn3q3": "",
+    "--sx-1edn6di": ""
+   },
+   "blockedSheets": 48,
+   "reducedMotionRules": 21,
+   "h1": [
+    "The product development system for teams and agentsThe product developmentsystem for teams and agentsThe product development system for teams and agents"
+   ],
+   "h2": [
+    "A new species of product tool. Purpose-built for modern teams with AI workflows at its core, Linear sets a new standard for planning and building products.",
+    "Intakeand integrations",
+    "Planningand monitoring",
+    "AI andautomations",
+    "Build, review,and ship",
+    "Built for the future. Available today."
+   ],
+   "h3": [
+    "Faster app launch",
+    "Product",
+    "Features",
+    "Company",
+    "Resources",
+    "Connect",
+    "Legal"
+   ],
+   "nav": [
+    "Log in",
+    "Sign up"
+   ],
+   "ctas": [
+    "Sign up [73x32 bg #e5e5e6 fg #08090a r 9999px pad 0px 12px 13px/510]",
+    "Performance [56x12 bg #000000 a0 fg #d0d6e0 r 16px pad 0px 11px 0px 7px 12px/400]",
+    "iOS [29x12 bg #000000 a0 fg #d0d6e0 r 16px pad 0px 11px 0px 7px 12px/400]",
+    "Get started [127x44 bg #e5e5e6 fg #08090a r 9999px pad 0px 20px 16px/510]"
+   ],
+   "media": {
+    "img": 39,
+    "svg": 229,
+    "video": 0,
+    "canvas": 0
+   }
+  },
+  "1440": {
+   "status": 200,
+   "finalUrl": "https://linear.app/",
+   "width": 1440,
+   "h1Style": {
+    "font": "\"Inter Variable\" 64px/64px w510 ls -1.408px",
+    "color": "#f7f8f8",
+    "top": 272,
+    "width": 1282,
+    "align": "start"
+   },
+   "title": "Linear – The system for product development",
+   "description": "Purpose-built for planning and building products with AI agents.",
+   "pageHeight": 9960,
+   "bodyBg": "#08090a",
+   "htmlBg": "#08090a",
+   "fontsLoaded": [
+    "Inter Variable 100 900 normal",
+    "Berkeley Mono 100 900 normal"
+   ],
+   "families": [
+    {
+     "v": "\"Inter Variable\", \"SF Pro Display\"",
+     "n": 7525
+    },
+    {
+     "v": "\"Berkeley Mono\", ui-monospace",
+     "n": 1423
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "15px / lh 24px / w400 / ls -0.165px",
+     "n": 1664,
+     "ex": "span: Purpose-built for planning and building products. Designed f"
+    },
+    {
+     "v": "14px / lh 24px / w400 / ls normal",
+     "n": 1221,
+     "ex": "span: import"
+    },
+    {
+     "v": "13px / lh 20px / w400 / ls -0.039px",
+     "n": 629,
+     "ex": "p: Fix the dimmed ride rows that never reset and open a PR"
+    },
+    {
+     "v": "24px / lh 31.92px / w400 / ls -0.288px",
+     "n": 547,
+     "ex": "p: Automatically turn conversations and customer feedback into "
+    },
+    {
+     "v": "12px / lh 16.8px / w510 / ls normal",
+     "n": 529,
+     "ex": "span: Jori"
+    },
+    {
+     "v": "13px / lh 19.5px / w510 / ls -0.13px",
+     "n": 492,
+     "ex": "span: Linear"
+    },
+    {
+     "v": "15px / lh 20px / w300 / ls -0.06px",
+     "n": 378,
+     "ex": "span: Has anyone been looking into the iOS startup performance iss"
+    },
+    {
+     "v": "12px / lh 14px / w510 / ls normal",
+     "n": 365,
+     "ex": "button: Workspace"
+    },
+    {
+     "v": "13px / lh 19.5px / w400 / ls -0.13px",
+     "n": 361,
+     "ex": "span: ENG-2498"
+    },
+    {
+     "v": "12px / lh 14px / w400 / ls normal",
+     "n": 349,
+     "ex": "span: created the issue via on behalf of"
+    },
+    {
+     "v": "48px / lh 48px / w510 / ls -1.056px",
+     "n": 246,
+     "ex": "h2: Purpose-built for modern teams with AI workflows at its core"
+    },
+    {
+     "v": "12px / lh 16.8px / w400 / ls normal",
+     "n": 245,
+     "ex": "span: ·"
+    },
+    {
+     "v": "14px / lh 21px / w400 / ls -0.182px",
+     "n": 173,
+     "ex": "p: Render UI before sync when minimum required state is present"
+    },
+    {
+     "v": "12px / lh 16px / w400 / ls normal",
+     "n": 168,
+     "ex": "span: / 84"
+    },
+    {
+     "v": "32px / lh 36px / w400 / ls -0.704px",
+     "n": 164,
+     "ex": "p: You’ll probably build a better product, just because of the "
+    },
+    {
+     "v": "15px / lh 24px / w510 / ls -0.165px",
+     "n": 156,
+     "ex": "span: New"
+    },
+    {
+     "v": "13px / lh 16px / w500 / ls normal",
+     "n": 134,
+     "ex": "span: Add granular project permissions"
+    },
+    {
+     "v": "10px / lh 14px / w400 / ls -0.15px",
+     "n": 126,
+     "ex": "span: ENG-2085"
+    },
+    {
+     "v": "13px / lh 16px / w400 / ls -0.13px",
+     "n": 120,
+     "ex": "span: Right now we show a spinner forever, which makes it look lik"
+    },
+    {
+     "v": "64px / lh 64px / w510 / ls -1.408px",
+     "n": 101,
+     "ex": "span: The product development"
+    },
+    {
+     "v": "13px / lh normal / w510 / ls normal",
+     "n": 101,
+     "ex": "span: Pulse"
+    },
+    {
+     "v": "13px / lh 19.5px / w400 / ls normal",
+     "n": 80,
+     "ex": "button: Product"
+    },
+    {
+     "v": "13px / lh 20px / w400 / ls -0.13px",
+     "n": 74,
+     "ex": "span: UI Refresh"
+    },
+    {
+     "v": "13px / lh 20px / w400 / ls normal",
+     "n": 60,
+     "ex": "p: Reply…"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#d0d6e0",
+     "n": 2893
+    },
+    {
+     "v": "#8a8f98",
+     "n": 2878
+    },
+    {
+     "v": "#62666d",
+     "n": 798
+    },
+    {
+     "v": "#f7f8f8",
+     "n": 757
+    },
+    {
+     "v": "#000000 a0",
+     "n": 502
+    },
+    {
+     "v": "#08090a",
+     "n": 260
+    },
+    {
+     "v": "#f7bf8b",
+     "n": 231
+    },
+    {
+     "v": "#f79ce0",
+     "n": 157
+    },
+    {
+     "v": "#ffdf9f",
+     "n": 130
+    },
+    {
+     "v": "#e2e4e7",
+     "n": 97
+    },
+    {
+     "v": "#83dcdc",
+     "n": 78
+    },
+    {
+     "v": "#8fa6ff",
+     "n": 68
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#8a8f98 on #08090a",
+     "n": 2085,
+     "ex": "6.13:1"
+    },
+    {
+     "v": "#d0d6e0 on #0f1011",
+     "n": 1390,
+     "ex": "13.04:1"
+    },
+    {
+     "v": "#d0d6e0 on #08090a",
+     "n": 1159,
+     "ex": "13.64:1"
+    },
+    {
+     "v": "#8a8f98 on #0f1011",
+     "n": 592,
+     "ex": "5.86:1"
+    },
+    {
+     "v": "#000000 a0 on #0f1011",
+     "n": 502,
+     "ex": "1:1"
+    },
+    {
+     "v": "#62666d on #0f1011",
+     "n": 392,
+     "ex": "3.3:1"
+    },
+    {
+     "v": "#f7f8f8 on #0f1011",
+     "n": 349,
+     "ex": "17.9:1"
+    },
+    {
+     "v": "#f7f8f8 on #08090a",
+     "n": 312,
+     "ex": "18.73:1"
+    },
+    {
+     "v": "#d0d6e0 on #090a0b",
+     "n": 237,
+     "ex": "13.56:1"
+    },
+    {
+     "v": "#f7bf8b on #0f1011",
+     "n": 231,
+     "ex": "11.59:1"
+    },
+    {
+     "v": "#62666d on #08090a",
+     "n": 198,
+     "ex": "3.45:1"
+    },
+    {
+     "v": "#62666d on #090a0b",
+     "n": 186,
+     "ex": "3.44:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#08090a",
+     "n": 15058
+    },
+    {
+     "v": "#0f1011",
+     "n": 4824
+    },
+    {
+     "v": "radial-gradient(52.53% 57.5% at 50% 100%, rgba(8, 9, 10, 0) 0%, rgba(8, 9, 10, 0.5) 100%), linear-gradient(rgb(8, 9, 10) 10%, rgb(208, 214, ",
+     "n": 1087
+    },
+    {
+     "v": "#090a0b",
+     "n": 950
+    },
+    {
+     "v": "#101112",
+     "n": 950
+    },
+    {
+     "v": "radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, rgba(0, 0, 0, 0) 50%)",
+     "n": 800
+    },
+    {
+     "v": "#ffffff a0.01",
+     "n": 755
+    },
+    {
+     "v": "linear-gradient(rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.02)), none",
+     "n": 461
+    },
+    {
+     "v": "linear-gradient(0deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.4) 100%), linear-gradient(rgb(178, 213, 255) 0%, rgb(223, 209, 255)",
+     "n": 422
+    },
+    {
+     "v": "#161718",
+     "n": 260
+    },
+    {
+     "v": "#ffffff a0.02",
+     "n": 219
+    },
+    {
+     "v": "#e4f222",
+     "n": 207
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #ffffff a0.08",
+     "n": 66
+    },
+    {
+     "v": "1px #ffffff a0.12",
+     "n": 11
+    },
+    {
+     "v": "1px #ffffff a0.05",
+     "n": 3
+    },
+    {
+     "v": "1px #23252a",
+     "n": 3
+    },
+    {
+     "v": "1px #e5e5e6",
+     "n": 2
+    },
+    {
+     "v": "1px #2e2e32",
+     "n": 2
+    },
+    {
+     "v": "1px #24282c",
+     "n": 1
+    },
+    {
+     "v": "1px #ffffff a0.06",
+     "n": 1
+    }
+   ],
+   "radii": [
+    {
+     "v": "9999px",
+     "n": 72,
+     "ex": "button.TZTsQG_anchor TZTsQG_trigger h"
+    },
+    {
+     "v": "8px",
+     "n": 29,
+     "ex": "button.Mmx1Wq_switchWorkspaceButton"
+    },
+    {
+     "v": "50%",
+     "n": 28,
+     "ex": "img.sx-16rqkct sx-h8yej3 sx-5yr21d"
+    },
+    {
+     "v": "4px",
+     "n": 22,
+     "ex": "code.KFZpfa_code"
+    },
+    {
+     "v": "12px",
+     "n": 19,
+     "ex": "div.WS84WW_frame"
+    },
+    {
+     "v": "9px",
+     "n": 18,
+     "ex": "div.KFZpfa_commentCard Fzcv4W_edge"
+    },
+    {
+     "v": "6px",
+     "n": 11,
+     "ex": "a.TZTsQG_logoLink I_mUeq_root"
+    },
+    {
+     "v": "999px",
+     "n": 10,
+     "ex": "span.NN4GVa_avatar"
+    },
+    {
+     "v": "12px 12px 0px 0px",
+     "n": 7,
+     "ex": "div.MwJdiW_panel qM9FAa_panel"
+    },
+    {
+     "v": "16px",
+     "n": 6,
+     "ex": "button._1uFtza_labelButton"
+    },
+    {
+     "v": "2px 0px 0px 2px",
+     "n": 4,
+     "ex": "span.ngusfW_keyword ngusfW_charRemo"
+    },
+    {
+     "v": "0px 2px 2px 0px",
+     "n": 4,
+     "ex": "span.ngusfW_variable ngusfW_charRem"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgba(0, 0, 0, 0.2) 0px 0px 0px 1px",
+     "n": 8,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.2) 0px 0px 12px 0px inset",
+     "n": 7,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.25) 0px 2px 32px 0px",
+     "n": 5,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(255, 255, 255, 0.08) 0px 0px 0px 0.5px inset",
+     "n": 5,
+     "ex": "span"
+    },
+    {
+     "v": "rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset",
+     "n": 4,
+     "ex": "button"
+    },
+    {
+     "v": "rgb(35, 37, 42) 0px 0px 0px 1px inset",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0) 0px 8px 2px 0px, rgba(0, 0, 0, 0.01) 0px 5px 2px 0px, rgba(0, 0, 0, 0.04) 0px 3px 2px 0px, rgba(0, 0, 0, 0.07) 0px 1px 1px 0px, rgba(0, 0, 0, 0.08) 0px 0px 1px 0px",
+     "n": 2,
+     "ex": "a"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.06) 0px 4px 4px -1px, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px",
+     "n": 2,
+     "ex": "span"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "color 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 187,
+     "ex": "span"
+    },
+    {
+     "v": "color 0.1s ease",
+     "n": 34,
+     "ex": "a"
+    },
+    {
+     "v": "filter, transform 0.16s, 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 22,
+     "ex": "button"
+    },
+    {
+     "v": "color 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 20,
+     "ex": "span"
+    },
+    {
+     "v": "background 0.4s ease-out",
+     "n": 19,
+     "ex": "span"
+    },
+    {
+     "v": "background-color, border-left-color 0.1s, 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94), cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 8,
+     "ex": "span"
+    },
+    {
+     "v": "color, background 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 7,
+     "ex": "button"
+    },
+    {
+     "v": "filter 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 6,
+     "ex": "a"
+    },
+    {
+     "v": "filter 0.2s cubic-bezier(0.165, 0.84, 0.44, 1)",
+     "n": 6,
+     "ex": "a"
+    },
+    {
+     "v": "transform 0.7s cubic-bezier(0.32, 0.72, 0, 1)",
+     "n": 5,
+     "ex": "g"
+    },
+    {
+     "v": "border, background-color, color, box-shadow, opaci 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 4,
+     "ex": "a"
+    },
+    {
+     "v": "background, color 0.16s, 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 4,
+     "ex": "button"
+    }
+   ],
+   "animations": [
+    {
+     "v": "fFDhtq_dotIn 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94) x1",
+     "n": 438
+    },
+    {
+     "v": "-VOcTG_agentLabelSweep 2s linear x1",
+     "n": 3
+    },
+    {
+     "v": "grid-dot-0-0-upDown 2.8s steps(1) xinfinite",
+     "n": 1
+    },
+    {
+     "v": "grid-dot-0-1-upDown 2.8s steps(1) xinfinite",
+     "n": 1
+    },
+    {
+     "v": "grid-dot-0-2-upDown 2.8s steps(1) xinfinite",
+     "n": 1
+    },
+    {
+     "v": "grid-dot-0-3-upDown 2.8s steps(1) xinfinite",
+     "n": 1
+    },
+    {
+     "v": "grid-dot-0-4-upDown 2.8s steps(1) xinfinite",
+     "n": 1
+    },
+    {
+     "v": "grid-dot-1-0-upDown 2.8s steps(1) xinfinite",
+     "n": 1
+    }
+   ],
+   "maxWidths": [
+    {
+     "v": "1436px (rendered 1344px)",
+     "n": 5,
+     "ex": "div"
+    },
+    {
+     "v": "1436px (rendered 1436px)",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 1440px)",
+     "n": 2,
+     "ex": "img"
+    },
+    {
+     "v": "calc(100% + 32px) (rendered 662px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "620px (rendered 620px)",
+     "n": 1,
+     "ex": "li"
+    },
+    {
+     "v": "1416px (rendered 1416px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "1250px (rendered 1250px)",
+     "n": 1,
+     "ex": "h2"
+    },
+    {
+     "v": "722.25px (rendered 722px)",
+     "n": 1,
+     "ex": "h2"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 4
+    },
+    {
+     "v": "pt 128px pb 128px",
+     "n": 4
+    }
+   ],
+   "gaps": [
+    {
+     "v": "8px",
+     "n": 90
+    },
+    {
+     "v": "4px",
+     "n": 61
+    },
+    {
+     "v": "6px",
+     "n": 60
+    },
+    {
+     "v": "12px",
+     "n": 14
+    },
+    {
+     "v": "2px",
+     "n": 11
+    },
+    {
+     "v": "10px",
+     "n": 5
+    },
+    {
+     "v": "16px",
+     "n": 4
+    },
+    {
+     "v": "11px",
+     "n": 4
+    },
+    {
+     "v": "5px",
+     "n": 4
+    },
+    {
+     "v": "24px",
+     "n": 2
+    },
+    {
+     "v": "20px",
+     "n": 2
+    },
+    {
+     "v": "32px",
+     "n": 1
+    },
+    {
+     "v": "64px",
+     "n": 1
+    },
+    {
+     "v": "40px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "32px",
+     "n": 88
+    },
+    {
+     "v": "4px",
+     "n": 78
+    },
+    {
+     "v": "8px",
+     "n": 58
+    },
+    {
+     "v": "12px",
+     "n": 57
+    },
+    {
+     "v": "6px",
+     "n": 55
+    },
+    {
+     "v": "7px",
+     "n": 22
+    },
+    {
+     "v": "10px",
+     "n": 19
+    },
+    {
+     "v": "14px",
+     "n": 19
+    },
+    {
+     "v": "36px",
+     "n": 15
+    },
+    {
+     "v": "1px",
+     "n": 13
+    },
+    {
+     "v": "24px",
+     "n": 10
+    },
+    {
+     "v": "16px",
+     "n": 9
+    },
+    {
+     "v": "11px",
+     "n": 9
+    },
+    {
+     "v": "5px",
+     "n": 9
+    },
+    {
+     "v": "20px",
+     "n": 8
+    },
+    {
+     "v": "128px",
+     "n": 8
+    },
+    {
+     "v": "3px",
+     "n": 7
+    },
+    {
+     "v": "30px",
+     "n": 6
+    }
+   ],
+   "margins": [
+    {
+     "v": "10px",
+     "n": 16
+    },
+    {
+     "v": "19px",
+     "n": 8
+    },
+    {
+     "v": "48px",
+     "n": 8
+    },
+    {
+     "v": "24px",
+     "n": 8
+    },
+    {
+     "v": "7px",
+     "n": 7
+    },
+    {
+     "v": "35px",
+     "n": 5
+    },
+    {
+     "v": "2px",
+     "n": 4
+    },
+    {
+     "v": "15px",
+     "n": 3
+    },
+    {
+     "v": "159px",
+     "n": 3
+    },
+    {
+     "v": "282px",
+     "n": 2
+    },
+    {
+     "v": "224px",
+     "n": 2
+    },
+    {
+     "v": "199px",
+     "n": 1
+    },
+    {
+     "v": "31px",
+     "n": 1
+    },
+    {
+     "v": "69px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "Automatically turn conversations and customer feedback into actionable issues that are instantly routed, labeled, and pr",
+    "chars": 149,
+    "lines": 3,
+    "charsPerLine": 50,
+    "width": 566,
+    "fontSize": "24px",
+    "lineHeight": "31.92px",
+    "color": "#d0d6e0"
+   },
+   "rootVars": {
+    "--btn-highlight-bg": "transparent",
+    "--btn-highlight-color": "inherit",
+    "--btn-overlay-shadow": "none",
+    "--btn-overlay-shadow-hover": "none",
+    "--sx-1a798ef": "6px",
+    "--sx-ds2y8i": "5px",
+    "--editor-hairline": "var(--sx-1ele6il)",
+    "--editor-bg-border-thin": "var(--sx-1o1lnwn)",
+    "--editor-block-spacing": "1rem",
+    "--editor-block-spacing-large": "calc(1.375 * var(--editor-block-spacing))",
+    "--editor-block-spacing-small": "calc(.375 * var(--editor-block-spacing))",
+    "--editor-block-radius": "6px",
+    "--editor-block-menu-size": "20px",
+    "--editor-block-menu-offset": "28px",
+    "--editor-last-invisible-paragraph-spacing": "10px",
+    "--editor-line-height": "1.6",
+    "--editor-font-weight": "var(--font-weight-normal)",
+    "--editor-letter-spacing": "-.00666667em",
+    "--editor-list-inset": "1.5rem",
+    "--editor-bullet-disc-width": ".5em",
+    "--editor-bullet-disc-offset": ".5em",
+    "--editor-todolist-checkbox-width": "14px",
+    "--editor-font-size": "var(--font-size-regular)",
+    "--editor-text-color": "var(--sx-3zwjav)",
+    "--editor-surface-background": "var(--sx-1ubxoo9)",
+    "--editor-safe-area": "16px",
+    "--focus-ring-color": "var(--sx-ch85qk)",
+    "--focus-ring-width": "1px",
+    "--focus-ring-outline": "var(--focus-ring-width) solid var(--focus-ring-color)",
+    "--icon-color": "initial",
+    "--icon-default-color": "initial",
+    "--icon-replacement-color": "initial",
+    "--link-text-decoration": "none",
+    "--pointer": "default",
+    "--external": "pointer",
+    "--zoom-in": "zoom-in",
+    "--zoom-out": "zoom-out",
+    "--scrollbar-width": "12px",
+    "--selection-bg": "",
+    "--selection-bg-active": "",
+    "--sx-18pfyxa": "6px 12px",
+    "--sx-x8afrf": "6px",
+    "--sx-1uu732i": "12px",
+    "--sx-1mc3c6y": "",
+    "--sx-6zt3z6": "",
+    "--sx-ykavoc": "5px",
+    "--sx-11lpf43": ".8125rem",
+    "--sx-1ele6il": "",
+    "--sx-138rywl": "13vh",
+    "--sx-1fj52yw": "inherit",
+    "--sx-1m4y240": "",
+    "--sx-g52i5g": "",
+    "--sx-1ubxoo9": "",
+    "--sx-1gxylln": "",
+    "--sx-1gm0lru": "",
+    "--sx-1gcjx5j": "",
+    "--sx-1gakdvt": "",
+    "--sx-1rsaf4u": "",
+    "--sx-7jk47a": "",
+    "--sx-1qdowq0": "",
+    "--sx-142jeir": "",
+    "--sx-k68kma": "",
+    "--sx-1o1lnwn": "",
+    "--sx-d29rh7": "",
+    "--sx-1uv3w6h": "",
+    "--sx-15wwovl": "",
+    "--sx-cx2ark": "",
+    "--sx-138kmyo": "",
+    "--sx-w1p5jj": "",
+    "--sx-1d2fpwc": "",
+    "--sx-13epfux": "",
+    "--sx-9pdekr": "",
+    "--sx-5igtf4": "",
+    "--sx-1ospiv4": "",
+    "--sx-1jmjcvw": "",
+    "--sx-1n1r1h9": "",
+    "--sx-irmyh9": "",
+    "--sx-1urpf9d": "",
+    "--sx-193njt9": "",
+    "--sx-1uztw8p": "",
+    "--sx-1ikf7kw": "",
+    "--sx-18yrgu8": "",
+    "--sx-1ub7w50": "",
+    "--sx-9jlh1t": "",
+    "--sx-pqiwo2": "",
+    "--sx-35jz1e": "",
+    "--sx-ys2i3t": "",
+    "--sx-16143rj": "",
+    "--sx-3zwjav": "",
+    "--sx-1awr4hy": "",
+    "--sx-1dd5bcf": "",
+    "--sx-f6abet": "",
+    "--sx-1eapsa9": "",
+    "--sx-1xaoi8i": "",
+    "--sx-n8xqcl": "",
+    "--sx-ickszr": "",
+    "--sx-1jffjrl": "",
+    "--sx-hfmm6c": "",
+    "--sx-10o0rs5": "",
+    "--sx-13kjjc4": "",
+    "--sx-1ccqs4f": "",
+    "--sx-1fphd1n": "",
+    "--sx-j1ai0m": "",
+    "--sx-629164": "",
+    "--sx-ljw4h1": "",
+    "--sx-1qlh175": "",
+    "--sx-1uoekal": "",
+    "--sx-9o00jb": "",
+    "--sx-ot17o6": "",
+    "--sx-1cxqmhc": "",
+    "--sx-10845vo": "",
+    "--sx-1ps2i54": "",
+    "--sx-18uyzu6": "",
+    "--sx-wsz0k3": "",
+    "--sx-jw5zf4": "",
+    "--sx-8gevfv": "",
+    "--sx-ciqj87": "",
+    "--sx-180qi0f": "",
+    "--sx-14ggo8w": "",
+    "--sx-129bhjt": "",
+    "--sx-1h56kua": "",
+    "--sx-91u3ar": "",
+    "--sx-ugsh4": "",
+    "--sx-105wzx7": "",
+    "--sx-1k7nh0l": "",
+    "--sx-msgncm": "",
+    "--sx-fwc8so": "",
+    "--sx-11vg3qk": "",
+    "--sx-1hz3utq": "",
+    "--sx-1ijrdvx": "",
+    "--sx-183dfpr": "",
+    "--sx-1vyp3gc": "",
+    "--sx-ikq9iy": "",
+    "--sx-34xdpc": "",
+    "--sx-i20l48": "",
+    "--sx-17ckey5": "",
+    "--sx-1q6smeb": "",
+    "--sx-1bu05id": "",
+    "--sx-tw6awd": "",
+    "--sx-1dcvabv": "",
+    "--sx-13m9wh7": "",
+    "--sx-or1tl7": "",
+    "--sx-1vqca58": "",
+    "--sx-1stx5uy": "",
+    "--sx-5t1vcl": "",
+    "--sx-6od1kq": "",
+    "--sx-1em7oyp": "",
+    "--sx-bpgheo": "",
+    "--sx-1yxqotz": "",
+    "--sx-kthb5v": "",
+    "--sx-7ide1": "",
+    "--sx-19hxmp1": "",
+    "--sx-ws85c5": "",
+    "--sx-1glqxor": "",
+    "--sx-1fh23cp": "",
+    "--sx-74qs5": "",
+    "--sx-ch85qk": "",
+    "--sx-d1bcc1": "",
+    "--sx-16hn3q3": "",
+    "--sx-1edn6di": ""
+   },
+   "blockedSheets": 48,
+   "reducedMotionRules": 14,
+   "h1": [
+    "The product development system for teams and agentsThe product developmentsystem for teams and agentsThe product development system for teams and agents"
+   ],
+   "h2": [
+    "A new species of product tool. Purpose-built for modern teams with AI workflows at its core, Linear sets a new standard for planning and building products.",
+    "Intakeand integrations",
+    "Planningand monitoring",
+    "AI andautomations",
+    "Build, review,and ship",
+    "Changelog",
+    "Built for the future. Available today."
+   ],
+   "h3": [
+    "Faster app launch",
+    "Product",
+    "Features",
+    "Company",
+    "Resources",
+    "Connect"
+   ],
+   "nav": [
+    "Customers",
+    "Pricing",
+    "Now",
+    "Contact",
+    "Log in",
+    "Sign up"
+   ],
+   "ctas": [
+    "Sign up [73x32 bg #e5e5e6 fg #08090a r 9999px pad 0px 12px 13px/510]",
+    "Performance [111x24 bg #000000 a0 fg #d0d6e0 r 16px pad 0px 11px 0px 7px 12px/400]",
+    "iOS [58x24 bg #000000 a0 fg #d0d6e0 r 16px pad 0px 11px 0px 7px 12px/400]",
+    "Our speed is intense and Linear helps us [432x480 bg #e4f222 fg #f7f8f8 r 8px pad 24px 32px 16px/400]",
+    "Get started [127x44 bg #e5e5e6 fg #08090a r 9999px pad 0px 20px 16px/510]"
+   ],
+   "media": {
+    "img": 39,
+    "svg": 231,
+    "video": 0,
+    "canvas": 0
+   }
+  }
+ }
+}

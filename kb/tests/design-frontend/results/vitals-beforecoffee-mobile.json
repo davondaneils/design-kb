@@ -1,0 +1,110 @@
+{
+  "page": "kb/tests/design-frontend/before/coffee.html",
+  "profile": "mobile",
+  "runs": 7,
+  "encoding": "gzip",
+  "lcp": 912,
+  "fcp": 912,
+  "cls": 0,
+  "inp": 56,
+  "tbt": 26,
+  "ttfb": 461.20000000018626,
+  "fontsReady": 1019.4000000003725,
+  "load": 1147.5,
+  "bytes": 96274,
+  "docBytes": 96274,
+  "requests": 1,
+  "dom": 395,
+  "mainThread": {
+    "script": 11.392,
+    "style": 77.447,
+    "layout": 127.136,
+    "task": 509.798,
+    "styleCount": 6,
+    "layoutCount": 5
+  },
+  "lcpElement": "h1#hero-title.display \"Ethiopia Guji, roasted Tuesday in Portla\"",
+  "worstInteractions": [
+    {
+      "name": "pointerdown",
+      "d": 56,
+      "input": 5,
+      "proc": 9
+    },
+    {
+      "name": "pointerdown",
+      "d": 48,
+      "input": 1,
+      "proc": 7
+    },
+    {
+      "name": "pointerdown",
+      "d": 48,
+      "input": 7,
+      "proc": 2
+    }
+  ],
+  "interactions": 10,
+  "shifts": [],
+  "steps": [
+    "click .add-btn",
+    "click .add-btn",
+    "click .add-btn",
+    "click #email",
+    "key d",
+    "key a",
+    "key n",
+    "key a",
+    "key @",
+    "press Enter"
+  ],
+  "verdict": {
+    "lcp": "good",
+    "cls": "good",
+    "inp": "good"
+  },
+  "perRun": [
+    {
+      "lcp": 928,
+      "cls": 0,
+      "inp": 56,
+      "tbt": 26
+    },
+    {
+      "lcp": 888,
+      "cls": 0,
+      "inp": 56,
+      "tbt": 22
+    },
+    {
+      "lcp": 912,
+      "cls": 0,
+      "inp": 56,
+      "tbt": 74
+    },
+    {
+      "lcp": 932,
+      "cls": 0,
+      "inp": 64,
+      "tbt": 38
+    },
+    {
+      "lcp": 936,
+      "cls": 0,
+      "inp": 56,
+      "tbt": 32
+    },
+    {
+      "lcp": 884,
+      "cls": 0,
+      "inp": 56,
+      "tbt": 7
+    },
+    {
+      "lcp": 884,
+      "cls": 0,
+      "inp": 56,
+      "tbt": 8
+    }
+  ]
+}

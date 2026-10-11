@@ -1,0 +1,672 @@
+{
+  "file": "kb/tests/heldout/baseline/poster-a2.html",
+  "date": "2026-10-11T01:21:21.198Z",
+  "checks": {
+    "axe": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overlay": {
+      "fail": [
+        {
+          "message": "text over art \"Set\": worst pixel 2.76:1 (min 3) in light at 390px",
+          "target": ".plate > span:nth-child(1)",
+          "scheme": "light",
+          "width": 390
+        },
+        {
+          "message": "text over art \"in\": worst pixel 2.76:1 (min 3) in light at 390px",
+          "target": ".plate > .in",
+          "scheme": "light",
+          "width": 390
+        },
+        {
+          "message": "text over art \"Stone\": worst pixel 2.75:1 (min 3) in light at 390px",
+          "target": ".plate > span:nth-child(3)",
+          "scheme": "light",
+          "width": 390
+        },
+        {
+          "message": "text over art \"When\": worst pixel 2.76:1 (min 4.5) in light at 390px",
+          "target": "div:nth-child(1) > b",
+          "scheme": "light",
+          "width": 390
+        },
+        {
+          "message": "text over art \"Where\": worst pixel 2.76:1 (min 4.5) in light at 390px",
+          "target": "div:nth-child(2) > b",
+          "scheme": "light",
+          "width": 390
+        },
+        {
+          "message": "text over art \"With\": worst pixel 2.82:1 (min 4.5) in light at 390px",
+          "target": "div:nth-child(3) > b",
+          "scheme": "light",
+          "width": 390
+        },
+        {
+          "message": "text over art \"Stone\": worst pixel 1:1 (min 3) in light at 1440px",
+          "target": ".ink > span:nth-child(3)",
+          "scheme": "light",
+          "width": 1440
+        },
+        {
+          "message": "text over art \"Set\": worst pixel 2.78:1 (min 3) in light at 1440px",
+          "target": ".plate > span:nth-child(1)",
+          "scheme": "light",
+          "width": 1440
+        },
+        {
+          "message": "text over art \"in\": worst pixel 2.75:1 (min 3) in light at 1440px",
+          "target": ".plate > .in",
+          "scheme": "light",
+          "width": 1440
+        },
+        {
+          "message": "text over art \"Stone\": worst pixel 2.72:1 (min 3) in light at 1440px",
+          "target": ".plate > span:nth-child(3)",
+          "scheme": "light",
+          "width": 1440
+        },
+        {
+          "message": "text over art \"When\": worst pixel 2.79:1 (min 3) in light at 1440px",
+          "target": "div:nth-child(1) > b",
+          "scheme": "light",
+          "width": 1440
+        },
+        {
+          "message": "text over art \"Where\": worst pixel 2.76:1 (min 3) in light at 1440px",
+          "target": "div:nth-child(2) > b",
+          "scheme": "light",
+          "width": 1440
+        },
+        {
+          "message": "text over art \"With\": worst pixel 2.79:1 (min 3) in light at 1440px",
+          "target": "div:nth-child(3) > b",
+          "scheme": "light",
+          "width": 1440
+        },
+        {
+          "message": "text over art \"Set\": worst pixel 2.76:1 (min 3) in dark at 390px",
+          "target": ".plate > span:nth-child(1)",
+          "scheme": "dark",
+          "width": 390
+        },
+        {
+          "message": "text over art \"in\": worst pixel 2.76:1 (min 3) in dark at 390px",
+          "target": ".plate > .in",
+          "scheme": "dark",
+          "width": 390
+        },
+        {
+          "message": "text over art \"Stone\": worst pixel 2.75:1 (min 3) in dark at 390px",
+          "target": ".plate > span:nth-child(3)",
+          "scheme": "dark",
+          "width": 390
+        },
+        {
+          "message": "text over art \"When\": worst pixel 2.76:1 (min 4.5) in dark at 390px",
+          "target": "div:nth-child(1) > b",
+          "scheme": "dark",
+          "width": 390
+        },
+        {
+          "message": "text over art \"Where\": worst pixel 2.76:1 (min 4.5) in dark at 390px",
+          "target": "div:nth-child(2) > b",
+          "scheme": "dark",
+          "width": 390
+        },
+        {
+          "message": "text over art \"With\": worst pixel 2.82:1 (min 4.5) in dark at 390px",
+          "target": "div:nth-child(3) > b",
+          "scheme": "dark",
+          "width": 390
+        },
+        {
+          "message": "text over art \"Stone\": worst pixel 1:1 (min 3) in dark at 1440px",
+          "target": ".ink > span:nth-child(3)",
+          "scheme": "dark",
+          "width": 1440
+        },
+        {
+          "message": "text over art \"Set\": worst pixel 2.78:1 (min 3) in dark at 1440px",
+          "target": ".plate > span:nth-child(1)",
+          "scheme": "dark",
+          "width": 1440
+        },
+        {
+          "message": "text over art \"in\": worst pixel 2.75:1 (min 3) in dark at 1440px",
+          "target": ".plate > .in",
+          "scheme": "dark",
+          "width": 1440
+        },
+        {
+          "message": "text over art \"Stone\": worst pixel 2.72:1 (min 3) in dark at 1440px",
+          "target": ".plate > span:nth-child(3)",
+          "scheme": "dark",
+          "width": 1440
+        },
+        {
+          "message": "text over art \"When\": worst pixel 2.79:1 (min 3) in dark at 1440px",
+          "target": "div:nth-child(1) > b",
+          "scheme": "dark",
+          "width": 1440
+        },
+        {
+          "message": "text over art \"Where\": worst pixel 2.76:1 (min 3) in dark at 1440px",
+          "target": "div:nth-child(2) > b",
+          "scheme": "dark",
+          "width": 1440
+        },
+        {
+          "message": "text over art \"With\": worst pixel 2.79:1 (min 3) in dark at 1440px",
+          "target": "div:nth-child(3) > b",
+          "scheme": "dark",
+          "width": 1440
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "targets": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "measure": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "type-scale": {
+      "fail": [
+        {
+          "message": "font size 8.19px off the type scale at 390px",
+          "size": 8.19,
+          "count": 6,
+          "examples": [
+            "body > main.poster > div.top > span",
+            "body > main.poster > div.top > span.r",
+            "body > main.poster > div.foot > div",
+            "body > main.poster > div.foot > div"
+          ]
+        },
+        {
+          "message": "font size 132.6px off the type scale at 390px",
+          "size": 132.6,
+          "count": 4,
+          "examples": [
+            "main.poster > div.title > h1.ink > span",
+            "main.poster > div.title > h1.ink > span",
+            "main.poster > div.title > h1.plate > span",
+            "main.poster > div.title > h1.plate > span"
+          ]
+        },
+        {
+          "message": "font size 82.21px off the type scale at 390px",
+          "size": 82.21,
+          "count": 2,
+          "examples": [
+            "main.poster > div.title > h1.ink > span.in",
+            "main.poster > div.title > h1.plate > span.in"
+          ]
+        },
+        {
+          "message": "font size 6.24px off the type scale at 390px",
+          "size": 6.24,
+          "count": 3,
+          "examples": [
+            "main.poster > div.foot > div > b",
+            "main.poster > div.foot > div > b",
+            "main.poster > div.foot > div > b"
+          ]
+        },
+        {
+          "message": "font size 30.24px off the type scale at 1440px",
+          "size": 30.24,
+          "count": 6,
+          "examples": [
+            "body > main.poster > div.top > span",
+            "body > main.poster > div.top > span.r",
+            "body > main.poster > div.foot > div",
+            "body > main.poster > div.foot > div"
+          ]
+        },
+        {
+          "message": "font size 489.6px off the type scale at 1440px",
+          "size": 489.6,
+          "count": 4,
+          "examples": [
+            "main.poster > div.title > h1.ink > span",
+            "main.poster > div.title > h1.ink > span",
+            "main.poster > div.title > h1.plate > span",
+            "main.poster > div.title > h1.plate > span"
+          ]
+        },
+        {
+          "message": "font size 303.55px off the type scale at 1440px",
+          "size": 303.55,
+          "count": 2,
+          "examples": [
+            "main.poster > div.title > h1.ink > span.in",
+            "main.poster > div.title > h1.plate > span.in"
+          ]
+        },
+        {
+          "message": "font size 23.04px off the type scale at 1440px",
+          "size": 23.04,
+          "count": 3,
+          "examples": [
+            "main.poster > div.foot > div > b",
+            "main.poster > div.foot > div > b",
+            "main.poster > div.foot > div > b"
+          ]
+        },
+        {
+          "message": "font size 74.88px off the type scale at 1440px",
+          "size": 74.88,
+          "count": 1,
+          "examples": [
+            "main.poster > div.foot > div > span.date"
+          ]
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "spacing": {
+      "fail": [
+        {
+          "message": "padding-top:19.5px off the spacing scale at 390px",
+          "value": "padding-top:19.5",
+          "count": 1,
+          "examples": [
+            "html > body > main.poster"
+          ]
+        },
+        {
+          "message": "padding-right:19.5px off the spacing scale at 390px",
+          "value": "padding-right:19.5",
+          "count": 1,
+          "examples": [
+            "html > body > main.poster"
+          ]
+        },
+        {
+          "message": "padding-bottom:19.5px off the spacing scale at 390px",
+          "value": "padding-bottom:19.5",
+          "count": 1,
+          "examples": [
+            "html > body > main.poster"
+          ]
+        },
+        {
+          "message": "padding-left:19.5px off the spacing scale at 390px",
+          "value": "padding-left:19.5",
+          "count": 1,
+          "examples": [
+            "html > body > main.poster"
+          ]
+        },
+        {
+          "message": "padding-left:9.87px off the spacing scale at 390px",
+          "value": "padding-left:9.87",
+          "count": 2,
+          "examples": [
+            "main.poster > div.title > h1.ink > span.in",
+            "main.poster > div.title > h1.plate > span.in"
+          ]
+        },
+        {
+          "message": "margin-bottom:9.36px off the spacing scale at 390px",
+          "value": "margin-bottom:9.36",
+          "count": 1,
+          "examples": [
+            "html > body > main.poster > div.rule"
+          ]
+        },
+        {
+          "message": "margin-bottom:3.12px off the spacing scale at 390px",
+          "value": "margin-bottom:3.12",
+          "count": 3,
+          "examples": [
+            "main.poster > div.foot > div > b",
+            "main.poster > div.foot > div > b",
+            "main.poster > div.foot > div > b"
+          ]
+        },
+        {
+          "message": "margin-top:10.14px off the spacing scale at 390px",
+          "value": "margin-top:10.14",
+          "count": 1,
+          "examples": [
+            "html > body > main.poster > div.url"
+          ]
+        },
+        {
+          "message": "padding-top:72px off the spacing scale at 1440px",
+          "value": "padding-top:72",
+          "count": 1,
+          "examples": [
+            "html > body > main.poster"
+          ]
+        },
+        {
+          "message": "padding-right:72px off the spacing scale at 1440px",
+          "value": "padding-right:72",
+          "count": 1,
+          "examples": [
+            "html > body > main.poster"
+          ]
+        },
+        {
+          "message": "padding-bottom:72px off the spacing scale at 1440px",
+          "value": "padding-bottom:72",
+          "count": 1,
+          "examples": [
+            "html > body > main.poster"
+          ]
+        },
+        {
+          "message": "padding-left:72px off the spacing scale at 1440px",
+          "value": "padding-left:72",
+          "count": 1,
+          "examples": [
+            "html > body > main.poster"
+          ]
+        },
+        {
+          "message": "padding-left:36.43px off the spacing scale at 1440px",
+          "value": "padding-left:36.43",
+          "count": 2,
+          "examples": [
+            "main.poster > div.title > h1.ink > span.in",
+            "main.poster > div.title > h1.plate > span.in"
+          ]
+        },
+        {
+          "message": "margin-top:43.2px off the spacing scale at 1440px",
+          "value": "margin-top:43.2",
+          "count": 1,
+          "examples": [
+            "html > body > main.poster > div.rule"
+          ]
+        },
+        {
+          "message": "margin-bottom:34.56px off the spacing scale at 1440px",
+          "value": "margin-bottom:34.56",
+          "count": 1,
+          "examples": [
+            "html > body > main.poster > div.rule"
+          ]
+        },
+        {
+          "message": "row-gap:43.2px off the spacing scale at 1440px",
+          "value": "row-gap:43.2",
+          "count": 1,
+          "examples": [
+            "html > body > main.poster > div.foot"
+          ]
+        },
+        {
+          "message": "column-gap:43.2px off the spacing scale at 1440px",
+          "value": "column-gap:43.2",
+          "count": 1,
+          "examples": [
+            "html > body > main.poster > div.foot"
+          ]
+        },
+        {
+          "message": "margin-top:37.44px off the spacing scale at 1440px",
+          "value": "margin-top:37.44",
+          "count": 1,
+          "examples": [
+            "html > body > main.poster > div.url"
+          ]
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "overflow": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "heading-wrap": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "heading ends on a one-word line at 390px (\"SetinStone\")",
+          "sel": "body > main.poster > div.title > h1.ink",
+          "lines": 3,
+          "text": "SetinStone"
+        },
+        {
+          "message": "heading ends on a one-word line at 390px (\"SetinStone\")",
+          "sel": "body > main.poster > div.title > h1.plate",
+          "lines": 3,
+          "text": "SetinStone"
+        },
+        {
+          "message": "heading ends on a one-word line at 1440px (\"SetinStone\")",
+          "sel": "body > main.poster > div.title > h1.ink",
+          "lines": 3,
+          "text": "SetinStone"
+        },
+        {
+          "message": "heading ends on a one-word line at 1440px (\"SetinStone\")",
+          "sel": "body > main.poster > div.title > h1.plate",
+          "lines": 3,
+          "text": "SetinStone"
+        }
+      ],
+      "pass": true
+    },
+    "svg-overlap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "primary": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "radius": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "color-scheme": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "typography": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "tabular": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "shadows": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icons": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icon-stroke": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "weight": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "occlusion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "squash": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-header": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "run-together": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "word-break": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "grid-edge": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "hidden-content": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "double-space": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "undefined-var": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-layer": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "truth": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "proportion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "nav-parity": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus-shape": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "skip-link": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-shift": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "fallback": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "motion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    }
+  },
+  "summary": {
+    "weightKB": {
+      "html": 267,
+      "svg": 0
+    },
+    "focusables": 0,
+    "fallbackShift390": 1,
+    "fallbackShift1440": 2,
+    "motionFound": {
+      "animations": 0,
+      "movingTransitions": 0
+    },
+    "axe": "pass",
+    "overlay": "FAIL (26)",
+    "targets": "pass",
+    "measure": "pass",
+    "type-scale": "FAIL (9)",
+    "spacing": "FAIL (18)",
+    "overflow": "pass",
+    "heading-wrap": "pass (4 warn)",
+    "svg-overlap": "pass",
+    "primary": "pass",
+    "radius": "pass",
+    "color-scheme": "pass",
+    "typography": "pass",
+    "tabular": "pass",
+    "shadows": "pass",
+    "icons": "pass",
+    "icon-stroke": "pass",
+    "weight": "pass",
+    "occlusion": "pass",
+    "squash": "pass",
+    "sticky-header": "pass",
+    "run-together": "pass",
+    "word-break": "pass",
+    "grid-edge": "pass",
+    "hidden-content": "pass",
+    "double-space": "pass",
+    "undefined-var": "pass",
+    "state-layer": "pass",
+    "truth": "pass",
+    "proportion": "pass",
+    "nav-parity": "pass",
+    "focus": "pass",
+    "focus-shape": "pass",
+    "sticky-focus": "pass",
+    "skip-link": "pass",
+    "state-shift": "pass",
+    "fallback": "pass",
+    "motion": "pass",
+    "result": "FAIL",
+    "fails": 53,
+    "warns": 4
+  }
+}

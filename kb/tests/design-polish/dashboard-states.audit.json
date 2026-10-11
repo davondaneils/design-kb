@@ -1,0 +1,81 @@
+{
+  "file": "kb/tests/design-polish/dashboard-states.html",
+  "checks": {
+    "radius": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "census: 4px x80, 8px x80, 12px x16, full x24"
+        }
+      ]
+    },
+    "shadow": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "distinct shadows: 4"
+        }
+      ]
+    },
+    "hover-gate": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "icon-stroke": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "icons checked: 7"
+        }
+      ]
+    },
+    "svg-hairline": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "color-scheme": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "tabular": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "heading-wrap": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "focus-shape": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "elements tested: 22"
+        }
+      ]
+    },
+    "state-shift": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "forced-edge": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    }
+  },
+  "summary": {
+    "result": "PASS",
+    "fails": 0,
+    "warns": 0
+  }
+}

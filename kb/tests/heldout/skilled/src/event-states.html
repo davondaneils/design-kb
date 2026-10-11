@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en-GB" data-lint-page="state-sheet">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Set in Stone state sheet</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg">
+<style>
+/*@FONTS Bodoni Moda=bodoni-roman.woff2;700;normal*/
+/*@INCLUDE fest-tokens.css*/
+@layer tokens {
+  :root { color-scheme: light dark; }
+  @media (prefers-color-scheme: dark) {
+    :root { --color-bg: var(--color-paper-990); --color-text: var(--color-paper-100); --color-text-muted: var(--color-paper-400);
+      --color-border-strong: var(--color-paper-100); --color-primary: var(--color-sandstone-400); --color-primary-hover: var(--color-sandstone-300);
+      --color-primary-active: var(--color-sandstone-300); --color-on-primary: var(--color-paper-990); --color-focus-ring: var(--color-paper-100);
+      --state-hover: rgb(236 233 229 / 0.08); --state-pressed: rgb(236 233 229 / 0.10); }
+  }
+}
+@layer components {
+  main { max-inline-size: 1280px; margin-inline: auto; padding: var(--space-8) var(--space-6); }
+  h1 { font-family: var(--font-display); font-size: var(--text-3xl); line-height: var(--leading-tight); margin-block-end: var(--space-7); }
+  h2 { margin-block: var(--space-7) var(--space-4); color: var(--color-text-muted); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(232px, 1fr)); gap: var(--space-6); }
+  .cell { display: grid; gap: var(--space-3); justify-items: start; }
+  .cell p { font-size: var(--text-sm); color: var(--color-text-muted); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; min-height: var(--size-control-lg); padding-inline: var(--space-6); border-radius: var(--radius-control);
+    font-size: var(--text-base); font-weight: 600; text-decoration: none; white-space: nowrap; }
+  .btn-primary { background: var(--color-primary); color: var(--color-on-primary); }
+  .btn-primary.is-hover { background: var(--color-primary-hover); }
+  .btn-primary.is-pressed { background: var(--color-primary-active); }
+  .btn-outline { box-shadow: inset 0 0 0 2px var(--color-border-strong); color: var(--color-text); }
+  .btn-outline.is-hover { background: var(--state-hover); }
+  .btn-outline.is-pressed { background: var(--state-pressed); }
+  .is-focus { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+  .nav { display: inline-flex; align-items: center; min-height: var(--size-touch); padding-inline: var(--space-4); font-weight: 500; text-decoration: none; color: var(--color-text); border-radius: var(--radius-sm); }
+  .nav.is-hover { background: var(--state-hover); }
+  .nav[aria-current] { box-shadow: inset 0 -2px 0 var(--color-text); }
+  .textlink { font-weight: 600; text-underline-offset: 0.18em; color: var(--color-text); display: inline-flex; align-items: center; min-height: var(--size-touch); }
+  .textlink.is-hover { text-decoration-thickness: 2px; }
+  .soldout { background: var(--color-surface-sunken); color: var(--color-text-muted); box-shadow: inset 0 0 0 1px var(--color-border); cursor: not-allowed; }
+}
+</style>
+</head>
+<body>
+<main>
+  <h1>Set in Stone controls, every state</h1>
+  <h2 class="caps">Primary button</h2>
+  <div class="grid">
+    <div class="cell"><a class="btn btn-primary" href="#p1">Get tickets</a><p>Rest</p></div>
+    <div class="cell"><a class="btn btn-primary is-hover" href="#p2">Get tickets</a><p>Hover (pointer only)</p></div>
+    <div class="cell"><a class="btn btn-primary is-pressed" href="#p3">Get tickets</a><p>Pressed</p></div>
+    <div class="cell"><a class="btn btn-primary is-focus" href="#p4">Get tickets</a><p>Focus, 2px ink ring</p></div>
+    <div class="cell"><button class="btn btn-primary" aria-busy="true" style="position: relative"><span style="opacity: 0">Get tickets</span><span aria-hidden="true" style="position: absolute">Opening…</span></button><p>Busy, opening the ticket shop</p></div>
+  </div>
+  <h2 class="caps">Outline button</h2>
+  <div class="grid">
+    <div class="cell"><a class="btn btn-outline" href="#o1">Get day tickets</a><p>Rest</p></div>
+    <div class="cell"><a class="btn btn-outline is-hover" href="#o2">Get day tickets</a><p>Hover</p></div>
+    <div class="cell"><a class="btn btn-outline is-pressed" href="#o3">Get day tickets</a><p>Pressed</p></div>
+    <div class="cell"><a class="btn btn-outline is-focus" href="#o4">Get day tickets</a><p>Focus</p></div>
+    <div class="cell"><button class="btn soldout" disabled>Workshop full</button><p>Sold out (disabled, reason in the label)</p></div>
+  </div>
+  <h2 class="caps">Navigation and text links</h2>
+  <div class="grid">
+    <div class="cell"><a class="nav" href="#n1">Programme</a><p>Rest</p></div>
+    <div class="cell"><a class="nav is-hover" href="#n2">Programme</a><p>Hover</p></div>
+    <div class="cell"><a class="nav" aria-current="true" href="#n3">Programme</a><p>Current section</p></div>
+    <div class="cell"><a class="textlink is-focus" href="#n4">See the programme</a><p>Text link, focus</p></div>
+  </div>
+</main>
+</body>
+</html>

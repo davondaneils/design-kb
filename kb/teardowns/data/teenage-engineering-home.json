@@ -1,0 +1,588 @@
+{
+ "url": "https://teenage.engineering",
+ "measuredAt": "2026-10-10T17:00:34.384Z",
+ "method": "Playwright Chromium, getComputedStyle on visible elements, light scheme, after scroll-through and fonts.ready",
+ "widths": {
+  "390": {
+   "status": 200,
+   "finalUrl": "https://teenage.engineering/",
+   "width": 390,
+   "h1Style": null,
+   "title": "teenage engineering",
+   "description": "teenage engineering creates high quality, well designed, electronic products for all people who love sound and music.",
+   "pageHeight": 1761,
+   "bodyBg": "#000000",
+   "htmlBg": "#000000",
+   "fontsLoaded": [
+    "te-20 100 normal",
+    "te-20 300 normal"
+   ],
+   "families": [
+    {
+     "v": "te-20, Unicode",
+     "n": 325
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "14.3265px / lh 15.9184px / w300 / ls normal",
+     "n": 89,
+     "ex": "span: now open!wed–sun 11am–7pm"
+    },
+    {
+     "v": "10.3469px / lh 11.9388px / w300 / ls normal",
+     "n": 89,
+     "ex": "p: copyright ©2026"
+    },
+    {
+     "v": "13.2807px / lh 23.8776px / w100 / ls normal",
+     "n": 54,
+     "ex": "span: *excludes field desk. please see ."
+    },
+    {
+     "v": "21.4898px / lh 23.8776px / w300 / ls normal",
+     "n": 43,
+     "ex": "span: free shipping over $120*"
+    },
+    {
+     "v": "16px / lh 24px / w300 / ls normal",
+     "n": 29,
+     "ex": "span: checkout"
+    },
+    {
+     "v": "21.4898px / lh 23.8776px / w100 / ls normal",
+     "n": 20,
+     "ex": "span: 14 day return policy"
+    },
+    {
+     "v": "20px / lh 30px / w100 / ls 1.2px",
+     "n": 1,
+     "ex": "tspan: 0"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#f5f5f5",
+     "n": 269
+    },
+    {
+     "v": "#e5e5e5",
+     "n": 29
+    },
+    {
+     "v": "#0f0e12",
+     "n": 19
+    },
+    {
+     "v": "#000000",
+     "n": 8
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#f5f5f5 on #0f0e12",
+     "n": 268,
+     "ex": "17.64:1"
+    },
+    {
+     "v": "#e5e5e5 on #000000",
+     "n": 29,
+     "ex": "16.67:1"
+    },
+    {
+     "v": "#0f0e12 on #b2b2b2",
+     "n": 19,
+     "ex": "9.07:1"
+    },
+    {
+     "v": "#000000 on #000000",
+     "n": 8,
+     "ex": "1:1"
+    },
+    {
+     "v": "#f5f5f5 on #000000",
+     "n": 1,
+     "ex": "19.26:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#0f0e12",
+     "n": 336
+    },
+    {
+     "v": "#000000",
+     "n": 233
+    },
+    {
+     "v": "#b2b2b2",
+     "n": 18
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #272727",
+     "n": 8
+    }
+   ],
+   "radii": [
+    {
+     "v": "7.9592px",
+     "n": 1,
+     "ex": "button._button_1gnhu_1 _size-lg_1gnhu"
+    }
+   ],
+   "shadows": [],
+   "transitions": [],
+   "animations": [],
+   "maxWidths": [
+    {
+     "v": "100% (rendered 448px)",
+     "n": 1,
+     "ex": "img"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 4
+    },
+    {
+     "v": "pt 35.8163px pb 35.8163px",
+     "n": 1
+    }
+   ],
+   "gaps": [],
+   "paddings": [
+    {
+     "v": "17.9082px",
+     "n": 12
+    },
+    {
+     "v": "35.8163px",
+     "n": 2
+    },
+    {
+     "v": "7.9592px",
+     "n": 2
+    },
+    {
+     "v": "21.4898px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "35.8163px",
+     "n": 3
+    },
+    {
+     "v": "17.9082px",
+     "n": 2
+    }
+   ],
+   "measure": null,
+   "rootVars": {
+    "--white": "#fff",
+    "--te-white": "#f5f5f5",
+    "--te-black": "#0f0e12",
+    "--te-grey-100": "#e5e5e5",
+    "--te-grey-200": "#ccc",
+    "--te-grey-300": "#b2b2b2",
+    "--te-grey-500": "#a1a7af",
+    "--te-grey-600": "#767676",
+    "--te-grey-700": "#7f7f7f",
+    "--te-grey-900": "#4d4d4d",
+    "--te-grey-1000": "#272727",
+    "--te-blue": "#0071bb",
+    "--te-green": "#006837",
+    "--te-orange": "#f05a24",
+    "--te-red": "#b81d13",
+    "--te-yellow": "#fab413",
+    "--success": "var(--te-green)",
+    "--error": "#c0262c",
+    "--z-over": "100",
+    "--z-navigation": "1000",
+    "--z-modal-backdrop": "2000",
+    "--z-dialog": "2001",
+    "--viewport-height": "100vh",
+    "--base-design-width": "980",
+    "--header-height": "calc(.0816327 * var(--client-width))",
+    "--footer-height": "calc(.0663265 * var(--client-width))",
+    "--page-height": "calc(100vh - var(--header-height))",
+    "--footer-column": "calc(.219388 * var(--client-width))",
+    "--product-background-color": "#f5f5f5",
+    "--theme-body-bc": "#000000",
+    "--theme-bc": "null",
+    "--theme-fc": "#000000",
+    "--theme-fct": "var(--te-grey-100)",
+    "--theme-mc": "#f1f2f2",
+    "--theme-c1": "inherit",
+    "--theme-c10": "inherit",
+    "--theme-c11": "inherit",
+    "--theme-c3": "inherit",
+    "--theme-c4": "inherit",
+    "--theme-c5": "inherit",
+    "--theme-c6": "inherit",
+    "--theme-c7": "inherit",
+    "--theme-c8": "inherit",
+    "--theme-c8b": "inherit",
+    "--theme-c9": "inherit",
+    "--theme-mobile-cart": "#E5E5E5",
+    "--theme-mobile-cart-text": "rgb(15, 14, 18)",
+    "--theme-mobile-search": "#E5E5E5",
+    "--theme-op": "1",
+    "--theme-dt": "0",
+    "--header-adjustment-primary": "calc(.00306122 * var(--client-width))",
+    "--header-adjustment-secondary": "calc(-.00204082 * var(--client-width))",
+    "--space-xs": "calc(.00510204 * var(--client-width))",
+    "--space-sm": "calc(.0102041 * var(--client-width))",
+    "--space-md": "calc(.0153061 * var(--client-width))",
+    "--space-lg": "calc(.0229592 * var(--client-width))",
+    "--space-xl": "calc(.0459184 * var(--client-width))",
+    "--tile-border-radius": "0",
+    "--tile-padding": "1vw",
+    "--btn-min-click-area": "48px",
+    "--te-20": "\"te-20\", \"Unicode\", sans-serif",
+    "--te-40": "\"te-40\", \"Unicode\", sans-serif",
+    "--fw-thin": "100",
+    "--fw-light": "300",
+    "--fs-10": "calc(.00918367 * var(--client-width))",
+    "--fs-15": "calc(.0132653 * var(--client-width))",
+    "--fs-20": "calc(.0183673 * var(--client-width))",
+    "--fs-25": "calc(.0234694 * var(--client-width))",
+    "--fs-30": "calc(.027551 * var(--client-width))",
+    "--fs-40": "calc(.0367347 * var(--client-width))",
+    "--lh-10": "calc(.0102041 * var(--client-width))",
+    "--lh-15": "calc(.0153061 * var(--client-width))",
+    "--lh-20": "calc(.0204082 * var(--client-width))",
+    "--lh-25": "calc(.0306122 * var(--client-width))",
+    "--lh-30": "calc(.0306122 * var(--client-width))",
+    "--lh-40": "calc(.0408163 * var(--client-width))",
+    "--round": "9999px",
+    "--client-width": "100vw",
+    "--icon-size": "calc(.0244898 * var(--client-width))",
+    "--field-padding": "calc(.0102041 * var(--client-width))",
+    "--field-color": "#000",
+    "--field-color-disabled": "var(--te-grey-300)",
+    "--field-background": "#fff",
+    "--field-background-disabled": "var(--te-grey-100)",
+    "--field-placeholder": "var(--te-grey-700)",
+    "--field-font-size": "var(--fs-15)",
+    "--field-line-height": "1.5em",
+    "--field-border-color": "var(--te-grey-100)",
+    "--field-border": "calc(.00102041 * var(--client-width)) solid var(--field-border-color)",
+    "--field-border-radius": "0",
+    "--field-label-padding-top": "calc(.0153061 * var(--client-width))",
+    "--field-label-padding-bottom": "calc(.00510204 * var(--client-width))",
+    "--field-size": "calc(var(--field-line-height) + (var(--field-padding) * 2))",
+    "--grid-divider": "calc(.00102041 * var(--client-width))",
+    "--grid-divider-color": "var(--te-grey-300)",
+    "--bag-overlay-right": ".7vw",
+    "--bag-overlay-bottom": "1.25vw",
+    "--bag-overlay-width": "3.25vw",
+    "--bag-overlay-height": "6.25vw",
+    "--footer-link-height": "calc(.107143 * var(--client-width))",
+    "--footer-link-divider": "calc(.00306122 * var(--client-width))",
+    "--theme-om": "true"
+   },
+   "blockedSheets": 1,
+   "reducedMotionRules": 1,
+   "h1": [],
+   "h2": [],
+   "h3": [],
+   "nav": [
+    "checkout0"
+   ],
+   "ctas": [
+    "join our newsletter [354x52 bg #b2b2b2 fg #0f0e12 r 7.9592px pad 7.9592px 21.4898px 21.4898px/300]"
+   ],
+   "media": {
+    "img": 3,
+    "svg": 17,
+    "video": 0,
+    "canvas": 0
+   }
+  },
+  "1440": {
+   "status": 200,
+   "finalUrl": "https://teenage.engineering/",
+   "width": 1440,
+   "h1Style": null,
+   "title": "teenage engineering",
+   "description": "teenage engineering creates high quality, well designed, electronic products for all people who love sound and music.",
+   "pageHeight": 2285,
+   "bodyBg": "#000000",
+   "htmlBg": "#000000",
+   "fontsLoaded": [
+    "te-20 100 normal",
+    "te-20 300 normal",
+    "te-40 300 normal"
+   ],
+   "families": [
+    {
+     "v": "te-20, Unicode",
+     "n": 453
+    },
+    {
+     "v": "te-40, Unicode",
+     "n": 25
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "16px / lh 24px / w100 / ls normal",
+     "n": 193,
+     "ex": "span: teenage engineering"
+    },
+    {
+     "v": "9px / lh 13.5px / w100 / ls normal",
+     "n": 107,
+     "ex": "tspan: now"
+    },
+    {
+     "v": "19.102px / lh 22.0408px / w100 / ls normal",
+     "n": 73,
+     "ex": "p: newsletter"
+    },
+    {
+     "v": "19.5px / lh 29.25px / w100 / ls normal",
+     "n": 43,
+     "ex": "tspan: latest"
+    },
+    {
+     "v": "26.449px / lh 29.3878px / w300 / ls normal",
+     "n": 25,
+     "ex": "span: now open!wed–sun 11am–7pm"
+    },
+    {
+     "v": "16px / lh 24px / w300 / ls normal",
+     "n": 24,
+     "ex": "span: country or region"
+    },
+    {
+     "v": "19.102px / lh 22.0408px / w300 / ls normal",
+     "n": 13,
+     "ex": "span: united states"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#f1f2f2",
+     "n": 368
+    },
+    {
+     "v": "#e5e5e5",
+     "n": 103
+    },
+    {
+     "v": "#000000",
+     "n": 7
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#f1f2f2 on #000000",
+     "n": 368,
+     "ex": "18.72:1"
+    },
+    {
+     "v": "#e5e5e5 on #000000",
+     "n": 103,
+     "ex": "16.67:1"
+    },
+    {
+     "v": "#000000 on #000000",
+     "n": 7,
+     "ex": "1:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#000000",
+     "n": 518
+    }
+   ],
+   "borders": [],
+   "radii": [],
+   "shadows": [],
+   "transitions": [
+    {
+     "v": "transform 0.2s ease-in",
+     "n": 1,
+     "ex": "a"
+    }
+   ],
+   "animations": [],
+   "maxWidths": [
+    {
+     "v": "100% (rendered 1440px)",
+     "n": 1,
+     "ex": "img"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "14.6939px / col normal",
+     "n": 1
+    },
+    {
+     "v": "22.0408px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "66.1225px",
+     "n": 3
+    },
+    {
+     "v": "33.0612px",
+     "n": 2
+    }
+   ],
+   "margins": [],
+   "measure": null,
+   "rootVars": {
+    "--white": "#fff",
+    "--te-white": "#f5f5f5",
+    "--te-black": "#0f0e12",
+    "--te-grey-100": "#e5e5e5",
+    "--te-grey-200": "#ccc",
+    "--te-grey-300": "#b2b2b2",
+    "--te-grey-500": "#a1a7af",
+    "--te-grey-600": "#767676",
+    "--te-grey-700": "#7f7f7f",
+    "--te-grey-900": "#4d4d4d",
+    "--te-grey-1000": "#272727",
+    "--te-blue": "#0071bb",
+    "--te-green": "#006837",
+    "--te-orange": "#f05a24",
+    "--te-red": "#b81d13",
+    "--te-yellow": "#fab413",
+    "--success": "var(--te-green)",
+    "--error": "#c0262c",
+    "--z-over": "100",
+    "--z-navigation": "1000",
+    "--z-modal-backdrop": "2000",
+    "--z-dialog": "2001",
+    "--viewport-height": "100vh",
+    "--base-design-width": "980",
+    "--header-height": "calc(.0816327 * var(--client-width))",
+    "--footer-height": "calc(.0663265 * var(--client-width))",
+    "--page-height": "calc(100vh - var(--header-height))",
+    "--footer-column": "calc(.219388 * var(--client-width))",
+    "--product-background-color": "#f5f5f5",
+    "--theme-body-bc": "#000000",
+    "--theme-bc": "null",
+    "--theme-fc": "#000000",
+    "--theme-fct": "var(--te-grey-100)",
+    "--theme-mc": "#f1f2f2",
+    "--theme-c1": "inherit",
+    "--theme-c10": "inherit",
+    "--theme-c11": "inherit",
+    "--theme-c3": "inherit",
+    "--theme-c4": "inherit",
+    "--theme-c5": "inherit",
+    "--theme-c6": "inherit",
+    "--theme-c7": "inherit",
+    "--theme-c8": "inherit",
+    "--theme-c8b": "inherit",
+    "--theme-c9": "inherit",
+    "--theme-mobile-cart": "#E5E5E5",
+    "--theme-mobile-cart-text": "rgb(15, 14, 18)",
+    "--theme-mobile-search": "#E5E5E5",
+    "--theme-op": "1",
+    "--theme-dt": "0",
+    "--header-adjustment-primary": "calc(.00306122 * var(--client-width))",
+    "--header-adjustment-secondary": "calc(-.00204082 * var(--client-width))",
+    "--space-xs": "calc(.00510204 * var(--client-width))",
+    "--space-sm": "calc(.0102041 * var(--client-width))",
+    "--space-md": "calc(.0153061 * var(--client-width))",
+    "--space-lg": "calc(.0229592 * var(--client-width))",
+    "--space-xl": "calc(.0459184 * var(--client-width))",
+    "--tile-border-radius": "0",
+    "--tile-padding": "1vw",
+    "--btn-min-click-area": "48px",
+    "--te-20": "\"te-20\", \"Unicode\", sans-serif",
+    "--te-40": "\"te-40\", \"Unicode\", sans-serif",
+    "--fw-thin": "100",
+    "--fw-light": "300",
+    "--fs-10": "calc(.00918367 * var(--client-width))",
+    "--fs-15": "calc(.0132653 * var(--client-width))",
+    "--fs-20": "calc(.0183673 * var(--client-width))",
+    "--fs-25": "calc(.0234694 * var(--client-width))",
+    "--fs-30": "calc(.027551 * var(--client-width))",
+    "--fs-40": "calc(.0367347 * var(--client-width))",
+    "--lh-10": "calc(.0102041 * var(--client-width))",
+    "--lh-15": "calc(.0153061 * var(--client-width))",
+    "--lh-20": "calc(.0204082 * var(--client-width))",
+    "--lh-25": "calc(.0306122 * var(--client-width))",
+    "--lh-30": "calc(.0306122 * var(--client-width))",
+    "--lh-40": "calc(.0408163 * var(--client-width))",
+    "--round": "9999px",
+    "--client-width": "100vw",
+    "--icon-size": "calc(.0244898 * var(--client-width))",
+    "--field-padding": "calc(.0102041 * var(--client-width))",
+    "--field-color": "#000",
+    "--field-color-disabled": "var(--te-grey-300)",
+    "--field-background": "#fff",
+    "--field-background-disabled": "var(--te-grey-100)",
+    "--field-placeholder": "var(--te-grey-700)",
+    "--field-font-size": "var(--fs-15)",
+    "--field-line-height": "1.5em",
+    "--field-border-color": "var(--te-grey-100)",
+    "--field-border": "calc(.00102041 * var(--client-width)) solid var(--field-border-color)",
+    "--field-border-radius": "0",
+    "--field-label-padding-top": "calc(.0153061 * var(--client-width))",
+    "--field-label-padding-bottom": "calc(.00510204 * var(--client-width))",
+    "--field-size": "calc(var(--field-line-height) + (var(--field-padding) * 2))",
+    "--grid-divider": "calc(.00102041 * var(--client-width))",
+    "--grid-divider-color": "var(--te-grey-300)",
+    "--bag-overlay-right": ".7vw",
+    "--bag-overlay-bottom": "1.25vw",
+    "--bag-overlay-width": "3.25vw",
+    "--bag-overlay-height": "6.25vw",
+    "--footer-link-height": "calc(.107143 * var(--client-width))",
+    "--footer-link-divider": "calc(.00306122 * var(--client-width))",
+    "--theme-om": "true"
+   },
+   "blockedSheets": 1,
+   "reducedMotionRules": 1,
+   "h1": [],
+   "h2": [],
+   "h3": [],
+   "nav": [
+    "teenage engineering",
+    "product",
+    "instruments",
+    "audio",
+    "designs",
+    "store",
+    "checkout",
+    "deals",
+    "newsletter",
+    "instagram",
+    "now",
+    "guides",
+    "support",
+    "product",
+    "checkout",
+    "store"
+   ],
+   "ctas": [],
+   "media": {
+    "img": 3,
+    "svg": 17,
+    "video": 0,
+    "canvas": 0
+   }
+  }
+ }
+}

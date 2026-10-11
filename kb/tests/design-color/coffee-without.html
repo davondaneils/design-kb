@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ember & Oak Coffee Roasters</title>
+<style>
+  :root {
+    --orange: #F26B21;
+    --orange-dark: #D95A14;
+    --cream: #FFF8F0;
+    --espresso: #3E2723;
+    --latte: #C8A27A;
+    --text: #333333;
+    --text-light: #777777;
+    --white: #FFFFFF;
+    --card: #FFFFFF;
+    --border: #EADFD3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --cream: #121212;
+      --espresso: #EDEDED;
+      --text: #EDEDED;
+      --text-light: #9E9E9E;
+      --card: #1E1E1E;
+      --border: #2C2C2C;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--cream); color: var(--text); line-height: 1.6; }
+  a { color: var(--orange); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  header { padding: 20px 0; border-bottom: 1px solid var(--border); }
+  .nav { display: flex; justify-content: space-between; align-items: center; }
+  .logo { font-size: 22px; font-weight: 800; color: var(--espresso); }
+  .logo span { color: var(--orange); }
+  .nav ul { display: flex; gap: 30px; list-style: none; }
+  .nav ul a { color: var(--text); font-weight: 500; font-size: 15px; }
+  .btn { display: inline-block; background: var(--orange); color: var(--white); padding: 14px 28px; border-radius: 8px; font-weight: 600; font-size: 16px; border: none; cursor: pointer; transition: background 0.2s; }
+  .btn:hover { background: var(--orange-dark); text-decoration: none; }
+  .btn-outline { background: transparent; color: var(--orange); border: 2px solid var(--orange); }
+  .hero { padding: 80px 0; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .eyebrow { color: var(--orange); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 13px; margin-bottom: 15px; }
+  .hero h1 { font-size: 56px; line-height: 1.1; color: var(--espresso); margin-bottom: 20px; }
+  .hero p { font-size: 18px; color: var(--text-light); margin-bottom: 30px; }
+  .hero-actions { display: flex; gap: 15px; flex-wrap: wrap; }
+  .hero-img { aspect-ratio: 4/5; border-radius: 20px; background: linear-gradient(135deg, #F26B21 0%, #8B3A0F 100%); display: flex; align-items: center; justify-content: center; }
+  .bag { width: 55%; aspect-ratio: 3/4; background: var(--cream); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+  .bag strong { font-size: 20px; color: var(--espresso); }
+  .bag small { color: var(--text-light); font-size: 14px; }
+  section { padding: 80px 0; }
+  .section-title { text-align: center; font-size: 40px; color: var(--espresso); margin-bottom: 15px; }
+  .section-sub { text-align: center; color: var(--text-light); max-width: 600px; margin: 0 auto 50px; font-size: 18px; }
+  .sub-box { background: var(--espresso); color: var(--white); border-radius: 20px; padding: 60px; display: grid; grid-template-columns: 2fr 1fr; gap: 40px; align-items: center; }
+  @media (prefers-color-scheme: dark) { .sub-box { background: #2A1F1A; } }
+  .sub-box h2 { font-size: 36px; margin-bottom: 15px; }
+  .sub-box p { color: #D7CCC8; font-size: 17px; }
+  .price { font-size: 48px; font-weight: 800; color: var(--orange); }
+  .price small { font-size: 18px; color: #D7CCC8; font-weight: 400; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+  .card { background: var(--card); border-radius: 16px; padding: 30px; border: 1px solid var(--border); transition: transform 0.2s; }
+  .card:hover { transform: translateY(-5px); }
+  .swatch { height: 160px; border-radius: 12px; margin-bottom: 20px; }
+  .card h3 { font-size: 22px; color: var(--espresso); margin-bottom: 5px; }
+  .origin { color: var(--text-light); font-size: 14px; margin-bottom: 15px; }
+  .notes { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+  .note { background: rgba(242,107,33,0.1); color: var(--orange); padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 500; }
+  .card-foot { display: flex; justify-content: space-between; align-items: center; }
+  .card-price { font-weight: 700; font-size: 20px; color: var(--espresso); }
+  .story-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  .step-num { width: 50px; height: 50px; border-radius: 50%; background: var(--orange); color: var(--white); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 20px; margin-bottom: 20px; }
+  .story-grid h3 { font-size: 22px; color: var(--espresso); margin-bottom: 10px; }
+  .story-grid p { color: var(--text-light); }
+  footer { background: var(--espresso); color: #D7CCC8; padding: 60px 0 30px; }
+  @media (prefers-color-scheme: dark) { footer { background: #0A0A0A; } }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  footer h4 { color: var(--white); font-size: 18px; margin-bottom: 15px; }
+  footer ul { list-style: none; }
+  footer li { margin-bottom: 8px; }
+  footer a { color: #D7CCC8; }
+  .newsletter { display: flex; gap: 10px; margin-top: 15px; }
+  .newsletter input { flex: 1; padding: 14px; border-radius: 8px; border: 1px solid #5D4037; background: #4E342E; color: var(--white); font-size: 16px; }
+  .newsletter input::placeholder { color: #A1887F; }
+  .error { color: #EF4444; font-size: 14px; margin-top: 8px; }
+  .copyright { border-top: 1px solid #5D4037; padding-top: 20px; font-size: 14px; text-align: center; }
+  @media (max-width: 768px) {
+    .hero-grid, .sub-box, .footer-grid { grid-template-columns: 1fr; }
+    .cards, .story-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 40px; }
+    .nav ul { display: none; }
+    .sub-box { padding: 30px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <div class="logo">Ember <span>&amp;</span> Oak</div>
+    <ul>
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#subscribe">Subscriptions</a></li>
+      <li><a href="#story">Our Story</a></li>
+    </ul>
+    <a href="#subscribe" class="btn">Subscribe</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">New Single Origin</p>
+      <h1>Ethiopia Guji, roasted this week in Portland</h1>
+      <p>Bright notes of peach, jasmine and honey. Small-batch roasted and shipped within 48 hours so it arrives at its peak.</p>
+      <div class="hero-actions">
+        <a href="#shop" class="btn">Shop Now</a>
+        <a href="#subscribe" class="btn btn-outline">Start a Subscription</a>
+      </div>
+    </div>
+    <div class="hero-img" role="img" aria-label="Bag of Ethiopia Guji coffee">
+      <div class="bag"><strong>Ethiopia Guji</strong><small>Washed · Light roast</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="subscribe">
+  <div class="container">
+    <div class="sub-box">
+      <div>
+        <h2>Never run out of great coffee</h2>
+        <p>Get a fresh bag every two or four weeks. Pick your roast, skip or cancel anytime, and save 15% on every order.</p>
+      </div>
+      <div>
+        <div class="price">$18<small>/bag</small></div>
+        <a href="#" class="btn" style="margin-top:20px">Subscribe &amp; Save</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="shop">
+  <div class="container">
+    <h2 class="section-title">Featured Coffees</h2>
+    <p class="section-sub">Hand-picked lots from farms we know by name.</p>
+    <div class="cards">
+      <article class="card">
+        <div class="swatch" style="background:linear-gradient(135deg,#F9A86A,#F26B21)"></div>
+        <h3>Ethiopia Guji</h3>
+        <p class="origin">Washed · Light roast</p>
+        <div class="notes"><span class="note">Peach</span><span class="note">Jasmine</span><span class="note">Honey</span></div>
+        <div class="card-foot"><span class="card-price">$21</span><a href="#" class="btn">Add to Cart</a></div>
+      </article>
+      <article class="card">
+        <div class="swatch" style="background:linear-gradient(135deg,#C8A27A,#6D4C41)"></div>
+        <h3>Colombia Huila</h3>
+        <p class="origin">Washed · Medium roast</p>
+        <div class="notes"><span class="note">Caramel</span><span class="note">Red apple</span><span class="note">Cocoa</span></div>
+        <div class="card-foot"><span class="card-price">$19</span><a href="#" class="btn">Add to Cart</a></div>
+      </article>
+      <article class="card">
+        <div class="swatch" style="background:linear-gradient(135deg,#8D6E63,#3E2723)"></div>
+        <h3>Oak Fire Espresso</h3>
+        <p class="origin">Blend · Medium-dark roast</p>
+        <div class="notes"><span class="note">Dark chocolate</span><span class="note">Molasses</span></div>
+        <div class="card-foot"><span class="card-price">$18</span><a href="#" class="btn">Add to Cart</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="story">
+  <div class="container">
+    <h2 class="section-title">How We Roast</h2>
+    <p class="section-sub">Three steps, no shortcuts.</p>
+    <div class="story-grid">
+      <div><div class="step-num">1</div><h3>Source</h3><p>We buy directly from growers and pay well above fair trade prices for exceptional lots.</p></div>
+      <div><div class="step-num">2</div><h3>Roast</h3><p>Every batch is roasted in small 12 kilo runs on our vintage drum roaster in Southeast Portland.</p></div>
+      <div><div class="step-num">3</div><h3>Ship</h3><p>Coffee leaves within 48 hours of roasting, so it reaches your cup at its best.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Join our newsletter</h4>
+        <p>New releases, brew guides and subscriber-only lots.</p>
+        <form class="newsletter" onsubmit="return false">
+          <input type="email" placeholder="Your email" aria-label="Email address" value="dana@">
+          <button class="btn" type="submit">Sign Up</button>
+        </form>
+        <p class="error">Please enter a valid email address.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul><li><a href="#">Coffee</a></li><li><a href="#">Subscriptions</a></li><li><a href="#">Gear</a></li></ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul><li><a href="#">About</a></li><li><a href="#">Wholesale</a></li><li><a href="#">Contact</a></li></ul>
+      </div>
+    </div>
+    <p class="copyright">© 2026 Ember &amp; Oak Coffee Roasters. Portland, Oregon.</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en-GB" data-canvas="1200x630">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1200">
+<meta name="robots" content="noindex">
+<title>Set in Stone social card</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+/*@FONT*/
+/*@INCLUDE tokens.css*/
+@layer components {
+  html, body { background: var(--color-wall-joint); }
+  body { width: 1200px; height: 630px; overflow: hidden; }
+  .card { width: 1200px; height: 630px; grid-template-columns: 1fr; grid-template-rows: auto 1fr; --joint: 8px; --pad: 32px; --wall-wdth: 125%; --k-set: 2.619; --k-in: 1.402; --k-stone: 4.604; }
+  .card .words .stone { padding: 32px 48px; }
+  .card .words .course-1 { font-size: calc((1200px - 4 * 48px - 8px) / (var(--k-set) + var(--k-in))); }
+  .card .words .course-2 { font-size: calc((1200px - 2 * 48px) / var(--k-stone)); }
+  .info { --cols: 1.15fr 1fr; }
+  .info .stone { display: flex; align-items: center; padding: 16px 48px; font-size: 48px; font-weight: 800; font-stretch: 75%; line-height: 1.05; }
+}
+</style>
+</head>
+<body>
+<main class="wall card">
+  <h1 class="words">
+    <span class="course course-1"><span class="stone tone-a"><span class="w" data-lint-skip="overlay">Set</span></span> <span class="stone tone-c"><span class="w" data-lint-skip="overlay">in</span></span></span>
+    <span class="course course-2"><span class="stone tone-b"><span class="w" data-lint-skip="overlay">Stone</span></span></span>
+  </h1>
+  <div class="course info">
+    <p class="stone tone-e num">Sat 17 &amp; Sun 18 April 2027</p>
+    <p class="stone tone-d">Trongate 103, Glasgow</p>
+  </div>
+</main>
+</body>
+</html>

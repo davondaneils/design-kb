@@ -1,0 +1,176 @@
+{
+  "file": "kb/tests/design-art-direction/coffee-before.html",
+  "date": "2026-10-09T22:01:58.581Z",
+  "checks": {
+    "axe": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "needs review by eye, color-contrast: Elements must meet minimum color contrast ratio thresholds (3 nodes; axe could not decide, often text over images, gradients or overlapping layers)",
+          "scheme": "light",
+          "width": 390,
+          "targets": [
+            ".mark",
+            ".bag-label > .origin",
+            ".meta"
+          ]
+        },
+        {
+          "message": "needs review by eye, color-contrast: Elements must meet minimum color contrast ratio thresholds (3 nodes; axe could not decide, often text over images, gradients or overlapping layers)",
+          "scheme": "dark",
+          "width": 390,
+          "targets": [
+            ".mark",
+            ".bag-label > .origin",
+            ".meta"
+          ]
+        }
+      ],
+      "pass": true
+    },
+    "targets": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "body > header.site-header > div.wrap > a.logo",
+          "w": 125.5,
+          "h": 25
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "header.site-header > div.wrap > nav.nav > a",
+          "w": 58.2,
+          "h": 37
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "header.site-header > div.wrap > nav.nav > a.btn.btn-secondary",
+          "w": 100.6,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#shop > div.wrap > div.section-head > a",
+          "w": 125.7,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "ul.cards > li.card > div.card-foot > button.btn.btn-secondary",
+          "w": 106.9,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "ul.cards > li.card > div.card-foot > button.btn.btn-secondary",
+          "w": 106.9,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "ul.cards > li.card > div.card-foot > button.btn.btn-secondary",
+          "w": 106.9,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.links > ul > li > a",
+          "w": 50.7,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.links > ul > li > a",
+          "w": 103.7,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.links > ul > li > a",
+          "w": 100.3,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.links > ul > li > a",
+          "w": 73.2,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.links > ul > li > a",
+          "w": 70.6,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.links > ul > li > a",
+          "w": 78.7,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.links > ul > li > a",
+          "w": 98.6,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.links > ul > li > a",
+          "w": 59.4,
+          "h": 32
+        }
+      ],
+      "pass": true
+    },
+    "measure": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "type-scale": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "spacing": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overflow": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "motion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    }
+  },
+  "summary": {
+    "focusables": 22,
+    "motionFound": {
+      "animations": 0,
+      "movingTransitions": 0
+    },
+    "axe": "pass (2 warn)",
+    "targets": "pass (15 warn)",
+    "measure": "pass",
+    "type-scale": "pass",
+    "spacing": "pass",
+    "overflow": "pass",
+    "focus": "pass",
+    "motion": "pass",
+    "result": "PASS",
+    "fails": 0,
+    "warns": 17
+  }
+}

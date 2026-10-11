@@ -1,0 +1,29 @@
+{
+  "before": "kb/tests/design-frontend/before/dashboard.html",
+  "after": "kb/tests/design-frontend/dashboard.html",
+  "tolerance": 0,
+  "results": [
+    {
+      "name": "dashboard-900-light",
+      "query": "",
+      "scheme": "light",
+      "width": 900,
+      "sizeBefore": [
+        900,
+        1616
+      ],
+      "sizeAfter": [
+        900,
+        1437
+      ],
+      "pixels": 1293300,
+      "diffPixels": 278947,
+      "maxDelta": 255,
+      "rows": [
+        229,
+        1436
+      ],
+      "identical": false
+    }
+  ]
+}

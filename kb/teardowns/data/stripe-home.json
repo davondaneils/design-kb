@@ -1,0 +1,1694 @@
+{
+ "url": "https://stripe.com",
+ "measuredAt": "2026-10-10T16:51:32.964Z",
+ "method": "Playwright Chromium, getComputedStyle on visible elements, light scheme, after scroll-through and fonts.ready",
+ "widths": {
+  "390": {
+   "status": 200,
+   "finalUrl": "https://stripe.com/",
+   "width": 390,
+   "h1Style": {
+    "font": "sohne-var 34px/35.02px w300 ls -0.34px",
+    "color": "#81b81a",
+    "top": 191,
+    "width": 358,
+    "align": "start"
+   },
+   "title": "Stripe | Financial Infrastructure to Grow Your Revenue",
+   "description": "Stripe is a financial services platform that helps all types of businesses accept payments, build flexible billing models, and manage money movement.",
+   "pageHeight": 20510,
+   "bodyBg": "#000000 a0",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "sohne-var 1 1000 normal",
+    "SourceCodePro 500 normal"
+   ],
+   "families": [
+    {
+     "v": "sohne-var, \"SF Pro Display\"",
+     "n": 14007
+    },
+    {
+     "v": "SourceCodePro, SFMono-Regular",
+     "n": 417
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "20px / lh 24px / w300 / ls -0.2px",
+     "n": 2665,
+     "ex": "h3: Accept and optimize payments globally—online and in person"
+    },
+    {
+     "v": "16px / lh 22.4px / w300 / ls normal",
+     "n": 2396,
+     "ex": "p: currencies and payment methods supported"
+    },
+    {
+     "v": "16px / lh 20px / w300 / ls normal",
+     "n": 1125,
+     "ex": "a: Pricing"
+    },
+    {
+     "v": "18px / lh 25.2px / w300 / ls normal",
+     "n": 911,
+     "ex": "q: With Stripe, we have a global technology partner to help our"
+    },
+    {
+     "v": "16px / lh 21.6px / w300 / ls normal",
+     "n": 566,
+     "ex": "p: 50% of Fortune 100 companies have used Stripe to grow their "
+    },
+    {
+     "v": "16px / lh normal / w400 / ls normal",
+     "n": 531,
+     "ex": "a: View services"
+    },
+    {
+     "v": "22px / lh 26.4px / w300 / ls -0.22px",
+     "n": 464,
+     "ex": "h2: Flexible solutions for every business model."
+    },
+    {
+     "v": "16px / lh 22.4px / w400 / ls normal",
+     "n": 363,
+     "ex": "p: 160"
+    },
+    {
+     "v": "11px / lh 15.4px / w300 / ls normal",
+     "n": 294,
+     "ex": "div: I’m refreshing my wardrobe. Can you recommend some cozy, com"
+    },
+    {
+     "v": "10px / lh normal / w400 / ls normal",
+     "n": 293,
+     "ex": "div: Show a list of payments with export, refund, and dispute cap"
+    },
+    {
+     "v": "10px / lh normal / w300 / ls normal",
+     "n": 275,
+     "ex": "div: Total balance"
+    },
+    {
+     "v": "16px / lh 16px / w400 / ls normal",
+     "n": 254,
+     "ex": "a: Get started"
+    },
+    {
+     "v": "11px / lh 15.95px / w300 / ls normal",
+     "n": 228,
+     "ex": "span: 5 class pass"
+    },
+    {
+     "v": "18px / lh 22.5px / w300 / ls normal",
+     "n": 223,
+     "ex": "h3: Hertz unifies commerce with Stripe."
+    },
+    {
+     "v": "12px / lh 24px / w500 / ls normal",
+     "n": 219,
+     "ex": "span: 1"
+    },
+    {
+     "v": "12px / lh normal / w400 / ls normal",
+     "n": 210,
+     "ex": "span: Global GDP running on Stripe:"
+    },
+    {
+     "v": "10px / lh 11.5px / w300 / ls 0.1px",
+     "n": 201,
+     "ex": "div: Tap, insert, or swipe to pay"
+    },
+    {
+     "v": "10px / lh 12px / w300 / ls normal",
+     "n": 196,
+     "ex": "div: jane.diaz@stripe.com"
+    },
+    {
+     "v": "8px / lh 8px / w500 / ls normal",
+     "n": 193,
+     "ex": "div: stripeConnectInstance.();"
+    },
+    {
+     "v": "10px / lh 14.5px / w300 / ls -0.3px",
+     "n": 180,
+     "ex": "div: $8,348.00"
+    },
+    {
+     "v": "10px / lh 11.5px / w400 / ls 0.1px",
+     "n": 141,
+     "ex": "div: Mocha Latte"
+    },
+    {
+     "v": "10px / lh 14.5px / w400 / ls normal",
+     "n": 131,
+     "ex": "div: Vital Flow"
+    },
+    {
+     "v": "9px / lh 10.8px / w400 / ls normal",
+     "n": 120,
+     "ex": "div: Electric Kettle with Temperature Control"
+    },
+    {
+     "v": "9px / lh 10.8px / w300 / ls normal",
+     "n": 106,
+     "ex": "div: roastery.com/checkout"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#50617a",
+     "n": 4785
+    },
+    {
+     "v": "#061b31",
+     "n": 3429
+    },
+    {
+     "v": "#64748d",
+     "n": 2546
+    },
+    {
+     "v": "#ffffff",
+     "n": 957
+    },
+    {
+     "v": "#839bc8",
+     "n": 481
+    },
+    {
+     "v": "#000000",
+     "n": 474
+    },
+    {
+     "v": "#533afd",
+     "n": 356
+    },
+    {
+     "v": "#a3b5d6",
+     "n": 309
+    },
+    {
+     "v": "#1a2c44",
+     "n": 185
+    },
+    {
+     "v": "#3c4f69",
+     "n": 173
+    },
+    {
+     "v": "#273951",
+     "n": 110
+    },
+    {
+     "v": "#f2f7fe",
+     "n": 106
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#061b31 on #ffffff",
+     "n": 3054,
+     "ex": "17.37:1"
+    },
+    {
+     "v": "#50617a on #ffffff",
+     "n": 2648,
+     "ex": "6.3:1"
+    },
+    {
+     "v": "#64748d on #ffffff",
+     "n": 2515,
+     "ex": "4.75:1"
+    },
+    {
+     "v": "#50617a on #f8fafd",
+     "n": 2121,
+     "ex": "6.03:1"
+    },
+    {
+     "v": "#ffffff on #0d1738",
+     "n": 494,
+     "ex": "17.55:1"
+    },
+    {
+     "v": "#839bc8 on #0d1738",
+     "n": 481,
+     "ex": "6.26:1"
+    },
+    {
+     "v": "#061b31 on #f8fafd",
+     "n": 369,
+     "ex": "16.61:1"
+    },
+    {
+     "v": "#a3b5d6 on #0d1738",
+     "n": 309,
+     "ex": "8.47:1"
+    },
+    {
+     "v": "#533afd on #ffffff",
+     "n": 253,
+     "ex": "6.19:1"
+    },
+    {
+     "v": "#000000 on #0d1738",
+     "n": 212,
+     "ex": "1.2:1"
+    },
+    {
+     "v": "#1a2c44 on #ffffff",
+     "n": 185,
+     "ex": "14.12:1"
+    },
+    {
+     "v": "#000000 on #ffffff",
+     "n": 176,
+     "ex": "21:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#ffffff",
+     "n": 8466
+    },
+    {
+     "v": "#e5edf5",
+     "n": 3230
+    },
+    {
+     "v": "#f8fafd",
+     "n": 1938
+    },
+    {
+     "v": "#0d1738",
+     "n": 1506
+    },
+    {
+     "v": "radial-gradient(155.66% 78.1% at 50% 104.07%, rgb(175, 255, 234) 1.11%, rgb(103, 99, 228) 22.58%, rgb(51, 36, 150) 42.92%, rgb(41, 34, 125) ",
+     "n": 1140
+    },
+    {
+     "v": "#f8fafd a0.45",
+     "n": 395
+    },
+    {
+     "v": "#122054",
+     "n": 291
+    },
+    {
+     "v": "radial-gradient(50% 50%, rgb(255, 207, 94) 41.35%, rgba(255, 207, 94, 0) 100%)",
+     "n": 235
+    },
+    {
+     "v": "radial-gradient(50% 50%, rgba(83, 58, 253, 0.8) 62.5%, rgba(83, 58, 253, 0) 100%)",
+     "n": 232
+    },
+    {
+     "v": "radial-gradient(50% 50%, rgba(243, 99, 243, 0.8) 53.85%, rgba(243, 99, 243, 0) 100%)",
+     "n": 224
+    },
+    {
+     "v": "#f6f9fc",
+     "n": 211
+    },
+    {
+     "v": "linear-gradient(rgb(255, 255, 255) 41.35%, rgba(255, 255, 255, 0))",
+     "n": 168
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #e5edf5",
+     "n": 46
+    },
+    {
+     "v": "1px #362baa",
+     "n": 12
+    },
+    {
+     "v": "1px #d6d9fc",
+     "n": 8
+    },
+    {
+     "v": "1px #b9b9f9",
+     "n": 7
+    },
+    {
+     "v": "1px #15be53 a0.4",
+     "n": 7
+    },
+    {
+     "v": "1px #152460",
+     "n": 4
+    },
+    {
+     "v": "1px #e7ecf1",
+     "n": 2
+    },
+    {
+     "v": "1px #ffd7ef",
+     "n": 2
+    }
+   ],
+   "radii": [
+    {
+     "v": "4px",
+     "n": 79,
+     "ex": "button.hds-ui-button hds-navigation-m"
+    },
+    {
+     "v": "6px",
+     "n": 79,
+     "ex": "div.modular-solutions-bento-card__"
+    },
+    {
+     "v": "1px",
+     "n": 31,
+     "ex": "div.billing-plan-graphic__bar"
+    },
+    {
+     "v": "5px",
+     "n": 13,
+     "ex": "div.modular-solutions-bento-card__"
+    },
+    {
+     "v": "0px 0px 6px 6px",
+     "n": 5,
+     "ex": "div.payments-graphic__checkout-pay"
+    },
+    {
+     "v": "6px 6px 0px 0px",
+     "n": 4,
+     "ex": "div.payments-graphic__checkout-pay"
+    },
+    {
+     "v": "100%",
+     "n": 3,
+     "ex": "div.billing-plan-graphic__backgrou"
+    },
+    {
+     "v": "16px",
+     "n": 2,
+     "ex": "div.browser-graphic__url-box"
+    },
+    {
+     "v": "3px",
+     "n": 2,
+     "ex": "div.billing-plan-graphic__usage-pr"
+    },
+    {
+     "v": "4.51px",
+     "n": 2,
+     "ex": "span.connect-platform-graphic__paym"
+    },
+    {
+     "v": "2px",
+     "n": 2,
+     "ex": "div.book-button__icon-container"
+    },
+    {
+     "v": "10px",
+     "n": 1,
+     "ex": "div.connect-platform-graphic__paym"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgba(3, 3, 39, 0.25) 0px 14.088px 21.132px -14.088px, rgba(0, 0, 0, 0.1) 0px 8.453px 16.906px -8.453px",
+     "n": 5,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(50, 50, 93, 0.25) 0px 30px 45px -30px, rgba(0, 0, 0, 0.1) 0px 18px 36px -18px",
+     "n": 4,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.1) 0px 20.187px 40.374px -20.187px",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(23, 23, 23, 0.08) 0px 15px 35px 0px",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(23, 23, 23, 0.06) 0px 3px 6px 0px",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(50, 50, 93, 0.12) 0px 16px 32px 0px",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(50, 50, 93, 0.12) 0px 15.931px 31.863px 0px",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(10, 37, 64, 0.22) 0px -1.854px 4.634px 0px inset",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "color 0.3s cubic-bezier(0.25, 1, 0.5, 1)",
+     "n": 136,
+     "ex": "a"
+    },
+    {
+     "v": "transform 0.3s cubic-bezier(0.25, 1, 0.5, 1)",
+     "n": 45,
+     "ex": "g"
+    },
+    {
+     "v": "opacity 0.15s linear",
+     "n": 36,
+     "ex": "li"
+    },
+    {
+     "v": "transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1)",
+     "n": 22,
+     "ex": "div"
+    },
+    {
+     "v": "background-color, color, outline-color, border 0.3s, 0.3s, 0.3s, 0.3s cubic-bezier(0.25, 1, 0.5, 1), cubic-bezier(0.25, 1, 0.5, 1), cubic-bezier(0.25, 1, 0.5, 1), cubic-bezier(0.25, 1, 0.5, 1)",
+     "n": 19,
+     "ex": "a"
+    },
+    {
+     "v": "border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 12,
+     "ex": "div"
+    },
+    {
+     "v": "opacity 0.5s cubic-bezier(0.33, 1, 0.68, 1)",
+     "n": 7,
+     "ex": "div"
+    },
+    {
+     "v": "transform 2s cubic-bezier(0.9, 0, 0.1, 1)",
+     "n": 7,
+     "ex": "div"
+    },
+    {
+     "v": "z-index 0.1s steps(1)",
+     "n": 6,
+     "ex": "button"
+    },
+    {
+     "v": "transform, opacity, fill 0.25s, 0.25s, 0.1s ease-in-out, ease-in-out, ease-in-out",
+     "n": 5,
+     "ex": "rect"
+    },
+    {
+     "v": "max-height, visibility 0.5s, 0s cubic-bezier(0.65, 0, 0.35, 1), steps(1)",
+     "n": 4,
+     "ex": "div"
+    },
+    {
+     "v": "border-color 0.5s linear",
+     "n": 4,
+     "ex": "div"
+    }
+   ],
+   "animations": [
+    {
+     "v": "book-of-the-week-fade-in 0.5s cubic-bezier(0.33, 1, 0.68, 1) x1",
+     "n": 2
+    },
+    {
+     "v": "detect-scroll, navigation-menu-delay-reset auto, 0s linear, linear x1, 1",
+     "n": 1
+    }
+   ],
+   "maxWidths": [
+    {
+     "v": "400px (rendered 358px)",
+     "n": 14,
+     "ex": "div"
+    },
+    {
+     "v": "1266px (rendered 390px)",
+     "n": 12,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 358px)",
+     "n": 9,
+     "ex": "img"
+    },
+    {
+     "v": "100% (rendered 340px)",
+     "n": 7,
+     "ex": "img"
+    },
+    {
+     "v": "356px (rendered 326px)",
+     "n": 5,
+     "ex": "div"
+    },
+    {
+     "v": "min(100% - 80px, 264.6px) (rendered 265px)",
+     "n": 4,
+     "ex": "div"
+    },
+    {
+     "v": "180px (rendered 171px)",
+     "n": 4,
+     "ex": "p"
+    },
+    {
+     "v": "606.524px (rendered 390px)",
+     "n": 4,
+     "ex": "q"
+    },
+    {
+     "v": "856px (rendered 358px)",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 398px)",
+     "n": 3,
+     "ex": "img"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 17
+    }
+   ],
+   "gaps": [
+    {
+     "v": "8px",
+     "n": 42
+    },
+    {
+     "v": "16px",
+     "n": 29
+    },
+    {
+     "v": "24px",
+     "n": 14
+    },
+    {
+     "v": "40px",
+     "n": 13
+    },
+    {
+     "v": "16px / col normal",
+     "n": 11
+    },
+    {
+     "v": "4px",
+     "n": 10
+    },
+    {
+     "v": "4px / col normal",
+     "n": 8
+    },
+    {
+     "v": "10px",
+     "n": 7
+    },
+    {
+     "v": "32px",
+     "n": 5
+    },
+    {
+     "v": "12px",
+     "n": 5
+    },
+    {
+     "v": "26px",
+     "n": 4
+    },
+    {
+     "v": "14px",
+     "n": 3
+    },
+    {
+     "v": "24px / col 16px",
+     "n": 3
+    },
+    {
+     "v": "6px",
+     "n": 2
+    }
+   ],
+   "paddings": [
+    {
+     "v": "8px",
+     "n": 105
+    },
+    {
+     "v": "6px",
+     "n": 73
+    },
+    {
+     "v": "16px",
+     "n": 63
+    },
+    {
+     "v": "12px",
+     "n": 47
+    },
+    {
+     "v": "24px",
+     "n": 41
+    },
+    {
+     "v": "4px",
+     "n": 38
+    },
+    {
+     "v": "2px",
+     "n": 26
+    },
+    {
+     "v": "1px",
+     "n": 21
+    },
+    {
+     "v": "13.5px",
+     "n": 15
+    },
+    {
+     "v": "10px",
+     "n": 14
+    },
+    {
+     "v": "11px",
+     "n": 13
+    },
+    {
+     "v": "32px",
+     "n": 11
+    },
+    {
+     "v": "56px",
+     "n": 10
+    },
+    {
+     "v": "14px",
+     "n": 9
+    },
+    {
+     "v": "12.5px",
+     "n": 8
+    },
+    {
+     "v": "14.5px",
+     "n": 7
+    },
+    {
+     "v": "9px",
+     "n": 7
+    },
+    {
+     "v": "7px",
+     "n": 7
+    }
+   ],
+   "margins": [
+    {
+     "v": "16px",
+     "n": 27
+    },
+    {
+     "v": "8px",
+     "n": 8
+    },
+    {
+     "v": "6px",
+     "n": 8
+    },
+    {
+     "v": "10px",
+     "n": 8
+    },
+    {
+     "v": "12px",
+     "n": 7
+    },
+    {
+     "v": "20px",
+     "n": 6
+    },
+    {
+     "v": "4px",
+     "n": 5
+    },
+    {
+     "v": "32px",
+     "n": 5
+    },
+    {
+     "v": "18px",
+     "n": 4
+    },
+    {
+     "v": "3px",
+     "n": 4
+    },
+    {
+     "v": "1px",
+     "n": 4
+    },
+    {
+     "v": "14px",
+     "n": 3
+    },
+    {
+     "v": "2px",
+     "n": 3
+    },
+    {
+     "v": "22px",
+     "n": 2
+    }
+   ],
+   "measure": {
+    "text": "From the Fortune 100 to the Forbes Cloud 100, vertical SaaS platforms use Stripe to expand their product offerings with ",
+    "chars": 161,
+    "lines": 4,
+    "charsPerLine": 40,
+    "width": 358,
+    "fontSize": "16px",
+    "lineHeight": "21.6px",
+    "color": "#50617a"
+   },
+   "rootVars": {},
+   "blockedSheets": 8,
+   "reducedMotionRules": 0,
+   "h1": [
+    "Financial infrastructure to grow your revenue. Accept payments, handle business banking,1 and implement custom revenue models—from your first transaction to your billionth.",
+    "Financial infrastructure to grow your revenue. Accept payments, handle business banking,1 and implement custom revenue models—from your first transaction to your billionth."
+   ],
+   "h2": [
+    "Flexible solutions for every business model.",
+    "The backbone of global commerce",
+    "Powering businesses of all sizes.",
+    "Reliable, extensible infrastructure for every stack.",
+    "What’s happening"
+   ],
+   "h3": [
+    "Accept and optimize payments globally—online and in person",
+    "Enable any billing model",
+    "Monetize through agentic commerce",
+    "Create a card issuing program",
+    "Access borderless money movement with stablecoins and crypto",
+    "Embed payments in your platform",
+    "Transform your enterprise with agile financial infrastructure",
+    "Hertz unifies commerce with Stripe.",
+    "URBN consolidates $5 billion in online and in-store revenue onto Stripe.",
+    "Instacart powers online grocery delivery with Stripe.",
+    "Le Monde improves local and international payments with Stripe.",
+    "Build a foundation for your startup that enables faster growth",
+    "Make your SaaS platform a complete financial operating system",
+    "Connect to existing systems.",
+    "Scale with confidence.",
+    "Choose an integration path."
+   ],
+   "nav": [
+    "Stripe for enterprises",
+    "Stripe for startups",
+    "Stripe for platforms"
+   ],
+   "ctas": [
+    "Get started [358x44 bg #533afd fg #ffffff r 4px pad 13.5px 24px 14.5px 16px/400]",
+    "Sign up with Google [358x44 bg #ffffff a0.65 fg #533afd r 4px pad 12.5px 24px 13.5px 16px/400]",
+    "Watch now [139x44 bg #ffffff fg #533afd r 4px pad 13.5px 24px 14.5px 16px/400]",
+    "Stripe for enterprises [358x44 bg #533afd fg #ffffff r 4px pad 13.5px 24px 14.5px 16px/400]",
+    "Read the story [166x44 bg #ffffff a0 fg #533afd r 4px pad 12.5px 24px 13.5px 16px/400]",
+    "Read the story [166x44 bg #ffffff a0 fg #533afd r 4px pad 12.5px 24px 13.5px 16px/400]",
+    "Read the story [166x44 bg #ffffff a0 fg #533afd r 4px pad 12.5px 24px 13.5px 16px/400]",
+    "Read the story [166x44 bg #ffffff a0 fg #533afd r 4px pad 12.5px 24px 13.5px 16px/400]",
+    "Stripe for startups [358x44 bg #533afd fg #ffffff r 4px pad 13.5px 24px 14.5px 16px/400]",
+    "Stripe for platforms [358x44 bg #533afd fg #ffffff r 4px pad 13.5px 24px 14.5px 16px/400]",
+    "View developer docs [358x44 bg #533afd fg #ffffff r 4px pad 13.5px 24px 14.5px 16px/400]",
+    "View Stripe’s GitHub [358x44 bg #ffffff a0 fg #ffffff r 4px pad 12.5px 24px 13.5px 16px/400]",
+    "Read the letter [168x44 bg #ffffff a0 fg #533afd r 4px pad 12.5px 24px 13.5px 16px/400]",
+    "Stripe Press [142x38 bg #000000 a0 fg #0000ee r 4px pad 2px 16px/400]"
+   ],
+   "media": {
+    "img": 48,
+    "svg": 274,
+    "video": 0,
+    "canvas": 1
+   }
+  },
+  "1440": {
+   "status": 200,
+   "finalUrl": "https://stripe.com/",
+   "width": 1440,
+   "h1Style": {
+    "font": "sohne-var 48px/55.2px w300 ls -0.96px",
+    "color": "#81b81a",
+    "top": 258,
+    "width": 1018,
+    "align": "start"
+   },
+   "title": "Stripe | Financial Infrastructure to Grow Your Revenue",
+   "description": "Stripe is a financial services platform that helps all types of businesses accept payments, build flexible billing models, and manage money movement.",
+   "pageHeight": 14822,
+   "bodyBg": "#000000 a0",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "sohne-var 1 1000 normal",
+    "SourceCodePro 500 normal"
+   ],
+   "families": [
+    {
+     "v": "sohne-var, \"SF Pro Display\"",
+     "n": 15203
+    },
+    {
+     "v": "SourceCodePro, SFMono-Regular",
+     "n": 417
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "16px / lh 22.4px / w300 / ls normal",
+     "n": 2544,
+     "ex": "span: currencies and payment methods supported"
+    },
+    {
+     "v": "22px / lh 24.2px / w300 / ls -0.22px",
+     "n": 1861,
+     "ex": "h3: Hertz unifies commerce with Stripe."
+    },
+    {
+     "v": "26px / lh 29.12px / w300 / ls -0.26px",
+     "n": 1850,
+     "ex": "h3: Accept and optimize payments globally—online and in person"
+    },
+    {
+     "v": "16px / lh 20px / w300 / ls normal",
+     "n": 1125,
+     "ex": "a: Pricing"
+    },
+    {
+     "v": "16px / lh normal / w400 / ls normal",
+     "n": 667,
+     "ex": "a: View services"
+    },
+    {
+     "v": "18px / lh 25.2px / w300 / ls normal",
+     "n": 566,
+     "ex": "p: 50% of Fortune 100 companies have used Stripe to grow their "
+    },
+    {
+     "v": "32px / lh 35.2px / w300 / ls -0.64px",
+     "n": 501,
+     "ex": "h2: Flexible solutions for every business model."
+    },
+    {
+     "v": "10px / lh normal / w300 / ls normal",
+     "n": 476,
+     "ex": "div: To make sure your business is supportable, we need to collec"
+    },
+    {
+     "v": "16px / lh 16px / w400 / ls normal",
+     "n": 341,
+     "ex": "a: Get started"
+    },
+    {
+     "v": "48px / lh 55.2px / w300 / ls -0.96px",
+     "n": 340,
+     "ex": "em: Financial infrastructure to grow your revenue."
+    },
+    {
+     "v": "10px / lh normal / w400 / ls normal",
+     "n": 318,
+     "ex": "div: Home"
+    },
+    {
+     "v": "11px / lh 15.4px / w300 / ls normal",
+     "n": 294,
+     "ex": "div: I’m refreshing my wardrobe. Can you recommend some cozy, com"
+    },
+    {
+     "v": "16px / lh 22.4px / w400 / ls normal",
+     "n": 287,
+     "ex": "p: 160"
+    },
+    {
+     "v": "14px / lh 19.6px / w300 / ls normal",
+     "n": 256,
+     "ex": "p: Stripe Treasury includes various distinct Stripe products. S"
+    },
+    {
+     "v": "11px / lh 15.95px / w300 / ls normal",
+     "n": 228,
+     "ex": "span: 5 class pass"
+    },
+    {
+     "v": "12px / lh 24px / w500 / ls normal",
+     "n": 219,
+     "ex": "span: 1"
+    },
+    {
+     "v": "10px / lh 11.5px / w300 / ls 0.1px",
+     "n": 201,
+     "ex": "div: Tap, insert, or swipe to pay"
+    },
+    {
+     "v": "10px / lh 12px / w300 / ls normal",
+     "n": 196,
+     "ex": "div: jane.diaz@stripe.com"
+    },
+    {
+     "v": "9px / lh 9px / w500 / ls normal",
+     "n": 193,
+     "ex": "div: stripeConnectInstance.();"
+    },
+    {
+     "v": "10px / lh 14.5px / w300 / ls -0.3px",
+     "n": 180,
+     "ex": "div: $8,348.00"
+    },
+    {
+     "v": "12px / lh normal / w400 / ls normal",
+     "n": 145,
+     "ex": "div: Order summary"
+    },
+    {
+     "v": "10px / lh 11.5px / w400 / ls 0.1px",
+     "n": 141,
+     "ex": "div: Mocha Latte"
+    },
+    {
+     "v": "14px / lh normal / w400 / ls normal",
+     "n": 135,
+     "ex": "span: Global GDP running on Stripe:"
+    },
+    {
+     "v": "10px / lh 14.5px / w400 / ls normal",
+     "n": 131,
+     "ex": "div: Vital Flow"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#50617a",
+     "n": 4420
+    },
+    {
+     "v": "#061b31",
+     "n": 4205
+    },
+    {
+     "v": "#64748d",
+     "n": 2862
+    },
+    {
+     "v": "#ffffff",
+     "n": 802
+    },
+    {
+     "v": "#533afd",
+     "n": 579
+    },
+    {
+     "v": "#839bc8",
+     "n": 481
+    },
+    {
+     "v": "#000000",
+     "n": 474
+    },
+    {
+     "v": "#a3b5d6",
+     "n": 309
+    },
+    {
+     "v": "#1a2c44",
+     "n": 185
+    },
+    {
+     "v": "#3c4f69",
+     "n": 173
+    },
+    {
+     "v": "#7d8ba4",
+     "n": 135
+    },
+    {
+     "v": "#81b81a",
+     "n": 125
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#061b31 on #ffffff",
+     "n": 3830,
+     "ex": "17.37:1"
+    },
+    {
+     "v": "#64748d on #ffffff",
+     "n": 2574,
+     "ex": "4.75:1"
+    },
+    {
+     "v": "#50617a on #ffffff",
+     "n": 2283,
+     "ex": "6.3:1"
+    },
+    {
+     "v": "#50617a on #f8fafd",
+     "n": 2121,
+     "ex": "6.03:1"
+    },
+    {
+     "v": "#839bc8 on #0d1738",
+     "n": 481,
+     "ex": "6.26:1"
+    },
+    {
+     "v": "#533afd on #ffffff",
+     "n": 434,
+     "ex": "6.19:1"
+    },
+    {
+     "v": "#061b31 on #f8fafd",
+     "n": 369,
+     "ex": "16.61:1"
+    },
+    {
+     "v": "#a3b5d6 on #0d1738",
+     "n": 309,
+     "ex": "8.47:1"
+    },
+    {
+     "v": "#64748d on #f8fafd",
+     "n": 288,
+     "ex": "4.54:1"
+    },
+    {
+     "v": "#ffffff on #0d1738",
+     "n": 283,
+     "ex": "17.55:1"
+    },
+    {
+     "v": "#000000 on #0d1738",
+     "n": 212,
+     "ex": "1.2:1"
+    },
+    {
+     "v": "#1a2c44 on #ffffff",
+     "n": 185,
+     "ex": "14.12:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#ffffff",
+     "n": 20179
+    },
+    {
+     "v": "#e5edf5",
+     "n": 3709
+    },
+    {
+     "v": "#f8fafd",
+     "n": 3442
+    },
+    {
+     "v": "#0d1738",
+     "n": 3372
+    },
+    {
+     "v": "radial-gradient(circle, rgb(127, 125, 252), rgb(244, 75, 204) 33%, rgb(229, 237, 245) 66%)",
+     "n": 2205
+    },
+    {
+     "v": "radial-gradient(102.83% 103.24% at 49.98% 104.51%, rgb(255, 180, 81) 0px, rgb(239, 198, 128) 16.73%, rgb(180, 216, 255) 33.03%, rgb(210, 232",
+     "n": 1408
+    },
+    {
+     "v": "#f8fafd a0.45",
+     "n": 1183
+    },
+    {
+     "v": "#122054",
+     "n": 369
+    },
+    {
+     "v": "#fffafd",
+     "n": 325
+    },
+    {
+     "v": "radial-gradient(50% 50%, rgb(255, 207, 94) 41.35%, rgba(255, 207, 94, 0) 100%)",
+     "n": 304
+    },
+    {
+     "v": "#344b58",
+     "n": 304
+    },
+    {
+     "v": "radial-gradient(50% 50%, rgba(83, 58, 253, 0.8) 62.5%, rgba(83, 58, 253, 0) 100%)",
+     "n": 300
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #e5edf5",
+     "n": 46
+    },
+    {
+     "v": "1px #362baa",
+     "n": 12
+    },
+    {
+     "v": "1px #b9b9f9",
+     "n": 10
+    },
+    {
+     "v": "1px #d6d9fc",
+     "n": 9
+    },
+    {
+     "v": "1px #15be53 a0.4",
+     "n": 7
+    },
+    {
+     "v": "1px #ffd7ef",
+     "n": 4
+    },
+    {
+     "v": "1px #152460",
+     "n": 4
+    },
+    {
+     "v": "1px #e2e4ff",
+     "n": 3
+    }
+   ],
+   "radii": [
+    {
+     "v": "4px",
+     "n": 100,
+     "ex": "button.hds-button hds-navigation-menu"
+    },
+    {
+     "v": "6px",
+     "n": 70,
+     "ex": "nav.hds-navigation-menu navigation"
+    },
+    {
+     "v": "5px",
+     "n": 7,
+     "ex": "div.modular-solutions-bento-card__"
+    },
+    {
+     "v": "0px 0px 6px 6px",
+     "n": 5,
+     "ex": "div.payments-graphic__checkout-pay"
+    },
+    {
+     "v": "8px",
+     "n": 4,
+     "ex": "div.stats-menu__stat-wrapper"
+    },
+    {
+     "v": "16px",
+     "n": 3,
+     "ex": "div.browser-graphic__url-box"
+    },
+    {
+     "v": "6px 6px 0px 0px",
+     "n": 3,
+     "ex": "div.payments-graphic__checkout-pay"
+    },
+    {
+     "v": "100%",
+     "n": 3,
+     "ex": "div.billing-plan-graphic__backgrou"
+    },
+    {
+     "v": "3px",
+     "n": 2,
+     "ex": "div.billing-plan-graphic__usage-pr"
+    },
+    {
+     "v": "4.51px",
+     "n": 2,
+     "ex": "span.connect-platform-graphic__paym"
+    },
+    {
+     "v": "2px",
+     "n": 2,
+     "ex": "div.book-button__icon-container"
+    },
+    {
+     "v": "10px",
+     "n": 1,
+     "ex": "div.connect-platform-graphic__paym"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgba(3, 3, 39, 0.25) 0px 14.088px 21.132px -14.088px, rgba(0, 0, 0, 0.1) 0px 8.453px 16.906px -8.453px",
+     "n": 5,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(50, 50, 93, 0.25) 0px 30px 45px -30px, rgba(0, 0, 0, 0.1) 0px 18px 36px -18px",
+     "n": 4,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(23, 23, 23, 0.08) 0px 15px 35px 0px",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(23, 23, 23, 0.06) 0px 3px 6px 0px",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.1) 0px 20.187px 40.374px -20.187px",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(50, 50, 93, 0.12) 0px 16px 32px 0px",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(50, 50, 93, 0.12) 0px 15.931px 31.863px 0px",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(55, 39, 37, 0.15) 0px 10px 50px -7.79776px",
+     "n": 1,
+     "ex": "img"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "color 0.3s cubic-bezier(0.25, 1, 0.5, 1)",
+     "n": 153,
+     "ex": "a"
+    },
+    {
+     "v": "transform 0.3s cubic-bezier(0.25, 1, 0.5, 1)",
+     "n": 46,
+     "ex": "g"
+    },
+    {
+     "v": "transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1)",
+     "n": 46,
+     "ex": "div"
+    },
+    {
+     "v": "opacity 0.15s linear",
+     "n": 36,
+     "ex": "li"
+    },
+    {
+     "v": "background-color, color, outline-color, border 0.3s, 0.3s, 0.3s, 0.3s cubic-bezier(0.25, 1, 0.5, 1), cubic-bezier(0.25, 1, 0.5, 1), cubic-bezier(0.25, 1, 0.5, 1), cubic-bezier(0.25, 1, 0.5, 1)",
+     "n": 23,
+     "ex": "a"
+    },
+    {
+     "v": "clip-path 0.8s cubic-bezier(0.165, 0.84, 0.44, 1)",
+     "n": 12,
+     "ex": "div"
+    },
+    {
+     "v": "border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 12,
+     "ex": "div"
+    },
+    {
+     "v": "opacity 0.12s ease",
+     "n": 9,
+     "ex": "div"
+    },
+    {
+     "v": "transform 1s cubic-bezier(0.16, 1, 0.3, 1)",
+     "n": 8,
+     "ex": "div"
+    },
+    {
+     "v": "color, background-color, border-color 0.24s, 0.24s, 0.24s cubic-bezier(0.45, 0.05, 0.55, 0.95), cubic-bezier(0.45, 0.05, 0.55, 0.95), cubic-bezier(0.45, 0.05, 0.55, 0.95)",
+     "n": 7,
+     "ex": "button"
+    },
+    {
+     "v": "opacity 0.5s cubic-bezier(0.33, 1, 0.68, 1)",
+     "n": 7,
+     "ex": "div"
+    },
+    {
+     "v": "transform 2s cubic-bezier(0.9, 0, 0.1, 1)",
+     "n": 7,
+     "ex": "div"
+    }
+   ],
+   "animations": [
+    {
+     "v": "book-of-the-week-fade-in 0.5s cubic-bezier(0.33, 1, 0.68, 1) x1",
+     "n": 2
+    },
+    {
+     "v": "detect-scroll auto linear x1",
+     "n": 1
+    }
+   ],
+   "maxWidths": [
+    {
+     "v": "1266px (rendered 1266px)",
+     "n": 15,
+     "ex": "div"
+    },
+    {
+     "v": "817.778px (rendered 818px)",
+     "n": 8,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 1232px)",
+     "n": 4,
+     "ex": "img"
+    },
+    {
+     "v": "876.097px (rendered 876px)",
+     "n": 4,
+     "ex": "q"
+    },
+    {
+     "v": "856px (rendered 856px)",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "752px (rendered 752px)",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "1018.37px (rendered 1018px)",
+     "n": 2,
+     "ex": "h1"
+    },
+    {
+     "v": "1298px (rendered 1298px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "1349px (rendered 1262px)",
+     "n": 1,
+     "ex": "nav"
+    },
+    {
+     "v": "816px (rendered 816px)",
+     "n": 1,
+     "ex": "button"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 15
+    }
+   ],
+   "gaps": [
+    {
+     "v": "8px",
+     "n": 52
+    },
+    {
+     "v": "16px",
+     "n": 26
+    },
+    {
+     "v": "4px",
+     "n": 15
+    },
+    {
+     "v": "64px",
+     "n": 14
+    },
+    {
+     "v": "16px / col normal",
+     "n": 11
+    },
+    {
+     "v": "10px",
+     "n": 9
+    },
+    {
+     "v": "32px",
+     "n": 9
+    },
+    {
+     "v": "4px / col normal",
+     "n": 8
+    },
+    {
+     "v": "14px",
+     "n": 5
+    },
+    {
+     "v": "24px",
+     "n": 5
+    },
+    {
+     "v": "12px",
+     "n": 5
+    },
+    {
+     "v": "26px",
+     "n": 4
+    },
+    {
+     "v": "8px / col 16px",
+     "n": 3
+    },
+    {
+     "v": "32px / col 16px",
+     "n": 3
+    }
+   ],
+   "paddings": [
+    {
+     "v": "8px",
+     "n": 110
+    },
+    {
+     "v": "6px",
+     "n": 75
+    },
+    {
+     "v": "16px",
+     "n": 64
+    },
+    {
+     "v": "12px",
+     "n": 62
+    },
+    {
+     "v": "24px",
+     "n": 41
+    },
+    {
+     "v": "4px",
+     "n": 35
+    },
+    {
+     "v": "2px",
+     "n": 30
+    },
+    {
+     "v": "1px",
+     "n": 21
+    },
+    {
+     "v": "15.5px",
+     "n": 18
+    },
+    {
+     "v": "10px",
+     "n": 16
+    },
+    {
+     "v": "11px",
+     "n": 13
+    },
+    {
+     "v": "32px",
+     "n": 13
+    },
+    {
+     "v": "20px",
+     "n": 12
+    },
+    {
+     "v": "14.5px",
+     "n": 11
+    },
+    {
+     "v": "96px",
+     "n": 9
+    },
+    {
+     "v": "14px",
+     "n": 8
+    },
+    {
+     "v": "40px",
+     "n": 8
+    },
+    {
+     "v": "64px",
+     "n": 8
+    }
+   ],
+   "margins": [
+    {
+     "v": "16px",
+     "n": 23
+    },
+    {
+     "v": "6px",
+     "n": 11
+    },
+    {
+     "v": "10px",
+     "n": 8
+    },
+    {
+     "v": "12px",
+     "n": 7
+    },
+    {
+     "v": "20px",
+     "n": 6
+    },
+    {
+     "v": "8px",
+     "n": 6
+    },
+    {
+     "v": "4px",
+     "n": 5
+    },
+    {
+     "v": "3px",
+     "n": 4
+    },
+    {
+     "v": "18px",
+     "n": 3
+    },
+    {
+     "v": "14px",
+     "n": 3
+    },
+    {
+     "v": "2px",
+     "n": 3
+    },
+    {
+     "v": "32px",
+     "n": 3
+    },
+    {
+     "v": "22px",
+     "n": 2
+    },
+    {
+     "v": "24px",
+     "n": 2
+    }
+   ],
+   "measure": {
+    "text": "Our annual letter explores the trends defining the internet economy—including steeper growth for newer businesses, faste",
+    "chars": 195,
+    "lines": 3,
+    "charsPerLine": 65,
+    "width": 817,
+    "fontSize": "22px",
+    "lineHeight": "24.2px",
+    "color": "#64748d"
+   },
+   "rootVars": {},
+   "blockedSheets": 6,
+   "reducedMotionRules": 0,
+   "h1": [
+    "Financial infrastructure to grow your revenue. Accept payments, handle business banking,1 and implement custom revenue models—from your first transaction to your billionth.",
+    "Financial infrastructure to grow your revenue. Accept payments, handle business banking,1 and implement custom revenue models—from your first transaction to your billionth."
+   ],
+   "h2": [
+    "Flexible solutions for every business model.",
+    "The backbone of global commerce",
+    "Powering businesses of all sizes.",
+    "Reliable, extensible infrastructure for every stack.",
+    "What’s happening"
+   ],
+   "h3": [
+    "Accept and optimize payments globally—online and in person",
+    "Enable any billing model",
+    "Monetize through agentic commerce",
+    "Create a card issuing program",
+    "Access borderless money movement with stablecoins and crypto",
+    "Embed payments in your platform",
+    "Transform your enterprise with agile financial infrastructure",
+    "Hertz unifies commerce with Stripe.",
+    "URBN consolidates $5 billion in online and in-store revenue onto Stripe.",
+    "Instacart powers online grocery delivery with Stripe.",
+    "Le Monde improves local and international payments with Stripe.",
+    "Build a foundation for your startup that enables faster growth",
+    "Make your SaaS platform a complete financial operating system",
+    "Connect to existing systems.",
+    "Scale with confidence.",
+    "Choose an integration path."
+   ],
+   "nav": [
+    "Pricing",
+    "Sign inSign in",
+    "Contact sales",
+    "Stripe for enterprises",
+    "Stripe for startups",
+    "Stripe for platforms"
+   ],
+   "ctas": [
+    "Sign inSign in [84x40 bg #000000 a0 fg #533afd r 4px pad 10.5px 20px 13.5px 14px/400]",
+    "Contact sales [137x40 bg #533afd fg #ffffff r 4px pad 11.5px 20px 12.5px 14px/400]",
+    "Get started [141x48 bg #533afd fg #ffffff r 4px pad 15.5px 24px 16.5px 16px/400]",
+    "Sign up with Google [212x48 bg #ffffff a0.65 fg #533afd r 4px pad 14.5px 24px 15.5px 16px/400]",
+    "Watch now [139x48 bg #ffffff fg #533afd r 4px pad 15.5px 24px 16.5px 16px/400]",
+    "Stripe for enterprises [212x48 bg #533afd fg #ffffff r 4px pad 15.5px 24px 16.5px 16px/400]",
+    "Read the story [166x40 bg #ffffff a0 fg #533afd r 4px pad 0px 16px/400]",
+    "Read the story [40x40 bg #e2e4ff fg #533afd r 4px pad 0px 16px/400]",
+    "Read the story [40x40 bg #e2e4ff fg #533afd r 4px pad 0px 16px/400]",
+    "Read the story [40x40 bg #e2e4ff fg #533afd r 4px pad 0px 16px/400]",
+    "Stripe for startups [190x48 bg #533afd fg #ffffff r 4px pad 15.5px 24px 16.5px 16px/400]",
+    "Stripe for platforms [200x48 bg #533afd fg #ffffff r 4px pad 15.5px 24px 16.5px 16px/400]",
+    "View developer docs [209x48 bg #533afd fg #ffffff r 4px pad 15.5px 24px 16.5px 16px/400]",
+    "View Stripe’s GitHub [195x48 bg #ffffff a0 fg #ffffff r 4px pad 14.5px 24px 15.5px 16px/400]"
+   ],
+   "media": {
+    "img": 52,
+    "svg": 266,
+    "video": 0,
+    "canvas": 7
+   }
+  }
+ }
+}

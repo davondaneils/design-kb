@@ -1,0 +1,376 @@
+[
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.75,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "svg.tally",
+  "count": 1,
+  "ink1": 0.33147977941176465,
+  "soft1": 0.6106870229007634,
+  "ink2": 0.3319125306372546,
+  "soft2": 0.36504424778761063,
+  "pad": 1.5,
+  "flags": []
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.75,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "overview",
+  "count": 1,
+  "ink1": 0.36513480392156844,
+  "soft1": 0.6119402985074627,
+  "ink2": 0.3759037990196075,
+  "soft2": 0.359375,
+  "pad": 1,
+  "flags": []
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "events",
+  "count": 1,
+  "ink1": 0.13633578431372548,
+  "soft1": 0.64,
+  "ink2": 0.1382429534313725,
+  "soft2": 0.31176470588235294,
+  "pad": 1,
+  "flags": [
+   "volume"
+  ]
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "funnels",
+  "count": 1,
+  "ink1": 0.21148897058823524,
+  "soft1": 0.5394736842105263,
+  "ink2": 0.20994178921568632,
+  "soft2": 0.19747899159663865,
+  "pad": 1.5,
+  "flags": []
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "retention",
+  "count": 1,
+  "ink1": 0.2412071078431373,
+  "soft1": 0.6382978723404256,
+  "ink2": 0.2411841299019608,
+  "soft2": 0.3523489932885906,
+  "pad": 1.5,
+  "flags": []
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "users",
+  "count": 1,
+  "ink1": 0.2016850490196078,
+  "soft1": 0.6153846153846154,
+  "ink2": 0.18241038602941184,
+  "soft2": 0.41739130434782606,
+  "pad": 1.5,
+  "flags": [
+   "volume"
+  ]
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "settings",
+  "count": 1,
+  "ink1": 0.3460171568627448,
+  "soft1": 0.6935483870967742,
+  "ink2": 0.3428270526960787,
+  "soft2": 0.40540540540540543,
+  "pad": 1,
+  "flags": []
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "commands",
+  "count": 1,
+  "ink1": 0.3499387254901961,
+  "soft1": 0.5151515151515151,
+  "ink2": 0.341861979166667,
+  "soft2": 0.25735294117647056,
+  "pad": 1.5,
+  "flags": []
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "keyboard",
+  "count": 1,
+  "ink1": 0.2872855392156862,
+  "soft1": 0.6481481481481481,
+  "ink2": 0.28961780024509814,
+  "soft2": 0.13924050632911392,
+  "pad": 1,
+  "flags": []
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "search",
+  "count": 1,
+  "ink1": 0.18858762254901956,
+  "soft1": 0.6933333333333334,
+  "ink2": 0.20085784313725474,
+  "soft2": 0.40711462450592883,
+  "pad": 1.5,
+  "flags": []
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "calendar",
+  "count": 1,
+  "ink1": 0.33187806372549,
+  "soft1": 0.5294117647058824,
+  "ink2": 0.3318857230392159,
+  "soft2": 0.09659090909090909,
+  "pad": 1,
+  "flags": []
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "plus",
+  "count": 1,
+  "ink1": 0.11518075980392152,
+  "soft1": 0.5476190476190477,
+  "ink2": 0.11572457107843134,
+  "soft2": 0.13385826771653545,
+  "pad": 2,
+  "flags": [
+   "volume"
+  ]
+ },
+ {
+  "w": 12,
+  "h": 12,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "arrow-up",
+  "count": 4,
+  "ink1": 0.17641612200435725,
+  "soft1": 0.5675675675675675,
+  "ink2": 0.1736315359477124,
+  "soft2": 0.22764227642276422,
+  "pad": 1,
+  "flags": []
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 0,
+  "caps": [],
+  "joins": [],
+  "colors": [],
+  "solid": true,
+  "where": "error",
+  "count": 1,
+  "ink1": 0.5059895833333337,
+  "soft1": 0.3246753246753247,
+  "ink2": 0.5168198529411769,
+  "soft2": 0.17465753424657535,
+  "pad": 1,
+  "flags": []
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 0,
+  "caps": [],
+  "joins": [],
+  "colors": [],
+  "solid": true,
+  "where": "warning",
+  "count": 1,
+  "ink1": 0.39947916666666644,
+  "soft1": 0.3114754098360656,
+  "ink2": 0.39683287377450976,
+  "soft2": 0.1571753986332574,
+  "pad": 1,
+  "flags": []
+ },
+ {
+  "w": 12,
+  "h": 12,
+  "stroke": 1.25,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "arrow-down",
+  "count": 3,
+  "ink1": 0.15144335511982568,
+  "soft1": 0.7714285714285715,
+  "ink2": 0.15119825708061002,
+  "soft2": 0.5544554455445545,
+  "pad": 1,
+  "flags": []
+ },
+ {
+  "w": 12,
+  "h": 12,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "arrow-down",
+  "count": 1,
+  "ink1": 0.17238562091503268,
+  "soft1": 0.6216216216216216,
+  "ink2": 0.17265114379084967,
+  "soft2": 0.2601626016260163,
+  "pad": 1,
+  "flags": []
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 0,
+  "caps": [],
+  "joins": [],
+  "colors": [],
+  "solid": true,
+  "where": "more",
+  "count": 6,
+  "ink1": 0.056862745098039194,
+  "soft1": 0.6666666666666666,
+  "ink2": 0.058145680147058794,
+  "soft2": 0.42857142857142855,
+  "pad": 2,
+  "flags": [
+   "volume"
+  ]
+ }
+]

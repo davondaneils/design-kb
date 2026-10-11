@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Bad semantic fixture</title>
+<!-- Each block reproduces one class the round 4.1 critic caught by eye (kb/reviews/round4.1-critic.md). Expected lint fails:
+     primitive-in-component (the label curve reads --color-orange-700, the tooltip --color-slate-950 and --color-slate-50,
+     and an inline style reads --color-red-600; the token definitions on :root and in the dark block do not count) and
+     error-icon (an aria-invalid field's described-by error and a role=alert line that are text and color only; the
+     error with an icon and the one marked "Error:" pass). -->
+<style>
+  :root { color-scheme: light dark; --color-slate-50: #f6f7f8; --color-slate-950: #1f2224; --color-orange-700: #933701; --color-red-600: #c2272d;
+    --color-bg: #ffffff; --color-text: var(--color-slate-950); --color-danger: var(--color-red-600); --color-primary: #1f5fd1; }
+  @media (prefers-color-scheme: dark) { :root { --color-bg: #101214; --color-text: var(--color-slate-50); --color-danger: #ffa59e; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px/1.5 system-ui, sans-serif; background: var(--color-bg); color: var(--color-text); }
+  :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 16px; }
+  h1 { font-size: 31px; line-height: 1.2; margin: 0 0 24px; }
+  p { margin: 0 0 16px; max-inline-size: 52ch; }
+  .curve { fill: none; stroke: var(--color-orange-700); stroke-width: 2; }
+  .tip { display: inline-block; padding: 4px 8px; border-radius: 4px; background: var(--color-slate-950); color: var(--color-slate-50); font-size: 12px; }
+  .field { display: block; min-height: 44px; padding: 0 12px; border: 1px solid #6b6f76; border-radius: 8px; font: inherit; background: var(--color-bg); color: var(--color-text); }
+  .msg { display: flex; gap: 4px; align-items: center; font-size: 14px; color: var(--color-danger); margin: 8px 0 16px; }
+  .msg svg { width: 16px; height: 16px; flex: none; fill: currentColor; }
+</style></head>
+<body><main>
+  <h1>Bad semantic fixture</h1>
+  <svg width="120" height="40" viewBox="0 0 120 40" aria-hidden="true"><polyline class="curve" points="0,35 40,20 80,10 120,5"/></svg>
+  <p><span class="tip">Overview</span></p>
+  <p style="border-bottom: 2px solid var(--color-red-600)">Inline primitive.</p>
+  <label for="a">Work email</label>
+  <input class="field" id="a" type="email" value="sam@" aria-invalid="true" aria-describedby="a-err">
+  <p class="msg" id="a-err">Add the rest of the address, for example sam@acme.com.</p>
+  <p class="msg" role="alert">Payment did not go through.</p>
+  <label for="b">Work email, with icon</label>
+  <input class="field" id="b" type="email" value="sam@" aria-invalid="true" aria-describedby="b-err">
+  <p class="msg" id="b-err"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7"/></svg>Add the rest of the address.</p>
+  <p class="msg" role="alert">Error: the card was declined.</p>
+</main></body></html>

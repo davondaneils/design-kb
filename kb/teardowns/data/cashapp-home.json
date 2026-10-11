@@ -1,0 +1,1014 @@
+{
+ "url": "https://cash.app",
+ "measuredAt": "2026-10-10T16:50:00.328Z",
+ "method": "Playwright Chromium, getComputedStyle on visible elements, light scheme, after scroll-through and fonts.ready",
+ "widths": {
+  "390": {
+   "status": 200,
+   "finalUrl": "https://cash.app/",
+   "width": 390,
+   "h1Style": {
+    "font": "\"Cash Sans\" 41.6711px/39.5875px w400 ls -1.25013px",
+    "color": "#000000",
+    "top": 120,
+    "width": 358,
+    "align": "left"
+   },
+   "title": "Send, Receive, Invest, & Manage Your Money with Cash App",
+   "description": "Download Cash App to send & receive money instantly, spend with the Cash App Card, buy bitcoin, invest in stocks, & manage your finances.",
+   "pageHeight": 11235,
+   "bodyBg": "#000000 a0",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "Cash Sans 400 normal",
+    "Cash Sans 500 normal",
+    "Cash Sans 600 normal",
+    "Cash Sans 700 normal"
+   ],
+   "families": [
+    {
+     "v": "\"Cash Sans\", \"Helvetica Neue\"",
+     "n": 3651
+    },
+    {
+     "v": "\"Cash Sans\", sans-serif",
+     "n": 289
+    },
+    {
+     "v": "Arial",
+     "n": 132
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "10.4178px / lh 12.5013px / w400 / ls -0.208355px",
+     "n": 1397,
+     "ex": "small: Cash App is a financial services platform, and not an FDIC-i"
+    },
+    {
+     "v": "16.6684px / lh 23.3358px / w400 / ls -0.500053px",
+     "n": 1318,
+     "ex": "p: From getting paid to growing what you've got, Cash App makes"
+    },
+    {
+     "v": "29.1698px / lh 32.0867px / w400 / ls -0.875093px",
+     "n": 425,
+     "ex": "h2: Earn, save, and do more with Cash App Green"
+    },
+    {
+     "v": "8.975px / lh 11.6675px / w400 / ls -0.1px",
+     "n": 270,
+     "ex": "div: We and our partners may use cookies and similar technologies"
+    },
+    {
+     "v": "14.5849px / lh 14.5849px / w400 / ls -0.291698px",
+     "n": 142,
+     "ex": "a: Learn about Green"
+    },
+    {
+     "v": "10.4178px / lh 12.5013px / w400 / ls -0.312533px",
+     "n": 126,
+     "ex": "span: See legal disclaimers"
+    },
+    {
+     "v": "16.6684px / lh 20.0021px / w400 / ls -0.500053px",
+     "n": 119,
+     "ex": "blockquote: Cash App makes it so easy to manage everything—I use it for "
+    },
+    {
+     "v": "10.4178px / lh 12.5013px / w500 / ls -0.208355px",
+     "n": 109,
+     "ex": "a: Sutton prepaid card"
+    },
+    {
+     "v": "41.6711px / lh 39.5875px / w400 / ls -1.25013px",
+     "n": 75,
+     "ex": "h1: The way money should work"
+    },
+    {
+     "v": "25.0027px / lh 35.0037px / w400 / ls -0.75008px",
+     "n": 32,
+     "ex": "p: Available daily 8AM to 9:30PM ET"
+    },
+    {
+     "v": "8.975px / lh 11.6675px / w600 / ls -0.1px",
+     "n": 19,
+     "ex": "a: Cookie Preferences."
+    },
+    {
+     "v": "25.0027px / lh 35.0037px / w700 / ls -0.75008px",
+     "n": 16,
+     "ex": "b: 1 (800) 969-1940"
+    },
+    {
+     "v": "8.33422px / lh 0px / w400 / ls -0.500053px",
+     "n": 11,
+     "ex": "sup: *"
+    },
+    {
+     "v": "14.5849px / lh 14.5849px / w500 / ls normal",
+     "n": 7,
+     "ex": "span: Sign up"
+    },
+    {
+     "v": "5.20889px / lh 6.25066px / w400 / ls -0.312533px",
+     "n": 6,
+     "ex": "span: *"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#000000",
+     "n": 2549
+    },
+    {
+     "v": "#999999",
+     "n": 1506
+    },
+    {
+     "v": "#ffffff",
+     "n": 17
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#000000 on #ffffff",
+     "n": 2537,
+     "ex": "21:1"
+    },
+    {
+     "v": "#999999 on #ffffff",
+     "n": 1506,
+     "ex": "2.85:1"
+    },
+    {
+     "v": "#ffffff on #000000",
+     "n": 17,
+     "ex": "21:1"
+    },
+    {
+     "v": "#000000 on #00e013",
+     "n": 12,
+     "ex": "11.67:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#ffffff",
+     "n": 5548
+    },
+    {
+     "v": "#00e013",
+     "n": 542
+    },
+    {
+     "v": "#000000",
+     "n": 17
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #000000",
+     "n": 8
+    },
+    {
+     "v": "1px color(srgb 0 0 0 / 0.3)",
+     "n": 3
+    },
+    {
+     "v": "1px #000000 a0.3",
+     "n": 1
+    },
+    {
+     "v": "1px #c7c7c7",
+     "n": 1
+    }
+   ],
+   "radii": [
+    {
+     "v": "100px",
+     "n": 9,
+     "ex": "a.gallery-themed-button-module-s"
+    },
+    {
+     "v": "15.9% / 13%",
+     "n": 5,
+     "ex": "div.background-video-module-sass-m"
+    },
+    {
+     "v": "14.6% / 7%",
+     "n": 4,
+     "ex": "div.vertical-app-demo-video-module"
+    },
+    {
+     "v": "14.3%",
+     "n": 4,
+     "ex": "div.footer-text-card-module-sass-m"
+    },
+    {
+     "v": "50%",
+     "n": 2,
+     "ex": "a.gallery-menu-button-module-sas"
+    },
+    {
+     "v": "7.8% / 6.6%",
+     "n": 2,
+     "ex": "div.vertical-testimonial-video-mod"
+    },
+    {
+     "v": "999px",
+     "n": 1,
+     "ex": "a.link-module-sass-module__tgZFL"
+    },
+    {
+     "v": "6px",
+     "n": 1,
+     "ex": "div.otFloatingRounded otRelFont ot"
+    },
+    {
+     "v": "1000px",
+     "n": 1,
+     "ex": "button.onetrust-close-btn-handler one"
+    }
+   ],
+   "shadows": [],
+   "transitions": [
+    {
+     "v": "color 0.6s ease",
+     "n": 15,
+     "ex": "div"
+    },
+    {
+     "v": "all 0.3s ease",
+     "n": 8,
+     "ex": "a"
+    },
+    {
+     "v": "transform 0.4s ease-in-out",
+     "n": 6,
+     "ex": "img"
+    },
+    {
+     "v": "opacity, transform 0.6s, 0.6s ease, ease",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "all 0.3s ease-in-out",
+     "n": 2,
+     "ex": "a"
+    },
+    {
+     "v": "background-color 0.6s ease-in-out",
+     "n": 1,
+     "ex": "main"
+    },
+    {
+     "v": "fill 0.3s ease-in-out",
+     "n": 1,
+     "ex": "rect"
+    },
+    {
+     "v": "opacity, background-color 0.1s, 0.6s linear, ease-in-out",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "opacity 0.1s linear",
+     "n": 1,
+     "ex": "video"
+    },
+    {
+     "v": "all 0.6s ease-in-out",
+     "n": 1,
+     "ex": "footer"
+    },
+    {
+     "v": "opacity 0.2s ease",
+     "n": 1,
+     "ex": "a"
+    }
+   ],
+   "animations": [
+    {
+     "v": "fall-release-floating-cta-module-sass-module__dyHkFW__ctaSlideIn 0.6s cubic-bezier(0, 0, 0.2, 1) x1",
+     "n": 1
+    }
+   ],
+   "maxWidths": [
+    {
+     "v": "100% (rendered 199px)",
+     "n": 6,
+     "ex": "img"
+    },
+    {
+     "v": "100% (rendered 171px)",
+     "n": 4,
+     "ex": "div"
+    },
+    {
+     "v": "284px (rendered 284px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "315px (rendered 315px)",
+     "n": 1,
+     "ex": "figure"
+    },
+    {
+     "v": "55% (rendered 197px)",
+     "n": 1,
+     "ex": "p"
+    },
+    {
+     "v": "700px (rendered 370px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 368px)",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 11
+    },
+    {
+     "v": "pt 60px pb 60px",
+     "n": 8
+    },
+    {
+     "v": "pt 0px pb 40px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "10.9387px",
+     "n": 8
+    },
+    {
+     "v": "35px",
+     "n": 5
+    },
+    {
+     "v": "4px",
+     "n": 2
+    },
+    {
+     "v": "6.125px",
+     "n": 1
+    },
+    {
+     "v": "20px / col normal",
+     "n": 1
+    },
+    {
+     "v": "28px",
+     "n": 1
+    },
+    {
+     "v": "32px / col 16px",
+     "n": 1
+    },
+    {
+     "v": "91.4996px / col normal",
+     "n": 1
+    },
+    {
+     "v": "8.99999px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "60px",
+     "n": 16
+    },
+    {
+     "v": "16.6559px",
+     "n": 16
+    },
+    {
+     "v": "40px",
+     "n": 10
+    },
+    {
+     "v": "20.7105px",
+     "n": 8
+    },
+    {
+     "v": "32px",
+     "n": 4
+    },
+    {
+     "v": "16px",
+     "n": 3
+    },
+    {
+     "v": "10px",
+     "n": 3
+    },
+    {
+     "v": "16.6684px",
+     "n": 2
+    },
+    {
+     "v": "14.375px",
+     "n": 1
+    },
+    {
+     "v": "120px",
+     "n": 1
+    },
+    {
+     "v": "70px",
+     "n": 1
+    },
+    {
+     "v": "100px",
+     "n": 1
+    },
+    {
+     "v": "15px",
+     "n": 1
+    },
+    {
+     "v": "25px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "40px",
+     "n": 9
+    },
+    {
+     "v": "29.1698px",
+     "n": 8
+    },
+    {
+     "v": "54px",
+     "n": 6
+    },
+    {
+     "v": "4.16711px",
+     "n": 6
+    },
+    {
+     "v": "12.75px",
+     "n": 5
+    },
+    {
+     "v": "8px",
+     "n": 4
+    },
+    {
+     "v": "32px",
+     "n": 3
+    },
+    {
+     "v": "18px",
+     "n": 2
+    },
+    {
+     "v": "48px",
+     "n": 1
+    },
+    {
+     "v": "16px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "It's easier than ever to earn our best benefits yet—higher Borrow limits, up to 3.5% savings interest, free overdraft co",
+    "chars": 174,
+    "lines": 4,
+    "charsPerLine": 44,
+    "width": 358,
+    "fontSize": "16.6684px",
+    "lineHeight": "23.3358px",
+    "color": "#000000"
+   },
+   "rootVars": {},
+   "blockedSheets": 0,
+   "reducedMotionRules": 1,
+   "h1": [
+    "The way money should work"
+   ],
+   "h2": [
+    "Earn, save, and do more with Cash App Green",
+    "Cash App Card is the debit card that works for you",
+    "Access cash when you need it",
+    "Meet the all-new Cash App Tags",
+    "Make your money go even further",
+    "Sending money is fast, free, and made for you",
+    "Security built into every swipe, tap, and send",
+    "The money app trusted by 59 million+ active accounts"
+   ],
+   "h3": [
+    "5★",
+    "9.9m+",
+    "4.5★",
+    "Sign up now"
+   ],
+   "nav": [
+    "Cash App Logo",
+    "Sign up"
+   ],
+   "ctas": [
+    "Sign up [94x38 bg #ffffff fg #000000 r 999px pad 0px 14.375px 14.5849px/500]",
+    "Learn about Green [159x50 bg #000000 a0 fg #000000 r 100px pad 16.6559px 20.7105px 14.5849px/400]",
+    "Meet Cash App Card [172x50 bg #000000 a0 fg #000000 r 100px pad 16.6559px 20.7105px 14.5849px/400]",
+    "Learn more [115x50 bg #000000 a0 fg #000000 r 100px pad 16.6559px 20.7105px 14.5849px/400]",
+    "Explore tags [121x50 bg #000000 a0 fg #000000 r 100px pad 16.6559px 20.7105px 14.5849px/400]",
+    "Learn how to save and grow [215x50 bg #000000 a0 fg #000000 r 100px pad 16.6559px 20.7105px 14.5849px/400]",
+    "Send money [121x50 bg #000000 a0 fg #000000 r 100px pad 16.6559px 20.7105px 14.5849px/400]",
+    "Learn about security [171x50 bg #000000 a0 fg #000000 r 100px pad 16.6559px 20.7105px 14.5849px/400]",
+    "Read reviews [126x50 bg #000000 a0 fg #000000 r 100px pad 16.6559px 20.7105px 14.5849px/400]",
+    "Download Cash App [351x46 bg #000000 fg #0000ee r 100px pad 15px 20px 16px 25px 16.6684px/400]"
+   ],
+   "media": {
+    "img": 25,
+    "svg": 22,
+    "video": 8,
+    "canvas": 0
+   }
+  },
+  "1440": {
+   "status": 200,
+   "finalUrl": "https://cash.app/",
+   "width": 1440,
+   "h1Style": {
+    "font": "\"Cash Sans\" 55.9998px/53.1998px w400 ls -1.67999px",
+    "color": "#000000",
+    "top": 484,
+    "width": 453,
+    "align": "left"
+   },
+   "title": "Send, Receive, Invest, & Manage Your Money with Cash App",
+   "description": "Download Cash App to send & receive money instantly, spend with the Cash App Card, buy bitcoin, invest in stocks, & manage your finances.",
+   "pageHeight": 1440,
+   "bodyBg": "#000000 a0",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "Cash Sans 400 normal",
+    "Cash Sans 500 normal",
+    "Cash Sans 600 normal",
+    "Cash Sans 700 normal"
+   ],
+   "families": [
+    {
+     "v": "\"Cash Sans\", \"Helvetica Neue\"",
+     "n": 3651
+    },
+    {
+     "v": "\"Cash Sans\", sans-serif",
+     "n": 289
+    },
+    {
+     "v": "Arial",
+     "n": 132
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "12px / lh 14.4px / w400 / ls -0.239999px",
+     "n": 1397,
+     "ex": "small: Cash App is a financial services platform, and not an FDIC-i"
+    },
+    {
+     "v": "17.9999px / lh 25.1999px / w400 / ls -0.539998px",
+     "n": 1318,
+     "ex": "p: From getting paid to growing what you've got, Cash App makes"
+    },
+    {
+     "v": "39.9999px / lh 43.9998px / w400 / ls -1.2px",
+     "n": 347,
+     "ex": "h2: Earn, save, and do more with Cash App Green"
+    },
+    {
+     "v": "11.6px / lh 15.08px / w400 / ls -0.1px",
+     "n": 270,
+     "ex": "div: We and our partners may use cookies and similar technologies"
+    },
+    {
+     "v": "17.9999px / lh 21.5999px / w400 / ls -0.539998px",
+     "n": 219,
+     "ex": "blockquote: Cash App makes it so easy to manage everything—I use it for "
+    },
+    {
+     "v": "14px / lh 14px / w400 / ls -0.279999px",
+     "n": 136,
+     "ex": "a: Get started"
+    },
+    {
+     "v": "12px / lh 14.4px / w400 / ls -0.359999px",
+     "n": 126,
+     "ex": "span: See legal disclaimers"
+    },
+    {
+     "v": "12px / lh 14.4px / w500 / ls -0.239999px",
+     "n": 109,
+     "ex": "a: Sutton prepaid card"
+    },
+    {
+     "v": "55.9998px / lh 53.1998px / w400 / ls -1.67999px",
+     "n": 53,
+     "ex": "h1: The way money should work"
+    },
+    {
+     "v": "20.2499px / lh 28.3499px / w400 / ls -0.607498px",
+     "n": 32,
+     "ex": "p: Available daily 8AM to 9:30PM ET"
+    },
+    {
+     "v": "11.6px / lh 15.08px / w600 / ls -0.1px",
+     "n": 19,
+     "ex": "a: Cookie Preferences."
+    },
+    {
+     "v": "20.2499px / lh 28.3499px / w700 / ls -0.607498px",
+     "n": 16,
+     "ex": "b: 1 (800) 969-1940"
+    },
+    {
+     "v": "8.99997px / lh 0px / w400 / ls -0.539998px",
+     "n": 11,
+     "ex": "sup: *"
+    },
+    {
+     "v": "12px / lh 12px / w500 / ls -0.239999px",
+     "n": 7,
+     "ex": "span: Sign up"
+    },
+    {
+     "v": "12px / lh 12px / w400 / ls -0.239999px",
+     "n": 6,
+     "ex": "a: Log in"
+    },
+    {
+     "v": "5.99998px / lh 7.19998px / w400 / ls -0.359999px",
+     "n": 6,
+     "ex": "span: *"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#000000",
+     "n": 2560
+    },
+    {
+     "v": "#999999",
+     "n": 1506
+    },
+    {
+     "v": "#ffffff",
+     "n": 6
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#000000 on #ffffff",
+     "n": 2548,
+     "ex": "21:1"
+    },
+    {
+     "v": "#999999 on #ffffff",
+     "n": 1506,
+     "ex": "2.85:1"
+    },
+    {
+     "v": "#000000 on #00e013",
+     "n": 12,
+     "ex": "11.67:1"
+    },
+    {
+     "v": "#ffffff on #000000",
+     "n": 6,
+     "ex": "21:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#ffffff",
+     "n": 3718
+    },
+    {
+     "v": "#00e013",
+     "n": 1639
+    },
+    {
+     "v": "#000000",
+     "n": 5
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #000000",
+     "n": 8
+    },
+    {
+     "v": "1px color(srgb 0 0 0 / 0.3)",
+     "n": 3
+    },
+    {
+     "v": "1px #000000 a0.3",
+     "n": 1
+    },
+    {
+     "v": "1px #c7c7c7",
+     "n": 1
+    }
+   ],
+   "radii": [
+    {
+     "v": "100px",
+     "n": 9,
+     "ex": "a.gallery-themed-button-module-s"
+    },
+    {
+     "v": "15.9% / 13%",
+     "n": 5,
+     "ex": "div.background-video-module-sass-m"
+    },
+    {
+     "v": "14.3%",
+     "n": 4,
+     "ex": "div.footer-text-card-module-sass-m"
+    },
+    {
+     "v": "999px",
+     "n": 2,
+     "ex": "a.link-module-sass-module__tgZFL"
+    },
+    {
+     "v": "50%",
+     "n": 2,
+     "ex": "a.gallery-menu-button-module-sas"
+    },
+    {
+     "v": "6px",
+     "n": 1,
+     "ex": "div.otFloatingRounded otRelFont ot"
+    },
+    {
+     "v": "1000px",
+     "n": 1,
+     "ex": "button.onetrust-close-btn-handler one"
+    }
+   ],
+   "shadows": [],
+   "transitions": [
+    {
+     "v": "color 0.6s ease",
+     "n": 15,
+     "ex": "div"
+    },
+    {
+     "v": "all 0.3s ease",
+     "n": 9,
+     "ex": "a"
+    },
+    {
+     "v": "transform 0.4s ease-in-out",
+     "n": 6,
+     "ex": "img"
+    },
+    {
+     "v": "opacity, transform 0.6s, 0.6s ease, ease",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "all 0.3s ease-in-out",
+     "n": 3,
+     "ex": "a"
+    },
+    {
+     "v": "background-color 0.6s ease-in-out",
+     "n": 1,
+     "ex": "main"
+    },
+    {
+     "v": "fill 0.3s ease-in-out",
+     "n": 1,
+     "ex": "rect"
+    },
+    {
+     "v": "opacity, background-color 0.1s, 0.6s linear, ease-in-out",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "opacity 0.1s linear",
+     "n": 1,
+     "ex": "video"
+    },
+    {
+     "v": "all 0.6s ease-in-out",
+     "n": 1,
+     "ex": "footer"
+    }
+   ],
+   "animations": [],
+   "maxWidths": [],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 11
+    },
+    {
+     "v": "pt 90px pb 90px",
+     "n": 8
+    },
+    {
+     "v": "pt 0px pb 40px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "10.5px",
+     "n": 9
+    },
+    {
+     "v": "24px",
+     "n": 9
+    },
+    {
+     "v": "20px",
+     "n": 5
+    },
+    {
+     "v": "4px",
+     "n": 2
+    },
+    {
+     "v": "7.99999px",
+     "n": 1
+    },
+    {
+     "v": "20px / col normal",
+     "n": 1
+    },
+    {
+     "v": "28px",
+     "n": 1
+    },
+    {
+     "v": "32px / col 20px",
+     "n": 1
+    },
+    {
+     "v": "23.9996px / col normal",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "90px",
+     "n": 16
+    },
+    {
+     "v": "15.9879px",
+     "n": 16
+    },
+    {
+     "v": "40px",
+     "n": 10
+    },
+    {
+     "v": "19.8799px",
+     "n": 9
+    },
+    {
+     "v": "20px",
+     "n": 5
+    },
+    {
+     "v": "32px",
+     "n": 4
+    },
+    {
+     "v": "12px",
+     "n": 3
+    },
+    {
+     "v": "80px",
+     "n": 2
+    },
+    {
+     "v": "14px",
+     "n": 2
+    },
+    {
+     "v": "17.9999px",
+     "n": 2
+    },
+    {
+     "v": "100px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "32px",
+     "n": 10
+    },
+    {
+     "v": "39.9999px",
+     "n": 7
+    },
+    {
+     "v": "4.49998px",
+     "n": 6
+    },
+    {
+     "v": "24px",
+     "n": 5
+    },
+    {
+     "v": "8px",
+     "n": 4
+    },
+    {
+     "v": "18px",
+     "n": 2
+    },
+    {
+     "v": "81px",
+     "n": 1
+    },
+    {
+     "v": "19.9999px",
+     "n": 1
+    },
+    {
+     "v": "180px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "It's easier than ever to earn our best benefits yet—higher Borrow limits, up to 3.5% savings interest, free overdraft co",
+    "chars": 174,
+    "lines": 4,
+    "charsPerLine": 44,
+    "width": 371,
+    "fontSize": "17.9999px",
+    "lineHeight": "25.1999px",
+    "color": "#000000"
+   },
+   "rootVars": {},
+   "blockedSheets": 0,
+   "reducedMotionRules": 1,
+   "h1": [
+    "The way money should work"
+   ],
+   "h2": [
+    "Earn, save, and do more with Cash App Green",
+    "Cash App Card is the debit card that works for you",
+    "Access cash when you need it",
+    "Meet the all-new Cash App Tags",
+    "Make your money go even further",
+    "Sending money is fast, free, and made for you",
+    "Security built into every swipe, tap, and send",
+    "The money app trusted by 59 million+ active accounts"
+   ],
+   "h3": [
+    "5★",
+    "9.9m+",
+    "4.5★",
+    "Sign up now"
+   ],
+   "nav": [
+    "Cash App Logo",
+    "Sign up",
+    "Log in"
+   ],
+   "ctas": [
+    "Sign up [95x46 bg #ffffff fg #000000 r 999px pad 0px 20px 12px/500]",
+    "Log in [71x46 bg #000000 fg #ffffff r 999px pad 0px 20px 12px/400]",
+    "Get started [127x42 bg #ffffff fg #000000 r 100px pad 14px 19.8799px 14px/400]",
+    "Learn about Green [153x48 bg #000000 a0 fg #000000 r 100px pad 15.9879px 19.8799px 14px/400]",
+    "Meet Cash App Card [165x48 bg #000000 a0 fg #000000 r 100px pad 15.9879px 19.8799px 14px/400]",
+    "Learn more [110x48 bg #000000 a0 fg #000000 r 100px pad 15.9879px 19.8799px 14px/400]",
+    "Explore tags [116x48 bg #000000 a0 fg #000000 r 100px pad 15.9879px 19.8799px 14px/400]",
+    "Learn how to save and grow [206x48 bg #000000 a0 fg #000000 r 100px pad 15.9879px 19.8799px 14px/400]",
+    "Send money [116x48 bg #000000 a0 fg #000000 r 100px pad 15.9879px 19.8799px 14px/400]",
+    "Learn about security [164x48 bg #000000 a0 fg #000000 r 100px pad 15.9879px 19.8799px 14px/400]",
+    "Read reviews [121x48 bg #000000 a0 fg #000000 r 100px pad 15.9879px 19.8799px 14px/400]"
+   ],
+   "media": {
+    "img": 25,
+    "svg": 22,
+    "video": 8,
+    "canvas": 0
+   }
+  }
+ }
+}

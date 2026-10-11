@@ -1,0 +1,558 @@
+{
+  "file": "kb/tests/heldout/baseline/app-first-run.html",
+  "date": "2026-10-11T01:20:49.423Z",
+  "checks": {
+    "axe": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overlay": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "targets": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "measure": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "type-scale": {
+      "fail": [
+        {
+          "message": "font size 15px off the type scale at 390px",
+          "size": 15,
+          "count": 2,
+          "examples": [
+            "body > div.screen > div.status > span.num",
+            "body > div.screen > div.copy > div.brand"
+          ]
+        },
+        {
+          "message": "font size 13px off the type scale at 390px",
+          "size": 13,
+          "count": 5,
+          "examples": [
+            "body > div.screen > div.art > div.chip.num",
+            "body > div.screen > div.art > div.chip.num",
+            "body > div.screen > div.actions > p.trust",
+            "body > div.screen > div.actions > p.fine"
+          ]
+        },
+        {
+          "message": "font size 17px off the type scale at 390px",
+          "size": 17,
+          "count": 3,
+          "examples": [
+            "div.screen > div.art > div.chip.num > b",
+            "div.screen > div.art > div.chip.num > b",
+            "body > div.screen > div.copy > p"
+          ]
+        },
+        {
+          "message": "font size 32px off the type scale at 390px",
+          "size": 32,
+          "count": 1,
+          "examples": [
+            "body > div.screen > div.copy > h1"
+          ]
+        },
+        {
+          "message": "font size 15px off the type scale at 1440px",
+          "size": 15,
+          "count": 2,
+          "examples": [
+            "body > div.screen > div.status > span.num",
+            "body > div.screen > div.copy > div.brand"
+          ]
+        },
+        {
+          "message": "font size 13px off the type scale at 1440px",
+          "size": 13,
+          "count": 5,
+          "examples": [
+            "body > div.screen > div.art > div.chip.num",
+            "body > div.screen > div.art > div.chip.num",
+            "body > div.screen > div.actions > p.trust",
+            "body > div.screen > div.actions > p.fine"
+          ]
+        },
+        {
+          "message": "font size 17px off the type scale at 1440px",
+          "size": 17,
+          "count": 3,
+          "examples": [
+            "div.screen > div.art > div.chip.num > b",
+            "div.screen > div.art > div.chip.num > b",
+            "body > div.screen > div.copy > p"
+          ]
+        },
+        {
+          "message": "font size 32px off the type scale at 1440px",
+          "size": 32,
+          "count": 1,
+          "examples": [
+            "body > div.screen > div.copy > h1"
+          ]
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "spacing": {
+      "fail": [
+        {
+          "message": "padding-right:28px off the spacing scale at 390px",
+          "value": "padding-right:28",
+          "count": 1,
+          "examples": [
+            "html > body > div.screen > div.status"
+          ]
+        },
+        {
+          "message": "row-gap:6px off the spacing scale at 390px",
+          "value": "row-gap:6",
+          "count": 1,
+          "examples": [
+            "body > div.screen > div.status > span.icons"
+          ]
+        },
+        {
+          "message": "column-gap:6px off the spacing scale at 390px",
+          "value": "column-gap:6",
+          "count": 1,
+          "examples": [
+            "body > div.screen > div.status > span.icons"
+          ]
+        },
+        {
+          "message": "padding-top:10px off the spacing scale at 390px",
+          "value": "padding-top:10",
+          "count": 2,
+          "examples": [
+            "body > div.screen > div.art > div.chip.num",
+            "body > div.screen > div.art > div.chip.num"
+          ]
+        },
+        {
+          "message": "padding-right:14px off the spacing scale at 390px",
+          "value": "padding-right:14",
+          "count": 2,
+          "examples": [
+            "body > div.screen > div.art > div.chip.num",
+            "body > div.screen > div.art > div.chip.num"
+          ]
+        },
+        {
+          "message": "padding-bottom:10px off the spacing scale at 390px",
+          "value": "padding-bottom:10",
+          "count": 2,
+          "examples": [
+            "body > div.screen > div.art > div.chip.num",
+            "body > div.screen > div.art > div.chip.num"
+          ]
+        },
+        {
+          "message": "padding-left:14px off the spacing scale at 390px",
+          "value": "padding-left:14",
+          "count": 2,
+          "examples": [
+            "body > div.screen > div.art > div.chip.num",
+            "body > div.screen > div.art > div.chip.num"
+          ]
+        },
+        {
+          "message": "padding-top:28px off the spacing scale at 390px",
+          "value": "padding-top:28",
+          "count": 1,
+          "examples": [
+            "html > body > div.screen > div.copy"
+          ]
+        },
+        {
+          "message": "margin-top:14px off the spacing scale at 390px",
+          "value": "margin-top:14",
+          "count": 1,
+          "examples": [
+            "body > div.screen > div.copy > h1"
+          ]
+        },
+        {
+          "message": "padding-right:20px off the spacing scale at 390px",
+          "value": "padding-right:20",
+          "count": 1,
+          "examples": [
+            "html > body > div.screen > div.actions"
+          ]
+        },
+        {
+          "message": "padding-bottom:34px off the spacing scale at 390px",
+          "value": "padding-bottom:34",
+          "count": 1,
+          "examples": [
+            "html > body > div.screen > div.actions"
+          ]
+        },
+        {
+          "message": "padding-left:20px off the spacing scale at 390px",
+          "value": "padding-left:20",
+          "count": 1,
+          "examples": [
+            "html > body > div.screen > div.actions"
+          ]
+        },
+        {
+          "message": "padding-right:28px off the spacing scale at 1440px",
+          "value": "padding-right:28",
+          "count": 1,
+          "examples": [
+            "html > body > div.screen > div.status"
+          ]
+        },
+        {
+          "message": "row-gap:6px off the spacing scale at 1440px",
+          "value": "row-gap:6",
+          "count": 1,
+          "examples": [
+            "body > div.screen > div.status > span.icons"
+          ]
+        },
+        {
+          "message": "column-gap:6px off the spacing scale at 1440px",
+          "value": "column-gap:6",
+          "count": 1,
+          "examples": [
+            "body > div.screen > div.status > span.icons"
+          ]
+        },
+        {
+          "message": "padding-top:10px off the spacing scale at 1440px",
+          "value": "padding-top:10",
+          "count": 2,
+          "examples": [
+            "body > div.screen > div.art > div.chip.num",
+            "body > div.screen > div.art > div.chip.num"
+          ]
+        },
+        {
+          "message": "padding-right:14px off the spacing scale at 1440px",
+          "value": "padding-right:14",
+          "count": 2,
+          "examples": [
+            "body > div.screen > div.art > div.chip.num",
+            "body > div.screen > div.art > div.chip.num"
+          ]
+        },
+        {
+          "message": "padding-bottom:10px off the spacing scale at 1440px",
+          "value": "padding-bottom:10",
+          "count": 2,
+          "examples": [
+            "body > div.screen > div.art > div.chip.num",
+            "body > div.screen > div.art > div.chip.num"
+          ]
+        },
+        {
+          "message": "padding-left:14px off the spacing scale at 1440px",
+          "value": "padding-left:14",
+          "count": 2,
+          "examples": [
+            "body > div.screen > div.art > div.chip.num",
+            "body > div.screen > div.art > div.chip.num"
+          ]
+        },
+        {
+          "message": "padding-top:28px off the spacing scale at 1440px",
+          "value": "padding-top:28",
+          "count": 1,
+          "examples": [
+            "html > body > div.screen > div.copy"
+          ]
+        },
+        {
+          "message": "margin-top:14px off the spacing scale at 1440px",
+          "value": "margin-top:14",
+          "count": 1,
+          "examples": [
+            "body > div.screen > div.copy > h1"
+          ]
+        },
+        {
+          "message": "padding-right:20px off the spacing scale at 1440px",
+          "value": "padding-right:20",
+          "count": 1,
+          "examples": [
+            "html > body > div.screen > div.actions"
+          ]
+        },
+        {
+          "message": "padding-bottom:34px off the spacing scale at 1440px",
+          "value": "padding-bottom:34",
+          "count": 1,
+          "examples": [
+            "html > body > div.screen > div.actions"
+          ]
+        },
+        {
+          "message": "padding-left:20px off the spacing scale at 1440px",
+          "value": "padding-left:20",
+          "count": 1,
+          "examples": [
+            "html > body > div.screen > div.actions"
+          ]
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "overflow": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "heading-wrap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "svg-overlap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "primary": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "radius": {
+      "fail": [
+        {
+          "message": "radius 28px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "html > body > div.screen > div.art",
+          "value": 28
+        },
+        {
+          "message": "radius 14px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "body > div.screen > div.art > div.chip.num",
+          "value": 14
+        },
+        {
+          "message": "radius 14px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "body > div.screen > div.art > div.chip.num",
+          "value": 14
+        },
+        {
+          "message": "radius 14px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "body > div.screen > div.actions > button.btn.btn-primary",
+          "value": 14
+        },
+        {
+          "message": "radius 14px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "body > div.screen > div.actions > button.btn.btn-secondary",
+          "value": 14
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "color-scheme": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "typography": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "tabular": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "shadows": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icons": {
+      "fail": [
+        {
+          "message": "icons mix stroke joins: miter (1, e.g. div.screen > div.status > span.icons > svg), round (2, e.g. div.screen > div.actions > p.trust > svg); one join per set"
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "icon-stroke": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "weight": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "occlusion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "squash": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-header": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "run-together": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "word-break": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "grid-edge": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "hidden-content": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "double-space": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "undefined-var": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-layer": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "truth": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "proportion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "nav-parity": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus-shape": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "skip-link": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-shift": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "fallback": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "motion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    }
+  },
+  "summary": {
+    "weightKB": {
+      "html": 108,
+      "svg": 2
+    },
+    "focusables": 3,
+    "fallbackShift390": 0,
+    "fallbackShift1440": 0,
+    "motionFound": {
+      "animations": 0,
+      "movingTransitions": 0
+    },
+    "axe": "pass",
+    "overlay": "pass",
+    "targets": "pass",
+    "measure": "pass",
+    "type-scale": "FAIL (8)",
+    "spacing": "FAIL (24)",
+    "overflow": "pass",
+    "heading-wrap": "pass",
+    "svg-overlap": "pass",
+    "primary": "pass",
+    "radius": "FAIL (5)",
+    "color-scheme": "pass",
+    "typography": "pass",
+    "tabular": "pass",
+    "shadows": "pass",
+    "icons": "FAIL (1)",
+    "icon-stroke": "pass",
+    "weight": "pass",
+    "occlusion": "pass",
+    "squash": "pass",
+    "sticky-header": "pass",
+    "run-together": "pass",
+    "word-break": "pass",
+    "grid-edge": "pass",
+    "hidden-content": "pass",
+    "double-space": "pass",
+    "undefined-var": "pass",
+    "state-layer": "pass",
+    "truth": "pass",
+    "proportion": "pass",
+    "nav-parity": "pass",
+    "focus": "pass",
+    "focus-shape": "pass",
+    "sticky-focus": "pass",
+    "skip-link": "pass",
+    "state-shift": "pass",
+    "fallback": "pass",
+    "motion": "pass",
+    "result": "FAIL",
+    "fails": 38,
+    "warns": 0
+  }
+}

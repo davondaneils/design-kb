@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Ember &amp; Oak: small-batch coffee roasters in Portland, Oregon</title>
+<meta name="description" content="Single-origin coffee roasted 12 kg at a time on a 1962 Probat in Portland, shipped within 48 hours. From $18 a bag on subscription, shipping included.">
+<link rel="canonical" href="https://emberandoak.example/">
+<meta name="robots" content="max-image-preview:large">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9f6f4">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#16100c">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ember &amp; Oak">
+<meta property="og:title" content="Ember &amp; Oak: small-batch coffee roasters in Portland">
+<meta property="og:description" content="Single-origin coffee, roasted 12 kilos at a time and shipped within 48 hours. Every bag prints what we paid for it.">
+<meta property="og:url" content="https://emberandoak.example/">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://emberandoak.example/og/home-1200x630.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A bag of Ember &amp; Oak coffee on an oak table beside a handful of green coffee, with the wordmark and the line: single-origin coffee, roasted in Portland.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%2327201a%22%2F%3E%3Cellipse%20cx%3D%2216%22%20cy%3D%2216.5%22%20rx%3D%229.25%22%20ry%3D%2210.25%22%20fill%3D%22none%22%20stroke%3D%22%23f9f6f4%22%20stroke-width%3D%223.5%22%2F%3E%3Ccircle%20cx%3D%2217.25%22%20cy%3D%2214.25%22%20r%3D%224%22%20fill%3D%22%23f26b21%22%2F%3E%3C%2Fsvg%3E" type="image/svg+xml">
+<link rel="icon" href="/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="fonts/newsreader-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" type="image/webp" media="(min-width: 1024px), (max-width: 639.98px)" imagesrcset="../../assets/photos/hero-bag-portrait-480.webp 480w, ../../assets/photos/hero-bag-portrait-678.webp 678w" imagesizes="(min-width: 1280px) 600px, (min-width: 1024px) 45vw, 100vw" fetchpriority="high">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebSite",
+   "@id": "https://emberandoak.example/#website",
+   "url": "https://emberandoak.example/",
+   "name": "Ember & Oak",
+   "alternateName": [
+    "Ember & Oak Coffee Roasters"
+   ],
+   "publisher": {
+    "@id": "https://emberandoak.example/#org"
+   },
+   "inLanguage": "en-US"
+  },
+  {
+   "@type": "OnlineStore",
+   "@id": "https://emberandoak.example/#org",
+   "name": "Ember & Oak Coffee Roasters",
+   "url": "https://emberandoak.example/",
+   "logo": "https://emberandoak.example/logo-512.png",
+   "image": "https://emberandoak.example/og/home-1200x630.png",
+   "description": "Specialty coffee roaster in Southeast Portland, Oregon. Single-origin coffee roasted twelve kilos at a time on a 1962 Probat and shipped within 48 hours of roasting.",
+   "address": {
+    "@id": "https://emberandoak.example/#address"
+   },
+   "subOrganization": {
+    "@id": "https://emberandoak.example/visit/#cafe"
+   }
+  },
+  {
+   "@type": "PostalAddress",
+   "@id": "https://emberandoak.example/#address",
+   "streetAddress": "1120 SE Water Ave",
+   "addressLocality": "Portland",
+   "addressRegion": "OR",
+   "postalCode": "97214",
+   "addressCountry": "US"
+  },
+  {
+   "@type": "CafeOrCoffeeShop",
+   "@id": "https://emberandoak.example/visit/#cafe",
+   "name": "Ember & Oak Coffee Roasters",
+   "url": "https://emberandoak.example/visit/",
+   "parentOrganization": {
+    "@id": "https://emberandoak.example/#org"
+   },
+   "address": {
+    "@id": "https://emberandoak.example/#address"
+   },
+   "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 45.51216,
+    "longitude": -122.66534
+   },
+   "openingHoursSpecification": [
+    {
+     "@type": "OpeningHoursSpecification",
+     "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+     ],
+     "opens": "07:00",
+     "closes": "15:00"
+    }
+   ],
+   "servesCuisine": "Coffee",
+   "image": "https://emberandoak.example/og/home-1200x630.png"
+  }
+ ]
+}
+</script>
+<style>
+/* Ember & Oak homepage, round 3 (kb/tests/round3.md). One page with every wave 2 gain folded in, then pushed on
+   photography and the middle of the page. Built through design-director > design-playbook-landing.
+   Concept (design-art-direction 01): "The hill and the fire". Photographs show the things (the bag, the drop, the cupping);
+   drawings show the places and the numbers (one contour per 150 m of altitude, the batch's real roast log).
+   Reject test: does each visual show a thing we make, a place, a measurement or the roast? If not, it goes.
+   Photos are AI-generated stand-ins (kb/assets/photos/README.md); the page never captions them as real people or places.
+   Wave gains carried: layout (12-column grid with a margin column, ruled index, right-bleeding chart paper, hanging numerals,
+   2.3x ledger with rules to scale, phone and tablet edits), copy (true numbers, one promise said one way, absolute dates,
+   one verb per action), graphic (outlined wordmark with the ember O, favicon, icons on a 16 grid), search (title, canonical,
+   one JSON-LD graph, social card, real links), motion (two-transform curve wipe, contour rise, cart digit roll, tokens only,
+   per-element reduced motion), conversion (price and primary in the first screen, term line, proof with a denominator,
+   checkout), UX (three-question order slip, quick add asks the grind, cart drawer with undo, phone menu), frontend (cascade
+   layers, light-dark() tokens, skip link, forms that work without script, fonts self-hosted and preloaded). */
+@layer reset, tokens, base, layout, components, states, utilities;
+
+@font-face { font-family: "Newsreader"; src: url("fonts/newsreader-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Newsreader"; src: url("fonts/newsreader-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fonts/inter-var.woff2") format("woff2"); font-weight: 400 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Geist Mono"; src: url("fonts/geist-mono.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
+/* Metric fallbacks (design-typography 06): the swap moves nothing. Values from kb/tests/design-typography/fonts. */
+@font-face {
+  font-family: "Newsreader Fallback";
+  src: local("Times New Roman"), local("Liberation Serif");
+  size-adjust: 105.37%;
+  ascent-override: 69.76%;
+  descent-override: 25.15%;
+  line-gap-override: 0.00%;
+}
+
+@font-face {
+  font-family: "Newsreader Fallback";
+  src: local("Times New Roman Italic"), local("TimesNewRomanPS-ItalicMT"), local("Liberation Serif Italic");
+  size-adjust: 97.07%;
+  ascent-override: 75.72%;
+  descent-override: 27.30%;
+  line-gap-override: 0.00%;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("Arial"), local("Liberation Sans");
+  size-adjust: 107.59%;
+  ascent-override: 90.04%;
+  descent-override: 22.42%;
+  line-gap-override: 0.00%;
+}
+
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-padding-top: 80px; } /* sticky header 64 + 16 */
+  body, h1, h2, h3, h4, p, ul, ol, dl, dd, figure, blockquote, fieldset { margin: 0; padding: 0; }
+  ul, ol { list-style: none; } /* lists keep their semantics; numerals are typed where they are design */
+  fieldset { border: 0; min-width: 0; }
+  legend { padding: 0; }
+  img { display: block; max-width: 100%; height: auto; }
+  button, input, select { font: inherit; color: inherit; }
+  [hidden] { display: none !important; }
+  @media (forced-colors: active) { .btn, .opt, input, .stepper, dialog, .chip, .slip, .lot .tile { border: 1px solid CanvasText; } }
+}
+
+@layer tokens {
+  :root {
+    color-scheme: light dark;
+    /* Primitives */
+    --color-brand: #f26b21;
+    --color-orange-100: #ffe3d5; --color-orange-300: #ffa97e; --color-orange-600: #b14500; --color-orange-700: #933701;
+    --color-orange-800: #762901; --color-orange-900: #5a1d00; --color-orange-950: #3f0f00;
+    --color-warm-50: #f9f6f4; --color-warm-100: #eee8e4; --color-warm-200: #dfd5ce; --color-warm-300: #ccbeb3; --color-warm-500: #998779;
+    --color-warm-600: #79685b; --color-warm-800: #4f4238; --color-warm-900: #3b3129; --color-warm-950: #27201a; --color-warm-975: #1e1813; --color-warm-990: #16100c;
+    --color-red-300: #ffa59e; --color-red-600: #c2272d; --color-green-300: #8fd6a6; --color-green-700: #1e6b3a;
+    --color-white: #ffffff;
+
+    /* Semantic roles: one declaration per role, light and dark side by side (design-frontend 03). A section that sets
+       color-scheme: dark (the roastery) gets every dark value without a second token set. */
+    --color-bg: light-dark(var(--color-warm-50), var(--color-warm-990));
+    --color-surface: light-dark(var(--color-white), var(--color-warm-975));
+    --color-surface-raised: light-dark(var(--color-white), var(--color-warm-950));
+    --color-surface-sunken: light-dark(var(--color-warm-100), var(--color-warm-990));
+    --color-text: light-dark(var(--color-warm-950), var(--color-warm-50));
+    --color-text-muted: light-dark(var(--color-warm-600), var(--color-warm-300));
+    --color-text-muted-on-tint: light-dark(var(--color-warm-800), var(--color-warm-300)); /* warm 600 drops to 4.24:1 on hover tints */
+    --color-border: light-dark(var(--color-warm-200), var(--color-warm-800));
+    --color-border-strong: light-dark(var(--color-warm-500), var(--color-warm-500));
+    --color-primary: var(--color-orange-600);
+    --color-primary-hover: var(--color-orange-700);
+    --color-primary-active: var(--color-orange-800);
+    --color-on-primary: var(--color-white);
+    --color-accent: light-dark(var(--color-orange-600), var(--color-orange-300));
+    --color-success: light-dark(var(--color-green-700), var(--color-green-300));
+    --color-danger: light-dark(var(--color-red-600), var(--color-red-300));
+    --color-focus-ring: light-dark(var(--color-orange-600), var(--color-orange-300));
+    --color-selected-bg: light-dark(var(--color-orange-100), var(--color-orange-900));
+    --color-selected-text: light-dark(var(--color-warm-950), var(--color-warm-50));
+    --color-selected-ring: light-dark(var(--color-orange-600), var(--color-orange-300));
+    --color-feature-bg: light-dark(var(--color-brand), var(--color-orange-950));
+    --color-feature-lift: light-dark(#f7884a, #4c1803);   /* brand lifted 5% OKLCH: the light pool behind the headline */
+    --color-feature-text: light-dark(var(--color-warm-950), var(--color-warm-50));
+    --color-band-line: light-dark(rgb(255 255 255 / 0.22), rgb(0 0 0 / 0.35));
+    --color-illustration-surface: light-dark(var(--color-warm-100), var(--color-warm-975));
+    --color-illustration-line: light-dark(var(--color-warm-300), var(--color-warm-800));
+    --color-illustration-accent: light-dark(var(--color-orange-600), var(--color-orange-300));
+    --color-illustration-accent-fill: light-dark(rgb(242 107 33 / 0.12), rgb(255 169 126 / 0.08));
+    --color-logo-ember: var(--color-brand);
+    --color-scrim: light-dark(rgb(39 32 26 / 0.48), rgb(0 0 0 / 0.6));
+    --photo-dim: light-dark(1, 0.9); /* not a color: read by the dim rule below through a registered fallback */
+
+    /* Space (FOUNDATIONS: 0, 2, 4, 8, 12, 16, 24, 32, 48, 64, 96, 128) */
+    --space-1: 2px; --space-2: 4px; --space-3: 8px; --space-4: 12px; --space-5: 16px; --space-6: 24px;
+    --space-7: 32px; --space-8: 48px; --space-9: 64px; --space-10: 96px; --space-11: 128px;
+    /* Type (1.25 scale, rem) and the display ramp */
+    --text-xs: 0.75rem; --text-sm: 0.875rem; --text-base: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem;
+    --text-2xl: 1.9375rem; --text-3xl: 2.4375rem; --text-4xl: 3.0625rem; --text-5xl: 3.8125rem;
+    --text-display: clamp(3.0625rem, 14cqi, 5.5rem);                /* 49 to 88px, sized to the hero column, not the window */
+    --text-display-2: clamp(2.4375rem, 1.6rem + 3.4vw, 4.75rem);   /* 39 to 76px, section statements */
+    --text-numeral: clamp(3.8125rem, 2.3rem + 6.1vw, 9.5rem);      /* 61 to 152px, the ledger figure */
+    --leading-display: 0.95; --leading-tight: 1.1; --leading-snug: 1.25; --leading-normal: 1.5;
+    --size-measure: 52ch;
+    --font-serif: "Newsreader", "Newsreader Fallback", "Iowan Old Style", Charter, Georgia, serif;
+    --font-sans: "Inter", "Inter Fallback", -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    /* Radius: one family */
+    --radius-sm: 4px; --radius-md: 8px; --radius-lg: 12px; --radius-xl: 16px; --radius-full: 9999px;
+    --radius-control: var(--radius-full); --radius-card: var(--radius-lg);
+    /* Motion (FOUNDATIONS v0.3; design-motion tokens). Page 600 is for one below-the-fold reveal only. */
+    --duration-instant: 100ms; --duration-fast: 150ms; --duration-base: 200ms; --duration-slow: 300ms; --duration-page: 600ms;
+    --ease-standard: cubic-bezier(0.2, 0, 0, 1); --ease-enter: cubic-bezier(0, 0, 0, 1); --ease-exit: cubic-bezier(0.3, 0, 1, 1);
+    --motion-hover: var(--duration-instant) var(--ease-standard);
+    --motion-enter: var(--duration-base) var(--ease-enter);
+    /* Elevation (FOUNDATIONS recipe). Dark layers are transparent, not "none", so a composed list stays valid
+       (design-frontend found "none" inside a list voided the whole dark button highlight). */
+    --shadow-rgb: 39 32 26;
+    --ring: 0 0 0 1px light-dark(rgb(39 32 26 / 0.08), rgb(255 255 255 / 0.08));
+    --ring-strong: 0 0 0 1px light-dark(rgb(39 32 26 / 0.12), rgb(255 255 255 / 0.14));
+    --highlight: inset 0 1px 0 light-dark(rgb(255 255 255 / 0.14), rgb(255 255 255 / 0.08));
+    --shadow-1: 0 1px 2px light-dark(rgb(39 32 26 / 0.06), transparent);
+    --shadow-2: 0 1px 2px light-dark(rgb(39 32 26 / 0.06), transparent), 0 4px 12px -2px light-dark(rgb(39 32 26 / 0.08), transparent);
+    --shadow-3: 0 2px 4px -1px light-dark(rgb(39 32 26 / 0.08), transparent), 0 12px 24px -6px light-dark(rgb(39 32 26 / 0.16), transparent);
+    --shadow-4: 0 4px 8px -2px light-dark(rgb(39 32 26 / 0.10), transparent), 0 24px 48px -12px light-dark(rgb(39 32 26 / 0.24), transparent);
+    --elevation-card: var(--ring), var(--shadow-1);
+    --elevation-popover: var(--ring), var(--shadow-3), var(--highlight);
+    --elevation-modal: var(--ring), var(--shadow-4), var(--highlight);
+    --state-hover: color-mix(in oklch, var(--color-text) 8%, transparent);
+    --state-pressed: color-mix(in oklch, var(--color-text) 10%, transparent);
+    --icon-stroke: 1.5px;
+  }
+}
+
+@layer base {
+  body { background: var(--color-bg); color: var(--color-text); font: var(--text-base)/var(--leading-normal) var(--font-sans);
+    font-kerning: normal; font-synthesis: none; -webkit-tap-highlight-color: transparent; }
+  @media (prefers-color-scheme: dark) { body { -webkit-font-smoothing: antialiased; } }
+  h1, h2, h3 { text-wrap: balance; font-weight: inherit; font-size: inherit; }
+  p, li, dd { text-wrap: pretty; }
+  ::selection { background: var(--color-selected-bg); color: var(--color-selected-text); }
+  input { accent-color: var(--color-primary); caret-color: var(--color-focus-ring); }
+  a { color: var(--color-accent); text-decoration-thickness: 0.06em; text-underline-offset: 0.2em; }
+  @media (hover: hover) { a:hover { text-decoration-thickness: 0.12em; } }
+  :focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+  :where(a:focus-visible) { border-radius: var(--radius-sm); }
+  em { font-style: italic; }
+  b, strong { font-weight: 600; }
+  .i { flex: none; display: block; width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: var(--icon-stroke); stroke-linecap: round; stroke-linejoin: round; }
+  .i .solid { fill: currentColor; stroke: none; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+}
+
+@layer layout {
+  .wrap { max-width: 1232px; margin: 0 auto; padding: 0 var(--space-5); }
+  @media (min-width: 768px) { .wrap { padding: 0 var(--space-8); } }
+  /* Page grid (design-layout 06): 12 columns from lg, gap 32; columns 1 to 3 are the margin (labels, captions, hanging
+     numerals, axis labels), 4 to 12 the body. The hero, band and ledger split on the same lines. One column under lg. */
+  .g12 { display: grid; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 1024px) {
+    .g12 { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--space-7); }
+    .in-margin { grid-column: 1 / 4; }
+    .in-body { grid-column: 4 / -1; }
+    .in-full { grid-column: 1 / -1; }
+    .in-left { grid-column: 1 / 7; }
+    .in-right { grid-column: 7 / -1; }
+    .margin-sticky { position: sticky; top: 96px; align-self: start; }
+  }
+  .section { padding: var(--space-9) 0; }
+  @media (min-width: 1024px) { .section { padding: var(--space-11) 0; } .hero + .section { padding-top: 0; } }
+  .block + .block { margin-top: var(--space-9); }
+  @media (min-width: 1024px) { .block + .block { margin-top: var(--space-10); } }
+}
+
+@layer components {
+  /* ---------- Type roles ---------- */
+  .display { font-family: var(--font-serif); font-size: var(--text-display); line-height: var(--leading-display); letter-spacing: -0.025em;
+    translate: -0.04em 0; } /* optical margin: the E's side bearing */
+  .label { font: 600 var(--text-xs)/1.333 var(--font-sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); }
+  .mono { font-family: var(--font-mono); font-weight: 400; letter-spacing: 0; text-transform: none; font-variant-numeric: tabular-nums slashed-zero; }
+  .label .mono { font-weight: 500; letter-spacing: 0.02em; }
+  .num { font-variant-numeric: tabular-nums lining-nums; }
+  .unit { text-transform: none; letter-spacing: 0.02em; }
+  .h-display { font: 400 var(--text-display-2)/1 var(--font-serif); letter-spacing: -0.02em; max-width: 14em; }
+  .h-display em { letter-spacing: -0.01em; }
+  .muted { color: var(--color-text-muted); }
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: 0; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+  .skip { position: fixed; left: var(--space-3); top: var(--space-3); z-index: 30; display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--space-5); border-radius: var(--radius-md);
+    background: var(--color-surface-raised); color: var(--color-text); box-shadow: var(--elevation-popover); font-weight: 600; text-decoration: none; transform: translateY(-200%); }
+  .skip:focus { transform: none; }
+  main:focus { outline: none; }
+
+  /* ---------- Buttons: rest, hover (fine pointer), pressed (a step past hover), focus ring, busy. No state changes the box. ---------- */
+  .btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: var(--space-3); min-height: 48px; padding: var(--space-4) var(--space-6);
+    border-radius: var(--radius-control); border: 1px solid transparent; font: 600 var(--text-base)/1.5 var(--font-sans); text-decoration: none; cursor: pointer; white-space: nowrap;
+    transition: background-color var(--motion-hover), border-color var(--motion-hover), color var(--motion-hover); }
+  .btn-primary { background: var(--color-primary); color: var(--color-on-primary); box-shadow: var(--highlight), var(--shadow-1); }
+  .btn-secondary { background: transparent; color: var(--color-text); border-color: var(--color-border-strong); }
+  @media (hover: hover) {
+    .btn-primary:hover { background: var(--color-primary-hover); box-shadow: var(--highlight), var(--shadow-2); }
+    .btn-secondary:hover { background: var(--state-hover); }
+  }
+  .btn-primary:active { background: var(--color-primary-active); box-shadow: var(--highlight); }
+  .btn-secondary:active { background: var(--state-pressed); }
+  .btn-sm { min-height: 40px; padding: var(--space-3) var(--space-5); font-size: var(--text-sm); }
+  .btn-wide { width: 100%; min-height: 56px; }
+  .btn[aria-busy=true] { cursor: progress; }
+  .btn .spinner { display: none; width: 16px; height: 16px; border-radius: var(--radius-full); border: 2px solid currentColor; border-right-color: transparent; }
+  .btn[aria-busy=true] .spinner { display: inline-block; }
+  @media (prefers-reduced-motion: no-preference) {
+    .btn { transition: background-color var(--motion-hover), border-color var(--motion-hover), color var(--motion-hover), transform var(--motion-hover); }
+    .btn:active { transform: scale(0.97); }
+    .btn-wide:active { transform: scale(0.98); }  /* wide buttons press less: the same scale moves their edges further */
+    .btn[aria-busy=true] .spinner { animation: spin 800ms linear infinite, appear var(--duration-fast) var(--ease-enter) 300ms both; }
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes appear { from { opacity: 0; } }
+  @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+  .link-btn { min-height: 44px; padding: 0 var(--space-3); margin: 0 calc(var(--space-3) * -1); border: 0; background: none; color: var(--color-text-muted);
+    font: 500 var(--text-sm)/1.5 var(--font-sans); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; cursor: pointer; border-radius: var(--radius-sm); }
+  @media (hover: hover) { .link-btn:hover { color: var(--color-text); } }
+  .more { display: inline-flex; align-items: center; gap: var(--space-2); min-height: 44px; font-weight: 500; }
+
+  /* ---------- Header: sticky, translucent, one hairline, no shadow (it would be a second light source) ---------- */
+  .site-header { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid var(--color-border);
+    background: color-mix(in oklch, var(--color-bg) 86%, transparent); -webkit-backdrop-filter: saturate(1.4) blur(12px); backdrop-filter: saturate(1.4) blur(12px); }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: var(--space-5); min-height: 64px; }
+  .logo { display: block; color: var(--color-text); padding: var(--space-4) 0; border-radius: var(--radius-sm); }
+  .logo svg { display: block; height: 22px; width: auto; }
+  @media (min-width: 768px) { .logo svg { height: 26px; } }
+  .ember { fill: var(--color-logo-ember); }
+  .nav { display: flex; align-items: center; gap: var(--space-2); }
+  .nav a { display: inline-flex; align-items: center; gap: var(--space-3); color: var(--color-text); text-decoration: none; min-height: 44px; padding: var(--space-3) var(--space-4);
+    font-size: var(--text-sm); font-weight: 500; border-radius: var(--radius-full); transition: background-color var(--motion-hover); }
+  @media (hover: hover) { .nav a:hover { background: var(--state-hover); } }
+  .nav a:active { background: var(--state-pressed); }
+  .nav .hide-sm { display: none; }
+  @media (max-width: 767.98px) { .nav .hide-phone { display: none; } } /* Shop is the first row of the menu on phones */
+  @media (min-width: 768px) { .nav .hide-sm { display: inline-flex; } }
+  .cart-count { display: inline-grid; place-items: center; min-width: 24px; height: 24px; padding: 0 var(--space-2); overflow: hidden; border-radius: var(--radius-full);
+    background: var(--color-surface-sunken); font-size: var(--text-xs); font-weight: 600; font-variant-numeric: tabular-nums;
+    transition: background-color var(--motion-hover), color var(--motion-hover); }
+  .cart-count > span { grid-area: 1 / 1; } /* old and new digit share one cell while the count rolls */
+  .cart-count.has { background: var(--color-text); color: var(--color-bg); }
+  .menu-toggle { display: inline-flex; align-items: center; gap: var(--space-3); min-height: 44px; padding: var(--space-3) var(--space-4); border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-full); background: none; font: 500 var(--text-sm)/1.5 var(--font-sans); cursor: pointer; }
+  @media (hover: hover) { .menu-toggle:hover { background: var(--state-hover); } }
+  .menu-toggle:active, .menu-toggle[aria-expanded=true] { background: var(--state-pressed); }
+  @media (min-width: 768px) { .menu-toggle, .mobile-menu { display: none !important; } }
+  .mobile-menu ul { display: grid; padding: 0 0 var(--space-5); }
+  .mobile-menu a { display: flex; align-items: center; justify-content: space-between; min-height: 56px; color: var(--color-text); text-decoration: none;
+    font: 400 var(--text-xl)/1.25 var(--font-serif); border-bottom: 1px solid var(--color-border); }
+  .mobile-menu .i { color: var(--color-text-muted); }
+  @media (max-width: 767px) { .bar { gap: var(--space-3); } .nav a { padding: var(--space-3); } }
+
+  /* ---------- Hero: type left, the photograph right, on the 6 + 6 lines of the page grid. Phone: the words and the buy
+     panel first (price and primary in the first screen), then the photo full bleed, then the facts. ---------- */
+  .hero { padding: var(--space-6) 0 var(--space-9); overflow-x: clip; }
+  @media (min-width: 1024px) { .hero { padding: var(--space-5) 0 var(--space-9); } } /* 1440x900: the lots index peeks above the fold (playbook-landing done 4) */
+  .hero .g12 { grid-template-areas: "copy" "photo" "facts"; }
+  .hero-copy { grid-area: copy; container-type: inline-size; padding-top: var(--space-5); }
+  .hero-photo { grid-area: photo; margin-top: var(--space-7); }
+  .facts { grid-area: facts; }
+  @media (min-width: 1024px) {
+    .hero .g12 { grid-template-areas: none; grid-template-rows: 1fr auto; }
+    .hero-copy { grid-column: 1 / 7; grid-row: 1; padding-top: var(--space-7); }
+    .facts { grid-column: 1 / 7; grid-row: 2; align-self: end; }
+    .hero-photo { grid-column: 7 / -1; grid-row: 1 / 3; margin-top: 0; }
+  }
+  .hero h1 { margin-top: var(--space-5); }
+  .notes { margin-top: var(--space-6); font: italic 400 var(--text-xl)/var(--leading-snug) var(--font-serif); letter-spacing: -0.005em; max-width: 19em; }
+  @media (min-width: 768px) { .notes { font-size: var(--text-2xl); } }
+  /* Buy panel (design-conversion 01, after Apple's price-and-Buy panel): the price is the button's caption. */
+  .buy { margin-top: var(--space-7); display: grid; gap: var(--space-5); max-width: 34rem; }
+  .buy-price { display: flex; align-items: baseline; gap: var(--space-4); }
+  .buy-price .amt { font: 400 var(--text-4xl)/0.9 var(--font-serif); letter-spacing: -0.03em; font-variant-numeric: tabular-nums lining-nums; }
+  .buy-price .amt sup { font-size: var(--text-xl); vertical-align: 0.8em; letter-spacing: 0; margin-right: var(--space-1); }
+  .buy-price span:last-child { max-width: 24em; }
+  .actions { display: flex; flex-wrap: wrap; gap: var(--space-4); }
+  @media (max-width: 479px) { .actions .btn { flex: 1 1 100%; } }
+  .buy-note { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-5); font-size: var(--text-sm); color: var(--color-text-muted); }
+  .buy-note a { display: inline-flex; align-items: center; gap: var(--space-2); min-height: 44px; color: var(--color-text); font-weight: 500; }
+  .buy-note .i { width: 12px; height: 12px; color: var(--color-accent); }
+  .facts { display: grid; grid-template-columns: repeat(3, auto); justify-content: space-between; margin-top: var(--space-7); padding-top: var(--space-5); border-top: 1px solid var(--color-border); }
+  @media (min-width: 1024px) { .facts { justify-content: start; column-gap: var(--space-9); } }
+  .facts dd { font: 400 var(--text-3xl)/var(--leading-tight) var(--font-serif); font-variant-numeric: tabular-nums lining-nums; letter-spacing: -0.02em; margin-top: var(--space-3); }
+  .facts dd small { font-size: var(--text-lg); letter-spacing: 0; color: var(--color-text-muted); }
+
+  /* The photograph and its printed label. The frame keeps the photo's own aspect ratio (no object-fit crop), so the label,
+     placed in percent of the photo, lands on the blank label in every crop (measured in kb/tests/round3/photos.py). */
+  .frame { position: relative; overflow: hidden; border-radius: var(--radius-xl); background: var(--color-illustration-surface); isolation: isolate; }
+  .frame img { width: 100%; height: auto; }
+  .frame::after { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 0 0 0 1px rgb(39 32 26 / 0.08); pointer-events: none; }
+  @media (prefers-color-scheme: dark) { .frame img, .frame .print { filter: brightness(0.9); } } /* a lit room in a dark page: take the glare off, keep the color */
+  .print { position: absolute; left: var(--l); top: var(--t); width: var(--w); height: var(--h); mix-blend-mode: multiply; pointer-events: none; }
+  .hero-photo .print { --l: 35.99%; --t: 42.92%; --w: 28.47%; --h: 29.95%; }
+  @media (min-width: 640px) and (max-width: 1023.98px) { .hero-photo .print { --l: 57.36%; --w: 15.27%; } }
+  .print text { fill: #2a221b; }
+  .print .serif { font-family: var(--font-serif); font-style: italic; }
+  .print .sans { font-family: var(--font-sans); font-weight: 600; letter-spacing: 0.12em; }
+  .print .mono { font-family: var(--font-mono); font-weight: 500; }
+  .print .rule { stroke: #2a221b; stroke-width: 0.75; }
+  .print .lcurve { fill: none; stroke: var(--color-orange-700); stroke-width: 1.25; stroke-linejoin: round; stroke-linecap: round; }
+  .print .ember { fill: var(--color-brand); }
+  .print .symbol { color: #2a221b; }
+  .caption { margin-top: var(--space-4); display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-2) var(--space-5); font-size: var(--text-sm); color: var(--color-text-muted); }
+  .caption .mono { font-size: var(--text-xs); }
+  @media (max-width: 639px) {
+    .hero-photo .frame { margin-inline: calc(var(--space-5) * -1); border-radius: 0; } /* phone: the photo goes edge to edge */
+  }
+
+  /* ---------- Shop: a ruled index (design-layout 06). Rows a reader compares down one edge; the contour tile is data:
+     one line per 150 m of altitude. ---------- */
+  .margin-label { display: grid; gap: var(--space-4); align-content: start; justify-items: start; }
+  .lots { margin-top: var(--space-8); border-top: 2px solid var(--color-text); }
+  .lot { position: relative; display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: var(--space-5); padding: var(--space-6) 0; border-bottom: 1px solid var(--color-border); }
+  @media (min-width: 768px) { .lot { grid-template-columns: 176px minmax(0, 1fr) auto; column-gap: var(--space-7); align-items: center; } }
+  .lot .tile { position: relative; aspect-ratio: 4 / 3; align-self: start; border-radius: var(--radius-md); overflow: hidden; background: var(--color-illustration-surface); }
+  .tile svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .tile .c { fill: none; stroke: var(--color-illustration-line); stroke-width: 1; vector-effect: non-scaling-stroke; transition: stroke var(--motion-hover); }
+  .tile .alt { position: absolute; right: var(--space-2); bottom: var(--space-2); padding: 0 var(--space-2); border-radius: var(--radius-sm); background: var(--color-illustration-surface);
+    font: 500 var(--text-xs)/1.5 var(--font-mono); color: var(--color-text-muted-on-tint); } /* a paper chip: the contours never run under the figure */
+  @media (max-width: 767px) { .tile .alt { display: none; } } /* the altitude is in the origin line beside it */
+  .lot-main { display: grid; gap: var(--space-3); align-content: start; min-width: 0; }
+  .roast { display: flex; align-items: center; gap: var(--space-3); }
+  .roast-meter { display: inline-flex; gap: var(--space-1); }
+  .roast-meter i { width: 16px; height: 8px; border-radius: var(--radius-full); box-shadow: inset 0 0 0 1px var(--color-border-strong); }
+  .roast-meter i.on { background: var(--color-text); box-shadow: none; }
+  .lot h3 { font: 400 var(--text-2xl)/var(--leading-tight) var(--font-serif); letter-spacing: -0.015em; }
+  @media (min-width: 1024px) { .lot h3 { font-size: var(--text-3xl); } }
+  .lot .origin { font-size: var(--text-sm); color: var(--color-text-muted); }
+  .lot .taste { font: italic 400 var(--text-lg)/var(--leading-snug) var(--font-serif); }
+  .lot-buy { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); }
+  @media (min-width: 768px) { .lot-buy { grid-column: auto; flex-direction: column; align-items: flex-end; gap: var(--space-3); } }
+  .lot-buy .btn { position: relative; z-index: 2; }
+  @media (pointer: coarse), (max-width: 767.98px) { .lot-buy .btn-sm { min-height: 44px; } }
+  .lot-buy .p { font-size: var(--text-lg); font-weight: 600; font-variant-numeric: tabular-nums lining-nums; }
+  .lot-buy .p small { font-size: var(--text-sm); font-weight: 400; color: var(--color-text-muted); }
+  .lot-buy .sub { font-size: var(--text-xs); color: var(--color-text-muted); }
+  @media (max-width: 767px) { .lot-buy .sub { display: none; } }
+  .card-link { color: inherit; text-decoration: none; }
+  .card-link::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+  .card-link:focus-visible { outline: none; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  .lot:has(.card-link:focus-visible) { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; border-radius: var(--radius-sm); }
+  @media (hover: hover) and (pointer: fine) {
+    .lot:hover .card-link { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px; }
+    .lot:hover .tile .c { stroke: var(--color-border-strong); }
+  }
+
+  /* ---------- Subscription band: contour texture, a pool of light behind the headline, the order slip on paper ---------- */
+  .feature { position: relative; overflow: hidden; isolation: isolate; color: var(--color-feature-text);
+    background: radial-gradient(80% 90% at 20% 0%, var(--color-feature-lift), transparent 70%), var(--color-feature-bg); }
+  .feature > svg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; }
+  .feature .c { fill: none; stroke: var(--color-band-line); stroke-width: 1; vector-effect: non-scaling-stroke; }
+  .feature-grid { padding-top: var(--space-9); padding-bottom: var(--space-9); row-gap: var(--space-8); }
+  @media (max-width: 1023.98px) { .feature-grid { grid-template-areas: "head" "slip" "proof"; } .feature-head { grid-area: head; } .proof { grid-area: proof; } .slip { grid-area: slip; } }
+  @media (min-width: 1024px) {
+    .feature-grid { padding-top: var(--space-11); padding-bottom: var(--space-11); grid-template-areas: none; grid-template-rows: auto 1fr; }
+    .feature-head { grid-column: 1 / 7; grid-row: 1; }
+    .proof { grid-column: 1 / 7; grid-row: 2; align-self: end; }
+    .slip { grid-column: 8 / -1; grid-row: 1 / 3; align-self: start; }
+  }
+  .feature .label { color: inherit; }
+  .feature h2 { margin-top: var(--space-5); font: 400 var(--text-display-2)/1 var(--font-serif); letter-spacing: -0.02em; max-width: 12em; }
+  .perks { margin-top: var(--space-7); display: grid; gap: var(--space-3); }
+  .perks li { display: flex; gap: var(--space-4); align-items: flex-start; }
+  .perks .i { margin-top: var(--space-2); }
+  /* Proof with a denominator (design-conversion 02): average, count, distribution in text and bars, and the mixed review. */
+  .rating { display: flex; align-items: flex-end; gap: var(--space-5); padding-top: var(--space-6); border-top: 1px solid currentColor; }
+  .rating .score { font: 400 var(--text-5xl)/0.85 var(--font-serif); font-variant-numeric: tabular-nums lining-nums; letter-spacing: -0.03em; }
+  .rating .of { max-width: 16em; }
+  .dist { margin-top: var(--space-5); display: grid; gap: var(--space-2); max-width: 400px; font-size: var(--text-sm); }
+  .dist li { display: grid; grid-template-columns: 48px 1fr 48px; align-items: center; gap: var(--space-4); }
+  .dist .track { height: 8px; border-radius: var(--radius-full); background: color-mix(in oklch, var(--color-feature-text) 16%, transparent); overflow: hidden; }
+  .dist .track i { display: block; height: 100%; width: var(--w); background: var(--color-feature-text); border-radius: var(--radius-full); }
+  .dist .n { text-align: right; font-variant-numeric: tabular-nums lining-nums; }
+  .review { margin-top: var(--space-7); }
+  .review > p:first-child { font: italic 400 var(--text-xl)/var(--leading-snug) var(--font-serif); letter-spacing: -0.005em; max-width: 24em; }
+  .review footer { margin-top: var(--space-3); font-size: var(--text-sm); }
+  .reply { margin-top: var(--space-5); padding-left: var(--space-5); border-left: 2px solid currentColor; max-inline-size: var(--size-measure); }
+  .feature :focus-visible { outline-color: var(--color-feature-text); }
+  .feature .proof a { color: inherit; }
+
+  /* The order slip (design-ux 07 with design-conversion 01): options as native radios in fieldsets, asked in the buyer's
+     words, no default for what would ship wrong (the grind); the button is the summary; terms sit beside it. */
+  .slip { background: var(--color-surface); color: var(--color-text); border-radius: var(--radius-xl); box-shadow: var(--ring), var(--shadow-3); padding: var(--space-6) var(--space-5); display: grid; gap: var(--space-6); }
+  @media (prefers-color-scheme: dark) { .slip { box-shadow: var(--ring), var(--highlight); } }
+  @media (min-width: 640px) { .slip { padding: var(--space-7); } }
+  .slip-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: var(--space-2) var(--space-4); padding-bottom: var(--space-5); border-bottom: 1px solid var(--color-border); }
+  .slip-head h3 { font: 400 var(--text-2xl)/var(--leading-tight) var(--font-serif); letter-spacing: -0.015em; }
+  .opt-group legend { margin-bottom: var(--space-4); font: 600 var(--text-base)/1.5 var(--font-sans); }
+  .opt-group legend .hint { display: block; font-weight: 400; font-size: var(--text-sm); color: var(--color-text-muted); }
+  .opts { display: grid; gap: var(--space-3); }
+  .opts.cols-2, .opts.cols-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  @media (min-width: 640px) { .opts.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .opt { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; column-gap: var(--space-4); min-height: 56px; margin: 0;
+    padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); box-shadow: inset 0 0 0 1px var(--color-border-strong); background: var(--color-surface);
+    cursor: pointer; font-size: var(--text-sm); line-height: 1.25; transition: background-color var(--motion-hover); } /* the ring snaps: box-shadow never animates (design-motion) */
+  .opt.stack { grid-template-columns: auto minmax(0, 1fr); column-gap: var(--space-3); }
+  .opt input { margin: 0; width: 16px; height: 16px; font-size: var(--text-sm); }
+  .opt .name { display: block; font-weight: 600; }
+  .opt .sub { display: block; color: var(--color-text-muted); font-size: var(--text-xs); line-height: 1.333; margin-top: var(--space-1); }
+  .opt .amt { font-variant-numeric: tabular-nums lining-nums; font-weight: 600; }
+  .usual { display: inline-block; margin-top: var(--space-1); font-size: var(--text-xs); font-weight: 600; color: var(--color-accent); }
+  @media (hover: hover) { .opt:hover { background: color-mix(in oklch, var(--color-text) 4%, var(--color-surface)); } .opt:hover .sub { color: var(--color-text-muted-on-tint); } }
+  .opt:has(input:checked) { box-shadow: inset 0 0 0 2px var(--color-selected-ring); background: color-mix(in oklch, var(--color-selected-bg) 50%, var(--color-surface)); }
+  .opt:has(input:checked) .sub { color: var(--color-text-muted-on-tint); }
+  .opt:has(input:focus-visible) { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+  .opt input:focus-visible { outline: none; }
+  .opt-group.invalid .opts { padding-left: var(--space-4); box-shadow: inset 2px 0 0 var(--color-danger); }
+  .opt-group .error { margin: 0 0 var(--space-4); }
+  .slip-sum { display: grid; gap: var(--space-4); padding-top: var(--space-5); border-top: 1px solid var(--color-border); }
+  .ships { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-2) var(--space-4); font-size: var(--text-sm); color: var(--color-text-muted); }
+  .ships b { color: var(--color-text); }
+  .ships > span { display: inline-flex; align-items: center; gap: var(--space-2); }
+  /* The term line restates the choice in place; its height is reserved so changing the plan never moves the button. */
+  .terms { padding: var(--space-4) var(--space-5); border-radius: var(--radius-md); background: var(--color-surface-sunken); box-shadow: inset 0 0 0 1px var(--color-border);
+    font-size: var(--text-sm); min-height: calc(1.5em * 3 + 2 * var(--space-4)); }
+  .guarantee { font-size: var(--text-sm); color: var(--color-text-muted); text-align: center; }
+
+  /* ---------- Roastery: a dark room in the page. color-scheme: dark flips every light-dark() token inside. ---------- */
+  .roastery { color-scheme: dark; background: var(--color-surface); color: var(--color-text); overflow-x: clip; }
+  .manifesto { font: 400 var(--text-xl)/var(--leading-snug) var(--font-serif); letter-spacing: -0.015em; margin-top: var(--space-6); max-width: 21em; }
+  @media (min-width: 768px) { .manifesto { font-size: var(--text-3xl); } }
+  @media (min-width: 1024px) { .manifesto { margin-top: 0; } }
+  .manifesto em { color: var(--color-accent); }
+  .drop .frame { border-radius: var(--radius-lg); }
+  @media (max-width: 639px) { .drop .frame { margin-inline: calc(var(--space-5) * -1); border-radius: 0; } }
+  .drop .caption { margin-top: var(--space-4); }
+  /* The roast curve: the batch's real log (build.mjs). Paper bleeds right only: the log runs on past the drop. */
+  .curve-head { display: grid; gap: var(--space-3); align-content: start; color: var(--color-text-muted); max-inline-size: 40ch; }
+  .curve-head b { color: var(--color-text); }
+  @media (min-width: 1024px) { .curve-head { padding-inline-end: var(--space-8); } }
+  .plot { position: relative; isolation: isolate; height: 240px; margin: var(--space-8) 0 var(--space-7) var(--space-8); }
+  @media (min-width: 768px) { .plot { height: 320px; } }
+  @media (min-width: 1024px) { .plot { height: 360px; margin: var(--space-3) 0 var(--space-7); } }
+  .plot::before { content: ""; position: absolute; z-index: -1; top: 0; bottom: 0; left: 0; right: -100vw;
+    background: linear-gradient(var(--color-border), var(--color-border)) 0 12.5% / 100% 1px no-repeat,
+                linear-gradient(var(--color-border), var(--color-border)) 0 43.75% / 100% 1px no-repeat,
+                linear-gradient(var(--color-border), var(--color-border)) 0 75% / 100% 1px no-repeat,
+                linear-gradient(var(--color-border-strong), var(--color-border-strong)) 0 100% / 100% 1px no-repeat; }
+  .plot svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .plot .crack { stroke: var(--color-border-strong); stroke-width: 1; stroke-dasharray: 4 4; vector-effect: non-scaling-stroke; }
+  .plot .area { fill: var(--color-illustration-accent-fill); }
+  .plot .line { fill: none; stroke: var(--color-illustration-accent); stroke-width: 2; vector-effect: non-scaling-stroke; stroke-linejoin: round; stroke-linecap: round; }
+  .anno { font-size: var(--text-xs); font-weight: 500; line-height: 1.5; font-variant-numeric: tabular-nums; }
+  .ylab, .xlab { position: absolute; color: var(--color-text-muted); font-family: var(--font-mono); font-weight: 400; }
+  .ylab { left: calc(-1 * var(--space-8)); transform: translateY(-50%); }
+  @media (min-width: 1024px) { .ylab { left: auto; right: calc(100% + var(--space-4)); } } /* axis labels hang in the gutter */
+  .xlab { top: 100%; margin-top: var(--space-3); transform: translateX(-50%); }
+  .xlab.start { transform: none; } .xlab.end { transform: translateX(-100%); }
+  .pt { position: absolute; width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: var(--radius-full); background: var(--color-illustration-accent); box-shadow: 0 0 0 2px var(--color-surface); }
+  .pt.drop-pt { width: 12px; height: 12px; margin: -6px 0 0 -6px; }
+  .ptlab { position: absolute; white-space: nowrap; color: var(--color-text); background: var(--color-surface); padding: var(--space-1) var(--space-2); border-radius: var(--radius-sm); }
+  .ptlab.above { transform: translate(-100%, calc(-100% - 12px)); }
+  .ptlab.below { transform: translate(-24px, 12px); }
+  .ptlab.optional { display: none; }
+  @media (min-width: 768px) { .ptlab.optional { display: block; } }
+  /* Motion 1 (design-motion): the curve is drawn once on first view by a two-transform wipe, linear because x is time;
+     markers land as the pen passes. Compositor only: no clip-path, no dashoffset. */
+  .wipe { position: absolute; inset: calc(-1 * var(--space-3)); overflow: hidden; }
+  .wipe-in, .wipe-out { position: absolute; inset: 0; }
+  .wipe-in { overflow: hidden; }
+  .plot .wipe svg { inset: var(--space-3); width: calc(100% - 2 * var(--space-3)); height: calc(100% - 2 * var(--space-3)); }
+  @media (prefers-reduced-motion: no-preference) {
+    .js .curve:not(.seen) .wipe-in { transform: translateX(-100%); }
+    .js .curve:not(.seen) .wipe-out { transform: translateX(100%); }
+    .js .curve:not(.seen) .pt, .js .curve:not(.seen) .ptlab { opacity: 0; }
+    .js .curve.seen .wipe-in { animation: wipe-in var(--duration-page) linear both; }
+    .js .curve.seen .wipe-out { animation: wipe-out var(--duration-page) linear both; }
+    .js .curve.seen .pt { animation: pop var(--duration-fast) var(--ease-enter) both; animation-delay: calc(var(--at) * var(--duration-page)); }
+    .js .curve.seen .ptlab { animation: fade var(--duration-fast) var(--ease-enter) both; animation-delay: calc(var(--at) * var(--duration-page) + var(--duration-instant)); }
+    @keyframes wipe-in { from { transform: translateX(-100%); } to { transform: none; } }
+    @keyframes wipe-out { from { transform: translateX(100%); } to { transform: none; } }
+    @keyframes pop { from { opacity: 0; transform: scale(0.5); } to { opacity: 1; transform: none; } }
+    .js .tile:not(.seen) .c { opacity: 0; } /* Motion 2: the hill builds line by line (script) */
+  }
+
+  /* ---------- Ledger: a number instead of a picture; the table's rules are drawn to scale ---------- */
+  .ledger-figure { display: grid; gap: var(--space-4); align-content: start; margin-top: var(--space-5); }
+  .ledger-figure .big { font: 400 var(--text-numeral)/0.85 var(--font-serif); font-variant-numeric: tabular-nums lining-nums; letter-spacing: -0.04em; translate: -0.04em 0; }
+  .ledger-figure .big .x { font-size: var(--text-4xl); letter-spacing: 0; margin-left: var(--space-2); color: var(--color-accent); }
+  .ledger-figure .say { font: italic 400 var(--text-xl)/var(--leading-snug) var(--font-serif); max-width: 16em; }
+  .ledger { margin-top: var(--space-8); }
+  @media (min-width: 1024px) { .ledger-figure { grid-column: 4 / 8; margin-top: 0; } .ledger { grid-column: 8 / -1; margin-top: 0; } }
+  .ledger table { width: 100%; border-collapse: collapse; }
+  .ledger caption { text-align: left; padding-bottom: var(--space-4); }
+  .ledger tr { position: relative; }
+  .ledger th, .ledger td { padding: var(--space-5) 0 var(--space-4); border-bottom: 1px solid var(--color-border); text-align: left; font-weight: 400; }
+  .ledger td { text-align: right; font-variant-numeric: tabular-nums lining-nums; }
+  .ledger time { font-variant-numeric: tabular-nums; }
+  .ledger .rule { position: absolute; left: 0; bottom: -1px; height: 2px; width: calc(var(--v) * 100%); background: var(--color-text); }
+  .ledger tr.paid th, .ledger tr.paid td { font-weight: 600; }
+  .ledger tr.paid .rule { height: 4px; bottom: -2px; background: var(--color-accent); }
+  .src { margin-top: var(--space-5); font-size: var(--text-sm); color: var(--color-text-muted); max-inline-size: var(--size-measure); }
+  .ship-note { display: flex; align-items: center; gap: var(--space-3); }
+
+  /* ---------- Promises: the cupping photograph beside the three statements, numerals hanging ---------- */
+  .promises { background: var(--color-surface); }
+  .promises .cup { margin-top: var(--space-8); }
+  /* 1024 up: the photograph and the statement share a row on the 6 + 6 lines; the three promises run across the full
+     measure beneath them as one ruled row, so neither column ends in a hole (round 3: the stacked version left 400px empty). */
+  @media (min-width: 1024px) {
+    .promises .cup { grid-column: 1 / 7; grid-row: 1; margin-top: 0; }
+    .promises .promise-head { grid-column: 8 / -1; grid-row: 1; align-self: center; }
+    .promises .steps { grid-column: 1 / -1; grid-row: 2; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--space-7); margin-top: var(--space-10); }
+    .promises .steps li { grid-template-columns: minmax(0, 1fr); gap: var(--space-4); border-top: 2px solid var(--color-text); } /* numeral above: the text keeps a 45+ character measure */
+  }
+  @media (max-width: 639px) { .promises .cup .frame { margin-inline: calc(var(--space-5) * -1); border-radius: 0; } }
+  .steps { margin-top: var(--space-8); display: grid; }
+  .steps li { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: var(--space-5); align-items: start; border-top: 1px solid var(--color-border); padding: var(--space-6) 0; }
+  .steps .n { font: italic 400 var(--text-4xl)/0.8 var(--font-serif); color: var(--color-accent); }
+  .steps h3 { font: 600 var(--text-lg)/var(--leading-snug) var(--font-sans); letter-spacing: -0.01em; }
+  .steps p { margin-top: var(--space-3); color: var(--color-text-muted); max-inline-size: var(--size-measure); }
+
+  /* ---------- Footer and the letters ---------- */
+  .site-footer { padding: var(--space-9) 0 var(--space-7); }
+  .site-footer .cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-8) var(--space-6); }
+  .site-footer .cols > :first-child { grid-column: 1 / -1; }
+  @media (min-width: 1024px) { .site-footer .cols { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--space-7); }
+    .site-footer .cols > :first-child { grid-column: 1 / 7; } .site-footer .links:nth-child(2) { grid-column: 8 / 10; } .site-footer .links:nth-child(3) { grid-column: 10 / -1; } }
+  .site-footer h2.letters { font: 400 var(--text-2xl)/var(--leading-tight) var(--font-serif); letter-spacing: -0.015em; }
+  .intro { color: var(--color-text-muted); margin-top: var(--space-3); max-inline-size: var(--size-measure); }
+  .news { margin-top: var(--space-6); max-width: 480px; }
+  .news label, .fld label { display: block; font-size: var(--text-sm); font-weight: 600; margin-bottom: var(--space-3); }
+  .field-row { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+  .news input { flex: 1 1 240px; min-height: 48px; padding: var(--space-4) var(--space-5); border-radius: var(--radius-full); border: 1px solid var(--color-border-strong);
+    background: var(--color-surface); font: var(--text-base)/1.5 var(--font-sans); }
+  @media (hover: hover) { .news input:hover, .co-form input:hover { border-color: var(--color-text-muted); } }
+  input[aria-invalid=true] { border-color: var(--color-danger) !important; box-shadow: inset 0 0 0 1px var(--color-danger); } /* the second pixel is inset: no shift */
+  .error, .ok { display: flex; gap: var(--space-3); align-items: flex-start; font-size: var(--text-sm); margin-top: var(--space-3); }
+  .error { color: var(--color-danger); }
+  .ok { font-size: var(--text-base); }
+  .ok .i { color: var(--color-success); }
+  .error .i, .ok .i { margin-top: var(--space-1); }
+  .news[data-done] .field-row, .news[data-done] > label { display: none; }
+  .links h2 { margin-bottom: var(--space-4); }
+  .links a { display: inline-flex; align-items: center; min-height: 44px; color: var(--color-text); text-decoration: none; }
+  @media (hover: hover) { .links a:hover { text-decoration: underline; } }
+  .signoff { margin-top: var(--space-10); padding-top: var(--space-6); border-top: 1px solid var(--color-border); display: grid; gap: var(--space-5); }
+  .signoff .mark { color: var(--color-text); }
+  .signoff .mark svg { display: block; width: 100%; height: auto; margin-inline-start: -0.6%; } /* optical margin: the E's serif overhangs */
+  .legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-4); font-size: var(--text-sm); color: var(--color-text-muted); }
+  .legal .mono { font-size: var(--text-xs); align-self: center; }
+
+  /* ---------- Dialogs: quick add (a sheet on phones), the cart drawer, checkout ---------- */
+  dialog { padding: 0; border: 0; color: var(--color-text); background: var(--color-surface-raised); box-shadow: var(--elevation-modal); max-height: 100dvh; overscroll-behavior: contain; }
+  dialog::backdrop { background: var(--color-scrim); }
+  .dlg-head { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-4); padding: var(--space-5) var(--space-4) var(--space-5) var(--space-6); border-bottom: 1px solid var(--color-border); }
+  .dlg-head h2 { font: 400 var(--text-2xl)/var(--leading-tight) var(--font-serif); letter-spacing: -0.015em; border-radius: var(--radius-sm); }
+  .dlg-head h2:focus { outline: none; }
+  .dlg-head .meta { margin-top: var(--space-2); font-size: var(--text-sm); color: var(--color-text-muted); }
+  .close { flex: none; display: inline-grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: var(--radius-full); background: none; cursor: pointer; }
+  @media (hover: hover) { .close:hover { background: var(--state-hover); } }
+  .close:active { background: var(--state-pressed); }
+  #quick { width: min(480px, calc(100vw - 32px)); margin: auto; border-radius: var(--radius-xl); }
+  #quick form { padding: var(--space-6); display: grid; gap: var(--space-6); }
+  @media (max-width: 639px) { #quick { margin: auto 0 0; width: 100vw; max-width: 100vw; border-radius: var(--radius-xl) var(--radius-xl) 0 0; } }
+  .qty-row { display: flex; align-items: center; justify-content: space-between; gap: var(--space-5); }
+  .qty-row .lbl { font-weight: 600; }
+  .stepper { display: inline-flex; align-items: center; border-radius: var(--radius-full); box-shadow: inset 0 0 0 1px var(--color-border-strong); }
+  .stepper button { display: inline-grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: var(--radius-full); background: none; cursor: pointer; }
+  @media (hover: hover) { .stepper button:hover { background: var(--state-hover); } }
+  .stepper button:active { background: var(--state-pressed); }
+  .stepper button[aria-disabled=true] { color: var(--color-text-muted); cursor: not-allowed; }
+  .stepper output { min-width: 32px; text-align: center; font-weight: 600; font-variant-numeric: tabular-nums lining-nums; }
+  .fine { font-size: var(--text-sm); color: var(--color-text-muted); }
+  #cart { margin: 0 0 0 auto; width: min(448px, 100vw); height: 100dvh; max-width: 100vw; border-radius: 0; }
+  #cart[open] { display: flex; flex-direction: column; }
+  .cart-body { flex: 1; overflow-y: auto; padding: 0 var(--space-6) var(--space-6); }
+  .cart-group h3 { padding: var(--space-5) 0 var(--space-3); }
+  .line { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: var(--space-2) var(--space-5); padding: var(--space-5) 0; border-top: 1px solid var(--color-border); }
+  .thumb { grid-row: span 2; width: 56px; height: 56px; border-radius: var(--radius-md); overflow: hidden; background: var(--color-illustration-surface); }
+  .thumb img { width: 56px; height: 56px; object-fit: cover; object-position: 50% 52%; }
+  .line .nm { font: 400 var(--text-lg)/var(--leading-snug) var(--font-serif); }
+  .line .meta { font-size: var(--text-sm); color: var(--color-text-muted); }
+  .line .amt { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums lining-nums; }
+  .line .amt small { display: block; font-weight: 400; font-size: var(--text-xs); color: var(--color-text-muted); }
+  .line .ctrl { grid-column: 2 / -1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3); }
+  .line .renew { font-size: var(--text-xs); color: var(--color-text-muted); }
+  .line.removed { grid-template-columns: minmax(0, 1fr) auto; align-items: center; padding: var(--space-3) 0; color: var(--color-text-muted); font-size: var(--text-sm); }
+  .line.removed .link-btn { margin: 0; color: var(--color-text); font-weight: 600; }
+  .cart-sum { border-top: 1px solid var(--color-border); padding: var(--space-5) var(--space-6) var(--space-6); display: grid; gap: var(--space-4); }
+  .cart-sum dl, .summary dl { display: grid; gap: var(--space-2); }
+  .cart-sum dl div, .summary dl div { display: flex; justify-content: space-between; gap: var(--space-4); font-size: var(--text-sm); }
+  .cart-sum dd, .summary dd { font-variant-numeric: tabular-nums lining-nums; text-align: right; }
+  .cart-sum .total, .summary .total { font-size: var(--text-base); font-weight: 600; padding-top: var(--space-3); border-top: 1px solid var(--color-border); }
+  .cart-sum .then { color: var(--color-text-muted); }
+  .cart-sum .fine { text-align: center; }
+  .cart-empty { display: grid; justify-items: start; gap: var(--space-4); padding: var(--space-8) 0; }
+  .cart-empty h3 { font: 400 var(--text-xl)/var(--leading-tight) var(--font-serif); }
+  .cart-empty p { color: var(--color-text-muted); max-inline-size: var(--size-measure); }
+  #cart[data-empty] .cart-sum, #cart[data-empty] .cart-groups { display: none; }
+  #cart:not([data-empty]) .cart-empty { display: none; }
+  /* Checkout (design-conversion 04): express pay first, about eight fields, the card block encapsulated, total and term beside Pay. */
+  #checkout { width: min(960px, 100%); max-width: 100%; max-height: 100%; margin: auto; border-radius: var(--radius-xl); }
+  @media (max-width: 639px) { #checkout { margin: 0; width: 100%; height: 100%; border-radius: 0; } }
+  .co-head { position: sticky; top: 0; z-index: 2; background: var(--color-surface-raised); }
+  .co-body { display: grid; gap: var(--space-7); padding: var(--space-6) var(--space-5) var(--space-7); }
+  @media (min-width: 768px) { .co-body { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-8); padding: var(--space-7); } }
+  .co-form { display: grid; gap: var(--space-6); max-width: 480px; }
+  .express { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+  .or { display: flex; align-items: center; gap: var(--space-4); font-size: var(--text-sm); color: var(--color-text-muted); }
+  .or::before, .or::after { content: ""; flex: 1; height: 1px; background: var(--color-border); }
+  .co-form fieldset { display: grid; gap: var(--space-5); }
+  .co-form legend { margin-bottom: var(--space-4); }
+  .fld { display: grid; gap: var(--space-3); }
+  .fld label { margin: 0; }
+  .hint { font-size: var(--text-sm); color: var(--color-text-muted); }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+  .co-form input:not([type=checkbox]) { width: 100%; min-height: 48px; padding: var(--space-4) var(--space-5); border: 1px solid var(--color-border-strong); border-radius: var(--radius-md);
+    background: var(--color-surface); font: var(--text-base)/1.5 var(--font-sans); }
+  .linkish { justify-self: start; display: inline-flex; align-items: center; min-height: 32px; padding: 0; border: 0; background: none; color: var(--color-text);
+    font: 500 var(--text-sm)/1.5 var(--font-sans); text-decoration: underline; text-decoration-thickness: 0.06em; text-underline-offset: 0.2em; cursor: pointer; }
+  .card-block { padding: var(--space-5); border-radius: var(--radius-lg); background: var(--color-surface-sunken); box-shadow: inset 0 0 0 1px var(--color-border); }
+  .card-block legend, .card-block .lock { color: var(--color-text); }
+  .lock { display: flex; align-items: center; gap: var(--space-3); font-size: var(--text-sm); }
+  .check { display: flex; gap: var(--space-3); align-items: flex-start; }
+  .check input { width: 20px; height: 20px; margin: var(--space-1) 0 0; }
+  .summary { align-self: start; display: grid; gap: var(--space-5); padding: var(--space-6); border-radius: var(--radius-lg); background: var(--color-bg); box-shadow: inset 0 0 0 1px var(--color-border); }
+  @media (min-width: 768px) { .summary { position: sticky; top: 112px; } }
+  .summary h3 { font: 400 var(--text-xl)/var(--leading-tight) var(--font-serif); }
+  .summary .total dd { font: 400 var(--text-2xl)/1 var(--font-serif); letter-spacing: -0.01em; }
+  .summary .term { font-size: var(--text-sm); }
+  @media (prefers-reduced-motion: no-preference) {
+    #cart[open] { animation: drawer-in var(--duration-slow) var(--ease-enter); }
+    #quick[open], #checkout[open] { animation: fade var(--duration-base) var(--ease-enter); }
+    @keyframes drawer-in { from { translate: 24px 0; opacity: 0; } to { translate: 0 0; opacity: 1; } }
+    .ok:not(:empty) { animation: rise var(--motion-enter) both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+  }
+  /* Reduced motion (design-motion 05): every movement above is opt-in under no-preference, so reduce gets end states at
+     first paint. Color fades at --motion-hover stay for everyone. No global animation reset. */
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="/" aria-label="Ember &amp; Oak, home"><svg class="wordmark" viewBox="0 0 844.5 108" aria-hidden="true"><g fill="currentColor"><path d="M66.7 30.9 64.1 51.8 66.7 72.6H65L56.9 54.6L25.2 52.9V50.7L56.9 48.8L65 30.9ZM88.7 32.3 86.8 32.9 71.8 6.6 82.7 8.6H22.9V4H73.4L82.9 -0.2H83.6ZM73.5 101.3 90.9 74.8 92.8 75.3 85.2 108.1H84.4L75.3 104H22.9V99.4H84.2ZM4.5 104V101.9L16.6 98.9V9.1L4.5 6.1V4H34.4V104Z"/><path d="M123.1 44.6V99.9L132.3 102V104H98.1V102L107.4 99.9V45.5Q106.3 44.6 104.2 43.1Q102.1 41.5 97.8 38.6V37.1L122.6 30.2H123.1ZM166 52.2V99.9L175.1 102V104H141.1V102L150.3 99.9V54.4Q150.3 50.3 148.9 47.6Q147.5 45 144.6 43.6Q141.8 42.3 137.3 42.3Q132.8 42.3 128.5 43.5Q124.3 44.7 121.2 46.3L120.5 44.5Q125.7 40.2 129.4 37.5Q133.2 34.8 136.2 33.4Q139.1 32 141.8 31.5Q144.5 31 147.6 31Q154 31 158 33.3Q162.1 35.5 164 40.2Q166 44.9 166 52.2ZM208.8 52.2V99.9L218.2 102V104H183.9V102L193.1 99.9V54.4Q193.1 50.3 191.7 47.6Q190.3 45 187.5 43.6Q184.6 42.3 180.1 42.3Q175.6 42.3 171.4 43.5Q167.1 44.7 164 46.3L163.3 44.5Q168.5 40.2 172.3 37.5Q176 34.8 179 33.4Q181.9 32 184.6 31.5Q187.4 31 190.4 31Q200 31 204.4 36.1Q208.8 41.3 208.8 52.2Z"/><path d="M233.1 99.6 241.8 98 227.2 106.5 226.2 106 229.2 88.4V14.6Q228.3 14 226.8 12.9Q225.3 11.9 223.1 10.4Q221 9 218.2 7.1V5.9L244.7 0.1H245.7L244.9 12.2V87.1Q244.9 91.4 247 94.7Q249 98.1 252.6 100Q256.2 101.9 260.7 101.9Q267 101.9 271.4 98.4Q275.8 94.9 278.1 87.8Q280.4 80.7 280.4 70.2Q280.4 60.3 278.2 53.9Q275.9 47.4 271.4 44.4Q266.9 41.3 260 41.3Q256.5 41.3 253.3 42.1Q250 42.8 247 44.6Q244 46.3 241.1 49.4L240.2 47.8Q244.8 42.8 248.7 39.5Q252.6 36.3 255.9 34.4Q259.2 32.5 262.2 31.7Q265.2 30.9 268.1 30.9Q277.2 30.9 283.6 35Q290.1 39.1 293.5 46.6Q297 54.1 297 64.4Q297 74.2 294.1 81.9Q291.2 89.5 286 94.8Q280.8 100.1 273.6 102.8Q266.5 105.5 258 105.5Q253.7 105.5 249.4 104.9Q245 104.3 240.9 103Q236.8 101.7 233.1 99.6Z"/><path d="M340.1 30.9Q347.8 30.9 353.5 34Q359.1 37.2 362.4 43.2Q365.7 49.3 366.3 58.1H319.8V53.7H357.9L351.1 56.7Q350.4 48.9 348.8 44Q347.2 39.2 344.5 36.9Q341.8 34.7 337.9 34.7Q332.8 34.7 329.1 37.7Q325.4 40.7 323.4 46.7Q321.5 52.8 321.5 61.8Q321.5 73.2 324.4 80.4Q327.3 87.5 332.9 90.8Q338.5 94 346.6 94Q350.5 94 354.1 93Q357.7 92 360.9 90Q364.1 87.9 366.6 84.7L367.9 85.7Q363.4 93 358.9 97.4Q354.4 101.7 349.4 103.6Q344.5 105.5 338.6 105.5Q329.2 105.5 321.8 101.4Q314.3 97.2 310 89.2Q305.8 81.2 305.8 69.5Q305.8 59.1 309.8 50.3Q313.8 41.5 321.5 36.2Q329.2 30.9 340.1 30.9Z"/><path d="M420.7 31.1Q424 31.1 425.9 33Q427.8 34.9 427.8 38.2Q427.8 42.2 425.3 44.8Q422.8 47.4 419 47.4Q417.1 47.4 415.4 47Q413.6 46.6 411.8 46.2Q410 45.7 407.7 45.7Q405.7 45.7 403.9 46.4Q402.1 47.1 400.4 48.3Q398.7 49.4 396.9 51.1L396.9 48Q402.4 42.2 406.1 38.8Q409.8 35.4 412.3 33.7Q414.9 32.1 416.8 31.6Q418.8 31.1 420.7 31.1ZM398.2 44.1V99.9L408.9 102V104H373.1V102L382.5 99.9V45.5Q381.6 44.8 380.3 43.9Q379.1 43.1 377.2 41.7Q375.4 40.4 372.8 38.6V37.1L397.6 30.2H398.2Z"/><path d="M519.3 86.9 515 90.4Q509.4 95.9 504.1 99.2Q498.8 102.5 493.6 104Q488.4 105.5 483.1 105.5Q474.3 105.5 468.4 102.3Q462.5 99.2 459.6 93.9Q456.6 88.7 456.6 82.4Q456.6 77.2 458.2 72.6Q459.7 68 463.3 63.8Q466.9 59.6 473.2 55.8Q479.5 51.9 489 48.2L498.8 44.3Q506.6 39.3 510.7 34.6Q514.8 29.9 516.4 25.3Q518 20.6 518 16.1Q518 11.1 515.6 8.3Q513.3 5.6 508.2 5.6Q503.6 5.6 500.1 7.7Q496.7 9.8 494.8 13.5Q492.9 17.3 492.9 22.3Q492.9 26.2 494.1 30.6Q495.3 35.1 497.9 39.8L531.1 99.4L542.7 102.6L542.2 104H516.5L485.8 47.4Q484.1 44.2 483 41.1Q481.9 37.9 481.4 34.8Q480.9 31.7 480.9 28.9Q480.9 21.3 484.3 15.3Q487.6 9.3 494 5.9Q500.4 2.5 509.4 2.5Q516.2 2.5 520.7 4.5Q525.1 6.5 527.3 10Q529.5 13.4 529.5 17.9Q529.5 22.6 527.2 27.1Q524.9 31.5 518.7 36.1Q512.5 40.7 500.5 45.7L490.5 49.8Q482.9 53.2 478.7 57.2Q474.5 61.2 472.8 65.8Q471.1 70.4 471.1 76Q471.1 85.3 476.8 90.6Q482.4 95.9 492 95.9Q497.1 95.9 502.5 94.6Q507.8 93.3 513.2 88.9L517.2 85.5Q520.8 81.9 524.2 76.5Q527.6 71.1 530.8 63.8Q533.9 56.5 536.8 47.1L526.1 44.5L526.6 42.9H557.2L556.7 44.5L544.7 47.1Q538.7 60.5 532.4 70Q526.1 79.6 519.3 86.9Z"/><path d="M739.6 57.7 740.1 60.8Q731.2 63.7 725.6 66.3Q720.1 68.9 717.2 71.6Q714.3 74.2 713.2 77.2Q712.1 80.1 712.1 83.7Q712.1 89.6 715.3 92.6Q718.5 95.5 723.2 95.5Q726.8 95.5 729.5 94.1Q732.2 92.6 733.8 89.8Q735.3 87 735.3 82.9V50.5Q735.3 43.7 731.9 40.1Q728.5 36.5 721.5 36.5Q718.2 36.5 714.9 37Q711.7 37.5 709.7 38.3L713.3 35.2Q713 38.3 712.5 41.2Q712 44.1 711.4 46.2Q710.7 48.4 709.8 49.5Q708.8 50.7 706.9 51.5Q704.9 52.2 702.8 52.2Q700 52.2 698.4 51.1Q696.9 50.1 696.9 47.9Q696.9 44.9 699.8 41.9Q702.7 38.9 707.3 36.4Q712 33.9 717.5 32.4Q723 30.9 728.2 30.9Q736.5 30.9 741.5 33.3Q746.5 35.7 748.7 40.1Q751 44.4 751 50.3V90.8Q751 93 751.7 94.3Q752.4 95.7 753.6 96.3Q754.9 96.9 756.5 96.9Q758.8 96.9 760.9 96.2Q763.1 95.5 765.5 93.9V96.2Q760.2 102.1 756.1 103.8Q751.9 105.5 747.2 105.5Q742.8 105.5 740.2 103.6Q737.6 101.7 736.5 98.1Q735.4 94.4 735.1 89.1L735.5 89.2Q734.3 94.1 731.6 97.8Q728.9 101.4 725.1 103.5Q721.3 105.5 716.7 105.5Q707.7 105.5 702 100.8Q696.3 96.1 696.3 87.3Q696.3 82.8 697.8 79.2Q699.4 75.7 703.9 72.5Q708.3 69.3 716.9 65.8Q725.5 62.3 739.6 57.7Z"/><path d="M797.6 61.9 802.3 57.4 838.7 99.9 846.2 102V104H811V102L819.7 100.1L790.9 66.5H787V63H791.6L824 37L813.6 34.7V32.4H841.3V34.7L830.7 37.1ZM790.2 99.9 799.5 102V104H765.2V102L774.5 99.9V13.7Q773.6 13.2 772 12.3Q770.3 11.4 768.1 10.2Q765.9 9 763.1 7.5V6.1L789.7 0.1H790.2V12.2Z"/><path d="M637 2.5Q647.8 2.5 656.9 6.2Q666.1 9.9 672.8 16.7Q679.5 23.6 683.1 32.9Q686.8 42.3 686.8 53.5Q686.8 64.9 683.1 74.4Q679.4 84 672.6 90.9Q665.8 97.9 656.6 101.7Q647.4 105.5 636.5 105.5Q625.6 105.5 616.5 101.8Q607.3 98.1 600.6 91.3Q593.9 84.4 590.2 75.1Q586.5 65.7 586.5 54.4Q586.5 43 590.2 33.5Q593.9 24 600.7 17Q607.5 10.1 616.7 6.3Q626 2.5 637 2.5ZM637.4 101.7Q647 101.7 654 96.5Q661 91.2 664.8 81.2Q668.7 71.2 668.7 56.9Q668.7 40.7 664.5 29.4Q660.4 18.1 653 12.1Q645.7 6.2 636 6.2Q626.3 6.2 619.3 11.5Q612.3 16.7 608.4 26.8Q604.6 36.8 604.6 51.1Q604.6 67.3 608.7 78.6Q612.9 89.9 620.2 95.8Q627.6 101.7 637.4 101.7Z"/></g><ellipse cx="638.1600000000001" cy="51.5" rx="23" ry="33" fill="none" stroke="currentColor" stroke-width="3"/><circle class="ember" cx="642.6600000000001" cy="42" r="7.5"/></svg></a>
+    <nav class="nav" aria-label="Main">
+      <a class="hide-phone" href="/coffee/">Shop</a>
+      <a class="hide-sm" href="/subscriptions/">Subscriptions</a>
+      <a class="hide-sm" href="/roastery/">Roastery</a>
+      <a class="hide-sm" href="/journal/">Journal</a>
+      <a href="/cart/" id="cart-link" aria-haspopup="dialog" aria-describedby="cart-label">Cart <span class="cart-count" id="cart-count"><span aria-hidden="true" id="cart-n">0</span></span><span class="sr-only" id="cart-label">empty</span></a>
+      <button class="menu-toggle" type="button" id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu"><svg class="i" data-icon="menu" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.25 5.25h11.5M2.25 10.75h11.5"/></svg>Menu</button>
+    </nav>
+  </div>
+  <nav class="mobile-menu wrap" id="mobile-menu" aria-label="Main, all sections" hidden>
+    <ul>
+      <li><a href="/coffee/">Shop coffee<svg class="i" data-icon="arrow-right" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.75 8h10.5M9.25 3.75L13.5 8l-4.25 4.25"/></svg></a></li>
+      <li><a href="/subscriptions/">Subscriptions<svg class="i" data-icon="arrow-right" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.75 8h10.5M9.25 3.75L13.5 8l-4.25 4.25"/></svg></a></li>
+      <li><a href="/roastery/">Roastery<svg class="i" data-icon="arrow-right" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.75 8h10.5M9.25 3.75L13.5 8l-4.25 4.25"/></svg></a></li>
+      <li><a href="/journal/">Journal<svg class="i" data-icon="arrow-right" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.75 8h10.5M9.25 3.75L13.5 8l-4.25 4.25"/></svg></a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap g12">
+      <div class="hero-copy">
+        <p class="label"><time datetime="2026-W42">This week’s</time> single-origin coffee · <span class="mono">Lot 0412</span></p>
+        <h1 id="hero-title" class="display">Ethiopia Guji, <em>roasted&nbsp;<time datetime="2026-10-13">Tuesday</time></em> in&nbsp;Portland.</h1>
+        <p class="notes">Peach, jasmine and wildflower honey, from the Hambela Wamena washing station.</p>
+        <div class="buy">
+          <p class="buy-price"><span class="amt num"><sup>$</sup>18</span><span>a bag on subscription, shipping included. <span class="muted">$21 as a single bag.</span></span></p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#subscribe">Subscribe, $18 a bag</a>
+            <a class="btn btn-secondary" href="/coffee/ethiopia-guji-hambela-wamena/" data-quick="guji" aria-haspopup="dialog">Buy this bag, $21</a>
+          </div>
+          <p class="buy-note"><span>Order by Mon,&nbsp;Oct&nbsp;12 for the Tue,&nbsp;Oct&nbsp;13 roast.</span><a href="#reviews"><svg class="i" data-icon="star" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path class="solid" d="M8 1.75l1.85 3.95 4.3.5-3.2 2.95.85 4.25L8 11.25l-3.8 2.15.85-4.25-3.2-2.95 4.3-.5z"/></svg>4.7 from 1,284 reviews</a></p>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <div class="frame">
+          <picture>
+            <source media="(min-width: 640px) and (max-width: 1023.98px)" type="image/webp" width="1264" height="848" sizes="calc(100vw - 96px)"
+              srcset="../../assets/photos/hero-bag-640.webp 640w, ../../assets/photos/hero-bag-960.webp 960w, ../../assets/photos/hero-bag-1264.webp 1264w">
+            <source media="(min-width: 640px) and (max-width: 1023.98px)" type="image/jpeg" width="1264" height="848" sizes="calc(100vw - 96px)"
+              srcset="../../assets/photos/hero-bag-640.jpg 640w, ../../assets/photos/hero-bag-960.jpg 960w, ../../assets/photos/hero-bag-1264.jpg 1264w">
+            <source type="image/webp" width="678" height="848" sizes="(min-width: 1280px) 600px, (min-width: 1024px) 45vw, 100vw"
+              srcset="../../assets/photos/hero-bag-portrait-480.webp 480w, ../../assets/photos/hero-bag-portrait-678.webp 678w">
+            <img src="../../assets/photos/hero-bag-portrait-678.jpg" width="678" height="848" sizes="(min-width: 1280px) 600px, (min-width: 1024px) 45vw, 100vw"
+              srcset="../../assets/photos/hero-bag-portrait-480.jpg 480w, ../../assets/photos/hero-bag-portrait-678.jpg 678w"
+              alt="A bag of Ethiopia Guji, lot 0412, standing on a worn oak table by a window, with a handful of pale green unroasted beans at its foot."
+              fetchpriority="high" decoding="async">
+          </picture>
+          <svg class="print" viewBox="0 0 194 254" aria-hidden="true"><svg class="symbol" x="75" y="12" width="44" height="44" viewBox="0 0 120 120" aria-hidden="true"><g transform="translate(-576.7 7.0) scale(1)"><path fill="currentColor" d="M637 2.5Q647.8 2.5 656.9 6.2Q666.1 9.9 672.8 16.7Q679.5 23.6 683.1 32.9Q686.8 42.3 686.8 53.5Q686.8 64.9 683.1 74.4Q679.4 84 672.6 90.9Q665.8 97.9 656.6 101.7Q647.4 105.5 636.5 105.5Q625.6 105.5 616.5 101.8Q607.3 98.1 600.6 91.3Q593.9 84.4 590.2 75.1Q586.5 65.7 586.5 54.4Q586.5 43 590.2 33.5Q593.9 24 600.7 17Q607.5 10.1 616.7 6.3Q626 2.5 637 2.5ZM637.4 101.7Q647 101.7 654 96.5Q661 91.2 664.8 81.2Q668.7 71.2 668.7 56.9Q668.7 40.7 664.5 29.4Q660.4 18.1 653 12.1Q645.7 6.2 636 6.2Q626.3 6.2 619.3 11.5Q612.3 16.7 608.4 26.8Q604.6 36.8 604.6 51.1Q604.6 67.3 608.7 78.6Q612.9 89.9 620.2 95.8Q627.6 101.7 637.4 101.7Z"/><ellipse cx="638.1600000000001" cy="51.5" rx="23" ry="33" fill="none" stroke="currentColor" stroke-width="3"/><circle class="ember" cx="642.6600000000001" cy="42" r="7.5"/></g></svg><text class="serif" x="97" y="96" font-size="31" text-anchor="middle">Ethiopia</text><text class="serif" x="97" y="128" font-size="31" text-anchor="middle">Guji</text><line class="rule" x1="28" x2="166" y1="146" y2="146"/><polyline class="lcurve" points="28.0,161.7 34.8,176.0 41.6,186.9 48.4,192.6 55.1,189.8 61.9,187.1 68.7,184.5 75.5,182.0 82.3,179.7 89.1,177.4 95.9,175.3 102.7,173.2 109.4,171.3 116.2,169.5 123.0,167.8 129.8,166.2 136.6,164.7 143.4,163.3 145.6,162.9 150.2,162.1 157.0,161.0 163.7,160.1 166.0,159.8"/><text class="mono" x="97" y="236" font-size="24" text-anchor="middle">0412</text></svg>
+        </div>
+        <figcaption class="caption"><span>Lot 0412 beside the green coffee it started as.</span><span class="mono">60 bags this season</span></figcaption>
+      </figure>
+      <dl class="facts">
+        <div><dt class="label">Altitude</dt><dd class="num">2,100<small>&#8239;m</small></dd></div>
+        <div><dt class="label">Batch</dt><dd class="num">12<small>&#8239;kg</small></dd></div>
+        <div><dt class="label">Roast to ship</dt><dd class="num">48<small>&#8239;h</small></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section shop" id="shop" aria-labelledby="shop-title">
+    <div class="wrap g12">
+      <div class="in-margin margin-label margin-sticky">
+        <p class="label">On the roaster now</p>
+        <a class="more" href="/coffee/">See all 9 coffees<svg class="i" data-icon="arrow-right" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.75 8h10.5M9.25 3.75L13.5 8l-4.25 4.25"/></svg></a>
+      </div>
+      <div class="in-body">
+        <h2 id="shop-title" class="h-display">Three coffees, grown 1,100&nbsp;to&nbsp;2,100 <em>meters&nbsp;up</em></h2>
+        <ul class="lots">
+          <li class="lot">
+            <div class="tile" aria-hidden="true"><svg viewBox="0 0 320 240" preserveAspectRatio="xMidYMid slice"><path class="c" data-level="0" d="M22 0L22 2L21 6L20 8L19 9L17 11L12 13L8 14L3 15L0 16M0 160L0 160L1 160L3 161L8 162L12 164L15 168L18 171L19 172L22 175L25 178L26 183L25 188L24 193L23 198L23 203L23 208L23 212L21 215L19 218L18 219L17 223L15 228L13 232L11 235L8 237L3 237L0 237"/>
+<path class="c" data-level="1" d="M44 0L44 3L45 8L44 12L41 17L40 20L40 20L37 22L32 26L28 29L23 30L20 30L20 30L17 31L12 34L8 36L3 37L0 38M0 133L2 132L6 131L8 130L9 129L13 128L18 129L23 129L28 129L32 129L35 130L37 130L39 131L42 134L45 138L46 143L45 148L45 153L45 158L45 163L44 168L44 173L44 178L45 183L46 188L47 191L49 194L51 197L53 199L55 203L58 208L60 210L60 211L61 213L63 218L66 221L69 224L73 226L78 229L80 230L80 230L83 233L87 238L90 240"/>
+<path class="c" data-level="2" d="M68 0L68 3L67 8L67 13L66 18L65 23L64 28L62 33L61 38L60 40L60 41L59 44L56 48L54 51L51 52L48 54L43 56L38 57L35 59L33 63L33 68L32 72L31 75L29 77L28 79L25 83L22 88L22 93L25 98L28 101L29 102L32 104L37 108L39 110L40 111L43 113L48 116L51 118L52 119L54 122L58 126L61 128L62 129L63 133L64 138L65 143L65 148L66 153L68 158L68 163L66 168L65 173L65 178L65 183L67 188L68 191L69 192L71 195L74 198L77 201L79 204L81 207L84 209L87 211L89 212L93 213L98 214L102 216L106 219L108 221L109 222L112 224L115 228L118 231L119 232L122 235L125 238L126 240M262 240L262 238L264 233L266 228L269 224L273 222L278 223L282 225L286 228L289 230L290 231L293 231L298 231L303 232L308 236L313 237L318 237L320 237"/>
+<path class="c" data-level="3" d="M91 0L90 1L90 3L90 6L89 9L89 13L88 18L87 23L85 28L83 32L81 37L80 39L80 40L79 43L78 48L77 53L76 58L74 63L73 68L72 71L71 74L69 77L68 79L68 81L69 84L72 87L75 89L77 93L76 98L74 103L72 108L71 113L72 118L73 123L75 128L76 133L77 138L78 143L79 148L80 150L80 150L83 153L88 157L90 160L90 160L90 160L90 160L89 163L88 168L88 171L89 172L93 174L98 177L100 179L100 180L100 182L100 185L100 188L99 189L99 190L100 190L103 191L108 191L113 192L118 193L122 195L127 198L130 200L130 200L132 203L136 208L139 211L140 212L143 214L148 215L153 215L158 213L161 212L162 211L165 209L168 207L173 207L178 208L181 209L182 210L185 211L188 213L191 216L192 219L194 223L197 228L198 233L198 238L198 240M206 240L207 239L209 238L212 235L216 232L218 230L219 229L223 228L228 227L233 226L238 224L241 222L242 221L244 218L247 213L249 210L250 209L253 207L258 205L261 203L263 201L266 199L269 196L273 194L278 193L282 192L286 191L288 190L289 189L292 189L295 190L297 190L299 191L301 191L303 190L306 190L309 189L313 188L318 187L320 187"/>
+<path class="c major" data-level="4" d="M105 0L104 3L104 8L103 13L102 18L102 22L101 27L100 30L100 30L99 33L96 38L94 43L92 48L91 53L92 58L92 62L91 67L90 69L90 70L90 70L90 70L91 73L93 78L94 83L96 88L97 93L99 98L99 103L98 108L97 113L95 118L93 122L91 125L89 127L88 129L88 133L89 138L89 140L90 141L93 142L98 145L101 147L104 149L106 152L109 155L111 158L112 159L114 163L116 168L118 171L119 172L123 174L128 176L133 177L138 179L141 180L143 180L145 180L148 181L153 182L158 183L163 184L168 186L171 188L174 189L177 190L179 191L183 192L188 194L193 195L198 198L201 199L202 200L205 201L208 204L212 206L216 209L219 210L220 211L221 211L222 210L224 209L228 208L232 206L236 202L239 200L240 199L243 197L248 194L252 192L255 191L258 189L259 188L263 186L268 183L271 181L272 180L274 179L278 178L283 177L288 176L293 174L298 173L301 171L303 170L305 168L308 163L310 161L311 160L313 158L318 155L320 154"/>
+<path class="c" data-level="5" d="M125 0L124 1L121 4L119 7L118 9L116 13L114 18L113 23L113 28L113 33L113 38L113 43L112 48L111 51L110 52L109 54L107 58L106 63L105 68L105 73L106 78L107 83L108 88L109 93L109 98L109 101L110 104L110 107L111 109L111 113L111 118L111 123L113 128L115 132L118 136L120 139L121 140L123 143L126 148L128 151L129 153L131 156L133 159L135 161L138 163L143 165L148 167L152 168L156 169L159 170L160 170L163 171L168 173L173 174L178 177L182 178L185 179L188 180L189 181L193 182L198 184L203 186L208 187L212 188L215 189L218 191L219 192L222 192L225 191L228 190L229 189L233 188L238 186L242 183L247 181L249 180L250 180L253 178L258 175L262 173L265 171L267 169L269 168L273 167L278 166L283 165L288 163L291 162L293 161L295 159L298 157L301 155L304 152L307 148L309 145L311 143L312 141L314 138L317 133L318 129L319 127L320 125"/>
+<path class="c" data-level="6" d="M140 0L138 3L135 8L133 12L131 15L129 17L128 19L127 23L126 28L125 33L124 38L123 43L122 48L121 52L120 55L120 57L119 59L119 63L119 68L119 72L120 75L120 77L121 79L121 83L122 88L123 93L125 98L125 103L126 108L126 113L127 118L128 121L129 123L131 125L132 128L135 133L138 138L139 140L140 141L142 144L145 148L147 151L149 153L153 155L158 157L161 159L162 160L164 161L168 163L173 164L178 167L182 168L185 169L187 170L189 171L193 172L198 174L203 175L208 176L213 177L218 177L223 177L228 176L233 175L238 174L241 172L243 171L246 169L249 168L253 166L258 164L261 162L263 161L266 159L269 158L273 156L278 155L282 153L286 151L289 150L290 149L292 146L297 142L299 140L300 139L301 137L304 132L306 128L308 123L309 119L310 117L311 115L312 112L313 108L314 103L315 98L317 93L317 88L318 83L318 78L319 73L319 68L319 63L319 58L318 53L318 48L317 43L316 38L316 33L316 28L316 23L314 19L311 16L309 13L307 11L304 8L301 4L299 2L298 1L298 0"/>
+<path class="c" data-level="7" d="M155 0L153 1L151 3L149 6L146 9L144 12L141 17L140 19L140 20L139 23L137 28L136 33L134 38L133 43L131 48L130 51L130 53L130 56L129 59L129 63L129 68L129 71L130 72L131 75L132 78L133 83L134 88L135 93L136 98L137 103L138 108L139 112L140 115L140 117L141 119L142 123L145 128L147 131L149 134L151 137L153 139L156 141L159 144L161 146L163 149L166 151L169 153L173 155L178 157L181 159L183 160L185 161L188 162L193 163L198 165L203 166L208 167L213 168L218 168L223 167L228 166L233 165L238 162L241 161L242 160L245 159L248 158L253 156L258 154L262 152L267 151L270 150L270 150L273 149L278 147L282 144L285 141L287 139L289 136L291 133L293 131L295 128L297 123L298 118L299 115L300 113L301 111L302 108L304 103L306 98L308 93L309 88L309 83L309 78L310 73L310 71L310 70L310 68L310 63L310 60L310 59L310 57L309 52L308 48L308 43L307 38L307 33L306 28L305 23L303 19L301 16L299 14L296 11L294 9L291 6L289 4L286 1L285 0"/>
+<path class="c" data-level="8" d="M169 0L167 2L162 6L159 8L158 9L156 13L154 18L152 22L151 25L150 28L149 29L148 33L145 38L143 43L142 48L141 51L140 54L140 56L139 59L139 63L139 68L139 71L140 74L140 76L141 79L142 83L143 88L144 93L145 98L146 103L147 108L148 112L149 115L150 118L151 119L153 123L157 128L160 130L160 130L162 133L165 138L168 141L169 143L173 145L178 147L181 149L183 150L185 151L188 153L193 154L198 156L203 157L208 158L213 159L218 158L223 158L228 157L233 155L238 153L241 152L244 151L246 150L249 149L253 147L258 146L263 144L268 143L271 142L274 141L276 139L279 136L281 134L283 131L285 128L287 123L289 119L290 117L291 115L292 112L293 108L295 103L297 98L299 93L300 91L300 90L300 88L301 83L301 78L301 73L301 68L301 63L301 58L300 53L300 49L300 48L300 46L299 42L298 38L298 33L297 28L295 23L293 19L291 17L288 14L285 11L283 9L281 7L278 5L273 2L270 0"/>
+<path class="c major" data-level="9" d="M186 0L184 1L181 4L178 6L174 9L172 11L171 12L169 14L167 18L164 23L162 28L161 30L160 31L159 34L158 38L156 43L154 48L153 53L151 58L151 61L150 63L150 66L149 69L149 73L150 78L150 80L150 80L150 83L151 88L152 93L153 98L154 103L156 108L157 112L159 116L160 118L161 119L163 123L167 128L169 130L170 131L172 134L177 138L180 140L180 140L183 141L188 143L193 145L198 147L202 149L206 150L208 150L209 150L211 150L214 150L217 150L219 150L223 149L228 147L233 146L238 144L242 142L246 141L249 140L250 139L253 139L258 137L263 136L268 134L271 132L272 131L275 128L278 123L279 120L280 119L281 116L283 112L285 108L286 103L288 99L289 96L291 93L292 91L292 88L292 83L292 78L292 73L292 68L292 63L292 58L291 53L291 49L290 46L290 44L289 41L289 38L288 33L285 28L282 24L279 22L278 21L275 18L272 15L269 13L267 11L265 9L262 6L258 4L255 1L253 0"/>
+<path class="c" data-level="10" d="M200 0L197 2L192 6L189 8L188 9L186 12L182 16L179 18L178 19L177 23L175 28L173 32L171 36L170 38L169 39L168 43L165 48L163 53L162 58L160 61L160 63L160 65L159 68L159 73L159 78L159 83L159 88L160 91L160 92L160 95L161 98L163 103L166 108L168 111L169 113L171 115L173 118L175 122L178 126L181 129L182 130L184 131L188 133L193 135L198 137L201 139L203 140L206 140L209 141L213 141L218 140L220 140L220 140L223 139L228 138L233 136L238 135L243 133L248 131L250 130L251 130L253 129L258 126L262 124L265 121L267 119L269 118L271 115L273 112L275 108L277 103L279 99L280 98L281 95L283 92L284 88L284 83L284 78L284 73L284 68L283 63L283 58L283 53L282 48L281 43L281 39L280 38L278 36L274 32L272 30L271 29L268 26L265 22L262 19L261 18L258 15L254 12L252 9L251 8L248 7L243 4L239 2L237 1L236 0"/>
+<path class="c" data-level="11" d="M209 8L206 9L203 11L201 12L199 15L196 18L193 21L191 24L189 26L187 29L184 32L181 37L180 40L180 40L179 43L176 48L174 53L171 58L170 60L170 60L170 63L169 68L168 73L167 78L166 83L167 88L167 93L168 98L169 100L170 101L172 103L177 108L179 110L180 111L183 113L188 115L191 118L193 119L196 121L199 124L202 126L206 129L208 130L209 131L212 131L217 130L219 130L220 130L223 129L228 128L233 126L238 124L242 123L247 121L250 120L250 120L252 117L257 112L259 110L260 109L262 107L266 102L269 100L270 99L271 96L273 92L275 88L277 83L277 78L275 73L274 68L274 63L274 58L273 53L272 48L271 45L270 42L269 41L267 38L263 33L261 30L260 29L258 27L255 22L253 19L251 17L248 16L243 14L238 12L235 11L232 10L231 9L228 8L223 7L218 6L213 7L209 8"/>
+<path class="c" data-level="12" d="M200 30L200 30L198 33L195 38L192 42L191 45L190 48L189 49L187 53L185 58L183 63L181 68L180 70L180 70L179 73L177 78L175 83L175 88L176 93L178 98L180 100L180 100L183 101L188 104L193 106L198 109L200 110L200 110L203 111L208 113L213 114L218 115L223 115L228 113L231 112L234 111L237 109L239 108L242 106L247 102L249 100L250 99L253 97L258 94L261 92L262 91L263 88L265 83L266 78L264 73L263 68L262 63L261 58L260 55L260 52L259 51L258 48L256 43L253 38L251 34L250 31L249 30L247 28L242 25L238 23L233 22L228 22L223 21L218 21L213 22L208 24L203 28L200 30"/>
+<path class="c" data-level="13" d="M209 38L208 39L206 43L203 48L201 51L200 53L199 55L198 58L196 63L194 68L192 71L191 74L190 77L189 79L188 83L189 88L189 90L190 91L193 92L198 93L203 92L208 91L210 91L211 90L214 89L218 88L223 87L228 86L233 85L238 83L240 81L241 80L242 78L242 73L243 68L244 63L245 58L244 53L243 48L241 45L240 42L239 41L236 39L232 36L228 34L223 34L218 35L213 37L209 38"/></svg><span class="alt">2,100&#8239;m</span></div>
+            <div class="lot-main">
+              <div class="roast label"><span class="roast-meter" aria-hidden="true"><i class="on"></i><i></i><i></i></span>Light roast</div>
+              <h3><a class="card-link" href="/coffee/ethiopia-guji-hambela-wamena/">Ethiopia Guji</a></h3>
+              <p class="origin">Hambela Wamena, washed, 2,100&#8239;m</p>
+              <p class="taste">Peach, jasmine, wildflower honey</p>
+            </div>
+            <div class="lot-buy"><p class="p">$21 <small>/ <span class="unit">340&#8239;g</span></small></p><p class="sub">$18 on subscription</p><button class="btn btn-secondary btn-sm" type="button" data-quick="guji" aria-haspopup="dialog">Add to cart…<span class="sr-only"> Ethiopia Guji</span></button></div>
+          </li>
+          <li class="lot">
+            <div class="tile" aria-hidden="true"><svg viewBox="0 0 320 240" preserveAspectRatio="xMidYMid slice"><path class="c" data-level="0" d="M320 71L318 71L313 71L310 71L309 70L307 68L302 65L298 62L294 61L292 60L291 59L288 57L284 52L282 48L282 43L285 38L288 35L293 34L298 35L301 34L303 31L304 28L304 23L304 18L303 13L302 9L301 7L299 5L297 2L296 0M320 49L318 47L314 42L311 39L310 38L309 38L307 39L306 43L306 48L307 52L309 57L313 58L318 55L320 54"/>
+<path class="c" data-level="1" d="M18 0L17 3L15 8L13 11L11 12L8 15L3 18L0 19M320 107L318 107L313 107L308 106L303 106L298 104L293 102L290 100L289 100L287 98L282 93L280 91L279 90L277 88L272 84L270 82L269 81L266 78L263 73L261 68L260 65L260 63L259 61L257 58L253 53L251 48L252 43L254 38L258 34L260 31L261 30L262 28L265 23L267 19L269 18L273 17L278 16L281 14L282 11L282 8L282 3L281 0M0 213L1 214L3 218L6 221L9 224L11 227L14 229L16 231L19 233L23 234L28 236L32 237L35 239L36 240"/>
+<path class="c" data-level="2" d="M28 0L28 3L26 8L24 11L21 14L19 16L16 19L13 21L11 23L8 25L4 28L1 30L0 31L0 32M320 134L318 134L313 134L308 133L303 131L300 130L300 130L298 128L293 124L289 121L288 120L286 119L282 116L278 113L274 111L272 110L271 109L268 107L263 102L260 100L260 100L257 98L252 95L249 92L246 91L244 88L242 83L241 80L240 79L239 77L236 72L234 68L233 63L232 58L231 53L231 48L231 43L233 38L237 33L239 29L240 27L241 25L242 22L245 18L248 13L250 11L250 10L250 9L250 7L250 5L249 2L248 0M0 181L2 183L5 188L8 192L9 196L10 199L10 200L12 203L16 208L18 211L19 212L22 215L27 218L30 220L30 220L33 221L38 222L42 225L47 228L50 230L50 230L52 233L55 238L57 240"/>
+<path class="c" data-level="3" d="M41 0L41 0L40 1L39 4L37 8L35 12L32 15L29 18L28 19L25 22L22 25L19 28L17 29L15 31L12 34L9 36L6 39L4 41L1 44L0 45M194 0L193 1L191 2L188 2L183 3L179 2L177 1L176 0M320 155L318 155L313 155L308 156L303 157L298 156L293 153L290 151L290 150L288 148L286 143L284 139L281 136L279 133L276 131L273 129L271 127L268 125L263 122L261 120L260 120L258 118L253 116L248 114L243 111L241 110L240 109L238 109L233 107L229 105L227 102L225 98L223 93L221 88L220 83L220 81L220 80L219 78L218 73L216 68L216 63L215 58L214 53L213 48L212 43L212 38L213 33L214 28L214 23L215 18L217 13L216 8L212 4L209 1L208 0L207 0M0 147L0 148L1 149L3 153L5 158L7 162L9 167L10 170L10 170L11 173L12 178L14 183L17 188L19 191L20 192L22 195L25 198L28 201L29 202L33 204L38 206L41 208L44 209L46 211L49 212L53 214L58 217L61 219L63 220L65 221L68 223L72 226L77 229L79 230L80 230L83 231L88 233L93 235L98 237L101 238L103 239L104 240M128 240L128 240L129 239L133 239L138 239L141 239L142 240L143 240"/>
+<path class="c major" data-level="4" d="M54 0L53 2L51 7L50 9L50 10L48 13L44 18L42 21L41 22L38 24L33 28L30 30L30 30L28 33L23 37L20 40L19 40L17 42L12 47L10 50L10 50L8 53L5 58L3 63L1 68L0 70L0 71L0 71M320 188L318 186L313 182L310 180L310 180L307 178L302 175L298 173L293 172L289 171L287 170L284 168L281 164L280 161L279 160L277 158L273 153L271 150L270 149L268 148L263 148L258 148L253 148L248 146L245 142L242 139L241 138L239 135L236 132L233 129L231 127L228 125L223 122L220 120L220 120L218 118L216 113L214 108L213 103L212 98L211 94L210 91L210 90L209 88L209 83L208 78L207 73L206 68L205 63L203 58L201 55L200 52L199 51L198 48L197 43L196 38L196 33L195 29L192 26L188 24L183 22L179 21L178 20L175 18L172 14L169 12L168 11L165 9L162 7L159 4L156 1L154 0M0 125L1 126L3 129L6 132L9 137L10 139L10 140L11 143L13 148L14 153L15 158L17 162L19 165L20 167L21 169L23 173L24 178L27 182L29 185L31 187L33 189L35 191L38 193L43 196L48 198L50 199L51 200L53 202L58 205L63 207L68 209L70 210L70 210L73 212L78 215L82 217L86 219L89 220L90 220L93 221L98 221L103 223L108 226L113 227L118 228L123 228L128 228L133 227L138 227L143 227L148 228L151 229L153 230L155 231L158 232L163 234L168 236L172 238L177 239L179 240M282 240L281 238L280 234L280 231L280 230L280 230L280 230L283 228L288 224L293 223L298 226L302 228L305 229L307 232L309 235L310 235L311 232L313 228L316 223L318 219L319 218L320 217"/>
+<path class="c" data-level="5" d="M90 0L90 0L90 0L88 1L83 2L78 3L73 6L70 8L69 9L66 12L62 17L60 20L60 20L57 22L52 26L49 28L48 29L45 31L42 33L38 36L35 39L32 41L31 43L28 45L25 48L23 51L21 54L19 56L18 59L16 63L14 68L12 72L11 75L10 77L9 79L8 83L6 88L6 93L6 98L6 103L6 108L7 112L9 115L11 117L12 119L13 123L16 128L18 133L19 138L20 140L20 140L21 143L22 148L23 153L25 158L27 162L29 167L30 169L30 170L32 173L37 178L39 180L40 181L43 183L48 187L50 190L51 190L53 191L58 194L62 196L66 199L69 200L70 201L73 202L78 204L83 205L88 206L93 208L98 209L100 210L100 210L103 211L108 212L113 213L118 214L123 214L128 213L133 213L138 214L143 215L148 217L152 218L156 219L159 220L160 220L163 221L168 223L173 224L178 224L183 225L188 225L193 226L198 228L201 229L203 230L206 230L209 231L213 232L218 232L223 232L228 233L232 232L236 231L239 230L240 229L242 227L245 222L247 219L249 217L251 215L254 212L257 208L259 203L259 198L259 193L259 189L260 188L261 186L262 182L262 178L261 175L259 172L257 171L254 170L251 169L248 167L243 164L239 161L238 160L236 158L233 153L231 150L230 149L228 147L225 142L222 139L221 138L219 135L216 132L213 129L211 127L209 124L207 121L206 118L204 113L203 108L203 103L202 98L201 94L200 91L199 90L199 88L198 83L196 78L195 73L193 68L192 63L191 60L190 59L189 56L187 52L185 48L183 43L182 39L181 38L178 36L173 33L169 31L168 30L166 28L162 24L160 21L159 20L156 18L152 15L149 12L148 11L146 8L142 3L140 1L139 0L139 0"/>
+<path class="c" data-level="6" d="M100 9L99 10L96 11L92 13L88 15L83 18L80 20L80 20L78 22L73 25L69 28L67 29L64 31L61 32L58 34L53 36L49 38L47 39L45 41L42 44L39 47L37 49L35 52L32 57L30 60L30 60L28 63L25 68L22 71L21 73L19 75L18 78L17 83L16 88L16 93L17 98L18 102L19 107L20 110L20 110L21 113L22 118L24 123L26 128L28 132L29 137L30 140L30 140L30 143L31 148L33 153L35 158L37 162L39 167L40 169L41 170L43 171L48 174L52 177L56 179L59 180L60 181L63 183L68 186L71 188L73 189L75 191L78 193L83 194L88 195L93 197L98 198L102 199L106 200L108 200L109 200L113 200L118 201L121 201L124 200L126 200L129 199L132 199L136 200L138 200L139 200L143 202L148 205L152 208L156 209L159 210L160 210L161 210L162 210L165 210L168 209L172 206L177 202L179 200L180 199L181 199L182 200L184 202L188 205L191 207L194 209L196 210L199 211L203 212L208 212L213 213L218 213L222 212L225 211L228 209L229 207L231 205L232 202L234 198L237 193L236 188L232 183L230 181L230 180L229 178L228 173L226 168L223 163L221 160L220 159L218 156L214 152L211 150L210 149L209 146L206 142L203 138L201 134L200 132L199 131L197 128L193 123L191 118L190 113L190 111L190 110L190 110L190 109L190 106L191 102L191 99L190 98L189 95L188 92L187 88L186 83L184 78L182 73L181 69L180 68L178 66L175 62L172 59L171 57L169 55L166 52L164 49L161 46L159 44L156 41L153 39L151 37L148 35L144 32L141 30L140 29L138 27L133 24L129 22L127 21L124 18L122 13L120 10L120 10L118 9L113 9L108 8L103 9L100 9"/>
+<path class="c" data-level="7" d="M90 30L90 30L87 32L82 35L78 38L74 39L71 40L70 40L68 41L63 43L58 45L53 47L50 49L49 50L47 53L44 58L42 61L41 64L39 66L38 69L36 73L32 78L31 81L30 82L29 84L28 88L28 93L28 98L29 101L30 104L30 107L31 109L32 113L32 118L33 123L35 128L37 133L38 138L39 141L40 144L40 146L41 149L43 153L46 158L48 161L49 162L53 163L58 165L62 167L66 169L69 170L70 171L72 174L76 178L79 180L80 181L83 182L88 183L93 184L98 185L103 186L108 187L113 187L118 188L123 188L128 188L133 188L138 188L141 189L143 190L145 191L148 192L153 192L158 191L160 190L160 190L163 188L168 185L172 183L176 181L178 180L179 179L182 177L187 172L190 170L190 169L191 167L193 162L193 158L191 155L190 152L189 151L188 148L185 143L183 138L181 134L180 132L180 131L179 128L178 123L177 118L176 113L176 108L177 103L176 98L174 93L172 88L171 83L170 81L170 80L168 78L164 73L161 70L160 69L158 66L155 62L153 59L151 57L149 54L146 51L143 49L141 47L138 45L134 42L131 40L130 39L128 38L123 36L118 35L113 34L108 33L104 31L101 30L100 29L98 29L93 30L90 30"/>
+<path class="c" data-level="8" d="M80 50L79 50L77 51L72 53L68 55L63 56L59 58L57 59L55 62L52 67L50 70L50 70L48 73L45 78L43 83L41 88L40 90L40 91L40 93L40 98L40 100L40 101L41 103L42 108L43 113L44 118L45 123L46 128L48 132L49 136L50 138L51 139L54 142L58 147L60 149L61 150L63 152L68 156L70 158L71 159L74 162L78 166L81 168L84 169L87 170L89 171L93 172L98 173L103 174L108 175L113 176L118 176L123 176L128 176L133 176L138 176L143 176L148 177L153 176L158 174L161 172L162 171L164 168L167 163L169 159L170 157L171 155L172 152L173 148L172 143L171 139L170 136L170 133L169 131L168 128L167 123L166 118L166 113L166 108L165 103L164 98L162 93L161 90L160 89L159 86L156 82L153 78L151 75L149 73L148 71L146 68L142 63L140 60L140 60L137 58L132 55L128 52L124 51L121 50L120 50L118 49L113 49L108 48L103 46L98 45L93 46L88 48L83 49L80 50"/>
+<path class="c major" data-level="9" d="M99 59L97 60L95 60L92 61L88 62L83 62L78 63L73 65L69 67L66 69L63 71L61 74L59 76L58 79L56 83L55 88L53 93L52 98L52 103L53 108L54 113L55 118L57 122L59 126L61 128L62 129L65 131L68 134L71 137L72 139L74 143L77 148L79 151L80 152L82 154L87 158L90 160L90 160L93 161L98 161L103 163L108 165L113 165L118 164L122 163L125 161L128 160L129 159L133 158L138 156L143 156L148 156L152 155L157 152L160 149L160 148L160 146L160 142L160 139L160 136L160 133L160 131L159 128L158 123L157 118L156 113L155 108L154 103L153 98L151 94L150 92L149 91L147 88L143 83L141 79L140 78L139 75L136 72L133 69L131 67L128 65L123 63L118 62L113 61L109 61L106 60L103 60L101 59L99 59"/>
+<path class="c" data-level="10" d="M99 69L96 70L94 70L91 71L88 72L83 73L78 75L75 78L73 81L71 84L69 87L68 89L67 93L66 98L66 103L66 108L67 111L69 114L71 117L72 119L74 123L78 128L80 130L80 130L82 133L87 138L89 140L90 141L93 143L98 145L101 147L104 149L106 151L109 152L113 152L118 151L120 150L120 150L123 148L128 145L132 143L137 141L140 140L140 140L141 137L143 132L144 128L143 123L142 119L141 116L140 114L139 111L138 108L139 103L138 98L136 93L134 88L131 84L129 82L128 81L126 79L122 76L118 74L113 71L110 70L110 70L108 70L103 69L99 69"/>
+<path class="c" data-level="11" d="M100 80L99 80L96 81L92 84L88 86L85 89L82 91L81 93L79 95L78 98L78 103L79 108L80 110L80 111L82 113L85 118L87 121L89 123L93 125L98 127L102 129L107 130L109 130L110 130L113 130L118 131L120 131L121 130L123 128L125 123L126 118L126 113L125 108L125 103L125 98L123 93L122 89L121 88L118 86L113 82L109 80L108 80L105 80L102 80L100 80"/></svg><span class="alt">1,750&#8239;m</span></div>
+            <div class="lot-main">
+              <div class="roast label"><span class="roast-meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span>Medium roast</div>
+              <h3><a class="card-link" href="/coffee/colombia-huila-finca-el-mirador/">Colombia Huila</a></h3>
+              <p class="origin">Finca El Mirador, washed, 1,750&#8239;m</p>
+              <p class="taste">Caramel, red apple, cocoa nib</p>
+            </div>
+            <div class="lot-buy"><p class="p">$19 <small>/ <span class="unit">340&#8239;g</span></small></p><p class="sub">$16 on subscription</p><button class="btn btn-secondary btn-sm" type="button" data-quick="huila" aria-haspopup="dialog">Add to cart…<span class="sr-only"> Colombia Huila</span></button></div>
+          </li>
+          <li class="lot">
+            <div class="tile" aria-hidden="true"><svg viewBox="0 0 320 240" preserveAspectRatio="xMidYMid slice"><path class="c" data-level="0" d="M320 34L318 33L313 32L309 31L308 30L306 28L302 24L300 21L299 20L297 18L292 14L289 11L286 10L284 10L281 9L278 8L273 5L268 5L263 5L258 5L253 3L248 3L243 4L240 6L239 9L237 11L232 14L228 15L223 13L219 12L217 11L215 9L212 7L208 4L203 3L199 1L197 0L196 0M0 179L3 179L8 179L10 179L11 180L13 182L18 186L20 189L21 190L21 192L20 196L20 198L20 199L20 201L20 203L20 205L21 208L21 210L20 211L19 214L16 218L14 223L12 228L11 231L10 234L10 237L9 239L9 240"/>
+<path class="c" data-level="1" d="M320 51L320 51L319 50L317 49L312 46L308 46L303 47L298 48L293 48L288 49L283 50L280 50L280 50L280 50L280 50L277 50L272 49L268 48L263 45L258 43L253 41L250 40L250 40L248 38L243 33L240 31L239 30L236 29L232 28L228 26L223 24L219 23L216 21L214 19L211 17L208 15L203 13L198 12L193 11L190 10L190 10L188 10L183 10L178 8L173 4L169 2L168 1L168 0M0 162L3 163L8 166L13 168L18 169L20 170L20 170L23 171L28 173L33 176L38 178L40 179L41 180L41 183L42 188L42 193L43 198L42 202L41 205L39 207L38 209L37 213L35 218L33 222L31 226L30 229L29 230L27 232L22 237L20 240L20 240L20 240"/>
+<path class="c" data-level="2" d="M320 98L318 96L313 92L310 90L310 89L309 87L308 82L306 78L302 74L299 72L297 71L295 69L292 68L288 66L283 63L279 61L278 60L275 59L272 58L268 57L263 56L258 55L253 54L249 52L247 51L244 48L241 45L239 43L237 41L235 39L232 37L228 35L223 34L218 33L213 31L210 30L210 30L208 30L203 30L200 30L199 30L197 31L192 34L188 36L185 39L182 40L181 41L180 41L179 40L178 38L177 33L175 28L173 23L172 20L171 19L168 18L163 15L159 13L156 11L154 9L151 6L149 3L147 1L146 0M0 147L1 148L2 149L5 151L8 154L12 156L16 159L18 160L19 161L23 162L28 163L33 165L38 168L40 169L41 170L44 172L48 175L51 178L53 179L54 183L55 188L56 193L57 198L58 201L59 203L61 206L63 209L65 213L68 218L69 220L70 221L72 223L75 228L77 230L79 231L83 233L88 235L92 237L97 239L100 240"/>
+<path class="c" data-level="3" d="M320 107L318 105L313 102L310 100L310 100L308 98L305 93L302 89L301 87L298 84L294 81L291 80L290 79L288 77L283 73L280 70L279 70L277 69L272 67L268 65L263 65L258 64L253 63L249 62L246 61L243 59L241 58L238 55L234 52L232 49L231 48L228 47L223 45L218 43L213 42L208 42L203 43L198 45L194 48L192 50L191 51L188 52L183 53L178 53L173 51L170 50L169 50L166 49L162 46L159 44L156 41L153 39L151 36L149 33L146 31L144 29L141 27L139 24L136 21L135 18L134 13L133 9L131 6L129 3L128 1L127 0M0 134L2 136L5 139L7 141L9 143L12 145L16 148L18 150L19 151L23 152L28 154L33 156L38 158L40 159L41 160L43 162L48 165L51 168L53 169L55 171L58 174L61 177L64 179L66 182L69 185L70 188L71 189L73 193L74 198L76 203L78 208L79 211L80 212L82 214L86 218L89 220L90 221L93 222L98 223L102 225L106 228L109 230L110 231L113 232L118 235L123 237L128 237L133 238L138 237L143 237L148 236L153 236L158 236L162 237L165 239L166 240M301 240L302 238L304 233L306 228L309 223L310 220L310 220L313 219L318 217L320 215"/>
+<path class="c major" data-level="4" d="M320 116L318 115L313 112L311 110L310 110L308 107L304 102L301 99L300 98L298 95L295 92L293 89L291 88L288 86L283 84L279 82L278 81L275 78L272 75L268 74L263 74L258 73L253 72L249 71L247 70L245 69L242 68L238 65L233 63L229 61L226 60L223 60L221 59L218 58L213 56L208 56L203 56L198 57L193 59L190 60L190 60L187 60L182 61L178 61L173 61L170 60L170 60L167 59L162 58L158 57L153 56L148 54L144 51L142 49L141 48L138 46L135 42L132 39L131 38L128 36L125 32L122 28L121 25L120 22L119 21L117 18L112 13L110 10L109 10L107 8L102 4L99 1L96 0L95 0M0 109L0 109L0 110L1 113L3 118L5 122L8 127L10 130L10 130L13 132L18 137L20 139L21 140L23 141L28 144L33 146L38 148L40 149L41 150L44 151L48 154L51 157L53 159L55 161L58 164L62 166L65 169L68 171L69 172L72 175L75 178L78 181L79 184L81 186L84 189L86 191L89 194L91 197L93 199L95 201L98 203L103 204L108 204L111 205L114 208L116 213L118 218L119 221L120 222L122 224L127 228L129 230L130 230L133 231L138 231L141 231L142 230L144 229L148 227L153 225L158 224L162 225L167 228L169 230L170 230L173 232L178 233L183 236L188 238L191 240L192 240L193 240M293 240L294 238L296 233L298 228L299 225L301 223L302 221L304 218L308 214L311 212L314 211L316 210L319 209L320 208"/>
+<path class="c" data-level="5" d="M320 125L318 124L314 121L312 120L311 119L308 117L303 114L299 111L298 110L296 108L293 103L291 100L290 99L288 97L283 94L279 92L278 91L275 88L272 85L268 83L263 83L258 82L255 81L253 80L251 79L248 78L243 77L238 75L233 73L229 71L226 70L223 70L221 69L218 68L213 67L208 66L203 66L198 66L193 67L188 68L183 68L178 69L173 70L170 70L170 70L170 70L170 70L167 69L162 68L158 67L153 69L148 69L143 69L138 67L133 65L128 62L125 61L122 59L121 58L118 56L115 52L113 48L112 43L111 39L110 37L109 35L108 32L105 28L102 23L98 22L93 25L88 25L83 22L81 18L80 15L79 12L78 11L76 10L72 9L68 7L63 3L59 1L57 0L55 0M0 74L1 75L3 78L5 82L8 86L11 89L12 90L13 93L13 98L13 103L12 108L13 113L15 118L17 121L19 123L22 125L26 128L29 130L30 131L33 133L38 136L41 138L44 139L47 140L49 141L53 143L58 147L60 149L60 150L62 153L66 158L68 160L69 161L73 162L78 163L83 165L88 167L90 169L91 170L93 172L98 175L102 177L107 179L110 180L110 180L112 183L115 188L117 191L119 193L121 196L122 199L125 203L127 208L129 211L130 212L133 214L138 217L143 216L148 212L153 211L158 211L163 213L168 216L171 218L172 219L174 221L178 224L183 226L188 229L190 230L190 230L193 231L198 232L203 234L208 238L210 240L210 240L210 240M275 240L276 239L279 238L282 236L287 232L289 230L290 229L291 227L293 222L296 218L299 213L300 210L300 210L303 209L308 206L313 204L318 202L320 202"/>
+<path class="c" data-level="6" d="M20 40L20 40L19 43L16 48L14 52L11 56L10 58L9 59L9 61L10 63L11 65L12 68L14 72L18 76L20 78L21 79L23 83L27 88L29 93L29 98L30 101L30 102L31 104L33 108L35 111L38 113L43 115L48 117L52 119L56 120L58 120L59 120L60 120L61 120L63 119L68 117L71 114L73 111L74 108L74 103L75 98L77 93L77 88L76 83L74 78L71 73L70 71L69 70L67 68L62 64L58 61L53 61L49 60L46 60L43 60L41 59L38 57L35 52L33 48L31 45L28 43L23 41L20 40L20 40L20 40M320 137L319 135L316 132L313 129L311 128L308 126L303 124L299 122L298 121L296 118L292 115L289 113L287 111L285 108L282 105L279 103L276 101L274 99L271 96L268 94L263 92L260 91L259 90L256 89L252 88L248 87L243 85L238 84L233 83L228 82L223 81L220 80L220 80L218 80L213 79L208 79L205 80L203 80L201 81L199 81L198 80L195 80L192 79L188 79L184 80L181 80L180 80L179 80L176 80L173 80L171 80L168 80L163 80L160 80L160 80L157 83L152 88L150 91L150 94L150 96L150 99L147 101L142 104L138 106L133 107L128 108L125 109L122 110L121 111L118 113L113 116L110 118L109 119L106 122L102 127L100 130L100 130L98 133L96 138L96 141L99 144L101 146L104 149L106 153L108 158L109 160L110 161L112 164L116 168L118 171L119 172L122 174L125 178L127 182L129 185L131 187L132 189L135 193L137 198L139 200L140 201L141 201L142 200L145 200L148 199L152 199L157 200L159 200L160 200L163 200L168 201L173 203L178 207L180 209L181 210L183 212L188 217L190 219L191 220L194 221L198 222L203 225L208 227L211 229L212 230L214 231L218 234L223 235L228 237L233 237L238 238L243 237L248 236L253 235L258 235L263 235L268 234L272 232L276 231L278 230L279 229L281 226L284 222L286 218L288 213L289 210L290 209L292 206L296 202L299 200L300 199L303 199L308 198L313 196L318 194L320 193"/>
+<path class="c" data-level="7" d="M320 164L320 163L319 161L317 158L315 153L312 148L311 144L310 141L309 140L307 139L302 137L298 135L295 132L292 129L291 127L289 125L287 122L285 119L282 116L278 113L275 111L273 109L271 108L268 106L263 104L259 102L256 101L253 99L251 98L248 96L243 94L238 93L233 93L228 94L223 94L218 94L213 94L208 94L203 94L198 94L193 94L188 96L183 99L181 103L181 108L181 113L181 118L180 121L180 122L178 122L174 121L171 120L170 120L170 120L170 120L167 122L162 125L158 126L153 126L148 127L145 129L143 132L141 136L140 138L139 139L138 143L137 148L137 153L137 158L137 163L137 168L138 171L139 173L141 175L144 178L147 181L149 182L153 184L158 187L163 188L168 188L171 189L174 190L177 190L179 191L181 194L184 198L187 201L189 203L191 205L194 208L197 211L199 213L203 215L208 217L211 219L213 220L215 221L218 222L223 224L228 225L233 225L238 225L243 225L248 223L253 222L258 222L263 222L268 221L270 221L271 220L271 218L272 213L274 208L278 203L280 200L280 200L283 199L288 196L292 193L296 191L298 189L299 188L303 188L308 187L312 185L315 182L318 179L319 177L320 175"/>
+<path class="c" data-level="8" d="M200 108L199 109L197 113L194 118L192 122L191 125L190 128L189 129L188 133L185 138L183 141L181 144L178 147L174 149L172 152L171 156L169 159L167 160L165 163L163 168L164 171L168 172L173 173L178 176L180 178L181 179L184 183L187 188L189 190L190 191L192 194L197 198L199 200L200 201L203 202L208 204L213 205L218 204L223 205L228 206L231 208L232 209L235 211L238 212L243 212L248 211L250 210L251 210L254 208L258 204L260 202L261 201L263 198L268 194L271 191L273 190L275 189L278 186L282 184L285 181L287 178L287 173L288 168L289 164L290 161L291 160L291 158L292 153L291 149L290 148L289 146L287 142L285 138L282 133L281 130L280 129L279 126L276 122L273 119L271 118L268 116L263 114L258 112L255 111L252 110L251 109L248 108L243 107L238 106L233 105L228 105L223 105L218 105L213 106L208 107L203 107L200 108"/>
+<path class="c major" data-level="9" d="M218 118L215 119L212 120L211 121L208 123L203 127L200 129L200 130L198 133L196 138L194 143L192 148L191 151L190 154L190 156L189 159L189 161L190 163L191 165L192 168L194 173L197 178L199 181L200 183L203 185L208 187L213 189L218 189L221 190L222 190L225 190L228 191L233 191L238 191L241 191L242 190L245 189L248 188L252 186L257 182L259 180L260 179L262 177L266 172L269 169L270 167L270 164L271 161L273 158L275 153L276 148L274 143L273 138L271 135L269 133L268 131L266 128L262 125L259 122L256 121L254 119L251 118L248 118L243 117L238 117L233 117L228 117L223 117L218 118"/>
+<path class="c" data-level="10" d="M219 129L217 130L214 131L211 132L209 134L206 138L203 143L202 148L201 153L201 158L204 161L208 164L213 166L218 166L223 167L228 169L231 169L232 170L234 170L238 171L242 171L247 170L250 170L250 170L252 167L256 162L258 159L259 156L261 153L262 151L262 148L261 143L261 140L260 139L258 137L254 132L252 130L251 129L248 128L243 127L238 127L233 127L228 128L223 128L219 129"/></svg><span class="alt">1,100&nbsp;and&nbsp;1,600&#8239;m</span></div>
+            <div class="lot-main">
+              <div class="roast label"><span class="roast-meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span>Dark roast</div>
+              <h3><a class="card-link" href="/coffee/oak-fire-espresso/">Oak Fire Espresso</a></h3>
+              <p class="origin">Brazil and Guatemala blend, 1,100&nbsp;and&nbsp;1,600&#8239;m</p>
+              <p class="taste">Dark chocolate, molasses, toasted almond</p>
+            </div>
+            <div class="lot-buy"><p class="p">$18 <small>/ <span class="unit">340&#8239;g</span></small></p><p class="sub">$15 on subscription</p><button class="btn btn-secondary btn-sm" type="button" data-quick="oak" aria-haspopup="dialog">Add to cart…<span class="sr-only"> Oak Fire Espresso</span></button></div>
+          </li>
+        </ul>
+        <p class="src ship-note"><svg class="i i-inline" data-icon="truck" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.75 4.25h7.5v6.5h-7.5zM9.25 6.75h2.5l2.5 2.5v1.5h-5"/><circle cx="4.75" cy="11.75" r="1.25"/><circle cx="11.75" cy="11.75" r="1.25"/></svg>Single bags ship for $6, free over $40. Subscriptions always ship free.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature" id="subscribe" aria-labelledby="sub-title">
+    <svg viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path class="c" data-level="0" d="M28 15L31 14L36 14L44 15L48 16L48 16L48 16L48 16L52 15L60 13L65 13L68 15L72 18L77 22L84 26L92 28L100 29L108 30L116 30L124 31L129 31L131 32L135 36L141 44L144 48L144 49L146 53L150 60L151 68L148 76L146 82L145 86L142 90L137 94L133 97L130 99L124 100L116 100L108 100L100 99L92 100L84 102L76 105L68 108L62 106L58 99L55 92L53 84L51 76L49 68L44 65L36 68L31 68L29 65L27 60L25 52L23 44L22 36L23 28L25 20L28 15M474 0L472 4L468 12L465 17L464 18L460 21L452 27L444 29L436 25L428 23L420 22L412 22L404 23L396 24L388 25L380 23L373 18L369 16L368 15L365 15L358 16L354 16L353 16L352 16L352 16L349 12L343 4L341 0M271 48L272 47L276 47L284 46L288 46L289 47L291 52L294 60L294 68L291 76L289 81L288 83L287 87L285 93L283 100L280 108L277 114L274 118L268 119L260 116L254 114L250 113L246 111L242 109L236 106L228 103L221 100L216 97L213 92L210 84L212 78L220 74L228 72L236 71L244 69L252 67L257 66L258 65L262 60L267 52L271 48M566 400L564 399L561 397L558 393L555 387L552 380L549 372L547 366L545 362L540 359L532 358L526 360L522 365L519 372L517 380L515 385L513 386L511 386L510 385L506 381L499 375L495 371L493 369L492 364L491 356L489 348L484 340L485 332L490 324L493 316L494 308L495 300L494 292L493 284L491 276L491 269L494 264L497 260L500 257L503 252L506 244L505 236L499 229L495 225L493 224L489 223L483 221L476 217L468 211L464 208L464 208L460 205L452 199L445 195L440 193L436 191L433 189L429 185L423 179L423 173L429 168L433 164L436 161L440 158L445 153L450 149L455 146L459 143L462 142L466 142L469 143L473 146L478 149L484 153L492 157L500 156L508 150L514 147L517 145L520 140L522 132L522 124L521 116L520 108L519 100L519 92L522 84L525 79L527 77L532 75L540 73L548 70L555 66L559 64L560 63L564 61L572 55L580 53L588 53L595 56L600 61L604 67L607 72L610 76L613 79L617 83L622 90L628 93L636 90L642 91L646 94L646 97L642 100L636 101L628 100L621 102L616 109L612 113L609 114L606 118L603 125L600 132L595 140L592 144L592 144L588 148L580 156L576 160L576 160L573 164L568 172L565 180L566 188L567 196L568 204L566 212L562 220L563 228L567 236L570 242L574 246L580 249L588 252L596 253L604 253L612 252L620 251L628 251L636 253L644 253L652 252L660 249L668 244L676 241L684 242L692 242L700 242L708 242L716 241L724 244L732 250L737 254L739 255L743 258L749 262L754 266L757 270L757 274L754 279L750 283L746 286L742 290L738 293L732 294L724 292L716 292L708 294L700 294L692 292L684 291L676 292L668 292L660 290L652 290L644 289L636 290L628 292L620 294L612 298L606 301L601 303L597 306L594 309L590 313L585 318L581 322L578 325L572 328L564 329L556 330L548 330L542 331L538 334L538 339L542 346L548 349L556 347L564 348L572 349L576 351L577 352L579 356L583 364L586 372L589 380L590 388L591 395L592 399L592 400L592 400M526 262L521 269L521 276L524 284L526 288L527 289L532 291L540 294L545 294L547 290L550 284L553 276L552 269L547 263L540 260L532 259L526 262"/>
+<path class="c" data-level="1" d="M244 0L243 1L241 4L238 8L234 13L230 18L226 22L220 22L212 19L204 18L196 20L188 20L180 17L174 20L169 28L167 36L167 44L169 49L174 50L180 51L188 53L196 54L204 55L212 55L220 54L226 52L231 49L235 45L238 39L241 35L244 33L248 31L253 28L260 25L268 23L274 20L279 17L283 12L286 4L288 0M503 0L501 3L498 9L495 13L493 15L489 19L483 24L479 28L477 31L473 35L467 41L462 45L459 47L455 49L450 51L444 51L436 49L428 49L420 50L412 51L404 51L396 52L388 53L380 54L372 56L364 56L356 56L348 56L340 57L332 59L324 62L320 64L320 64L317 68L311 76L307 83L305 88L304 92L303 95L303 99L304 104L304 108L305 111L309 115L316 121L324 123L332 123L340 123L348 123L356 123L364 123L372 123L380 125L388 126L396 127L404 127L412 126L420 125L428 124L436 122L444 120L452 119L460 118L466 116L469 113L473 108L478 101L480 97L480 96L481 92L483 84L486 76L493 69L497 65L498 64L502 62L509 58L516 55L524 52L531 50L537 49L541 48L543 47L546 43L549 36L551 28L552 20L554 13L558 7L561 3L563 1L564 0M612 0L611 1L609 2L606 6L602 13L602 20L605 28L607 32L608 33L611 37L617 44L621 49L623 51L628 52L636 53L643 52L650 49L654 48L655 47L659 43L665 36L665 29L659 22L655 18L653 17L649 12L643 5L640 1L639 0L638 0M871 0L869 1L866 2L860 4L852 5L844 7L836 9L830 12L826 15L822 17L818 20L813 24L807 29L803 32L801 33L796 37L789 44L785 48L784 48L780 51L772 57L766 60L762 63L758 65L754 68L750 72L745 77L743 84L745 92L745 100L743 108L744 115L749 121L753 125L754 127L754 132L754 140L753 145L752 147L751 151L750 157L746 164L741 172L739 180L741 188L741 196L740 204L741 212L743 220L746 227L750 232L754 236L757 239L761 242L766 245L771 249L777 254L781 258L783 261L786 265L790 270L792 276L792 284L790 291L786 296L782 300L779 303L775 306L770 309L764 313L757 318L753 320L752 320L748 321L740 322L732 323L724 322L716 321L708 320L704 320L704 320L700 319L692 316L684 315L676 316L668 316L660 317L652 318L644 318L636 319L629 320L625 320L624 320L621 324L616 332L613 340L615 348L616 356L616 364L616 372L618 380L620 388L623 396L624 400M718 27L714 30L712 36L711 44L710 52L707 60L709 66L716 71L724 75L732 77L740 74L747 67L749 60L745 52L742 44L741 36L739 31L737 28L732 26L724 26L718 27M422 400L424 396L428 388L430 383L431 382L435 378L440 371L444 364L446 356L448 348L448 340L448 336L448 336L452 334L460 330L465 326L468 322L469 316L468 308L467 302L465 297L460 294L452 291L447 289L445 288L441 285L435 279L428 279L420 283L412 285L404 285L396 284L388 282L381 278L376 274L374 268L375 260L375 252L374 244L372 237L369 230L367 226L364 225L364 222L367 218L369 214L370 210L372 204L376 196L375 188L370 181L367 177L366 176L362 173L355 168L351 164L348 161L344 159L339 156L332 153L324 151L316 151L308 152L300 153L292 155L284 154L276 151L268 150L260 151L253 150L246 146L242 144L241 143L236 141L228 137L220 136L212 140L204 142L196 143L191 143L188 144L184 144L179 145L172 145L164 145L156 145L148 147L140 148L132 148L126 147L122 145L118 142L114 138L110 134L106 130L102 127L98 125L94 125L91 127L87 129L82 132L77 136L70 141L66 145L65 147L60 148L52 150L46 149L43 146L39 141L34 136L31 132L29 129L26 124L22 116L19 111L17 109L12 106L4 102L0 100M622 137L618 142L614 147L610 154L607 158L605 159L601 164L595 171L592 175L591 176L591 177L592 180L593 184L594 189L594 194L593 199L592 203L591 206L591 212L591 220L591 224L592 225L594 225L599 224L603 224L606 223L608 223L609 224L613 226L620 229L628 231L636 231L644 232L652 233L659 231L664 226L668 223L671 220L675 216L680 211L684 204L686 196L687 188L687 180L685 172L682 164L678 158L674 154L668 151L660 148L655 146L654 145L650 141L643 135L636 133L628 134L622 137M383 176L382 176L382 176L383 176L384 176L384 176L384 176L384 176L383 176M318 223L319 222L324 222L332 221L339 221L345 223L345 228L340 236L337 240L336 241L335 241L334 240L330 238L323 233L319 229L318 226L318 223M398 212L394 220L394 226L398 231L404 234L412 234L420 231L427 226L427 222L420 219L412 215L404 210L398 212"/>
+<path class="c" data-level="2" d="M897 0L897 1L896 3L892 7L884 13L880 16L880 16L876 19L868 24L860 28L852 30L848 31L847 32L843 35L836 40L828 44L820 47L816 48L816 48L812 51L804 58L799 62L798 63L797 68L795 76L795 84L797 92L795 100L789 108L786 113L785 116L783 120L782 125L780 132L780 140L778 148L775 156L772 163L769 169L767 173L765 175L765 178L767 182L769 186L770 190L770 196L770 204L769 211L768 218L768 222L768 223L768 224L768 224L772 227L780 232L785 236L787 239L791 242L797 246L804 250L812 251L818 253L821 255L824 260L825 268L828 274L831 277L834 281L837 286L838 292L835 300L833 305L832 308L831 312L829 317L829 324L830 332L831 336L832 337L836 340L844 344L852 345L860 343L866 340L870 337L874 335L878 333L881 333L884 335L888 337L893 340L900 343L908 346L916 348L924 350L930 351L934 352L938 353L942 354L946 358L951 365L955 372L957 380L959 385L960 386L964 388L972 390L980 390L988 389L994 392L997 397L999 400M1200 30L1196 29L1188 27L1180 24L1172 20L1168 17L1167 16L1163 12L1156 4L1152 0L1152 0L1152 0M398 76L394 79L391 84L387 92L388 100L396 107L404 109L412 105L420 103L428 103L436 103L444 101L452 99L459 97L462 92L459 84L455 79L450 76L444 74L436 73L428 72L420 72L412 73L404 74L398 76M336 95L335 96L335 96L336 97L336 97L337 96L337 96L336 95L336 95M392 400L394 397L398 391L401 387L403 385L406 380L410 372L413 364L412 356L413 349L415 344L417 340L418 337L420 332L423 324L422 319L418 317L412 314L404 310L398 307L395 305L391 303L386 301L381 301L374 303L370 304L369 305L364 306L356 305L352 304L352 304L350 300L346 292L342 286L338 283L332 280L324 276L319 274L316 273L313 268L310 260L307 255L305 254L300 250L292 244L288 240L287 240L285 236L282 228L280 220L279 212L278 204L277 196L275 191L273 189L269 189L263 191L259 192L257 193L255 193L254 192L250 190L243 187L236 184L228 182L223 179L221 177L217 173L211 168L204 165L196 165L188 166L180 168L172 169L164 170L156 172L148 174L140 175L132 174L124 171L116 167L108 166L100 169L94 171L89 174L85 177L82 179L76 183L68 187L60 189L52 189L47 190L45 191L41 193L35 194L28 195L20 195L12 195L4 194L0 193M1038 400L1039 399L1040 398L1042 394L1047 387L1051 382L1054 379L1058 375L1063 370L1067 366L1070 362L1076 360L1084 358L1091 356L1097 353L1101 352L1103 351L1104 351L1105 352L1109 356L1116 363L1121 367L1124 368L1128 369L1133 370L1138 370L1143 369L1146 364L1148 356L1150 351L1151 348L1153 348L1155 351L1159 353L1165 355L1170 355L1174 353L1178 350L1182 347L1187 343L1192 338L1192 332L1187 324L1180 322L1172 325L1167 325L1166 322L1166 318L1167 314L1169 310L1170 306L1170 302L1169 299L1168 295L1167 290L1167 286L1168 283L1169 279L1170 274L1174 269L1181 263L1188 259L1196 258L1200 258M766 344L762 349L761 356L762 364L764 368L767 369L772 370L780 370L785 370L786 369L786 366L785 362L783 358L782 354L778 349L771 344L766 344M735 382L733 383L733 384L735 385L737 385L738 384L738 383L737 382L735 382M857 400L855 398L850 393L846 389L843 386L839 383L834 381L828 380L820 381L812 381L804 383L800 384L799 384L797 388L794 396L792 400"/>
+<path class="c" data-level="3" d="M935 0L933 2L930 5L926 9L923 14L920 20L916 28L913 33L912 34L908 37L900 43L895 47L892 48L888 49L883 50L876 52L868 54L860 57L853 62L849 64L848 65L844 69L836 76L832 80L832 80L832 81L832 82L832 86L832 93L832 96L832 97L828 101L820 108L816 111L815 112L812 116L807 124L803 130L801 133L799 137L796 142L794 148L793 156L793 164L794 172L794 180L792 188L789 196L788 204L790 211L797 218L800 222L801 223L805 226L812 231L820 234L828 233L834 235L839 238L843 242L846 246L850 250L854 254L858 259L862 265L868 268L876 269L880 270L881 271L881 276L880 284L884 291L892 298L896 302L897 303L901 307L908 314L914 318L917 319L921 321L926 322L932 325L940 329L946 332L950 335L954 338L958 342L964 345L972 349L977 351L979 352L983 353L989 355L996 358L1004 362L1012 364L1020 365L1028 362L1036 356L1040 353L1041 352L1045 349L1052 344L1059 340L1064 337L1068 335L1071 334L1076 333L1084 332L1092 330L1100 327L1105 324L1108 321L1112 318L1117 315L1123 311L1129 306L1133 303L1135 302L1138 298L1143 291L1145 284L1144 276L1145 269L1150 264L1153 260L1156 257L1160 253L1165 246L1169 242L1172 241L1176 238L1181 233L1186 229L1191 226L1195 223L1198 220L1200 218M1200 97L1200 97L1199 96L1196 92L1188 84L1185 79L1184 78L1184 74L1183 67L1181 60L1179 52L1175 46L1170 42L1165 38L1159 34L1155 31L1153 30L1149 26L1143 19L1139 14L1137 11L1135 7L1132 2L1130 0M356 400L359 396L363 388L366 383L367 382L371 378L376 371L379 364L380 356L378 348L375 340L372 335L369 334L364 333L356 331L349 328L344 323L340 317L337 312L334 308L329 305L325 303L322 300L316 297L308 293L302 290L299 289L295 286L290 283L285 279L280 274L276 272L273 271L268 268L260 264L255 260L254 257L252 252L250 244L248 236L245 228L242 223L241 222L236 219L228 216L220 213L212 211L206 209L203 208L199 207L194 205L188 204L180 202L173 203L167 206L163 208L161 209L156 212L148 218L142 221L137 223L133 225L130 227L124 229L116 232L108 233L100 232L92 234L85 238L85 243L92 248L96 252L97 255L97 257L96 258L92 262L84 267L76 268L68 264L60 261L52 258L48 256L48 256L44 253L36 247L31 243L29 241L27 236L25 228L22 224L18 223L12 222L4 220L0 218M0 318L4 318L12 319L16 319L17 320L19 324L23 332L26 337L30 339L34 343L39 349L42 356L42 364L42 372L41 380L38 388L34 396L32 400L32 400L32 400"/>
+<path class="c major" data-level="4" d="M959 0L956 3L948 9L943 13L941 15L937 20L931 27L928 31L927 32L924 36L919 44L915 49L913 52L909 56L903 61L899 65L897 67L892 68L884 68L877 71L870 77L866 81L865 83L862 87L857 93L853 98L850 102L847 106L846 110L842 116L835 123L832 127L831 128L828 132L825 140L822 148L819 156L818 164L819 172L820 180L819 188L822 195L829 201L833 205L836 207L840 210L845 213L852 217L860 222L864 224L864 224L868 228L876 235L881 239L882 240L886 244L893 251L896 255L897 256L899 260L903 268L907 273L910 276L916 278L924 279L930 282L933 286L937 292L941 300L944 304L944 305L947 309L954 316L958 320L959 321L964 324L972 329L979 332L985 335L989 336L991 337L992 337L993 336L997 334L1004 330L1012 327L1020 323L1025 321L1026 320L1030 319L1037 316L1044 314L1052 314L1060 313L1068 310L1076 309L1084 309L1092 308L1100 305L1104 304L1104 304L1108 300L1116 292L1120 288L1120 288L1122 284L1125 276L1129 268L1133 260L1135 256L1136 255L1139 251L1146 244L1150 239L1151 237L1154 233L1157 227L1161 221L1166 216L1170 212L1173 209L1177 204L1182 196L1184 192L1184 192L1187 188L1190 180L1191 172L1189 164L1187 160L1185 159L1180 155L1173 148L1169 143L1168 141L1167 137L1165 131L1163 124L1163 116L1164 108L1164 100L1163 92L1162 84L1160 76L1157 68L1155 63L1153 60L1148 58L1140 55L1135 52L1132 49L1128 44L1123 36L1120 32L1120 32L1117 28L1111 20L1107 15L1105 12L1103 8L1100 3L1098 0M262 400L265 397L270 392L276 389L284 390L290 389L295 386L299 382L302 377L308 373L316 371L324 371L332 373L337 373L340 370L340 365L337 360L332 356L325 353L321 352L320 351L318 347L314 340L310 335L306 332L300 329L292 326L286 324L282 321L278 318L274 314L270 310L266 306L262 302L258 298L254 294L250 290L246 286L242 283L239 279L236 274L234 268L233 260L231 252L228 244L226 239L225 238L220 235L212 229L205 226L200 225L196 224L193 223L188 222L180 220L174 220L169 223L165 226L162 231L158 235L155 238L151 243L146 248L143 252L140 255L138 260L134 268L132 273L129 276L126 280L122 285L118 292L114 300L112 304L112 304L108 306L100 310L93 314L87 318L83 320L81 321L77 325L72 332L69 340L69 348L68 356L66 364L67 372L71 380L71 388L69 396L68 400"/>
+<path class="c" data-level="5" d="M986 0L983 1L978 2L972 5L964 11L959 14L958 15L954 19L947 25L943 29L941 31L938 36L932 44L929 49L928 50L926 54L921 61L917 66L914 71L910 75L907 78L903 83L898 90L895 94L894 95L891 100L888 108L884 114L881 118L877 122L872 126L868 129L865 131L861 135L855 141L851 145L849 147L846 151L841 157L838 164L837 172L838 180L840 188L843 193L846 196L852 199L860 204L865 207L866 208L870 211L877 217L882 221L887 223L891 225L894 226L900 229L908 234L913 238L914 239L918 244L924 252L927 256L928 257L932 260L940 266L945 270L946 271L949 276L955 284L958 289L959 291L963 295L969 301L973 305L975 306L980 309L988 314L996 315L1004 311L1012 308L1020 306L1024 304L1025 304L1029 303L1036 300L1044 299L1052 299L1060 297L1067 291L1071 287L1072 286L1076 283L1084 278L1089 274L1091 273L1095 271L1101 268L1107 264L1112 259L1116 253L1119 247L1121 243L1122 241L1124 236L1127 228L1130 222L1134 218L1138 214L1143 210L1147 205L1150 200L1155 196L1160 193L1164 190L1167 186L1168 182L1169 178L1169 175L1168 174L1164 172L1156 168L1151 164L1149 161L1147 156L1145 148L1144 140L1144 132L1144 124L1143 116L1143 108L1143 100L1143 92L1141 84L1139 79L1137 77L1132 73L1125 67L1121 64L1120 63L1118 59L1115 52L1111 45L1106 40L1103 36L1100 33L1096 28L1091 20L1089 16L1088 15L1084 11L1076 5L1071 2L1070 1L1070 0M221 400L222 400L223 399L228 396L236 392L242 389L245 386L249 382L254 378L259 374L265 370L269 366L271 361L272 357L273 354L273 351L272 349L268 346L260 342L255 339L254 337L252 332L249 324L246 316L242 309L240 305L240 304L236 300L228 292L224 288L224 287L222 283L219 276L216 268L214 260L212 254L209 251L204 248L196 247L188 245L180 244L174 246L169 253L165 258L162 263L159 267L156 270L152 275L147 281L143 285L142 287L138 292L132 300L129 305L128 307L127 311L125 317L121 323L115 328L110 332L105 335L103 340L104 348L104 356L105 364L105 372L103 380L101 388L101 396L100 400"/>
+<path class="c" data-level="6" d="M1006 12L1002 15L998 17L994 19L988 20L980 20L972 23L964 29L960 31L959 32L956 36L949 44L945 48L944 49L941 53L935 60L931 65L929 68L926 72L923 77L920 84L916 92L914 97L913 100L910 104L907 109L903 114L898 119L895 123L893 126L889 132L883 139L879 143L878 144L874 147L867 154L863 158L862 159L859 164L855 172L855 180L861 188L864 192L864 192L868 194L876 197L884 201L892 206L896 208L896 208L900 211L908 216L914 220L919 223L923 226L926 230L931 234L936 238L940 241L943 243L947 247L952 253L956 257L959 260L962 264L965 269L968 276L972 284L974 289L975 290L980 292L988 294L996 296L1004 296L1012 295L1020 293L1028 291L1035 289L1039 288L1040 287L1044 284L1052 278L1056 274L1057 273L1061 270L1068 265L1076 261L1083 258L1087 256L1088 256L1092 253L1100 248L1105 244L1106 241L1107 236L1109 228L1111 220L1116 212L1118 207L1119 206L1122 202L1127 195L1129 188L1130 180L1129 172L1127 164L1126 156L1127 148L1128 140L1128 132L1128 124L1127 116L1127 108L1129 100L1128 92L1125 84L1123 79L1121 78L1117 74L1112 67L1108 62L1105 57L1102 53L1099 50L1095 46L1090 41L1084 38L1076 35L1071 33L1069 32L1065 31L1059 29L1052 25L1044 19L1040 16L1040 16L1036 15L1028 12L1020 11L1012 11L1006 12M162 400L166 397L173 390L180 388L188 390L196 389L204 387L209 385L210 384L214 381L221 374L225 370L226 369L227 364L227 356L228 348L227 340L227 332L228 324L227 319L225 316L220 315L212 316L206 313L203 307L200 300L198 292L196 284L195 276L194 272L193 271L188 271L180 271L176 271L176 272L173 276L167 284L163 291L161 298L160 302L160 303L160 304L160 305L162 309L166 316L166 322L162 326L158 330L154 334L153 340L153 348L154 356L155 364L154 372L152 380L149 386L146 389L140 392L132 395L127 398L126 399L126 400"/>
+<path class="c" data-level="7" d="M1022 31L1017 32L1013 32L1010 33L1004 34L996 35L988 36L980 38L973 41L968 46L964 49L961 52L956 56L949 61L945 64L944 65L942 69L938 76L934 84L930 92L928 96L928 97L926 101L923 108L921 116L918 124L916 130L913 133L909 137L904 142L900 148L897 155L896 159L895 160L891 164L884 172L884 179L892 184L897 188L899 191L903 194L909 198L915 202L922 206L926 208L927 209L932 209L939 208L943 208L944 208L944 208L944 208L948 209L956 212L964 215L972 219L977 222L979 223L980 228L979 236L978 242L977 247L976 251L975 254L975 257L976 258L978 262L981 269L985 274L990 278L996 280L1004 282L1012 282L1020 279L1028 277L1036 274L1040 272L1040 272L1043 268L1048 260L1052 255L1055 252L1060 249L1068 246L1074 244L1079 241L1083 237L1086 232L1088 228L1089 225L1091 220L1094 212L1096 204L1097 196L1100 188L1103 181L1104 177L1104 176L1106 172L1109 164L1111 156L1112 148L1112 140L1113 132L1113 124L1113 116L1114 108L1115 100L1113 92L1109 84L1106 79L1105 77L1102 73L1098 67L1094 62L1090 59L1084 56L1076 53L1069 51L1062 49L1058 48L1057 47L1052 44L1044 37L1038 33L1035 32L1031 32L1026 31L1022 31"/>
+<path class="c" data-level="8" d="M1008 48L1008 48L1004 49L996 50L988 53L980 57L975 61L972 63L968 68L963 75L960 79L959 80L956 84L950 92L946 96L945 97L942 101L938 108L936 116L937 124L937 132L935 140L934 148L933 156L931 161L929 164L926 168L921 173L921 178L926 183L932 183L940 179L948 177L956 178L964 181L972 188L976 191L977 192L981 194L988 199L994 203L998 206L1002 210L1006 214L1011 218L1017 222L1021 226L1023 229L1028 230L1036 228L1041 226L1043 225L1047 221L1053 216L1058 212L1063 209L1067 207L1070 206L1074 202L1078 195L1079 188L1077 180L1077 172L1079 164L1082 156L1086 148L1088 144L1088 144L1090 140L1093 132L1095 124L1097 116L1097 108L1096 100L1093 92L1090 85L1088 81L1087 80L1083 77L1076 72L1069 68L1064 65L1060 64L1057 63L1052 61L1044 58L1036 55L1028 51L1020 49L1012 48L1008 48L1008 48L1008 48"/>
+<path class="c major" data-level="9" d="M1022 79L1018 80L1014 80L1010 81L1004 84L996 87L989 91L984 94L981 100L979 108L978 113L977 115L975 119L974 125L974 129L975 130L979 134L986 141L990 145L991 146L994 150L999 157L1003 163L1006 168L1012 172L1020 174L1026 172L1030 164L1034 158L1038 155L1043 151L1048 146L1051 140L1054 132L1055 127L1056 125L1059 121L1066 115L1068 108L1067 100L1063 93L1058 88L1052 85L1044 83L1038 81L1033 80L1029 80L1026 79L1022 79M1036 174L1029 175L1029 176L1036 177L1040 177L1041 176L1041 175L1040 174L1036 174"/></svg>
+    <div class="wrap g12 feature-grid">
+      <div class="feature-head">
+        <p class="label">The subscription</p>
+        <h2 id="sub-title">A new hill at your door, every <em>two or four</em> weeks.</h2>
+        <ul class="perks">
+          <li><svg class="i" data-icon="check" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.25 8.25l3 3 6.5-6.5"/></svg>Subscribers pay $3 less a bag, and shipping is included</li>
+          <li><svg class="i" data-icon="check" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.25 8.25l3 3 6.5-6.5"/></svg>Every bag comes with its farm’s map and its roast curve</li>
+          <li><svg class="i" data-icon="check" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.25 8.25l3 3 6.5-6.5"/></svg>Skip, swap or cancel online, any time before the next roast</li>
+        </ul>
+      </div>
+      <!-- Sample proof for a fictional brand (test page only). The distribution sums to 1,284 and averages 4.70. -->
+      <div class="proof" id="reviews">
+        <div class="rating"><p class="score num">4.7</p><p class="of">out of 5, from <b class="num">1,284</b> subscriber reviews since 2023</p></div>
+        <ul class="dist" aria-label="Reviews by rating">
+          <li><span>5 stars</span><span class="track" aria-hidden="true"><i style="--w:81%"></i></span><span class="n">1,040</span></li>
+          <li><span>4 stars</span><span class="track" aria-hidden="true"><i style="--w:12.5%"></i></span><span class="n">160</span></li>
+          <li><span>3 stars</span><span class="track" aria-hidden="true"><i style="--w:3.4%"></i></span><span class="n">44</span></li>
+          <li><span>2 stars</span><span class="track" aria-hidden="true"><i style="--w:1.7%"></i></span><span class="n">22</span></li>
+          <li><span>1 star</span><span class="track" aria-hidden="true"><i style="--w:1.4%"></i></span><span class="n">18</span></li>
+        </ul>
+        <blockquote class="review">
+          <p>“Lovely coffee, but the Guji was too bright for my moka pot.”</p>
+          <footer><b>Ines R.</b>, Tacoma · moka pot · 3 of 5</footer>
+          <p class="reply"><b>Maya, head roaster:</b> We swapped her next bag for the Huila, which takes the heat better. Tell us how you brew and we will do the same for you.</p>
+        </blockquote>
+      </div>
+
+      <form class="slip" id="sub-form" action="/subscriptions/" method="post" novalidate aria-labelledby="slip-title">
+        <div class="slip-head"><h3 id="slip-title">Build your subscription</h3><span class="label">3 questions</span></div>
+        <fieldset class="opt-group" id="g-coffee">
+          <legend>Which coffee?</legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="coffee" value="choice" data-name="Roaster’s choice" data-price="18" checked><span><span class="name">Roaster’s choice</span><span class="sub">A different single origin each delivery</span></span><span class="amt">$18</span></label>
+            <label class="opt"><input type="radio" name="coffee" value="guji" data-name="Ethiopia Guji" data-price="18"><span><span class="name">Ethiopia Guji</span><span class="sub">Light, peach and jasmine</span></span><span class="amt">$18</span></label>
+            <label class="opt"><input type="radio" name="coffee" value="huila" data-name="Colombia Huila" data-price="16"><span><span class="name">Colombia Huila</span><span class="sub">Medium, caramel and red apple</span></span><span class="amt">$16</span></label>
+            <label class="opt"><input type="radio" name="coffee" value="oak" data-name="Oak Fire Espresso" data-price="15"><span><span class="name">Oak Fire Espresso</span><span class="sub">Dark, chocolate and molasses</span></span><span class="amt">$15</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="opt-group" id="g-brew" aria-describedby="brew-error">
+          <legend>How do you brew?<span class="hint">We grind each bag for your brewer the morning it ships.</span></legend>
+          <p class="error" id="brew-error" hidden><svg class="i" data-icon="error" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path class="solid" fill-rule="evenodd" d="M8 1.25a6.75 6.75 0 1 1 0 13.5A6.75 6.75 0 0 1 8 1.25zM7.25 4.75v4a.75.75 0 0 0 1.5 0v-4a.75.75 0 0 0-1.5 0zM8 10.4a.9.9 0 1 0 0 1.8.9.9 0 0 0 0-1.8z"/></svg>Choose how you brew, so we grind it right.</p>
+          <div class="opts cols-3">
+            <label class="opt stack"><input type="radio" name="brew" value="pourover" data-name="Pour-over"><span><span class="name">Pour-over</span><span class="sub">Medium-fine</span></span></label>
+            <label class="opt stack"><input type="radio" name="brew" value="espresso" data-name="Espresso"><span><span class="name">Espresso</span><span class="sub">Fine</span></span></label>
+            <label class="opt stack"><input type="radio" name="brew" value="drip" data-name="Drip machine"><span><span class="name">Drip machine</span><span class="sub">Medium</span></span></label>
+            <label class="opt stack"><input type="radio" name="brew" value="press" data-name="French press"><span><span class="name">French press</span><span class="sub">Coarse</span></span></label>
+            <label class="opt stack"><input type="radio" name="brew" value="moka" data-name="Moka pot"><span><span class="name">Moka pot</span><span class="sub">Fine to medium</span></span></label>
+            <label class="opt stack"><input type="radio" name="brew" value="whole" data-name="Whole bean"><span><span class="name">Whole bean</span><span class="sub">You grind it</span></span></label>
+          </div>
+        </fieldset>
+        <fieldset class="opt-group" id="g-every">
+          <legend>How often?<span class="hint">A 340&#8239;g bag makes about 20 cups.</span></legend>
+          <div class="opts cols-2">
+            <label class="opt stack"><input type="radio" name="every" value="2" checked><span><span class="name">Every 2 weeks</span><span class="sub">About a cup and a half a day</span></span></label>
+            <label class="opt stack"><input type="radio" name="every" value="4"><span><span class="name">Every 4 weeks</span><span class="sub">About five cups a week</span></span></label>
+          </div>
+        </fieldset>
+        <div class="slip-sum">
+          <p class="ships"><span>First bag ships by <b>Thu,&nbsp;Oct&nbsp;15</b></span><span><svg class="i i-inline" data-icon="truck" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.75 4.25h7.5v6.5h-7.5zM9.25 6.75h2.5l2.5 2.5v1.5h-5"/><circle cx="4.75" cy="11.75" r="1.25"/><circle cx="11.75" cy="11.75" r="1.25"/></svg>Shipping included</span></p>
+          <p class="terms" id="sub-terms" aria-live="polite"><b>$18 every 2&nbsp;weeks</b>, charged on roast day. First roast Tue,&nbsp;Oct&nbsp;13; next charge Tue,&nbsp;Oct&nbsp;27. Skip, pause or cancel online any time before a roast.</p>
+          <button class="btn btn-primary btn-wide" type="submit" id="sub-btn">Subscribe, $18 every 2 weeks</button>
+          <p class="guarantee">Not for you? Tell us within 30 days and your next bag is on us.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="section roastery" id="roastery" aria-labelledby="roast-title">
+    <div class="wrap g12">
+      <div class="block g12 in-full">
+        <h2 id="roast-title" class="label in-margin">How we roast</h2>
+        <p class="manifesto in-body">We roast on a 1962 Probat in Southeast Portland, 12 kilos at a time. Every batch is logged, and we print <em>what we paid</em> for every lot on the bag.</p>
+      </div>
+      <figure class="block drop in-full">
+        <div class="frame">
+          <picture>
+            <source media="(min-width: 640px)" type="image/webp" width="1264" height="632" sizes="(min-width: 1232px) 1136px, calc(100vw - 96px)"
+              srcset="../../assets/photos/roaster-drop-wide-640.webp 640w, ../../assets/photos/roaster-drop-wide-960.webp 960w, ../../assets/photos/roaster-drop-wide-1264.webp 1264w">
+            <source media="(min-width: 640px)" type="image/jpeg" width="1264" height="632" sizes="(min-width: 1232px) 1136px, calc(100vw - 96px)"
+              srcset="../../assets/photos/roaster-drop-wide-640.jpg 640w, ../../assets/photos/roaster-drop-wide-960.jpg 960w, ../../assets/photos/roaster-drop-wide-1264.jpg 1264w">
+            <source type="image/webp" width="784" height="588" sizes="100vw" srcset="../../assets/photos/roaster-drop-tight-520.webp 520w, ../../assets/photos/roaster-drop-tight-784.webp 784w">
+            <img src="../../assets/photos/roaster-drop-tight-784.jpg" width="784" height="588" sizes="100vw" loading="lazy" decoding="async"
+              srcset="../../assets/photos/roaster-drop-tight-520.jpg 520w, ../../assets/photos/roaster-drop-tight-784.jpg 784w"
+              alt="Roasted coffee pouring from the open door of a cast-iron drum roaster into the round cooling tray, where a stirring arm turns the beans.">
+          </picture>
+        </div>
+        <figcaption class="caption"><span>The drop: the batch leaves the drum and the cooling tray stops the roast.</span><span class="mono">10:10 · 207&#8239;°C</span></figcaption>
+      </figure>
+      <figure class="block curve g12 in-full" aria-labelledby="curve-cap">
+        <figcaption id="curve-cap" class="curve-head in-margin"><span><b>Batch 0412, Ethiopia Guji.</b> Bean temperature over 10 minutes 10 seconds, the bag in your hands. It ends at the moment above.</span><span class="anno mono">First crack 8:40 at 196&#8239;°C · out at 10:10 at 207&#8239;°C</span></figcaption>
+        <div class="plot in-body" aria-hidden="true">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none"><line class="crack" x1="82.54" x2="82.54" y1="0" y2="100"/></svg>
+          <div class="wipe"><div class="wipe-in"><div class="wipe-out">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none"><polygon class="area" points="0,100 0.00,12.50 4.76,43.75 9.52,67.50 14.29,80.00 19.05,73.88 23.81,68.00 28.57,62.31 33.33,56.94 38.10,51.75 42.86,46.81 47.62,42.13 52.38,37.69 57.14,33.50 61.90,29.56 66.67,25.81 71.43,22.31 76.19,19.06 80.95,16.06 82.54,15.12 85.71,13.31 90.48,10.94 95.24,8.94 96.83,8.31 96.83,100"/><polyline class="line" points="0.00,12.50 4.76,43.75 9.52,67.50 14.29,80.00 19.05,73.88 23.81,68.00 28.57,62.31 33.33,56.94 38.10,51.75 42.86,46.81 47.62,42.13 52.38,37.69 57.14,33.50 61.90,29.56 66.67,25.81 71.43,22.31 76.19,19.06 80.95,16.06 82.54,15.12 85.71,13.31 90.48,10.94 95.24,8.94 96.83,8.31"/></svg>
+          </div></div></div>
+          <span class="ylab anno" style="top:12.5%">200&#8239;°C</span>
+          <span class="ylab anno" style="top:43.75%">150&#8239;°C</span>
+          <span class="ylab anno" style="top:75%">100&#8239;°C</span>
+          <span class="xlab anno start" style="left:0%">0:00</span>
+          <span class="xlab anno" style="left:47.62%">5:00</span>
+          <span class="xlab anno end" style="left:96.83%">10:10</span>
+          <i class="pt" style="left:14.29%; top:80%; --at:0.15"></i>
+          <span class="ptlab anno below" style="left:14.29%; top:80%; --at:0.15"><b>Turning point</b> 1:30, 92&#8239;°C</span>
+          <i class="pt" style="left:52.38%; top:37.5%; --at:0.53"></i>
+          <span class="ptlab anno above optional" style="left:52.38%; top:37.5%; --at:0.53"><b>Yellowing</b> 5:30, 160&#8239;°C</span>
+          <i class="pt" style="left:82.54%; top:15.13%; --at:0.83"></i>
+          <span class="ptlab anno above" style="left:82.54%; top:15.13%; --at:0.83"><b>First crack</b> 8:40, 196&#8239;°C</span>
+          <i class="pt drop-pt" style="left:96.83%; top:8.31%; --at:0.97"></i>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="paid" aria-labelledby="paid-title">
+    <div class="wrap g12">
+      <h2 id="paid-title" class="label in-margin">What we paid, lot 0412</h2>
+      <div class="ledger-figure">
+        <p class="big num" aria-hidden="true">2.3<span class="x">&#215;</span></p>
+        <p class="say">the Fairtrade minimum, for every pound of green coffee.</p>
+        <p class="sr-only">We paid 2.3 times the Fairtrade minimum.</p>
+      </div>
+      <div class="ledger">
+        <table>
+          <caption class="label">Per pound of green coffee, 2026 harvest</caption>
+          <tbody>
+            <tr><th scope="row">Fairtrade minimum</th><td>$1.80<span class="rule" style="--v:0.439" aria-hidden="true"></span></td></tr>
+            <tr><th scope="row">Commodity price (New York “C”), <time datetime="2026-09-30">Sep&nbsp;30</time></th><td>$2.62<span class="rule" style="--v:0.639" aria-hidden="true"></span></td></tr>
+            <tr class="paid"><th scope="row">Paid to the washing station</th><td>$4.10<span class="rule" style="--v:1" aria-hidden="true"></span></td></tr>
+          </tbody>
+        </table>
+        <p class="src">Each rule is drawn to scale. Prices before import and freight. Contract and receipts on request, and <a href="/transparency/">what we paid for every lot</a> we roast.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section promises" id="promises" aria-labelledby="promise-title">
+    <div class="wrap g12">
+      <div class="promise-head">
+        <p class="label">Between the farm and your door</p>
+        <h2 id="promise-title" class="h-display" style="margin-top:var(--space-5)">Bought by name, tasted twice, shipped in <em>48&nbsp;hours</em>.</h2>
+      </div>
+      <figure class="cup">
+        <div class="frame">
+          <picture>
+            <source type="image/webp" width="824" height="640" sizes="(min-width: 1232px) 552px, (min-width: 1024px) 45vw, 100vw" srcset="../../assets/photos/cupping-crop-560.webp 560w, ../../assets/photos/cupping-crop-824.webp 824w">
+            <img src="../../assets/photos/cupping-crop-824.jpg" width="824" height="640" sizes="(min-width: 1232px) 552px, (min-width: 1024px) 45vw, 100vw" loading="lazy" decoding="async"
+              srcset="../../assets/photos/cupping-crop-560.jpg 560w, ../../assets/photos/cupping-crop-824.jpg 824w"
+              alt="A roaster in a gray apron leans over a row of tasting bowls with a spoon, the drum roaster behind her against a brick wall.">
+          </picture>
+        </div>
+        <figcaption class="caption"><span>The first cupping, the morning after the roast.</span><span class="mono">Batch 0412</span></figcaption>
+      </figure>
+      <ol class="steps">
+          <li><span class="n" aria-hidden="true">1</span><div><h3>We know every grower by name</h3><p>We buy direct and visit every farm we buy from at least once every two years. The ledger above is what lot 0412 cost.</p></div></li>
+          <li><span class="n" aria-hidden="true">2</span><div><h3>Two of us taste every batch</h3><p>Each batch is cupped the morning after its roast, then again before it is packed. A batch that misses its profile becomes cafe espresso, not your bag.</p></div></li>
+          <li><span class="n" aria-hidden="true">3</span><div><h3>It leaves within 48 hours of the roast</h3><p>We roast on Tuesdays and Fridays and ship the next day, so the coffee peaks in your kitchen, not on our shelf.</p></div></li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="journal">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h2 class="letters">Letters from the roastery</h2>
+        <p class="intro">New lots with their maps, brew notes and the odd subscriber-only release. Twice a month, no more.</p>
+        <form class="news" id="news" name="letters" action="/letters/" method="post" novalidate>
+          <label for="email">Email address</label>
+          <div class="field-row">
+            <input id="email" name="email" type="email" placeholder="you@example.com" aria-describedby="email-error" autocomplete="email">
+            <button class="btn btn-primary" type="submit" id="news-btn"><span class="spinner" aria-hidden="true"></span>Get the letters</button>
+          </div>
+          <p class="error" id="email-error" hidden><svg class="i" data-icon="error" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path class="solid" fill-rule="evenodd" d="M8 1.25a6.75 6.75 0 1 1 0 13.5A6.75 6.75 0 0 1 8 1.25zM7.25 4.75v4a.75.75 0 0 0 1.5 0v-4a.75.75 0 0 0-1.5 0zM8 10.4a.9.9 0 1 0 0 1.8.9.9 0 0 0 0-1.8z"/></svg>Add the rest of your email, for example dana@example.com.</p>
+          <p class="ok" role="status" id="news-ok"></p>
+        </form>
+      </div>
+      <div class="links"><h2 class="label">Shop</h2><ul><li><a href="/coffee/">Coffee</a></li><li><a href="/subscriptions/">Subscriptions</a></li><li><a href="/brewing-gear/">Brewing gear</a></li><li><a href="/gift-cards/">Gift cards</a></li></ul></div>
+      <div class="links"><h2 class="label">Roastery</h2><ul><li><a href="/roastery/">Our story</a></li><li><a href="/wholesale/">Wholesale</a></li><li><a href="/visit/">Visit the cafe</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+    </div>
+    <div class="signoff">
+      <div class="mark"><svg class="wordmark" viewBox="0 0 844.5 108" aria-hidden="true"><g fill="currentColor"><path d="M66.7 30.9 64.1 51.8 66.7 72.6H65L56.9 54.6L25.2 52.9V50.7L56.9 48.8L65 30.9ZM88.7 32.3 86.8 32.9 71.8 6.6 82.7 8.6H22.9V4H73.4L82.9 -0.2H83.6ZM73.5 101.3 90.9 74.8 92.8 75.3 85.2 108.1H84.4L75.3 104H22.9V99.4H84.2ZM4.5 104V101.9L16.6 98.9V9.1L4.5 6.1V4H34.4V104Z"/><path d="M123.1 44.6V99.9L132.3 102V104H98.1V102L107.4 99.9V45.5Q106.3 44.6 104.2 43.1Q102.1 41.5 97.8 38.6V37.1L122.6 30.2H123.1ZM166 52.2V99.9L175.1 102V104H141.1V102L150.3 99.9V54.4Q150.3 50.3 148.9 47.6Q147.5 45 144.6 43.6Q141.8 42.3 137.3 42.3Q132.8 42.3 128.5 43.5Q124.3 44.7 121.2 46.3L120.5 44.5Q125.7 40.2 129.4 37.5Q133.2 34.8 136.2 33.4Q139.1 32 141.8 31.5Q144.5 31 147.6 31Q154 31 158 33.3Q162.1 35.5 164 40.2Q166 44.9 166 52.2ZM208.8 52.2V99.9L218.2 102V104H183.9V102L193.1 99.9V54.4Q193.1 50.3 191.7 47.6Q190.3 45 187.5 43.6Q184.6 42.3 180.1 42.3Q175.6 42.3 171.4 43.5Q167.1 44.7 164 46.3L163.3 44.5Q168.5 40.2 172.3 37.5Q176 34.8 179 33.4Q181.9 32 184.6 31.5Q187.4 31 190.4 31Q200 31 204.4 36.1Q208.8 41.3 208.8 52.2Z"/><path d="M233.1 99.6 241.8 98 227.2 106.5 226.2 106 229.2 88.4V14.6Q228.3 14 226.8 12.9Q225.3 11.9 223.1 10.4Q221 9 218.2 7.1V5.9L244.7 0.1H245.7L244.9 12.2V87.1Q244.9 91.4 247 94.7Q249 98.1 252.6 100Q256.2 101.9 260.7 101.9Q267 101.9 271.4 98.4Q275.8 94.9 278.1 87.8Q280.4 80.7 280.4 70.2Q280.4 60.3 278.2 53.9Q275.9 47.4 271.4 44.4Q266.9 41.3 260 41.3Q256.5 41.3 253.3 42.1Q250 42.8 247 44.6Q244 46.3 241.1 49.4L240.2 47.8Q244.8 42.8 248.7 39.5Q252.6 36.3 255.9 34.4Q259.2 32.5 262.2 31.7Q265.2 30.9 268.1 30.9Q277.2 30.9 283.6 35Q290.1 39.1 293.5 46.6Q297 54.1 297 64.4Q297 74.2 294.1 81.9Q291.2 89.5 286 94.8Q280.8 100.1 273.6 102.8Q266.5 105.5 258 105.5Q253.7 105.5 249.4 104.9Q245 104.3 240.9 103Q236.8 101.7 233.1 99.6Z"/><path d="M340.1 30.9Q347.8 30.9 353.5 34Q359.1 37.2 362.4 43.2Q365.7 49.3 366.3 58.1H319.8V53.7H357.9L351.1 56.7Q350.4 48.9 348.8 44Q347.2 39.2 344.5 36.9Q341.8 34.7 337.9 34.7Q332.8 34.7 329.1 37.7Q325.4 40.7 323.4 46.7Q321.5 52.8 321.5 61.8Q321.5 73.2 324.4 80.4Q327.3 87.5 332.9 90.8Q338.5 94 346.6 94Q350.5 94 354.1 93Q357.7 92 360.9 90Q364.1 87.9 366.6 84.7L367.9 85.7Q363.4 93 358.9 97.4Q354.4 101.7 349.4 103.6Q344.5 105.5 338.6 105.5Q329.2 105.5 321.8 101.4Q314.3 97.2 310 89.2Q305.8 81.2 305.8 69.5Q305.8 59.1 309.8 50.3Q313.8 41.5 321.5 36.2Q329.2 30.9 340.1 30.9Z"/><path d="M420.7 31.1Q424 31.1 425.9 33Q427.8 34.9 427.8 38.2Q427.8 42.2 425.3 44.8Q422.8 47.4 419 47.4Q417.1 47.4 415.4 47Q413.6 46.6 411.8 46.2Q410 45.7 407.7 45.7Q405.7 45.7 403.9 46.4Q402.1 47.1 400.4 48.3Q398.7 49.4 396.9 51.1L396.9 48Q402.4 42.2 406.1 38.8Q409.8 35.4 412.3 33.7Q414.9 32.1 416.8 31.6Q418.8 31.1 420.7 31.1ZM398.2 44.1V99.9L408.9 102V104H373.1V102L382.5 99.9V45.5Q381.6 44.8 380.3 43.9Q379.1 43.1 377.2 41.7Q375.4 40.4 372.8 38.6V37.1L397.6 30.2H398.2Z"/><path d="M519.3 86.9 515 90.4Q509.4 95.9 504.1 99.2Q498.8 102.5 493.6 104Q488.4 105.5 483.1 105.5Q474.3 105.5 468.4 102.3Q462.5 99.2 459.6 93.9Q456.6 88.7 456.6 82.4Q456.6 77.2 458.2 72.6Q459.7 68 463.3 63.8Q466.9 59.6 473.2 55.8Q479.5 51.9 489 48.2L498.8 44.3Q506.6 39.3 510.7 34.6Q514.8 29.9 516.4 25.3Q518 20.6 518 16.1Q518 11.1 515.6 8.3Q513.3 5.6 508.2 5.6Q503.6 5.6 500.1 7.7Q496.7 9.8 494.8 13.5Q492.9 17.3 492.9 22.3Q492.9 26.2 494.1 30.6Q495.3 35.1 497.9 39.8L531.1 99.4L542.7 102.6L542.2 104H516.5L485.8 47.4Q484.1 44.2 483 41.1Q481.9 37.9 481.4 34.8Q480.9 31.7 480.9 28.9Q480.9 21.3 484.3 15.3Q487.6 9.3 494 5.9Q500.4 2.5 509.4 2.5Q516.2 2.5 520.7 4.5Q525.1 6.5 527.3 10Q529.5 13.4 529.5 17.9Q529.5 22.6 527.2 27.1Q524.9 31.5 518.7 36.1Q512.5 40.7 500.5 45.7L490.5 49.8Q482.9 53.2 478.7 57.2Q474.5 61.2 472.8 65.8Q471.1 70.4 471.1 76Q471.1 85.3 476.8 90.6Q482.4 95.9 492 95.9Q497.1 95.9 502.5 94.6Q507.8 93.3 513.2 88.9L517.2 85.5Q520.8 81.9 524.2 76.5Q527.6 71.1 530.8 63.8Q533.9 56.5 536.8 47.1L526.1 44.5L526.6 42.9H557.2L556.7 44.5L544.7 47.1Q538.7 60.5 532.4 70Q526.1 79.6 519.3 86.9Z"/><path d="M739.6 57.7 740.1 60.8Q731.2 63.7 725.6 66.3Q720.1 68.9 717.2 71.6Q714.3 74.2 713.2 77.2Q712.1 80.1 712.1 83.7Q712.1 89.6 715.3 92.6Q718.5 95.5 723.2 95.5Q726.8 95.5 729.5 94.1Q732.2 92.6 733.8 89.8Q735.3 87 735.3 82.9V50.5Q735.3 43.7 731.9 40.1Q728.5 36.5 721.5 36.5Q718.2 36.5 714.9 37Q711.7 37.5 709.7 38.3L713.3 35.2Q713 38.3 712.5 41.2Q712 44.1 711.4 46.2Q710.7 48.4 709.8 49.5Q708.8 50.7 706.9 51.5Q704.9 52.2 702.8 52.2Q700 52.2 698.4 51.1Q696.9 50.1 696.9 47.9Q696.9 44.9 699.8 41.9Q702.7 38.9 707.3 36.4Q712 33.9 717.5 32.4Q723 30.9 728.2 30.9Q736.5 30.9 741.5 33.3Q746.5 35.7 748.7 40.1Q751 44.4 751 50.3V90.8Q751 93 751.7 94.3Q752.4 95.7 753.6 96.3Q754.9 96.9 756.5 96.9Q758.8 96.9 760.9 96.2Q763.1 95.5 765.5 93.9V96.2Q760.2 102.1 756.1 103.8Q751.9 105.5 747.2 105.5Q742.8 105.5 740.2 103.6Q737.6 101.7 736.5 98.1Q735.4 94.4 735.1 89.1L735.5 89.2Q734.3 94.1 731.6 97.8Q728.9 101.4 725.1 103.5Q721.3 105.5 716.7 105.5Q707.7 105.5 702 100.8Q696.3 96.1 696.3 87.3Q696.3 82.8 697.8 79.2Q699.4 75.7 703.9 72.5Q708.3 69.3 716.9 65.8Q725.5 62.3 739.6 57.7Z"/><path d="M797.6 61.9 802.3 57.4 838.7 99.9 846.2 102V104H811V102L819.7 100.1L790.9 66.5H787V63H791.6L824 37L813.6 34.7V32.4H841.3V34.7L830.7 37.1ZM790.2 99.9 799.5 102V104H765.2V102L774.5 99.9V13.7Q773.6 13.2 772 12.3Q770.3 11.4 768.1 10.2Q765.9 9 763.1 7.5V6.1L789.7 0.1H790.2V12.2Z"/><path d="M637 2.5Q647.8 2.5 656.9 6.2Q666.1 9.9 672.8 16.7Q679.5 23.6 683.1 32.9Q686.8 42.3 686.8 53.5Q686.8 64.9 683.1 74.4Q679.4 84 672.6 90.9Q665.8 97.9 656.6 101.7Q647.4 105.5 636.5 105.5Q625.6 105.5 616.5 101.8Q607.3 98.1 600.6 91.3Q593.9 84.4 590.2 75.1Q586.5 65.7 586.5 54.4Q586.5 43 590.2 33.5Q593.9 24 600.7 17Q607.5 10.1 616.7 6.3Q626 2.5 637 2.5ZM637.4 101.7Q647 101.7 654 96.5Q661 91.2 664.8 81.2Q668.7 71.2 668.7 56.9Q668.7 40.7 664.5 29.4Q660.4 18.1 653 12.1Q645.7 6.2 636 6.2Q626.3 6.2 619.3 11.5Q612.3 16.7 608.4 26.8Q604.6 36.8 604.6 51.1Q604.6 67.3 608.7 78.6Q612.9 89.9 620.2 95.8Q627.6 101.7 637.4 101.7Z"/></g><ellipse cx="638.1600000000001" cy="51.5" rx="23" ry="33" fill="none" stroke="currentColor" stroke-width="3"/><ellipse cx="640.6600000000001" cy="46" rx="13.5" ry="18.5" fill="none" stroke="currentColor" stroke-width="3"/><circle class="ember" cx="642.6600000000001" cy="42" r="7.5"/></svg></div>
+      <div class="legal"><p>Ember &amp; Oak Coffee Roasters, 1120 SE Water Ave, Portland, OR 97214. Cafe open daily, 7&nbsp;am to 3&nbsp;pm.</p><p class="mono">45.51° N, 122.67° W · 15&#8239;m · © 2026</p></div>
+    </div>
+  </div>
+</footer>
+
+<dialog id="quick" aria-labelledby="q-title" aria-describedby="q-meta">
+  <div class="dlg-head">
+    <div><p class="label">Add to cart</p><h2 id="q-title" tabindex="-1">Ethiopia Guji</h2><p class="meta num" id="q-meta">$21 a bag, <span class="unit">340&#8239;g</span>. Roasted Tue,&nbsp;Oct&nbsp;13, ships by Thu,&nbsp;Oct&nbsp;15.</p></div>
+    <button class="close" type="button" data-close aria-label="Close"><svg class="i" data-icon="close" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.25 4.25l7.5 7.5M11.75 4.25l-7.5 7.5"/></svg></button>
+  </div>
+  <form id="quick-form" action="/cart/" method="post" novalidate>
+    <fieldset class="opt-group" id="q-brew" aria-describedby="q-error">
+      <legend>How do you brew?<span class="hint">We grind it for your brewer the morning it ships.</span></legend>
+      <p class="error" id="q-error" hidden><svg class="i" data-icon="error" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path class="solid" fill-rule="evenodd" d="M8 1.25a6.75 6.75 0 1 1 0 13.5A6.75 6.75 0 0 1 8 1.25zM7.25 4.75v4a.75.75 0 0 0 1.5 0v-4a.75.75 0 0 0-1.5 0zM8 10.4a.9.9 0 1 0 0 1.8.9.9 0 0 0 0-1.8z"/></svg>Choose how you brew, so we grind it right.</p>
+      <div class="opts cols-2">
+        <label class="opt stack"><input type="radio" name="qbrew" value="pourover" data-name="Pour-over"><span><span class="name">Pour-over</span><span class="sub">Medium-fine</span><span class="usual" hidden>Your usual</span></span></label>
+        <label class="opt stack"><input type="radio" name="qbrew" value="espresso" data-name="Espresso"><span><span class="name">Espresso</span><span class="sub">Fine</span><span class="usual" hidden>Your usual</span></span></label>
+        <label class="opt stack"><input type="radio" name="qbrew" value="drip" data-name="Drip machine"><span><span class="name">Drip machine</span><span class="sub">Medium</span><span class="usual" hidden>Your usual</span></span></label>
+        <label class="opt stack"><input type="radio" name="qbrew" value="press" data-name="French press"><span><span class="name">French press</span><span class="sub">Coarse</span><span class="usual" hidden>Your usual</span></span></label>
+        <label class="opt stack"><input type="radio" name="qbrew" value="moka" data-name="Moka pot"><span><span class="name">Moka pot</span><span class="sub">Fine to medium</span><span class="usual" hidden>Your usual</span></span></label>
+        <label class="opt stack"><input type="radio" name="qbrew" value="whole" data-name="Whole bean"><span><span class="name">Whole bean</span><span class="sub">You grind it</span><span class="usual" hidden>Your usual</span></span></label>
+      </div>
+    </fieldset>
+    <div class="qty-row">
+      <span class="lbl" id="q-qty-lbl">Bags</span>
+      <div class="stepper" role="group" aria-labelledby="q-qty-lbl">
+        <button type="button" id="q-minus" aria-label="One bag fewer" aria-disabled="true"><svg class="i" data-icon="minus" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.25 8h9.5"/></svg></button>
+        <output id="q-qty" aria-live="polite">1</output>
+        <button type="button" id="q-plus" aria-label="One bag more"><svg class="i" data-icon="plus" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3.25v9.5M3.25 8h9.5"/></svg></button>
+      </div>
+    </div>
+    <button class="btn btn-primary btn-wide" type="submit" id="q-add">Add to cart, $21</button>
+  </form>
+</dialog>
+
+<dialog id="cart" aria-labelledby="cart-title">
+  <div class="dlg-head">
+    <div><h2 id="cart-title" tabindex="-1">Your cart</h2><p class="meta" id="cart-meta">2 items</p></div>
+    <button class="close" type="button" data-close aria-label="Close cart"><svg class="i" data-icon="close" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.25 4.25l7.5 7.5M11.75 4.25l-7.5 7.5"/></svg></button>
+  </div>
+  <div class="cart-body">
+    <div class="cart-groups" id="cart-groups"></div>
+    <div class="cart-empty">
+      <h3>Your cart is empty</h3>
+      <p><time datetime="2026-W42">This week’s</time> coffee is Ethiopia Guji, roasted Tue,&nbsp;Oct&nbsp;13 in Portland and shipped by Thu,&nbsp;Oct&nbsp;15.</p>
+      <button class="btn btn-primary" type="button" data-quick="guji">Buy this bag, $21</button>
+      <a class="more" href="/coffee/" data-close-link>See all 9 coffees<svg class="i" data-icon="arrow-right" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.75 8h10.5M9.25 3.75L13.5 8l-4.25 4.25"/></svg></a>
+    </div>
+  </div>
+  <div class="cart-sum">
+    <dl id="cart-totals"></dl>
+    <button class="btn btn-primary btn-wide" type="button" id="checkout-btn" aria-haspopup="dialog"><span id="checkout-lbl">Check out, $39.00</span></button>
+    <p class="fine">Guest checkout. You review the order before you pay.</p>
+  </div>
+  <p class="sr-only" role="status" id="cart-status"></p>
+</dialog>
+
+<dialog id="checkout" aria-labelledby="co-title">
+  <div class="dlg-head co-head">
+    <div><h2 id="co-title" tabindex="-1">Checkout</h2><p class="meta" id="co-sub">Roaster’s choice every 2 weeks, and one bag of Ethiopia Guji</p></div>
+    <button class="close" type="button" data-close aria-label="Close checkout"><svg class="i" data-icon="close" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.25 4.25l7.5 7.5M11.75 4.25l-7.5 7.5"/></svg></button>
+  </div>
+  <form class="co-body" id="co-form" action="/checkout/" method="post" novalidate>
+    <div class="co-form">
+      <div class="express" role="group" aria-label="Express checkout">
+        <button class="btn btn-secondary" type="button">Apple Pay</button>
+        <button class="btn btn-secondary" type="button">Google Pay</button>
+      </div>
+      <p class="or">or pay with card</p>
+      <fieldset>
+        <legend class="label">Contact</legend>
+        <div class="fld"><label for="co-email">Email</label><input id="co-email" name="email" type="email" autocomplete="email" inputmode="email" aria-describedby="co-email-hint co-email-error"><span class="hint" id="co-email-hint">For your receipt and shipping updates.</span>
+          <p class="error" id="co-email-error" hidden><svg class="i" data-icon="error" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path class="solid" fill-rule="evenodd" d="M8 1.25a6.75 6.75 0 1 1 0 13.5A6.75 6.75 0 0 1 8 1.25zM7.25 4.75v4a.75.75 0 0 0 1.5 0v-4a.75.75 0 0 0-1.5 0zM8 10.4a.9.9 0 1 0 0 1.8.9.9 0 0 0 0-1.8z"/></svg>Add the rest of your email, for example dana@example.com.</p></div>
+      </fieldset>
+      <fieldset>
+        <legend class="label">Delivery</legend>
+        <div class="fld"><label for="co-name">Full name</label><input id="co-name" name="name" autocomplete="shipping name"></div>
+        <div class="fld"><label for="co-street">Street address</label><input id="co-street" name="street" autocomplete="shipping address-line1">
+          <button class="linkish" type="button" id="co-add-line2" aria-expanded="false" aria-controls="co-line2-fld">Add apartment or suite</button></div>
+        <div class="fld" id="co-line2-fld" hidden><label for="co-line2">Apartment or suite (optional)</label><input id="co-line2" name="line2" autocomplete="shipping address-line2"></div>
+        <div class="pair">
+          <div class="fld"><label for="co-city">City</label><input id="co-city" name="city" autocomplete="shipping address-level2"></div>
+          <div class="fld"><label for="co-zip">ZIP code</label><input id="co-zip" name="postal" autocomplete="shipping postal-code" inputmode="numeric"></div>
+        </div>
+        <p class="hint">Shipping to the United States.</p>
+      </fieldset>
+      <fieldset class="card-block">
+        <legend class="label">Card</legend>
+        <p class="lock"><svg class="i" data-icon="lock" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.25" y="7.25" width="9.5" height="6.5" rx="1.5"/><path d="M5.25 7.25v-2a2.75 2.75 0 0 1 5.5 0v2"/></svg>Encrypted by our payment processor. We never see or store your card number.</p>
+        <div class="fld"><label for="co-cc">Card number</label><input id="co-cc" name="cardnumber" type="text" autocomplete="cc-number" inputmode="numeric"></div>
+        <div class="pair">
+          <div class="fld"><label for="co-exp">Expiry (MM/YY)</label><input id="co-exp" name="cc-exp" autocomplete="cc-exp" inputmode="numeric"></div>
+          <div class="fld"><label for="co-cvc">Security code</label><input id="co-cvc" name="cvc" autocomplete="cc-csc" inputmode="numeric"></div>
+        </div>
+        <label class="check"><input type="checkbox" checked> Billing address same as delivery</label>
+      </fieldset>
+    </div>
+    <aside class="summary" aria-labelledby="co-sum-title">
+      <h3 id="co-sum-title">Order summary</h3>
+      <dl id="co-lines"></dl>
+      <p class="term" id="co-term"></p>
+      <button class="btn btn-primary btn-wide" type="submit" id="co-pay"><span class="spinner" aria-hidden="true"></span><span class="lbl" id="co-pay-lbl">Pay $39.00</span></button>
+      <p class="fine">Not for you? Tell us within 30 days and your next bag is on us.</p>
+    </aside>
+  </form>
+  <p class="sr-only" role="status" id="co-status"></p>
+</dialog>
+<div class="sr-only" role="status" aria-live="polite" id="announce"></div>
+
+<script>
+// Purchase flow (design-ux 07, design-conversion 01 and 04), phone navigation (design-ux 02) and motion (design-motion).
+// Every state is reachable by URL for review, rendering and the lint:
+//   ?state=menu | quick | sub-error | plan-4 | cart | cart-empty | removed | checkout | checkout-error | error | sending | subscribed
+// Dates (fiction set on Sat, Oct 10, 2026): roasts Tue and Fri; first roast Tue, Oct 13; ships by Thu, Oct 15;
+// a subscription is charged on roast day, so the next charge is Tue, Oct 27 (2 weeks) or Tue, Nov 10 (4 weeks).
+(function () {
+  document.documentElement.classList.add('js');
+  const state = new URLSearchParams(location.search).get('state');
+  const $ = (id) => document.getElementById(id);
+  const money = (n) => '$' + n.toFixed(2);
+  const ICON = { minus: '<svg class="i" data-icon="minus" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.25 8h9.5"/></svg>', plus: '<svg class="i" data-icon="plus" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3.25v9.5M3.25 8h9.5"/></svg>', check: '<svg class="i" data-icon="check" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.25 8.25l3 3 6.5-6.5"/></svg>' };
+  const THUMB = '<span class="thumb" aria-hidden="true"><img src="../../assets/photos/hero-bag-portrait-480.webp" alt="" width="56" height="56"></span>';
+  // Motion tokens are read from CSS, never typed here, so the script and the stylesheet cannot drift apart.
+  const css = getComputedStyle(document.documentElement);
+  const ms = (t) => parseFloat(css.getPropertyValue(t));
+  const ease = (t) => css.getPropertyValue(t).trim();
+  const still = matchMedia('(prefers-reduced-motion: reduce)');
+
+  // Announce from inside an open modal: content outside a showModal() dialog is inert, so its live region is not read.
+  function say(t) {
+    const open = [...document.querySelectorAll('dialog[open]')].pop();
+    const r = (open && open.querySelector('[role=status]')) || $('announce');
+    r.textContent = ''; setTimeout(() => { r.textContent = t; }, 50);
+  }
+  // While a modal is open the page behind it is inert: WCAG 1.4.3 exempts inactive content, so the lint's text-over-art
+  // check is switched off for <main> only while a dialog is open (design-ux pipeline note; the dialog itself is still checked).
+  const mainEl = document.querySelector('main');
+  const syncInert = () => { if (document.querySelector('dialog[open]')) mainEl.setAttribute('data-lint-skip', 'overlay'); else mainEl.removeAttribute('data-lint-skip'); };
+  new MutationObserver(syncInert).observe(document.body, { subtree: true, attributes: true, attributeFilter: ['open'] });
+
+  // ---- Phone menu: a disclosure, not a modal. Escape closes and returns focus. ----
+  const toggle = $('menu-toggle'), menu = $('mobile-menu');
+  function setMenu(open, focusBack) { menu.hidden = !open; toggle.setAttribute('aria-expanded', String(open)); if (!open && focusBack) toggle.focus(); }
+  toggle.addEventListener('click', () => setMenu(menu.hidden));
+  menu.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) setMenu(false, true); });
+
+  // ---- Cart model ----
+  const coffees = { guji: { name: 'Ethiopia Guji', price: 21 }, huila: { name: 'Colombia Huila', price: 19 }, oak: { name: 'Oak Fire Espresso', price: 18 } };
+  const NEXT = { 2: 'Tue,\u00a0Oct\u00a027', 4: 'Tue,\u00a0Nov\u00a010' };
+  let lines = [], nextId = 1;
+  const FREE_OVER = 40, SHIP = 6;
+  const count = () => lines.filter((l) => !l.removed).reduce((n, l) => n + l.qty, 0);
+  function totals() {
+    const live = lines.filter((l) => !l.removed);
+    const once = live.filter((l) => l.kind === 'once').reduce((s, l) => s + l.price * l.qty, 0);
+    const subs = live.filter((l) => l.kind === 'sub');
+    const subToday = subs.reduce((s, l) => s + l.price, 0);
+    const ship = once === 0 || subs.length || once >= FREE_OVER ? 0 : SHIP;
+    return { once, subs, subToday, ship, today: once + subToday + ship };
+  }
+  // Motion 3: the cart count. The new digit rolls up from below while the old one leaves (up = more); the badge bumps once.
+  // Reduced motion: the digit crossfades in place at --duration-instant.
+  let shown = 0;
+  function setCount(animate) {
+    const n = count(), el = $('cart-n');
+    $('cart-label').textContent = n ? n + (n === 1 ? ' item' : ' items') : 'empty';
+    $('cart-count').classList.toggle('has', n > 0);
+    if (n === shown || !animate) { el.textContent = n; shown = n; return; }
+    const badge = el.parentNode, old = el.cloneNode(true); old.removeAttribute('id'); badge.appendChild(old);
+    const up = n > shown; el.textContent = n; shown = n;
+    if (still.matches) {
+      old.animate([{ opacity: 1 }, { opacity: 0 }], { duration: ms('--duration-instant'), fill: 'forwards' }).finished.then(() => old.remove());
+      el.animate([{ opacity: 0 }, { opacity: 1 }], { duration: ms('--duration-instant') });
+      return;
+    }
+    const d = up ? '-100%' : '100%', f = up ? '100%' : '-100%';
+    old.animate([{ transform: 'none', opacity: 1 }, { transform: 'translateY(' + d + ')', opacity: 0 }], { duration: ms('--duration-fast'), easing: ease('--ease-exit'), fill: 'forwards' }).finished.then(() => old.remove());
+    el.animate([{ transform: 'translateY(' + f + ')', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: ms('--duration-base'), easing: ease('--ease-enter') });
+    badge.animate([{ transform: 'none' }, { transform: 'scale(1.15)' }, { transform: 'none' }], { duration: ms('--duration-base'), easing: ease('--ease-standard') });
+  }
+  const cart = $('cart');
+  function renderCart(animate) {
+    setCount(animate);
+    const t = totals(), n = count();
+    cart.toggleAttribute('data-empty', n === 0 && !lines.some((l) => l.removed));
+    $('cart-meta').textContent = n ? n + (n === 1 ? ' item' : ' items') : 'Nothing in it yet';
+    const subs = lines.filter((l) => l.kind === 'sub'), once = lines.filter((l) => l.kind === 'once'), groups = [];
+    if (subs.length) groups.push(['Every ' + subs[0].every + '\u00a0weeks', subs]);
+    if (once.length) groups.push(['Once', once]);
+    $('cart-groups').innerHTML = groups.map(([title, ls]) => '<section class="cart-group"><h3 class="label">' + title + '</h3><ul>' + ls.map(lineHtml).join('') + '</ul></section>').join('');
+    let dl = '<div><dt>Coffee today</dt><dd>' + money(t.once + t.subToday) + '</dd></div>';
+    dl += '<div><dt>Shipping</dt><dd>' + (t.ship ? money(t.ship) : (t.subs.length && t.once ? 'Free with your subscription' : 'Included')) + '</dd></div>';
+    if (t.ship) dl += '<div class="then"><dt>Free shipping over $40</dt><dd>' + money(FREE_OVER - t.once) + ' to go</dd></div>';
+    dl += '<div class="total"><dt>Due today</dt><dd>' + money(t.today) + '</dd></div>';
+    if (t.subs.length) dl += '<div class="then"><dt>Then every ' + t.subs[0].every + '\u00a0weeks, from ' + NEXT[t.subs[0].every] + '</dt><dd>' + money(t.subToday) + '</dd></div>';
+    $('cart-totals').innerHTML = dl;
+    $('checkout-lbl').textContent = 'Check out, ' + money(t.today);
+  }
+  function lineHtml(l) {
+    if (l.removed) return '<li class="line removed"><span>Removed ' + l.name + '.</span><button class="link-btn" type="button" data-undo="' + l.id + '">Undo</button></li>';
+    const meta = l.brew + (l.kind === 'sub' ? ', every ' + l.every + '\u00a0weeks' : ', 340\u202fg');
+    const amt = l.kind === 'sub' ? money(l.price) + '<small>a delivery</small>' : money(l.price * l.qty) + (l.qty > 1 ? '<small>' + money(l.price) + ' each</small>' : '');
+    const ctrl = l.kind === 'once'
+      ? '<div class="stepper" role="group" aria-label="Bags of ' + l.name + '"><button type="button" data-dec="' + l.id + '" aria-label="One bag fewer"' + (l.qty === 1 ? ' aria-disabled="true"' : '') + '>' + ICON.minus + '</button><output aria-live="polite">' + l.qty + '</output><button type="button" data-inc="' + l.id + '" aria-label="One bag more">' + ICON.plus + '</button></div>'
+      : '<span class="renew">Skip, pause or cancel online</span>';
+    return '<li class="line">' + THUMB + '<div><p class="nm">' + l.name + '</p><p class="meta">' + meta + '</p></div><p class="amt num">' + amt + '</p>' +
+      '<div class="ctrl">' + ctrl + '<button class="link-btn" type="button" data-remove="' + l.id + '">Remove<span class="sr-only"> ' + l.name + '</span></button></div></li>';
+  }
+  $('cart-groups').addEventListener('click', (e) => {
+    const b = e.target.closest('button'); if (!b) return;
+    const id = +(b.dataset.remove || b.dataset.undo || b.dataset.inc || b.dataset.dec);
+    const l = lines.find((x) => x.id === id); if (!l) return;
+    if (b.dataset.remove) { l.removed = true; renderCart(true); say('Removed ' + l.name + '. Undo is next to it.'); cart.querySelector('[data-undo="' + id + '"]').focus(); }
+    else if (b.dataset.undo) { l.removed = false; renderCart(true); say(l.name + ' is back in your cart.'); cart.querySelector('[data-remove="' + id + '"]').focus(); }
+    else if (b.dataset.inc) { l.qty++; renderCart(true); cart.querySelector('[data-inc="' + id + '"]').focus(); say(l.qty + ' bags of ' + l.name + '. Due today ' + money(totals().today) + '.'); }
+    else if (b.dataset.dec && l.qty > 1) { l.qty--; renderCart(true); cart.querySelector('[data-dec="' + id + '"]').focus(); say(l.qty + (l.qty === 1 ? ' bag of ' : ' bags of ') + l.name + '.'); }
+  });
+  function openCart(opener, animate) {
+    renderCart(animate); cart._opener = opener || document.activeElement;
+    if (!cart.open) cart.showModal();
+    $('cart-title').focus();
+  }
+  $('cart-link').addEventListener('click', (e) => { e.preventDefault(); setMenu(false); openCart($('cart-link')); });
+  cart.addEventListener('close', () => { lines = lines.filter((l) => !l.removed); setCount(false); const o = cart._opener; if (o && document.contains(o) && !$('checkout').open) o.focus(); });
+  document.querySelectorAll('dialog [data-close]').forEach((b) => b.addEventListener('click', () => b.closest('dialog').close()));
+  cart.querySelector('[data-close-link]').addEventListener('click', () => cart.close());
+
+  // ---- Checkout: the summary is the cart; Pay names the amount; the term line restates the renewal. ----
+  const co = $('checkout'), coForm = $('co-form'), coEmail = $('co-email'), coErr = $('co-email-error');
+  function renderCheckout() {
+    const t = totals(), live = lines.filter((l) => !l.removed);
+    $('co-sub').textContent = live.map((l) => l.kind === 'sub' ? l.name + ' every ' + l.every + '\u00a0weeks' : (l.qty === 1 ? 'one bag of ' : l.qty + ' bags of ') + l.name).join(', and ').replace(/^./, (c) => c.toUpperCase());
+    let dl = live.map((l) => '<div><dt>' + (l.kind === 'sub' ? l.name + ', every ' + l.every + '\u00a0weeks' : l.name + (l.qty > 1 ? ' × ' + l.qty : '')) + '</dt><dd>' + money(l.kind === 'sub' ? l.price : l.price * l.qty) + '</dd></div>').join('');
+    dl += '<div><dt>Shipping</dt><dd>' + (t.ship ? money(t.ship) : 'Free') + '</dd></div><div><dt>Tax (Oregon has no sales tax)</dt><dd>$0.00</dd></div>';
+    dl += '<div class="total"><dt>Due today</dt><dd>' + money(t.today) + '</dd></div>';
+    $('co-lines').innerHTML = dl;
+    $('co-term').innerHTML = t.subs.length ? 'Then <b>' + money(t.subToday).replace('.00', '') + ' every ' + t.subs[0].every + '\u00a0weeks</b>, next on ' + NEXT[t.subs[0].every] + '. Skip, pause or cancel online any time before a roast.' : 'One order, no renewal.';
+    $('co-pay-lbl').textContent = 'Pay ' + money(t.today);
+  }
+  function openCheckout() { renderCheckout(); if (cart.open) cart.close(); co.showModal(); $('co-title').focus(); }
+  $('checkout-btn').addEventListener('click', openCheckout);
+  co.addEventListener('close', () => { if (document.contains($('cart-link'))) $('cart-link').focus(); });
+  $('co-add-line2').addEventListener('click', (e) => { $('co-line2-fld').hidden = false; e.currentTarget.setAttribute('aria-expanded', 'true'); e.currentTarget.hidden = true; $('co-line2').focus(); });
+  const emailOk = () => /\S+@\S+\.\S+/.test(coEmail.value);
+  const coShowError = () => { coEmail.setAttribute('aria-invalid', 'true'); coErr.hidden = false; };
+  coEmail.addEventListener('blur', () => { if (coEmail.value && !emailOk()) coShowError(); });
+  coEmail.addEventListener('input', () => { if (emailOk()) { coEmail.removeAttribute('aria-invalid'); coErr.hidden = true; } });
+  coForm.addEventListener('submit', (e) => { e.preventDefault(); if (!emailOk()) { coShowError(); coEmail.focus(); return; } const p = $('co-pay'); p.setAttribute('aria-busy', 'true'); p.setAttribute('aria-disabled', 'true'); say('Paying ' + money(totals().today) + '.'); });
+
+  // ---- Quick add: asks the one question with no safe default (the grind) and remembers the answer. ----
+  const quick = $('quick'), qForm = $('quick-form');
+  let qCoffee = 'guji', qQty = 1, usual = null;
+  try { usual = localStorage.getItem('eo-brew'); } catch (e) { /* private mode: no memory, still works */ }
+  function qLabel() { const c = coffees[qCoffee]; $('q-add').textContent = qQty === 1 ? 'Add to cart, $' + c.price : 'Add ' + qQty + ' bags, $' + c.price * qQty; }
+  function openQuick(id, opener) {
+    qCoffee = id; qQty = 1; quick._opener = opener;
+    const c = coffees[id];
+    $('q-title').textContent = c.name;
+    $('q-meta').innerHTML = '$' + c.price + ' a bag, <span class="unit">340\u202fg</span>. Roasted Tue,\u00a0Oct\u00a013, ships by Thu,\u00a0Oct\u00a015.';
+    $('q-qty').textContent = '1'; $('q-minus').setAttribute('aria-disabled', 'true');
+    clearError('q-brew', 'q-error');
+    qForm.querySelectorAll('input[name=qbrew]').forEach((r) => { r.checked = r.value === usual; r.closest('.opt').querySelector('.usual').hidden = r.value !== usual; });
+    if (cart.open) cart.close();
+    quick.showModal();
+    const pre = qForm.querySelector('input[name=qbrew]:checked');
+    (pre ? $('q-add') : $('q-title')).focus();
+    qLabel();
+  }
+  quick.addEventListener('close', () => { if (quick._opener && document.contains(quick._opener) && !cart.open) quick._opener.focus(); });
+  $('q-plus').addEventListener('click', () => { qQty = Math.min(qQty + 1, 12); $('q-qty').textContent = qQty; $('q-minus').removeAttribute('aria-disabled'); qLabel(); });
+  $('q-minus').addEventListener('click', () => { if (qQty === 1) return; qQty--; $('q-qty').textContent = qQty; if (qQty === 1) $('q-minus').setAttribute('aria-disabled', 'true'); qLabel(); });
+  document.querySelectorAll('[data-quick]').forEach((b) => b.addEventListener('click', (e) => { e.preventDefault(); openQuick(b.dataset.quick, b); }));
+  function showError(groupId, errId, review) { const g = $(groupId); g.classList.add('invalid'); $(errId).hidden = false; g.querySelector('input').focus({ preventScroll: !!review }); }
+  function clearError(groupId, errId) { $(groupId).classList.remove('invalid'); $(errId).hidden = true; }
+  qForm.addEventListener('change', (e) => { if (e.target.name === 'qbrew') clearError('q-brew', 'q-error'); });
+  qForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const brew = qForm.querySelector('input[name=qbrew]:checked');
+    if (!brew) { showError('q-brew', 'q-error'); return; }
+    remember(brew.value);
+    const c = coffees[qCoffee];
+    const same = lines.find((l) => l.kind === 'once' && l.coffee === qCoffee && l.brew === brew.dataset.name && !l.removed);
+    if (same) same.qty += qQty; else lines.push({ id: nextId++, kind: 'once', coffee: qCoffee, name: c.name, brew: brew.dataset.name, price: c.price, qty: qQty });
+    const opener = quick._opener; quick._opener = null; quick.close();
+    openCart(opener, true);
+    say('Added ' + c.name + ', ' + brew.dataset.name.toLowerCase() + '. ' + count() + ' items, due today ' + money(totals().today) + '.');
+  });
+  function remember(v) { usual = v; try { localStorage.setItem('eo-brew', v); } catch (e) { /* no memory */ } }
+
+  // ---- Subscription slip: the button is the summary, the term line restates it, the brew question has no default. ----
+  const sub = $('sub-form');
+  function subValues() {
+    const c = sub.querySelector('input[name=coffee]:checked'), b = sub.querySelector('input[name=brew]:checked'), ev = sub.querySelector('input[name=every]:checked');
+    return { c, b, every: +ev.value, price: +c.dataset.price };
+  }
+  function subLabel() {
+    const v = subValues();
+    $('sub-btn').textContent = 'Subscribe, $' + v.price + ' every ' + v.every + '\u00a0weeks';
+    $('sub-terms').innerHTML = '<b>$' + v.price + ' every ' + v.every + '\u00a0weeks</b>, charged on roast day. First roast Tue,\u00a0Oct\u00a013; next charge ' + NEXT[v.every] + '. Skip, pause or cancel online any time before a roast.';
+  }
+  sub.addEventListener('change', (e) => { subLabel(); if (e.target.name === 'brew') clearError('g-brew', 'brew-error'); });
+  sub.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const v = subValues();
+    if (!v.b) { showError('g-brew', 'brew-error'); return; }
+    remember(v.b.value);
+    lines = lines.filter((l) => l.kind !== 'sub');
+    lines.unshift({ id: nextId++, kind: 'sub', name: v.c.dataset.name, brew: v.b.dataset.name, every: v.every, price: v.price, qty: 1 });
+    openCart($('sub-btn'), true);
+    say('Added a subscription: ' + v.c.dataset.name + ', every ' + v.every + '\u00a0weeks, $' + v.price + ' a delivery.');
+  });
+  subLabel();
+
+  // ---- The letters ----
+  const form = $('news'), email = $('email'), btn = $('news-btn'), err = $('email-error'), ok = $('news-ok');
+  const valid = () => email.validity.valid && /\S+@\S+\.\S+/.test(email.value);
+  function newsError() { email.setAttribute('aria-invalid', 'true'); err.hidden = false; }
+  function done(addr) { form.setAttribute('data-done', ''); ok.innerHTML = ICON.check + '<span>You’re on the list. The first letter goes to ' + addr.replace(/[<>&]/g, '') + ' on Thu,\u00a0Oct\u00a022.</span>'; }
+  email.addEventListener('input', () => { if (valid()) { email.removeAttribute('aria-invalid'); err.hidden = true; } });
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!valid()) { newsError(); email.focus(); return; }
+    btn.setAttribute('aria-busy', 'true'); btn.setAttribute('aria-disabled', 'true');
+    setTimeout(() => { btn.removeAttribute('aria-busy'); btn.removeAttribute('aria-disabled'); done(email.value); }, 900);
+  });
+
+  // ---- Review states by URL ----
+  const seed = () => { lines = [
+    { id: nextId++, kind: 'sub', name: 'Roaster’s choice', brew: 'Pour-over', every: 2, price: 18, qty: 1 },
+    { id: nextId++, kind: 'once', coffee: 'guji', name: 'Ethiopia Guji', brew: 'Pour-over', price: 21, qty: 1 } ]; };
+  if (state === 'menu') setMenu(true);
+  if (state === 'quick') { usual = 'pourover'; openQuick('guji', document.querySelector('.lot [data-quick]')); }
+  if (state === 'sub-error') { $('g-brew').classList.add('invalid'); $('brew-error').hidden = false; } // review render: the error shows, focus stays put
+  if (state === 'plan-4') { sub.querySelector('input[name=every][value="4"]').checked = true; sub.querySelector('input[name=brew][value="moka"]').checked = true; sub.querySelector('input[name=coffee][value="huila"]').checked = true; subLabel(); }
+  if (state === 'cart' || state === 'added') { seed(); openCart($('cart-link')); }
+  if (state === 'cart-empty') openCart($('cart-link'));
+  if (state === 'removed') { seed(); lines.push({ id: nextId++, kind: 'once', coffee: 'huila', name: 'Colombia Huila', brew: 'Pour-over', price: 19, qty: 1, removed: true }); openCart($('cart-link')); }
+  if (state === 'checkout' || state === 'checkout-error') {
+    seed(); setCount(false);
+    coEmail.value = state === 'checkout-error' ? 'dana@' : 'dana@example.com';
+    $('co-name').value = 'Dana Whitfield'; $('co-street').value = '2231 SE Belmont St'; $('co-city').value = 'Portland'; $('co-zip').value = '97214';
+    openCheckout();
+    if (state === 'checkout-error') coShowError();
+  }
+  if (state === 'error') { email.value = 'dana@'; newsError(); }
+  if (state === 'sending') { email.value = 'dana@example.com'; btn.setAttribute('aria-busy', 'true'); btn.setAttribute('aria-disabled', 'true'); }
+  if (state === 'subscribed') done('dana@example.com');
+  setCount(false);
+
+  // ---- Motion 1 and 2 run once, on first view. Without IntersectionObserver, or under reduced motion, all is drawn at once. ----
+  const curve = document.querySelector('figure.curve'), tiles = document.querySelectorAll('.tile');
+  function rise(tile) {
+    const ls = [...tile.querySelectorAll('.c')];
+    const levels = Math.max(...ls.map((l) => +l.dataset.level)) || 1;
+    const step = Math.min(40, 300 / levels); // the last level starts within 300 ms
+    tile.classList.add('seen');
+    ls.forEach((l) => l.animate([{ opacity: 0 }, { opacity: 1 }], { duration: ms('--duration-base'), delay: +l.dataset.level * step, easing: ease('--ease-enter'), fill: 'backwards' }));
+  }
+  if ('IntersectionObserver' in window && !still.matches) {
+    const io = new IntersectionObserver((es) => es.forEach((e) => {
+      if (!e.isIntersecting) return;
+      if (e.target === curve) curve.classList.add('seen'); else rise(e.target);
+      io.unobserve(e.target);
+    }), { threshold: 0.4 });
+    io.observe(curve); tiles.forEach((t) => io.observe(t));
+  } else { curve.classList.add('seen'); tiles.forEach((t) => t.classList.add('seen')); }
+})();
+</script>
+</body>
+</html>

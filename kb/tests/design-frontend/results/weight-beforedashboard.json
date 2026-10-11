@@ -1,0 +1,52 @@
+{
+  "file": "kb/tests/design-frontend/before/dashboard.html",
+  "total": {
+    "raw": 110876,
+    "gzip": 47227,
+    "br": 43734
+  },
+  "parts": [
+    {
+      "part": "fonts",
+      "raw": 37470,
+      "gzip": 28253
+    },
+    {
+      "part": "dataUrls",
+      "raw": 0,
+      "gzip": 0
+    },
+    {
+      "part": "css",
+      "raw": 36035,
+      "gzip": 8095
+    },
+    {
+      "part": "svg",
+      "raw": 7238,
+      "gzip": 1292
+    },
+    {
+      "part": "script",
+      "raw": 16602,
+      "gzip": 5522
+    },
+    {
+      "part": "html",
+      "raw": 13536,
+      "gzip": 3440
+    }
+  ],
+  "critical": {
+    "beforePaint": {
+      "raw": 73712,
+      "gzip": 37376,
+      "br": 35235
+    },
+    "beforeLcp": {
+      "raw": 80217,
+      "gzip": 39000,
+      "br": 36617
+    }
+  }
+}

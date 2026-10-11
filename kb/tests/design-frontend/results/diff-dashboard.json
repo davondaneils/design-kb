@@ -1,0 +1,1223 @@
+{
+  "before": "kb/tests/design-frontend/before/dashboard.html",
+  "after": "kb/tests/design-frontend/dashboard.html",
+  "tolerance": 0,
+  "results": [
+    {
+      "name": "dashboard-390-light",
+      "query": "",
+      "scheme": "light",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        1954
+      ],
+      "sizeAfter": [
+        390,
+        1954
+      ],
+      "pixels": 762060,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-768-light",
+      "query": "",
+      "scheme": "light",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        1692
+      ],
+      "sizeAfter": [
+        768,
+        1692
+      ],
+      "pixels": 1299456,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-1024-light",
+      "query": "",
+      "scheme": "light",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        1520
+      ],
+      "sizeAfter": [
+        1024,
+        1520
+      ],
+      "pixels": 1556480,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-1440-light",
+      "query": "",
+      "scheme": "light",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        1029
+      ],
+      "sizeAfter": [
+        1440,
+        1029
+      ],
+      "pixels": 1481760,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-390-dark",
+      "query": "",
+      "scheme": "dark",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        1954
+      ],
+      "sizeAfter": [
+        390,
+        1954
+      ],
+      "pixels": 762060,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-768-dark",
+      "query": "",
+      "scheme": "dark",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        1692
+      ],
+      "sizeAfter": [
+        768,
+        1692
+      ],
+      "pixels": 1299456,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-1024-dark",
+      "query": "",
+      "scheme": "dark",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        1520
+      ],
+      "sizeAfter": [
+        1024,
+        1520
+      ],
+      "pixels": 1556480,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-1440-dark",
+      "query": "",
+      "scheme": "dark",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        1029
+      ],
+      "sizeAfter": [
+        1440,
+        1029
+      ],
+      "pixels": 1481760,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-loading-390-light",
+      "query": "?state=loading",
+      "scheme": "light",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        1152
+      ],
+      "sizeAfter": [
+        390,
+        1152
+      ],
+      "pixels": 449280,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-loading-768-light",
+      "query": "?state=loading",
+      "scheme": "light",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        1152
+      ],
+      "sizeAfter": [
+        768,
+        1152
+      ],
+      "pixels": 884736,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-loading-1024-light",
+      "query": "?state=loading",
+      "scheme": "light",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        1040
+      ],
+      "sizeAfter": [
+        1024,
+        1040
+      ],
+      "pixels": 1064960,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-loading-1440-light",
+      "query": "?state=loading",
+      "scheme": "light",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        901
+      ],
+      "sizeAfter": [
+        1440,
+        901
+      ],
+      "pixels": 1297440,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-loading-390-dark",
+      "query": "?state=loading",
+      "scheme": "dark",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        1152
+      ],
+      "sizeAfter": [
+        390,
+        1152
+      ],
+      "pixels": 449280,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-loading-768-dark",
+      "query": "?state=loading",
+      "scheme": "dark",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        1152
+      ],
+      "sizeAfter": [
+        768,
+        1152
+      ],
+      "pixels": 884736,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-loading-1024-dark",
+      "query": "?state=loading",
+      "scheme": "dark",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        1040
+      ],
+      "sizeAfter": [
+        1024,
+        1040
+      ],
+      "pixels": 1064960,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-loading-1440-dark",
+      "query": "?state=loading",
+      "scheme": "dark",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        901
+      ],
+      "sizeAfter": [
+        1440,
+        901
+      ],
+      "pixels": 1297440,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-empty-390-light",
+      "query": "?state=empty",
+      "scheme": "light",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        1282
+      ],
+      "sizeAfter": [
+        390,
+        1282
+      ],
+      "pixels": 499980,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-empty-768-light",
+      "query": "?state=empty",
+      "scheme": "light",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        1276
+      ],
+      "sizeAfter": [
+        768,
+        1276
+      ],
+      "pixels": 979968,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-empty-1024-light",
+      "query": "?state=empty",
+      "scheme": "light",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        1149
+      ],
+      "sizeAfter": [
+        1024,
+        1149
+      ],
+      "pixels": 1176576,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-empty-1440-light",
+      "query": "?state=empty",
+      "scheme": "light",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        901
+      ],
+      "sizeAfter": [
+        1440,
+        901
+      ],
+      "pixels": 1297440,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-empty-390-dark",
+      "query": "?state=empty",
+      "scheme": "dark",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        1282
+      ],
+      "sizeAfter": [
+        390,
+        1282
+      ],
+      "pixels": 499980,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-empty-768-dark",
+      "query": "?state=empty",
+      "scheme": "dark",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        1276
+      ],
+      "sizeAfter": [
+        768,
+        1276
+      ],
+      "pixels": 979968,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-empty-1024-dark",
+      "query": "?state=empty",
+      "scheme": "dark",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        1149
+      ],
+      "sizeAfter": [
+        1024,
+        1149
+      ],
+      "pixels": 1176576,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-empty-1440-dark",
+      "query": "?state=empty",
+      "scheme": "dark",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        901
+      ],
+      "sizeAfter": [
+        1440,
+        901
+      ],
+      "pixels": 1297440,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-partial-390-light",
+      "query": "?state=partial",
+      "scheme": "light",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        1759
+      ],
+      "sizeAfter": [
+        390,
+        1759
+      ],
+      "pixels": 686010,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-partial-768-light",
+      "query": "?state=partial",
+      "scheme": "light",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        1648
+      ],
+      "sizeAfter": [
+        768,
+        1648
+      ],
+      "pixels": 1265664,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-partial-1024-light",
+      "query": "?state=partial",
+      "scheme": "light",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        1476
+      ],
+      "sizeAfter": [
+        1024,
+        1476
+      ],
+      "pixels": 1511424,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-partial-1440-light",
+      "query": "?state=partial",
+      "scheme": "light",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        1003
+      ],
+      "sizeAfter": [
+        1440,
+        1003
+      ],
+      "pixels": 1444320,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-partial-390-dark",
+      "query": "?state=partial",
+      "scheme": "dark",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        1759
+      ],
+      "sizeAfter": [
+        390,
+        1759
+      ],
+      "pixels": 686010,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-partial-768-dark",
+      "query": "?state=partial",
+      "scheme": "dark",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        1648
+      ],
+      "sizeAfter": [
+        768,
+        1648
+      ],
+      "pixels": 1265664,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-partial-1024-dark",
+      "query": "?state=partial",
+      "scheme": "dark",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        1476
+      ],
+      "sizeAfter": [
+        1024,
+        1476
+      ],
+      "pixels": 1511424,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-partial-1440-dark",
+      "query": "?state=partial",
+      "scheme": "dark",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        1003
+      ],
+      "sizeAfter": [
+        1440,
+        1003
+      ],
+      "pixels": 1444320,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-viewer-390-light",
+      "query": "?state=viewer",
+      "scheme": "light",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        1954
+      ],
+      "sizeAfter": [
+        390,
+        1954
+      ],
+      "pixels": 762060,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-viewer-768-light",
+      "query": "?state=viewer",
+      "scheme": "light",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        1692
+      ],
+      "sizeAfter": [
+        768,
+        1692
+      ],
+      "pixels": 1299456,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-viewer-1024-light",
+      "query": "?state=viewer",
+      "scheme": "light",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        1520
+      ],
+      "sizeAfter": [
+        1024,
+        1520
+      ],
+      "pixels": 1556480,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-viewer-1440-light",
+      "query": "?state=viewer",
+      "scheme": "light",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        1029
+      ],
+      "sizeAfter": [
+        1440,
+        1029
+      ],
+      "pixels": 1481760,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-viewer-390-dark",
+      "query": "?state=viewer",
+      "scheme": "dark",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        1954
+      ],
+      "sizeAfter": [
+        390,
+        1954
+      ],
+      "pixels": 762060,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-viewer-768-dark",
+      "query": "?state=viewer",
+      "scheme": "dark",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        1692
+      ],
+      "sizeAfter": [
+        768,
+        1692
+      ],
+      "pixels": 1299456,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-viewer-1024-dark",
+      "query": "?state=viewer",
+      "scheme": "dark",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        1520
+      ],
+      "sizeAfter": [
+        1024,
+        1520
+      ],
+      "pixels": 1556480,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-state-viewer-1440-dark",
+      "query": "?state=viewer",
+      "scheme": "dark",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        1029
+      ],
+      "sizeAfter": [
+        1440,
+        1029
+      ],
+      "pixels": 1481760,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-density-compact-390-light",
+      "query": "?density=compact",
+      "scheme": "light",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        1882
+      ],
+      "sizeAfter": [
+        390,
+        1882
+      ],
+      "pixels": 733980,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-density-compact-768-light",
+      "query": "?density=compact",
+      "scheme": "light",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        1556
+      ],
+      "sizeAfter": [
+        768,
+        1556
+      ],
+      "pixels": 1195008,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-density-compact-1024-light",
+      "query": "?density=compact",
+      "scheme": "light",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        1392
+      ],
+      "sizeAfter": [
+        1024,
+        1392
+      ],
+      "pixels": 1425408,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-density-compact-1440-light",
+      "query": "?density=compact",
+      "scheme": "light",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        939
+      ],
+      "sizeAfter": [
+        1440,
+        939
+      ],
+      "pixels": 1352160,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-density-compact-390-dark",
+      "query": "?density=compact",
+      "scheme": "dark",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        1882
+      ],
+      "sizeAfter": [
+        390,
+        1882
+      ],
+      "pixels": 733980,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-density-compact-768-dark",
+      "query": "?density=compact",
+      "scheme": "dark",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        1556
+      ],
+      "sizeAfter": [
+        768,
+        1556
+      ],
+      "pixels": 1195008,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-density-compact-1024-dark",
+      "query": "?density=compact",
+      "scheme": "dark",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        1392
+      ],
+      "sizeAfter": [
+        1024,
+        1392
+      ],
+      "pixels": 1425408,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-density-compact-1440-dark",
+      "query": "?density=compact",
+      "scheme": "dark",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        939
+      ],
+      "sizeAfter": [
+        1440,
+        939
+      ],
+      "pixels": 1352160,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-open-palette-390-light",
+      "query": "?open=palette",
+      "scheme": "light",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        1954
+      ],
+      "sizeAfter": [
+        390,
+        1954
+      ],
+      "pixels": 762060,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-open-palette-768-light",
+      "query": "?open=palette",
+      "scheme": "light",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        1692
+      ],
+      "sizeAfter": [
+        768,
+        1692
+      ],
+      "pixels": 1299456,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-open-palette-1024-light",
+      "query": "?open=palette",
+      "scheme": "light",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        1520
+      ],
+      "sizeAfter": [
+        1024,
+        1520
+      ],
+      "pixels": 1556480,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-open-palette-1440-light",
+      "query": "?open=palette",
+      "scheme": "light",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        1029
+      ],
+      "sizeAfter": [
+        1440,
+        1029
+      ],
+      "pixels": 1481760,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-open-palette-390-dark",
+      "query": "?open=palette",
+      "scheme": "dark",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        1954
+      ],
+      "sizeAfter": [
+        390,
+        1954
+      ],
+      "pixels": 762060,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-open-palette-768-dark",
+      "query": "?open=palette",
+      "scheme": "dark",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        1692
+      ],
+      "sizeAfter": [
+        768,
+        1692
+      ],
+      "pixels": 1299456,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-open-palette-1024-dark",
+      "query": "?open=palette",
+      "scheme": "dark",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        1520
+      ],
+      "sizeAfter": [
+        1024,
+        1520
+      ],
+      "pixels": 1556480,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-open-palette-1440-dark",
+      "query": "?open=palette",
+      "scheme": "dark",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        1029
+      ],
+      "sizeAfter": [
+        1440,
+        1029
+      ],
+      "pixels": 1481760,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-open-sheet-390-light",
+      "query": "?open=sheet",
+      "scheme": "light",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        1954
+      ],
+      "sizeAfter": [
+        390,
+        1954
+      ],
+      "pixels": 762060,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-open-sheet-768-light",
+      "query": "?open=sheet",
+      "scheme": "light",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        1692
+      ],
+      "sizeAfter": [
+        768,
+        1692
+      ],
+      "pixels": 1299456,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-open-sheet-1024-light",
+      "query": "?open=sheet",
+      "scheme": "light",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        1520
+      ],
+      "sizeAfter": [
+        1024,
+        1520
+      ],
+      "pixels": 1556480,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-open-sheet-1440-light",
+      "query": "?open=sheet",
+      "scheme": "light",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        1029
+      ],
+      "sizeAfter": [
+        1440,
+        1029
+      ],
+      "pixels": 1481760,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-open-sheet-390-dark",
+      "query": "?open=sheet",
+      "scheme": "dark",
+      "width": 390,
+      "sizeBefore": [
+        390,
+        1954
+      ],
+      "sizeAfter": [
+        390,
+        1954
+      ],
+      "pixels": 762060,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-open-sheet-768-dark",
+      "query": "?open=sheet",
+      "scheme": "dark",
+      "width": 768,
+      "sizeBefore": [
+        768,
+        1692
+      ],
+      "sizeAfter": [
+        768,
+        1692
+      ],
+      "pixels": 1299456,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-open-sheet-1024-dark",
+      "query": "?open=sheet",
+      "scheme": "dark",
+      "width": 1024,
+      "sizeBefore": [
+        1024,
+        1520
+      ],
+      "sizeAfter": [
+        1024,
+        1520
+      ],
+      "pixels": 1556480,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    },
+    {
+      "name": "dashboard-open-sheet-1440-dark",
+      "query": "?open=sheet",
+      "scheme": "dark",
+      "width": 1440,
+      "sizeBefore": [
+        1440,
+        1029
+      ],
+      "sizeAfter": [
+        1440,
+        1029
+      ],
+      "pixels": 1481760,
+      "diffPixels": 0,
+      "maxDelta": 0,
+      "rows": null,
+      "identical": true
+    }
+  ]
+}

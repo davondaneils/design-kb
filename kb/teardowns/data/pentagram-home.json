@@ -1,0 +1,1403 @@
+{
+ "url": "https://www.pentagram.com",
+ "measuredAt": "2026-10-10T16:59:12.604Z",
+ "method": "Playwright Chromium, getComputedStyle on visible elements, light scheme, after scroll-through and fonts.ready",
+ "widths": {
+  "390": {
+   "status": 200,
+   "finalUrl": "https://www.pentagram.com/",
+   "width": 390,
+   "h1Style": {
+    "font": "Plain 17px/25px w500 ls normal",
+    "color": "#1a1a1a",
+    "top": 18,
+    "width": 103,
+    "align": "start"
+   },
+   "title": "Pentagram — The world’s largest independent design consultancy",
+   "description": "Pentagram is the world’s largest independent design consultancy. The firm is owned and run by 24 partners, each of whom are leaders in their individual fields.",
+   "pageHeight": 34640,
+   "bodyBg": "#000000 a0",
+   "htmlBg": "#ffffff",
+   "fontsLoaded": [
+    "Plain 400 normal"
+   ],
+   "families": [
+    {
+     "v": "Plain, Arial",
+     "n": 17902
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "16px / lh 20px / w400 / ls normal",
+     "n": 13411,
+     "ex": "p: We use cookies to enhance your browsing experience, serve pe"
+    },
+    {
+     "v": "13px / lh 16.25px / w400 / ls normal",
+     "n": 3583,
+     "ex": "span: Brand identity framework for a company that creates innovati"
+    },
+    {
+     "v": "24px / lh 28.8px / w400 / ls -0.24px",
+     "n": 493,
+     "ex": "p: Design is about making choices. Sometimes the best solution "
+    },
+    {
+     "v": "36px / lh 37.8px / w400 / ls -0.36px",
+     "n": 198,
+     "ex": "h3: The Secret Life of Things"
+    },
+    {
+     "v": "16px / lh 16px / w400 / ls normal",
+     "n": 116,
+     "ex": "span: Brand Identity"
+    },
+    {
+     "v": "16px / lh 20px / w500 / ls normal",
+     "n": 62,
+     "ex": "h3: News"
+    },
+    {
+     "v": "18px / lh 24px / w700 / ls normal",
+     "n": 21,
+     "ex": "p: We value your privacy"
+    },
+    {
+     "v": "17px / lh 25px / w500 / ls normal",
+     "n": 9,
+     "ex": "span: Pentagram"
+    },
+    {
+     "v": "24px / lh 60px / w400 / ls -0.24px",
+     "n": 9,
+     "ex": "button: Subscribe"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#767676",
+     "n": 6016
+    },
+    {
+     "v": "#ffffff a0.56",
+     "n": 4063
+    },
+    {
+     "v": "#8c8c8c",
+     "n": 2488
+    },
+    {
+     "v": "#ffffff",
+     "n": 2267
+    },
+    {
+     "v": "#1a1a1a",
+     "n": 1919
+    },
+    {
+     "v": "#000000 a0.56",
+     "n": 1129
+    },
+    {
+     "v": "#000000",
+     "n": 20
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#767676 on #ffffff",
+     "n": 6016,
+     "ex": "4.54:1"
+    },
+    {
+     "v": "#ffffff a0.56 on #222222",
+     "n": 4045,
+     "ex": "5.92:1"
+    },
+    {
+     "v": "#8c8c8c on #000000",
+     "n": 2479,
+     "ex": "6.25:1"
+    },
+    {
+     "v": "#1a1a1a on #ffffff",
+     "n": 1385,
+     "ex": "17.4:1"
+    },
+    {
+     "v": "#000000 a0.56 on #ffffff",
+     "n": 1129,
+     "ex": "4.94:1"
+    },
+    {
+     "v": "#ffffff on #000000",
+     "n": 1038,
+     "ex": "21:1"
+    },
+    {
+     "v": "#ffffff on #222222",
+     "n": 799,
+     "ex": "15.91:1"
+    },
+    {
+     "v": "#1a1a1a on #e8e8e8",
+     "n": 534,
+     "ex": "14.2:1"
+    },
+    {
+     "v": "#ffffff on #e3e4e5",
+     "n": 228,
+     "ex": "1.27:1"
+    },
+    {
+     "v": "#ffffff on #282828",
+     "n": 202,
+     "ex": "14.74:1"
+    },
+    {
+     "v": "#000000 on #ffffff",
+     "n": 20,
+     "ex": "21:1"
+    },
+    {
+     "v": "#ffffff a0.56 on #000000",
+     "n": 18,
+     "ex": "6.48:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#ffffff",
+     "n": 14673
+    },
+    {
+     "v": "#222222",
+     "n": 2327
+    },
+    {
+     "v": "#000000",
+     "n": 2172
+    },
+    {
+     "v": "#000000 a0.07",
+     "n": 279
+    },
+    {
+     "v": "#e3e4e5",
+     "n": 203
+    },
+    {
+     "v": "#282828 a0.75",
+     "n": 102
+    },
+    {
+     "v": "#e8e8e8 a0.8",
+     "n": 19
+    },
+    {
+     "v": "#ffffff a0.12",
+     "n": 18
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #ffffff",
+     "n": 3
+    },
+    {
+     "v": "1px #333333",
+     "n": 3
+    }
+   ],
+   "radii": [
+    {
+     "v": "4px",
+     "n": 151,
+     "ex": "button.cky-btn cky-btn-customize"
+    },
+    {
+     "v": "8px",
+     "n": 6,
+     "ex": "div.bg-inverse p-outer-gutter roun"
+    },
+    {
+     "v": "20px",
+     "n": 2,
+     "ex": "div.cky-consent-container cky-box-"
+    }
+   ],
+   "shadows": [],
+   "transitions": [
+    {
+     "v": "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 88,
+     "ex": "img"
+    },
+    {
+     "v": "opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 16,
+     "ex": "video"
+    },
+    {
+     "v": "all 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 11,
+     "ex": "img"
+    },
+    {
+     "v": "transform, opacity 0.4s, 0.4s ease-in-out, ease-in-out",
+     "n": 4,
+     "ex": "div"
+    },
+    {
+     "v": "background-color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 3,
+     "ex": "button"
+    },
+    {
+     "v": "transform 0.5s cubic-bezier(0.59, 0.01, 0.28, 1)",
+     "n": 1,
+     "ex": "main"
+    },
+    {
+     "v": "top, bottom 0.3s, 0.3s ease-in-out, ease-in-out",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "border-radius 0.4s ease",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "animations": [],
+   "maxWidths": [
+    {
+     "v": "100% (rendered 366px)",
+     "n": 42,
+     "ex": "video"
+    },
+    {
+     "v": "100% (rendered 390px)",
+     "n": 16,
+     "ex": "img"
+    },
+    {
+     "v": "100% (rendered 165px)",
+     "n": 16,
+     "ex": "img"
+    },
+    {
+     "v": "100% (rendered 321px)",
+     "n": 9,
+     "ex": "img"
+    },
+    {
+     "v": "100% (rendered 300px)",
+     "n": 7,
+     "ex": "video"
+    },
+    {
+     "v": "100% (rendered 320px)",
+     "n": 3,
+     "ex": "img"
+    },
+    {
+     "v": "calc(100% - 20px) (rendered 370px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "1728px (rendered 390px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 354px)",
+     "n": 1,
+     "ex": "img"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 24px pb 0px",
+     "n": 3
+    },
+    {
+     "v": "pt 0px pb 0px",
+     "n": 2
+    }
+   ],
+   "gaps": [
+    {
+     "v": "8px",
+     "n": 66
+    },
+    {
+     "v": "12px",
+     "n": 17
+    },
+    {
+     "v": "48px / col 12px",
+     "n": 16
+    },
+    {
+     "v": "48px",
+     "n": 5
+    },
+    {
+     "v": "32px / col 12px",
+     "n": 4
+    },
+    {
+     "v": "16px / col normal",
+     "n": 2
+    },
+    {
+     "v": "16px / col 24px",
+     "n": 2
+    },
+    {
+     "v": "48px / col normal",
+     "n": 1
+    },
+    {
+     "v": "24px / col normal",
+     "n": 1
+    },
+    {
+     "v": "4px / col normal",
+     "n": 1
+    },
+    {
+     "v": "12px / col normal",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "4px",
+     "n": 293
+    },
+    {
+     "v": "8px",
+     "n": 229
+    },
+    {
+     "v": "12px",
+     "n": 28
+    },
+    {
+     "v": "24px",
+     "n": 11
+    },
+    {
+     "v": "32px",
+     "n": 11
+    },
+    {
+     "v": "48px",
+     "n": 11
+    },
+    {
+     "v": "9px",
+     "n": 10
+    },
+    {
+     "v": "16px",
+     "n": 7
+    },
+    {
+     "v": "11px",
+     "n": 6
+    },
+    {
+     "v": "7px",
+     "n": 6
+    },
+    {
+     "v": "20px",
+     "n": 3
+    }
+   ],
+   "margins": [
+    {
+     "v": "8px",
+     "n": 72
+    },
+    {
+     "v": "32px",
+     "n": 13
+    },
+    {
+     "v": "48px",
+     "n": 8
+    },
+    {
+     "v": "40px",
+     "n": 8
+    },
+    {
+     "v": "24px",
+     "n": 7
+    },
+    {
+     "v": "16px",
+     "n": 4
+    },
+    {
+     "v": "12px",
+     "n": 4
+    },
+    {
+     "v": "4px",
+     "n": 3
+    },
+    {
+     "v": "20px",
+     "n": 2
+    },
+    {
+     "v": "70px",
+     "n": 2
+    }
+   ],
+   "measure": {
+    "text": "Pentagram is the world’s most acclaimed creative collective, where 23 partners work independently and collaboratively to",
+    "chars": 297,
+    "lines": 7,
+    "charsPerLine": 42,
+    "width": 366,
+    "fontSize": "16px",
+    "lineHeight": "20px",
+    "color": "#ffffff"
+   },
+   "rootVars": {
+    "--breakpoint": "\"xxl\"",
+    "--container-width": "1792px",
+    "--inner-gutter": "16px",
+    "--outer-gutter": "32px",
+    "--grid-columns": "12",
+    "--env": "\"production\"",
+    "--grid-column-bg": "rgba(127, 255, 255, .25)",
+    "--spacing-header": "3.75rem",
+    "--spacing-spacing-1": ".25rem",
+    "--spacing-spacing-2": ".5rem",
+    "--spacing-spacing-3": ".75rem",
+    "--spacing-spacing-4": "1.125rem",
+    "--spacing-spacing-5": "1.5rem",
+    "--spacing-spacing-6": "2rem",
+    "--spacing-spacing-7": "3rem",
+    "--spacing-spacing-8": "4rem",
+    "--spacing-spacing-9": "6rem",
+    "--spacing-spacing-10": "8rem",
+    "--spacing-spacing-11": "10rem",
+    "--spacing-spacing-12": "12.25rem",
+    "--sans": "-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, ",
+    "--serif": "Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color ",
+    "--mono": "ui-monospace, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace",
+    "--plain": "Plain, Arial, Sans-Serif",
+    "--f-display-1-font-family": "var(--plain)",
+    "--f-display-1-font-size": "8.1875rem",
+    "--f-display-1-font-stretch": "initial",
+    "--f-display-1-font-style": "initial",
+    "--f-display-1-font-variant": "initial",
+    "--f-display-1-font-weight": "350",
+    "--f-display-1-line-height": "1",
+    "--f-display-1-letter-spacing": "-.04em",
+    "--f-display-1-font-feature-settings": "\"case\" on",
+    "--f-display-1--moz-osx-font-smoothing": "grayscale",
+    "--f-display-1--webkit-font-smoothing": "antialiased",
+    "--f-display-1---bold-weight": "initial",
+    "--f-heading-1-font-family": "var(--plain)",
+    "--f-heading-1-font-size": "3.25rem",
+    "--f-heading-1-font-stretch": "initial",
+    "--f-heading-1-font-style": "initial",
+    "--f-heading-1-font-variant": "initial",
+    "--f-heading-1-font-weight": "400",
+    "--f-heading-1-line-height": "1.05",
+    "--f-heading-1-letter-spacing": "-.02em",
+    "--f-heading-1-font-feature-settings": "\"case\" on",
+    "--f-heading-1--moz-osx-font-smoothing": "grayscale",
+    "--f-heading-1--webkit-font-smoothing": "antialiased",
+    "--f-heading-1---bold-weight": "initial",
+    "--f-heading-2-font-family": "var(--plain)",
+    "--f-heading-2-font-size": "4.0625rem",
+    "--f-heading-2-font-stretch": "initial",
+    "--f-heading-2-font-style": "initial",
+    "--f-heading-2-font-variant": "initial",
+    "--f-heading-2-font-weight": "375",
+    "--f-heading-2-line-height": "1.05",
+    "--f-heading-2-letter-spacing": "-.02em",
+    "--f-heading-2-font-feature-settings": "\"case\" on",
+    "--f-heading-2--moz-osx-font-smoothing": "grayscale",
+    "--f-heading-2--webkit-font-smoothing": "antialiased",
+    "--f-heading-2---bold-weight": "initial",
+    "--f-heading-3-font-family": "var(--plain)",
+    "--f-heading-3-font-size": "2.5625rem",
+    "--f-heading-3-font-stretch": "initial",
+    "--f-heading-3-font-style": "initial",
+    "--f-heading-3-font-variant": "initial",
+    "--f-heading-3-font-weight": "400",
+    "--f-heading-3-line-height": "1.2",
+    "--f-heading-3-letter-spacing": "-.02em",
+    "--f-heading-3-font-feature-settings": "\"case\" on",
+    "--f-heading-3--moz-osx-font-smoothing": "grayscale",
+    "--f-heading-3--webkit-font-smoothing": "antialiased",
+    "--f-heading-3---bold-weight": "initial",
+    "--f-heading-4-font-family": "var(--plain)",
+    "--f-heading-4-font-size": "2rem",
+    "--f-heading-4-font-stretch": "initial",
+    "--f-heading-4-font-style": "initial",
+    "--f-heading-4-font-variant": "initial",
+    "--f-heading-4-font-weight": "400",
+    "--f-heading-4-line-height": "1.2",
+    "--f-heading-4-letter-spacing": "-.01em",
+    "--f-heading-4-font-feature-settings": "\"case\" on",
+    "--f-heading-4--moz-osx-font-smoothing": "grayscale",
+    "--f-heading-4--webkit-font-smoothing": "antialiased",
+    "--f-heading-4---bold-weight": "initial",
+    "--f-heading-5-font-family": "var(--plain)",
+    "--f-heading-5-font-size": "1.5rem",
+    "--f-heading-5-font-stretch": "initial",
+    "--f-heading-5-font-style": "initial",
+    "--f-heading-5-font-variant": "initial",
+    "--f-heading-5-font-weight": "400",
+    "--f-heading-5-line-height": "1.2",
+    "--f-heading-5-letter-spacing": "-.02em",
+    "--f-heading-5-font-feature-settings": "\"case\" on",
+    "--f-heading-5--moz-osx-font-smoothing": "grayscale",
+    "--f-heading-5--webkit-font-smoothing": "antialiased",
+    "--f-heading-5---bold-weight": "initial",
+    "--f-body-1-font-family": "var(--plain)",
+    "--f-body-1-font-size": "1rem",
+    "--f-body-1-font-stretch": "initial",
+    "--f-body-1-font-style": "initial",
+    "--f-body-1-font-variant": "initial",
+    "--f-body-1-font-weight": "400",
+    "--f-body-1-line-height": "1.25",
+    "--f-body-1-letter-spacing": "0",
+    "--f-body-1-font-feature-settings": "\"case\" on",
+    "--f-body-1--moz-osx-font-smoothing": "grayscale",
+    "--f-body-1--webkit-font-smoothing": "antialiased",
+    "--f-body-1---bold-weight": "initial",
+    "--f-body-2-font-family": "var(--plain)",
+    "--f-body-2-font-size": "1rem",
+    "--f-body-2-font-stretch": "initial",
+    "--f-body-2-font-style": "initial",
+    "--f-body-2-font-variant": "initial",
+    "--f-body-2-font-weight": "400",
+    "--f-body-2-line-height": "1.25",
+    "--f-body-2-letter-spacing": "0",
+    "--f-body-2-font-feature-settings": "\"case\" on",
+    "--f-body-2--moz-osx-font-smoothing": "grayscale",
+    "--f-body-2--webkit-font-smoothing": "antialiased",
+    "--f-body-2---bold-weight": "initial",
+    "--f-caption-font-family": "var(--plain)",
+    "--f-caption-font-size": ".8125rem",
+    "--f-caption-font-stretch": "initial",
+    "--f-caption-font-style": "initial",
+    "--f-caption-font-variant": "initial",
+    "--f-caption-font-weight": "400",
+    "--f-caption-line-height": "1.25",
+    "--f-caption-letter-spacing": "0",
+    "--f-caption-font-feature-settings": "\"case\" on",
+    "--f-caption--moz-osx-font-smoothing": "grayscale",
+    "--f-caption--webkit-font-smoothing": "antialiased",
+    "--f-caption---bold-weight": "initial",
+    "--f-number-font-family": "var(--plain)",
+    "--f-number-font-size": ".8125rem",
+    "--f-number-font-stretch": "initial",
+    "--f-number-font-style": "initial",
+    "--f-number-font-variant": "initial",
+    "--f-number-font-weight": "400",
+    "--f-number-line-height": "1",
+    "--f-number-letter-spacing": "0",
+    "--f-number-font-feature-settings": "\"case\" on",
+    "--f-number--moz-osx-font-smoothing": "grayscale",
+    "--f-number--webkit-font-smoothing": "antialiased",
+    "--f-number---bold-weight": "initial",
+    "--f-shop-cart-font-family": "var(--plain)",
+    "--f-shop-cart-font-size": ".6875rem",
+    "--f-shop-cart-font-stretch": "initial",
+    "--f-shop-cart-font-style": "initial",
+    "--f-shop-cart-font-variant": "initial",
+    "--f-shop-cart-font-weight": "400",
+    "--f-shop-cart-line-height": "1",
+    "--f-shop-cart-letter-spacing": "0",
+    "--f-shop-cart-font-feature-settings": "\"case\" on",
+    "--f-shop-cart--moz-osx-font-smoothing": "grayscale",
+    "--f-shop-cart--webkit-font-smoothing": "antialiased",
+    "--f-shop-cart---bold-weight": "initial",
+    "--white": "#FFFFFF",
+    "--black": "#000000",
+    "--dark": "#222222",
+    "--gray-050": "#F5F5F5"
+   },
+   "blockedSheets": 0,
+   "reducedMotionRules": 2,
+   "h1": [
+    "Pentagram"
+   ],
+   "h2": [
+    "See latest projects",
+    "8 latest Brand Identity projects",
+    "7 latest Motion Graphics & Film projects",
+    "See latest projects",
+    "8 latest Data Driven Experiences projects",
+    "8 latest Industrial/Product Design projects",
+    "See latest projects",
+    "8 latest Signage & Environmental Graphics projects",
+    "Storefront Gala 2026",
+    "YouMe Kyoto Triennale",
+    "Marina Willer at KIKK Festival 2026",
+    "Abbott Miller at AIGA NY"
+   ],
+   "h3": [
+    "The Secret Life of Things",
+    "Storefront Gala 2026",
+    "Design Doha Biennial",
+    "‘Es Devlin: Other Worlds’ exhibition at the Design Museum London",
+    "‘Pentagram x Deus Ex Machina’",
+    "YouMe Kyoto Triennale",
+    "'In Defense of the Detour'",
+    "SMCC",
+    "520 Fifth Avenue",
+    "Retrospective: Shakespeare in the Park",
+    "Cass Art King’s Cross Store",
+    "London Design Festival 2026",
+    "Women+ on the Edge of Democracy",
+    "Xsolla",
+    "Sada Mada",
+    "De Niro Con"
+   ],
+   "nav": [
+    "Pentagram"
+   ],
+   "ctas": [
+    "Customise [102x44 bg #000000 a0 fg #ffffff r 4px pad 11px 8px 16px/400]",
+    "Reject All [102x44 bg #ffffff fg #000000 r 4px pad 11px 8px 16px/400]",
+    "Accept All [102x44 bg #ffffff fg #000000 r 4px pad 11px 8px 16px/400]",
+    "Pentagram [103x24 bg #000000 a0 fg #1a1a1a r 0px pad 0px 17px/500]",
+    "The Obama Presidential Center The typogr [390x520 bg #000000 a0 fg #1a1a1a r 0px pad 0px 17px/400]",
+    "Isomorphic Labs Beautiful Symmetry: Pent [390x520 bg #000000 a0 fg #1a1a1a r 0px pad 0px 17px/400]",
+    "Mosaic Rooms New strategy, brand identit [390x520 bg #000000 a0 fg #1a1a1a r 0px pad 0px 17px/400]",
+    "ICD Beauty Brand identity and packaging  [390x520 bg #000000 a0 fg #1a1a1a r 0px pad 0px 17px/400]",
+    "Hiut Visual identity and art direction f [390x520 bg #000000 a0 fg #1a1a1a r 0px pad 0px 17px/400]",
+    "‘A Data Love Letter to the Subway’ A dat [390x520 bg #000000 a0 fg #1a1a1a r 0px pad 0px 17px/400]",
+    "Guggenheim Visual identity for the const [390x520 bg #000000 a0 fg #1a1a1a r 0px pad 0px 17px/400]",
+    "Rugiet Brand identity and custom typefac [390x520 bg #000000 a0 fg #1a1a1a r 0px pad 0px 17px/400]",
+    "Folger Shakespeare Library Visual identi [390x520 bg #000000 a0 fg #1a1a1a r 0px pad 0px 17px/400]",
+    "Natural History Museum Moving the Museum [390x520 bg #000000 a0 fg #1a1a1a r 0px pad 0px 17px/400]"
+   ],
+   "media": {
+    "img": 187,
+    "svg": 128,
+    "video": 23,
+    "canvas": 0
+   }
+  },
+  "1440": {
+   "status": 200,
+   "finalUrl": "https://www.pentagram.com/",
+   "width": 1440,
+   "h1Style": {
+    "font": "Plain 19px/25px w500 ls normal",
+    "color": "#1a1a1a",
+    "top": 18,
+    "width": 103,
+    "align": "start"
+   },
+   "title": "Pentagram — The world’s largest independent design consultancy",
+   "description": "Pentagram is the world’s largest independent design consultancy. The firm is owned and run by 24 partners, each of whom are leaders in their individual fields.",
+   "pageHeight": 25615,
+   "bodyBg": "#000000 a0",
+   "htmlBg": "#ffffff",
+   "fontsLoaded": [
+    "Plain 400 normal"
+   ],
+   "families": [
+    {
+     "v": "Plain, Arial",
+     "n": 19057
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "16px / lh 20px / w400 / ls normal",
+     "n": 16669,
+     "ex": "p: We use cookies to enhance your browsing experience, serve pe"
+    },
+    {
+     "v": "13px / lh 16.25px / w400 / ls normal",
+     "n": 1465,
+     "ex": "span: Arts & Culture"
+    },
+    {
+     "v": "32px / lh 38.4px / w400 / ls -0.32px",
+     "n": 493,
+     "ex": "p: Design is about making choices. Sometimes the best solution "
+    },
+    {
+     "v": "52px / lh 54.6px / w400 / ls -1.04px",
+     "n": 198,
+     "ex": "h3: The Secret Life of Things"
+    },
+    {
+     "v": "16px / lh 16px / w400 / ls normal",
+     "n": 116,
+     "ex": "span: Brand Identity"
+    },
+    {
+     "v": "16px / lh 20px / w500 / ls normal",
+     "n": 77,
+     "ex": "h2: Site navigation"
+    },
+    {
+     "v": "18px / lh 24px / w700 / ls normal",
+     "n": 21,
+     "ex": "p: We value your privacy"
+    },
+    {
+     "v": "19px / lh 25px / w500 / ls normal",
+     "n": 9,
+     "ex": "span: Pentagram"
+    },
+    {
+     "v": "32px / lh 60px / w400 / ls -0.32px",
+     "n": 9,
+     "ex": "button: Subscribe"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#767676",
+     "n": 6016
+    },
+    {
+     "v": "#ffffff a0.56",
+     "n": 4063
+    },
+    {
+     "v": "#ffffff",
+     "n": 3469
+    },
+    {
+     "v": "#8c8c8c",
+     "n": 2396
+    },
+    {
+     "v": "#1a1a1a",
+     "n": 1964
+    },
+    {
+     "v": "#000000 a0.56",
+     "n": 1129
+    },
+    {
+     "v": "#000000",
+     "n": 20
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#767676 on #ffffff",
+     "n": 6016,
+     "ex": "4.54:1"
+    },
+    {
+     "v": "#ffffff a0.56 on #222222",
+     "n": 4045,
+     "ex": "5.92:1"
+    },
+    {
+     "v": "#8c8c8c on #000000",
+     "n": 2387,
+     "ex": "6.25:1"
+    },
+    {
+     "v": "#ffffff on #e3e4e5",
+     "n": 1442,
+     "ex": "1.27:1"
+    },
+    {
+     "v": "#1a1a1a on #ffffff",
+     "n": 1427,
+     "ex": "17.4:1"
+    },
+    {
+     "v": "#000000 a0.56 on #ffffff",
+     "n": 1129,
+     "ex": "4.94:1"
+    },
+    {
+     "v": "#ffffff on #000000",
+     "n": 1020,
+     "ex": "21:1"
+    },
+    {
+     "v": "#ffffff on #222222",
+     "n": 805,
+     "ex": "15.91:1"
+    },
+    {
+     "v": "#1a1a1a on #e8e8e8",
+     "n": 537,
+     "ex": "14.2:1"
+    },
+    {
+     "v": "#ffffff on #282828",
+     "n": 202,
+     "ex": "14.74:1"
+    },
+    {
+     "v": "#000000 on #ffffff",
+     "n": 20,
+     "ex": "21:1"
+    },
+    {
+     "v": "#ffffff a0.56 on #000000",
+     "n": 18,
+     "ex": "6.48:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#ffffff",
+     "n": 36441
+    },
+    {
+     "v": "#222222",
+     "n": 10874
+    },
+    {
+     "v": "#000000",
+     "n": 6399
+    },
+    {
+     "v": "#e3e4e5",
+     "n": 889
+    },
+    {
+     "v": "#000000 a0.07",
+     "n": 273
+    },
+    {
+     "v": "#282828 a0.75",
+     "n": 113
+    },
+    {
+     "v": "#ffffff a0.12",
+     "n": 18
+    },
+    {
+     "v": "#e8e8e8 a0.8",
+     "n": 14
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #ffffff",
+     "n": 3
+    },
+    {
+     "v": "1px #333333",
+     "n": 3
+    }
+   ],
+   "radii": [
+    {
+     "v": "4px",
+     "n": 155,
+     "ex": "button.cky-btn cky-btn-customize"
+    },
+    {
+     "v": "9999px",
+     "n": 12,
+     "ex": "button.shrink-0 w-[18px] h-[18px] bg-"
+    },
+    {
+     "v": "8px",
+     "n": 6,
+     "ex": "div.bg-inverse p-outer-gutter roun"
+    },
+    {
+     "v": "20px",
+     "n": 2,
+     "ex": "div.cky-consent-container cky-box-"
+    }
+   ],
+   "shadows": [],
+   "transitions": [
+    {
+     "v": "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 96,
+     "ex": "img"
+    },
+    {
+     "v": "all 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 19,
+     "ex": "img"
+    },
+    {
+     "v": "opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 16,
+     "ex": "video"
+    },
+    {
+     "v": "background-color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+     "n": 7,
+     "ex": "button"
+    },
+    {
+     "v": "transform, opacity 0.4s, 0.4s ease-in-out, ease-in-out",
+     "n": 4,
+     "ex": "div"
+    },
+    {
+     "v": "transform 0.5s cubic-bezier(0.59, 0.01, 0.28, 1)",
+     "n": 1,
+     "ex": "main"
+    },
+    {
+     "v": "top, bottom 0.3s, 0.3s ease-in-out, ease-in-out",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "border-radius 0.4s ease",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "animations": [],
+   "maxWidths": [
+    {
+     "v": "1728px (rendered 1392px)",
+     "n": 33,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 1440px)",
+     "n": 16,
+     "ex": "img"
+    },
+    {
+     "v": "100% (rendered 674px)",
+     "n": 10,
+     "ex": "img"
+    },
+    {
+     "v": "100% (rendered 1392px)",
+     "n": 5,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 924px)",
+     "n": 4,
+     "ex": "img"
+    },
+    {
+     "v": "100% (rendered 671px)",
+     "n": 2,
+     "ex": "img"
+    },
+    {
+     "v": "1728px (rendered 1440px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 746px)",
+     "n": 1,
+     "ex": "img"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 2
+    },
+    {
+     "v": "pt 24px pb 0px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "8px",
+     "n": 68
+    },
+    {
+     "v": "12px",
+     "n": 22
+    },
+    {
+     "v": "96px / col 12px",
+     "n": 8
+    },
+    {
+     "v": "48px / col 12px",
+     "n": 8
+    },
+    {
+     "v": "32px / col 12px",
+     "n": 4
+    },
+    {
+     "v": "16px / col normal",
+     "n": 2
+    },
+    {
+     "v": "16px / col 24px",
+     "n": 2
+    },
+    {
+     "v": "6px",
+     "n": 1
+    },
+    {
+     "v": "48px / col normal",
+     "n": 1
+    },
+    {
+     "v": "24px / col 12px",
+     "n": 1
+    },
+    {
+     "v": "4px / col normal",
+     "n": 1
+    },
+    {
+     "v": "12px / col normal",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "8px",
+     "n": 295
+    },
+    {
+     "v": "4px",
+     "n": 234
+    },
+    {
+     "v": "24px",
+     "n": 45
+    },
+    {
+     "v": "48px",
+     "n": 14
+    },
+    {
+     "v": "7px",
+     "n": 14
+    },
+    {
+     "v": "6px",
+     "n": 10
+    },
+    {
+     "v": "12px",
+     "n": 7
+    },
+    {
+     "v": "11px",
+     "n": 6
+    },
+    {
+     "v": "64px",
+     "n": 4
+    },
+    {
+     "v": "96px",
+     "n": 4
+    },
+    {
+     "v": "16px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "8px",
+     "n": 72
+    },
+    {
+     "v": "64px",
+     "n": 15
+    },
+    {
+     "v": "48px",
+     "n": 11
+    },
+    {
+     "v": "96px",
+     "n": 8
+    },
+    {
+     "v": "12px",
+     "n": 4
+    },
+    {
+     "v": "20px",
+     "n": 2
+    },
+    {
+     "v": "70px",
+     "n": 2
+    },
+    {
+     "v": "32px",
+     "n": 1
+    },
+    {
+     "v": "24px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "Pentagram is the world’s most acclaimed creative collective, where 23 partners work independently and collaboratively to",
+    "chars": 297,
+    "lines": 5,
+    "charsPerLine": 59,
+    "width": 573,
+    "fontSize": "16px",
+    "lineHeight": "20px",
+    "color": "#ffffff"
+   },
+   "rootVars": {
+    "--breakpoint": "\"xxl\"",
+    "--container-width": "1792px",
+    "--inner-gutter": "16px",
+    "--outer-gutter": "32px",
+    "--grid-columns": "12",
+    "--env": "\"production\"",
+    "--grid-column-bg": "rgba(127, 255, 255, .25)",
+    "--spacing-header": "3.75rem",
+    "--spacing-spacing-1": ".25rem",
+    "--spacing-spacing-2": ".5rem",
+    "--spacing-spacing-3": ".75rem",
+    "--spacing-spacing-4": "1.125rem",
+    "--spacing-spacing-5": "1.5rem",
+    "--spacing-spacing-6": "2rem",
+    "--spacing-spacing-7": "3rem",
+    "--spacing-spacing-8": "4rem",
+    "--spacing-spacing-9": "6rem",
+    "--spacing-spacing-10": "8rem",
+    "--spacing-spacing-11": "10rem",
+    "--spacing-spacing-12": "12.25rem",
+    "--sans": "-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, ",
+    "--serif": "Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color ",
+    "--mono": "ui-monospace, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace",
+    "--plain": "Plain, Arial, Sans-Serif",
+    "--f-display-1-font-family": "var(--plain)",
+    "--f-display-1-font-size": "8.1875rem",
+    "--f-display-1-font-stretch": "initial",
+    "--f-display-1-font-style": "initial",
+    "--f-display-1-font-variant": "initial",
+    "--f-display-1-font-weight": "350",
+    "--f-display-1-line-height": "1",
+    "--f-display-1-letter-spacing": "-.04em",
+    "--f-display-1-font-feature-settings": "\"case\" on",
+    "--f-display-1--moz-osx-font-smoothing": "grayscale",
+    "--f-display-1--webkit-font-smoothing": "antialiased",
+    "--f-display-1---bold-weight": "initial",
+    "--f-heading-1-font-family": "var(--plain)",
+    "--f-heading-1-font-size": "3.25rem",
+    "--f-heading-1-font-stretch": "initial",
+    "--f-heading-1-font-style": "initial",
+    "--f-heading-1-font-variant": "initial",
+    "--f-heading-1-font-weight": "400",
+    "--f-heading-1-line-height": "1.05",
+    "--f-heading-1-letter-spacing": "-.02em",
+    "--f-heading-1-font-feature-settings": "\"case\" on",
+    "--f-heading-1--moz-osx-font-smoothing": "grayscale",
+    "--f-heading-1--webkit-font-smoothing": "antialiased",
+    "--f-heading-1---bold-weight": "initial",
+    "--f-heading-2-font-family": "var(--plain)",
+    "--f-heading-2-font-size": "4.0625rem",
+    "--f-heading-2-font-stretch": "initial",
+    "--f-heading-2-font-style": "initial",
+    "--f-heading-2-font-variant": "initial",
+    "--f-heading-2-font-weight": "375",
+    "--f-heading-2-line-height": "1.05",
+    "--f-heading-2-letter-spacing": "-.02em",
+    "--f-heading-2-font-feature-settings": "\"case\" on",
+    "--f-heading-2--moz-osx-font-smoothing": "grayscale",
+    "--f-heading-2--webkit-font-smoothing": "antialiased",
+    "--f-heading-2---bold-weight": "initial",
+    "--f-heading-3-font-family": "var(--plain)",
+    "--f-heading-3-font-size": "2.5625rem",
+    "--f-heading-3-font-stretch": "initial",
+    "--f-heading-3-font-style": "initial",
+    "--f-heading-3-font-variant": "initial",
+    "--f-heading-3-font-weight": "400",
+    "--f-heading-3-line-height": "1.2",
+    "--f-heading-3-letter-spacing": "-.02em",
+    "--f-heading-3-font-feature-settings": "\"case\" on",
+    "--f-heading-3--moz-osx-font-smoothing": "grayscale",
+    "--f-heading-3--webkit-font-smoothing": "antialiased",
+    "--f-heading-3---bold-weight": "initial",
+    "--f-heading-4-font-family": "var(--plain)",
+    "--f-heading-4-font-size": "2rem",
+    "--f-heading-4-font-stretch": "initial",
+    "--f-heading-4-font-style": "initial",
+    "--f-heading-4-font-variant": "initial",
+    "--f-heading-4-font-weight": "400",
+    "--f-heading-4-line-height": "1.2",
+    "--f-heading-4-letter-spacing": "-.01em",
+    "--f-heading-4-font-feature-settings": "\"case\" on",
+    "--f-heading-4--moz-osx-font-smoothing": "grayscale",
+    "--f-heading-4--webkit-font-smoothing": "antialiased",
+    "--f-heading-4---bold-weight": "initial",
+    "--f-heading-5-font-family": "var(--plain)",
+    "--f-heading-5-font-size": "1.5rem",
+    "--f-heading-5-font-stretch": "initial",
+    "--f-heading-5-font-style": "initial",
+    "--f-heading-5-font-variant": "initial",
+    "--f-heading-5-font-weight": "400",
+    "--f-heading-5-line-height": "1.2",
+    "--f-heading-5-letter-spacing": "-.02em",
+    "--f-heading-5-font-feature-settings": "\"case\" on",
+    "--f-heading-5--moz-osx-font-smoothing": "grayscale",
+    "--f-heading-5--webkit-font-smoothing": "antialiased",
+    "--f-heading-5---bold-weight": "initial",
+    "--f-body-1-font-family": "var(--plain)",
+    "--f-body-1-font-size": "1rem",
+    "--f-body-1-font-stretch": "initial",
+    "--f-body-1-font-style": "initial",
+    "--f-body-1-font-variant": "initial",
+    "--f-body-1-font-weight": "400",
+    "--f-body-1-line-height": "1.25",
+    "--f-body-1-letter-spacing": "0",
+    "--f-body-1-font-feature-settings": "\"case\" on",
+    "--f-body-1--moz-osx-font-smoothing": "grayscale",
+    "--f-body-1--webkit-font-smoothing": "antialiased",
+    "--f-body-1---bold-weight": "initial",
+    "--f-body-2-font-family": "var(--plain)",
+    "--f-body-2-font-size": "1rem",
+    "--f-body-2-font-stretch": "initial",
+    "--f-body-2-font-style": "initial",
+    "--f-body-2-font-variant": "initial",
+    "--f-body-2-font-weight": "400",
+    "--f-body-2-line-height": "1.25",
+    "--f-body-2-letter-spacing": "0",
+    "--f-body-2-font-feature-settings": "\"case\" on",
+    "--f-body-2--moz-osx-font-smoothing": "grayscale",
+    "--f-body-2--webkit-font-smoothing": "antialiased",
+    "--f-body-2---bold-weight": "initial",
+    "--f-caption-font-family": "var(--plain)",
+    "--f-caption-font-size": ".8125rem",
+    "--f-caption-font-stretch": "initial",
+    "--f-caption-font-style": "initial",
+    "--f-caption-font-variant": "initial",
+    "--f-caption-font-weight": "400",
+    "--f-caption-line-height": "1.25",
+    "--f-caption-letter-spacing": "0",
+    "--f-caption-font-feature-settings": "\"case\" on",
+    "--f-caption--moz-osx-font-smoothing": "grayscale",
+    "--f-caption--webkit-font-smoothing": "antialiased",
+    "--f-caption---bold-weight": "initial",
+    "--f-number-font-family": "var(--plain)",
+    "--f-number-font-size": ".8125rem",
+    "--f-number-font-stretch": "initial",
+    "--f-number-font-style": "initial",
+    "--f-number-font-variant": "initial",
+    "--f-number-font-weight": "400",
+    "--f-number-line-height": "1",
+    "--f-number-letter-spacing": "0",
+    "--f-number-font-feature-settings": "\"case\" on",
+    "--f-number--moz-osx-font-smoothing": "grayscale",
+    "--f-number--webkit-font-smoothing": "antialiased",
+    "--f-number---bold-weight": "initial",
+    "--f-shop-cart-font-family": "var(--plain)",
+    "--f-shop-cart-font-size": ".6875rem",
+    "--f-shop-cart-font-stretch": "initial",
+    "--f-shop-cart-font-style": "initial",
+    "--f-shop-cart-font-variant": "initial",
+    "--f-shop-cart-font-weight": "400",
+    "--f-shop-cart-line-height": "1",
+    "--f-shop-cart-letter-spacing": "0",
+    "--f-shop-cart-font-feature-settings": "\"case\" on",
+    "--f-shop-cart--moz-osx-font-smoothing": "grayscale",
+    "--f-shop-cart--webkit-font-smoothing": "antialiased",
+    "--f-shop-cart---bold-weight": "initial",
+    "--white": "#FFFFFF",
+    "--black": "#000000",
+    "--dark": "#222222",
+    "--gray-050": "#F5F5F5"
+   },
+   "blockedSheets": 0,
+   "reducedMotionRules": 2,
+   "h1": [
+    "Pentagram"
+   ],
+   "h2": [
+    "Site navigation",
+    "See latest projects",
+    "8 latest Brand Identity projects",
+    "7 latest Motion Graphics & Film projects",
+    "See latest projects",
+    "8 latest Data Driven Experiences projects",
+    "8 latest Industrial/Product Design projects",
+    "See latest projects",
+    "8 latest Signage & Environmental Graphics projects",
+    "Storefront Gala 2026",
+    "YouMe Kyoto Triennale",
+    "Marina Willer at KIKK Festival 2026",
+    "Abbott Miller at AIGA NY"
+   ],
+   "h3": [
+    "The Secret Life of Things",
+    "Storefront Gala 2026",
+    "Design Doha Biennial",
+    "‘Es Devlin: Other Worlds’ exhibition at the Design Museum London",
+    "‘Pentagram x Deus Ex Machina’",
+    "YouMe Kyoto Triennale",
+    "'In Defense of the Detour'",
+    "SMCC",
+    "520 Fifth Avenue",
+    "Retrospective: Shakespeare in the Park",
+    "Cass Art King’s Cross Store",
+    "London Design Festival 2026",
+    "Women+ on the Edge of Democracy",
+    "Xsolla",
+    "Sada Mada",
+    "De Niro Con"
+   ],
+   "nav": [
+    "Pentagram",
+    "Work",
+    "About",
+    "News",
+    "Contact",
+    "Archive"
+   ],
+   "ctas": [
+    "Customise [125x44 bg #000000 a0 fg #ffffff r 4px pad 11px 12px 16px/400]",
+    "Reject All [125x44 bg #ffffff fg #000000 r 4px pad 11px 12px 16px/400]",
+    "Accept All [125x44 bg #ffffff fg #000000 r 4px pad 11px 12px 16px/400]",
+    "Pentagram [103x24 bg #000000 a0 fg #1a1a1a r 0px pad 0px 19px/500]",
+    "Work [38x19 bg #000000 a0 fg #1a1a1a r 0px pad 0px 16px/400]",
+    "About [46x19 bg #000000 a0 fg #1a1a1a r 0px pad 0px 16px/400]",
+    "News [42x19 bg #000000 a0 fg #1a1a1a r 0px pad 0px 16px/400]",
+    "Contact [60x19 bg #000000 a0 fg #1a1a1a r 0px pad 0px 16px/400]",
+    "Archive [57x19 bg #000000 a0 fg #1a1a1a r 0px pad 0px 16px/400]",
+    "The Obama Presidential Center The typogr [1440x617 bg #000000 a0 fg #1a1a1a r 0px pad 0px 19px/400]",
+    "Isomorphic Labs Beautiful Symmetry: Pent [1440x617 bg #000000 a0 fg #1a1a1a r 0px pad 0px 19px/400]",
+    "Mosaic Rooms New strategy, brand identit [1440x617 bg #000000 a0 fg #1a1a1a r 0px pad 0px 19px/400]",
+    "ICD Beauty Brand identity and packaging  [1440x617 bg #000000 a0 fg #1a1a1a r 0px pad 0px 19px/400]",
+    "Hiut Visual identity and art direction f [1440x617 bg #000000 a0 fg #1a1a1a r 0px pad 0px 19px/400]"
+   ],
+   "media": {
+    "img": 187,
+    "svg": 128,
+    "video": 23,
+    "canvas": 0
+   }
+  }
+ }
+}

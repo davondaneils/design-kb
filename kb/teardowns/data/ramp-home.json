@@ -1,0 +1,1494 @@
+{
+ "url": "https://ramp.com",
+ "measuredAt": "2026-10-10T16:48:36.944Z",
+ "method": "Playwright Chromium, getComputedStyle on visible elements, light scheme, after scroll-through and fonts.ready",
+ "widths": {
+  "390": {
+   "status": 200,
+   "finalUrl": "https://ramp.com/",
+   "width": 390,
+   "h1Style": {
+    "font": "Lausanne 40px/42px w400 ls -0.01px",
+    "color": "lab(2.83994 0.367254 0.969091)",
+    "top": 227,
+    "width": 358,
+    "align": "start"
+   },
+   "title": "Spend Management, Corporate Cards & Accounts Payable Solutions | Ramp",
+   "description": "Make expense management easy with Ramp's spend management platform. Combine global corporate cards, travel, expenses and accounts payable to automate finance operations and improve efficiency.",
+   "pageHeight": 14654,
+   "bodyBg": "lab(100 0 0)",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "Lausanne 400 normal",
+    "Lausanne 400 italic",
+    "Material Icons 400 normal",
+    "Material Icons Outlined 400 normal"
+   ],
+   "families": [
+    {
+     "v": "Lausanne, Arial",
+     "n": 7854
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "14px / lh 20px / w400 / ls normal",
+     "n": 2648,
+     "ex": "div: New: AI Token Spend Management — see, understand, and contro"
+    },
+    {
+     "v": "12px / lh 18px / w400 / ls normal",
+     "n": 2468,
+     "ex": "span: Learn more"
+    },
+    {
+     "v": "15px / lh 21px / w400 / ls normal",
+     "n": 1054,
+     "ex": "p: To exceed free cash flow goals"
+    },
+    {
+     "v": "22px / lh 26px / w400 / ls normal",
+     "n": 408,
+     "ex": "h2: Join 70,000 of the world’s most ambitious companies"
+    },
+    {
+     "v": "20px / lh 24px / w400 / ls normal",
+     "n": 241,
+     "ex": "h3: Cards & Expenses"
+    },
+    {
+     "v": "16px / lh 24px / w400 / ls normal",
+     "n": 216,
+     "ex": "label: Email"
+    },
+    {
+     "v": "10px / lh 21px / w400 / ls 0.18px",
+     "n": 215,
+     "ex": "span: US corporate payments processed by Ramp:"
+    },
+    {
+     "v": "34px / lh 38px / w400 / ls normal",
+     "n": 163,
+     "ex": "h2: Systems that never spoke"
+    },
+    {
+     "v": "15px / lh 10.8px / w400 / ls normal",
+     "n": 138,
+     "ex": "div: Get started for free"
+    },
+    {
+     "v": "28px / lh 32px / w400 / ls normal",
+     "n": 109,
+     "ex": "h2: One platform for all of finance."
+    },
+    {
+     "v": "15px / lh 24px / w400 / ls normal",
+     "n": 71,
+     "ex": "span: We build software for accounting teams and need better expen"
+    },
+    {
+     "v": "17px / lh 23px / w400 / ls normal",
+     "n": 64,
+     "ex": "div: Cards, expenses, bill payments, and – in the blink of AI."
+    },
+    {
+     "v": "40px / lh 42px / w400 / ls -0.01px",
+     "n": 29,
+     "ex": "h1: Time is money. Save both."
+    },
+    {
+     "v": "18px / lh 22px / w400 / ls normal",
+     "n": 29,
+     "ex": "p: See what agents can automate."
+    },
+    {
+     "v": "17px / lh 0px / w400 / ls normal",
+     "n": 1,
+     "ex": "sup: *"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "lab(2.83994 0.367254 0.969091 / 0.6)",
+     "n": 3629
+    },
+    {
+     "v": "lab(100 0 0 / 0.6)",
+     "n": 2368
+    },
+    {
+     "v": "lab(2.83994 0.367254 0.969091)",
+     "n": 1464
+    },
+    {
+     "v": "lab(100 0 0)",
+     "n": 393
+    }
+   ],
+   "contrastPairs": [],
+   "backgrounds": [
+    {
+     "v": "#1f1f1d",
+     "n": 95
+    },
+    {
+     "v": "linear-gradient(rgba(23, 18, 14, 0.2) 0%, rgba(23, 18, 14, 0.6) 60%, rgba(23, 18, 14, 0.82) 100%)",
+     "n": 95
+    },
+    {
+     "v": "linear-gradient(rgba(255, 255, 255, 0) 55%, rgb(255, 255, 255) 89.09%)",
+     "n": 78
+    },
+    {
+     "v": "linear-gradient(lab(100 0 0) 60%, rgba(0, 0, 0, 0) 100%)",
+     "n": 78
+    },
+    {
+     "v": "#f4f2ef",
+     "n": 69
+    },
+    {
+     "v": "#ffffff a0.5",
+     "n": 51
+    },
+    {
+     "v": "linear-gradient(in oklab, rgba(244, 242, 240, 0) 0%, rgb(244, 242, 240) 100%)",
+     "n": 32
+    },
+    {
+     "v": "#212121 a0.02",
+     "n": 29
+    },
+    {
+     "v": "linear-gradient(to right in oklab, rgba(244, 242, 240, 0) 0%, rgb(244, 242, 240) 100%)",
+     "n": 25
+    },
+    {
+     "v": "#ffffff",
+     "n": 25
+    },
+    {
+     "v": "#ffffff a0.1",
+     "n": 15
+    },
+    {
+     "v": "#212121 a0.05",
+     "n": 9
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px lab(83.0178 1.03405 2.01975)",
+     "n": 23
+    },
+    {
+     "v": "1px lab(91.6229 -0.159115 -2.26791)",
+     "n": 17
+    },
+    {
+     "v": "1px #212121 a0.1",
+     "n": 14
+    },
+    {
+     "v": "1px oklab(0.2145 0.00152552 0.000480294 / 0.1)",
+     "n": 2
+    },
+    {
+     "v": "1px #ffffff a0.2",
+     "n": 2
+    },
+    {
+     "v": "1px #ffffff a0",
+     "n": 1
+    },
+    {
+     "v": "1px lab(100 0 0)",
+     "n": 1
+    },
+    {
+     "v": "1px #ffffff a0.3",
+     "n": 1
+    }
+   ],
+   "radii": [
+    {
+     "v": "12px",
+     "n": 41,
+     "ex": "div.relative inline-flex w-full ma"
+    },
+    {
+     "v": "6px",
+     "n": 20,
+     "ex": "button.relative flex size-10 items-ce"
+    },
+    {
+     "v": "16px",
+     "n": 19,
+     "ex": "div.relative flex w-full flex-col "
+    },
+    {
+     "v": "8px",
+     "n": 17,
+     "ex": "div.flex h-10 w-10 shrink-0 items-"
+    },
+    {
+     "v": "4px",
+     "n": 9,
+     "ex": "span.bg-grayLight rounded-sm px-1.5"
+    },
+    {
+     "v": "999px",
+     "n": 3,
+     "ex": "span.NavbarClient-module__0lPMIq__m"
+    },
+    {
+     "v": "3.35544e+07px",
+     "n": 2,
+     "ex": "span.pointer-events-none absolute b"
+    },
+    {
+     "v": "3px",
+     "n": 1,
+     "ex": "button.absolute bottom-[5px] right-[5"
+    }
+   ],
+   "shadows": [],
+   "transitions": [
+    {
+     "v": "color, background-color, border-color, outline-col 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 19,
+     "ex": "button"
+    },
+    {
+     "v": "transform, box-shadow 0.4s, 0.4s ease, ease",
+     "n": 17,
+     "ex": "article"
+    },
+    {
+     "v": "opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 5,
+     "ex": "span"
+    },
+    {
+     "v": "color, background-color, border-color, outline-col 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 4,
+     "ex": "div"
+    },
+    {
+     "v": "transform, opacity 0.25s, 0.25s ease-in-out, ease-in-out",
+     "n": 3,
+     "ex": "span"
+    },
+    {
+     "v": "color, background-color, border-color, outline-col 0.3s cubic-bezier(0, 0, 0.2, 1)",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "opacity 0.24s cubic-bezier(0.45, 0.05, 0.55, 0.95)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "color, background-color, border-color, outline-col 0.1s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "color, background-color 0.24s, 0.24s cubic-bezier(0.45, 0.05, 0.55, 0.95), cubic-bezier(0.45, 0.05, 0.55, 0.95)",
+     "n": 1,
+     "ex": "button"
+    },
+    {
+     "v": "filter, opacity 0.68s, 0.68s cubic-bezier(0.4, 0, 0.2, 1), cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "border-color, box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "animations": [],
+   "maxWidths": [
+    {
+     "v": "1440px (rendered 390px)",
+     "n": 12,
+     "ex": "div"
+    },
+    {
+     "v": "533px (rendered 358px)",
+     "n": 8,
+     "ex": "h2"
+    },
+    {
+     "v": "100% (rendered 358px)",
+     "n": 6,
+     "ex": "ul"
+    },
+    {
+     "v": "100% (rendered 356px)",
+     "n": 5,
+     "ex": "video"
+    },
+    {
+     "v": "300px (rendered 264px)",
+     "n": 5,
+     "ex": "h3"
+    },
+    {
+     "v": "500px (rendered 358px)",
+     "n": 4,
+     "ex": "form"
+    },
+    {
+     "v": "540px (rendered 358px)",
+     "n": 2,
+     "ex": "p"
+    },
+    {
+     "v": "1090px (rendered 358px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "960px (rendered 358px)",
+     "n": 2,
+     "ex": "h2"
+    },
+    {
+     "v": "500px (rendered 326px)",
+     "n": 2,
+     "ex": "form"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 10
+    },
+    {
+     "v": "pt 80px pb 80px",
+     "n": 1
+    },
+    {
+     "v": "pt 48px pb 48px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "8px",
+     "n": 26
+    },
+    {
+     "v": "12px",
+     "n": 21
+    },
+    {
+     "v": "16px",
+     "n": 7
+    },
+    {
+     "v": "24px",
+     "n": 7
+    },
+    {
+     "v": "6px",
+     "n": 2
+    },
+    {
+     "v": "1px",
+     "n": 1
+    },
+    {
+     "v": "96px",
+     "n": 1
+    },
+    {
+     "v": "32px",
+     "n": 1
+    },
+    {
+     "v": "8px / col 16px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "16px",
+     "n": 84
+    },
+    {
+     "v": "4px",
+     "n": 51
+    },
+    {
+     "v": "20px",
+     "n": 36
+    },
+    {
+     "v": "6px",
+     "n": 33
+    },
+    {
+     "v": "24px",
+     "n": 21
+    },
+    {
+     "v": "32px",
+     "n": 15
+    },
+    {
+     "v": "12px",
+     "n": 8
+    },
+    {
+     "v": "8px",
+     "n": 7
+    },
+    {
+     "v": "80px",
+     "n": 6
+    },
+    {
+     "v": "1px",
+     "n": 3
+    },
+    {
+     "v": "48px",
+     "n": 2
+    },
+    {
+     "v": "17px",
+     "n": 1
+    },
+    {
+     "v": "23px",
+     "n": 1
+    },
+    {
+     "v": "64px",
+     "n": 1
+    },
+    {
+     "v": "40px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "24px",
+     "n": 25
+    },
+    {
+     "v": "16px",
+     "n": 25
+    },
+    {
+     "v": "32px",
+     "n": 11
+    },
+    {
+     "v": "80px",
+     "n": 7
+    },
+    {
+     "v": "8px",
+     "n": 4
+    },
+    {
+     "v": "40px",
+     "n": 2
+    },
+    {
+     "v": "20px",
+     "n": 2
+    },
+    {
+     "v": "4px",
+     "n": 1
+    },
+    {
+     "v": "48px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "Gone are the days of scrambling to chase receipts, manually coding really large data sets. All of that has been automati",
+    "chars": 170,
+    "lines": 4,
+    "charsPerLine": 43,
+    "width": 358,
+    "fontSize": "15px",
+    "lineHeight": "21px",
+    "color": "lab(2.83994 0.367254 0.969091)"
+   },
+   "rootVars": {
+    "--font-sans": "\"Lausanne\", Arial, sans-serif",
+    "--font-mono": "\"IBM Plex Mono\", ui-monospace, monospace",
+    "--color-cyan-400": "lab(76.6045% -40.9406 -29.6231)",
+    "--color-blue-600": "lab(44.0605% 29.0279 -86.0352)",
+    "--color-gray-50": "lab(98.2596% -.247031 -.706708)",
+    "--color-gray-100": "lab(96.1596% -.0823438 -1.13575)",
+    "--color-gray-200": "lab(91.6229% -.159115 -2.26791)",
+    "--color-gray-300": "lab(85.1236% -.612259 -3.7138)",
+    "--color-gray-500": "lab(47.7841% -.393182 -10.0268)",
+    "--color-gray-600": "lab(35.6337% -1.58697 -10.8425)",
+    "--color-gray-700": "lab(27.1134% -.956401 -12.3224)",
+    "--color-gray-900": "lab(8.11897% .811279 -12.254)",
+    "--color-black": "var(--black)",
+    "--color-white": "var(--white)",
+    "--spacing": ".25rem",
+    "--breakpoint-sm": "480px",
+    "--breakpoint-md": "768px",
+    "--breakpoint-lg": "992px",
+    "--breakpoint-xl": "1280px",
+    "--breakpoint-2xl": "1440px",
+    "--container-sm": "24rem",
+    "--container-md": "28rem",
+    "--container-lg": "32rem",
+    "--container-xl": "36rem",
+    "--container-2xl": "42rem",
+    "--container-3xl": "48rem",
+    "--container-4xl": "56rem",
+    "--container-5xl": "64rem",
+    "--container-6xl": "72rem",
+    "--text-xs": ".75rem",
+    "--text-xs--line-height": "calc(1 / .75)",
+    "--text-sm": ".875rem",
+    "--text-sm--line-height": "calc(1.25 / .875)",
+    "--text-base": "1rem",
+    "--text-base--line-height": "calc(1.5 / 1)",
+    "--text-lg": "1.125rem",
+    "--text-lg--line-height": "calc(1.75 / 1.125)",
+    "--text-xl": "1.25rem",
+    "--text-xl--line-height": "calc(1.75 / 1.25)",
+    "--text-2xl": "1.5rem",
+    "--text-2xl--line-height": "calc(2 / 1.5)",
+    "--text-3xl": "1.875rem",
+    "--text-3xl--line-height": "calc(2.25 / 1.875)",
+    "--text-4xl": "2.25rem",
+    "--text-4xl--line-height": "calc(2.5 / 2.25)",
+    "--text-5xl": "3rem",
+    "--text-5xl--line-height": "1",
+    "--font-weight-light": "300",
+    "--font-weight-normal": "400",
+    "--font-weight-medium": "500",
+    "--font-weight-semibold": "600",
+    "--font-weight-bold": "700",
+    "--tracking-tight": "-.025em",
+    "--tracking-normal": "0em",
+    "--tracking-wide": ".025em",
+    "--tracking-wider": ".05em",
+    "--tracking-widest": ".1em",
+    "--leading-tight": "1.25",
+    "--leading-relaxed": "1.625",
+    "--radius-sm": ".25rem",
+    "--radius-md": ".375rem",
+    "--radius-lg": ".5rem",
+    "--radius-xl": ".75rem",
+    "--radius-2xl": "1rem",
+    "--radius-3xl": "1.5rem",
+    "--drop-shadow-md": "0 3px 3px #0000001f",
+    "--drop-shadow-lg": "0 4px 4px #00000026",
+    "--ease-out": "cubic-bezier(0, 0, .2, 1)",
+    "--ease-in-out": "cubic-bezier(.4, 0, .2, 1)",
+    "--animate-spin": "spin 1s linear infinite",
+    "--animate-ping": "ping 1s cubic-bezier(0, 0, .2, 1) infinite",
+    "--animate-pulse": "pulse 2s cubic-bezier(.4, 0, .6, 1) infinite",
+    "--blur-xs": "4px",
+    "--blur-sm": "8px",
+    "--blur-md": "12px",
+    "--blur-lg": "16px",
+    "--blur-xl": "24px",
+    "--blur-3xl": "64px",
+    "--aspect-video": "16 / 9",
+    "--default-transition-duration": ".15s",
+    "--default-transition-timing-function": "cubic-bezier(.4, 0, .2, 1)",
+    "--default-font-family": "var(--font-sans)",
+    "--default-mono-font-family": "var(--font-mono)",
+    "--color-black-0": "var(--black-0)",
+    "--color-black-25": "var(--black-25)",
+    "--color-black-50": "var(--black-50)",
+    "--color-black-100": "var(--black-100)",
+    "--color-black-200": "var(--black-200)",
+    "--color-black-300": "var(--black-300)",
+    "--color-black-400": "var(--black-400)",
+    "--color-black-500": "var(--black-500)",
+    "--color-black-600": "var(--black-600)",
+    "--color-black-700": "var(--black-700)",
+    "--color-black-800": "var(--black-800)",
+    "--color-black-900": "var(--black-900)",
+    "--color-white-0": "var(--white-0)",
+    "--color-white-25": "var(--white-25)",
+    "--color-white-50": "var(--white-50)",
+    "--color-white-100": "var(--white-100)",
+    "--color-white-200": "var(--white-200)",
+    "--color-white-300": "var(--white-300)",
+    "--color-white-400": "var(--white-400)",
+    "--color-white-500": "var(--white-500)",
+    "--color-white-600": "var(--white-600)",
+    "--color-white-700": "var(--white-700)",
+    "--color-white-800": "var(--white-800)",
+    "--color-white-900": "var(--white-900)",
+    "--text-color-primary": "var(--text-primary)",
+    "--text-color-primaryReverse": "var(--text-primaryReverse)",
+    "--text-color-hushed": "var(--text-hushed)",
+    "--text-color-hushedReverse": "var(--text-hushedReverse)",
+    "--text-color-blaze": "var(--blaze)",
+    "--background-color-black": "var(--black)",
+    "--background-color-solar": "var(--solar)",
+    "--background-color-solarLight": "var(--solarLight)",
+    "--background-color-smolder": "var(--smolder)",
+    "--background-color-grayLight": "var(--grayLight)",
+    "--background-color-grayMedium": "var(--grayMedium)",
+    "--background-color-grayDark": "var(--grayDark)",
+    "--background-color-white": "var(--white)",
+    "--background-color-springLight": "var(--springLight)",
+    "--background-color-spring": "var(--spring)",
+    "--background-image-midnight": "var(--midnight)",
+    "--background-image-dusk": "var(--dusk)",
+    "--background-image-daylight": "var(--daylight)",
+    "--border-color-primary": "var(--border-primary)",
+    "--accent-color-primary": "var(--text-primary)",
+    "--z-index-header": "var(--z-header)",
+    "--z-index-overlay": "var(--z-overlay)",
+    "--z-index-modal": "var(--z-modal)",
+    "--z-index-popover": "var(--z-popover)",
+    "--z-index-tooltip": "var(--z-tooltip)",
+    "--z-index-toast": "var(--z-toast)",
+    "--z-index-navmenu": "var(--z-navmenu)",
+    "--page-theme": "var(--white)",
+    "--lausanne-ascent": "1866",
+    "--lausanne-descent": "-410",
+    "--lausanne-units-per-em": "2048",
+    "--white-rgb": "255, 255, 255",
+    "--white-0": "rgba(var(--white-rgb), 0)",
+    "--white-25": "rgba(var(--white-rgb), .025)",
+    "--white-50": "rgba(var(--white-rgb), .05)",
+    "--white-100": "rgba(var(--white-rgb), .1)",
+    "--white-200": "rgba(var(--white-rgb), .2)",
+    "--white-300": "rgba(var(--white-rgb), .3)",
+    "--white-400": "rgba(var(--white-rgb), .4)",
+    "--white-500": "rgba(var(--white-rgb), .5)",
+    "--white-600": "rgba(var(--white-rgb), .6)",
+    "--white-700": "rgba(var(--white-rgb), .7)",
+    "--white-800": "rgba(var(--white-rgb), .8)",
+    "--white-900": "rgba(var(--white-rgb), .9)",
+    "--black-rgb": "33, 33, 33",
+    "--black-0": "rgba(var(--black-rgb), 0)",
+    "--black-25": "rgba(var(--black-rgb), .025)",
+    "--black-50": "rgba(var(--black-rgb), .05)",
+    "--black-100": "rgba(var(--black-rgb), .1)",
+    "--black-200": "rgba(var(--black-rgb), .2)",
+    "--black-300": "rgba(var(--black-rgb), .3)",
+    "--black-400": "rgba(var(--black-rgb), .4)",
+    "--black-500": "rgba(var(--black-rgb), .5)"
+   },
+   "blockedSheets": 0,
+   "reducedMotionRules": 12,
+   "h1": [
+    "Time is money. Save both."
+   ],
+   "h2": [
+    "Join 70,000 of the world’s most ambitious companies growing 3.2x faster than the average American business.",
+    "One platform for all of finance. Agents for every workflow, working 24/7.",
+    "See recommendations for your business",
+    "Systems that never spoke",
+    "Built on the intelligence of 70k+ finance teams. One platform for the agentic era.",
+    "Introducing Stack by Ramp. The AI operating system built for today’s top finance teams.",
+    "Keep your finance team focused on strategy. Let agents handle the busywork.",
+    "AI that learns from your team. And gets smarter with every team that joins.",
+    "Scale the team.Shrink the paperwork.",
+    "Set user access on autopilot.",
+    "One platform for all your global spend.",
+    "We've got the receipts.",
+    "Time is money. Save both."
+   ],
+   "h3": [
+    "Cards & Expenses that handle themselves",
+    "Procure to pay without chasing approvals",
+    "Accounting automation eliminates month-end madness",
+    "Banking that flows money to the highest return",
+    "200+ Integrations to the tools you already use"
+   ],
+   "nav": [
+    "New: AI Token Spend Management — see, understand, and control your AI bill. Learn more"
+   ],
+   "ctas": [
+    "New: AI Token Spend Management — see, un [358x30 bg #000000 a0 fg lab(100 0 0) r 0px pad 0px 14px/400]",
+    "Back [52x20 bg #000000 a0 fg lab(2.83994 0.367254 0.969091) r 0px pad 0px 14px/400]",
+    "banking* [68x23 bg #000000 a0 fg lab(2.83994 0.367254 0.969091 / 0.6) r 0px pad 0px 17px/400]",
+    "Get started for free [358x42 bg lab(92.1406 -20.4979 84.7726) fg lab(2.83994 0.367254 0.969091) r 6px pad 0px 16px 15px/400]",
+    "Read the report [358x24 bg #000000 a0 fg lab(2.83994 0.367254 0.969091 / 0.6) r 0px pad 0px 16px/400]",
+    "Switch in days, not months [212x43 bg lab(92.1406 -20.4979 84.7726) fg lab(2.83994 0.367254 0.969091) r 6px pad 16px 15px/400]",
+    "View Demo [109x43 bg lab(95.604 0.426412 1.20401) fg lab(2.83994 0.367254 0.969091) r 6px pad 16px 15px/400]",
+    "Cards & Expenses that handle themselves [358x520 bg lab(95.604 0.426412 1.20401) fg lab(2.83994 0.367254 0.969091) r 12px pad 0px 16px/400]",
+    "Procure to pay without chasing approvals [358x520 bg lab(95.604 0.426412 1.20401) fg lab(2.83994 0.367254 0.969091) r 12px pad 0px 16px/400]",
+    "Accounting automation eliminates month-e [358x448 bg lab(95.604 0.426412 1.20401) fg lab(2.83994 0.367254 0.969091) r 12px pad 0px 16px/400]",
+    "Banking that flows money to the highest  [358x448 bg lab(95.604 0.426412 1.20401) fg lab(2.83994 0.367254 0.969091) r 12px pad 0px 16px/400]",
+    "200+ Integrations to the tools you alrea [358x448 bg lab(95.604 0.426412 1.20401) fg lab(2.83994 0.367254 0.969091) r 12px pad 0px 16px/400]",
+    "Privacy Policy [74x13 bg #000000 a0 fg lab(100 0 0) r 0px pad 0px 12px/400]",
+    "Explore Ramp Intelligence [209x43 bg lab(92.1406 -20.4979 84.7726) fg lab(2.83994 0.367254 0.969091) r 6px pad 16px 15px/400]"
+   ],
+   "media": {
+    "img": 62,
+    "svg": 30,
+    "video": 3,
+    "canvas": 9
+   }
+  },
+  "1440": {
+   "status": 200,
+   "finalUrl": "https://ramp.com/",
+   "width": 1440,
+   "h1Style": {
+    "font": "Lausanne 64px/64px w400 ls -0.01px",
+    "color": "lab(2.83994 0.367254 0.969091)",
+    "top": 229,
+    "width": 1050,
+    "align": "start"
+   },
+   "title": "Spend Management, Corporate Cards & Accounts Payable Solutions | Ramp",
+   "description": "Make expense management easy with Ramp's spend management platform. Combine global corporate cards, travel, expenses and accounts payable to automate finance operations and improve efficiency.",
+   "pageHeight": 13997,
+   "bodyBg": "lab(100 0 0)",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "Lausanne 400 normal",
+    "Lausanne 400 italic",
+    "Material Icons 400 normal",
+    "Material Icons Outlined 400 normal"
+   ],
+   "families": [
+    {
+     "v": "Lausanne, Arial",
+     "n": 9226
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "14px / lh 20px / w400 / ls normal",
+     "n": 4018,
+     "ex": "p: New: AI Token Spend Management — see, understand, and contro"
+    },
+    {
+     "v": "13px / lh 19px / w400 / ls normal",
+     "n": 2468,
+     "ex": "a: Learn more"
+    },
+    {
+     "v": "16px / lh 22px / w400 / ls normal",
+     "n": 1045,
+     "ex": "p: saved on global spend"
+    },
+    {
+     "v": "28px / lh 32px / w400 / ls normal",
+     "n": 408,
+     "ex": "h2: Join 70,000 of the world’s most ambitious companies"
+    },
+    {
+     "v": "24px / lh 28px / w400 / ls normal",
+     "n": 241,
+     "ex": "h3: Cards & Expenses"
+    },
+    {
+     "v": "16px / lh 24px / w400 / ls normal",
+     "n": 220,
+     "ex": "label: Email"
+    },
+    {
+     "v": "10px / lh 22px / w400 / ls 0.18px",
+     "n": 215,
+     "ex": "span: US corporate payments processed by Ramp:"
+    },
+    {
+     "v": "48px / lh 50px / w400 / ls -0.01px",
+     "n": 163,
+     "ex": "h2: Systems that never spoke"
+    },
+    {
+     "v": "16px / lh 10.8px / w400 / ls normal",
+     "n": 138,
+     "ex": "div: Get started for free"
+    },
+    {
+     "v": "40px / lh 42px / w400 / ls -0.005px",
+     "n": 109,
+     "ex": "h2: One platform for all of finance."
+    },
+    {
+     "v": "18px / lh 24px / w400 / ls normal",
+     "n": 64,
+     "ex": "div: Cards, expenses, bill payments, and – in the blink of AI."
+    },
+    {
+     "v": "14px / lh 14px / w400 / ls normal",
+     "n": 50,
+     "ex": "button: Products"
+    },
+    {
+     "v": "64px / lh 64px / w400 / ls -0.01px",
+     "n": 29,
+     "ex": "h1: Time is money. Save both."
+    },
+    {
+     "v": "20px / lh 26px / w400 / ls normal",
+     "n": 29,
+     "ex": "p: See what agents can automate."
+    },
+    {
+     "v": "14px / lh 10.4px / w400 / ls normal",
+     "n": 28,
+     "ex": "a: Sign in"
+    },
+    {
+     "v": "18px / lh 0px / w400 / ls normal",
+     "n": 1,
+     "ex": "sup: *"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "lab(2.83994 0.367254 0.969091 / 0.6)",
+     "n": 4085
+    },
+    {
+     "v": "lab(100 0 0 / 0.6)",
+     "n": 3129
+    },
+    {
+     "v": "lab(2.83994 0.367254 0.969091)",
+     "n": 1586
+    },
+    {
+     "v": "lab(100 0 0)",
+     "n": 426
+    }
+   ],
+   "contrastPairs": [],
+   "backgrounds": [
+    {
+     "v": "linear-gradient(lab(100 0 0) 60%, rgba(0, 0, 0, 0) 100%)",
+     "n": 290
+    },
+    {
+     "v": "linear-gradient(rgba(255, 255, 255, 0) 55%, rgb(255, 255, 255) 89.09%)",
+     "n": 288
+    },
+    {
+     "v": "#f4f2ef",
+     "n": 235
+    },
+    {
+     "v": "#ffffff a0.5",
+     "n": 147
+    },
+    {
+     "v": "#1f1f1d",
+     "n": 107
+    },
+    {
+     "v": "linear-gradient(rgba(23, 18, 14, 0.2) 0%, rgba(23, 18, 14, 0.6) 60%, rgba(23, 18, 14, 0.82) 100%)",
+     "n": 107
+    },
+    {
+     "v": "#212121 a0.02",
+     "n": 59
+    },
+    {
+     "v": "#ffffff",
+     "n": 56
+    },
+    {
+     "v": "linear-gradient(in oklab, rgba(244, 242, 240, 0) 0%, rgb(244, 242, 240) 100%)",
+     "n": 44
+    },
+    {
+     "v": "linear-gradient(to right in oklab, rgba(244, 242, 240, 0) 0%, rgb(244, 242, 240) 100%)",
+     "n": 35
+    },
+    {
+     "v": "#ffffff a0.1",
+     "n": 31
+    },
+    {
+     "v": "#212121 a0.2",
+     "n": 17
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px lab(83.0178 1.03405 2.01975)",
+     "n": 24
+    },
+    {
+     "v": "1px lab(91.6229 -0.159115 -2.26791)",
+     "n": 22
+    },
+    {
+     "v": "1px #212121 a0.1",
+     "n": 14
+    },
+    {
+     "v": "1px oklab(0.2145 0.00152552 0.000480294 / 0.1)",
+     "n": 2
+    },
+    {
+     "v": "1px #ffffff a0.2",
+     "n": 2
+    },
+    {
+     "v": "1px #ffffff a0.3",
+     "n": 1
+    }
+   ],
+   "radii": [
+    {
+     "v": "12px",
+     "n": 42,
+     "ex": "div.relative inline-flex w-full ma"
+    },
+    {
+     "v": "8px",
+     "n": 25,
+     "ex": "button.body-m leading-[.675rem] relat"
+    },
+    {
+     "v": "16px",
+     "n": 24,
+     "ex": "div.relative flex w-full flex-col "
+    },
+    {
+     "v": "6px",
+     "n": 22,
+     "ex": "button.group inline-flex h-11 w-max c"
+    },
+    {
+     "v": "4px",
+     "n": 9,
+     "ex": "span.bg-grayLight rounded-sm px-1.5"
+    },
+    {
+     "v": "3.35544e+07px",
+     "n": 7,
+     "ex": "span.pointer-events-none absolute t"
+    },
+    {
+     "v": "10px",
+     "n": 3,
+     "ex": "input.transition-colors duration-150"
+    },
+    {
+     "v": "3px",
+     "n": 1,
+     "ex": "button.absolute bottom-[5px] right-[5"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.6) 0px 0px 2px 0px inset",
+     "n": 1,
+     "ex": "a"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "color, background-color, border-color, outline-col 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 26,
+     "ex": "a"
+    },
+    {
+     "v": "transform, box-shadow 0.4s, 0.4s ease, ease",
+     "n": 22,
+     "ex": "article"
+    },
+    {
+     "v": "color, background-color, border-color, outline-col 0.3s cubic-bezier(0, 0, 0.2, 1)",
+     "n": 9,
+     "ex": "div"
+    },
+    {
+     "v": "color 0.24s cubic-bezier(0.45, 0.05, 0.55, 0.95)",
+     "n": 6,
+     "ex": "button"
+    },
+    {
+     "v": "opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 5,
+     "ex": "span"
+    },
+    {
+     "v": "color, background-color, border-color, outline-col 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 4,
+     "ex": "div"
+    },
+    {
+     "v": "transform, translate, scale, rotate 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 2,
+     "ex": "img"
+    },
+    {
+     "v": "color, background-color, border-color, outline-col 0.1s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "filter, opacity 0.68s, 0.68s cubic-bezier(0.4, 0, 0.2, 1), cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "border-color, box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "animations": [],
+   "maxWidths": [
+    {
+     "v": "1440px (rendered 1440px)",
+     "n": 11,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 1312px)",
+     "n": 3,
+     "ex": "ul"
+    },
+    {
+     "v": "768px (rendered 768px)",
+     "n": 2,
+     "ex": "form"
+    },
+    {
+     "v": "1090px (rendered 1002px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 753px)",
+     "n": 2,
+     "ex": "img"
+    },
+    {
+     "v": "960px (rendered 960px)",
+     "n": 2,
+     "ex": "h2"
+    },
+    {
+     "v": "100% (rendered 644px)",
+     "n": 2,
+     "ex": "img"
+    },
+    {
+     "v": "1050px (rendered 1050px)",
+     "n": 1,
+     "ex": "h1"
+    },
+    {
+     "v": "100% (rendered 1310px)",
+     "n": 1,
+     "ex": "video"
+    },
+    {
+     "v": "1312px (rendered 1312px)",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 10
+    },
+    {
+     "v": "pt 128px pb 128px",
+     "n": 1
+    },
+    {
+     "v": "pt 64px pb 64px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "8px",
+     "n": 32
+    },
+    {
+     "v": "12px",
+     "n": 23
+    },
+    {
+     "v": "24px",
+     "n": 10
+    },
+    {
+     "v": "16px",
+     "n": 8
+    },
+    {
+     "v": "4px",
+     "n": 1
+    },
+    {
+     "v": "6px",
+     "n": 1
+    },
+    {
+     "v": "1px",
+     "n": 1
+    },
+    {
+     "v": "128px",
+     "n": 1
+    },
+    {
+     "v": "32px",
+     "n": 1
+    },
+    {
+     "v": "48px / col 24px",
+     "n": 1
+    },
+    {
+     "v": "8px / col 16px",
+     "n": 1
+    },
+    {
+     "v": "16px / col 0px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "8px",
+     "n": 122
+    },
+    {
+     "v": "20px",
+     "n": 77
+    },
+    {
+     "v": "4px",
+     "n": 75
+    },
+    {
+     "v": "24px",
+     "n": 40
+    },
+    {
+     "v": "6px",
+     "n": 27
+    },
+    {
+     "v": "64px",
+     "n": 20
+    },
+    {
+     "v": "12px",
+     "n": 20
+    },
+    {
+     "v": "16px",
+     "n": 17
+    },
+    {
+     "v": "32px",
+     "n": 16
+    },
+    {
+     "v": "128px",
+     "n": 6
+    },
+    {
+     "v": "1px",
+     "n": 3
+    },
+    {
+     "v": "17px",
+     "n": 1
+    },
+    {
+     "v": "23px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "16px",
+     "n": 37
+    },
+    {
+     "v": "24px",
+     "n": 19
+    },
+    {
+     "v": "32px",
+     "n": 9
+    },
+    {
+     "v": "128px",
+     "n": 7
+    },
+    {
+     "v": "48px",
+     "n": 3
+    },
+    {
+     "v": "64px",
+     "n": 2
+    },
+    {
+     "v": "20px",
+     "n": 2
+    },
+    {
+     "v": "40px",
+     "n": 2
+    },
+    {
+     "v": "4px",
+     "n": 1
+    },
+    {
+     "v": "80px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "Gone are the days of scrambling to chase receipts, manually coding really large data sets. All of that has been automati",
+    "chars": 170,
+    "lines": 3,
+    "charsPerLine": 57,
+    "width": 533,
+    "fontSize": "16px",
+    "lineHeight": "22px",
+    "color": "lab(2.83994 0.367254 0.969091)"
+   },
+   "rootVars": {
+    "--font-sans": "\"Lausanne\", Arial, sans-serif",
+    "--font-mono": "\"IBM Plex Mono\", ui-monospace, monospace",
+    "--color-cyan-400": "lab(76.6045% -40.9406 -29.6231)",
+    "--color-blue-600": "lab(44.0605% 29.0279 -86.0352)",
+    "--color-gray-50": "lab(98.2596% -.247031 -.706708)",
+    "--color-gray-100": "lab(96.1596% -.0823438 -1.13575)",
+    "--color-gray-200": "lab(91.6229% -.159115 -2.26791)",
+    "--color-gray-300": "lab(85.1236% -.612259 -3.7138)",
+    "--color-gray-500": "lab(47.7841% -.393182 -10.0268)",
+    "--color-gray-600": "lab(35.6337% -1.58697 -10.8425)",
+    "--color-gray-700": "lab(27.1134% -.956401 -12.3224)",
+    "--color-gray-900": "lab(8.11897% .811279 -12.254)",
+    "--color-black": "var(--black)",
+    "--color-white": "var(--white)",
+    "--spacing": ".25rem",
+    "--breakpoint-sm": "480px",
+    "--breakpoint-md": "768px",
+    "--breakpoint-lg": "992px",
+    "--breakpoint-xl": "1280px",
+    "--breakpoint-2xl": "1440px",
+    "--container-sm": "24rem",
+    "--container-md": "28rem",
+    "--container-lg": "32rem",
+    "--container-xl": "36rem",
+    "--container-2xl": "42rem",
+    "--container-3xl": "48rem",
+    "--container-4xl": "56rem",
+    "--container-5xl": "64rem",
+    "--container-6xl": "72rem",
+    "--text-xs": ".75rem",
+    "--text-xs--line-height": "calc(1 / .75)",
+    "--text-sm": ".875rem",
+    "--text-sm--line-height": "calc(1.25 / .875)",
+    "--text-base": "1rem",
+    "--text-base--line-height": "calc(1.5 / 1)",
+    "--text-lg": "1.125rem",
+    "--text-lg--line-height": "calc(1.75 / 1.125)",
+    "--text-xl": "1.25rem",
+    "--text-xl--line-height": "calc(1.75 / 1.25)",
+    "--text-2xl": "1.5rem",
+    "--text-2xl--line-height": "calc(2 / 1.5)",
+    "--text-3xl": "1.875rem",
+    "--text-3xl--line-height": "calc(2.25 / 1.875)",
+    "--text-4xl": "2.25rem",
+    "--text-4xl--line-height": "calc(2.5 / 2.25)",
+    "--text-5xl": "3rem",
+    "--text-5xl--line-height": "1",
+    "--font-weight-light": "300",
+    "--font-weight-normal": "400",
+    "--font-weight-medium": "500",
+    "--font-weight-semibold": "600",
+    "--font-weight-bold": "700",
+    "--tracking-tight": "-.025em",
+    "--tracking-normal": "0em",
+    "--tracking-wide": ".025em",
+    "--tracking-wider": ".05em",
+    "--tracking-widest": ".1em",
+    "--leading-tight": "1.25",
+    "--leading-relaxed": "1.625",
+    "--radius-sm": ".25rem",
+    "--radius-md": ".375rem",
+    "--radius-lg": ".5rem",
+    "--radius-xl": ".75rem",
+    "--radius-2xl": "1rem",
+    "--radius-3xl": "1.5rem",
+    "--drop-shadow-md": "0 3px 3px #0000001f",
+    "--drop-shadow-lg": "0 4px 4px #00000026",
+    "--ease-out": "cubic-bezier(0, 0, .2, 1)",
+    "--ease-in-out": "cubic-bezier(.4, 0, .2, 1)",
+    "--animate-spin": "spin 1s linear infinite",
+    "--animate-ping": "ping 1s cubic-bezier(0, 0, .2, 1) infinite",
+    "--animate-pulse": "pulse 2s cubic-bezier(.4, 0, .6, 1) infinite",
+    "--blur-xs": "4px",
+    "--blur-sm": "8px",
+    "--blur-md": "12px",
+    "--blur-lg": "16px",
+    "--blur-xl": "24px",
+    "--blur-3xl": "64px",
+    "--aspect-video": "16 / 9",
+    "--default-transition-duration": ".15s",
+    "--default-transition-timing-function": "cubic-bezier(.4, 0, .2, 1)",
+    "--default-font-family": "var(--font-sans)",
+    "--default-mono-font-family": "var(--font-mono)",
+    "--color-black-0": "var(--black-0)",
+    "--color-black-25": "var(--black-25)",
+    "--color-black-50": "var(--black-50)",
+    "--color-black-100": "var(--black-100)",
+    "--color-black-200": "var(--black-200)",
+    "--color-black-300": "var(--black-300)",
+    "--color-black-400": "var(--black-400)",
+    "--color-black-500": "var(--black-500)",
+    "--color-black-600": "var(--black-600)",
+    "--color-black-700": "var(--black-700)",
+    "--color-black-800": "var(--black-800)",
+    "--color-black-900": "var(--black-900)",
+    "--color-white-0": "var(--white-0)",
+    "--color-white-25": "var(--white-25)",
+    "--color-white-50": "var(--white-50)",
+    "--color-white-100": "var(--white-100)",
+    "--color-white-200": "var(--white-200)",
+    "--color-white-300": "var(--white-300)",
+    "--color-white-400": "var(--white-400)",
+    "--color-white-500": "var(--white-500)",
+    "--color-white-600": "var(--white-600)",
+    "--color-white-700": "var(--white-700)",
+    "--color-white-800": "var(--white-800)",
+    "--color-white-900": "var(--white-900)",
+    "--text-color-primary": "var(--text-primary)",
+    "--text-color-primaryReverse": "var(--text-primaryReverse)",
+    "--text-color-hushed": "var(--text-hushed)",
+    "--text-color-hushedReverse": "var(--text-hushedReverse)",
+    "--text-color-blaze": "var(--blaze)",
+    "--background-color-black": "var(--black)",
+    "--background-color-solar": "var(--solar)",
+    "--background-color-solarLight": "var(--solarLight)",
+    "--background-color-smolder": "var(--smolder)",
+    "--background-color-grayLight": "var(--grayLight)",
+    "--background-color-grayMedium": "var(--grayMedium)",
+    "--background-color-grayDark": "var(--grayDark)",
+    "--background-color-white": "var(--white)",
+    "--background-color-springLight": "var(--springLight)",
+    "--background-color-spring": "var(--spring)",
+    "--background-image-midnight": "var(--midnight)",
+    "--background-image-dusk": "var(--dusk)",
+    "--background-image-daylight": "var(--daylight)",
+    "--border-color-primary": "var(--border-primary)",
+    "--accent-color-primary": "var(--text-primary)",
+    "--z-index-header": "var(--z-header)",
+    "--z-index-overlay": "var(--z-overlay)",
+    "--z-index-modal": "var(--z-modal)",
+    "--z-index-popover": "var(--z-popover)",
+    "--z-index-tooltip": "var(--z-tooltip)",
+    "--z-index-toast": "var(--z-toast)",
+    "--z-index-navmenu": "var(--z-navmenu)",
+    "--page-theme": "var(--white)",
+    "--lausanne-ascent": "1866",
+    "--lausanne-descent": "-410",
+    "--lausanne-units-per-em": "2048",
+    "--white-rgb": "255, 255, 255",
+    "--white-0": "rgba(var(--white-rgb), 0)",
+    "--white-25": "rgba(var(--white-rgb), .025)",
+    "--white-50": "rgba(var(--white-rgb), .05)",
+    "--white-100": "rgba(var(--white-rgb), .1)",
+    "--white-200": "rgba(var(--white-rgb), .2)",
+    "--white-300": "rgba(var(--white-rgb), .3)",
+    "--white-400": "rgba(var(--white-rgb), .4)",
+    "--white-500": "rgba(var(--white-rgb), .5)",
+    "--white-600": "rgba(var(--white-rgb), .6)",
+    "--white-700": "rgba(var(--white-rgb), .7)",
+    "--white-800": "rgba(var(--white-rgb), .8)",
+    "--white-900": "rgba(var(--white-rgb), .9)",
+    "--black-rgb": "33, 33, 33",
+    "--black-0": "rgba(var(--black-rgb), 0)",
+    "--black-25": "rgba(var(--black-rgb), .025)",
+    "--black-50": "rgba(var(--black-rgb), .05)",
+    "--black-100": "rgba(var(--black-rgb), .1)",
+    "--black-200": "rgba(var(--black-rgb), .2)",
+    "--black-300": "rgba(var(--black-rgb), .3)",
+    "--black-400": "rgba(var(--black-rgb), .4)",
+    "--black-500": "rgba(var(--black-rgb), .5)"
+   },
+   "blockedSheets": 0,
+   "reducedMotionRules": 12,
+   "h1": [
+    "Time is money. Save both."
+   ],
+   "h2": [
+    "Join 70,000 of the world’s most ambitious companies growing 3.2x faster than the average American business.",
+    "One platform for all of finance. Agents for every workflow, working 24/7.",
+    "See recommendations for your business",
+    "Systems that never spoke",
+    "Built on the intelligence of 70k+ finance teams. One platform for the agentic era.",
+    "Introducing Stack by Ramp. The AI operating system built for today’s top finance teams.",
+    "Keep your finance team focused on strategy. Let agents handle the busywork.",
+    "AI that learns from your team. And gets smarter with every team that joins.",
+    "Scale the team.Shrink the paperwork.",
+    "Set user access on autopilot.",
+    "One platform for all your global spend.",
+    "We've got the receipts.",
+    "Time is money. Save both."
+   ],
+   "h3": [
+    "Cards & Expenses that handle themselves",
+    "Procure to pay without chasing approvals",
+    "Accounting automation eliminates month-end madness",
+    "Banking that flows money to the highest return",
+    "200+ Integrations to the tools you already use"
+   ],
+   "nav": [
+    "Learn more",
+    "Customers",
+    "Pricing",
+    "Sign in",
+    "See a demo",
+    "Get started"
+   ],
+   "ctas": [
+    "Learn more [66x19 bg #000000 a0 fg lab(100 0 0) r 0px pad 0px 13px/400]",
+    "Products [105x44 bg #000000 a0 fg lab(2.83994 0.367254 0.969091) r 6px pad 0px 12px 14px/400]",
+    "Partners [101x44 bg #000000 a0 fg lab(2.83994 0.367254 0.969091) r 6px pad 0px 12px 14px/400]",
+    "Solutions [107x44 bg #000000 a0 fg lab(2.83994 0.367254 0.969091) r 6px pad 0px 12px 14px/400]",
+    "Resources [115x44 bg #000000 a0 fg lab(2.83994 0.367254 0.969091) r 6px pad 0px 12px 14px/400]",
+    "Customers [93x44 bg #000000 a0 fg lab(2.83994 0.367254 0.969091) r 6px pad 0px 12px 14px/400]",
+    "Pricing [68x44 bg #000000 a0 fg lab(2.83994 0.367254 0.969091) r 6px pad 0px 12px 14px/400]",
+    "Sign in [75x34 bg #000000 a0 fg lab(2.83994 0.367254 0.969091) r 0px pad 0px 16px/400]",
+    "Sign in [75x34 bg #ffffff a0.05 fg lab(2.83994 0.367254 0.969091) r 6px pad 12px 16px 14px/400]",
+    "See a demo [107x34 bg lab(92.1406 -20.4979 84.7726) fg lab(2.83994 0.367254 0.969091) r 6px pad 12px 16px 14px/400]",
+    "Get started [103x34 bg lab(8.86531 0.515342 0.18619) fg lab(100 0 0) r 6px pad 12px 16px 14px/400]",
+    "banking* [72x24 bg #000000 a0 fg lab(2.83994 0.367254 0.969091 / 0.6) r 0px pad 0px 18px/400]",
+    "Get started for free [176x52 bg lab(92.1406 -20.4979 84.7726) fg lab(2.83994 0.367254 0.969091) r 8px pad 0px 20px 16px/400]",
+    "Read the report [1312x24 bg #000000 a0 fg lab(2.83994 0.367254 0.969091 / 0.6) r 0px pad 0px 16px/400]"
+   ],
+   "media": {
+    "img": 70,
+    "svg": 30,
+    "video": 3,
+    "canvas": 9
+   }
+  }
+ }
+}

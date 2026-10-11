@@ -1,0 +1,106 @@
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebSite",
+   "@id": "https://emberandoak.example/#website",
+   "url": "https://emberandoak.example/",
+   "name": "Ember & Oak",
+   "alternateName": [
+    "Ember & Oak Coffee Roasters"
+   ],
+   "publisher": {
+    "@id": "https://emberandoak.example/#org"
+   },
+   "inLanguage": "en-US"
+  },
+  {
+   "@type": "OnlineStore",
+   "@id": "https://emberandoak.example/#org",
+   "name": "Ember & Oak Coffee Roasters",
+   "url": "https://emberandoak.example/",
+   "logo": "https://emberandoak.example/logo-512.png",
+   "image": "https://emberandoak.example/og/home-1200x630.png",
+   "description": "Specialty coffee roaster in Southeast Portland, Oregon. Single-origin coffee roasted twelve kilos at a time on a 1962 Probat and shipped the day after the roast.",
+   "address": {
+    "@id": "https://emberandoak.example/#address"
+   },
+   "subOrganization": {
+    "@id": "https://emberandoak.example/visit/#cafe"
+   }
+  },
+  {
+   "@type": "Product",
+   "@id": "https://emberandoak.example/coffee/ethiopia-guji-hambela-wamena/#product",
+   "name": "Ethiopia Guji",
+   "description": "Light roast, washed, 2,100 m. Peach, jasmine, wildflower honey.",
+   "url": "https://emberandoak.example/coffee/ethiopia-guji-hambela-wamena/",
+   "image": "https://emberandoak.example/og/home-1200x630.png",
+   "brand": {
+    "@id": "https://emberandoak.example/#org"
+   },
+   "weight": {
+    "@type": "QuantitativeValue",
+    "value": 340,
+    "unitCode": "GRM"
+   },
+   "offers": {
+    "@type": "Offer",
+    "url": "https://emberandoak.example/coffee/ethiopia-guji-hambela-wamena/",
+    "price": "21.00",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition",
+    "seller": {
+     "@id": "https://emberandoak.example/#org"
+    }
+   }
+  },
+  {
+   "@type": "PostalAddress",
+   "@id": "https://emberandoak.example/#address",
+   "streetAddress": "1120 SE Water Ave",
+   "addressLocality": "Portland",
+   "addressRegion": "OR",
+   "postalCode": "97214",
+   "addressCountry": "US"
+  },
+  {
+   "@type": "CafeOrCoffeeShop",
+   "@id": "https://emberandoak.example/visit/#cafe",
+   "name": "Ember & Oak Coffee Roasters",
+   "url": "https://emberandoak.example/visit/",
+   "parentOrganization": {
+    "@id": "https://emberandoak.example/#org"
+   },
+   "address": {
+    "@id": "https://emberandoak.example/#address"
+   },
+   "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 45.51216,
+    "longitude": -122.66534
+   },
+   "openingHoursSpecification": [
+    {
+     "@type": "OpeningHoursSpecification",
+     "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+     ],
+     "opens": "07:00",
+     "closes": "15:00"
+    }
+   ],
+   "servesCuisine": "Coffee",
+   "image": "https://emberandoak.example/og/home-1200x630.png"
+  }
+ ]
+}
+</script>

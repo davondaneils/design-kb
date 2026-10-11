@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Ember &amp; Oak: small-batch coffee roasters in Portland, Oregon</title>
+<meta name="description" content="Single-origin coffee roasted 12 kg at a time on a 1962 Probat in Portland, shipped the day after the roast. From $18 a bag on subscription, shipping included.">
+<link rel="canonical" href="https://emberandoak.example/">
+<meta name="robots" content="max-image-preview:large">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9f6f4">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#16100c">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ember &amp; Oak">
+<meta property="og:title" content="Ember &amp; Oak: small-batch coffee roasters in Portland">
+<meta property="og:description" content="Single-origin coffee, roasted 12 kilos at a time and shipped the day after the roast. Every bag prints what we paid for it.">
+<meta property="og:url" content="https://emberandoak.example/">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://emberandoak.example/og/home-1200x630.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A bag of Ember &amp; Oak coffee on an oak table beside a handful of green coffee, with the wordmark and the line: single-origin coffee, roasted in Portland.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="{{FAVICON}}" type="image/svg+xml">
+<link rel="icon" href="/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="fonts/newsreader-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" type="image/webp" media="(min-width: 1024px), (max-width: 639.98px)" imagesrcset="../../assets/photos/hero-bag-portrait-480.webp 480w, ../../assets/photos/hero-bag-portrait-678.webp 678w" imagesizes="(min-width: 1280px) 600px, (min-width: 1024px) 45vw, 100vw" fetchpriority="high">
+{{JSONLD}}
+<style>
+/* Ember & Oak homepage, round 4 (kb/tests/round4.md): round 3 plus the clean-context critic's gate fixes
+   (kb/reviews/round3-critic.md). Round 3 notes follow. One page with every wave 2 gain folded in, then pushed on
+   photography and the middle of the page. Built through design-director > design-playbook-landing.
+   Concept (design-art-direction 01): "The hill and the fire". Photographs show the things (the bag, the drop, the cupping);
+   drawings show the places and the numbers (one contour per 150 m of altitude, the batch's real roast log).
+   Reject test: does each visual show a thing we make, a place, a measurement or the roast? If not, it goes.
+   Photos are AI-generated stand-ins (kb/assets/photos/README.md); the page never captions them as real people or places.
+   Wave gains carried: layout (12-column grid with a margin column, ruled index, right-bleeding chart paper, hanging numerals,
+   2.3x ledger with rules to scale, phone and tablet edits), copy (true numbers, one promise said one way, absolute dates,
+   one verb per action), graphic (outlined wordmark with the ember O, favicon, icons on a 16 grid), search (title, canonical,
+   one JSON-LD graph, social card, real links), motion (two-transform curve wipe, contour rise, cart digit roll, tokens only,
+   per-element reduced motion), conversion (price and primary in the first screen, term line, proof with a denominator,
+   checkout), UX (three-question order slip, quick add asks the grind, cart drawer with undo, phone menu), frontend (cascade
+   layers, light-dark() tokens, skip link, forms that work without script, fonts self-hosted and preloaded). */
+@layer reset, tokens, base, layout, components, states, utilities;
+
+@font-face { font-family: "Newsreader"; src: url("fonts/newsreader-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Newsreader"; src: url("fonts/newsreader-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fonts/inter-var.woff2") format("woff2"); font-weight: 400 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Geist Mono"; src: url("fonts/geist-mono.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
+/* Metric fallbacks (design-typography 06): the swap moves nothing. Values from kb/tests/design-typography/fonts. */
+/* @inline newsreader-fallback.css */
+/* @inline newsreader-fallback-italic.css */
+/* @inline inter-fallback.css */
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-padding-top: 80px; } /* sticky header 64 + 16 */
+  body, h1, h2, h3, h4, p, ul, ol, dl, dd, figure, blockquote, fieldset { margin: 0; padding: 0; }
+  ul, ol { list-style: none; } /* lists keep their semantics; numerals are typed where they are design */
+  fieldset { border: 0; min-width: 0; }
+  legend { padding: 0; }
+  img { display: block; max-width: 100%; height: auto; }
+  button, input, select { font: inherit; color: inherit; }
+  [hidden] { display: none !important; }
+  @media (forced-colors: active) { .btn, .opt, input, .stepper, dialog, .chip, .slip, .lot .tile { border: 1px solid CanvasText; } }
+}
+
+@layer tokens {
+  :root {
+    color-scheme: light dark;
+    /* Primitives */
+    --color-brand: #f26b21;
+    --color-orange-100: #ffe3d5; --color-orange-300: #ffa97e; --color-orange-600: #b14500; --color-orange-700: #933701;
+    --color-orange-800: #762901; --color-orange-900: #5a1d00; --color-orange-950: #3f0f00;
+    --color-warm-50: #f9f6f4; --color-warm-100: #eee8e4; --color-warm-200: #dfd5ce; --color-warm-300: #ccbeb3; --color-warm-500: #998779;
+    --color-warm-600: #79685b; --color-warm-800: #4f4238; --color-warm-900: #3b3129; --color-warm-950: #27201a; --color-warm-975: #1e1813; --color-warm-990: #16100c;
+    --color-red-300: #ffa59e; --color-red-600: #c2272d; --color-green-300: #8fd6a6; --color-green-700: #1e6b3a;
+    --color-white: #ffffff;
+
+    /* Semantic roles: one declaration per role, light and dark side by side (design-frontend 03). A section that sets
+       color-scheme: dark (the roastery) gets every dark value without a second token set. */
+    --color-bg: light-dark(var(--color-warm-50), var(--color-warm-990));
+    --color-surface: light-dark(var(--color-white), var(--color-warm-975));
+    --color-surface-raised: light-dark(var(--color-white), var(--color-warm-950));
+    --color-surface-sunken: light-dark(var(--color-warm-100), var(--color-warm-990));
+    --color-text: light-dark(var(--color-warm-950), var(--color-warm-50));
+    --color-text-muted: light-dark(var(--color-warm-600), var(--color-warm-300));
+    --color-text-muted-on-tint: light-dark(var(--color-warm-800), var(--color-warm-300)); /* warm 600 drops to 4.24:1 on hover tints */
+    --color-border: light-dark(var(--color-warm-200), var(--color-warm-800));
+    --color-border-strong: light-dark(var(--color-warm-500), var(--color-warm-500));
+    --color-primary: var(--color-orange-600);
+    --color-primary-hover: var(--color-orange-700);
+    --color-primary-active: var(--color-orange-800);
+    --color-on-primary: var(--color-white);
+    --color-accent: light-dark(var(--color-orange-600), var(--color-orange-300));
+    --color-success: light-dark(var(--color-green-700), var(--color-green-300));
+    --color-danger: light-dark(var(--color-red-600), var(--color-red-300));
+    --color-focus-ring: light-dark(var(--color-orange-600), var(--color-orange-300));
+    --color-selected-bg: light-dark(var(--color-orange-100), var(--color-orange-900));
+    --color-selected-text: light-dark(var(--color-warm-950), var(--color-warm-50));
+    --color-selected-ring: light-dark(var(--color-orange-600), var(--color-orange-300));
+    --color-feature-bg: light-dark(var(--color-brand), var(--color-orange-950));
+    --color-feature-lift: light-dark(#f7884a, #4c1803);   /* brand lifted 5% OKLCH: the light pool behind the headline */
+    --color-feature-text: light-dark(var(--color-warm-950), var(--color-warm-50));
+    --color-band-line: light-dark(rgb(255 255 255 / 0.22), rgb(0 0 0 / 0.35));
+    --color-illustration-surface: light-dark(var(--color-warm-100), var(--color-warm-975));
+    --color-illustration-line: light-dark(var(--color-warm-300), var(--color-warm-800));
+    --color-illustration-accent: light-dark(var(--color-orange-600), var(--color-orange-300));
+    --color-illustration-accent-fill: light-dark(rgb(242 107 33 / 0.12), rgb(255 169 126 / 0.08));
+    /* Ink printed on the bag label in the photograph: a physical object, so one value in both themes (not remapped). */
+    --color-illustration-ink: #2a221b;                          /* label ink, a printed black warmed toward the kraft */
+    --color-illustration-ink-accent: var(--color-orange-700);  /* the roast curve, printed in the house orange */
+    --color-logo-ember: var(--color-brand);
+    --color-scrim: light-dark(rgb(39 32 26 / 0.48), rgb(0 0 0 / 0.6));
+    --photo-dim: light-dark(1, 0.9); /* not a color: read by the dim rule below through a registered fallback */
+
+    /* Space (FOUNDATIONS: 0, 2, 4, 8, 12, 16, 24, 32, 48, 64, 96, 128) */
+    --space-1: 2px; --space-2: 4px; --space-3: 8px; --space-4: 12px; --space-5: 16px; --space-6: 24px;
+    --space-7: 32px; --space-8: 48px; --space-9: 64px; --space-10: 96px; --space-11: 128px;
+    /* Type (1.25 scale, rem) and the display ramp */
+    --text-xs: 0.75rem; --text-sm: 0.875rem; --text-base: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem;
+    --text-2xl: 1.9375rem; --text-3xl: 2.4375rem; --text-4xl: 3.0625rem; --text-5xl: 3.8125rem;
+    --text-display: clamp(3.0625rem, 14cqi, 5.5rem);                /* 49 to 88px, sized to the hero column, not the window */
+    --text-display-2: clamp(2.4375rem, 1.6rem + 3.4vw, 4.75rem);   /* 39 to 76px, section statements */
+    --text-numeral: clamp(3.8125rem, 2.3rem + 6.1vw, 9.5rem);      /* 61 to 152px, the ledger figure */
+    --leading-display: 1.1; --leading-tight: 1.1; --leading-snug: 1.25; --leading-normal: 1.5;
+    --size-measure: 52ch;
+    --font-serif: "Newsreader", "Newsreader Fallback", "Iowan Old Style", Charter, Georgia, serif;
+    --font-sans: "Inter", "Inter Fallback", -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    /* Radius: one family */
+    --radius-sm: 4px; --radius-md: 8px; --radius-lg: 12px; --radius-xl: 16px; --radius-full: 9999px;
+    --radius-control: var(--radius-full); --radius-card: var(--radius-lg);
+    /* Motion (FOUNDATIONS v0.4.1; design-motion tokens). Page 600 is for one below-the-fold reveal only. */
+    --duration-instant: 100ms; --duration-fast: 150ms; --duration-base: 200ms; --duration-slow: 300ms; --duration-page: 600ms;
+    --ease-standard: cubic-bezier(0.2, 0, 0, 1); --ease-enter: cubic-bezier(0, 0, 0, 1); --ease-exit: cubic-bezier(0.3, 0, 1, 1);
+    --motion-hover: var(--duration-instant) var(--ease-standard);
+    --motion-enter: var(--duration-base) var(--ease-enter);
+    /* Elevation (FOUNDATIONS recipe). Dark layers are transparent, not "none", so a composed list stays valid
+       (design-frontend found "none" inside a list voided the whole dark button highlight). */
+    --shadow-rgb: 39 32 26;
+    --ring: 0 0 0 1px light-dark(rgb(39 32 26 / 0.08), rgb(255 255 255 / 0.08));
+    --ring-strong: 0 0 0 1px light-dark(rgb(39 32 26 / 0.12), rgb(255 255 255 / 0.14));
+    --highlight: inset 0 1px 0 light-dark(rgb(255 255 255 / 0.14), rgb(255 255 255 / 0.08));
+    --shadow-1: 0 1px 2px light-dark(rgb(39 32 26 / 0.06), transparent);
+    --shadow-2: 0 1px 2px light-dark(rgb(39 32 26 / 0.06), transparent), 0 4px 12px -2px light-dark(rgb(39 32 26 / 0.08), transparent);
+    --shadow-3: 0 2px 4px -1px light-dark(rgb(39 32 26 / 0.08), transparent), 0 12px 24px -6px light-dark(rgb(39 32 26 / 0.16), transparent);
+    --shadow-4: 0 4px 8px -2px light-dark(rgb(39 32 26 / 0.10), transparent), 0 24px 48px -12px light-dark(rgb(39 32 26 / 0.24), transparent);
+    --elevation-card: var(--ring), var(--shadow-1);
+    --elevation-popover: var(--ring), var(--shadow-3), var(--highlight);
+    --elevation-modal: var(--ring), var(--shadow-4), var(--highlight);
+    --state-hover: color-mix(in oklch, var(--color-text) 8%, transparent);
+    --state-pressed: color-mix(in oklch, var(--color-text) 10%, transparent);
+    --icon-stroke: 1.5px;
+    /* Sizes (FOUNDATIONS v0.4.1). 44px touch heights below stay literal: they are WCAG 2.5.5 minimums, not sizes. */
+    --size-control-sm: 32px; --size-control-md: 40px; --size-control-lg: 48px;
+    --size-icon-sm: 12px; --size-icon-md: 16px; --size-icon-lg: 20px; --size-icon-xl: 24px;
+  }
+}
+
+@layer base {
+  body { background: var(--color-bg); color: var(--color-text); font: var(--text-base)/var(--leading-normal) var(--font-sans);
+    font-kerning: normal; font-synthesis: none; -webkit-tap-highlight-color: transparent; }
+  @media (prefers-color-scheme: dark) { body { -webkit-font-smoothing: antialiased; } }
+  h1, h2, h3 { text-wrap: balance; font-weight: inherit; font-size: inherit; }
+  p, li, dd { text-wrap: pretty; }
+  ::selection { background: var(--color-selected-bg); color: var(--color-selected-text); }
+  input { accent-color: var(--color-primary); caret-color: var(--color-focus-ring); }
+  a { color: var(--color-accent); text-decoration-thickness: 0.06em; text-underline-offset: 0.2em; }
+  @media (hover: hover) { a:hover { text-decoration-thickness: 0.12em; } }
+  :focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+  :where(a:focus-visible) { border-radius: var(--radius-sm); }
+  em { font-style: italic; }
+  b, strong { font-weight: 600; }
+  .i { flex: none; display: block; width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: var(--icon-stroke); stroke-linecap: round; stroke-linejoin: round; }
+  .i .solid { fill: currentColor; stroke: none; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+}
+
+@layer layout {
+  .wrap { max-width: 1232px; margin: 0 auto; padding: 0 var(--space-5); }
+  @media (min-width: 768px) { .wrap { padding: 0 var(--space-8); } }
+  /* Page grid (design-layout 06): 12 columns from lg, gap 32; columns 1 to 3 are the margin (labels, captions, hanging
+     numerals, axis labels), 4 to 12 the body. The hero, band and ledger split on the same lines. One column under lg. */
+  .g12 { display: grid; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 1024px) {
+    .g12 { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--space-7); }
+    .in-margin { grid-column: 1 / 4; }
+    .in-body { grid-column: 4 / -1; }
+    .in-full { grid-column: 1 / -1; }
+    .in-left { grid-column: 1 / 7; }
+    .in-right { grid-column: 7 / -1; }
+    .margin-sticky { position: sticky; top: 96px; align-self: start; }
+  }
+  .section { padding: var(--space-9) 0; }
+  @media (min-width: 1024px) { .section { padding: var(--space-11) 0; } .hero + .section { padding-top: 0; } }
+  .block + .block { margin-top: var(--space-9); }
+  @media (min-width: 1024px) { .block + .block { margin-top: var(--space-10); } }
+}
+
+@layer components {
+  /* ---------- Type roles ---------- */
+  .display { font-family: var(--font-serif); font-size: var(--text-display); line-height: var(--leading-display); letter-spacing: -0.025em;
+    translate: -0.04em 0; } /* optical margin: the E's side bearing */
+  .label { font: 600 var(--text-xs)/1.333 var(--font-sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); }
+  .mono { font-family: var(--font-mono); font-weight: 400; letter-spacing: 0; text-transform: none; font-variant-numeric: tabular-nums slashed-zero; }
+  .label .mono { font-weight: 500; letter-spacing: 0.02em; }
+  .num { font-variant-numeric: tabular-nums lining-nums; }
+  .unit { text-transform: none; letter-spacing: 0.02em; }
+  .h-display { font: 400 var(--text-display-2)/var(--leading-tight) var(--font-serif); letter-spacing: -0.02em; max-width: 14em; }
+    .muted { color: var(--color-text-muted); }
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: 0; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+  .skip { position: fixed; left: var(--space-3); top: var(--space-3); z-index: 30; display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--space-5); border-radius: var(--radius-md);
+    background: var(--color-surface-raised); color: var(--color-text); box-shadow: var(--elevation-popover); font-weight: 600; text-decoration: none; transform: translateY(-200%); }
+  .skip:focus { transform: none; }
+  main:focus { outline: none; }
+
+  /* ---------- Buttons: rest, hover (fine pointer), pressed (a step past hover), focus ring, busy. No state changes the box. ---------- */
+  .btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: var(--space-3); min-height: var(--size-control-lg); padding: var(--space-4) var(--space-6);
+    border-radius: var(--radius-control); border: 1px solid transparent; font: 600 var(--text-base)/1.5 var(--font-sans); text-decoration: none; cursor: pointer; white-space: nowrap;
+    transition: background-color var(--motion-hover), border-color var(--motion-hover), color var(--motion-hover); }
+  .btn-primary { background: var(--color-primary); color: var(--color-on-primary); box-shadow: var(--highlight), var(--shadow-1); }
+  .btn-secondary { background: transparent; color: var(--color-text); border-color: var(--color-border-strong); }
+  @media (hover: hover) {
+    .btn-primary:hover { background: var(--color-primary-hover); box-shadow: var(--highlight), var(--shadow-2); }
+    .btn-secondary:hover { background: var(--state-hover); }
+  }
+  .btn-primary:active { background: var(--color-primary-active); box-shadow: var(--highlight); }
+  .btn-secondary:active { background: var(--state-pressed); }
+  .btn-sm { min-height: var(--size-control-md); padding: var(--space-3) var(--space-5); font-size: var(--text-sm); }
+  .btn-wide { width: 100%; min-height: 56px; }
+  .btn[aria-busy=true] { cursor: progress; }
+  .btn .spinner { display: none; width: 16px; height: 16px; border-radius: var(--radius-full); border: 2px solid currentColor; border-right-color: transparent; }
+  .btn[aria-busy=true] .spinner { display: inline-block; }
+  @media (prefers-reduced-motion: no-preference) {
+    .btn { transition: background-color var(--motion-hover), border-color var(--motion-hover), color var(--motion-hover), transform var(--motion-hover); }
+    .btn:active { transform: scale(0.97); }
+    .btn-wide:active { transform: scale(0.98); }  /* wide buttons press less: the same scale moves their edges further */
+    .btn[aria-busy=true] .spinner { animation: spin 800ms linear infinite, appear var(--duration-fast) var(--ease-enter) 300ms both; }
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes appear { from { opacity: 0; } }
+  @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+  .link-btn { min-height: 44px; padding: 0 var(--space-3); margin: 0 calc(var(--space-3) * -1); border: 0; background: none; color: var(--color-text-muted);
+    font: 500 var(--text-sm)/1.5 var(--font-sans); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; cursor: pointer; border-radius: var(--radius-sm); }
+  @media (hover: hover) { .link-btn:hover { color: var(--color-text); } }
+  .more { display: inline-flex; align-items: center; gap: var(--space-2); min-height: 44px; font-weight: 500; }
+
+  /* ---------- Header: sticky, translucent, one hairline, no shadow (it would be a second light source) ---------- */
+  .site-header { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid var(--color-border);
+    background: color-mix(in oklch, var(--color-bg) 86%, transparent); -webkit-backdrop-filter: saturate(1.4) blur(12px); backdrop-filter: saturate(1.4) blur(12px); }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: var(--space-5); min-height: 64px; }
+  .logo { display: block; color: var(--color-text); padding: var(--space-4) 0; border-radius: var(--radius-sm); }
+  .logo svg { display: block; height: 22px; width: auto; }
+  @media (min-width: 768px) { .logo svg { height: 26px; } }
+  .ember { fill: var(--color-logo-ember); }
+  .nav { display: flex; align-items: center; gap: var(--space-2); }
+  .nav a { display: inline-flex; align-items: center; gap: var(--space-3); color: var(--color-text); text-decoration: none; min-height: 44px; padding: var(--space-3) var(--space-4);
+    font-size: var(--text-sm); font-weight: 500; border-radius: var(--radius-full); transition: background-color var(--motion-hover); }
+  @media (hover: hover) { .nav a:hover { background: var(--state-hover); } }
+  .nav a:active { background: var(--state-pressed); }
+  .nav .hide-sm { display: none; }
+  @media (max-width: 767.98px) { .nav .hide-phone { display: none; } } /* Shop is the first row of the menu on phones */
+  @media (min-width: 768px) { .nav .hide-sm { display: inline-flex; } }
+  .cart-count { display: inline-grid; place-items: center; min-width: 24px; height: 24px; padding: 0 var(--space-2); overflow: hidden; border-radius: var(--radius-full);
+    background: var(--color-surface-sunken); box-shadow: inset 0 0 0 1px var(--color-border); font-size: var(--text-xs); font-weight: 600; font-variant-numeric: tabular-nums;
+    transition: background-color var(--motion-hover), color var(--motion-hover); }
+  .cart-count > span { grid-area: 1 / 1; } /* old and new digit share one cell while the count rolls */
+  .cart-count.has { background: var(--color-text); color: var(--color-bg); box-shadow: none; }
+  .menu-toggle { display: inline-flex; align-items: center; gap: var(--space-3); min-height: 44px; padding: var(--space-3) var(--space-4); border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-full); background: none; font: 500 var(--text-sm)/1.5 var(--font-sans); cursor: pointer; }
+  @media (hover: hover) { .menu-toggle:hover { background: var(--state-hover); } }
+  .menu-toggle:active, .menu-toggle[aria-expanded=true] { background: var(--state-pressed); }
+  @media (min-width: 768px) { .menu-toggle, .mobile-menu { display: none !important; } }
+  .site-header:has(#menu-toggle[aria-expanded=true]) { position: relative; } /* open, the menu is 305px tall: it scrolls away with the page instead of covering every anchor and focus target (WCAG 2.4.11) */
+  .mobile-menu ul { display: grid; padding: 0 0 var(--space-5); }
+  .mobile-menu a { display: flex; align-items: center; justify-content: space-between; min-height: 56px; color: var(--color-text); text-decoration: none;
+    font: 400 var(--text-xl)/1.25 var(--font-serif); border-bottom: 1px solid var(--color-border); }
+  .mobile-menu .i { color: var(--color-text-muted); }
+  @media (max-width: 767px) { .bar { gap: var(--space-3); } .nav a { padding: var(--space-3); } }
+
+  /* ---------- Hero: type left, the photograph right, on the 6 + 6 lines of the page grid. Phone: the words and the buy
+     panel first (price and primary in the first screen), then the photo full bleed, then the facts. ---------- */
+  .hero { padding: var(--space-6) 0 var(--space-9); overflow-x: clip; }
+  @media (min-width: 1024px) { .hero { padding: var(--space-5) 0 var(--space-9); } } /* 1440x900: the lots index peeks above the fold (playbook-landing done 4) */
+  .hero .g12 { grid-template-areas: "copy" "photo" "facts"; }
+  .hero-copy { grid-area: copy; container-type: inline-size; padding-top: var(--space-5); }
+  .hero-photo { grid-area: photo; margin-top: var(--space-7); }
+  .facts { grid-area: facts; }
+  @media (min-width: 1024px) {
+    .hero .g12 { grid-template-areas: none; grid-template-rows: 1fr auto; }
+    .hero-copy { grid-column: 1 / 7; grid-row: 1; padding-top: var(--space-5); }
+    .facts { grid-column: 1 / 7; grid-row: 2; align-self: end; }
+    .hero-photo { grid-column: 7 / -1; grid-row: 1 / 3; margin-top: 0; }
+  }
+  .hero h1 { margin-top: var(--space-5); }
+  .notes { margin-top: var(--space-6); font: italic 400 var(--text-xl)/var(--leading-snug) var(--font-serif); letter-spacing: -0.005em; max-width: 19em; }
+  @media (min-width: 768px) { .notes { font-size: var(--text-2xl); } }
+  /* Buy panel (design-conversion 01, after Apple's price-and-Buy panel): the price is the button's caption. */
+  .buy { margin-top: var(--space-7); display: grid; gap: var(--space-5); max-width: 34rem; }
+  .buy-price { display: flex; align-items: baseline; gap: var(--space-4); }
+  .buy-price .amt { font: 400 var(--text-4xl)/var(--leading-tight) var(--font-serif); letter-spacing: -0.03em; font-variant-numeric: tabular-nums lining-nums; }
+  .buy-price .amt sup { font-size: var(--text-xl); vertical-align: 0.8em; letter-spacing: 0; margin-right: var(--space-1); }
+  .buy-price span:last-child { max-width: 30em; }
+  .actions { display: flex; flex-wrap: wrap; gap: var(--space-4); }
+  @media (max-width: 479px) { .actions .btn { flex: 1 1 100%; } }
+  .buy-note { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-5); font-size: var(--text-sm); color: var(--color-text-muted); }
+  .buy-note a { display: inline-flex; align-items: center; gap: var(--space-2); min-height: 44px; color: var(--color-text); font-weight: 500; }
+  .buy-note .i { width: 12px; height: 12px; color: var(--color-accent); }
+  .facts { display: grid; grid-template-columns: repeat(3, auto); justify-content: space-between; margin-top: var(--space-7); padding-top: var(--space-5); border-top: 1px solid var(--color-border); }
+  @media (min-width: 1024px) { .facts { justify-content: start; column-gap: var(--space-9); } }
+  .facts dd { font: 400 var(--text-3xl)/var(--leading-tight) var(--font-serif); font-variant-numeric: tabular-nums lining-nums; letter-spacing: -0.02em; margin-top: var(--space-3); }
+  .facts dd small { font-size: var(--text-lg); letter-spacing: 0; color: var(--color-text-muted); }
+
+  /* The photograph and its printed label. The frame keeps the photo's own aspect ratio (no object-fit crop), so the label,
+     placed in percent of the photo, lands on the blank label in every crop (measured in kb/tests/round3/photos.py). */
+  .frame { position: relative; overflow: hidden; border-radius: var(--radius-xl); background: var(--color-illustration-surface); isolation: isolate; }
+  .frame img { width: 100%; height: auto; }
+  .frame::after { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 0 0 0 1px rgb(39 32 26 / 0.08); pointer-events: none; }
+  @media (prefers-color-scheme: dark) { .frame img, .frame .print { filter: brightness(0.9); } } /* a lit room in a dark page: take the glare off, keep the color */
+  .print { position: absolute; left: var(--l); top: var(--t); width: var(--w); height: var(--h); mix-blend-mode: multiply; pointer-events: none; }
+  .hero-photo .print { --l: 35.99%; --t: 42.92%; --w: 28.47%; --h: 29.95%; }
+  @media (min-width: 640px) and (max-width: 1023.98px) { .hero-photo .print { --l: 57.36%; --w: 15.27%; } }
+  .print text { fill: var(--color-illustration-ink); }
+  .print .serif { font-family: var(--font-serif); font-style: italic; }
+  .print .sans { font-family: var(--font-sans); font-weight: 600; letter-spacing: 0.12em; }
+  .print .mono { font-family: var(--font-mono); font-weight: 500; }
+  .print .rule { stroke: var(--color-illustration-ink); stroke-width: 0.75; }
+  .print .lcurve { fill: none; stroke: var(--color-illustration-ink-accent); stroke-width: 1.25; stroke-linejoin: round; stroke-linecap: round; }
+  .print .ember { fill: var(--color-brand); }
+  .print .symbol { color: var(--color-illustration-ink); }
+  .caption { margin-top: var(--space-4); display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-2) var(--space-5); font-size: var(--text-sm); color: var(--color-text-muted); }
+  .caption .mono { font-size: var(--text-xs); }
+  @media (max-width: 639px) {
+    .hero-photo .frame { margin-inline: calc(var(--space-5) * -1); border-radius: 0; } /* phone: the photo goes edge to edge */
+  }
+
+  /* ---------- Shop: a ruled index (design-layout 06). Rows a reader compares down one edge; the contour tile is data:
+     one line per 150 m of altitude. ---------- */
+  .margin-label { display: grid; gap: var(--space-4); align-content: start; justify-items: start; }
+  /* round 4.1: one column, the shop's "See all 9 coffees" follows the three lots instead of preceding their heading */
+  @media (max-width: 1023.98px) { .shop .margin-label { display: contents; } .shop .margin-label .label { margin-bottom: var(--space-4); } .shop .margin-label .more { order: 1; justify-self: start; margin-top: var(--space-5); } }
+  .lots { margin-top: var(--space-8); border-top: 2px solid var(--color-text); }
+  .lot { position: relative; display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: var(--space-5); padding: var(--space-6) 0; border-bottom: 1px solid var(--color-border); }
+  @media (min-width: 768px) { .lot { grid-template-columns: 176px minmax(0, 1fr) auto; column-gap: var(--space-7); align-items: center; } }
+  .lot .tile { position: relative; aspect-ratio: 4 / 3; align-self: start; border-radius: var(--radius-md); overflow: hidden; background: var(--color-illustration-surface); }
+  .tile svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .tile .c { fill: none; stroke: var(--color-illustration-line); stroke-width: 1; vector-effect: non-scaling-stroke; transition: stroke var(--motion-hover); }
+  .tile .alt { position: absolute; right: var(--space-2); bottom: var(--space-2); padding: 0 var(--space-2); border-radius: var(--radius-sm); background: var(--color-illustration-surface);
+    font: 500 var(--text-xs)/1.5 var(--font-mono); color: var(--color-text-muted-on-tint); } /* a paper chip: the contours never run under the figure */
+  @media (max-width: 767px) { .tile .alt { display: none; } } /* the altitude is in the origin line beside it */
+  .lot-main { display: grid; gap: var(--space-3); align-content: start; min-width: 0; }
+  .roast { display: flex; align-items: center; gap: var(--space-3); }
+  .roast-meter { display: inline-flex; gap: var(--space-1); }
+  .roast-meter i { width: 16px; height: 8px; border-radius: var(--radius-full); box-shadow: inset 0 0 0 1px var(--color-border-strong); }
+  .roast-meter i.on { background: var(--color-text); box-shadow: none; }
+  .lot h3 { font: 400 var(--text-2xl)/var(--leading-tight) var(--font-serif); letter-spacing: -0.015em; }
+  @media (min-width: 1024px) { .lot h3 { font-size: var(--text-3xl); } }
+  .lot .origin { font-size: var(--text-sm); color: var(--color-text-muted); }
+  .lot .taste { font: italic 400 var(--text-lg)/var(--leading-snug) var(--font-serif); }
+  .lot-buy { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); }
+  @media (min-width: 768px) { .lot-buy { grid-column: auto; flex-direction: column; align-items: flex-end; gap: var(--space-3); } }
+  .lot-buy .btn { position: relative; z-index: 2; }
+  @media (pointer: coarse), (max-width: 767.98px) { .lot-buy .btn-sm { min-height: 44px; } }
+  .lot-buy .p { font-size: var(--text-lg); font-weight: 600; font-variant-numeric: tabular-nums lining-nums; }
+  .lot-buy .p small { font-size: var(--text-sm); font-weight: 400; color: var(--color-text-muted); }
+  .lot-buy .sub { font-size: var(--text-xs); color: var(--color-text-muted); }
+  @media (max-width: 767px) { .lot-buy { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: var(--space-4); row-gap: var(--space-1); } .lot-buy .btn { grid-row: 1 / 3; grid-column: 2; } }
+  .card-link { color: inherit; text-decoration: none; }
+  .card-link::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+  .card-link:focus-visible { outline: none; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  .lot:has(.card-link:focus-visible) { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; border-radius: var(--radius-sm); }
+  @media (hover: hover) and (pointer: fine) {
+    .lot:hover .card-link { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px; }
+    .lot:hover .tile .c { stroke: var(--color-border-strong); }
+  }
+
+  /* ---------- Subscription band: contour texture, a pool of light behind the headline, the order slip on paper ---------- */
+  .feature { position: relative; overflow: hidden; overflow: clip; isolation: isolate; /* clip, not hidden: hidden would make the band the sticky scroller */ color: var(--color-feature-text);
+    background: radial-gradient(80% 90% at 20% 0%, var(--color-feature-lift), transparent 70%), var(--color-feature-bg); }
+  .feature > svg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; }
+  .feature .c { fill: none; stroke: var(--color-band-line); stroke-width: 1; vector-effect: non-scaling-stroke; }
+  .feature-grid { padding-top: var(--space-9); padding-bottom: var(--space-9); row-gap: var(--space-8); }
+  @media (max-width: 1023.98px) { .feature-grid { grid-template-areas: "head" "slip" "proof"; } .feature-head { grid-area: head; } .proof { grid-area: proof; } .slip { grid-area: slip; } }
+  @media (min-width: 1024px) {
+    .feature-grid { padding-top: var(--space-11); padding-bottom: var(--space-11); grid-template-areas: none; grid-template-rows: auto 1fr; }
+    .feature-head { grid-column: 1 / 7; grid-row: 1; }
+    /* round 4.1: the slip (1,130 to 1,210px) is taller than any laptop screen, so it cannot stick; the proof (441px) does.
+       It rides down row 2 beside the order form and ends level with the slip's last line, closing the hole as the reader scrolls. */
+    .proof { grid-column: 1 / 7; grid-row: 2; align-self: start; position: sticky; top: calc(64px + var(--space-8)); }
+    .slip { grid-column: 8 / -1; grid-row: 1 / 3; align-self: start; }
+  }
+  .feature .label { color: inherit; }
+  .feature h2 { margin-top: var(--space-5); font: 400 var(--text-display-2)/var(--leading-tight) var(--font-serif); letter-spacing: -0.02em; max-width: 12em; }
+  .perks { margin-top: var(--space-7); display: grid; gap: var(--space-3); }
+  .perks li { display: flex; gap: var(--space-4); align-items: flex-start; }
+  .perks .i { margin-top: var(--space-2); }
+  /* Proof with a denominator (design-conversion 02): average, count, distribution in text and bars, and the mixed review. */
+  .rating { display: flex; align-items: flex-end; gap: var(--space-5); padding-top: var(--space-6); border-top: 1px solid currentColor; }
+  .rating .score { font: 400 var(--text-5xl)/var(--leading-tight) var(--font-serif); font-variant-numeric: tabular-nums lining-nums; letter-spacing: -0.03em; }
+  .rating .of { max-width: 16em; }
+  .dist { margin-top: var(--space-5); display: grid; gap: var(--space-2); max-width: 400px; font-size: var(--text-sm); }
+  .dist li { display: grid; grid-template-columns: 48px 1fr 48px; align-items: center; gap: var(--space-4); }
+  .dist .track { height: 8px; border-radius: var(--radius-full); background: color-mix(in oklch, var(--color-feature-text) 16%, transparent); overflow: hidden; }
+  .dist .track i { display: block; height: 100%; width: var(--w); background: var(--color-feature-text); border-radius: var(--radius-full); }
+  .dist .n { text-align: right; font-variant-numeric: tabular-nums lining-nums; }
+  .review { margin-top: var(--space-7); }
+  .review > p:first-child { font: 400 var(--text-xl)/var(--leading-snug) var(--font-serif); letter-spacing: -0.005em; max-width: 24em; }
+  .review footer { margin-top: var(--space-3); font-size: var(--text-sm); }
+  .reply { margin-top: var(--space-5); padding-left: var(--space-5); border-left: 2px solid currentColor; max-inline-size: var(--size-measure); }
+  .feature :focus-visible { outline-color: var(--color-feature-text); }
+  .feature .proof a { color: inherit; }
+
+  /* The order slip (design-ux 07 with design-conversion 01): options as native radios in fieldsets, asked in the buyer's
+     words, no default for what would ship wrong (the grind); the button is the summary; terms sit beside it. */
+  .slip { container: slip / inline-size; background: var(--color-surface); color: var(--color-text); border-radius: var(--radius-xl); box-shadow: var(--ring), var(--shadow-3); padding: var(--space-6) var(--space-5); display: grid; gap: var(--space-6); }
+  @media (prefers-color-scheme: dark) { .slip { box-shadow: var(--ring), var(--highlight); } }
+  @media (min-width: 640px) { .slip { padding: var(--space-7); } }
+  .slip-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: var(--space-2) var(--space-4); padding-bottom: var(--space-5); border-bottom: 1px solid var(--color-border); }
+  .slip-head h3 { font: 400 var(--text-2xl)/var(--leading-tight) var(--font-serif); letter-spacing: -0.015em; }
+  .opt-group legend { margin-bottom: var(--space-4); font: 600 var(--text-base)/1.5 var(--font-sans); }
+  .opt-group legend .hint { display: block; font-weight: 400; font-size: var(--text-sm); color: var(--color-text-muted); }
+  .opts { display: grid; gap: var(--space-3); }
+  .opts.cols-2, .opts.cols-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  @container slip (width >= 26rem) { .opts.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } } /* 3 x 130px options plus gaps; under that, 2 */
+  .opt { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; column-gap: var(--space-4); min-height: 56px; margin: 0;
+    padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); box-shadow: inset 0 0 0 1px var(--color-border-strong); background: var(--color-surface);
+    cursor: pointer; font-size: var(--text-sm); line-height: 1.25; transition: background-color var(--motion-hover); } /* the ring snaps: box-shadow never animates (design-motion) */
+  .opt.stack { grid-template-columns: auto minmax(0, 1fr); column-gap: var(--space-3); align-items: start; } /* names share one top edge across a row, even when one option carries "Your usual" */
+  .opt.stack input { margin-top: calc((1.25em - 16px) / 2); }
+  .opt input { margin: 0; width: 16px; height: 16px; font-size: var(--text-sm); }
+  .opt .name { display: block; font-weight: 600; }
+  .opt .sub { display: block; color: var(--color-text-muted); font-size: var(--text-xs); line-height: 1.333; margin-top: var(--space-1); }
+  .opt .amt { font-variant-numeric: tabular-nums lining-nums; font-weight: 600; }
+  .usual { display: inline-block; margin-top: var(--space-1); font-size: var(--text-xs); font-weight: 600; color: var(--color-accent); }
+  @media (hover: hover) { .opt:hover { background: linear-gradient(var(--state-hover), var(--state-hover)), var(--color-surface); } .opt:hover .sub { color: var(--color-text-muted-on-tint); } }
+  .opt:has(input:checked) { box-shadow: inset 0 0 0 2px var(--color-selected-ring); background: color-mix(in oklch, var(--color-selected-bg) 50%, var(--color-surface)); }
+  .opt:has(input:checked) .sub { color: var(--color-text-muted-on-tint); }
+  .opt:has(input:focus-visible) { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+  .opt input:focus-visible { outline: none; }
+  .opt-group.invalid .opts { padding-left: var(--space-4); box-shadow: inset 2px 0 0 var(--color-danger); }
+  .opt-group .error { margin: 0 0 var(--space-4); }
+  .slip-sum { display: grid; gap: var(--space-4); padding-top: var(--space-5); border-top: 1px solid var(--color-border); }
+  .ships { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-2) var(--space-4); font-size: var(--text-sm); color: var(--color-text-muted); }
+  .ships b { color: var(--color-text); }
+  .ships > span { display: inline-flex; align-items: center; gap: var(--space-2); }
+  /* The term line restates the choice in place; its height is reserved so changing the plan never moves the button. */
+  .terms { padding: var(--space-4) var(--space-5); border-radius: var(--radius-md); background: var(--color-surface-sunken); box-shadow: inset 0 0 0 1px var(--color-border);
+    font-size: var(--text-sm); min-height: calc(1.5em * 3 + 2 * var(--space-4)); }
+  .guarantee { font-size: var(--text-sm); color: var(--color-text-muted); text-align: center; }
+
+  /* ---------- Roastery: a dark room in the page. color-scheme: dark flips every light-dark() token inside. ---------- */
+  .roastery { color-scheme: dark; background: var(--color-surface); color: var(--color-text); overflow-x: clip; }
+  .manifesto { font: 400 var(--text-xl)/var(--leading-snug) var(--font-serif); letter-spacing: -0.015em; margin-top: var(--space-6); max-width: 21em; }
+  @media (min-width: 768px) { .manifesto { font-size: var(--text-3xl); } }
+  @media (min-width: 1024px) { .manifesto { margin-top: 0; } }
+  .drop .frame { border-radius: var(--radius-lg); }
+  @media (max-width: 639px) { .drop .frame { margin-inline: calc(var(--space-5) * -1); border-radius: 0; } }
+  .drop .caption { margin-top: var(--space-4); }
+  /* The roast curve: the batch's real log (build.mjs). The paper stops at the plot edge, where the log stops (round 4: the
+     bleed promised a cooling tail that was never drawn). */
+  .curve-head { display: grid; gap: var(--space-3); align-content: start; color: var(--color-text-muted); max-inline-size: 40ch; }
+  .curve-head b { color: var(--color-text); }
+  @media (min-width: 1024px) { .curve-head { padding-inline-end: var(--space-8); } }
+  /* 1024 to 1279: the margin column is 160px, about 20 characters a line, so the caption sets above the plot on the body line */
+  @media (min-width: 1024px) and (max-width: 1279.98px) { .curve .curve-head { grid-column: 4 / -1; padding-inline-end: 0; } .curve .plot { margin-top: var(--space-7); } }
+  .plot { position: relative; isolation: isolate; height: 240px; margin: var(--space-8) 0 var(--space-7) var(--space-8); }
+  @media (min-width: 768px) { .plot { height: 320px; } }
+  @media (min-width: 1024px) { .plot { height: 360px; margin: var(--space-3) 0 var(--space-7); } }
+  .plot::before { content: ""; position: absolute; z-index: -1; top: 0; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(var(--color-border), var(--color-border)) 0 12.5% / 100% 1px no-repeat,
+                linear-gradient(var(--color-border), var(--color-border)) 0 43.75% / 100% 1px no-repeat,
+                linear-gradient(var(--color-border), var(--color-border)) 0 75% / 100% 1px no-repeat,
+                linear-gradient(var(--color-border-strong), var(--color-border-strong)) 0 100% / 100% 1px no-repeat; }
+  .plot svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .plot .crack { stroke: var(--color-border-strong); stroke-width: 1; stroke-dasharray: 4 4; vector-effect: non-scaling-stroke; }
+  .plot .area { fill: var(--color-illustration-accent-fill); }
+  .plot .line { fill: none; stroke: var(--color-illustration-accent); stroke-width: 2; vector-effect: non-scaling-stroke; stroke-linejoin: round; stroke-linecap: round; }
+  .anno { font-size: var(--text-xs); font-weight: 500; line-height: 1.5; font-variant-numeric: tabular-nums; }
+  .ylab, .xlab { position: absolute; color: var(--color-text-muted); font-family: var(--font-mono); font-weight: 400; }
+  .ylab { left: calc(-1 * var(--space-8)); transform: translateY(-50%); }
+  @media (min-width: 1024px) { .ylab { left: auto; right: calc(100% + var(--space-4)); } } /* axis labels hang in the gutter */
+  .xlab { top: 100%; margin-top: var(--space-3); transform: translateX(-50%); }
+  .xlab.start { transform: none; } .xlab.end { transform: translateX(-100%); }
+  .pt { position: absolute; width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: var(--radius-full); background: var(--color-illustration-accent); box-shadow: 0 0 0 2px var(--color-surface); }
+  .pt.drop-pt { width: 12px; height: 12px; margin: -6px 0 0 -6px; }
+  .ptlab { position: absolute; white-space: nowrap; color: var(--color-text); background: var(--color-surface); padding: var(--space-1) var(--space-2); border-radius: var(--radius-sm); }
+  .ptlab.above { transform: translate(-100%, calc(-100% - 12px)); }
+  .ptlab.below { transform: translate(-24px, 12px); }
+  .ptlab.optional { display: none; }
+  @media (min-width: 768px) { .ptlab.optional { display: block; } }
+  /* Motion 1 (design-motion): the curve is drawn once on first view by a two-transform wipe, linear because x is time;
+     markers land as the pen passes. Compositor only: no clip-path, no dashoffset. */
+  .wipe { position: absolute; inset: calc(-1 * var(--space-3)); overflow: hidden; }
+  .wipe-in, .wipe-out { position: absolute; inset: 0; }
+  .wipe-in { overflow: hidden; }
+  .plot .wipe svg { inset: var(--space-3); width: calc(100% - 2 * var(--space-3)); height: calc(100% - 2 * var(--space-3)); }
+  @media (prefers-reduced-motion: no-preference) {
+    .js .curve:not(.seen) .wipe-in { transform: translateX(-100%); }
+    .js .curve:not(.seen) .wipe-out { transform: translateX(100%); }
+    .js .curve:not(.seen) .pt, .js .curve:not(.seen) .ptlab { opacity: 0; }
+    .js .curve.seen .wipe-in { animation: wipe-in var(--duration-page) linear both; }
+    .js .curve.seen .wipe-out { animation: wipe-out var(--duration-page) linear both; }
+    .js .curve.seen .pt { animation: pop var(--duration-fast) var(--ease-enter) both; animation-delay: calc(var(--at) * var(--duration-page)); }
+    .js .curve.seen .ptlab { animation: fade var(--duration-fast) var(--ease-enter) both; animation-delay: calc(var(--at) * var(--duration-page) + var(--duration-instant)); }
+    @keyframes wipe-in { from { transform: translateX(-100%); } to { transform: none; } }
+    @keyframes wipe-out { from { transform: translateX(100%); } to { transform: none; } }
+    @keyframes pop { from { opacity: 0; transform: scale(0.5); } to { opacity: 1; transform: none; } }
+    .js .tile:not(.seen) .c { opacity: 0; } /* Motion 2: the hill builds line by line (script) */
+  }
+
+  /* ---------- Ledger: a number instead of a picture; the table's rules are drawn to scale ---------- */
+  .ledger-figure { display: grid; gap: var(--space-4); align-content: start; margin-top: var(--space-5); }
+  .ledger-figure .big { font: 400 var(--text-numeral)/var(--leading-tight) var(--font-serif); font-variant-numeric: tabular-nums lining-nums; letter-spacing: -0.04em; translate: -0.04em 0; }
+  @media (min-width: 1040px) { .ledger-figure .big { line-height: 0.95; } } /* the clamp passes 100px at 1036px: only then may it set solid */
+  .ledger-figure .big .x { font-size: var(--text-4xl); letter-spacing: 0; margin-left: var(--space-2); color: var(--color-accent); }
+  .ledger-figure .say { font: 400 var(--text-xl)/var(--leading-snug) var(--font-serif); max-width: 16em; }
+  .ledger { margin-top: var(--space-8); }
+  @media (min-width: 1024px) { .ledger-figure { grid-column: 4 / 8; margin-top: 0; } .ledger { grid-column: 8 / -1; margin-top: 0; } }
+  .ledger table { width: 100%; border-collapse: collapse; }
+  .ledger caption { text-align: left; padding-bottom: var(--space-4); }
+  .ledger tr { position: relative; }
+  .ledger th, .ledger td { padding: var(--space-5) 0 var(--space-4); border-bottom: 1px solid var(--color-border); text-align: left; font-weight: 400; }
+  .ledger td { text-align: right; font-variant-numeric: tabular-nums lining-nums; padding-inline-start: var(--space-6); white-space: nowrap; vertical-align: bottom; }
+  .ledger time { font-variant-numeric: tabular-nums; }
+  .ledger .rule { position: absolute; left: 0; bottom: -1px; height: 2px; width: calc(var(--v) * 100%); background: var(--color-text); }
+  .ledger tr.paid th, .ledger tr.paid td { font-weight: 600; }
+  .ledger tr.paid .rule { height: 4px; bottom: -2px; background: var(--color-accent); }
+  .src { margin-top: var(--space-5); font-size: var(--text-sm); color: var(--color-text-muted); max-inline-size: var(--size-measure); }
+  .ship-note { display: flex; align-items: center; gap: var(--space-3); }
+
+  /* ---------- Promises: the cupping photograph beside the three statements, numerals hanging ---------- */
+  .promises { background: var(--color-surface); }
+  .promises .cup { margin-top: var(--space-8); }
+  /* 1024 up: the photograph and the statement share a row on the 6 + 6 lines; the three promises run across the full
+     measure beneath them as one ruled row, so neither column ends in a hole (round 3: the stacked version left 400px empty). */
+  @media (min-width: 1024px) {
+    .promises .cup { grid-column: 1 / 7; grid-row: 1; margin-top: 0; }
+    .promises .promise-head { grid-column: 7 / -1; grid-row: 1; align-self: center; padding-inline-start: var(--space-7); } /* six columns: the four-clause promise sets in four lines, not six */
+    .promises .steps { grid-column: 1 / -1; grid-row: 2; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--space-7); margin-top: var(--space-10); }
+    .promises .steps li { grid-template-columns: minmax(0, 1fr); gap: var(--space-4); border-top: 2px solid var(--color-text); } /* numeral above: the text keeps a 45+ character measure */
+    /* round 4.1: numeral, heading and body share three rows across the columns (subgrid), so a heading that wraps
+       ("We know every grower by name" at 1024) moves every body down with it instead of leaving its own 25px low. */
+    .promises .steps { grid-template-rows: auto auto auto; }
+    .promises .steps li { grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; }
+    .promises .steps li > div { display: contents; }
+    .promises .steps li h3 { margin-top: var(--space-4); }
+  }
+  @media (max-width: 639px) { .promises .cup .frame { margin-inline: calc(var(--space-5) * -1); border-radius: 0; } }
+  .steps { margin-top: var(--space-8); display: grid; }
+  .steps li { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: var(--space-5); align-items: start; align-content: start; border-top: 1px solid var(--color-border); padding: var(--space-6) 0; }
+  .steps .n { font: 400 var(--text-4xl)/var(--leading-tight) var(--font-serif); font-variant-numeric: lining-nums; color: var(--color-accent); }
+  .steps h3 { font: 600 var(--text-lg)/var(--leading-snug) var(--font-sans); letter-spacing: -0.01em; }
+  .steps p { margin-top: var(--space-3); color: var(--color-text-muted); max-inline-size: var(--size-measure); }
+
+  /* ---------- Footer and the letters ---------- */
+  .site-footer { padding: var(--space-9) 0 var(--space-7); }
+  .site-footer .cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-8) var(--space-6); }
+  .site-footer .cols > :first-child { grid-column: 1 / -1; }
+  @media (min-width: 1024px) { .site-footer .cols { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--space-7); }
+    .site-footer .cols > :first-child { grid-column: 1 / 7; } .site-footer .links:nth-child(2) { grid-column: 8 / 10; } .site-footer .links:nth-child(3) { grid-column: 10 / -1; } }
+  .site-footer h2.letters { font: 400 var(--text-2xl)/var(--leading-tight) var(--font-serif); letter-spacing: -0.015em; }
+  .intro { color: var(--color-text-muted); margin-top: var(--space-3); max-inline-size: var(--size-measure); }
+  .news { margin-top: var(--space-6); max-width: 480px; }
+  .news label, .fld label { display: block; font-size: var(--text-sm); font-weight: 600; margin-bottom: var(--space-3); }
+  .field-row { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+  .news input { flex: 1 1 240px; min-height: var(--size-control-lg); padding: var(--space-4) var(--space-5); border-radius: var(--radius-full); border: 1px solid var(--color-border-strong);
+    background: var(--color-surface); font: var(--text-base)/1.5 var(--font-sans); }
+  @media (hover: hover) { .news input:hover, .co-form input:hover { border-color: var(--color-text-muted); } }
+  input[aria-invalid=true] { border-color: var(--color-danger) !important; box-shadow: inset 0 0 0 1px var(--color-danger); } /* the second pixel is inset: no shift */
+  .error, .ok { display: flex; gap: var(--space-3); align-items: flex-start; font-size: var(--text-sm); margin-top: var(--space-3); }
+  .error { color: var(--color-danger); }
+  .ok { font-size: var(--text-base); }
+  .ok .i { color: var(--color-success); }
+  .error .i, .ok .i { margin-top: var(--space-1); }
+  .news[data-done] .field-row, .news[data-done] > label { display: none; }
+  .links h2 { margin-bottom: var(--space-4); }
+  .links a { display: inline-flex; align-items: center; min-height: 44px; color: var(--color-text); text-decoration: none; }
+  @media (hover: hover) { .links a:hover { text-decoration: underline; } }
+  .signoff { margin-top: var(--space-10); padding-top: var(--space-6); border-top: 1px solid var(--color-border); display: grid; gap: var(--space-5); }
+  .signoff .mark { color: var(--color-text); }
+  .signoff .mark svg { display: block; width: 100%; height: auto; margin-inline-start: -0.6%; } /* optical margin: the E's serif overhangs */
+  .legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-4); font-size: var(--text-sm); color: var(--color-text-muted); }
+  .legal .mono { font-size: var(--text-xs); align-self: center; }
+
+  /* ---------- Dialogs: quick add (a sheet on phones), the cart drawer, checkout ---------- */
+  dialog { padding: 0; border: 0; color: var(--color-text); background: var(--color-surface-raised); box-shadow: var(--elevation-modal); max-height: 100dvh; overscroll-behavior: contain; }
+  dialog::backdrop { background: var(--color-scrim); }
+  .dlg-head { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-4); padding: var(--space-5) var(--space-4) var(--space-5) var(--space-6); border-bottom: 1px solid var(--color-border); }
+  .dlg-head h2 { font: 400 var(--text-2xl)/var(--leading-tight) var(--font-serif); letter-spacing: -0.015em; border-radius: var(--radius-sm); }
+  .dlg-head h2:focus { outline: none; }
+  .dlg-head .meta { margin-top: var(--space-2); font-size: var(--text-sm); color: var(--color-text-muted); }
+  .close { flex: none; display: inline-grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: var(--radius-full); background: none; cursor: pointer; }
+  @media (hover: hover) { .close:hover { background: var(--state-hover); } }
+  .close:active { background: var(--state-pressed); }
+  #quick { width: min(480px, calc(100vw - 32px)); margin: auto; border-radius: var(--radius-xl); }
+  #quick form { padding: var(--space-6); display: grid; gap: var(--space-6); }
+  @media (max-width: 639px) { #quick { margin: auto 0 0; width: 100vw; max-width: 100vw; border-radius: var(--radius-xl) var(--radius-xl) 0 0; } }
+  .qty-row { display: flex; align-items: center; justify-content: space-between; gap: var(--space-5); }
+  .qty-row .lbl { font-weight: 600; }
+  .stepper { display: inline-flex; align-items: center; border-radius: var(--radius-full); box-shadow: inset 0 0 0 1px var(--color-border-strong); }
+  .stepper button { display: inline-grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: var(--radius-full); background: none; cursor: pointer; }
+  @media (hover: hover) { .stepper button:hover { background: var(--state-hover); } }
+  .stepper button:active { background: var(--state-pressed); }
+  .stepper button[aria-disabled=true] { color: var(--color-text-muted); cursor: not-allowed; }
+  .stepper output { min-width: 32px; text-align: center; font-weight: 600; font-variant-numeric: tabular-nums lining-nums; }
+  .fine { font-size: var(--text-sm); color: var(--color-text-muted); }
+  #cart { margin: 0 0 0 auto; width: min(448px, 100vw); height: 100dvh; max-width: 100vw; border-radius: 0; }
+  #cart[open] { display: flex; flex-direction: column; }
+  .cart-body { flex: 1; overflow-y: auto; padding: 0 var(--space-6) var(--space-6); }
+  .cart-group h3 { padding: var(--space-5) 0 var(--space-3); }
+  .line { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: var(--space-2) var(--space-5); padding: var(--space-5) 0; border-top: 1px solid var(--color-border); }
+  .thumb { grid-row: span 2; width: 56px; height: 56px; border-radius: var(--radius-md); overflow: hidden; background: var(--color-illustration-surface); }
+  .thumb img { width: 56px; height: 56px; object-fit: cover; object-position: 50% 52%; }
+  .line .nm { font: 400 var(--text-lg)/var(--leading-snug) var(--font-serif); }
+  .line .meta { font-size: var(--text-sm); color: var(--color-text-muted); }
+  .line .amt { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums lining-nums; }
+  .line .amt small { display: block; font-weight: 400; font-size: var(--text-xs); color: var(--color-text-muted); }
+  .line .ctrl { grid-column: 2 / -1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3); }
+  .line .renew { font-size: var(--text-xs); color: var(--color-text-muted); }
+  .line.removed { grid-template-columns: minmax(0, 1fr) auto; align-items: center; padding: var(--space-3) 0; color: var(--color-text-muted); font-size: var(--text-sm); }
+  .line.removed .link-btn { margin: 0; color: var(--color-text); font-weight: 600; }
+  .cart-sum { border-top: 1px solid var(--color-border); padding: var(--space-5) var(--space-6) var(--space-6); display: grid; gap: var(--space-4); }
+  .cart-sum dl, .summary dl { display: grid; gap: var(--space-2); }
+  .cart-sum dl div, .summary dl div { display: flex; justify-content: space-between; gap: var(--space-4); font-size: var(--text-sm); }
+  .cart-sum dd, .summary dd { font-variant-numeric: tabular-nums lining-nums; text-align: right; }
+  .cart-sum .total, .summary .total { font-size: var(--text-base); font-weight: 600; padding-top: var(--space-3); border-top: 1px solid var(--color-border); }
+  .cart-sum .then { color: var(--color-text-muted); }
+  .cart-sum .fine { text-align: center; }
+  .cart-empty { display: grid; justify-items: start; gap: var(--space-4); padding: var(--space-8) 0; }
+  .cart-empty h3 { font: 400 var(--text-xl)/var(--leading-tight) var(--font-serif); }
+  .cart-empty p { color: var(--color-text-muted); max-inline-size: var(--size-measure); }
+  #cart[data-empty] .cart-sum, #cart[data-empty] .cart-groups { display: none; }
+  #cart:not([data-empty]) .cart-empty { display: none; }
+  /* Checkout (design-conversion 04): express pay first, about eight fields, the card block encapsulated, total and term beside Pay. */
+  #checkout { width: min(960px, 100%); max-width: 100%; max-height: 100%; margin: auto; border-radius: var(--radius-xl); }
+  @media (max-width: 639px) { #checkout { margin: 0; width: 100%; height: 100%; border-radius: 0; } }
+  .co-head { position: sticky; top: 0; z-index: 2; background: var(--color-surface-raised); }
+  .co-body { display: grid; gap: var(--space-7); padding: var(--space-6) var(--space-5) var(--space-7); }
+  @media (min-width: 768px) { .co-body { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-8); padding: var(--space-7); } }
+  .co-form { display: grid; gap: var(--space-6); max-width: 480px; }
+  .express { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+  .or { display: flex; align-items: center; gap: var(--space-4); font-size: var(--text-sm); color: var(--color-text-muted); }
+  .or::before, .or::after { content: ""; flex: 1; height: 1px; background: var(--color-border); }
+  .co-form fieldset { display: grid; gap: var(--space-5); }
+  .co-form legend { margin-bottom: var(--space-4); }
+  .fld { display: grid; gap: var(--space-3); }
+  .fld label { margin: 0; }
+  .hint { font-size: var(--text-sm); color: var(--color-text-muted); }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+  .co-form input:not([type=checkbox]) { width: 100%; min-height: var(--size-control-lg); padding: var(--space-4) var(--space-5); border: 1px solid var(--color-border-strong); border-radius: var(--radius-md);
+    background: var(--color-surface); font: var(--text-base)/1.5 var(--font-sans); }
+  .linkish { justify-self: start; display: inline-flex; align-items: center; min-height: var(--size-control-sm); padding: 0; border: 0; background: none; color: var(--color-text);
+    font: 500 var(--text-sm)/1.5 var(--font-sans); text-decoration: underline; text-decoration-thickness: 0.06em; text-underline-offset: 0.2em; cursor: pointer; }
+  .card-block { padding: var(--space-5); border-radius: var(--radius-lg); background: var(--color-surface-sunken); box-shadow: inset 0 0 0 1px var(--color-border); }
+  .card-block legend, .card-block .lock { color: var(--color-text); }
+  .lock { display: flex; align-items: center; gap: var(--space-3); font-size: var(--text-sm); }
+  .check { display: flex; gap: var(--space-3); align-items: flex-start; }
+  .check input { width: 20px; height: 20px; margin: var(--space-1) 0 0; }
+  .summary { align-self: start; display: grid; gap: var(--space-5); padding: var(--space-6); border-radius: var(--radius-lg); background: var(--color-bg); box-shadow: inset 0 0 0 1px var(--color-border); }
+  @media (min-width: 768px) { .summary { position: sticky; top: 112px; } }
+  .summary h3 { font: 400 var(--text-xl)/var(--leading-tight) var(--font-serif); }
+  .summary .total dd { font: 400 var(--text-2xl)/1 var(--font-serif); letter-spacing: -0.01em; }
+  .summary .term { font-size: var(--text-sm); }
+  @media (prefers-reduced-motion: no-preference) {
+    #cart[open] { animation: drawer-in var(--duration-slow) var(--ease-enter); }
+    #quick[open], #checkout[open] { animation: fade var(--duration-base) var(--ease-enter); }
+    @keyframes drawer-in { from { translate: 24px 0; opacity: 0; } to { translate: 0 0; opacity: 1; } }
+    .ok:not(:empty) { animation: rise var(--motion-enter) both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+  }
+  /* Reduced motion (design-motion 05): every movement above is opt-in under no-preference, so reduce gets end states at
+     first paint. Color fades at --motion-hover stay for everyone. No global animation reset. */
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="/" aria-label="Ember &amp; Oak, home">{{WM_HEADER}}</a>
+    <nav class="nav" aria-label="Main">
+      <a class="hide-phone" href="/coffee/">Shop</a>
+      <a class="hide-sm" href="/subscriptions/">Subscriptions</a>
+      <a class="hide-sm" href="/roastery/">Roastery</a>
+      <a class="hide-sm" href="/journal/">Journal</a>
+      <a href="/cart/" id="cart-link" aria-haspopup="dialog" aria-describedby="cart-label">Cart <span class="cart-count" id="cart-count"><span aria-hidden="true" id="cart-n">0</span></span><span class="sr-only" id="cart-label">empty</span></a>
+      <button class="menu-toggle" type="button" id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu">{{c:menu}}Menu</button>
+    </nav>
+  </div>
+  <nav class="mobile-menu wrap" id="mobile-menu" aria-label="Main, all sections" hidden>
+    <ul>
+      <li><a href="/coffee/">Shop coffee{{c:arrow-right}}</a></li>
+      <li><a href="/subscriptions/">Subscriptions{{c:arrow-right}}</a></li>
+      <li><a href="/roastery/">Roastery{{c:arrow-right}}</a></li>
+      <li><a href="/journal/">Journal{{c:arrow-right}}</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap g12">
+      <div class="hero-copy">
+        <p class="label"><time datetime="2026-W42">This week’s</time> single-origin coffee · <span class="mono">Lot 0412</span></p>
+        <h1 id="hero-title" class="display">Ethiopia Guji, <em>roasted&nbsp;<time datetime="2026-10-13">Tuesday</time></em> in&nbsp;Portland.</h1>
+        <p class="notes">Peach, jasmine and wildflower honey, from the Hambela Wamena washing station.</p>
+        <div class="buy">
+          <p class="buy-price"><span class="amt num"><sup>$</sup>18</span><span>a bag on subscription, shipping included. <span class="muted">$21 as a single bag.</span></span></p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#subscribe">Subscribe, $18 a bag</a>
+            <a class="btn btn-secondary" href="/coffee/ethiopia-guji-hambela-wamena/" data-quick="guji" aria-haspopup="dialog">Buy this bag, $21</a>
+          </div>
+          <p class="buy-note"><span>Order by Mon,&nbsp;Oct&nbsp;12 for the Oct&nbsp;13 roast.</span><a href="#reviews">{{c:star}}4.7 from 1,284 subscriber reviews</a></p>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <div class="frame">
+          <picture>
+            <source media="(min-width: 640px) and (max-width: 1023.98px)" type="image/webp" width="1264" height="848" sizes="calc(100vw - 96px)"
+              srcset="../../assets/photos/hero-bag-640.webp 640w, ../../assets/photos/hero-bag-960.webp 960w, ../../assets/photos/hero-bag-1264.webp 1264w">
+            <source media="(min-width: 640px) and (max-width: 1023.98px)" type="image/jpeg" width="1264" height="848" sizes="calc(100vw - 96px)"
+              srcset="../../assets/photos/hero-bag-640.jpg 640w, ../../assets/photos/hero-bag-960.jpg 960w, ../../assets/photos/hero-bag-1264.jpg 1264w">
+            <source type="image/webp" width="678" height="848" sizes="(min-width: 1280px) 600px, (min-width: 1024px) 45vw, 100vw"
+              srcset="../../assets/photos/hero-bag-portrait-480.webp 480w, ../../assets/photos/hero-bag-portrait-678.webp 678w">
+            <img src="../../assets/photos/hero-bag-portrait-678.jpg" width="678" height="848" sizes="(min-width: 1280px) 600px, (min-width: 1024px) 45vw, 100vw"
+              srcset="../../assets/photos/hero-bag-portrait-480.jpg 480w, ../../assets/photos/hero-bag-portrait-678.jpg 678w"
+              alt="A bag of Ethiopia Guji, lot 0412, standing on a worn oak table by a window, with a handful of pale green unroasted beans at its foot."
+              fetchpriority="high" decoding="async">
+          </picture>
+          {{LABEL}}
+        </div>
+        <figcaption class="caption"><span>Lot 0412 beside the green coffee it started as.</span><span class="mono">60 bags this season</span></figcaption>
+      </figure>
+      <dl class="facts">
+        <div><dt class="label">Altitude</dt><dd class="num">2,100<small>&#8239;m</small></dd></div>
+        <div><dt class="label">Batch</dt><dd class="num">12<small>&#8239;kg</small></dd></div>
+        <div><dt class="label">Roast to ship</dt><dd class="num">1<small>&#8239;day</small></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section shop" id="shop" aria-labelledby="shop-title">
+    <div class="wrap g12">
+      <div class="in-margin margin-label margin-sticky">
+        <p class="label">On the roaster now</p>
+        <a class="more" href="/coffee/">See all 9 coffees{{c:arrow-right}}</a>
+      </div>
+      <div class="in-body">
+        <h2 id="shop-title" class="h-display">Three coffees, grown 1,100&nbsp;to&nbsp;2,100 meters&nbsp;up</h2>
+        <ul class="lots">
+          <li class="lot">
+            <div class="tile" aria-hidden="true"><svg viewBox="0 0 320 240" preserveAspectRatio="xMidYMid slice">{{GUJI}}</svg><span class="alt">2,100&#8239;m</span></div>
+            <div class="lot-main">
+              <div class="roast label"><span class="roast-meter" aria-hidden="true"><i class="on"></i><i></i><i></i></span>Light roast</div>
+              <h3><a class="card-link" href="/coffee/ethiopia-guji-hambela-wamena/">Ethiopia Guji</a></h3>
+              <p class="origin">Hambela Wamena, washed, 2,100&#8239;m</p>
+              <p class="taste">Peach, jasmine, wildflower honey</p>
+            </div>
+            <div class="lot-buy"><p class="p">$21 <small>/ <span class="unit">340&#8239;g</span></small></p><p class="sub">$18 on subscription</p><button class="btn btn-secondary btn-sm" type="button" data-quick="guji" aria-haspopup="dialog">Add to cart…<span class="sr-only"> Ethiopia Guji</span></button></div>
+          </li>
+          <li class="lot">
+            <div class="tile" aria-hidden="true"><svg viewBox="0 0 320 240" preserveAspectRatio="xMidYMid slice">{{HUILA}}</svg><span class="alt">1,750&#8239;m</span></div>
+            <div class="lot-main">
+              <div class="roast label"><span class="roast-meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span>Medium roast</div>
+              <h3><a class="card-link" href="/coffee/colombia-huila-finca-el-mirador/">Colombia Huila</a></h3>
+              <p class="origin">Finca El Mirador, washed, 1,750&#8239;m</p>
+              <p class="taste">Caramel, red apple, cocoa nib</p>
+            </div>
+            <div class="lot-buy"><p class="p">$19 <small>/ <span class="unit">340&#8239;g</span></small></p><p class="sub">$16 on subscription</p><button class="btn btn-secondary btn-sm" type="button" data-quick="huila" aria-haspopup="dialog">Add to cart…<span class="sr-only"> Colombia Huila</span></button></div>
+          </li>
+          <li class="lot">
+            <div class="tile" aria-hidden="true"><svg viewBox="0 0 320 240" preserveAspectRatio="xMidYMid slice">{{BLEND}}</svg><span class="alt">1,100&nbsp;and&nbsp;1,600&#8239;m</span></div>
+            <div class="lot-main">
+              <div class="roast label"><span class="roast-meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span>Dark roast</div>
+              <h3><a class="card-link" href="/coffee/oak-fire-espresso/">Oak Fire Espresso</a></h3>
+              <p class="origin">Brazil and Guatemala blend, 1,100&nbsp;and&nbsp;1,600&#8239;m</p>
+              <p class="taste">Dark chocolate, molasses, toasted almond</p>
+            </div>
+            <div class="lot-buy"><p class="p">$18 <small>/ <span class="unit">340&#8239;g</span></small></p><p class="sub">$15 on subscription</p><button class="btn btn-secondary btn-sm" type="button" data-quick="oak" aria-haspopup="dialog">Add to cart…<span class="sr-only"> Oak Fire Espresso</span></button></div>
+          </li>
+        </ul>
+        <p class="src ship-note">{{c:truck:i-inline}}Single bags ship for $6, free over $40 or with a subscription. Subscriptions always ship free.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature" id="subscribe" aria-labelledby="sub-title">
+    <svg viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">{{BAND}}</svg>
+    <div class="wrap g12 feature-grid">
+      <div class="feature-head">
+        <p class="label">The subscription</p>
+        <h2 id="sub-title">A new hill at your door, every two or four weeks.</h2>
+        <ul class="perks">
+          <li>{{c:check}}Subscribers pay $3 less a bag, and shipping is included</li>
+          <li>{{c:check}}Every bag comes with its farm’s map and its roast curve</li>
+          <li>{{c:check}}Skip, swap, pause or cancel online any time before a roast</li>
+        </ul>
+      </div>
+      <!-- Sample proof for a fictional brand (test page only). The distribution sums to 1,284 and averages 4.70. -->
+      <div class="proof" id="reviews">
+        <div class="rating"><p class="score num">4.7</p><p class="of">out of 5, from <b class="num">1,284</b> subscriber reviews since 2023</p></div>
+        <ul class="dist" aria-label="Reviews by rating">
+          <li><span>5 stars</span><span class="track" aria-hidden="true"><i style="--w:81%"></i></span><span class="n">1,040</span></li>
+          <li><span>4 stars</span><span class="track" aria-hidden="true"><i style="--w:12.5%"></i></span><span class="n">160</span></li>
+          <li><span>3 stars</span><span class="track" aria-hidden="true"><i style="--w:3.4%"></i></span><span class="n">44</span></li>
+          <li><span>2 stars</span><span class="track" aria-hidden="true"><i style="--w:1.7%"></i></span><span class="n">22</span></li>
+          <li><span>1 star</span><span class="track" aria-hidden="true"><i style="--w:1.4%"></i></span><span class="n">18</span></li>
+        </ul>
+        <blockquote class="review">
+          <p>“Lovely coffee, but the Guji was too bright for my moka pot.”</p>
+          <footer><b>Ines R.</b>, Tacoma · moka pot · 3 of 5</footer>
+          <p class="reply"><b>Maya, head roaster:</b> We swapped her next bag for the Huila, which takes the heat better. Tell us how you brew and we will do the same for you.</p>
+        </blockquote>
+      </div>
+
+      <form class="slip" id="sub-form" action="/subscriptions/" method="post" novalidate aria-labelledby="slip-title">
+        <div class="slip-head"><h3 id="slip-title">Build your subscription</h3><span class="label">3 questions</span></div>
+        <fieldset class="opt-group" id="g-coffee">
+          <legend>Which coffee?</legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="coffee" value="choice" data-name="Roaster’s choice" data-price="18" checked><span><span class="name">Roaster’s choice</span><span class="sub">A different single origin each delivery</span></span><span class="amt">$18</span></label>
+            <label class="opt"><input type="radio" name="coffee" value="guji" data-name="Ethiopia Guji" data-price="18"><span><span class="name">Ethiopia Guji</span><span class="sub">Light, peach and jasmine</span></span><span class="amt">$18</span></label>
+            <label class="opt"><input type="radio" name="coffee" value="huila" data-name="Colombia Huila" data-price="16"><span><span class="name">Colombia Huila</span><span class="sub">Medium, caramel and red apple</span></span><span class="amt">$16</span></label>
+            <label class="opt"><input type="radio" name="coffee" value="oak" data-name="Oak Fire Espresso" data-price="15"><span><span class="name">Oak Fire Espresso</span><span class="sub">Dark, chocolate and molasses</span></span><span class="amt">$15</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="opt-group" id="g-brew" aria-describedby="brew-error">
+          <legend>How do you brew?<span class="hint">We grind each bag for your brewer the morning it ships.</span></legend>
+          <p class="error" id="brew-error" hidden>{{c:error}}Choose how you brew, so we grind it right.</p>
+          <div class="opts cols-3">
+            <label class="opt stack"><input type="radio" name="brew" value="pourover" data-name="Pour-over"><span><span class="name">Pour-over</span><span class="sub">Medium-fine</span></span></label>
+            <label class="opt stack"><input type="radio" name="brew" value="espresso" data-name="Espresso"><span><span class="name">Espresso</span><span class="sub">Fine</span></span></label>
+            <label class="opt stack"><input type="radio" name="brew" value="drip" data-name="Drip machine"><span><span class="name">Drip machine</span><span class="sub">Medium</span></span></label>
+            <label class="opt stack"><input type="radio" name="brew" value="press" data-name="French press"><span><span class="name">French press</span><span class="sub">Coarse</span></span></label>
+            <label class="opt stack"><input type="radio" name="brew" value="moka" data-name="Moka pot"><span><span class="name">Moka pot</span><span class="sub">Fine to medium</span></span></label>
+            <label class="opt stack"><input type="radio" name="brew" value="whole" data-name="Whole bean"><span><span class="name">Whole bean</span><span class="sub">You grind it</span></span></label>
+          </div>
+        </fieldset>
+        <fieldset class="opt-group" id="g-every">
+          <legend>How often?<span class="hint">A 340&#8239;g bag makes about 20 cups.</span></legend>
+          <div class="opts cols-2">
+            <label class="opt stack"><input type="radio" name="every" value="2" checked><span><span class="name">Every 2 weeks</span><span class="sub">About 10 cups a week</span></span></label>
+            <label class="opt stack"><input type="radio" name="every" value="4"><span><span class="name">Every 4 weeks</span><span class="sub">About 5 cups a week</span></span></label>
+          </div>
+        </fieldset>
+        <div class="slip-sum">
+          <p class="ships"><span>First bag ships <b>Wed,&nbsp;Oct&nbsp;14</b></span><span>{{c:truck:i-inline}}Shipping included</span></p>
+          <p class="terms" id="sub-terms" aria-live="polite"><b>$18 at checkout, then every 2&nbsp;weeks</b> on roast day: next charge Tue,&nbsp;Oct&nbsp;27. First roast Tue,&nbsp;Oct&nbsp;13. Skip, swap, pause or cancel online any time before a roast.</p>
+          <button class="btn btn-primary btn-wide" type="submit" id="sub-btn">Subscribe, $18 every 2 weeks</button>
+          <p class="guarantee">Not for you? Tell us within 30 days and your next bag is on us.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="section roastery" id="roastery" aria-labelledby="roast-title">
+    <div class="wrap g12">
+      <div class="block g12 in-full">
+        <h2 id="roast-title" class="label in-margin">How we roast</h2>
+        <p class="manifesto in-body">We roast on a 1962 Probat in Southeast Portland, 12 kilos at a time. Every batch is logged, and we print what we paid for every lot on the bag.</p>
+      </div>
+      <figure class="block drop in-full">
+        <div class="frame">
+          <picture>
+            <source media="(min-width: 640px)" type="image/webp" width="1264" height="632" sizes="(min-width: 1232px) 1136px, calc(100vw - 96px)"
+              srcset="../../assets/photos/roaster-drop-wide-640.webp 640w, ../../assets/photos/roaster-drop-wide-960.webp 960w, ../../assets/photos/roaster-drop-wide-1264.webp 1264w">
+            <source media="(min-width: 640px)" type="image/jpeg" width="1264" height="632" sizes="(min-width: 1232px) 1136px, calc(100vw - 96px)"
+              srcset="../../assets/photos/roaster-drop-wide-640.jpg 640w, ../../assets/photos/roaster-drop-wide-960.jpg 960w, ../../assets/photos/roaster-drop-wide-1264.jpg 1264w">
+            <source type="image/webp" width="784" height="588" sizes="100vw" srcset="../../assets/photos/roaster-drop-tight-520.webp 520w, ../../assets/photos/roaster-drop-tight-784.webp 784w">
+            <img src="../../assets/photos/roaster-drop-tight-784.jpg" width="784" height="588" sizes="100vw" loading="lazy" decoding="async"
+              srcset="../../assets/photos/roaster-drop-tight-520.jpg 520w, ../../assets/photos/roaster-drop-tight-784.jpg 784w"
+              alt="Roasted coffee pouring from the open door of a cast-iron drum roaster into the round cooling tray, where a stirring arm turns the beans.">
+          </picture>
+        </div>
+        <figcaption class="caption"><span>The drop: the batch leaves the drum and the cooling tray stops the roast.</span><span class="mono">10:10 · 207&#8239;°C</span></figcaption>
+      </figure>
+      <figure class="block curve g12 in-full" aria-labelledby="curve-cap">
+        <figcaption id="curve-cap" class="curve-head in-margin"><span><b>Batch 0412, Ethiopia Guji.</b> Bean temperature over 10 minutes 10 seconds, the bag in your hands. It ends at the moment above.</span><span class="anno mono">First crack 8:40 at 196&#8239;°C · out at 10:10 at 207&#8239;°C</span></figcaption>
+        <div class="plot in-body" aria-hidden="true">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none"><line class="crack" x1="82.54" x2="82.54" y1="0" y2="100"/></svg>
+          <div class="wipe"><div class="wipe-in"><div class="wipe-out">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none"><polygon class="area" points="{{CURVE_AREA}}"/><polyline class="line" points="{{CURVE}}"/></svg>
+          </div></div></div>
+          <span class="ylab anno" style="top:12.5%">200&#8239;°C</span>
+          <span class="ylab anno" style="top:43.75%">150&#8239;°C</span>
+          <span class="ylab anno" style="top:75%">100&#8239;°C</span>
+          <span class="xlab anno start" style="left:0%">0:00</span>
+          <span class="xlab anno" style="left:47.62%">5:00</span>
+          <span class="xlab anno end" style="left:96.83%">10:10</span>
+          <i class="pt" style="left:14.29%; top:80%; --at:0.15"></i>
+          <span class="ptlab anno below" style="left:14.29%; top:80%; --at:0.15"><b>Turning point</b> 1:30, 92&#8239;°C</span>
+          <i class="pt" style="left:52.38%; top:37.5%; --at:0.53"></i>
+          <span class="ptlab anno above optional" style="left:52.38%; top:37.5%; --at:0.53"><b>Yellowing</b> 5:30, 160&#8239;°C</span>
+          <i class="pt" style="left:82.54%; top:15.13%; --at:0.83"></i>
+          <span class="ptlab anno above" style="left:82.54%; top:15.13%; --at:0.83"><b>First crack</b> 8:40, 196&#8239;°C</span>
+          <i class="pt drop-pt" style="left:96.83%; top:8.31%; --at:0.97"></i>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="paid" aria-labelledby="paid-title">
+    <div class="wrap g12">
+      <h2 id="paid-title" class="label in-margin">What we paid, lot 0412</h2>
+      <div class="ledger-figure">
+        <p class="big num" aria-hidden="true">2.3<span class="x">&#215;</span></p>
+        <p class="say">the Fairtrade minimum, for every pound of green coffee.</p>
+        <p class="sr-only">We paid 2.3 times the Fairtrade minimum.</p>
+      </div>
+      <div class="ledger">
+        <table>
+          <caption class="label">Per pound of green coffee, 2026 harvest</caption>
+          <tbody>
+            <tr><th scope="row">Fairtrade minimum</th><td>$1.80<span class="rule" style="--v:0.439" aria-hidden="true"></span></td></tr>
+            <tr><th scope="row">Commodity price (New York “C”), <time datetime="2026-09-30">Sep&nbsp;30</time></th><td>$2.62<span class="rule" style="--v:0.639" aria-hidden="true"></span></td></tr>
+            <tr class="paid"><th scope="row">Paid to the washing station</th><td>$4.10<span class="rule" style="--v:1" aria-hidden="true"></span></td></tr>
+          </tbody>
+        </table>
+        <p class="src">Each rule is drawn to scale. Prices before import and freight. Contract and receipts on request, and <a href="/transparency/">what we paid for every lot</a> we roast.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section promises" id="promises" aria-labelledby="promise-title">
+    <div class="wrap g12">
+      <div class="promise-head">
+        <p class="label">Between the farm and your door</p>
+        <h2 id="promise-title" class="h-display" style="margin-top:var(--space-5)">Bought by name, tasted twice, shipped the day after the roast.</h2>
+      </div>
+      <figure class="cup">
+        <div class="frame">
+          <picture>
+            <source type="image/webp" width="824" height="640" sizes="(min-width: 1232px) 552px, (min-width: 1024px) 45vw, 100vw" srcset="../../assets/photos/cupping-crop-560.webp 560w, ../../assets/photos/cupping-crop-824.webp 824w">
+            <img src="../../assets/photos/cupping-crop-824.jpg" width="824" height="640" sizes="(min-width: 1232px) 552px, (min-width: 1024px) 45vw, 100vw" loading="lazy" decoding="async"
+              srcset="../../assets/photos/cupping-crop-560.jpg 560w, ../../assets/photos/cupping-crop-824.jpg 824w"
+              alt="A roaster in a gray apron leans over a row of tasting bowls with a spoon, the drum roaster behind her against a brick wall.">
+          </picture>
+        </div>
+        <figcaption class="caption"><span>The first cupping, the morning after the roast.</span><span class="mono">Batch 0412</span></figcaption>
+      </figure>
+      <ol class="steps">
+          <li><span class="n" aria-hidden="true">1</span><div><h3>We know every grower by name</h3><p>We buy direct and visit every farm we buy from at least once every two years. The ledger above is what lot 0412 cost.</p></div></li>
+          <li><span class="n" aria-hidden="true">2</span><div><h3>We taste every batch twice</h3><p>Each batch is cupped the morning after its roast, then again before it is packed. A batch that misses its profile becomes cafe espresso, not your bag.</p></div></li>
+          <li><span class="n" aria-hidden="true">3</span><div><h3>It ships the day after the roast</h3><p>We roast on Tuesdays and Fridays and ship each batch the day after, on Wednesdays and Saturdays, so the coffee peaks in your kitchen, not on our shelf.</p></div></li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="journal">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h2 class="letters">Letters from the roastery</h2>
+        <p class="intro">New lots with their maps, brew notes and the odd subscriber-only release. Twice a month, no more.</p>
+        <form class="news" id="news" name="letters" action="/letters/" method="post" novalidate>
+          <label for="email">Email address</label>
+          <div class="field-row">
+            <input id="email" name="email" type="email" placeholder="you@example.com" aria-describedby="email-error" autocomplete="email">
+            <button class="btn btn-primary" type="submit" id="news-btn"><span class="spinner" aria-hidden="true"></span>Get the letters</button>
+          </div>
+          <p class="error" id="email-error" hidden>{{c:error}}Add the rest of your email, for example dana@example.com.</p>
+          <p class="ok" role="status" id="news-ok"></p>
+        </form>
+      </div>
+      <div class="links"><h2 class="label">Shop</h2><ul><li><a href="/coffee/">Coffee</a></li><li><a href="/subscriptions/">Subscriptions</a></li><li><a href="/brewing-gear/">Brewing gear</a></li><li><a href="/gift-cards/">Gift cards</a></li></ul></div>
+      <div class="links"><h2 class="label">Roastery</h2><ul><li><a href="/roastery/">Our story</a></li><li><a href="/wholesale/">Wholesale</a></li><li><a href="/visit/">Visit the cafe</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+    </div>
+    <div class="signoff">
+      <div class="mark">{{WM_SIGNOFF}}</div>
+      <div class="legal"><p>Ember &amp; Oak Coffee Roasters, 1120 SE Water Ave, Portland, OR 97214. Cafe open daily, 7&nbsp;am to 3&nbsp;pm.</p><p class="mono">45.51° N, 122.67° W · 15&#8239;m · © 2026</p></div>
+    </div>
+  </div>
+</footer>
+
+<dialog id="quick" aria-labelledby="q-title" aria-describedby="q-meta">
+  <div class="dlg-head">
+    <div><p class="label">Add to cart</p><h2 id="q-title" tabindex="-1">Ethiopia Guji</h2><p class="meta num" id="q-meta">$21 a bag, <span class="unit">340&#8239;g</span>. Roasts Tue,&nbsp;Oct&nbsp;13, ships Wed,&nbsp;Oct&nbsp;14.</p></div>
+    <button class="close" type="button" data-close aria-label="Close">{{c:close}}</button>
+  </div>
+  <form id="quick-form" action="/cart/" method="post" novalidate>
+    <fieldset class="opt-group" id="q-brew" aria-describedby="q-error">
+      <legend>How do you brew?<span class="hint">We grind it for your brewer the morning it ships.</span></legend>
+      <p class="error" id="q-error" hidden>{{c:error}}Choose how you brew, so we grind it right.</p>
+      <div class="opts cols-2">
+        <label class="opt stack"><input type="radio" name="qbrew" value="pourover" data-name="Pour-over"><span><span class="name">Pour-over</span><span class="sub">Medium-fine</span><span class="usual" hidden>Your usual</span></span></label>
+        <label class="opt stack"><input type="radio" name="qbrew" value="espresso" data-name="Espresso"><span><span class="name">Espresso</span><span class="sub">Fine</span><span class="usual" hidden>Your usual</span></span></label>
+        <label class="opt stack"><input type="radio" name="qbrew" value="drip" data-name="Drip machine"><span><span class="name">Drip machine</span><span class="sub">Medium</span><span class="usual" hidden>Your usual</span></span></label>
+        <label class="opt stack"><input type="radio" name="qbrew" value="press" data-name="French press"><span><span class="name">French press</span><span class="sub">Coarse</span><span class="usual" hidden>Your usual</span></span></label>
+        <label class="opt stack"><input type="radio" name="qbrew" value="moka" data-name="Moka pot"><span><span class="name">Moka pot</span><span class="sub">Fine to medium</span><span class="usual" hidden>Your usual</span></span></label>
+        <label class="opt stack"><input type="radio" name="qbrew" value="whole" data-name="Whole bean"><span><span class="name">Whole bean</span><span class="sub">You grind it</span><span class="usual" hidden>Your usual</span></span></label>
+      </div>
+    </fieldset>
+    <div class="qty-row">
+      <span class="lbl" id="q-qty-lbl">Bags</span>
+      <div class="stepper" role="group" aria-labelledby="q-qty-lbl">
+        <button type="button" id="q-minus" aria-label="One bag fewer" aria-disabled="true">{{c:minus}}</button>
+        <output id="q-qty" aria-live="polite">1</output>
+        <button type="button" id="q-plus" aria-label="One bag more">{{c:plus}}</button>
+      </div>
+    </div>
+    <button class="btn btn-primary btn-wide" type="submit" id="q-add">Add to cart, $21</button>
+  </form>
+</dialog>
+
+<dialog id="cart" aria-labelledby="cart-title">
+  <div class="dlg-head">
+    <div><h2 id="cart-title" tabindex="-1">Your cart</h2><p class="meta" id="cart-meta">2 items</p></div>
+    <button class="close" type="button" data-close aria-label="Close cart">{{c:close}}</button>
+  </div>
+  <div class="cart-body">
+    <div class="cart-groups" id="cart-groups"></div>
+    <div class="cart-empty">
+      <h3>Your cart is empty</h3>
+      <p><time datetime="2026-W42">This week’s</time> coffee is Ethiopia Guji. It roasts Tue,&nbsp;Oct&nbsp;13 in Portland and ships Wed,&nbsp;Oct&nbsp;14.</p>
+      <button class="btn btn-primary" type="button" data-quick="guji">Buy this bag, $21</button>
+      <a class="more" href="/coffee/" data-close-link>See all 9 coffees{{c:arrow-right}}</a>
+    </div>
+  </div>
+  <div class="cart-sum">
+    <dl id="cart-totals"></dl>
+    <button class="btn btn-primary btn-wide" type="button" id="checkout-btn" aria-haspopup="dialog"><span id="checkout-lbl">Check out, $39.00</span></button>
+    <p class="fine">Guest checkout. You review the order before you pay.</p>
+  </div>
+  <p class="sr-only" role="status" id="cart-status"></p>
+</dialog>
+
+<dialog id="checkout" aria-labelledby="co-title">
+  <div class="dlg-head co-head">
+    <div><h2 id="co-title" tabindex="-1">Checkout</h2><p class="meta" id="co-sub">Roaster’s choice every 2 weeks, and one bag of Ethiopia Guji</p></div>
+    <button class="close" type="button" data-close aria-label="Close checkout">{{c:close}}</button>
+  </div>
+  <form class="co-body" id="co-form" action="/checkout/" method="post" novalidate>
+    <div class="co-form">
+      <div class="express" role="group" aria-label="Express checkout">
+        <button class="btn btn-secondary" type="button">Apple Pay</button>
+        <button class="btn btn-secondary" type="button">Google Pay</button>
+      </div>
+      <p class="or">or pay with card</p>
+      <fieldset>
+        <legend class="label">Contact</legend>
+        <div class="fld"><label for="co-email">Email</label><input id="co-email" name="email" type="email" autocomplete="email" inputmode="email" aria-describedby="co-email-hint co-email-error"><span class="hint" id="co-email-hint">For your receipt and shipping updates.</span>
+          <p class="error" id="co-email-error" hidden>{{c:error}}Add the rest of your email, for example dana@example.com.</p></div>
+      </fieldset>
+      <fieldset>
+        <legend class="label">Delivery</legend>
+        <div class="fld"><label for="co-name">Full name</label><input id="co-name" name="name" autocomplete="shipping name"></div>
+        <div class="fld"><label for="co-street">Street address</label><input id="co-street" name="street" autocomplete="shipping address-line1">
+          <button class="linkish" type="button" id="co-add-line2" aria-expanded="false" aria-controls="co-line2-fld">Add apartment or suite</button></div>
+        <div class="fld" id="co-line2-fld" hidden><label for="co-line2">Apartment or suite (optional)</label><input id="co-line2" name="line2" autocomplete="shipping address-line2"></div>
+        <div class="pair">
+          <div class="fld"><label for="co-city">City</label><input id="co-city" name="city" autocomplete="shipping address-level2"></div>
+          <div class="fld"><label for="co-zip">ZIP code</label><input id="co-zip" name="postal" autocomplete="shipping postal-code" inputmode="numeric"></div>
+        </div>
+        <p class="hint">Shipping to the United States.</p>
+      </fieldset>
+      <fieldset class="card-block">
+        <legend class="label">Card</legend>
+        <p class="lock">{{c:lock}}Encrypted by our payment processor. We never see or store your card number.</p>
+        <div class="fld"><label for="co-cc">Card number</label><input id="co-cc" name="cardnumber" type="text" autocomplete="cc-number" inputmode="numeric"></div>
+        <div class="pair">
+          <div class="fld"><label for="co-exp">Expiry (MM/YY)</label><input id="co-exp" name="cc-exp" autocomplete="cc-exp" inputmode="numeric"></div>
+          <div class="fld"><label for="co-cvc">Security code</label><input id="co-cvc" name="cvc" autocomplete="cc-csc" inputmode="numeric"></div>
+        </div>
+        <label class="check"><input type="checkbox" checked> Billing address same as delivery</label>
+      </fieldset>
+    </div>
+    <aside class="summary" aria-labelledby="co-sum-title">
+      <h3 id="co-sum-title">Order summary</h3>
+      <dl id="co-lines"></dl>
+      <p class="term" id="co-term"></p>
+      <button class="btn btn-primary btn-wide" type="submit" id="co-pay"><span class="spinner" aria-hidden="true"></span><span class="lbl" id="co-pay-lbl">Pay $39.00</span></button>
+      <p class="fine">Not for you? Tell us within 30 days and your next bag is on us.</p>
+    </aside>
+  </form>
+  <p class="sr-only" role="status" id="co-status"></p>
+</dialog>
+<div class="sr-only" role="status" aria-live="polite" id="announce"></div>
+
+<script>
+// Purchase flow (design-ux 07, design-conversion 01 and 04), phone navigation (design-ux 02) and motion (design-motion).
+// Every state is reachable by URL for review, rendering and the lint:
+//   ?state=menu | quick | sub-error | plan-4 | cart | cart-empty | removed | checkout | checkout-error | error | sending | subscribed
+// Dates (fiction set on Sat, Oct 10, 2026): roasts Tue and Fri; first roast Tue, Oct 13; ships Wed, Oct 14 (the day after the roast);
+// one charge rule everywhere (slip, cart, checkout): the first bag is paid at checkout, then every 2 or 4 weeks on
+// roast day, so the next charge is Tue, Oct 27 (2 weeks) or Tue, Nov 10 (4 weeks).
+(function () {
+  document.documentElement.classList.add('js');
+  const state = new URLSearchParams(location.search).get('state');
+  const $ = (id) => document.getElementById(id);
+  const money = (n) => '$' + n.toFixed(2);
+  const ICON = { minus: '{{c:minus}}', plus: '{{c:plus}}', check: '{{c:check}}' };
+  const THUMB = '<span class="thumb" aria-hidden="true"><img src="../../assets/photos/hero-bag-portrait-480.webp" alt="" width="56" height="56"></span>';
+  // Motion tokens are read from CSS, never typed here, so the script and the stylesheet cannot drift apart.
+  const css = getComputedStyle(document.documentElement);
+  const ms = (t) => parseFloat(css.getPropertyValue(t));
+  const ease = (t) => css.getPropertyValue(t).trim();
+  const still = matchMedia('(prefers-reduced-motion: reduce)');
+
+  // Announce from inside an open modal: content outside a showModal() dialog is inert, so its live region is not read.
+  function say(t) {
+    const open = [...document.querySelectorAll('dialog[open]')].pop();
+    const r = (open && open.querySelector('[role=status]')) || $('announce');
+    r.textContent = ''; setTimeout(() => { r.textContent = t; }, 50);
+  }
+  // While a modal is open the page behind it is inert: WCAG 1.4.3 exempts inactive content, so the lint's text-over-art
+  // check is switched off for <main> only while a dialog is open (design-ux pipeline note; the dialog itself is still checked).
+  const mainEl = document.querySelector('main');
+  const syncInert = () => { if (document.querySelector('dialog[open]')) mainEl.setAttribute('data-lint-skip', 'overlay'); else mainEl.removeAttribute('data-lint-skip'); };
+  new MutationObserver(syncInert).observe(document.body, { subtree: true, attributes: true, attributeFilter: ['open'] });
+
+  // ---- Phone menu: a disclosure, not a modal. Escape closes and returns focus. ----
+  const toggle = $('menu-toggle'), menu = $('mobile-menu');
+  function setMenu(open, focusBack) { menu.hidden = !open; toggle.setAttribute('aria-expanded', String(open)); if (!open && focusBack) toggle.focus(); }
+  toggle.addEventListener('click', () => setMenu(menu.hidden));
+  menu.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) setMenu(false, true); });
+
+  // ---- Cart model ----
+  const coffees = { guji: { name: 'Ethiopia Guji', price: 21 }, huila: { name: 'Colombia Huila', price: 19 }, oak: { name: 'Oak Fire Espresso', price: 18 } };
+  const NEXT = { 2: 'Tue,\u00a0Oct\u00a027', 4: 'Tue,\u00a0Nov\u00a010' };
+  let lines = [], nextId = 1;
+  const FREE_OVER = 40, SHIP = 6;
+  const count = () => lines.filter((l) => !l.removed).reduce((n, l) => n + l.qty, 0);
+  function totals() {
+    const live = lines.filter((l) => !l.removed);
+    const once = live.filter((l) => l.kind === 'once').reduce((s, l) => s + l.price * l.qty, 0);
+    const subs = live.filter((l) => l.kind === 'sub');
+    const subToday = subs.reduce((s, l) => s + l.price, 0);
+    const ship = once === 0 || subs.length || once >= FREE_OVER ? 0 : SHIP;
+    return { once, subs, subToday, ship, today: once + subToday + ship };
+  }
+  // Motion 3: the cart count. The new digit rolls up from below while the old one leaves (up = more); the badge bumps once.
+  // Reduced motion: the digit crossfades in place at --duration-instant.
+  let shown = 0;
+  function setCount(animate) {
+    const n = count(), el = $('cart-n');
+    $('cart-label').textContent = n ? n + (n === 1 ? ' item' : ' items') : 'empty';
+    $('cart-count').classList.toggle('has', n > 0);
+    if (n === shown || !animate) { el.textContent = n; shown = n; return; }
+    const badge = el.parentNode, old = el.cloneNode(true); old.removeAttribute('id'); badge.appendChild(old);
+    const up = n > shown; el.textContent = n; shown = n;
+    if (still.matches) {
+      old.animate([{ opacity: 1 }, { opacity: 0 }], { duration: ms('--duration-instant'), fill: 'forwards' }).finished.then(() => old.remove());
+      el.animate([{ opacity: 0 }, { opacity: 1 }], { duration: ms('--duration-instant') });
+      return;
+    }
+    const d = up ? '-100%' : '100%', f = up ? '100%' : '-100%';
+    old.animate([{ transform: 'none', opacity: 1 }, { transform: 'translateY(' + d + ')', opacity: 0 }], { duration: ms('--duration-fast'), easing: ease('--ease-exit'), fill: 'forwards' }).finished.then(() => old.remove());
+    el.animate([{ transform: 'translateY(' + f + ')', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: ms('--duration-base'), easing: ease('--ease-enter') });
+    badge.animate([{ transform: 'none' }, { transform: 'scale(1.15)' }, { transform: 'none' }], { duration: ms('--duration-base'), easing: ease('--ease-standard') });
+  }
+  const cart = $('cart');
+  function renderCart(animate) {
+    setCount(animate);
+    const t = totals(), n = count();
+    cart.toggleAttribute('data-empty', n === 0 && !lines.some((l) => l.removed));
+    $('cart-meta').textContent = n ? n + (n === 1 ? ' item' : ' items') : 'Nothing in it yet';
+    const subs = lines.filter((l) => l.kind === 'sub'), once = lines.filter((l) => l.kind === 'once'), groups = [];
+    if (subs.length) groups.push(['Every ' + subs[0].every + '\u00a0weeks', subs]);
+    if (once.length) groups.push(['Once', once]);
+    $('cart-groups').innerHTML = groups.map(([title, ls]) => '<section class="cart-group"><h3 class="label">' + title + '</h3><ul>' + ls.map(lineHtml).join('') + '</ul></section>').join('');
+    let dl = '<div><dt>Coffee today</dt><dd>' + money(t.once + t.subToday) + '</dd></div>';
+    dl += '<div><dt>Shipping</dt><dd>' + (t.ship ? money(t.ship) : (t.subs.length && t.once ? 'Free with your subscription' : 'Included')) + '</dd></div>';
+    if (t.ship) dl += '<div class="then"><dt>Free shipping over $40</dt><dd>' + money(FREE_OVER - t.once) + ' to go</dd></div>';
+    dl += '<div class="total"><dt>Due today</dt><dd>' + money(t.today) + '</dd></div>';
+    if (t.subs.length) dl += '<div class="then"><dt>Then every ' + t.subs[0].every + '\u00a0weeks on roast day, from ' + NEXT[t.subs[0].every] + '</dt><dd>' + money(t.subToday) + '</dd></div>';
+    $('cart-totals').innerHTML = dl;
+    $('checkout-lbl').textContent = 'Check out, ' + money(t.today);
+  }
+  function lineHtml(l) {
+    if (l.removed) return '<li class="line removed"><span>Removed ' + l.name + '.</span><button class="link-btn" type="button" data-undo="' + l.id + '">Undo</button></li>';
+    const meta = l.brew + (l.kind === 'sub' ? ', every ' + l.every + '\u00a0weeks' : ', 340\u202fg');
+    const amt = l.kind === 'sub' ? money(l.price) + '<small>a delivery</small>' : money(l.price * l.qty) + (l.qty > 1 ? '<small>' + money(l.price) + ' each</small>' : '');
+    const ctrl = l.kind === 'once'
+      ? '<div class="stepper" role="group" aria-label="Bags of ' + l.name + '"><button type="button" data-dec="' + l.id + '" aria-label="One bag fewer"' + (l.qty === 1 ? ' aria-disabled="true"' : '') + '>' + ICON.minus + '</button><output aria-live="polite">' + l.qty + '</output><button type="button" data-inc="' + l.id + '" aria-label="One bag more">' + ICON.plus + '</button></div>'
+      : '<span class="renew">Skip, swap, pause or cancel online any time before a roast</span>';
+    return '<li class="line">' + THUMB + '<div><p class="nm">' + l.name + '</p><p class="meta">' + meta + '</p></div><p class="amt num">' + amt + '</p>' +
+      '<div class="ctrl">' + ctrl + '<button class="link-btn" type="button" data-remove="' + l.id + '">Remove<span class="sr-only"> ' + l.name + '</span></button></div></li>';
+  }
+  $('cart-groups').addEventListener('click', (e) => {
+    const b = e.target.closest('button'); if (!b) return;
+    const id = +(b.dataset.remove || b.dataset.undo || b.dataset.inc || b.dataset.dec);
+    const l = lines.find((x) => x.id === id); if (!l) return;
+    if (b.dataset.remove) { l.removed = true; renderCart(true); say('Removed ' + l.name + '. Undo is next to it.'); cart.querySelector('[data-undo="' + id + '"]').focus(); }
+    else if (b.dataset.undo) { l.removed = false; renderCart(true); say(l.name + ' is back in your cart.'); cart.querySelector('[data-remove="' + id + '"]').focus(); }
+    else if (b.dataset.inc) { l.qty++; renderCart(true); cart.querySelector('[data-inc="' + id + '"]').focus(); say(l.qty + ' bags of ' + l.name + '. Due today ' + money(totals().today) + '.'); }
+    else if (b.dataset.dec && l.qty > 1) { l.qty--; renderCart(true); cart.querySelector('[data-dec="' + id + '"]').focus(); say(l.qty + (l.qty === 1 ? ' bag of ' : ' bags of ') + l.name + '.'); }
+  });
+  function openCart(opener, animate) {
+    renderCart(animate); cart._opener = opener || document.activeElement;
+    if (!cart.open) cart.showModal();
+    $('cart-title').focus();
+  }
+  $('cart-link').addEventListener('click', (e) => { e.preventDefault(); setMenu(false); openCart($('cart-link')); });
+  cart.addEventListener('close', () => { lines = lines.filter((l) => !l.removed); setCount(false); const o = cart._opener; if (o && document.contains(o) && !$('checkout').open) o.focus(); });
+  document.querySelectorAll('dialog [data-close]').forEach((b) => b.addEventListener('click', () => b.closest('dialog').close()));
+  cart.querySelector('[data-close-link]').addEventListener('click', () => cart.close());
+
+  // ---- Checkout: the summary is the cart; Pay names the amount; the term line restates the renewal. ----
+  const co = $('checkout'), coForm = $('co-form'), coEmail = $('co-email'), coErr = $('co-email-error');
+  function renderCheckout() {
+    const t = totals(), live = lines.filter((l) => !l.removed);
+    $('co-sub').textContent = live.map((l) => l.kind === 'sub' ? l.name + ' every ' + l.every + '\u00a0weeks' : (l.qty === 1 ? 'one bag of ' : l.qty + ' bags of ') + l.name).join(', and ').replace(/^./, (c) => c.toUpperCase());
+    let dl = live.map((l) => '<div><dt>' + (l.kind === 'sub' ? l.name + ', every ' + l.every + '\u00a0weeks' : l.name + (l.qty > 1 ? ' × ' + l.qty : '')) + '</dt><dd>' + money(l.kind === 'sub' ? l.price : l.price * l.qty) + '</dd></div>').join('');
+    dl += '<div><dt>Shipping</dt><dd>' + (t.ship ? money(t.ship) : 'Free') + '</dd></div><div><dt>Tax (Oregon has no sales tax)</dt><dd>$0.00</dd></div>';
+    dl += '<div class="total"><dt>Due today</dt><dd>' + money(t.today) + '</dd></div>';
+    $('co-lines').innerHTML = dl;
+    $('co-term').innerHTML = t.subs.length ? 'Then <b>' + money(t.subToday).replace('.00', '') + ' every ' + t.subs[0].every + '\u00a0weeks</b> on roast day, next on ' + NEXT[t.subs[0].every] + '. Skip, swap, pause or cancel online any time before a roast.' : 'One order, no renewal.';
+    $('co-pay-lbl').textContent = 'Pay ' + money(t.today);
+  }
+  function openCheckout() { renderCheckout(); if (cart.open) cart.close(); co.showModal(); $('co-title').focus(); }
+  $('checkout-btn').addEventListener('click', openCheckout);
+  co.addEventListener('close', () => { if (document.contains($('cart-link'))) $('cart-link').focus(); });
+  $('co-add-line2').addEventListener('click', (e) => { $('co-line2-fld').hidden = false; e.currentTarget.setAttribute('aria-expanded', 'true'); e.currentTarget.hidden = true; $('co-line2').focus(); });
+  const emailOk = () => /\S+@\S+\.\S+/.test(coEmail.value);
+  const coShowError = () => { coEmail.setAttribute('aria-invalid', 'true'); coErr.hidden = false; };
+  coEmail.addEventListener('blur', () => { if (coEmail.value && !emailOk()) coShowError(); });
+  coEmail.addEventListener('input', () => { if (emailOk()) { coEmail.removeAttribute('aria-invalid'); coErr.hidden = true; } });
+  coForm.addEventListener('submit', (e) => { e.preventDefault(); if (!emailOk()) { coShowError(); coEmail.focus(); return; } const p = $('co-pay'); p.setAttribute('aria-busy', 'true'); p.setAttribute('aria-disabled', 'true'); say('Paying ' + money(totals().today) + '.'); });
+
+  // ---- Quick add: asks the one question with no safe default (the grind) and remembers the answer. ----
+  const quick = $('quick'), qForm = $('quick-form');
+  let qCoffee = 'guji', qQty = 1, usual = null;
+  try { usual = localStorage.getItem('eo-brew'); } catch (e) { /* private mode: no memory, still works */ }
+  function qLabel() { const c = coffees[qCoffee]; $('q-add').textContent = qQty === 1 ? 'Add to cart, $' + c.price : 'Add ' + qQty + ' bags, $' + c.price * qQty; }
+  function openQuick(id, opener) {
+    qCoffee = id; qQty = 1; quick._opener = opener;
+    const c = coffees[id];
+    $('q-title').textContent = c.name;
+    $('q-meta').innerHTML = '$' + c.price + ' a bag, <span class="unit">340\u202fg</span>. Roasts Tue,\u00a0Oct\u00a013, ships Wed,\u00a0Oct\u00a014.';
+    $('q-qty').textContent = '1'; $('q-minus').setAttribute('aria-disabled', 'true');
+    clearError('q-brew', 'q-error');
+    qForm.querySelectorAll('input[name=qbrew]').forEach((r) => { r.checked = r.value === usual; r.closest('.opt').querySelector('.usual').hidden = r.value !== usual; });
+    if (cart.open) cart.close();
+    quick.showModal();
+    const pre = qForm.querySelector('input[name=qbrew]:checked');
+    (pre ? $('q-add') : $('q-title')).focus();
+    qLabel();
+  }
+  quick.addEventListener('close', () => { if (quick._opener && document.contains(quick._opener) && !cart.open) quick._opener.focus(); });
+  $('q-plus').addEventListener('click', () => { qQty = Math.min(qQty + 1, 12); $('q-qty').textContent = qQty; $('q-minus').removeAttribute('aria-disabled'); qLabel(); });
+  $('q-minus').addEventListener('click', () => { if (qQty === 1) return; qQty--; $('q-qty').textContent = qQty; if (qQty === 1) $('q-minus').setAttribute('aria-disabled', 'true'); qLabel(); });
+  document.querySelectorAll('[data-quick]').forEach((b) => b.addEventListener('click', (e) => { e.preventDefault(); openQuick(b.dataset.quick, b); }));
+  function showError(groupId, errId, review) { const g = $(groupId); g.classList.add('invalid'); $(errId).hidden = false; g.querySelector('input').focus({ preventScroll: !!review }); }
+  function clearError(groupId, errId) { $(groupId).classList.remove('invalid'); $(errId).hidden = true; }
+  qForm.addEventListener('change', (e) => { if (e.target.name === 'qbrew') clearError('q-brew', 'q-error'); });
+  qForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const brew = qForm.querySelector('input[name=qbrew]:checked');
+    if (!brew) { showError('q-brew', 'q-error'); return; }
+    remember(brew.value);
+    const c = coffees[qCoffee];
+    const same = lines.find((l) => l.kind === 'once' && l.coffee === qCoffee && l.brew === brew.dataset.name && !l.removed);
+    if (same) same.qty += qQty; else lines.push({ id: nextId++, kind: 'once', coffee: qCoffee, name: c.name, brew: brew.dataset.name, price: c.price, qty: qQty });
+    const opener = quick._opener; quick._opener = null; quick.close();
+    openCart(opener, true);
+    say('Added ' + c.name + ', ' + brew.dataset.name.toLowerCase() + '. ' + count() + ' items, due today ' + money(totals().today) + '.');
+  });
+  function remember(v) { usual = v; try { localStorage.setItem('eo-brew', v); } catch (e) { /* no memory */ } }
+
+  // ---- Subscription slip: the button is the summary, the term line restates it, the brew question has no default. ----
+  const sub = $('sub-form');
+  function subValues() {
+    const c = sub.querySelector('input[name=coffee]:checked'), b = sub.querySelector('input[name=brew]:checked'), ev = sub.querySelector('input[name=every]:checked');
+    return { c, b, every: +ev.value, price: +c.dataset.price };
+  }
+  function subLabel() {
+    const v = subValues();
+    $('sub-btn').textContent = 'Subscribe, $' + v.price + ' every ' + v.every + '\u00a0weeks';
+    $('sub-terms').innerHTML = '<b>$' + v.price + ' at checkout, then every ' + v.every + '\u00a0weeks</b> on roast day: next charge ' + NEXT[v.every] + '. First roast Tue,\u00a0Oct\u00a013. Skip, swap, pause or cancel online any time before a roast.';
+  }
+  sub.addEventListener('change', (e) => { subLabel(); if (e.target.name === 'brew') clearError('g-brew', 'brew-error'); });
+  sub.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const v = subValues();
+    if (!v.b) { showError('g-brew', 'brew-error'); return; }
+    remember(v.b.value);
+    lines = lines.filter((l) => l.kind !== 'sub');
+    lines.unshift({ id: nextId++, kind: 'sub', name: v.c.dataset.name, brew: v.b.dataset.name, every: v.every, price: v.price, qty: 1 });
+    openCart($('sub-btn'), true);
+    say('Added a subscription: ' + v.c.dataset.name + ', every ' + v.every + '\u00a0weeks, $' + v.price + ' a delivery.');
+  });
+  subLabel();
+
+  // ---- The letters ----
+  const form = $('news'), email = $('email'), btn = $('news-btn'), err = $('email-error'), ok = $('news-ok');
+  const valid = () => email.validity.valid && /\S+@\S+\.\S+/.test(email.value);
+  function newsError() { email.setAttribute('aria-invalid', 'true'); err.hidden = false; }
+  function done(addr) { form.setAttribute('data-done', ''); ok.innerHTML = ICON.check + '<span>You’re on the list. The first letter goes to ' + addr.replace(/[<>&]/g, '') + ' on Thu,\u00a0Oct\u00a022.</span>'; }
+  email.addEventListener('input', () => { if (valid()) { email.removeAttribute('aria-invalid'); err.hidden = true; } });
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!valid()) { newsError(); email.focus(); return; }
+    btn.setAttribute('aria-busy', 'true'); btn.setAttribute('aria-disabled', 'true');
+    setTimeout(() => { btn.removeAttribute('aria-busy'); btn.removeAttribute('aria-disabled'); done(email.value); }, 900);
+  });
+
+  // ---- Review states by URL ----
+  const seed = () => { lines = [
+    { id: nextId++, kind: 'sub', name: 'Roaster’s choice', brew: 'Pour-over', every: 2, price: 18, qty: 1 },
+    { id: nextId++, kind: 'once', coffee: 'guji', name: 'Ethiopia Guji', brew: 'Pour-over', price: 21, qty: 1 } ]; };
+  if (state === 'menu') setMenu(true);
+  if (state === 'quick') { usual = 'pourover'; openQuick('guji', document.querySelector('.lot [data-quick]')); }
+  if (state === 'sub-error') { $('g-brew').classList.add('invalid'); $('brew-error').hidden = false; } // review render: the error shows, focus stays put
+  if (state === 'plan-4') { sub.querySelector('input[name=every][value="4"]').checked = true; sub.querySelector('input[name=brew][value="moka"]').checked = true; sub.querySelector('input[name=coffee][value="huila"]').checked = true; subLabel(); }
+  if (state === 'cart' || state === 'added') { seed(); openCart($('cart-link')); }
+  if (state === 'cart-empty') openCart($('cart-link'));
+  if (state === 'removed') { seed(); lines.push({ id: nextId++, kind: 'once', coffee: 'huila', name: 'Colombia Huila', brew: 'Pour-over', price: 19, qty: 1, removed: true }); openCart($('cart-link')); }
+  if (state === 'checkout' || state === 'checkout-error') {
+    seed(); setCount(false);
+    coEmail.value = state === 'checkout-error' ? 'dana@' : 'dana@example.com';
+    $('co-name').value = 'Dana Whitfield'; $('co-street').value = '2231 SE Belmont St'; $('co-city').value = 'Portland'; $('co-zip').value = '97214';
+    openCheckout();
+    if (state === 'checkout-error') coShowError();
+  }
+  if (state === 'error') { email.value = 'dana@'; newsError(); }
+  if (state === 'sending') { email.value = 'dana@example.com'; btn.setAttribute('aria-busy', 'true'); btn.setAttribute('aria-disabled', 'true'); }
+  if (state === 'subscribed') done('dana@example.com');
+  setCount(false);
+
+  // ---- Motion 1 and 2 run once, on first view. Without IntersectionObserver, or under reduced motion, all is drawn at once. ----
+  const curve = document.querySelector('figure.curve'), tiles = document.querySelectorAll('.tile');
+  function rise(tile) {
+    const ls = [...tile.querySelectorAll('.c')];
+    const levels = Math.max(...ls.map((l) => +l.dataset.level)) || 1;
+    const step = Math.min(40, 300 / levels); // the last level starts within 300 ms
+    tile.classList.add('seen');
+    ls.forEach((l) => l.animate([{ opacity: 0 }, { opacity: 1 }], { duration: ms('--duration-base'), delay: +l.dataset.level * step, easing: ease('--ease-enter'), fill: 'backwards' }));
+  }
+  if ('IntersectionObserver' in window && !still.matches) {
+    const io = new IntersectionObserver((es) => es.forEach((e) => {
+      if (!e.isIntersecting) return;
+      if (e.target === curve) curve.classList.add('seen'); else rise(e.target);
+      io.unobserve(e.target);
+    }), { threshold: 0.4 });
+    io.observe(curve); tiles.forEach((t) => io.observe(t));
+  } else { curve.classList.add('seen'); tiles.forEach((t) => t.classList.add('seen')); }
+})();
+</script>
+</body>
+</html>

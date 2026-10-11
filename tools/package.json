@@ -1,0 +1,15 @@
+{
+  "name": "design-kb-tools",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Render and fundamentals lint for design-kb test pages",
+  "scripts": {
+    "render": "node render.mjs",
+    "lint": "node lint.mjs"
+  },
+  "dependencies": {
+    "axe-core": "4.14.0",
+    "playwright-core": "1.56.1"
+  }
+}

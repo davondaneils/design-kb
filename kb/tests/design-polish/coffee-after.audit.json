@@ -1,0 +1,98 @@
+{
+  "file": "kb/tests/design-polish/coffee-after.html",
+  "checks": {
+    "radius": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "census: 4px x32, 8px x2, 12px x14, 16px x4, full x104"
+        }
+      ]
+    },
+    "shadow": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "8 distinct box-shadow values (tokens give 5 plus rings)"
+        }
+      ],
+      "info": [
+        {
+          "message": "distinct shadows: 8"
+        }
+      ]
+    },
+    "hover-gate": {
+      "fail": [],
+      "warn": [
+        {
+          "message": ":hover moves or lifts outside @media (hover: hover): border-top-color box-shadow",
+          "selector": "input[aria-invalid=\"true\"], input[aria-invalid=\"true\"]:hover",
+          "props": "border-top-color box-shadow"
+        }
+      ],
+      "info": []
+    },
+    "icon-stroke": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "icons checked: 5"
+        }
+      ]
+    },
+    "svg-hairline": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "color-scheme": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "tabular": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "1 numeric cells without tabular figures",
+          "examples": [
+            "div.wrap > div.offer > p.price"
+          ]
+        }
+      ],
+      "info": []
+    },
+    "heading-wrap": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "focus-shape": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "elements tested: 25"
+        }
+      ]
+    },
+    "state-shift": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "forced-edge": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    }
+  },
+  "summary": {
+    "result": "PASS",
+    "fails": 0,
+    "warns": 3
+  }
+}

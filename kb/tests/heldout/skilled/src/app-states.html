@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en-US" data-lint-page="state-sheet">
+<head>
+<title>Keel state sheet</title>
+/*@INCLUDE head-app.html*/
+<style>
+/*@FONTS Inter=inter-sub.woff2;400 700;normal*/
+/*@INCLUDE app-tokens.css*/
+@layer components {
+  main { max-inline-size: 1200px; margin-inline: auto; padding: var(--space-7) var(--space-5); }
+  h1 { font-size: var(--text-2xl); font-weight: 700; margin-block-end: var(--space-6); }
+  h2 { font-size: var(--text-sm); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-muted); margin-block: var(--space-7) var(--space-4); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(208px, 1fr)); gap: var(--space-5); }
+  .cell { display: grid; gap: var(--space-3); align-content: start; }
+  .cell p { font-size: var(--text-xs); color: var(--color-text-muted); }
+  .is-hover.btn-primary { background: var(--color-primary-hover); }
+  .is-pressed.btn-primary { background: var(--color-primary-active); }
+  .is-hover.btn-secondary { background-image: linear-gradient(var(--state-hover), var(--state-hover)); }
+  .is-pressed.btn-secondary { background-image: linear-gradient(var(--state-pressed), var(--state-pressed)); }
+  .is-focus { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+  .btn[disabled] { background: var(--color-surface-sunken); color: var(--color-text-muted); box-shadow: inset 0 0 0 1px var(--color-border); cursor: not-allowed; }
+  .btn[aria-busy="true"] .lbl { opacity: 0; }
+  .btn[aria-busy="true"]::after { content: ""; position: absolute; width: 16px; height: 16px; border-radius: var(--radius-full); border: 2px solid currentColor; border-right-color: transparent; }
+  .sw { position: relative; width: 52px; height: 32px; border-radius: var(--radius-full); background: var(--color-border-strong); }
+  .sw::after { content: ""; position: absolute; top: 2px; left: 2px; width: 28px; height: 28px; border-radius: var(--radius-full); background: #ffffff; }
+  .sw.on { background: var(--color-primary); }
+  .sw.on::after { left: 22px; }
+  .sw.off-disabled { opacity: 0.38; }
+  .inp { display: flex; align-items: center; min-height: var(--size-control-lg); padding-inline: var(--space-4); border-radius: var(--radius-lg);
+    background: var(--color-surface-sunken); box-shadow: inset 0 0 0 1px var(--color-border-strong); font-size: var(--text-base); }
+  .inp.err { box-shadow: inset 0 0 0 2px var(--color-danger); }
+  .msg { display: flex; gap: var(--space-2); align-items: center; font-size: var(--text-sm); color: var(--color-danger); font-weight: 500; }
+  .msg.ok { color: var(--color-success); }
+}
+</style>
+</head>
+<body>
+<main>
+  <h1>Keel controls, every state</h1>
+  <h2>Primary button</h2>
+  <div class="grid">
+    <div class="cell"><a class="btn btn-primary" href="#rest"><span class="lbl">Add $1,250 income</span></a><p>Rest</p></div>
+    <div class="cell"><a class="btn btn-primary is-hover" href="#hover"><span class="lbl">Add $1,250 income</span></a><p>Hover (pointer only)</p></div>
+    <div class="cell"><a class="btn btn-primary is-pressed" href="#pressed"><span class="lbl">Add $1,250 income</span></a><p>Pressed</p></div>
+    <div class="cell"><a class="btn btn-primary is-focus" href="#focus"><span class="lbl">Add $1,250 income</span></a><p>Focus</p></div>
+    <div class="cell"><button class="btn btn-primary" disabled><span class="lbl">Add income</span></button><p>Disabled (not used; Add stays enabled)</p></div>
+    <div class="cell"><button class="btn btn-primary" aria-busy="true"><span class="lbl">Add $1,250 income</span></button><p>Saving</p></div>
+  </div>
+  <h2>Secondary button</h2>
+  <div class="grid">
+    <div class="cell"><a class="btn btn-secondary" href="#s1">Start manually</a><p>Rest</p></div>
+    <div class="cell"><a class="btn btn-secondary is-hover" href="#s2">Start manually</a><p>Hover</p></div>
+    <div class="cell"><a class="btn btn-secondary is-pressed" href="#s3">Start manually</a><p>Pressed</p></div>
+    <div class="cell"><a class="btn btn-secondary is-focus" href="#s4">Start manually</a><p>Focus</p></div>
+  </div>
+  <h2>Switch</h2>
+  <div class="grid">
+    <div class="cell"><span class="sw on" role="img" aria-label="On"></span><p>On</p></div>
+    <div class="cell"><span class="sw" role="img" aria-label="Off"></span><p>Off</p></div>
+    <div class="cell"><span class="sw on is-focus" role="img" aria-label="On, focused"></span><p>Focus</p></div>
+    <div class="cell"><span class="sw off-disabled" role="img" aria-label="Off, unavailable"></span><p>Disabled</p></div>
+  </div>
+  <h2>Field</h2>
+  <div class="grid">
+    <div class="cell"><span class="inp">Halden Studio</span><p>Rest</p></div>
+    <div class="cell"><span class="inp is-focus">Halden Studio</span><p>Focus</p></div>
+    <div class="cell"><span class="inp err"><span class="visually-hidden">Empty amount field</span></span><p class="msg"><svg class="icon icon-md" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.5v.01"/></svg>Enter an amount</p></div>
+    <div class="cell"><span class="inp">$1,250.00</span><p class="msg ok"><svg class="icon icon-md" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Added. $350 set aside</p></div>
+  </div>
+</main>
+</body>
+</html>

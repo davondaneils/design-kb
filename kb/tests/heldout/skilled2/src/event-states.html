@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en-GB" data-lint-page="state-sheet">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Set in Stone state sheet</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+/*@FONT*/
+/*@INCLUDE tokens.css*/
+/*@INCLUDE event.css*/
+@layer components {
+  .sheet { max-inline-size: 1280px; margin-inline: auto; padding: var(--space-8) var(--space-6); }
+  .sheet h1 { font-size: var(--text-3xl); font-weight: 900; font-stretch: 62%; text-transform: uppercase; line-height: var(--leading-tight); margin-block-end: var(--space-7); }
+  .sheet h2 { font-size: var(--text-sm); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-block: var(--space-7) var(--space-4); color: var(--color-text-muted); font-stretch: 100%; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(232px, 1fr)); gap: var(--space-6); }
+  .cell { display: grid; gap: var(--space-3); justify-items: start; }
+  .cell p { font-size: var(--text-sm); color: var(--color-text-muted); }
+  .wallcell { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: var(--space-2); background: var(--color-wall-joint); }
+  .wallcell .stone { display: grid; gap: var(--space-3); justify-items: start; color: var(--color-wall-ink); padding: var(--space-5); }
+  .wallcell .stone p { font-size: var(--text-sm); }
+  .btn-primary.is-hover { background: var(--color-primary-hover); }
+  .btn-primary.is-pressed { background: var(--color-primary-active); box-shadow: inset 0 2px 0 rgb(0 0 0 / 0.24); }
+  .btn-outline.is-hover { background: var(--state-hover); }
+  .btn-outline.is-pressed { background: var(--state-pressed); }
+  .btn-wall.is-hover, .btn-wall.is-pressed { background: var(--color-lime); }
+  .btn-wall.is-pressed { box-shadow: inset 0 2px 0 rgb(0 0 0 / 0.18); }
+  .is-focus { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+  .wallcell .is-focus { outline-color: var(--color-wall-focus); }
+  .navlink { display: inline-flex; align-items: center; min-height: var(--size-touch); padding-inline: var(--space-4); font-weight: 700; text-decoration: none; border-radius: var(--radius-sm); }
+  .navlink.is-hover { background: var(--color-wall-hover); }
+  .soldout { background: var(--color-surface-sunken); color: var(--color-text-muted); box-shadow: inset 0 0 0 1px var(--color-border); cursor: not-allowed; }
+  .textlink { font-weight: 600; text-underline-offset: 0.18em; display: inline-flex; align-items: center; min-height: var(--size-touch); }
+  .textlink.is-hover { text-decoration-thickness: 2px; }
+}
+</style>
+</head>
+<body>
+<main class="sheet">
+  <h1>Set in Stone controls, every state</h1>
+  <h2>On the wall (hero and footer, same in both schemes)</h2>
+  <div class="wallcell">
+    <div class="stone tone-a"><a class="btn btn-wall" href="#w1">Get tickets</a><p>Primary on the wall, rest</p></div>
+    <div class="stone tone-c"><a class="btn btn-wall is-hover" href="#w2">Get tickets</a><p>Hover (pointer only)</p></div>
+    <div class="stone tone-b"><a class="btn btn-wall is-pressed" href="#w3">Get tickets</a><p>Pressed</p></div>
+    <div class="stone tone-d"><a class="btn btn-wall is-focus" href="#w4">Get tickets</a><p>Focus, 2px cream ring</p></div>
+    <div class="stone tone-a"><a class="navlink" href="#w5">Programme</a><p>Nav link, rest</p></div>
+    <div class="stone tone-c"><a class="navlink is-hover" href="#w6">Programme</a><p>Nav link, hover</p></div>
+    <div class="stone tone-b"><a class="navlink is-focus" href="#w7">Programme</a><p>Nav link, focus</p></div>
+  </div>
+  <h2>Primary button</h2>
+  <div class="grid">
+    <div class="cell"><a class="btn btn-primary" href="#p1">Get weekend tickets</a><p>Rest</p></div>
+    <div class="cell"><a class="btn btn-primary is-hover" href="#p2">Get weekend tickets</a><p>Hover (pointer only)</p></div>
+    <div class="cell"><a class="btn btn-primary is-pressed" href="#p3">Get weekend tickets</a><p>Pressed</p></div>
+    <div class="cell"><a class="btn btn-primary is-focus" href="#p4">Get weekend tickets</a><p>Focus, 2px ink ring</p></div>
+    <div class="cell"><button class="btn btn-primary" aria-busy="true" style="position: relative"><span style="opacity: 0">Get weekend tickets</span><span aria-hidden="true" style="position: absolute">Opening…</span></button><p>Busy, opening the ticket shop</p></div>
+  </div>
+  <h2>Outline button</h2>
+  <div class="grid">
+    <div class="cell"><a class="btn btn-outline" href="#o1">Get day tickets</a><p>Rest</p></div>
+    <div class="cell"><a class="btn btn-outline is-hover" href="#o2">Get day tickets</a><p>Hover</p></div>
+    <div class="cell"><a class="btn btn-outline is-pressed" href="#o3">Get day tickets</a><p>Pressed</p></div>
+    <div class="cell"><a class="btn btn-outline is-focus" href="#o4">Get day tickets</a><p>Focus</p></div>
+    <div class="cell"><button class="btn soldout" disabled>Workshop full</button><p>Sold out (disabled, reason in the label)</p></div>
+  </div>
+  <h2>Text links</h2>
+  <div class="grid">
+    <div class="cell"><a class="textlink" href="#t1">access@setinstone.scot</a><p>Rest</p></div>
+    <div class="cell"><a class="textlink is-hover" href="#t2">access@setinstone.scot</a><p>Hover</p></div>
+    <div class="cell"><a class="textlink is-focus" href="#t3">access@setinstone.scot</a><p>Focus</p></div>
+  </div>
+</main>
+</body>
+</html>

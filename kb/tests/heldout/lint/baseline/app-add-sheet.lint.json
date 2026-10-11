@@ -1,0 +1,733 @@
+{
+  "file": "kb/tests/heldout/baseline/app-add-sheet.html",
+  "date": "2026-10-11T01:21:04.716Z",
+  "checks": {
+    "axe": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "needs review by eye, aria-prohibited-attr: Elements must only use permitted ARIA attributes (1 nodes)",
+          "scheme": "light",
+          "width": 390,
+          "targets": [
+            "div[aria-label=\"Amount £1,250.00\"]"
+          ]
+        },
+        {
+          "message": "needs review by eye, aria-prohibited-attr: Elements must only use permitted ARIA attributes (1 nodes)",
+          "scheme": "dark",
+          "width": 390,
+          "targets": [
+            "div[aria-label=\"Amount £1,250.00\"]"
+          ]
+        }
+      ],
+      "pass": true
+    },
+    "overlay": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "targets": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.screen > section.sheet > div.seg > button",
+          "w": 172,
+          "h": 38
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.screen > section.sheet > div.seg > button",
+          "w": 172,
+          "h": 38
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.screen > section.sheet > div.taxrow > div.switch",
+          "w": 51,
+          "h": 31
+        }
+      ],
+      "pass": true
+    },
+    "measure": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "type-scale": {
+      "fail": [
+        {
+          "message": "font size 15px off the type scale at 390px",
+          "size": 15,
+          "count": 4,
+          "examples": [
+            "div.screen > div.behind > div.status > span.num",
+            "div.screen > section.sheet > div.seg > button",
+            "div.screen > section.sheet > div.seg > button",
+            "section.sheet > div.taxrow > div > b"
+          ]
+        },
+        {
+          "message": "font size 17px off the type scale at 390px",
+          "size": 17,
+          "count": 2,
+          "examples": [
+            "div.screen > section.sheet > div.head > button.x",
+            "#t"
+          ]
+        },
+        {
+          "message": "font size 56px off the type scale at 390px",
+          "size": 56,
+          "count": 1,
+          "examples": [
+            "div.screen > section.sheet > div.amount > div.v.num"
+          ]
+        },
+        {
+          "message": "font size 33.6px off the type scale at 390px",
+          "size": 33.6,
+          "count": 1,
+          "examples": [
+            "section.sheet > div.amount > div.v.num > span.c"
+          ]
+        },
+        {
+          "message": "font size 13px off the type scale at 390px",
+          "size": 13,
+          "count": 1,
+          "examples": [
+            "section.sheet > div.taxrow > div > span.num"
+          ]
+        },
+        {
+          "message": "font size 15px off the type scale at 1440px",
+          "size": 15,
+          "count": 4,
+          "examples": [
+            "div.screen > div.behind > div.status > span.num",
+            "div.screen > section.sheet > div.seg > button",
+            "div.screen > section.sheet > div.seg > button",
+            "section.sheet > div.taxrow > div > b"
+          ]
+        },
+        {
+          "message": "font size 17px off the type scale at 1440px",
+          "size": 17,
+          "count": 2,
+          "examples": [
+            "div.screen > section.sheet > div.head > button.x",
+            "#t"
+          ]
+        },
+        {
+          "message": "font size 56px off the type scale at 1440px",
+          "size": 56,
+          "count": 1,
+          "examples": [
+            "div.screen > section.sheet > div.amount > div.v.num"
+          ]
+        },
+        {
+          "message": "font size 33.6px off the type scale at 1440px",
+          "size": 33.6,
+          "count": 1,
+          "examples": [
+            "section.sheet > div.amount > div.v.num > span.c"
+          ]
+        },
+        {
+          "message": "font size 13px off the type scale at 1440px",
+          "size": 13,
+          "count": 1,
+          "examples": [
+            "section.sheet > div.taxrow > div > span.num"
+          ]
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "spacing": {
+      "fail": [
+        {
+          "message": "padding-right:28px off the spacing scale at 390px",
+          "value": "padding-right:28",
+          "count": 1,
+          "examples": [
+            "body > div.screen > div.behind > div.status"
+          ]
+        },
+        {
+          "message": "row-gap:6px off the spacing scale at 390px",
+          "value": "row-gap:6",
+          "count": 5,
+          "examples": [
+            "div.screen > div.behind > div.status > span.icons",
+            "section.sheet > div.fields > div.row > span.v",
+            "section.sheet > div.fields > div.row > span.v",
+            "section.sheet > div.fields > div.row > span.v.num"
+          ]
+        },
+        {
+          "message": "column-gap:6px off the spacing scale at 390px",
+          "value": "column-gap:6",
+          "count": 5,
+          "examples": [
+            "div.screen > div.behind > div.status > span.icons",
+            "section.sheet > div.fields > div.row > span.v",
+            "section.sheet > div.fields > div.row > span.v",
+            "section.sheet > div.fields > div.row > span.v.num"
+          ]
+        },
+        {
+          "message": "padding-top:60px off the spacing scale at 390px",
+          "value": "padding-top:60",
+          "count": 1,
+          "examples": [
+            "body > div.screen > div.behind > div.ghost"
+          ]
+        },
+        {
+          "message": "padding-right:20px off the spacing scale at 390px",
+          "value": "padding-right:20",
+          "count": 2,
+          "examples": [
+            "body > div.screen > div.behind > div.ghost",
+            "html > body > div.screen > section.sheet"
+          ]
+        },
+        {
+          "message": "padding-bottom:60px off the spacing scale at 390px",
+          "value": "padding-bottom:60",
+          "count": 1,
+          "examples": [
+            "body > div.screen > div.behind > div.ghost"
+          ]
+        },
+        {
+          "message": "padding-left:20px off the spacing scale at 390px",
+          "value": "padding-left:20",
+          "count": 2,
+          "examples": [
+            "body > div.screen > div.behind > div.ghost",
+            "html > body > div.screen > section.sheet"
+          ]
+        },
+        {
+          "message": "margin-bottom:20px off the spacing scale at 390px",
+          "value": "margin-bottom:20",
+          "count": 1,
+          "examples": [
+            "div.screen > div.behind > div.ghost > div.g1"
+          ]
+        },
+        {
+          "message": "padding-bottom:34px off the spacing scale at 390px",
+          "value": "padding-bottom:34",
+          "count": 1,
+          "examples": [
+            "html > body > div.screen > section.sheet"
+          ]
+        },
+        {
+          "message": "margin-bottom:10px off the spacing scale at 390px",
+          "value": "margin-bottom:10",
+          "count": 1,
+          "examples": [
+            "body > div.screen > section.sheet > div.grab"
+          ]
+        },
+        {
+          "message": "padding-top:10px off the spacing scale at 390px",
+          "value": "padding-top:10",
+          "count": 1,
+          "examples": [
+            "div.screen > section.sheet > div.head > button.x"
+          ]
+        },
+        {
+          "message": "padding-bottom:10px off the spacing scale at 390px",
+          "value": "padding-bottom:10",
+          "count": 1,
+          "examples": [
+            "div.screen > section.sheet > div.head > button.x"
+          ]
+        },
+        {
+          "message": "padding-top:3px off the spacing scale at 390px",
+          "value": "padding-top:3",
+          "count": 1,
+          "examples": [
+            "body > div.screen > section.sheet > div.seg"
+          ]
+        },
+        {
+          "message": "padding-right:3px off the spacing scale at 390px",
+          "value": "padding-right:3",
+          "count": 1,
+          "examples": [
+            "body > div.screen > section.sheet > div.seg"
+          ]
+        },
+        {
+          "message": "padding-bottom:3px off the spacing scale at 390px",
+          "value": "padding-bottom:3",
+          "count": 1,
+          "examples": [
+            "body > div.screen > section.sheet > div.seg"
+          ]
+        },
+        {
+          "message": "padding-left:3px off the spacing scale at 390px",
+          "value": "padding-left:3",
+          "count": 1,
+          "examples": [
+            "body > div.screen > section.sheet > div.seg"
+          ]
+        },
+        {
+          "message": "padding-top:26px off the spacing scale at 390px",
+          "value": "padding-top:26",
+          "count": 1,
+          "examples": [
+            "body > div.screen > section.sheet > div.amount"
+          ]
+        },
+        {
+          "message": "padding-bottom:18px off the spacing scale at 390px",
+          "value": "padding-bottom:18",
+          "count": 1,
+          "examples": [
+            "body > div.screen > section.sheet > div.amount"
+          ]
+        },
+        {
+          "message": "padding-top:14px off the spacing scale at 390px",
+          "value": "padding-top:14",
+          "count": 1,
+          "examples": [
+            "body > div.screen > section.sheet > div.taxrow"
+          ]
+        },
+        {
+          "message": "padding-bottom:14px off the spacing scale at 390px",
+          "value": "padding-bottom:14",
+          "count": 1,
+          "examples": [
+            "body > div.screen > section.sheet > div.taxrow"
+          ]
+        },
+        {
+          "message": "padding-right:28px off the spacing scale at 1440px",
+          "value": "padding-right:28",
+          "count": 1,
+          "examples": [
+            "body > div.screen > div.behind > div.status"
+          ]
+        },
+        {
+          "message": "row-gap:6px off the spacing scale at 1440px",
+          "value": "row-gap:6",
+          "count": 5,
+          "examples": [
+            "div.screen > div.behind > div.status > span.icons",
+            "section.sheet > div.fields > div.row > span.v",
+            "section.sheet > div.fields > div.row > span.v",
+            "section.sheet > div.fields > div.row > span.v.num"
+          ]
+        },
+        {
+          "message": "column-gap:6px off the spacing scale at 1440px",
+          "value": "column-gap:6",
+          "count": 5,
+          "examples": [
+            "div.screen > div.behind > div.status > span.icons",
+            "section.sheet > div.fields > div.row > span.v",
+            "section.sheet > div.fields > div.row > span.v",
+            "section.sheet > div.fields > div.row > span.v.num"
+          ]
+        },
+        {
+          "message": "padding-top:60px off the spacing scale at 1440px",
+          "value": "padding-top:60",
+          "count": 1,
+          "examples": [
+            "body > div.screen > div.behind > div.ghost"
+          ]
+        },
+        {
+          "message": "padding-right:20px off the spacing scale at 1440px",
+          "value": "padding-right:20",
+          "count": 2,
+          "examples": [
+            "body > div.screen > div.behind > div.ghost",
+            "html > body > div.screen > section.sheet"
+          ]
+        },
+        {
+          "message": "padding-bottom:60px off the spacing scale at 1440px",
+          "value": "padding-bottom:60",
+          "count": 1,
+          "examples": [
+            "body > div.screen > div.behind > div.ghost"
+          ]
+        },
+        {
+          "message": "padding-left:20px off the spacing scale at 1440px",
+          "value": "padding-left:20",
+          "count": 2,
+          "examples": [
+            "body > div.screen > div.behind > div.ghost",
+            "html > body > div.screen > section.sheet"
+          ]
+        },
+        {
+          "message": "margin-bottom:20px off the spacing scale at 1440px",
+          "value": "margin-bottom:20",
+          "count": 1,
+          "examples": [
+            "div.screen > div.behind > div.ghost > div.g1"
+          ]
+        },
+        {
+          "message": "padding-bottom:34px off the spacing scale at 1440px",
+          "value": "padding-bottom:34",
+          "count": 1,
+          "examples": [
+            "html > body > div.screen > section.sheet"
+          ]
+        },
+        {
+          "message": "margin-bottom:10px off the spacing scale at 1440px",
+          "value": "margin-bottom:10",
+          "count": 1,
+          "examples": [
+            "body > div.screen > section.sheet > div.grab"
+          ]
+        },
+        {
+          "message": "padding-top:10px off the spacing scale at 1440px",
+          "value": "padding-top:10",
+          "count": 1,
+          "examples": [
+            "div.screen > section.sheet > div.head > button.x"
+          ]
+        },
+        {
+          "message": "padding-bottom:10px off the spacing scale at 1440px",
+          "value": "padding-bottom:10",
+          "count": 1,
+          "examples": [
+            "div.screen > section.sheet > div.head > button.x"
+          ]
+        },
+        {
+          "message": "padding-top:3px off the spacing scale at 1440px",
+          "value": "padding-top:3",
+          "count": 1,
+          "examples": [
+            "body > div.screen > section.sheet > div.seg"
+          ]
+        },
+        {
+          "message": "padding-right:3px off the spacing scale at 1440px",
+          "value": "padding-right:3",
+          "count": 1,
+          "examples": [
+            "body > div.screen > section.sheet > div.seg"
+          ]
+        },
+        {
+          "message": "padding-bottom:3px off the spacing scale at 1440px",
+          "value": "padding-bottom:3",
+          "count": 1,
+          "examples": [
+            "body > div.screen > section.sheet > div.seg"
+          ]
+        },
+        {
+          "message": "padding-left:3px off the spacing scale at 1440px",
+          "value": "padding-left:3",
+          "count": 1,
+          "examples": [
+            "body > div.screen > section.sheet > div.seg"
+          ]
+        },
+        {
+          "message": "padding-top:26px off the spacing scale at 1440px",
+          "value": "padding-top:26",
+          "count": 1,
+          "examples": [
+            "body > div.screen > section.sheet > div.amount"
+          ]
+        },
+        {
+          "message": "padding-bottom:18px off the spacing scale at 1440px",
+          "value": "padding-bottom:18",
+          "count": 1,
+          "examples": [
+            "body > div.screen > section.sheet > div.amount"
+          ]
+        },
+        {
+          "message": "padding-top:14px off the spacing scale at 1440px",
+          "value": "padding-top:14",
+          "count": 1,
+          "examples": [
+            "body > div.screen > section.sheet > div.taxrow"
+          ]
+        },
+        {
+          "message": "padding-bottom:14px off the spacing scale at 1440px",
+          "value": "padding-bottom:14",
+          "count": 1,
+          "examples": [
+            "body > div.screen > section.sheet > div.taxrow"
+          ]
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "overflow": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "heading-wrap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "svg-overlap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "primary": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "radius": {
+      "fail": [
+        {
+          "message": "radius 20px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "div.screen > div.behind > div.ghost > div.g2",
+          "value": 20
+        },
+        {
+          "message": "radius 20px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "div.screen > div.behind > div.ghost > div.g3",
+          "value": 20
+        },
+        {
+          "message": "radius 24px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "html > body > div.screen > section.sheet",
+          "value": 24
+        },
+        {
+          "message": "radius 14px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "body > div.screen > section.sheet > button.btn.btn-primary",
+          "value": 14
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "color-scheme": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "typography": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "tabular": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "shadows": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icons": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icon-stroke": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "weight": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "occlusion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "squash": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-header": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "run-together": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "word-break": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "grid-edge": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "hidden-content": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "double-space": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "undefined-var": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-layer": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "truth": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "proportion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "nav-parity": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus-shape": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "skip-link": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-shift": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "fallback": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "motion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    }
+  },
+  "summary": {
+    "weightKB": {
+      "html": 110,
+      "svg": 1
+    },
+    "focusables": 4,
+    "fallbackShift390": 0,
+    "fallbackShift1440": 0,
+    "motionFound": {
+      "animations": 0,
+      "movingTransitions": 0
+    },
+    "axe": "pass (2 warn)",
+    "overlay": "pass",
+    "targets": "pass (3 warn)",
+    "measure": "pass",
+    "type-scale": "FAIL (10)",
+    "spacing": "FAIL (40)",
+    "overflow": "pass",
+    "heading-wrap": "pass",
+    "svg-overlap": "pass",
+    "primary": "pass",
+    "radius": "FAIL (4)",
+    "color-scheme": "pass",
+    "typography": "pass",
+    "tabular": "pass",
+    "shadows": "pass",
+    "icons": "pass",
+    "icon-stroke": "pass",
+    "weight": "pass",
+    "occlusion": "pass",
+    "squash": "pass",
+    "sticky-header": "pass",
+    "run-together": "pass",
+    "word-break": "pass",
+    "grid-edge": "pass",
+    "hidden-content": "pass",
+    "double-space": "pass",
+    "undefined-var": "pass",
+    "state-layer": "pass",
+    "truth": "pass",
+    "proportion": "pass",
+    "nav-parity": "pass",
+    "focus": "pass",
+    "focus-shape": "pass",
+    "sticky-focus": "pass",
+    "skip-link": "pass",
+    "state-shift": "pass",
+    "fallback": "pass",
+    "motion": "pass",
+    "result": "FAIL",
+    "fails": 54,
+    "warns": 5
+  }
+}

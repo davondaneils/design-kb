@@ -1,0 +1,1619 @@
+{
+ "url": "https://www.notion.com/product",
+ "measuredAt": "2026-10-10T16:58:15.719Z",
+ "method": "Playwright Chromium, getComputedStyle on visible elements, light scheme, after scroll-through and fonts.ready",
+ "widths": {
+  "390": {
+   "status": 200,
+   "finalUrl": "https://www.notion.com/product",
+   "width": 390,
+   "h1Style": {
+    "font": "NotionInter 42px/48px w600 ls -1.5px",
+    "color": "#000000 a0.95",
+    "top": 176,
+    "width": 358,
+    "align": "center"
+   },
+   "title": "The AI workspace that works for you. | Notion",
+   "description": "Build Custom Agents, search across all your apps, and automate busywork. The AI workspace where teams get more done, faster.",
+   "pageHeight": 4003,
+   "bodyBg": "#ffffff",
+   "htmlBg": "#ffffff",
+   "fontsLoaded": [
+    "NotionInter 400 normal",
+    "NotionInter 500 normal",
+    "NotionInter 600 normal",
+    "NotionInter 700 normal",
+    "Lyon Text 400 normal"
+   ],
+   "families": [
+    {
+     "v": "NotionInter, Inter",
+     "n": 1566
+    },
+    {
+     "v": "\"Lyon Text\", Georgia",
+     "n": 345
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "14px / lh 20px / w500 / ls normal",
+     "n": 727,
+     "ex": "span: Get Notion free"
+    },
+    {
+     "v": "18px / lh 28px / w400 / ls normal",
+     "n": 345,
+     "ex": "blockquote: Using the most AI-native tools like Notion is an important c"
+    },
+    {
+     "v": "14px / lh 20px / w400 / ls normal",
+     "n": 295,
+     "ex": "p: The most ambitious companies run on Notion."
+    },
+    {
+     "v": "16px / lh 24px / w700 / ls normal",
+     "n": 149,
+     "ex": "h3: Triage product feedback"
+    },
+    {
+     "v": "22px / lh 28px / w700 / ls -0.25px",
+     "n": 115,
+     "ex": "h2: Bring everything into one system of record."
+    },
+    {
+     "v": "16px / lh 24px / w400 / ls normal",
+     "n": 78,
+     "ex": "p: Capture context, find answers, and automate tasks with AI bu"
+    },
+    {
+     "v": "16px / lh 24px / w500 / ls normal",
+     "n": 58,
+     "ex": "a: Get Notion free"
+    },
+    {
+     "v": "32px / lh 40px / w700 / ls -0.75px",
+     "n": 52,
+     "ex": "h2: AI where your team works."
+    },
+    {
+     "v": "12px / lh 16px / w500 / ls 0.125px",
+     "n": 33,
+     "ex": "li: Product"
+    },
+    {
+     "v": "42px / lh 48px / w600 / ls -1.5px",
+     "n": 32,
+     "ex": "h1: Where teams and agents together."
+    },
+    {
+     "v": "26px / lh 32px / w700 / ls -0.625px",
+     "n": 18,
+     "ex": "h2: Get started today."
+    },
+    {
+     "v": "31.5px / lh 38.115px / w500 / ls -0.875001px",
+     "n": 6,
+     "ex": "span: Create"
+    },
+    {
+     "v": "20px / lh 28px / w600 / ls -0.125px",
+     "n": 3,
+     "ex": "span: →"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#ffffff",
+     "n": 510
+    },
+    {
+     "v": "#615d59",
+     "n": 459
+    },
+    {
+     "v": "#000000 a0.9",
+     "n": 352
+    },
+    {
+     "v": "#000000",
+     "n": 264
+    },
+    {
+     "v": "#000000 a0.54",
+     "n": 165
+    },
+    {
+     "v": "#000000 a0.95",
+     "n": 120
+    },
+    {
+     "v": "#005bab",
+     "n": 14
+    },
+    {
+     "v": "#097fe8",
+     "n": 14
+    },
+    {
+     "v": "#000000 a0.59",
+     "n": 13
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#ffffff on #ffffff",
+     "n": 462,
+     "ex": "1:1"
+    },
+    {
+     "v": "#615d59 on #ffffff",
+     "n": 459,
+     "ex": "6.53:1"
+    },
+    {
+     "v": "#000000 a0.9 on #ffffff",
+     "n": 306,
+     "ex": "17.4:1"
+    },
+    {
+     "v": "#000000 a0.54 on #ffffff",
+     "n": 165,
+     "ex": "4.59:1"
+    },
+    {
+     "v": "#000000 on #ffffff",
+     "n": 149,
+     "ex": "21:1"
+    },
+    {
+     "v": "#000000 on #f9f9f8",
+     "n": 115,
+     "ex": "19.93:1"
+    },
+    {
+     "v": "#000000 a0.95 on #ffffff",
+     "n": 96,
+     "ex": "19.47:1"
+    },
+    {
+     "v": "#000000 a0.9 on #f9f9f8",
+     "n": 46,
+     "ex": "16.62:1"
+    },
+    {
+     "v": "#ffffff on #0075de",
+     "n": 45,
+     "ex": "4.57:1"
+    },
+    {
+     "v": "#000000 a0.95 on #f6f5f4",
+     "n": 18,
+     "ex": "17.94:1"
+    },
+    {
+     "v": "#005bab on #e6f3fe",
+     "n": 14,
+     "ex": "6.04:1"
+    },
+    {
+     "v": "#097fe8 on #ffffff",
+     "n": 14,
+     "ex": "4.03:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#ffffff",
+     "n": 2193
+    },
+    {
+     "v": "#f9f9f8",
+     "n": 413
+    },
+    {
+     "v": "linear-gradient(rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.55) 100%)",
+     "n": 323
+    },
+    {
+     "v": "#097fe8",
+     "n": 108
+    },
+    {
+     "v": "#ffb110",
+     "n": 108
+    },
+    {
+     "v": "#f64932",
+     "n": 108
+    },
+    {
+     "v": "#e32d14",
+     "n": 108
+    },
+    {
+     "v": "#005bab",
+     "n": 108
+    },
+    {
+     "v": "#e89d01",
+     "n": 108
+    },
+    {
+     "v": "#f6f5f4",
+     "n": 103
+    },
+    {
+     "v": "#000000 a0.75",
+     "n": 43
+    },
+    {
+     "v": "#0075de",
+     "n": 28
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #ffffff a0",
+     "n": 28
+    },
+    {
+     "v": "1px #000000 a0.1",
+     "n": 6
+    },
+    {
+     "v": "3px #000000",
+     "n": 2
+    }
+   ],
+   "radii": [
+    {
+     "v": "8px",
+     "n": 51,
+     "ex": "a.button-module-scss-module__pIQ"
+    },
+    {
+     "v": "4px",
+     "n": 15,
+     "ex": "span.graphic-module-scss-module__po"
+    },
+    {
+     "v": "6px",
+     "n": 9,
+     "ex": "article.bento-module-scss-module__xvim"
+    },
+    {
+     "v": "12px",
+     "n": 8,
+     "ex": "div.flex flex-row items-center lg:"
+    },
+    {
+     "v": "9999.01px",
+     "n": 7,
+     "ex": "span.homepageHeroTeamsAndAgents-mod"
+    },
+    {
+     "v": "100%",
+     "n": 3,
+     "ex": "span.arrow-module-scss-module__WbIA"
+    },
+    {
+     "v": "6px 6px 0px 0px",
+     "n": 2,
+     "ex": "img.next-image bento-module-scss-m"
+    },
+    {
+     "v": "11.7px 11.7px 0px 0px",
+     "n": 2,
+     "ex": "picture.bento-module-scss-module__xvim"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgba(0, 0, 0, 0.01) 0px 0.175px 1.041px 0px, rgba(0, 0, 0, 0.02) 0px 0.8px 2.925px 0px, rgba(0, 0, 0, 0.027) 0px 2.025px 7.847px 0px, rgba(0, 0, 0, 0.04) 0px 4px 18px 0px",
+     "n": 4,
+     "ex": "img"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0) 0px 1px 0px 0px",
+     "n": 1,
+     "ex": "nav"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "background-color, color 0.2s cubic-bezier(0.42, 0, 1, 1)",
+     "n": 27,
+     "ex": "a"
+    },
+    {
+     "v": "text-decoration-color 0.2s cubic-bezier(0.42, 0, 1, 1)",
+     "n": 23,
+     "ex": "span"
+    },
+    {
+     "v": "outline-color 0.2s cubic-bezier(0.42, 0, 1, 1)",
+     "n": 8,
+     "ex": "article"
+    },
+    {
+     "v": "rotate 0.3s cubic-bezier(0.86, 0, 0.07, 1)",
+     "n": 7,
+     "ex": "img"
+    },
+    {
+     "v": "background-color 0.2s cubic-bezier(0.42, 0, 1, 1)",
+     "n": 5,
+     "ex": "span"
+    },
+    {
+     "v": "box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1)",
+     "n": 3,
+     "ex": "a"
+    },
+    {
+     "v": "transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1)",
+     "n": 3,
+     "ex": "img"
+    },
+    {
+     "v": "transform 0.3s ease",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "box-shadow 0.2s cubic-bezier(0.42, 0, 1, 1)",
+     "n": 1,
+     "ex": "nav"
+    },
+    {
+     "v": "inline-size 0.3s cubic-bezier(0.86, 0, 0.07, 1)",
+     "n": 1,
+     "ex": "span"
+    },
+    {
+     "v": "background-color, border-color 0.2s cubic-bezier(0.42, 0, 1, 1)",
+     "n": 1,
+     "ex": "button"
+    }
+   ],
+   "animations": [
+    {
+     "v": "logoWallMarquee-module-scss-module__4H5qWW__marqueePolygon 115s linear xinfinite",
+     "n": 23
+    },
+    {
+     "v": "globalNavigation-module-scss-module__HWB10a__navShadowScrolled auto linear x1",
+     "n": 1
+    },
+    {
+     "v": "logoWallMarquee-module-scss-module__4H5qWW__detectOverflow auto ease x1",
+     "n": 1
+    },
+    {
+     "v": "Marquee-module-scss-module__X75v-G__marqueeFrames 60s linear xinfinite",
+     "n": 1
+    }
+   ],
+   "maxWidths": [
+    {
+     "v": "280px (rendered 280px)",
+     "n": 2,
+     "ex": "a"
+    },
+    {
+     "v": "1184px (rendered 390px)",
+     "n": 2,
+     "ex": "p"
+    },
+    {
+     "v": "1252px (rendered 358px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "528.55px (rendered 358px)",
+     "n": 2,
+     "ex": "h2"
+    },
+    {
+     "v": "100% (rendered 358px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "1284px (rendered 390px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 166px)",
+     "n": 1,
+     "ex": "button"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 4
+    },
+    {
+     "v": "pt 0px pb 16px",
+     "n": 1
+    },
+    {
+     "v": "pt 32px pb 32px",
+     "n": 1
+    },
+    {
+     "v": "pt 40px pb 12px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "8px",
+     "n": 39
+    },
+    {
+     "v": "12px",
+     "n": 20
+    },
+    {
+     "v": "16px",
+     "n": 14
+    },
+    {
+     "v": "24px",
+     "n": 4
+    },
+    {
+     "v": "8px / col normal",
+     "n": 3
+    },
+    {
+     "v": "40px / col 12px",
+     "n": 2
+    },
+    {
+     "v": "6px",
+     "n": 1
+    },
+    {
+     "v": "32px",
+     "n": 1
+    },
+    {
+     "v": "20px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "6px",
+     "n": 54
+    },
+    {
+     "v": "3px",
+     "n": 46
+    },
+    {
+     "v": "8px",
+     "n": 42
+    },
+    {
+     "v": "16px",
+     "n": 34
+    },
+    {
+     "v": "15px",
+     "n": 18
+    },
+    {
+     "v": "24px",
+     "n": 10
+    },
+    {
+     "v": "4px",
+     "n": 6
+    },
+    {
+     "v": "32px",
+     "n": 5
+    },
+    {
+     "v": "14px",
+     "n": 3
+    },
+    {
+     "v": "11px",
+     "n": 3
+    },
+    {
+     "v": "2px",
+     "n": 2
+    },
+    {
+     "v": "12px",
+     "n": 2
+    },
+    {
+     "v": "64px",
+     "n": 2
+    },
+    {
+     "v": "40px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "12px",
+     "n": 3
+    },
+    {
+     "v": "24px",
+     "n": 2
+    },
+    {
+     "v": "20px",
+     "n": 1
+    },
+    {
+     "v": "32px",
+     "n": 1
+    },
+    {
+     "v": "16px",
+     "n": 1
+    },
+    {
+     "v": "4px",
+     "n": 1
+    },
+    {
+     "v": "26px",
+     "n": 1
+    }
+   ],
+   "measure": null,
+   "rootVars": {
+    "--direction": "1",
+    "--tatami-border-radius-0": "0",
+    "--tatami-border-radius-200": ".25rem",
+    "--tatami-border-radius-300": ".3125rem",
+    "--tatami-border-radius-400": ".375rem",
+    "--tatami-border-radius-500": ".5rem",
+    "--tatami-border-radius-600": ".625rem",
+    "--tatami-border-radius-700": ".75rem",
+    "--tatami-border-radius-800": ".875rem",
+    "--tatami-border-radius-900": "1rem",
+    "--tatami-border-radius-round": "624.938rem",
+    "--tatami-border-width-1": "var(--tatami-dimension-thickness-1)",
+    "--tatami-border-style-solid": "solid",
+    "--tatami-border-style-dashed": "dashed",
+    "--tatami-color-gray-100": "#f9f9f8",
+    "--tatami-color-gray-200": "#f6f5f4",
+    "--tatami-color-gray-300": "#dfdcd9",
+    "--tatami-color-gray-400": "#a39e98",
+    "--tatami-color-gray-500": "#78736f",
+    "--tatami-color-gray-600": "#615d59",
+    "--tatami-color-gray-700": "#494744",
+    "--tatami-color-gray-800": "#31302e",
+    "--tatami-color-gray-900": "#191918",
+    "--tatami-color-red-100": "#fef3f1",
+    "--tatami-color-red-200": "#fdd3cd",
+    "--tatami-color-red-300": "#ff8b7c",
+    "--tatami-color-red-400": "#f77463",
+    "--tatami-color-red-500": "#f64932",
+    "--tatami-color-red-600": "#e32d14",
+    "--tatami-color-red-700": "#b01601",
+    "--tatami-color-red-800": "#6f0d00",
+    "--tatami-color-red-900": "#4f0900",
+    "--tatami-color-orange-100": "#fff5ed",
+    "--tatami-color-orange-200": "#ffdec4",
+    "--tatami-color-orange-300": "#ffad71",
+    "--tatami-color-orange-400": "#ff8a33",
+    "--tatami-color-orange-500": "#ff6d00",
+    "--tatami-color-orange-600": "#dd5b00",
+    "--tatami-color-orange-700": "#ab4a00",
+    "--tatami-color-orange-800": "#793400",
+    "--tatami-color-orange-900": "#532200",
+    "--tatami-color-yellow-100": "#fff5e0",
+    "--tatami-color-yellow-200": "#ffe4af",
+    "--tatami-color-yellow-300": "#ffd786",
+    "--tatami-color-yellow-400": "#ffc95e",
+    "--tatami-color-yellow-500": "#ffb110",
+    "--tatami-color-yellow-600": "#e89d01",
+    "--tatami-color-yellow-700": "#c78600",
+    "--tatami-color-yellow-800": "#a16c00",
+    "--tatami-color-yellow-900": "#704b00",
+    "--tatami-color-teal-100": "#f2fafa",
+    "--tatami-color-teal-200": "#bde6e4",
+    "--tatami-color-teal-300": "#83cbc9",
+    "--tatami-color-teal-400": "#2a9d99",
+    "--tatami-color-teal-500": "#27918d",
+    "--tatami-color-teal-600": "#0a7b77",
+    "--tatami-color-teal-700": "#126764",
+    "--tatami-color-teal-800": "#0a4d4b",
+    "--tatami-color-teal-900": "#042b29",
+    "--tatami-color-blue-100": "#f2f9ff",
+    "--tatami-color-blue-200": "#e6f3fe",
+    "--tatami-color-blue-300": "#93cdfe",
+    "--tatami-color-blue-400": "#62aef0",
+    "--tatami-color-blue-500": "#097fe8",
+    "--tatami-color-blue-600": "#0075de",
+    "--tatami-color-blue-700": "#005bab",
+    "--tatami-color-blue-800": "#00396b",
+    "--tatami-color-blue-900": "#002a4f",
+    "--tatami-color-purple-100": "#f8f5fc",
+    "--tatami-color-purple-200": "#eadbfa",
+    "--tatami-color-purple-300": "#d6b6f6",
+    "--tatami-color-purple-400": "#ad6ded",
+    "--tatami-color-purple-500": "#9849e8",
+    "--tatami-color-purple-600": "#7237ae",
+    "--tatami-color-purple-700": "#562983",
+    "--tatami-color-purple-800": "#391c57",
+    "--tatami-color-purple-900": "#1c0e2c",
+    "--tatami-color-green-100": "#f0faf2",
+    "--tatami-color-green-200": "#d0f4d8",
+    "--tatami-color-green-300": "#abe5b8",
+    "--tatami-color-green-400": "#68ce7e",
+    "--tatami-color-green-500": "#1aae39",
+    "--tatami-color-green-600": "#14832b",
+    "--tatami-color-green-700": "#0f6220",
+    "--tatami-color-green-800": "#0a4216",
+    "--tatami-color-green-900": "#05210b",
+    "--tatami-color-pink-100": "#fff5fc",
+    "--tatami-color-pink-200": "#ffcdf1",
+    "--tatami-color-pink-300": "#ffb5eb",
+    "--tatami-color-pink-400": "#ff83dd",
+    "--tatami-color-pink-500": "#ff64c8",
+    "--tatami-color-pink-600": "#d13f9d",
+    "--tatami-color-pink-700": "#9d2472",
+    "--tatami-color-pink-800": "#6c1b4f",
+    "--tatami-color-pink-900": "#481034",
+    "--tatami-color-brown-100": "#fcf8f5",
+    "--tatami-color-brown-200": "#ebd5c5",
+    "--tatami-color-brown-300": "#d9b79f",
+    "--tatami-color-brown-400": "#b18164",
+    "--tatami-color-brown-500": "#9c7054",
+    "--tatami-color-brown-600": "#885d3d",
+    "--tatami-color-brown-700": "#744d2d",
+    "--tatami-color-brown-800": "#654124",
+    "--tatami-color-brown-900": "#523410",
+    "--tatami-color-black": "#000",
+    "--tatami-color-white": "#fff",
+    "--tatami-color-alpha-black-100": "#0000000d",
+    "--tatami-color-alpha-black-200": "#0000001a",
+    "--tatami-color-alpha-black-300": "#0003",
+    "--tatami-color-alpha-black-400": "#0000004d",
+    "--tatami-color-alpha-black-500": "#0000008a",
+    "--tatami-color-alpha-black-600": "#00000096",
+    "--tatami-color-alpha-black-700": "#000000bf",
+    "--tatami-color-alpha-black-800": "#000000e5",
+    "--tatami-color-alpha-black-900": "#000000f2",
+    "--tatami-color-alpha-white-100": "#ffffff0d",
+    "--tatami-color-alpha-white-200": "#ffffff1a",
+    "--tatami-color-alpha-white-300": "#fff3",
+    "--tatami-color-alpha-white-400": "#ffffff4d",
+    "--tatami-color-alpha-white-500": "#ffffff80",
+    "--tatami-color-alpha-white-600": "#ffffffa8",
+    "--tatami-color-alpha-white-700": "#ffffffbf",
+    "--tatami-color-alpha-white-800": "#ffffffd9",
+    "--tatami-color-alpha-white-900": "#fffffff2",
+    "--tatami-color-transparent": "#fff0",
+    "--tatami-color-campaigns-agents-launch-blue-200": "#2537b1",
+    "--tatami-color-campaigns-agents-launch-blue-300": "#607df6",
+    "--tatami-color-campaigns-agents-launch-blue-400": "#455dd3",
+    "--tatami-color-campaigns-agents-launch-blue-500": "#394ea3",
+    "--tatami-color-campaigns-agents-launch-blue-600": "#213183",
+    "--tatami-color-campaigns-agents-launch-blue-900": "#02093a",
+    "--tatami-color-campaigns-agents-launch-yellow": "#fefcd5",
+    "--tatami-color-campaigns-dev-platform-dos-blue": "#1313ba",
+    "--tatami-color-campaigns-dev-platform-dos-black": "#0a0a5d",
+    "--tatami-color-campaigns-dev-platform-dos-neon": "#6666fd",
+    "--tatami-color-campaigns-dev-platform-dos-slate": "#7171a8",
+    "--tatami-color-campaigns-dev-platform-dos-lavender": "#cbcbef",
+    "--tatami-color-campaigns-dev-platform-dos-gray": "#f6f6fc",
+    "--tatami-color-campaigns-dev-platform-dos-white": "var(--tatami-color-white)",
+    "--tatami-color-campaigns-dev-platform-dos-alpha-blue": "#1313baa8",
+    "--tatami-color-campaigns-dev-platform-dos-alpha-white": "var(--tatami-color-alpha-white-700)",
+    "--tatami-color-campaigns-dev-platform-dos-alpha-lavender": "#cbcbef70",
+    "--tatami-color-campaigns-dev-platform-dos-alpha-gray": "#f6f6fc70",
+    "--tatami-dimension-spacing-0": "0",
+    "--tatami-dimension-spacing-4": ".25rem",
+    "--tatami-dimension-spacing-8": ".5rem",
+    "--tatami-dimension-spacing-12": ".75rem",
+    "--tatami-dimension-spacing-16": "1rem",
+    "--tatami-dimension-spacing-20": "1.25rem",
+    "--tatami-dimension-spacing-24": "1.5rem",
+    "--tatami-dimension-spacing-28": "1.75rem",
+    "--tatami-dimension-spacing-30": "1.875rem",
+    "--tatami-dimension-spacing-32": "2rem",
+    "--tatami-dimension-spacing-40": "2.5rem",
+    "--tatami-dimension-spacing-48": "3rem",
+    "--tatami-dimension-spacing-56": "3.5rem",
+    "--tatami-dimension-spacing-64": "4rem",
+    "--tatami-dimension-spacing-72": "4.5rem",
+    "--tatami-dimension-spacing-80": "5rem",
+    "--tatami-dimension-spacing-96": "6rem"
+   },
+   "blockedSheets": 1,
+   "reducedMotionRules": 21,
+   "h1": [
+    "Where teams and agents Create together."
+   ],
+   "h2": [
+    "AI where your team works.",
+    "Bring everything into one system of record.",
+    "Get answers, instantly—with citations.",
+    "Keep work moving 24/7 with agents.",
+    "Trusted by teams that ship.",
+    "Get started today."
+   ],
+   "h3": [
+    "See what Notion can do",
+    "Triage product feedback→",
+    "Resolve support tickets in Slack→",
+    "Respond to security alerts faster→",
+    "Automate weekly reporting→",
+    "Create your own developer tools→"
+   ],
+   "nav": [
+    "Get Notion free",
+    "Get Notion free",
+    "Request a demo",
+    "Features",
+    "What's New",
+    "Notion AI",
+    "Pricing",
+    "Request a demo",
+    "Download",
+    "Customer stories",
+    "Connections",
+    "Marketplace",
+    "Help Center",
+    "Academy",
+    "Community",
+    "About us"
+   ],
+   "ctas": [
+    "Get Notion free [132x36 bg #0075de fg #ffffff r 8px pad 4px 14px 16px/500]",
+    "Get Notion free [280x38 bg #0075de fg #ffffff r 8px pad 6px 15px 16px/500]",
+    "Request a demo [280x38 bg #e6f3fe fg #005bab r 8px pad 6px 15px 16px/500]",
+    "Get Notion free [326x38 bg #0075de fg #ffffff r 8px pad 6px 15px 16px/500]",
+    "Request a demo [326x38 bg #ffffff fg #097fe8 r 8px pad 6px 15px 16px/500]",
+    "English (US) [166x38 bg #ffffff fg #000000 a0.95 r 9999.01px pad 8px 16px 14px/500]"
+   ],
+   "media": {
+    "img": 60,
+    "svg": 27,
+    "video": 1,
+    "canvas": 0
+   }
+  },
+  "1440": {
+   "status": 200,
+   "finalUrl": "https://www.notion.com/product",
+   "width": 1440,
+   "h1Style": {
+    "font": "NotionInter 96px/100px w600 ls -4.6px",
+    "color": "#000000 a0.95",
+    "top": 144,
+    "width": 1252,
+    "align": "center"
+   },
+   "title": "The AI workspace that works for you. | Notion",
+   "description": "Build Custom Agents, search across all your apps, and automate busywork. The AI workspace where teams get more done, faster.",
+   "pageHeight": 4687,
+   "bodyBg": "#ffffff",
+   "htmlBg": "#ffffff",
+   "fontsLoaded": [
+    "NotionInter 400 normal",
+    "NotionInter 500 normal",
+    "NotionInter 600 normal",
+    "NotionInter 700 normal",
+    "Lyon Text 400 normal"
+   ],
+   "families": [
+    {
+     "v": "NotionInter, Inter",
+     "n": 1630
+    },
+    {
+     "v": "\"Lyon Text\", Georgia",
+     "n": 399
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "14px / lh 20px / w500 / ls normal",
+     "n": 770,
+     "ex": "span: Product"
+    },
+    {
+     "v": "18px / lh 28px / w400 / ls normal",
+     "n": 345,
+     "ex": "blockquote: Using the most AI-native tools like Notion is an important c"
+    },
+    {
+     "v": "14px / lh 20px / w400 / ls normal",
+     "n": 311,
+     "ex": "p: The most ambitious companies run on Notion."
+    },
+    {
+     "v": "16px / lh 24px / w700 / ls normal",
+     "n": 149,
+     "ex": "h3: Triage product feedback"
+    },
+    {
+     "v": "22px / lh 28px / w700 / ls -0.25px",
+     "n": 115,
+     "ex": "h2: Bring everything into one system of record."
+    },
+    {
+     "v": "20px / lh 28px / w400 / ls -0.125px",
+     "n": 78,
+     "ex": "p: Capture context, find answers, and automate tasks with AI bu"
+    },
+    {
+     "v": "16px / lh 24px / w400 / ls normal",
+     "n": 59,
+     "ex": "span: Pause"
+    },
+    {
+     "v": "16px / lh 24px / w500 / ls normal",
+     "n": 58,
+     "ex": "a: Get Notion free"
+    },
+    {
+     "v": "54px / lh 56px / w700 / ls -1.87501px",
+     "n": 52,
+     "ex": "h2: AI where your team works."
+    },
+    {
+     "v": "12px / lh 16px / w500 / ls 0.125px",
+     "n": 33,
+     "ex": "li: Product"
+    },
+    {
+     "v": "96px / lh 100px / w600 / ls -4.6px",
+     "n": 32,
+     "ex": "h1: Where teams and agents together."
+    },
+    {
+     "v": "42px / lh 48px / w700 / ls -1.5px",
+     "n": 18,
+     "ex": "h2: Get started today."
+    },
+    {
+     "v": "72px / lh 87.12px / w500 / ls -2px",
+     "n": 6,
+     "ex": "span: Create"
+    },
+    {
+     "v": "20px / lh 28px / w600 / ls -0.125px",
+     "n": 3,
+     "ex": "span: →"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#ffffff",
+     "n": 515
+    },
+    {
+     "v": "#615d59",
+     "n": 459
+    },
+    {
+     "v": "#000000 a0.9",
+     "n": 395
+    },
+    {
+     "v": "#000000",
+     "n": 264
+    },
+    {
+     "v": "#000000 a0.54",
+     "n": 181
+    },
+    {
+     "v": "#000000 a0.95",
+     "n": 174
+    },
+    {
+     "v": "#005bab",
+     "n": 14
+    },
+    {
+     "v": "#097fe8",
+     "n": 14
+    },
+    {
+     "v": "#000000 a0.59",
+     "n": 13
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#ffffff on #ffffff",
+     "n": 467,
+     "ex": "1:1"
+    },
+    {
+     "v": "#615d59 on #ffffff",
+     "n": 459,
+     "ex": "6.53:1"
+    },
+    {
+     "v": "#000000 a0.9 on #ffffff",
+     "n": 349,
+     "ex": "17.4:1"
+    },
+    {
+     "v": "#000000 a0.54 on #ffffff",
+     "n": 181,
+     "ex": "4.59:1"
+    },
+    {
+     "v": "#000000 a0.95 on #ffffff",
+     "n": 150,
+     "ex": "19.47:1"
+    },
+    {
+     "v": "#000000 on #ffffff",
+     "n": 149,
+     "ex": "21:1"
+    },
+    {
+     "v": "#000000 on #f9f9f8",
+     "n": 115,
+     "ex": "19.93:1"
+    },
+    {
+     "v": "#000000 a0.9 on #f9f9f8",
+     "n": 46,
+     "ex": "16.62:1"
+    },
+    {
+     "v": "#ffffff on #0075de",
+     "n": 45,
+     "ex": "4.57:1"
+    },
+    {
+     "v": "#000000 a0.95 on #f6f5f4",
+     "n": 18,
+     "ex": "17.94:1"
+    },
+    {
+     "v": "#005bab on #e6f3fe",
+     "n": 14,
+     "ex": "6.04:1"
+    },
+    {
+     "v": "#097fe8 on #ffffff",
+     "n": 14,
+     "ex": "4.03:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#ffffff",
+     "n": 6446
+    },
+    {
+     "v": "#f9f9f8",
+     "n": 1122
+    },
+    {
+     "v": "#f6f5f4",
+     "n": 907
+    },
+    {
+     "v": "linear-gradient(rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.55) 100%)",
+     "n": 581
+    },
+    {
+     "v": "#097fe8",
+     "n": 195
+    },
+    {
+     "v": "#ffb110",
+     "n": 195
+    },
+    {
+     "v": "#f64932",
+     "n": 195
+    },
+    {
+     "v": "#005bab",
+     "n": 194
+    },
+    {
+     "v": "#e32d14",
+     "n": 194
+    },
+    {
+     "v": "#e89d01",
+     "n": 194
+    },
+    {
+     "v": "#000000 a0.75",
+     "n": 43
+    },
+    {
+     "v": "#ffdec4",
+     "n": 33
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #ffffff a0",
+     "n": 28
+    },
+    {
+     "v": "1px #000000 a0.1",
+     "n": 7
+    }
+   ],
+   "radii": [
+    {
+     "v": "8px",
+     "n": 52,
+     "ex": "a.button-module-scss-module__pIQ"
+    },
+    {
+     "v": "4px",
+     "n": 20,
+     "ex": "button.globalNavigation-module-scss-m"
+    },
+    {
+     "v": "12px",
+     "n": 17,
+     "ex": "article.bento-module-scss-module__xvim"
+    },
+    {
+     "v": "9999.01px",
+     "n": 7,
+     "ex": "span.homepageHeroTeamsAndAgents-mod"
+    },
+    {
+     "v": "100%",
+     "n": 3,
+     "ex": "span.arrow-module-scss-module__WbIA"
+    },
+    {
+     "v": "12px 12px 0px 0px",
+     "n": 2,
+     "ex": "img.next-image bento-module-scss-m"
+    },
+    {
+     "v": "12px 0px 0px",
+     "n": 2,
+     "ex": "picture.bento-module-scss-module__xvim"
+    },
+    {
+     "v": "50%",
+     "n": 1,
+     "ex": "button.HeroMedia-module-scss-module__"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgba(0, 0, 0, 0.01) 0px 0.175px 1.041px 0px, rgba(0, 0, 0, 0.02) 0px 0.8px 2.925px 0px, rgba(0, 0, 0, 0.027) 0px 2.025px 7.847px 0px, rgba(0, 0, 0, 0.04) 0px 4px 18px 0px",
+     "n": 4,
+     "ex": "img"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0) 0px 1px 0px 0px",
+     "n": 1,
+     "ex": "nav"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.008) 0px 0.667px 3.502px 0px, rgba(0, 0, 0, 0.016) 0px 2.933px 7.252px 0px, rgba(0, 0, 0, 0.02) 0px 7.2px 14.462px 0px, rgba(0, 0, 0, 0.024) 0px 13.867px 28.348px 0px, rgba(0, 0, 0, 0.03) 0px 23.333px 52.123px 0px, rgba(0, 0, 0, 0.04) 0px 36px 89px 0px",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "background-color, color 0.2s cubic-bezier(0.42, 0, 1, 1)",
+     "n": 27,
+     "ex": "a"
+    },
+    {
+     "v": "text-decoration-color 0.2s cubic-bezier(0.42, 0, 1, 1)",
+     "n": 23,
+     "ex": "span"
+    },
+    {
+     "v": "outline-color 0.2s cubic-bezier(0.42, 0, 1, 1)",
+     "n": 8,
+     "ex": "article"
+    },
+    {
+     "v": "background-color 0.15s ease",
+     "n": 5,
+     "ex": "button"
+    },
+    {
+     "v": "background-color 0.2s cubic-bezier(0.42, 0, 1, 1)",
+     "n": 5,
+     "ex": "span"
+    },
+    {
+     "v": "box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1)",
+     "n": 3,
+     "ex": "a"
+    },
+    {
+     "v": "transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1)",
+     "n": 3,
+     "ex": "img"
+    },
+    {
+     "v": "transform 0.3s ease",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "box-shadow 0.2s cubic-bezier(0.42, 0, 1, 1)",
+     "n": 1,
+     "ex": "nav"
+    },
+    {
+     "v": "inline-size 0.3s cubic-bezier(0.86, 0, 0.07, 1)",
+     "n": 1,
+     "ex": "span"
+    },
+    {
+     "v": "opacity 0.3s ease",
+     "n": 1,
+     "ex": "picture"
+    },
+    {
+     "v": "all 0.2s ease",
+     "n": 1,
+     "ex": "button"
+    }
+   ],
+   "animations": [
+    {
+     "v": "globalNavigation-module-scss-module__HWB10a__navShadowScrolled auto linear x1",
+     "n": 1
+    },
+    {
+     "v": "Marquee-module-scss-module__X75v-G__marqueeFrames 60s linear xinfinite",
+     "n": 1
+    }
+   ],
+   "maxWidths": [
+    {
+     "v": "1184px (rendered 1184px)",
+     "n": 2,
+     "ex": "p"
+    },
+    {
+     "v": "1252px (rendered 1229px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 960px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "891.925px (rendered 655px)",
+     "n": 1,
+     "ex": "h2"
+    },
+    {
+     "v": "891.925px (rendered 671px)",
+     "n": 1,
+     "ex": "h2"
+    },
+    {
+     "v": "1380px (rendered 1380px)",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 4
+    },
+    {
+     "v": "pt 0px pb 16px",
+     "n": 1
+    },
+    {
+     "v": "pt 96px pb 96px",
+     "n": 1
+    },
+    {
+     "v": "pt 80px pb 24px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "8px",
+     "n": 44
+    },
+    {
+     "v": "12px",
+     "n": 22
+    },
+    {
+     "v": "16px",
+     "n": 12
+    },
+    {
+     "v": "24px",
+     "n": 4
+    },
+    {
+     "v": "8px / col normal",
+     "n": 3
+    },
+    {
+     "v": "32px",
+     "n": 2
+    },
+    {
+     "v": "4px",
+     "n": 1
+    },
+    {
+     "v": "64px",
+     "n": 1
+    },
+    {
+     "v": "20px",
+     "n": 1
+    },
+    {
+     "v": "36px",
+     "n": 1
+    },
+    {
+     "v": "40px / col 24px",
+     "n": 1
+    },
+    {
+     "v": "16px / col normal",
+     "n": 1
+    },
+    {
+     "v": "80px / col 24px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "6px",
+     "n": 54
+    },
+    {
+     "v": "3px",
+     "n": 46
+    },
+    {
+     "v": "8px",
+     "n": 44
+    },
+    {
+     "v": "24px",
+     "n": 39
+    },
+    {
+     "v": "15px",
+     "n": 18
+    },
+    {
+     "v": "5px",
+     "n": 10
+    },
+    {
+     "v": "4px",
+     "n": 6
+    },
+    {
+     "v": "10px",
+     "n": 5
+    },
+    {
+     "v": "96px",
+     "n": 4
+    },
+    {
+     "v": "14px",
+     "n": 3
+    },
+    {
+     "v": "16px",
+     "n": 2
+    },
+    {
+     "v": "105.6px",
+     "n": 2
+    },
+    {
+     "v": "64px",
+     "n": 2
+    },
+    {
+     "v": "9px",
+     "n": 2
+    },
+    {
+     "v": "28px",
+     "n": 1
+    },
+    {
+     "v": "32px",
+     "n": 1
+    },
+    {
+     "v": "80px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "12px",
+     "n": 3
+    },
+    {
+     "v": "32px",
+     "n": 2
+    },
+    {
+     "v": "20px",
+     "n": 1
+    },
+    {
+     "v": "80px",
+     "n": 1
+    },
+    {
+     "v": "16px",
+     "n": 1
+    },
+    {
+     "v": "4px",
+     "n": 1
+    },
+    {
+     "v": "71px",
+     "n": 1
+    },
+    {
+     "v": "8px",
+     "n": 1
+    }
+   ],
+   "measure": null,
+   "rootVars": {
+    "--direction": "1",
+    "--tatami-border-radius-0": "0",
+    "--tatami-border-radius-200": ".25rem",
+    "--tatami-border-radius-300": ".3125rem",
+    "--tatami-border-radius-400": ".375rem",
+    "--tatami-border-radius-500": ".5rem",
+    "--tatami-border-radius-600": ".625rem",
+    "--tatami-border-radius-700": ".75rem",
+    "--tatami-border-radius-800": ".875rem",
+    "--tatami-border-radius-900": "1rem",
+    "--tatami-border-radius-round": "624.938rem",
+    "--tatami-border-width-1": "var(--tatami-dimension-thickness-1)",
+    "--tatami-border-style-solid": "solid",
+    "--tatami-border-style-dashed": "dashed",
+    "--tatami-color-gray-100": "#f9f9f8",
+    "--tatami-color-gray-200": "#f6f5f4",
+    "--tatami-color-gray-300": "#dfdcd9",
+    "--tatami-color-gray-400": "#a39e98",
+    "--tatami-color-gray-500": "#78736f",
+    "--tatami-color-gray-600": "#615d59",
+    "--tatami-color-gray-700": "#494744",
+    "--tatami-color-gray-800": "#31302e",
+    "--tatami-color-gray-900": "#191918",
+    "--tatami-color-red-100": "#fef3f1",
+    "--tatami-color-red-200": "#fdd3cd",
+    "--tatami-color-red-300": "#ff8b7c",
+    "--tatami-color-red-400": "#f77463",
+    "--tatami-color-red-500": "#f64932",
+    "--tatami-color-red-600": "#e32d14",
+    "--tatami-color-red-700": "#b01601",
+    "--tatami-color-red-800": "#6f0d00",
+    "--tatami-color-red-900": "#4f0900",
+    "--tatami-color-orange-100": "#fff5ed",
+    "--tatami-color-orange-200": "#ffdec4",
+    "--tatami-color-orange-300": "#ffad71",
+    "--tatami-color-orange-400": "#ff8a33",
+    "--tatami-color-orange-500": "#ff6d00",
+    "--tatami-color-orange-600": "#dd5b00",
+    "--tatami-color-orange-700": "#ab4a00",
+    "--tatami-color-orange-800": "#793400",
+    "--tatami-color-orange-900": "#532200",
+    "--tatami-color-yellow-100": "#fff5e0",
+    "--tatami-color-yellow-200": "#ffe4af",
+    "--tatami-color-yellow-300": "#ffd786",
+    "--tatami-color-yellow-400": "#ffc95e",
+    "--tatami-color-yellow-500": "#ffb110",
+    "--tatami-color-yellow-600": "#e89d01",
+    "--tatami-color-yellow-700": "#c78600",
+    "--tatami-color-yellow-800": "#a16c00",
+    "--tatami-color-yellow-900": "#704b00",
+    "--tatami-color-teal-100": "#f2fafa",
+    "--tatami-color-teal-200": "#bde6e4",
+    "--tatami-color-teal-300": "#83cbc9",
+    "--tatami-color-teal-400": "#2a9d99",
+    "--tatami-color-teal-500": "#27918d",
+    "--tatami-color-teal-600": "#0a7b77",
+    "--tatami-color-teal-700": "#126764",
+    "--tatami-color-teal-800": "#0a4d4b",
+    "--tatami-color-teal-900": "#042b29",
+    "--tatami-color-blue-100": "#f2f9ff",
+    "--tatami-color-blue-200": "#e6f3fe",
+    "--tatami-color-blue-300": "#93cdfe",
+    "--tatami-color-blue-400": "#62aef0",
+    "--tatami-color-blue-500": "#097fe8",
+    "--tatami-color-blue-600": "#0075de",
+    "--tatami-color-blue-700": "#005bab",
+    "--tatami-color-blue-800": "#00396b",
+    "--tatami-color-blue-900": "#002a4f",
+    "--tatami-color-purple-100": "#f8f5fc",
+    "--tatami-color-purple-200": "#eadbfa",
+    "--tatami-color-purple-300": "#d6b6f6",
+    "--tatami-color-purple-400": "#ad6ded",
+    "--tatami-color-purple-500": "#9849e8",
+    "--tatami-color-purple-600": "#7237ae",
+    "--tatami-color-purple-700": "#562983",
+    "--tatami-color-purple-800": "#391c57",
+    "--tatami-color-purple-900": "#1c0e2c",
+    "--tatami-color-green-100": "#f0faf2",
+    "--tatami-color-green-200": "#d0f4d8",
+    "--tatami-color-green-300": "#abe5b8",
+    "--tatami-color-green-400": "#68ce7e",
+    "--tatami-color-green-500": "#1aae39",
+    "--tatami-color-green-600": "#14832b",
+    "--tatami-color-green-700": "#0f6220",
+    "--tatami-color-green-800": "#0a4216",
+    "--tatami-color-green-900": "#05210b",
+    "--tatami-color-pink-100": "#fff5fc",
+    "--tatami-color-pink-200": "#ffcdf1",
+    "--tatami-color-pink-300": "#ffb5eb",
+    "--tatami-color-pink-400": "#ff83dd",
+    "--tatami-color-pink-500": "#ff64c8",
+    "--tatami-color-pink-600": "#d13f9d",
+    "--tatami-color-pink-700": "#9d2472",
+    "--tatami-color-pink-800": "#6c1b4f",
+    "--tatami-color-pink-900": "#481034",
+    "--tatami-color-brown-100": "#fcf8f5",
+    "--tatami-color-brown-200": "#ebd5c5",
+    "--tatami-color-brown-300": "#d9b79f",
+    "--tatami-color-brown-400": "#b18164",
+    "--tatami-color-brown-500": "#9c7054",
+    "--tatami-color-brown-600": "#885d3d",
+    "--tatami-color-brown-700": "#744d2d",
+    "--tatami-color-brown-800": "#654124",
+    "--tatami-color-brown-900": "#523410",
+    "--tatami-color-black": "#000",
+    "--tatami-color-white": "#fff",
+    "--tatami-color-alpha-black-100": "#0000000d",
+    "--tatami-color-alpha-black-200": "#0000001a",
+    "--tatami-color-alpha-black-300": "#0003",
+    "--tatami-color-alpha-black-400": "#0000004d",
+    "--tatami-color-alpha-black-500": "#0000008a",
+    "--tatami-color-alpha-black-600": "#00000096",
+    "--tatami-color-alpha-black-700": "#000000bf",
+    "--tatami-color-alpha-black-800": "#000000e5",
+    "--tatami-color-alpha-black-900": "#000000f2",
+    "--tatami-color-alpha-white-100": "#ffffff0d",
+    "--tatami-color-alpha-white-200": "#ffffff1a",
+    "--tatami-color-alpha-white-300": "#fff3",
+    "--tatami-color-alpha-white-400": "#ffffff4d",
+    "--tatami-color-alpha-white-500": "#ffffff80",
+    "--tatami-color-alpha-white-600": "#ffffffa8",
+    "--tatami-color-alpha-white-700": "#ffffffbf",
+    "--tatami-color-alpha-white-800": "#ffffffd9",
+    "--tatami-color-alpha-white-900": "#fffffff2",
+    "--tatami-color-transparent": "#fff0",
+    "--tatami-color-campaigns-agents-launch-blue-200": "#2537b1",
+    "--tatami-color-campaigns-agents-launch-blue-300": "#607df6",
+    "--tatami-color-campaigns-agents-launch-blue-400": "#455dd3",
+    "--tatami-color-campaigns-agents-launch-blue-500": "#394ea3",
+    "--tatami-color-campaigns-agents-launch-blue-600": "#213183",
+    "--tatami-color-campaigns-agents-launch-blue-900": "#02093a",
+    "--tatami-color-campaigns-agents-launch-yellow": "#fefcd5",
+    "--tatami-color-campaigns-dev-platform-dos-blue": "#1313ba",
+    "--tatami-color-campaigns-dev-platform-dos-black": "#0a0a5d",
+    "--tatami-color-campaigns-dev-platform-dos-neon": "#6666fd",
+    "--tatami-color-campaigns-dev-platform-dos-slate": "#7171a8",
+    "--tatami-color-campaigns-dev-platform-dos-lavender": "#cbcbef",
+    "--tatami-color-campaigns-dev-platform-dos-gray": "#f6f6fc",
+    "--tatami-color-campaigns-dev-platform-dos-white": "var(--tatami-color-white)",
+    "--tatami-color-campaigns-dev-platform-dos-alpha-blue": "#1313baa8",
+    "--tatami-color-campaigns-dev-platform-dos-alpha-white": "var(--tatami-color-alpha-white-700)",
+    "--tatami-color-campaigns-dev-platform-dos-alpha-lavender": "#cbcbef70",
+    "--tatami-color-campaigns-dev-platform-dos-alpha-gray": "#f6f6fc70",
+    "--tatami-dimension-spacing-0": "0",
+    "--tatami-dimension-spacing-4": ".25rem",
+    "--tatami-dimension-spacing-8": ".5rem",
+    "--tatami-dimension-spacing-12": ".75rem",
+    "--tatami-dimension-spacing-16": "1rem",
+    "--tatami-dimension-spacing-20": "1.25rem",
+    "--tatami-dimension-spacing-24": "1.5rem",
+    "--tatami-dimension-spacing-28": "1.75rem",
+    "--tatami-dimension-spacing-30": "1.875rem",
+    "--tatami-dimension-spacing-32": "2rem",
+    "--tatami-dimension-spacing-40": "2.5rem",
+    "--tatami-dimension-spacing-48": "3rem",
+    "--tatami-dimension-spacing-56": "3.5rem",
+    "--tatami-dimension-spacing-64": "4rem",
+    "--tatami-dimension-spacing-72": "4.5rem",
+    "--tatami-dimension-spacing-80": "5rem",
+    "--tatami-dimension-spacing-96": "6rem"
+   },
+   "blockedSheets": 1,
+   "reducedMotionRules": 21,
+   "h1": [
+    "Where teams and agents Create together."
+   ],
+   "h2": [
+    "AI where your team works.",
+    "Bring everything into one system of record.",
+    "Get answers, instantly—with citations.",
+    "Keep work moving 24/7 with agents.",
+    "Trusted by teams that ship.",
+    "Get started today."
+   ],
+   "h3": [
+    "See what Notion can do",
+    "Triage product feedback→",
+    "Resolve support tickets in Slack→",
+    "Respond to security alerts faster→",
+    "Automate weekly reporting→",
+    "Create your own developer tools→"
+   ],
+   "nav": [
+    "Pricing",
+    "Request a demo",
+    "Log in",
+    "Get Notion free",
+    "Get Notion free",
+    "Request a demo",
+    "Features",
+    "What's New",
+    "Notion AI",
+    "Pricing",
+    "Request a demo",
+    "Download",
+    "Explore more→",
+    "Customer stories",
+    "Connections",
+    "Marketplace"
+   ],
+   "ctas": [
+    "Get Notion free [132x36 bg #0075de fg #ffffff r 8px pad 4px 14px 16px/500]",
+    "Get Notion free [156x38 bg #0075de fg #ffffff r 8px pad 6px 15px 16px/500]",
+    "Request a demo [156x38 bg #e6f3fe fg #005bab r 8px pad 6px 15px 16px/500]",
+    "Get Notion free [149x38 bg #0075de fg #ffffff r 8px pad 6px 15px 16px/500]",
+    "Request a demo [156x38 bg #ffffff fg #097fe8 r 8px pad 6px 15px 16px/500]",
+    "English (US) [166x38 bg #ffffff fg #000000 a0.95 r 9999.01px pad 8px 16px 14px/500]"
+   ],
+   "media": {
+    "img": 60,
+    "svg": 27,
+    "video": 1,
+    "canvas": 0
+   }
+  }
+ }
+}

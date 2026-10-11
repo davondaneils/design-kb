@@ -1,0 +1,381 @@
+[
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "miter"
+  ],
+  "colors": [
+   "stroke=#101214"
+  ],
+  "solid": false,
+  "where": "span.logo",
+  "count": 1,
+  "ink1": 0.31208639705882335,
+  "soft1": 0.6148148148148148,
+  "ink2": 0.31179917279411784,
+  "soft2": 0.46318289786223277,
+  "pad": 0.5,
+  "flags": [
+   "pad",
+   "color:stroke=#101214"
+  ]
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "nav.nav-group.nav",
+  "count": 1,
+  "ink1": 0.4601102941176462,
+  "soft1": 0.9,
+  "ink2": 0.46040134803921545,
+  "soft2": 0.48717948717948717,
+  "pad": 1,
+  "flags": [
+   "volume"
+  ]
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "nav.nav-group.nav",
+  "count": 1,
+  "ink1": 0.12317708333333335,
+  "soft1": 0.6521739130434783,
+  "ink2": 0.11622625612745102,
+  "soft2": 0.4276315789473684,
+  "pad": 1,
+  "flags": [
+   "volume"
+  ]
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "nav.nav-group.nav",
+  "count": 1,
+  "ink1": 0.21588541666666658,
+  "soft1": 0.8181818181818182,
+  "ink2": 0.21277190563725482,
+  "soft2": 0.460431654676259,
+  "pad": 1,
+  "flags": []
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "nav.nav-group.nav",
+  "count": 1,
+  "ink1": 0.23572303921568627,
+  "soft1": 0.7528089887640449,
+  "ink2": 0.23615579044117652,
+  "soft2": 0.45110410094637227,
+  "pad": 1,
+  "flags": []
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "nav.nav-group.nav",
+  "count": 1,
+  "ink1": 0.2144454656862745,
+  "soft1": 0.7088607594936709,
+  "ink2": 0.2072035845588235,
+  "soft2": 0.4233576642335766,
+  "pad": 1,
+  "flags": []
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "nav.nav-group.nav",
+  "count": 1,
+  "ink1": 0.2463388480392154,
+  "soft1": 0.7685185185185185,
+  "ink2": 0.2347503063725489,
+  "soft2": 0.5089285714285714,
+  "pad": 0,
+  "flags": [
+   "pad"
+  ]
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "button.side-btn",
+  "count": 1,
+  "ink1": 0.2996476715686272,
+  "soft1": 0.6923076923076923,
+  "ink2": 0.2933823529411763,
+  "soft2": 0.4105263157894737,
+  "pad": 2,
+  "flags": []
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "button.side-btn",
+  "count": 1,
+  "ink1": 0.31449142156862714,
+  "soft1": 0.803030303030303,
+  "ink2": 0.31614583333333307,
+  "soft2": 0.509090909090909,
+  "pad": 0.5,
+  "flags": [
+   "pad"
+  ]
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "label.search",
+  "count": 1,
+  "ink1": 0.2020833333333333,
+  "soft1": 0.7012987012987013,
+  "ink2": 0.21750919117647044,
+  "soft2": 0.3897058823529412,
+  "pad": 1,
+  "flags": []
+ },
+ {
+  "w": 12,
+  "h": 12,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "button.chip.active",
+  "count": 1,
+  "ink1": 0.3180827886710238,
+  "soft1": 0.5,
+  "ink2": 0.3415032679738561,
+  "soft2": 0.44483985765124556,
+  "pad": 0,
+  "flags": [
+   "volume"
+  ]
+ },
+ {
+  "w": 12,
+  "h": 12,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "button.chip",
+  "count": 1,
+  "ink1": 0.1148148148148148,
+  "soft1": 1,
+  "ink2": 0.12089460784313724,
+  "soft2": 0.4230769230769231,
+  "pad": 1.5,
+  "flags": [
+   "volume"
+  ]
+ },
+ {
+  "w": 12,
+  "h": 12,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "span.delta.good",
+  "count": 4,
+  "ink1": 0.1999727668845316,
+  "soft1": 0.7619047619047619,
+  "ink2": 0.20049700435729856,
+  "soft2": 0.43243243243243246,
+  "pad": 1,
+  "flags": []
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 2,
+  "caps": [
+   "butt"
+  ],
+  "joins": [
+   "miter"
+  ],
+  "colors": [
+   "stroke=#ffffff"
+  ],
+  "solid": false,
+  "where": "svg.icon",
+  "count": 1,
+  "ink1": 0.5902573529411762,
+  "soft1": 0.19879518072289157,
+  "ink2": 0.6022135416666669,
+  "soft2": 0.10802469135802469,
+  "pad": 1,
+  "flags": [
+   "volume",
+   "color:stroke=#ffffff"
+  ]
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "butt"
+  ],
+  "joins": [
+   "miter"
+  ],
+  "colors": [
+   "stroke=#000000"
+  ],
+  "solid": false,
+  "where": "svg.icon",
+  "count": 1,
+  "ink1": 0.35557598039215677,
+  "soft1": 0.21568627450980393,
+  "ink2": 0.35552236519607855,
+  "soft2": 0.11398963730569948,
+  "pad": 1,
+  "flags": [
+   "color:stroke=#000000"
+  ]
+ },
+ {
+  "w": 12,
+  "h": 12,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "button.sort",
+  "count": 4,
+  "ink1": 0.17140522875816996,
+  "soft1": 0.7777777777777778,
+  "ink2": 0.17091503267973854,
+  "soft2": 0.4375,
+  "pad": 1,
+  "flags": []
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 0,
+  "caps": [],
+  "joins": [],
+  "colors": [],
+  "solid": true,
+  "where": "button.row-btn",
+  "count": 6,
+  "ink1": 0.056862745098039194,
+  "soft1": 0.6666666666666666,
+  "ink2": 0.058145680147058794,
+  "soft2": 0.42857142857142855,
+  "pad": 2,
+  "flags": []
+ }
+]

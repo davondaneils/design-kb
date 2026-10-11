@@ -1,49 +1,45 @@
 # design-kb
 
-Goal: a team of agents that researches, writes, checks and tests a design knowledge base that makes Claude excellent at web, app and graphic design, from color and type through copy, motion, data and search.
+A team of agents that researches, writes, checks and tests a design knowledge base that makes Claude excellent at web, app and graphic design. The bar is the exemplar set in `kb/exemplars.md` (Stripe, Linear, Apple, Pentagram and others), judged on rendered pages, with fundamentals checked first.
 
-## What the finished knowledge base looks like (proposed default)
+## How the skills are organised
 
-- **One Claude skill per domain** (for example `design-color`, `design-typography`), each a short SKILL.md with decision rules, plus a `references/` folder holding the deep material (scales, tables, checklists, worked examples). Claude loads the short part every time and the deep part only when needed.
-- **One router skill, `design-director`**, that runs a project end to end and calls on the domain skills in the right order (strategy, then structure, then visuals, then copy, then build, then search).
-- **Your existing skills plug straight in:** `website-strategy` (discovery and positioning), `copywriting` (persuasion copy), `sales-funnels` (conversion paths). PPGPool27 stays its own project skill but can inherit the new design rules.
+Three layers, all shipped as Claude skills in `skills/`:
 
-## The agents (defined in `.claude/agents/`)
+| Layer | Skills | Role |
+|---|---|---|
+| Foundations | `design-foundations` | Always loaded first. Token system, the 16-item fundamentals gate, accessibility (WCAG 2.2 AA) as the cross-cutting floor. Mirrors `kb/FOUNDATIONS.md`, the source of truth. |
+| Job playbooks | `design-playbook-landing`, `design-playbook-dashboard`, `design-playbook-mobile`, `design-playbook-brand` | What triggers. Each says which references to load in what order, what done looks like, and the signature moves of the closest exemplars. |
+| Domain references | `design-color`, `design-typography`, `design-layout`, `design-graphic`, `design-ux`, `design-motion`, `design-copy`, `design-frontend`, `design-search` | Depth, loaded on demand by the director or a playbook. Not triggered on their own. |
 
-| # | Agent | Job | Takes in | Hands off |
-|---|---|---|---|---|
-| 1 | **Editor in Chief** (orchestrator) | Owns the topic map, assigns work, enforces the house format and your rules (no em dashes, plain language). | Your priorities and the domain list | Topic briefs to the Researcher |
-| 2 | **Researcher** | Gathers the best sources per topic: canonical books, standards (WCAG, Google Search docs, Apple HIG, Material), and current practice. Separates consensus from opinion. | A topic brief | Source notes with citations |
-| 3 | **Domain Specialists** (one template, many hats) | Turn research into usable rules: principles, decision trees, numbers (type scales, contrast ratios, spacing, easing curves), do and don't, examples. | Source notes | A draft domain chapter |
-| 4 | **Skill Architect** | Shapes chapters into skills: trigger description, short SKILL.md, deep references, cross-links between domains. | Draft chapter | A draft skill |
-| 5 | **Critic** | Fact checks against sources, catches contradictions between domains (say, motion vs accessibility), cuts filler. | Draft skill | Fix list, or approval |
-| 6 | **Tester** | Gives Claude real briefs (a landing page, a dashboard, a logo lockup) with and without the skill and compares the results. | Approved skill | Pass, or a list of gaps back to the Specialist |
-| 7 | **Librarian** | Keeps the index, versions and freshness dates. Flags fast moving areas (SEO, AEO, framework trends) for re-review. | Shipped skills | Update tickets back to the Editor |
+`design-director` is the spine: it loads foundations, picks the playbook, pulls references, and ends with a self-critique loop (render with `tools/render.mjs`, lint with `tools/lint.mjs`, compare to exemplars, fix, at most 3 rounds).
 
-### Specialist hats (domains)
+The user's existing skills plug in where a playbook says: `website-strategy` (positioning), `copywriting` (direct response only: sales pages, VSLs, funnels; never premium product or brand sites), `sales-funnels`, `dataviz`.
 
-1. Strategy and brand (reuses `website-strategy`)
-2. Color theory and palettes
-3. Typography and font pairing
-4. Layout, grids, spacing and visual hierarchy
-5. Graphic design (logos, icons, imagery, illustration)
-6. UX and interaction patterns (web and app)
-7. Motion and micro-interaction
-8. Copywriting and UX writing (reuses `copywriting`)
-9. Conversion and funnels (reuses `sales-funnels`)
-10. Front-end build: HTML, CSS, accessibility, performance
-11. Data and backend: database structure, APIs, auth
-12. Search: SEO and AEO (answer engine optimization)
+Planned next: visual polish, product and tool UI, art direction and imagery, design systems (inside foundations), and a fuller self-critique method (inside the director). Data and backend was dropped; it is archived on the `wip/design-data` branch.
 
-## Pipeline
+## The agents (`.claude/agents/`)
 
-Editor in Chief → Researcher → Specialist → Skill Architect → Critic → Tester → (loop back on gaps) → Librarian ships it.
+editor-in-chief > researcher > domain-specialist > skill-architect > critic > tester > librarian.
 
-Each domain runs through this loop on its own, so several can move in parallel.
+| Agent | Job |
+|---|---|
+| editor-in-chief | Plans per layer (foundations, then playbooks, then references), writes briefs with test briefs and rubric, owns `kb/FOUNDATIONS.md`, caps loops at 3 rounds, gets Davon's approval before batch runs. |
+| researcher | Sources under a tiered policy with quote, URL and date per claim; runs the standing exemplar teardown stream (`kb/teardowns/`). |
+| domain-specialist | Writes chapters: floor (fundamentals, standards) then ceiling (exemplar patterns, signature moves). |
+| skill-architect | Packages chapters as skills, with descriptions set by layer. |
+| critic | Citation spot check, fundamentals gate, contradictions with foundations, the expert bar. |
+| tester | Builds real pages with and without the skills, lints, renders, judges against the exemplars. |
+| librarian | Index, versions, freshness, topic map rollup, keeps the foundations mirrors in sync. |
 
-## Proposed first build order
+## Repo map
 
-1. Write the 7 agent definitions themselves (this step).
-2. Pilot on **one domain** (color is a good pilot: it is well sourced and easy to test visually).
-3. Fix the agents based on the pilot, then run the remaining domains in batches.
-4. Build `design-director` last, once the domain skills exist.
+| Path | What |
+|---|---|
+| `skills/` | The shipped and in-progress skills (three layers above) |
+| `kb/FOUNDATIONS.md` | Shared contract: tokens, chapter template, fundamentals checklist |
+| `kb/exemplars.md` | The approved quality bar |
+| `kb/briefs`, `research`, `drafts`, `reviews`, `tests` | Pipeline stages |
+| `kb/teardowns/` | Measured exemplar CSS (standing research stream) |
+| `kb/status/`, `kb/TOPIC_MAP.md`, `kb/INDEX.md` | Per-domain status, its rollup (`node tools/rollup.mjs`), the skill index |
+| `tools/` | `render.mjs` (screenshots), `lint.mjs` (fundamentals lint), `rollup.mjs` |

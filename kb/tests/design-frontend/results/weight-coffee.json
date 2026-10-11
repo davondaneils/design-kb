@@ -1,0 +1,52 @@
+{
+  "file": "kb/tests/design-frontend/./coffee.html",
+  "total": {
+    "raw": 202198,
+    "gzip": 95083,
+    "br": 76575
+  },
+  "parts": [
+    {
+      "part": "fonts",
+      "raw": 59640,
+      "gzip": 44828
+    },
+    {
+      "part": "dataUrls",
+      "raw": 302,
+      "gzip": 232
+    },
+    {
+      "part": "css",
+      "raw": 31144,
+      "gzip": 6768
+    },
+    {
+      "part": "svg",
+      "raw": 95347,
+      "gzip": 35829
+    },
+    {
+      "part": "script",
+      "raw": 3026,
+      "gzip": 1328
+    },
+    {
+      "part": "html",
+      "raw": 12754,
+      "gzip": 3879
+    }
+  ],
+  "critical": {
+    "beforePaint": {
+      "raw": 91802,
+      "gzip": 53223,
+      "br": 51176
+    },
+    "beforeLcp": {
+      "raw": 92745,
+      "gzip": 53677,
+      "br": 51509
+    }
+  }
+}

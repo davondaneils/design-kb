@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="robots" content="noindex">
+<title>Search and share preview, Ember &amp; Oak</title>
+<style>
+/* Review sheet for the tester (design-search reference 07): how the homepage reads where people meet it before they
+   visit. Generic result and card frames, not any engine's real UI. Sizes are the ones the card must survive:
+   a 600px result line, a 500px feed card, a 2:1 crop, a centered square crop and a 16 and 32px favicon. */
+:root { --text: #1f1a17; --muted: #5d534c; --line: #ddd5ce; --bg: #f9f6f4; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 Inter, "Liberation Sans", sans-serif; }
+main { max-width: 1120px; margin: 0 auto; padding: 48px 24px; display: grid; gap: 48px; }
+h1 { font-size: 25px; line-height: 1.25; margin: 0; }
+h2 { font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 16px; }
+.result { max-width: 600px; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px 24px; }
+.site { display: flex; gap: 12px; align-items: center; font-size: 14px; }
+.site img { width: 32px; height: 32px; border-radius: 9999px; }
+.site b { display: block; font-weight: 600; }
+.site span { color: var(--muted); }
+.result .t { font-size: 20px; line-height: 1.25; color: #1a3fa3; margin: 8px 0 4px; }
+.result p { margin: 0; font-size: 14px; color: var(--muted); }
+.cards { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; }
+figure { margin: 0; font-size: 14px; color: var(--muted); }
+figure .frame { overflow: hidden; border-radius: 12px; border: 1px solid var(--line); background: #fff; }
+figure img { display: block; }
+.feed img { width: 500px; height: auto; }
+.wide .frame { width: 500px; height: 250px; } .wide img { width: 500px; height: 263px; margin-top: -6px; }
+.square .frame { width: 160px; height: 160px; } .square img { height: 160px; width: auto; margin-left: -72px; }
+.icons { display: flex; gap: 16px; align-items: center; }
+.icons img:nth-child(1) { width: 16px; height: 16px; } .icons img:nth-child(2) { width: 32px; height: 32px; }
+figcaption { margin-top: 8px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Ember &amp; Oak homepage: search and share preview</h1>
+  <section>
+    <h2>Result, 600px</h2>
+    <div class="result">
+      <div class="site"><img src="site/icon-192.png" alt=""><div><b>Ember &amp; Oak</b><span>https://emberandoak.example</span></div></div>
+      <div class="t">Ember &amp; Oak: small-batch coffee roasters in Portland, Oregon</div>
+      <p>Single-origin coffee roasted 12 kg at a time on a 1962 Probat in Southeast Portland, shipped within 48 hours. Bags from $18; subscriptions $18 with shipping.</p>
+    </div>
+  </section>
+  <section>
+    <h2>Social card</h2>
+    <div class="cards">
+      <figure class="feed"><div class="frame"><img src="site/og/home-1200x630.png" alt="The Ember and Oak wordmark over orange contour lines."></div><figcaption>Feed, 500px wide, 1.91:1</figcaption></figure>
+      <figure class="wide"><div class="frame"><img src="site/og/home-1200x630.png" alt=""></div><figcaption>2:1 crop</figcaption></figure>
+      <figure class="square"><div class="frame"><img src="site/og/home-1200x630.png" alt=""></div><figcaption>Centered square crop</figcaption></figure>
+      <figure><div class="icons"><img src="site/icon-192.png" alt=""><img src="site/icon-192.png" alt=""></div><figcaption>Favicon at 16 and 32px</figcaption></figure>
+    </div>
+  </section>
+</main>
+</body>
+</html>

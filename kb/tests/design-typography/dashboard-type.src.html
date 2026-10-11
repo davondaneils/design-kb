@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Overview · Tally</title>
+<style>
+/* Type: design-typography (reference 06, no font CDN). Inter, self-hosted: the Fontsource OFL build, weight axis
+   narrowed to 400 to 600 and subset to the Latin core, 27 KB WOFF2 inlined (kb/tests/design-typography/fonts/build.sh).
+   A metric-matched Arial fallback (size-adjust 107.59%) keeps the swap from moving columns.
+   Why ship a font on a dashboard: system-ui is SF, Segoe UI or Roboto depending on the OS, each with different
+   figure widths, so a table tuned on one platform shifts on another (design-typography 02, worked example 3).
+   Color tokens unchanged from kb/tests/design-color/dashboard-with.html. */
+/* @inline inter-text.css */
+/* @inline inter-fallback.css */
+/* Tokens follow kb/FOUNDATIONS.md v0.2. Ramps from skills/design-color/assets/oklch_scale.py:
+   teal: scale --hue 183 --chroma 0.13 (brand #14b8a6 = oklch(70.4% 0.123 182.5), L .70: fill only, never white labels)
+   slate: scale --hue 250 --chroma 0.012 --neutral; green 150/0.15; red 25/0.19; amber 75/0.16 --shift -20.
+   Chart pair validated with the dataviz skill's validate_palette.js (separation passes; the gray is a deliberate benchmark). */
+:root {
+  --color-brand: #14b8a6;
+  --color-teal-50: #ecfaf8; --color-teal-400: #1ebdac; --color-teal-500: #01a091; --color-teal-600: #027d71;
+  --color-teal-700: #01675c; --color-teal-800: #015148; --color-teal-950: #012824; --color-teal-200: #a8e6db;
+  --color-slate-50: #f6f7f8; --color-slate-100: #e8eaec; --color-slate-200: #d5d8db; --color-slate-300: #bdc1c7;
+  --color-slate-500: #858b92; --color-slate-600: #676c73; --color-slate-800: #41454a; --color-slate-950: #1f2224;
+  --color-slate-975: #181a1c; --color-slate-990: #101214;
+  --color-green-300: #8ad69a; --color-green-700: #026a2e;
+  --color-red-50: #fff4f3; --color-red-200: #ffc8c3; --color-red-300: #ffa59e; --color-red-600: #c2272d; --color-red-800: #840915; --color-red-950: #450407;
+  --color-amber-50: #fdf6e9; --color-amber-200: #f3d39b; --color-amber-600: #926003; --color-amber-800: #623b00; --color-amber-950: #341b00; --color-amber-300: #eab761;
+
+  --color-bg: var(--color-slate-50);              /* app chrome and sidebar */
+  --color-surface: #ffffff;                        /* working area */
+  --color-surface-raised: #ffffff;
+  --color-surface-hover: var(--color-slate-100);
+  --color-text: var(--color-slate-950);
+  --color-text-muted: var(--color-slate-600);      /* 5.29:1 on white, 4.93:1 on bg */
+  --color-border: var(--color-slate-200);          /* dividers only */
+  --color-border-strong: var(--color-slate-500);   /* inputs, 3.44:1 */
+  --color-primary: var(--color-teal-600);          /* white label 5.03:1 */
+  --color-primary-hover: var(--color-teal-700);
+  --color-on-primary: #ffffff;
+  --color-selected-bg: var(--color-teal-50);
+  --color-selected-text: var(--color-teal-800);    /* 8.63:1 */
+  --color-accent: var(--color-teal-700);
+  --color-positive: var(--color-green-700);        /* 6.77:1 */
+  --color-negative: var(--color-red-600);          /* 5.80:1 */
+  --color-warning-subtle: var(--color-amber-50); --color-warning-text: var(--color-amber-800); --color-warning-mark: var(--color-amber-600);
+  --color-danger-subtle: var(--color-red-50); --color-danger-text: var(--color-red-800); --color-danger-mark: var(--color-red-600);
+  --color-chart-current: var(--color-teal-700);    /* 2px line; lightness gap to the gray keeps CVD separation */
+  --color-chart-previous: var(--color-slate-500);  /* dashed benchmark, 3.44:1 */
+  --color-chart-grid: var(--color-slate-100);
+  --color-focus-ring: var(--color-teal-600);
+
+  --space-1: 2px; --space-2: 4px; --space-3: 8px; --space-4: 12px; --space-5: 16px; --space-6: 24px; --space-7: 32px; --space-8: 48px;
+  --text-xs: 0.75rem; --text-sm: 0.875rem; --text-base: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.9375rem; --text-3xl: 2.4375rem;
+  --radius-sm: 4px; --radius-md: 8px; --radius-lg: 12px; --radius-full: 9999px;
+  --font-sans: "Inter Var", "Inter Fallback", -apple-system, "Segoe UI Variable Text", "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  --duration-fast: 150ms; --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: var(--color-slate-990);
+    --color-surface: var(--color-slate-975);
+    --color-surface-raised: var(--color-slate-950);
+    --color-surface-hover: var(--color-slate-950);
+    --color-text: var(--color-slate-50);
+    --color-text-muted: var(--color-slate-300);    /* 9.65:1, APCA Lc 68 (slate-400 would be Lc 52) */
+    --color-border: var(--color-slate-800);
+    --color-border-strong: var(--color-slate-500); /* 5.07:1 */
+    --color-primary: var(--color-brand);           /* brand teal returns exact: fill behind near-black label, 7.54:1 */
+    --color-primary-hover: var(--color-teal-400);
+    --color-on-primary: var(--color-slate-990);
+    --color-selected-bg: var(--color-teal-950);
+    --color-selected-text: var(--color-teal-200);  /* 11.28:1 */
+    --color-accent: var(--color-teal-200);
+    --color-positive: var(--color-green-300);
+    --color-negative: var(--color-red-300);
+    --color-warning-subtle: #2a2011; /* oklch(25% 0.03 75): the 950 step (C .056) glows on near-black; quiet tint, text 11.1:1 */ --color-warning-text: var(--color-amber-200); --color-warning-mark: var(--color-amber-300);
+    --color-danger-subtle: #311b19; /* oklch(25% 0.035 25), text 11.0:1 */ --color-danger-text: var(--color-red-200); --color-danger-mark: var(--color-red-300);
+    --color-chart-current: var(--color-teal-400);  /* 7.42:1 */
+    --color-chart-previous: var(--color-slate-600);/* 3.30:1 */
+    --color-chart-grid: var(--color-slate-950);
+    --color-focus-ring: var(--color-teal-400);
+  }
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--color-bg); color: var(--color-text); font: var(--text-sm)/1.5 var(--font-sans);
+  font-kerning: normal; font-synthesis: none;
+  font-size-adjust: ex-height from-font; } /* computes to Inter's 0.546 on body and inherits, so mono paths match the x-height */
+.num, td.num, .kpi .value, .delta, time { font-variant-numeric: tabular-nums lining-nums; }
+code, .path { font-family: var(--font-mono); font-size: 1em; }
+h1, h2, h3, p, ul, ol, dl, dd { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+a { color: inherit; }
+button, input { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; border-radius: var(--radius-sm); }
+svg { display: block; }
+
+.app { display: grid; min-height: 100vh; }
+@media (min-width: 1024px) { .app { grid-template-columns: 240px minmax(0, 1fr); } }
+
+/* Sidebar: same surface as the chrome, no dark slab (Linear and Vercel keep nav quiet) */
+.sidebar { display: none; padding: var(--space-4); border-right: 1px solid var(--color-border); }
+@media (min-width: 1024px) { .sidebar { display: flex; flex-direction: column; gap: var(--space-6); } }
+.workspace { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3); font-weight: 600; }
+.logo { width: 24px; height: 24px; border-radius: var(--radius-sm); background: var(--color-brand); display: grid; place-items: center; }
+.nav-group h2 { font-size: var(--text-xs); font-weight: 500; color: var(--color-text-muted); padding: 0 var(--space-3) var(--space-3); }
+.nav a { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-3); border-radius: var(--radius-md); text-decoration: none; color: var(--color-text-muted); }
+.nav a:hover { background: var(--color-surface-hover); color: var(--color-text); }
+.nav a[aria-current=page] { background: var(--color-selected-bg); color: var(--color-selected-text); font-weight: 600; }
+.nav svg { flex: none; }
+
+/* Top bar */
+.main { display: flex; flex-direction: column; min-width: 0; }
+.topbar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4); padding: var(--space-4) var(--space-5); border-bottom: 1px solid var(--color-border); }
+@media (min-width: 1024px) { .topbar { padding: var(--space-4) var(--space-7); } }
+.btn.menu-btn { padding: 0 var(--space-4); }
+@media (min-width: 1024px) { .btn.menu-btn { display: none; } }
+.topbar h1 { font-size: var(--text-lg); font-weight: 600; line-height: 1.25; letter-spacing: -0.01em; margin-right: auto; }
+.search { display: flex; align-items: center; gap: var(--space-3); min-height: 40px; padding: 0 var(--space-4); border: 1px solid var(--color-border-strong); border-radius: var(--radius-md); background: var(--color-surface); color: var(--color-text-muted); flex: 1 1 200px; max-width: 320px; }
+.search input { border: 0; padding: 0; background: transparent; outline: none; width: 100%; min-height: 32px; font-size: var(--text-sm); }
+.search:focus-within { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+.search input::placeholder { color: var(--color-text-muted); }
+.search kbd { font: 500 var(--text-xs)/1.5 var(--font-sans); padding: 0 var(--space-2); border: 1px solid var(--color-border); border-radius: var(--radius-sm); }
+.btn { text-box: trim-both cap alphabetic; display: inline-flex; align-items: center; gap: var(--space-3); min-height: 40px; padding: 0 var(--space-4); border-radius: var(--radius-md); border: 1px solid var(--color-border-strong); background: var(--color-surface); cursor: pointer; font-weight: 500; transition: background-color var(--duration-fast) var(--ease-standard); }
+.btn:hover { background: var(--color-surface-hover); }
+.btn-primary { background: var(--color-primary); color: var(--color-on-primary); border-color: transparent; font-weight: 600; }
+.btn-primary:hover { background: var(--color-primary-hover); }
+
+/* Content */
+.content { padding: var(--space-5); display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-5); }
+@media (min-width: 1024px) { .content { padding: var(--space-6) var(--space-7) var(--space-8); gap: var(--space-6); } }
+.panel { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); }
+.panel-head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding: var(--space-4) var(--space-5); border-bottom: 1px solid var(--color-border); }
+.panel-head h2 { font-size: var(--text-sm); font-weight: 600; letter-spacing: -0.005em; }
+.panel-head a { color: var(--color-accent); font-weight: 500; padding: var(--space-2) 0; white-space: nowrap; }
+
+/* KPI row: one panel split by hairlines reads calmer than four floating cards */
+.kpis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 1024px) { .kpis { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.kpi { padding: var(--space-5); border-bottom: 1px solid var(--color-border); }
+.kpi:nth-child(odd) { border-right: 1px solid var(--color-border); }
+.kpi:nth-child(n+3) { border-bottom: 0; }
+@media (min-width: 1024px) { .kpi { border-bottom: 0; border-right: 1px solid var(--color-border); } .kpi:last-child { border-right: 0; } }
+.kpi dt { color: var(--color-text-muted); font-size: var(--text-sm); }
+.kpi dd { margin-top: var(--space-3); }
+.kpi .value { display: block; font-size: var(--text-3xl); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1; }
+.kpi .u { font-size: var(--text-lg); font-weight: 500; letter-spacing: 0; color: var(--color-text-muted); margin-left: var(--space-1); }
+.kpi .u.pre { margin-left: 0; margin-right: var(--space-1); }
+.delta { display: inline-flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); margin-top: var(--space-3); font-size: var(--text-xs); font-weight: 600; }
+.delta.good { color: var(--color-positive); }
+.delta.bad { color: var(--color-negative); }
+.delta span { color: var(--color-text-muted); font-weight: 400; }
+
+.grid-2 { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-5); }
+@media (min-width: 1024px) { .grid-2 { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: var(--space-6); } }
+
+/* Chart */
+.chart-body { padding: var(--space-5); }
+.legend { display: flex; flex-wrap: wrap; gap: var(--space-5); font-size: var(--text-xs); color: var(--color-text-muted); }
+.legend li { display: flex; align-items: center; gap: var(--space-3); }
+.legend svg { overflow: visible; }
+.chart { position: relative; margin-top: var(--space-4); }
+.chart svg { width: 100%; height: 240px; overflow: visible; }
+.chart .grid line { stroke: var(--color-chart-grid); stroke-width: 1; }
+.chart .axis text { fill: var(--color-text-muted); font-size: 12px; font-family: var(--font-sans); font-variant-numeric: tabular-nums; }
+.line-current { fill: none; stroke: var(--color-chart-current); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.line-previous { fill: none; stroke: var(--color-chart-previous); stroke-width: 2; stroke-dasharray: 4 4; }
+.end-dot { fill: var(--color-chart-current); stroke: var(--color-surface); stroke-width: 2; }
+.label-current { fill: var(--color-text); font-size: 12px; font-weight: 600; font-family: var(--font-sans); }
+.crosshair { stroke: var(--color-border-strong); stroke-width: 1; }
+.tooltip { position: absolute; top: 0; pointer-events: none; background: var(--color-surface-raised); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); font-size: var(--text-xs); box-shadow: 0 4px 16px rgb(0 0 0 / 0.12); white-space: nowrap; }
+.tooltip[hidden] { display: none; }
+
+/* Alerts: status = icon + word + color, never color alone */
+.alerts { padding: var(--space-4); display: grid; gap: var(--space-4); }
+.alert { border: 1px solid transparent; display: grid; grid-template-columns: auto 1fr; gap: var(--space-4); padding: var(--space-4); border-radius: var(--radius-md); }
+.alert.warning { background: var(--color-warning-subtle); color: var(--color-warning-text); }
+.alert.danger { background: var(--color-danger-subtle); color: var(--color-danger-text); }
+.alert .icon { color: var(--color-warning-mark); margin-top: var(--space-1); }
+.alert.danger .icon { color: var(--color-danger-mark); }
+.alert strong { display: block; font-weight: 600; }
+.alert p { margin-top: var(--space-2); }
+.alert .meta { font-size: var(--text-xs); margin-top: var(--space-3); }
+.alert a { display: inline-block; padding: var(--space-2) 0; font-weight: 600; }
+
+/* Table */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; min-width: 560px; }
+th, td { padding: var(--space-4) var(--space-5); text-align: left; border-bottom: 1px solid var(--color-border); white-space: nowrap; }
+th { font-size: var(--text-xs); font-weight: 500; color: var(--color-text-muted); letter-spacing: 0.01em; }
+td .u { color: var(--color-text-muted); }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:hover { background: var(--color-surface-hover); }
+td.num, th.num { text-align: right; }
+td a { display: inline-block; min-width: 24px; padding: var(--space-2) 0; text-decoration: none; font-weight: 500; }
+td a:hover { text-decoration: underline; }
+.share { display: flex; align-items: center; gap: var(--space-4); justify-content: flex-end; }
+.share-bar { width: 96px; height: 8px; border-radius: var(--radius-full); background: var(--color-chart-grid); overflow: hidden; }
+.share-bar i { display: block; height: 100%; background: var(--color-chart-current); border-radius: var(--radius-full); }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+@media (forced-colors: active) { .panel, .btn, .alert { border: 1px solid CanvasText; } .nav a[aria-current=page] { outline: 2px solid Highlight; } }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" aria-label="Workspace">
+    <div class="workspace"><span class="logo" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 3h8M6 3v7" stroke="#101214" stroke-width="2" stroke-linecap="round"/></svg></span>Tally</div>
+    <nav class="nav-group nav" aria-label="Main">
+      <h2>Analytics</h2>
+      <ul>
+        <li><a href="#" aria-current="page"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2h5v5H2zM9 2h5v5H9zM2 9h5v5H2zM9 9h5v5H9z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Overview</a></li>
+        <li><a href="#"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 13l4-5 3 3 5-7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Events</a></li>
+        <li><a href="#"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12l-4 5v5l-4-2V8z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Funnels</a></li>
+        <li><a href="#"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8a6 6 0 1 0 2-4.5M2 2v3h3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Retention</a></li>
+        <li><a href="#"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M2 14c1-3 3-4 6-4s5 1 6 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Users</a></li>
+      </ul>
+    </nav>
+    <nav class="nav-group nav" aria-label="Workspace settings">
+      <h2>Workspace</h2>
+      <ul>
+        <li><a href="#"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3 3l1.5 1.5M11.5 11.5L13 13M3 13l1.5-1.5M11.5 4.5L13 3" stroke="currentColor" stroke-width="1.5"/></svg>Settings</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="btn menu-btn" type="button" aria-label="Open navigation"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="1.5"/></svg></button>
+      <h1>Overview</h1>
+      <label class="search"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M11 11l3 3" stroke="currentColor" stroke-width="1.5"/></svg><input type="search" placeholder="Search pages and events" aria-label="Search pages and events"><kbd>/</kbd></label>
+      <button class="btn" type="button" aria-haspopup="listbox"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3" width="12" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M2 6h12M5 1v3M11 1v3" stroke="currentColor" stroke-width="1.5"/></svg><time datetime="2026-07-21">Jul&#8239;21</time>&#8201;&#8211;&#8201;<time datetime="2026-10-12">Oct&#8239;12</time></button>
+      <button class="btn btn-primary" type="button">Share report</button>
+    </header>
+
+    <main class="content">
+      <section class="panel" aria-label="Key metrics, last 7 days versus previous 7 days">
+        <dl class="kpis">
+          <div class="kpi"><dt>Weekly active users</dt><dd><span class="value">48,210</span><span class="delta good"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 10V2M2 6l4-4 4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>+12.4% <span>vs last week</span></span></dd></div>
+          <div class="kpi"><dt>Conversion</dt><dd><span class="value">3.8<span class="u">%</span></span><span class="delta good"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 10V2M2 6l4-4 4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>+0.6 pts <span>vs last week</span></span></dd></div>
+          <div class="kpi"><dt>Revenue</dt><dd><span class="value"><span class="u pre">$</span>184.2<span class="u">k</span></span><span class="delta good"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 10V2M2 6l4-4 4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>+8.1% <span>vs last week</span></span></dd></div>
+          <div class="kpi"><dt>Churn</dt><dd><span class="value">2.9<span class="u">%</span></span><span class="delta bad"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 10V2M2 6l4-4 4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>+0.4 pts, worse <span>vs last week</span></span></dd></div>
+        </dl>
+      </section>
+
+      <div class="grid-2">
+        <section class="panel" aria-labelledby="chart-title">
+          <div class="panel-head"><h2 id="chart-title">Weekly active users, last 12 weeks</h2><a href="#">Open in Events</a></div>
+          <div class="chart-body">
+            <ul class="legend">
+              <li><svg width="24" height="8" aria-hidden="true"><line x1="0" y1="4" x2="24" y2="4" class="line-current"/></svg>This period</li>
+              <li><svg width="24" height="8" aria-hidden="true"><line x1="0" y1="4" x2="24" y2="4" class="line-previous"/></svg>Previous 12 weeks</li>
+            </ul>
+            <div class="chart" id="chart">
+              <svg id="chart-svg" height="240" role="img" aria-labelledby="chart-title chart-desc">
+                <desc id="chart-desc">Weekly active users rose from 31,400 in the week of Jul 21 to 48,210 in the week of Oct 6. The previous 12 weeks ran from 29,800 to 34,100.</desc>
+                <g id="chart-plot"></g>
+              </svg>
+              <div class="tooltip" id="tooltip" hidden></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel" aria-labelledby="alerts-title">
+          <div class="panel-head"><h2 id="alerts-title">Alerts</h2><a href="#">Manage</a></div>
+          <ul class="alerts">
+            <li class="alert danger">
+              <svg class="icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="currentColor"/><path d="M8 4v5M8 11v1" stroke="#ffffff" stroke-width="2"/></svg>
+              <div><strong>Error: checkout events stopped</strong><p>No <code>checkout_completed</code> events for 2&nbsp;hours.</p><p class="meta">Since 14:05 &middot; <a href="#">View tracking plan</a></p></div>
+            </li>
+            <li class="alert warning">
+              <svg class="icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l7 13H1z" fill="currentColor"/><path d="M8 6v4M8 11.5v1" stroke="#000000" stroke-width="1.5"/></svg>
+              <div><strong>Warning: iOS volume down 18%</strong><p>Fewer events from iOS 26 since Tuesday.</p><p class="meta">Since Oct 7 &middot; <a href="#">Compare platforms</a></p></div>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <section class="panel" aria-labelledby="pages-title">
+        <div class="panel-head"><h2 id="pages-title">Top pages</h2><a href="#">All pages</a></div>
+        <div class="table-wrap" tabindex="0" role="region" aria-labelledby="pages-title">
+          <table>
+            <thead><tr><th scope="col">Page</th><th scope="col" class="num">Views</th><th scope="col" class="num">Avg. time</th><th scope="col" class="num">Share of views</th></tr></thead>
+            <tbody>
+              <tr><td><a class="path" href="#">/pricing</a></td><td class="num">24,180</td><td class="num">1<span class="u">m</span> 42<span class="u">s</span></td><td class="num"><div class="share"><span>34<span class="u">%</span></span><span class="share-bar" aria-hidden="true"><i style="width:100%"></i></span></div></td></tr>
+              <tr><td><a class="path" href="#">/</a></td><td class="num">19,920</td><td class="num">0<span class="u">m</span> 58<span class="u">s</span></td><td class="num"><div class="share"><span>28<span class="u">%</span></span><span class="share-bar" aria-hidden="true"><i style="width:82%"></i></span></div></td></tr>
+              <tr><td><a class="path" href="#">/docs/quickstart</a></td><td class="num">11,402</td><td class="num">3<span class="u">m</span> 10<span class="u">s</span></td><td class="num"><div class="share"><span>16<span class="u">%</span></span><span class="share-bar" aria-hidden="true"><i style="width:47%"></i></span></div></td></tr>
+              <tr><td><a class="path" href="#">/blog/retention-benchmarks</a></td><td class="num">8,733</td><td class="num">4<span class="u">m</span> 22<span class="u">s</span></td><td class="num"><div class="share"><span>12<span class="u">%</span></span><span class="share-bar" aria-hidden="true"><i style="width:36%"></i></span></div></td></tr>
+              <tr><td><a class="path" href="#">/signup</a></td><td class="num">6,015</td><td class="num">1<span class="u">m</span> 05<span class="u">s</span></td><td class="num"><div class="share"><span>8<span class="u">%</span></span><span class="share-bar" aria-hidden="true"><i style="width:25%"></i></span></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+<script>
+// Chart drawn at the container's real width so 12px labels stay 12px (a scaled viewBox shrank them to 6px at 390).
+// Hover layer: crosshair and tooltip (dataviz skill default).
+(function () {
+  const cur = [31400, 32000, 33200, 32800, 34800, 35600, 37000, 38800, 39600, 42400, 44600, 48210];
+  const prev = [29800, 30200, 30800, 30400, 31400, 31600, 32000, 32600, 32200, 33200, 33600, 34100];
+  const weeks = ['Jul 21', 'Jul 28', 'Aug 4', 'Aug 11', 'Aug 18', 'Aug 25', 'Sep 1', 'Sep 8', 'Sep 15', 'Sep 22', 'Sep 29', 'Oct 6'];
+  const box = document.getElementById('chart');
+  const svg = document.getElementById('chart-svg');
+  const plot = document.getElementById('chart-plot');
+  const tip = document.getElementById('tooltip');
+  const H = 240, top = 24, bottom = 216, left = 40;
+  let W = 0, right = 0;
+  const x = (i) => left + i * ((right - left) / 11);
+  const y = (v) => bottom - ((v - 20000) / 30000) * (bottom - top);
+  const pts = (arr) => arr.map((v, i) => x(i).toFixed(1) + ',' + y(v).toFixed(1)).join(' ');
+  function draw() {
+    W = box.clientWidth; right = W - 8;
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    const ticks = [50000, 40000, 30000, 20000];
+    const mid = W < 480 ? [] : [6];
+    plot.innerHTML =
+      '<g class="grid">' + ticks.map((t) => '<line x1="' + left + '" x2="' + right + '" y1="' + y(t) + '" y2="' + y(t) + '"/>').join('') + '</g>' +
+      '<g class="axis">' + ticks.map((t) => '<text x="' + (left - 8) + '" y="' + (y(t) + 4) + '" text-anchor="end">' + t / 1000 + 'k</text>').join('') +
+      '<text x="' + left + '" y="' + (H - 4) + '">Jul 21</text>' +
+      mid.map((i) => '<text x="' + x(i) + '" y="' + (H - 4) + '" text-anchor="middle">' + weeks[i] + '</text>').join('') +
+      '<text x="' + right + '" y="' + (H - 4) + '" text-anchor="end">Oct 6</text></g>' +
+      '<polyline class="line-previous" points="' + pts(prev) + '"/>' +
+      '<polyline class="line-current" points="' + pts(cur) + '"/>' +
+      '<circle class="end-dot" cx="' + x(11) + '" cy="' + y(cur[11]) + '" r="4"/>' +
+      '<text class="label-current" x="' + (x(11) - 8) + '" y="' + (y(cur[11]) - 8) + '" text-anchor="end">48.2k</text>' +
+      '<line class="crosshair" id="crosshair" x1="0" x2="0" y1="' + top + '" y2="' + bottom + '" visibility="hidden"/>';
+  }
+  draw();
+  addEventListener('resize', draw);
+  svg.addEventListener('pointermove', (e) => {
+    const r = svg.getBoundingClientRect();
+    const i = Math.max(0, Math.min(11, Math.round((e.clientX - r.left - left) / ((right - left) / 11))));
+    const hair = document.getElementById('crosshair');
+    hair.setAttribute('x1', x(i)); hair.setAttribute('x2', x(i)); hair.setAttribute('visibility', 'visible');
+    tip.hidden = false;
+    tip.textContent = weeks[i] + ': ' + cur[i].toLocaleString() + ' (previous ' + prev[i].toLocaleString() + ')';
+    tip.style.left = Math.min(Math.max(0, x(i) - tip.offsetWidth / 2), r.width - tip.offsetWidth) + 'px';
+  });
+  svg.addEventListener('pointerleave', () => { document.getElementById('crosshair').setAttribute('visibility', 'hidden'); tip.hidden = true; });
+})();
+</script>
+</body>
+</html>

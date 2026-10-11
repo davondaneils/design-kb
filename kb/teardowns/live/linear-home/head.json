@@ -1,0 +1,41 @@
+{
+  "url": "https://linear.app/",
+  "title": "Linear – The system for product development",
+  "description": "Purpose-built for planning and building products with AI agents.",
+  "canonical": "https://linear.app",
+  "viewport": "width=device-width, height=device-height, initial-scale=1, viewport-fit=cover",
+  "theme_color": "#08090a",
+  "og": {
+    "title": "same as title",
+    "description": "same as description",
+    "image": "https://linear.app/api/og/main?title=Linear&v=4 (generated per page)",
+    "url": null,
+    "type": null
+  },
+  "twitter": {
+    "card": "summary_large_image",
+    "site": "@linear",
+    "creator": "@linear"
+  },
+  "jsonld": "none (selector unmatched)",
+  "icons": [
+    "/favicon.ico?v=2 sizes=any",
+    "/static/favicon.svg?v=2",
+    "/static/apple-touch-icon.png?v=2 180x180"
+  ],
+  "h1": "Visible lines are split spans animated in (inline style opacity 0, blur 10px, translateY 20%), separate line breaks for mobile and desktop, all aria-hidden; the accessible text sits in a visually hidden span: 'The product development system for teams and agents'.",
+  "first_screen_ctas": {
+    "nav": [
+      "Contact",
+      "Sign up"
+    ],
+    "hero": []
+  },
+  "other": "application-name Linear; apple-mobile-web-app-status-bar-style black",
+  "title_chars": 43,
+  "description_chars": 64,
+  "source": {
+    "tool": "TinyFish fetch_content (page_metadata, include_selectors h1 and link[rel~=icon] and script[type=application/ld+json])",
+    "captured": "2026-10-10"
+  }
+}

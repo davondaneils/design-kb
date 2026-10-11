@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ember &amp; Oak social card</title>
+<style>
+/* Social card for the homepage (design-search reference 07, "Social cards"). Rendered to site/og/home-1200x630.png by build.mjs.
+   Evergreen on purpose: Facebook caches an image by its URL, so the homepage card never names this week's lot.
+   Lot cards get their own URL per lot (og/lot-0412-1200x630.png).
+   Built from the page's own signature: the brand-orange subscription band, its contour field, the Newsreader wordmark.
+   Safe area: everything that must read fits the centered 630x630 square (measured: wordmark 565px, line 585px, footnote 442px), so a 2:1 crop
+   or a centered square crop keeps the whole wordmark. Smallest type 20px caps: 8px in a 500px feed card, a footnote by design;
+   the wordmark (104px) and the line (31px) carry the card at 43 and 13px. */
+/* @inline newsreader-display-roman.css */
+/* @inline newsreader-display-italic.css */
+html, body { margin: 0; }
+body { width: 1200px; height: 630px; overflow: hidden; position: relative; isolation: isolate;
+  background: radial-gradient(70% 90% at 50% 10%, #f7884a, transparent 70%), #f26b21; color: #27201a;
+  font-family: Inter, "Liberation Sans", sans-serif; }
+svg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; }
+svg .c { fill: none; stroke: rgb(255 255 255 / 0.24); stroke-width: 1.5; }
+.inner { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; text-align: center; gap: 28px; }
+.mark { font: 400 104px/0.9 "Newsreader Display", serif; letter-spacing: -0.035em; font-feature-settings: "kern"; }
+.mark i { font-style: italic; font-weight: 400; }
+.line { font: 600 31px/1.2 Inter, sans-serif; letter-spacing: -0.01em; }
+.meta { position: absolute; left: 0; right: 0; bottom: 48px; text-align: center; font: 600 20px/1 Inter, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<svg viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid slice" aria-hidden="true">{{CARD}}</svg>
+<div class="inner">
+  <div class="mark">Ember <i>&amp;</i> Oak</div>
+  <div class="line">Single-origin coffee, roasted in Portland</div>
+</div>
+<div class="meta">12&#8239;kg batches · shipped in 48 hours</div>
+</body>
+</html>

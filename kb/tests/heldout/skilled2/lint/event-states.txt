@@ -1,0 +1,47 @@
+
+Fundamentals lint: event-states.html  ->  PASS (0 fail, 1 warn)
+
+  pass  axe
+  pass  overlay
+  pass  targets
+  pass  measure
+  pass  type-scale
+  pass  spacing
+  pass  overflow
+  pass  heading-wrap  (1 warn)
+        ! heading ends on a one-word line at 390px ("Set in Stone controls, every state")  [html > body > main.sheet > h1]
+  pass  svg-overlap
+  pass  primary
+  pass  radius
+  pass  color-scheme
+  pass  typography
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke
+  pass  weight
+  pass  occlusion
+  pass  squash
+  pass  sticky-header
+  pass  run-together
+  pass  word-break
+  pass  grid-edge
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  state-sheet
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback
+  pass  motion
+
+  JSON: kb/tests/heldout/skilled2/lint/event-states.json

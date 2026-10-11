@@ -1,0 +1,57 @@
+{
+  "file": "kb/tests/combined/dashboard.html",
+  "expect": "private",
+  "date": "2026-10-10T16:46:47.738Z",
+  "checks": {
+    "size": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "HTML 108 KB uncompressed (Googlebot cut: 2 MB)"
+        }
+      ]
+    },
+    "head-order": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "search and social tags end by byte 180, before the first large inline block at byte 211"
+        }
+      ]
+    },
+    "robots": {
+      "fail": [
+        {
+          "message": "private page without meta robots noindex. Auth is the real control; noindex (meta here, X-Robots-Tag on every app response) is the backstop if a URL ever answers without auth"
+        }
+      ],
+      "warn": [],
+      "info": []
+    },
+    "title": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "title \"Overview, Tally\" (shows in tabs, history and shared bookmarks; keep workspace secrets out of it)"
+        }
+      ]
+    },
+    "structured-data": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "0 JSON-LD blocks, 0 typed nodes: "
+        }
+      ]
+    }
+  },
+  "summary": {
+    "fail": 1,
+    "warn": 0,
+    "pass": false
+  }
+}

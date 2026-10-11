@@ -1,0 +1,60 @@
+{
+  "file": "kb/tests/design-conversion/before/coffee.html",
+  "date": "2026-10-10T16:39:01.119Z",
+  "checks": {
+    "primary-per-screen": {
+      "fail": [],
+      "warn": []
+    },
+    "cta-label": {
+      "fail": [],
+      "warn": []
+    },
+    "form-label": {
+      "fail": [],
+      "warn": []
+    },
+    "autocomplete": {
+      "fail": [],
+      "warn": []
+    },
+    "card-number-type": {
+      "fail": [],
+      "warn": []
+    },
+    "paste-block": {
+      "fail": [],
+      "warn": []
+    },
+    "preticked": {
+      "fail": [],
+      "warn": []
+    },
+    "sub-terms": {
+      "fail": [],
+      "warn": []
+    },
+    "pay-total": {
+      "fail": [],
+      "warn": []
+    },
+    "rating-count": {
+      "fail": [],
+      "warn": []
+    },
+    "cart-shipping": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "3 add-to-cart controls with no shipping cost or threshold near them (Baymard: 64% look for it on the product)",
+          "sel": "div.card-body > div.card-foot > button.btn.btn-secondary",
+          "width": 390
+        }
+      ]
+    },
+    "urgency": {
+      "fail": [],
+      "warn": []
+    }
+  }
+}

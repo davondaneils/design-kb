@@ -1,0 +1,1228 @@
+{
+  "file": "kb/tests/design-color/coffee-without.html",
+  "date": "2026-10-09T21:06:22.047Z",
+  "checks": {
+    "axe": {
+      "fail": [
+        {
+          "message": "color-contrast: Elements must meet minimum color contrast ratio thresholds",
+          "scheme": "light",
+          "width": 390,
+          "target": ".nav > .btn[href$=\"#subscribe\"]",
+          "why": "Fix any of the following:   Element has insufficient color contrast of 3.04 (foreground color: #ffffff, background color: #f26b21, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "message": "color-contrast: Elements must meet minimum color contrast ratio thresholds",
+          "scheme": "light",
+          "width": 390,
+          "target": ".eyebrow",
+          "why": "Fix any of the following:   Element has insufficient color contrast of 4.25 (foreground color: #777777, background color: #fff8f0, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "message": "color-contrast: Elements must meet minimum color contrast ratio thresholds",
+          "scheme": "light",
+          "width": 390,
+          "target": ".hero-grid > div:nth-child(1) > p:nth-child(3)",
+          "why": "Fix any of the following:   Element has insufficient color contrast of 4.25 (foreground color: #777777, background color: #fff8f0, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "message": "color-contrast: Elements must meet minimum color contrast ratio thresholds",
+          "scheme": "light",
+          "width": 390,
+          "target": ".btn[href$=\"#shop\"]",
+          "why": "Fix any of the following:   Element has insufficient color contrast of 3.04 (foreground color: #ffffff, background color: #f26b21, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "message": "color-contrast: Elements must meet minimum color contrast ratio thresholds",
+          "scheme": "light",
+          "width": 390,
+          "target": ".btn-outline",
+          "why": "Fix any of the following:   Element has insufficient color contrast of 2.88 (foreground color: #f26b21, background color: #fff8f0, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "message": "color-contrast: Elements must meet minimum color contrast ratio thresholds",
+          "scheme": "light",
+          "width": 390,
+          "target": ".bag > small",
+          "why": "Fix any of the following:   Element has insufficient color contrast of 4.25 (foreground color: #777777, background color: #fff8f0, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "message": "color-contrast: Elements must meet minimum color contrast ratio thresholds",
+          "scheme": "light",
+          "width": 390,
+          "target": "div:nth-child(2) > .btn[href=\"#\"]",
+          "why": "Fix any of the following:   Element has insufficient color contrast of 3.04 (foreground color: #ffffff, background color: #f26b21, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "message": "color-contrast: Elements must meet minimum color contrast ratio thresholds",
+          "scheme": "light",
+          "width": 390,
+          "target": "#shop > .container > .section-sub",
+          "why": "Fix any of the following:   Element has insufficient color contrast of 4.25 (foreground color: #777777, background color: #fff8f0, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "message": "color-contrast: Elements must meet minimum color contrast ratio thresholds",
+          "scheme": "dark",
+          "width": 390,
+          "target": ".nav > .btn[href$=\"#subscribe\"]",
+          "why": "Fix any of the following:   Element has insufficient color contrast of 3.04 (foreground color: #ffffff, background color: #f26b21, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "message": "color-contrast: Elements must meet minimum color contrast ratio thresholds",
+          "scheme": "dark",
+          "width": 390,
+          "target": ".btn[href$=\"#shop\"]",
+          "why": "Fix any of the following:   Element has insufficient color contrast of 3.04 (foreground color: #ffffff, background color: #f26b21, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "message": "color-contrast: Elements must meet minimum color contrast ratio thresholds",
+          "scheme": "dark",
+          "width": 390,
+          "target": "div:nth-child(2) > .btn[href=\"#\"]",
+          "why": "Fix any of the following:   Element has insufficient color contrast of 3.04 (foreground color: #ffffff, background color: #f26b21, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "message": "color-contrast: Elements must meet minimum color contrast ratio thresholds",
+          "scheme": "dark",
+          "width": 390,
+          "target": "article:nth-child(1) > .card-foot > .btn[href=\"#\"]",
+          "why": "Fix any of the following:   Element has insufficient color contrast of 3.04 (foreground color: #ffffff, background color: #f26b21, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "message": "color-contrast: Elements must meet minimum color contrast ratio thresholds",
+          "scheme": "dark",
+          "width": 390,
+          "target": "article:nth-child(2) > .card-foot > .btn[href=\"#\"]",
+          "why": "Fix any of the following:   Element has insufficient color contrast of 3.04 (foreground color: #ffffff, background color: #f26b21, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "message": "color-contrast: Elements must meet minimum color contrast ratio thresholds",
+          "scheme": "dark",
+          "width": 390,
+          "target": "article:nth-child(3) > .card-foot > .btn[href=\"#\"]",
+          "why": "Fix any of the following:   Element has insufficient color contrast of 3.04 (foreground color: #ffffff, background color: #f26b21, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "message": "color-contrast: Elements must meet minimum color contrast ratio thresholds",
+          "scheme": "dark",
+          "width": 390,
+          "target": "button",
+          "why": "Fix any of the following:   Element has insufficient color contrast of 3.04 (foreground color: #ffffff, background color: #f26b21, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "targets": {
+      "fail": [
+        {
+          "message": "target under 24x24 at 390px",
+          "sel": "div > ul > li > a",
+          "w": 50.7,
+          "h": 20
+        },
+        {
+          "message": "target under 24x24 at 390px",
+          "sel": "div > ul > li > a",
+          "w": 103.7,
+          "h": 20
+        },
+        {
+          "message": "target under 24x24 at 390px",
+          "sel": "div > ul > li > a",
+          "w": 36.4,
+          "h": 20
+        },
+        {
+          "message": "target under 24x24 at 390px",
+          "sel": "div > ul > li > a",
+          "w": 45.1,
+          "h": 20
+        },
+        {
+          "message": "target under 24x24 at 390px",
+          "sel": "div > ul > li > a",
+          "w": 78.7,
+          "h": 20
+        },
+        {
+          "message": "target under 24x24 at 390px",
+          "sel": "div > ul > li > a",
+          "w": 59.4,
+          "h": 20
+        },
+        {
+          "message": "target under 24x24 at 1440px",
+          "sel": "div.container.nav > ul > li > a",
+          "w": 37,
+          "h": 19
+        },
+        {
+          "message": "target under 24x24 at 1440px",
+          "sel": "div.container.nav > ul > li > a",
+          "w": 98.8,
+          "h": 19
+        },
+        {
+          "message": "target under 24x24 at 1440px",
+          "sel": "div.container.nav > ul > li > a",
+          "w": 68.7,
+          "h": 19
+        },
+        {
+          "message": "target under 24x24 at 1440px",
+          "sel": "div > ul > li > a",
+          "w": 50.7,
+          "h": 20
+        },
+        {
+          "message": "target under 24x24 at 1440px",
+          "sel": "div > ul > li > a",
+          "w": 103.7,
+          "h": 20
+        },
+        {
+          "message": "target under 24x24 at 1440px",
+          "sel": "div > ul > li > a",
+          "w": 36.4,
+          "h": 20
+        },
+        {
+          "message": "target under 24x24 at 1440px",
+          "sel": "div > ul > li > a",
+          "w": 45.1,
+          "h": 20
+        },
+        {
+          "message": "target under 24x24 at 1440px",
+          "sel": "div > ul > li > a",
+          "w": 78.7,
+          "h": 20
+        },
+        {
+          "message": "target under 24x24 at 1440px",
+          "sel": "div > ul > li > a",
+          "w": 59.4,
+          "h": 20
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "measure": {
+      "fail": [
+        {
+          "message": "line length 82 characters at 1440px (max 75)",
+          "sel": "div.container > div.sub-box > div > p",
+          "cpl": 82,
+          "widest": 82,
+          "lines": 2,
+          "fontSize": 17
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "type-scale": {
+      "fail": [
+        {
+          "message": "font size 22px off the type scale at 390px",
+          "size": 22,
+          "count": 8,
+          "examples": [
+            "body > header > div.container.nav > div.logo",
+            "header > div.container.nav > div.logo > span",
+            "div.container > div.cards > article.card > h3",
+            "div.container > div.cards > article.card > h3"
+          ]
+        },
+        {
+          "message": "font size 18px off the type scale at 390px",
+          "size": 18,
+          "count": 8,
+          "examples": [
+            "section.hero > div.container.hero-grid > div > p.eyebrow",
+            "section.hero > div.container.hero-grid > div > p",
+            "div.sub-box > div > div.price > small",
+            "#shop > div.container > p.section-sub"
+          ]
+        },
+        {
+          "message": "font size 40px off the type scale at 390px",
+          "size": 40,
+          "count": 3,
+          "examples": [
+            "section.hero > div.container.hero-grid > div > h1",
+            "#shop > div.container > h2.section-title",
+            "#story > div.container > h2.section-title"
+          ]
+        },
+        {
+          "message": "font size 36px off the type scale at 390px",
+          "size": 36,
+          "count": 1,
+          "examples": [
+            "div.container > div.sub-box > div > h2"
+          ]
+        },
+        {
+          "message": "font size 17px off the type scale at 390px",
+          "size": 17,
+          "count": 1,
+          "examples": [
+            "div.container > div.sub-box > div > p"
+          ]
+        },
+        {
+          "message": "font size 48px off the type scale at 390px",
+          "size": 48,
+          "count": 1,
+          "examples": [
+            "div.container > div.sub-box > div > div.price"
+          ]
+        },
+        {
+          "message": "font size 13px off the type scale at 390px",
+          "size": 13,
+          "count": 8,
+          "examples": [
+            "div.cards > article.card > div.notes > span.note",
+            "div.cards > article.card > div.notes > span.note",
+            "div.cards > article.card > div.notes > span.note",
+            "div.cards > article.card > div.notes > span.note"
+          ]
+        },
+        {
+          "message": "font size 22px off the type scale at 1440px",
+          "size": 22,
+          "count": 8,
+          "examples": [
+            "body > header > div.container.nav > div.logo",
+            "header > div.container.nav > div.logo > span",
+            "div.container > div.cards > article.card > h3",
+            "div.container > div.cards > article.card > h3"
+          ]
+        },
+        {
+          "message": "font size 15px off the type scale at 1440px",
+          "size": 15,
+          "count": 3,
+          "examples": [
+            "div.container.nav > ul > li > a",
+            "div.container.nav > ul > li > a",
+            "div.container.nav > ul > li > a"
+          ]
+        },
+        {
+          "message": "font size 18px off the type scale at 1440px",
+          "size": 18,
+          "count": 8,
+          "examples": [
+            "section.hero > div.container.hero-grid > div > p.eyebrow",
+            "section.hero > div.container.hero-grid > div > p",
+            "div.sub-box > div > div.price > small",
+            "#shop > div.container > p.section-sub"
+          ]
+        },
+        {
+          "message": "font size 56px off the type scale at 1440px",
+          "size": 56,
+          "count": 1,
+          "examples": [
+            "section.hero > div.container.hero-grid > div > h1"
+          ]
+        },
+        {
+          "message": "font size 36px off the type scale at 1440px",
+          "size": 36,
+          "count": 1,
+          "examples": [
+            "div.container > div.sub-box > div > h2"
+          ]
+        },
+        {
+          "message": "font size 17px off the type scale at 1440px",
+          "size": 17,
+          "count": 1,
+          "examples": [
+            "div.container > div.sub-box > div > p"
+          ]
+        },
+        {
+          "message": "font size 48px off the type scale at 1440px",
+          "size": 48,
+          "count": 1,
+          "examples": [
+            "div.container > div.sub-box > div > div.price"
+          ]
+        },
+        {
+          "message": "font size 40px off the type scale at 1440px",
+          "size": 40,
+          "count": 2,
+          "examples": [
+            "#shop > div.container > h2.section-title",
+            "#story > div.container > h2.section-title"
+          ]
+        },
+        {
+          "message": "font size 13px off the type scale at 1440px",
+          "size": 13,
+          "count": 8,
+          "examples": [
+            "div.cards > article.card > div.notes > span.note",
+            "div.cards > article.card > div.notes > span.note",
+            "div.cards > article.card > div.notes > span.note",
+            "div.cards > article.card > div.notes > span.note"
+          ]
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "spacing": {
+      "fail": [
+        {
+          "message": "padding-top:20px off the spacing scale at 390px",
+          "value": "padding-top:20",
+          "count": 3,
+          "examples": [
+            "html > body > header",
+            "section.hero > div.container.hero-grid > div.hero-img > div.bag",
+            "body > footer > div.container > p.copyright"
+          ]
+        },
+        {
+          "message": "padding-bottom:20px off the spacing scale at 390px",
+          "value": "padding-bottom:20",
+          "count": 2,
+          "examples": [
+            "html > body > header",
+            "section.hero > div.container.hero-grid > div.hero-img > div.bag"
+          ]
+        },
+        {
+          "message": "padding-right:20px off the spacing scale at 390px",
+          "value": "padding-right:20",
+          "count": 7,
+          "examples": [
+            "html > body > header > div.container.nav",
+            "body > main > section.hero > div.container.hero-grid",
+            "section.hero > div.container.hero-grid > div.hero-img > div.bag",
+            "#subscribe > div.container"
+          ]
+        },
+        {
+          "message": "padding-left:20px off the spacing scale at 390px",
+          "value": "padding-left:20",
+          "count": 7,
+          "examples": [
+            "html > body > header > div.container.nav",
+            "body > main > section.hero > div.container.hero-grid",
+            "section.hero > div.container.hero-grid > div.hero-img > div.bag",
+            "#subscribe > div.container"
+          ]
+        },
+        {
+          "message": "padding-top:14px off the spacing scale at 390px",
+          "value": "padding-top:14",
+          "count": 9,
+          "examples": [
+            "body > header > div.container.nav > a.btn",
+            "div.container.hero-grid > div > div.hero-actions > a.btn",
+            "div.container.hero-grid > div > div.hero-actions > a.btn.btn-outline",
+            "div.container > div.sub-box > div > a.btn"
+          ]
+        },
+        {
+          "message": "padding-right:28px off the spacing scale at 390px",
+          "value": "padding-right:28",
+          "count": 8,
+          "examples": [
+            "body > header > div.container.nav > a.btn",
+            "div.container.hero-grid > div > div.hero-actions > a.btn",
+            "div.container.hero-grid > div > div.hero-actions > a.btn.btn-outline",
+            "div.container > div.sub-box > div > a.btn"
+          ]
+        },
+        {
+          "message": "padding-bottom:14px off the spacing scale at 390px",
+          "value": "padding-bottom:14",
+          "count": 9,
+          "examples": [
+            "body > header > div.container.nav > a.btn",
+            "div.container.hero-grid > div > div.hero-actions > a.btn",
+            "div.container.hero-grid > div > div.hero-actions > a.btn.btn-outline",
+            "div.container > div.sub-box > div > a.btn"
+          ]
+        },
+        {
+          "message": "padding-left:28px off the spacing scale at 390px",
+          "value": "padding-left:28",
+          "count": 8,
+          "examples": [
+            "body > header > div.container.nav > a.btn",
+            "div.container.hero-grid > div > div.hero-actions > a.btn",
+            "div.container.hero-grid > div > div.hero-actions > a.btn.btn-outline",
+            "div.container > div.sub-box > div > a.btn"
+          ]
+        },
+        {
+          "message": "padding-top:80px off the spacing scale at 390px",
+          "value": "padding-top:80",
+          "count": 4,
+          "examples": [
+            "html > body > main > section.hero",
+            "#subscribe",
+            "#shop",
+            "#story"
+          ]
+        },
+        {
+          "message": "padding-bottom:80px off the spacing scale at 390px",
+          "value": "padding-bottom:80",
+          "count": 4,
+          "examples": [
+            "html > body > main > section.hero",
+            "#subscribe",
+            "#shop",
+            "#story"
+          ]
+        },
+        {
+          "message": "row-gap:60px off the spacing scale at 390px",
+          "value": "row-gap:60",
+          "count": 1,
+          "examples": [
+            "body > main > section.hero > div.container.hero-grid"
+          ]
+        },
+        {
+          "message": "column-gap:60px off the spacing scale at 390px",
+          "value": "column-gap:60",
+          "count": 1,
+          "examples": [
+            "body > main > section.hero > div.container.hero-grid"
+          ]
+        },
+        {
+          "message": "margin-bottom:30px off the spacing scale at 390px",
+          "value": "margin-bottom:30",
+          "count": 2,
+          "examples": [
+            "section.hero > div.container.hero-grid > div > p.eyebrow",
+            "section.hero > div.container.hero-grid > div > p"
+          ]
+        },
+        {
+          "message": "margin-bottom:20px off the spacing scale at 390px",
+          "value": "margin-bottom:20",
+          "count": 10,
+          "examples": [
+            "section.hero > div.container.hero-grid > div > h1",
+            "div.container > div.cards > article.card > div.swatch",
+            "div.container > div.cards > article.card > div.notes",
+            "div.container > div.cards > article.card > div.swatch"
+          ]
+        },
+        {
+          "message": "row-gap:15px off the spacing scale at 390px",
+          "value": "row-gap:15",
+          "count": 1,
+          "examples": [
+            "section.hero > div.container.hero-grid > div > div.hero-actions"
+          ]
+        },
+        {
+          "message": "column-gap:15px off the spacing scale at 390px",
+          "value": "column-gap:15",
+          "count": 1,
+          "examples": [
+            "section.hero > div.container.hero-grid > div > div.hero-actions"
+          ]
+        },
+        {
+          "message": "padding-top:30px off the spacing scale at 390px",
+          "value": "padding-top:30",
+          "count": 4,
+          "examples": [
+            "#subscribe > div.container > div.sub-box",
+            "#shop > div.container > div.cards > article.card",
+            "#shop > div.container > div.cards > article.card",
+            "#shop > div.container > div.cards > article.card"
+          ]
+        },
+        {
+          "message": "padding-right:30px off the spacing scale at 390px",
+          "value": "padding-right:30",
+          "count": 4,
+          "examples": [
+            "#subscribe > div.container > div.sub-box",
+            "#shop > div.container > div.cards > article.card",
+            "#shop > div.container > div.cards > article.card",
+            "#shop > div.container > div.cards > article.card"
+          ]
+        },
+        {
+          "message": "padding-bottom:30px off the spacing scale at 390px",
+          "value": "padding-bottom:30",
+          "count": 5,
+          "examples": [
+            "#subscribe > div.container > div.sub-box",
+            "#shop > div.container > div.cards > article.card",
+            "#shop > div.container > div.cards > article.card",
+            "#shop > div.container > div.cards > article.card"
+          ]
+        },
+        {
+          "message": "padding-left:30px off the spacing scale at 390px",
+          "value": "padding-left:30",
+          "count": 4,
+          "examples": [
+            "#subscribe > div.container > div.sub-box",
+            "#shop > div.container > div.cards > article.card",
+            "#shop > div.container > div.cards > article.card",
+            "#shop > div.container > div.cards > article.card"
+          ]
+        },
+        {
+          "message": "row-gap:40px off the spacing scale at 390px",
+          "value": "row-gap:40",
+          "count": 3,
+          "examples": [
+            "#subscribe > div.container > div.sub-box",
+            "#story > div.container > div.story-grid",
+            "body > footer > div.container > div.footer-grid"
+          ]
+        },
+        {
+          "message": "column-gap:40px off the spacing scale at 390px",
+          "value": "column-gap:40",
+          "count": 3,
+          "examples": [
+            "#subscribe > div.container > div.sub-box",
+            "#story > div.container > div.story-grid",
+            "body > footer > div.container > div.footer-grid"
+          ]
+        },
+        {
+          "message": "margin-bottom:15px off the spacing scale at 390px",
+          "value": "margin-bottom:15",
+          "count": 9,
+          "examples": [
+            "div.container > div.sub-box > div > h2",
+            "#shop > div.container > h2.section-title",
+            "div.container > div.cards > article.card > p.origin",
+            "div.container > div.cards > article.card > p.origin"
+          ]
+        },
+        {
+          "message": "margin-top:20px off the spacing scale at 390px",
+          "value": "margin-top:20",
+          "count": 1,
+          "examples": [
+            "div.container > div.sub-box > div > a.btn"
+          ]
+        },
+        {
+          "message": "margin-bottom:50px off the spacing scale at 390px",
+          "value": "margin-bottom:50",
+          "count": 2,
+          "examples": [
+            "#shop > div.container > p.section-sub",
+            "#story > div.container > p.section-sub"
+          ]
+        },
+        {
+          "message": "row-gap:30px off the spacing scale at 390px",
+          "value": "row-gap:30",
+          "count": 1,
+          "examples": [
+            "#shop > div.container > div.cards"
+          ]
+        },
+        {
+          "message": "column-gap:30px off the spacing scale at 390px",
+          "value": "column-gap:30",
+          "count": 1,
+          "examples": [
+            "#shop > div.container > div.cards"
+          ]
+        },
+        {
+          "message": "margin-bottom:5px off the spacing scale at 390px",
+          "value": "margin-bottom:5",
+          "count": 3,
+          "examples": [
+            "div.container > div.cards > article.card > h3",
+            "div.container > div.cards > article.card > h3",
+            "div.container > div.cards > article.card > h3"
+          ]
+        },
+        {
+          "message": "margin-bottom:10px off the spacing scale at 390px",
+          "value": "margin-bottom:10",
+          "count": 3,
+          "examples": [
+            "div.container > div.story-grid > div > h3",
+            "div.container > div.story-grid > div > h3",
+            "div.container > div.story-grid > div > h3"
+          ]
+        },
+        {
+          "message": "padding-top:60px off the spacing scale at 390px",
+          "value": "padding-top:60",
+          "count": 1,
+          "examples": [
+            "html > body > footer"
+          ]
+        },
+        {
+          "message": "margin-bottom:40px off the spacing scale at 390px",
+          "value": "margin-bottom:40",
+          "count": 1,
+          "examples": [
+            "body > footer > div.container > div.footer-grid"
+          ]
+        },
+        {
+          "message": "margin-top:15px off the spacing scale at 390px",
+          "value": "margin-top:15",
+          "count": 1,
+          "examples": [
+            "div.container > div.footer-grid > div > form.newsletter"
+          ]
+        },
+        {
+          "message": "row-gap:10px off the spacing scale at 390px",
+          "value": "row-gap:10",
+          "count": 1,
+          "examples": [
+            "div.container > div.footer-grid > div > form.newsletter"
+          ]
+        },
+        {
+          "message": "column-gap:10px off the spacing scale at 390px",
+          "value": "column-gap:10",
+          "count": 1,
+          "examples": [
+            "div.container > div.footer-grid > div > form.newsletter"
+          ]
+        },
+        {
+          "message": "padding-right:14px off the spacing scale at 390px",
+          "value": "padding-right:14",
+          "count": 1,
+          "examples": [
+            "div.footer-grid > div > form.newsletter > input"
+          ]
+        },
+        {
+          "message": "padding-left:14px off the spacing scale at 390px",
+          "value": "padding-left:14",
+          "count": 1,
+          "examples": [
+            "div.footer-grid > div > form.newsletter > input"
+          ]
+        },
+        {
+          "message": "padding-top:20px off the spacing scale at 1440px",
+          "value": "padding-top:20",
+          "count": 3,
+          "examples": [
+            "html > body > header",
+            "section.hero > div.container.hero-grid > div.hero-img > div.bag",
+            "body > footer > div.container > p.copyright"
+          ]
+        },
+        {
+          "message": "padding-bottom:20px off the spacing scale at 1440px",
+          "value": "padding-bottom:20",
+          "count": 2,
+          "examples": [
+            "html > body > header",
+            "section.hero > div.container.hero-grid > div.hero-img > div.bag"
+          ]
+        },
+        {
+          "message": "padding-right:20px off the spacing scale at 1440px",
+          "value": "padding-right:20",
+          "count": 7,
+          "examples": [
+            "html > body > header > div.container.nav",
+            "body > main > section.hero > div.container.hero-grid",
+            "section.hero > div.container.hero-grid > div.hero-img > div.bag",
+            "#subscribe > div.container"
+          ]
+        },
+        {
+          "message": "padding-left:20px off the spacing scale at 1440px",
+          "value": "padding-left:20",
+          "count": 7,
+          "examples": [
+            "html > body > header > div.container.nav",
+            "body > main > section.hero > div.container.hero-grid",
+            "section.hero > div.container.hero-grid > div.hero-img > div.bag",
+            "#subscribe > div.container"
+          ]
+        },
+        {
+          "message": "row-gap:30px off the spacing scale at 1440px",
+          "value": "row-gap:30",
+          "count": 2,
+          "examples": [
+            "body > header > div.container.nav > ul",
+            "#shop > div.container > div.cards"
+          ]
+        },
+        {
+          "message": "column-gap:30px off the spacing scale at 1440px",
+          "value": "column-gap:30",
+          "count": 2,
+          "examples": [
+            "body > header > div.container.nav > ul",
+            "#shop > div.container > div.cards"
+          ]
+        },
+        {
+          "message": "padding-top:14px off the spacing scale at 1440px",
+          "value": "padding-top:14",
+          "count": 9,
+          "examples": [
+            "body > header > div.container.nav > a.btn",
+            "div.container.hero-grid > div > div.hero-actions > a.btn",
+            "div.container.hero-grid > div > div.hero-actions > a.btn.btn-outline",
+            "div.container > div.sub-box > div > a.btn"
+          ]
+        },
+        {
+          "message": "padding-right:28px off the spacing scale at 1440px",
+          "value": "padding-right:28",
+          "count": 8,
+          "examples": [
+            "body > header > div.container.nav > a.btn",
+            "div.container.hero-grid > div > div.hero-actions > a.btn",
+            "div.container.hero-grid > div > div.hero-actions > a.btn.btn-outline",
+            "div.container > div.sub-box > div > a.btn"
+          ]
+        },
+        {
+          "message": "padding-bottom:14px off the spacing scale at 1440px",
+          "value": "padding-bottom:14",
+          "count": 9,
+          "examples": [
+            "body > header > div.container.nav > a.btn",
+            "div.container.hero-grid > div > div.hero-actions > a.btn",
+            "div.container.hero-grid > div > div.hero-actions > a.btn.btn-outline",
+            "div.container > div.sub-box > div > a.btn"
+          ]
+        },
+        {
+          "message": "padding-left:28px off the spacing scale at 1440px",
+          "value": "padding-left:28",
+          "count": 8,
+          "examples": [
+            "body > header > div.container.nav > a.btn",
+            "div.container.hero-grid > div > div.hero-actions > a.btn",
+            "div.container.hero-grid > div > div.hero-actions > a.btn.btn-outline",
+            "div.container > div.sub-box > div > a.btn"
+          ]
+        },
+        {
+          "message": "padding-top:80px off the spacing scale at 1440px",
+          "value": "padding-top:80",
+          "count": 4,
+          "examples": [
+            "html > body > main > section.hero",
+            "#subscribe",
+            "#shop",
+            "#story"
+          ]
+        },
+        {
+          "message": "padding-bottom:80px off the spacing scale at 1440px",
+          "value": "padding-bottom:80",
+          "count": 4,
+          "examples": [
+            "html > body > main > section.hero",
+            "#subscribe",
+            "#shop",
+            "#story"
+          ]
+        },
+        {
+          "message": "row-gap:60px off the spacing scale at 1440px",
+          "value": "row-gap:60",
+          "count": 1,
+          "examples": [
+            "body > main > section.hero > div.container.hero-grid"
+          ]
+        },
+        {
+          "message": "column-gap:60px off the spacing scale at 1440px",
+          "value": "column-gap:60",
+          "count": 1,
+          "examples": [
+            "body > main > section.hero > div.container.hero-grid"
+          ]
+        },
+        {
+          "message": "margin-bottom:30px off the spacing scale at 1440px",
+          "value": "margin-bottom:30",
+          "count": 2,
+          "examples": [
+            "section.hero > div.container.hero-grid > div > p.eyebrow",
+            "section.hero > div.container.hero-grid > div > p"
+          ]
+        },
+        {
+          "message": "margin-bottom:20px off the spacing scale at 1440px",
+          "value": "margin-bottom:20",
+          "count": 10,
+          "examples": [
+            "section.hero > div.container.hero-grid > div > h1",
+            "div.container > div.cards > article.card > div.swatch",
+            "div.container > div.cards > article.card > div.notes",
+            "div.container > div.cards > article.card > div.swatch"
+          ]
+        },
+        {
+          "message": "row-gap:15px off the spacing scale at 1440px",
+          "value": "row-gap:15",
+          "count": 1,
+          "examples": [
+            "section.hero > div.container.hero-grid > div > div.hero-actions"
+          ]
+        },
+        {
+          "message": "column-gap:15px off the spacing scale at 1440px",
+          "value": "column-gap:15",
+          "count": 1,
+          "examples": [
+            "section.hero > div.container.hero-grid > div > div.hero-actions"
+          ]
+        },
+        {
+          "message": "padding-top:60px off the spacing scale at 1440px",
+          "value": "padding-top:60",
+          "count": 2,
+          "examples": [
+            "#subscribe > div.container > div.sub-box",
+            "html > body > footer"
+          ]
+        },
+        {
+          "message": "padding-right:60px off the spacing scale at 1440px",
+          "value": "padding-right:60",
+          "count": 1,
+          "examples": [
+            "#subscribe > div.container > div.sub-box"
+          ]
+        },
+        {
+          "message": "padding-bottom:60px off the spacing scale at 1440px",
+          "value": "padding-bottom:60",
+          "count": 1,
+          "examples": [
+            "#subscribe > div.container > div.sub-box"
+          ]
+        },
+        {
+          "message": "padding-left:60px off the spacing scale at 1440px",
+          "value": "padding-left:60",
+          "count": 1,
+          "examples": [
+            "#subscribe > div.container > div.sub-box"
+          ]
+        },
+        {
+          "message": "row-gap:40px off the spacing scale at 1440px",
+          "value": "row-gap:40",
+          "count": 3,
+          "examples": [
+            "#subscribe > div.container > div.sub-box",
+            "#story > div.container > div.story-grid",
+            "body > footer > div.container > div.footer-grid"
+          ]
+        },
+        {
+          "message": "column-gap:40px off the spacing scale at 1440px",
+          "value": "column-gap:40",
+          "count": 3,
+          "examples": [
+            "#subscribe > div.container > div.sub-box",
+            "#story > div.container > div.story-grid",
+            "body > footer > div.container > div.footer-grid"
+          ]
+        },
+        {
+          "message": "margin-bottom:15px off the spacing scale at 1440px",
+          "value": "margin-bottom:15",
+          "count": 9,
+          "examples": [
+            "div.container > div.sub-box > div > h2",
+            "#shop > div.container > h2.section-title",
+            "div.container > div.cards > article.card > p.origin",
+            "div.container > div.cards > article.card > p.origin"
+          ]
+        },
+        {
+          "message": "margin-top:20px off the spacing scale at 1440px",
+          "value": "margin-top:20",
+          "count": 1,
+          "examples": [
+            "div.container > div.sub-box > div > a.btn"
+          ]
+        },
+        {
+          "message": "margin-bottom:50px off the spacing scale at 1440px",
+          "value": "margin-bottom:50",
+          "count": 2,
+          "examples": [
+            "#shop > div.container > p.section-sub",
+            "#story > div.container > p.section-sub"
+          ]
+        },
+        {
+          "message": "padding-top:30px off the spacing scale at 1440px",
+          "value": "padding-top:30",
+          "count": 3,
+          "examples": [
+            "#shop > div.container > div.cards > article.card",
+            "#shop > div.container > div.cards > article.card",
+            "#shop > div.container > div.cards > article.card"
+          ]
+        },
+        {
+          "message": "padding-right:30px off the spacing scale at 1440px",
+          "value": "padding-right:30",
+          "count": 3,
+          "examples": [
+            "#shop > div.container > div.cards > article.card",
+            "#shop > div.container > div.cards > article.card",
+            "#shop > div.container > div.cards > article.card"
+          ]
+        },
+        {
+          "message": "padding-bottom:30px off the spacing scale at 1440px",
+          "value": "padding-bottom:30",
+          "count": 4,
+          "examples": [
+            "#shop > div.container > div.cards > article.card",
+            "#shop > div.container > div.cards > article.card",
+            "#shop > div.container > div.cards > article.card",
+            "html > body > footer"
+          ]
+        },
+        {
+          "message": "padding-left:30px off the spacing scale at 1440px",
+          "value": "padding-left:30",
+          "count": 3,
+          "examples": [
+            "#shop > div.container > div.cards > article.card",
+            "#shop > div.container > div.cards > article.card",
+            "#shop > div.container > div.cards > article.card"
+          ]
+        },
+        {
+          "message": "margin-bottom:5px off the spacing scale at 1440px",
+          "value": "margin-bottom:5",
+          "count": 3,
+          "examples": [
+            "div.container > div.cards > article.card > h3",
+            "div.container > div.cards > article.card > h3",
+            "div.container > div.cards > article.card > h3"
+          ]
+        },
+        {
+          "message": "margin-bottom:10px off the spacing scale at 1440px",
+          "value": "margin-bottom:10",
+          "count": 3,
+          "examples": [
+            "div.container > div.story-grid > div > h3",
+            "div.container > div.story-grid > div > h3",
+            "div.container > div.story-grid > div > h3"
+          ]
+        },
+        {
+          "message": "margin-bottom:40px off the spacing scale at 1440px",
+          "value": "margin-bottom:40",
+          "count": 1,
+          "examples": [
+            "body > footer > div.container > div.footer-grid"
+          ]
+        },
+        {
+          "message": "margin-top:15px off the spacing scale at 1440px",
+          "value": "margin-top:15",
+          "count": 1,
+          "examples": [
+            "div.container > div.footer-grid > div > form.newsletter"
+          ]
+        },
+        {
+          "message": "row-gap:10px off the spacing scale at 1440px",
+          "value": "row-gap:10",
+          "count": 1,
+          "examples": [
+            "div.container > div.footer-grid > div > form.newsletter"
+          ]
+        },
+        {
+          "message": "column-gap:10px off the spacing scale at 1440px",
+          "value": "column-gap:10",
+          "count": 1,
+          "examples": [
+            "div.container > div.footer-grid > div > form.newsletter"
+          ]
+        },
+        {
+          "message": "padding-right:14px off the spacing scale at 1440px",
+          "value": "padding-right:14",
+          "count": 1,
+          "examples": [
+            "div.footer-grid > div > form.newsletter > input"
+          ]
+        },
+        {
+          "message": "padding-left:14px off the spacing scale at 1440px",
+          "value": "padding-left:14",
+          "count": 1,
+          "examples": [
+            "div.footer-grid > div > form.newsletter > input"
+          ]
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "overflow": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "thin focus outline (auto 1px rgb(16, 16, 16)); FOUNDATIONS default is 2px",
+          "target": "div.container.nav > ul > li > a"
+        },
+        {
+          "message": "thin focus outline (auto 1px rgb(16, 16, 16)); FOUNDATIONS default is 2px",
+          "target": "div.container.nav > ul > li > a"
+        },
+        {
+          "message": "thin focus outline (auto 1px rgb(16, 16, 16)); FOUNDATIONS default is 2px",
+          "target": "div.container.nav > ul > li > a"
+        },
+        {
+          "message": "thin focus outline (auto 1px rgb(16, 16, 16)); FOUNDATIONS default is 2px",
+          "target": "body > header > div.container.nav > a.btn"
+        },
+        {
+          "message": "thin focus outline (auto 1px rgb(16, 16, 16)); FOUNDATIONS default is 2px",
+          "target": "div.container.hero-grid > div > div.hero-actions > a.btn"
+        },
+        {
+          "message": "thin focus outline (auto 1px rgb(16, 16, 16)); FOUNDATIONS default is 2px",
+          "target": "div.container.hero-grid > div > div.hero-actions > a.btn.btn-outline"
+        },
+        {
+          "message": "thin focus outline (auto 1px rgb(16, 16, 16)); FOUNDATIONS default is 2px",
+          "target": "div.container > div.sub-box > div > a.btn"
+        },
+        {
+          "message": "thin focus outline (auto 1px rgb(16, 16, 16)); FOUNDATIONS default is 2px",
+          "target": "div.cards > article.card > div.card-foot > a.btn"
+        },
+        {
+          "message": "thin focus outline (auto 1px rgb(16, 16, 16)); FOUNDATIONS default is 2px",
+          "target": "div.cards > article.card > div.card-foot > a.btn"
+        },
+        {
+          "message": "thin focus outline (auto 1px rgb(16, 16, 16)); FOUNDATIONS default is 2px",
+          "target": "div.cards > article.card > div.card-foot > a.btn"
+        },
+        {
+          "message": "thin focus outline (auto 1px rgb(16, 16, 16)); FOUNDATIONS default is 2px",
+          "target": "div.footer-grid > div > form.newsletter > input"
+        },
+        {
+          "message": "thin focus outline (auto 1px rgb(16, 16, 16)); FOUNDATIONS default is 2px",
+          "target": "div.footer-grid > div > form.newsletter > button.btn"
+        },
+        {
+          "message": "thin focus outline (auto 1px rgb(16, 16, 16)); FOUNDATIONS default is 2px",
+          "target": "div > ul > li > a"
+        },
+        {
+          "message": "thin focus outline (auto 1px rgb(16, 16, 16)); FOUNDATIONS default is 2px",
+          "target": "div > ul > li > a"
+        },
+        {
+          "message": "thin focus outline (auto 1px rgb(16, 16, 16)); FOUNDATIONS default is 2px",
+          "target": "div > ul > li > a"
+        },
+        {
+          "message": "thin focus outline (auto 1px rgb(16, 16, 16)); FOUNDATIONS default is 2px",
+          "target": "div > ul > li > a"
+        },
+        {
+          "message": "thin focus outline (auto 1px rgb(16, 16, 16)); FOUNDATIONS default is 2px",
+          "target": "div > ul > li > a"
+        },
+        {
+          "message": "thin focus outline (auto 1px rgb(16, 16, 16)); FOUNDATIONS default is 2px",
+          "target": "div > ul > li > a"
+        }
+      ],
+      "pass": true
+    },
+    "motion": {
+      "fail": [
+        {
+          "message": "page animates but has no prefers-reduced-motion rule"
+        }
+      ],
+      "warn": [
+        {
+          "message": "3 movement transitions still over 100ms with reduced motion",
+          "examples": [
+            {
+              "prop": "transform",
+              "dur": 0.2
+            },
+            {
+              "prop": "transform",
+              "dur": 0.2
+            },
+            {
+              "prop": "transform",
+              "dur": 0.2
+            }
+          ]
+        }
+      ],
+      "pass": false
+    }
+  },
+  "summary": {
+    "focusables": 18,
+    "motionFound": {
+      "animations": 0,
+      "movingTransitions": 3
+    },
+    "axe": "FAIL (15)",
+    "targets": "FAIL (15)",
+    "measure": "FAIL (1)",
+    "type-scale": "FAIL (16)",
+    "spacing": "FAIL (75)",
+    "overflow": "pass",
+    "focus": "pass (18 warn)",
+    "motion": "FAIL (1)",
+    "result": "FAIL",
+    "fails": 123,
+    "warns": 19
+  }
+}

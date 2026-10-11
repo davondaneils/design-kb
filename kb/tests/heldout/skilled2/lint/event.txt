@@ -1,0 +1,54 @@
+
+Fundamentals lint: event.html  ->  PASS (0 fail, 9 warn)
+
+  pass  axe
+  pass  overlay
+  pass  targets
+  pass  measure
+  pass  type-scale  (4 warn)
+        ! fluid display size 147.23px at 390px (clamp() present)  [h1.words > span.course.course-1 > span.stone.tone-a > span.w, h1.words > span.course.course-1 > span.stone.tone-c > span.w]
+        ! fluid display size 146.84px at 390px (clamp() present)  [h1.words > span.course.course-2 > span.stone.tone-b > span.w]
+        ! fluid display size 324.3px at 1440px (clamp() present)  [h1.words > span.course.course-1 > span.stone.tone-a > span.w, h1.words > span.course.course-1 > span.stone.tone-c > span.w]
+        ! fluid display size 298.87px at 1440px (clamp() present)  [h1.words > span.course.course-2 > span.stone.tone-b > span.w]
+  pass  spacing
+  pass  overflow
+  pass  heading-wrap  (2 warn)
+        ! heading ends on a one-word line at 390px ("Set in Stone")  [#top > h1.words]
+        ! heading ends on a one-word line at 1440px ("Set in Stone")  [#top > h1.words]
+  pass  svg-overlap  (1 warn)
+        ! text "Set" partly covered by div.course.course-nav > div.stone.tone-d > a > svg.mark.mark-line (170x7px) at 1440px  [h1.words > span.course.course-1 > span.stone.tone-a > span.w]
+  pass  primary
+  pass  radius
+  pass  color-scheme
+  pass  typography
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke
+  pass  weight
+  pass  occlusion
+  pass  squash
+  pass  sticky-header
+  pass  run-together
+  pass  word-break
+  pass  grid-edge
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback  (2 warn)
+        ! layout moves 53px at 390px when the web fonts fail (worst: html > body > footer.wall.foot); add metric fallbacks (size-adjust, ascent-override). Line count changed in 11 elements: div.wrap > div.days > div.day > h3 "Saturday 17 April Day one" 2 to 1 lines; div.days > div.day > ol > li "10amType fair opensIndependent foundries" 4 to 3 lines; div.days > div.day > ol > li "1pmDraw on stone, pull a printEwan Baird" 3 to 4 lines; div.days > div.day > ol > li "3pmArabic and Latin in one familyNadia H" 3 to 2 lines; ... (one element near a wrap point is a copy fix; many is a font metrics fix)  [html > body > footer.wall.foot]
+        ! layout moves 54px at 1440px when the web fonts fail (worst: #programme); add metric fallbacks (size-adjust, ascent-override). Line count changed in 9 elements: #main > section.about > div.wrap.about-grid > p.manifesto "Glasgow is built from red sandstone, cut" 5 to 6 lines; div.wrap > div.days > div.day > h3 "Saturday 17 April Day one" 2 to 1 lines; div.days > div.day > ol > li "10amType fair opensIndependent foundries" 3 to 2 lines; div.days > div.day > ol > li "1pmDraw on stone, pull a printEwan Baird" 3 to 4 lines; ... (one element near a wrap point is a copy fix; many is a font metrics fix)  [#programme]
+  pass  motion
+
+  JSON: kb/tests/heldout/skilled2/lint/event.json

@@ -1,0 +1,77 @@
+{
+  "page": "kb/tests/design-frontend/./dashboard.html",
+  "profile": "desktop",
+  "runs": 5,
+  "encoding": "gzip",
+  "lcp": 236,
+  "fcp": 236,
+  "cls": 0.003040994658961562,
+  "inp": 0,
+  "tbt": 0,
+  "ttfb": 129.1000000005588,
+  "fontsReady": 258.79999999981374,
+  "load": 257.09999999962747,
+  "bytes": 47477,
+  "docBytes": 47477,
+  "requests": 1,
+  "dom": 514,
+  "mainThread": {
+    "script": 25.128999999999998,
+    "style": 7.204999999999999,
+    "layout": 44.206,
+    "task": 113.91,
+    "styleCount": 5,
+    "layoutCount": 4
+  },
+  "lcpElement": "p.answer.answer-ready \"Weekly active users are up 12.4%, the th\"",
+  "worstInteractions": [],
+  "interactions": 0,
+  "shifts": [
+    {
+      "t": 267.5,
+      "value": 0.003040994658961562,
+      "input": false,
+      "src": [
+        "label.search \"/\""
+      ]
+    }
+  ],
+  "steps": [],
+  "verdict": {
+    "lcp": "good",
+    "cls": "good",
+    "inp": "good"
+  },
+  "perRun": [
+    {
+      "lcp": 232,
+      "cls": 0.003040994658961562,
+      "inp": 0,
+      "tbt": 0
+    },
+    {
+      "lcp": 292,
+      "cls": 0,
+      "inp": 0,
+      "tbt": 0
+    },
+    {
+      "lcp": 236,
+      "cls": 0.003040994658961562,
+      "inp": 0,
+      "tbt": 0
+    },
+    {
+      "lcp": 240,
+      "cls": 0.003040994658961562,
+      "inp": 0,
+      "tbt": 0
+    },
+    {
+      "lcp": 232,
+      "cls": 0.003040994658961562,
+      "inp": 0,
+      "tbt": 0
+    }
+  ]
+}

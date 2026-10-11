@@ -1,0 +1,58 @@
+  <section class="feature" id="subscribe" aria-labelledby="sub-title">
+    <svg viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">{{BAND}}</svg>
+    <div class="wrap has-slip">
+      <div>
+        <p class="label">The subscription</p>
+        <h2 id="sub-title">A new hill at your door, every <em>two or four</em> weeks.</h2>
+        <ul class="perks">
+          <li><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8.5"/></svg>Roasted to order, never more than three days old when it ships</li>
+          <li><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8.5"/></svg>Every bag comes with its farm’s map and its roast curve</li>
+          <li><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8.5"/></svg>Skip, swap or cancel online, any time before the next roast</li>
+        </ul>
+        <div class="price-block">
+          <p class="price num"><span class="cur" aria-hidden="true">$</span><span aria-hidden="true">18</span><span class="sr-only">$18</span></p>
+          <p class="offer-note"><strong>A bag, shipping included.</strong> 15% under shop price. Single coffees from $15.</p>
+        </div>
+      </div>
+
+      <form class="slip" id="sub-form" novalidate aria-labelledby="slip-title">
+        <div class="slip-head"><h3 id="slip-title">Build your subscription</h3><span class="label">3 questions</span></div>
+
+        <fieldset class="opt-group" id="g-coffee">
+          <legend>Which coffee?</legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="coffee" value="choice" data-name="Roaster’s choice" data-price="18" checked><span><span class="name">Roaster’s choice</span><span class="sub">A different single origin each delivery</span></span><span class="amt">$18</span></label>
+            <label class="opt"><input type="radio" name="coffee" value="guji" data-name="Ethiopia Guji" data-price="18"><span><span class="name">Ethiopia Guji</span><span class="sub">Light, peach and jasmine</span></span><span class="amt">$18</span></label>
+            <label class="opt"><input type="radio" name="coffee" value="huila" data-name="Colombia Huila" data-price="16"><span><span class="name">Colombia Huila</span><span class="sub">Medium, caramel and red apple</span></span><span class="amt">$16</span></label>
+            <label class="opt"><input type="radio" name="coffee" value="oak" data-name="Oak Fire Espresso" data-price="15"><span><span class="name">Oak Fire Espresso</span><span class="sub">Dark, chocolate and molasses</span></span><span class="amt">$15</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="opt-group" id="g-brew" aria-describedby="brew-error">
+          <legend>How do you brew?<span class="hint">We grind each bag for your brewer the morning it ships.</span></legend>
+          <p class="error" id="brew-error" hidden><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5v4M8 11v.5"/></svg>Choose how you brew, so we grind it right.</p>
+          <div class="opts cols-3">
+            <label class="opt stack"><input type="radio" name="brew" value="pourover" data-name="Pour-over"><span><span class="name">Pour-over</span><span class="sub">Medium-fine</span></span></label>
+            <label class="opt stack"><input type="radio" name="brew" value="espresso" data-name="Espresso"><span><span class="name">Espresso</span><span class="sub">Fine</span></span></label>
+            <label class="opt stack"><input type="radio" name="brew" value="drip" data-name="Drip machine"><span><span class="name">Drip machine</span><span class="sub">Medium</span></span></label>
+            <label class="opt stack"><input type="radio" name="brew" value="press" data-name="French press"><span><span class="name">French press</span><span class="sub">Coarse</span></span></label>
+            <label class="opt stack"><input type="radio" name="brew" value="whole" data-name="Whole bean"><span><span class="name">Whole bean</span><span class="sub">You grind it</span></span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="opt-group" id="g-every">
+          <legend>How often?<span class="hint">A 340&#8239;g bag makes about 22 cups.</span></legend>
+          <div class="opts cols-2">
+            <label class="opt stack"><input type="radio" name="every" value="2" checked><span><span class="name">Every 2 weeks</span><span class="sub">1 to 2 cups a day</span></span></label>
+            <label class="opt stack"><input type="radio" name="every" value="4"><span><span class="name">Every 4 weeks</span><span class="sub">About 1 cup a day</span></span></label>
+          </div>
+        </fieldset>
+
+        <div class="slip-sum">
+          <p class="ships"><span>First bag ships <b>Friday, Oct 16</b></span><span>Shipping included</span></p>
+          <button class="btn btn-primary" type="submit" id="sub-btn">Add subscription, $18 every 2 weeks</button>
+          <p class="terms" id="sub-terms">Renews every 2 weeks until you stop it. Skip, pause or cancel online before the next roast; you’ll confirm everything at checkout.</p>
+        </div>
+      </form>
+    </div>
+  </section>

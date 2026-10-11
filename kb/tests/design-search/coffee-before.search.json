@@ -1,0 +1,155 @@
+{
+  "file": "kb/tests/combined/coffee.html",
+  "expect": "public",
+  "date": "2026-10-10T16:46:45.227Z",
+  "checks": {
+    "size": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "HTML 198 KB uncompressed (Googlebot cut: 2 MB)"
+        }
+      ]
+    },
+    "head-order": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "search and social tags end by byte 237, before the first large inline block at byte 395"
+        }
+      ]
+    },
+    "title": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "\"Ember & Oak Coffee Roasters, Portland\" (37 chars)"
+        }
+      ]
+    },
+    "description": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "121 chars"
+        }
+      ]
+    },
+    "robots": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "no max-image-preview:large: Google may show only a small thumbnail from this page"
+        }
+      ],
+      "info": []
+    },
+    "canonical": {
+      "fail": [
+        {
+          "message": "0 canonical links, want exactly 1"
+        }
+      ],
+      "warn": [],
+      "info": []
+    },
+    "headings": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "h1 Ethiopia Guji, roasted Tuesday in Portland.\n  h2 A new hill at your door, every two or four weeks.\n  h2 Three coffees we can’t stop drinking\n    h3 Ethiopia Guji\n    h3 Colombia Huila\n    h3 Oak Fire Espresso\n  h2 How we roast\n    h3 Buy direct\n    h3 Roast in small batches\n    h3 Ship within 48 hours\n  h2 Letters from the roastery\n    h3 Shop\n    h3 Roastery"
+        }
+      ]
+    },
+    "links": {
+      "fail": [
+        {
+          "message": "14 links with no real destination (href \"#\", empty or javascript:). Crawlers follow only real <a href> URLs",
+          "examples": [
+            "Ember & Oak",
+            "Start my subscription",
+            "See all 9 coffees",
+            "Ethiopia Guji",
+            "Colombia Huila",
+            "Oak Fire Espresso",
+            "Coffee",
+            "Subscriptions"
+          ]
+        }
+      ],
+      "warn": [
+        {
+          "message": "5 header/footer links point to #fragments, so the site's hub pages get no sitewide links: Shop, Roastery, Journal, Cart 0empty, Subscribe"
+        }
+      ],
+      "info": [
+        {
+          "message": "21 links, 6 unique destinations"
+        }
+      ]
+    },
+    "dates": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "3 relative dates outside <time datetime>: a quoted passage loses its week. \"This week\", \"Tuesday\", \"this Friday\""
+        }
+      ],
+      "info": []
+    },
+    "social": {
+      "fail": [
+        {
+          "message": "missing og:title (one of the four required Open Graph properties)"
+        },
+        {
+          "message": "missing og:type (one of the four required Open Graph properties)"
+        },
+        {
+          "message": "missing og:image (one of the four required Open Graph properties)"
+        },
+        {
+          "message": "missing og:url (one of the four required Open Graph properties)"
+        }
+      ],
+      "warn": [
+        {
+          "message": "no twitter:card; X falls back to a small summary card"
+        }
+      ],
+      "info": []
+    },
+    "favicon": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "no icon link; Google shows a favicon next to every result"
+        }
+      ],
+      "info": []
+    },
+    "structured-data": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "no JSON-LD"
+        }
+      ],
+      "info": [
+        {
+          "message": "0 JSON-LD blocks, 0 typed nodes: "
+        }
+      ]
+    }
+  },
+  "summary": {
+    "fail": 6,
+    "warn": 6,
+    "pass": false
+  }
+}

@@ -1,0 +1,1500 @@
+{
+ "url": "https://www.designjoy.co",
+ "measuredAt": "2026-10-10T16:52:03.515Z",
+ "method": "Playwright Chromium, getComputedStyle on visible elements, light scheme, after scroll-through and fonts.ready",
+ "widths": {
+  "390": {
+   "status": 200,
+   "finalUrl": "https://www.designjoy.co/",
+   "width": 390,
+   "h1Style": {
+    "font": "Figtree 61px/56px w500 ls -3px",
+    "color": "#000000",
+    "top": 104,
+    "width": 303,
+    "align": "start"
+   },
+   "title": "Designjoy - Design as a Subscription",
+   "description": "The #1 design subscription service for agencies, startups, and entrepreneurs.",
+   "pageHeight": 12239,
+   "bodyBg": "#ece6e8",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "webflow-icons 400 normal",
+    "Seriouslynostalgicfnit Reg 400 normal",
+    "Seriouslynostalgicfn Xcn 400 normal",
+    "Ocrastd 400 normal",
+    "Figtree 300 normal",
+    "Figtree 400 normal",
+    "Figtree 500 normal",
+    "Figtree 600 normal",
+    "Figtree 700 normal"
+   ],
+   "families": [
+    {
+     "v": "Figtree, sans-serif",
+     "n": 3125
+    },
+    {
+     "v": "\"Seriouslynostalgicfn Xcn\", Arial",
+     "n": 107
+    },
+    {
+     "v": "\"Seriouslynostalgicfnit Reg\", Arial",
+     "n": 99
+    },
+    {
+     "v": "Ocrastd, Arial",
+     "n": 26
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "14px / lh 20px / w400 / ls normal",
+     "n": 798,
+     "ex": "div: Start today"
+    },
+    {
+     "v": "20px / lh 22px / w500 / ls normal",
+     "n": 458,
+     "ex": "div: How fast will I receive my designs?"
+    },
+    {
+     "v": "14px / lh 16px / w400 / ls normal",
+     "n": 350,
+     "ex": "p: Easily manage your design queue with a Trello board."
+    },
+    {
+     "v": "20px / lh 24px / w400 / ls normal",
+     "n": 319,
+     "ex": "span: Pause or cancel anytime."
+    },
+    {
+     "v": "20px / lh 28px / w400 / ls normal",
+     "n": 302,
+     "ex": "p: First launched in 2017, Designjoy the design industry with i"
+    },
+    {
+     "v": "16px / lh 20px / w400 / ls normal",
+     "n": 286,
+     "ex": "p: Subscribe to a plan & request as many designs as you’d like."
+    },
+    {
+     "v": "50px / lh 50px / w400 / ls normal",
+     "n": 122,
+     "ex": "div: \"Designjoy shows that they know the art of subtlety.\""
+    },
+    {
+     "v": "22px / lh 24.2px / w500 / ls normal",
+     "n": 101,
+     "ex": "div: Design board"
+    },
+    {
+     "v": "24px / lh 26.4px / w500 / ls normal",
+     "n": 92,
+     "ex": "div: Subscribe"
+    },
+    {
+     "v": "14px / lh 16px / w500 / ls normal",
+     "n": 58,
+     "ex": "div: Fintech Product of the Year"
+    },
+    {
+     "v": "61px / lh 56px / w500 / ls -3px",
+     "n": 49,
+     "ex": "h1: Design subscriptions for"
+    },
+    {
+     "v": "42px / lh 47px / w500 / ls -2px",
+     "n": 43,
+     "ex": "h2: The way design been done in the first place"
+    },
+    {
+     "v": "50px / lh 50px / w500 / ls -3px",
+     "n": 41,
+     "ex": "h1: See if Designjoy is the right fit for you"
+    },
+    {
+     "v": "61px / lh 56px / w400 / ls normal",
+     "n": 40,
+     "ex": "span: everyone"
+    },
+    {
+     "v": "16px / lh 17.6px / w400 / ls normal",
+     "n": 34,
+     "ex": "div: One subscription to rule them all."
+    },
+    {
+     "v": "9px / lh 11px / w400 / ls normal",
+     "n": 31,
+     "ex": "div: PAUSE OR CANCEL ANYTIME"
+    },
+    {
+     "v": "50px / lh 50px / w500 / ls -1px",
+     "n": 26,
+     "ex": "div: Join"
+    },
+    {
+     "v": "10px / lh 20px / w400 / ls normal",
+     "n": 26,
+     "ex": "div: Membership benefits"
+    },
+    {
+     "v": "12px / lh 16px / w400 / ls normal",
+     "n": 26,
+     "ex": "div: Buy Me A Coffee"
+    },
+    {
+     "v": "40px / lh 40px / w500 / ls -1px",
+     "n": 24,
+     "ex": "div: Book a 15-min intro call"
+    },
+    {
+     "v": "20px / lh 20px / w500 / ls normal",
+     "n": 22,
+     "ex": "a: See pricing"
+    },
+    {
+     "v": "53px / lh 50px / w400 / ls normal",
+     "n": 21,
+     "ex": "span: endless possibilities"
+    },
+    {
+     "v": "53px / lh 50px / w500 / ls -3px",
+     "n": 17,
+     "ex": "h1: One subscription,"
+    },
+    {
+     "v": "15px / lh 20px / w500 / ls normal",
+     "n": 15,
+     "ex": "div: See recent work"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#000000",
+     "n": 1551
+    },
+    {
+     "v": "#99948f",
+     "n": 1086
+    },
+    {
+     "v": "#ffffff",
+     "n": 420
+    },
+    {
+     "v": "#ffffff a0.8",
+     "n": 111
+    },
+    {
+     "v": "#000000 a0.55",
+     "n": 60
+    },
+    {
+     "v": "#ff0084",
+     "n": 32
+    },
+    {
+     "v": "#ffffff a0.46",
+     "n": 31
+    },
+    {
+     "v": "#ffffff a0.53",
+     "n": 30
+    },
+    {
+     "v": "#ffffff a0.5",
+     "n": 30
+    },
+    {
+     "v": "#535353",
+     "n": 6
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#99948f on #ece6e8",
+     "n": 948,
+     "ex": "2.44:1"
+    },
+    {
+     "v": "#000000 on #ece6e8",
+     "n": 924,
+     "ex": "17.05:1"
+    },
+    {
+     "v": "#000000 on #ffffff",
+     "n": 627,
+     "ex": "21:1"
+    },
+    {
+     "v": "#ffffff on #000000",
+     "n": 391,
+     "ex": "21:1"
+    },
+    {
+     "v": "#ffffff a0.8 on #ffffff",
+     "n": 111,
+     "ex": "1:1"
+    },
+    {
+     "v": "#99948f on #ffffff",
+     "n": 80,
+     "ex": "3.01:1"
+    },
+    {
+     "v": "#000000 a0.55 on #ffffff",
+     "n": 60,
+     "ex": "4.76:1"
+    },
+    {
+     "v": "#99948f on #000000",
+     "n": 58,
+     "ex": "6.99:1"
+    },
+    {
+     "v": "#ff0084 on #1b000e",
+     "n": 32,
+     "ex": "5.3:1"
+    },
+    {
+     "v": "#ffffff a0.46 on #000000",
+     "n": 31,
+     "ex": "4.58:1"
+    },
+    {
+     "v": "#ffffff a0.53 on #000000",
+     "n": 30,
+     "ex": "5.86:1"
+    },
+    {
+     "v": "#ffffff a0.5 on #000000",
+     "n": 30,
+     "ex": "5.28:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#000000",
+     "n": 1528
+    },
+    {
+     "v": "#ffffff",
+     "n": 1309
+    },
+    {
+     "v": "#ece6e8",
+     "n": 108
+    },
+    {
+     "v": "#ffffff a0.49",
+     "n": 87
+    },
+    {
+     "v": "linear-gradient(rgb(40, 39, 39), rgb(27, 27, 27))",
+     "n": 76
+    },
+    {
+     "v": "linear-gradient(rgba(255, 219, 1, 0) -3%, rgba(255, 219, 1, 0) 3%, rgba(255, 219, 1, 0.75) 28%, rgba(255, 219, 1, 0.86) 57%, rgb(255, 219, 1",
+     "n": 61
+    },
+    {
+     "v": "linear-gradient(rgba(0, 0, 254, 0) -3%, rgba(0, 0, 254, 0) 3%, rgba(0, 0, 254, 0.75) 28%, rgba(0, 0, 254, 0.86) 57%, rgb(0, 0, 254) 100%, rg",
+     "n": 61
+    },
+    {
+     "v": "linear-gradient(rgba(255, 90, 0, 0) -3%, rgba(255, 90, 0, 0) 3%, rgba(255, 90, 0, 0.75) 28%, rgba(255, 90, 0, 0.86) 57%, rgb(255, 90, 0) 100",
+     "n": 61
+    },
+    {
+     "v": "#ddced3",
+     "n": 21
+    },
+    {
+     "v": "#1b000e",
+     "n": 9
+    },
+    {
+     "v": "linear-gradient(rgb(68, 68, 68), rgb(0, 0, 0))",
+     "n": 5
+    },
+    {
+     "v": "#2c2c2c",
+     "n": 4
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #e0d4d8",
+     "n": 18
+    },
+    {
+     "v": "3px #ffffff",
+     "n": 3
+    },
+    {
+     "v": "1px #f3edef",
+     "n": 2
+    },
+    {
+     "v": "1px #000000",
+     "n": 2
+    },
+    {
+     "v": "1px #d1c2c7",
+     "n": 2
+    },
+    {
+     "v": "1px #0813ff",
+     "n": 1
+    },
+    {
+     "v": "1px #ccbfc4",
+     "n": 1
+    },
+    {
+     "v": "1px #1d1d1d",
+     "n": 1
+    }
+   ],
+   "radii": [
+    {
+     "v": "390px",
+     "n": 50,
+     "ex": "div.hero__member-card-badge"
+    },
+    {
+     "v": "19px",
+     "n": 21,
+     "ex": "div.div-block-37"
+    },
+    {
+     "v": "8px",
+     "n": 5,
+     "ex": "a.button w-button"
+    },
+    {
+     "v": "20px",
+     "n": 3,
+     "ex": "div.front-design"
+    },
+    {
+     "v": "12px",
+     "n": 2,
+     "ex": "div.div-block-34"
+    },
+    {
+     "v": "4px",
+     "n": 2,
+     "ex": "div.div-block-5"
+    },
+    {
+     "v": "15px",
+     "n": 1,
+     "ex": "div.request__block"
+    },
+    {
+     "v": "6px",
+     "n": 1,
+     "ex": "div.div-block-8"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgba(0, 0, 0, 0.2) 0px 11px 5px 0px",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(255, 255, 255, 0.16) 0px 1px 0.25px 0px inset, rgba(255, 255, 255, 0.11) 0px 2px 1px 0px inset",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.2) 0px 50px 50px 0px",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(95, 95, 95, 0.5) 0px 2px 1px 0px inset, rgba(255, 255, 255, 0.62) 1px 1px 0.2px 0px inset",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.59) 0px 20px 30px 0px",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.3) 0px 1px 2px 0px, rgb(0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.3) 1px 1px 0.25px 0px inset, rgba(255, 255, 255, 0.5) 0px 2px 1px 0px inset",
+     "n": 1,
+     "ex": "a"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.25) 0px 20px 68px 0px, rgba(0, 0, 0, 0.3) 0px 1px 2px 0px, rgb(0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.5) 0px 2px 1px 0px inset, rgba(255, 255, 255, 0.3) 1px 1px 0.25px 0px inset",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.2) 0px 0px 0px 0px, rgba(0, 0, 0, 0.3) 0px 1px 2px 0px, rgba(255, 255, 255, 0.3) 0px 1px 0.25px 0px inset, rgba(255, 255, 255, 0.11) 0px 2px 1px 0px inset",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "all 0.2s ease",
+     "n": 3,
+     "ex": "a"
+    }
+   ],
+   "animations": [],
+   "maxWidths": [
+    {
+     "v": "100% (rendered 297px)",
+     "n": 12,
+     "ex": "img"
+    },
+    {
+     "v": "1200px (rendered 351px)",
+     "n": 9,
+     "ex": "div"
+    },
+    {
+     "v": "310px (rendered 303px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "670px (rendered 303px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "520px (rendered 303px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 237px)",
+     "n": 1,
+     "ex": "a"
+    },
+    {
+     "v": "100% (rendered 254px)",
+     "n": 1,
+     "ex": "img"
+    },
+    {
+     "v": "480px (rendered 303px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "580px (rendered 303px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "750px (rendered 303px)",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "sections": [],
+   "gaps": [
+    {
+     "v": "32px",
+     "n": 25
+    },
+    {
+     "v": "6px",
+     "n": 5
+    },
+    {
+     "v": "20px",
+     "n": 4
+    },
+    {
+     "v": "12px",
+     "n": 4
+    },
+    {
+     "v": "10px",
+     "n": 3
+    },
+    {
+     "v": "32px / col 50px",
+     "n": 2
+    },
+    {
+     "v": "7px",
+     "n": 2
+    },
+    {
+     "v": "24px",
+     "n": 2
+    },
+    {
+     "v": "60px",
+     "n": 1
+    },
+    {
+     "v": "8px",
+     "n": 1
+    },
+    {
+     "v": "16px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "7px",
+     "n": 92
+    },
+    {
+     "v": "10px",
+     "n": 33
+    },
+    {
+     "v": "32px",
+     "n": 18
+    },
+    {
+     "v": "46px",
+     "n": 18
+    },
+    {
+     "v": "16px",
+     "n": 17
+    },
+    {
+     "v": "40px",
+     "n": 13
+    },
+    {
+     "v": "8px",
+     "n": 13
+    },
+    {
+     "v": "19.5px",
+     "n": 9
+    },
+    {
+     "v": "60px",
+     "n": 8
+    },
+    {
+     "v": "12px",
+     "n": 7
+    },
+    {
+     "v": "9px",
+     "n": 6
+    },
+    {
+     "v": "26px",
+     "n": 6
+    },
+    {
+     "v": "20px",
+     "n": 5
+    },
+    {
+     "v": "15px",
+     "n": 5
+    },
+    {
+     "v": "3px",
+     "n": 4
+    },
+    {
+     "v": "74px",
+     "n": 3
+    },
+    {
+     "v": "43px",
+     "n": 3
+    },
+    {
+     "v": "4px",
+     "n": 2
+    }
+   ],
+   "margins": [
+    {
+     "v": "24px",
+     "n": 16
+    },
+    {
+     "v": "12px",
+     "n": 13
+    },
+    {
+     "v": "32px",
+     "n": 9
+    },
+    {
+     "v": "16px",
+     "n": 8
+    },
+    {
+     "v": "60px",
+     "n": 6
+    },
+    {
+     "v": "10px",
+     "n": 6
+    },
+    {
+     "v": "4px",
+     "n": 4
+    },
+    {
+     "v": "2px",
+     "n": 2
+    },
+    {
+     "v": "50px",
+     "n": 2
+    },
+    {
+     "v": "80px",
+     "n": 2
+    },
+    {
+     "v": "6px",
+     "n": 2
+    },
+    {
+     "v": "3px",
+     "n": 2
+    },
+    {
+     "v": "8px",
+     "n": 2
+    },
+    {
+     "v": "20px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "First launched in 2017, Designjoy revolutionized the design industry with its subscription-based model. To this day, Des",
+    "chars": 303,
+    "lines": 16,
+    "charsPerLine": 19,
+    "width": 215,
+    "fontSize": "20px",
+    "lineHeight": "28px",
+    "color": "#99948f"
+   },
+   "rootVars": {
+    "--black": "black",
+    "--orange-red": "#ea552b",
+    "--gold": "#fdd900",
+    "--indian-red": "#f7414e",
+    "--orange": "#fb421f",
+    "--midnight-blue": "#130933",
+    "--lime": "#61f15c",
+    "--white": "white",
+    "--white-smoke": "#f6f9fc",
+    "--medium-sea-green": "#2cc05a",
+    "--8f8f8f": "#8f8f8f",
+    "--royal-blue": "#0c77f8",
+    "--lavender-blush": "#f5e8f8",
+    "--indigo": "#3a2099",
+    "--royal-blue-2": "#0052ff",
+    "--dark-slate-blue": "#3e396b",
+    "--cornflower-blue": "#8994c6",
+    "--dodger-blue": "#097fff",
+    "--ghost-white": "#f3f6ff",
+    "--deep-sky-blue": "#0ab3e4",
+    "--border": "#e4e4e4",
+    "--main-text": "#162944",
+    "--white-smoke-2": "#f8f9fc",
+    "--slate-blue": "#1a49dd",
+    "--slate-grey": "#6b7c93",
+    "--light-steel-blue": "#94a7c2",
+    "--royal-blue-3": "#05f",
+    "--dodger-blue-2": "#09f",
+    "--dodger-blue-3": "#09f",
+    "--purple": "#80376b",
+    "--orange-2": "#fd9800",
+    "--linen": "#fbe8de"
+   },
+   "blockedSheets": 2,
+   "reducedMotionRules": 0,
+   "h1": [
+    "Design subscriptions for everyone",
+    "It's \"you'll never go back\" better",
+    "One subscription, endless possibilities"
+   ],
+   "h2": [
+    "The way design should’ve been done in the first place",
+    "$4,995",
+    "$5,995"
+   ],
+   "h3": [],
+   "nav": [],
+   "ctas": [
+    "See pricing [237x60 bg #ffffff fg #000000 r 8px pad 20px 15px 20px/500]",
+    "See recent work [144x38 bg #000000 a0 fg #ffffff r 8px pad 8px 16px 15px/500]",
+    "Book a call [239x60 bg #ffffff fg #000000 r 8px pad 20px 15px 20px/500]"
+   ],
+   "media": {
+    "img": 74,
+    "svg": 4,
+    "video": 0,
+    "canvas": 0
+   }
+  },
+  "1440": {
+   "status": 200,
+   "finalUrl": "https://www.designjoy.co/",
+   "width": 1440,
+   "h1Style": {
+    "font": "Figtree 82px/78px w500 ls -3px",
+    "color": "#000000",
+    "top": 218,
+    "width": 550,
+    "align": "start"
+   },
+   "title": "Designjoy - Design as a Subscription",
+   "description": "The #1 design subscription service for agencies, startups, and entrepreneurs.",
+   "pageHeight": 6998,
+   "bodyBg": "#ece6e8",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "webflow-icons 400 normal",
+    "Seriouslynostalgicfnit Reg 400 normal",
+    "Seriouslynostalgicfn Xcn 400 normal",
+    "Ocrastd 400 normal",
+    "Figtree 300 normal",
+    "Figtree 400 normal",
+    "Figtree 500 normal",
+    "Figtree 600 normal",
+    "Figtree 700 normal"
+   ],
+   "families": [
+    {
+     "v": "Figtree, sans-serif",
+     "n": 3158
+    },
+    {
+     "v": "\"Seriouslynostalgicfn Xcn\", Arial",
+     "n": 107
+    },
+    {
+     "v": "\"Seriouslynostalgicfnit Reg\", Arial",
+     "n": 99
+    },
+    {
+     "v": "Ocrastd, Arial",
+     "n": 26
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "14px / lh 20px / w400 / ls normal",
+     "n": 798,
+     "ex": "div: Start today"
+    },
+    {
+     "v": "20px / lh 22px / w500 / ls normal",
+     "n": 458,
+     "ex": "div: How fast will I receive my designs?"
+    },
+    {
+     "v": "14px / lh 16px / w400 / ls normal",
+     "n": 356,
+     "ex": "p: Easily manage your design queue with a Trello board."
+    },
+    {
+     "v": "20px / lh 24px / w400 / ls normal",
+     "n": 319,
+     "ex": "span: Pause or cancel anytime."
+    },
+    {
+     "v": "20px / lh 28px / w400 / ls normal",
+     "n": 302,
+     "ex": "p: First launched in 2017, Designjoy the design industry with i"
+    },
+    {
+     "v": "16px / lh 20px / w400 / ls normal",
+     "n": 286,
+     "ex": "p: Subscribe to a plan & request as many designs as you’d like."
+    },
+    {
+     "v": "60px / lh 60px / w400 / ls normal",
+     "n": 107,
+     "ex": "div: \"Designjoy shows that they know the art of subtlety.\""
+    },
+    {
+     "v": "22px / lh 24.2px / w500 / ls normal",
+     "n": 101,
+     "ex": "div: Design board"
+    },
+    {
+     "v": "24px / lh 26.4px / w500 / ls normal",
+     "n": 92,
+     "ex": "div: Subscribe"
+    },
+    {
+     "v": "82px / lh 78px / w500 / ls -3px",
+     "n": 66,
+     "ex": "h1: Design subscriptions for"
+    },
+    {
+     "v": "82px / lh 78px / w400 / ls normal",
+     "n": 61,
+     "ex": "span: everyone"
+    },
+    {
+     "v": "14px / lh 16px / w500 / ls normal",
+     "n": 58,
+     "ex": "div: Fintech Product of the Year"
+    },
+    {
+     "v": "56px / lh 56px / w500 / ls -2px",
+     "n": 49,
+     "ex": "h2: The way design been done in the first place"
+    },
+    {
+     "v": "15px / lh 20px / w500 / ls normal",
+     "n": 42,
+     "ex": "div: Login"
+    },
+    {
+     "v": "70px / lh 66px / w500 / ls -3px",
+     "n": 41,
+     "ex": "h1: See if Designjoy is the right fit for you"
+    },
+    {
+     "v": "16px / lh 17.6px / w400 / ls normal",
+     "n": 34,
+     "ex": "div: One subscription to rule them all."
+    },
+    {
+     "v": "9px / lh 11px / w400 / ls normal",
+     "n": 31,
+     "ex": "div: PAUSE OR CANCEL ANYTIME"
+    },
+    {
+     "v": "50px / lh 50px / w500 / ls -1px",
+     "n": 26,
+     "ex": "div: Join"
+    },
+    {
+     "v": "10px / lh 20px / w400 / ls normal",
+     "n": 26,
+     "ex": "div: Membership benefits"
+    },
+    {
+     "v": "12px / lh 16px / w400 / ls normal",
+     "n": 26,
+     "ex": "div: Buy Me A Coffee"
+    },
+    {
+     "v": "40px / lh 40px / w500 / ls -1px",
+     "n": 24,
+     "ex": "div: Book a 15-min intro call"
+    },
+    {
+     "v": "20px / lh 20px / w500 / ls normal",
+     "n": 22,
+     "ex": "a: See pricing"
+    },
+    {
+     "v": "70px / lh 66px / w400 / ls normal",
+     "n": 15,
+     "ex": "span: (it totally is)"
+    },
+    {
+     "v": "18px / lh 20px / w500 / ls normal",
+     "n": 13,
+     "ex": "div: Kevin O'Leary"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#000000",
+     "n": 1567
+    },
+    {
+     "v": "#99948f",
+     "n": 1092
+    },
+    {
+     "v": "#ffffff",
+     "n": 431
+    },
+    {
+     "v": "#ffffff a0.8",
+     "n": 111
+    },
+    {
+     "v": "#000000 a0.55",
+     "n": 60
+    },
+    {
+     "v": "#ff0084",
+     "n": 32
+    },
+    {
+     "v": "#ffffff a0.46",
+     "n": 31
+    },
+    {
+     "v": "#ffffff a0.53",
+     "n": 30
+    },
+    {
+     "v": "#ffffff a0.5",
+     "n": 30
+    },
+    {
+     "v": "#535353",
+     "n": 6
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#99948f on #ece6e8",
+     "n": 954,
+     "ex": "2.44:1"
+    },
+    {
+     "v": "#000000 on #ece6e8",
+     "n": 940,
+     "ex": "17.05:1"
+    },
+    {
+     "v": "#000000 on #ffffff",
+     "n": 627,
+     "ex": "21:1"
+    },
+    {
+     "v": "#ffffff on #000000",
+     "n": 391,
+     "ex": "21:1"
+    },
+    {
+     "v": "#ffffff a0.8 on #ffffff",
+     "n": 111,
+     "ex": "1:1"
+    },
+    {
+     "v": "#99948f on #ffffff",
+     "n": 80,
+     "ex": "3.01:1"
+    },
+    {
+     "v": "#000000 a0.55 on #ffffff",
+     "n": 60,
+     "ex": "4.76:1"
+    },
+    {
+     "v": "#99948f on #000000",
+     "n": 58,
+     "ex": "6.99:1"
+    },
+    {
+     "v": "#ff0084 on #1b000e",
+     "n": 32,
+     "ex": "5.3:1"
+    },
+    {
+     "v": "#ffffff a0.46 on #000000",
+     "n": 31,
+     "ex": "4.58:1"
+    },
+    {
+     "v": "#ffffff a0.53 on #000000",
+     "n": 30,
+     "ex": "5.86:1"
+    },
+    {
+     "v": "#ffffff a0.5 on #000000",
+     "n": 30,
+     "ex": "5.28:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#000000",
+     "n": 2957
+    },
+    {
+     "v": "#ffffff",
+     "n": 1809
+    },
+    {
+     "v": "#ece6e8",
+     "n": 124
+    },
+    {
+     "v": "linear-gradient(rgb(40, 39, 39), rgb(27, 27, 27))",
+     "n": 106
+    },
+    {
+     "v": "#ffffff a0.49",
+     "n": 87
+    },
+    {
+     "v": "linear-gradient(rgba(255, 219, 1, 0) -3%, rgba(255, 219, 1, 0) 3%, rgba(255, 219, 1, 0.75) 28%, rgba(255, 219, 1, 0.86) 57%, rgb(255, 219, 1",
+     "n": 70
+    },
+    {
+     "v": "linear-gradient(rgba(0, 0, 254, 0) -3%, rgba(0, 0, 254, 0) 3%, rgba(0, 0, 254, 0.75) 28%, rgba(0, 0, 254, 0.86) 57%, rgb(0, 0, 254) 100%, rg",
+     "n": 70
+    },
+    {
+     "v": "linear-gradient(rgba(255, 90, 0, 0) -3%, rgba(255, 90, 0, 0) 3%, rgba(255, 90, 0, 0.75) 28%, rgba(255, 90, 0, 0.86) 57%, rgb(255, 90, 0) 100",
+     "n": 70
+    },
+    {
+     "v": "#ddced3",
+     "n": 12
+    },
+    {
+     "v": "linear-gradient(rgb(68, 68, 68), rgb(0, 0, 0))",
+     "n": 10
+    },
+    {
+     "v": "#1b000e",
+     "n": 9
+    },
+    {
+     "v": "#ff5a00",
+     "n": 3
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #e0d4d8",
+     "n": 18
+    },
+    {
+     "v": "1px #000000",
+     "n": 3
+    },
+    {
+     "v": "3px #ffffff",
+     "n": 3
+    },
+    {
+     "v": "1px #ddced3",
+     "n": 2
+    },
+    {
+     "v": "1px #f3edef",
+     "n": 2
+    },
+    {
+     "v": "1px #d1c2c7",
+     "n": 2
+    },
+    {
+     "v": "1px #0813ff",
+     "n": 1
+    },
+    {
+     "v": "1px #ccbfc4",
+     "n": 1
+    }
+   ],
+   "radii": [
+    {
+     "v": "1440px",
+     "n": 50,
+     "ex": "div.hero__member-card-badge"
+    },
+    {
+     "v": "19px",
+     "n": 21,
+     "ex": "div.div-block-37"
+    },
+    {
+     "v": "8px",
+     "n": 8,
+     "ex": "a.button-outline w-inline-block"
+    },
+    {
+     "v": "20px",
+     "n": 3,
+     "ex": "div.front-design"
+    },
+    {
+     "v": "100px",
+     "n": 2,
+     "ex": "div.left-arrow-2 w-slider-arrow-le"
+    },
+    {
+     "v": "12px",
+     "n": 2,
+     "ex": "div.div-block-34"
+    },
+    {
+     "v": "4px",
+     "n": 2,
+     "ex": "div.div-block-5"
+    },
+    {
+     "v": "15px",
+     "n": 1,
+     "ex": "div.request__block"
+    },
+    {
+     "v": "6px",
+     "n": 1,
+     "ex": "div.div-block-8"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgba(0, 0, 0, 0.2) 0px 11px 5px 0px",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.3) 0px 1px 2px 0px, rgb(0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.3) 1px 1px 0.25px 0px inset, rgba(255, 255, 255, 0.5) 0px 2px 1px 0px inset",
+     "n": 2,
+     "ex": "a"
+    },
+    {
+     "v": "rgba(255, 255, 255, 0.16) 0px 1px 0.25px 0px inset, rgba(255, 255, 255, 0.11) 0px 2px 1px 0px inset",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.2) 0px 50px 50px 0px",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(95, 95, 95, 0.5) 0px 2px 1px 0px inset, rgba(255, 255, 255, 0.62) 1px 1px 0.2px 0px inset",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.59) 0px 20px 30px 0px",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.25) 0px 20px 68px 0px, rgba(0, 0, 0, 0.3) 0px 1px 2px 0px, rgb(0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.5) 0px 2px 1px 0px inset, rgba(255, 255, 255, 0.3) 1px 1px 0.25px 0px inset",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(0, 0, 0, 0.2) 0px 0px 0px 0px, rgba(0, 0, 0, 0.3) 0px 1px 2px 0px, rgba(255, 255, 255, 0.3) 0px 1px 0.25px 0px inset, rgba(255, 255, 255, 0.11) 0px 2px 1px 0px inset",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "all 0.2s ease",
+     "n": 6,
+     "ex": "a"
+    }
+   ],
+   "animations": [],
+   "maxWidths": [
+    {
+     "v": "1200px (rendered 1200px)",
+     "n": 9,
+     "ex": "div"
+    },
+    {
+     "v": "670px (rendered 670px)",
+     "n": 3,
+     "ex": "div"
+    },
+    {
+     "v": "750px (rendered 750px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "610px (rendered 610px)",
+     "n": 1,
+     "ex": "h1"
+    },
+    {
+     "v": "100% (rendered 584px)",
+     "n": 1,
+     "ex": "img"
+    },
+    {
+     "v": "590px (rendered 590px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "100% (rendered 698px)",
+     "n": 1,
+     "ex": "img"
+    }
+   ],
+   "sections": [],
+   "gaps": [
+    {
+     "v": "32px",
+     "n": 24
+    },
+    {
+     "v": "16px",
+     "n": 7
+    },
+    {
+     "v": "24px",
+     "n": 6
+    },
+    {
+     "v": "7px",
+     "n": 5
+    },
+    {
+     "v": "6px",
+     "n": 5
+    },
+    {
+     "v": "12px",
+     "n": 4
+    },
+    {
+     "v": "8px",
+     "n": 2
+    },
+    {
+     "v": "20px",
+     "n": 2
+    },
+    {
+     "v": "32px / col 50px",
+     "n": 2
+    },
+    {
+     "v": "160px",
+     "n": 1
+    },
+    {
+     "v": "60px",
+     "n": 1
+    },
+    {
+     "v": "10px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "7px",
+     "n": 92
+    },
+    {
+     "v": "10px",
+     "n": 33
+    },
+    {
+     "v": "16px",
+     "n": 20
+    },
+    {
+     "v": "46px",
+     "n": 18
+    },
+    {
+     "v": "60px",
+     "n": 17
+    },
+    {
+     "v": "8px",
+     "n": 16
+    },
+    {
+     "v": "40px",
+     "n": 16
+    },
+    {
+     "v": "32px",
+     "n": 15
+    },
+    {
+     "v": "72px",
+     "n": 9
+    },
+    {
+     "v": "12px",
+     "n": 7
+    },
+    {
+     "v": "9px",
+     "n": 6
+    },
+    {
+     "v": "20px",
+     "n": 5
+    },
+    {
+     "v": "15px",
+     "n": 5
+    },
+    {
+     "v": "3px",
+     "n": 4
+    },
+    {
+     "v": "74px",
+     "n": 3
+    },
+    {
+     "v": "43px",
+     "n": 3
+    },
+    {
+     "v": "4px",
+     "n": 2
+    },
+    {
+     "v": "70px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "24px",
+     "n": 18
+    },
+    {
+     "v": "12px",
+     "n": 13
+    },
+    {
+     "v": "32px",
+     "n": 8
+    },
+    {
+     "v": "16px",
+     "n": 7
+    },
+    {
+     "v": "60px",
+     "n": 6
+    },
+    {
+     "v": "10px",
+     "n": 6
+    },
+    {
+     "v": "19px",
+     "n": 4
+    },
+    {
+     "v": "4px",
+     "n": 4
+    },
+    {
+     "v": "2px",
+     "n": 2
+    },
+    {
+     "v": "80px",
+     "n": 2
+    },
+    {
+     "v": "6px",
+     "n": 2
+    },
+    {
+     "v": "3px",
+     "n": 2
+    },
+    {
+     "v": "8px",
+     "n": 2
+    },
+    {
+     "v": "120px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "First launched in 2017, Designjoy revolutionized the design industry with its subscription-based model. To this day, Des",
+    "chars": 303,
+    "lines": 6,
+    "charsPerLine": 51,
+    "width": 560,
+    "fontSize": "20px",
+    "lineHeight": "28px",
+    "color": "#99948f"
+   },
+   "rootVars": {
+    "--black": "black",
+    "--orange-red": "#ea552b",
+    "--gold": "#fdd900",
+    "--indian-red": "#f7414e",
+    "--orange": "#fb421f",
+    "--midnight-blue": "#130933",
+    "--lime": "#61f15c",
+    "--white": "white",
+    "--white-smoke": "#f6f9fc",
+    "--medium-sea-green": "#2cc05a",
+    "--8f8f8f": "#8f8f8f",
+    "--royal-blue": "#0c77f8",
+    "--lavender-blush": "#f5e8f8",
+    "--indigo": "#3a2099",
+    "--royal-blue-2": "#0052ff",
+    "--dark-slate-blue": "#3e396b",
+    "--cornflower-blue": "#8994c6",
+    "--dodger-blue": "#097fff",
+    "--ghost-white": "#f3f6ff",
+    "--deep-sky-blue": "#0ab3e4",
+    "--border": "#e4e4e4",
+    "--main-text": "#162944",
+    "--white-smoke-2": "#f8f9fc",
+    "--slate-blue": "#1a49dd",
+    "--slate-grey": "#6b7c93",
+    "--light-steel-blue": "#94a7c2",
+    "--royal-blue-3": "#05f",
+    "--dodger-blue-2": "#09f",
+    "--dodger-blue-3": "#09f",
+    "--purple": "#80376b",
+    "--orange-2": "#fd9800",
+    "--linen": "#fbe8de"
+   },
+   "blockedSheets": 2,
+   "reducedMotionRules": 0,
+   "h1": [
+    "Design subscriptions for everyone",
+    "It's \"you'll never go back\" better",
+    "One subscription, endless possibilities"
+   ],
+   "h2": [
+    "The way design should’ve been done in the first place",
+    "$4,995",
+    "$5,995"
+   ],
+   "h3": [],
+   "nav": [],
+   "ctas": [
+    "Login [71x38 bg #000000 a0 fg #000000 r 8px pad 8px 16px 15px/500]",
+    "Book a call [127x38 bg #000000 a0 fg #000000 r 8px pad 8px 16px 15px/500]",
+    "See pricing [110x38 bg #000000 a0 fg #ffffff r 8px pad 8px 16px 15px/500]",
+    "See pricing [324x60 bg #ffffff fg #000000 r 8px pad 20px 15px 20px/500]",
+    "See recent work [144x38 bg #000000 a0 fg #ffffff r 8px pad 8px 16px 15px/500]",
+    "Book a call [326x60 bg #ffffff fg #000000 r 8px pad 20px 15px 20px/500]"
+   ],
+   "media": {
+    "img": 74,
+    "svg": 4,
+    "video": 0,
+    "canvas": 0
+   }
+  }
+ }
+}

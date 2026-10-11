@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en-GB" data-canvas="1080x1350">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080">
+<title>Canvas fixture</title>
+<!-- Fixture for the lint's fixed-canvas mode (tools/lint.mjs, canvas-text) and rotated or mirrored text handling.
+     Expected: canvas-text fails once (".fine", 24px on a 1080 canvas is seen at 8.7px); the rotated sheet and the
+     mirrored letter raise no measure, squash or run-together fails; no 390 overflow fail although the canvas is
+     1080 wide. The mirrored S tests the lint only; as design it fails the concept legibility check in
+     design-playbook-brand. Run: node tools/lint.mjs tools/fixtures/canvas-poster.html --out-dir /tmp -->
+<style>
+  :root { --color-bg: #f4f0e8; --color-text: #24211c; --space-8: 48px; --space-9: 64px; color-scheme: light; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--color-bg); color: var(--color-text); font-family: system-ui, sans-serif; }
+  main { position: relative; width: 1080px; height: 1350px; overflow: hidden; padding: var(--space-9); }
+  h1 { font-size: 160px; line-height: 0.95; }
+  .mirror { display: inline-block; scale: -1 1; }
+  .sheet { margin-top: var(--space-8); width: 720px; rotate: -1.2deg; padding: var(--space-8); display: flex; flex-direction: column; gap: var(--space-8); }
+  .sheet p { font-size: 48px; line-height: 1.1; }
+  .fine { font-size: 24px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Set in <span class="mirror">S</span>tone</h1>
+  <div class="sheet">
+    <p>Glasgow type and print festival, two days of letterpress, talks and a book fair</p>
+    <p>Sat 17 to Sun 18 April 2027</p>
+  </div>
+  <p class="fine">Printed on recycled stock</p>
+</main>
+</body>
+</html>
