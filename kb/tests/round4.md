@@ -180,3 +180,15 @@ Read by eye on the new renders: dashboard first-run at 1440 (no caveat under Con
 1. A clean-context critic for round 4.1 (none available here); until then the judged rows are unverified.
 2. The critic's opinion items listed above (coffee 6, 7, 9; dashboard 6, 8, 10; phone time zone), plus everything in "Still below the bar" (photography, font fallback shift, chart keyboard access).
 3. FOUNDATIONS item 13, 15 and 16 rows do not yet name the new lint checks (`undefined-var`, `state-layer`, `double-space`, explained-by, meters); that is an editor-in-chief change, proposed here. design-director's state truth contract should add `data-explained-by`.
+
+## Davon's blind ranking (2026-10-11)
+
+Davon answered "1B, 2A, 3A". Against the key (now revealed in `kb/tests/round4/blind-key.md`), round 4 won 2 of 3. All three pairs were fully blind (same photos on both sides). The pairs were rendered from round 4 before the 4.1 fixes.
+
+| Pair | View | Picked | Round 4 was | Result |
+|---|---|---|---|---|
+| 1 | Coffee, 1440 light | B | B | Round 4 |
+| 2 | Dashboard, 1440 light | A | B | Round 3 |
+| 3 | Dashboard, 1024 light | A | A | Round 4 |
+
+Reading (opinion until Davon says why): at 1440 he preferred round 3's dashboard, which keeps boxed panels, the teal accent on the chart line and share bars, and the date range and comparison controls in the toolbar. Round 4 moved toward Linear-style hairlines, a black chart line, grey row-fill bars and no date control at the top. At 1024 round 4 won, where round 3's header broke. The critic's "fewer boxes, toward Linear" advice did not beat Davon's eye at desktop width, so treat restraint as a means, not a goal.
