@@ -14,6 +14,8 @@
 //                 between them, so it reads as one word ("Sep 30$2.62", "Pauseupdates")
 //   word-break    a word split across two lines inside a control, label or table cell ("Pour-" / "over"),
 //                 or text that runs into the control's padding; elsewhere a mid-word break is a warning
+//   double-space  a flex or grid gap next to a no-break space at an item's edge, or two spaces in a row where one is
+//                 a no-break space ("Invite&nbsp;&nbsp;&nbsp;a teammate", round 4 critic)
 //   grid-edge     sibling columns (same tag and class, side by side) whose matching children miss each other's
 //                 top or left edge by more than 2px while every earlier child has the same height (the promise
 //                 columns 12px off); near-miss left edges (2 to 6px off an edge used 4+ times) are warnings
@@ -25,7 +27,7 @@
 //                 (aria-busy=true) and, when the sheet has fields, one invalid field (aria-invalid=true);
 //                 a data sheet (table, chart or KPI) names loading, error, empty and partial panels (warn)
 //
-// Opt out per element with data-lint-skip="occlusion squash run-together word-break grid-edge hidden-content".
+// Opt out per element with data-lint-skip="occlusion squash run-together word-break grid-edge hidden-content double-space".
 
 export async function layoutChecks(page, width) {
   return page.evaluate((width) => {
@@ -145,6 +147,38 @@ export async function layoutChecks(page, width) {
       prev = cur;
     }
 
+    // ---- double-space: a flex or grid gap plus a no-break space, or two spaces in a row that HTML cannot collapse ----
+    // ("Invite&nbsp;&nbsp;&nbsp;a teammate": an 8px gap between "Invite" and a span that starts with &nbsp;, round 4 critic).
+    out.doubles = [];
+    const NB = / | | /;
+    const shownItem = (n) => n.nodeType === 3 ? !!n.textContent.length : (n.nodeType === 1 && n.getClientRects().length > 0 && !/absolute|fixed/.test(getComputedStyle(n).position) && !clipped(n) && getComputedStyle(n).display !== 'contents');
+    for (const c of all) {
+      if (!L.visible(c) || L.inactive(c) || L.skipped(c, 'double-space')) continue;
+      const cs = getComputedStyle(c);
+      if (!/flex|grid/.test(cs.display) || /column/.test(cs.flexDirection) && /flex/.test(cs.display)) continue;
+      if ((parseFloat(cs.columnGap) || 0) < 1) continue;
+      const items = [...c.childNodes].filter(shownItem).filter((n) => n.nodeType === 1 || n.textContent.trim() || NB.test(n.textContent));
+      items.forEach((n, i) => {
+        const t = n.textContent;
+        const lead = i > 0 && NB.test(t.charAt(0)), trail = i < items.length - 1 && NB.test(t.charAt(t.length - 1));
+        if (lead || trail) out.doubles.push({ sel: L.sel(n.nodeType === 1 ? n : c), text: (lead ? '[gap]' : '') + t.replace(/\s+/g, ' ').trim().slice(0, 30) + (trail ? '[gap]' : ''), gap: Math.round(parseFloat(cs.columnGap)), kind: 'gap' });
+      });
+    }
+    {
+      const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      let last = null;
+      for (let n = w.nextNode(); n; n = w.nextNode()) {
+        const el = n.parentElement;
+        if (!el || el.closest('script, style, template, noscript, code, pre, textarea, svg') || !n.textContent.length) continue;
+        if (!el.getClientRects().length || clipped(el) || L.inactive(el) || L.skipped(el, 'double-space') || /pre/.test(getComputedStyle(el).whiteSpace)) { last = null; continue; }
+        const t = n.textContent;
+        const within = /[   ][  ]|[  ] /.test(t);
+        const across = last && boxOf(last) === boxOf(n) && /[   ]$/.test(last.textContent) && /^[   ]/.test(t) && (NB.test(last.textContent.slice(-1)) || NB.test(t.charAt(0)));
+        if (within || across) out.doubles.push({ sel: L.sel(el), text: t.replace(/\s+/g, ' ').trim().slice(0, 30), kind: 'spaces' });
+        last = n;
+      }
+    }
+
     // ---- word-break and text into padding, inside controls, labels and cells ----
     const TIGHT = 'button, a, label, summary, legend, th, td, dt, [role=button], [role=tab], [role=radio], [role=option], [role=menuitem], [role=checkbox], [role=switch], [class*=chip], [class*=badge], [class*=tag]';
     const seenW = new Set();
@@ -258,6 +292,7 @@ export function reportLayout(r, width, add) {
   for (const w of r.words) add('word-break', w.level, `"${w.word}" breaks across two lines at ${width}px${w.level === 'fail' ? ' inside a control, label or cell' : ''}`, { sel: w.sel, width });
   for (const p of r.padding) add('word-break', 'fail', `text "${p.text}" runs ${p.px}px into its control's padding at ${width}px`, { sel: p.sel, width });
   for (const g of r.grid) add('grid-edge', 'fail', `sibling columns miss a shared ${g.axis} edge by ${g.px}px at ${width}px (${g.columns} columns in ${g.parent})`, { sel: g.sel, width });
+  for (const d of r.doubles || []) add('double-space', 'fail', d.kind === 'gap' ? `a ${d.gap}px flex or grid gap plus a no-break space at ${width}px: "${d.text}" reads as two or three word spaces (put the words in one item, or drop the no-break space)` : `two spaces in a row that HTML cannot collapse at ${width}px: "${d.text}"`, { sel: d.sel, width });
   for (const n of r.near.slice(0, 6)) add('grid-edge', 'warn', `left edge at ${n.x}px is ${Math.abs(n.x - n.grid)}px off the edge at ${n.grid}px that 4+ blocks share, at ${width}px (align it, or offset it on purpose by a full step)`, { sel: n.sel, width });
 }
 

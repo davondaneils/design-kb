@@ -1,6 +1,6 @@
 {
   "file": "kb/tests/round4/coffee-states.html",
-  "date": "2026-10-10T23:42:14.424Z",
+  "date": "2026-10-11T00:48:33.434Z",
   "checks": {
     "axe": {
       "fail": [],
@@ -146,6 +146,21 @@
       "warn": [],
       "pass": true
     },
+    "double-space": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "undefined-var": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-layer": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
     "state-sheet": {
       "fail": [],
       "warn": [],
@@ -205,10 +220,10 @@
   "summary": {
     "stateSheet": true,
     "weightKB": {
-      "html": 81,
+      "html": 83,
       "svg": 3
     },
-    "focusables": 49,
+    "focusables": 53,
     "fallbackShift390": 0,
     "fallbackShift1440": 0,
     "motionFound": {
@@ -240,6 +255,9 @@
     "word-break": "pass",
     "grid-edge": "pass",
     "hidden-content": "pass",
+    "double-space": "pass",
+    "undefined-var": "pass",
+    "state-layer": "pass",
     "state-sheet": "pass",
     "truth": "pass",
     "proportion": "pass",

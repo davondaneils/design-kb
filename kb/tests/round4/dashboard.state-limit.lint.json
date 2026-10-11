@@ -1,6 +1,6 @@
 {
   "file": "kb/tests/round4/dashboard.html?state=limit",
-  "date": "2026-10-10T23:50:17.899Z",
+  "date": "2026-10-11T00:44:39.023Z",
   "checks": {
     "axe": {
       "fail": [],
@@ -48,7 +48,7 @@
         {
           "message": "touch target under 44x44 at 390px",
           "sel": "thead > tr > th.num > button.sort",
-          "w": 94.8,
+          "w": 109.3,
           "h": 24
         },
         {
@@ -182,6 +182,21 @@
       "warn": [],
       "pass": true
     },
+    "double-space": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "undefined-var": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-layer": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
     "truth": {
       "fail": [],
       "warn": [],
@@ -226,9 +241,9 @@
       "fail": [],
       "warn": [
         {
-          "message": "layout moves 83px at 390px when the web fonts fail (worst: #main > section.panel); add metric fallbacks (size-adjust, ascent-override). Line count changed in 4 elements: #limit-alert \"Warning: 7.8M of 10M events used this mo\" 7 to 9 lines; #limit-alert > div > p \"At this rate you reach the Starter limit\" 4 to 5 lines; #limit-alert > div > p.meta.limit-admin \"Billing is yours · Compare plans · Dismi\" 1 to 2 lines; #plat-note \"Active users this week, Oct 6 to 12, aga\" 2 to 3 lines (one element near a wrap point is a copy fix; many is a font metrics fix)",
-          "sel": "#main > section.panel",
-          "shift": 83,
+          "message": "layout moves 65px at 390px when the web fonts fail (worst: #main > div.split); add metric fallbacks (size-adjust, ascent-override). Line count changed in 3 elements: #limit-alert \"Warning: 7.8M of 10M events used this mo\" 7 to 9 lines; #limit-alert > div > p \"At this rate you reach the Starter limit\" 4 to 5 lines; #limit-alert > div > p.meta.limit-admin \"Billing is yours · Compare plans · Dismi\" 1 to 2 lines (one element near a wrap point is a copy fix; many is a font metrics fix)",
+          "sel": "#main > div.split",
+          "shift": 65,
           "rewrapped": [
             {
               "sel": "#limit-alert",
@@ -247,12 +262,6 @@
               "from": 1,
               "to": 2,
               "text": "Billing is yours · Compare plans · Dismi"
-            },
-            {
-              "sel": "#plat-note",
-              "from": 2,
-              "to": 3,
-              "text": "Active users this week, Oct 6 to 12, aga"
             }
           ]
         },
@@ -280,11 +289,11 @@
   },
   "summary": {
     "weightKB": {
-      "html": 157,
+      "html": 159,
       "svg": 14
     },
     "focusables": 49,
-    "fallbackShift390": 83,
+    "fallbackShift390": 65,
     "fallbackShift1440": -25,
     "motionFound": {
       "animations": 0,
@@ -315,6 +324,9 @@
     "word-break": "pass",
     "grid-edge": "pass",
     "hidden-content": "pass",
+    "double-space": "pass",
+    "undefined-var": "pass",
+    "state-layer": "pass",
     "truth": "pass",
     "proportion": "pass",
     "nav-parity": "pass",

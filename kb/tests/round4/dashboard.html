@@ -119,7 +119,7 @@
   --state-hover: color-mix(in oklch, var(--color-text) 8%, transparent);
   --state-pressed: color-mix(in oklch, var(--color-text) 10%, transparent);
 
-  --space-1: 2px; --space-2: 4px; --space-3: 8px; --space-4: 12px; --space-5: 16px; --space-6: 24px; --space-7: 32px; --space-8: 48px; --space-9: 64px;
+  --space-1: 2px; --space-2: 4px; --space-3: 8px; --space-4: 12px; --space-5: 16px; --space-6: 24px; --space-7: 32px; --space-8: 48px; --space-9: 64px; --space-10: 96px;
   --text-xs: 12px; --text-sm: 14px; --text-base: 16px; --text-lg: 20px; --text-xl: 25px; --text-2xl: 31px; --text-3xl: 39px;
   --radius-sm: 4px; --radius-md: 8px; --radius-lg: 12px; --radius-full: 9999px;
   --size-control-sm: 32px; --size-control-md: 40px; --size-control-lg: 48px;
@@ -366,6 +366,9 @@ kbd { white-space: nowrap; display: inline-flex; align-items: center; justify-co
 html[data-live=paused] .freshness .dot { background: var(--color-text-muted); }
 @media (hover: hover) { .live-btn:hover { background: var(--state-hover); color: var(--color-text); } }
 .live-btn:active { background: var(--state-pressed); }
+/* Touch: a 44x44 hit area (WCAG 2.5.5) without growing the 64px head. The button keeps its 24px box so its label stays on
+   the freshness line; ::after extends the hit area 12px up and 8px down, which ends exactly at the head's bottom edge. */
+@media (pointer: coarse) { .live-btn { position: relative; min-width: 44px; justify-content: center; } .live-btn::after { content: ""; position: absolute; inset: -12px 0 -8px; } }
 html[data-state=loading] .live-btn, html[data-state=empty] .live-btn, html[data-phase~=sample] .live-btn { display: none; } /* sample data is not live: nothing to pause */
 .live-more { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } /* narrow: "Pause" shows, "Pause updates" is the name */
 @container main (width >= 40rem) { .live-more { position: static; width: auto; height: auto; overflow: visible; clip: auto; } }
@@ -430,6 +433,7 @@ html[data-state=viewer] .kpi.pickable[data-metric=rev] .kpi-pick { cursor: defau
 .split { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--content-gap) var(--space-7); }
 @container content (width >= 60rem) { .split { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); } } /* 2:1, the explainer beside the chart (playbook rule 8) */
 .split > .panel { display: flex; flex-direction: column; }
+.split > .panel[aria-labelledby=plat-title] { align-self: start; } /* round 4.1: ends with its footnote, not stretched to the chart's height */
 .content { max-inline-size: 1600px; } /* ultra-wide: past 1600px the work area stops growing; a wider screen gets air, not longer eye travel */
 
 /* Platforms: a ranked bar list, the evidence for the iOS warning, beside the trend it explains */
@@ -525,6 +529,7 @@ td.act, th.act { width: 1%; padding-left: 0; padding-right: 0; text-align: right
   thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   tbody tr { display: grid; grid-template-columns: max-content max-content minmax(0, 1fr) auto auto; grid-template-areas: "page page page key act" "time share . . act"; align-items: center; column-gap: var(--space-3); row-gap: var(--space-2); padding: var(--space-4) 0; border-bottom: 1px solid var(--color-border); } /* round 4: flush with the section edge, like every other row */
   tbody tr:last-child { border-bottom: 0; }
+  tbody tr.search-miss { display: block; } /* one sentence, not a card: a max-content grid column would size it to its full length */
   th, td { height: auto; padding: 0; border: 0; }
   td.secondary { display: inline-flex; gap: var(--space-2); font-size: var(--text-xs); color: var(--color-text-muted); }
   td.secondary::before { content: attr(data-label); }
@@ -660,6 +665,8 @@ dialog::backdrop { background: var(--color-scrim); }
    check-failed: the cause named, the fix, who can do it. first-data: real numbers swap in; metrics that cannot compute say when. */
 .setup, .answer-sample, .answer-first, .fr-sample, .kpis.first, .first-chart, .invite-btn, .fresh-sample, .fresh-first, .guide-link { display: none; }
 html[data-phase~=setup] .setup { display: block; }
+/* A caveat lives only while the alert that explains it is on screen: setup hides .attention, so sample tiles drop theirs. */
+html[data-phase~=setup] .kpi .caveat, html[data-phase~=setup] .warn-mark, html[data-phase~=setup] .legend-partial { display: none; }
 html[data-phase~=setup] .guide-link { display: flex; }
 html[data-phase~=setup] .attention, html[data-phase~=setup] .share-btn, html[data-phase~=setup] .answer-ready, html[data-phase~=setup] .fresh-ready { display: none; }
 html[data-phase~=sample] .fr-sample { display: inline-flex; }
@@ -811,7 +818,7 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
       <button class="btn cmd-btn" type="button" data-open="palette" aria-keyshortcuts="Control+K Meta+K">Commands<kbd class="mod-k" aria-hidden="true">Ctrl K</kbd></button>
       <button class="btn btn-primary share-btn" type="button">Share report</button>
       <a class="btn btn-primary install-btn" href="#step-install">Install snippet</a>
-      <button class="btn btn-primary invite-btn" type="button">Invite<span class="live-more">&nbsp;a teammate</span></button>
+      <button class="btn btn-primary invite-btn" type="button"><span>Invite<span class="live-more">&nbsp;a teammate</span></span></button>
     </header>
 
     <div class="toolbar" role="toolbar" aria-label="View options">
@@ -825,11 +832,11 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
 
     <main class="content" id="main" tabindex="-1" aria-busy="false">
       <p class="answer answer-ready"><span><strong>Weekly active users are up <span id="ans-pct" class="num" data-num data-derived-from="same #wau-pct">8.1%</span>, the eighth rise in a row.</strong></span> <span>Checkout events stopped at 2:05&nbsp;pm, so <a href="#attention-title">today’s conversion and revenue are undercounted</a>.</span></p>
-      <p class="answer answer-loading">Loading this week’s overview.</p>
+      <p class="answer answer-loading">Loading the overview.</p>
       <p class="answer answer-empty"><strong>No events yet.</strong> Install the tracking snippet and your first numbers appear here within a minute.</p>
 
       <p class="answer answer-sample"><strong>This is sample data from a demo store,</strong> so you can see what Tally will show. Your own numbers replace it within a minute of your first event.</p>
-      <p class="answer answer-first"><strong>Tally is counting: 38 page views from 12 visitors since 2:06&nbsp;pm.</strong> Weekly comparisons start on Oct 19, once a full week is in.</p>
+      <p class="answer answer-first"><strong>Tally is counting: 38 page views from 12 visitors since 2:06&nbsp;pm.</strong> Weekly comparisons start on Oct 26, once two full weeks are in.</p>
 
       <section class="panel boxed setup" id="setup" aria-labelledby="setup-title">
         <div class="setup-head">
@@ -888,16 +895,16 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
       </section>
 
       <section class="panel kpi-panel" aria-labelledby="kpi-title">
-        <div class="panel-head"><h2 id="kpi-title">This week<span class="kpi-dates">, Oct&nbsp;6 to 12</span></h2><span class="pick-hint">Choose a tile to chart it</span></div>
+        <div class="panel-head"><h2 id="kpi-title">Last 7 days<span class="kpi-dates">, Oct&nbsp;6 to 12</span></h2><span class="pick-hint">Choose a tile to chart it</span></div>
         <p class="sample-bar"><span class="tag" style="display:inline-flex">Sample</span>Demo store numbers. Yours replace them after the first event.</p>
         <dl class="kpis ready" data-lint-skip="grid-edge">
-          <div class="kpi pickable" data-metric="wau"><dt><button class="kpi-pick" type="button" aria-pressed="true" aria-controls="chart-panel" data-metric="wau">Weekly active users<span class="sr-only">, show in chart</span></button></dt><dd><span class="value"><span class="live" data-live="wau" aria-hidden="true" id="wau-val" data-num data-value="48210" data-monotonic="up" data-sum-of="#plat-list .b-val">48,210</span><span class="sr-only" id="wau-sr">48,210</span></span><svg class="spark" id="wau-spark" viewBox="0 0 96 32" preserveAspectRatio="none" role="img" aria-label="12-week trend: up from 31,400 to 48,210"><polyline points="4,28.0 12,27.1 20,25.4 28,26.0 36,23.1 44,22.0 52,20.0 60,17.4 68,16.3 76,12.3 84,9.2 92,4.0" vector-effect="non-scaling-stroke"/><circle cx="92" cy="4.0" r="2.5"/></svg><span class="delta good"><svg class="i i-12" data-icon="arrow-up" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 10V2.5M3 5.75l3.25-3.25 3.25 3.25"/></svg><span id="wau-pct" data-num data-derived-from="pct-change #wau-val #wau-prev">+8.1%</span> <span class="vs">vs last week</span></span></dd></div>
-          <div class="kpi pickable" data-metric="conv"><dt><button class="kpi-pick" type="button" aria-pressed="false" aria-controls="chart-panel" data-metric="conv">Conversion<span class="sr-only">, show in chart</span></button></dt><dd><span class="value" data-num data-source="checkout">3.8<span class="u">%</span></span><svg class="spark" viewBox="0 0 96 32" preserveAspectRatio="none" role="img" aria-label="12-week trend: up from 3.0% to 3.8%"><polyline points="4,28.0 12,25.0 20,25.0 28,22.0 36,22.0 44,19.0 52,16.0 60,19.0 68,13.0 76,10.0 84,22.0 92,4.0" vector-effect="non-scaling-stroke"/><circle cx="92" cy="4.0" r="2.5"/></svg><span class="delta good"><svg class="i i-12" data-icon="arrow-up" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 10V2.5M3 5.75l3.25-3.25 3.25 3.25"/></svg>+0.6 pts <span class="vs">vs last week</span></span><span class="caveat">Partial since 2:05&nbsp;pm</span></dd></div>
-          <div class="kpi pickable" data-metric="rev"><dt><button class="kpi-pick" type="button" aria-pressed="false" aria-controls="chart-panel" data-metric="rev">Revenue<span class="sr-only">, show in chart</span></button></dt><dd><span class="rev-value"><span class="value" data-num data-value="184200" data-source="checkout"><span class="u pre" aria-hidden="true">$</span><span aria-hidden="true">184.2</span><span class="u" aria-hidden="true">k</span><span class="sr-only">$184.2k</span></span><svg class="spark" viewBox="0 0 96 32" preserveAspectRatio="none" role="img" aria-label="12-week trend: up from $141k to $184.2k"><polyline points="4,28.0 12,26.3 20,25.2 28,23.6 36,21.9 44,20.2 52,18.6 60,15.8 68,13.6 76,10.8 84,11.0 92,4.0" vector-effect="non-scaling-stroke"/><circle cx="92" cy="4.0" r="2.5"/></svg><span class="delta good"><svg class="i i-12" data-icon="arrow-up" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 10V2.5M3 5.75l3.25-3.25 3.25 3.25"/></svg>+8.1% <span class="vs">vs last week</span></span><span class="caveat">Partial since 2:05&nbsp;pm</span></span><span class="rev-restricted"><span class="value" aria-hidden="true"><svg class="i i-lock" data-icon="lock" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.25" y="7.25" width="9.5" height="6.5" rx="1.5"/><path d="M5.25 7.25v-2a2.75 2.75 0 0 1 5.5 0v2"/></svg></span><span class="restricted">Visible to Finance admins. <a href="#">Ask Priya Shah for access</a></span></span></dd></div>
-          <div class="kpi pickable" data-metric="churn"><dt><button class="kpi-pick" type="button" aria-pressed="false" aria-controls="chart-panel" data-metric="churn">Churn<span class="sr-only">, show in chart</span></button></dt><dd><span class="value">2.9<span class="u">%</span></span><svg class="spark bad" viewBox="0 0 96 32" preserveAspectRatio="none" role="img" aria-label="12-week trend: up from 2.6% to 2.9%, which is worse"><polyline points="4,23.2 12,28.0 20,23.2 28,23.2 36,18.4 44,18.4 52,23.2 60,13.6 68,13.6 76,8.8 84,28.0 92,4.0" vector-effect="non-scaling-stroke"/><circle cx="92" cy="4.0" r="2.5"/></svg><span class="delta bad"><svg class="i i-12" data-icon="arrow-up" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 10V2.5M3 5.75l3.25-3.25 3.25 3.25"/></svg>+0.4 pts, worse <span class="vs">vs last week</span></span></dd></div>
+          <div class="kpi pickable" data-metric="wau"><dt><button class="kpi-pick" type="button" aria-pressed="true" aria-controls="chart-panel" data-metric="wau">Weekly active users<span class="sr-only">, show in chart</span></button></dt><dd><span class="value"><span class="live" data-live="wau" aria-hidden="true" id="wau-val" data-num data-value="48210" data-monotonic="up" data-sum-of="#plat-list .b-val">48,210</span><span class="sr-only" id="wau-sr">48,210</span></span><svg class="spark" id="wau-spark" viewBox="0 0 96 32" preserveAspectRatio="none" role="img" aria-label="12-week trend: up from 31,400 to 48,210"><polyline points="4,28.0 12,27.1 20,25.4 28,26.0 36,23.1 44,22.0 52,20.0 60,17.4 68,16.3 76,12.3 84,9.2 92,4.0" vector-effect="non-scaling-stroke"/><circle cx="92" cy="4.0" r="2.5"/></svg><span class="delta good"><svg class="i i-12" data-icon="arrow-up" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 10V2.5M3 5.75l3.25-3.25 3.25 3.25"/></svg><span id="wau-pct" data-num data-derived-from="pct-change #wau-val #wau-prev">+8.1%</span> <span class="vs">vs prior 7 days</span></span></dd></div>
+          <div class="kpi pickable" data-metric="conv"><dt><button class="kpi-pick" type="button" aria-pressed="false" aria-controls="chart-panel" data-metric="conv">Conversion<span class="sr-only">, show in chart</span></button></dt><dd><span class="value" data-num data-source="checkout">3.8<span class="u">%</span></span><svg class="spark" viewBox="0 0 96 32" preserveAspectRatio="none" role="img" aria-label="12-week trend: up from 3.0% to 3.8%"><polyline points="4,28.0 12,25.0 20,25.0 28,22.0 36,22.0 44,19.0 52,16.0 60,19.0 68,13.0 76,10.0 84,22.0 92,4.0" vector-effect="non-scaling-stroke"/><circle cx="92" cy="4.0" r="2.5"/></svg><span class="delta good"><svg class="i i-12" data-icon="arrow-up" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 10V2.5M3 5.75l3.25-3.25 3.25 3.25"/></svg>+0.6 pts <span class="vs">vs prior 7 days</span></span><span class="caveat" data-explained-by="#alert-checkout">Partial since 2:05&nbsp;pm</span></dd></div>
+          <div class="kpi pickable" data-metric="rev"><dt><button class="kpi-pick" type="button" aria-pressed="false" aria-controls="chart-panel" data-metric="rev">Revenue<span class="sr-only">, show in chart</span></button></dt><dd><span class="rev-value"><span class="value" data-num data-value="184200" data-source="checkout"><span class="u pre" aria-hidden="true">$</span><span aria-hidden="true">184.2</span><span class="u" aria-hidden="true">k</span><span class="sr-only">$184.2k</span></span><svg class="spark" viewBox="0 0 96 32" preserveAspectRatio="none" role="img" aria-label="12-week trend: up from $141k to $184.2k"><polyline points="4,28.0 12,26.3 20,25.2 28,23.6 36,21.9 44,20.2 52,18.6 60,15.8 68,13.6 76,10.8 84,11.0 92,4.0" vector-effect="non-scaling-stroke"/><circle cx="92" cy="4.0" r="2.5"/></svg><span class="delta good"><svg class="i i-12" data-icon="arrow-up" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 10V2.5M3 5.75l3.25-3.25 3.25 3.25"/></svg>+8.1% <span class="vs">vs prior 7 days</span></span><span class="caveat" data-explained-by="#alert-checkout">Partial since 2:05&nbsp;pm</span></span><span class="rev-restricted"><span class="value" aria-hidden="true"><svg class="i i-lock" data-icon="lock" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.25" y="7.25" width="9.5" height="6.5" rx="1.5"/><path d="M5.25 7.25v-2a2.75 2.75 0 0 1 5.5 0v2"/></svg></span><span class="restricted">Visible to Finance admins. <a href="#">Ask Priya Shah for access</a></span></span></dd></div>
+          <div class="kpi pickable" data-metric="churn"><dt><button class="kpi-pick" type="button" aria-pressed="false" aria-controls="chart-panel" data-metric="churn">Churn<span class="sr-only">, show in chart</span></button></dt><dd><span class="value">2.9<span class="u">%</span></span><svg class="spark bad" viewBox="0 0 96 32" preserveAspectRatio="none" role="img" aria-label="12-week trend: up from 2.6% to 2.9%, which is worse"><polyline points="4,23.2 12,28.0 20,23.2 28,23.2 36,18.4 44,18.4 52,23.2 60,13.6 68,13.6 76,8.8 84,28.0 92,4.0" vector-effect="non-scaling-stroke"/><circle cx="92" cy="4.0" r="2.5"/></svg><span class="delta bad"><svg class="i i-12" data-icon="arrow-up" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 10V2.5M3 5.75l3.25-3.25 3.25 3.25"/></svg>+0.4 pts, worse <span class="vs">vs prior 7 days</span></span></dd></div>
         </dl>
         <dl class="kpis first" data-lint-skip="grid-edge">
-          <div class="kpi"><dt>Weekly active users</dt><dd><span class="value">12</span><span class="pending">Week-on-week from Oct 19</span></dd></div>
+          <div class="kpi"><dt>Weekly active users</dt><dd><span class="value">12</span><span class="pending">Week-on-week from Oct 26</span></dd></div>
           <div class="kpi"><dt>Conversion</dt><dd><span class="value" aria-hidden="true">&ndash;</span><span class="pending">Needs a <code>checkout_completed</code> event</span></dd></div>
           <div class="kpi"><dt>Revenue</dt><dd><span class="value" aria-hidden="true">&ndash;</span><span class="pending"><a href="#">Connect Stripe</a> to see revenue</span></dd></div>
           <div class="kpi"><dt>Churn</dt><dd><span class="value" aria-hidden="true">&ndash;</span><span class="pending">Needs 30 days of data, Nov 11</span></dd></div>
@@ -919,13 +926,13 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
       <section class="panel boxed attention ready-attention" aria-labelledby="attention-title">
         <div class="panel-head"><h2 id="attention-title">Needs attention</h2><a class="btn btn-ghost" href="#">Manage alerts</a></div>
         <ul class="alerts">
-          <li class="alert danger" data-source-stopped="checkout">
+          <li class="alert danger" id="alert-checkout" data-source-stopped="checkout">
             <svg class="i icon" data-icon="error" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path class="solid" fill-rule="evenodd" d="M8 1.25a6.75 6.75 0 1 1 0 13.5A6.75 6.75 0 0 1 8 1.25zM7.25 4.75v4a.75.75 0 0 0 1.5 0v-4a.75.75 0 0 0-1.5 0zM8 10.4a.9.9 0 1 0 0 1.8.9.9 0 0 0 0-1.8z"/></svg>
             <div><strong>Error: checkout events stopped at 2:05&nbsp;pm</strong><p>No <code>checkout_completed</code> events since then. Other events are still arriving.</p><p class="meta">Last event 2:05&nbsp;pm PT &middot; <a href="#">Open in Events</a></p></div>
           </li>
-          <li class="alert warning">
+          <li class="alert warning" id="alert-ios">
             <svg class="i icon" data-icon="warning" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path class="solid" fill-rule="evenodd" d="M6.7 2.1a1.5 1.5 0 0 1 2.6 0l5.55 9.65a1.5 1.5 0 0 1-1.3 2.25H2.45a1.5 1.5 0 0 1-1.3-2.25zM7.25 5.75v3.25a.75.75 0 0 0 1.5 0V5.75a.75.75 0 0 0-1.5 0zM8 10.6a.85.85 0 1 0 0 1.7.85.85 0 0 0 0-1.7z"/></svg>
-            <div><strong>Warning: iOS active users down <span id="ios-pct">18%</span> this week</strong><p>The drop is limited to devices on iOS 26.</p><p class="meta">Started Wed,&nbsp;Oct&nbsp;7 &middot; <a href="#">Compare platforms</a></p></div>
+            <div><strong>Warning: iOS active users down <span id="ios-pct">18%</span> in the last 7 days</strong><p>The drop is limited to devices on iOS 26.</p><p class="meta">Started Wed,&nbsp;Oct&nbsp;7 &middot; <a href="#">Compare platforms</a></p></div>
           </li>
           <!-- design-conversion 05: the plan limit is one alert among the others, ranked after data errors. Numbers: 7.8M by Oct 12 is
                0.65M a day, so 10M is crossed during Oct 16. Shown only in ?state=limit and ?state=limit-member. -->
@@ -943,9 +950,9 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
           <div class="panel-head"><div class="title"><h2 id="chart-title">Weekly active users, 12 weeks</h2><span class="tag fr-sample">Sample</span></div><a class="btn btn-ghost" href="#">Open in Events</a></div>
           <div class="chart-body ready">
             <ul class="legend">
-              <li><button class="chip active" type="button" aria-haspopup="dialog"><svg width="24" height="8" aria-hidden="true"><line x1="0" y1="4" x2="24" y2="4" class="line-current"/></svg><span class="lg-long">Last 12 weeks:&nbsp;</span><b>Jul&nbsp;21&thinsp;&ndash;&thinsp;Oct&nbsp;12</b><span class="sr-only">, change period</span></button></li>
+              <li><button class="chip active" type="button" aria-haspopup="dialog"><svg width="24" height="8" aria-hidden="true"><line x1="0" y1="4" x2="24" y2="4" class="line-current"/></svg><span><span class="lg-long">Last 12 weeks: </span><b>Jul&nbsp;21&thinsp;&ndash;&thinsp;Oct&nbsp;12</b></span><span class="sr-only">, change period</span></button></li>
               <li><button class="chip active" type="button" aria-haspopup="dialog"><svg width="24" height="8" aria-hidden="true"><line x1="0" y1="4" x2="24" y2="4" class="line-previous"/></svg>vs previous 12&nbsp;weeks<span class="sr-only">, change comparison</span></button></li>
-              <li class="legend-partial" id="legend-partial" hidden><svg width="24" height="8" aria-hidden="true"><line x1="2" y1="4" x2="22" y2="4" class="line-partial"/></svg>This week, partial since 2:05&nbsp;pm</li>
+              <li class="legend-partial" id="legend-partial" data-explained-by="#alert-checkout" hidden><svg width="24" height="8" aria-hidden="true"><line x1="2" y1="4" x2="22" y2="4" class="line-partial"/></svg>Last 7 days, partial since 2:05&nbsp;pm</li>
             </ul>
             <div class="chart" id="chart">
               <svg id="chart-svg" height="240" role="img" aria-labelledby="chart-title chart-desc">
@@ -979,7 +986,7 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
           <div class="panel-head"><div class="title"><h2 id="plat-title">Active users by platform</h2><span class="tag fr-sample">Sample</span></div><a class="btn btn-ghost" href="#">Compare</a></div>
           <ul class="bars ready bars-ready" id="plat-list">
             <li><span class="b-name">Web</span><span class="b-val num">31,040</span><span class="b-bar" aria-hidden="true"><i style="width:64.4%"></i></span><span class="delta good"><svg class="i i-12" data-icon="arrow-up" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 10V2.5M3 5.75l3.25-3.25 3.25 3.25"/></svg>+21%</span></li>
-            <li><span class="b-name">iOS<svg class="i i-12 icon" data-icon="warning-12" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path class="solid" fill-rule="evenodd" d="M5.05 1.85a1.1 1.1 0 0 1 1.9 0l4.15 7.45a1.1 1.1 0 0 1-.95 1.65H1.85a1.1 1.1 0 0 1-.95-1.65zM5.4 4.5v2.4a.6.6 0 0 0 1.2 0V4.5a.6.6 0 0 0-1.2 0zM6 8.15a.65.65 0 1 0 0 1.3.65.65 0 0 0 0-1.3z"/></svg><span class="sr-only">, has a warning</span></span><span class="b-val num">9,870</span><span class="b-bar" aria-hidden="true"><i style="width:20.5%"></i></span><span class="delta bad"><svg class="i i-12" data-icon="arrow-down" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 2v7.5M3 6.25l3.25 3.25 3.25-3.25"/></svg>&minus;18%, down</span></li>
+            <li><span class="b-name">iOS<span class="warn-mark" data-explained-by="#alert-ios"><svg class="i i-12 icon" data-icon="warning-12" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path class="solid" fill-rule="evenodd" d="M5.05 1.85a1.1 1.1 0 0 1 1.9 0l4.15 7.45a1.1 1.1 0 0 1-.95 1.65H1.85a1.1 1.1 0 0 1-.95-1.65zM5.4 4.5v2.4a.6.6 0 0 0 1.2 0V4.5a.6.6 0 0 0-1.2 0zM6 8.15a.65.65 0 1 0 0 1.3.65.65 0 0 0 0-1.3z"/></svg><span class="sr-only">, has a warning</span></span></span><span class="b-val num">9,870</span><span class="b-bar" aria-hidden="true"><i style="width:20.5%"></i></span><span class="delta bad"><svg class="i i-12" data-icon="arrow-down" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 2v7.5M3 6.25l3.25 3.25 3.25-3.25"/></svg>&minus;18%, down</span></li>
             <li><span class="b-name">Android</span><span class="b-val num">7,300</span><span class="b-bar" aria-hidden="true"><i style="width:15.1%"></i></span><span class="delta good"><svg class="i i-12" data-icon="arrow-up" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 10V2.5M3 5.75l3.25-3.25 3.25 3.25"/></svg>+5%</span></li>
           </ul>
           <div class="state loading" aria-hidden="true">
@@ -988,18 +995,18 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
             <div class="skel-row"><span class="skel" style="width:35%"></span><span class="skel" style="width:20%"></span></div>
           </div>
           <div class="state empty-st empty"><h3>No platforms yet</h3><p>Each platform gets a bar once it sends its first event.</p></div>
-          <p class="pane-note" id="plat-note">Active users this week, Oct&nbsp;6 to 12, against last week’s <span id="wau-prev" class="num" data-num>44,600</span>. The three add up to <span class="num" data-num data-sum-of="#plat-list .b-val" data-monotonic="up">48,210</span>; each bar is its share of that total.</p>
+          <p class="pane-note" id="plat-note">Active users in the last 7 days, Oct&nbsp;6 to 12, against the prior 7 days’ <span id="wau-prev" class="num" data-num>44,600</span>. The three add up to <span class="num" data-num data-sum-of="#plat-list .b-val" data-monotonic="up">48,210</span>; each bar is its share of that total.</p>
         </section>
       </div>
 
       <section class="panel" aria-labelledby="pages-title">
-          <div class="panel-head"><div class="title"><h2 id="pages-title">Top pages this week</h2><span class="tag fr-sample">Sample</span></div><a class="btn btn-ghost" href="#">All pages</a></div>
+          <div class="panel-head"><div class="title"><h2 id="pages-title">Top pages, last 7 days</h2><span class="tag fr-sample">Sample</span></div><a class="btn btn-ghost" href="#">All pages</a></div>
           <div class="table-wrap ready ready-table">
             <table role="table" aria-labelledby="pages-title" aria-describedby="pages-sort" data-share-base="214" id="pages-table">
               <thead role="rowgroup"><tr role="row">
                 <th role="columnheader" scope="col" aria-sort="none" data-key="page"><button class="sort" type="button">Page<svg class="i i-12" data-icon="arrow-down" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 2v7.5M3 6.25l3.25 3.25 3.25-3.25"/></svg></button></th>
                 <th role="columnheader" scope="col" class="num" aria-sort="descending" data-key="views"><button class="sort" type="button">Views<svg class="i i-12" data-icon="arrow-down" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 2v7.5M3 6.25l3.25 3.25 3.25-3.25"/></svg></button></th>
-                <th role="columnheader" scope="col" class="num" data-key="chg"><button class="sort" type="button">vs last week<svg class="i i-12" data-icon="arrow-down" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 2v7.5M3 6.25l3.25 3.25 3.25-3.25"/></svg></button></th>
+                <th role="columnheader" scope="col" class="num" data-key="chg"><button class="sort" type="button">vs prior 7 days<svg class="i i-12" data-icon="arrow-down" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 2v7.5M3 6.25l3.25 3.25 3.25-3.25"/></svg></button></th>
                 <th role="columnheader" scope="col" class="num" data-key="time"><button class="sort" type="button">Avg. time<svg class="i i-12" data-icon="arrow-down" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 2v7.5M3 6.25l3.25 3.25 3.25-3.25"/></svg></button></th>
                 <th role="columnheader" scope="col" class="num" data-key="share"><button class="sort" type="button">Share of views<svg class="i i-12" data-icon="arrow-down" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 2v7.5M3 6.25l3.25 3.25 3.25-3.25"/></svg></button></th>
                 <th role="columnheader" scope="col" class="act"><span class="sr-only">Actions</span></th>
@@ -1160,7 +1167,7 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
   });
 
   // --- Table: data, sort, row menu ---
-  // This week's views and their change against last week (the same basis as every KPI). Share is of all 112,560 views
+  // This week's views and their change against the prior 7 days (the same basis as every KPI). Share is of all 112,560 views
   // on all 214 pages this week, so the six rows shown add up to 63.7%, not 100 (round 3 divided by the six rows).
   let PAGES = { total: 112560, count: 214 };
   const rows = [
@@ -1171,7 +1178,7 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
     { page: '/signup', views: 6015, chg: 11, time: 65 },
     { page: '/docs/api/events', views: 1488, chg: 2, time: 214 },
   ];
-  const fmtTime = (s) => Math.floor(s / 60) + 'm ' + String(s % 60).padStart(2, '0') + 's';
+  const fmtTime = (s) => s < 60 ? s + 's' : Math.floor(s / 60) + 'm ' + String(s % 60).padStart(2, '0') + 's'; // "58s", not "0m 58s" (Vercel prints durations tersely)
   const fmtNum = (n) => n.toLocaleString('en-US');
   // Middle truncation: paths differ at their ends, so keep both ends visible; full path stays in the accessible name
   const mid = (p) => p.length <= 24 ? p : '<span aria-hidden="true">' + p.slice(0, 13) + '\u2026' + p.slice(-10) + '</span><span class="sr-only">' + p + '</span>';
@@ -1183,8 +1190,8 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
   document.getElementById('pages-table').dataset.shareBase = String(PAGES.count);
   const shown6 = rows.reduce((s, r) => s + r.views, 0);
   document.getElementById('pages-range').innerHTML = '1 to ' + rows.length + ' of ' + PAGES.count + ' pages, ' + (shown6 === PAGES.total ? 'all ' : (Math.round(shown6 / PAGES.total * 1000) / 10) + '% of ') + '<span id="views-total" class="num" data-num>' + PAGES.total.toLocaleString('en-US') + '</span> views';
-  // Change vs last week: arrow plus sign plus, when it falls, the word, never color alone. No comparison yet: a dash, named.
-  const chg = (v) => v === undefined ? '<span class="chg none">&ndash;<span class="sr-only">no comparison until Oct 19</span></span>' : '<span class="chg ' + (v < 0 ? 'down' : 'up') + '">' + (v < 0 ? '<svg class="i i-12" data-icon="arrow-down" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 2v7.5M3 6.25l3.25 3.25 3.25-3.25"/></svg>' : '<svg class="i i-12" data-icon="arrow-up" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 10V2.5M3 5.75l3.25-3.25 3.25 3.25"/></svg>') + '' + (v < 0 ? '&minus;' + (-v) + '%, down' : '+' + v + '%') + '</span>';
+  // Change vs prior 7 days: arrow plus sign plus, when it falls, the word, never color alone. No comparison yet: a dash, named.
+  const chg = (v) => v === undefined ? '<span class="chg none">&ndash;<span class="sr-only">no comparison until Oct 26</span></span>' : '<span class="chg ' + (v < 0 ? 'down' : 'up') + '">' + (v < 0 ? '<svg class="i i-12" data-icon="arrow-down" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 2v7.5M3 6.25l3.25 3.25 3.25-3.25"/></svg>' : '<svg class="i i-12" data-icon="arrow-up" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 10V2.5M3 5.75l3.25-3.25 3.25 3.25"/></svg>') + '' + (v < 0 ? '&minus;' + (-v) + '%, down' : '+' + v + '%') + '</span>';
   const tbody = document.getElementById('pages-body');
   let sortKey = 'views', sortDir = 'descending';
   const dots = '<svg class="i" data-icon="more" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle class="solid" cx="3.5" cy="8" r="1.25"/><circle class="solid" cx="8" cy="8" r="1.25"/><circle class="solid" cx="12.5" cy="8" r="1.25"/></svg>';
@@ -1196,12 +1203,12 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
     // Search narrows the rows by path; no match is a named state with its way out, not an empty table.
     const qv = (document.getElementById('search').value || '').trim().toLowerCase();
     const list = qv ? sorted.filter((r) => r.page.toLowerCase().includes(qv)) : sorted;
-    if (!list.length) { tbody.innerHTML = '<tr class="search-miss" role="row"><td role="cell" colspan="6">No pages this week match \u201c' + qv.replace(/[<>&"]/g, '') + '\u201d. <button class="text-link dismiss" type="button" data-clear>Clear search</button></td></tr>'; return 'No pages match'; }
+    if (!list.length) { tbody.innerHTML = '<tr class="search-miss" role="row"><td role="cell" colspan="6">No pages in the last 7 days match \u201c' + qv.replace(/[<>&"]/g, '') + '\u201d. <button class="text-link dismiss" type="button" data-clear>Clear search</button></td></tr>'; return 'No pages match'; }
     tbody.innerHTML = list.map((r) =>
       '<tr role="row" style="--s:' + r.share + '%">' +
       '<th role="rowheader" scope="row" class="page-cell"><a href="#" title="' + r.page + '">' + mid(r.page) + '</a></th>' +
       '<td role="cell" class="num key" id="pv-' + r.i + '" data-num>' + fmtNum(r.views) + '</td>' +
-      '<td role="cell" class="num secondary t-chg" data-label="vs last week">' + chg(r.chg) + '</td>' +
+      '<td role="cell" class="num secondary t-chg" data-label="vs prior 7 days">' + chg(r.chg) + '</td>' +
       '<td role="cell" class="num secondary t-time" data-label="Avg. time">' + fmtTime(r.time) + '</td>' +
       '<td role="cell" class="num secondary t-share" data-label="Share of views" data-num data-derived-from="share #pv-' + r.i + ' #views-total">' + r.share.toFixed(1) + '%</td>' +
       '<td role="cell" class="act"><button class="row-btn" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Actions for ' + r.page + '">' + dots + '</button></td>' +
@@ -1209,7 +1216,7 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
     document.querySelectorAll('thead th[data-key]').forEach((th) => {
       if (th.dataset.key === sortKey) th.setAttribute('aria-sort', sortDir); else th.removeAttribute('aria-sort');
     });
-    const names = { page: 'page', views: 'views', chg: 'change against last week', time: 'average time', share: 'share of views' };
+    const names = { page: 'page', views: 'views', chg: 'change against the prior 7 days', time: 'average time', share: 'share of views' };
     const dirWord = sortKey === 'page' ? (sortDir === 'ascending' ? 'A to Z' : 'Z to A') : (sortDir === 'ascending' ? 'lowest first' : 'highest first');
     document.getElementById('pages-sort').textContent = 'Sorted by ' + names[sortKey] + ', ' + dirWord;
     return 'Sorted by ' + names[sortKey] + ', ' + dirWord;
@@ -1280,7 +1287,7 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
     { g: 'Go to', label: 'Funnels', keys: ['G', 'F'], alias: 'conversion steps' },
     { g: 'Go to', label: 'Retention', keys: ['G', 'R'], alias: 'cohorts churn' },
     { g: 'Go to', label: 'Users', keys: ['G', 'U'], alias: 'people accounts' },
-    { g: 'Go to', label: 'Workspace settings', keys: ['G', 'S'], alias: 'preferences members billing' },
+    { g: 'Go to', label: 'Settings', keys: ['G', 'S'], alias: 'workspace preferences members billing' },
     { g: 'Help', label: 'Keyboard shortcuts', keys: ['?'], alias: 'keys hotkeys help', run: () => openDialog(sheet) },
   ];
   let active = 0, shown = [], opener = null;
@@ -1401,13 +1408,13 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
     const first = !PLAT[0].prev;
     // Platform rows: bars are each platform's share of the total, on a true 0 to 100 scale
     document.getElementById('plat-list').innerHTML = PLAT.map((p) =>
-      '<li data-plat="' + p.key + '"><span class="b-name">' + p.name + (p.warn ? '<svg class="i i-12 icon" data-icon="warning-12" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path class="solid" fill-rule="evenodd" d="M5.05 1.85a1.1 1.1 0 0 1 1.9 0l4.15 7.45a1.1 1.1 0 0 1-.95 1.65H1.85a1.1 1.1 0 0 1-.95-1.65zM5.4 4.5v2.4a.6.6 0 0 0 1.2 0V4.5a.6.6 0 0 0-1.2 0zM6 8.15a.65.65 0 1 0 0 1.3.65.65 0 0 0 0-1.3z"/></svg><span class="sr-only">, has a warning</span>' : '') + '</span>' +
+      '<li data-plat="' + p.key + '"><span class="b-name">' + p.name + (p.warn ? '<span class="warn-mark" data-explained-by="#alert-ios"><svg class="i i-12 icon" data-icon="warning-12" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path class="solid" fill-rule="evenodd" d="M5.05 1.85a1.1 1.1 0 0 1 1.9 0l4.15 7.45a1.1 1.1 0 0 1-.95 1.65H1.85a1.1 1.1 0 0 1-.95-1.65zM5.4 4.5v2.4a.6.6 0 0 0 1.2 0V4.5a.6.6 0 0 0-1.2 0zM6 8.15a.65.65 0 1 0 0 1.3.65.65 0 0 0 0-1.3z"/></svg><span class="sr-only">, has a warning</span></span>' : '') + '</span>' +
       '<span class="b-val num" data-num data-monotonic="up">' + fmtN(p.now) + '</span><span class="b-bar" aria-hidden="true"><i data-bar="' + (p.now / wau * 100).toFixed(2) + '" data-bar-max="100" style="width:' + (p.now / wau * 100).toFixed(2) + '%"></i></span>' +
       (first ? '' : delta(pct1(p.now, p.prev), 0)) + '</li>').join('');
     const sample = /sample/.test(root.dataset.phase || '');
     document.getElementById('plat-note').innerHTML = first
-      ? 'Visitors since 2:06&nbsp;pm. The three add up to <span class="num" data-num data-sum-of="#plat-list .b-val">' + fmtN(wau) + '</span>; each bar is its share of that total. Week-on-week from Oct&nbsp;19.'
-      : (sample ? 'Sample data. ' : '') + 'Active users this week, Oct&nbsp;6 to 12, against last week\u2019s <span id="wau-prev" class="num" data-num>' + fmtN(WAU_PREV) + '</span>. The three add up to <span class="num" data-num data-sum-of="#plat-list .b-val" data-monotonic="up">' + fmtN(wau) + '</span>; each bar is its share of that total.';
+      ? 'Visitors since 2:06&nbsp;pm. The three add up to <span class="num" data-num data-sum-of="#plat-list .b-val">' + fmtN(wau) + '</span>; each bar is its share of that total. Week-on-week from Oct&nbsp;26.'
+      : (sample ? 'Sample data. ' : '') + 'Active users in the last 7 days, Oct&nbsp;6 to 12, against the prior 7 days\u2019 <span id="wau-prev" class="num" data-num>' + fmtN(WAU_PREV) + '</span>. The three add up to <span class="num" data-num data-sum-of="#plat-list .b-val" data-monotonic="up">' + fmtN(wau) + '</span>; each bar is its share of that total.';
     if (first) return;
     const ios = PLAT.find((p) => p.key === 'ios');
     document.getElementById('ios-pct').textContent = Math.abs(Math.round(pct1(ios.now, ios.prev))) + '%';
@@ -1454,7 +1461,7 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
   });
 
   // --- Chart. The KPI tiles choose the metric; the chart never animates (a switch is a redraw, not a transition).
-  // Weekly windows end on Monday, so the last point (Oct 6 to 12) is this week, still open. Conversion and revenue lost
+  // Weekly windows end on Monday, so the last point (Oct 6 to 12) is the last 7 days, still open. Conversion and revenue lost
   // checkout events from 2:05 pm today: their last point is drawn open and dotted and labelled where it is read
   // (design-playbook-dashboard rule 7: the caveat sits on every number the data problem affects).
   const weeks = ['Jul 21', 'Jul 28', 'Aug 4', 'Aug 11', 'Aug 18', 'Aug 25', 'Sep 1', 'Sep 8', 'Sep 15', 'Sep 22', 'Sep 29', 'Oct 6'];
@@ -1481,7 +1488,8 @@ html[data-state=loading] .pane-note, html[data-state=empty] .pane-note { display
   const box = document.getElementById('chart'), svg = document.getElementById('chart-svg'), plot = document.getElementById('chart-plot'), tip = document.getElementById('tooltip');
   const H = 240, top = 24, bottom = 216, left = 48;
   let right = 0;
-  const m = () => METRICS[metric];
+  // Sample data has no outage: its alerts are hidden, so the chart drops the partial mark they would explain (lint-truth explained-by).
+  const m = () => { const d = METRICS[metric]; return d.partial && /setup/.test(root.dataset.phase || '') ? { ...d, partial: false, desc: d.desc.replace(', which is partial since 2:05 pm', '') } : d; };
   const x = (i) => left + i * ((right - left) / 11);
   const y = (v) => bottom - ((v - m().min) / (m().max - m().min)) * (bottom - top);
   const pts = (arr) => arr.map((v, i) => x(i).toFixed(1) + ',' + y(v).toFixed(1)).join(' ');

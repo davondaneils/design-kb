@@ -103,7 +103,7 @@
   --state-hover: color-mix(in oklch, var(--color-text) 8%, transparent);
   --state-pressed: color-mix(in oklch, var(--color-text) 10%, transparent);
 
-  --space-1: 2px; --space-2: 4px; --space-3: 8px; --space-4: 12px; --space-5: 16px; --space-6: 24px; --space-7: 32px; --space-8: 48px; --space-9: 64px;
+  --space-1: 2px; --space-2: 4px; --space-3: 8px; --space-4: 12px; --space-5: 16px; --space-6: 24px; --space-7: 32px; --space-8: 48px; --space-9: 64px; --space-10: 96px;
   --text-xs: 12px; --text-sm: 14px; --text-base: 16px; --text-lg: 20px; --text-xl: 25px; --text-2xl: 31px; --text-3xl: 39px;
   --radius-sm: 4px; --radius-md: 8px; --radius-lg: 12px; --radius-full: 9999px;
   --size-control-sm: 32px; --size-control-md: 40px; --size-control-lg: 48px;
@@ -350,6 +350,9 @@ kbd { white-space: nowrap; display: inline-flex; align-items: center; justify-co
 html[data-live=paused] .freshness .dot { background: var(--color-text-muted); }
 @media (hover: hover) { .live-btn:hover { background: var(--state-hover); color: var(--color-text); } }
 .live-btn:active { background: var(--state-pressed); }
+/* Touch: a 44x44 hit area (WCAG 2.5.5) without growing the 64px head. The button keeps its 24px box so its label stays on
+   the freshness line; ::after extends the hit area 12px up and 8px down, which ends exactly at the head's bottom edge. */
+@media (pointer: coarse) { .live-btn { position: relative; min-width: 44px; justify-content: center; } .live-btn::after { content: ""; position: absolute; inset: -12px 0 -8px; } }
 html[data-state=loading] .live-btn, html[data-state=empty] .live-btn, html[data-phase~=sample] .live-btn { display: none; } /* sample data is not live: nothing to pause */
 .live-more { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } /* narrow: "Pause" shows, "Pause updates" is the name */
 @container main (width >= 40rem) { .live-more { position: static; width: auto; height: auto; overflow: visible; clip: auto; } }
@@ -414,6 +417,7 @@ html[data-state=viewer] .kpi.pickable[data-metric=rev] .kpi-pick { cursor: defau
 .split { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--content-gap) var(--space-7); }
 @container content (width >= 60rem) { .split { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); } } /* 2:1, the explainer beside the chart (playbook rule 8) */
 .split > .panel { display: flex; flex-direction: column; }
+.split > .panel[aria-labelledby=plat-title] { align-self: start; } /* round 4.1: ends with its footnote, not stretched to the chart's height */
 .content { max-inline-size: 1600px; } /* ultra-wide: past 1600px the work area stops growing; a wider screen gets air, not longer eye travel */
 
 /* Platforms: a ranked bar list, the evidence for the iOS warning, beside the trend it explains */
@@ -509,6 +513,7 @@ td.act, th.act { width: 1%; padding-left: 0; padding-right: 0; text-align: right
   thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   tbody tr { display: grid; grid-template-columns: max-content max-content minmax(0, 1fr) auto auto; grid-template-areas: "page page page key act" "time share . . act"; align-items: center; column-gap: var(--space-3); row-gap: var(--space-2); padding: var(--space-4) 0; border-bottom: 1px solid var(--color-border); } /* round 4: flush with the section edge, like every other row */
   tbody tr:last-child { border-bottom: 0; }
+  tbody tr.search-miss { display: block; } /* one sentence, not a card: a max-content grid column would size it to its full length */
   th, td { height: auto; padding: 0; border: 0; }
   td.secondary { display: inline-flex; gap: var(--space-2); font-size: var(--text-xs); color: var(--color-text-muted); }
   td.secondary::before { content: attr(data-label); }
@@ -644,6 +649,8 @@ dialog::backdrop { background: var(--color-scrim); }
    check-failed: the cause named, the fix, who can do it. first-data: real numbers swap in; metrics that cannot compute say when. */
 .setup, .answer-sample, .answer-first, .fr-sample, .kpis.first, .first-chart, .invite-btn, .fresh-sample, .fresh-first, .guide-link { display: none; }
 html[data-phase~=setup] .setup { display: block; }
+/* A caveat lives only while the alert that explains it is on screen: setup hides .attention, so sample tiles drop theirs. */
+html[data-phase~=setup] .kpi .caveat, html[data-phase~=setup] .warn-mark, html[data-phase~=setup] .legend-partial { display: none; }
 html[data-phase~=setup] .guide-link { display: flex; }
 html[data-phase~=setup] .attention, html[data-phase~=setup] .share-btn, html[data-phase~=setup] .answer-ready, html[data-phase~=setup] .fresh-ready { display: none; }
 html[data-phase~=sample] .fr-sample { display: inline-flex; }
@@ -783,7 +790,7 @@ body { background: var(--color-surface); }
 .demo-kpi .kpi { padding: var(--panel-p) !important; }
 .sheet .failed, .sheet .empty { display: grid; }
 .demo-pal { width: 340px; max-width: 100%; padding: var(--space-3); background: var(--color-surface-raised); border-radius: var(--radius-lg); box-shadow: var(--elevation-modal); }
-.usage-demo { width: 220px; } .usage-demo .usage { margin: 0; } .usage.is-hover { background: var(--state-hover); color: var(--color-text); } .usage.warn { box-shadow: inset 0 0 0 1px var(--color-warning-mark); } .usage.warn .meter i { background: var(--color-warning-mark); }</style>
+.usage-demo { width: 220px; } .usage-demo .usage { margin: 0; } .usage.is-hover { background: var(--state-hover); color: var(--color-text); } .usage.warn { box-shadow: inset 0 0 0 1px var(--color-warning); } .usage.warn .meter i { background: var(--color-warning); }</style>
 </head>
 <body>
 <main class="sheet">
@@ -833,8 +840,8 @@ body { background: var(--color-surface); }
     <th scope="col"><button class="sort is-focus" type="button">Focus<svg class="i i-12" data-icon="arrow-down" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 2v7.5M3 6.25l3.25 3.25 3.25-3.25"/></svg></button></th>
   </tr></thead><tbody><tr><td>/pricing</td><td class="num">24,180</td><td class="num">24,180</td><td class="num">1,488</td><td>/</td></tr></tbody></table></div></section>
   <section class="group" aria-labelledby="d6"><h2 id="d6">KPI tile</h2><div class="row">
-    <div class="cell"><span>Ready, with sparkline</span><dl class="demo-kpi"><div class="kpi"><dt>Conversion</dt><dd><span class="value">3.8<span class="u">%</span></span><svg class="spark" viewBox="0 0 96 32" preserveAspectRatio="none" role="img" aria-label="12-week trend: up from 3.0% to 3.8%"><polyline points="4,28 12,25 20,25 28,22 36,22 44,19 52,16 60,19 68,13 76,10 84,22 92,4" vector-effect="non-scaling-stroke"/><circle cx="92" cy="4" r="2.5"/></svg><span class="delta good"><svg class="i i-12" data-icon="arrow-up" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 10V2.5M3 5.75l3.25-3.25 3.25 3.25"/></svg>+0.6 pts <span class="vs">vs last week</span></span></dd></div></dl></div>
-    <div class="cell"><span>Partial (data problem marked where it is read)</span><dl class="demo-kpi"><div class="kpi"><dt>Revenue</dt><dd><span class="value"><span class="u pre">$</span>184.2<span class="u">k</span></span><span class="delta good"><svg class="i i-12" data-icon="arrow-up" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 10V2.5M3 5.75l3.25-3.25 3.25 3.25"/></svg>+8.1% <span class="vs">vs last week</span></span><span class="caveat">Partial since 2:05&nbsp;pm</span></dd></div></dl></div>
+    <div class="cell"><span>Ready, with sparkline</span><dl class="demo-kpi"><div class="kpi"><dt>Conversion</dt><dd><span class="value">3.8<span class="u">%</span></span><svg class="spark" viewBox="0 0 96 32" preserveAspectRatio="none" role="img" aria-label="12-week trend: up from 3.0% to 3.8%"><polyline points="4,28 12,25 20,25 28,22 36,22 44,19 52,16 60,19 68,13 76,10 84,22 92,4" vector-effect="non-scaling-stroke"/><circle cx="92" cy="4" r="2.5"/></svg><span class="delta good"><svg class="i i-12" data-icon="arrow-up" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 10V2.5M3 5.75l3.25-3.25 3.25 3.25"/></svg>+0.6 pts <span class="vs">vs prior 7 days</span></span></dd></div></dl></div>
+    <div class="cell"><span>Partial (data problem marked where it is read)</span><dl class="demo-kpi"><div class="kpi"><dt>Revenue</dt><dd><span class="value"><span class="u pre">$</span>184.2<span class="u">k</span></span><span class="delta good"><svg class="i i-12" data-icon="arrow-up" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6.25 10V2.5M3 5.75l3.25-3.25 3.25 3.25"/></svg>+8.1% <span class="vs">vs prior 7 days</span></span><span class="caveat">Partial since 2:05&nbsp;pm</span></dd></div></dl></div>
     <div class="cell"><span>Loading (skeleton after 300 ms)</span><div class="demo-kpi"><div class="kpi"><span class="skel label"></span><span class="skel value"></span><span class="skel delta"></span></div></div></div>
     <div class="cell"><span>No data yet</span><dl class="demo-kpi"><div class="kpi"><dt>Conversion</dt><dd><span class="value" aria-hidden="true">&ndash;</span><span class="restricted">No data yet</span></dd></div></dl></div>
     <div class="cell"><span>Viewer role</span><dl class="demo-kpi"><div class="kpi"><dt>Revenue</dt><dd><span class="value" aria-hidden="true"><svg class="i i-lock" data-icon="lock" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.25" y="7.25" width="9.5" height="6.5" rx="1.5"/><path d="M5.25 7.25v-2a2.75 2.75 0 0 1 5.5 0v2"/></svg></span><span class="restricted">Visible to Finance admins. <a href="#">Ask Priya Shah for access</a></span></dd></div></dl></div>
@@ -844,12 +851,12 @@ body { background: var(--color-surface); }
     <div class="cell"><span>Palette option, active</span><div class="demo-pal" role="listbox" aria-label="Commands demo"><div class="pal-opt" role="option" aria-selected="true">Share report</div><div class="pal-opt" role="option" aria-selected="false">Events<span class="kbds" aria-hidden="true"><kbd>G</kbd><kbd>E</kbd></span></div></div></div>
   </div></section>
   <section class="group" aria-labelledby="d9"><h2 id="d9">Panels: error, empty, loading, no match</h2><div class="row">
-    <div class="cell demo-wide"><span>Error, with retry</span><section class="panel" aria-label="Top pages, error demo"><div class="panel-head"><h3>Top pages this week</h3></div><div class="failed"><svg class="i icon i-20" data-icon="warning" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path class="solid" fill-rule="evenodd" d="M6.7 2.1a1.5 1.5 0 0 1 2.6 0l5.55 9.65a1.5 1.5 0 0 1-1.3 2.25H2.45a1.5 1.5 0 0 1-1.3-2.25zM7.25 5.75v3.25a.75.75 0 0 0 1.5 0V5.75a.75.75 0 0 0-1.5 0zM8 10.6a.85.85 0 1 0 0 1.7.85.85 0 0 0 0-1.7z"/></svg><h3>Top pages didn’t load</h3><p>The query timed out after 30 seconds. Your data is safe; the rest of the overview is current.</p><button class="btn" type="button"><span class="spinner" aria-hidden="true"></span><span>Try again</span></button></div></section></div>
-    <div class="cell demo-wide"><span>Empty, before the first event</span><section class="panel" aria-label="Top pages, empty demo"><div class="panel-head"><h3>Top pages this week</h3></div><div class="empty"><h3>No pages tracked yet</h3><p>Pages are ranked by views once the snippet sends <code>page_view</code> events.</p></div></section></div>
-    <div class="cell demo-wide"><span>Loading rows</span><section class="panel" aria-label="Top pages, loading demo"><div class="panel-head"><h3>Top pages this week</h3></div><div class="skel-row"><span class="skel" style="width:40%"></span><span class="skel" style="width:15%"></span></div><div class="skel-row"><span class="skel" style="width:25%"></span><span class="skel" style="width:15%"></span></div><div class="skel-row"><span class="skel" style="width:45%"></span><span class="skel" style="width:15%"></span></div></section></div>
+    <div class="cell demo-wide"><span>Error, with retry</span><section class="panel" aria-label="Top pages, error demo"><div class="panel-head"><h3>Top pages, last 7 days</h3></div><div class="failed"><svg class="i icon i-20" data-icon="warning" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path class="solid" fill-rule="evenodd" d="M6.7 2.1a1.5 1.5 0 0 1 2.6 0l5.55 9.65a1.5 1.5 0 0 1-1.3 2.25H2.45a1.5 1.5 0 0 1-1.3-2.25zM7.25 5.75v3.25a.75.75 0 0 0 1.5 0V5.75a.75.75 0 0 0-1.5 0zM8 10.6a.85.85 0 1 0 0 1.7.85.85 0 0 0 0-1.7z"/></svg><h3>Top pages didn’t load</h3><p>The query timed out after 30 seconds. Your data is safe; the rest of the overview is current.</p><button class="btn" type="button"><span class="spinner" aria-hidden="true"></span><span>Try again</span></button></div></section></div>
+    <div class="cell demo-wide"><span>Empty, before the first event</span><section class="panel" aria-label="Top pages, empty demo"><div class="panel-head"><h3>Top pages, last 7 days</h3></div><div class="empty"><h3>No pages tracked yet</h3><p>Pages are ranked by views once the snippet sends <code>page_view</code> events.</p></div></section></div>
+    <div class="cell demo-wide"><span>Loading rows</span><section class="panel" aria-label="Top pages, loading demo"><div class="panel-head"><h3>Top pages, last 7 days</h3></div><div class="skel-row"><span class="skel" style="width:40%"></span><span class="skel" style="width:15%"></span></div><div class="skel-row"><span class="skel" style="width:25%"></span><span class="skel" style="width:15%"></span></div><div class="skel-row"><span class="skel" style="width:45%"></span><span class="skel" style="width:15%"></span></div></section></div>
     <div class="cell demo-wide"><span>Invite field, error (checked on submit)</span><form class="invite-form" novalidate><input class="field" type="email" value="sam@" aria-invalid="true" aria-label="Teammate’s work email, error" aria-describedby="inv-err"><button class="btn" type="button">Invite</button><p class="field-msg err" id="inv-err">Add the rest of the address, for example sam@acme.com.</p></form></div>
     <div class="cell demo-wide"><span>Invite field, rest</span><form class="invite-form" novalidate><input class="field" type="email" placeholder="name@acme.com" aria-label="Teammate’s work email"><button class="btn" type="button">Invite</button></form></div>
-    <div class="cell demo-wide"><span>Search, no match (the field’s only failure: it cannot be invalid)</span><label class="search" style="display:flex"><input type="search" value="/pricng" aria-label="Search pages, no match"><kbd aria-hidden="true">/</kbd></label><table><tbody><tr class="search-miss"><td colspan="6">No pages this week match “/pricng”. <button class="text-link dismiss" type="button">Clear search</button></td></tr></tbody></table></div>
+    <div class="cell demo-wide"><span>Search, no match (the field’s only failure: it cannot be invalid)</span><label class="search" style="display:flex"><input type="search" value="/pricng" aria-label="Search pages, no match"><kbd aria-hidden="true">/</kbd></label><table><tbody><tr class="search-miss"><td colspan="6">No pages in the last 7 days match “/pricng”. <button class="text-link dismiss" type="button">Clear search</button></td></tr></tbody></table></div>
   </div></section>
   <section class="group" aria-labelledby="d8"><h2 id="d8">Plan usage meter (design-conversion 05)</h2><div class="row">
     <div class="cell usage-demo"><span>Setup and empty: nothing counted yet</span><a class="usage" href="#"><span class="usage-row"><span id="u0">Events this month</span><span class="plan">Starter</span></span><span class="meter" role="meter" aria-labelledby="u0" aria-valuemin="0" aria-valuemax="10000000" aria-valuenow="0" aria-valuetext="No events yet, 0 of 10 million"><i style="--w:0%"></i></span><span class="usage-row num"><span>No events yet</span><span></span></span></a></div>

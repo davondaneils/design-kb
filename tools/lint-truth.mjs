@@ -31,6 +31,9 @@
 //   data-monotonic="up|down"       never moves the other way across live updates
 //   data-source="<name>"           with data-source-stopped="<name>" on a visible alert: the number must not change
 //                                  while that alert is visible
+//   data-explained-by="<selector>" on a caveat or warning glyph: the alert it points at must be visible whenever the
+//                                  caveat is (fail); a caveat with no markup and no visible alert naming a cause warns
+//   [role=meter|progressbar]       with aria-valuenow above aria-valuemin: a fill is painted, on scale (proportion)
 //   data-data="none"               on html, body or a panel in empty and setup states: every visible [data-num]
 //                                  inside is hidden, zero or a dash; [data-sample] regions are exempt
 // The contract checks run again after every live update, so a total that stops matching after a tick fails.
@@ -126,6 +129,41 @@ const CONTRACT = () => {
     if (e.closest('[data-sample]')) continue;
     const n = num(e);
     if (n && n.v !== 0) out.push({ check: 'truth', level: 'fail', message: `"${n.text}" shows in a state marked data-data="none" (empty or setup); hide it or show 0 or a dash`, sel: L.sel(e) });
+  }
+  // Explained-by: a caveat or warning glyph names the alert that explains it; when that alert is hidden (a sample or setup
+  // state hides the alerts), the caveat points at nothing and must go too (round 4 critic: "Partial since 2:05 pm" on
+  // sample tiles whose outage alert was hidden).
+  for (const e of q('[data-explained-by]').filter(vis)) {
+    const sel = e.getAttribute('data-explained-by'), t = q(sel);
+    const what = norm(e.textContent || '') || e.getAttribute('aria-label') || L.sel(e);
+    if (!t.length) out.push({ check: 'truth', level: 'fail', message: `"${what.slice(0, 50)}" says data-explained-by="${sel}", which matches nothing`, sel: L.sel(e) });
+    else if (!t.some(vis)) out.push({ check: 'truth', level: 'fail', message: `"${what.slice(0, 50)}" is shown but ${sel}, the alert that explains it, is hidden in this state; hide the caveat with its cause`, sel: L.sel(e) });
+  }
+  // Heuristic (no markup): a caveat ("Partial since 2:05 pm") on a page with no visible alert naming a cause. State sheets exempt.
+  const sheetPage = document.documentElement.dataset.lintPage === 'state-sheet' || /state sheet/i.test(document.title);
+  if (!sheetPage) {
+    const CAV = /\b(?:partial since|partial data|delayed since|undercount)/i;
+    const cavs = q('body *').filter((e) => !e.closest('[data-explained-by], script, style, template') && vis(e) && e.children.length === 0 && CAV.test(e.textContent || '') && norm(e.textContent).length < 80);
+    const causes = q('[role=alert], [data-source-stopped], [class*=alert], [class*=banner], [class*=callout]').filter((e) => vis(e) && /stopped|failed|outage|not (?:being )?received|delayed|error/i.test(e.textContent || ''));
+    if (cavs.length && !causes.length) out.push({ check: 'truth', level: 'warn', message: `${cavs.length} caveat${cavs.length > 1 ? 's' : ''} ("${norm(cavs[0].textContent).slice(0, 40)}") with no visible alert naming the cause; show the cause or drop the caveat (declare data-explained-by to make this a fail)`, sel: L.sel(cavs[0]) });
+  }
+  // Meters: a meter above its minimum paints a fill, and the fill is drawn to scale (round 4: an undefined token left the
+  // 75 percent warning meter empty under "7.8M of 10M").
+  const alphaOf = (c) => { const m = (c || '').match(/rgba?\(([^)]+)\)/); if (!m) return c === 'transparent' ? 0 : 1; const v = m[1].split(/[ ,/]+/).filter(Boolean).map(Number); return v.length > 3 ? v[3] : 1; };
+  for (const m of q('[role=meter], [role=progressbar]').filter(vis)) {
+    const now = parseFloat(m.getAttribute('aria-valuenow')), min = parseFloat(m.getAttribute('aria-valuemin') || '0'), max = parseFloat(m.getAttribute('aria-valuemax') || '100');
+    if (!(now > min) || !(max > min)) continue;
+    const tr = m.getBoundingClientRect();
+    if (((now - min) / (max - min)) * Math.max(tr.width, tr.height) < 2) continue; // under 2px drawn: an empty track is to scale (38 of 10M)
+    const fill = [...m.querySelectorAll('*')].find((f) => { const r = f.getBoundingClientRect(); return r.width > 0 && r.height > 0; });
+    const cs = fill && getComputedStyle(fill);
+    const painted = cs && (alphaOf(cs.backgroundColor) > 0.05 || cs.backgroundImage !== 'none');
+    const label = m.getAttribute('aria-valuetext') || `${now} of ${max}`;
+    if (!painted) { out.push({ check: 'proportion', level: 'fail', message: `meter "${label.slice(0, 50)}" paints no fill (a value above its minimum drawn as an empty bar)`, sel: L.sel(m) }); continue; }
+    const horizontal = tr.width >= tr.height;
+    const got = horizontal ? fill.getBoundingClientRect().width / tr.width : fill.getBoundingClientRect().height / tr.height;
+    const want = (now - min) / (max - min);
+    if (Math.abs(got - want) > 0.03) out.push({ check: 'proportion', level: 'fail', message: `meter "${label.slice(0, 50)}" fills ${Math.round(got * 100)}% of its track for ${Math.round(want * 100)}%`, sel: L.sel(m) });
   }
   // Bars: contract first, then a fill beside exactly one percent value.
   const bars = new Set();

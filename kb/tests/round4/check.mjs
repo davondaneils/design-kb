@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-// Proves each gate failure the round 3 critic found is fixed (kb/reviews/round3-critic.md, section 2).
+// Proves each gate failure the round 3 critic found is fixed (kb/reviews/round3-critic.md, section 2), and, from
+// round 4.1, each judged fail of the round 4 critic (kb/reviews/round4-critic.md). Port: KB_PORT (default 8765).
 // Run from the repo root with the repo served over HTTP:
 //   python3 -m http.server 8765 --bind 127.0.0.1 &   node kb/tests/round4/check.mjs
 // Prints one line per check, PASS or FAIL, and exits 1 on any fail.
@@ -8,7 +9,7 @@ import path from 'node:path';
 import { launch } from '../../../tools/browser.mjs';
 
 const here = path.dirname(new URL(import.meta.url).pathname);
-const B = 'http://127.0.0.1:8765/kb/tests/round4/';
+const B = 'http://127.0.0.1:' + (process.env.KB_PORT || 8765) + '/kb/tests/round4/';
 let fails = 0;
 const ok = (cond, msg, extra = '') => { if (!cond) fails++; console.log((cond ? 'PASS ' : 'FAIL ') + msg + (extra ? '  ' + extra : '')); };
 const browser = await launch();
@@ -151,9 +152,9 @@ for (const s of ['loading', 'empty', 'first-run', 'listening', 'check-failed', '
   const sharesOk = r.rows.every((x) => Math.abs(x.share - Math.round(x.views / 112560 * 1000) / 10) < 0.01 && x.s === x.share + '%');
   const sum = r.rows.reduce((a, b) => a + b.share, 0);
   ok(sharesOk && sum < 100 && /63\.7% of 112,560 views/.test(r.range), `dashboard table: share is of all 112,560 views (six rows sum to ${sum.toFixed(1)}%), each row bar is that share on 0 to 100`);
-  ok(r.vs.length === 4 && r.vs.every((v) => v === 'vs last week') && r.chgHead === 'vs last week' && /This week/.test(r.kpiHead)
+  ok(r.vs.length === 4 && r.vs.every((v) => v === 'vs prior 7 days') && r.chgHead === 'vs prior 7 days' && /Last 7 days/.test(r.kpiHead)
     && /Last 12 weeks/.test(r.legend) && /vs previous 12/.test(r.legend) && !/Compared to|previous/.test(r.toolbar),
-    'dashboard comparison: KPIs and table say "vs last week"; the 12-week comparison is the chart legend, the only numbers it drives');
+    'dashboard comparison: KPIs and table say "vs prior 7 days" (round 4.1: the window is rolling); the 12-week comparison is the chart legend, the only numbers it drives');
   await p.context().close();
 }
 
@@ -192,14 +193,14 @@ for (const s of ['loading', 'empty', 'first-run', 'listening', 'check-failed', '
 for (const w of [390, 768, 1024, 1440]) {
   const p = await open('coffee.html', w);
   const r = await p.evaluate(() => {
-    const tops = [...document.querySelectorAll('.promises .steps li > div')].map((d) => Math.round(d.getBoundingClientRect().top + scrollY));
+    const tops = [...document.querySelectorAll('.promises .steps li')].map((li) => ['h3', 'p'].map((t) => Math.round(li.querySelector(t).getBoundingClientRect().top + scrollY)).join('/'));
     const gaps = [...document.querySelectorAll('#paid tr')].map((tr) => { const th = tr.querySelector('th').getBoundingClientRect(), td = tr.querySelector('td'); const range = document.createRange(); range.selectNodeContents(td.firstChild); return Math.round(range.getBoundingClientRect().left - th.right); });
     const names = [...document.querySelectorAll('#g-brew .opt')].map((o) => ({ w: Math.round(o.getBoundingClientRect().width), lines: [o.querySelector('.name'), o.querySelector('.sub')].map((e) => Math.round(e.getBoundingClientRect().height / parseFloat(getComputedStyle(e).lineHeight))) }));
     const slip = document.querySelector('.slip'); const sw = slip.getBoundingClientRect().width - parseFloat(getComputedStyle(slip).paddingLeft) * 2;
     const cols = new Set([...document.querySelectorAll('#g-brew .opt')].map((o) => Math.round(o.getBoundingClientRect().left))).size;
     return { tops, gaps, names, sw: Math.round(sw), cols };
   });
-  if (w >= 1024) ok(new Set(r.tops).size === 1, `coffee promises ${w}: the three columns share one top edge`, r.tops.join(','));
+  if (w >= 1024) ok(new Set(r.tops).size === 1, `coffee promises ${w}: the three columns share one top edge for headings and one for bodies (round 4.1 subgrid: a two-line heading moves every body down)`, r.tops.join(','));
   ok(r.gaps.every((g) => g >= 16), `coffee ledger ${w}: label to price gutter at least 16px`, r.gaps.join(','));
   ok(r.names.every((n) => n.lines.every((l) => l === 1) && n.w >= 120) && r.cols === (r.sw >= 416 ? 3 : 2),
     `coffee slip ${w}: ${r.cols} grind columns for a ${r.sw}px slip (3 from 26rem), every name and grind on one line`, JSON.stringify(r.names.map((n) => n.w)));
@@ -217,6 +218,222 @@ for (const w of [390, 768, 1024, 1440]) {
   ok(r.color !== 'rgba(0, 0, 0, 0)' && r.spinner !== 'none' && r.sw === 16 && r.text === 'Get the letters', 'coffee state sheet: "Sending" draws its spinner beside a visible label with the page\'s own rule', JSON.stringify(r));
   await p.context().close();
 }
+
+// =================== Round 4.1: the round 4 critic's judged fails (kb/reviews/round4-critic.md, section 2) ===================
+const src = (f) => fs.readFileSync(path.join(here, f), 'utf8');
+
+// ---------- Coffee 13a: the option hover is the 8 percent --state-hover layer, on the page and the sheet ----------
+{
+  const files = { 'coffee.src.html': src('coffee.src.html'), 'states.mjs': src('states.mjs') };
+  const rawHover = Object.entries(files).filter(([, t]) => /\.opt(:hover|\.is-hover)\s*\{[^}]*color-mix/.test(t)).map(([f]) => f);
+  const p = await open('coffee.html', 1440);
+  await p.locator('#g-brew .opt').first().scrollIntoViewIfNeeded();
+  await p.locator('#g-brew .opt').nth(1).hover();
+  const r = await p.evaluate(() => {
+    const o = document.querySelectorAll('#g-brew .opt')[1];
+    return { img: getComputedStyle(o).backgroundImage, layer: getComputedStyle(document.documentElement).getPropertyValue('--state-hover').trim() };
+  });
+  ok(rawHover.length === 0 && /linear-gradient/.test(r.img) && /8%/.test(r.layer),
+    'coffee 13a: option hover paints var(--state-hover), 8 percent, on the page and the sheet (no raw color-mix)', JSON.stringify({ rawHover, img: r.img.slice(0, 60), layer: r.layer }));
+  await p.context().close();
+}
+{
+  const s = await open('coffee-states.html', 1440);
+  const img = await s.evaluate(() => getComputedStyle(document.querySelector('.opt.is-hover')).backgroundImage);
+  ok(/linear-gradient/.test(img), 'coffee 13a: the sheet\'s hover option uses the same layer', img.slice(0, 60));
+  await s.context().close();
+}
+
+// ---------- Coffee 13b: control sizes are FOUNDATIONS tokens ----------
+{
+  const t = src('coffee.src.html');
+  const raw = (t.match(/min-height:\s*(32|40|48)px/g) || []);
+  const p = await open('coffee.html', 1440);
+  const r = await p.evaluate(() => {
+    const cs = getComputedStyle(document.documentElement);
+    const btn = document.querySelector('.btn:not(.btn-sm):not(.btn-wide)'), sm = document.querySelector('.btn-sm');
+    return { lg: cs.getPropertyValue('--size-control-lg').trim(), md: cs.getPropertyValue('--size-control-md').trim(), sm: cs.getPropertyValue('--size-control-sm').trim(), icon: cs.getPropertyValue('--size-icon-md').trim(), btn: getComputedStyle(btn).minHeight, btnSm: sm && getComputedStyle(sm).minHeight };
+  });
+  ok(raw.length === 0 && r.lg === '48px' && r.md === '40px' && r.sm === '32px' && r.icon === '16px' && r.btn === '48px' && r.btnSm === '40px' && /--size-control-lg\)/.test(t) && !/FOUNDATIONS v0\.3/.test(t),
+    'coffee 13b: --size-control-{sm,md,lg} and --size-icon-* on the coffee root; buttons and fields use them (no raw 32, 40 or 48px heights)', JSON.stringify({ raw, ...r }));
+  await p.context().close();
+}
+
+// ---------- Coffee 16: one rule for when a subscriber pays, the same in slip, cart and checkout ----------
+{
+  const files = ['coffee.html', 'coffee-states.html'].map((f) => src(f)).join('\n');
+  ok(!/charged on roast day/.test(files), 'coffee 16: "charged on roast day" (which contradicted "Due today $39") is gone from the page and the sheet');
+  const nb = (t) => t.replace(/ /g, ' ');
+  const slip = await open('coffee.html', 1440);
+  const terms = nb(await slip.evaluate(() => document.getElementById('sub-terms').textContent));
+  await slip.context().close();
+  const plan4 = await open('coffee.html?state=plan-4', 1440);
+  const terms4 = nb(await plan4.evaluate(() => document.getElementById('sub-terms').textContent));
+  await plan4.context().close();
+  const cart = await open('coffee.html?state=cart', 1440);
+  const c = nb(await cart.evaluate(() => document.getElementById('cart-totals').textContent));
+  await cart.context().close();
+  const co = await open('coffee.html?state=checkout', 1440);
+  const k = await co.evaluate(() => ({ lines: document.getElementById('co-lines').textContent, term: document.getElementById('co-term').textContent, pay: document.getElementById('co-pay-lbl').textContent }));
+  await co.context().close();
+  const sub = 18, once = 21;
+  ok(/^\$18 at checkout, then every 2 weeks on roast day: next charge Tue, Oct 27\./.test(terms) && /^\$16 at checkout, then every 4 weeks on roast day: next charge Tue, Nov 10\./.test(terms4),
+    'coffee 16: the slip says the first bag is paid at checkout, then every 2 (or 4) weeks on roast day, next Tue, Oct 27 (Nov 10)', terms.slice(0, 80));
+  ok(c.includes('Due today$' + (sub + once).toFixed(2)) && c.includes('Then every 2 weeks on roast day, from Tue, Oct 27$18.00'),
+    'coffee 16: the cart charges the $18 today with the $21 bag ($39.00), then $18 every 2 weeks on roast day from Tue, Oct 27', c.slice(0, 160));
+  ok(nb(k.lines).includes('Due today$39.00') && k.pay === 'Pay $39.00' && /every 2 weeks on roast day, next on Tue, Oct 27/.test(nb(k.term)),
+    'coffee 16: checkout pays $39.00 today and restates the same renewal rule', nb(k.term));
+}
+{
+  const files = ['coffee.html', 'coffee-states.html'].map((f) => src(f)).join('\n');
+  ok(!/roasted Tue|shipped Wed|Roasted Tue/.test(files) && /It roasts Tue,(&nbsp;|\s)Oct(&nbsp;|\s)13/.test(files) && /free over \$40 or with a subscription/.test(files),
+    'coffee 16 (also): future dates in the present tense ("It roasts Tue, Oct 13"); the lots note states the cart\'s "Free with your subscription" rule');
+}
+
+// ---------- Coffee band (fix 4): the proof rides beside the slip and ends level with it at 1024 and 1440 ----------
+for (const w of [1024, 1440]) {
+  const p = await open('coffee.html', w);
+  const r = await p.evaluate(async () => {
+    const slip = document.querySelector('.slip'), proof = document.querySelector('.proof');
+    const sb = slip.getBoundingClientRect().bottom + scrollY;
+    const still = proof.getBoundingClientRect().bottom + scrollY;
+    const stick = parseFloat(getComputedStyle(proof).top), ph = proof.getBoundingClientRect().height;
+    scrollTo(0, sb - stick - ph); await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+    const gap = Math.round(slip.getBoundingClientRect().bottom - proof.getBoundingClientRect().bottom);
+    const top = Math.round(proof.getBoundingClientRect().top);
+    return { hole: Math.round(sb - still), gap, top, pos: getComputedStyle(proof).position };
+  });
+  ok(r.pos === 'sticky' && Math.abs(r.gap) <= 1 && r.top >= 64,
+    `coffee band ${w}: the proof is sticky and ends level with the slip as the reader reaches the slip's end (gap ${r.gap}px, was ${r.hole}px at rest), clear of the 64px header`, JSON.stringify(r));
+  await p.context().close();
+}
+
+// ---------- Dashboard 13a: "Invite a teammate" has one word space ----------
+{
+  const p = await open('dashboard.html?state=first-data', 1440);
+  const r = await p.evaluate(() => {
+    const b = document.querySelector('.invite-btn');
+    const rg = document.createRange();
+    const walk = document.createTreeWalker(b, NodeFilter.SHOW_TEXT);
+    const nodes = []; for (let n = walk.nextNode(); n; n = walk.nextNode()) nodes.push(n);
+    const a = nodes.find((n) => n.textContent === 'Invite'), z = nodes.find((n) => /^ a teammate/.test(n.textContent));
+    rg.selectNodeContents(a); const ar = rg.getBoundingClientRect().right;
+    rg.setStart(z, 1); rg.setEnd(z, 2); const zl = rg.getBoundingClientRect().left;
+    rg.setStart(z, 0); rg.setEnd(z, 1); const space = rg.getBoundingClientRect().width;
+    return { gap: Math.round((zl - ar) * 10) / 10, space: Math.round(space * 10) / 10, text: b.textContent };
+  });
+  ok(Math.abs(r.gap - r.space) <= 0.5, `dashboard 13a: "Invite a teammate" (first-data, 1440) has one word space between the words (${r.gap}px, one space is ${r.space}px)`, JSON.stringify(r));
+  await p.context().close();
+}
+
+// ---------- Dashboard 15: the sheet's 75 percent usage meter paints its warning fill ----------
+{
+  const p = await open('dashboard-states.html', 1440);
+  const r = await p.evaluate(() => {
+    const m = document.querySelector('.usage.warn .meter'), i = m.querySelector('i');
+    const want = getComputedStyle(document.documentElement).getPropertyValue('--color-warning').trim();
+    return { bg: getComputedStyle(i).backgroundColor, ring: getComputedStyle(m.closest('.usage')).boxShadow, frac: Math.round(i.getBoundingClientRect().width / m.getBoundingClientRect().width * 100), want };
+  });
+  ok(r.bg !== 'rgba(0, 0, 0, 0)' && r.frac === 78 && r.ring !== 'none' && !/warning-mark/.test(src('states.mjs')),
+    'dashboard 15: the sheet\'s warning meter fills 78% of its track in the warning color, with its ring (no undefined --color-warning-mark)', JSON.stringify(r));
+  await p.context().close();
+}
+
+// ---------- Dashboard 16: sample states drop caveats and glyphs whose alerts they hide; the live state keeps them ----------
+for (const s of ['', 'first-run', 'listening', 'check-failed']) {
+  const p = await open('dashboard.html' + (s ? '?state=' + s : ''), 1440);
+  await p.click('.kpi-pick[data-metric=conv]').catch(() => {});
+  const r = await p.evaluate(() => {
+    const vis = (e) => !!e && e.getClientRects().length > 0 && getComputedStyle(e).visibility !== 'hidden';
+    return {
+      caveats: [...document.querySelectorAll('.kpi .caveat')].filter(vis).length,
+      glyph: [...document.querySelectorAll('.warn-mark')].filter(vis).length,
+      legend: vis(document.getElementById('legend-partial')),
+      alerts: [vis(document.getElementById('alert-checkout')), vis(document.getElementById('alert-ios'))],
+      partialLine: !!document.querySelector('#chart-plot .line-partial'),
+      orphans: [...document.querySelectorAll('[data-explained-by]')].filter(vis).filter((e) => ![...document.querySelectorAll(e.getAttribute('data-explained-by'))].some(vis)).length,
+    };
+  });
+  if (!s) ok(r.caveats === 2 && r.glyph === 1 && r.legend && r.partialLine && r.alerts.every(Boolean) && r.orphans === 0, 'dashboard 16: the live state keeps both "Partial since 2:05 pm" caveats, the iOS glyph and the dotted chart point beside their alerts', JSON.stringify(r));
+  else ok(r.caveats === 0 && r.glyph === 0 && !r.legend && !r.partialLine && r.orphans === 0, `dashboard 16 ?state=${s}: no outage caveat, iOS glyph or partial chart point while the alerts that explain them are hidden`, JSON.stringify(r));
+  await p.context().close();
+}
+
+// ---------- Dashboard (fix 4): the rolling window is labelled as one; comparisons start once two full weeks are in ----------
+{
+  const p = await open('dashboard.html', 1440);
+  const t = (await visibleText(p)).replace(/ /g, ' ');
+  await p.context().close();
+  const f = await open('dashboard.html?state=first-data', 1440);
+  const tf = (await visibleText(f)).replace(/ /g, ' ');
+  await f.context().close();
+  ok(/Last 7 days ?, Oct 6 to 12/.test(t) && !/\bthis week\b/i.test(t) && !/vs last week/.test(t) && /Weekly comparisons start on Oct 26, once two full weeks are in/.test(tf) && /Week-on-week from Oct 26/.test(tf) && !/Oct 19/.test(tf),
+    'dashboard: "Last 7 days, Oct 6 to 12" (a Tuesday to Monday rolling window), never "this week"; comparisons from Oct 26 (two full 7-day windows after Oct 12)');
+}
+
+// ---------- Dashboard (fix 5): Pause updates is at least 44x44 under a coarse pointer, and the head stays 64px ----------
+{
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true, reducedMotion: 'reduce' });
+  const p = await ctx.newPage();
+  await p.goto(B + 'dashboard.html'); await p.evaluate(() => document.fonts.ready);
+  const r = await p.evaluate(() => {
+    const b = document.getElementById('live-btn').getBoundingClientRect();
+    const head = document.querySelector('.page-head').getBoundingClientRect();
+    // Probe the hit area row by row and column by column: it is the button plus its ::after.
+    const on = (x, y) => { const e = document.elementFromPoint(x, y); return !!e && !!e.closest('#live-btn'); };
+    const cx = b.left + b.width / 2, cy = b.top + b.height / 2;
+    let top = cy, bottom = cy, left = cx, right = cx;
+    while (on(cx, top - 1)) top--; while (on(cx, bottom + 1)) bottom++; while (on(left - 1, cy)) left--; while (on(right + 1, cy)) right++;
+    return { coarse: matchMedia('(pointer: coarse)').matches, w: Math.round(right - left + 1), h: Math.round(bottom - top + 1), head: Math.round(head.height), inside: top >= head.top && bottom <= head.bottom, label: [Math.round(b.top), Math.round(b.bottom)] };
+  });
+  ok(r.coarse && r.w >= 44 && r.h >= 44 && r.head === 64 && r.inside, 'dashboard (fix 5): "Pause updates" has a 44x44 hit area at 390 under a coarse pointer; the head stays 64px', JSON.stringify(r));
+  await ctx.close();
+}
+
+// ---------- Round 4.1, further down the critic's list ----------
+for (const w of [390, 768]) {
+  const p = await open('coffee.html', w);
+  const r = await p.evaluate(() => {
+    const more = document.querySelector('.shop .margin-label .more').getBoundingClientRect().top;
+    const h2 = document.getElementById('shop-title').getBoundingClientRect().top;
+    const last = [...document.querySelectorAll('.shop .lots > li')].pop().getBoundingClientRect().bottom;
+    return { more: Math.round(more), h2: Math.round(h2), last: Math.round(last) };
+  });
+  ok(r.more > r.h2 && r.more > r.last, `coffee shop ${w}: "See all 9 coffees" follows its heading and the three lots`, JSON.stringify(r));
+  await p.context().close();
+}
+{
+  const p = await open('coffee-states.html', 1440);
+  const r = await p.evaluate(() => [...document.querySelectorAll('.menu-toggle')].filter((e) => e.getClientRects().length).length);
+  ok(r >= 4, `coffee state sheet 1440: the menu toggle's states render (${r} shown)`);
+  await p.context().close();
+}
+{
+  const p = await open('dashboard.html', 1440);
+  const r = await p.evaluate(() => {
+    const panel = document.querySelector('.split > .panel[aria-labelledby=plat-title]');
+    const note = document.getElementById('plat-note');
+    const times = [...document.querySelectorAll('#pages-body td.t-time')].map((e) => e.textContent);
+    return { slack: Math.round(panel.getBoundingClientRect().bottom - note.getBoundingClientRect().bottom), times };
+  });
+  ok(r.slack <= 24 && r.times.every((t) => !/^0m/.test(t)), 'dashboard: the platform panel ends with its footnote; durations under a minute read "58s", not "0m 58s"', JSON.stringify(r));
+  await p.context().close();
+}
+
+// ---------- Tools: the lint now catches each class (fixture tools/fixtures/bad-tokens.html; good.html passes) ----------
+{
+  const { execFileSync } = await import('node:child_process');
+  const root = path.resolve(here, '../../..');
+  const out = path.join(process.env.TMPDIR || '/tmp', 'r41-lint');
+  fs.mkdirSync(out, { recursive: true });
+  const run = (f) => { try { execFileSync('node', [path.join(root, 'tools/lint.mjs'), path.join(root, 'tools/fixtures', f), '--out-dir', out, '--quiet', '--no-fallback'], { stdio: 'pipe' }); } catch { /* exit 1 on fail */ } return JSON.parse(fs.readFileSync(path.join(out, f.replace('.html', '.lint.json')), 'utf8')); };
+  const bad = run('bad-tokens.html'), good = run('good.html');
+  const msgs = (c) => (bad.checks[c] && bad.checks[c].fail || []).map((x) => x.message).join(' | ');
+  ok(/--color-warning-mark/.test(msgs('undefined-var')) && /raw color/.test(msgs('state-layer')) && /4%/.test(msgs('state-layer')) && /gap plus a no-break space/.test(msgs('double-space')) && /two spaces in a row/.test(msgs('double-space'))
+    && /alert that explains it, is hidden/.test(msgs('truth')) && /paints no fill/.test(msgs('proportion')) && good.summary.fails === 0,
+    'tools: lint fails bad-tokens.html on undefined-var, state-layer (raw and 4%), double-space (gap and spaces), truth (explained-by) and proportion (empty meter); good.html passes');
+}
+
 
 await browser.close();
 console.log(fails ? `${fails} checks failed` : 'all checks pass');

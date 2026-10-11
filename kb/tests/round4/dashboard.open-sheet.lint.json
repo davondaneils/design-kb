@@ -1,6 +1,6 @@
 {
   "file": "kb/tests/round4/dashboard.html?open=sheet",
-  "date": "2026-10-10T23:51:45.923Z",
+  "date": "2026-10-11T00:44:58.361Z",
   "checks": {
     "axe": {
       "fail": [],
@@ -149,6 +149,21 @@
       "warn": [],
       "pass": true
     },
+    "double-space": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "undefined-var": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-layer": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
     "truth": {
       "fail": [],
       "warn": [],
@@ -191,21 +206,7 @@
     },
     "fallback": {
       "fail": [],
-      "warn": [
-        {
-          "message": "layout moves 18px at 390px when the web fonts fail (worst: #main > section.panel); add metric fallbacks (size-adjust, ascent-override). Line count changed in 1 elements: #plat-note \"Active users this week, Oct 6 to 12, aga\" 2 to 3 lines (one element near a wrap point is a copy fix; many is a font metrics fix)",
-          "sel": "#main > section.panel",
-          "shift": 18,
-          "rewrapped": [
-            {
-              "sel": "#plat-note",
-              "from": 2,
-              "to": 3,
-              "text": "Active users this week, Oct 6 to 12, aga"
-            }
-          ]
-        }
-      ],
+      "warn": [],
       "pass": true
     },
     "motion": {
@@ -216,11 +217,11 @@
   },
   "summary": {
     "weightKB": {
-      "html": 157,
+      "html": 159,
       "svg": 14
     },
     "focusables": 2,
-    "fallbackShift390": 18,
+    "fallbackShift390": 0,
     "fallbackShift1440": 0,
     "motionFound": {
       "animations": 0,
@@ -251,6 +252,9 @@
     "word-break": "pass",
     "grid-edge": "pass",
     "hidden-content": "pass",
+    "double-space": "pass",
+    "undefined-var": "pass",
+    "state-layer": "pass",
     "truth": "pass",
     "proportion": "pass",
     "nav-parity": "pass",
@@ -259,10 +263,10 @@
     "sticky-focus": "pass",
     "skip-link": "pass",
     "state-shift": "pass",
-    "fallback": "pass (1 warn)",
+    "fallback": "pass",
     "motion": "pass",
     "result": "PASS",
     "fails": 0,
-    "warns": 5
+    "warns": 4
   }
 }

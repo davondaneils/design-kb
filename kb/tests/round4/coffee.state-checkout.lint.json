@@ -1,6 +1,6 @@
 {
   "file": "kb/tests/round4/coffee.html?state=checkout",
-  "date": "2026-10-10T23:38:06.254Z",
+  "date": "2026-10-11T00:47:44.649Z",
   "checks": {
     "axe": {
       "fail": [],
@@ -122,7 +122,7 @@
           "sel": "#co-title"
         },
         {
-          "message": "text \", next on Tue, Oct 27. Skip, p\" partly covered by div.wrap.g12 > figure.hero-photo > div.frame > svg.print (143x10px) at 1440px",
+          "message": "text \"on roast day, next on Tue, Oct\" partly covered by div.wrap.g12 > figure.hero-photo > div.frame > svg.print (157x10px) at 1440px",
           "sel": "#co-term"
         },
         {
@@ -212,6 +212,21 @@
       "pass": true
     },
     "hidden-content": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "double-space": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "undefined-var": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-layer": {
       "fail": [],
       "warn": [],
       "pass": true
@@ -307,7 +322,7 @@
   },
   "summary": {
     "weightKB": {
-      "html": 192,
+      "html": 194,
       "svg": 70
     },
     "focusables": 15,
@@ -342,6 +357,9 @@
     "word-break": "pass",
     "grid-edge": "pass",
     "hidden-content": "pass",
+    "double-space": "pass",
+    "undefined-var": "pass",
+    "state-layer": "pass",
     "truth": "pass",
     "proportion": "pass",
     "nav-parity": "pass",

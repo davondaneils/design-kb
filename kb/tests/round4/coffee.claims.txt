@@ -1,4 +1,4 @@
-Claims inventory: /home/claude/design-kb/.claude/worktrees/agent-aa8f94194e4294d3b/kb/tests/round4/coffee.html (98 strings to check against the data)
+Claims inventory: kb/tests/round4/coffee.html (98 strings to check against the data)
 
   1  Cart 0
   2  This week’s single-origin coffee · Lot 0412
@@ -28,7 +28,7 @@ Claims inventory: /home/claude/design-kb/.claude/worktrees/agent-aa8f94194e4294d
  26  Brazil and Guatemala blend, 1,100 and 1,600 m
  27  $18 / 340 g
  28  $15 on subscription
- 29  Single bags ship for $6, free over $40. Subscriptions always ship free.
+ 29  Single bags ship for $6, free over $40 or with a subscription. Subscriptions always ship free.
  30  Subscribers pay $3 less a bag, and shipping is included
  31  4.7
  32  out of 5, from 1,284 subscriber reviews since 2023
@@ -54,7 +54,7 @@ Claims inventory: /home/claude/design-kb/.claude/worktrees/agent-aa8f94194e4294d
  52  Every 4 weeks
  53  About 5 cups a week
  54  First bag ships Wed, Oct 14
- 55  $18 every 2 weeks , charged on roast day. First roast Tue, Oct 13; next charge Tue, Oct 27. Skip, pause or cancel online any time before a roast.
+ 55  $18 today, then every 2 weeks on roast day: next charge Tue, Oct 27. First roast Tue, Oct 13. Skip, pause or cancel online any time before a roast.
  56  Subscribe, $18 every 2 weeks
  57  Not for you? Tell us within 30 days and your next bag is on us.
  58  We roast on a 1962 Probat in Southeast Portland, 12 kilos at a time. Every batch is logged, and we print what we paid for every lot on the bag.
@@ -87,10 +87,10 @@ Claims inventory: /home/claude/design-kb/.claude/worktrees/agent-aa8f94194e4294d
  85  Ember & Oak Coffee Roasters, 1120 SE Water Ave, Portland, OR 97214. Cafe open daily, 7 am to 3 pm.
  86  45.51° N, 122.67° W · 15 m · © 2026
  87  $21 a bag, 340 g
- 88  . Roasted Tue, Oct 13, ships Wed, Oct 14.
+ 88  . Roasts Tue, Oct 13, ships Wed, Oct 14.
  89  Add to cart, $21
  90  2 items
- 91  This week’s coffee is Ethiopia Guji, roasted Tue, Oct 13 in Portland and shipped Wed, Oct 14.
+ 91  This week’s coffee is Ethiopia Guji. It roasts Tue, Oct 13 in Portland and ships Wed, Oct 14.
  92  Check out, $39.00
  93  Roaster’s choice every 2 weeks, and one bag of Ethiopia Guji
  94  Pay $39.00
