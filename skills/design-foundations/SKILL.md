@@ -5,7 +5,7 @@ description: Foundation layer of design-kb, always loaded first by design-direct
 
 # design-foundations
 
-The floor under every design job. Nothing a playbook or domain reference teaches earns credit until this layer passes. Source of truth: `kb/FOUNDATIONS.md` (contract v0.4.1) in the design-kb repo. The reference files here mirror it; if they ever differ, FOUNDATIONS wins.
+The floor under every design job. Nothing a playbook or domain reference teaches earns credit until this layer passes. Source of truth: `kb/FOUNDATIONS.md` (contract v0.4.2) in the design-kb repo. The reference files here mirror it; if they ever differ, FOUNDATIONS wins.
 
 ## 1. Non-negotiable rules
 1. **Tokens only.** Components use semantic tokens (`--color-text-muted`, `--space-gap-md`, `--radius-control`), never raw values or primitives. Names follow `--{category}-{role}-{variant}`.

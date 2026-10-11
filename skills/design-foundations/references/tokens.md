@@ -1,6 +1,6 @@
 # Tokens and scales
 
-Mirror of `kb/FOUNDATIONS.md` v0.4 (token sections, icons, sizes and content mechanics). FOUNDATIONS is the source of truth: if this file and FOUNDATIONS differ, FOUNDATIONS wins and the librarian re-syncs this file. Only the editor-in-chief changes the values.
+Mirror of `kb/FOUNDATIONS.md` v0.4.2 (token sections, icons, sizes and content mechanics). FOUNDATIONS is the source of truth: if this file and FOUNDATIONS differ, FOUNDATIONS wins and the librarian re-syncs this file. Only the editor-in-chief changes the values.
 
 ## Token naming
 `--{category}-{role}-{variant}`, for example `--color-text-muted`, `--space-4`, `--text-lg`, `--radius-md`, `--duration-fast`. Semantic tokens reference primitive tokens; components only use semantic tokens.
@@ -94,6 +94,7 @@ One schema for every domain. Primitives hold raw values; semantic tokens point a
 | Type size | `--text-xs` to `--text-5xl` (12 to 61) | `--text-body`, `--text-label`, `--text-heading-{1..4}`, `--text-display`, `--text-display-2` (fluid, may exceed 61, max at most 2.5x min) | design-typography |
 | Type other | `--font-{sans,serif,mono}`, `--weight-{regular,medium,semibold,bold}`, `--leading-{tight,snug,normal}` (1.1, 1.25, 1.5) | | design-typography |
 | Radius | `--radius-{none,sm,md,lg,xl,full}` (0, 4, 8, 12, 16, 9999px) | `--radius-control`, `--radius-card` | design-layout |
+| State | (uses the text color) | `--state-{hover,focus,pressed,dragged}`: `color-mix(in oklch, var(--color-text) 8% / 10% / 10% / 16%, transparent)`, the state layers above; filled controls use `--color-primary-hover` and `--color-primary-active` instead | design-color with design-polish |
 | Elevation | `--shadow-{0..4}`, `--shadow-rgb` (tint, as space-separated RGB) | `--elevation-{card,popover,modal}` (ring plus shadow), `--ring` (1px edge), `--highlight` (dark-theme top edge) | design-layout with design-polish (recipe above) |
 | Motion | `--duration-{instant,fast,base,slow,page}`, `--ease-{standard,enter,exit}`; the `linear` keyword for loops, scroll-linked and time-axis motion | `--motion-{hover,enter,exit}` (values in Motion above) | design-motion |
 | Icon | `--size-icon-{sm,md,lg,xl}` (12, 16, 20, 24) | `--icon-stroke` (1.5px) | design-graphic with design-polish |

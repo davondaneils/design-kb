@@ -1,4 +1,4 @@
-# Shared foundation contract (v0.4.1)
+# Shared foundation contract (v0.4.2)
 
 Every design-kb skill builds on this. Skills may teach when and how to deviate, but every default, example, token name and cross-reference uses these values so the skills never contradict each other.
 
@@ -115,6 +115,7 @@ One schema for every domain. Primitives hold raw values; semantic tokens point a
 | Type size | `--text-xs` to `--text-5xl` (12 to 61) | `--text-body`, `--text-label`, `--text-heading-{1..4}`, `--text-display`, `--text-display-2` (fluid, may exceed 61, max at most 2.5x min) | design-typography |
 | Type other | `--font-{sans,serif,mono}`, `--weight-{regular,medium,semibold,bold}`, `--leading-{tight,snug,normal}` (1.1, 1.25, 1.5) | | design-typography |
 | Radius | `--radius-{none,sm,md,lg,xl,full}` (0, 4, 8, 12, 16, 9999px) | `--radius-control`, `--radius-card` | design-layout |
+| State | (uses the text color) | `--state-{hover,focus,pressed,dragged}`: `color-mix(in oklch, var(--color-text) 8% / 10% / 10% / 16%, transparent)`, the state layers above; filled controls use `--color-primary-hover` and `--color-primary-active` instead | design-color with design-polish |
 | Elevation | `--shadow-{0..4}`, `--shadow-rgb` (tint, as space-separated RGB) | `--elevation-{card,popover,modal}` (ring plus shadow), `--ring` (1px edge), `--highlight` (dark-theme top edge) | design-layout with design-polish (recipe above) |
 | Motion | `--duration-{instant,fast,base,slow,page}`, `--ease-{standard,enter,exit}`; the `linear` keyword for loops, scroll-linked and time-axis motion | `--motion-{hover,enter,exit}` (values in Motion above) | design-motion |
 | Icon | `--size-icon-{sm,md,lg,xl}` (12, 16, 20, 24) | `--icon-stroke` (1.5px) | design-graphic with design-polish |
@@ -162,6 +163,7 @@ Every rendered test page must pass every item. One miss fails the page, however 
 | 16 | Copy is true and consistent: every number matches its source, in every state and after every live update; each promise has one wording; one verb per action; one comparison basis, named; shares and bars proportional; content mechanics as above (one clock, weekday-checked dates, no breaks inside dates, prices, ranges and units) | `node skills/design-copy/assets/claims_inventory.mjs page.html --year <year>` exits 0 (its WEEKDAY, CLOCK and RELATIVE flags) and its PROMISE and PERIOD warnings are fixed or named; [lint] `truth` (repeated numbers change together over 3 live updates, empty states carry no default-state numbers, stopped sources do not tick, the data-attribute contract in `tools/lint-truth.mjs` holds) `proportion` (share columns, 0 to 100 bars, meters that paint a fill) and `explained-by` (a caveat never shows without its alert); [judged] every listed claim ticked against its data, price list or log, then a fresh-context critic's judged pass |
 
 ## Change log
+- v0.4.2 (2026-10-11, editor-in-chief, from the round 4 clean-context critics, `kb/reviews/round4-critic.md` and `kb/reviews/round4.1-critic.md`): checklist row 13 names three new lint checks (`undefined-var`, `state-layer`, `double-space`) and row 16 names `explained-by` and meter fills, all in `tools/lint-tokens.mjs`, `tools/lint-layout.mjs` and `tools/lint-truth.mjs`. The token schema gains the `--state-*` row the `state-layer` check requires, with the Material 3 values already set above. No value or default changes.
 - v0.4.1 (2026-10-10, editor-in-chief, from the round 3 clean-context critic, `kb/reviews/round3-critic.md`): every lint check passed on both round 3 pages while the critic found 7 judged gate fails, so the classes it caught by eye move into the lint. No token, value or default changes.
   - Item 8: overflow is checked at every lint width (390, 768, 1024, 1440), not only 390.
   - Item 9: a sticky top bar taller than `scroll-padding-top` at any width fails (`sticky-header`; the dashboard header grew to 142px against 80px at 768 and 1024).
