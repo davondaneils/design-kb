@@ -144,3 +144,7 @@ Layout: at 390 the category line, dates and the one filled action (Get tickets, 
 ### Cold-viewer check (festival re-run, poster)
 
 Run after the build by a fresh agent with no project context, shown only the two poster images of blind pair 1 (5-second feed read). It read both correctly, found no typos or broken rendering in either, and said the stone-block poster "reads instantly at thumbnail size" and would stop the scroll more. The concept legibility check therefore passes. One mismatch to note: the two versions invented different venue and price details (the brief left them open), which a ranker could notice.
+
+### Davon's blind ranking, festival rematch (2026-10-11)
+
+Davon answered "1B, 2B, 3A". Against the key (now revealed in `kb/tests/heldout/festival2-blind-key.md`), the rebuilt skilled version beat the baseline he had picked in all 3 pairs: poster (B), event page 1440 (B) and event page 390 (A). With the fixes from commit 489c61b, the skills went from 0 of 2 to 3 of 3 on the brand brief. Across the held-out test the skills now win the product UI brief (2 of 2) and the brand brief (3 of 3 after one fix cycle).
