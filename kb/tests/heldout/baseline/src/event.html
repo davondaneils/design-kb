@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Set in Stone · Glasgow Type &amp; Print Festival, 17–18 April 2027</title>
+<meta name="description" content="Set in Stone is a two-day independent type and print festival at The Briggait, Glasgow, on 17 and 18 April 2027. Talks, workshops, open press and a type fair.">
+<style>
+/*@FONTS Fraunces=fraunces.woff2;100 900;normal|Fraunces=fraunces-italic.woff2;100 900;italic|Inter Tight=intertight.woff2;100 900;normal*/
+:root{color-scheme:light dark;--paper:#ece5d8;--paper-2:#e2d9c8;--ink:#141210;--muted:#57514a;--red:#c92f17;--red-ink:#ffffff;--line:rgba(20,18,16,.18);--max:1280px}
+@media (prefers-color-scheme:dark){:root{--paper:#141210;--paper-2:#1d1a17;--ink:#ece5d8;--muted:#b0a797;--red:#ff6a4d;--red-ink:#141210;--line:rgba(236,229,216,.18)}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--paper);color:var(--ink);scroll-behavior:smooth}
+body{font-family:'Inter Tight',sans-serif;font-size:18px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+@media (min-width:900px){.wrap{padding:0 48px}}
+.serif{font-family:'Fraunces',serif;font-variation-settings:'opsz' 144}
+header.nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Fraunces',serif;font-weight:900;font-size:22px;letter-spacing:-.03em;text-decoration:none}
+.logo i{font-weight:400}
+.nav ul{display:none;list-style:none;gap:32px;font-size:16px;font-weight:500}
+.nav ul a{text-decoration:none}
+@media (min-width:900px){.nav ul{display:flex}}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;white-space:nowrap}
+.btn-red{background:var(--red);color:var(--red-ink)}
+.btn-line{border:1.5px solid var(--ink)}
+.nav .btn{min-height:44px;padding:0 18px}
+.hero{padding:40px 0 56px;border-bottom:1px solid var(--line)}
+.hero .kick{display:flex;justify-content:space-between;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.hero h1{font-family:'Fraunces',serif;font-weight:900;font-variation-settings:'opsz' 144;font-size:clamp(88px,24vw,400px);line-height:.8;letter-spacing:-.05em;margin:28px 0 36px;position:relative}
+.hero h1 .in{font-style:italic;font-weight:400;font-size:.6em;letter-spacing:-.02em}
+.hero h1 .shadow{position:absolute;inset:0;color:var(--red);transform:translate(.025em,.02em);z-index:-1}
+.hero h1 span.l{display:block}
+.hero .grid{display:grid;gap:28px}
+@media (min-width:900px){.hero .grid{grid-template-columns:1.2fr 1fr 1fr;align-items:end}}
+.hero .lede{font-size:22px;line-height:1.4;max-width:30ch}
+.facts{font-size:17px}
+.facts b{display:block;font-family:'Fraunces',serif;font-weight:800;font-size:34px;line-height:1.05;letter-spacing:-.02em;font-variation-settings:'opsz' 144}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+section{padding:80px 0;border-bottom:1px solid var(--line)}
+.sh{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;margin-bottom:40px;gap:16px 24px}
+.sh h2{font-family:'Fraunces',serif;font-weight:800;font-variation-settings:'opsz' 144;font-size:clamp(44px,6vw,80px);line-height:.95;letter-spacing:-.035em}
+.sh p{max-width:36ch;color:var(--muted)}
+.days{display:grid;gap:48px}
+@media (min-width:900px){.days{grid-template-columns:1fr 1fr;gap:64px}}
+.day h3{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--red);padding-bottom:12px;border-bottom:2px solid var(--ink)}
+.day ol{list-style:none}
+.day li{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.day time{font-variant-numeric:tabular-nums;font-weight:600}
+.day li b{display:block;font-weight:600;font-size:19px;line-height:1.3}
+.day li span{color:var(--muted);font-size:16px}
+.people{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 20px}
+@media (min-width:900px){.people{grid-template-columns:repeat(3,1fr);gap:48px 32px}}
+.person .ph{aspect-ratio:4/5;background:var(--paper-2);border-radius:4px;display:grid;place-items:center;font-family:'Fraunces',serif;font-weight:900;font-size:clamp(56px,9vw,120px);color:var(--red);margin-bottom:14px;letter-spacing:-.04em}
+.person b{display:block;font-size:19px;font-weight:600;line-height:1.25}
+.person span{color:var(--muted);font-size:16px}
+.tix{display:grid;gap:16px}
+@media (min-width:900px){.tix{grid-template-columns:repeat(3,1fr);gap:24px}}
+.tk{border:1.5px solid var(--ink);border-radius:6px;padding:28px;display:flex;flex-direction:column;gap:12px}
+.tk.feature{background:var(--ink);color:var(--paper)}
+.tk.feature .btn{background:var(--red);color:var(--red-ink)}
+.tk h3{font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.tk .p{font-family:'Fraunces',serif;font-weight:800;font-size:64px;line-height:1;letter-spacing:-.03em;font-variation-settings:'opsz' 144}
+.tk ul{list-style:none;font-size:16px;flex:1}
+.tk li{padding:6px 0;border-top:1px solid currentColor;border-color:color-mix(in srgb,currentColor 20%,transparent)}
+.tk .btn{background:var(--ink);color:var(--paper);margin-top:8px}
+.venue{display:grid;gap:32px}
+@media (min-width:900px){.venue{grid-template-columns:1fr 1fr;gap:64px}}
+.venue dl{display:grid;grid-template-columns:120px 1fr;gap:14px 16px}
+.venue dt{font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding-top:3px}
+.map{aspect-ratio:4/3;background:var(--paper-2);border-radius:6px;position:relative;overflow:hidden}
+footer{padding:48px 0 64px;font-size:15px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#">Set <i>in</i> Stone</a>
+  <nav aria-label="Main"><ul><li><a href="#programme">Programme</a></li><li><a href="#speakers">Speakers</a></li><li><a href="#tickets">Tickets</a></li><li><a href="#venue">Venue</a></li></ul></nav>
+  <a class="btn btn-red" href="#tickets">Get tickets</a>
+</div></header>
+
+<main>
+<div class="hero"><div class="wrap">
+  <p class="kick"><span>Glasgow Type &amp; Print Festival</span><span>Second edition</span></p>
+  <h1 aria-label="Set in Stone"><span class="l">Set <span class="in">in</span></span><span class="l">Stone</span><span class="shadow" aria-hidden="true"><span class="l">Set <span class="in">in</span></span><span class="l">Stone</span></span></h1>
+  <div class="grid">
+    <p class="lede">Two days of letterpress, lithography and letterforms in the old fish market by the Clyde.</p>
+    <p class="facts"><b>17–18 April 2027</b>Saturday and Sunday, 10:00–18:00</p>
+    <div class="ctas"><a class="btn btn-red" href="#tickets">Get tickets from £18</a><a class="btn btn-line" href="#programme">See the programme</a></div>
+  </div>
+</div></div>
+
+<section id="programme"><div class="wrap">
+  <div class="sh"><h2>Programme</h2><p>Talks in the main hall, hands-on workshops in the studios, and a type fair all weekend.</p></div>
+  <div class="days">
+    <div class="day"><h3>Saturday 17 April</h3><ol>
+      <li><time>10:00</time><div><b>Doors and type fair opens</b><span>Main hall · 40 independent foundries and presses</span></div></li>
+      <li><time>11:00</time><div><b>Letters that outlast us</b><span>Ailsa Mackenzie, letter cutter</span></div></li>
+      <li><time>13:30</time><div><b>Workshop: stone lithography</b><span>Studio 2 · 12 places · +£25</span></div></li>
+      <li><time>15:00</time><div><b>Drawing a Scottish grotesque</b><span>Tomás Reyes, type designer</span></div></li>
+      <li><time>19:00</time><div><b>The overnight run</b><span>1,000 prints, one press, until sunrise</span></div></li>
+    </ol></div>
+    <div class="day"><h3>Sunday 18 April</h3><ol>
+      <li><time>10:00</time><div><b>Type fair and open press</b><span>Main hall</span></div></li>
+      <li><time>11:00</time><div><b>Riso, cheaply and loudly</b><span>Priya Chandran, printer</span></div></li>
+      <li><time>13:30</time><div><b>Workshop: wood type posters</b><span>Studio 1 · 16 places · +£25</span></div></li>
+      <li><time>15:00</time><div><b>A city written in sandstone</b><span>Fergus Lyall, historian</span></div></li>
+      <li><time>17:00</time><div><b>Closing: the print swap</b><span>Bring ten, leave with ten</span></div></li>
+    </ol></div>
+  </div>
+</div></section>
+
+<section id="speakers"><div class="wrap">
+  <div class="sh"><h2>Speakers</h2></div>
+  <div class="people">
+    <div class="person"><div class="ph" aria-hidden="true">AM</div><b>Ailsa Mackenzie</b><span>Letter cutter, Edinburgh</span></div>
+    <div class="person"><div class="ph" aria-hidden="true">TR</div><b>Tomás Reyes</b><span>Type designer, Lisbon</span></div>
+    <div class="person"><div class="ph" aria-hidden="true">PC</div><b>Priya Chandran</b><span>Risograph printer, Leeds</span></div>
+    <div class="person"><div class="ph" aria-hidden="true">FL</div><b>Fergus Lyall</b><span>Architectural historian, Glasgow</span></div>
+    <div class="person"><div class="ph" aria-hidden="true">HØ</div><b>Hanna Østergaard</b><span>Book designer, Copenhagen</span></div>
+    <div class="person"><div class="ph" aria-hidden="true">KA</div><b>Kemi Adebayo</b><span>Lettering artist, London</span></div>
+  </div>
+</div></section>
+
+<section id="tickets"><div class="wrap">
+  <div class="sh"><h2>Tickets</h2><p>Concessions for students and the unwaged. Under-16s free with an adult.</p></div>
+  <div class="tix">
+    <div class="tk"><h3>Day pass</h3><p class="p">£18</p><ul><li>Saturday or Sunday</li><li>All talks and the type fair</li></ul><a class="btn" href="#">Buy day pass</a></div>
+    <div class="tk feature"><h3>Weekend</h3><p class="p">£30</p><ul><li>Both days</li><li>All talks and the type fair</li><li>Festival print, signed</li></ul><a class="btn" href="#">Buy weekend pass</a></div>
+    <div class="tk"><h3>Concession weekend</h3><p class="p">£16</p><ul><li>Both days</li><li>Students and unwaged</li></ul><a class="btn" href="#">Buy concession</a></div>
+  </div>
+</div></section>
+
+<section id="venue"><div class="wrap">
+  <div class="venue">
+    <div><div class="sh"><h2>The Briggait</h2></div>
+    <dl><dt>Address</dt><dd>141 Bridgegate, Glasgow G1 5HZ</dd><dt>Train</dt><dd>Argyle Street, 5 minutes on foot</dd><dt>Subway</dt><dd>St Enoch, 6 minutes on foot</dd><dt>Access</dt><dd>Step-free throughout, accessible toilets on both floors</dd></dl></div>
+    <div class="map" aria-hidden="true"><svg viewBox="0 0 400 300" width="100%" height="100%"><path d="M0 210 C80 190 160 230 240 205 S360 180 400 195 V300 H0Z" fill="var(--line)"/><path d="M60 0 V300 M0 120 H400 M220 0 L260 300" stroke="var(--muted)" stroke-width="2" opacity=".35"/><circle cx="238" cy="160" r="10" fill="var(--red)"/><text x="254" y="166" font-family="Inter Tight" font-size="16" font-weight="600" fill="currentColor">The Briggait</text><text x="20" y="250" font-family="Inter Tight" font-size="14" fill="currentColor" opacity=".7">River Clyde</text></svg></div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>Set in Stone · Glasgow Type &amp; Print Festival · 17–18 April 2027</span><span><a href="#">Newsletter</a> · <a href="#">Instagram</a> · <a href="mailto:hello@setinstone.scot">hello@setinstone.scot</a></span></div></footer>
+</body>
+</html>

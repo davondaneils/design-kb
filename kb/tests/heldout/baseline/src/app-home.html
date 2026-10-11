@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ebb · Home</title>
+<style>
+/*@FONTS Inter=inter.woff2;100 900;normal*/
+/*@INCLUDE app.css*/
+.top{display:flex;align-items:center;justify-content:space-between;padding:8px 20px 4px}
+.top h1{font-size:28px;font-weight:700;letter-spacing:-.02em}
+.top .sub{color:var(--muted);font-size:14px}
+.avatar{width:40px;height:40px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-weight:700;font-size:15px}
+main{padding:12px 16px 120px;display:flex;flex-direction:column;gap:12px}
+.card{background:var(--surface);border-radius:var(--r);padding:20px;box-shadow:var(--shadow)}
+.hero .label{font-size:14px;color:var(--muted);font-weight:500;display:flex;justify-content:space-between}
+.hero .big{font-size:52px;font-weight:700;letter-spacing:-.035em;line-height:1.05;margin:6px 0 4px}
+.hero .big .cur{font-size:.55em;vertical-align:.55em;margin-right:2px;font-weight:600}
+.hero .big .p{color:var(--muted);font-size:.5em;font-weight:600;letter-spacing:-.01em}
+.hero .per{font-size:15px;color:var(--text)}
+.hero .per b{color:var(--accent)}
+.bar{height:10px;border-radius:6px;background:var(--surface-2);display:flex;overflow:hidden;margin:18px 0 12px;gap:2px}
+.bar span{display:block;height:100%}
+.legend{display:grid;grid-template-columns:1fr auto;row-gap:8px;font-size:14px}
+.legend dt{display:flex;align-items:center;gap:8px;color:var(--muted)}
+.legend dd{text-align:right;font-weight:500}
+.dot{width:8px;height:8px;border-radius:2px;display:inline-block}
+.legend .total{border-top:1px solid var(--line);padding-top:8px;color:var(--text);font-weight:600}
+.tax{display:flex;gap:14px;align-items:flex-start}
+.tax .ico{flex:none;width:40px;height:40px;border-radius:12px;background:var(--tax-soft);color:var(--tax);display:grid;place-items:center}
+.tax h2{font-size:16px;font-weight:600}
+.tax p{font-size:14px;color:var(--muted)}
+.tax .amt{margin-left:auto;text-align:right}
+.tax .amt strong{display:block;font-size:18px;font-weight:700}
+.tax .amt span{font-size:13px;color:var(--muted)}
+.meter{height:6px;background:var(--surface-2);border-radius:4px;margin-top:14px;overflow:hidden}
+.meter i{display:block;height:100%;width:66%;background:var(--tax);border-radius:4px}
+.meta{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-top:8px}
+.sec{display:flex;justify-content:space-between;align-items:baseline;padding:12px 4px 0}
+.sec h2{font-size:20px;font-weight:700;letter-spacing:-.01em}
+.sec a{color:var(--accent);font-size:15px;font-weight:600;text-decoration:none;padding:8px 0}
+.list{list-style:none;background:var(--surface);border-radius:var(--r);box-shadow:var(--shadow);padding:4px 0}
+.list li{display:flex;align-items:center;gap:12px;padding:12px 16px;min-height:64px}
+.list li+li::before{content:"";position:absolute;top:0;left:68px;right:0;border-top:1px solid var(--line)}
+.lg{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-weight:700;font-size:14px;flex:none}
+.list .who{flex:1;min-width:0}
+.list .who b{display:block;font-weight:600;font-size:16px}
+.list .who span{font-size:13px;color:var(--muted)}
+.list .val{text-align:right}
+.list .val b{display:block;font-weight:600;color:var(--accent)}
+.list .val span{font-size:13px;color:var(--muted)}
+.list li+li{position:relative}
+.tabbar{position:absolute;left:0;right:0;bottom:0;height:84px;background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(20px);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);padding:6px 8px 0}
+.tabbar a{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;font-weight:500;color:var(--muted);text-decoration:none;padding-top:4px}
+.tabbar a[aria-current]{color:var(--accent)}
+.tabbar .add{align-self:start;width:52px;height:52px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;margin:-2px auto 0;box-shadow:0 4px 14px rgba(31,111,92,.35)}
+</style>
+</head>
+<body>
+<div class="screen">
+/*@INCLUDE status.html*/
+<header class="top">
+  <div><p class="sub">Sunday 11 October</p><h1>Good morning, Maya</h1></div>
+  <div class="avatar" aria-label="Account">MO</div>
+</header>
+<main>
+  <section class="card hero" aria-labelledby="sts">
+    <p class="label"><span id="sts">Safe to spend in October</span><span class="num">21 days left</span></p>
+    <p class="big num"><span class="cur">£</span>1,840<span class="p">.00</span></p>
+    <p class="per">About <b class="num">£87 a day</b> until 31 October</p>
+    <div class="bar" role="img" aria-label="Balance of £6,920 split into tax £2,412, bills £1,268, buffer £1,400 and safe to spend £1,840">
+      <span style="width:34.9%;background:var(--tax)"></span>
+      <span style="width:18.3%;background:#7a8597"></span>
+      <span style="width:20.2%;background:#a9b6c9"></span>
+      <span style="width:26.6%;background:var(--accent)"></span>
+    </div>
+    <dl class="legend num">
+      <dt>In your accounts</dt><dd>£6,920</dd>
+      <dt><i class="dot" style="background:var(--tax)"></i>Tax set-aside</dt><dd>−£2,412</dd>
+      <dt><i class="dot" style="background:#7a8597"></i>Bills before 31 Oct</dt><dd>−£1,268</dd>
+      <dt><i class="dot" style="background:#a9b6c9"></i>Lean-month buffer</dt><dd>−£1,400</dd>
+      <dt class="total"><i class="dot" style="background:var(--accent)"></i>Safe to spend</dt><dd class="total">£1,840</dd>
+    </dl>
+  </section>
+
+  <section class="card" aria-labelledby="tx">
+    <div class="tax">
+      <div class="ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+      <div><h2 id="tx">Self Assessment</h2><p>Due 31 January 2027</p></div>
+      <div class="amt num"><strong>£2,412</strong><span>of £3,650</span></div>
+    </div>
+    <div class="meter" role="progressbar" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100" aria-label="Tax set-aside progress"><i></i></div>
+    <div class="meta num"><span>66% set aside</span><span>£1,238 to go · 112 days</span></div>
+  </section>
+
+  <div class="sec"><h2>Recent income</h2><a href="#">See all</a></div>
+  <ul class="list num">
+    <li><div class="lg" style="background:#e3ecff;color:#2b4fb3">HS</div><div class="who"><b>Halden Studio</b><span>Invoice #041 · 8 Oct</span></div><div class="val"><b>+£2,400.00</b><span>£600 to tax</span></div></li>
+    <li><div class="lg" style="background:#fde7dc;color:#a0441a">NF</div><div class="who"><b>Northfold Press</b><span>Invoice #039 · 3 Oct</span></div><div class="val"><b>+£850.00</b><span>£212.50 to tax</span></div></li>
+    <li><div class="lg" style="background:#efe3fb;color:#6b37a3">OA</div><div class="who"><b>Orbit Audio</b><span>Invoice #038 · 26 Sep</span></div><div class="val"><b>+£1,320.00</b><span>£330 to tax</span></div></li>
+  </ul>
+</main>
+<nav class="tabbar" aria-label="Main">
+  <a href="#" aria-current="page"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>Home</a>
+  <a href="#"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Activity</a>
+  <a href="#" class="add" aria-label="Add transaction"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></a>
+  <a href="#"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M17 7H9.5a2.5 2.5 0 0 0 0 5h5a2.5 2.5 0 0 1 0 5H6"/></svg>Tax</a>
+  <a href="#"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>You</a>
+</nav>
+</div>
+</body>
+</html>
