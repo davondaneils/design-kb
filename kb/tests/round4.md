@@ -194,3 +194,47 @@ Davon answered "1B, 2A, 3A", then corrected pair 3 to "3B". Final: 1B, 2A, 3B. A
 Reading (opinion until Davon says why): he preferred round 3's dashboard at both widths, even though round 3's header broke at 1024 and failed the gate. Round 3 keeps boxed panels, the teal accent on the chart line and share bars, and the date range and comparison controls in the toolbar. Round 4 moved toward Linear-style hairlines, a black chart line, grey row-fill bars and no date control at the top. The critic's "fewer boxes, toward Linear" advice lost to Davon's eye on the dashboard. Round 5 should keep round 4's correctness fixes and restore round 3's visual treatment, then test that.
 
 Davon's follow-up: "Changes were very slight though." So the two dashboard picks are a near tie, not a verdict against round 4. Round 4's dashboard work was mostly correctness that a still screenshot does not show (state truth, overlap at 1024, proportions). The planned revert to round 3's look was stopped. Lesson for the tester: blind pairs only measure visible change; pair them with the gate results, and when the visible delta is small, say so before asking for a ranking.
+
+## Round 4.2: the round 4.1 critic's judged fails, fixed and proved
+
+Tester report, 2026-10-11. Branch `round4/fixes2`, cut from `origin/restructure`. Review: `kb/reviews/round4.1-critic.md` (fresh critic, clean context: 4 judged gate fails, all 30 lint runs passing). Pages fixed in place in `kb/tests/round4/`; the blind pairs were not touched.
+
+### Proof: `check.mjs`, 124 of 124
+`KB_PORT=8793 node kb/tests/round4/check.mjs`. The 114 round 4.1 rows still pass; 10 new rows prove the round 4.1 findings and the new tools.
+
+| Critic finding | Fix | Proof in `check.mjs` |
+|---|---|---|
+| Coffee 16: "Skip, swap or cancel ... before the next roast" (band) against "Skip, pause or cancel ... before a roast" (slip, cart, checkout, sheet) | One promise everywhere: "Skip, swap, pause or cancel online any time before a roast" (band bullet, slip term line for 2 and 4 weeks, cart line, checkout summary, sheet). The cart line now carries the whole sentence, not a shortened "Skip, pause or cancel online" | the visible text of the page, cart, checkout, plan-4 and sheet holds exactly one "Skip, ... or cancel ... roast" variant, and it is this one; the source holds one |
+| Coffee 13: `.print .lcurve` names `--color-orange-700` | `--color-illustration-ink-accent: var(--color-orange-700)` on the root, commented as printed ink on a physical label (one value in both themes, not remapped). Advisory done: the label's raw `#2a221b` in three `.print` rules became `--color-illustration-ink` | the curve computes `rgb(147, 55, 1)` in light and dark; no `.print` rule names a primitive or the raw hex |
+| Dashboard 11: invite error is red text, no icon | The error line gets a 12px solid error glyph (`error-12`, drawn on the Tally 12 grid as the twin of `error`, same evenodd knock-out) in the error color, from a `<template>`, on the page and the sheet cell; the success line has none | after submitting "sam@" in first-run at 1440, `#invite-msg` holds a 12x12 `error-12` in the message color, `aria-invalid=true`; a valid address clears it; the sheet cell shows it |
+| Dashboard 13: `.logo` reads `--color-slate-990`, rail tooltip `--color-slate-950` on `-50`; dark box 1.09 to 1.17:1 against its surfaces | `--color-on-brand` for the logo glyph; `--color-tooltip-bg`, `-text` and `-edge` (light: slate-950 on slate-50, no edge; dark: slate-800 box, slate-50 text, slate-500 1px edge as a box-shadow so nothing shifts) | at 900 (rail), hovering Events: light box 14.66:1 against the bg; dark edge 5.46:1 against the bg and 5.07:1 against the surface on its right, box 1.94:1, text 9:1 or more; the logo glyph is one color in both themes |
+
+### New tool checks (each fails `tools/fixtures/bad-semantic.html`; `good.html` passes)
+- `primitive-in-component` (`tools/lint-tokens.mjs`): a declaration that reads `var(--color-{hue}-{50..990})` outside a token-definition block fails. A token block is a rule whose every selector is `:root` or `html` (with attribute, class or `:not()` qualifiers), a bare `[data-*]`, or `.dark`, `.light`, `.theme-*`; only custom properties there may read primitives. Inline styles count as components. Run on the round 4.1 pages it found exactly the critic's three rules (coffee `.print .lcurve`; dashboard `.logo` and the tooltip) and nothing else.
+- `error-icon` (`tools/lint-tokens.mjs`): a visible `[role=alert]`, `aria-errormessage` target, or `aria-describedby` target of an `aria-invalid=true` control (with several targets, the ones named for an error) must hold an svg, img, `[role=img]`, a painting `::before` or `::after`, or a text marker such as "Error:". On the round 4.1 sheet it found the invite error cell. The fixture's iconed error and "Error:" alert pass.
+- `tools/lint.mjs --states` now sets each state on the target's own query with `URLSearchParams` (`coffee.html?state=removed --states state=checkout` lints `?state=checkout`, not `?state=removed&state=checkout`); a `check.mjs` row proves it.
+- `claims_inventory.mjs` PROMISE reads subscription rights as a verb list before its comma split and compares the verb sets: "Skip, swap or cancel" against "Skip, pause or cancel" warns as `subscription rights has 2 different values`. It warned on the round 4.1 coffee page and is silent now.
+
+### Gates (round 4.2)
+| Gate | Coffee | Dashboard |
+|---|---|---|
+| `tools/lint.mjs` page, 390/768/1024/1440, light and dark | PASS, 0 fail, 9 warn | PASS, 0 fail, 9 warn |
+| every `?state=` URL and variant | 12 of 12 PASS | 14 of 14 PASS |
+| state sheet | PASS, 0 fail, 3 warn | PASS, 0 fail, 45 warn (targets on a desktop control sheet, as before) |
+| `check.mjs` | 124 of 124 (both pages and tools) | |
+| `claims_inventory.mjs --year 2026 --render` | exit 0, no flags or warnings on page, cart, checkout, cart-empty, subscribed, plan-4, sheet | exit 0; the named PERIOD warning ("vs prior 7 days", "vs previous 12 weeks"), as in 4.1 |
+| `search-check.mjs` | PASS public, 0 fail, 0 warn | PASS private, 0 fail, 0 warn |
+| `conversion-audit.mjs` | no fails (page, cart); the 390 shipping-cost warn as before | no fails |
+| `icon_audit.mjs` | PASS | PASS (page and sheet, `error-12` included) |
+| `motion-audit.mjs` (9 scenarios) | 6 of 6 | 3 of 3 |
+| renders | `kb/tests/round4/shots/` re-rendered: pages at 390, 768, 1024, 1440, light and dark; every state at 390 and 1440; both sheets | |
+
+Read by eye on close crops at 2x (scratchpad, not committed): the cart at 390 (the promise wraps to two lines under "Pour-over, every 2 weeks", Remove keeps its place), the rail tooltip in dark (a lifted slate box with a visible grey edge against the near-black bg and the rail), the invite error in dark (icon, then the text, in the danger tint, under the red-ringed field).
+
+### Judged rows: self-scored, unverified
+No subagent tool in this session, so no clean-context re-score of round 4.2. The four fixes are proved by `check.mjs`; the judged rows stay **self-scored, unverified** until a fresh critic reads the renders.
+
+### Still open after round 4.2
+1. A clean-context critic for round 4.2.
+2. The critic's opinion and advisory items not done here: band hole at rest at 1024, H2 at 96 percent of H1, dark-graded hero photo, busy buttons without a label, the table's empty Actions column, compact density, "PT" on the phone header, the sheet's empty-cart panel missing "Buy this bag, $21".
+3. Foundation conformance items from the critic for the editor-in-chief: off-schema names (`--color-selected-*`, `--color-scrim`, `--color-chart-*`, `--color-feature-*`, `--text-numeral`, `--size-control`). This round adds `--color-tooltip-{bg,text,edge}`, `--color-on-brand` and `--color-illustration-ink(-accent)` to the pages; the schema should adopt tooltip and on-brand as roles or say how to name them.

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Fundamentals lint: the automated half of the fundamentals checklist in kb/FOUNDATIONS.md (v0.4.1).
+// Fundamentals lint: the automated half of the fundamentals checklist in kb/FOUNDATIONS.md (v0.4.3).
 //
 // Usage:
 //   node tools/lint.mjs <html[?query]> [--json out.json] [--out-dir dir] [--quiet] [--states state=a,state=b]
@@ -45,6 +45,10 @@
 //                (the sheet's empty warning meter, round 4 critic; tools/lint-tokens.mjs)
 //   state-layer  hover and pressed backgrounds use --state-hover and --state-pressed (8 and 10 percent) or a
 //                --color-*-hover token, never a raw color-mix() or color (tools/lint-tokens.mjs)
+//   primitive-in-component  a declaration outside a :root or theme block reads a color primitive
+//                var(--color-{hue}-{n}); components use semantic tokens only (round 4.1 critic; tools/lint-tokens.mjs)
+//   error-icon   a field error ([role=alert], an aria-errormessage target, or the aria-describedby target of an
+//                aria-invalid control) carries an icon or a non-color marker besides its text (tools/lint-tokens.mjs)
 //   hidden-content  a control whose text is transparent and that paints nothing inside (tools/lint-layout.mjs)
 //   state-sheet  a state sheet shows a disabled, a busy and (with fields) an invalid control
 //   truth        numbers stay true across states and live updates: repeated numbers change together, empty
@@ -85,7 +89,7 @@ import { createRequire } from 'node:module';
 import { launch, toUrl, splitTarget } from './browser.mjs';
 import { layoutChecks, reportLayout, pageChecks } from './lint-layout.mjs';
 import { truthPass } from './lint-truth.mjs';
-import { tokenChecks } from './lint-tokens.mjs';
+import { tokenChecks, errorIconChecks } from './lint-tokens.mjs';
 
 const require = createRequire(import.meta.url);
 const axeSource = fs.readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
@@ -730,7 +734,7 @@ async function lintOne(browser, target, outPath) {
     const { context, page } = await openPage(width, 'light');
     const r = await layoutChecks(page, width);
     reportLayout(r, width, add);
-    if (width === 1440 || (width === layoutWidths[layoutWidths.length - 1] && !layoutWidths.includes(1440))) { await pageChecks(page, add); ok('undefined-var'); ok('state-layer'); await tokenChecks(page, add); }
+    if (width === 1440 || (width === layoutWidths[layoutWidths.length - 1] && !layoutWidths.includes(1440))) { await pageChecks(page, add); ok('undefined-var'); ok('state-layer'); ok('primitive-in-component'); ok('error-icon'); await tokenChecks(page, add); await errorIconChecks(page, add); }
     await context.close();
   }
   if (report.summary.stateSheet || report.checks['state-sheet']) ok('state-sheet');
@@ -1104,7 +1108,18 @@ async function overlayCheck(page, targets, scheme, width, add) {
 const browser = await launch();
 let total = 0;
 try {
-  const targets = [target, ...states.map((s) => `${target}${target.includes('?') ? '&' : '?'}${s}`)];
+  // A state replaces the same key in the target's own query instead of appending a second one
+  // (page.html?state=removed --states state=checkout lints page.html?state=checkout, not ?state=removed&state=checkout).
+  const withQuery = (t, s) => {
+    const hash = t.indexOf('#') === -1 ? '' : t.slice(t.indexOf('#'));
+    const bare = hash ? t.slice(0, t.indexOf('#')) : t;
+    const q = bare.indexOf('?');
+    const params = new URLSearchParams(q === -1 ? '' : bare.slice(q + 1));
+    for (const [k, v] of new URLSearchParams(s)) params.set(k, v);
+    const qs = params.toString();
+    return (q === -1 ? bare : bare.slice(0, q)) + (qs ? '?' + qs : '') + hash;
+  };
+  const targets = [target, ...states.map((s) => withQuery(target, s))];
   for (const t of targets) {
     let outPath = null;
     if (!/^https?:/.test(t)) {

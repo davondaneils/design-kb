@@ -110,6 +110,9 @@
     --color-illustration-line: light-dark(var(--color-warm-300), var(--color-warm-800));
     --color-illustration-accent: light-dark(var(--color-orange-600), var(--color-orange-300));
     --color-illustration-accent-fill: light-dark(rgb(242 107 33 / 0.12), rgb(255 169 126 / 0.08));
+    /* Ink printed on the bag label in the photograph: a physical object, so one value in both themes (not remapped). */
+    --color-illustration-ink: #2a221b;                          /* label ink, a printed black warmed toward the kraft */
+    --color-illustration-ink-accent: var(--color-orange-700);  /* the roast curve, printed in the house orange */
     --color-logo-ember: var(--color-brand);
     --color-scrim: light-dark(rgb(39 32 26 / 0.48), rgb(0 0 0 / 0.6));
     --photo-dim: light-dark(1, 0.9); /* not a color: read by the dim rule below through a registered fallback */
@@ -321,14 +324,14 @@
   .print { position: absolute; left: var(--l); top: var(--t); width: var(--w); height: var(--h); mix-blend-mode: multiply; pointer-events: none; }
   .hero-photo .print { --l: 35.99%; --t: 42.92%; --w: 28.47%; --h: 29.95%; }
   @media (min-width: 640px) and (max-width: 1023.98px) { .hero-photo .print { --l: 57.36%; --w: 15.27%; } }
-  .print text { fill: #2a221b; }
+  .print text { fill: var(--color-illustration-ink); }
   .print .serif { font-family: var(--font-serif); font-style: italic; }
   .print .sans { font-family: var(--font-sans); font-weight: 600; letter-spacing: 0.12em; }
   .print .mono { font-family: var(--font-mono); font-weight: 500; }
-  .print .rule { stroke: #2a221b; stroke-width: 0.75; }
-  .print .lcurve { fill: none; stroke: var(--color-orange-700); stroke-width: 1.25; stroke-linejoin: round; stroke-linecap: round; }
+  .print .rule { stroke: var(--color-illustration-ink); stroke-width: 0.75; }
+  .print .lcurve { fill: none; stroke: var(--color-illustration-ink-accent); stroke-width: 1.25; stroke-linejoin: round; stroke-linecap: round; }
   .print .ember { fill: var(--color-brand); }
-  .print .symbol { color: #2a221b; }
+  .print .symbol { color: var(--color-illustration-ink); }
   .caption { margin-top: var(--space-4); display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-2) var(--space-5); font-size: var(--text-sm); color: var(--color-text-muted); }
   .caption .mono { font-size: var(--text-xs); }
   @media (max-width: 639px) {
@@ -794,7 +797,7 @@
         <ul class="perks">
           <li>{{c:check}}Subscribers pay $3 less a bag, and shipping is included</li>
           <li>{{c:check}}Every bag comes with its farm’s map and its roast curve</li>
-          <li>{{c:check}}Skip, swap or cancel online, any time before the next roast</li>
+          <li>{{c:check}}Skip, swap, pause or cancel online any time before a roast</li>
         </ul>
       </div>
       <!-- Sample proof for a fictional brand (test page only). The distribution sums to 1,284 and averages 4.70. -->
@@ -846,7 +849,7 @@
         </fieldset>
         <div class="slip-sum">
           <p class="ships"><span>First bag ships <b>Wed,&nbsp;Oct&nbsp;14</b></span><span>{{c:truck:i-inline}}Shipping included</span></p>
-          <p class="terms" id="sub-terms" aria-live="polite"><b>$18 at checkout, then every 2&nbsp;weeks</b> on roast day: next charge Tue,&nbsp;Oct&nbsp;27. First roast Tue,&nbsp;Oct&nbsp;13. Skip, pause or cancel online any time before a roast.</p>
+          <p class="terms" id="sub-terms" aria-live="polite"><b>$18 at checkout, then every 2&nbsp;weeks</b> on roast day: next charge Tue,&nbsp;Oct&nbsp;27. First roast Tue,&nbsp;Oct&nbsp;13. Skip, swap, pause or cancel online any time before a roast.</p>
           <button class="btn btn-primary btn-wide" type="submit" id="sub-btn">Subscribe, $18 every 2 weeks</button>
           <p class="guarantee">Not for you? Tell us within 30 days and your next bag is on us.</p>
         </div>
@@ -1175,7 +1178,7 @@
     const amt = l.kind === 'sub' ? money(l.price) + '<small>a delivery</small>' : money(l.price * l.qty) + (l.qty > 1 ? '<small>' + money(l.price) + ' each</small>' : '');
     const ctrl = l.kind === 'once'
       ? '<div class="stepper" role="group" aria-label="Bags of ' + l.name + '"><button type="button" data-dec="' + l.id + '" aria-label="One bag fewer"' + (l.qty === 1 ? ' aria-disabled="true"' : '') + '>' + ICON.minus + '</button><output aria-live="polite">' + l.qty + '</output><button type="button" data-inc="' + l.id + '" aria-label="One bag more">' + ICON.plus + '</button></div>'
-      : '<span class="renew">Skip, pause or cancel online</span>';
+      : '<span class="renew">Skip, swap, pause or cancel online any time before a roast</span>';
     return '<li class="line">' + THUMB + '<div><p class="nm">' + l.name + '</p><p class="meta">' + meta + '</p></div><p class="amt num">' + amt + '</p>' +
       '<div class="ctrl">' + ctrl + '<button class="link-btn" type="button" data-remove="' + l.id + '">Remove<span class="sr-only"> ' + l.name + '</span></button></div></li>';
   }
@@ -1207,7 +1210,7 @@
     dl += '<div><dt>Shipping</dt><dd>' + (t.ship ? money(t.ship) : 'Free') + '</dd></div><div><dt>Tax (Oregon has no sales tax)</dt><dd>$0.00</dd></div>';
     dl += '<div class="total"><dt>Due today</dt><dd>' + money(t.today) + '</dd></div>';
     $('co-lines').innerHTML = dl;
-    $('co-term').innerHTML = t.subs.length ? 'Then <b>' + money(t.subToday).replace('.00', '') + ' every ' + t.subs[0].every + '\u00a0weeks</b> on roast day, next on ' + NEXT[t.subs[0].every] + '. Skip, pause or cancel online any time before a roast.' : 'One order, no renewal.';
+    $('co-term').innerHTML = t.subs.length ? 'Then <b>' + money(t.subToday).replace('.00', '') + ' every ' + t.subs[0].every + '\u00a0weeks</b> on roast day, next on ' + NEXT[t.subs[0].every] + '. Skip, swap, pause or cancel online any time before a roast.' : 'One order, no renewal.';
     $('co-pay-lbl').textContent = 'Pay ' + money(t.today);
   }
   function openCheckout() { renderCheckout(); if (cart.open) cart.close(); co.showModal(); $('co-title').focus(); }
@@ -1269,7 +1272,7 @@
   function subLabel() {
     const v = subValues();
     $('sub-btn').textContent = 'Subscribe, $' + v.price + ' every ' + v.every + '\u00a0weeks';
-    $('sub-terms').innerHTML = '<b>$' + v.price + ' at checkout, then every ' + v.every + '\u00a0weeks</b> on roast day: next charge ' + NEXT[v.every] + '. First roast Tue,\u00a0Oct\u00a013. Skip, pause or cancel online any time before a roast.';
+    $('sub-terms').innerHTML = '<b>$' + v.price + ' at checkout, then every ' + v.every + '\u00a0weeks</b> on roast day: next charge ' + NEXT[v.every] + '. First roast Tue,\u00a0Oct\u00a013. Skip, swap, pause or cancel online any time before a roast.';
   }
   sub.addEventListener('change', (e) => { subLabel(); if (e.target.name === 'brew') clearError('g-brew', 'brew-error'); });
   sub.addEventListener('submit', (e) => {

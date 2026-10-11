@@ -1,6 +1,6 @@
 {
   "file": "kb/tests/round4/coffee.html?state=removed",
-  "date": "2026-10-11T00:47:34.631Z",
+  "date": "2026-10-11T01:34:24.488Z",
   "checks": {
     "axe": {
       "fail": [],
@@ -87,6 +87,18 @@
         {
           "message": "text \"Your cart\" partly covered by header.site-header > div.wrap.bar > a.logo > svg.wordmark (113x22px) at 390px",
           "sel": "#cart-title"
+        },
+        {
+          "message": "text \"Skip, swap, pause or cancel on\" partly covered by figure.hero-photo > div.frame > picture > img (200x15px) at 1440px",
+          "sel": "ul > li.line > div.ctrl > span.renew"
+        },
+        {
+          "message": "text \"Ethiopia Guji\" partly covered by div.wrap.g12 > figure.hero-photo > div.frame > svg.print (4x5px) at 1440px",
+          "sel": "ul > li.line > div > p.nm"
+        },
+        {
+          "message": "text \"Pour-over, 340 g\" partly covered by div.wrap.g12 > figure.hero-photo > div.frame > svg.print (4x17px) at 1440px",
+          "sel": "ul > li.line > div > p.meta"
         },
         {
           "message": "text \"Removed Colombia Huila.\" partly covered by div.wrap.g12 > figure.hero-photo > div.frame > svg.print (76x17px) at 1440px",
@@ -198,6 +210,16 @@
       "warn": [],
       "pass": true
     },
+    "primitive-in-component": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "error-icon": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
     "truth": {
       "fail": [],
       "warn": [],
@@ -289,7 +311,7 @@
   },
   "summary": {
     "weightKB": {
-      "html": 195,
+      "html": 196,
       "svg": 70
     },
     "focusables": 7,
@@ -307,7 +329,7 @@
     "spacing": "pass",
     "overflow": "pass",
     "heading-wrap": "pass",
-    "svg-overlap": "pass (4 warn)",
+    "svg-overlap": "pass (7 warn)",
     "primary": "pass",
     "radius": "pass",
     "color-scheme": "pass",
@@ -327,6 +349,8 @@
     "double-space": "pass",
     "undefined-var": "pass",
     "state-layer": "pass",
+    "primitive-in-component": "pass",
+    "error-icon": "pass",
     "truth": "pass",
     "proportion": "pass",
     "nav-parity": "pass",
@@ -339,6 +363,6 @@
     "motion": "pass",
     "result": "PASS",
     "fails": 0,
-    "warns": 9
+    "warns": 12
   }
 }
