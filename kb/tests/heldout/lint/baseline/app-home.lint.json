@@ -1,0 +1,778 @@
+{
+  "file": "kb/tests/heldout/baseline/app-home.html",
+  "date": "2026-10-11T01:20:57.321Z",
+  "checks": {
+    "axe": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "needs review by eye, aria-prohibited-attr: Elements must only use permitted ARIA attributes (1 nodes)",
+          "scheme": "light",
+          "width": 390,
+          "targets": [
+            ".avatar"
+          ]
+        },
+        {
+          "message": "needs review by eye, aria-prohibited-attr: Elements must only use permitted ARIA attributes (1 nodes)",
+          "scheme": "dark",
+          "width": 390,
+          "targets": [
+            ".avatar"
+          ]
+        }
+      ],
+      "pass": true
+    },
+    "overlay": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "targets": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.screen > main > div.sec > a",
+          "w": 47.6,
+          "h": 37.8
+        }
+      ],
+      "pass": true
+    },
+    "measure": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "type-scale": {
+      "fail": [
+        {
+          "message": "font size 15px off the type scale at 390px",
+          "size": 15,
+          "count": 5,
+          "examples": [
+            "body > div.screen > div.status > span.num",
+            "body > div.screen > header.top > div.avatar",
+            "div.screen > main > section.card.hero > p.per",
+            "main > section.card.hero > p.per > b.num"
+          ]
+        },
+        {
+          "message": "font size 28px off the type scale at 390px",
+          "size": 28,
+          "count": 1,
+          "examples": [
+            "div.screen > header.top > div > h1"
+          ]
+        },
+        {
+          "message": "font size 52px off the type scale at 390px",
+          "size": 52,
+          "count": 1,
+          "examples": [
+            "div.screen > main > section.card.hero > p.big.num"
+          ]
+        },
+        {
+          "message": "font size 28.6px off the type scale at 390px",
+          "size": 28.6,
+          "count": 1,
+          "examples": [
+            "main > section.card.hero > p.big.num > span.cur"
+          ]
+        },
+        {
+          "message": "font size 26px off the type scale at 390px",
+          "size": 26,
+          "count": 1,
+          "examples": [
+            "main > section.card.hero > p.big.num > span.p"
+          ]
+        },
+        {
+          "message": "font size 18px off the type scale at 390px",
+          "size": 18,
+          "count": 1,
+          "examples": [
+            "section.card > div.tax > div.amt.num > strong"
+          ]
+        },
+        {
+          "message": "font size 13px off the type scale at 390px",
+          "size": 13,
+          "count": 9,
+          "examples": [
+            "section.card > div.tax > div.amt.num > span",
+            "main > section.card > div.meta.num > span",
+            "main > section.card > div.meta.num > span",
+            "ul.list.num > li > div.who > span"
+          ]
+        },
+        {
+          "message": "font size 11px off the type scale at 390px",
+          "size": 11,
+          "count": 4,
+          "examples": [
+            "body > div.screen > nav.tabbar > a",
+            "body > div.screen > nav.tabbar > a",
+            "body > div.screen > nav.tabbar > a",
+            "body > div.screen > nav.tabbar > a"
+          ]
+        },
+        {
+          "message": "font size 15px off the type scale at 1440px",
+          "size": 15,
+          "count": 5,
+          "examples": [
+            "body > div.screen > div.status > span.num",
+            "body > div.screen > header.top > div.avatar",
+            "div.screen > main > section.card.hero > p.per",
+            "main > section.card.hero > p.per > b.num"
+          ]
+        },
+        {
+          "message": "font size 28px off the type scale at 1440px",
+          "size": 28,
+          "count": 1,
+          "examples": [
+            "div.screen > header.top > div > h1"
+          ]
+        },
+        {
+          "message": "font size 52px off the type scale at 1440px",
+          "size": 52,
+          "count": 1,
+          "examples": [
+            "div.screen > main > section.card.hero > p.big.num"
+          ]
+        },
+        {
+          "message": "font size 28.6px off the type scale at 1440px",
+          "size": 28.6,
+          "count": 1,
+          "examples": [
+            "main > section.card.hero > p.big.num > span.cur"
+          ]
+        },
+        {
+          "message": "font size 26px off the type scale at 1440px",
+          "size": 26,
+          "count": 1,
+          "examples": [
+            "main > section.card.hero > p.big.num > span.p"
+          ]
+        },
+        {
+          "message": "font size 18px off the type scale at 1440px",
+          "size": 18,
+          "count": 1,
+          "examples": [
+            "section.card > div.tax > div.amt.num > strong"
+          ]
+        },
+        {
+          "message": "font size 13px off the type scale at 1440px",
+          "size": 13,
+          "count": 9,
+          "examples": [
+            "section.card > div.tax > div.amt.num > span",
+            "main > section.card > div.meta.num > span",
+            "main > section.card > div.meta.num > span",
+            "ul.list.num > li > div.who > span"
+          ]
+        },
+        {
+          "message": "font size 11px off the type scale at 1440px",
+          "size": 11,
+          "count": 4,
+          "examples": [
+            "body > div.screen > nav.tabbar > a",
+            "body > div.screen > nav.tabbar > a",
+            "body > div.screen > nav.tabbar > a",
+            "body > div.screen > nav.tabbar > a"
+          ]
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "spacing": {
+      "fail": [
+        {
+          "message": "padding-right:28px off the spacing scale at 390px",
+          "value": "padding-right:28",
+          "count": 1,
+          "examples": [
+            "html > body > div.screen > div.status"
+          ]
+        },
+        {
+          "message": "row-gap:6px off the spacing scale at 390px",
+          "value": "row-gap:6",
+          "count": 1,
+          "examples": [
+            "body > div.screen > div.status > span.icons"
+          ]
+        },
+        {
+          "message": "column-gap:6px off the spacing scale at 390px",
+          "value": "column-gap:6",
+          "count": 1,
+          "examples": [
+            "body > div.screen > div.status > span.icons"
+          ]
+        },
+        {
+          "message": "padding-right:20px off the spacing scale at 390px",
+          "value": "padding-right:20",
+          "count": 3,
+          "examples": [
+            "html > body > div.screen > header.top",
+            "body > div.screen > main > section.card.hero",
+            "body > div.screen > main > section.card"
+          ]
+        },
+        {
+          "message": "padding-left:20px off the spacing scale at 390px",
+          "value": "padding-left:20",
+          "count": 3,
+          "examples": [
+            "html > body > div.screen > header.top",
+            "body > div.screen > main > section.card.hero",
+            "body > div.screen > main > section.card"
+          ]
+        },
+        {
+          "message": "padding-bottom:120px off the spacing scale at 390px",
+          "value": "padding-bottom:120",
+          "count": 1,
+          "examples": [
+            "html > body > div.screen > main"
+          ]
+        },
+        {
+          "message": "padding-top:20px off the spacing scale at 390px",
+          "value": "padding-top:20",
+          "count": 2,
+          "examples": [
+            "body > div.screen > main > section.card.hero",
+            "body > div.screen > main > section.card"
+          ]
+        },
+        {
+          "message": "padding-bottom:20px off the spacing scale at 390px",
+          "value": "padding-bottom:20",
+          "count": 2,
+          "examples": [
+            "body > div.screen > main > section.card.hero",
+            "body > div.screen > main > section.card"
+          ]
+        },
+        {
+          "message": "margin-top:6px off the spacing scale at 390px",
+          "value": "margin-top:6",
+          "count": 1,
+          "examples": [
+            "div.screen > main > section.card.hero > p.big.num"
+          ]
+        },
+        {
+          "message": "margin-top:18px off the spacing scale at 390px",
+          "value": "margin-top:18",
+          "count": 1,
+          "examples": [
+            "div.screen > main > section.card.hero > div.bar"
+          ]
+        },
+        {
+          "message": "row-gap:14px off the spacing scale at 390px",
+          "value": "row-gap:14",
+          "count": 1,
+          "examples": [
+            "div.screen > main > section.card > div.tax"
+          ]
+        },
+        {
+          "message": "column-gap:14px off the spacing scale at 390px",
+          "value": "column-gap:14",
+          "count": 1,
+          "examples": [
+            "div.screen > main > section.card > div.tax"
+          ]
+        },
+        {
+          "message": "margin-top:14px off the spacing scale at 390px",
+          "value": "margin-top:14",
+          "count": 1,
+          "examples": [
+            "div.screen > main > section.card > div.meter"
+          ]
+        },
+        {
+          "message": "padding-top:6px off the spacing scale at 390px",
+          "value": "padding-top:6",
+          "count": 1,
+          "examples": [
+            "html > body > div.screen > nav.tabbar"
+          ]
+        },
+        {
+          "message": "row-gap:3px off the spacing scale at 390px",
+          "value": "row-gap:3",
+          "count": 5,
+          "examples": [
+            "body > div.screen > nav.tabbar > a",
+            "body > div.screen > nav.tabbar > a",
+            "body > div.screen > nav.tabbar > a.add",
+            "body > div.screen > nav.tabbar > a"
+          ]
+        },
+        {
+          "message": "column-gap:3px off the spacing scale at 390px",
+          "value": "column-gap:3",
+          "count": 5,
+          "examples": [
+            "body > div.screen > nav.tabbar > a",
+            "body > div.screen > nav.tabbar > a",
+            "body > div.screen > nav.tabbar > a.add",
+            "body > div.screen > nav.tabbar > a"
+          ]
+        },
+        {
+          "message": "padding-right:28px off the spacing scale at 1440px",
+          "value": "padding-right:28",
+          "count": 1,
+          "examples": [
+            "html > body > div.screen > div.status"
+          ]
+        },
+        {
+          "message": "row-gap:6px off the spacing scale at 1440px",
+          "value": "row-gap:6",
+          "count": 1,
+          "examples": [
+            "body > div.screen > div.status > span.icons"
+          ]
+        },
+        {
+          "message": "column-gap:6px off the spacing scale at 1440px",
+          "value": "column-gap:6",
+          "count": 1,
+          "examples": [
+            "body > div.screen > div.status > span.icons"
+          ]
+        },
+        {
+          "message": "padding-right:20px off the spacing scale at 1440px",
+          "value": "padding-right:20",
+          "count": 3,
+          "examples": [
+            "html > body > div.screen > header.top",
+            "body > div.screen > main > section.card.hero",
+            "body > div.screen > main > section.card"
+          ]
+        },
+        {
+          "message": "padding-left:20px off the spacing scale at 1440px",
+          "value": "padding-left:20",
+          "count": 3,
+          "examples": [
+            "html > body > div.screen > header.top",
+            "body > div.screen > main > section.card.hero",
+            "body > div.screen > main > section.card"
+          ]
+        },
+        {
+          "message": "padding-bottom:120px off the spacing scale at 1440px",
+          "value": "padding-bottom:120",
+          "count": 1,
+          "examples": [
+            "html > body > div.screen > main"
+          ]
+        },
+        {
+          "message": "padding-top:20px off the spacing scale at 1440px",
+          "value": "padding-top:20",
+          "count": 2,
+          "examples": [
+            "body > div.screen > main > section.card.hero",
+            "body > div.screen > main > section.card"
+          ]
+        },
+        {
+          "message": "padding-bottom:20px off the spacing scale at 1440px",
+          "value": "padding-bottom:20",
+          "count": 2,
+          "examples": [
+            "body > div.screen > main > section.card.hero",
+            "body > div.screen > main > section.card"
+          ]
+        },
+        {
+          "message": "margin-top:6px off the spacing scale at 1440px",
+          "value": "margin-top:6",
+          "count": 1,
+          "examples": [
+            "div.screen > main > section.card.hero > p.big.num"
+          ]
+        },
+        {
+          "message": "margin-top:18px off the spacing scale at 1440px",
+          "value": "margin-top:18",
+          "count": 1,
+          "examples": [
+            "div.screen > main > section.card.hero > div.bar"
+          ]
+        },
+        {
+          "message": "row-gap:14px off the spacing scale at 1440px",
+          "value": "row-gap:14",
+          "count": 1,
+          "examples": [
+            "div.screen > main > section.card > div.tax"
+          ]
+        },
+        {
+          "message": "column-gap:14px off the spacing scale at 1440px",
+          "value": "column-gap:14",
+          "count": 1,
+          "examples": [
+            "div.screen > main > section.card > div.tax"
+          ]
+        },
+        {
+          "message": "margin-top:14px off the spacing scale at 1440px",
+          "value": "margin-top:14",
+          "count": 1,
+          "examples": [
+            "div.screen > main > section.card > div.meter"
+          ]
+        },
+        {
+          "message": "padding-top:6px off the spacing scale at 1440px",
+          "value": "padding-top:6",
+          "count": 1,
+          "examples": [
+            "html > body > div.screen > nav.tabbar"
+          ]
+        },
+        {
+          "message": "row-gap:3px off the spacing scale at 1440px",
+          "value": "row-gap:3",
+          "count": 5,
+          "examples": [
+            "body > div.screen > nav.tabbar > a",
+            "body > div.screen > nav.tabbar > a",
+            "body > div.screen > nav.tabbar > a.add",
+            "body > div.screen > nav.tabbar > a"
+          ]
+        },
+        {
+          "message": "column-gap:3px off the spacing scale at 1440px",
+          "value": "column-gap:3",
+          "count": 5,
+          "examples": [
+            "body > div.screen > nav.tabbar > a",
+            "body > div.screen > nav.tabbar > a",
+            "body > div.screen > nav.tabbar > a.add",
+            "body > div.screen > nav.tabbar > a"
+          ]
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "overflow": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "heading-wrap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "svg-overlap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "primary": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "radius": {
+      "fail": [
+        {
+          "message": "radius 20px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "body > div.screen > main > section.card.hero",
+          "value": 20
+        },
+        {
+          "message": "radius 2px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "section.card.hero > dl.legend.num > dt > i.dot",
+          "value": 2
+        },
+        {
+          "message": "radius 2px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "section.card.hero > dl.legend.num > dt > i.dot",
+          "value": 2
+        },
+        {
+          "message": "radius 2px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "section.card.hero > dl.legend.num > dt > i.dot",
+          "value": 2
+        },
+        {
+          "message": "radius 2px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "section.card.hero > dl.legend.num > dt.total > i.dot",
+          "value": 2
+        },
+        {
+          "message": "radius 20px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "body > div.screen > main > section.card",
+          "value": 20
+        },
+        {
+          "message": "radius 20px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "body > div.screen > main > ul.list.num",
+          "value": 20
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "color-scheme": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "typography": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "tabular": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "shadows": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "shadow alpha 0.35 over 0.25",
+          "sel": "body > div.screen > nav.tabbar > a.add"
+        },
+        {
+          "message": "1 drop shadows in the dark scheme (lift with a lighter surface, ring and highlight)",
+          "examples": [
+            "body > div.screen > nav.tabbar > a.add"
+          ]
+        }
+      ],
+      "pass": true
+    },
+    "icons": {
+      "fail": [
+        {
+          "message": "icons mix stroke caps: round (4, e.g. section.card > div.tax > div.ico > svg), butt (2, e.g. div.screen > nav.tabbar > a > svg); one cap per set"
+        },
+        {
+          "message": "icons mix stroke joins: miter (5, e.g. div.screen > div.status > span.icons > svg), round (3, e.g. section.card > div.tax > div.ico > svg); one join per set"
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "icon-stroke": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "icon stroke 2px vs text stem 1.18px (11px 500)",
+          "sel": "div.screen > nav.tabbar > a > svg"
+        },
+        {
+          "message": "icon stroke 2px vs text stem 1.18px (11px 500)",
+          "sel": "div.screen > nav.tabbar > a > svg"
+        },
+        {
+          "message": "icon stroke 2px vs text stem 1.18px (11px 500)",
+          "sel": "div.screen > nav.tabbar > a > svg"
+        },
+        {
+          "message": "icon stroke 2px vs text stem 1.18px (11px 500)",
+          "sel": "div.screen > nav.tabbar > a > svg"
+        }
+      ],
+      "pass": true
+    },
+    "weight": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "occlusion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "squash": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-header": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "run-together": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "word-break": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "grid-edge": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "hidden-content": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "double-space": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "undefined-var": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-layer": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "truth": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "proportion": {
+      "fail": [
+        {
+          "message": "4 bars not on a 0 to 100 scale: a 66% value fills 34% of its track (bars scaled to the maximum read as shares of 100)",
+          "sel": "main > section.card.hero > div.bar > span"
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "nav-parity": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus-shape": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "skip-link": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-shift": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "fallback": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "motion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    }
+  },
+  "summary": {
+    "weightKB": {
+      "html": 113,
+      "svg": 2
+    },
+    "focusables": 6,
+    "fallbackShift390": 0,
+    "fallbackShift1440": 0,
+    "motionFound": {
+      "animations": 0,
+      "movingTransitions": 0
+    },
+    "axe": "pass (2 warn)",
+    "overlay": "pass",
+    "targets": "pass (1 warn)",
+    "measure": "pass",
+    "type-scale": "FAIL (16)",
+    "spacing": "FAIL (32)",
+    "overflow": "pass",
+    "heading-wrap": "pass",
+    "svg-overlap": "pass",
+    "primary": "pass",
+    "radius": "FAIL (7)",
+    "color-scheme": "pass",
+    "typography": "pass",
+    "tabular": "pass",
+    "shadows": "pass (2 warn)",
+    "icons": "FAIL (2)",
+    "icon-stroke": "pass (4 warn)",
+    "weight": "pass",
+    "occlusion": "pass",
+    "squash": "pass",
+    "sticky-header": "pass",
+    "run-together": "pass",
+    "word-break": "pass",
+    "grid-edge": "pass",
+    "hidden-content": "pass",
+    "double-space": "pass",
+    "undefined-var": "pass",
+    "state-layer": "pass",
+    "truth": "pass",
+    "proportion": "FAIL (1)",
+    "nav-parity": "pass",
+    "focus": "pass",
+    "focus-shape": "pass",
+    "sticky-focus": "pass",
+    "skip-link": "pass",
+    "state-shift": "pass",
+    "fallback": "pass",
+    "motion": "pass",
+    "result": "FAIL",
+    "fails": 58,
+    "warns": 9
+  }
+}

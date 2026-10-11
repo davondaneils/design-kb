@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Set in Stone brand guidelines</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg">
+<style>
+/*@FONTS Bodoni Moda=bodoni-roman.woff2;700;normal|Bodoni Moda=bodoni-italic.woff2;500;italic*/
+/*@INCLUDE fest-tokens.css*/
+@layer components {
+  :root { color-scheme: light; }
+  main { max-inline-size: 1280px; margin-inline: auto; padding: var(--space-9) var(--space-6); }
+  @media (min-width: 1024px) { main { padding-inline: var(--space-8); } }
+  h1 { font-family: var(--font-display); font-size: var(--text-display-2); line-height: var(--leading-tight); }
+  h1 i { font-style: italic; font-weight: 500; color: var(--color-accent); }
+  .lede { font-size: var(--text-lg); max-inline-size: 52ch; margin-block: var(--space-5) var(--space-8); }
+  section { padding-block: var(--space-8); box-shadow: inset 0 1px 0 var(--color-border); }
+  h2 { font-family: var(--font-display); font-size: var(--text-3xl); line-height: var(--leading-tight); margin-block-end: var(--space-6); }
+  .note { color: var(--color-text-muted); max-inline-size: 52ch; margin-block-end: var(--space-6); }
+  .tiles { display: grid; gap: var(--space-5); }
+  @media (min-width: 768px) { .tiles { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .tiles-4 { grid-template-columns: repeat(4, 1fr); } }
+  .tile { border-radius: var(--radius-sm); padding: var(--space-7); display: grid; place-items: center; height: 240px; box-shadow: inset 0 0 0 1px var(--color-border); }
+  .tile .wordmark { width: 80%; height: auto; max-height: 176px; }
+  .tile.ink { background: var(--color-paper-950); color: var(--color-cream); --color-logo-accent: var(--color-sandstone-400); }
+  .tile.stone { background: var(--color-stone); color: var(--color-paper-950); --color-logo-accent: var(--color-paper-950); }
+  .tile.one { --color-logo-accent: var(--color-paper-950); }
+  .cap { font-size: var(--text-sm); color: var(--color-text-muted); margin-block-start: var(--space-3); }
+  .tabs { display: flex; gap: var(--space-5); flex-wrap: wrap; }
+  .tab { display: flex; align-items: center; gap: var(--space-3); height: 48px; padding-inline: var(--space-5); border-radius: var(--radius-sm); font-size: var(--text-sm); }
+  .tab img { display: block; }
+  .t-light { background: #ffffff; color: #24211c; box-shadow: inset 0 0 0 1px var(--color-border); }
+  .t-gray { background: #dee1e6; color: #24211c; }
+  .t-dark { background: #202124; color: #f4f0e8; }
+  .swatches { display: grid; gap: var(--space-5); }
+  @media (min-width: 768px) { .swatches { grid-template-columns: repeat(4, 1fr); } }
+  .sw { border-radius: var(--radius-sm); overflow: hidden; box-shadow: inset 0 0 0 1px var(--color-border); }
+  .sw .chip { height: 96px; box-shadow: inset 0 -1px 0 var(--color-border); }
+  .sw div:last-child { padding: var(--space-4); font-size: var(--text-sm); }
+  .sw b { display: block; font-size: var(--text-base); }
+  .type-spec { font-family: var(--font-display); font-size: var(--text-4xl); line-height: var(--leading-tight); }
+  .type-spec i { font-weight: 500; }
+  .dd { display: grid; gap: var(--space-5); }
+  @media (min-width: 768px) { .dd { grid-template-columns: repeat(2, 1fr); } }
+  .dd figure { display: grid; gap: var(--space-3); }
+  .dd figcaption { font-size: var(--text-sm); }
+  .dd figcaption b { display: block; font-size: var(--text-base); }
+  .bad .wordmark { filter: none; }
+  .squash .wordmark { transform: scaleX(1.4); width: 55%; }
+}
+</style>
+</head>
+<body>
+<main>
+  <h1>Set <i>in</i> Stone, brand guidelines</h1>
+  <p class="lede">Concept: every image is the litho stone and the sheet it prints. The stone carries the name in reverse; the sheet carries it right-reading in ink and Glasgow red sandstone. Reject test: if an image shows no stone, no print and no act of printing (mirror, grain, registration), cut it.</p>
+
+  <section aria-labelledby="mark-h">
+    <h2 id="mark-h">The wordmark</h2>
+    <p class="note">Bodoni Moda 800 at optical size 28, outlined. One quirk: the S of Stone is drawn mirror-reversed, as it sits on the stone, so on the stone it reads the right way round. Clear space is the cap height of the S on every side; minimum width 96&nbsp;px on screen, 30&nbsp;mm in print.</p>
+    <div class="tiles">
+      <div><div class="tile">/*@INCLUDE wm-line.html*/</div><p class="cap">Primary, ink and sandstone on cream</p></div>
+      <div><div class="tile ink">/*@INCLUDE wm-line.html*/</div><p class="cap">Reversed, cream and light sandstone on ink</p></div>
+      <div><div class="tile one">/*@INCLUDE wm-stack.html*/</div><p class="cap">Stacked, one colour</p></div>
+      <div><div class="tile stone"><span style="display: block; width: 60%; scale: -1 1">/*@INCLUDE wm-stack.html*/</span></div><p class="cap">The stone: mirrored, on grey only</p></div>
+    </div>
+    <h3 class="cap" style="margin-block: var(--space-6) var(--space-3)">Favicon on its own sandstone field, 16 and 32&nbsp;px</h3>
+    <div class="tabs">
+      <span class="tab t-light"><img src="favicon.svg" width="16" height="16" alt="">setinstone.scot</span>
+      <span class="tab t-gray"><img src="favicon.svg" width="16" height="16" alt="">setinstone.scot</span>
+      <span class="tab t-dark"><img src="favicon.svg" width="16" height="16" alt="">setinstone.scot</span>
+    </div>
+    <p class="cap"><img src="favicon.svg" width="32" height="32" alt="Favicon at 32 pixels" style="vertical-align: middle"> 32&nbsp;px</p>
+  </section>
+
+  <section aria-labelledby="color-h">
+    <h2 id="color-h">Colour, in proportion</h2>
+    <p class="note">Mostly cream and ink. Sandstone is one moment per surface: the italic in, a price, the primary button. Ratios measured with oklch_scale.py.</p>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background: #f4f0e8"></div><div><b>Cream #f4f0e8</b>Page and sheet. About 70 percent.</div></div>
+      <div class="sw"><div class="chip" style="background: #24211c"></div><div><b>Ink #24211c</b>Text, 14.1:1 on cream. About 20 percent.</div></div>
+      <div class="sw"><div class="chip" style="background: #c7c0b7"></div><div><b>Stone #c7c0b7</b>The stone only. Ink on it 8.9:1.</div></div>
+      <div class="sw"><div class="chip" style="background: #8e3a25"></div><div><b>Sandstone #8e3a25</b>6.6:1 on cream, text allowed. Under 10 percent.</div></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="type-h">
+    <h2 id="type-h">Type</h2>
+    <p class="note">Display: Bodoni Moda (OFL, free for web, print and logo use), roman 700 and italic 500, pinned at optical size 48 for 39&nbsp;px and up. Text and labels: the system sans. Nothing below 40&nbsp;px on a 1080 social canvas.</p>
+    <p class="type-spec">Writing <i>on</i> stone, 17–18 April</p>
+  </section>
+
+  <section aria-labelledby="dd-h">
+    <h2 id="dd-h">Do and don’t</h2>
+    <div class="dd">
+      <figure><div class="tile">/*@INCLUDE wm-line.html*/</div><figcaption><b>Do</b>Set the wordmark on cream, ink or stone, with its clear space.</figcaption></figure>
+      <figure><div class="tile squash">/*@INCLUDE wm-line.html*/</div><figcaption><b>Don’t</b>Stretch it, set it in live type, or turn the S the right way round.</figcaption></figure>
+    </div>
+  </section>
+</main>
+</body>
+</html>

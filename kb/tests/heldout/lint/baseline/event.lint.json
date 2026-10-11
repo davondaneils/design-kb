@@ -1,0 +1,1138 @@
+{
+  "file": "kb/tests/heldout/baseline/event.html",
+  "date": "2026-10-11T01:21:32.013Z",
+  "checks": {
+    "axe": {
+      "fail": [
+        {
+          "message": "color-contrast: Elements must meet minimum color contrast ratio thresholds",
+          "scheme": "light",
+          "width": 390,
+          "target": ".day:nth-child(1) > h3",
+          "why": "Fix any of the following:   Element has insufficient color contrast of 4.29 (foreground color: #c92f17, background color: #ece5d8, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "message": "color-contrast: Elements must meet minimum color contrast ratio thresholds",
+          "scheme": "light",
+          "width": 390,
+          "target": ".day:nth-child(2) > h3",
+          "why": "Fix any of the following:   Element has insufficient color contrast of 4.29 (foreground color: #c92f17, background color: #ece5d8, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "overlay": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "targets": {
+      "fail": [
+        {
+          "message": "target under 24x24 at 1440px",
+          "sel": "nav > ul > li > a",
+          "w": 82.4,
+          "h": 20
+        },
+        {
+          "message": "target under 24x24 at 1440px",
+          "sel": "nav > ul > li > a",
+          "w": 65.9,
+          "h": 20
+        },
+        {
+          "message": "target under 24x24 at 1440px",
+          "sel": "nav > ul > li > a",
+          "w": 51.1,
+          "h": 20
+        },
+        {
+          "message": "target under 24x24 at 1440px",
+          "sel": "nav > ul > li > a",
+          "w": 44.8,
+          "h": 20
+        }
+      ],
+      "warn": [
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "body > header.nav > div.wrap > a.logo",
+          "w": 121,
+          "h": 33
+        }
+      ],
+      "pass": false
+    },
+    "measure": {
+      "fail": [
+        {
+          "message": "line length 42 characters at 1440px (min 45)",
+          "sel": "div.hero > div.wrap > div.grid > p.lede",
+          "cpl": 42,
+          "widest": 42,
+          "lines": 3,
+          "fontSize": 22
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "type-scale": {
+      "fail": [
+        {
+          "message": "font size 22px off the type scale at 390px",
+          "size": 22,
+          "count": 3,
+          "examples": [
+            "body > header.nav > div.wrap > a.logo",
+            "header.nav > div.wrap > a.logo > i",
+            "div.hero > div.wrap > div.grid > p.lede"
+          ]
+        },
+        {
+          "message": "font size 17px off the type scale at 390px",
+          "size": 17,
+          "count": 1,
+          "examples": [
+            "div.hero > div.wrap > div.grid > p.facts"
+          ]
+        },
+        {
+          "message": "font size 34px off the type scale at 390px",
+          "size": 34,
+          "count": 1,
+          "examples": [
+            "div.wrap > div.grid > p.facts > b"
+          ]
+        },
+        {
+          "message": "font size 18px off the type scale at 390px",
+          "size": 18,
+          "count": 16,
+          "examples": [
+            "#programme > div.wrap > div.sh > p",
+            "div.day > ol > li > time",
+            "div.day > ol > li > time",
+            "div.day > ol > li > time"
+          ]
+        },
+        {
+          "message": "font size 19px off the type scale at 390px",
+          "size": 19,
+          "count": 16,
+          "examples": [
+            "ol > li > div > b",
+            "ol > li > div > b",
+            "ol > li > div > b",
+            "ol > li > div > b"
+          ]
+        },
+        {
+          "message": "font size 15px off the type scale at 390px",
+          "size": 15,
+          "count": 5,
+          "examples": [
+            "body > footer > div.wrap > span",
+            "body > footer > div.wrap > span",
+            "footer > div.wrap > span > a",
+            "footer > div.wrap > span > a"
+          ]
+        },
+        {
+          "message": "font size 22px off the type scale at 1440px",
+          "size": 22,
+          "count": 3,
+          "examples": [
+            "body > header.nav > div.wrap > a.logo",
+            "header.nav > div.wrap > a.logo > i",
+            "div.hero > div.wrap > div.grid > p.lede"
+          ]
+        },
+        {
+          "message": "font size 17px off the type scale at 1440px",
+          "size": 17,
+          "count": 1,
+          "examples": [
+            "div.hero > div.wrap > div.grid > p.facts"
+          ]
+        },
+        {
+          "message": "font size 34px off the type scale at 1440px",
+          "size": 34,
+          "count": 1,
+          "examples": [
+            "div.wrap > div.grid > p.facts > b"
+          ]
+        },
+        {
+          "message": "font size 18px off the type scale at 1440px",
+          "size": 18,
+          "count": 16,
+          "examples": [
+            "#programme > div.wrap > div.sh > p",
+            "div.day > ol > li > time",
+            "div.day > ol > li > time",
+            "div.day > ol > li > time"
+          ]
+        },
+        {
+          "message": "font size 19px off the type scale at 1440px",
+          "size": 19,
+          "count": 16,
+          "examples": [
+            "ol > li > div > b",
+            "ol > li > div > b",
+            "ol > li > div > b",
+            "ol > li > div > b"
+          ]
+        },
+        {
+          "message": "font size 15px off the type scale at 1440px",
+          "size": 15,
+          "count": 5,
+          "examples": [
+            "body > footer > div.wrap > span",
+            "body > footer > div.wrap > span",
+            "footer > div.wrap > span > a",
+            "footer > div.wrap > span > a"
+          ]
+        }
+      ],
+      "warn": [
+        {
+          "message": "fluid display size 93.6px at 390px (clamp() present)",
+          "size": 93.6,
+          "count": 4,
+          "examples": [
+            "div.hero > div.wrap > h1 > span.l",
+            "div.hero > div.wrap > h1 > span.l",
+            "div.wrap > h1 > span.shadow > span.l",
+            "div.wrap > h1 > span.shadow > span.l"
+          ]
+        },
+        {
+          "message": "fluid display size 56.16px at 390px (clamp() present)",
+          "size": 56.16,
+          "count": 2,
+          "examples": [
+            "div.wrap > h1 > span.l > span.in",
+            "h1 > span.shadow > span.l > span.in"
+          ]
+        },
+        {
+          "message": "fluid display size 44px at 390px (clamp() present)",
+          "size": 44,
+          "count": 4,
+          "examples": [
+            "#programme > div.wrap > div.sh > h2",
+            "#speakers > div.wrap > div.sh > h2",
+            "#tickets > div.wrap > div.sh > h2",
+            "div.venue > div > div.sh > h2"
+          ]
+        },
+        {
+          "message": "fluid display size 56px at 390px (clamp() present)",
+          "size": 56,
+          "count": 6,
+          "examples": [
+            "div.wrap > div.people > div.person > div.ph",
+            "div.wrap > div.people > div.person > div.ph",
+            "div.wrap > div.people > div.person > div.ph",
+            "div.wrap > div.people > div.person > div.ph"
+          ]
+        },
+        {
+          "message": "fluid display size 64px at 390px (clamp() present)",
+          "size": 64,
+          "count": 3,
+          "examples": [
+            "div.wrap > div.tix > div.tk > p.p",
+            "div.wrap > div.tix > div.tk.feature > p.p",
+            "div.wrap > div.tix > div.tk > p.p"
+          ]
+        },
+        {
+          "message": "fluid display size 345.6px at 1440px (clamp() present)",
+          "size": 345.6,
+          "count": 4,
+          "examples": [
+            "div.hero > div.wrap > h1 > span.l",
+            "div.hero > div.wrap > h1 > span.l",
+            "div.wrap > h1 > span.shadow > span.l",
+            "div.wrap > h1 > span.shadow > span.l"
+          ]
+        },
+        {
+          "message": "fluid display size 207.36px at 1440px (clamp() present)",
+          "size": 207.36,
+          "count": 2,
+          "examples": [
+            "div.wrap > h1 > span.l > span.in",
+            "h1 > span.shadow > span.l > span.in"
+          ]
+        },
+        {
+          "message": "fluid display size 80px at 1440px (clamp() present)",
+          "size": 80,
+          "count": 4,
+          "examples": [
+            "#programme > div.wrap > div.sh > h2",
+            "#speakers > div.wrap > div.sh > h2",
+            "#tickets > div.wrap > div.sh > h2",
+            "div.venue > div > div.sh > h2"
+          ]
+        },
+        {
+          "message": "fluid display size 120px at 1440px (clamp() present)",
+          "size": 120,
+          "count": 6,
+          "examples": [
+            "div.wrap > div.people > div.person > div.ph",
+            "div.wrap > div.people > div.person > div.ph",
+            "div.wrap > div.people > div.person > div.ph",
+            "div.wrap > div.people > div.person > div.ph"
+          ]
+        },
+        {
+          "message": "fluid display size 64px at 1440px (clamp() present)",
+          "size": 64,
+          "count": 3,
+          "examples": [
+            "div.wrap > div.tix > div.tk > p.p",
+            "div.wrap > div.tix > div.tk.feature > p.p",
+            "div.wrap > div.tix > div.tk > p.p"
+          ]
+        }
+      ],
+      "pass": false
+    },
+    "spacing": {
+      "fail": [
+        {
+          "message": "padding-right:18px off the spacing scale at 390px",
+          "value": "padding-right:18",
+          "count": 1,
+          "examples": [
+            "body > header.nav > div.wrap > a.btn.btn-red"
+          ]
+        },
+        {
+          "message": "padding-left:18px off the spacing scale at 390px",
+          "value": "padding-left:18",
+          "count": 1,
+          "examples": [
+            "body > header.nav > div.wrap > a.btn.btn-red"
+          ]
+        },
+        {
+          "message": "padding-top:40px off the spacing scale at 390px",
+          "value": "padding-top:40",
+          "count": 1,
+          "examples": [
+            "html > body > main > div.hero"
+          ]
+        },
+        {
+          "message": "padding-bottom:56px off the spacing scale at 390px",
+          "value": "padding-bottom:56",
+          "count": 1,
+          "examples": [
+            "html > body > main > div.hero"
+          ]
+        },
+        {
+          "message": "margin-top:28px off the spacing scale at 390px",
+          "value": "margin-top:28",
+          "count": 1,
+          "examples": [
+            "main > div.hero > div.wrap > h1"
+          ]
+        },
+        {
+          "message": "margin-bottom:36px off the spacing scale at 390px",
+          "value": "margin-bottom:36",
+          "count": 1,
+          "examples": [
+            "main > div.hero > div.wrap > h1"
+          ]
+        },
+        {
+          "message": "row-gap:28px off the spacing scale at 390px",
+          "value": "row-gap:28",
+          "count": 2,
+          "examples": [
+            "main > div.hero > div.wrap > div.grid",
+            "#speakers > div.wrap > div.people"
+          ]
+        },
+        {
+          "message": "column-gap:28px off the spacing scale at 390px",
+          "value": "column-gap:28",
+          "count": 1,
+          "examples": [
+            "main > div.hero > div.wrap > div.grid"
+          ]
+        },
+        {
+          "message": "padding-right:22px off the spacing scale at 390px",
+          "value": "padding-right:22",
+          "count": 5,
+          "examples": [
+            "div.wrap > div.grid > div.ctas > a.btn.btn-red",
+            "div.wrap > div.grid > div.ctas > a.btn.btn-line",
+            "div.wrap > div.tix > div.tk > a.btn",
+            "div.wrap > div.tix > div.tk.feature > a.btn"
+          ]
+        },
+        {
+          "message": "padding-left:22px off the spacing scale at 390px",
+          "value": "padding-left:22",
+          "count": 5,
+          "examples": [
+            "div.wrap > div.grid > div.ctas > a.btn.btn-red",
+            "div.wrap > div.grid > div.ctas > a.btn.btn-line",
+            "div.wrap > div.tix > div.tk > a.btn",
+            "div.wrap > div.tix > div.tk.feature > a.btn"
+          ]
+        },
+        {
+          "message": "padding-top:80px off the spacing scale at 390px",
+          "value": "padding-top:80",
+          "count": 4,
+          "examples": [
+            "#programme",
+            "#speakers",
+            "#tickets",
+            "#venue"
+          ]
+        },
+        {
+          "message": "padding-bottom:80px off the spacing scale at 390px",
+          "value": "padding-bottom:80",
+          "count": 4,
+          "examples": [
+            "#programme",
+            "#speakers",
+            "#tickets",
+            "#venue"
+          ]
+        },
+        {
+          "message": "margin-bottom:40px off the spacing scale at 390px",
+          "value": "margin-bottom:40",
+          "count": 4,
+          "examples": [
+            "#programme > div.wrap > div.sh",
+            "#speakers > div.wrap > div.sh",
+            "#tickets > div.wrap > div.sh",
+            "div.wrap > div.venue > div > div.sh"
+          ]
+        },
+        {
+          "message": "padding-top:18px off the spacing scale at 390px",
+          "value": "padding-top:18",
+          "count": 10,
+          "examples": [
+            "div.days > div.day > ol > li",
+            "div.days > div.day > ol > li",
+            "div.days > div.day > ol > li",
+            "div.days > div.day > ol > li"
+          ]
+        },
+        {
+          "message": "padding-bottom:18px off the spacing scale at 390px",
+          "value": "padding-bottom:18",
+          "count": 10,
+          "examples": [
+            "div.days > div.day > ol > li",
+            "div.days > div.day > ol > li",
+            "div.days > div.day > ol > li",
+            "div.days > div.day > ol > li"
+          ]
+        },
+        {
+          "message": "column-gap:20px off the spacing scale at 390px",
+          "value": "column-gap:20",
+          "count": 1,
+          "examples": [
+            "#speakers > div.wrap > div.people"
+          ]
+        },
+        {
+          "message": "margin-bottom:14px off the spacing scale at 390px",
+          "value": "margin-bottom:14",
+          "count": 6,
+          "examples": [
+            "div.wrap > div.people > div.person > div.ph",
+            "div.wrap > div.people > div.person > div.ph",
+            "div.wrap > div.people > div.person > div.ph",
+            "div.wrap > div.people > div.person > div.ph"
+          ]
+        },
+        {
+          "message": "padding-top:28px off the spacing scale at 390px",
+          "value": "padding-top:28",
+          "count": 3,
+          "examples": [
+            "#tickets > div.wrap > div.tix > div.tk",
+            "#tickets > div.wrap > div.tix > div.tk.feature",
+            "#tickets > div.wrap > div.tix > div.tk"
+          ]
+        },
+        {
+          "message": "padding-right:28px off the spacing scale at 390px",
+          "value": "padding-right:28",
+          "count": 3,
+          "examples": [
+            "#tickets > div.wrap > div.tix > div.tk",
+            "#tickets > div.wrap > div.tix > div.tk.feature",
+            "#tickets > div.wrap > div.tix > div.tk"
+          ]
+        },
+        {
+          "message": "padding-bottom:28px off the spacing scale at 390px",
+          "value": "padding-bottom:28",
+          "count": 3,
+          "examples": [
+            "#tickets > div.wrap > div.tix > div.tk",
+            "#tickets > div.wrap > div.tix > div.tk.feature",
+            "#tickets > div.wrap > div.tix > div.tk"
+          ]
+        },
+        {
+          "message": "padding-left:28px off the spacing scale at 390px",
+          "value": "padding-left:28",
+          "count": 3,
+          "examples": [
+            "#tickets > div.wrap > div.tix > div.tk",
+            "#tickets > div.wrap > div.tix > div.tk.feature",
+            "#tickets > div.wrap > div.tix > div.tk"
+          ]
+        },
+        {
+          "message": "padding-top:6px off the spacing scale at 390px",
+          "value": "padding-top:6",
+          "count": 7,
+          "examples": [
+            "div.tix > div.tk > ul > li",
+            "div.tix > div.tk > ul > li",
+            "div.tix > div.tk.feature > ul > li",
+            "div.tix > div.tk.feature > ul > li"
+          ]
+        },
+        {
+          "message": "padding-bottom:6px off the spacing scale at 390px",
+          "value": "padding-bottom:6",
+          "count": 7,
+          "examples": [
+            "div.tix > div.tk > ul > li",
+            "div.tix > div.tk > ul > li",
+            "div.tix > div.tk.feature > ul > li",
+            "div.tix > div.tk.feature > ul > li"
+          ]
+        },
+        {
+          "message": "row-gap:14px off the spacing scale at 390px",
+          "value": "row-gap:14",
+          "count": 1,
+          "examples": [
+            "div.wrap > div.venue > div > dl"
+          ]
+        },
+        {
+          "message": "padding-top:3px off the spacing scale at 390px",
+          "value": "padding-top:3",
+          "count": 4,
+          "examples": [
+            "div.venue > div > dl > dt",
+            "div.venue > div > dl > dt",
+            "div.venue > div > dl > dt",
+            "div.venue > div > dl > dt"
+          ]
+        },
+        {
+          "message": "padding-right:18px off the spacing scale at 1440px",
+          "value": "padding-right:18",
+          "count": 1,
+          "examples": [
+            "body > header.nav > div.wrap > a.btn.btn-red"
+          ]
+        },
+        {
+          "message": "padding-left:18px off the spacing scale at 1440px",
+          "value": "padding-left:18",
+          "count": 1,
+          "examples": [
+            "body > header.nav > div.wrap > a.btn.btn-red"
+          ]
+        },
+        {
+          "message": "padding-top:40px off the spacing scale at 1440px",
+          "value": "padding-top:40",
+          "count": 1,
+          "examples": [
+            "html > body > main > div.hero"
+          ]
+        },
+        {
+          "message": "padding-bottom:56px off the spacing scale at 1440px",
+          "value": "padding-bottom:56",
+          "count": 1,
+          "examples": [
+            "html > body > main > div.hero"
+          ]
+        },
+        {
+          "message": "margin-top:28px off the spacing scale at 1440px",
+          "value": "margin-top:28",
+          "count": 1,
+          "examples": [
+            "main > div.hero > div.wrap > h1"
+          ]
+        },
+        {
+          "message": "margin-bottom:36px off the spacing scale at 1440px",
+          "value": "margin-bottom:36",
+          "count": 1,
+          "examples": [
+            "main > div.hero > div.wrap > h1"
+          ]
+        },
+        {
+          "message": "row-gap:28px off the spacing scale at 1440px",
+          "value": "row-gap:28",
+          "count": 1,
+          "examples": [
+            "main > div.hero > div.wrap > div.grid"
+          ]
+        },
+        {
+          "message": "column-gap:28px off the spacing scale at 1440px",
+          "value": "column-gap:28",
+          "count": 1,
+          "examples": [
+            "main > div.hero > div.wrap > div.grid"
+          ]
+        },
+        {
+          "message": "padding-right:22px off the spacing scale at 1440px",
+          "value": "padding-right:22",
+          "count": 5,
+          "examples": [
+            "div.wrap > div.grid > div.ctas > a.btn.btn-red",
+            "div.wrap > div.grid > div.ctas > a.btn.btn-line",
+            "div.wrap > div.tix > div.tk > a.btn",
+            "div.wrap > div.tix > div.tk.feature > a.btn"
+          ]
+        },
+        {
+          "message": "padding-left:22px off the spacing scale at 1440px",
+          "value": "padding-left:22",
+          "count": 5,
+          "examples": [
+            "div.wrap > div.grid > div.ctas > a.btn.btn-red",
+            "div.wrap > div.grid > div.ctas > a.btn.btn-line",
+            "div.wrap > div.tix > div.tk > a.btn",
+            "div.wrap > div.tix > div.tk.feature > a.btn"
+          ]
+        },
+        {
+          "message": "padding-top:80px off the spacing scale at 1440px",
+          "value": "padding-top:80",
+          "count": 4,
+          "examples": [
+            "#programme",
+            "#speakers",
+            "#tickets",
+            "#venue"
+          ]
+        },
+        {
+          "message": "padding-bottom:80px off the spacing scale at 1440px",
+          "value": "padding-bottom:80",
+          "count": 4,
+          "examples": [
+            "#programme",
+            "#speakers",
+            "#tickets",
+            "#venue"
+          ]
+        },
+        {
+          "message": "margin-bottom:40px off the spacing scale at 1440px",
+          "value": "margin-bottom:40",
+          "count": 4,
+          "examples": [
+            "#programme > div.wrap > div.sh",
+            "#speakers > div.wrap > div.sh",
+            "#tickets > div.wrap > div.sh",
+            "div.wrap > div.venue > div > div.sh"
+          ]
+        },
+        {
+          "message": "padding-top:18px off the spacing scale at 1440px",
+          "value": "padding-top:18",
+          "count": 10,
+          "examples": [
+            "div.days > div.day > ol > li",
+            "div.days > div.day > ol > li",
+            "div.days > div.day > ol > li",
+            "div.days > div.day > ol > li"
+          ]
+        },
+        {
+          "message": "padding-bottom:18px off the spacing scale at 1440px",
+          "value": "padding-bottom:18",
+          "count": 10,
+          "examples": [
+            "div.days > div.day > ol > li",
+            "div.days > div.day > ol > li",
+            "div.days > div.day > ol > li",
+            "div.days > div.day > ol > li"
+          ]
+        },
+        {
+          "message": "margin-bottom:14px off the spacing scale at 1440px",
+          "value": "margin-bottom:14",
+          "count": 6,
+          "examples": [
+            "div.wrap > div.people > div.person > div.ph",
+            "div.wrap > div.people > div.person > div.ph",
+            "div.wrap > div.people > div.person > div.ph",
+            "div.wrap > div.people > div.person > div.ph"
+          ]
+        },
+        {
+          "message": "padding-top:28px off the spacing scale at 1440px",
+          "value": "padding-top:28",
+          "count": 3,
+          "examples": [
+            "#tickets > div.wrap > div.tix > div.tk",
+            "#tickets > div.wrap > div.tix > div.tk.feature",
+            "#tickets > div.wrap > div.tix > div.tk"
+          ]
+        },
+        {
+          "message": "padding-right:28px off the spacing scale at 1440px",
+          "value": "padding-right:28",
+          "count": 3,
+          "examples": [
+            "#tickets > div.wrap > div.tix > div.tk",
+            "#tickets > div.wrap > div.tix > div.tk.feature",
+            "#tickets > div.wrap > div.tix > div.tk"
+          ]
+        },
+        {
+          "message": "padding-bottom:28px off the spacing scale at 1440px",
+          "value": "padding-bottom:28",
+          "count": 3,
+          "examples": [
+            "#tickets > div.wrap > div.tix > div.tk",
+            "#tickets > div.wrap > div.tix > div.tk.feature",
+            "#tickets > div.wrap > div.tix > div.tk"
+          ]
+        },
+        {
+          "message": "padding-left:28px off the spacing scale at 1440px",
+          "value": "padding-left:28",
+          "count": 3,
+          "examples": [
+            "#tickets > div.wrap > div.tix > div.tk",
+            "#tickets > div.wrap > div.tix > div.tk.feature",
+            "#tickets > div.wrap > div.tix > div.tk"
+          ]
+        },
+        {
+          "message": "padding-top:6px off the spacing scale at 1440px",
+          "value": "padding-top:6",
+          "count": 7,
+          "examples": [
+            "div.tix > div.tk > ul > li",
+            "div.tix > div.tk > ul > li",
+            "div.tix > div.tk.feature > ul > li",
+            "div.tix > div.tk.feature > ul > li"
+          ]
+        },
+        {
+          "message": "padding-bottom:6px off the spacing scale at 1440px",
+          "value": "padding-bottom:6",
+          "count": 7,
+          "examples": [
+            "div.tix > div.tk > ul > li",
+            "div.tix > div.tk > ul > li",
+            "div.tix > div.tk.feature > ul > li",
+            "div.tix > div.tk.feature > ul > li"
+          ]
+        },
+        {
+          "message": "row-gap:14px off the spacing scale at 1440px",
+          "value": "row-gap:14",
+          "count": 1,
+          "examples": [
+            "div.wrap > div.venue > div > dl"
+          ]
+        },
+        {
+          "message": "padding-top:3px off the spacing scale at 1440px",
+          "value": "padding-top:3",
+          "count": 4,
+          "examples": [
+            "div.venue > div > dl > dt",
+            "div.venue > div > dl > dt",
+            "div.venue > div > dl > dt",
+            "div.venue > div > dl > dt"
+          ]
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "overflow": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "heading-wrap": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "heading ends on a one-word line at 390px (\"Set inStoneSet inStone\")",
+          "sel": "main > div.hero > div.wrap > h1",
+          "lines": 4,
+          "text": "Set inStoneSet inStone"
+        },
+        {
+          "message": "heading ends on a one-word line at 1440px (\"Set inStoneSet inStone\")",
+          "sel": "main > div.hero > div.wrap > h1",
+          "lines": 6,
+          "text": "Set inStoneSet inStone"
+        }
+      ],
+      "pass": true
+    },
+    "svg-overlap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "primary": {
+      "fail": [
+        {
+          "message": "2 filled calls to action in screen 1 at 390px (\"Get tickets\", \"Get tickets from £18\"); one primary per view",
+          "sel": "div.wrap > div.grid > div.ctas > a.btn.btn-red"
+        },
+        {
+          "message": "3 filled calls to action in screen 5 at 390px (\"Buy day pass\", \"Buy weekend pass\", \"Buy concession\"); one primary per view",
+          "sel": "div.wrap > div.tix > div.tk.feature > a.btn"
+        },
+        {
+          "message": "2 filled calls to action in screen 1 at 1440px (\"Get tickets\", \"Get tickets from £18\"); one primary per view",
+          "sel": "div.wrap > div.grid > div.ctas > a.btn.btn-red"
+        },
+        {
+          "message": "3 filled calls to action in screen 4 at 1440px (\"Buy day pass\", \"Buy weekend pass\", \"Buy concession\"); one primary per view",
+          "sel": "div.wrap > div.tix > div.tk.feature > a.btn"
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "radius": {
+      "fail": [
+        {
+          "message": "radius 6px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "#tickets > div.wrap > div.tix > div.tk",
+          "value": 6
+        },
+        {
+          "message": "radius 6px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "#tickets > div.wrap > div.tix > div.tk.feature",
+          "value": 6
+        },
+        {
+          "message": "radius 6px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "#tickets > div.wrap > div.tix > div.tk",
+          "value": 6
+        },
+        {
+          "message": "radius 6px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "#venue > div.wrap > div.venue > div.map",
+          "value": 6
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "color-scheme": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "typography": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "tabular": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "shadows": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icons": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icon-stroke": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "weight": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "occlusion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "squash": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-header": {
+      "fail": [
+        {
+          "message": "sticky top bar is 65px tall at 390px but html scroll-padding-top is auto; anchors and focus land under it (WCAG 2.4.11)",
+          "sel": "html > body > header.nav",
+          "width": 390
+        },
+        {
+          "message": "sticky top bar is 65px tall at 768px but html scroll-padding-top is auto; anchors and focus land under it (WCAG 2.4.11)",
+          "sel": "html > body > header.nav",
+          "width": 768
+        },
+        {
+          "message": "sticky top bar is 65px tall at 1024px but html scroll-padding-top is auto; anchors and focus land under it (WCAG 2.4.11)",
+          "sel": "html > body > header.nav",
+          "width": 1024
+        },
+        {
+          "message": "sticky top bar is 65px tall at 1440px but html scroll-padding-top is auto; anchors and focus land under it (WCAG 2.4.11)",
+          "sel": "html > body > header.nav",
+          "width": 1440
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "run-together": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "word-break": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "grid-edge": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "hidden-content": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "double-space": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "undefined-var": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-layer": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "truth": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "proportion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "nav-parity": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus-shape": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "skip-link": {
+      "fail": [
+        {
+          "message": "6 focusable elements before main and no working skip link: first focusable is body > header.nav > div.wrap > a.logo, not a same-page link"
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "state-shift": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "fallback": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "layout moves 127px at 390px when the web fonts fail (worst: html > body > footer); add metric fallbacks (size-adjust, ascent-override). Line count changed in 8 elements: #programme > div.wrap > div.sh > p \"Talks in the main hall, hands-on worksho\" 2 to 3 lines; div.days > div.day > ol > li \"10:00Doors and type fair opensMain hall \" 3 to 4 lines; div.days > div.day > ol > li \"13:30Workshop: stone lithographyStudio 2\" 2 to 4 lines; div.days > div.day > ol > li \"15:00Drawing a Scottish grotesqueTomás R\" 2 to 3 lines; ... (one element near a wrap point is a copy fix; many is a font metrics fix)",
+          "sel": "html > body > footer",
+          "shift": 127,
+          "rewrapped": [
+            {
+              "sel": "#programme > div.wrap > div.sh > p",
+              "from": 2,
+              "to": 3,
+              "text": "Talks in the main hall, hands-on worksho"
+            },
+            {
+              "sel": "div.days > div.day > ol > li",
+              "from": 3,
+              "to": 4,
+              "text": "10:00Doors and type fair opensMain hall "
+            },
+            {
+              "sel": "div.days > div.day > ol > li",
+              "from": 2,
+              "to": 4,
+              "text": "13:30Workshop: stone lithographyStudio 2"
+            },
+            {
+              "sel": "div.days > div.day > ol > li",
+              "from": 2,
+              "to": 3,
+              "text": "15:00Drawing a Scottish grotesqueTomás R"
+            },
+            {
+              "sel": "div.days > div.day > ol > li",
+              "from": 2,
+              "to": 3,
+              "text": "19:00The overnight run1,000 prints, one "
+            },
+            {
+              "sel": "div.days > div.day > ol > li",
+              "from": 3,
+              "to": 2,
+              "text": "11:00Riso, cheaply and loudlyPriya Chand"
+            },
+            {
+              "sel": "div.days > div.day > ol > li",
+              "from": 4,
+              "to": 3,
+              "text": "13:30Workshop: wood type postersStudio 1"
+            },
+            {
+              "sel": "div.days > div.day > ol > li",
+              "from": 2,
+              "to": 3,
+              "text": "15:00A city written in sandstoneFergus L"
+            }
+          ]
+        }
+      ],
+      "pass": true
+    },
+    "motion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    }
+  },
+  "summary": {
+    "weightKB": {
+      "html": 275,
+      "svg": 1
+    },
+    "focusables": 14,
+    "fallbackShift390": 127,
+    "fallbackShift1440": 0,
+    "motionFound": {
+      "animations": 0,
+      "movingTransitions": 0
+    },
+    "axe": "FAIL (2)",
+    "overlay": "pass",
+    "targets": "FAIL (4)",
+    "measure": "FAIL (1)",
+    "type-scale": "FAIL (12)",
+    "spacing": "FAIL (49)",
+    "overflow": "pass",
+    "heading-wrap": "pass (2 warn)",
+    "svg-overlap": "pass",
+    "primary": "FAIL (4)",
+    "radius": "FAIL (4)",
+    "color-scheme": "pass",
+    "typography": "pass",
+    "tabular": "pass",
+    "shadows": "pass",
+    "icons": "pass",
+    "icon-stroke": "pass",
+    "weight": "pass",
+    "occlusion": "pass",
+    "squash": "pass",
+    "sticky-header": "FAIL (4)",
+    "run-together": "pass",
+    "word-break": "pass",
+    "grid-edge": "pass",
+    "hidden-content": "pass",
+    "double-space": "pass",
+    "undefined-var": "pass",
+    "state-layer": "pass",
+    "truth": "pass",
+    "proportion": "pass",
+    "nav-parity": "pass",
+    "focus": "pass",
+    "focus-shape": "pass",
+    "sticky-focus": "pass",
+    "skip-link": "FAIL (1)",
+    "state-shift": "pass",
+    "fallback": "pass (1 warn)",
+    "motion": "pass",
+    "result": "FAIL",
+    "fails": 81,
+    "warns": 14
+  }
+}

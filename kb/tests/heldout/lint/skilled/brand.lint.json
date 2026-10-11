@@ -1,0 +1,287 @@
+{
+  "file": "kb/tests/heldout/skilled/brand.html",
+  "date": "2026-10-11T01:43:14.630Z",
+  "checks": {
+    "axe": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overlay": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "targets": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "measure": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "type-scale": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "fluid display size 75.84px at 1440px (clamp() present)",
+          "size": 75.84,
+          "count": 2,
+          "examples": [
+            "html > body > main > h1",
+            "body > main > h1 > i"
+          ]
+        }
+      ],
+      "pass": true
+    },
+    "spacing": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overflow": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "heading-wrap": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "heading ends on a one-word line at 390px (\"Colour, in proportion\")",
+          "sel": "#color-h",
+          "lines": 2,
+          "text": "Colour, in proportion"
+        }
+      ],
+      "pass": true
+    },
+    "svg-overlap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "primary": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "radius": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "color-scheme": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "typography": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "tabular": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "shadows": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icons": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icon-stroke": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "weight": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "occlusion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "squash": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-header": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "run-together": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "word-break": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "\"mirror-reversed,\" breaks across two lines at 390px",
+          "sel": "body > main > section > p.note",
+          "width": 390
+        }
+      ],
+      "pass": true
+    },
+    "grid-edge": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "hidden-content": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "double-space": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "undefined-var": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-layer": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "truth": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "proportion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "nav-parity": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus-shape": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "skip-link": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-shift": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "fallback": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "layout moves -54px at 390px when the web fonts fail (worst: html > body > main > section); add metric fallbacks (size-adjust, ascent-override). Line count changed in 1 elements: body > main > section > p.type-spec \"Writing on stone, 17–18 April\" 3 to 2 lines (one element near a wrap point is a copy fix; many is a font metrics fix)",
+          "sel": "html > body > main > section",
+          "shift": -54,
+          "rewrapped": [
+            {
+              "sel": "body > main > section > p.type-spec",
+              "from": 3,
+              "to": 2,
+              "text": "Writing on stone, 17–18 April"
+            }
+          ]
+        }
+      ],
+      "pass": true
+    },
+    "motion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    }
+  },
+  "summary": {
+    "weightKB": {
+      "html": 91,
+      "svg": 35
+    },
+    "focusables": 0,
+    "fallbackShift390": -54,
+    "fallbackShift1440": 0,
+    "motionFound": {
+      "animations": 0,
+      "movingTransitions": 0
+    },
+    "axe": "pass",
+    "overlay": "pass",
+    "targets": "pass",
+    "measure": "pass",
+    "type-scale": "pass (1 warn)",
+    "spacing": "pass",
+    "overflow": "pass",
+    "heading-wrap": "pass (1 warn)",
+    "svg-overlap": "pass",
+    "primary": "pass",
+    "radius": "pass",
+    "color-scheme": "pass",
+    "typography": "pass",
+    "tabular": "pass",
+    "shadows": "pass",
+    "icons": "pass",
+    "icon-stroke": "pass",
+    "weight": "pass",
+    "occlusion": "pass",
+    "squash": "pass",
+    "sticky-header": "pass",
+    "run-together": "pass",
+    "word-break": "pass (1 warn)",
+    "grid-edge": "pass",
+    "hidden-content": "pass",
+    "double-space": "pass",
+    "undefined-var": "pass",
+    "state-layer": "pass",
+    "truth": "pass",
+    "proportion": "pass",
+    "nav-parity": "pass",
+    "focus": "pass",
+    "focus-shape": "pass",
+    "sticky-focus": "pass",
+    "skip-link": "pass",
+    "state-shift": "pass",
+    "fallback": "pass (1 warn)",
+    "motion": "pass",
+    "result": "PASS",
+    "fails": 0,
+    "warns": 4
+  }
+}

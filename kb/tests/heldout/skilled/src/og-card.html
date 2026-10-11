@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Set in Stone social card</title>
+<meta name="robots" content="noindex">
+<style>
+/*@FONTS Bodoni Moda=bodoni-roman.woff2;700;normal*/
+/*@INCLUDE fest-tokens.css*/
+@layer components {
+  html, body { background: var(--color-paper-950); }
+  .card { position: relative; width: 1200px; height: 630px; overflow: hidden; background: var(--color-paper-950); }
+  .bed-grain { opacity: 0.18; mix-blend-mode: screen; }
+  /* safe area: everything that must read sits in the centred 630 × 630 square (x 285 to 915) or is repeated */
+  .stone { position: absolute; left: 48px; top: 48px; bottom: 48px; width: 520px; background: var(--color-stone); border-radius: var(--radius-sm); overflow: hidden; }
+  .stone .grain { opacity: 0.32; }
+  .stone .wordmark { position: absolute; left: 50%; top: 50%; width: 400px; translate: -50% -50%; scale: -1 1; opacity: 0.86; color: var(--color-paper-950); --color-logo-accent: var(--color-paper-950); }
+  .sheet { position: absolute; left: 470px; right: 48px; top: 64px; bottom: 32px; background: var(--color-cream); rotate: -1.2deg; padding: var(--space-8); display: flex; flex-direction: column;
+    box-shadow: 0 24px 48px -12px rgb(0 0 0 / 0.24); }
+  .sheet .wordmark { width: 440px; color: var(--color-paper-950); }
+  .info { margin-top: auto; border-top: 4px solid var(--color-paper-950); padding-top: var(--space-5); font-size: var(--text-2xl); font-weight: 600; line-height: var(--leading-tight); }
+  .info .red { color: var(--color-sandstone-700); }
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="grain bed-grain"></div>
+  <div class="stone"><div class="grain"></div>/*@INCLUDE wm-stack.html*/</div>
+  <div class="sheet">/*@INCLUDE wm-stack.html*/<div class="info"><p>Glasgow type &amp; print festival</p><p class="red">17–18 April 2027</p></div></div>
+</div>
+</body>
+</html>
