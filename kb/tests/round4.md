@@ -183,12 +183,12 @@ Read by eye on the new renders: dashboard first-run at 1440 (no caveat under Con
 
 ## Davon's blind ranking (2026-10-11)
 
-Davon answered "1B, 2A, 3A". Against the key (now revealed in `kb/tests/round4/blind-key.md`), round 4 won 2 of 3. All three pairs were fully blind (same photos on both sides). The pairs were rendered from round 4 before the 4.1 fixes.
+Davon answered "1B, 2A, 3A", then corrected pair 3 to "3B". Final: 1B, 2A, 3B. Against the key (now revealed in `kb/tests/round4/blind-key.md`), round 4 won 1 of 3. All three pairs were fully blind (same photos on both sides). The pairs were rendered from round 4 before the 4.1 fixes.
 
 | Pair | View | Picked | Round 4 was | Result |
 |---|---|---|---|---|
 | 1 | Coffee, 1440 light | B | B | Round 4 |
 | 2 | Dashboard, 1440 light | A | B | Round 3 |
-| 3 | Dashboard, 1024 light | A | A | Round 4 |
+| 3 | Dashboard, 1024 light | B | A | Round 3 |
 
-Reading (opinion until Davon says why): at 1440 he preferred round 3's dashboard, which keeps boxed panels, the teal accent on the chart line and share bars, and the date range and comparison controls in the toolbar. Round 4 moved toward Linear-style hairlines, a black chart line, grey row-fill bars and no date control at the top. At 1024 round 4 won, where round 3's header broke. The critic's "fewer boxes, toward Linear" advice did not beat Davon's eye at desktop width, so treat restraint as a means, not a goal.
+Reading (opinion until Davon says why): he preferred round 3's dashboard at both widths, even though round 3's header broke at 1024 and failed the gate. Round 3 keeps boxed panels, the teal accent on the chart line and share bars, and the date range and comparison controls in the toolbar. Round 4 moved toward Linear-style hairlines, a black chart line, grey row-fill bars and no date control at the top. The critic's "fewer boxes, toward Linear" advice lost to Davon's eye on the dashboard. Round 5 should keep round 4's correctness fixes and restore round 3's visual treatment, then test that.
