@@ -92,3 +92,16 @@ Underperformed or failed:
 5. design-playbook-mobile: measured teardowns of a money app home and an add-transaction sheet.
 6. design-playbook-landing: an event-page variant (dates, programme, tickets, access) with a type-led hero allowed to be loud.
 7. Re-run this test with real subagents so the baseline and the critic have clean contexts.
+
+## Davon's blind ranking (2026-10-11)
+
+Davon answered "1A, 2B, 3B, 4B". Against the key (now revealed in `kb/tests/heldout/blind-key.md`), the skilled version won 2 of 4:
+
+| Pair | View | Picked | Skilled was | Result |
+|---|---|---|---|---|
+| 1 | App home, 390 light | A | A | Skilled |
+| 2 | App first run, 390 dark | B | B | Skilled |
+| 3 | Poster, 1080x1350 | B | A | Baseline |
+| 4 | Event page, 1440 light | B | A | Baseline |
+
+Reading: the skills won the product UI brief and lost the brand brief, even though the baseline festival pages fail lint (canvas text too small, contrast at 4.29:1, three filled buttons in one screen). The losses match the gaps this report already named: the skilled poster's mirrored S read as a mistake, and the skilled event hero was quieter than the baseline's. Gate correctness does not win a brand brief on its own; identity at full strength does. Those gaps were fixed in commit 489c61b (brand concept legibility check, event-hero rule, high-contrast type floors, canvas lint) after the pairs were made, so the festival brief is re-run with the fixed skills.
