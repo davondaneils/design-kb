@@ -105,3 +105,38 @@ Davon answered "1A, 2B, 3B, 4B". Against the key (now revealed in `kb/tests/held
 | 4 | Event page, 1440 light | B | A | Baseline |
 
 Reading: the skills won the product UI brief and lost the brand brief, even though the baseline festival pages fail lint (canvas text too small, contrast at 4.29:1, three filled buttons in one screen). The losses match the gaps this report already named: the skilled poster's mirrored S read as a mistake, and the skilled event hero was quieter than the baseline's. Gate correctness does not win a brand brief on its own; identity at full strength does. Those gaps were fixed in commit 489c61b (brand concept legibility check, event-hero rule, high-contrast type floors, canvas lint) after the pairs were made, so the festival brief is re-run with the fixed skills.
+
+## Festival re-run (2026-10-11, branch `heldout/festival2`)
+
+Brief 2 only, same brief and dates, rebuilt with the skills as fixed in 489c61b: design-playbook-brand (section 0 brief-only scope, section 2a concept legibility check), design-playbook-landing 3b (the event hero carries the identity at full strength), design-typography `references/08-high-contrast-faces.md`, and the canvas lint (`data-canvas`). The bar on impact is the baseline poster and event page Davon picked; they were looked at, not copied (different face, colour, concept and layout).
+
+**Method.** Single builder again: this session had no Agent or Task tool, so there was no clean-context critic and no subagent cold viewer. Judged rows are **self-scored, unverified**; gate not claimed (design-director step 13).
+
+**Brief-only scope** (brand section 0). Built: poster 1080x1350, poster A2 (1191x1684, linted as 420x594 mm print read at 150 cm), event page, its state sheet, social card `og.png`, favicon (SVG plus 192 and 180 PNG). Not built: guidelines page, logo kit, brand strategy document; the brief did not ask for them. Three-line brief instead of website-strategy: audience, people who make or love letters and print in and around Glasgow; true fact, Glasgow is built of red sandstone laid in courses, and type is "set" the way stone is; competitor wall, festival posters lean on a Didone or a misregistration effect (both earlier versions of this test did).
+
+**Concept.** "Type is set the way Glasgow's red sandstone is set: in courses, each stone cut to its word." The name is laid as ashlar: SET and IN are two stones in the first course, STONE one long stone in the second, every word sized to fill its stone (font size = stone width divided by the word's measured em width, `skilled2/src/measure.mjs`), five stone tones and pale lime joints. The width axis of Archivo (wdth 62 to 125) is the mason's cut: condensed on the posters and phones, regular on tablets, extended at 1280 and up, so every format is a wall cut to its own width. Reject test: hide the name and a red wall of cream capitals with staggered joints still says sandstone and setting, not a generic music festival (opinion).
+
+**Concept legibility (brand 2a).** Devices flagged that a stranger could read as an error: none. Every letter is right-reading; nothing is mirrored, rotated, cropped through a letter or misregistered; the reversed S of the first skilled poster was dropped. One risk named: the joint between SET and IN could read as one word "SETIN"; on the renders the 8px lime joint plus the change of stone separates them. Cold-viewer test: **not run** (no subagent available); self-checked only, which section 2a says does not count. Davon's blind rank is the first real cold view.
+
+**Type (typography 08).** Archivo is a low-contrast grotesque with no hairlines, so the hairline floor does not bind; Archivo 900 at wdth 62 was chosen partly for that after the Bodoni loss. Smallest canvas text 40px on 1080 (14.4 CSS px seen in a 390 feed); A2 smallest 30px, about 30pt printed. OFL, subset with `font_kit.py` to 81 KB (wght 400 to 900, wdth 62 to 125), self-hosted as base64.
+
+**Gate results.**
+| Check | poster-social | poster-a2 | event | event-states | og-card |
+|---|---|---|---|---|---|
+| `tools/lint.mjs` | PASS, 0 fail, 1 warn | PASS, 0 fail, 1 warn (print mode) | PASS, 0 fail, 9 warn | PASS, 0 fail, 1 warn | PASS, 0 fail, 1 warn |
+| canvas-text | pass | pass | n/a | n/a | pass |
+| `claims_inventory.mjs --year 2027` | exit 0 | exit 0 | exit 0 | | |
+| `search-check.mjs` | | | PASS, 0 fail, 4 warn | | |
+| `conversion-audit.mjs` | | | no fails | | |
+
+Warnings read and kept: fallback layout shift (14 to 54px if the web font fails; an `Archivo Fallback` face with size-adjust is in place, and the fitted wordmark cannot match a fallback by design); `type-scale` fluid display sizes on the h1 (147px at 390, 324px at 1440; `clamp(49px, fit, 512px)`); `heading-wrap` "Stone" alone on its line (the second course, intended); `svg-overlap` 7px between the header logo box and the h1 em box (no ink overlaps; the header sits above with `z-index`); search warns for in-page anchors and weekday names. Lint skips, each with a reason: `data-lint-skip="overlay"` on the three wall words, because the text range rect is the untrimmed em box, which runs into the joint above while the glyphs sit wholly on the stone (`text-box: trim-both cap alphabetic`). Measured instead on the 1080 render: the worst stone pixel against the cream ink is 5.9:1 (flat stone tones 5.61 to 7.76:1). Favicon: `tab_contrast.py` fails each colour alone (lime field 1.08:1 on a light gray tab, stone 1.46:1 on a dark tab), so it is a two-tone mark on its own field: the stones carry 6.3:1 or more on light strips and the lime field 8.55:1 or more on dark.
+
+Claims ticked: Sat 17 and Sun 18 April 2027 (weekdays checked against 2027); Fri 2 April 2027 refund date (a Friday); 10am to 6pm matches JSON-LD 10:00 to 18:00; prices £20, £32, £16 match the three Offers; workshop prices and places match the programme; "Day tickets £20" on the posters matches the page.
+
+Layout: at 390 the category line, dates and the one filled action (Get tickets, cream on the wall) sit at about 600px of the 844 first screen; at 1440 the hero ends near 800px and About peeks above 900. The nav carries a text link to tickets, never a second filled button.
+
+**Outputs.** Pages in `kb/tests/heldout/skilled2/` (`poster-social.html`, `poster-a2.html`, `event.html`, `event-states.html`, `og-card.html`, `og.png`, favicons; sources and build scripts in `skilled2/src/`, font subset in `skilled2/fonts/`). Shots in `kb/tests/heldout/shots/skilled2/` (posters; event 390, 768, 1024, 1440 light and dark; state sheet 390 and 1440 light and dark). Lint output in `kb/tests/heldout/skilled2/lint/`.
+
+**Self-rating (unverified, opinion).** Against the baseline Davon picked: the new hero is the poster at full strength in the first screen at 390 and 1440 (red sandstone field edge to edge, 300px extended capitals at 1440). It is louder than the baseline's black Didone on cream, and it passes the gate where the baseline failed on canvas text, contrast and three filled buttons. Against a studio festival identity: close on idea and system (one rule generates poster, A2, social card, page and favicon), clearly below on finish. The stone grain is a generic noise texture, the joints read as a grid before they read as masonry, and the body below the hero is competent but plain. Pass not claimed: no clean critic, no cold viewer.
+
+**Blind pairs.** Three pairs, new skilled versus the baseline Davon picked: (1) poster 1080x1350, (2) event page 1440 light, full page, (3) event page 390 light, full page. Order drawn with Python `secrets`, redrawn if all three matched; the files and the key are outside the repo (scratchpad `festival2-pairs/` and `festival2-blind-key.md`).

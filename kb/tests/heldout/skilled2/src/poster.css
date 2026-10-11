@@ -1,0 +1,14 @@
+@layer components {
+  html, body { background: var(--color-wall-joint); }
+  body { width: var(--W); height: var(--H); overflow: hidden; }
+  .poster { width: var(--W); height: var(--H); grid-template-rows: auto auto 1fr auto; --joint: var(--J); --pad: var(--P); }
+  .poster .small { font-size: var(--t-small); font-weight: 700; font-stretch: 100%; line-height: 1.15; letter-spacing: 0; text-wrap: balance; }
+  .poster .small span { display: block; }
+  .poster .label { font-size: var(--t-label); font-weight: 600; font-stretch: 100%; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.1; opacity: 1; }
+  .poster .big { font-size: var(--t-big); font-weight: 800; font-stretch: 75%; line-height: 1; letter-spacing: -0.005em; }
+  .poster .big span { display: block; }
+  .poster .stone { display: flex; flex-direction: column; justify-content: space-between; }
+  .poster .stone.end { justify-content: flex-end; }
+  .poster .course-top .stone, .poster .course-foot .stone, .poster .course-info .stone { justify-content: center; }
+  .poster .url { font-size: var(--t-small); font-weight: 800; font-stretch: 100%; letter-spacing: 0; }
+}
