@@ -1,0 +1,95 @@
+Crux data layer tests, 2026-10-13T21:12:11Z, postgres (PostgreSQL) 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1)
+
+== 0. Static gate checks ==
+PASS  every public table has a primary key
+PASS  row level security enabled on every public table
+PASS  every foreign key's leading column leads a full (non-partial) index
+PASS  no float, money, serial, char(n) or timestamp-without-zone columns except wall-clock class times
+PASS  security definer functions pin search_path
+PASS  anon can execute no api function
+PASS  schedule query uses the (location_id, starts_at, id) index
+
+== 1. Two members take the last place at once ==
+PASS  one gets the place, the other is told the class is full
+PASS  places taken equals capacity (8 of 8)
+
+== 1b. Thirty members book an empty class of 10 at once (waitlist on) ==
+PASS  exactly 10 confirmed
+PASS  exactly 20 waitlisted
+PASS  no request failed
+PASS  waitlist order is total (20 distinct positions)
+
+== 1c. Negative control: same race without the class lock oversells ==
+PASS  control: 2 confirmed in a class of 1 (the test can see an oversell)
+
+== 2. Two cancels promote from the waitlist at once ==
+PASS  both cancels succeed
+PASS  the first two in line are promoted, in order
+PASS  places taken still equals capacity (8 of 8)
+PASS  the third in line is now first
+
+== 2b. A cancel and a new booking at once: nobody jumps the queue ==
+PASS  the waiting member got the place
+PASS  the new booker joined the waitlist
+PASS  places taken equals capacity (8 of 8)
+
+== 3. A member cannot book twice ==
+PASS  two taps with different keys: one booking, one already_booked
+PASS  one live booking for that member
+PASS  a retry with the same key at the same time replays the same booking
+PASS  ...and created one row
+PASS  same key, different request: idempotency_key_reused
+PASS  cancelling twice is safe (state unchanged)
+PASS  a member who cancelled may book again
+PASS  the database refuses a second live booking even from the server
+
+== 4. Cross-gym isolation (Maya is a member of both gyms) ==
+PASS  staff B sees none of gym A's bookings
+PASS  staff B sees only gym B bookings of the shared member
+PASS  staff B sees no gym A memberships, passes or classes
+PASS  staff B cannot read a gym A member's profile
+PASS  staff A sees only gym A bookings of the shared member
+PASS  the member sees her own bookings in both gyms
+PASS  a member sees only her own bookings
+PASS  a member sees only her own membership rows
+PASS  staff B checking in a gym A booking: not_found
+PASS  staff B reading gym A's schedule: not_found
+PASS  staff A can publish a class in gym A
+PASS  staff B inserting a class into gym A: refused by policy
+PASS  a gym A member (not staff) inserting a class: refused by row-level security
+PASS  owner A changes the free-cancel window (read back)
+PASS  staff A updating gym settings: 0 rows
+PASS  staff B reads gym B's bookings
+PASS  staff B updating a gym A class: 0 rows
+PASS  a member cancelling someone else's booking: not_found
+PASS  a member cannot write bookings directly
+PASS  a member cannot check in (staff only)
+PASS  anon reads nothing
+PASS  anon cannot call the api
+
+== 5. Capacity is a database invariant, and check-in never frees a place ==
+PASS  server insert over capacity is refused by bookings_class_capacity
+PASS  after two check-ins the class is still full
+PASS  staff A checks a member in
+PASS  checking in twice is safe
+
+== 6. Late cancel, promotion inside the window, payment grace ==
+PASS  late cancel without confirmation: late_cancel_unconfirmed
+PASS  late cancel with confirmation: late_cancelled
+PASS  first in line promoted, may cancel free until the start
+PASS  past due inside 7 days: access grace
+PASS  past due inside 7 days: booking allowed
+PASS  past due over 7 days: no_access (grace ended)
+PASS  gym B access unaffected by gym A's failed payment
+
+== 7. One pack credit cannot pay for two classes at once ==
+PASS  one booking, one no_access
+PASS  credits left: 0
+
+== 8. A class moved or cancelled by the gym keeps its promises ==
+PASS  moved class: free cancellation until the new start
+PASS  moved class: version bumped for If-Match
+PASS  cancelled class: bookings cancelled with reason class_cancelled
+PASS  instructor double-booked: refused by classes_instructor_no_overlap
+
+Result: 68 passed, 0 failed

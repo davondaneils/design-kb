@@ -139,5 +139,5 @@ Business Profile name equals the real-world name (no keywords, Official), most s
 - **sales-funnels**: what happens after the click.
 - **design-frontend**: SSR, Core Web Vitals, semantic HTML and WCAG 2.2 AA.
 - **design-ux**: navigation labels, IA testing, infinite scroll patterns.
-- **Engineering (out of scope)**: content model feeding pages and JSON-LD, slugs, redirect tables, tracking.
+- **design-data**: content model feeding pages and JSON-LD, slugs and redirect tables, ids in URLs (`references/07-data-shapes-the-ui.md`). Tracking stays out of scope.
 - **design-typography** and **design-layout**: the H1 must be the visually dominant title.

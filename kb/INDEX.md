@@ -33,10 +33,12 @@ No other skill has a recorded shipped version yet. Every row below is merged and
 | [design-copy](../skills/design-copy/SKILL.md) | reference | Page structure, microcopy, voice, readability, copy in context, claims inventory | 0.2 | testing (awaiting Davon) | 2026-10-10 | 2027-10 | copywriting, design-conversion |
 | [design-frontend](../skills/design-frontend/SKILL.md) | reference | Semantic HTML, modern CSS, performance, images and fonts, measured build quality | 0.2 | review (render test passed) | 2026-10-10 | 2027-01 (framework and browser support move fast) | design-foundations, design-search |
 | [design-search](../skills/design-search/SKILL.md) | reference | Technical SEO, on-page, structured data, AI answers, built-page gate | v0.2 | testing | 2026-10-10 | 2027-01 (every 3 months: search and AI answers) | design-frontend, website-strategy |
+| [design-strategy](../skills/design-strategy/SKILL.md) | reference (loads second on every job) | Strategy brief at the right depth: audience moment, positioning and swap test, one true fact, claims ledger, voice, identity decisions with evidence levels (`assets/brief_lint.mjs`) | v0.1.2 | testing | 2026-10-13 | 2027-04 (distinctive-asset benchmarks, ad-claim rules, Dunford style names) | website-strategy, crafting-voice-identity, design-playbook-brand, design-art-direction |
+| [design-data](../skills/design-data/SKILL.md) | reference | Schema, access rules (RLS), API, auth, and the data-to-screen contract (reference 07) | v0.2.3 | testing | 2026-10-13 | 2027-01-13 (Supabase keys and Advisors, Stripe, PostgreSQL 19, GDPR omnibus) | design-product-ui, design-ux, design-frontend, design-search |
 
 Planned (no content yet): design systems (inside design-foundations), self-critique method (inside design-director).
 
-Linked user skills: website-strategy, copywriting (direct response only), sales-funnels, dataviz.
+Linked user skills: website-strategy and crafting-voice-identity (routed by design-strategy), copywriting (direct response only), sales-funnels, dataviz.
 
 Standing references: exemplar teardowns `kb/teardowns/INDEX.md` (measured 2026-10-10), UI pattern examples `kb/references/patterns/` (observed 2026-10-10), source library `kb/references/README.md`.
 

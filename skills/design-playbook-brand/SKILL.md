@@ -9,12 +9,12 @@ An identity is a system that has to work at 16px and on a billboard, in one colo
 
 ## 0. Scope: the brief sets the deliverables
 1. **Read the brief's deliverable list first and build that list.** If the brief asks for a poster and a site, the identity is what those two need: the wordmark (outlined SVG plus the small-size master), the color and type tokens, and the rules the poster and site actually use. No guidelines page, logo kit, photography brief or brand strategy document unless the brief asks for one. The held-out test built a brand page nobody asked for because this playbook demanded it (`kb/tests/heldout.md` section 6).
-2. **Strategy depth follows the brief.** Run website-strategy only when positioning, audience or competitors are missing and the brief is an identity job (new brand, rebrand, "brand system"). For a campaign, event or one-off artifact, write three lines instead (audience, the one true fact the idea comes from, the competitor wall you checked) and move on.
+2. **Strategy depth follows the brief** (design-strategy section 1). For a campaign, event or one-off artifact, the three-line brief (audience, the one true fact the idea comes from, the competitor wall you checked) and move on. For a new brand, rebrand or "brand system" with positioning, audience or competitors missing, the full brief: website-strategy stages 2 to 5 as inputs, the one-page design-strategy brief as the summary. A rebrand starts with design-strategy's asset audit (fame and uniqueness) before any sketch.
 3. **Name what you did not build** in one line of the hand-over ("Not built: guidelines page, logo kit; say if you want them"). Never pad the delivery to look complete (opinion).
 
 ## 1. Load in this order
 1. **design-foundations** (always): tokens and the accessibility floor apply to every brand color and type choice used on screen.
-2. **website-strategy** when section 0 says so (identity job with positioning missing); otherwise the three-line brief from section 0. No mark before one of the two.
+2. **design-strategy** at the depth section 0 sets (it routes to website-strategy for full depth); `references/05-strategy-to-visual-identity.md` for the identity decision table, distinctive assets, category codes and the asset audit. No mark before the brief.
 3. **design-graphic**: `references/01-logo-identity.md` (concept, competitor wall, mark types, clear space, minimum sizes).
 4. **design-typography**: `references/02-selection-pairing.md`, `03-web-fonts-variable-licensing.md` (licensing for web, app and print), `07-type-led-pages.md` for the wordmark-scale display moments.
 5. **design-color**: `references/psychology-brand.md`, then `palette-building.md` to turn the brand hue into contrast-locked ramps and `ui-tokens-themes.md` for screen roles.
@@ -48,9 +48,10 @@ The held-out skilled poster mirrored the S in "Stone" on the main title: the ide
 1. Deliverables: what the brief lists (section 0). For a full identity job: the mark as SVG (primary, reversed, one color, small-size version), a token file for color and type, and a guidelines page in HTML. For an artifact-led brief: the mark and tokens those artifacts use, and the artifacts.
 2. Every page delivered passes `node tools/lint.mjs page.html` and renders light and dark with `node tools/render.mjs`; posters and social images run in canvas mode (`data-canvas="1080x1350"` on the page, or `--canvas`), which judges text at the size it is seen.
 3. The concept legibility check (section 2a) is recorded for every flagged device.
-4. The mark is rendered at 16, 32 and 512px and on light, dark and photo backgrounds; it reads at every size. The favicon reaches 3:1 on light, gray and dark tab strips or sits on its own field (design-graphic `assets/tab_contrast.py`; FOUNDATIONS accessibility findings). The logo itself is exempt from contrast; any version used as a link is not.
+4. Brand color fields are rendered in dark mode and still read as the brand: remap the field to a dark role that keeps its hue, and keep every button inside the brand system (in the Halden test the damson field vanished in dark mode and the button turned pink). The mark is rendered at 16, 32 and 512px and on light, dark and photo backgrounds; it reads at every size. The favicon reaches 3:1 on light, gray and dark tab strips or sits on its own field (design-graphic `assets/tab_contrast.py`; FOUNDATIONS accessibility findings). The logo itself is exempt from contrast; any version used as a link is not.
 5. Compared with the closest exemplar (`references/signature-moves.md`), rated close on idea, system and presentation.
 6. The hand-over names what is still short of the exemplar, and what the brief did not ask for and was not built.
+7. The strategy brief passes `brief_lint.mjs`; its primary distinctive asset is a shape, not a color alone; new assets were tested for misattribution and learnability with the name hidden (a new asset has no recognition yet to measure; fame is tracked with real buyers after launch), not by liking (design-strategy `references/05-strategy-to-visual-identity.md` and `06-checking-a-strategy.md`).
 
 ## 4. Reference map
 | Need | Read |

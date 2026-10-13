@@ -6,7 +6,7 @@ A knowledge base that teaches Claude web, app and graphic design. It is built by
 - Never use em dashes.
 - Plain language. Decision rules and real numbers over essays.
 - Cite a source for every factual claim. Mark opinion as opinion.
-- Reuse before writing: link to the existing website-strategy, copywriting and sales-funnels skills instead of duplicating them.
+- Reuse before writing: link to the existing website-strategy, crafting-voice-identity, copywriting and sales-funnels skills instead of duplicating them.
 - Build on the shared foundation contract in `kb/FOUNDATIONS.md`: every default, example, token name and number must match it (a skill may teach when to deviate).
 
 ## Quality bar
@@ -19,9 +19,9 @@ A knowledge base that teaches Claude web, app and graphic design. It is built by
 Three layers, all in `skills/`:
 1. **Foundations** (`design-foundations`): tokens, the fundamentals gate and accessibility, always loaded first. Mirrors `kb/FOUNDATIONS.md`, which stays the source of truth.
 2. **Job playbooks** (`design-playbook-landing`, `-dashboard`, `-mobile`, `-brand`): the skills that trigger. Each names the references to load in order, what done looks like, and the exemplars it is judged against.
-3. **Domain references** (`design-color`, `-typography`, `-layout`, `-graphic`, `-ux`, `-motion`, `-copy`, `-frontend`, `-search`): depth loaded on demand. Their descriptions say "Domain reference loaded by design-director or a design playbook"; they are not broad triggers.
+3. **Domain references** (`design-strategy`, `design-color`, `-typography`, `-layout`, `-graphic`, `-ux`, `-motion`, `-copy`, `-frontend`, `-search`, `-data`): depth loaded on demand. design-strategy is the exception that loads on every job, second, at the depth the brief needs. Their descriptions say "Domain reference loaded by design-director or a design playbook"; they are not broad triggers.
 
-`design-director` is the spine: foundations, then the playbook, then references, then the self-critique loop (render, lint, compare to exemplars, max 3 rounds). Exemplar teardowns (`kb/teardowns/`) are a standing research stream. Data and backend is out of scope (archived on `wip/design-data`).
+`design-director` is the spine: foundations, then the strategy brief (design-strategy, at the depth the brief needs), then the playbook, then references, then the self-critique loop (render, lint, compare to exemplars, max 3 rounds). Exemplar teardowns (`kb/teardowns/`) are a standing research stream. Data and backend lives in `design-data`, loaded when a screen is drawn over real data or the job includes the schema, API or access rules; its design angle is the contract between data and screens (`references/07-data-shapes-the-ui.md`).
 
 ## Pipeline
 editor-in-chief > researcher > domain-specialist > skill-architect > critic > tester > librarian.

@@ -1,0 +1,16 @@
+#### t_x (gym1 rows visible)
+u20: [u20] 0 classes, 0 bookings, 0 memberships, 0 passes, 3 profiles, 0 locations, 0 audit
+u3: [u3] 0 classes, 0 bookings, 0 memberships, 0 passes, 4 profiles, 0 locations, 0 audit
+u4: [u4] 0 classes, 0 bookings, 0 memberships, 0 passes, 4 profiles, 0 locations, 0 audit
+u19: [u19] 1 classes, 1 bookings, 1 memberships, 1 passes, 5 profiles, 1 locations, 0 audit
+u10: [u10] 1 classes, 1 bookings, 1 memberships, 1 passes, 3 profiles, 1 locations, 0 audit
+u2: [u2] 1 classes, 2 bookings, 12 memberships, 10 passes, 12 profiles, 1 locations, 0 audit
+u1: [u1] 1 classes, 2 bookings, 12 memberships, 10 passes, 12 profiles, 1 locations, 2 audit
+#### t_y (gym1 rows visible)
+u20: [u20] 0 classes, 0 bookings, 0 memberships, 0 passes, 0 locations
+u3: [u3] 0 classes, 0 bookings, 0 memberships, 0 passes, 0 locations
+u4: [u4] 0 classes, 0 bookings, 0 memberships, 0 passes, 0 locations
+u19: [u19] 1 classes, 1 bookings, 1 memberships, 1 passes, 1 locations
+u10: [u10] 1 classes, 1 bookings, 1 memberships, 1 passes, 1 locations
+u2: [u2] 1 classes, 2 bookings, 12 memberships, 10 passes, 1 locations
+u1: [u1] 1 classes, 2 bookings, 12 memberships, 10 passes, 1 locations
