@@ -30,7 +30,7 @@ create table profiles (
 ```
 Rules:
 - Create the profile with a trigger on auth signup or lazily on first request. A failing trigger blocks signups (Supabase docs), so keep it tiny and tested.
-- Never authorize on `user_metadata` / `raw_user_meta_data`; users can edit it (Supabase RLS docs). Roles live in your own tables (below) or in `app_metadata`.
+- Never authorize on `user_metadata` / `raw_user_meta_data`; users can edit it (Supabase RLS docs). Roles live in your own tables (below) or in `app_metadata`. `app_metadata` rides inside the JWT, and "a JWT is not always up-to-date" (Supabase RLS docs): a demoted admin keeps the claim until the token refreshes. When a revocation must take effect at once (removing a member, demoting an owner), policies read the role from your tables, not from the token.
 - Email: let the auth provider own it. If you copy it, keep it in sync from auth events and treat the provider as truth.
 - Outside Supabase, the same shape applies: a `users` table owned by your auth library (Auth.js, Better Auth, Clerk, WorkOS) plus your `profiles`.
 
@@ -40,6 +40,7 @@ create table orgs (
   id uuid primary key default uuidv7(),
   name text not null,
   slug text not null unique check (slug ~ '^[a-z0-9-]{2,48}$'),
+  time_zone text not null default 'UTC',   -- IANA name; "today", "overdue" and week boundaries are computed in it (07)
   created_at timestamptz not null default now()
 );
 
@@ -64,7 +65,10 @@ create table invitations (
   created_at timestamptz not null default now()
 );
 create unique index on invitations (org_id, lower(email)) where accepted_at is null;
+create index on invitations (org_id);       -- FK index; the partial index above skips accepted rows
+create index on invitations (invited_by);   -- FK index (Advisor 0001)
 ```
+Re-inviting the same email updates the pending row (new token hash, new `expires_at`) instead of inserting, so an expired invite never blocks a fresh one.
 Every business table then carries `org_id uuid not null references orgs(id)` plus an index starting with `org_id`.
 
 Decision rules:
@@ -85,9 +89,9 @@ create table subscriptions (
   id text primary key,                           -- Stripe subscription id, sub_...
   org_id uuid not null references orgs(id) on delete cascade,
   status text not null,                          -- mirror Stripe's values exactly
-  price_id text not null,
-  quantity integer not null default 1,           -- seats
-  current_period_end timestamptz,
+  price_id text not null,                        -- from the subscription item, not the subscription
+  quantity integer not null default 1,           -- seats: the seat item's quantity
+  current_period_end timestamptz,                -- from items.data[].current_period_end (moved off the subscription in API 2025-03-31.basil)
   cancel_at_period_end boolean not null default false,
   synced_at timestamptz not null default now()
 );
@@ -102,7 +106,7 @@ create table stripe_events (                    -- dedupe log
 Rules:
 - **Create the Stripe customer before checkout** and store the mapping; put your `org_id` in Stripe `metadata` (Theo Browne, practitioner).
 - **One sync function.** On any relevant webhook, and on the checkout success page, call `syncStripe(customerId)`: fetch current subscriptions from the Stripe API and upsert your rows. Do not apply event payloads as deltas: Stripe does not guarantee order and may deliver duplicates (Stripe webhooks docs). This removes a whole class of "user paid but app says free" bugs.
-- **Dedupe:** insert the event id into `stripe_events` first; if it conflicts, return 200 and stop.
+- **Dedupe without losing events:** insert the event id into `stripe_events` in the same transaction as the work it triggers (or as the durable job that will do it). If the insert conflicts, return 200 and stop. Never record the id first and do the work after a commit: a crash in between marks the event done, Stripe's retry is skipped, and the effect is lost. With the sync function the re-fetch is already safe to repeat; the dedupe row matters for one-off effects (emails, credit grants).
 - **Access rule:** grant paid features when status is `active` or `trialing`. Treat `past_due` as a grace period you choose (show a banner, keep access for N days); your Stripe settings decide whether it later moves to `canceled`, `unpaid` or stays `past_due`. Revoke on `unpaid` (Stripe: "Revoke access to your product when the subscription is `unpaid`"), `canceled`, `incomplete_expired`. `incomplete` has 23 hours to complete payment. `paused` means a trial ended without a payment method under the `pause` setting: no access until resumed. `active` does not mean every invoice is paid (Stripe subscription docs, checked 2026-10-13).
 - **Or gate on Entitlements**, the better default when plans bundle features: Stripe creates an active entitlement per feature when a subscription becomes active, fires `entitlements.active_entitlement_summary.updated` on every change (its list holds at most 10 entries; fetch `entitlements.url` for more), and `GET /v1/entitlements/active_entitlements?customer=` reconciles after a missed webhook (Stripe Entitlements docs, checked 2026-10-13). Store the feature lookup keys per org; the API turns them into capability flags for the UI (`07-data-shapes-the-ui.md`).
 - **Never compute "is paid" in the browser** from a client-readable flag the user can write. The column is written only by the server (service role) and read through RLS.
@@ -125,6 +129,7 @@ create table posts (
   check (status <> 'published' or published_at is not null)
 );
 create index on posts (org_id, status, published_at desc);
+create index on posts (author_id);              -- FK index (Advisor 0001)
 
 create table post_revisions (
   id bigint generated always as identity primary key,
@@ -134,6 +139,7 @@ create table post_revisions (
   created_at timestamptz not null default now()
 );
 create index on post_revisions (post_id, created_at desc);
+create index on post_revisions (edited_by);      -- FK index
 
 create table slug_redirects (                  -- old slug keeps working after a rename
   org_id uuid not null references orgs(id) on delete cascade,
@@ -141,6 +147,7 @@ create table slug_redirects (                  -- old slug keeps working after a
   post_id uuid not null references posts(id) on delete cascade,
   primary key (org_id, old_slug)
 );
+create index on slug_redirects (post_id);        -- FK index
 ```
 Rules: status as a single CHECKed column (never three booleans); `published_at` drives ordering and scheduling; a cross-column CHECK makes "published with no date" impossible; slug unique per tenant; keep old slugs as 301 redirects (search impact: design-search). Rich text editor output (TipTap, Lexical, Portable Text) is a legitimate jsonb document because it is read and written whole.
 
@@ -156,6 +163,7 @@ create table attachments (
   created_at timestamptz not null default now()
 );
 create index on attachments (org_id, created_at desc);
+create index on attachments (uploaded_by);       -- FK index
 ```
 Rules:
 - Bytes go to object storage (Supabase Storage, S3, R2); the table stores path and metadata. Never store files in a `bytea` column for app uploads (opinion, near universal).
@@ -192,7 +200,7 @@ Why not soft delete everywhere: every query must remember the filter, foreign ke
 
 ## Worked example: B2B SaaS with teams and per-seat billing
 - Tables: profiles, orgs, memberships, invitations, billing_customers, subscriptions, stripe_events, projects (org-owned), audit_events.
-- Seats: `subscriptions.quantity` is the paid seat count. Accepting an invite runs in one transaction: `select quantity from subscriptions where org_id = $1 for update` (locks the row so two concurrent accepts cannot both see 4 of 5 seats), then count memberships, then insert. A plain count without the lock is a race. Over the limit returns 409 with a problem+json body pointing to upgrade (API rules in `05-api-design.md`).
+- Seats: `subscriptions.quantity` is the paid seat count. Accepting an invite runs in one transaction: `select id from orgs where id = $1 for update` (lock the org, the one row that always exists; an org can have no subscription row, or a canceled one next to the live one), then read the live subscription's `quantity`, count memberships, insert. Two concurrent accepts cannot both see 4 of 5 seats. A plain count without the lock is a race. Over the limit returns 409 with a problem+json body pointing to upgrade (API rules in `05-api-design.md`).
 - Removing a member: delete the membership row only; the projects they created stay with the org (`created_by` set null or kept as a dangling id in audit).
 - RLS: `projects` readable when the caller has a membership in `projects.org_id` (policy pattern in `06-auth-rls-privacy.md`).
 
@@ -217,6 +225,7 @@ Why not soft delete everywhere: every query must remember the filter, foreign ke
 - Stripe, How subscriptions work: https://docs.stripe.com/billing/subscriptions/overview (accessed 2026-10-13)
 - Stripe, Entitlements (API): https://docs.stripe.com/billing/entitlements.md?dashboard-or-api=api (accessed 2026-10-13)
 - Stripe, Webhooks: https://docs.stripe.com/webhooks (accessed 2026-10-09)
+- Stripe changelog, 2025-03-31.basil ("`current_period_start` and `current_period_end` fields are no longer available on the subscription resource"; now on subscription items): https://docs.stripe.com/changelog/basil/2025-03-31/deprecate-subscription-current-period-start-and-end (accessed 2026-10-13)
 - Brandur Leach, Soft deletion probably isn't worth it: https://brandur.org/soft-deletion (accessed 2026-10-09)
 - Brandur Leach, Idempotency keys: https://brandur.org/idempotency-keys (accessed 2026-10-09)
 - OWASP Session Management Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html (accessed 2026-10-09)

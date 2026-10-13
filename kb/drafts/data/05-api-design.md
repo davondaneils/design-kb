@@ -48,12 +48,12 @@ Use RFC 9457 Problem Details, `Content-Type: application/problem+json`:
   "status": 422,
   "detail": "2 fields need attention.",
   "errors": [
-    { "pointer": "#/slug", "code": "taken", "detail": "That URL is already in use." },
+    { "pointer": "#/slug", "code": "invalid_format", "detail": "Use lowercase letters, numbers and hyphens." },
     { "pointer": "#/price_minor", "code": "min", "detail": "Price can't be negative." }
   ]
 }
 ```
-`errors` is an extension member. RFC 9457's own validation example uses `errors` items with `detail` and a JSON Pointer `pointer` (checked 2026-10-13); the `code` is this skill's addition so the client maps a stable code to its message. Clients "SHOULD NOT parse the detail member" (RFC 9457): show the client's own copy for each code, fall back to `detail`. A problem with no `type` means `about:blank`. Map database constraint names to pointers and codes (name your constraints; mapping table in `07-data-shapes-the-ui.md`). Never return stack traces, SQL or internal IDs of other tenants. Error message wording: design-copy.
+A uniqueness clash (slug or invoice number taken) is a conflict with current state: 409 with the same `errors` shape (`code: "taken"`), as in the mapping table in `07-data-shapes-the-ui.md`; when one submit has both kinds, return 422 and include the `taken` item (opinion). `errors` is an extension member. RFC 9457's own validation example uses `errors` items with `detail` and a JSON Pointer `pointer` (checked 2026-10-13); the `code` is this skill's addition so the client maps a stable code to its message. Clients "SHOULD NOT parse the detail member" (RFC 9457): show the client's own copy for each code, fall back to `detail`. A problem with no `type` means `about:blank`. Map database constraint names to pointers and codes (name your constraints; mapping table in `07-data-shapes-the-ui.md`). Never return stack traces, SQL or internal IDs of other tenants. Error message wording: design-copy.
 
 ## Decision rules: lists and pagination
 - Paginate every list endpoint from day one; adding it later breaks clients (Google AIP-158).
@@ -73,7 +73,7 @@ Use RFC 9457 Problem Details, `Content-Type: application/problem+json`:
 
 ## Decision rules: webhooks you receive
 1. Read the raw body; verify the signature with the provider library before parsing (Stripe: `Stripe-Signature`, HMAC-SHA256, 5 minute tolerance; frameworks that parse the body break verification).
-2. Insert the event id into a processed-events table; on conflict, return 200 and stop (duplicates happen).
+2. Insert the event id into a processed-events table in the same transaction as the work, or as the durable job that does it; on conflict, return 200 and stop (duplicates happen). Never record the id and then do the work after a separate commit: a crash between them marks the event done and the retry is skipped.
 3. Return 2xx fast, then do the work asynchronously (queue or background task). Stripe retries live events for up to 3 days.
 4. Assume no ordering. Re-fetch current state from the provider instead of trusting the event payload as a delta.
 5. Exempt the route from CSRF middleware; never from signature checks.

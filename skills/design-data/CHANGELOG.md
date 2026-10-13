@@ -1,5 +1,13 @@
 # Changelog: design-data
 
+## v0.2.1 (2026-10-13, critic fixes; `kb/reviews/design-data.md`, "v0.2 review")
+- Gate fixes in the skill's own SQL: five unindexed foreign keys indexed (03: `invitations.invited_by`, `posts.author_id`, `post_revisions.edited_by`, `slug_redirects.post_id`, `attachments.uploaded_by`; plus `invitations.org_id`, `bookings.class_id`); `orgs.time_zone` added (07 computes "overdue" in it); bookings use a partial unique index so a cancelled member can rebook; the yoga example stores wall time plus zone as truth, as its own rule says.
+- Races and lost work: seats lock the org row (an org can have zero or two subscription rows); webhook dedupe is written in the same transaction as the effect (03, 05, SKILL move 15).
+- Dated or wrong facts: PostgreSQL 18 NOT NULL `not valid` then `validate` (02, move 14); Stripe `current_period_end` moved to subscription items in 2025-03-31.basil (03, SKILL billing); Advisors run 0001 to 0030; supabase/cli issue 5868 closed 2026-07-16; Supabase default grants hedged to the docs' wording.
+- New: `nullif(current_setting(...), '')::uuid` (measured error without it); JWT `app_metadata` staleness (move 19); write tests read rows back; sortable header equals an index and fractional order keys (07, moves 31 and 32); slugs resolve by a full id or a unique short id; example UUIDv7 now dates to the invoice's creation; 05 error example consistent with 409 for `taken`.
+- Description: direct-load sentence now matches the other domain references (no keyword trigger list).
+- Data-to-screen expert moves are now 20 to 32 (one security move inserted as 19).
+
 ## v0.2 (2026-10-13)
 - Revived from the archive (`wip/design-data`, v0.1 of 2026-10-09) as a **domain reference**, with the data-to-screen contract as the reason it belongs in design-kb.
 - SKILL.md rewritten in the current convention: reference-layer description and header, gate items 14 to 21 (data to screen), state matrix, time and money rules, list rules, expert moves 19 to 29, data-to-screen contract table in the output format, hand-offs to the skills that exist today.

@@ -54,10 +54,10 @@ App connections: `statement_timeout` around 15 s so one runaway query cannot hol
 | Change | Dangerous form | Safe sequence |
 |---|---|---|
 | Add column | `add column x uuid default gen_random_uuid()` (volatile default rewrites table) | Add nullable or with a constant default (no rewrite since PG 11; ALTER TABLE docs), then backfill in batches |
-| Add index | `create index` (blocks writes) | `create index concurrently` outside a transaction; if it fails, drop the INVALID index and retry |
+| Add index | `create index` (blocks writes) | `create index concurrently` outside a transaction; if it fails, drop the INVALID index and retry. Migration tools that wrap each file in a transaction make it fail with "cannot run inside a transaction block": give it its own file and use the tool's opt-out (CREATE INDEX docs) |
 | Add foreign key | `add foreign key` (locks both tables while scanning) | `add constraint ... foreign key ... not valid;` then in a separate step `validate constraint` (SHARE UPDATE EXCLUSIVE only) |
 | Add CHECK | plain add (scans under lock) | `not valid`, then `validate constraint` |
-| Set NOT NULL | `alter column set not null` on a big table (full scan under ACCESS EXCLUSIVE) | add `check (col is not null) not valid`, validate, then `set not null` (skips the scan because the valid check proves it), then drop the check |
+| Set NOT NULL | `alter column set not null` on a big table (full scan under ACCESS EXCLUSIVE) | PostgreSQL 18: `add constraint t_col_nn not null col not valid`, then `validate constraint t_col_nn` (SHARE UPDATE EXCLUSIVE; not-null constraints accept NOT VALID since 18). Older versions: add `check (col is not null) not valid`, validate, then `set not null` (skips the scan because the valid check proves it), then drop the check (ALTER TABLE docs) |
 | Add UNIQUE | `add unique` | `create unique index concurrently`, then `add constraint ... unique using index` |
 | Rename column or table | `rename` while old code is running | expand and contract: add new, dual write, backfill, move reads, stop writing old, drop old |
 | Change type | `alter type` (rewrites, unless widening e.g. to `text`) | same expand and contract |
@@ -79,9 +79,9 @@ Expand and contract, in deploy order: (1) migration adds the new shape, (2) depl
 Each row needs its own value (derived from the stored `country`), so a constant default will not do.
 1. Migration A: `alter table profiles add column timezone text;` (instant, metadata only).
 2. Deploy code that writes `timezone` on signup and on profile save.
-3. Backfill job: `update profiles p set timezone = c.default_tz from countries c where c.code = p.country and p.id > $last_id and p.id <= $next_id and p.timezone is null;` in batches of 5,000 by id range, committing each, short sleep between.
-4. Migration B: `alter table profiles add constraint profiles_timezone_nn check (timezone is not null) not valid;` then `alter table profiles validate constraint profiles_timezone_nn;`
-5. Migration C: `alter table profiles alter column timezone set not null; alter table profiles drop constraint profiles_timezone_nn;`
+3. Backfill job: `update profiles p set timezone = coalesce((select c.default_tz from countries c where c.code = p.country), 'UTC') where p.id > $last_id and p.id <= $next_id and p.timezone is null;` in batches of 5,000 by id range, committing each, short sleep between. The `coalesce` matters: a join (`update ... from countries`) skips rows with no country match, and step 4 then fails on the rows it left null.
+4. Migration B (PostgreSQL 18): `alter table profiles add constraint profiles_timezone_nn not null timezone not valid;` then, in its own step, `alter table profiles validate constraint profiles_timezone_nn;`. The column is NOT NULL once the constraint validates.
+5. On PostgreSQL 17 and older, step 4 is three steps: `add constraint profiles_timezone_nn check (timezone is not null) not valid`, `validate constraint profiles_timezone_nn`, then `alter column timezone set not null` (no scan, the valid check proves it) and `drop constraint profiles_timezone_nn`.
 No step holds a long ACCESS EXCLUSIVE lock. Shortcut worth knowing: when a constant default is correct, `add column x text not null default 'UTC'` is instant on PG 11+ because non-volatile defaults are stored in metadata (ALTER TABLE docs).
 
 ## Worked example: "my list page got slow"
@@ -105,7 +105,7 @@ No step holds a long ACCESS EXCLUSIVE lock. Shortcut worth knowing: when a const
 - PostgreSQL docs, Constraints: https://www.postgresql.org/docs/current/ddl-constraints.html (accessed 2026-10-09)
 - PostgreSQL docs, Multicolumn indexes: https://www.postgresql.org/docs/current/indexes-multicolumn.html (accessed 2026-10-09)
 - PostgreSQL docs, CREATE INDEX: https://www.postgresql.org/docs/current/sql-createindex.html (accessed 2026-10-09)
-- PostgreSQL docs, ALTER TABLE: https://www.postgresql.org/docs/current/sql-altertable.html (accessed 2026-10-09)
+- PostgreSQL 18 docs, ALTER TABLE (NOT VALID allowed for "foreign-key, CHECK, and not-null constraints"; VALIDATE takes SHARE UPDATE EXCLUSIVE): https://www.postgresql.org/docs/current/sql-altertable.html (accessed 2026-10-13)
 - PostgreSQL wiki, Count estimate: https://wiki.postgresql.org/wiki/Count_estimate (accessed 2026-10-13)
 - Markus Winand, No offset: https://use-the-index-luke.com/no-offset (accessed 2026-10-09)
 - ankane, strong_migrations: https://github.com/ankane/strong_migrations (accessed 2026-10-09)

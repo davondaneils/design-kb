@@ -75,7 +75,7 @@ Use jsonb when all three are true: the shape varies per row, you rarely filter o
 | Do | Don't |
 |---|---|
 | `price_cents bigint NOT NULL CHECK (price_cents >= 0), currency text NOT NULL` | `price float` |
-| `starts_at timestamptz` and store the venue's IANA time zone (`America/Toronto`) separately when local wall time matters | `timestamp` plus a UTC offset string |
+| Past instants: `paid_at timestamptz`, plus the venue's IANA zone (`America/Toronto`) in its own column when the screen shows local time. Future events at a place: `starts_local timestamp` plus the zone as truth (worked example below) | `timestamp` plus a UTC offset string |
 | `memberships(org_id, user_id, role)` with `UNIQUE (org_id, user_id)` | `users.org_ids uuid[]` |
 | `WHERE created_at >= '2026-10-01' AND created_at < '2026-11-01'` | `BETWEEN '2026-10-01' AND '2026-10-31'` (misses most of the last day, double counts boundaries) |
 | `NOT EXISTS (subquery)` | `NOT IN (subquery)` (a single NULL returns zero rows) |
@@ -98,14 +98,16 @@ create table classes (
   id uuid primary key default uuidv7(),
   studio_id uuid not null references studios(id) on delete cascade,
   title text not null,
-  starts_at timestamptz not null,
+  starts_local timestamp not null,         -- truth: wall time at the studio ("7:00 am")
+  ends_local timestamp not null,
+  starts_at timestamptz not null,          -- derived: starts_local at time zone studios.time_zone; recomputed by a job when tz data changes
   ends_at timestamptz not null,
   capacity integer not null check (capacity > 0),
   price_cents bigint not null check (price_cents >= 0),
   currency text not null default 'cad',
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now(),
-  check (ends_at > starts_at)
+  check (ends_local > starts_local)
 );
 create index on classes (studio_id, starts_at);   -- FK index that also serves "this studio's schedule"
 
@@ -117,11 +119,14 @@ create table bookings (
   amount_paid_cents bigint not null check (amount_paid_cents >= 0),   -- price at time of booking
   currency text not null,
   created_at timestamptz not null default now(),
-  unique (class_id, user_id)
+  updated_at timestamptz not null default now()
 );
+create unique index bookings_one_live_per_member on bookings (class_id, user_id)
+  where status <> 'cancelled';                    -- a member who cancels can book again
+create index on bookings (class_id);              -- FK index; the partial index above skips cancelled rows
 create index on bookings (user_id, created_at desc);
 ```
-Reasoning (updated 2026-10-13): if classes are booked weeks ahead, also store `starts_local timestamp` with the studio zone as the truth, because tz rules change (IANA 2026e moved Manitoba to permanent UTC-05 on 2026-10-31; `07-data-shapes-the-ui.md`). Price paid lives on `bookings` because it is a fact about the booking (the class price can change later). `on delete restrict` on `class_id` stops someone deleting a class that has paid bookings; the UI must cancel and refund first. Capacity is enforced in the booking transaction with `select ... for update` on the class row and a count, because a CHECK cannot count rows (constraints docs). The studio time zone is stored so "7:00 am class" stays 7:00 am across DST.
+Reasoning (updated 2026-10-13, review pass): classes are booked weeks ahead, so the wall time plus the studio zone is the truth and `starts_at` is derived, because tz rules change (IANA 2026e moved Manitoba to permanent UTC-05 on 2026-10-31; `07-data-shapes-the-ui.md`; opinion). A plain `unique (class_id, user_id)` would stop a member who cancelled from ever rebooking, so uniqueness covers live bookings only (partial unique index; CREATE INDEX docs). Price paid lives on `bookings` because it is a fact about the booking (the class price can change later). `on delete restrict` on `class_id` stops someone deleting a class that has paid bookings; the UI must cancel and refund first. Capacity is enforced in the booking transaction with `select ... for update` on the class row and a count of bookings `where status <> 'cancelled'`, because a CHECK cannot count rows (constraints docs). The studio time zone is stored so the "7:00 am class" stays 7:00 am across DST and across rule changes.
 
 ## Worked example: "I store prices as float, is that ok?"
 No. `0.1 + 0.2` is `0.30000000000000004` in binary floating point, and Postgres documents `real` and `double precision` as inexact; use `numeric` for exact money (numeric types docs). Migration: add `price_cents bigint`, backfill `round(price * 100)`, switch reads, drop the float (expand and contract, see `02-indexes-and-migrations.md`). Store `currency` next to it.

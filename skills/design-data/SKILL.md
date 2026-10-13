@@ -1,13 +1,13 @@
 ---
 name: design-data
-description: Domain reference loaded by design-director or a design playbook (mainly design-playbook-dashboard and design-playbook-mobile, also design-playbook-landing for sites with accounts, shops or bookings); do not trigger on its own for a page, screen or brand job. Covers the data layer behind a screen and the contract between data and screens: database schema and data modeling (tables, keys, types, constraints, indexes, migrations), common app models (users and profiles, orgs, memberships, roles, invitations, multi-tenancy, Stripe billing and entitlements, content, files, audit logs, deletion), platform choice (Postgres, SQLite, Supabase, Firebase and Firestore, Convex, Neon), REST API design (status codes, problem+json errors, pagination, idempotency, webhooks), auth, Supabase row level security and Firebase rules, secrets, privacy and GDPR, and what each data decision lets a screen truthfully show (states, time zones, money, counts, totals, optimistic writes, capability flags, freshness, images, slugs, activity feeds, field errors). Load it directly when the user asks a narrow schema, RLS, API or auth question, for example "schema for", "what tables", "ERD", "Supabase", "RLS", "policy", "migration", "slow query", "index", "API endpoints", "webhook", "multi-tenant", "teams and seats", "store prices", "delete my account". Not for layout, visual design or copy (design-product-ui, design-ux, design-copy).
+description: Domain reference loaded by design-director or a design playbook (mainly design-playbook-dashboard and design-playbook-mobile, also design-playbook-landing for sites with accounts, shops or bookings); do not trigger on its own for a page, screen or brand job. Covers the data layer behind a screen and the contract between data and screens: database schema and data modeling (tables, keys, types, constraints, indexes, migrations), common app models (users and profiles, orgs, memberships, roles, invitations, multi-tenancy, Stripe billing and entitlements, content, files, audit logs, deletion), platform choice (Postgres, SQLite, Supabase, Firebase and Firestore, Convex, Neon), REST API design (status codes, problem+json errors, pagination, idempotency, webhooks), auth, Supabase row level security and Firebase rules, secrets, privacy and GDPR, and what each data decision lets a screen truthfully show (states, time zones, money, counts, totals, optimistic writes, capability flags, freshness, images, slugs, activity feeds, field errors). Load it directly only when the user names it or asks a narrow question inside this domain alone (a schema, RLS policy, migration, API, webhook or auth question with no screen to design). Not for layout, visual design or copy (design-product-ui, design-ux, design-copy).
 ---
 
 # design-data
 
 > **Layer: domain reference.** Loaded after `design-foundations` by `design-director` or a `design-playbook-*` skill whenever a screen is drawn over real data, or directly for a narrow data question. Accessibility floor for anything that reaches a screen: design-foundations `references/accessibility.md`. State visuals: design-product-ui `references/05-states-bulk.md`.
 
-Version 0.2. Facts current to **2026-10-13** (every time-sensitive fact rechecked against primary sources that day; dates per fact in `kb/research/data/`). Platform facts move: PostgreSQL 19 is in beta, Supabase legacy keys are deprecated by the end of 2026, the GDPR Digital Omnibus is pending. Before advice that depends on a platform behavior, check the fact's date in `references/` and say how old it is. Review due 2027-01-13.
+Version 0.2.1. Facts current to **2026-10-13** (every time-sensitive fact rechecked against primary sources that day; dates per fact in `kb/research/data/`). Platform facts move: PostgreSQL 19 is in beta, Supabase legacy keys are deprecated by the end of 2026, the GDPR Digital Omnibus is pending. Before advice that depends on a platform behavior, check the fact's date in `references/` and say how old it is. Review due 2027-01-13.
 
 The bar: a schema, policy set, API and data-to-screen contract that a senior engineer at Stripe or Supabase and a senior product designer at Linear would approve without comments. Correct first, then fast, then pleasant to evolve, and never a screen that shows something the data cannot supply.
 
@@ -51,7 +51,7 @@ Every answer that proposes or reviews a schema, policy, endpoint or a screen ove
 20. Actions carry capability flags with a reason from the same function the policy uses; the UI never infers permission from a role name.
 21. Field failures map from named constraints to problem+json items with a JSON Pointer and a stable code; images are stored with width, height and alt text.
 
-Automated checks: Supabase Advisors (`supabase db advisors`, Studio, MCP `get_advisors`) cover gate items 1, 3, 8 and 9 in part: 0004 no primary key, 0001 unindexed foreign keys, 0013 RLS disabled in public, 0023 sensitive columns exposed, 0008 RLS enabled with no policy, 0015 RLS references user metadata, 0024 permissive RLS policy, 0003 unwrapped `auth.uid()`, 0010 security definer view, 0011 mutable search path, 0028 and 0029 security definer functions callable by `anon` or `authenticated` (ids confirmed 2026-10-13). Run them against the linked project, not only `--local`, which misses the API-exposure lints (supabase/cli issue 5868). On a built page, gate 18 is `[lint]` through `tools/lint.mjs` `truth`; gate 21's alt text is `[lint]` through axe.
+Automated checks: Supabase Advisors (`supabase db advisors`, Studio, MCP `get_advisors`) cover gate items 1, 3, 8 and 9 in part: 0004 no primary key, 0001 unindexed foreign keys, 0013 RLS disabled in public, 0023 sensitive columns exposed, 0008 RLS enabled with no policy, 0015 RLS references user metadata, 0024 permissive RLS policy, 0003 unwrapped `auth.uid()`, 0010 security definer view, 0011 mutable search path, 0028 and 0029 security definer functions callable by `anon` or `authenticated` (ids confirmed 2026-10-13; the list runs 0001 to 0030). Run them against the linked project as well as locally, because production drifts from the migrations; CLI versions from before the fix for supabase/cli issue 5868 (closed 2026-07-16) gave `--local` a false all-clear on the API-exposure lints. On a built page, gate 18 is `[lint]` through `tools/lint.mjs` `truth`; gate 21's alt text is `[lint]` through axe.
 
 ## 2. How to work a data request
 1. **Restate the domain** in nouns, verbs and invariants ("an invoice belongs to one client; a number is unique per org").
@@ -94,7 +94,7 @@ Automated checks: Supabase Advisors (`supabase db advisors`, Studio, MCP `get_ad
 Page size default 20 to 50, max 100, clamped (Stripe 10 and 100; band is opinion).
 
 ### Billing access
-`active` and `trialing` grant; `past_due` is a grace period you configure; revoke on `unpaid`, `canceled`, `incomplete_expired`; `incomplete` has 23 hours; `paused` means a trial ended without a payment method; `active` does not mean every invoice is paid (Stripe, 2026-10-13). Better when plans bundle features: gate on Stripe Entitlements and turn them into capability flags.
+`active` and `trialing` grant; `past_due` is a grace period you configure; revoke on `unpaid`, `canceled`, `incomplete_expired`; `incomplete` has 23 hours; `paused` means a trial ended without a payment method; `active` does not mean every invoice is paid (Stripe, 2026-10-13). Since API version 2025-03-31.basil the billing period (`current_period_end`) lives on subscription items, not the subscription. Better when plans bundle features: gate on Stripe Entitlements and turn them into capability flags.
 
 ### API
 Plural nouns, one level of nesting, POST create (201 plus `Location`), PATCH partial update, DELETE 204, 401 unauthenticated, 403 forbidden, 404 for other tenants' objects (common practice, opinion), 409 conflict, 412 failed `If-Match`, 422 validation, 429 with `Retry-After`. Idempotency: same key and payload replays; different payload 422; still running 409 (convention from the IETF draft, which expired 2026-04-18; Stripe practice is the reference). Keep keys at least 24 hours.
@@ -102,14 +102,14 @@ Plural nouns, one level of nesting, POST create (201 plus `Location`), PATCH par
 ## 4. Expert moves (what separates a top practitioner from a strong generalist)
 
 **Modeling**
-1. Org-owned data from day one in anything that might have teams; a personal org at signup gives solo and team users one code path.
+1. Org-owned data from day one in anything that might have teams; a personal org at signup gives solo and team users one code path (opinion; Makerkit and WorkOS model it this way).
 2. Facts of an event live on the event: the price paid lives on the order line, not read back from the product.
 3. Duplicate `org_id` onto children for cheap RLS and make the copy impossible to get wrong: `foreign key (project_id, org_id) references projects (id, org_id)` plus `unique (id, org_id)` on the parent.
 4. Status as one CHECKed text column plus cross-column CHECKs, never several booleans.
 5. "No overlaps" is `EXCLUDE USING gist (room_id with =, tstzrange(starts_at, ends_at) with &&)` (needs `btree_gist`).
 6. UUIDv7 keys for public-facing apps (time-ordered, no row-count leak, built into PostgreSQL 18); bigint identity for internal high-volume tables. UUIDv7 reveals creation time to the millisecond, so use UUIDv4 where that is sensitive (RFC 9562: v4 for any security role).
-7. Limits that count rows (seats, capacity) are checked after locking the parent row (`select ... for update`); a bare count is a race.
-8. Default to hard delete plus a `deleted_records` jsonb archive; `deleted_at` only for a real trash with partial unique indexes and a purge job.
+7. Limits that count rows (seats, capacity) are checked after locking a parent row that always exists (`select ... from orgs where id = $1 for update` for seats, the class row for capacity); a bare count is a race, and locking a subscription row fails when the org has none or two.
+8. Default to hard delete plus a `deleted_records` jsonb archive; `deleted_at` only for a real trash with partial unique indexes and a purge job (opinion, after Brandur Leach). Uniqueness that must survive a cancel or a delete is a partial unique index (a member who cancelled a booking can book again).
 9. Audit log append-only, no foreign keys on purpose, written in the same transaction as the action.
 
 **Performance**
@@ -119,28 +119,31 @@ Plural nouns, one level of nesting, POST create (201 plus `Location`), PATCH par
 13. RLS speed (Supabase measured, 100K rows): index policy columns (171 ms to under 0.1 ms), wrap `(select auth.uid())` (179 to 9), membership in a wrapped security definer function `org_id = any (array(select private.my_org_ids()))` (173,000 to 16), `to authenticated` (anon 170 to under 0.1), and also filter in the client query (171 to 9).
 
 **Safe change**
-14. Migration sessions set `lock_timeout = '10s'` and a long `statement_timeout`; `create index concurrently`; constraints `not valid` then `validate`; NOT NULL via a validated CHECK; renames and type changes by expand and contract.
+14. Migration sessions set `lock_timeout = '10s'` and a long `statement_timeout`; `create index concurrently` in its own non-transactional migration file; constraints `not valid` then `validate`; NOT NULL on PostgreSQL 18 is `add constraint x_nn not null col not valid` then `validate constraint x_nn` (older versions: a validated CHECK, then `set not null`); renames and type changes by expand and contract.
 
 **Billing**
-15. Stripe is the source of truth; one `syncStripe(customerId)` re-fetches state from every relevant webhook and the success page. Never apply payloads as deltas. Dedupe on event id and make the business effect idempotent (`unique (org_id, stripe_invoice_id)` on credit grants).
+15. Stripe is the source of truth; one `syncStripe(customerId)` re-fetches state from every relevant webhook and the success page. Never apply payloads as deltas. Dedupe on event id in the same transaction as the effect (recording the id first and working after the commit loses the event on a crash), and make the business effect idempotent (`unique (org_id, stripe_invoice_id)` on credit grants).
 
 **Security and privacy**
-16. Two-user, two-org cross-tenant tests as pgTAP files run by `supabase test db`; a read test checks rows, because `lives_ok` passes on an empty result.
+16. Two-user, two-org cross-tenant tests as pgTAP files run by `supabase test db`; a read test checks rows, because `lives_ok` passes on an empty result, and an allowed write is proved by reading the row back (`lives_ok` also passes when the write matched zero rows).
 17. Security definer helpers in an unexposed `private` schema with `set search_path = ''`, `grant usage on schema private to authenticated`, execute revoked from `anon`; they skip RLS only because their owner can.
 18. Files: private bucket, path prefixed by the owner key, storage policies mirroring the tables, signed URLs, a job that deletes objects when rows go.
+19. Roles in `app_metadata` ride in the JWT, which is stale until it refreshes (Supabase RLS docs); removing a member or demoting an owner takes effect at once only when policies read your tables.
 
 **Data to screen** (reference 07)
-19. **Echo the query.** The response repeats filters, sort, period and zone, so empty versus no results is never a guess.
-20. **Ship the summary with the page**, same snapshot, stamped `as_of`; KPI and table cannot disagree.
-21. **Capabilities with reasons** (`can.void = { allowed: false, reason: "role", who: "Owner or Admin" }`) from the policy function; the UI says who can change it.
-22. **"50+" is the honest cheap count**: fetch one extra row. Stripe's own search total is opt-in and accurate only to 10,000.
-23. **Freshness from the server clock**: `as_of` plus the `Date` header, never the device clock or the fetch time.
-24. **Lost updates become a conversation**: `ETag` plus `If-Match`, 412 names who changed what; 428 where people edit together.
-25. **Client ids end the temp-id dance**: `crypto.randomUUID()` for optimistic creates plus one `Idempotency-Key` per intent.
-26. **Positions and "places left" are computed, never stored**: store the order key, compute rank and remainder at read, let the locked write be the truth and return 409 with `remaining: 0`.
-27. **Sentences are rendered, not stored**: activity rows keep action, actor, target and parameters; the edge renders them in the locale.
-28. **Dimensions are data**: width, height, alt, focal point and placeholder captured on upload; CLS is solved in the schema.
-29. **Date-only values never meet `new Date()`**: `new Date("2026-10-09")` prints "Thu, Oct 8" in Toronto (measured); format with `timeZone: 'UTC'`.
+20. **Echo the query.** The response repeats filters, sort, period and zone, so empty versus no results is never a guess.
+21. **Ship the summary with the page**, same snapshot, stamped `as_of`; KPI and table cannot disagree.
+22. **Capabilities with reasons** (`can.void = { allowed: false, reason: "role", who: "Owner or Admin" }`) from the policy function; the UI says who can change it.
+23. **"50+" is the honest cheap count**: fetch one extra row. Stripe's own search total is opt-in and accurate only to 10,000.
+24. **Freshness from the server clock**: `as_of` plus the `Date` header, never the device clock or the fetch time.
+25. **Lost updates become a conversation**: `ETag` plus `If-Match`, 412 names who changed what; 428 where people edit together.
+26. **Client ids end the temp-id dance**: `crypto.randomUUID()` for optimistic creates plus one `Idempotency-Key` per intent.
+27. **Positions and "places left" are computed, never stored**: store the order key, compute rank and remainder at read, let the locked write be the truth and return 409 with `remaining: 0`.
+28. **Sentences are rendered, not stored**: activity rows keep action, actor, target and parameters; the edge renders them in the locale.
+29. **Dimensions are data**: width, height, alt, focal point and placeholder captured on upload; CLS is solved in the schema.
+30. **Date-only values never meet `new Date()`**: `new Date("2026-10-09")` prints "Thu, Oct 8" in Toronto (measured); format with `timeZone: 'UTC'`.
+31. **A sortable header is an index**: on a big list only columns an index serves in keyset order `(filters, column, id)` sort; the API allowlists them and a sort change drops the cursor.
+32. **Manual order is a fraction**: drag to reorder writes one order key between the neighbours (Figma fractional indexing); string keys, because a float key runs out after 52 drops between 1 and 2 (measured).
 
 ## 5. Platform decision (short form)
 | If | Then |
@@ -195,4 +198,4 @@ For a review: gate misses first (numbered, with the fix as code), then expert-le
 - Stored UI preferences follow the shared foundation contract: `theme` in (`light`, `dark`, `system`, where `system` follows `prefers-color-scheme`) and a `reduced_motion` boolean, mapped straight to the contract's light and dark roles.
 
 ## 9. Where defaults may change
-PostgreSQL 19 release (beta on 2026-10-13); Supabase legacy key shutoff (end of 2026); Supabase Advisor lint list (grows; 0001 to 0029 on 2026-10-13); Stripe statuses and Entitlements; the IETF Idempotency-Key draft (expired, may be revived); the GDPR Digital Omnibus (would set breach notice to 96 hours if adopted); Temporal reaching Baseline (it would simplify reference 07's time rules); IANA tz releases (2026e on 2026-09-29). Recheck every 3 months.
+PostgreSQL 19 release (beta on 2026-10-13); Supabase legacy key shutoff (end of 2026); Supabase Advisor lint list (grows; 0001 to 0030 on 2026-10-13); Stripe statuses and Entitlements; the IETF Idempotency-Key draft (expired, may be revived); the GDPR Digital Omnibus (would set breach notice to 96 hours if adopted); Temporal reaching Baseline (it would simplify reference 07's time rules); IANA tz releases (2026e on 2026-09-29). Recheck every 3 months.

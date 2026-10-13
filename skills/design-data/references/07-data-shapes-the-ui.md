@@ -80,6 +80,10 @@ Stale and source stopped differ: stale means we have not fetched lately; stopped
 
 Exact `count(*)` checks every row's visibility (D12); Stripe's own search total is opt-in and "only accurate up to 10,000" (D10); AIP-158 lets totals be estimates if documented (D11).
 
+- **A sortable column is an indexed column.** Keyset needs an index that matches the ORDER BY (D13), and the cursor encodes the sort key plus `id`. So a table header is sortable only where an index serves `(filter columns, that column, id)`; the API allowlists those sorts, a sort change drops the cursor and starts at page one, and other columns sort only when the whole set is on the client. The designer and the schema decide the sortable headers together.
+- **Manual order is a fraction, not a position.** For drag to reorder, store an order key between the neighbours' keys ("every index is a fraction between 0 and 1 exclusive"; "Reordering an object only involves editing a single value", Figma engineering on fractional indexing). One drag writes one row, fits the optimistic rule above, and two people reordering at once do not renumber each other's rows. Use string keys (opinion) so the gaps never run out: a float key placed again and again between the same two neighbours halves the gap each time and runs out of precision after 52 drops between keys 1 and 2 (measured in Node 22, 2026-10-13; double precision carries a 52-bit fraction).
+- **New rows on a live keyset list** arrive above the first row, outside the cursor: show "3 new" and insert on click or at the top when the viewer is at the top, never shift rows under the pointer (opinion; the cursor stays valid because it points down the list).
+
 ### Derived numbers
 - Compute every total, share and delta in one SQL statement (or one view) in the same transaction as the page of rows, and stamp it with `as_of`.
 - Never compute a total from the rows on screen unless the screen holds the whole set; a paginated table's total comes from the server's `summary`.
@@ -132,7 +136,7 @@ Store per image: `storage_path`, `width`, `height`, `alt` (empty string for deco
 The `width`, `height` and `object-position` values come from the row (data, not design values); `object-position` turns the stored focal point into the crop (D26).
 
 ### Slugs and stable URLs
-- The id is the identity; the slug is decoration: `/posts/0199d3a2-7c1e/how-we-fire` or `/posts/how-we-fire-7c1e`. Resolve by id, 301 to the current slug when it differs (design-search: one hop, stable URLs).
+- The id is the identity; the slug is decoration: `/posts/01a0d912-f0f9-7b55-9a40-2f6c1d0e8a11/how-we-fire`, or a dedicated `short_id text not null unique` (opinion: 8 or more random base62 characters) for `/posts/how-we-fire-k3T9x2Qa`. Resolve by the id or short id, 301 to the current slug when it differs (design-search: one hop, stable URLs). A truncated UUID is not an id: under v7 its first 12 hex digits are the creation millisecond (RFC 9562, D16), so prefixes collide and date the row.
 - If the slug is the whole key (public marketing pages), keep `slug_redirects` so every old slug 301s (reference 03).
 
 ### Activity feeds
@@ -185,6 +189,8 @@ Supabase's Data API (PostgREST) returns 409 for 23505 and 23503 with the code an
 12. **Dimensions are data.** Width, height, focal point and placeholder captured on upload; CLS is solved in the schema, not in CSS.
 13. **A stopped source is its own state.** `sources.x.last_event_at` lets the UI freeze those numbers and say since when, separately from staleness.
 14. **Date-only values never meet `new Date()`.** Format with `timeZone: 'UTC'` or from parts (D36, D37).
+15. **A sortable header is an index.** Only columns an index serves in keyset order are sortable on a big list; the schema and the table header are designed together.
+16. **Manual order is a fraction.** A drag writes one order key between its neighbours; no renumbering, no conflict between two people reordering (Figma fractional indexing).
 
 ## Do and don't
 | Do | Don't |
@@ -247,7 +253,7 @@ Response to `GET /v1/invoices?status=outstanding&limit=50` (one of the 8 rows sh
 {
   "data": [
     {
-      "id": "0199d3a2-7c1e-7b55-9a40-2f6c1d0e8a11",
+      "id": "01a0d912-f0f9-7b55-9a40-2f6c1d0e8a11",
       "number": "INV-0142",
       "client": { "id": "0199c0f4-...", "name": "Northwind Press" },
       "status": "open",
@@ -359,6 +365,8 @@ Choice: the query returns `{ "value": null, "reason": "not_enough_data", "min_sa
 - MDN, Date.parse(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse (accessed 2026-10-13)
 - MDN, Crypto.randomUUID(): https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID (accessed 2026-10-13)
 - MDN, object-position: https://developer.mozilla.org/en-US/docs/Web/CSS/object-position (accessed 2026-10-13)
+- Figma engineering, Realtime editing of ordered sequences (fractional indexing): https://www.figma.com/blog/realtime-editing-of-ordered-sequences/ (accessed 2026-10-13)
+- Markus Winand, No offset (keyset needs an index matching the ORDER BY, D13): https://use-the-index-luke.com/no-offset (accessed 2026-10-09)
 - Stripe, Supported currencies: https://docs.stripe.com/currencies (accessed 2026-10-13)
 - Stripe API, Pagination: https://docs.stripe.com/api/pagination (accessed 2026-10-13)
 - Stripe API, Search (total_count): https://docs.stripe.com/api/pagination/search (accessed 2026-10-13)
