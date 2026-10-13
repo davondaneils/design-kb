@@ -1,18 +1,25 @@
-/* design-motion v0.2: motion tokens on the design-kb shared foundation (kb/FOUNDATIONS.md v0.3, Motion and Token schema).
+/* design-motion v0.3: motion tokens on the design-kb shared foundation (kb/FOUNDATIONS.md v0.5, Motion and Token schema).
    Names and values match FOUNDATIONS. Extend, do not redefine. */
 :root {
-  /* Durations (primitives): low end of each foundation band by default */
-  --duration-instant: 100ms; /* band 0 to 100ms: press, hover color, toggle, checkbox, fade-through exit */
-  --duration-fast: 150ms;    /* tooltip, small popover, menu, dropdown, most exits */
-  --duration-base: 200ms;    /* band 200 to 250ms: dialog, accordion, toast, digit roll, label swap entrance */
-  --duration-slow: 300ms;    /* band 300 to 400ms: drawer, sheet, shared element */
-  --duration-page: 400ms;    /* route change; never raised: 600ms is the ceiling for a marketing reveal, 800ms the one hero reveal (FOUNDATIONS v0.4.5) */
+  /* Durations (primitives), one band per job (FOUNDATIONS v0.5 motion ladder) */
+  --duration-instant: 100ms; /* press/hover band: press, hover color, toggle, checkbox, fade-through exit */
+  --duration-fast: 150ms;    /* press/hover band (the other hover choice), tooltip, most exits, the scene seam, the move delay after a fade */
+  --duration-base: 200ms;    /* UI change band 200 to 250ms: dialog, accordion, toast, digit roll, label swap entrance */
+  --duration-slow: 300ms;    /* UI change band 300 to 400ms: drawer, sheet, shared element, value-stack swap, masked word rise */
+  --duration-page: 400ms;    /* entrance band: route change, first-screen entrance; the one hero reveal may run to 800ms */
+  --duration-reveal: 600ms;  /* reveal band: a block entering on scroll, once; text that blurs in may run to 1000ms */
+  /* Scene band (1200 to 4500ms per beat, loop 12s or less) is set per scene in data-beats, never as a token. */
+
+  /* Choreography (primitives) */
+  --stagger: 40ms;           /* gap between siblings; range 20 to 80ms; cards may use calc(var(--stagger) * 2) */
+  --travel: 16px;            /* entrance travel; range 8 to 50px, or a 100% rise inside a clipping mask */
 
   /* Easing (primitives): Material 3 standard set, the three FOUNDATIONS curves */
-  --ease-standard: cubic-bezier(0.2, 0, 0, 1); /* moves and resizes on screen, hover color */
-  --ease-enter: cubic-bezier(0, 0, 0, 1);      /* decelerate: arriving */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1); /* moves and resizes on screen, swaps in place, opacity of a split reveal */
+  --ease-enter: cubic-bezier(0, 0, 0, 1);      /* decelerate: arriving (stronger than Stripe's quart (.25,1,.5,1)) */
   --ease-exit: cubic-bezier(0.3, 0, 1, 1);     /* accelerate: leaving for good, keep short */
-  /* linear is not a token: use the keyword for loops, scroll-linked motion and reveals whose x axis is time. */
+  /* Keywords, not tokens: linear for loops, scroll-linked motion, progress fills and time axes;
+     steps(1) for things that should feel digital (a caret, a pixel grid, a terminal line). */
 
   /* Semantic pairs (FOUNDATIONS --motion-{hover,enter,exit}): a duration plus a curve, for transition shorthands.
      transition: background-color var(--motion-hover), transform var(--motion-hover); */
@@ -38,4 +45,5 @@
    const css = getComputedStyle(document.documentElement);
    const ms = (t) => parseFloat(css.getPropertyValue(t));        // ms('--duration-base') -> 200
    const ease = (t) => css.getPropertyValue(t).trim();           // ease('--ease-enter')
-   el.animate(keyframes, { duration: ms('--duration-base'), easing: ease('--ease-enter') }); */
+   el.animate(keyframes, { duration: ms('--duration-base'), easing: ease('--ease-enter') });
+   Product scenes: assets/scene.js reads beats from data-beats and the seam from --duration-fast. */

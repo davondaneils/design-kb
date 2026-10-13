@@ -6,6 +6,7 @@
 | State changes (hover, open, selected) | CSS transitions | Interruptible: a transition retargets from the current value; keyframes restart (Kowalski) |
 | Enter and exit of popovers, dialogs, `display: none` elements, no JS | CSS transitions plus `@starting-style` and `transition-behavior: allow-discrete` | Baseline since Aug 2024 (MDN) |
 | Looping or multi-step decorative motion | CSS `@keyframes` | Declarative, compositor-friendly |
+| Product scene (a mock-up stepping through states with holds) | `assets/scene.js` stepping `data-state`, CSS transitions keyed off it | Beats in `data-beats`; pause, in-view, seam and reduce still built in; motion stays in CSS where the audit can read it (reference 08) |
 | Imperative control (reverse, pause, sequence, read progress) without a framework | Web Animations API (`element.animate`) | Same engine as CSS, promise-based (MDN) |
 | React: enter and exit of conditional elements, shared layout, gestures, springs with velocity | Motion (formerly Framer Motion) | `AnimatePresence`, `layout`, `layoutId`, drag (motion.dev) |
 | Route and page transitions | View Transitions API | Native snapshotting; same-document Baseline Oct 2025 (web.dev) |
@@ -20,7 +21,8 @@ Never use Lottie or a JS library for something CSS does (a fade, a press, a chev
 /* Tokens: design-kb foundation */
 :root {
   --duration-instant: 100ms; --duration-fast: 150ms; --duration-base: 200ms;
-  --duration-slow: 300ms; --duration-page: 400ms;
+  --duration-slow: 300ms; --duration-page: 400ms; --duration-reveal: 600ms;
+  --stagger: 40ms; --travel: 16px;
   --ease-standard: cubic-bezier(0.2, 0, 0, 1);
   --ease-enter: cubic-bezier(0, 0, 0, 1);
   --ease-exit: cubic-bezier(0.3, 0, 1, 1);
@@ -111,7 +113,7 @@ The grid trick above needs a wrapper the browser does not give `<details>`; its 
   details[open]::details-content { block-size: auto; }
 }
 ```
-Progressive: where either feature is missing, the panel opens instantly and stays correct. Under reduced motion nothing here applies, so it snaps (FOUNDATIONS Motion). Do not hide closed content with `details:not([open]) > :not(summary) { display: none }`: it removes the part this animates (round 1's workaround for a lint bug the lint now handles; `kb/tests/benchmark/round1/landing/BUILD_NOTES.md` skill problem 12).
+Progressive: where either feature is missing, the panel opens instantly and stays correct. Under reduced motion nothing here applies, so it snaps (FOUNDATIONS Motion). The summary icon's open state lives outside the media query (`details[open] summary .icon { transform: rotate(45deg); }`) and only its `transition` sits inside `no-preference`, so reduce keeps the state (reference 04, accordion row). Do not hide closed content with `details:not([open]) > :not(summary) { display: none }`: it removes the part this animates (round 1's workaround for a lint bug the lint now handles; `kb/tests/benchmark/round1/landing/BUILD_NOTES.md` skill problem 12).
 
 **Scroll reveal, progressive**
 ```css
@@ -124,17 +126,20 @@ Progressive: where either feature is missing, the panel opens instantly and stay
     }
   }
 }
-@keyframes reveal { from { opacity: 0; transform: translateY(12px); } }
+@keyframes reveal { from { opacity: 0; transform: translateY(var(--travel)); } }
 ```
 `linear` is correct here: the scroll position is the clock, so easing would fight the person's own scroll speed (opinion).
 
 ## Web Animations API
 ```js
+const css = getComputedStyle(document.documentElement);
+const ms = (t) => parseFloat(css.getPropertyValue(t));   // tokens, never millisecond literals
+const ease = (t) => css.getPropertyValue(t).trim();
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const anim = panel.animate(
   reduce ? [{ opacity: 0 }, { opacity: 1 }]
-         : [{ opacity: 0, transform: 'translateY(8px)' }, { opacity: 1, transform: 'none' }],
-  { duration: 200, easing: 'cubic-bezier(0, 0, 0, 1)' } // --duration-base, --ease-enter
+         : [{ opacity: 0, transform: `translateY(${css.getPropertyValue('--travel').trim()})` }, { opacity: 1, transform: 'none' }],
+  { duration: ms(reduce ? '--duration-fast' : '--duration-base'), easing: ease('--ease-enter') }
 );
 await anim.finished;
 anim.commitStyles(); // write final values, then drop the animation
@@ -208,6 +213,15 @@ const effects = { duration: 0.2, ease: [0.2, 0, 0, 1] };                  // --d
 - Reduced motion: do not play; jump to the most meaningful frame (`goToAndStop(frame, true)` in lottie-web) and expose a play button if the animation teaches something.
 - Accessibility: the container gets `role="img"` and an `aria-label` describing the meaning, or `aria-hidden="true"` if purely decorative.
 - Timing still follows the tokens: a Lottie success check inside a button plays in `--duration-base` to `--duration-slow`, not 2 s.
+
+## Product scenes
+```html
+<div data-scene id="run-scene" aria-hidden="true" data-beats="queued:1600 sending:2400 paid:3200"
+     data-rest="4000" data-still="paid" data-state="paid" data-seen="queued sending paid">...</div>
+<button type="button" data-scene-pause aria-controls="run-scene" aria-pressed="false">Pause animation</button>
+<script src="scene.js" defer></script>
+```
+CSS keys every change off `[data-state]` and `[data-seen~=state]` inside `@media (prefers-reduced-motion: no-preference)`, and may read the current beat as `var(--beat)`. Full worked scene, masked heading and split card reveal: reference 08. Check: `node skills/design-motion/assets/motion-plan-check.mjs page.html`.
 
 ## Hand-offs
 - design-frontend owns bundling (Motion and Lottie players are real bundle cost), SSR, and CI testing of reduced motion.

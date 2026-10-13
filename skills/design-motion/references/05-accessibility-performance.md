@@ -3,7 +3,7 @@
 Cross-cutting accessibility floor: design-foundations `references/accessibility.md`. This file keeps the motion-specific part.
 
 ## Principles
-1. Reduce means replace, not remove. Motion that carries meaning becomes "a dissolve, highlight fade, or color shift"; decorative motion stops (Apple reduced motion criteria; Val Head).
+1. Reduce means replace, not remove. Motion that carries meaning becomes "a dissolve, highlight fade, or color shift"; decorative motion stops (Apple reduced motion criteria; Val Head). The state a motion leads to is never removed: only the transition goes (benchmark round 2, `kb/reviews/benchmark-round2-landing.md` item 15c).
 2. The risk is in how much of the visual field moves and in what way: scaling, spinning, multi-speed layers (parallax), large-area wipes and fast travel through depth are the triggers; small opacity and color changes are low risk (Val Head, A List Apart; Apple).
 3. Only `transform` and `opacity` are cheap. Everything else costs layout or paint on every frame (web.dev).
 4. Smoothness is judged on a mid-range phone with the main thread busy, not on the designer's laptop (opinion).
@@ -22,9 +22,12 @@ Cross-cutting accessibility floor: design-foundations `references/accessibility.
 | Parallax, scroll-linked transforms, scroll-jacking, smooth scroll | Remove. Use default anchor jumps (`scroll-behavior: smooth` only inside `no-preference`). |
 | Page or view slides, zooms, container transforms | Replace with a crossfade at `--duration-fast`. |
 | Popover or dialog scale plus fade | Keep the fade, drop the scale. Same tokens. |
+| Disclosure icon, tab indicator, selection mark, toggle thumb | Keep the end state (icon rotated or swapped, indicator under the selected tab, thumb at the "on" end); remove only the transition. Never `transform: none !important` on an element whose transform is its state. |
+| Product scene (scripted mock-up) | The still frame: the final, most informative state, rendered in place; nothing animates inside; the pause button is hidden (`assets/scene.js` does this). |
+| Masked text rise, text blur-in, block reveal | Text and blocks in place at first paint; no fade over 150 ms. |
 | Hover color, focus ring, button color change | Keep. |
 | Button press scale | Drop the scale; keep color feedback. |
-| Spinners and progress | Keep (they carry state), but slow decorative spins and prefer determinate bars. |
+| Spinners and progress | The state stays, the rotation stops (FOUNDATIONS: nothing rotates under reduce; the lint fails it): a static icon plus "Loading" text, or a determinate bar that updates in steps without animating. |
 | Skeleton shimmer | Static skeleton. |
 | Autoplay video, GIF, Lottie, marquee | Do not autoplay. Show the most meaningful still frame (not necessarily the first) with a play control (`picture` with a reduced-motion source for GIFs). |
 | Celebration, confetti, bounce | Replace with a static badge, color change and text; haptic on native. |
@@ -45,12 +48,12 @@ Cross-cutting accessibility floor: design-foundations `references/accessibility.
 - Never animate `width`, `height`, `top`, `left`, `margin`, `padding` or `border-width`. Use transform, or FLIP (measure, invert with transform, play), which is how Motion's `layout` works (motion.dev).
 - Height of unknown content: `display: grid; grid-template-rows: 0fr` to `1fr` (works across modern browsers; opinion on preference), or `interpolate-size: allow-keywords` where supported (Chromium only, not Baseline: MDN). Progressive enhancement only.
 - Shadows: put the larger shadow on a pseudo-element and animate its `opacity`, instead of animating `box-shadow` (paint cost; web.dev notes shadows are expensive to paint).
-- Blur: `filter: blur()` and `backdrop-filter` are paint-heavy; keep animated blur at or below 20 px and on small areas (Kowalski, opinion).
+- Blur: `filter: blur()` and `backdrop-filter` are paint-heavy; animate blur only on text blocks as they enter, at 10 px or less (Linear's text blur-in uses 10 px, `kb/teardowns/motion-imagery.md`; Kowalski's outer limit is 20 px), never under reduced motion. `motion-audit.mjs` fails animated blur above 10 px.
 - `will-change`: only after measuring a problem, applied just before the animation and removed after (web.dev). Never in a global stylesheet on many elements.
 - Prefer CSS transitions, CSS animations and WAAPI for compositor properties; they keep running smoothly when the main thread is busy. JS loops driven by `requestAnimationFrame` stall when the main thread stalls (Kowalski; web.dev rendering model).
 - Responsiveness: keep animation setup off the critical path of an interaction so INP stays at or below 200 ms (web.dev).
 - LCP: never start the LCP element at opacity 0 (Chromium excludes it from LCP candidates; web.dev).
-- Pause what is off-screen: IntersectionObserver to pause Lottie, canvas and video loops out of view; `content-visibility` or `animation-play-state: paused` for CSS loops (opinion; standard technique).
+- Pause what is off-screen: IntersectionObserver to pause Lottie, canvas, video and scene loops out of view (`assets/scene.js` does it for scenes); `content-visibility` or `animation-play-state: paused` for CSS loops (opinion; standard technique).
 - Measure: DevTools Performance panel with 4x CPU throttling, Animations panel to slow playback to 10 to 25 percent, and the frame rendering stats. Review recordings frame by frame, and again the next day with fresh eyes (Kowalski).
 
 ## Do and don't

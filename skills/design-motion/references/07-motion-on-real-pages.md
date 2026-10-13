@@ -7,13 +7,13 @@ What changes when motion leaves the spec table and lands on a page that carries 
 ### Fundamentals (non-negotiable)
 1. **Tokens, also in scripts.** CSS uses `--duration-*`, `--ease-*` and `--motion-*`; scripts read the same tokens with `getComputedStyle` and never type a millisecond value. [judged; `motion-audit.mjs` checks the result]
 2. **Every transition list entry names a token curve.** An entry without a curve runs on `ease` (the initial value), including discrete ones like `visibility`. Write `visibility var(--duration-instant) linear`. [audit]
-3. **No movement under reduced motion; designed, not deleted.** Movement lives inside `@media (prefers-reduced-motion: no-preference)`; reduce gets the end state at first paint or a fade of 150 ms or less. No global `animation: none !important` reset: it also deletes the fades that carry meaning. [lint `motion`; audit reduce row]
+3. **No movement under reduced motion; designed, not deleted.** Movement lives inside `@media (prefers-reduced-motion: no-preference)`; reduce gets the end state at first paint or a fade of 150 ms or less. The end state itself is never inside that query: an open icon stays rotated, a scene shows its still frame. No global `animation: none !important` reset, and no `transform: none !important` on an element whose transform is its state. [lint `motion`; audit reduce row; `motion-plan-check` end states]
 4. **First paint never hides.** Headline, KPIs and chart data are visible and final at load. A marketing page may add the one hero reveal FOUNDATIONS allows (up to 800ms on `--ease-enter`, played once on load, removed under reduced motion; Stripe reveals `.8s`, `kb/teardowns/stripe-home.md`), on the hero's supporting artifact (a product card, the drawn motif) by `transform` or `clip-path`, never by fading the headline or the LCP element from opacity 0. Every other reveal is below the fold, once, after the person scrolls to it. [judged]
 5. **Numbers never animate on arrival.** A KPI or price is shown, not counted up. Motion is for a change while the number is on screen. [judged]
 6. **Auto-updating values can be paused.** A number that updates on a timer beside other content needs a pause, stop, hide or frequency control (WCAG 2.2.2, Level A, which covers auto-updating information, not only moving content). [judged]
 7. **Keyboard paths are instant.** Shortcuts (Ctrl K, `?`, Esc, Enter in a palette) open and close without transition; the same dialog may animate from a pointer. [audit `expect: 'none'`]
-8. **Movement on transform and opacity only.** Shadows, layout properties, `clip-path` and blur do not animate; a hover shadow fades on a pseudo-element's opacity. [audit]
-9. **Film it before hand-over.** Every animation the page has is filmed in both motion settings and its real timings read from the browser. A screenshot proves nothing about motion. [audit]
+8. **Movement on transform and opacity only.** Shadows, layout properties and `clip-path` do not animate; a hover shadow fades on a pseudo-element's opacity. Blur animates only as a text block's entrance, 10 px or less, never under reduce (Linear, `kb/teardowns/motion-imagery.md`). [audit]
+9. **Film it and measure it before hand-over.** Every animation the page has is filmed in both motion settings and its real timings read from the browser (`motion-audit.mjs`), and the page's ladder, scene, stagger, travel and reduce behavior are measured the way the exemplars were (`motion-plan-check.mjs`). A screenshot proves nothing about motion. [audit; check]
 
 ### Standards
 | Rule | Source |
@@ -57,7 +57,7 @@ What changes when motion leaves the spec table and lands on a page that carries 
 ## Ceiling: exemplar patterns and signature moves
 
 ### Exemplar patterns
-Exemplar hosts are blocked from this environment, so no exemplar motion was filmed. Transition values were read from each site's shipped CSS in the exemplar teardowns (`kb/teardowns/*.md`, branch `claude/exemplar-library-xfa3bl`, measured 2026-10); values below come from there, not from memory.
+The table below was read from each site's shipped CSS (`kb/teardowns/*.md`, measured 2026-10). Since then the exemplars were recorded live, every animation as it ran, at 1440 and 390 and under reduce (`kb/teardowns/motion-imagery.md`, raw `kb/teardowns/data/choreo/`); the live capture is the stronger evidence and supersedes the declared values where they differ: Stripe runs 20 durations and scene timelines to 11.95 s, Linear 13 durations with 1000 ms text blur-ins, Mercury a split fade and move at 670 ms. Product scenes, ladders and masks: reference 08.
 
 | Exemplar | Measured | Reading |
 |---|---|---|
@@ -67,7 +67,7 @@ Exemplar hosts are blocked from this environment, so no exemplar motion was film
 | Raycast | keys 200 and 400 ms; card slides 700 ms `cubic-bezier(.215,.61,.355,1)`; caret `steps(1)` | Also past 600 ms on marketing reveals. |
 | Apple | 300 and 320 ms; 40 reduced-motion rules | The most reduced-motion rules of the set. |
 
-Reading (opinion): product UI from the best teams sits inside the token set (100 ms hovers, 150 to 300 ms state changes). Marketing reveals at Stripe and Raycast run 700 to 800 ms, above the 600 ms ceiling; FOUNDATIONS allows that once per page as the hero reveal (800 ms), sets `--duration-page` at 400 ms and keeps 600 ms as the ceiling for everything else (v0.4.5). All five ship explicit reduced-motion rules. Raycast ships its palette with no open animation, which Kowalski (practitioner, tier 4) calls "the optimal experience". Recheck by pointing `motion-audit.mjs` at the live exemplars when hosts open.
+Reading (opinion): product UI from the best teams sits inside the token set (100 ms hovers, 150 to 300 ms state changes). Marketing reveals at Stripe and Raycast run 700 to 800 ms, above the 600 ms ceiling; FOUNDATIONS allows that once per page as the hero reveal (800 ms), sets `--duration-page` at 400 ms and keeps 600 ms as the ceiling for everything else (v0.4.5). All five ship explicit reduced-motion rules. Raycast ships its palette with no open animation, which Kowalski (practitioner, tier 4) calls "the optimal experience". Rechecked live with `kb/teardowns/choreo-probe.mjs` (2026-10-13); `motion-plan-check.mjs` runs the same recording on a built page.
 
 ### Signature moves
 1. **Linear for time axes.** Ease is for objects; a pen drawing a time series is a clock. Reason: honest speed, and marker sync by multiplication. Shipped example: the coffee roast curve (`kb/tests/design-motion/strips/coffee-1-roast-curve.png`).
@@ -102,5 +102,10 @@ Reading (opinion): product UI from the best teams sits inside the token set (100
 cd tools && npm ci && cd ..          # once; Playwright Chromium from /opt/pw-browsers
 node skills/design-motion/assets/motion-audit.mjs kb/tests/design-motion/scenarios.mjs out/strips
 node skills/design-motion/assets/motion-audit.mjs my-scenarios.mjs out/strips --only menu,drawer --frames 8
+```
+Then the page-level check, at both widths (exit 1 on a missing ladder, a missing or misbehaving scene, stagger or travel out of range, movement under reduce, or an end state lost under reduce):
+```bash
+node skills/design-motion/assets/motion-plan-check.mjs page.html
+node skills/design-motion/assets/motion-plan-check.mjs page.html --width 390 --json out/motion-plan-390.json
 ```
 A scenario is one user action: `{ name, url, width, scheme, setup, trigger, clip, expect: 'motion' | 'none' }` (example file: `kb/tests/design-motion/scenarios.mjs`). Output per scenario: a PNG strip (no-preference row, reduce row, timing table) and `motion-audit.json`. Exit 1 on any off-token duration or curve, any layout or shadow property animating, any movement under reduce, or a keyboard path that animates. It does not judge purpose, choreography or taste: look at every strip.
