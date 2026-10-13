@@ -62,6 +62,14 @@ revoke all on function private.my_org_ids() from public, anon;
 grant usage on schema private to authenticated;                    -- added 2026-10-13, as in Supabase's own example
 grant execute on function private.my_org_ids() to authenticated;   -- needed so policies can call it
 
+create or replace function private.my_admin_org_ids()               -- orgs where the caller is owner or admin
+returns setof uuid language sql stable security definer set search_path = '' as $$
+  select org_id from public.memberships
+  where user_id = (select auth.uid()) and role in ('owner','admin')
+$$;
+revoke all on function private.my_admin_org_ids() from public, anon;
+grant execute on function private.my_admin_org_ids() to authenticated;
+
 alter table projects enable row level security;
 revoke all on table projects from anon, authenticated;
 grant select, insert, update, delete on table projects to authenticated;
@@ -77,14 +85,11 @@ create policy "members update projects" on projects for update to authenticated
   with check (org_id = any (array(select private.my_org_ids())));
 
 create policy "admins delete projects" on projects for delete to authenticated
-  using (exists (
-    select 1 from memberships m
-    where m.org_id = projects.org_id and m.user_id = (select auth.uid()) and m.role in ('owner','admin')
-  ));
+  using (org_id = any (array(select private.my_admin_org_ids())));
 
 create index on projects (org_id);
 ```
-The `private` schema must not be in the API's exposed schemas list. The helper skips RLS on `memberships` only because its owner can (on Supabase the owner is `postgres`, which has `bypassrls`); a helper owned by a role without it, or reading a table with `force row level security`, re-evaluates the policy and recurses (Supabase RLS docs, 2026-10-13).
+Role checks go through a helper too. A policy that reads `memberships` directly runs as the caller, so it sees only the membership rows that `memberships`' own grants and policies allow: with that table locked down as this page requires, an owner's delete matches zero rows and reports success (measured on PostgreSQL 16.15, 2026-10-13, critic second pass). The `private` schema must not be in the API's exposed schemas list. The helper skips RLS on `memberships` only because its owner can (on Supabase the owner is `postgres`, which has `bypassrls`); a helper owned by a role without it, or reading a table with `force row level security`, re-evaluates the policy and recurses (Supabase RLS docs, 2026-10-13).
 
 Self-hosted Postgres with your own server: same policies, with tenant context from `nullif(current_setting('app.current_org', true), '')::uuid` set per transaction via `set local` or `set_config(..., true)` so pooled connections never carry one tenant's context into the next request (AWS guidance plus PostgreSQL docs). The `nullif` is not decoration: once any transaction on a connection has set the parameter, `current_setting(..., true)` returns an empty string (not null) on later transactions, and `''::uuid` raises "invalid input syntax for type uuid" (measured on PostgreSQL 16.15, 2026-10-13). With `nullif` an unset tenant gives null and the policy returns no rows.
 
@@ -134,6 +139,7 @@ Flow: re-authenticate, show what will be deleted and what is kept (invoices kept
 - OWASP Password Storage Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html (accessed 2026-10-09)
 - OWASP Session Management Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html (accessed 2026-10-09)
 - Supabase, Row Level Security: https://supabase.com/docs/guides/database/postgres/row-level-security (accessed 2026-10-13)
+- pgTAP documentation (`lives_ok` asserts only that no exception was raised): https://pgtap.org/documentation.html (accessed 2026-10-13)
 - Supabase, RLS performance and best practices: https://supabase.com/docs/guides/troubleshooting/rls-performance-and-best-practices-Z5Jjwv (accessed 2026-10-13)
 - Supabase, Performance and Security Advisors: https://supabase.com/docs/guides/database/database-advisors (accessed 2026-10-13)
 - Supabase, Advisors (observability; CLI command): https://supabase.com/docs/guides/observability/advisors (accessed 2026-10-13)

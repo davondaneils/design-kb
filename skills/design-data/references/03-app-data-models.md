@@ -226,6 +226,7 @@ Why not soft delete everywhere: every query must remember the filter, foreign ke
 - Stripe, Entitlements (API): https://docs.stripe.com/billing/entitlements.md?dashboard-or-api=api (accessed 2026-10-13)
 - Stripe, Webhooks: https://docs.stripe.com/webhooks (accessed 2026-10-09)
 - Stripe changelog, 2025-03-31.basil ("`current_period_start` and `current_period_end` fields are no longer available on the subscription resource"; now on subscription items): https://docs.stripe.com/changelog/basil/2025-03-31/deprecate-subscription-current-period-start-and-end (accessed 2026-10-13)
+- Stripe API, Subscription Item object (`quantity`, `current_period_end` per item): https://docs.stripe.com/api/subscription_items/object.md?api-version=2025-03-31.basil (accessed 2026-10-13)
 - Brandur Leach, Soft deletion probably isn't worth it: https://brandur.org/soft-deletion (accessed 2026-10-09)
 - Brandur Leach, Idempotency keys: https://brandur.org/idempotency-keys (accessed 2026-10-09)
 - OWASP Session Management Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html (accessed 2026-10-09)

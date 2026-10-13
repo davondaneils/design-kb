@@ -144,3 +144,121 @@ The list is long enough to clear the expert bar. The data-to-screen material (07
 
 ## Contradictions with other skills
 None found. design-product-ui owns state visuals and sortable header markup; design-ux owns optimistic and undo timing (07 cites both with the same numbers: 5 s undo, optimistic only for reversible actions); design-frontend owns `Intl` and images; design-search owns 301s. `dataviz` is an external skill also named by design-product-ui.
+
+# v0.2.1 second pass (2026-10-13)
+
+Reviewed: `skills/design-data/` v0.2.1 (SKILL.md, CHANGELOG, references 01 to 07) and `kb/drafts/data/01` to `07`, against `kb/research/data/` after the researcher's commit a50a88d, `kb/FOUNDATIONS.md` v0.4.4 (unchanged since the first pass), design-director, and the Agent Skills spec. `kb/tests/` was not read.
+
+## Verdict: approve for testing
+
+The citation batch passes, every first-pass fix is present and correct in both the skill and the drafts, and all reference SQL runs on PostgreSQL 16.15. This pass found one new correctness bug in the canonical RLS set (owner deletes failed closed) and one spec violation (description over 1,024 characters). Both are fixed below, and the gate passes on re-read. The skill moves to v0.2.2.
+
+## Citation spot check (before step 1)
+Population: 66 quote-bearing rows (01 R1 to R6, 02 R1 to R6, 03 R1 to R4, 04 R1 to R2, 05 R1 to R7, 06 R1 to R10, 07 D1 to D29, D36, D38). Excluded: internal rows D30 to D35 and measured rows D37 and 06 R11. Sample: 14 (20 percent, rounded up), `random.seed(202610132); random.sample(pop, 14)` in Python 3. All URLs re-fetched on 2026-10-13.
+
+| Row | Checked | Result |
+|---|---|---|
+| 01-R1 | PG 18.6 docs list `uuidv7 ( [ shift interval ] ) → uuid` and `uuidv4()` | Pass |
+| 01-R4 | RFC 9562 s8: "If UUIDs are required for use with any security operation ... UUIDv4 ... SHOULD be utilized" | Pass |
+| 01-R5 | PG datetime docs: "stored internally as UTC, and the originally stated or assumed time zone is not retained" | Pass |
+| 02-R2 | Supabase RLS guide table: `auth.uid()=user_id`, `user_id indexed`, 171ms, <.1 | Pass |
+| 02-R3 | PG wiki Count estimate: "has to check visibility for all rows, due to the MVCC model" | Pass |
+| 04-R1 | API keys page: deprecating `anon` and `service_role` "by the end of 2026"; `apikey` header; deactivation reversible. Migration page: "They return HTTP 401 if used in a browser (matched on the `User-Agent` header)" | Pass |
+| 05-R5 | AIP-158: "This total may be an estimate ..."; default 50, max 1,000 coerced; three-day token rule of thumb | Pass |
+| 06-R4 | Supabase RLS: "a `security definer` function only skips RLS when its owner can" | Pass |
+| 06-R8 | NIST 800-63B rev 4: 15 single-factor, 8 with MFA, at least 64, no composition rules, no periodic change | Pass |
+| 07-D2 | PG datetime docs: "continue to be prone to arbitrary changes, particularly with respect to daylight-savings rules" | Pass |
+| 07-D4 | MDN DateTimeFormat: "Can be any IANA time zone name"; `shortGeneric` gives "PT", `shortOffset` gives "GMT-8" | Pass |
+| 07-D9 | Stripe pagination: `limit` "default is 10 ... ranging between 1 and 100"; `starting_after`, `ending_before` | Pass |
+| 07-D26 | MDN object-position definition; initial value `50% 50%` | Pass |
+| 07-D29 | Stripe subscriptions: `paused` in the status table; "`active` doesn't necessarily indicate that all outstanding invoices ... have been paid" | Pass |
+
+I also checked every row the researcher added or changed (outside the sample), because those rows are the reason for this pass:
+| Row | Checked | Result |
+|---|---|---|
+| 02-R5 | PG 18 ALTER TABLE: NOT VALID "currently only allowed for foreign-key, CHECK, and not-null constraints"; VALIDATE wording; "If a column has an invalid not-null constraint, SET NOT NULL validates it"; SHARE UPDATE EXCLUSIVE | Pass |
+| 02-R6 | v2.109.0 dated 2026-06-30, "Migration files with pipeline-incompatible statements now apply correctly", PR 5671; PR 6276 merged 2026-08-19, "but not `DROP INDEX CONCURRENTLY`, which was missed"; SIDE_EFFECTS.md flush, "Atomicity is therefore lost at each flush boundary", own file, `if not exists`, no history row, re-run from the top | Pass. The skill's wording was broader than the row (fix 3) |
+| 03-R4 | basil changelog quotes; subscription item `quantity` "The quantity of the plan to which the customer should be subscribed" | Pass |
+| 06-R2 | all four Supabase quotes present (backticks aside) | Pass |
+| 06-R5 | Advisors list 0001 to 0030, nothing higher; 0030 description; levels 0001 INFO, 0013, 0015 and 0023 ERROR; issue 5868 closed as completed 2026-07-16 by PR 5887 | Pass |
+| 06-R9, R10 | "Keep in mind that a JWT is not always up-to-date."; "Never prove an allowed write with `lives_ok`. It passes when the write matched zero rows."; "lives_ok passes on an empty result."; pgTAP "lives_ok() ensures that an SQL statement does _not_ throw an exception" | Pass |
+| 07-D38 | Figma (Evan Wallace, 2017-03-06): all three quotes; the server gives the second concurrent insert a unique position | Pass |
+
+Batch result: **pass**. First-pass fixes 21, 22 and 23 (researcher) are done.
+
+## First-pass fixes confirmed (skill and drafts)
+References and drafts have the same body text. The only differences are the header phrase "and claim ids" and the Sources lists, which exist only in the references. Each fix was checked at its site.
+| # | Status |
+|---|---|
+| 1 FK indexes (03) | Present; catalog check finds 0 unindexed FKs in the skill's tables |
+| 2 Seat lock on `orgs` | Present (03, move 7); two-session race measured below |
+| 3 Dedupe in the same transaction | Present (03, 05, move 15) |
+| 4 `nullif(current_setting(...), '')::uuid` | Present (06); re-measured |
+| 5 Bookings partial unique index, wall time as truth | Present (01); re-measured |
+| 6 `orgs.time_zone` | Present (03) |
+| 7 Slugs resolve by full id or `short_id` | Present (07); UUID prefix reasoning correct |
+| 8 Description house wording | Present; trimmed further this pass (fix 2) |
+| 9 PG 18 NOT VALID not null | Present (02, move 14); PG 16 rejects the syntax, as the "PostgreSQL 18" label implies |
+| 10 `coalesce` backfill | Present; worked example runs end to end on 16 (17-and-older route) |
+| 11 Concurrent index in its own file | Present |
+| 12 Stripe basil | Present. The skill attributes only the period move to basil, not `quantity`, as 03-R4 requires |
+| 13 Advisors 0030, issue 5868 | Present (SKILL automated checks, section 9, 06) |
+| 14 Default grants hedge, write tests read back | Present (06, move 16) |
+| 15 `app_metadata` staleness | Present (03, 06, move 19) |
+| 16 409 for `taken` | Present (05, 07) |
+| 17 Invoice UUIDv7 | Present; decodes to 2026-09-25T14:58:12.345Z, before `sent_at` 15:04Z |
+| 18 Moves 31, 32 | Present |
+| 19 Moves 1, 8 marked opinion | Present |
+| 20 Version, changelog, renumbering | Present |
+| 23 Supabase CLI line in 02 | Present; wording tightened (fix 3) |
+
+## Numbers measured
+| Number | Method | Result |
+|---|---|---|
+| All `sql` blocks (01, 02, 03 x6, 06, 07) | PostgreSQL 16.15 scratch cluster. Shims: roles `anon` and `authenticated`, `auth.users`, `auth.uid()` from `request.jwt.claim.sub`, `uuidv7()` mapped to `gen_random_uuid()`, `btree_gist`. Stand-ins for `projects` and `clients` | All run with `ON_ERROR_STOP`; the 02 keyset query (prepared) and the 07 overdue predicate run |
+| Unindexed FKs | catalog query: FK columns with no non-partial index on the same leading columns | 0 in the skill's tables (the only hit was my `clients` stand-in) |
+| Cross-tenant RLS | user B against org A: select, update, update-into, insert-into, delete; anon | B sees 0 rows, updates 0, inserting into or moving a row into A is refused by `with check`, anon gets "permission denied" |
+| **Owner delete, shipped policy** | `memberships` with RLS on and grants revoked per gate 8, then `select` granted with no policy | Owner A: `DELETE 0`, reported as success. With no grant: "permission denied for table memberships". **Bug, fixed (fix 1)** |
+| Owner delete, fixed policy | `private.my_admin_org_ids()` helper | Owner deletes (`DELETE 1`); plain member of the same org `DELETE 0`; anon refused |
+| Seat lock | two concurrent `accept()` calls with `pg_sleep(1)` between lock and count, 2 seats, 1 member | One "joined", one "409 seats full"; final count 2 |
+| Tenant GUC | one session | fresh `is null` t; after an earlier `set local` the value is `''`; `nullif` gives null; bare `::uuid` raises `invalid input syntax for type uuid: ""` |
+| Rebook after cancel | partial unique index | cancel then rebook works; a second live booking is refused |
+| EXCLUDE (move 5) | `btree_gist`, overlapping `tstzrange` | refused with an exclusion violation |
+| Winnipeg 7:00 am 2026-11-10 | `timestamp at time zone 'America/Winnipeg'` | 13:00Z with this system's pre-2026e tzdata (12:00Z under 2026e); matches the first pass |
+| Float halvings, 1 to 2 | Node 22.22.0 | 52: matches move 32 |
+| `new Date("2026-10-09")` in Toronto | Node 22.22.0, ICU 77.1 | "Thu, Oct 8": matches move 30 |
+| Description length | Python `len` | 1,314 characters, over the spec's 1,024 cap (agentskills.io/specification: "Max 1024 characters"). **Fixed** to 1,003 |
+| SKILL.md length | `wc -w` | 3,573 words after fixes (3,612 before) |
+| Em dashes (U+2014) | Python scan of the skill, drafts, research and this review | 0 |
+
+## Foundation conformance (FOUNDATIONS v0.4.4, no change since the first pass)
+- Tokens `--color-surface-sunken` and `--radius-md` (07) are in the color roles and token schema. Pass.
+- Content mechanics (dates, times, money, locale from `lang`), truth contract attributes, stored `theme` and `reduced_motion`: unchanged since the first pass's checks. Pass.
+- design-director wiring: data contract rule (section 4) and roster line name reference 07 as the skill does. No contradiction.
+- Accessibility: unchanged; agrees with design-foundations `references/accessibility.md`.
+
+## Fix list
+| # | File | Change | Status |
+|---|---|---|---|
+| 1 | `references/06` and `kb/drafts/data/06` | Canonical "admins delete projects" policy now uses `private.my_admin_org_ids()` (security definer, `search_path = ''`, execute revoked from `anon`), not a direct `exists (select ... from memberships)`. Added a sentence on why: a policy that reads `memberships` runs as the caller and fails closed once `memberships` is locked down. Re-run on PG 16 | Done |
+| 2 | `SKILL.md` | Description trimmed from 1,314 to 1,003 characters, keeping the domain-reference opener, the playbooks, the direct-load sentence and the "Not for" line | Done |
+| 3 | `references/02` and `kb/drafts/data/02` | Supabase CLI sentence now scoped to the commands and dates in research 02-R6 (`migration up` and `down` since v2.109.0; `db push` and `db reset` share that code on `develop`; `drop index concurrently` since 2026-08-19); adds the re-run cost; the source is the CLI repository, not "docs". Three source lines added to 02 | Done |
+| 4 | `references/03`, `references/06` | Sources added: Stripe Subscription Item object (`quantity`); pgTAP documentation | Done |
+| 5 | `SKILL.md`, `CHANGELOG.md` | Version 0.2.2; changelog entry | Done |
+| 6 | `kb/research/data/06` | Add a measured row (R12) for the delete-policy result in "Numbers measured" above, so the new sentence in 06 has a research row and not only this review | **Researcher** (not blocking) |
+| 7 | `kb/INDEX.md`, `kb/status/data.md` | INDEX lists design-data as v0.2; update to v0.2.2 when testing finishes | **Librarian** |
+| 8 | `skills/design-strategy/SKILL.md` | Its description is 1,242 characters, also over the 1,024 cap. Not edited here (outside this review) | **Owner of design-strategy** |
+
+## Expert-learning test
+The first pass's list stands; each item was re-verified above (PG 18 NOT VALID not null; `current_setting` returning `''`; ISK and UGX; basil; `lives_ok` on zero rows; owner `bypassrls`; 173,000 to 16 ms; dedupe in the same transaction; Stripe `total_count`; sortable header equals an index; fractional order keys; Manitoba 2026e; `new Date` date-only). New this pass, and not common knowledge:
+- A role check written as `exists (select ... from memberships)` inside a policy runs under the caller's own grants and RLS on `memberships`. Lock that table down and admins silently lose the action (DELETE 0, no error), so role checks belong in a definer helper too (06).
+- The Supabase CLI does not wrap a migration file in BEGIN and COMMIT. It pipelines the file as one implicit transaction and splits it at concurrent statements, so a later failure leaves a partly applied migration with no history row (02).
+The list clears the bar.
+
+## Gaps still open (not blocking testing)
+- Offline write queue: a queued write that meets 412 or 409 on reconnect, and the order of dependent writes. design-playbook-mobile loads 07 for offline retries. Carried from the first pass to the domain specialist; the tester's mobile brief will show whether it bites.
+- Supabase Realtime and RLS, and what a live panel shows while it reconnects. Carried.
+- SKILL.md is about 3,570 words, around the spec's suggested 5,000-token body. Opinion: moving the Advisors id list to 06 would leave room.
+
+## Contradictions with other skills
+None found. The policy change matches move 13 and move 17 (membership checks through wrapped security definer helpers).

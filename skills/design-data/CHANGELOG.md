@@ -1,5 +1,10 @@
 # Changelog: design-data
 
+## v0.2.2 (2026-10-13, critic second pass; `kb/reviews/design-data.md`, "v0.2.1 second pass")
+- 06: the canonical delete policy now uses a second security definer helper, `private.my_admin_org_ids()`. The old policy read `memberships` as the caller, so with `memberships` locked down as gate 8 requires an owner's delete matched zero rows (measured on PostgreSQL 16.15).
+- Description trimmed from 1,314 to 1,003 characters (the Agent Skills spec caps `description` at 1,024).
+- 02: Supabase CLI split-and-commit behavior now names which commands and versions it covers, and the re-run cost; CLI sources added. Sources added to 03 (Stripe subscription item) and 06 (pgTAP).
+
 ## v0.2.1 (2026-10-13, critic fixes; `kb/reviews/design-data.md`, "v0.2 review")
 - Gate fixes in the skill's own SQL: five unindexed foreign keys indexed (03: `invitations.invited_by`, `posts.author_id`, `post_revisions.edited_by`, `slug_redirects.post_id`, `attachments.uploaded_by`; plus `invitations.org_id`, `bookings.class_id`); `orgs.time_zone` added (07 computes "overdue" in it); bookings use a partial unique index so a cancelled member can rebook; the yoga example stores wall time plus zone as truth, as its own rule says.
 - Races and lost work: seats lock the org row (an org can have zero or two subscription rows); webhook dedupe is written in the same transaction as the effect (03, 05, SKILL move 15).
