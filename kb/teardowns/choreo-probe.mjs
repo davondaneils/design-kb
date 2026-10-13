@@ -77,7 +77,7 @@ const IMAGERY = () => {
     const r = el.getBoundingClientRect(); if (r.width < 240 || r.height < 160 || r.width > vw * 0.98 || !vis(el)) continue;
     let small = 0, total = 0;
     const tw = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
-    for (let n = tw.nextNode(); n && total < 400; n = tw.nextNode()) { if (!n.textContent.trim()) continue; total++; const fs = parseFloat(getComputedStyle(n.parentElement).fontSize); if (fs <= 13.5) small++; }
+    for (let n = tw.nextNode(); n && total < 400; n = tw.nextNode()) { if (!n.textContent.trim() || (n.parentElement.checkVisibility && !n.parentElement.checkVisibility({ visibilityProperty: true, opacityProperty: true }))) continue; total++; const fs = parseFloat(getComputedStyle(n.parentElement).fontSize); if (fs <= 13.5) small++; }
     if (small >= 12 && small / total >= 0.6) cands.push({ el, r });
   }
   for (const c of cands) if (!cands.some((o) => o !== c && o.el.contains(c.el) && o.r.height < vh * 1.6) && !c.el.closest('[data-visual]')) add(c.el, 'product-mock');

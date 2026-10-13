@@ -22,7 +22,7 @@ WCAG 1.1.1, 1.4.3, 1.4.5, 1.4.11, 2.3.3; ARIA `img` role [V1]; W3C decorative im
 |---|---|---|
 | Numbers the brand owns (altitude, temperatures, counts, time series, distances) | **Data-driven graphic**: draw the data as art (contours, curves, sparklines, small multiples) | True and specific at once; users look at information [C10][V13] |
 | A physical product with a known shape (bag, bottle, device, card) | **SVG object drawing at full fidelity**: correct proportions, real label text in HTML, one light source | The product is the hero (landing playbook move 1) |
-| A software product | **The UI itself**, built in HTML with real data (Stripe, Linear) [V14][C5] | Proof beats illustration |
+| A software product | **The UI itself as a fragment set**: three or more HTML fragments at different scales, each showing its section's verb, one dataset, one treatment (06) [V14][C5] | Proof beats illustration; Stripe shows about 12 fragments, Linear 5 (`kb/teardowns/motion-imagery.md`) |
 | A material or surface the brand is about (paper, wood, ceramic, fabric) | **Procedural texture**: feTurbulence grain, SVG pattern [V6][V10] | Adds tactility without a file |
 | An abstract process | **Diagram** in the icon grid's stroke (design-graphic 02, 04) | Explains |
 | A real photo is needed and not available | **An honest slot**: the right ratio, a quiet surface, a caption saying what goes there, and the request in the hand-over (05) | Do not fake the photo |
@@ -77,7 +77,7 @@ SVG `<pattern>` tiles a motif "to cover an area" [V10]. Use the brand's own moti
 Hobbs: a grid that stores an angle at each point; resolution about 0.5 percent of image width; stop lines before they collide [V11][V12]. Use for one brand moment (OG image, section divider), seeded, and only when the angles come from something (wind data, a signal, the brand's own curve). Otherwise it reads as a tech demo. (opinion)
 
 ### 7. CSS-drawn object (simple packaging, cards, devices)
-Allowed when the object is mostly rectangles: use `aspect-ratio` from the real product, layered gradients for one consistent light, `border-radius` from the radius scale, real HTML text on the label. Keep the object `aria-hidden` and name it once on the wrapping `figure`.
+For a render that should read as photography-grade (one light, two-layer below-only shadow, highlight, grain, the brand fill as surface, captioned as a render), follow 06 section 6. Allowed when the object is mostly rectangles: use `aspect-ratio` from the real product, layered gradients for one consistent light, `border-radius` from the radius scale, real HTML text on the label. Keep the object `aria-hidden` and name it once on the wrapping `figure`.
 
 ### 8. Honest photo slot
 `<figure class="slot" style="aspect-ratio: 4 / 5">` with a quiet surface, the concept's motif at low contrast, and a visible caption ("Photo: the 1962 Probat, door open, coming soon") only on internal previews. On a public page, prefer drawing to an empty slot. The hand-over carries the request (05).
