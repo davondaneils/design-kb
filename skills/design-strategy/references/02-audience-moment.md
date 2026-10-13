@@ -19,7 +19,7 @@ The full buyer psychology profile (core complex, 2am thought, benefit ladder, ob
 1. **Situations, not people, trigger a category.** CEPs "are not about the brand, they're about the buyer" [B2]. A page that names the situation is recognized by everyone in it.
 2. **No push, no switch** [B3]. If the brief cannot name the push, the page will describe features to people with no reason to change.
 3. **Remove fear before adding pull.** "More features can increase anxiety" [B5]; guarantees, trials and expert opinions worked "by removing anxiety rather than adding pull" [B5].
-4. **Most viewers are not buying today.** In B2B "just 5% in a given quarter" are in market [B6]. Pages and identities serve two audiences: the in-market few who compare, and the many who must remember the brand later (03, 05).
+4. **Most viewers are not buying today.** In B2B "something like 5% in a quarter" are in market, a figure Dawes calls "a heuristic", not "a precise rule" [B6][B6b]. Pages and identities serve two audiences: the in-market few who compare, and the many who must remember the brand later (03, 05).
 
 ## Decision rules
 - **Write 5 to 10 CEPs** as situations in the buyer's words ("a client paid late again", "first tax bill as a freelancer", "the spreadsheet broke") (opinion on the count). Pick **one primary CEP for the hero**, and up to three for the sections below it. Drop CEPs the product cannot credibly serve and ones a competitor already owns (opinion).
@@ -40,7 +40,7 @@ The full buyer psychology profile (core complex, 2am thought, benefit ladder, ob
 | Item | Default |
 |---|---|
 | CEPs listed | 5 to 10; 1 for the hero, up to 3 for sections (opinion) |
-| In market at once (B2B) | about 5 percent a quarter, sector-dependent [B6] |
+| In market at once (B2B) | about 5 percent a quarter, a heuristic [B6][B6b]; for your category, share in market per year = 1 divided by the years between purchases (two years gives "50%" a year, "around 13% in any quarter" [B6b]) |
 | Customer phrases collected | 20 to 50 verbatim (design-copy 03) |
 | Anxieties with a design answer | at least 1; usually 2 or 3 (opinion) |
 
@@ -90,5 +90,5 @@ The full buyer psychology profile (core complex, 2am thought, benefit ladder, ob
 - Romaniuk, J. (2022), Category Entry Points in a B2B World, Ehrenberg-Bass Institute, listed at https://marketingscience.info/open-access-knowledge/open-access-reports (accessed 2026-10-13).
 - Romaniuk, quoted in Marketing Week, relayed at http://www.jenniromaniuk.com/blog/2022/6/22/ehrenberg-bass-linking-brand-messages-to-buying-situations-wins-the-mind-and-the-market (accessed 2026-10-13).
 - Moesta, B. and Spiek, C., Four Forces of Progress, https://jobstobedone.org/radio/wine-and-laptop-bag-jtbd and https://jobstobedone.org/radio/pull-and-anxiety (accessed 2026-10-13); The Re-Wired Group, https://therewiredgroup.com/learn/complete-guide-jobs-to-be-done (accessed 2026-10-13).
-- Dawes, J., for the LinkedIn B2B Institute, reported in Marketing Week, https://www.marketingweek.com/ehrenberg-bass-linkedin-b2b-buyers (accessed 2026-10-13).
+- Dawes, J. (2021), "Advertising effectiveness and the 95-5 rule: most B2B buyers are not in the market right now", Ehrenberg-Bass Institute for the LinkedIn B2B Institute, https://marketingscience.info/news-and-insights/advertising-effectiveness-and-the-95-5-rule-most-b2b-buyers-are-not-in-the-market-right-now (accessed 2026-10-13).
 - Davon's skills: website-strategy `references/stage3-icp.md`; copywriting SKILL.md (accessed 2026-10-13).

@@ -46,26 +46,55 @@ List the codes the category shares (the competitor wall shows them): hue, typefa
 |---|---|---|
 | **Semantic codes** (what it is: a bank looks safe to put money in; a menu looks like a menu; a checkout looks like a checkout) | Keep | They tell the in-market buyer they are in the right place (C; design-color rule 2 "conform when trust and familiarity are the job") |
 | **Expressive codes** (who it is: the shared stock photography, the shared blue, the shared geometric sans) | Break exactly one, hard | That break becomes the distinctive asset. Monzo kept banking's UI conventions and broke its color and photography: "The banking market is flooded with generic people photography" [E10] (opinion on the rule; Monzo is the shipped example) |
-| A famous-but-not-unique asset (Romaniuk's "Avoid" quadrant) | Never use it alone | It cues the category, not you; "such elements will trigger competitors to copy" [E1] |
+| A famous-but-not-unique asset (the grid's "Avoid solo use" quadrant [E2h]) | Never use it alone | It cues the category, not you; "such elements will trigger competitors to copy" [E1b] |
 
-Breaking more than one or two codes at once risks the buyer not recognizing the category at all (opinion).
+Breaking more than one or two codes at once risks the buyer not recognizing the category at all (opinion). The semantic and expressive split is our working label (opinion); the sourced lens below adds time.
+
+### Code states: residual, dominant, emergent
+Commercial semiotics sorts codes by when they belong. Raymond Williams: the residual "has been effectively formed in the past, but it is still active in the cultural process"; the emergent is "new meanings and values, new practices, new relationships and kinds of relationship ... continually being created" [E23]. Malcolm Evans brought the "Residual, Dominant and Emergent mapping tool" into brand semiotics [E24]; Lawes (2002) is the standard method paper [E25].
+
+| State | Where you find it | Use (opinion) |
+|---|---|---|
+| **Dominant** | What the competitor wall shares now | Keep the semantic ones; the expressive one you break comes from here |
+| **Residual** | Codes the category used to share and still half-uses, now read as dated | Avoid, unless the brand has real heritage and makes it the one true fact |
+| **Emergent** | Codes arriving from adjacent categories or the wider culture | The best source for the one expressive break: fresh without reading as an error |
+
+Method (opinion): sort every shared code on the wall into the three columns, then look at two adjacent categories for emergent codes. A code arriving in several unrelated categories at once is a cultural shift, not a fad; a code in one competitor only is a competitor's asset, not a code.
+
+### Brand behaviors: what the brand does
+COLLINS put it this way: brand problems are now "more behavior-based than communications-based" [E26]. A position is believed when the brand does something its competitors would not, in the product, the service or the policy. Write one to three behaviors in the brief (opinion on the method; "central organizing idea" is practice vocabulary with no single primary source):
+1. Each behavior proves the onlyness or the one true fact.
+2. Test: could a competitor copy it next week at no cost? Then it proves nothing.
+3. The best behaviors become assets: Ember and Oak logs every batch as a curve (behavior), and the curve becomes the image system (asset).
+The identity table then serves the behavior, not the other way round.
+
+### Across a portfolio
+The architecture decision (branded house, subbrand, endorsed, house of brands) lives in 01. Here: carry the primary asset across every product. Products from visually cohesive portfolios were matched to their portfolio by 79 versus 35 percent of respondents and had 17 percent higher correct brand recall; "the best way for a brand portfolio to stand out on shelf, is to design products that clearly fit in with the brand's visual identity" [E22]. Cohesion is countable without a survey: for each asset, the share of products that use it, averaged across assets [E22]. Variant cues (flavor, tier) go on secondary assets, never on the primary shape (opinion).
 
 ### Rebrand: the asset audit
 This is the distinctive asset audit. website-strategy stage 2 also has an "asset audit": a quarry of facts and proof for copy. Run that one for the one true fact; run this one before any sketch.
 
 1. List every current asset: mark, symbol, color, face, shape, character, sound, slogan, image style.
 2. Rate each on **fame** (share of category buyers who link it to the brand) and **uniqueness** (of all the brand links the asset prompts, the share that go to this brand). With a survey: Romaniuk's method, 50 percent thresholds [E2]. Without one (opinion, a stand-in): show each asset with the name removed to 8 or more category buyers and ask "which brand or brands does this make you think of?"; allow more than one answer and record every brand named. Fame = buyers naming us / buyers asked; uniqueness = mentions of us / all brand mentions. Fame lives in buyers' memories, so a fresh-context subagent cannot stand in here; it can only say whether an asset looks like a competitor's (06). Eight people find a direction, not a share.
-3. Place each on the grid and act:
+3. Place each on the grid and act (quadrant names from Romaniuk 2018, as cited in the 2026 benchmark [E2h]):
 
 | Quadrant | Fame, uniqueness | Action |
 |---|---|---|
 | Use or lose | high, high | Keep. Evolve detail only. Losing it costs recognition (Tropicana's orange with a straw [E6]) |
-| Invest | low, high | Keep and use more, consistently |
+| Investment potential | low, high | Keep and use more, consistently |
 | Avoid solo use | high, low | Use only with the name; do not build on it |
 | Ignore or test | low, low | Free to replace |
 
 4. **Simplify only after fame.** Mastercard dropped its name from the symbol only "with more than 80 percent of people spontaneously recognizing" it [E8] (opinion: use 80 percent recognition as the bar before removing a name).
 5. **Accidents can be assets.** Monzo's coral began as "a happy accident" and became the brand's main code [E9][E10]. Audit what customers already recognize, not what the founders intended.
+
+### After launch: tracking fame and uniqueness
+The benchmark is "a cross-sectional snapshot rather than a longitudinal perspective" [E2i], so nobody has published how fast assets move; the cadence below is opinion built on the in-market arithmetic.
+1. **Baseline at launch** among category buyers: fame near zero is expected; record misattribution (06 check 8) as the first uniqueness signal.
+2. **Re-measure after about one purchase cycle**, then yearly, and always before a redesign. Compute the cycle from the category's interpurchase time: with two years between purchases, "50% are in the market over the course of a (whole) year, or around 13% in any quarter" [E21]. Fame cannot grow faster than buyers meet the asset.
+3. **Read the movement.** Investment potential moves to Use or lose when fame passes 50 percent with uniqueness held. Uniqueness falling while fame holds means a competitor is encroaching: act on it first (Romaniuk's book sets up "a Distinctive Asset management system to provide an early warning system" [E19b]).
+4. **No fame gain after a cycle**: check co-presentation before blaming the asset. Building fame is "widespread co-presentation of the asset with the brand name" [E17]; an asset shown without the name, or the name without the asset, teaches nothing.
+5. **Portfolio**: recount cohesion at every product launch (Across a portfolio, above) [E22].
 
 ## Numbers
 | Item | Value |
@@ -79,16 +108,25 @@ This is the distinctive asset audit. website-strategy stage 2 also has an "asset
 | Distinctive assets | 1 primary shape plus 1 or 2 supporting (opinion) |
 | Category codes broken | 1, at most 2 (opinion) |
 | Brand to activation budget context | 60:40 databank average; B2B 46:54 [E13][E14] |
+| Benchmark sample | 12,249 category buyers, 1,162 assets, 128 brands [E2b] |
+| Competitive intensity (HHI, 1 = owned) | characters 0.69, logos 0.61, fonts 0.60, color 0.31 [E2c] |
+| Pack redesigns that used research (Caruso) | 86 percent of 227, with no more overall success [E16] |
+| Portfolio cohesion effect | 79 vs 35 percent matched to portfolio; 17 percent higher recall [E22] |
+| Re-measure fame and uniqueness | about one purchase cycle after launch, then yearly, and before any redesign (opinion) |
 
 ## Ceiling: expert moves
 1. **Give the identity and the words different jobs.** Words differentiate for the in-market comparer; the identity makes the brand recognizable for the out-of-market majority. Briefs that ask a logo to "say innovative and trustworthy" are asking it to do the copy's job, and the evidence says the copy wins anyway [E4] (opinion on the framing).
 2. **Lead with shape, then let color ride on it.** Pick a mark or container shape that can run alone, then a color in fixed proportion; never a palette-led identity. Shape-based assets "consistently perform best" across the 21 categories, color weakest [E2]. The exception to know: "narrative-driven assets perform relatively better in service industries" (same study, abstract), so a service brand tests a character or story asset before leaning on a second color (opinion).
 3. **Measure, then rebrand.** Run the asset audit before the first sketch; anything in "Use or lose" is a constraint, not an option. Tropicana's redesign removed its most recognized element and was reversed within weeks [E6].
-4. **Test assets by recognition, not liking.** Pack redesigns researched with focus groups and brand attitude measures are linked to worse results: that approach "has been associated with less successful outcomes", while distinctive asset research is "linked to more successful outcomes" [E2 citing Caruso et al. 2025]. An existing asset: hide the name, count correct and competitor links (the audit above). A brand-new asset has no fame yet, so a recognition count before launch is always near zero; test misattribution and learnability instead (06, check 8) (opinion on the method).
+4. **Test assets by recognition, not liking.** Of 227 pack redesigns, 86 percent used research and those that did showed no more overall success [E16]; focus groups and brand attitude measures are linked to worse results: that approach "has been associated with less successful outcomes", while distinctive asset research is "linked to more successful outcomes" [E2 citing Caruso et al. 2025]. An existing asset: hide the name, count correct and competitor links (the audit above). A brand-new asset has no fame yet, so a recognition count before launch is always near zero; test misattribution and learnability instead (06, check 8) (opinion on the method).
 5. **Break one expressive code hard, keep the semantic codes.** A bank that looks unlike a bank loses trust; a bank with a coral card in a sea of navy is remembered (Monzo [E9][E10]; opinion as a rule).
 6. **The louder the creative, the stronger the branding must be.** "The more attention-grabbing the creative, the harder the branding has to work to succeed" [E3]. A wild hero still carries the primary asset in the first screen.
 7. **Shape cues travel further than color cues.** The bouba/kiki match of sounds to round and spiky shapes held across 25 languages and 10 writing systems [E5]; color meanings vary by culture (design-color psychology-brand). For a global brand, put the attribute in the shape (E for the sound-shape match, our inference for brand attributes, opinion for the rule).
 8. **Name the evidence level out loud.** In the hand-over and to clients: "rounded forms read softer (lab evidence, weak effect); the coral is our judgment of ownability; the serif is category convention." Clients trust designers who separate taste from evidence (design-color psychology-brand).
+9. **Pick a contender, not a meaning.** Choosing an asset because it "means" the attribute (green for sustainable, an upward slant for growth) leads every brand drawing on the same source to the same asset; "It's not about picking a winner, it's about picking a contender" [E17], and suggestive assets score lower fame and uniqueness than non-suggestive ones [E18]. Use the attribute table to choose among unique contenders, never to pick the asset (our reconciliation, opinion).
+10. **Prove the position with a behavior, then draw the behavior.** The strongest identities picture something the brand does that a competitor would not (Ember and Oak's roast log drawn as its image system) [E26] (opinion on the method).
+11. **Take the one break from an emergent code.** A residual code reads dated, a dominant one reads generic; an emergent code from an adjacent category reads new without reading as an error [E23][E24] (opinion on the rule).
+12. **After launch, watch uniqueness first.** Fame grows slowly with exposure; a fall in uniqueness is the early sign that a competitor has moved onto your asset [E19b] (opinion on the priority).
 
 ## Do and don't
 | Do | Don't |
@@ -118,7 +156,7 @@ Asset audit (stand-in method, 8 local category buyers shown each asset without t
 | Lighthouse symbol | 6 of 8 | 0 | 75, 100 | Use or lose | Keep; redraw for 16px |
 | Navy and gold | 5 of 8 | 7 (two banks) | 62.5, 42 | Avoid solo use | Keep navy only with the symbol |
 | Slogan "Your neighbor in banking" | 1 of 8 | 3 | 12.5, 25 | Ignore or test | Replace |
-| Serif wordmark | 3 of 8 | 1 | 37.5, 75 | Invest | Keep the genre, redraw |
+| Serif wordmark | 3 of 8 | 1 | 37.5, 75 | Investment potential | Keep the genre, redraw |
 Result: the lighthouse is redrawn, not replaced; the new expressive break is photography of members in their real shops instead of stock families; checkout and account screens stay conventional (semantic code kept).
 
 ## Where this domain is usually wrong
@@ -128,6 +166,8 @@ Result: the lighthouse is redrawn, not replaced; the new expressive break is pho
 4. **"A rebrand should modernize everything."** Tropicana [E6]. Correction: asset audit first; keep "Use or lose".
 5. **"Blue means trust, green means health."** Category convention, not cause (design-color psychology-brand, Elliot 2015).
 6. **"60:40 is the rule."** It is an IPA databank average; B2B came out at 46:54 and it shifts by category and brand size [E13][E14] (kb/references/strategy-brand.md).
+7. **"Tropicana lost 20 percent, according to Nielsen."** The figures are Information Resources Inc. (IRI) data reported by Ad Age: unit sales down 20 percent and dollar sales down 19 percent, about $33 million, between January 1 and February 22, 2009 [E7]. The lesson stands; cite IRI.
+8. **"Pick the asset that says what we are."** Meaning-led selection reduces uniqueness, because competitors read the same meanings [E17][E18]. Correction: select for uniqueness against the wall; build meaning by co-presentation.
 
 ## Hand-offs
 - design-typography 02 (faces, pairing, licensing), 07 (display), 08 (high-contrast faces).
@@ -148,4 +188,13 @@ Result: the lighthouse is redrawn, not replaced; the new expressive break is pho
 - Mastercard press release, 2019-01-07, https://www.mastercard.com/us/en/news-and-trends/press/2019/january/mastercard-evolves-its-brand-mark-by-dropping-its-name.html (accessed 2026-10-13).
 - WIRED, "The inside story of Monzo's fluky bright coral bank cards", https://www.wired.com/story/monzo-card-design (accessed 2026-10-13); Monzo, "We've had a little makeover", https://monzo.com/blog/weve-had-a-little-makeover (accessed 2026-10-13).
 - Design Week, Spotify brand refresh, https://www.designweek.co.uk/spotify-undergoes-colourful-brand-refresh/ (accessed 2026-10-09, art direction research).
+- Phua, P., Bali, L., Anesbury, Z., Sharp, B. (2026), authors of the benchmark above, https://researchers.adelaide.edu.au/profile/peilin.phua (accessed 2026-10-13).
+- Caruso, W., Romaniuk, J., Page, B., Anesbury, Z. W., Williams, J. (2025), "The role of market research in pack redesign performance", International Journal of Market Research 67(1), https://journals.sagepub.com/doi/10.1177/14707853241296656 (accessed 2026-10-13).
+- Romaniuk, J. (2018), Building Distinctive Brand Assets, contents, https://www.gbv.de/dms/zbw/1019529245.pdf; Romaniuk, J., "Leaning on meaning could undermine your distinctive assets", Marketing Week, 2025-09-09, https://www.marketingweek.com/jenni-romaniuk-meaning-distinctive-assets/ (accessed 2026-10-13).
+- Bali, L., Anesbury, Z., Phua, P., Sharp, B. (2024), International Journal of Market Research 66(5), https://journals.sagepub.com/doi/abs/10.1177/14707853241251954 (accessed 2026-10-13).
+- Ward, E., Trinh, G., Beal, V., Dawes, J., Romaniuk, J. (2025), "Standing out while fitting in", International Journal of Market Research, https://journals.sagepub.com/doi/10.1177/14707853241291443 (accessed 2026-10-13).
+- Dawes, J. (2021), "Advertising effectiveness and the 95-5 rule", https://marketingscience.info/news-and-insights/advertising-effectiveness-and-the-95-5-rule-most-b2b-buyers-are-not-in-the-market-right-now (accessed 2026-10-13).
+- BusinessWeek (Bloomberg), "Tropicana Fiasco From Arnell Is Gift That Keeps Giving", 2009-04-02, relaying Ad Age and IRI, https://www.bloomberg.com/news/articles/2009-04-02/tropicana-fiasco-from-arnell-is-gift-that-keeps-giving (accessed 2026-10-13).
+- Williams, R. (1977), Marxism and Literature, "Dominant, Residual, and Emergent", https://analepsis.org/wp-content/uploads/2013/01/wmsdre.pdf; Semiovox, "Making Sense" (Malcolm Evans), https://www.semiovox.com/articles/2022/12/20/malcolm-evans; Lawes, R. (2002), "Demystifying semiotics", International Journal of Market Research 44(3), cited at https://lawes-consulting.co.uk/media (accessed 2026-10-13).
+- The Brand Identity, interview with Brian Collins, 2016-10-31, https://the-brandidentity.com/interviews/collins (accessed 2026-10-13).
 - Binet, L. and Field, P., chart titles via Tom Roach's compilation, https://thetomroach.com/wp-content/uploads/2020/06/the_greatest_hits_of_binet_and_field.pdf (accessed 2026-10-13); The Drum on the B2B study, https://www.thedrum.com/opinion/exclusive-look-binet-and-field-s-new-b2b-marketing-research (accessed 2026-10-13); IPA, https://ipa.co.uk/knowledge/effectiveness-research-analysis/les-binet-peter-field (accessed 2026-10-13).

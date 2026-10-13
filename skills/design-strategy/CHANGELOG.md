@@ -1,5 +1,14 @@
 # Changelog: design-strategy
 
+## v0.1.1 (2026-10-13, researcher fixes and strategist gaps from `kb/reviews/design-strategy.md`)
+- Research fixes: Tropicana figures credited to Information Resources Inc. via Ad Age (BusinessWeek relay, 2009-04-02), not Nielsen; Binet and Field chart title corrected to "effectiveness" (`pdftotext -raw`); Dawes 95:5 quote replaced with the paper's own wording on marketingscience.info, plus his caveat ("a heuristic") and the interpurchase method. New rows for Dunford's 20 to 30 percent "no decision" and definition, Neumeier, the services finding, the 2026 benchmark's authors (Phua, Bali, Anesbury, Sharp) and its full-text numbers (12,249 category buyers, HHI values, "Reliance on color alone", the Caruso relay), and Caruso et al. 2025 as its own row (227 redesigns, 86 percent researched, no more success).
+- Grid quadrants renamed to Romaniuk 2018 as cited in the benchmark: "Invest" is now "Investment potential"; "Avoid" is "Avoid solo use".
+- New: brand architecture (Aaker's spectrum and three questions, least distance by default) and a naming route (USPTO mark strength, route to specialists) in ref 01; Dunford's trend layer and the sales-pitch order as page order in ref 03; residual, dominant and emergent code states, brand behaviors, portfolio cohesion (Ward et al. 2025) and tracking after launch in ref 05; checks 9 (tracking) and 10 (behaviors) in ref 06; "pick a contender, not a meaning" (Romaniuk 2025).
+- Brief length: 600 words (lint warns above 600, fails above 800), down from 700 and 900, matching the research's 400 to 600 range. Example trimmed to 598 words by the linter's count; it still prints on two A4 sides at 10pt and 9pt (ReportLab render, Helvetica, 15mm margins), so "one page" stays a word discipline. Template gains optional Architecture and Behaviors lines.
+- `brief_lint.mjs`: Architecture field must name a position when present; full depth warns without Behaviors; self-test 15 of 15 (three new cases).
+- SKILL.md description cut from 1,242 to 901 characters (spec cap 1,024).
+- Drafts `kb/drafts/strategy/01` to `06` re-synced with the references.
+
 ## v0.1, critic pass (2026-10-13, `kb/reviews/design-strategy.md`)
 - Fixed: rebrand audit worked example (navy and gold was low fame, not "Avoid solo use"; stand-in now allows several brands per answer and computes fame and uniqueness); fame cannot be measured with fresh-context viewers; new assets are tested for misattribution and learnability, not recognition.
 - Fixed: "one printed page" claim (measured: the example fills about 1.3 A4 sides at 10pt); Dunford definition misquote; "most B2B deals" lost to the status quo replaced by Dunford's 20 to 30 percent; Caruso stated as association, not prediction; bouba/kiki brand use marked as inference; services exception from the 2026 benchmark abstract added.

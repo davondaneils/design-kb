@@ -6,8 +6,9 @@
 import { readFileSync } from 'node:fs';
 
 const DEPTHS = ['inherit', 'three lines', 'one page', 'full'];
-const WORD_WARN = 700;
-const WORD_FAIL = 900;
+const WORD_WARN = 600;
+const WORD_FAIL = 800;
+const ARCH = ['branded house', 'subbrand', 'sub-brand', 'endorsed', 'house of brands'];
 
 function stripComments(text) {
   return text.replace(/<!--[\s\S]*?-->/g, '');
@@ -63,6 +64,8 @@ export function lint(raw) {
   const locale = field(text, 'Locale');
   if (!locale || !/^[a-z]{2,3}(-[A-Z]{2})?\b/.test(locale)) fail('locale', 'Locale: must start with a language tag such as en-US or en-GB (it becomes <html lang>)');
   else if (/^en\b(?!-)/.test(locale)) warn('locale', 'Locale "en" reads as en-US; name the region');
+  const arch = field(text, 'Architecture');
+  if (arch !== null && !ARCH.some((a) => arch.toLowerCase().includes(a))) fail('architecture', 'Architecture: name the position (branded house, subbrand, endorsed or house of brands; ref 01)');
 
   // Audience moment (every depth)
   const moment = field(text, 'Moment');
@@ -110,6 +113,7 @@ export function lint(raw) {
   else if (/\bfail/i.test(swap) && !/\bpass/i.test(swap)) fail('swap', 'Swap test failed and no passing rewrite is recorded');
   if (!field(text, 'Proof on the page')) fail('proof', 'Proof on the page: missing');
   if (!field(text, 'Weakest field')) warn('weakest', 'Weakest field: not named');
+  if (depth === 'full' && !field(text, 'Behaviors')) warn('behaviors', 'Behaviors: name 1 to 3 things the brand does that prove the position (ref 05)');
 
   // Claims ledger
   const ledger = tableAfter(text, '4\\. Claims ledger') || [];
@@ -198,6 +202,9 @@ Reject test: Does it show stone, courses or setting?
       ['failed swap test fails', page.replace(/^Swap test:.*$/m, 'Swap test: fail; Northline fits the sentence'), 1],
       ['alternatives without status quo fail', page.replace('Alternatives: status quo: ', 'Alternatives: '), 1],
       ['identity row without E/C/O fails', page.replace('| Rounded reads softer (weak lab effect) | E weak |', '| Rounded reads softer (weak lab effect) | strong |'), 1],
+      ['architecture without a position fails', page.replace(/^Locale:.*$/m, (l) => l + '\nArchitecture: a family of coffees'), 1],
+      ['architecture with a position passes', page.replace(/^Locale:.*$/m, (l) => l + '\nArchitecture: endorsed, by Ember and Oak'), 0],
+      ['over the word ceiling fails', page + '\n' + 'filler '.repeat(300), 1],
     );
   } else console.log('note: example-brief-ember-oak.md not found; one-page cases skipped');
   let bad = 0;

@@ -98,3 +98,12 @@ design-strategy (v0.1, `skills/design-strategy/`) replaces the pointer to websit
 ## Pipeline
 20. This wave had no subagent tool, so there is no critic or tester run yet. The test briefs in `kb/tests/design-strategy/` were not read by the builder; run them from a clean context.
 21. Research notes: Parallel Search hit its free-tier limit midway; the Tom Roach Binet and Field compilation PDF did not parse through WebFetch, so its chart titles come from the search engine's text extraction (marked in `kb/research/strategy/05`). The Tropicana 20 percent figure is a tier 5 relay of Ad Age; the original was not fetched. The critic should re-fetch both.
+
+## v0.1.1 proposals (2026-10-13, not applied)
+22. **skills/design-playbook-brand/SKILL.md done item 7** (and proposal 13 above): replace "new assets were tested by recognition with the name hidden" with "new assets were tested for misattribution and learnability (design-strategy `references/06` check 8); existing assets by recognition among category buyers".
+23. **skills/design-art-direction/SKILL.md 2.1**: replace "Positioning comes from website-strategy." with "Positioning comes from the design-strategy brief (which routes to website-strategy at full depth)."
+24. **Grid names across the KB**: any skill that cites the distinctive asset grid should use Romaniuk 2018's names (Use or Lose, Investment Potential, Avoid Solo Use, Ignore or Test). Grep `Invest\b` and `"Avoid"` outside design-strategy.
+25. **Tropicana attribution**: a grep of `skills/` and `kb/references/` found no other "Nielsen" attribution for Tropicana at v0.1.1; keep it that way (the 2009 figures are IRI data via Ad Age).
+26. **kb/INDEX.md and TOPIC_MAP.md**: design-strategy v0.1.1; next review should re-check Dunford's three positioning style names (not confirmed in a primary source this round) and any longitudinal distinctive-asset data (the tracking cadence is opinion).
+27. **website-strategy**: its stage 4 has no brand-architecture or naming step; if Davon wants one, design-strategy ref 01 holds the short version. Not edited (Davon's skill).
+

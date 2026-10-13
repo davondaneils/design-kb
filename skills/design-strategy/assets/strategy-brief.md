@@ -1,5 +1,5 @@
 <!--
-Strategy brief template (design-strategy). One page: about 700 words or fewer outside these comments, tables included (about 1.3 A4 sides at 10pt; the name is the discipline).
+Strategy brief template (design-strategy). One page: about 600 words or fewer outside these comments, tables included (the name is the discipline: the 598-word example still prints on two A4 sides at 10pt).
 Fill every {{field}}. Delete the sections your depth does not need (see the depth table in SKILL.md section 1):
   inherit:     Header, 1 (Moment only), the Inherit block; record the swap test and any new claim in the hand-over
   three lines: Header, 1 (Moment only), 3 (Fact only), 2 (Competitor wall only), 7, and 8 (the rows ref 06 runs at this depth)
@@ -13,6 +13,8 @@ Depth: {{inherit | three lines | one page | full}} ({{why this depth, from the b
 Locale: {{en-US | en-GB | other}} ({{audience and place}})
 Deliverables: {{what the brief asks for}}
 Not built: {{what you are not making and why, or "nothing left out"}}
+<!-- Portfolio, sub-brand or naming jobs only (ref 01): -->
+Architecture: {{branded house | subbrand | endorsed | house of brands}} ({{answers to Aaker's three questions}})
 
 <!-- Inherit depth only: keep this block, delete sections 2 to 8. -->
 Brand source: {{guidelines file, tokens file or live site you inherit}}
@@ -36,6 +38,7 @@ Swap test: {{pass or fail, with each competitor's name tried}}
 ## 3. One true fact and proof
 Fact: {{one specific, checkable, owned fact}} (source: {{document, data or person}})
 Proof on the page: {{how the page shows it}}
+Behaviors: {{1 to 3 things the brand does that a competitor would not copy next week (ref 05)}}
 Weakest field: {{the thinnest part of this brief}}
 
 ## 4. Claims ledger
@@ -55,7 +58,7 @@ Flat in: {{errors, payments, security, and any others}}
 | {{attribute from positioning or voice}} | {{type, color, shape, imagery, layout or motion choice, in FOUNDATIONS tokens}} | {{why}} | {{E, C or O}} | {{design-typography 02, design-color, design-graphic 01, design-art-direction, design-layout, design-motion}} |
 Primary distinctive asset: {{a shape: mark, container, character, crop}}
 Supporting assets: {{color at a fixed share, face, image treatment}}
-Category codes: kept: {{semantic codes}}; broken: {{one expressive code}}
+Category codes: kept: {{semantic codes}}; broken: {{one dominant expressive code, replaced by an emergent one where possible}}
 Asset audit (rebrand only): {{asset, quadrant, action; or "not a rebrand"}}
 
 ## 7. Concept for art direction

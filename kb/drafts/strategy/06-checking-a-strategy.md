@@ -24,6 +24,7 @@ A strategy is checked three ways: is it **distinctive** (it could not be a compe
 | Three lines | Competitor wall (first screens or posters), hide-the-logo, five-second test with 1 or more fresh viewers, claims ledger |
 | One page | All of the above, plus the onlyness swap test on the brief and a fresh-context critic on the hero line |
 | Full (new brand, rebrand) | All of the above, plus the mark wall (design-graphic 01), the asset audit (05), and a real message test or recognition test when budget allows |
+| After launch (any brand with an identity table) | Check 9: re-measure fame and uniqueness on the 05 cadence |
 
 ### The checks
 1. **Word swap test** (03): put each named competitor's name into the onlyness sentence and the hero line. Pass: false for all three.
@@ -34,11 +35,14 @@ A strategy is checked three ways: is it **distinctive** (it could not be a compe
 6. **Message test** (when the page will carry spend or a launch): show the hero and key sections to the target audience; score clarity, relevance, value and differentiation [F3]. About 12 to 13 responses reach saturation in Wynter's guidance [F3]. A fresh-context subagent briefed with the audience moment is a stand-in, labelled as such (opinion).
 7. **Claims ledger**: one row per public claim. Claim as written; the fact; the source (document, data, test, date); evidence held: yes, or cut. A claim without evidence is rewritten as the fact it rests on, or cut (03; FTC, CAP 3.7).
 8. **Recognition test** (identity, full depth). An existing asset: shown without the name to category buyers, counting correct links and competitor links (the 05 audit). A new asset has no fame before launch, so test two things instead (opinion on the method): **misattribution**, shown cold and unnamed, does any viewer name a competitor or the category leader (any competitor link is a uniqueness warning); and **learnability**, shown once in context with the name, then unnamed among the covered competitor wall, is it picked as this brand? A fresh-context subagent can run both; only category buyers can measure fame.
+9. **Tracking** (after launch; 05 "After launch"). Same assets, same question, same kind of sample (category buyers), about one purchase cycle after launch, then yearly and before any redesign (opinion on the cadence). Record fame, uniqueness and quadrant per asset next to the previous round. A change of sample or wording breaks the comparison; note it.
+10. **Behavior check** (one page and full): for each brand behavior in the brief (05), ask whether a named competitor could copy it next week at no cost. Yes means it is not proof; find another or say so in the weakest field (opinion).
 
 ### Reading the results
 - **One viewer misreads the category**: the category word is missing or below the first screen (design-playbook-landing non-negotiable 2). Fix the hero, not the viewer.
 - **The covered wall cannot tell us apart**: the expressive code break (05) is too weak or absent. Strengthen the one break; do not add three.
 - **Message test: high clarity, low differentiation**: the words are fine and generic; go back to 03 step 2 (unique attributes), not to copy polish.
+- **Uniqueness falls between tracking rounds while fame holds**: a competitor is using a similar asset. Strengthen co-presentation with the name and the asset's most ownable detail before fame erodes too (05) (opinion).
 - **A claim has no evidence**: rewrite as the underlying fact or cut it. Never soften "only" to "one of the only"; it is still a claim (opinion).
 
 ## Numbers
@@ -49,6 +53,7 @@ A strategy is checked three ways: is it **distinctive** (it could not be a compe
 | Message test responses | about 12 to 13 to saturation [F3] |
 | Mark wall | 12 to 20 marks, 48px grayscale (opinion) [F6] |
 | Competitors on the screen wall | 3, at 1440x900 and 390x844 (opinion) |
+| Tracking cadence | about one purchase cycle after launch, then yearly, and before any redesign (opinion; 05) |
 
 ## Ceiling: expert moves
 1. **Cover the logos and ask the viewer to pick yours.** A distinctiveness check with a correct answer is harder to fool than "does it look different?" (opinion; it mirrors the asset audit's recognition question [05]).
