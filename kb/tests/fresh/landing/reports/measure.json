@@ -1,0 +1,1900 @@
+{
+ "url": "kb/tests/fresh/landing/halyard.html",
+ "measuredAt": "2026-10-13T23:52:09.325Z",
+ "method": "Playwright Chromium, getComputedStyle on visible elements, light scheme, after scroll-through and fonts.ready",
+ "widths": {
+  "390": {
+   "status": 200,
+   "finalUrl": "file:///home/user/design-kb/kb/tests/fresh/landing/halyard.html",
+   "width": 390,
+   "h1Style": {
+    "font": "\"Literata Display\" 61px/67.1px w500 ls -1.22px",
+    "color": "#1d2227",
+    "top": 179,
+    "width": 358,
+    "align": "start"
+   },
+   "title": "Halyard passage planner: Solent, Poole and Chichester Harbour",
+   "description": "Halyard reads tide, wind and daylight for your yacht or dayboat and marks the window to sail. Free for one boat; Halyard Plus is £4.99 a month or £39 a year.",
+   "pageHeight": 12494,
+   "bodyBg": "#ffffff",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "Literata Display 440 560 normal",
+    "Literata Display 440 560 italic",
+    "Literata Display Fallback normal normal",
+    "Literata Display Fallback normal italic",
+    "JetBrains Mono Halyard 450 normal"
+   ],
+   "families": [
+    {
+     "v": "-apple-system, BlinkMacSystemFont",
+     "n": 6653
+    },
+    {
+     "v": "\"JetBrains Mono Halyard\", ui-monospace",
+     "n": 904
+    },
+    {
+     "v": "\"Literata Display\", \"Literata Display Fallback\"",
+     "n": 684
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "16px / lh 24px / w400 / ls normal",
+     "n": 2805,
+     "ex": "a: Skip to content"
+    },
+    {
+     "v": "14px / lh 21px / w400 / ls normal",
+     "n": 1373,
+     "ex": "p: For 6 to 12 metre yachts and dayboats. Free for one boat and"
+    },
+    {
+     "v": "12px / lh 18px / w400 / ls normal",
+     "n": 1347,
+     "ex": "span: Sat 24 Oct · BST"
+    },
+    {
+     "v": "12px / lh 18px / w600 / ls normal",
+     "n": 414,
+     "ex": "span: Reading Saturday for Wren"
+    },
+    {
+     "v": "31px / lh 34.1px / w500 / ls -0.31px",
+     "n": 365,
+     "ex": "h2: What sailors say"
+    },
+    {
+     "v": "16px / lh 24px / w500 / ls normal",
+     "n": 274,
+     "ex": "p: Halyard is a planning aid. It is not a substitute for offici"
+    },
+    {
+     "v": "14px / lh 21px / w600 / ls normal",
+     "n": 214,
+     "ex": "b: Lymington to Cowes and back"
+    },
+    {
+     "v": "12px / lh 18px / w500 / ls normal",
+     "n": 187,
+     "ex": "span: Wren, 7.9 m sloop"
+    },
+    {
+     "v": "16px / lh 24px / w400 / ls -0.08px",
+     "n": 178,
+     "ex": "p: “It told me the gusts went over my limit after four. We were"
+    },
+    {
+     "v": "14px / lh 21px / w500 / ls normal",
+     "n": 157,
+     "ex": "p: Passage planning for the Solent, Poole and Chichester Harbou"
+    },
+    {
+     "v": "12px / lh 16px / w400 / ls normal",
+     "n": 130,
+     "ex": "span: HW 10:58 · 2.8 m"
+    },
+    {
+     "v": "20px / lh 30px / w400 / ls normal",
+     "n": 121,
+     "ex": "p: Halyard reads the tide, the wind and the daylight for your b"
+    },
+    {
+     "v": "25px / lh 32.5px / w400 / ls -0.25px",
+     "n": 108,
+     "ex": "p: “Friday night used to be four tabs and a tide table. Now I o"
+    },
+    {
+     "v": "16px / lh 24px / w600 / ls normal",
+     "n": 102,
+     "ex": "b: Wind against tide from 15:00."
+    },
+    {
+     "v": "12px / lh 12px / w400 / ls normal",
+     "n": 95,
+     "ex": "span: 06:00"
+    },
+    {
+     "v": "16px / lh 19.2px / w600 / ls normal",
+     "n": 78,
+     "ex": "a: Plan a sail"
+    },
+    {
+     "v": "20px / lh 25px / w600 / ls -0.1px",
+     "n": 68,
+     "ex": "h3: Tide with you"
+    },
+    {
+     "v": "16px / lh 20px / w600 / ls -0.08px",
+     "n": 64,
+     "ex": "h3: Covered: 14 tidal height stations and 8 stream points"
+    },
+    {
+     "v": "12px / lh 16px / w600 / ls normal",
+     "n": 43,
+     "ex": "span: Lymington"
+    },
+    {
+     "v": "20px / lh 25px / w600 / ls normal",
+     "n": 20,
+     "ex": "b: 08:30"
+    },
+    {
+     "v": "61px / lh 67.1px / w500 / ls -1.22px",
+     "n": 16,
+     "ex": "h1: Know when to go."
+    },
+    {
+     "v": "14px / lh 14px / w400 / ls normal",
+     "n": 16,
+     "ex": "span: The Solent"
+    },
+    {
+     "v": "14px / lh 16.8px / w500 / ls normal",
+     "n": 15,
+     "ex": "button: Pause animation"
+    },
+    {
+     "v": "12px / lh 18px / w450 / ls normal",
+     "n": 15,
+     "ex": "time: 15:00"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#626d78",
+     "n": 5153
+    },
+    {
+     "v": "#1d2227",
+     "n": 2900
+    },
+    {
+     "v": "#7d0350",
+     "n": 50
+    },
+    {
+     "v": "#7e4a00",
+     "n": 48
+    },
+    {
+     "v": "#ffffff",
+     "n": 45
+    },
+    {
+     "v": "#024b6a",
+     "n": 24
+    },
+    {
+     "v": "#9c0d65",
+     "n": 11
+    },
+    {
+     "v": "#006086",
+     "n": 10
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#626d78 on #ffffff",
+     "n": 3621,
+     "ex": "5.28:1"
+    },
+    {
+     "v": "#626d78 on #faf6ef",
+     "n": 1486,
+     "ex": "4.9:1"
+    },
+    {
+     "v": "#1d2227 on #ffffff",
+     "n": 1339,
+     "ex": "16.03:1"
+    },
+    {
+     "v": "#1d2227 on #faf6ef",
+     "n": 1173,
+     "ex": "14.88:1"
+    },
+    {
+     "v": "#1d2227 on #fff5e6",
+     "n": 228,
+     "ex": "14.85:1"
+    },
+    {
+     "v": "#1d2227 on #f5f7f8",
+     "n": 86,
+     "ex": "14.91:1"
+    },
+    {
+     "v": "#626d78 on #eef9ff",
+     "n": 46,
+     "ex": "4.93:1"
+    },
+    {
+     "v": "#ffffff on #b92079",
+     "n": 45,
+     "ex": "5.92:1"
+    },
+    {
+     "v": "#1d2227 on #eef9ff",
+     "n": 43,
+     "ex": "14.98:1"
+    },
+    {
+     "v": "#7d0350 on #ffe0eb",
+     "n": 40,
+     "ex": "8.55:1"
+    },
+    {
+     "v": "#7e4a00 on #fff5e6",
+     "n": 33,
+     "ex": "6.79:1"
+    },
+    {
+     "v": "#1d2227 on #aedffd",
+     "n": 31,
+     "ex": "11.27:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#faf6ef",
+     "n": 1987
+    },
+    {
+     "v": "#ffffff",
+     "n": 1202
+    },
+    {
+     "v": "linear-gradient(90deg, rgb(221, 230, 238) 0%, rgb(221, 230, 238) 22%, rgb(248, 225, 232) 31.5%, rgb(246, 239, 226) 42%, rgb(246, 239, 226) 6",
+     "n": 1065
+    },
+    {
+     "v": "#eef9ff",
+     "n": 123
+    },
+    {
+     "v": "#fff5e6",
+     "n": 99
+    },
+    {
+     "v": "#f5f7f8",
+     "n": 48
+    },
+    {
+     "v": "#b92079",
+     "n": 27
+    },
+    {
+     "v": "repeating-linear-gradient(-45deg, rgb(184, 194, 203) 0px, rgb(184, 194, 203) 1.5px, rgba(0, 0, 0, 0) 1.5px, rgba(0, 0, 0, 0) 6px)",
+     "n": 16
+    },
+    {
+     "v": "#b8c2cb",
+     "n": 11
+    },
+    {
+     "v": "#ffe0eb",
+     "n": 9
+    },
+    {
+     "v": "#aedffd",
+     "n": 5
+    },
+    {
+     "v": "#de920c",
+     "n": 4
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #d2d8de",
+     "n": 12
+    },
+    {
+     "v": "1px #808c97",
+     "n": 6
+    },
+    {
+     "v": "1px #000000 a0",
+     "n": 5
+    },
+    {
+     "v": "1px #7e4a00",
+     "n": 2
+    }
+   ],
+   "radii": [
+    {
+     "v": "4px 4px 0px 0px",
+     "n": 30,
+     "ex": "span.bar"
+    },
+    {
+     "v": "4px",
+     "n": 24,
+     "ex": "a.logo"
+    },
+    {
+     "v": "8px",
+     "n": 16,
+     "ex": "a.skip"
+    },
+    {
+     "v": "12px",
+     "n": 13,
+     "ex": "div.frag app"
+    },
+    {
+     "v": "16px",
+     "n": 12,
+     "ex": "div.stage stage--hero"
+    },
+    {
+     "v": "4px 0px 0px 4px",
+     "n": 8,
+     "ex": "span.seg seg--w"
+    },
+    {
+     "v": "0px 4px 4px 0px",
+     "n": 5,
+     "ex": "span.seg seg--e"
+    },
+    {
+     "v": "9999px",
+     "n": 2,
+     "ex": "span.status__prog"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgba(29, 34, 39, 0.08) 0px 0px 0px 1px, rgba(29, 34, 39, 0.25) 0px 32px 48px -32px, rgba(29, 34, 39, 0.1) 0px 16px 32px -16px",
+     "n": 9,
+     "ex": "div"
+    },
+    {
+     "v": "rgb(255, 255, 255) 1px 0px 0px 0px inset",
+     "n": 8,
+     "ex": "span"
+    },
+    {
+     "v": "rgba(29, 34, 39, 0.08) 0px 0px 0px 1px, rgba(29, 34, 39, 0.06) 0px 1px 2px 0px",
+     "n": 3,
+     "ex": "a"
+    },
+    {
+     "v": "rgba(255, 255, 255, 0.12) 0px 1px 0px 0px inset",
+     "n": 3,
+     "ex": "a"
+    },
+    {
+     "v": "rgb(185, 32, 121) 0px 0px 0px 2px inset",
+     "n": 3,
+     "ex": "span"
+    },
+    {
+     "v": "rgb(210, 216, 222) 1px 0px 0px 0px inset",
+     "n": 2,
+     "ex": "li"
+    },
+    {
+     "v": "rgb(128, 140, 151) 0px 0px 0px 1.5px inset",
+     "n": 2,
+     "ex": "span"
+    },
+    {
+     "v": "rgb(185, 32, 121) 2px 0px 0px 0px inset",
+     "n": 1,
+     "ex": "li"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "opacity, background-color 0.3s, 0.3s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
+     "n": 17,
+     "ex": "span"
+    },
+    {
+     "v": "color, text-decoration-color 0.1s, 0.1s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
+     "n": 13,
+     "ex": "a"
+    },
+    {
+     "v": "background-color, border-color, color, transform 0.1s, 0.1s, 0.1s, 0.1s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
+     "n": 8,
+     "ex": "button"
+    },
+    {
+     "v": "background-color 0.1s cubic-bezier(0.2, 0, 0, 1)",
+     "n": 5,
+     "ex": "summary"
+    },
+    {
+     "v": "background-color, color 0.1s, 0.1s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
+     "n": 2,
+     "ex": "button"
+    },
+    {
+     "v": "transform, visibility 0.3s, 0.3s cubic-bezier(0.2, 0, 0, 1), linear",
+     "n": 2,
+     "ex": "span"
+    },
+    {
+     "v": "opacity 0.15s cubic-bezier(0.2, 0, 0, 1)",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "animations": [
+    {
+     "v": "word-rise 0.3s cubic-bezier(0, 0, 0, 1) x1",
+     "n": 80
+    },
+    {
+     "v": "bar-rise 0.6s cubic-bezier(0, 0, 0, 1) x1",
+     "n": 15
+    },
+    {
+     "v": "fade, rise 0.6s, 0.6s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0, 0, 0, 1) x1, 1",
+     "n": 8
+    },
+    {
+     "v": "prog-a 1s linear x1",
+     "n": 1
+    }
+   ],
+   "maxWidths": [
+    {
+     "v": "524.875px (rendered 358px)",
+     "n": 13,
+     "ex": "p"
+    },
+    {
+     "v": "455.327px (rendered 358px)",
+     "n": 8,
+     "ex": "h2"
+    },
+    {
+     "v": "221.648px (rendered 167px)",
+     "n": 3,
+     "ex": "h2"
+    },
+    {
+     "v": "479.453px (rendered 358px)",
+     "n": 1,
+     "ex": "p"
+    },
+    {
+     "v": "423.938px (rendered 358px)",
+     "n": 1,
+     "ex": "p"
+    },
+    {
+     "v": "444.125px (rendered 358px)",
+     "n": 1,
+     "ex": "p"
+    },
+    {
+     "v": "459.266px (rendered 294px)",
+     "n": 1,
+     "ex": "p"
+    },
+    {
+     "v": "537.062px (rendered 358px)",
+     "n": 1,
+     "ex": "p"
+    },
+    {
+     "v": "388.609px (rendered 358px)",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 64px pb 64px",
+     "n": 9
+    },
+    {
+     "v": "pt 48px pb 64px",
+     "n": 1
+    },
+    {
+     "v": "pt 64px pb 32px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "8px",
+     "n": 55
+    },
+    {
+     "v": "12px",
+     "n": 25
+    },
+    {
+     "v": "4px",
+     "n": 21
+    },
+    {
+     "v": "2px",
+     "n": 9
+    },
+    {
+     "v": "16px",
+     "n": 9
+    },
+    {
+     "v": "48px",
+     "n": 7
+    },
+    {
+     "v": "24px",
+     "n": 6
+    },
+    {
+     "v": "32px",
+     "n": 4
+    },
+    {
+     "v": "8px / col 24px",
+     "n": 2
+    },
+    {
+     "v": "8px / col 16px",
+     "n": 1
+    },
+    {
+     "v": "4px / col 12px",
+     "n": 1
+    },
+    {
+     "v": "4px / col 16px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "8px",
+     "n": 172
+    },
+    {
+     "v": "12px",
+     "n": 66
+    },
+    {
+     "v": "16px",
+     "n": 44
+    },
+    {
+     "v": "2px",
+     "n": 31
+    },
+    {
+     "v": "32px",
+     "n": 22
+    },
+    {
+     "v": "64px",
+     "n": 20
+    },
+    {
+     "v": "24px",
+     "n": 7
+    },
+    {
+     "v": "48px",
+     "n": 4
+    },
+    {
+     "v": "4px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "12px",
+     "n": 12
+    },
+    {
+     "v": "24px",
+     "n": 8
+    },
+    {
+     "v": "16px",
+     "n": 7
+    },
+    {
+     "v": "8px",
+     "n": 6
+    },
+    {
+     "v": "4px",
+     "n": 4
+    },
+    {
+     "v": "48px",
+     "n": 3
+    },
+    {
+     "v": "32px",
+     "n": 2
+    },
+    {
+     "v": "64px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "From Anvil Point to Selsey Bill: Poole Harbour, the Solent and Chichester Harbour, with 14 tidal height stations and 8 s",
+    "chars": 225,
+    "lines": 5,
+    "charsPerLine": 45,
+    "width": 358,
+    "fontSize": "16px",
+    "lineHeight": "24px",
+    "color": "#626d78"
+   },
+   "rootVars": {
+    "--color-slate-50": "#f5f7f8",
+    "--color-slate-100": "#e6eaed",
+    "--color-slate-200": "#d2d8de",
+    "--color-slate-300": "#b8c2cb",
+    "--color-slate-400": "#9aa6b1",
+    "--color-slate-500": "#808c97",
+    "--color-slate-600": "#626d78",
+    "--color-slate-700": "#4f5963",
+    "--color-slate-800": "#3d464e",
+    "--color-slate-900": "#2d343a",
+    "--color-slate-950": "#1d2227",
+    "--color-slate-975": "#161a1e",
+    "--color-slate-990": "#0e1215",
+    "--color-magenta-50": "#fff3f7",
+    "--color-magenta-100": "#ffe0eb",
+    "--color-magenta-200": "#ffc4db",
+    "--color-magenta-300": "#ff9fc8",
+    "--color-magenta-400": "#fa69b0",
+    "--color-magenta-600": "#b92079",
+    "--color-magenta-700": "#9c0d65",
+    "--color-magenta-800": "#7d0350",
+    "--color-magenta-950": "#410229",
+    "--color-sea-50": "#eef9ff",
+    "--color-sea-100": "#d3eeff",
+    "--color-sea-200": "#aedffd",
+    "--color-sea-300": "#7fcbf7",
+    "--color-sea-400": "#48b0e7",
+    "--color-sea-600": "#0275a3",
+    "--color-sea-700": "#006086",
+    "--color-sea-800": "#024b6a",
+    "--color-sea-900": "#013850",
+    "--color-sea-950": "#002537",
+    "--color-buff-50": "#faf6ef",
+    "--color-buff-100": "#f1e9d7",
+    "--color-buff-200": "#e5d6b7",
+    "--color-buff-800": "#5b3f10",
+    "--color-buff-900": "#442e0b",
+    "--color-amber-50": "#fff5e6",
+    "--color-amber-300": "#efb563",
+    "--color-amber-400": "#de920c",
+    "--color-amber-700": "#7e4a00",
+    "--color-amber-950": "#2e1d00",
+    "--color-white": "#ffffff",
+    "--shadow-rgb": "29 34 39",
+    "--color-bg": "var(--color-slate-990)",
+    "--color-band": "var(--color-slate-975)",
+    "--color-surface": "var(--color-slate-975)",
+    "--color-surface-sunken": "var(--color-slate-950)",
+    "--color-text": "var(--color-slate-50)",
+    "--color-text-muted": "var(--color-slate-300)",
+    "--color-border": "rgb(255 255 255 / 0.1)",
+    "--color-border-strong": "var(--color-slate-500)",
+    "--color-primary": "var(--color-magenta-600)",
+    "--color-primary-hover": "var(--color-magenta-700)",
+    "--color-primary-active": "var(--color-magenta-800)",
+    "--color-on-primary": "var(--color-white)",
+    "--color-accent-text": "var(--color-magenta-300)",
+    "--color-focus-ring": "var(--color-magenta-300)",
+    "--color-warning": "var(--color-amber-300)",
+    "--color-warning-subtle": "var(--color-amber-950)",
+    "--color-selected": "var(--color-slate-50)",
+    "--color-on-selected": "var(--color-slate-990)",
+    "--color-segment-on": "var(--color-slate-800)",
+    "--color-tide": "var(--color-sea-400)",
+    "--color-tide-fill": "var(--color-sea-950)",
+    "--color-stream": "var(--color-sea-950)",
+    "--color-stream-fair": "var(--color-sea-800)",
+    "--color-stream-ink": "var(--color-sea-100)",
+    "--color-wind": "var(--color-slate-700)",
+    "--color-wind-over": "var(--color-amber-300)",
+    "--color-limit": "var(--color-amber-300)",
+    "--color-night": "var(--color-slate-990)",
+    "--color-day": "var(--color-buff-800)",
+    "--color-track": "var(--color-slate-950)",
+    "--color-cut": "var(--color-slate-700)",
+    "--color-window": "var(--color-magenta-400)",
+    "--color-window-fill": "var(--color-magenta-950)",
+    "--color-window-ink": "var(--color-magenta-200)",
+    "--color-land": "var(--color-slate-900)",
+    "--color-land-edge": "var(--color-slate-800)",
+    "--color-water": "var(--color-slate-975)",
+    "--color-water-ink": "var(--color-sea-300)",
+    "--color-logo-field": "var(--color-slate-50)",
+    "--color-logo-wave": "var(--color-slate-990)",
+    "--color-sky-night": "#10171d",
+    "--color-sky-dawn": "#2a1621",
+    "--color-sky-day": "#1f2327",
+    "--space-0": "0",
+    "--space-1": "2px",
+    "--space-2": "4px",
+    "--space-3": "8px",
+    "--space-4": "12px",
+    "--space-5": "16px",
+    "--space-6": "24px",
+    "--space-7": "32px",
+    "--space-8": "48px",
+    "--space-9": "64px",
+    "--space-10": "96px",
+    "--space-11": "128px",
+    "--text-xs": "0.75rem",
+    "--text-sm": "0.875rem",
+    "--text-base": "1rem",
+    "--text-lg": "1.25rem",
+    "--text-xl": "1.5625rem",
+    "--text-2xl": "1.9375rem",
+    "--text-3xl": "2.4375rem",
+    "--text-4xl": "3.0625rem",
+    "--text-5xl": "3.8125rem",
+    "--text-display": "clamp(3.8125rem, 0.25rem + 7.5vw, 6.5rem)",
+    "--leading-tight": "1.1",
+    "--leading-snug": "1.25",
+    "--leading-normal": "1.5",
+    "--leading-display": "1.1",
+    "--font-sans": "-apple-system, BlinkMacSystemFont, \"Segoe UI Variable Text\", \"Segoe UI\", Roboto, Inter, \"Helvetica Neue\", Arial, sans-se",
+    "--font-serif": "\"Literata Display\", \"Literata Display Fallback\", Georgia, serif",
+    "--font-mono": "\"JetBrains Mono Halyard\", ui-monospace, \"SF Mono\", Menlo, Consolas, monospace",
+    "--weight-regular": "400",
+    "--weight-medium": "500",
+    "--weight-semibold": "600",
+    "--radius-sm": "4px",
+    "--radius-md": "8px",
+    "--radius-lg": "12px",
+    "--radius-xl": "16px",
+    "--radius-full": "9999px",
+    "--size-control-sm": "32px",
+    "--size-control-md": "40px",
+    "--size-control-lg": "48px",
+    "--size-touch": "44px",
+    "--size-icon-sm": "12px",
+    "--size-icon-md": "16px",
+    "--size-icon-lg": "20px",
+    "--size-icon-xl": "24px",
+    "--icon-stroke": "1.5px",
+    "--size-measure": "52ch",
+    "--shadow-0": "0 0 0 0 transparent",
+    "--shadow-1": "0 0 0 0 transparent",
+    "--ring": "0 0 0 1px rgb(255 255 255 / 0.08)",
+    "--highlight": "inset 0 1px 0 rgb(255 255 255 / 0.06)",
+    "--elevation-card": "var(--ring)",
+    "--elevation-fragment": "var(--ring), var(--highlight)",
+    "--duration-instant": "100ms",
+    "--duration-fast": "150ms",
+    "--duration-base": "200ms",
+    "--duration-slow": "300ms",
+    "--duration-page": "400ms",
+    "--duration-reveal": "600ms",
+    "--stagger": "40ms",
+    "--travel": "16px",
+    "--ease-standard": "cubic-bezier(0.2, 0, 0, 1)",
+    "--ease-enter": "cubic-bezier(0, 0, 0, 1)",
+    "--ease-exit": "cubic-bezier(0.3, 0, 1, 1)",
+    "--motion-hover": "var(--duration-instant) var(--ease-standard)",
+    "--motion-enter": "var(--duration-base) var(--ease-enter)",
+    "--motion-exit": "var(--duration-fast) var(--ease-exit)",
+    "--state-hover": "color-mix(in oklch, var(--color-text) 8%, transparent)",
+    "--state-pressed": "color-mix(in oklch, var(--color-text) 10%, transparent)",
+    "--visual-treatment": "echo-fill",
+    "--visual-fill": "linear-gradient(90deg, var(--color-sky-night) 0%, var(--color-sky-night) 22%, var(--color-sky-dawn) 31.5%, var(--color-s",
+    "--fragment-scale": "1",
+    "--lab-w": "40px"
+   },
+   "blockedSheets": 0,
+   "reducedMotionRules": 4,
+   "h1": [
+    "Know when to go."
+   ],
+   "h2": [
+    "What sailors say",
+    "How a window is found. Three tests, every hour of the day.",
+    "One plan, to the minute. Out at 08:30, home by 14:10.",
+    "Warnings before you need them. Halyard keeps watching after you plan.",
+    "Where it works. Poole to Chichester Harbour.",
+    "Free for the odd sail. Plus for every weekend.",
+    "A planning aid, not a pilot. The decision to go stays with you.",
+    "Questions. Asked on the pontoon.",
+    "Find your next window. Pick a boat, a harbour and a day.",
+    "Product",
+    "Help",
+    "Company"
+   ],
+   "h3": [
+    "Tide with you",
+    "Wind inside your limits",
+    "Home before dark",
+    "Covered: 14 tidal height stations and 8 stream points",
+    "Not covered",
+    "Free",
+    "Halyard Plus"
+   ],
+   "nav": [
+    "Plan a sail",
+    "iPhone app",
+    "Android app",
+    "Pricing",
+    "How it works",
+    "Coverage",
+    "Safety and sources",
+    "Contact",
+    "About",
+    "Privacy",
+    "Terms"
+   ],
+   "ctas": [
+    "Skip to content [146x44 bg #ffffff fg #1d2227 r 8px pad 8px 16px 16px/400]",
+    "MenuClose [96x44 bg #000000 a0 fg #1d2227 r 8px pad 0px 16px 14px/600]",
+    "Plan a sail [127x48 bg #b92079 fg #ffffff r 8px pad 0px 24px 16px/600]",
+    "Get the app [139x48 bg #000000 a0 fg #1d2227 r 8px pad 0px 24px 16px/600]",
+    "Pause animation [168x44 bg #000000 a0 fg #1d2227 r 8px pad 0px 16px 14px/500]",
+    "Monthly [88x44 bg #ffffff fg #1d2227 r 8px pad 0px 16px 14px/600]",
+    "Plan a sail [294x48 bg #000000 a0 fg #1d2227 r 8px pad 0px 24px 16px/600]",
+    "Get Plus, £4.99 a month [294x48 bg #b92079 fg #ffffff r 8px pad 0px 24px 16px/600]",
+    "Plan a sail [127x48 bg #b92079 fg #ffffff r 8px pad 0px 24px 16px/600]",
+    "Get the app [139x48 bg #000000 a0 fg #1d2227 r 8px pad 0px 24px 16px/600]"
+   ],
+   "media": {
+    "img": 0,
+    "svg": 35,
+    "video": 0,
+    "canvas": 0
+   }
+  },
+  "1440": {
+   "status": 200,
+   "finalUrl": "file:///home/user/design-kb/kb/tests/fresh/landing/halyard.html",
+   "width": 1440,
+   "h1Style": {
+    "font": "\"Literata Display\" 104px/98.8px w500 ls -2.08px",
+    "color": "#1d2227",
+    "top": 298,
+    "width": 628,
+    "align": "start"
+   },
+   "title": "Halyard passage planner: Solent, Poole and Chichester Harbour",
+   "description": "Halyard reads tide, wind and daylight for your yacht or dayboat and marks the window to sail. Free for one boat; Halyard Plus is £4.99 a month or £39 a year.",
+   "pageHeight": 8080,
+   "bodyBg": "#ffffff",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "Literata Display 440 560 normal",
+    "Literata Display 440 560 italic",
+    "Literata Display Fallback normal normal",
+    "Literata Display Fallback normal italic",
+    "JetBrains Mono Halyard 450 normal"
+   ],
+   "families": [
+    {
+     "v": "-apple-system, BlinkMacSystemFont",
+     "n": 6742
+    },
+    {
+     "v": "\"JetBrains Mono Halyard\", ui-monospace",
+     "n": 904
+    },
+    {
+     "v": "\"Literata Display\", \"Literata Display Fallback\"",
+     "n": 709
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "16px / lh 24px / w400 / ls normal",
+     "n": 2805,
+     "ex": "a: Skip to content"
+    },
+    {
+     "v": "14px / lh 21px / w400 / ls normal",
+     "n": 1373,
+     "ex": "p: For 6 to 12 metre yachts and dayboats. Free for one boat and"
+    },
+    {
+     "v": "12px / lh 18px / w400 / ls normal",
+     "n": 1347,
+     "ex": "span: Sat 24 Oct · BST"
+    },
+    {
+     "v": "12px / lh 18px / w600 / ls normal",
+     "n": 414,
+     "ex": "span: Reading Saturday for Wren"
+    },
+    {
+     "v": "49px / lh 53.9px / w500 / ls -0.49px",
+     "n": 365,
+     "ex": "h2: What sailors say"
+    },
+    {
+     "v": "16px / lh 24px / w500 / ls normal",
+     "n": 274,
+     "ex": "p: Halyard is a planning aid. It is not a substitute for offici"
+    },
+    {
+     "v": "14px / lh 21px / w600 / ls normal",
+     "n": 214,
+     "ex": "b: Lymington to Cowes and back"
+    },
+    {
+     "v": "14px / lh 21px / w500 / ls normal",
+     "n": 197,
+     "ex": "a: How it works"
+    },
+    {
+     "v": "12px / lh 18px / w500 / ls normal",
+     "n": 187,
+     "ex": "span: Wren, 7.9 m sloop"
+    },
+    {
+     "v": "16px / lh 24px / w400 / ls -0.08px",
+     "n": 178,
+     "ex": "p: “It told me the gusts went over my limit after four. We were"
+    },
+    {
+     "v": "12px / lh 16px / w400 / ls normal",
+     "n": 172,
+     "ex": "span: HW 10:58 · 2.8 m"
+    },
+    {
+     "v": "20px / lh 30px / w400 / ls normal",
+     "n": 121,
+     "ex": "p: Halyard reads the tide, the wind and the daylight for your b"
+    },
+    {
+     "v": "31px / lh 38.75px / w400 / ls -0.31px",
+     "n": 108,
+     "ex": "p: “Friday night used to be four tabs and a tide table. Now I o"
+    },
+    {
+     "v": "16px / lh 24px / w600 / ls normal",
+     "n": 102,
+     "ex": "b: Wind against tide from 15:00."
+    },
+    {
+     "v": "12px / lh 12px / w400 / ls normal",
+     "n": 95,
+     "ex": "span: 06:00"
+    },
+    {
+     "v": "16px / lh 19.2px / w600 / ls normal",
+     "n": 78,
+     "ex": "a: Plan a sail"
+    },
+    {
+     "v": "20px / lh 25px / w600 / ls -0.1px",
+     "n": 68,
+     "ex": "h3: Tide with you"
+    },
+    {
+     "v": "16px / lh 20px / w600 / ls -0.08px",
+     "n": 64,
+     "ex": "h3: Covered: 14 tidal height stations and 8 stream points"
+    },
+    {
+     "v": "12px / lh 16px / w600 / ls normal",
+     "n": 43,
+     "ex": "span: Lymington"
+    },
+    {
+     "v": "14px / lh 14px / w400 / ls normal",
+     "n": 41,
+     "ex": "span: The Solent"
+    },
+    {
+     "v": "20px / lh 25px / w600 / ls normal",
+     "n": 20,
+     "ex": "b: 08:30"
+    },
+    {
+     "v": "104px / lh 98.8px / w500 / ls -2.08px",
+     "n": 16,
+     "ex": "h1: Know when to go."
+    },
+    {
+     "v": "14px / lh 16.8px / w500 / ls normal",
+     "n": 15,
+     "ex": "button: Pause animation"
+    },
+    {
+     "v": "12px / lh 18px / w450 / ls normal",
+     "n": 15,
+     "ex": "time: 15:00"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#626d78",
+     "n": 5195
+    },
+    {
+     "v": "#1d2227",
+     "n": 2947
+    },
+    {
+     "v": "#7d0350",
+     "n": 50
+    },
+    {
+     "v": "#7e4a00",
+     "n": 48
+    },
+    {
+     "v": "#ffffff",
+     "n": 45
+    },
+    {
+     "v": "#006086",
+     "n": 35
+    },
+    {
+     "v": "#024b6a",
+     "n": 24
+    },
+    {
+     "v": "#9c0d65",
+     "n": 11
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#626d78 on #ffffff",
+     "n": 3621,
+     "ex": "5.28:1"
+    },
+    {
+     "v": "#626d78 on #faf6ef",
+     "n": 1486,
+     "ex": "4.9:1"
+    },
+    {
+     "v": "#1d2227 on #ffffff",
+     "n": 1386,
+     "ex": "16.03:1"
+    },
+    {
+     "v": "#1d2227 on #faf6ef",
+     "n": 1173,
+     "ex": "14.88:1"
+    },
+    {
+     "v": "#1d2227 on #fff5e6",
+     "n": 228,
+     "ex": "14.85:1"
+    },
+    {
+     "v": "#626d78 on #eef9ff",
+     "n": 88,
+     "ex": "4.93:1"
+    },
+    {
+     "v": "#1d2227 on #f5f7f8",
+     "n": 86,
+     "ex": "14.91:1"
+    },
+    {
+     "v": "#ffffff on #b92079",
+     "n": 45,
+     "ex": "5.92:1"
+    },
+    {
+     "v": "#1d2227 on #eef9ff",
+     "n": 43,
+     "ex": "14.98:1"
+    },
+    {
+     "v": "#7d0350 on #ffe0eb",
+     "n": 40,
+     "ex": "8.55:1"
+    },
+    {
+     "v": "#006086 on #eef9ff",
+     "n": 35,
+     "ex": "6.51:1"
+    },
+    {
+     "v": "#7e4a00 on #fff5e6",
+     "n": 33,
+     "ex": "6.79:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#faf6ef",
+     "n": 5035
+    },
+    {
+     "v": "linear-gradient(90deg, rgb(221, 230, 238) 0%, rgb(221, 230, 238) 22%, rgb(248, 225, 232) 31.5%, rgb(246, 239, 226) 42%, rgb(246, 239, 226) 6",
+     "n": 2120
+    },
+    {
+     "v": "#ffffff",
+     "n": 1928
+    },
+    {
+     "v": "#eef9ff",
+     "n": 512
+    },
+    {
+     "v": "#fff5e6",
+     "n": 101
+    },
+    {
+     "v": "#f5f7f8",
+     "n": 66
+    },
+    {
+     "v": "#b92079",
+     "n": 45
+    },
+    {
+     "v": "repeating-linear-gradient(-45deg, rgb(184, 194, 203) 0px, rgb(184, 194, 203) 1.5px, rgba(0, 0, 0, 0) 1.5px, rgba(0, 0, 0, 0) 6px)",
+     "n": 25
+    },
+    {
+     "v": "#b8c2cb",
+     "n": 19
+    },
+    {
+     "v": "#ffe0eb",
+     "n": 11
+    },
+    {
+     "v": "#aedffd",
+     "n": 5
+    },
+    {
+     "v": "#de920c",
+     "n": 5
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #d2d8de",
+     "n": 10
+    },
+    {
+     "v": "1px #808c97",
+     "n": 7
+    },
+    {
+     "v": "1px #000000 a0",
+     "n": 4
+    },
+    {
+     "v": "1px #7e4a00",
+     "n": 2
+    }
+   ],
+   "radii": [
+    {
+     "v": "4px 4px 0px 0px",
+     "n": 30,
+     "ex": "span.bar"
+    },
+    {
+     "v": "4px",
+     "n": 24,
+     "ex": "a.logo"
+    },
+    {
+     "v": "8px",
+     "n": 21,
+     "ex": "a.skip"
+    },
+    {
+     "v": "12px",
+     "n": 13,
+     "ex": "div.frag app"
+    },
+    {
+     "v": "16px",
+     "n": 12,
+     "ex": "div.stage stage--hero"
+    },
+    {
+     "v": "4px 0px 0px 4px",
+     "n": 8,
+     "ex": "span.seg seg--w"
+    },
+    {
+     "v": "0px 4px 4px 0px",
+     "n": 5,
+     "ex": "span.seg seg--e"
+    },
+    {
+     "v": "9999px",
+     "n": 2,
+     "ex": "span.status__prog"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgba(29, 34, 39, 0.08) 0px 0px 0px 1px, rgba(29, 34, 39, 0.25) 0px 32px 48px -32px, rgba(29, 34, 39, 0.1) 0px 16px 32px -16px",
+     "n": 9,
+     "ex": "div"
+    },
+    {
+     "v": "rgb(255, 255, 255) 1px 0px 0px 0px inset",
+     "n": 8,
+     "ex": "span"
+    },
+    {
+     "v": "rgba(29, 34, 39, 0.08) 0px 0px 0px 1px, rgba(29, 34, 39, 0.06) 0px 1px 2px 0px",
+     "n": 3,
+     "ex": "a"
+    },
+    {
+     "v": "rgba(255, 255, 255, 0.12) 0px 1px 0px 0px inset",
+     "n": 3,
+     "ex": "a"
+    },
+    {
+     "v": "rgb(185, 32, 121) 0px 0px 0px 2px inset",
+     "n": 3,
+     "ex": "span"
+    },
+    {
+     "v": "rgb(210, 216, 222) 1px 0px 0px 0px inset",
+     "n": 2,
+     "ex": "li"
+    },
+    {
+     "v": "rgb(128, 140, 151) 0px 0px 0px 1.5px inset",
+     "n": 2,
+     "ex": "span"
+    },
+    {
+     "v": "rgb(185, 32, 121) 2px 0px 0px 0px inset",
+     "n": 1,
+     "ex": "li"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "opacity, background-color 0.3s, 0.3s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
+     "n": 17,
+     "ex": "span"
+    },
+    {
+     "v": "color, text-decoration-color 0.1s, 0.1s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
+     "n": 13,
+     "ex": "a"
+    },
+    {
+     "v": "background-color 0.1s cubic-bezier(0.2, 0, 0, 1)",
+     "n": 10,
+     "ex": "a"
+    },
+    {
+     "v": "background-color, border-color, color, transform 0.1s, 0.1s, 0.1s, 0.1s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
+     "n": 8,
+     "ex": "a"
+    },
+    {
+     "v": "background-color, color 0.1s, 0.1s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
+     "n": 2,
+     "ex": "button"
+    },
+    {
+     "v": "transform, visibility 0.3s, 0.3s cubic-bezier(0.2, 0, 0, 1), linear",
+     "n": 2,
+     "ex": "span"
+    },
+    {
+     "v": "opacity 0.15s cubic-bezier(0.2, 0, 0, 1)",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "animations": [
+    {
+     "v": "word-rise 0.3s cubic-bezier(0, 0, 0, 1) x1",
+     "n": 80
+    },
+    {
+     "v": "bar-rise 0.6s cubic-bezier(0, 0, 0, 1) x1",
+     "n": 15
+    },
+    {
+     "v": "fade, rise 0.6s, 0.6s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0, 0, 0, 1) x1, 1",
+     "n": 8
+    },
+    {
+     "v": "prog-a 1s linear x1",
+     "n": 1
+    }
+   ],
+   "maxWidths": [
+    {
+     "v": "719.713px (rendered 720px)",
+     "n": 2,
+     "ex": "h2"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 96px pb 96px",
+     "n": 9
+    },
+    {
+     "v": "pt 48px pb 96px",
+     "n": 1
+    },
+    {
+     "v": "pt 64px pb 32px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "8px",
+     "n": 51
+    },
+    {
+     "v": "12px",
+     "n": 25
+    },
+    {
+     "v": "4px",
+     "n": 21
+    },
+    {
+     "v": "24px",
+     "n": 11
+    },
+    {
+     "v": "16px",
+     "n": 11
+    },
+    {
+     "v": "2px",
+     "n": 6
+    },
+    {
+     "v": "64px",
+     "n": 6
+    },
+    {
+     "v": "8px / col 12px",
+     "n": 5
+    },
+    {
+     "v": "8px / col 24px",
+     "n": 2
+    },
+    {
+     "v": "48px",
+     "n": 2
+    },
+    {
+     "v": "8px / col 16px",
+     "n": 1
+    },
+    {
+     "v": "24px / col 64px",
+     "n": 1
+    },
+    {
+     "v": "32px",
+     "n": 1
+    },
+    {
+     "v": "4px / col 12px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "8px",
+     "n": 167
+    },
+    {
+     "v": "16px",
+     "n": 59
+    },
+    {
+     "v": "12px",
+     "n": 56
+    },
+    {
+     "v": "2px",
+     "n": 31
+    },
+    {
+     "v": "96px",
+     "n": 19
+    },
+    {
+     "v": "32px",
+     "n": 14
+    },
+    {
+     "v": "48px",
+     "n": 9
+    },
+    {
+     "v": "64px",
+     "n": 9
+    },
+    {
+     "v": "24px",
+     "n": 7
+    },
+    {
+     "v": "4px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "12px",
+     "n": 12
+    },
+    {
+     "v": "24px",
+     "n": 8
+    },
+    {
+     "v": "16px",
+     "n": 7
+    },
+    {
+     "v": "8px",
+     "n": 6
+    },
+    {
+     "v": "4px",
+     "n": 4
+    },
+    {
+     "v": "48px",
+     "n": 3
+    },
+    {
+     "v": "32px",
+     "n": 2
+    },
+    {
+     "v": "66px",
+     "n": 1
+    },
+    {
+     "v": "64px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "From Anvil Point to Selsey Bill: Poole Harbour, the Solent and Chichester Harbour, with 14 tidal height stations and 8 s",
+    "chars": 225,
+    "lines": 4,
+    "charsPerLine": 56,
+    "width": 525,
+    "fontSize": "16px",
+    "lineHeight": "24px",
+    "color": "#626d78"
+   },
+   "rootVars": {
+    "--color-slate-50": "#f5f7f8",
+    "--color-slate-100": "#e6eaed",
+    "--color-slate-200": "#d2d8de",
+    "--color-slate-300": "#b8c2cb",
+    "--color-slate-400": "#9aa6b1",
+    "--color-slate-500": "#808c97",
+    "--color-slate-600": "#626d78",
+    "--color-slate-700": "#4f5963",
+    "--color-slate-800": "#3d464e",
+    "--color-slate-900": "#2d343a",
+    "--color-slate-950": "#1d2227",
+    "--color-slate-975": "#161a1e",
+    "--color-slate-990": "#0e1215",
+    "--color-magenta-50": "#fff3f7",
+    "--color-magenta-100": "#ffe0eb",
+    "--color-magenta-200": "#ffc4db",
+    "--color-magenta-300": "#ff9fc8",
+    "--color-magenta-400": "#fa69b0",
+    "--color-magenta-600": "#b92079",
+    "--color-magenta-700": "#9c0d65",
+    "--color-magenta-800": "#7d0350",
+    "--color-magenta-950": "#410229",
+    "--color-sea-50": "#eef9ff",
+    "--color-sea-100": "#d3eeff",
+    "--color-sea-200": "#aedffd",
+    "--color-sea-300": "#7fcbf7",
+    "--color-sea-400": "#48b0e7",
+    "--color-sea-600": "#0275a3",
+    "--color-sea-700": "#006086",
+    "--color-sea-800": "#024b6a",
+    "--color-sea-900": "#013850",
+    "--color-sea-950": "#002537",
+    "--color-buff-50": "#faf6ef",
+    "--color-buff-100": "#f1e9d7",
+    "--color-buff-200": "#e5d6b7",
+    "--color-buff-800": "#5b3f10",
+    "--color-buff-900": "#442e0b",
+    "--color-amber-50": "#fff5e6",
+    "--color-amber-300": "#efb563",
+    "--color-amber-400": "#de920c",
+    "--color-amber-700": "#7e4a00",
+    "--color-amber-950": "#2e1d00",
+    "--color-white": "#ffffff",
+    "--shadow-rgb": "29 34 39",
+    "--color-bg": "var(--color-slate-990)",
+    "--color-band": "var(--color-slate-975)",
+    "--color-surface": "var(--color-slate-975)",
+    "--color-surface-sunken": "var(--color-slate-950)",
+    "--color-text": "var(--color-slate-50)",
+    "--color-text-muted": "var(--color-slate-300)",
+    "--color-border": "rgb(255 255 255 / 0.1)",
+    "--color-border-strong": "var(--color-slate-500)",
+    "--color-primary": "var(--color-magenta-600)",
+    "--color-primary-hover": "var(--color-magenta-700)",
+    "--color-primary-active": "var(--color-magenta-800)",
+    "--color-on-primary": "var(--color-white)",
+    "--color-accent-text": "var(--color-magenta-300)",
+    "--color-focus-ring": "var(--color-magenta-300)",
+    "--color-warning": "var(--color-amber-300)",
+    "--color-warning-subtle": "var(--color-amber-950)",
+    "--color-selected": "var(--color-slate-50)",
+    "--color-on-selected": "var(--color-slate-990)",
+    "--color-segment-on": "var(--color-slate-800)",
+    "--color-tide": "var(--color-sea-400)",
+    "--color-tide-fill": "var(--color-sea-950)",
+    "--color-stream": "var(--color-sea-950)",
+    "--color-stream-fair": "var(--color-sea-800)",
+    "--color-stream-ink": "var(--color-sea-100)",
+    "--color-wind": "var(--color-slate-700)",
+    "--color-wind-over": "var(--color-amber-300)",
+    "--color-limit": "var(--color-amber-300)",
+    "--color-night": "var(--color-slate-990)",
+    "--color-day": "var(--color-buff-800)",
+    "--color-track": "var(--color-slate-950)",
+    "--color-cut": "var(--color-slate-700)",
+    "--color-window": "var(--color-magenta-400)",
+    "--color-window-fill": "var(--color-magenta-950)",
+    "--color-window-ink": "var(--color-magenta-200)",
+    "--color-land": "var(--color-slate-900)",
+    "--color-land-edge": "var(--color-slate-800)",
+    "--color-water": "var(--color-slate-975)",
+    "--color-water-ink": "var(--color-sea-300)",
+    "--color-logo-field": "var(--color-slate-50)",
+    "--color-logo-wave": "var(--color-slate-990)",
+    "--color-sky-night": "#10171d",
+    "--color-sky-dawn": "#2a1621",
+    "--color-sky-day": "#1f2327",
+    "--space-0": "0",
+    "--space-1": "2px",
+    "--space-2": "4px",
+    "--space-3": "8px",
+    "--space-4": "12px",
+    "--space-5": "16px",
+    "--space-6": "24px",
+    "--space-7": "32px",
+    "--space-8": "48px",
+    "--space-9": "64px",
+    "--space-10": "96px",
+    "--space-11": "128px",
+    "--text-xs": "0.75rem",
+    "--text-sm": "0.875rem",
+    "--text-base": "1rem",
+    "--text-lg": "1.25rem",
+    "--text-xl": "1.5625rem",
+    "--text-2xl": "1.9375rem",
+    "--text-3xl": "2.4375rem",
+    "--text-4xl": "3.0625rem",
+    "--text-5xl": "3.8125rem",
+    "--text-display": "clamp(3.8125rem, 0.25rem + 7.5vw, 6.5rem)",
+    "--leading-tight": "1.1",
+    "--leading-snug": "1.25",
+    "--leading-normal": "1.5",
+    "--leading-display": "1.1",
+    "--font-sans": "-apple-system, BlinkMacSystemFont, \"Segoe UI Variable Text\", \"Segoe UI\", Roboto, Inter, \"Helvetica Neue\", Arial, sans-se",
+    "--font-serif": "\"Literata Display\", \"Literata Display Fallback\", Georgia, serif",
+    "--font-mono": "\"JetBrains Mono Halyard\", ui-monospace, \"SF Mono\", Menlo, Consolas, monospace",
+    "--weight-regular": "400",
+    "--weight-medium": "500",
+    "--weight-semibold": "600",
+    "--radius-sm": "4px",
+    "--radius-md": "8px",
+    "--radius-lg": "12px",
+    "--radius-xl": "16px",
+    "--radius-full": "9999px",
+    "--size-control-sm": "32px",
+    "--size-control-md": "40px",
+    "--size-control-lg": "48px",
+    "--size-touch": "44px",
+    "--size-icon-sm": "12px",
+    "--size-icon-md": "16px",
+    "--size-icon-lg": "20px",
+    "--size-icon-xl": "24px",
+    "--icon-stroke": "1.5px",
+    "--size-measure": "52ch",
+    "--shadow-0": "0 0 0 0 transparent",
+    "--shadow-1": "0 0 0 0 transparent",
+    "--ring": "0 0 0 1px rgb(255 255 255 / 0.08)",
+    "--highlight": "inset 0 1px 0 rgb(255 255 255 / 0.06)",
+    "--elevation-card": "var(--ring)",
+    "--elevation-fragment": "var(--ring), var(--highlight)",
+    "--duration-instant": "100ms",
+    "--duration-fast": "150ms",
+    "--duration-base": "200ms",
+    "--duration-slow": "300ms",
+    "--duration-page": "400ms",
+    "--duration-reveal": "600ms",
+    "--stagger": "40ms",
+    "--travel": "16px",
+    "--ease-standard": "cubic-bezier(0.2, 0, 0, 1)",
+    "--ease-enter": "cubic-bezier(0, 0, 0, 1)",
+    "--ease-exit": "cubic-bezier(0.3, 0, 1, 1)",
+    "--motion-hover": "var(--duration-instant) var(--ease-standard)",
+    "--motion-enter": "var(--duration-base) var(--ease-enter)",
+    "--motion-exit": "var(--duration-fast) var(--ease-exit)",
+    "--state-hover": "color-mix(in oklch, var(--color-text) 8%, transparent)",
+    "--state-pressed": "color-mix(in oklch, var(--color-text) 10%, transparent)",
+    "--visual-treatment": "echo-fill",
+    "--visual-fill": "linear-gradient(90deg, var(--color-sky-night) 0%, var(--color-sky-night) 22%, var(--color-sky-dawn) 31.5%, var(--color-s",
+    "--fragment-scale": "1",
+    "--lab-w": "40px"
+   },
+   "blockedSheets": 0,
+   "reducedMotionRules": 4,
+   "h1": [
+    "Know when to go."
+   ],
+   "h2": [
+    "What sailors say",
+    "How a window is found. Three tests, every hour of the day.",
+    "One plan, to the minute. Out at 08:30, home by 14:10.",
+    "Warnings before you need them. Halyard keeps watching after you plan.",
+    "Where it works. Poole to Chichester Harbour.",
+    "Free for the odd sail. Plus for every weekend.",
+    "A planning aid, not a pilot. The decision to go stays with you.",
+    "Questions. Asked on the pontoon.",
+    "Find your next window. Pick a boat, a harbour and a day.",
+    "Product",
+    "Help",
+    "Company"
+   ],
+   "h3": [
+    "Tide with you",
+    "Wind inside your limits",
+    "Home before dark",
+    "Covered: 14 tidal height stations and 8 stream points",
+    "Not covered",
+    "Free",
+    "Halyard Plus"
+   ],
+   "nav": [
+    "How it works",
+    "Coverage",
+    "Pricing",
+    "Safety",
+    "Sign in",
+    "Get the app",
+    "Plan a sail",
+    "iPhone app",
+    "Android app",
+    "Pricing",
+    "How it works",
+    "Coverage",
+    "Safety and sources",
+    "Contact",
+    "About",
+    "Privacy"
+   ],
+   "ctas": [
+    "Skip to content [146x44 bg #ffffff fg #1d2227 r 8px pad 8px 16px 16px/400]",
+    "Get the app [112x40 bg #000000 a0 fg #1d2227 r 8px pad 0px 16px 14px/600]",
+    "Plan a sail [127x48 bg #b92079 fg #ffffff r 8px pad 0px 24px 16px/600]",
+    "Get the app [139x48 bg #000000 a0 fg #1d2227 r 8px pad 0px 24px 16px/600]",
+    "Pause animation [168x44 bg #000000 a0 fg #1d2227 r 8px pad 0px 16px 14px/500]",
+    "Monthly [88x44 bg #ffffff fg #1d2227 r 8px pad 0px 16px 14px/600]",
+    "Plan a sail [459x48 bg #000000 a0 fg #1d2227 r 8px pad 0px 24px 16px/600]",
+    "Get Plus, £4.99 a month [669x48 bg #b92079 fg #ffffff r 8px pad 0px 24px 16px/600]",
+    "Plan a sail [127x48 bg #b92079 fg #ffffff r 8px pad 0px 24px 16px/600]",
+    "Get the app [139x48 bg #000000 a0 fg #1d2227 r 8px pad 0px 24px 16px/600]"
+   ],
+   "media": {
+    "img": 0,
+    "svg": 35,
+    "video": 0,
+    "canvas": 0
+   }
+  }
+ },
+ "head": {
+  "lang": "en-GB",
+  "title": "Halyard passage planner: Solent, Poole and Chichester Harbour",
+  "description": "Halyard reads tide, wind and daylight for your yacht or dayboat and marks the window to sail. Free for one boat; Halyard Plus is £4.99 a month or £39 a year.",
+  "canonical": "https://halyard.example/",
+  "robots": "max-image-preview:large",
+  "viewport": "width=device-width, initial-scale=1",
+  "themeColor": [
+   {
+    "content": "#ffffff",
+    "media": "(prefers-color-scheme: light)"
+   },
+   {
+    "content": "#0e1215",
+    "media": "(prefers-color-scheme: dark)"
+   }
+  ],
+  "colorScheme": null,
+  "og": [
+   {
+    "key": "og:type",
+    "content": "website"
+   },
+   {
+    "key": "og:site_name",
+    "content": "Halyard"
+   },
+   {
+    "key": "og:title",
+    "content": "Halyard: know when to go"
+   },
+   {
+    "key": "og:description",
+    "content": "Tide, wind and daylight for your boat on one strip, with the window to sail marked. For the Solent, Poole and Chichester Harbour."
+   },
+   {
+    "key": "og:url",
+    "content": "https://halyard.example/"
+   },
+   {
+    "key": "og:image",
+    "content": "https://halyard.example/og.png"
+   },
+   {
+    "key": "og:image:width",
+    "content": "1200"
+   },
+   {
+    "key": "og:image:height",
+    "content": "630"
+   },
+   {
+    "key": "og:image:alt",
+    "content": "The Halyard day strip for Lymington to Cowes and back, with two sailing windows marked in magenta."
+   },
+   {
+    "key": "og:locale",
+    "content": "en_GB"
+   }
+  ],
+  "twitter": [
+   {
+    "key": "twitter:card",
+    "content": "summary_large_image"
+   }
+  ],
+  "jsonld": [
+   {
+    "index": 0,
+    "inHead": true,
+    "bytes": 1182,
+    "types": [
+     "WebSite",
+     "Organization",
+     "SoftwareApplication",
+     "Offer"
+    ],
+    "context": "https://schema.org"
+   }
+  ],
+  "icons": [
+   {
+    "rel": "icon",
+    "type": "image/png",
+    "sizes": "96x96",
+    "media": "",
+    "href": "data:image/png;base64,iVBORw0KGgoAAAANSU... (data URI)"
+   }
+  ],
+  "order": [
+   "0 meta charset",
+   "1 meta viewport",
+   "2 title",
+   "3 meta description",
+   "4 meta robots",
+   "5 link canonical",
+   "6 meta og:type",
+   "7 meta og:site_name",
+   "8 meta og:title",
+   "9 meta og:description",
+   "10 meta og:url",
+   "11 meta og:image",
+   "12 meta og:image:width",
+   "13 meta og:image:height",
+   "14 meta og:image:alt",
+   "15 meta og:locale",
+   "16 meta twitter:card",
+   "17 meta theme-color",
+   "18 meta theme-color",
+   "19 link icon",
+   "20 script inline application/ld+json 1184B",
+   "21 script inline 45B",
+   "22 style 150809B"
+  ],
+  "positions": {
+   "count": 23,
+   "title": 2,
+   "description": 3,
+   "canonical": 5,
+   "firstOg": 6,
+   "firstJsonLd": 20,
+   "firstStylesheet": 22,
+   "firstScript": 21,
+   "firstLargeInline": 22
+  },
+  "headBytes": 157303,
+  "htmlBytes": 232150,
+  "served": {
+   "bytes": 231435,
+   "headBytes": 157290,
+   "order": [
+    "0 meta charset",
+    "1 meta viewport",
+    "2 title",
+    "3 meta description",
+    "4 meta robots",
+    "5 link canonical",
+    "6 meta og:type",
+    "7 meta og:site_name",
+    "8 meta og:title",
+    "9 meta og:description",
+    "10 meta og:url",
+    "11 meta og:image",
+    "12 meta og:image:width",
+    "13 meta og:image:height",
+    "14 meta og:image:alt",
+    "15 meta og:locale",
+    "16 meta twitter:card",
+    "17 meta theme-color",
+    "18 meta theme-color",
+    "19 link icon",
+    "20 script inline application/ld+json",
+    "21 script inline",
+    "22 style"
+   ],
+   "over2MB": false
+  }
+ }
+}

@@ -1,0 +1,98 @@
+Claims inventory: kb/tests/fresh/landing/halyard.html (93 strings to check against the data)
+
+  1  For 6 to 12 metre yachts and dayboats. Free for one boat and three plans a month, on iPhone, Android and the web.
+  2  Sat 24 Oct · BST
+  3  Reading Saturday for Wren
+  4  Wren, 7.9 m sloop
+  5  Wind ≤ 20 kn
+  6  Against tide ≤ 12 kn
+  7  06:00
+  8  09:00
+  9  12:00
+ 10  15:00
+ 11  18:00
+ 12  HW 10:58 · 2.8 m
+ 13  LW 17:31 · 0.6 m
+ 14  E 1.9 kn
+ 15  W 2.6 kn
+ 16  07:33
+ 17  17:56
+ 18  3 h 46 min
+ 19  08:30
+ 20  10:10
+ 21  12:30
+ 22  14:10
+ 23  FIG 0.1
+ 24  Wren, a 7.9 m sloop, Lymington to Cowes and back on Saturday 24 October 2026: two windows, out 07:33 to 09:30 and back 11:10 to 13:20. Sample data.
+ 25  “Friday night used to be four tabs and a tide table. Now I open one strip and the answer is already marked.”
+ 26  Sam, Westerly 26, Lymington
+ 27  “It told me the gusts went over my limit after four. We were back on the mooring by three.”
+ 28  Tom, Contessa 32, Poole
+ 29  With you 05:40 to 11:10
+ 30  FIG 0.2
+ 31  Halyard sends you out on a fair stream and back on the next one. On Saturday it runs east from 05:40 to 11:10, then west until 17:50: out in the morning, back after the turn.
+ 32  Over a limit from 15:00
+ 33  Over a limit
+ 34  Dashed line: 20 kn
+ 35  FIG 0.3
+ 36  Set the most your boat and crew will take. Wren’s limits are 20 kn of wind and 12 kn against the tide. From 15:00 a 15 kn westerly meets the west-going stream, so the afternoon is cut.
+ 37  Leave Cowes by 16:16
+ 38  FIG 0.4
+ 39  Sunrise 07:33, sunset 17:56, and the latest time to leave Cowes. Sample data.
+ 40  Halyard works back from sunset to the latest time you can leave. Sunset at Lymington is 17:56 and the passage takes 1 h 40 min, so Wren leaves Cowes by 16:16.
+ 41  One plan, to the minute. Out at 08:30, home by 14:10.
+ 42  Halyard times each leg at your boat’s speed with the stream added, so you know where you will be at each mark and how much daylight you have left. On Saturday that is 3 h 46 min to spare before sunset.
+ 43  Out: Lymington to Cowes, Saturday 24 October 2026 (sample)
+ 44  08:30 Leave Lymington Town Quay
+ 45  08:48 Jack in the Basket 1.5 nm
+ 46  09:17 Hamstead Ledge 3.1 nm
+ 47  09:59 Gurnard 4.6 nm
+ 48  10:10 Cowes 1.3 nm
+ 49  Total, 1 h 40 min 10.5 nm
+ 50  Leave 08:30
+ 51  10.5 nm
+ 52  FIG 0.5
+ 53  The out leg on Saturday. Illustration, not a chart: not for navigation. Sample data.
+ 54  When a new forecast moves your window, you hear about it the evening before, not off Hurst Point. These are the warnings for Wren on Saturday:
+ 55  Wind against tide from 15:00. A 15 kn westerly against a 2.4 kn west-going stream. Wren’s limit is 12 kn.
+ 56  Gusts to 23 kn from 16:00. Wren’s limit is 20 kn.
+ 57  Home after dark if you leave Cowes after 16:16. Sunset at Lymington is 17:56.
+ 58  Warnings, Sat 24 Oct
+ 59  3 for Wren
+ 60  W 15 kn on a 2.4 kn W-going stream
+ 61  16:00
+ 62  Gusts 23 kn
+ 63  Limit 20 kn
+ 64  16:16
+ 65  Sunset 17:56
+ 66  Fri 21:05
+ 67  It now closes at 13:20, 25 minutes earlier: the 21:00 forecast brings the wind on sooner. Your 12:30 start still works.
+ 68  FIG 0.6
+ 69  FIG 0.7
+ 70  Covered: 14 tidal height stations and 8 stream points
+ 71  Save £20.88
+ 72  £0
+ 73  £4.99 a month
+ 74  Or £39 a year, which works out at £3.25 a month
+ 75  Up to five boats and unlimited plans
+ 76  Get Plus, £4.99 a month
+ 77  Predictions for 14 stations, worked out from each station’s published tidal constants
+ 78  Direction and rate at 8 points, from the published stream atlas for the area
+ 79  Hourly forecast from a numerical weather model, updated every 6 hours
+ 80  Sat 24 Oct, 07:45
+ 81  Read the 06:00 inshore forecast
+ 82  HW Lymington 10:58
+ 83  Back by 14:10
+ 84  VHF on, channel 16
+ 85  FIG 0.8
+ 86  Wren, Sat 24 Oct
+ 87  2 windows
+ 88  Out 07:33 to 09:30
+ 89  Back 11:10 to 13:20
+ 90  FIG 0.9
+ 91  Saturday’s two windows for Wren. Sample data.
+ 92  Figures on this page are sample data for Saturday 24 October 2026 at Lymington, in British Summer Time.
+ 93  © 2026 Halyard
+
+No mechanical flags. Now tick every line above against its source: chart data, price list, policy, log.
+exit 0

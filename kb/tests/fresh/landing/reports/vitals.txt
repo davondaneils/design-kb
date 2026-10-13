@@ -1,0 +1,7 @@
+kb/tests/fresh/landing/halyard.html  [mobile, 3 runs, median, gzip]
+  LCP 1104 ms (good)  element: h1#hero-title "Know when to go."
+  CLS 0.000 (good)   INP proxy 0 ms (good) over 0 interactions
+  FCP 1104 ms  TBT 121 ms  TTFB 459 ms  fonts ready 1437 ms  load 1396 ms
+  wire 103.5 KB in 1 requests (document 103.5 KB)  DOM 988 elements
+  main thread at load: script 19 ms, style 127 ms (7x), layout 190 ms (5x)
+exit 0

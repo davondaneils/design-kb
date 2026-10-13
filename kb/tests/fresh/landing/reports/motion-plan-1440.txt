@@ -1,0 +1,10 @@
+motion-plan-check kb/tests/fresh/landing/halyard.html at 1440px
+  animations 347 (reduce 16); ladder 100/149/150/200/300/600/1000/1400/1800 ms
+  bands 4: reveal 600/1000; UI change 200/300; scene 1400/1800; press/hover 100/149/150
+  scenes #hero-scene [day:1600 tide:2000 wind:2400 light:2000 window:3600] seen day>tide>wind>light>window
+  staggers 23@20ms over 624ms, 18@20ms over 699ms, 22@20ms over 628ms, 17@20ms over 161ms, 4@80ms over 463ms, 19@20ms over 463ms; entrances 88 (80 masked)
+  warn stagger  23 items spread over 624ms (300|cubic-bezier(0, 0, 0, 1)|transform); fine for cards, too long for text (500ms)
+  warn stagger  18 items spread over 699ms (300|cubic-bezier(0, 0, 0, 1)|transform); fine for cards, too long for text (500ms)
+  warn stagger  22 items spread over 628ms (300|cubic-bezier(0, 0, 0, 1)|transform); fine for cards, too long for text (500ms)
+PASS: ladder, scene, stagger, travel and reduced motion meet FOUNDATIONS v0.5
+exit 0

@@ -1,0 +1,40 @@
+pass  Pause animation                mouse          
+pass  Pause animation                Enter          focus ring yes
+pass  Pause animation                Space          focus ring yes
+pass  Billing: Yearly                mouse          
+pass  Billing: Yearly                Enter          focus ring yes
+pass  Billing: Yearly                Space          focus ring yes
+pass  Billing: Monthly (from yearly) mouse          
+pass  Billing: Monthly (from yearly) Enter          focus ring yes
+pass  Billing: Monthly (from yearly) Space          focus ring yes
+pass  FAQ 1                          mouse          
+pass  FAQ 1                          Enter          focus ring yes
+pass  FAQ 1                          Space          focus ring yes
+pass  FAQ 2                          mouse          
+pass  FAQ 2                          Enter          focus ring yes
+pass  FAQ 2                          Space          focus ring yes
+pass  FAQ 3                          mouse          
+pass  FAQ 3                          Enter          focus ring yes
+pass  FAQ 3                          Space          focus ring yes
+pass  FAQ 4                          mouse          
+pass  FAQ 4                          Enter          focus ring yes
+pass  FAQ 4                          Space          focus ring yes
+pass  FAQ 5                          mouse          
+pass  FAQ 5                          Enter          focus ring yes
+pass  FAQ 5                          Space          focus ring yes
+pass  Menu (390)                     mouse          
+pass  Menu (390)                     Enter          focus ring yes
+pass  Menu (390)                     Space          focus ring yes
+pass  Menu (390)                     Escape closes  
+pass  Leg distances add up to the total: shown 10.5, re-added 10.5
+pass  Out passage time, first to last mark: shown 1 h 40 min, re-added 1 h 40 min
+pass  Out leg in the plan card (leave to arrive): shown 1 h 40 min, re-added 1 h 40 min
+pass  Back leg in the plan card (leave to home): shown 1 h 40 min, re-added 1 h 40 min
+pass  Daylight to spare: sunset 17:56 minus home: shown 3 h 46 min, re-added 3 h 46 min
+pass  Latest to leave Cowes: sunset minus passage: shown 16:16, re-added 16:16
+pass  Yearly price per month: £39 / 12: shown £3.25, re-added £3.25
+pass  Yearly saving: 12 x £4.99 minus £39: shown £20.88, re-added £20.88
+pass  Back window moved: was 13:45, now 13:20: shown 25 minutes, re-added 25 minutes
+pass  Height stations listed: shown 14, re-added 14
+PASS: every control works by mouse, Enter and Space; every total re-adds
+exit 0

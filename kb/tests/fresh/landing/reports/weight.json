@@ -1,0 +1,52 @@
+{
+  "file": "kb/tests/fresh/landing/halyard.html",
+  "total": {
+    "raw": 231496,
+    "gzip": 105726,
+    "br": 97060
+  },
+  "parts": [
+    {
+      "part": "fonts",
+      "raw": 92820,
+      "gzip": 69860
+    },
+    {
+      "part": "dataUrls",
+      "raw": 0,
+      "gzip": 0
+    },
+    {
+      "part": "css",
+      "raw": 58019,
+      "gzip": 11926
+    },
+    {
+      "part": "svg",
+      "raw": 24301,
+      "gzip": 4669
+    },
+    {
+      "part": "script",
+      "raw": 11927,
+      "gzip": 4335
+    },
+    {
+      "part": "html",
+      "raw": 44444,
+      "gzip": 11821
+    }
+  ],
+  "critical": {
+    "beforePaint": {
+      "raw": 157334,
+      "gzip": 86367,
+      "br": 83331
+    },
+    "beforeLcp": {
+      "raw": 163884,
+      "gzip": 89381,
+      "br": 85630
+    }
+  }
+}

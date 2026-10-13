@@ -1,0 +1,2 @@
+choreo-1440: 245 animations (0 loops); ladder 100/300/600/1000/1400/1800; curves 3; staggers 23@20ms, 22@20ms, 19@20ms, 18@20ms, 17@20ms, 4@81ms; mocks 14, photos 0, screens with visual 8/9
+exit 0

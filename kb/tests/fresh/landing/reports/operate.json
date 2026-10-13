@@ -1,0 +1,441 @@
+{
+  "controls": [
+    {
+      "control": "Pause animation",
+      "how": "mouse",
+      "ok": true,
+      "focusVisible": null,
+      "before": {
+        "pressed": "false",
+        "paused": false
+      },
+      "after": {
+        "pressed": "true",
+        "paused": true
+      }
+    },
+    {
+      "control": "Pause animation",
+      "how": "Enter",
+      "ok": true,
+      "focusVisible": true,
+      "before": {
+        "pressed": "false",
+        "paused": false
+      },
+      "after": {
+        "pressed": "true",
+        "paused": true
+      }
+    },
+    {
+      "control": "Pause animation",
+      "how": "Space",
+      "ok": true,
+      "focusVisible": true,
+      "before": {
+        "pressed": "false",
+        "paused": false
+      },
+      "after": {
+        "pressed": "true",
+        "paused": true
+      }
+    },
+    {
+      "control": "Billing: Yearly",
+      "how": "mouse",
+      "ok": true,
+      "focusVisible": null,
+      "before": {
+        "billing": "month",
+        "cta": "Get Plus, £4.99 a month",
+        "href": "/plus/?billing=month",
+        "terms": "Renews every month until you c",
+        "pressed": "false"
+      },
+      "after": {
+        "billing": "year",
+        "cta": "Get Plus, £39 a year",
+        "href": "/plus/?billing=year",
+        "terms": "Renews every year until you ca",
+        "pressed": "true"
+      }
+    },
+    {
+      "control": "Billing: Yearly",
+      "how": "Enter",
+      "ok": true,
+      "focusVisible": true,
+      "before": {
+        "billing": "month",
+        "cta": "Get Plus, £4.99 a month",
+        "href": "/plus/?billing=month",
+        "terms": "Renews every month until you c",
+        "pressed": "false"
+      },
+      "after": {
+        "billing": "year",
+        "cta": "Get Plus, £39 a year",
+        "href": "/plus/?billing=year",
+        "terms": "Renews every year until you ca",
+        "pressed": "true"
+      }
+    },
+    {
+      "control": "Billing: Yearly",
+      "how": "Space",
+      "ok": true,
+      "focusVisible": true,
+      "before": {
+        "billing": "month",
+        "cta": "Get Plus, £4.99 a month",
+        "href": "/plus/?billing=month",
+        "terms": "Renews every month until you c",
+        "pressed": "false"
+      },
+      "after": {
+        "billing": "year",
+        "cta": "Get Plus, £39 a year",
+        "href": "/plus/?billing=year",
+        "terms": "Renews every year until you ca",
+        "pressed": "true"
+      }
+    },
+    {
+      "control": "Billing: Monthly (from yearly)",
+      "how": "mouse",
+      "ok": true,
+      "focusVisible": null,
+      "before": {
+        "billing": "year",
+        "cta": "Get Plus, £39 a year"
+      },
+      "after": {
+        "billing": "month",
+        "cta": "Get Plus, £4.99 a month"
+      }
+    },
+    {
+      "control": "Billing: Monthly (from yearly)",
+      "how": "Enter",
+      "ok": true,
+      "focusVisible": true,
+      "before": {
+        "billing": "year",
+        "cta": "Get Plus, £39 a year"
+      },
+      "after": {
+        "billing": "month",
+        "cta": "Get Plus, £4.99 a month"
+      }
+    },
+    {
+      "control": "Billing: Monthly (from yearly)",
+      "how": "Space",
+      "ok": true,
+      "focusVisible": true,
+      "before": {
+        "billing": "year",
+        "cta": "Get Plus, £39 a year"
+      },
+      "after": {
+        "billing": "month",
+        "cta": "Get Plus, £4.99 a month"
+      }
+    },
+    {
+      "control": "FAQ 1",
+      "how": "mouse",
+      "ok": true,
+      "focusVisible": null,
+      "before": {
+        "open": false
+      },
+      "after": {
+        "open": true
+      }
+    },
+    {
+      "control": "FAQ 1",
+      "how": "Enter",
+      "ok": true,
+      "focusVisible": true,
+      "before": {
+        "open": false
+      },
+      "after": {
+        "open": true
+      }
+    },
+    {
+      "control": "FAQ 1",
+      "how": "Space",
+      "ok": true,
+      "focusVisible": true,
+      "before": {
+        "open": false
+      },
+      "after": {
+        "open": true
+      }
+    },
+    {
+      "control": "FAQ 2",
+      "how": "mouse",
+      "ok": true,
+      "focusVisible": null,
+      "before": {
+        "open": false
+      },
+      "after": {
+        "open": true
+      }
+    },
+    {
+      "control": "FAQ 2",
+      "how": "Enter",
+      "ok": true,
+      "focusVisible": true,
+      "before": {
+        "open": false
+      },
+      "after": {
+        "open": true
+      }
+    },
+    {
+      "control": "FAQ 2",
+      "how": "Space",
+      "ok": true,
+      "focusVisible": true,
+      "before": {
+        "open": false
+      },
+      "after": {
+        "open": true
+      }
+    },
+    {
+      "control": "FAQ 3",
+      "how": "mouse",
+      "ok": true,
+      "focusVisible": null,
+      "before": {
+        "open": false
+      },
+      "after": {
+        "open": true
+      }
+    },
+    {
+      "control": "FAQ 3",
+      "how": "Enter",
+      "ok": true,
+      "focusVisible": true,
+      "before": {
+        "open": false
+      },
+      "after": {
+        "open": true
+      }
+    },
+    {
+      "control": "FAQ 3",
+      "how": "Space",
+      "ok": true,
+      "focusVisible": true,
+      "before": {
+        "open": false
+      },
+      "after": {
+        "open": true
+      }
+    },
+    {
+      "control": "FAQ 4",
+      "how": "mouse",
+      "ok": true,
+      "focusVisible": null,
+      "before": {
+        "open": false
+      },
+      "after": {
+        "open": true
+      }
+    },
+    {
+      "control": "FAQ 4",
+      "how": "Enter",
+      "ok": true,
+      "focusVisible": true,
+      "before": {
+        "open": false
+      },
+      "after": {
+        "open": true
+      }
+    },
+    {
+      "control": "FAQ 4",
+      "how": "Space",
+      "ok": true,
+      "focusVisible": true,
+      "before": {
+        "open": false
+      },
+      "after": {
+        "open": true
+      }
+    },
+    {
+      "control": "FAQ 5",
+      "how": "mouse",
+      "ok": true,
+      "focusVisible": null,
+      "before": {
+        "open": false
+      },
+      "after": {
+        "open": true
+      }
+    },
+    {
+      "control": "FAQ 5",
+      "how": "Enter",
+      "ok": true,
+      "focusVisible": true,
+      "before": {
+        "open": false
+      },
+      "after": {
+        "open": true
+      }
+    },
+    {
+      "control": "FAQ 5",
+      "how": "Space",
+      "ok": true,
+      "focusVisible": true,
+      "before": {
+        "open": false
+      },
+      "after": {
+        "open": true
+      }
+    },
+    {
+      "control": "Menu (390)",
+      "how": "mouse",
+      "ok": true,
+      "focusVisible": null,
+      "before": {
+        "expanded": "false",
+        "navShown": false
+      },
+      "after": {
+        "expanded": "true",
+        "navShown": true
+      }
+    },
+    {
+      "control": "Menu (390)",
+      "how": "Enter",
+      "ok": true,
+      "focusVisible": true,
+      "before": {
+        "expanded": "false",
+        "navShown": false
+      },
+      "after": {
+        "expanded": "true",
+        "navShown": true
+      }
+    },
+    {
+      "control": "Menu (390)",
+      "how": "Space",
+      "ok": true,
+      "focusVisible": true,
+      "before": {
+        "expanded": "false",
+        "navShown": false
+      },
+      "after": {
+        "expanded": "true",
+        "navShown": true
+      }
+    },
+    {
+      "control": "Menu (390)",
+      "how": "Escape closes",
+      "ok": true,
+      "after": {
+        "expanded": "false",
+        "focus": true
+      }
+    }
+  ],
+  "totals": [
+    {
+      "what": "Leg distances add up to the total",
+      "shown": "10.5",
+      "computed": "10.5",
+      "ok": true
+    },
+    {
+      "what": "Out passage time, first to last mark",
+      "shown": "1 h 40 min",
+      "computed": "1 h 40 min",
+      "ok": true
+    },
+    {
+      "what": "Out leg in the plan card (leave to arrive)",
+      "shown": "1 h 40 min",
+      "computed": "1 h 40 min",
+      "ok": true
+    },
+    {
+      "what": "Back leg in the plan card (leave to home)",
+      "shown": "1 h 40 min",
+      "computed": "1 h 40 min",
+      "ok": true
+    },
+    {
+      "what": "Daylight to spare: sunset 17:56 minus home",
+      "shown": "3 h 46 min",
+      "computed": "3 h 46 min",
+      "ok": true
+    },
+    {
+      "what": "Latest to leave Cowes: sunset minus passage",
+      "shown": "16:16",
+      "computed": "16:16",
+      "ok": true
+    },
+    {
+      "what": "Yearly price per month: £39 / 12",
+      "shown": "£3.25",
+      "computed": "£3.25",
+      "ok": true
+    },
+    {
+      "what": "Yearly saving: 12 x £4.99 minus £39",
+      "shown": "£20.88",
+      "computed": "£20.88",
+      "ok": true
+    },
+    {
+      "what": "Back window moved: was 13:45, now 13:20",
+      "shown": "25 minutes",
+      "computed": "25 minutes",
+      "ok": true
+    },
+    {
+      "what": "Height stations listed",
+      "shown": "14",
+      "computed": "14",
+      "ok": true
+    }
+  ]
+}

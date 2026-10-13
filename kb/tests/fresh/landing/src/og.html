@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1200">
+<title>Halyard social card</title>
+<style>{{PAGE_CSS}}</style>
+<style>
+  body { margin: 0; }
+  .og { inline-size: 1200px; block-size: 630px; display: grid; grid-template-columns: 560px 1fr; gap: var(--space-8); align-items: center; padding: var(--space-9); background: var(--color-bg); box-sizing: border-box; }
+  .og .logo__word { block-size: 32px; }
+  .og h1 { font-size: 5.5rem; line-height: 0.95; margin-block: var(--space-7) var(--space-6); }
+  .og p { font-size: var(--text-lg); color: var(--color-text-muted); max-inline-size: 26ch; }
+  .og .stage { padding: var(--space-8) var(--space-6); }
+</style>
+</head>
+<body>
+<div class="og" data-canvas="1200x630">
+  <div><span class="logo">{{SYMBOL}}{{WORDMARK}}</span><h1>Know when to&nbsp;go.</h1><p>Tide, wind and daylight for your boat on one strip, with the window to sail marked.</p></div>
+  <div class="stage" aria-hidden="true">
+    <div class="frag mini">
+      <div class="frag__head"><b>Wren, Sat&nbsp;24&nbsp;Oct</b><span class="chip chip--win">2 windows</span></div>
+      <div class="frag__body">{{MINI_PLOT}}</div>
+      <div class="app__foot"><span class="key key--win">Out 07:33 to 09:30</span><span class="key key--win">Back 11:10 to 13:20</span></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

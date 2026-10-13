@@ -1,0 +1,270 @@
+{
+ "page": "kb/tests/fresh/landing/halyard.html",
+ "width": 390,
+ "needScene": true,
+ "measuredAt": "2026-10-13T23:56:28.526Z",
+ "animations": 285,
+ "reduceAnimations": 6,
+ "ladder": [
+  100,
+  149,
+  150,
+  200,
+  300,
+  600,
+  1000,
+  1400,
+  1800
+ ],
+ "bands": [
+  "reveal 600/1000",
+  "UI change 200/300",
+  "scene 1400/1800",
+  "press/hover 100/149/150"
+ ],
+ "scenes": [
+  {
+   "id": "hero-scene",
+   "hasId": true,
+   "beats": [
+    {
+     "state": "day",
+     "ms": 1600
+    },
+    {
+     "state": "tide",
+     "ms": 2000
+    },
+    {
+     "state": "wind",
+     "ms": 2400
+    },
+    {
+     "state": "light",
+     "ms": 2000
+    },
+    {
+     "state": "window",
+     "ms": 3600
+    }
+   ],
+   "still": "window",
+   "state": "tide",
+   "loop": true,
+   "rest": 4000,
+   "pauseButtons": 1,
+   "pauseVisible": true,
+   "statesSeen": [
+    "day",
+    "tide",
+    "wind",
+    "light",
+    "window"
+   ]
+  }
+ ],
+ "productTimelines": [],
+ "reversed": [],
+ "staggers": [
+  {
+   "key": "300|cubic-bezier(0, 0, 0, 1)|transform",
+   "n": 12,
+   "gap": 20,
+   "span": 161
+  },
+  {
+   "key": "300|cubic-bezier(0, 0, 0, 1)|transform",
+   "n": 11,
+   "gap": 20,
+   "span": 160
+  },
+  {
+   "key": "300|cubic-bezier(0, 0, 0, 1)|transform",
+   "n": 11,
+   "gap": 20,
+   "span": 161
+  },
+  {
+   "key": "300|cubic-bezier(0, 0, 0, 1)|transform",
+   "n": 7,
+   "gap": 40,
+   "span": 241
+  },
+  {
+   "key": "300|cubic-bezier(0, 0, 0, 1)|transform",
+   "n": 9,
+   "gap": 20,
+   "span": 161
+  },
+  {
+   "key": "300|cubic-bezier(0, 0, 0, 1)|transform",
+   "n": 13,
+   "gap": 20,
+   "span": 160
+  },
+  {
+   "key": "300|cubic-bezier(0, 0, 0, 1)|transform",
+   "n": 17,
+   "gap": 20,
+   "span": 611
+  },
+  {
+   "key": "600|cubic-bezier(0.2, 0, 0, 1)|opacity",
+   "n": 3,
+   "gap": 81,
+   "span": 161
+  },
+  {
+   "key": "600|cubic-bezier(0, 0, 0, 1)|transform",
+   "n": 18,
+   "gap": 20,
+   "span": 431
+  }
+ ],
+ "entrances": [
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "figure.rv",
+   "from": 16,
+   "mask": false,
+   "dur": 600
+  },
+  {
+   "target": "figure.rv",
+   "from": 16,
+   "mask": false,
+   "dur": 600
+  },
+  {
+   "target": "figure.rv",
+   "from": 16,
+   "mask": false,
+   "dur": 600
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  }
+ ],
+ "behavior": [
+  {
+   "id": "hero-scene",
+   "test": "hover",
+   "steps": 0
+  },
+  {
+   "id": "hero-scene",
+   "test": "pause button",
+   "steps": 0
+  },
+  {
+   "id": "hero-scene",
+   "test": "off screen",
+   "steps": 0
+  }
+ ],
+ "findings": [
+  {
+   "level": "warn",
+   "check": "stagger",
+   "msg": "17 items spread over 611ms (300|cubic-bezier(0, 0, 0, 1)|transform); fine for cards, too long for text (500ms)"
+  }
+ ]
+}
