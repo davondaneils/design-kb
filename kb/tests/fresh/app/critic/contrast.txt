@@ -1,0 +1,36 @@
+  2.59  light gust line violet-400 on surface
+  2.31  light gust line on night shading
+  5.62  light wind line violet-600 on surface
+  5.09  light tide line sea-600 on surface
+  6.91  light stream sea-700
+  4.96  light window edge green-600 on surface
+   1.2  light window fill green-100 vs surface
+  2.53  light hatch amber-400 vs surface
+  2.67  light danger hatch red-400 vs surface
+  2.53  light margin bracket (warn) amber-400
+  7.09  light 20 kn limit neutral-700
+  9.83  light handle ring navy-800
+  5.42  light focus ring navy-600 on surface
+  1.07  light handle hover fill navy-50 vs rest white
+  7.27  light badge white on amber-700
+   5.8  light badge white on red-600
+  4.89  light muted text on bg
+  5.24  light muted on surface
+  6.71  light success text green-700
+  7.27  light warning text amber-700
+   5.8  light danger text red-600 on surface
+  5.38  light danger red-600 on danger-subtle
+  3.45  light tag border neutral-500 on surface
+  3.45  light secondary btn border on surface
+  3.11  dark gust line violet-600 on surface
+  3.31  dark gust line on night
+  6.75  dark wind line violet-400
+   7.3  dark tide sea-400
+ 10.16  dark window edge green-300
+  9.53  dark hatch amber-300
+  9.61  dark focus navy-300 on surface
+ 10.45  dark muted neutral-300 on bg
+  5.08  dark btn border neutral-500 on surface
+  9.53  dark badge surface on amber-300
+  9.27  dark badge surface on red-300
+   1.0  dark meter track sunken vs bg (sidebar)

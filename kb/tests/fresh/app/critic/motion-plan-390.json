@@ -1,0 +1,38 @@
+{
+ "page": "kb/tests/fresh/app/plan.html",
+ "width": 390,
+ "needScene": false,
+ "measuredAt": "2026-10-13T21:44:24.794Z",
+ "animations": 15,
+ "reduceAnimations": 12,
+ "ladder": [
+  100,
+  200,
+  600
+ ],
+ "bands": [
+  "reveal 600",
+  "press/hover 100",
+  "UI change 200"
+ ],
+ "scenes": [],
+ "productTimelines": [],
+ "reversed": [],
+ "staggers": [],
+ "entrances": [
+  {
+   "target": "div.wipe",
+   "from": 199,
+   "mask": true,
+   "dur": 600
+  },
+  {
+   "target": "div.wipe-in",
+   "from": 199,
+   "mask": true,
+   "dur": 600
+  }
+ ],
+ "behavior": [],
+ "findings": []
+}

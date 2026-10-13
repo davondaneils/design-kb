@@ -1,0 +1,13 @@
+handle 0 box {"x":885.4000244140625,"y":613,"width":24,"height":32} hit at center: handle (in handle) in viewport: true
+  drag 0 11:50 16:44 17:31 -> 12:40 16:44 17:31
+handle 1 box {"x":1079.4000244140625,"y":634,"width":24,"height":32} hit at center: handle (in handle) in viewport: true
+  drag 1 12:40 16:44 17:31 -> 12:40 17:00 17:46
+saved then changed: notice hidden = true url  toast hidden true
+390 touch drag handle 0 11:50 16:44 17:31 -> 12:20 16:44 17:31 scrollY 775 -> 775
+390 touch drag handle 1 12:20 16:44 17:31 -> 12:20 16:55 17:41 scrollY 775 -> 775
+390 tap +10 back -> 12:20 17:05 17:51
+390 vertical pan on tide row scrollY 15 -> 238
+390 Tab: focused elements fully covered by savebar/topbar: none
+390 menu open, Tab order from menu button: Plan a passage@141 > Saved plans@183 > Boats@225 > Tide tables@267 > Settings@309 > Upgrade to Halyard Plu@408 > −10 min earlier, leave@436 > +10 min later, leave L@436 > −10 min earlier, leave@436 > +10 min later, leave Y@436 > DIV@442 > DIV@442 > Show hourly values@576 > Edit Wren’s limits@487
+menu is a static panel; main inert false
+after Escape focus on Menu

@@ -1,0 +1,4 @@
+390: plan lane top at load 1211; while stepping departures it ranged 1211 to 1280 (moves 69px)
+768: plan lane top at load 995; while stepping departures it ranged 995 to 1064 (moves 69px)
+1024: plan lane top at load 1003; while stepping departures it ranged 1003 to 1072 (moves 69px)
+1440: plan lane top at load 828; while stepping departures it ranged 828 to 918 (moves 90px)
