@@ -1,6 +1,6 @@
 # Domain plan: Data and backend structure (design-data)
 
-Owner hat: domain-specialist (data and backend). Status: shipped as v0.1 on branch skill/design-data.
+Owner hat: domain-specialist (data and backend). Status: revived 2026-10-13 as a domain reference (v0.2, drafting). v0.1 was archived on `wip/design-data` as "engineering, not design"; the revival angle is the contract between data and screens (subtopic 07).
 
 Audience: a designer-builder shipping real apps (solo or tiny team, often on Supabase, Firebase or a Postgres host, often with AI coding tools). They can read SQL but have never been burned by a production migration or a data leak. The skill must stop those burns before they happen and make the schema they ship look like a senior backend engineer drew it.
 
@@ -15,8 +15,9 @@ Audience: a designer-builder shipping real apps (solo or tiny team, often on Sup
 4. `04-platform-choice.md`: Postgres vs SQLite vs document stores vs hosted BaaS.
 5. `05-api-design.md`: REST resources, status codes, errors, pagination, idempotency, webhooks.
 6. `06-auth-rls-privacy.md`: authentication, authorization, RLS, secrets, privacy and retention.
+7. `07-data-shapes-the-ui.md`: how data decisions set what a screen can truthfully show (states, time, money, pagination, derived numbers, optimistic writes, capabilities, freshness, images, slugs, activity, field errors).
 
 ## Reuse and cross-links
 - Positioning, offer, buyer: website-strategy. Checkout and upsell flow: sales-funnels. Paywall copy: copywriting.
-- Forms, empty states, error UX: design-ux and design-copy. Rendering, caching, client data fetching: design-frontend. Structured data for search: design-search. Dashboards over this data: dataviz / design-ux.
+- Forms, empty states, error UX: design-ux and design-copy. Rendering, caching, client data fetching: design-frontend. Structured data for search: design-search. Dashboards over this data: dataviz, design-product-ui. States: design-product-ui `05-states-bulk.md` and design-ux `04-states-feedback.md`. Totals and live numbers: the design-director state truth contract.
 - Shared foundation contract: preference values stored in the database (theme, reduced motion) use the contract's names (`light`, `dark`, `system`) so the front end maps them to tokens without translation.

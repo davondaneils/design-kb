@@ -45,3 +45,13 @@ Status key: C = consensus, P = practitioner opinion, O = one expert's opinion, Q
 - Brandur Leach, Postgres 18 notes: https://brandur.org/nanoglyphs/045-postgres-18
 - Stripe, Supported currencies and minor units: https://docs.stripe.com/currencies
 - Kleppmann, DDIA ch. 2 summary: https://candost.blog/books/data-models-and-query-languages/
+
+## Re-check 2026-10-13 (time-sensitive facts, primary sources)
+| # | Fact | Result on 2026-10-13 | Quote | URL |
+|---|---|---|---|---|
+| R1 | `uuidv7()` is built into PostgreSQL 18 | Unchanged. The PG 18 docs list `uuidv7 ( [ shift interval ] ) → uuid` and `uuidv4()`. | "`uuidv7` ( [ _`shift`_ `interval` ] ) → `uuid`" | https://www.postgresql.org/docs/current/functions-uuid.html |
+| R2 | Current release | **Changed since the archive.** Current minor is 18.6 (2026-08-13). PostgreSQL 19 is in beta (Beta 4, 2026-09-24), not released; the archive's "PG 19 expected around September 2026" did not happen on time. PostgreSQL 14 stops receiving fixes on 2026-11-12. | "PostgreSQL 19 Beta 4 Released!"; "PostgreSQL 14 will stop receiving fixes on November 12, 2026." | https://www.postgresql.org/ |
+| R3 | UUIDv7 layout: 48-bit Unix millisecond timestamp, then random bits | Confirmed (RFC 9562, May 2024). | "allocating a Unix timestamp in milliseconds in the most significant 48 bits" | https://www.rfc-editor.org/rfc/rfc9562.html |
+| R4 | RFC 9562 security note on time-based UUIDs | New source for the archive's "UUIDv7 reveals creation time" caveat. | "If UUIDs are required for use with any security operation within an application context in any shape or form, then UUIDv4 (Section 5.4) SHOULD be utilized." | https://www.rfc-editor.org/rfc/rfc9562.html#name-security-considerations |
+| R5 | `timestamptz` is stored as UTC and the input zone is not kept | Confirmed. This is why the venue or user IANA zone needs its own column. | "the value is stored internally as UTC, and the originally stated or assumed time zone is not retained." | https://www.postgresql.org/docs/current/datatype-datetime.html |
+| R6 | Stripe minor units, special cases | Confirmed and sharpened: ISK and UGX are zero-decimal in practice but Stripe requires them as two-decimal values ending in 00; HUF and TWD are zero-decimal for payouts only. | "to charge 5 ISK, provide an `amount` value of `500`" | https://docs.stripe.com/currencies |

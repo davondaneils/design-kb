@@ -1,6 +1,14 @@
 # Indexes and migrations
 
-Facts from `kb/research/data/02-indexes-and-migrations.md`. Opinion is marked "Opinion".
+Facts from `kb/research/data/02-indexes-and-migrations.md` (rechecked 2026-10-13). Opinion is marked "Opinion".
+
+## Fundamentals (non-negotiable)
+1. Every foreign key column and every column an RLS policy filters on has an index. [judged]; Supabase Advisor 0001.
+2. Every hot list query has an index that matches its WHERE and ORDER BY, checked with `explain (analyze, buffers)`. [judged]
+3. Lists that can grow use keyset pagination with a unique tie-breaker. [judged]
+4. Schema changes are versioned migration files, run first on a non-production database with production-sized data. [judged]
+5. No migration blocks writes on a large table: concurrent index builds, `not valid` then `validate`, expand and contract for renames and type changes, `lock_timeout` set. [judged]
+6. Production has backups and one tested restore. [judged]
 
 ## Principles
 1. **Indexes come from queries, not from columns.** Write the query, then build the index that serves its WHERE and ORDER BY. An index nobody's query uses is pure write cost.
@@ -29,7 +37,7 @@ Facts from `kb/research/data/02-indexes-and-migrations.md`. Opinion is marked "O
   Always add a unique tie-breaker (`id`) to the sort. With UUIDv7 PKs, `order by id desc` alone is already time-ordered (opinion: convenient, but keep `created_at` for clarity in user-facing sorts).
   OFFSET is fine for admin tables under about 10,000 rows where users need "jump to page 7". Opinion.
 - **N+1:** loading a list then querying each row's children one at a time. Fix with a join, `where id = any($1)`, or your ORM's eager loading. Symptom: page time grows linearly with list length.
-- **Counts are expensive** on large tables. Show "50+" or an estimate rather than an exact `count(*)` over millions of rows (opinion; AIP-158 also allows `total_size` to be an estimate).
+- **Counts are expensive** on large tables: Postgres checks visibility for every row (PostgreSQL wiki, Count estimate). Show "50+" (fetch `limit + 1`) or an estimate from `pg_class.reltuples` rather than an exact `count(*)` over millions of rows (opinion on the UI; AIP-158 allows `total_size` to be an estimate). What each choice lets the list UI say: `07-data-shapes-the-ui.md`.
 
 ## Decision rules: safe migrations (PostgreSQL)
 Tooling rule: every schema change is a numbered migration file in version control, applied by a tool (Supabase CLI, Prisma Migrate, Drizzle Kit, Rails, Alembic). Never click-edit production schema in a dashboard. Opinion, universal among senior teams.
@@ -82,6 +90,12 @@ No step holds a long ACCESS EXCLUSIVE lock. Shortcut worth knowing: when a const
 3. Typical fix: composite index matching WHERE plus ORDER BY; switch OFFSET to keyset; remove N+1 by batching.
 4. Re-run explain; confirm Index Scan or Index Only Scan and time drop.
 5. If behind RLS, also apply the RLS performance rules in `06-auth-rls-privacy.md`.
+
+## Where this domain is usually wrong
+- **"Postgres indexes foreign keys automatically."** It indexes the referenced side only (PostgreSQL constraints docs).
+- **"OFFSET is fine."** It reads and discards every skipped row and drifts when rows arrive (Winand).
+- **"Add the index when it gets slow."** On a big table that is a `create index concurrently` under load, or a blocked table if someone forgets `concurrently`.
+- **"A constant default rewrites the table."** Not since PostgreSQL 11; only volatile defaults do (ALTER TABLE docs).
 
 ## Hand-offs
 - Loading and empty states while data streams in: design-ux. Client caching and optimistic UI: design-frontend.

@@ -1,6 +1,12 @@
 # Choosing the data platform
 
-Facts from `kb/research/data/04-platform-choice.md`. Pricing and limits change often; re-check before quoting (last checked October 2026). Opinion is marked "Opinion".
+Facts from `kb/research/data/04-platform-choice.md`. Pricing and limits change often; re-check before quoting (last checked 2026-10-13). Opinion is marked "Opinion".
+
+## Fundamentals (non-negotiable)
+1. Business data with users, teams, orders or permissions goes in a relational database unless the brief is clearly offline-first. [judged]
+2. Before anyone depends on it: automatic backups, one tested restore, region next to the functions, a pooler for serverless. [judged]
+3. If the browser talks to the database, the row rules are written and tested in the same change as the tables. [judged]
+4. Client code carries only the low-privilege key (Supabase publishable); secret keys stay on servers. [judged]
 
 ## Principles
 1. **Relational by default.** Business data is full of many-to-many relationships (users and orgs, orders and products, tags and posts). Relational databases join them; document stores push the joins into your code (Kleppmann, DDIA ch. 2).
@@ -24,7 +30,7 @@ Opinion for this audience: a designer-builder shipping a first or second real ap
 - **Free tier traps:** Supabase Free projects pause after 1 week of inactivity and cap at 500 MB per database and 2 active projects (supabase.com/pricing). Fine for prototypes; not for anything a client depends on.
 - **Region:** put the database in the same region as your server functions and most users; cross-region round trips add tens to hundreds of milliseconds per query.
 - **Connection limits:** serverless functions open many short connections. Use the host's pooler (Supavisor, PgBouncer, Neon pooler) in transaction mode for serverless; know that session state (`set`) does not survive across transactions there.
-- **Key model:** Supabase is replacing `anon` and `service_role` keys with `sb_publishable_...` and `sb_secret_...`, with legacy keys deprecated by end of 2026; secret keys are refused from browsers with 401 (Supabase docs). Build new projects on the new keys.
+- **Key model (checked 2026-10-13):** Supabase is deprecating the legacy `anon` and `service_role` keys "by the end of 2026" in favor of `sb_publishable_...` (browsers, apps, CLIs) and `sb_secret_...` (servers, Edge Functions). The new keys are not JWTs: send them on the `apikey` header. Secret keys return 401 from browsers (matched on User-Agent), and you can issue one per service so a leak forces one rotation. Legacy keys keep working until you deactivate them in Settings > API Keys, and deactivation is reversible, so migrate, verify, then deactivate. Build new projects on the new keys.
 - **Exit path:** can you `pg_dump` everything including auth users? For Firestore, plan an export pipeline before you need it.
 
 ## Firestore rules of thumb (if you choose it)
@@ -47,6 +53,12 @@ Shapes and strokes change many times per second; rooms are trees; presence is ep
 
 ## Worked example: marketplace MVP in a weekend
 Sellers, listings, buyers, orders, payouts, reviews: heavy many-to-many and money. Choice: Supabase Postgres, Stripe Connect, schema from `03-app-data-models.md` adapted (orgs as seller accounts). Firestore would force duplicating listing data into orders and reviews and hand-writing integrity rules. Turn on backups (Pro) before the first real transaction.
+
+## Where this domain is usually wrong
+- **"A document store because the schema is not decided yet."** Schema-on-read moves the schema into every reader (Kleppmann).
+- **"The free tier is fine for a client launch."** Supabase Free pauses after 1 week of inactivity and has no automatic backups (supabase.com/pricing, 2026-10-13).
+- **"The anon key is a secret."** It is public by design; the row rules are the wall (Supabase API keys docs).
+- **"Wait for PostgreSQL 19."** It is in beta (Beta 4, 2026-09-24); build on 18.
 
 ## Hand-offs
 - Rendering strategy, caching and where queries run (server components, edge): design-frontend.

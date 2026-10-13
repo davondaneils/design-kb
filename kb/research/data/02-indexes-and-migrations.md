@@ -31,3 +31,11 @@ Status key: C = consensus, P = practitioner opinion, O = one expert's opinion, Q
 - strong_migrations: https://github.com/ankane/strong_migrations
 - Firestore best practices: https://firebase.google.com/docs/firestore/best-practices
 - Supabase RLS performance: https://supabase.com/docs/guides/troubleshooting/rls-performance-and-best-practices-Z5Jjwv
+
+## Re-check 2026-10-13
+| # | Fact | Result | Quote | URL |
+|---|---|---|---|---|
+| R1 | Unindexed foreign keys are flagged by Supabase Advisor lint 0001 | Confirmed; level INFO. | "0001_unindexed_foreign_keys ... Level: INFO" | https://supabase.com/docs/guides/database/database-advisors?lint=0001_unindexed_foreign_keys |
+| R2 | Index on an RLS policy column: 171 ms to under 0.1 ms | Unchanged (Supabase sample results, 100K row table). | "auth.uid()=user_id | user_id indexed | 171ms | <.1" | https://supabase.com/docs/guides/troubleshooting/rls-performance-and-best-practices-Z5Jjwv |
+| R3 | Exact `count(*)` is slow on large tables; `pg_class.reltuples` gives an estimate | New for 07. | "PostgreSQL has to check visibility for all rows, due to the MVCC model." | https://wiki.postgresql.org/wiki/Count_estimate |
+| R4 | `FOR UPDATE SKIP LOCKED` skips locked rows and gives an inconsistent view, fit for queues only | New for 07 (waitlist promotion jobs). | "Skipping locked rows provides an inconsistent view of the data, so this is not suitable for general purpose work" | https://www.postgresql.org/docs/current/sql-select.html |

@@ -32,3 +32,10 @@ Status key: C = consensus, P = practitioner opinion, O = one expert's opinion, Q
 - Brandur Leach, Soft deletion: https://brandur.org/soft-deletion
 - Brandur Leach, Idempotency keys: https://brandur.org/idempotency-keys
 - OWASP Session Management Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html
+
+## Re-check 2026-10-13
+| # | Fact | Result | Quote | URL |
+|---|---|---|---|---|
+| R1 | Stripe subscription statuses | **Changed: one status added to the skill.** The list is `trialing`, `active`, `incomplete`, `incomplete_expired`, `past_due`, `canceled`, `unpaid`, `paused`. The archive omitted `paused` (trial ended without a payment method when `missing_payment_method` is `pause`). `incomplete` still has 23 hours. `past_due` can move to `canceled`, `unpaid` or stay `past_due` per settings. `active` does not mean every invoice is paid. | "The customer must make a successful payment within 23 hours to activate the subscription."; "`active` doesn't necessarily indicate that all outstanding invoices associated with the subscription have been paid." | https://docs.stripe.com/billing/subscriptions/overview |
+| R2 | Revoke on `unpaid` | Confirmed. | "Revoke access to your product when the subscription is `unpaid`" | same |
+| R3 | Stripe Entitlements | Confirmed and detailed: Stripe creates an active entitlement per feature when a subscription becomes active; the `entitlements.active_entitlement_summary.updated` webhook fires on every change; its `entitlements.data` holds at most 10 entries (fetch `entitlements.url` for more); `GET /v1/entitlements/active_entitlements?customer=` reconciles after a missed webhook. | "contains a maximum of 10 entitlements" | https://docs.stripe.com/billing/entitlements.md?dashboard-or-api=api |

@@ -1,6 +1,15 @@
 # Common app data models
 
-Facts from `kb/research/data/03-app-data-models.md`. Opinion is marked "Opinion". SQL is PostgreSQL 18 (Supabase-compatible; on older versions replace `uuidv7()` with `gen_random_uuid()`).
+Facts from `kb/research/data/03-app-data-models.md` (Stripe facts rechecked 2026-10-13). Opinion is marked "Opinion". SQL is PostgreSQL 18 (Supabase-compatible; on older versions replace `uuidv7()` with `gen_random_uuid()`).
+
+## Fundamentals (non-negotiable)
+1. The auth provider's user table is never extended or exposed; product data about a person lives in `profiles` keyed by the auth id. [judged]
+2. Anything that may be shared or sold to teams is owned by `org_id` from day one, indexed, on every business row. [judged]
+3. Roles live in your tables or `app_metadata`, never in user-editable metadata. [judged]
+4. Billing state is a cache of the provider, written only by the server from one sync function; webhook events are deduped and never applied as deltas. [judged]
+5. Limits that count rows (seats, capacity) are checked after locking the parent row in the same transaction. [judged]
+6. Files live in object storage, private by default, paths prefixed by the owner key, policies mirroring the tables. [judged]
+7. Deletion is designed per table (hard delete, trash with purge, or never delete), and the audit log is append-only. [judged]
 
 ## Principles
 1. **Identity is not a profile.** The auth provider owns credentials and sessions. Your `profiles` table owns everything the product knows about a person. Never write to or expose the provider's user table directly (Supabase docs).
@@ -94,7 +103,8 @@ Rules:
 - **Create the Stripe customer before checkout** and store the mapping; put your `org_id` in Stripe `metadata` (Theo Browne, practitioner).
 - **One sync function.** On any relevant webhook, and on the checkout success page, call `syncStripe(customerId)`: fetch current subscriptions from the Stripe API and upsert your rows. Do not apply event payloads as deltas: Stripe does not guarantee order and may deliver duplicates (Stripe webhooks docs). This removes a whole class of "user paid but app says free" bugs.
 - **Dedupe:** insert the event id into `stripe_events` first; if it conflicts, return 200 and stop.
-- **Access rule:** grant paid features when status is `active` or `trialing`. Treat `past_due` as a grace period you choose (show a banner, keep access for N days). Revoke on `unpaid`, `canceled`, `incomplete_expired`. `incomplete` has 23 hours to complete payment (Stripe subscription docs). Or use Stripe Entitlements and check features, not statuses.
+- **Access rule:** grant paid features when status is `active` or `trialing`. Treat `past_due` as a grace period you choose (show a banner, keep access for N days); your Stripe settings decide whether it later moves to `canceled`, `unpaid` or stays `past_due`. Revoke on `unpaid` (Stripe: "Revoke access to your product when the subscription is `unpaid`"), `canceled`, `incomplete_expired`. `incomplete` has 23 hours to complete payment. `paused` means a trial ended without a payment method under the `pause` setting: no access until resumed. `active` does not mean every invoice is paid (Stripe subscription docs, checked 2026-10-13).
+- **Or gate on Entitlements**, the better default when plans bundle features: Stripe creates an active entitlement per feature when a subscription becomes active, fires `entitlements.active_entitlement_summary.updated` on every change (its list holds at most 10 entries; fetch `entitlements.url` for more), and `GET /v1/entitlements/active_entitlements?customer=` reconciles after a missed webhook (Stripe Entitlements docs, checked 2026-10-13). Store the feature lookup keys per org; the API turns them into capability flags for the UI (`07-data-shapes-the-ui.md`).
 - **Never compute "is paid" in the browser** from a client-readable flag the user can write. The column is written only by the server (service role) and read through RLS.
 - Checkout flow, pricing page and upsells: sales-funnels. Paywall and plan copy: copywriting.
 
@@ -186,6 +196,13 @@ Why not soft delete everywhere: every query must remember the filter, foreign ke
 - Removing a member: delete the membership row only; the projects they created stay with the org (`created_by` set null or kept as a dangling id in audit).
 - RLS: `projects` readable when the caller has a membership in `projects.org_id` (policy pattern in `06-auth-rls-privacy.md`).
 
+## Where this domain is usually wrong
+- **"Add `deleted_at` to every table."** It leaks into every query and policy and breaks foreign keys; one practitioner saw undelete used almost never in a decade (Brandur Leach). Use it only for a real trash.
+- **"Handle each Stripe event type."** Events arrive unordered and duplicated (Stripe webhooks); re-fetch state with one sync function.
+- **"`past_due` means revoke."** It is a grace state whose outcome you configure; `unpaid` is the revoke signal (Stripe).
+- **"Users own the data."** In B2B the organization does; people leave (WorkOS).
+
 ## Hand-offs
+- What each billing and permission state looks like on screen, and the capability flags the UI reads: `07-data-shapes-the-ui.md`, design-product-ui, design-conversion.
 - Invite emails, role labels, destructive confirmations: design-copy and design-ux.
 - Pricing tiers and plan design: website-strategy (positioning) and sales-funnels (flow).

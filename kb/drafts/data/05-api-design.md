@@ -1,6 +1,14 @@
 # API design (REST basics)
 
-Facts from `kb/research/data/05-api-design.md`. Opinion is marked "Opinion".
+Facts from `kb/research/data/05-api-design.md` (rechecked 2026-10-13). Opinion is marked "Opinion".
+
+## Fundamentals (non-negotiable)
+1. Every endpoint that takes an object id checks that the caller may access that object (OWASP API1). [judged]
+2. Request bodies are allowlisted; responses omit private fields (OWASP API3). [judged]
+3. Every list is paginated from day one with a default and a cap. [judged]
+4. Every create or charge accepts an `Idempotency-Key`. [judged]
+5. Errors are RFC 9457 problem+json with correct status codes; field errors carry a pointer and a stable code. [judged]
+6. Webhooks you receive are signature-checked on the raw body, deduped on event id, acknowledged fast. [judged]
 
 ## Principles
 1. **An API is a promise.** Every field, status code and URL you ship is something a client (your app, a partner, an AI agent) will depend on. Add freely, remove never, rename never.
@@ -40,12 +48,12 @@ Use RFC 9457 Problem Details, `Content-Type: application/problem+json`:
   "status": 422,
   "detail": "2 fields need attention.",
   "errors": [
-    { "field": "slug", "code": "taken", "message": "That URL is already in use." },
-    { "field": "price_cents", "code": "min", "message": "Price can't be negative." }
+    { "pointer": "#/slug", "code": "taken", "detail": "That URL is already in use." },
+    { "pointer": "#/price_minor", "code": "min", "detail": "Price can't be negative." }
   ]
 }
 ```
-`errors` is an extension member (RFC 9457 allows them). Map database constraint names to field codes (name your constraints; see `01-schema-fundamentals.md`). Never return stack traces, SQL or internal IDs of other tenants. Error message wording: design-copy.
+`errors` is an extension member. RFC 9457's own validation example uses `errors` items with `detail` and a JSON Pointer `pointer` (checked 2026-10-13); the `code` is this skill's addition so the client maps a stable code to its message. Clients "SHOULD NOT parse the detail member" (RFC 9457): show the client's own copy for each code, fall back to `detail`. A problem with no `type` means `about:blank`. Map database constraint names to pointers and codes (name your constraints; mapping table in `07-data-shapes-the-ui.md`). Never return stack traces, SQL or internal IDs of other tenants. Error message wording: design-copy.
 
 ## Decision rules: lists and pagination
 - Paginate every list endpoint from day one; adding it later breaks clients (Google AIP-158).
@@ -59,8 +67,8 @@ Use RFC 9457 Problem Details, `Content-Type: application/problem+json`:
 
 ## Decision rules: idempotency
 - Accept an `Idempotency-Key` header on every POST that creates or charges. Client generates a UUIDv4 per user intent (not per retry) (Stripe).
-- Server stores `(user_id or org_id, key)` unique, with request fingerprint, status, response code and body (Brandur Leach). Same key plus same payload returns the stored response; same key plus different payload returns 422; same key while the first is still running returns 409 (IETF draft -07).
-- Keep keys at least 24 hours (Stripe); prune after that.
+- Server stores `(user_id or org_id, key)` unique, with request fingerprint, status, response code and body (Brandur Leach). Same key plus same payload returns the stored response; same key plus different payload returns 422; same key while the first is still running returns 409. These codes come from the IETF Idempotency-Key draft -07, which **expired on 2026-04-18** without becoming an RFC (datatracker, checked 2026-10-13): a sound convention, not a standard. Never put personal data in a key (Stripe).
+- Keep keys at least 24 hours (Stripe API v1); prune after that. Stripe's API v2 instead retries failed work to completion on a repeated key (Stripe docs, 2026-10-13); either way the client sends the same key for the same intent.
 - Clients retry with exponential backoff and jitter on network errors, 409, 429 and 5xx; never on 4xx validation errors. Opinion, standard practice.
 
 ## Decision rules: webhooks you receive
@@ -108,5 +116,16 @@ Items get a top-level path for updates so clients do not need the parent id, but
 ## Worked example: "Stripe webhook keeps double-granting credits"
 Cause: duplicate deliveries plus a handler that adds credits per event. Fix: (1) processed-events table keyed by `evt_` id; (2) make the grant itself idempotent, for example a `credit_grants` row unique on `(org_id, stripe_invoice_id)`, so even two different event types for the same invoice cannot grant twice; (3) compute balance from grants instead of incrementing a counter.
 
+## Decision rules: conditional requests
+- Send `ETag` on reads of editable resources; accept `If-None-Match` and return 304 when unchanged (RFC 9110).
+- Edits send `If-Match`; a mismatch returns 412 and the UI shows who changed what. Return 428 when a client edits without a precondition on resources people edit together (RFC 6585). Details and the screen side: `07-data-shapes-the-ui.md`.
+
+## Where this domain is usually wrong
+- **"200 with `{ success: false }`."** Clients and caches read status codes; use 4xx and problem+json.
+- **"The Idempotency-Key header is an IETF standard."** It is an expired draft (2026-04-18); Stripe's practice is the working reference.
+- **"Add pagination later."** It breaks every client (AIP-158).
+- **"Return the total count with every list."** Stripe lists carry `has_more`, not a total; Stripe search's total is opt-in and accurate only to 10,000 (Stripe docs, 2026-10-13).
+
 ## Hand-offs
+- Response fields the UI needs (states, `as_of`, summaries, capability flags): `07-data-shapes-the-ui.md`.
 - Error messages and empty states: design-copy, design-ux. Client fetching, caching, optimistic updates: design-frontend.

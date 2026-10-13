@@ -33,3 +33,10 @@ Status key: C = consensus, P = practitioner opinion, O = one expert's opinion, Q
 - Convex: https://stack.convex.dev/why-choose-convex-database-for-backend
 - AWS, multi-tenant partitioning models: https://docs.aws.amazon.com/prescriptive-guidance/latest/saas-multitenant-managed-postgresql/partitioning-models.html
 - Kleppmann DDIA ch. 2 summary: https://candost.blog/books/data-models-and-query-languages/
+
+## Re-check 2026-10-13
+| # | Fact | Result | Quote | URL |
+|---|---|---|---|---|
+| R1 | Supabase key names and legacy deprecation | Unchanged: `sb_publishable_...` and `sb_secret_...`; legacy `anon` and `service_role` "deprecating ... by the end of 2026". New detail: the new keys are not JWTs and go on the `apikey` header; secret keys return 401 from browsers (matched on User-Agent); legacy keys stay valid until you deactivate them, and deactivation is reversible. | "Supabase is deprecating the `anon` and `service_role` keys by the end of 2026."; "They return HTTP 401 if used in a browser (matched on the `User-Agent` header)" | https://supabase.com/docs/guides/api/api-keys ; https://supabase.com/docs/guides/getting-started/migrating-to-new-api-keys |
+| R2 | Supabase Free and Pro limits | Unchanged: Free 500 MB database, 50,000 MAU, 1 GB storage, 2 active projects, paused after 1 week inactive, no automatic backups; Pro from $25/month, 8 GB disk per project, daily backups kept 7 days; PITR $100 per month per 7 days retention. | "Free projects are paused after 1 week of inactivity. Limit of 2 active projects." | https://supabase.com/pricing |
+| R3 | PostgreSQL versions | See research 01 R2: 18.6 current, 19 in beta, 14 end of life 2026-11-12. | | https://www.postgresql.org/ |
