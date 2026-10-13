@@ -51,7 +51,7 @@ The held-out skilled poster mirrored the S in "Stone" on the main title: the ide
 4. The mark is rendered at 16, 32 and 512px and on light, dark and photo backgrounds; it reads at every size. The favicon reaches 3:1 on light, gray and dark tab strips or sits on its own field (design-graphic `assets/tab_contrast.py`; FOUNDATIONS accessibility findings). The logo itself is exempt from contrast; any version used as a link is not.
 5. Compared with the closest exemplar (`references/signature-moves.md`), rated close on idea, system and presentation.
 6. The hand-over names what is still short of the exemplar, and what the brief did not ask for and was not built.
-7. The strategy brief passes `brief_lint.mjs`; its primary distinctive asset is a shape, not a color alone; new assets were tested by recognition with the name hidden (design-strategy `references/06-checking-a-strategy.md`), not by liking.
+7. The strategy brief passes `brief_lint.mjs`; its primary distinctive asset is a shape, not a color alone; new assets were tested for misattribution and learnability with the name hidden (a new asset has no recognition yet to measure; fame is tracked with real buyers after launch), not by liking (design-strategy `references/05-strategy-to-visual-identity.md` and `06-checking-a-strategy.md`).
 
 ## 4. Reference map
 | Need | Read |
