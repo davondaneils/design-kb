@@ -1,0 +1,439 @@
+{
+  "date": "2026-10-13T14:55:22.717Z",
+  "tokensMs": [
+    100,
+    150,
+    200,
+    250,
+    300,
+    400,
+    500,
+    600,
+    800
+  ],
+  "scenarios": [
+    {
+      "name": "crossing-reveal",
+      "url": "kb/tests/benchmark/round1/landing/ferry.html",
+      "strip": "kb/tests/benchmark/round1/landing/motion/crossing-reveal.png",
+      "result": "PASS",
+      "findings": [],
+      "rows": [
+        {
+          "mode": "no-preference",
+          "end": 400,
+          "animations": [
+            {
+              "i": 0,
+              "type": "Animation",
+              "name": "(script)",
+              "target": "i.route",
+              "duration": 400,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 0,
+              "offset": 0,
+              "curve": "linear",
+              "props": [
+                "scale"
+              ]
+            },
+            {
+              "i": 1,
+              "type": "Animation",
+              "name": "(script)",
+              "target": "i.dot",
+              "duration": 400,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 144,
+              "offset": 0,
+              "curve": "linear",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 2,
+              "type": "Animation",
+              "name": "(script)",
+              "target": "i.route",
+              "duration": 400,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 0,
+              "offset": 0,
+              "curve": "linear",
+              "props": [
+                "scale"
+              ]
+            },
+            {
+              "i": 3,
+              "type": "Animation",
+              "name": "(script)",
+              "target": "i.dot",
+              "duration": 400,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 144,
+              "offset": 0,
+              "curve": "linear",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 4,
+              "type": "Animation",
+              "name": "(script)",
+              "target": "i.route",
+              "duration": 400,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 0,
+              "offset": 0,
+              "curve": "linear",
+              "props": [
+                "scale"
+              ]
+            },
+            {
+              "i": 5,
+              "type": "Animation",
+              "name": "(script)",
+              "target": "i.dot",
+              "duration": 400,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 144,
+              "offset": 0,
+              "curve": "linear",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 6,
+              "type": "Animation",
+              "name": "(script)",
+              "target": "i.route",
+              "duration": 400,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 0,
+              "offset": 0,
+              "curve": "linear",
+              "props": [
+                "scale"
+              ]
+            },
+            {
+              "i": 7,
+              "type": "Animation",
+              "name": "(script)",
+              "target": "i.dot",
+              "duration": 400,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 144,
+              "offset": 0,
+              "curve": "linear",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 8,
+              "type": "Animation",
+              "name": "(script)",
+              "target": "i.route",
+              "duration": 400,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 0,
+              "offset": 0,
+              "curve": "linear",
+              "props": [
+                "scale"
+              ]
+            },
+            {
+              "i": 9,
+              "type": "Animation",
+              "name": "(script)",
+              "target": "i.dot",
+              "duration": 400,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 144,
+              "offset": 0,
+              "curve": "linear",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 10,
+              "type": "Animation",
+              "name": "(script)",
+              "target": "i.route",
+              "duration": 400,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 0,
+              "offset": 0,
+              "curve": "linear",
+              "props": [
+                "scale"
+              ]
+            },
+            {
+              "i": 11,
+              "type": "Animation",
+              "name": "(script)",
+              "target": "i.dot",
+              "duration": 400,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 144,
+              "offset": 0,
+              "curve": "linear",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 12,
+              "type": "Animation",
+              "name": "(script)",
+              "target": "i.route",
+              "duration": 400,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 0,
+              "offset": 0,
+              "curve": "linear",
+              "props": [
+                "scale"
+              ]
+            },
+            {
+              "i": 13,
+              "type": "Animation",
+              "name": "(script)",
+              "target": "i.dot",
+              "duration": 400,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 144,
+              "offset": 0,
+              "curve": "linear",
+              "props": [
+                "opacity"
+              ]
+            }
+          ]
+        },
+        {
+          "mode": "reduce",
+          "end": 0,
+          "animations": []
+        }
+      ]
+    },
+    {
+      "name": "faq-open",
+      "url": "kb/tests/benchmark/round1/landing/ferry.html",
+      "strip": "kb/tests/benchmark/round1/landing/motion/faq-open.png",
+      "result": "PASS",
+      "findings": [],
+      "rows": [
+        {
+          "mode": "no-preference",
+          "end": 200,
+          "animations": [
+            {
+              "i": 0,
+              "type": "CSSTransition",
+              "name": "rotate",
+              "target": "svg.icon",
+              "duration": 200,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "cubic-bezier(0, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 400,
+              "offset": 0,
+              "curve": "enter",
+              "props": [
+                "rotate"
+              ]
+            }
+          ]
+        },
+        {
+          "mode": "reduce",
+          "end": 0,
+          "animations": []
+        }
+      ]
+    },
+    {
+      "name": "primary-press",
+      "url": "kb/tests/benchmark/round1/landing/ferry.html",
+      "strip": "kb/tests/benchmark/round1/landing/motion/primary-press.png",
+      "result": "PASS",
+      "findings": [],
+      "rows": [
+        {
+          "mode": "no-preference",
+          "end": 100,
+          "animations": [
+            {
+              "i": 0,
+              "type": "CSSTransition",
+              "name": "background-color",
+              "target": "a.btn.btn-primary",
+              "duration": 100,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.2, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 7475,
+              "offset": 0,
+              "curve": "standard",
+              "paint": true,
+              "props": [
+                "backgroundColor"
+              ]
+            },
+            {
+              "i": 1,
+              "type": "CSSTransition",
+              "name": "background-color",
+              "target": "a.btn.btn-primary",
+              "duration": 100,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.2, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 7475,
+              "offset": 0,
+              "curve": "standard",
+              "paint": true,
+              "props": [
+                "backgroundColor"
+              ]
+            },
+            {
+              "i": 2,
+              "type": "CSSTransition",
+              "name": "scale",
+              "target": "a.btn.btn-primary",
+              "duration": 100,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.2, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 7475,
+              "offset": 0,
+              "curve": "standard",
+              "props": [
+                "scale"
+              ]
+            }
+          ]
+        },
+        {
+          "mode": "reduce",
+          "end": 0,
+          "animations": []
+        }
+      ]
+    },
+    {
+      "name": "stepper-keyboard",
+      "url": "kb/tests/benchmark/round1/landing/ferry.html",
+      "strip": "kb/tests/benchmark/round1/landing/motion/stepper-keyboard.png",
+      "result": "PASS",
+      "findings": [],
+      "rows": [
+        {
+          "mode": "no-preference",
+          "end": 0,
+          "animations": []
+        },
+        {
+          "mode": "reduce",
+          "end": 0,
+          "animations": []
+        }
+      ]
+    }
+  ]
+}
