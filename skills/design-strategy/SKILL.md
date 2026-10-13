@@ -35,7 +35,7 @@ If two rows fit, take the shallower and say what you skipped. A deliverable the 
 ## 2. Fundamentals (non-negotiable, check first)
 1. **No visual decision before the brief exists at the right depth.** [judged]
 2. **Depth follows the brief; build only what it lists** and name what was not built (design-playbook-brand section 0). [judged]
-3. **One page**: about 700 words or fewer, tables included. [lint `brief_lint.mjs`]
+3. **One page** is a discipline, not a sheet of paper: about 700 words or fewer, tables included (opinion). Measured: the 680-word example fills about one and a third A4 sides at 10pt, so print it on two. [lint `brief_lint.mjs`]
 4. **Locale set from the audience**, then used as `<html lang>` (FOUNDATIONS "Locale first"). [lint]
 5. **The audience is a moment**: "[who] when [trigger], wanting [progress], held back by [anxiety or habit]", in their words with the source named. Never demographics alone. [lint for the shape; judged for truth]
 6. **The status quo is the first alternative**; three shortlisted competitors are named. [lint]
@@ -51,7 +51,7 @@ If two rows fit, take the shallower and say what you skipped. A deliverable the 
 
 ## 3. Principles
 1. **The brief is a contract, not an essay.** Every field has a named reader (table above); a field nobody reads is cut.
-2. **Two jobs, two audiences.** Positioning gives the in-market comparer a reason to choose, in words. The identity makes the brand recognizable to the out-of-market majority (about 95 percent of B2B buyers in a quarter, Dawes), in assets. Buyers perceive little difference between brands (Romaniuk, Sharp and Ehrenberg 2007); they do recognize distinctive assets.
+2. **Two jobs, two audiences.** Positioning gives the in-market comparer a reason to choose, in words. The identity makes the brand recognizable to the out-of-market majority (about 95 percent of B2B buyers in a quarter, Dawes), in assets. Buyers perceive little difference between brands (Romaniuk, Sharp and Ehrenberg 2007; contested by the positioning school); they do recognize distinctive assets.
 3. **Situations, not people, bring someone to a category** (Romaniuk's category entry points). No push, no switch; remove anxiety before adding pull (Moesta).
 4. **Alternatives define difference; the category is a frame you choose** (Dunford).
 5. **Shape first, color second; words beat shapes when they disagree** (2026 distinctive asset benchmark; Jiang et al. 2016).
@@ -65,7 +65,7 @@ If two rows fit, take the shallower and say what you skipped. A deliverable the 
 - **Voice tool**: inherit or three lines, name the source; one page, four lines; voice guide as deliverable, crafting-voice-identity in full; UI and page copy, design-copy 03.
 - **Distinctive assets**: one primary shape (mark, container, character, crop) that survives 16px and one color, plus one or two supporting assets (color at a fixed share, a face, an image treatment). Never color alone.
 - **Category codes**: keep the semantic codes (what it is: a bank looks safe, a checkout looks like a checkout); break exactly one expressive code hard (who it is: the shared stock photo, the shared blue). Never use a famous-but-not-unique asset alone.
-- **Rebrand audit**: fame and uniqueness per asset (50 percent thresholds); Use or lose: keep; Invest: use more; Avoid solo use: only with the name; Ignore or test: free to replace. Remove a name from a symbol only after about 80 percent spontaneous recognition (Mastercard 2019; opinion as a rule).
+- **Rebrand audit** (the distinctive asset audit, not website-strategy stage 2's fact-sheet "asset audit"): fame and uniqueness per asset among category buyers (50 percent thresholds); Use or lose: keep; Invest: use more; Avoid solo use: only with the name; Ignore or test: free to replace. Remove a name from a symbol only after about 80 percent spontaneous recognition (Mastercard 2019; opinion as a rule).
 - **Checks by depth**: inherit, swap test and ledger; three lines, add the covered competitor wall, hide-the-logo and a five-second test; one page, add the onlyness swap test and a fresh critic on the hero; full, add the mark wall, asset audit and a real message or recognition test.
 
 ### Attribute to identity, starting rows (ref 05 has the full table)
@@ -80,15 +80,15 @@ If two rows fit, take the shallower and say what you skipped. A deliverable the 
 ## 5. Expert moves (what a top strategist does that a generalist misses)
 1. **Give the words and the look different jobs.** Words differentiate for the 5 percent comparing today; the identity is distinctive for the 95 percent who must remember later. A brief that asks a logo to "say innovative and trustworthy" is asking it to do the copy's job, and a headline that states another attribute cancels the shape's effect anyway (Jiang et al. 2016).
 2. **Onlyness stays internal until the ledger says yes.** Public "only" is an objective claim (the ASA even treated "the perfect network" as objective in context). Publish the underlying fact: more specific, legally safe, and drawable for art direction.
-3. **Position against the status quo before the market leader.** The first alternative to beat is doing nothing (Dunford); a hero that beats the spreadsheet beats more deals.
+3. **Position against the status quo before the market leader.** The first alternative to beat is the status quo; Dunford reports enterprise software loses 20 to 30 percent of deals to "no decision", about one in four. A hero that beats the spreadsheet wins deals no feature comparison reaches (opinion).
 4. **Choose the category for its default assumptions.** "Invoicing software" imports the leader's feature checklist; "getting paid on time" imports a comparison you win. The category word in the hero is a positioning decision.
 5. **Spend design on the anxiety, not the pull.** The one-line reassurance beside the button and proof at the moment of doubt often outwork another feature: "More features can increase anxiety" (Moesta).
-6. **Lead with a shape; let color ride on it.** Across 1,162 assets in 21 categories, shapes average 40 percent fame and 71 percent uniqueness, colors 12 and 39; color is also the most contested (2026 benchmark). Monzo's coral works because it is a coral card, an object.
-7. **Measure before you rebrand.** Anything in "Use or lose" is a constraint, not an option. Tropicana removed its orange with a straw in January 2009 and brought it back within weeks (NYT).
-8. **Test identities by recognition, not liking.** Liking-based redesigns are linked to worse outcomes than distinctive-asset research (Caruso et al. 2025, cited in the 2026 benchmark). Hide the name; count correct brand links.
-9. **Keep the semantic codes, break one expressive code hard.** Monzo kept banking's interface grammar and broke its color and its "generic people photography". Breaking everything costs category recognition (opinion).
+6. **Lead with a shape; let color ride on it.** Across 1,162 assets in 21 categories, shapes average 40 percent fame and 71 percent uniqueness, colors 12 and 39; color is also the most contested (2026 benchmark). Monzo's coral works because it is a coral card, an object. "Narrative-driven assets perform relatively better in service industries" (same study, abstract), so a service brand should test a character or story asset before a second color (opinion).
+7. **Measure before you rebrand.** Anything in "Use or lose" is a constraint, not an option. Tropicana removed its orange with a straw in January 2009 and announced the old carton's return about seven weeks later (NYT).
+8. **Test identities by recognition, not liking.** Redesigns researched with focus groups and attitude measures are associated with worse outcomes than those grounded in distinctive-asset research (Caruso et al. 2025, cited in the 2026 benchmark). An existing asset: hide the name, count correct links and competitor links among category buyers. A new asset has no fame to measure, so test misattribution (shown cold, does anyone name a competitor?) and learnability (shown once with the name, then unnamed among the competitor wall: is it picked?) (ref 06; opinion on the method).
+9. **Keep the semantic codes, break one expressive code hard.** Monzo broke banking's color and its "generic people photography" while, on our reading, keeping its interface grammar. Breaking everything costs category recognition (opinion).
 10. **The louder the creative, the stronger the branding.** "The more attention-grabbing the creative, the harder the branding has to work" (Romaniuk): a wild hero still carries the primary asset in its first screen.
-11. **For global brands, put the attribute in the shape.** Round and angular cues hold across 25 languages and 10 writing systems (Ćwiek et al. 2022); color meanings vary by culture.
+11. **For global brands, put the attribute in the shape.** The bouba/kiki match of sounds to round and spiky shapes held across 25 languages and 10 writing systems (Ćwiek et al. 2022), while color meanings vary by culture (design-color). That shape cues travel further than hue cues is our inference for brand use (opinion).
 12. **Cover the logos and ask the viewer to pick yours.** A distinctiveness check with a right answer is harder to fool than "does it look different?". Brief the fresh viewer with the audience moment, never the strategy.
 13. **Name the weakest field.** "Weakest: proof; no reviews yet" lets the playbook design around the gap instead of faking proof.
 14. **Name the evidence level out loud** in the hand-over: lab evidence (weak), convention, or our judgment. Clients and critics trust a strategist who separates taste from evidence.
@@ -97,7 +97,7 @@ If two rows fit, take the shallower and say what you skipped. A deliverable the 
 | Item | Value |
 |---|---|
 | Depth tiers | inherit, three lines, one page, full (plus proposal via website-strategy) |
-| Brief length | about 700 words, tables included (lint warns above 700, fails above 900; opinion) |
+| Brief length | about 700 words, tables included (lint warns above 700, fails above 900; opinion); about 1.3 A4 sides at 10pt, measured on the example |
 | Named competitors | 3 for swap tests (opinion); 8 to 12 for the hue map (design-color); 12 to 20 marks at 48px for the wall (design-graphic) |
 | CEPs | 5 to 10 listed, 1 for the hero, up to 3 for sections (opinion) |
 | In market at once (B2B) | about 5 percent a quarter (Dawes), sector-dependent |
@@ -126,9 +126,9 @@ It passes `brief_lint.mjs`, and its one-line summary leads the hand-over: "Depth
 | File | Use |
 |---|---|
 | `assets/strategy-brief.md` | The template. Delete the sections your depth does not need |
-| `assets/example-brief-ember-oak.md` | A filled one-page brief (the design-kb test roaster); passes the linter at 700 words |
+| `assets/example-brief-ember-oak.md` | A filled one-page brief (the design-kb test roaster); passes the linter at or under 700 words by its count |
 | `node skills/design-strategy/assets/brief_lint.mjs brief.md [--json]` | Checks depth, locale, moment shape, status quo, 3 competitors, swap result, fact source, ledger (yes or cut), voice pairs and samples, identity rows with E/C/O, non-color primary asset, codes, checks, length, placeholders and em dashes. Exit 1 on any FAIL |
-| `node skills/design-strategy/assets/brief_lint.mjs --self-test` | Runs its six built-in cases |
+| `node skills/design-strategy/assets/brief_lint.mjs --self-test` | Runs its built-in three-line cases and, when the example sits beside it, one-page cases built from the example |
 
 ## 9. Reference map
 | Read | When |

@@ -31,7 +31,7 @@ Use the rows that match the brief's attributes (from positioning and voice). Eac
 | Calm, premium | Larger display contrast, fewer sizes; high-contrast serif only at display sizes (C; design-typography 08) | Low chroma, deep lightness (O; design-color) | Simple, one quirk only (O; design-graphic 01) | Fewer, larger images; one treatment (O) | More space: `--space-section` at the top of its range (O) | Slower and rarer, `--duration-slow` for one reveal (O; FOUNDATIONS reveal ceiling) |
 | Challenger, against the category | One face the category does not use (O) | Own an empty sector of the category hue wheel (O; design-color rule 2) | One shape no competitor has; test on the wall (O) | Break the category's image code (C to break; Monzo [E10]) | Keep the category's layout grammar for trust (O) | As brand, never louder than the floor allows (FOUNDATIONS) |
 | Trusted, regulated, established | Serif or sober sans, conservative sizes (C) | Conform to the category hue if trust is the job (C; design-color rule 2) | Keep existing famous assets (E; [E6][E8]) | Real people, real places, consent (C) | Conventional, proof near claims (C; design-conversion 02) | Minimal (O) |
-| Playful | Display face with character for heads only; body stays plain (O) | Higher chroma, more hues, each with a role (O; design-color) | Rounded, a character or mascot is a strong asset type (E; characters show low competitive intensity [E2]) | Custom illustration with one style (O; design-graphic 04) | Broken grid in hero only (O) | Springier only where `prefers-reduced-motion` removes it (FOUNDATIONS) |
+| Playful | Display face with character for heads only; body stays plain (O) | Higher chroma, more hues, each with a role (O; design-color) | Rounded; a character or mascot, the least contested asset type (E for low competitive intensity [E2]; O for the choice) | Custom illustration with one style (O; design-graphic 04) | Broken grid in hero only (O) | Springier only where `prefers-reduced-motion` removes it (FOUNDATIONS) |
 
 ### Pick the distinctive assets
 1. **One primary asset that is a shape**: the mark, a container shape, a cropping device, a character. It must survive 16px and one color (design-graphic 01).
@@ -51,13 +51,15 @@ List the codes the category shares (the competitor wall shows them): hue, typefa
 Breaking more than one or two codes at once risks the buyer not recognizing the category at all (opinion).
 
 ### Rebrand: the asset audit
+This is the distinctive asset audit. website-strategy stage 2 also has an "asset audit": a quarry of facts and proof for copy. Run that one for the one true fact; run this one before any sketch.
+
 1. List every current asset: mark, symbol, color, face, shape, character, sound, slogan, image style.
-2. Rate each on **fame** (share of category buyers who link it to the brand) and **uniqueness** (share of those who link it only to this brand). With a survey: Romaniuk's method, 50 percent thresholds [E2]. Without one (opinion, a stand-in): show each asset with the name removed to 5 or more category buyers or fresh-context viewers and ask "which brand is this?"; record hits and wrong brands.
+2. Rate each on **fame** (share of category buyers who link it to the brand) and **uniqueness** (of all the brand links the asset prompts, the share that go to this brand). With a survey: Romaniuk's method, 50 percent thresholds [E2]. Without one (opinion, a stand-in): show each asset with the name removed to 8 or more category buyers and ask "which brand or brands does this make you think of?"; allow more than one answer and record every brand named. Fame = buyers naming us / buyers asked; uniqueness = mentions of us / all brand mentions. Fame lives in buyers' memories, so a fresh-context subagent cannot stand in here; it can only say whether an asset looks like a competitor's (06). Eight people find a direction, not a share.
 3. Place each on the grid and act:
 
 | Quadrant | Fame, uniqueness | Action |
 |---|---|---|
-| Use or lose | high, high | Keep. Evolve detail only. Losing it costs recognition (Tropicana's orange with a straw [E6][E7]) |
+| Use or lose | high, high | Keep. Evolve detail only. Losing it costs recognition (Tropicana's orange with a straw [E6]) |
 | Invest | low, high | Keep and use more, consistently |
 | Avoid solo use | high, low | Use only with the name; do not build on it |
 | Ignore or test | low, low | Free to replace |
@@ -80,12 +82,12 @@ Breaking more than one or two codes at once risks the buyer not recognizing the 
 
 ## Ceiling: expert moves
 1. **Give the identity and the words different jobs.** Words differentiate for the in-market comparer; the identity makes the brand recognizable for the out-of-market majority. Briefs that ask a logo to "say innovative and trustworthy" are asking it to do the copy's job, and the evidence says the copy wins anyway [E4] (opinion on the framing).
-2. **Lead with shape, then let color ride on it.** Pick a mark or container shape that can run alone, then a color in fixed proportion; never a palette-led identity. Shapes beat colors on fame and uniqueness in every industry studied [E2].
+2. **Lead with shape, then let color ride on it.** Pick a mark or container shape that can run alone, then a color in fixed proportion; never a palette-led identity. Shape-based assets "consistently perform best" across the 21 categories, color weakest [E2]. The exception to know: "narrative-driven assets perform relatively better in service industries" (same study, abstract), so a service brand tests a character or story asset before leaning on a second color (opinion).
 3. **Measure, then rebrand.** Run the asset audit before the first sketch; anything in "Use or lose" is a constraint, not an option. Tropicana's redesign removed its most recognized element and was reversed within weeks [E6].
-4. **Test new assets by recognition, not liking.** Focus groups on liking predict redesign outcomes worse than distinctive asset measures [E2 citing Caruso et al. 2025]. Show the asset without the name; count correct brand links.
+4. **Test assets by recognition, not liking.** Pack redesigns researched with focus groups and brand attitude measures are linked to worse results: that approach "has been associated with less successful outcomes", while distinctive asset research is "linked to more successful outcomes" [E2 citing Caruso et al. 2025]. An existing asset: hide the name, count correct and competitor links (the audit above). A brand-new asset has no fame yet, so a recognition count before launch is always near zero; test misattribution and learnability instead (06, check 8) (opinion on the method).
 5. **Break one expressive code hard, keep the semantic codes.** A bank that looks unlike a bank loses trust; a bank with a coral card in a sea of navy is remembered (Monzo [E9][E10]; opinion as a rule).
 6. **The louder the creative, the stronger the branding must be.** "The more attention-grabbing the creative, the harder the branding has to work to succeed" [E3]. A wild hero still carries the primary asset in the first screen.
-7. **Shape cues travel; color cues do not.** Round and angular cues hold across 25 languages and 10 writing systems [E5]; color meanings vary by culture (design-color psychology-brand). For a global brand, put the attribute in the shape (E for the cue, opinion for the brand rule).
+7. **Shape cues travel further than color cues.** The bouba/kiki match of sounds to round and spiky shapes held across 25 languages and 10 writing systems [E5]; color meanings vary by culture (design-color psychology-brand). For a global brand, put the attribute in the shape (E for the sound-shape match, our inference for brand attributes, opinion for the rule).
 8. **Name the evidence level out loud.** In the hand-over and to clients: "rounded forms read softer (lab evidence, weak effect); the coral is our judgment of ownability; the serif is category convention." Clients trust designers who separate taste from evidence (design-color psychology-brand).
 
 ## Do and don't
@@ -110,13 +112,13 @@ Attributes from positioning and voice: precise, not cold; calm, not slow.
 Codes kept: grid calendar, sans type. Code broken: every competitor's hero shows smiling stock teams; this one shows a real week of slots from product data.
 
 ### 2. Rebrand: a 40-year-old regional credit union (full)
-Asset audit (stand-in method, 8 local category buyers shown each asset without the name; numbers are this worked example's, not research):
-| Asset | Named correctly | Named another brand | Quadrant (stand-in) | Action |
-|---|---|---|---|---|
-| Lighthouse symbol | 6 of 8 | 0 | Use or lose | Keep; redraw for 16px |
-| Navy and gold | 2 of 8 | 4 (two banks) | Avoid solo use | Keep navy only with the symbol |
-| Slogan "Your neighbor in banking" | 1 of 8 | 3 | Ignore or test | Replace |
-| Serif wordmark | 3 of 8 | 1 | Invest | Keep the genre, redraw |
+Asset audit (stand-in method, 8 local category buyers shown each asset without the name, more than one brand allowed; numbers are this worked example's, not research):
+| Asset | Named us | Other brand mentions | Fame, uniqueness | Quadrant (stand-in) | Action |
+|---|---|---|---|---|---|
+| Lighthouse symbol | 6 of 8 | 0 | 75, 100 | Use or lose | Keep; redraw for 16px |
+| Navy and gold | 5 of 8 | 7 (two banks) | 62.5, 42 | Avoid solo use | Keep navy only with the symbol |
+| Slogan "Your neighbor in banking" | 1 of 8 | 3 | 12.5, 25 | Ignore or test | Replace |
+| Serif wordmark | 3 of 8 | 1 | 37.5, 75 | Invest | Keep the genre, redraw |
 Result: the lighthouse is redrawn, not replaced; the new expressive break is photography of members in their real shops instead of stock families; checkout and account screens stay conventional (semantic code kept).
 
 ## Where this domain is usually wrong
@@ -129,7 +131,7 @@ Result: the lighthouse is redrawn, not replaced; the new expressive break is pho
 
 ## Hand-offs
 - design-typography 02 (faces, pairing, licensing), 07 (display), 08 (high-contrast faces).
-- design-color psychology-brand (hue choice, category wheel), palette-building (ramps), ui-tokens-themes (roles, both themes). Brand color versus contrast: the color changes role, never the floor.
+- design-color psychology-brand (hue choice, category wheel), palette-building (ramps), ui-tokens-themes (roles, both themes). Brand color versus contrast: the color changes role, never the floor. The hex values website-strategy stage 5 asks for go into `--color-brand` (FOUNDATIONS token schema); decisions here name the token and its role.
 - design-graphic 01 (mark types, competitor wall, stress tests), 02 (icons), 04 (illustration).
 - design-art-direction 01 (concept sentence, motifs, reject test, one treatment).
 - design-layout (grid, density, `--space-section`), design-motion 01 (purpose and personality; reduced motion always).

@@ -4,12 +4,12 @@
 
 Research notes: `kb/research/strategy/03-positioning.md` (C-numbers). Opinion is marked (opinion).
 
-Positioning, in Dunford's words, "defines how our product is different and better than alternatives for a particular set of customers" (aprildunford.com). It is built from components in a fixed order, starting with what the customer would do if the product did not exist [C1][C3]. This file adds three things the positioning books leave to others: the one true fact that carries the position onto a page, the legal line between a position and a public claim, and the split between being different (what you say) and being distinctive (what you look like).
+Positioning, in Dunford's words, "defines how your product is a leader at delivering something that a well-defined set of customers cares a lot about" ("An Introduction to Positioning", aprildunford.com). It is built from components in a fixed order, starting with what the customer would do if the product did not exist [C1][C3]. This file adds three things the positioning books leave to others: the one true fact that carries the position onto a page, the legal line between a position and a public claim, and the split between being different (what you say) and being distinctive (what you look like).
 
 website-strategy stage 4 holds the long method (Ries and Trout's one word, category design, Hormozi's niche test, tagline territory). Use it at full depth. This file is the short path and the checks.
 
 ## Floor: fundamentals (non-negotiable)
-1. **Competitive alternatives come first and include the status quo** (spreadsheet, agency, doing nothing) [C3][C4]. [lint: `brief_lint.mjs` checks the field lists at least one alternative that is not a named company; judged for truth]
+1. **Competitive alternatives come first and include the status quo** (spreadsheet, agency, doing nothing) [C3][C4]. [lint: `brief_lint.mjs` checks the Alternatives field names the status quo; judged for truth]
 2. **Three competitors are named** for the swap tests: the ones the best-fit customer actually shortlists, not every company on the internet [C4]. [lint: field present]
 3. **The positioning passes the name-swap test**: put each named competitor's name in the onlyness sentence and the hero line; if either still reads true, it fails [C10]. [judged; result recorded, `brief_lint.mjs` checks a result is written]
 4. **One true fact is stated with its source**: specific, checkable, owned by this brand. [lint: field present with a source]
@@ -63,7 +63,7 @@ website-strategy stage 4 holds the long method (Ries and Trout's one word, categ
 1. **Run the swap test twice: on the words and on the first screen.** The onlyness sentence can pass while the hero section (headline, image, layout) is interchangeable with a competitor's. Swap names in the sentence; swap logos on the screenshot (06) (opinion).
 2. **Translate onlyness into the fact, not the boast.** The public line is the evidence ("the only one that logs every roast" becomes "every bag shows its roast curve"). It survives CAP 3.7 and FTC review, it is more specific, and it gives art direction something to draw [C12][C13] (application is opinion).
 3. **Choose the category for its default assumptions.** Calling an invoicing tool "accounting software" imports QuickBooks as the reference and its feature checklist; calling it "getting paid on time" imports a different comparison. Pick the frame where your strengths are the assumed criteria [C3] (example is opinion).
-4. **Position against the status quo before the competitor.** In most B2B deals the alternative that wins is doing nothing [C4]; a hero that beats the spreadsheet beats more deals than one that beats the market leader (opinion from [C4]).
+4. **Position against the status quo before the competitor.** "The first competitive alternative we need to beat is the status quo" [C4]; on the same page Dunford reports enterprise software companies "lose between 20% and 30% of deals" to "no decision" (aprildunford.com, "Positioning and Competition"). That is about one deal in four lost to nobody; a hero that beats the spreadsheet wins deals a feature comparison never reaches (opinion).
 5. **Keep difference in the words and distinctiveness in the look.** Do not ask a logo or a color to "communicate" the positioning; evidence shows weak perceived differentiation [C11] and shape associations are overridden by a headline that says something else (05, Jiang 2016). Assign the job: words differentiate, assets identify.
 6. **When nothing is only, narrow the who or the where.** Neumeier's what, how, who, where, why, when lets a commodity win a specific audience in a specific place ("the only same-day denture repair in Tacoma") [C10]. If even that fails, say so in the brief (fix the company [C9]).
 
@@ -90,7 +90,7 @@ website-strategy stage 4 holds the long method (Ries and Trout's one word, categ
 - Alternatives: the status quo (Word template and email), Stripe Invoicing, FreshBooks.
 - Attributes: chases late payments with a sequence the freelancer approves; shows "expected by" dates from the client's own history.
 - Category frame tries: "invoicing software" (compared on templates, loses), "accounts receivable" (enterprise, wrong buyer), "getting paid on time" (wins: the value is the frame).
-- Swap test on the first hero draft "Beautiful invoices in seconds": true of all three named competitors. Fails. Rewrite: "Know when each client will actually pay." Fails for all three. Passes.
+- Swap test on the first hero draft "Beautiful invoices in seconds": still true with each competitor's name in it, so the test fails. Rewrite: "Know when each client will actually pay." False with each competitor's name in it: the test passes.
 - One true fact: the median days-late figure from the product's own data, with its scope and date, held in the claims ledger.
 
 ## Where this domain is usually wrong
@@ -106,6 +106,7 @@ website-strategy stage 4 holds the long method (Ries and Trout's one word, categ
 - design-conversion 02: proof beside the claim it proves.
 - design-art-direction: the one true fact becomes the concept sentence.
 - 05 (identity): distinctiveness, not differentiation, is the identity's job.
+- website-strategy stage 4 step 3 argues for category design (Ramadan). For a design brief, choose a frame the buyer already uses and searches (design-search) unless the brief funds the education a new category needs; a coined category in the hero fails the five-second test (06) (opinion).
 - Legal: substantiation rules differ by market (FTC in the US, ASA and CAP in the UK); for regulated claims (health, finance, environment) the client's lawyer decides (opinion).
 
 ## Sources

@@ -32,7 +32,7 @@ Three skills already define voice: Davon's crafting-voice-identity (the full bra
 ```
 Voice: Plainspoken, not blunt. "Your payment did not go through. You have not been charged."
        Warm, not cute.        "Morning. Three invoices went out overnight."
-       Expert, not academic.  "Late fees work best at 2 percent a month. Here's why."
+       Expert, not academic.  "Add the late fee to the first invoice, not the third. Here's the wording."
 Flat:  errors, payments, security (tone map dials at 1)
 ```
 
@@ -53,7 +53,7 @@ Flat:  errors, payments, security (tone map dials at 1)
 ## Ceiling: expert moves
 1. **Write the sample line in the worst moment first.** Payment failed, account locked, order late. If the pair still holds there, it is a voice; if it only works in the hero, cut it (opinion; design-copy 03 tone map).
 2. **Steal the "not" from the category.** "Expert, not academic" for a field where competitors write like manuals; "warm, not cute" where competitors use mascots and exclamation marks. The boundary is the differentiation (opinion).
-3. **Give every pair a visual twin in the same words.** "Plainspoken, not blunt" maps to a low-contrast grotesque at a calm size, not a condensed black weight; "warm, not cute" to a humanist face with soft terminals and rounded radius from the scale (`--radius-md`), not a bubble font. Written once, used by both the writer and the designer (05).
+3. **Give every pair a visual twin in the same words.** "Plainspoken, not blunt" maps to a grotesque with low stroke contrast at a calm size, not a condensed black weight; "warm, not cute" to a humanist face with soft terminals and rounded radius from the scale (`--radius-lg`, as in 05), not a bubble font. Written once, used by both the writer and the designer (05).
 4. **Ban the category's words, not only the corporate ones.** design-copy 03 bans "leverage", "seamless" and friends; add the three phrases every competitor uses ("all-in-one", "built for teams", "your coffee journey"). They are the verbal version of a category code (opinion).
 
 ## Do and don't

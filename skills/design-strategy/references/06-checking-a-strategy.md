@@ -8,7 +8,7 @@ A strategy is checked three ways: is it **distinctive** (it could not be a compe
 
 ## Floor: fundamentals (non-negotiable)
 1. **Your own judgment never counts as a cold viewer.** You know the idea. A fresh-context subagent shown only the image counts as one viewer (design-playbook-brand 2a) [F2]. [judged]
-2. **Every public claim has a ledger row**: claim, fact, source, evidence held, date. Numbers and dates also pass `claims_inventory.mjs` (FOUNDATIONS row 16) [F7]. [lint: `claims_inventory.mjs` on the page; `brief_lint.mjs` checks the ledger rows have a source]
+2. **Every public claim has a ledger row**: claim, fact, source with its date, evidence held (yes or cut). Numbers and dates also pass `claims_inventory.mjs` (FOUNDATIONS row 16) [F7]. [lint: `claims_inventory.mjs` on the page; `brief_lint.mjs` checks every ledger row has all four cells and "yes" or "cut"]
 3. **The swap tests are run and recorded**: words (onlyness and hero) and first screen (hide-the-logo). [lint: `brief_lint.mjs` checks a result is written; judged for honesty]
 4. **Results go in the hand-over**, including fails and what changed. [judged]
 5. **Identity is tested by recognition, not liking** (05). [judged]
@@ -34,8 +34,8 @@ A strategy is checked three ways: is it **distinctive** (it could not be a compe
 4. **Mark wall** (full depth): our mark among 12 to 20 category marks, grayscale at 48px [F6].
 5. **Five-second test** [F1]: show the first screen for 5 seconds to a cold viewer, hide it, ask: "What is this?", "Who is it for?", "What would you do next?", and for brand pieces "Is anything wrong with it?" (design-playbook-brand 2a). Pass: category, audience and action named correctly; nothing read as an error.
 6. **Message test** (when the page will carry spend or a launch): show the hero and key sections to the target audience; score clarity, relevance, value and differentiation [F3]. About 12 to 13 responses reach saturation in Wynter's guidance [F3]. A fresh-context subagent briefed with the audience moment is a stand-in, labelled as such (opinion).
-7. **Claims ledger**: one row per public claim. Claim as written; the fact; the source (document, data, test, date); evidence held (yes or no). Any "no" is rewritten as the fact or cut (03; FTC, CAP 3.7).
-8. **Recognition test** (identity, full depth): each new asset shown without the name to 5 or more viewers; count correct brand links and wrong brands (05).
+7. **Claims ledger**: one row per public claim. Claim as written; the fact; the source (document, data, test, date); evidence held: yes, or cut. A claim without evidence is rewritten as the fact it rests on, or cut (03; FTC, CAP 3.7).
+8. **Recognition test** (identity, full depth). An existing asset: shown without the name to category buyers, counting correct links and competitor links (the 05 audit). A new asset has no fame before launch, so test two things instead (opinion on the method): **misattribution**, shown cold and unnamed, does any viewer name a competitor or the category leader (any competitor link is a uniqueness warning); and **learnability**, shown once in context with the name, then unnamed among the covered competitor wall, is it picked as this brand? A fresh-context subagent can run both; only category buyers can measure fame.
 
 ### Reading the results
 - **One viewer misreads the category**: the category word is missing or below the first screen (design-playbook-landing non-negotiable 2). Fix the hero, not the viewer.
@@ -56,7 +56,7 @@ A strategy is checked three ways: is it **distinctive** (it could not be a compe
 1. **Cover the logos and ask the viewer to pick yours.** A distinctiveness check with a correct answer is harder to fool than "does it look different?" (opinion; it mirrors the asset audit's recognition question [05]).
 2. **Brief the fresh viewer with the audience moment, not the strategy.** Tell the subagent who it is and what situation it is in (02); never the positioning or concept. Otherwise it confirms the strategy instead of testing it (opinion).
 3. **Diagnose by dimension.** Clarity fails are copy fixes; relevance fails are audience (02) fixes; differentiation fails are positioning (03) fixes. Fixing the wrong layer is the most common waste after a message test (opinion, from Wynter's four dimensions [F3]).
-4. **Ledger the visual claims too.** A photo of a "customer" who is a model, a chart that implies growth, a "Featured in" logo strip: each is a claim and needs a row (design-art-direction fundamental 8; FTC "however conveyed" in 03).
+4. **Ledger the visual claims too.** A photo of a "customer" who is a model, a chart that implies growth, a "Featured in" logo strip: each is a claim and needs a row (design-art-direction fundamental 8: never present stock, AI or drawn people as real customers) (opinion on the ledger rule).
 5. **Re-run the wall after the build, not only on the brief.** Strategy that passed on paper often collapses into category defaults during layout; the built first screen is the one that competes (opinion).
 
 ## Do and don't

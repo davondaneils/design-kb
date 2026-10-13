@@ -1,8 +1,8 @@
 <!--
-Strategy brief template (design-strategy). One page: about 700 words or fewer outside these comments, tables included.
+Strategy brief template (design-strategy). One page: about 700 words or fewer outside these comments, tables included (about 1.3 A4 sides at 10pt; the name is the discipline).
 Fill every {{field}}. Delete the sections your depth does not need (see the depth table in SKILL.md section 1):
-  inherit:     Header, 1 (Moment only), and the Inherit block
-  three lines: Header, 1 (Moment only), 3 (Fact only), 2 (Competitor wall only), 7
+  inherit:     Header, 1 (Moment only), the Inherit block; record the swap test and any new claim in the hand-over
+  three lines: Header, 1 (Moment only), 3 (Fact only), 2 (Competitor wall only), 7, and 8 (the rows ref 06 runs at this depth)
   one page and full: everything; full adds the asset audit in 6
 Check it: node skills/design-strategy/assets/brief_lint.mjs <this file>
 House rules: no em dashes; mark opinion as (opinion); the locale becomes <html lang>.

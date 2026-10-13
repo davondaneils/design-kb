@@ -4,7 +4,7 @@
 Depth: one page (new site for a roaster with no strategy on file)
 Locale: en-US (Portland roaster, US shipping)
 Deliverables: landing page with shop cards
-Not built: brand guidelines, logo kit (the brief did not ask)
+Not built: guidelines, logo kit (not asked)
 
 ## 1. Audience moment
 Moment: home brewers who already own a grinder when their supermarket bag tastes flat again, wanting to understand why one coffee beats another, held back by fear of paying more for coffee that tastes the same.
@@ -46,8 +46,8 @@ Flat in: payment errors, delivery problems, account security
 |---|---|---|---|---|
 | Expert, not academic | Serif display at `--text-display`, sans body; tabular figures for altitude and times | Lab-notebook annotation reads as evidence | O | design-typography 02 |
 | Expert, not academic | Imagery is the brand's own data: contour maps and roast curves | Only this roaster has these numbers | O | design-art-direction 01 |
-| Warm, not cute | Warm neutrals; `--color-brand` orange only for the fire (the curve) | One loud element; orange fails as body text, so fill and accent only | O | design-color palette-building |
-| Warm, not cute | Rounded bag silhouette, `--radius-md` cards | Rounded reads softer (weak lab effect) | E weak | design-graphic 01 |
+| Warm, not cute | Warm neutrals; `--color-brand` orange only for the fire (the curve) | Orange: 3.0:1 on white, under 3:1 on warm neutrals; never text, curve one step darker (1.4.11) | O | design-color palette-building |
+| Warm, not cute | Rounded bag silhouette, `--radius-lg` cards | Rounded reads softer (weak lab effect) | E weak | design-graphic 01 |
 | Plain, not blunt | `--motion-enter` once on the hero curve, nothing else | Calm; reduced motion removes it | O | design-motion 01 |
 Primary distinctive asset: the bag shape printed with a contour map and one orange curve
 Supporting assets: brand orange at about 10 percent of any surface; the serif

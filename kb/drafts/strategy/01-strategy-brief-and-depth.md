@@ -7,7 +7,7 @@ Strategy in a design job is a short, decisive step that the rest of the work rea
 ## Floor: fundamentals (non-negotiable)
 1. **No visual decision before the brief exists at the right depth.** No type, color, layout or concept before the depth row below is filled. [judged]
 2. **Depth follows the brief, never the skill.** Use the depth table. Build only the deliverables the brief lists; name what was not built (design-playbook-brand section 0) [A4][A5]. [judged]
-3. **One page.** The brief fits one printed page: about 700 words or fewer, tables included (opinion; the linter warns above 700 and fails above 900). A longer document is the website-strategy output, summarized here. [lint: `brief_lint.mjs` word count]
+3. **One page.** "One page" names the discipline, not the paper: about 700 words or fewer, tables included (opinion; the linter warns above 700 and fails above 900). Measured: the 680-word example brief fills about 1.3 A4 sides at 10pt with 15mm margins, so a printed copy takes two sides. A longer document is the website-strategy output, summarized here. [lint: `brief_lint.mjs` word count]
 4. **Every field a downstream skill reads is filled** or marked "not needed at this depth" with the reason. No placeholder text ships. [lint: `brief_lint.mjs`]
 5. **The audience's locale is set in the brief** and becomes `<html lang>` (FOUNDATIONS Content mechanics, "Locale first"). A Glasgow festival is en-GB. [lint: `brief_lint.mjs` checks the field; the page lint checks `lang`]
 6. **Opinion is labelled** wherever the brief rests on judgment instead of a fact. [judged]
@@ -46,13 +46,13 @@ If two rows fit, take the shallower one and say what you skipped (opinion). If t
 | Competitors named | design-graphic 01 competitor wall, design-color category map, the swap tests (06) |
 
 ### Fill order
-1. Locale and depth. 2. Audience moment (02). 3. Competitive alternatives, then positioning (03). 4. One true fact and proof. 5. Voice (04). 6. Identity decisions (05). 7. Concept sentence. 8. Checks (06). 9. Run `node skills/design-strategy/assets/brief_lint.mjs brief.md`.
+1. Locale and depth. 2. Audience moment (02). 3. Competitive alternatives, then positioning (03). 4. One true fact and proof. 5. Claims ledger (03, 06). 6. Voice (04). 7. Identity decisions (05). 8. Concept sentence. 9. Checks (06). 10. Run `node skills/design-strategy/assets/brief_lint.mjs brief.md`.
 
 ## Numbers
 | Item | Default |
 |---|---|
 | Depth tiers | 4: inherit, three lines, one page, full |
-| Brief length | about 700 words or fewer, tables included (opinion) |
+| Brief length | about 700 words or fewer, tables included (opinion); about 1.3 A4 sides at 10pt (measured on the example) |
 | Named competitors | 3 for the swap tests (opinion); 8 to 12 for the color map (design-color); 12 to 20 marks for the wall (design-graphic) |
 | Wheeler phases | 5 [A1] |
 

@@ -20,7 +20,7 @@ The full buyer psychology profile (core complex, 2am thought, benefit ladder, ob
 4. **Most viewers are not buying today.** In B2B "just 5% in a given quarter" are in market [B6]. Pages and identities serve two audiences: the in-market few who compare, and the many who must remember the brand later (03, 05).
 
 ## Decision rules
-- **Write 5 to 10 CEPs** as situations in the buyer's words ("a client paid late again", "first tax bill as a freelancer", "the spreadsheet broke") (opinion on the count). Pick **one primary CEP for the hero**, and up to three for the sections below it. Use Romaniuk's deprioritizing rule as relayed by practitioners: drop CEPs the product cannot credibly serve and ones crowded with competitors (tier 5 relay; opinion).
+- **Write 5 to 10 CEPs** as situations in the buyer's words ("a client paid late again", "first tax bill as a freelancer", "the spreadsheet broke") (opinion on the count). Pick **one primary CEP for the hero**, and up to three for the sections below it. Drop CEPs the product cannot credibly serve and ones a competitor already owns (opinion).
 - **Map the four forces to slots** (opinion, from [B3][B5]):
 
 | Force | What you write | Where it lands on the page |
@@ -47,7 +47,7 @@ The full buyer psychology profile (core complex, 2am thought, benefit ladder, ob
 2. **Spend design on the anxiety, not the pull.** The highest-value element on many pages is the small reassurance beside the button ("Cancel online in two taps", "Your bank login never reaches us") and the proof placed at the moment of doubt. Reason: Moesta's finding that removing anxiety drove switches where added features did not [B5].
 3. **Design the habit exit.** Every switch has a "what about my old way" force; an import path or "keep your spreadsheet, we read it" section often converts better than another benefit (opinion, from the four forces [B3]).
 4. **Two clocks: the comparer and the rememberer.** The in-market 5 percent need a fast comparison (category word, price, proof); the 95 percent need one distinctive thing to remember. Put both in the first screen: the category word for the first, the distinctive asset for the second (opinion, from [B6]).
-5. **Quote the push, do not paraphrase it.** A phrase lifted from a review ("I'm never chasing invoices again") outperforms the brand's summary of it in recognition (practitioner consensus in design-copy 03 and website-strategy stage 3; opinion).
+5. **Quote the push, do not paraphrase it.** A phrase lifted from a review ("I'm never chasing invoices again") is recognized by the people in that situation in a way the brand's summary is not (practitioner advice in design-copy 03 and website-strategy stage 3; untested here, opinion).
 
 ## Do and don't
 | Do | Don't |

@@ -144,7 +144,7 @@ export function lint(raw) {
   if (folklore) warn('folklore', `"${folklore[0]}" reads as a hue-meaning law; label it convention (C) at most`);
   const primary = field(text, 'Primary distinctive asset');
   if (!primary) fail('asset', 'Primary distinctive asset: missing');
-  else if (/\b(colou?r|hue|palette)\b/i.test(primary) && !/\b(shape|mark|symbol|logo|container|character|wordmark|monogram|crop|form|pack|object|card)\b/i.test(primary))
+  else if (/\b(colou?rs?|hues?|palette|tints?|red|orange|yellow|green|blue|purple|violet|pink|coral|teal|navy|gold|magenta|cyan|turquoise|lilac|lavender|black|white)\b/i.test(primary) && !/\b(shape|mark|symbol|logo|container|character|mascot|wordmark|monogram|crop|form|pack|bag|bottle|object|card|silhouette)\b/i.test(primary))
     fail('asset', 'Primary distinctive asset is a color alone; lead with a shape (color is the weakest asset type)');
   const codes = field(text, 'Category codes');
   if (!codes || !/kept:/i.test(codes) || !/broken:/i.test(codes)) fail('codes', 'Category codes: write "kept: ...; broken: ..."');
@@ -187,6 +187,19 @@ Reject test: Does it show stone, courses or setting?
     ['fact without source fails', ok.replace(' (source: city heritage records)', ''), 1],
     ['bad locale fails', ok.replace('en-GB', 'British'), 1],
   ];
+  // One-page cases, built from the shipped example when it sits beside this script.
+  let page = null;
+  try { page = readFileSync(new URL('./example-brief-ember-oak.md', import.meta.url), 'utf8'); } catch { /* example not present */ }
+  if (page) {
+    cases.push(
+      ['one-page example passes', page, 0],
+      ['color-only primary asset fails', page.replace(/^Primary distinctive asset:.*$/m, 'Primary distinctive asset: brand orange'), 1],
+      ['ledger "no" fails', page.replace('| photo of the plate, 2026 | yes |', '| photo of the plate, 2026 | no |'), 1],
+      ['failed swap test fails', page.replace(/^Swap test:.*$/m, 'Swap test: fail; Northline fits the sentence'), 1],
+      ['alternatives without status quo fail', page.replace('Alternatives: status quo: ', 'Alternatives: '), 1],
+      ['identity row without E/C/O fails', page.replace('| Rounded reads softer (weak lab effect) | E weak |', '| Rounded reads softer (weak lab effect) | strong |'), 1],
+    );
+  } else console.log('note: example-brief-ember-oak.md not found; one-page cases skipped');
   let bad = 0;
   for (const [name, text, wantFails] of cases) {
     const r = lint(text);
