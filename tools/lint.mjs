@@ -34,6 +34,10 @@
 //   reading-size running text (p, li, dd, blockquote of 60+ characters) mostly under 16px on a marketing page fails
 //                (design-typography F2; Stripe 16, Linear 15). App screens (<html data-lint-page="app"> or a noindex
 //                robots meta): more than a third of all text under 14px at 390 fails, under 12px anywhere fails
+//   phone-facts  a number, price, rate or time visible at 1440 is visible at 390 or sits behind a disclosure (closed
+//                <details> or an aria-controls target): never cut a unique fact (design-layout gate rule 18)
+//   dead-control every enabled button, summary, tab, switch, checkbox and radio changes the page when clicked
+//                (DOM, attribute, value or URL), each tried on a fresh load at 1440, up to 60 controls
 //   selected-state  a control marked aria-pressed, aria-selected or aria-checked "true" must differ from an unselected
 //                peer by 3:1 in fill, ink or border, or by 200 in weight, or by an underline (WCAG 1.4.11; the
 //                benchmark filter, an aria-current link, measured 1.21:1). aria-current counts: a current-page link is a state too
@@ -394,6 +398,7 @@ async function lintOne(browser, target, outPath) {
 
   // 2 to 6 plus static polish and typography checks, at 390 and 1440 (or the canvas size), light scheme.
   const navByWidth = {};
+  const factsByWidth = {};
   for (const width of MAIN) {
     const { context, page } = await openPage(width, 'light');
     const r = await page.evaluate(({ width, WIDE, TYPE_SCALE, SPACE_SCALE, RADII, STEM }) => {
@@ -577,6 +582,21 @@ async function lintOne(browser, target, outPath) {
         // A same-page anchor whose section is on the page at this width is reachable by scrolling.
         const h = a.getAttribute('href') || '';
         if (h.startsWith('#') && h.length > 1) { let t = null; try { t = document.getElementById(decodeURIComponent(h.slice(1))); } catch { /* bad id */ } if (t && L.visible(t)) out.nav.reachable.push(hrefOf(a)); }
+      }
+
+      // Facts for phone-facts: numbers, money, rates and times in visible text, plus text a disclosure defers.
+      {
+        const FACT = /\b\d{1,2}:\d\d\s?(?:am|pm)\b|[$€£₹]\s?\d[\d,]*(?:\.\d+)?|\b\d{1,3}(?:,\d{3})+(?:\.\d+)?\b|\b\d+\.\d{2,}\b/gi;
+        const deferredRoots = [...document.querySelectorAll('details:not([open]), [aria-controls]')].flatMap((c) => c.matches('details') ? [c] : (c.getAttribute('aria-controls') || '').split(/\s+/).map((id) => document.getElementById(id)).filter(Boolean));
+        const facts = { shown: [], deferred: [] };
+        const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+        for (let n = w.nextNode(); n; n = w.nextNode()) {
+          const el = n.parentElement; if (!el || el.closest('svg, script, style, template, [aria-hidden=true]') || L.skipped(el, 'phone-facts')) continue;
+          const toks = n.textContent.match(FACT); if (!toks) continue;
+          const list = L.visible(el) && !L.inactive(el) ? facts.shown : deferredRoots.some((r) => r.contains(el)) ? facts.deferred : null;
+          if (list) for (const t of toks) list.push({ t: t.replace(/\s+/g, ' ').toLowerCase(), sel: L.sel(el) });
+        }
+        out.facts = facts;
       }
 
       // Reading size and selected state (benchmark round 1).
@@ -860,6 +880,7 @@ async function lintOne(browser, target, outPath) {
     for (const x of r.primary) add('primary', 'fail', `${x.labels.length} filled calls to action in screen ${x.screen} at ${width}px (${x.labels.map((l) => '"' + l + '"').join(', ')}); one primary per view`, { sel: x.sel });
     if (r.stateSheet) report.summary.stateSheet = true;
     navByWidth[width] = r.nav;
+    factsByWidth[width] = r.facts;
 
     if (width === WIDE) {
       ok('radius');
@@ -925,6 +946,42 @@ async function lintOne(browser, target, outPath) {
       seenHref.add(l.href);
       if (!reach.has(l.href)) add('nav-parity', 'warn', `nav destination "${l.text}" (${l.href}) shown at 1440 has no route at 390 (not visible, not in a menu, not linked elsewhere)`);
     }
+  }
+
+  // Phone facts: a number, price, rate or time shown at 1440 is shown, or deferred behind a disclosure, at 390.
+  // design-layout gate rule 18 ("never cut a unique fact; collapse or defer"): both benchmark rounds cut rates, head
+  // counts and the only timestamp at 390 with the rule in the skill (kb/reviews/benchmark-round2-landing.md).
+  ok('phone-facts');
+  if (!canvas && factsByWidth[1440] && factsByWidth[390]) {
+    const narrow = new Set([...factsByWidth[390].shown, ...factsByWidth[390].deferred].map((f) => f.t));
+    const lost = new Map();
+    for (const f of factsByWidth[1440].shown) if (!narrow.has(f.t) && !lost.has(f.t)) lost.set(f.t, f.sel);
+    if (lost.size) add('phone-facts', 'fail', `${lost.size} fact${lost.size > 1 ? 's' : ''} shown at 1440 ${lost.size > 1 ? 'are' : 'is'} gone at 390 (not visible, not behind a disclosure): ${[...lost.keys()].slice(0, 8).map((t) => '"' + t + '"').join(', ')}${lost.size > 8 ? ', ...' : ''}`, { sel: [...lost.values()][0] });
+  }
+
+  // Dead controls: every enabled button, summary, checkbox and radio changes something when clicked (DOM, URL or an
+  // attribute). The round 2 pricing stepper did nothing because its script picked up another [data-step] first; the lint,
+  // the state sheet and the self-review all passed it (kb/reviews/benchmark-round2-landing.md gate 15).
+  ok('dead-control');
+  if (!canvas) {
+    const pick = () => [...document.querySelectorAll('button, summary, [role=button], [role=tab], [role=switch], input[type=checkbox], input[type=radio]')]
+      .filter((el) => window.__lint.visible(el) && !window.__lint.inactive(el) && !window.__lint.skipped(el, 'dead-control') && !el.matches('[disabled], [aria-disabled=true]') && !el.closest('[disabled], dialog:not([open])'));
+    const snap = () => { const h = document.documentElement; let x = 0; const str = h.outerHTML + location.href + [...document.querySelectorAll('input, select, textarea')].map((e) => e.type === 'checkbox' || e.type === 'radio' ? e.checked : e.value).join('|'); for (let i = 0; i < str.length; i++) x = (x * 31 + str.charCodeAt(i)) | 0; return x; };
+    const { context, page } = await openPage(WIDE, 'light');
+    const count = await page.evaluate(`(${pick.toString()})().length`);
+    const max = Math.min(count, 60);
+    for (let i = 0; i < max; i++) {
+      if (i) { await page.goto(toUrl(target), { waitUntil: 'load' }); await settle(page); await page.addScriptTag({ content: helpers }); }
+      const info = await page.evaluate(`(() => { const el = (${pick.toString()})()[${i}]; if (!el) return null; el.setAttribute('data-lint-click', '1'); return { sel: window.__lint.sel(el), text: (el.textContent || el.getAttribute('aria-label') || '').replace(/\\s+/g, ' ').trim().slice(0, 30), before: (${snap.toString()})() }; })()`);
+      if (!info) continue;
+      // The marker itself is part of the snapshot, so take the before value after setting it.
+      try { await page.click('[data-lint-click]', { timeout: 1500 }); } catch { continue; } // covered or detached: occlusion reports it
+      await page.waitForTimeout(250);
+      let after; try { after = await page.evaluate(`(${snap.toString()})()`); } catch { continue; } // navigated away: it did something
+      if (after === info.before) add('dead-control', 'fail', `clicking "${info.text}" changes nothing on the page (no DOM, attribute, value or URL change)`, { sel: info.sel });
+    }
+    if (count > max) report.summary.deadControl = `clicked the first ${max} of ${count} controls`;
+    await context.close();
   }
 
   // Dark: drop shadows on dark surfaces.
@@ -1198,7 +1255,15 @@ async function lintOne(browser, target, outPath) {
 // record each text box and color, hide all text, screenshot, decode in a canvas, take the minimum ratio.
 async function overlayCheck(page, targets, scheme, width, add) {
   const items = await page.evaluate((targets) => {
-    const toRGB = (c) => (c.match(/[\d.]+/g) || []).slice(0, 4).map(Number);
+    // oklch(), lab() and color() keep their own space in computed style; reading their digits as rgb gave 2.24:1 for an
+    // 8.83:1 pair (benchmark round 2). Non-rgb colors are resolved to sRGB by painting one canvas pixel.
+    const cv = document.createElement('canvas'); cv.width = cv.height = 1; const cx = cv.getContext('2d', { willReadFrequently: true });
+    const toRGB = (c) => {
+      if (/^rgba?\(/.test(c)) return (c.match(/[\d.]+/g) || []).slice(0, 4).map(Number);
+      const am = c.match(/\/\s*([\d.]+)(%?)\s*\)$/); const a = am ? (am[2] ? +am[1] / 100 : +am[1]) : 1;
+      cx.clearRect(0, 0, 1, 1); cx.fillStyle = c.replace(/\s*\/\s*[\d.]+%?\s*\)$/, ')'); cx.fillRect(0, 0, 1, 1);
+      const d = cx.getImageData(0, 0, 1, 1).data; return [d[0], d[1], d[2], a];
+    };
     const out = [];
     for (const t of targets) {
       let el; try { el = document.querySelector(t); } catch { continue; }
@@ -1207,7 +1272,7 @@ async function overlayCheck(page, targets, scheme, width, add) {
       const s = getComputedStyle(el);
       const isSvgText = el instanceof SVGElement;
       const rgb = toRGB(isSvgText ? s.fill : s.color);
-      if (isSvgText && !/^rgb/.test(s.fill)) continue; // gradient or pattern fill: judged by eye
+      if (isSvgText && /^url\(|^none/.test(s.fill)) continue; // gradient or pattern fill: judged by eye
       if (rgb.length === 4 && rgb[3] === 0) continue;
       const size = parseFloat(s.fontSize);
       const bold = parseInt(s.fontWeight, 10) >= 700;

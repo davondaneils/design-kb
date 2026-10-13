@@ -1,0 +1,27 @@
+
+Polish audit: ferry-states.html
+
+  pass  radius
+        i census: 4px x16, 8px x176, 12px x44
+  pass  shadow
+        i distinct shadows: 4
+  pass  hover-gate
+  pass  icon-stroke
+        i icons checked: 0
+  pass  svg-hairline
+  pass  color-scheme
+  pass  tabular
+  pass  heading-wrap
+  pass  focus-shape
+        i elements tested: 50
+  pass  state-shift
+  pass  forced-edge  (10 warn)
+        ! input without border: e1
+        ! input without border: e2
+        ! input without border: e3
+        ! input without border: e4
+        ! input without border: e5
+        ! input without border: number
+        ... 4 more warnings
+
+  Result: PASS (0 fail, 10 warn)

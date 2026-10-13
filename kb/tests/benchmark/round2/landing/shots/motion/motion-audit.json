@@ -1,0 +1,781 @@
+{
+  "date": "2026-10-13T16:07:54.342Z",
+  "tokensMs": [
+    100,
+    150,
+    200,
+    250,
+    300,
+    400,
+    500,
+    600,
+    800
+  ],
+  "scenarios": [
+    {
+      "name": "hero-lanes",
+      "url": "kb/tests/benchmark/round2/landing/ferry.html",
+      "strip": "kb/tests/benchmark/round2/landing/shots/motion/hero-lanes.png",
+      "result": "PASS",
+      "findings": [],
+      "rows": [
+        {
+          "mode": "no-preference",
+          "end": 640,
+          "animations": [
+            {
+              "i": 0,
+              "type": "CSSAnimation",
+              "name": "lane-in",
+              "target": "td.lane::before",
+              "duration": 400,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "cubic-bezier(0, 0, 0, 1)"
+              ],
+              "area": 1760,
+              "offset": 0,
+              "curve": "enter",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 1,
+              "type": "CSSAnimation",
+              "name": "lane-in",
+              "target": "td.lane::after",
+              "duration": 400,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "cubic-bezier(0, 0, 0, 1)"
+              ],
+              "area": 1760,
+              "offset": 0,
+              "curve": "enter",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 2,
+              "type": "CSSAnimation",
+              "name": "dot-in",
+              "target": "span.dot",
+              "duration": 200,
+              "delay": 200,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "cubic-bezier(0, 0, 0, 1)"
+              ],
+              "area": 0,
+              "offset": 0,
+              "curve": "enter",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 3,
+              "type": "CSSAnimation",
+              "name": "lane-in",
+              "target": "td.lane::before",
+              "duration": 400,
+              "delay": 40,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "cubic-bezier(0, 0, 0, 1)"
+              ],
+              "area": 1760,
+              "offset": 0,
+              "curve": "enter",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 4,
+              "type": "CSSAnimation",
+              "name": "lane-in",
+              "target": "td.lane::after",
+              "duration": 400,
+              "delay": 40,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "cubic-bezier(0, 0, 0, 1)"
+              ],
+              "area": 1760,
+              "offset": 0,
+              "curve": "enter",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 5,
+              "type": "CSSAnimation",
+              "name": "dot-in",
+              "target": "span.dot",
+              "duration": 200,
+              "delay": 240.00000000000003,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "cubic-bezier(0, 0, 0, 1)"
+              ],
+              "area": 0,
+              "offset": 0,
+              "curve": "enter",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 6,
+              "type": "CSSAnimation",
+              "name": "lane-in",
+              "target": "td.lane::before",
+              "duration": 400,
+              "delay": 80,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "cubic-bezier(0, 0, 0, 1)"
+              ],
+              "area": 1760,
+              "offset": 0,
+              "curve": "enter",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 7,
+              "type": "CSSAnimation",
+              "name": "lane-in",
+              "target": "td.lane::after",
+              "duration": 400,
+              "delay": 80,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "cubic-bezier(0, 0, 0, 1)"
+              ],
+              "area": 1760,
+              "offset": 0,
+              "curve": "enter",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 8,
+              "type": "CSSAnimation",
+              "name": "dot-in",
+              "target": "span.dot",
+              "duration": 200,
+              "delay": 280,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "cubic-bezier(0, 0, 0, 1)"
+              ],
+              "area": 0,
+              "offset": 0,
+              "curve": "enter",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 9,
+              "type": "CSSAnimation",
+              "name": "lane-in",
+              "target": "td.lane::before",
+              "duration": 400,
+              "delay": 120,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "cubic-bezier(0, 0, 0, 1)"
+              ],
+              "area": 1760,
+              "offset": 0,
+              "curve": "enter",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 10,
+              "type": "CSSAnimation",
+              "name": "lane-in",
+              "target": "td.lane::after",
+              "duration": 400,
+              "delay": 120,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "cubic-bezier(0, 0, 0, 1)"
+              ],
+              "area": 1760,
+              "offset": 0,
+              "curve": "enter",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 11,
+              "type": "CSSAnimation",
+              "name": "dot-in",
+              "target": "span.dot",
+              "duration": 200,
+              "delay": 320,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "cubic-bezier(0, 0, 0, 1)"
+              ],
+              "area": 0,
+              "offset": 0,
+              "curve": "enter",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 12,
+              "type": "CSSAnimation",
+              "name": "lane-in",
+              "target": "td.lane::before",
+              "duration": 400,
+              "delay": 160,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "cubic-bezier(0, 0, 0, 1)"
+              ],
+              "area": 1760,
+              "offset": 0,
+              "curve": "enter",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 13,
+              "type": "CSSAnimation",
+              "name": "lane-in",
+              "target": "td.lane::after",
+              "duration": 400,
+              "delay": 160,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "cubic-bezier(0, 0, 0, 1)"
+              ],
+              "area": 1760,
+              "offset": 0,
+              "curve": "enter",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 14,
+              "type": "CSSAnimation",
+              "name": "dot-in",
+              "target": "span.dot",
+              "duration": 200,
+              "delay": 360,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "cubic-bezier(0, 0, 0, 1)"
+              ],
+              "area": 0,
+              "offset": 0,
+              "curve": "enter",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 15,
+              "type": "CSSAnimation",
+              "name": "lane-in",
+              "target": "td.lane::before",
+              "duration": 400,
+              "delay": 200,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "cubic-bezier(0, 0, 0, 1)"
+              ],
+              "area": 1760,
+              "offset": 0,
+              "curve": "enter",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 16,
+              "type": "CSSAnimation",
+              "name": "lane-in",
+              "target": "td.lane::after",
+              "duration": 400,
+              "delay": 200,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "cubic-bezier(0, 0, 0, 1)"
+              ],
+              "area": 1760,
+              "offset": 0,
+              "curve": "enter",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 17,
+              "type": "CSSAnimation",
+              "name": "dot-in",
+              "target": "span.dot",
+              "duration": 200,
+              "delay": 400,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "cubic-bezier(0, 0, 0, 1)"
+              ],
+              "area": 0,
+              "offset": 0,
+              "curve": "enter",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 18,
+              "type": "CSSAnimation",
+              "name": "lane-in",
+              "target": "td.lane::before",
+              "duration": 400,
+              "delay": 240,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "cubic-bezier(0, 0, 0, 1)"
+              ],
+              "area": 1760,
+              "offset": 0,
+              "curve": "enter",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 19,
+              "type": "CSSAnimation",
+              "name": "lane-in",
+              "target": "td.lane::after",
+              "duration": 400,
+              "delay": 240,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "cubic-bezier(0, 0, 0, 1)"
+              ],
+              "area": 1760,
+              "offset": 0,
+              "curve": "enter",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 20,
+              "type": "CSSAnimation",
+              "name": "dot-in",
+              "target": "span.dot",
+              "duration": 200,
+              "delay": 440,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "cubic-bezier(0, 0, 0, 1)"
+              ],
+              "area": 0,
+              "offset": 0,
+              "curve": "enter",
+              "props": [
+                "transform"
+              ]
+            }
+          ]
+        },
+        {
+          "mode": "reduce",
+          "end": 0,
+          "animations": []
+        }
+      ]
+    },
+    {
+      "name": "menu-pointer",
+      "url": "kb/tests/benchmark/round2/landing/ferry.html",
+      "strip": "kb/tests/benchmark/round2/landing/shots/motion/menu-pointer.png",
+      "result": "PASS",
+      "findings": [],
+      "rows": [
+        {
+          "mode": "no-preference",
+          "end": 200,
+          "animations": [
+            {
+              "i": 0,
+              "type": "CSSTransition",
+              "name": "background-color",
+              "target": "button.menu-btn",
+              "duration": 100,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.2, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 2535,
+              "offset": 0,
+              "curve": "standard",
+              "paint": true,
+              "props": [
+                "backgroundColor"
+              ]
+            },
+            {
+              "i": 1,
+              "type": "CSSAnimation",
+              "name": "menu-in",
+              "target": "div#menu.wrap.menu",
+              "duration": 200,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "cubic-bezier(0, 0, 0, 1)"
+              ],
+              "area": 304200,
+              "offset": 0,
+              "curve": "enter",
+              "props": [
+                "opacity",
+                "transform"
+              ]
+            }
+          ]
+        },
+        {
+          "mode": "reduce",
+          "end": 100,
+          "animations": [
+            {
+              "i": 0,
+              "type": "CSSTransition",
+              "name": "background-color",
+              "target": "button.menu-btn",
+              "duration": 100,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.2, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 2535,
+              "offset": 0,
+              "curve": "standard",
+              "paint": true,
+              "props": [
+                "backgroundColor"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "menu-keyboard",
+      "url": "kb/tests/benchmark/round2/landing/ferry.html",
+      "strip": "kb/tests/benchmark/round2/landing/shots/motion/menu-keyboard.png",
+      "result": "PASS",
+      "findings": [],
+      "rows": [
+        {
+          "mode": "no-preference",
+          "end": 0,
+          "animations": []
+        },
+        {
+          "mode": "reduce",
+          "end": 0,
+          "animations": []
+        }
+      ]
+    },
+    {
+      "name": "faq-open",
+      "url": "kb/tests/benchmark/round2/landing/ferry.html",
+      "strip": "kb/tests/benchmark/round2/landing/shots/motion/faq-open.png",
+      "result": "PASS",
+      "findings": [
+        {
+          "level": "warn",
+          "msg": "200 ms change under reduced motion; keep crossfades at 150 ms or less",
+          "target": "svg.icon.icon--lg color",
+          "mode": "reduce"
+        }
+      ],
+      "rows": [
+        {
+          "mode": "no-preference",
+          "end": 200,
+          "animations": [
+            {
+              "i": 0,
+              "type": "CSSTransition",
+              "name": "transform",
+              "target": "svg.icon.icon--lg",
+              "duration": 200,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.2, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 400,
+              "offset": 0,
+              "curve": "standard",
+              "props": [
+                "transform"
+              ]
+            }
+          ]
+        },
+        {
+          "mode": "reduce",
+          "end": 200,
+          "animations": [
+            {
+              "i": 0,
+              "type": "CSSTransition",
+              "name": "color",
+              "target": "svg.icon.icon--lg",
+              "duration": 200,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.2, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 400,
+              "offset": 0,
+              "curve": "standard",
+              "paint": true,
+              "props": [
+                "color"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "stepper-press",
+      "url": "kb/tests/benchmark/round2/landing/ferry.html",
+      "strip": "kb/tests/benchmark/round2/landing/shots/motion/stepper-press.png",
+      "result": "PASS",
+      "findings": [],
+      "rows": [
+        {
+          "mode": "no-preference",
+          "end": 100,
+          "animations": [
+            {
+              "i": 0,
+              "type": "CSSTransition",
+              "name": "background-color",
+              "target": "button",
+              "duration": 100,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.2, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 1600,
+              "offset": 0,
+              "curve": "standard",
+              "paint": true,
+              "props": [
+                "backgroundColor"
+              ]
+            },
+            {
+              "i": 1,
+              "type": "CSSTransition",
+              "name": "background-color",
+              "target": "button",
+              "duration": 100,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.2, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 1600,
+              "offset": 0,
+              "curve": "standard",
+              "paint": true,
+              "props": [
+                "backgroundColor"
+              ]
+            },
+            {
+              "i": 2,
+              "type": "CSSTransition",
+              "name": "transform",
+              "target": "button",
+              "duration": 100,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.2, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 1600,
+              "offset": 0,
+              "curve": "standard",
+              "props": [
+                "transform"
+              ]
+            }
+          ]
+        },
+        {
+          "mode": "reduce",
+          "end": 100,
+          "animations": [
+            {
+              "i": 0,
+              "type": "CSSTransition",
+              "name": "background-color",
+              "target": "button",
+              "duration": 100,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.2, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 1600,
+              "offset": 0,
+              "curve": "standard",
+              "paint": true,
+              "props": [
+                "backgroundColor"
+              ]
+            },
+            {
+              "i": 1,
+              "type": "CSSTransition",
+              "name": "background-color",
+              "target": "button",
+              "duration": 100,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.2, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 1600,
+              "offset": 0,
+              "curve": "standard",
+              "paint": true,
+              "props": [
+                "backgroundColor"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "stepper-keyboard",
+      "url": "kb/tests/benchmark/round2/landing/ferry.html",
+      "strip": "kb/tests/benchmark/round2/landing/shots/motion/stepper-keyboard.png",
+      "result": "PASS",
+      "findings": [],
+      "rows": [
+        {
+          "mode": "no-preference",
+          "end": 0,
+          "animations": []
+        },
+        {
+          "mode": "reduce",
+          "end": 0,
+          "animations": []
+        }
+      ]
+    },
+    {
+      "name": "signup-sent",
+      "url": "kb/tests/benchmark/round2/landing/ferry.html",
+      "strip": "kb/tests/benchmark/round2/landing/shots/motion/signup-sent.png",
+      "result": "PASS",
+      "findings": [],
+      "rows": [
+        {
+          "mode": "no-preference",
+          "end": 200,
+          "animations": [
+            {
+              "i": 0,
+              "type": "CSSAnimation",
+              "name": "menu-in",
+              "target": "div#signup-done.signup__done",
+              "duration": 200,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "cubic-bezier(0, 0, 0, 1)"
+              ],
+              "area": 50880,
+              "offset": 0,
+              "curve": "enter",
+              "props": [
+                "opacity",
+                "transform"
+              ]
+            }
+          ]
+        },
+        {
+          "mode": "reduce",
+          "end": 0,
+          "animations": []
+        }
+      ]
+    }
+  ]
+}

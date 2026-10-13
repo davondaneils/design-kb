@@ -1,0 +1,23 @@
+
+Polish audit: ferry.html
+
+  pass  radius
+        i census: 4px x88, 8px x60, 12px x8, 16px x8, full x16
+  pass  shadow
+        i distinct shadows: 4
+  pass  hover-gate
+  pass  icon-stroke
+        i icons checked: 0
+  pass  svg-hairline
+  pass  color-scheme
+  pass  tabular  (1 warn)
+        ! 1 numeric cells without tabular figures
+  pass  heading-wrap
+  pass  focus-shape
+        i elements tested: 39
+  pass  state-shift
+  pass  forced-edge  (2 warn)
+        ! input without border: email
+        ! input without border: people
+
+  Result: PASS (0 fail, 3 warn)

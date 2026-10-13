@@ -1,0 +1,59 @@
+Claims inventory: kb/tests/benchmark/round2/landing/ferry.html (54 strings to check against the data)
+
+  1  14 days free, no card needed.
+  2  Fund one dollar balance. Ferry pays your employees and contractors in their own currency the same day, at the rate locked when you approve. Built for teams of 5 to 200.
+  3  14 days free, no card needed. Then $12 per person per month, first 3 people free, billed monthly from day 15. Cancel online any time.
+  4  Your 14-day trial starts when you open it. Wrong address? Change it
+  5  $74,537.54
+  6  Funded Thu, Oct 29
+  7  Approved Fri, Oct 30, 9:14 am ET
+  8  Paying 4 of 7 currencies paid
+  9  October payroll for Lumen Studio, a sample company: 12 people in 7 currencies
+ 10  3
+ 11  24,500.00
+ 12  1.0000
+ 13  1
+ 14  9,200.00
+ 15  1.3745
+ 16  2
+ 17  11,400.00
+ 18  0.7470
+ 19  10,850.00
+ 20  0.8566
+ 21  78,000.00
+ 22  18.3264
+ 23  41,000.00
+ 24  5.3784
+ 25  310,000.00
+ 26  87.6480
+ 27  12 people, 7 currencies, no transfer fees
+ 28  Rates are per 1 USD, sample data
+ 29  A sample October run: one dollar balance splits into a lane for each currency, all paid on Fri, Oct 30 .
+ 30  We paid 12 people in 7 countries in one run. It used to take three tools and most of a day.
+ 31  people in 7 countries
+ 32  12
+ 33  01
+ 34  02
+ 35  03
+ 36  rate plus 0.4%, shown on every line, and no transfer fees.
+ 37  $15,261.04
+ 38  0.7470 GBP per USD
+ 39  £11,400.00
+ 40  7 currencies, 13 countries.
+ 41  One price per person. Your first 3 are free.
+ 42  $12 per person per month
+ 43  All 7 currencies and 13 countries
+ 44  From 1 to 200
+ 45  $108
+ 46  9 people at $12. Your first 3 are free.
+ 47  14 days free, no card needed. Then $12 per person per month, first 3 people free, billed monthly from day 15 for the people you paid. Cancel online any time.
+ 48  How fast do people get paid? The same day you approve, in all 13 countries. Each person gets the money in their local currency, into their own bank account.
+ 49  What does it cost? $12 per person per month, first 3 people free. You pay only for the people you paid that month. Exchange is the mid-market
+ 50  rate plus 0.4%, with no transfer fees.
+ 51  Cross-border payroll for teams of 5 to 200, paid from one balance.
+ 52  2026 Ferry. A sample company for a design benchmark; names, numbers and quotes on this page are sample content.
+ 53  One fewer person
+ 54  One more person
+
+No mechanical flags. Now tick every line above against its source: chart data, price list, policy, log.
+exit 0

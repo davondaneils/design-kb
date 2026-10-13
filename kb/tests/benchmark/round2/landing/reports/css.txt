@@ -1,0 +1,13 @@
+kb/tests/benchmark/round2/landing/ferry.html: PASS  (297 style rules, 1023 declarations, 169 token declarations)
+  layers: reset, tokens, base, layout, components, sections, motion; unlayered rules 0
+  container queries 0 (containers 0), :has() rules 5, media queries 11 distinct, !important 2, inline style attributes 9
+  warn motion-unguarded: 7
+         .btn { transition: background-color var(--motion-hover), border-color var(--motion-hover), color var(--motion-hover), transform var(--durati
+         .link .icon { transition: transform var(--motion-hover) }
+         .nav a, .header__signin { transition: background-color var(--motion-hover), color var(--motion-hover) }
+         .menu-btn { transition: background-color var(--motion-hover) }
+  warn media-min-max-syntax: 6
+         @media (min-width: 768px)
+         @media (min-width: 1024px)
+         @media (min-width: 1280px)
+         @media (min-width: 640px)

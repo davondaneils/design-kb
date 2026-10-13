@@ -1,0 +1,10 @@
+kb/tests/benchmark/round2/landing/ferry.html
+  total        164.4 KB raw     83.9 KB gzip     80.0 KB brotli
+  fonts         86.2 KB raw     64.9 KB gzip  (52% of raw)
+  dataUrls       0.0 KB raw      0.0 KB gzip  (0% of raw)
+  css           41.0 KB raw      8.2 KB gzip  (25% of raw)
+  svg           11.6 KB raw      1.7 KB gzip  (7% of raw)
+  script         4.9 KB raw      2.0 KB gzip  (3% of raw)
+  html          20.7 KB raw      6.1 KB gzip  (13% of raw)
+  before first paint (end of <head>):    76.1 KB gzip,    73.5 KB brotli
+  before LCP element (#hero-title):        77.9 KB gzip,    75.0 KB brotli
