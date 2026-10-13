@@ -72,3 +72,4 @@ Use when success rate is high and the action is reversible (like, archive, reord
 
 ## Hand-offs
 - State wording: design-copy. Loader motion: design-motion. Data viz empty and error states: dataviz.
+- The data condition behind each state (loading, empty, zero, unknown, not permitted, stale, partial, error), and client-generated ids plus `Idempotency-Key` for optimistic creates: design-data `references/07-data-shapes-the-ui.md`.

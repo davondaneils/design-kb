@@ -97,3 +97,4 @@ body { font-family: "Brand Sans", "Brand Sans Fallback", system-ui, sans-serif; 
 - Typeface choice and pairing: design-typography.
 - Image content, art direction and illustration style: design-graphic.
 - Next.js `next/image` and `next/font` specifics: chapter 06.
+- Image rows that store width, height, alt text, focal point and a placeholder, so dimensions come from the data rather than a guess in CSS: design-data `references/07-data-shapes-the-ui.md`.

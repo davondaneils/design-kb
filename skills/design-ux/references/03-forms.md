@@ -67,3 +67,4 @@
 - Microcopy, hints, error wording: design-copy.
 - Checkout persuasion, offers, order bumps: sales-funnels and copywriting.
 - Implementation of `autocomplete`, ARIA error linking (`aria-describedby`, `aria-invalid`): design-frontend.
+- Server side of field errors: named database constraints mapped to problem+json items with `pointer` and `code`, so the right field shows the right message: design-data `references/07-data-shapes-the-ui.md`.

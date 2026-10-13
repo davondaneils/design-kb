@@ -11,14 +11,15 @@ On a phone, the platform is half the design. People bring the habits of their sy
 1. **design-foundations** (always): tokens, the 16-item gate, `references/accessibility.md`.
 2. **This playbook's** `references/platform-conventions.md`: touch numbers, the iOS vs Android vs web table, modality, porting rules. Decide the platform first.
 3. **design-ux**: `references/01-fundamentals.md`, `02-navigation-ia.md`, `04-states-feedback.md` (notifications: ask after the first useful moment, one channel per event), `05-onboarding.md` (real product first, per-platform permission primers), `03-forms.md`, `06-platforms-touch-systems.md` (component specs). Shipped examples: `kb/references/patterns/01-onboarding.md`, `09-notifications.md`, `10-permission-and-error-states.md`.
-4. **design-layout**: `references/04-responsive-and-adaptive.md` (safe areas, width classes), `03-hierarchy-and-gestalt.md`.
-5. **design-typography**: `references/04-hierarchy-ui-editorial.md`; support Dynamic Type and Android font scale up to 200%.
-6. **design-color**: `references/ui-tokens-themes.md`; dark mode is expected on both platforms.
-7. **design-motion**: `references/02-timing-easing.md` (springs), `03-choreography-transitions.md`, `04-micro-interactions.md`.
-8. **design-graphic**: `references/02-icon-systems.md` (app icon, system symbols vs custom icons). **design-art-direction** `references/01-concept-and-consistency.md` when the app has illustration or onboarding art.
-9. **design-copy**: `references/02-ux-microcopy.md` (alerts, permission prompts, notifications).
-10. **design-frontend** for mobile web or a web mock; native code follows the platform's own toolkit.
-11. **design-polish** after the lint gate passes (`references/06-polish-checklist.md`, state sheet for every control), then the self-critique loop in design-director. App screens with lists, settings or command layers also load design-product-ui `references/03-forms-settings.md` and `05-states-bulk.md`.
+4. **design-data** `references/07-data-shapes-the-ui.md` for app screens over account data: every state names its data condition; optimistic writes and offline retries need client-generated ids and idempotency keys. The rest of design-data when the job includes the schema, API or access rules.
+5. **design-layout**: `references/04-responsive-and-adaptive.md` (safe areas, width classes), `03-hierarchy-and-gestalt.md`.
+6. **design-typography**: `references/04-hierarchy-ui-editorial.md`; support Dynamic Type and Android font scale up to 200%.
+7. **design-color**: `references/ui-tokens-themes.md`; dark mode is expected on both platforms.
+8. **design-motion**: `references/02-timing-easing.md` (springs), `03-choreography-transitions.md`, `04-micro-interactions.md`.
+9. **design-graphic**: `references/02-icon-systems.md` (app icon, system symbols vs custom icons). **design-art-direction** `references/01-concept-and-consistency.md` when the app has illustration or onboarding art.
+10. **design-copy**: `references/02-ux-microcopy.md` (alerts, permission prompts, notifications).
+11. **design-frontend** for mobile web or a web mock; native code follows the platform's own toolkit.
+12. **design-polish** after the lint gate passes (`references/06-polish-checklist.md`, state sheet for every control), then the self-critique loop in design-director. App screens with lists, settings or command layers also load design-product-ui `references/03-forms-settings.md` and `05-states-bulk.md`.
 
 ## 2. Non-negotiables for this job
 1. Touch targets 44x44 pt on iOS, 48x48 dp on Android, 44x44 CSS px on mobile web.
