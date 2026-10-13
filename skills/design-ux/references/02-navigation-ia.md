@@ -13,6 +13,7 @@
 | Marketing site, desktop | up to about 7 | Visible top bar | Mega menu only if sections have 10+ children each |
 | Marketing site, mobile | any | Visible key links or priority+ plus menu | Pure hamburger is the weakest option |
 | Small shop, phone | 4 to 6 | Shop and Cart visible, the rest behind a labelled "Menu" | Never drop links at a breakpoint without a route to them (found in the design-ux render test) |
+| Any site, phone menu open | all | Panel lists every link plus the primary action; the trigger label swaps "Menu" to "Close" and sets `aria-expanded` | A trigger that looks the same open and closed has no disclosure state (round 1, `kb/reviews/benchmark-round1-landing.md` gap 9) |
 | Web app shell | 5 to 15 | Sidebar at lg, rail at md, drawer below | Full rules: design-product-ui `references/04-shells-density.md` |
 | Native iOS and Android | 3 to 5 | Tab bar / navigation bar | Full rules: design-playbook-mobile `references/platform-conventions.md` |
 | Deep content (docs, settings) | many | Sidebar tree plus in-page table of contents plus search | Breadcrumbs on deep pages |

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Fundamentals lint: the automated half of the fundamentals checklist in kb/FOUNDATIONS.md (v0.4.4).
+// Fundamentals lint: the automated half of the fundamentals checklist in kb/FOUNDATIONS.md (v0.4.5).
 //
 // Usage:
 //   node tools/lint.mjs <html[?query]> [--json out.json] [--out-dir dir] [--quiet] [--states state=a,state=b]
@@ -29,7 +29,14 @@
 //   overlay      text axe could not decide (text over images, textures, gradients, overlaps): the worst pixel
 //                under each text box, measured on a render with all text hidden, against 4.5:1 (3:1 large)
 //   targets      interactive targets at least 24x24 CSS px (inline text links exempt); warn under 44x44 at 390px
-//   measure      body paragraphs 45 to 75 characters per line at 1440px; at most 75 at 390px
+//   measure      body paragraphs 45 to 75 characters per line at 1440px; 35 to 75 at 390px for text under 20px (the floor catches a
+//                two-column grid kept on a phone: 33 per line on the benchmark page, exemplars 34 to 50)
+//   reading-size running text (p, li, dd, blockquote of 60+ characters) mostly under 16px on a marketing page fails
+//                (design-typography F2; Stripe 16, Linear 15). App screens (<html data-lint-page="app"> or a noindex
+//                robots meta): more than a third of all text under 14px at 390 fails, under 12px anywhere fails
+//   selected-state  a control marked aria-pressed, aria-selected or aria-checked "true" must differ from an unselected
+//                peer by 3:1 in fill, ink or border, or by 200 in weight, or by an underline (WCAG 1.4.11; the
+//                benchmark filter, an aria-current link, measured 1.21:1). aria-current counts: a current-page link is a state too
 //   type-scale   every text size on the FOUNDATIONS scale; fluid clamp() sizes of 39px and up allowed (warn);
 //                SVG text renders at 12px or more
 //   spacing      margin, padding and gap on the FOUNDATIONS scale
@@ -137,6 +144,10 @@ if (!target) {
 const helpers = `
   window.__lint = {
     visible(el) {
+      // Content of a closed <details> is not rendered, but Chromium can still report boxes for it (the Ferry FAQ
+      // gave 14 false fails, benchmark round 1). Everything but the <summary> of a closed <details> is hidden.
+      const shut = el.closest('details:not([open])');
+      if (shut && el !== shut && !el.closest('summary')) return false;
       const s = getComputedStyle(el);
       if (s.display === 'none' || s.visibility === 'hidden' || Number(s.opacity) === 0) return false;
       const r = el.getBoundingClientRect();
@@ -568,6 +579,55 @@ async function lintOne(browser, target, outPath) {
         if (h.startsWith('#') && h.length > 1) { let t = null; try { t = document.getElementById(decodeURIComponent(h.slice(1))); } catch { /* bad id */ } if (t && L.visible(t)) out.nav.reachable.push(hrefOf(a)); }
       }
 
+      // Reading size and selected state (benchmark round 1).
+      {
+        const rgbx = (c) => { const m = c.match(/rgba?\(([^)]+)\)/); if (m) { const v = m[1].split(/[ ,/]+/).filter(Boolean).map(Number); return { r: v[0], g: v[1], b: v[2], a: v.length > 3 ? v[3] : 1 }; }
+          const cv = (window.__cv ||= Object.assign(document.createElement('canvas'), { width: 1, height: 1 })).getContext('2d', { willReadFrequently: true });
+          const am = c.match(/\/\s*([\d.]+)(%?)\s*\)$/); const a = am ? (am[2] ? +am[1] / 100 : +am[1]) : (c === 'transparent' ? 0 : 1);
+          cv.clearRect(0, 0, 1, 1); cv.fillStyle = c.replace(/\s*\/\s*[\d.]+%?\s*\)$/, ')'); cv.fillRect(0, 0, 1, 1); const d = cv.getImageData(0, 0, 1, 1).data; return { r: d[0], g: d[1], b: d[2], a }; };
+        const lumx = ({ r, g, b }) => { const f = (x) => { x /= 255; return x <= 0.04045 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4; }; return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b); };
+        const ratiox = (a, b) => { const [x, y] = [lumx(a), lumx(b)].sort((p, q) => q - p); return Math.round((x + 0.05) / (y + 0.05) * 100) / 100; };
+        const over = (top, base) => ({ r: top.r * top.a + base.r * (1 - top.a), g: top.g * top.a + base.g * (1 - top.a), b: top.b * top.a + base.b * (1 - top.a), a: 1 });
+        // Painted fill of an element: its own background composited over the first ancestor fill.
+        const fillOf = (el) => { const stack = []; for (let n = el; n; n = n.parentElement) { const c = rgbx(getComputedStyle(n).backgroundColor); if (c.a > 0) { stack.push(c); if (c.a >= 0.99) break; } } let out = { r: 255, g: 255, b: 255, a: 1 }; for (const c of stack.reverse()) out = over(c, out); return out; };
+        const isApp = document.documentElement.dataset.lintPage === 'app' || /noindex/i.test(document.querySelector('meta[name=robots]')?.content || '');
+        const chars = new Map(); const para = { small: 0, all: 0, ex: null };
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+        for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+          const el = n.parentElement; const t = n.textContent.replace(/\s+/g, '').length;
+          if (!t || !el || el.closest('svg, script, style, [aria-hidden=true]') || !L.visible(el) || L.inactive(el) || L.skipped(el, 'reading-size')) continue;
+          const fs = Math.round(parseFloat(getComputedStyle(el).fontSize));
+          chars.set(fs, (chars.get(fs) || 0) + t);
+        }
+        for (const el of all.filter((e) => e.matches('p, li, dd, blockquote') && L.visible(e) && !L.skipped(e, 'reading-size') && !e.closest('nav, footer, table, figure, [aria-hidden=true]'))) {
+          if (el.matches('li') && el.querySelector('p')) continue;
+          const t = el.textContent.replace(/\s+/g, ' ').trim().length; if (t < 60) continue;
+          const fs = parseFloat(getComputedStyle(el).fontSize); para.all += t; if (fs < 15.5) { para.small += t; para.ex ||= { sel: L.sel(el), px: fs }; }
+        }
+        const total = [...chars.values()].reduce((a, b) => a + b, 0) || 1;
+        out.reading = { isApp, total, under14: [...chars].filter(([k]) => k < 14).reduce((a, [, v]) => a + v, 0) / total, under12: [...chars].filter(([k]) => k < 12).reduce((a, [, v]) => a + v, 0), para };
+        out.selected = [];
+        const sel = [...document.querySelectorAll('[aria-pressed=true], [aria-selected=true], [aria-checked=true], [aria-current]:not([aria-current=false])')].filter((el) => L.visible(el) && !L.inactive(el) && !L.skipped(el, 'selected-state'));
+        for (const el of sel) {
+          const attr = ['aria-pressed', 'aria-selected', 'aria-checked'].find((a) => el.getAttribute(a) === 'true') || 'aria-current';
+          const same = (p) => p !== el && p.tagName === el.tagName && (p.getAttribute('role') || '') === (el.getAttribute('role') || '') && L.visible(p) && (attr === 'aria-current' ? !p.hasAttribute('aria-current') || p.getAttribute('aria-current') === 'false' : p.getAttribute(attr) !== 'true');
+          let peer = [...(el.parentElement?.children || [])].find(same);
+          if (!peer && el.parentElement?.parentElement) peer = [...el.parentElement.parentElement.querySelectorAll(':scope > * > ' + el.tagName)].find(same);
+          if (!peer) continue;
+          const a = getComputedStyle(el), b = getComputedStyle(peer);
+          const fa = fillOf(el), fb = fillOf(peer);
+          const fill = ratiox(fa, fb);
+          const ink = ratiox(over(rgbx(a.color), fa), over(rgbx(b.color), fb));
+          const weight = Math.abs(parseInt(a.fontWeight, 10) - parseInt(b.fontWeight, 10));
+          const edge = (s, f) => ['Top', 'Right', 'Bottom', 'Left'].some((k) => parseFloat(s['border' + k + 'Width']) >= 1.5 && ratiox(over(rgbx(s['border' + k + 'Color']), f), f) >= 3);
+          const border = edge(a, fa) && !edge(b, fb);
+          const under = /underline/.test(a.textDecorationLine) && !/underline/.test(b.textDecorationLine);
+          const pseudo = ['::before', '::after'].some((ps) => { const p = getComputedStyle(el, ps), q = getComputedStyle(peer, ps); return p.content !== 'none' && p.content !== q.content || (p.content !== 'none' && p.backgroundColor !== q.backgroundColor && ratiox(over(rgbx(p.backgroundColor), fa), fa) >= 3); });
+          if (fill >= 3 || ink >= 3 || weight >= 200 || border || under || pseudo) continue;
+          out.selected.push({ sel: L.sel(el), attr, link: el.matches('a[href]'), text: (el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 24), fill, ink, weight });
+        }
+      }
+
       if (width !== WIDE) return out;
 
       // ---- 1440-only static checks ----
@@ -765,7 +825,7 @@ async function lintOne(browser, target, outPath) {
     for (const m of canvas ? [] : r.measure) {
       if (m.cpl > 75) add('measure', 'fail', `line length ${m.cpl} characters at ${width}px (max 75)`, m);
       else if (width === WIDE && m.cpl < 45 && m.lines >= 3) add('measure', 'fail', `line length ${m.cpl} characters at 1440px (min 45)`, m);
-      else if (width === NARROW && m.cpl < 30 && m.lines >= 3) add('measure', 'warn', `short line length ${m.cpl} characters at 390px`, m);
+      else if (width === NARROW && m.cpl < 35 && m.lines >= 3 && m.fontSize < 20) add('measure', 'fail', `line length ${m.cpl} characters at 390px (min 35 for text under 20px)`, m);
     }
     if (canvas) {
       // A fixed canvas is not read at its own size: the UI type scale does not apply, the size it is seen at does.
@@ -787,6 +847,15 @@ async function lintOne(browser, target, outPath) {
     for (const h of canvas ? [] : r.headings) add('heading-wrap', 'warn', `heading ends on a one-word line at ${width}px ("${h.text}")`, h);
     ok('svg-overlap');
     for (const o of r.overlap) add('svg-overlap', 'warn', `text "${o.text}" partly covered by ${o.art} (${o.px}px) at ${width}px`, { sel: o.sel });
+    ok('reading-size');
+    if (!canvas && r.reading) {
+      const R = r.reading;
+      if (!R.isApp && R.para.all >= 300 && R.para.small / R.para.all > 0.5) add('reading-size', 'fail', `${Math.round(100 * R.para.small / R.para.all)}% of running text is under 16px at ${width}px (marketing pages read at 16; design-typography F2)`, R.para.ex);
+      if (R.isApp && width === NARROW && R.under14 > 1 / 3) add('reading-size', 'fail', `${Math.round(100 * R.under14)}% of text is under 14px at 390px (at most a third: headers and timestamps only)`, {});
+      if (R.under12 > 0) add('reading-size', 'fail', `${R.under12} characters under 12px at ${width}px`, {});
+    }
+    ok('selected-state');
+    for (const x of r.selected || []) add('selected-state', 'fail', `selected "${x.text}" (${x.attr}) differs from its unselected peer by fill ${x.fill}:1, ink ${x.ink}:1, weight ${x.weight} at ${width}px (needs 3:1, +200 weight, a 3:1 border or an underline)`, x);
     ok('primary');
     for (const x of r.primary) add('primary', 'fail', `${x.labels.length} filled calls to action in screen ${x.screen} at ${width}px (${x.labels.map((l) => '"' + l + '"').join(', ')}); one primary per view`, { sel: x.sel });
     if (r.stateSheet) report.summary.stateSheet = true;

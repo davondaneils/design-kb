@@ -61,6 +61,7 @@ Why, measured with `kb/research/typography/measure-cpl.mjs` (same counting as th
 - `em` does not track the face. The average character measured 0.40em (Times, Cambria, Calibri) to 0.51em (DejaVu); Bringhurst's 0.5em rule of thumb ("33em is about 66 characters") fits wide faces only. `32em` is right for Inter and gives 77 in a Times-width serif, over the 75 limit.
 - Display cuts are narrower per `ch` (Inter Display: 52ch gave 73). For large text in a display face, start at `46ch` and let the lint confirm.
 - Count, do not guess: the lint measures real characters per rendered line at 390 and 1440.
+- Phone floor: 35 characters at 390 (FOUNDATIONS v0.4.5, lint `measure`). Under it the cause is almost always a two-column grid kept on a phone or 14px text in a narrow cell: round 1's facts row measured 33, exemplars 34 to 50 (Stripe 40, Linear 50; `kb/reviews/benchmark-round1-landing.md` gap 7). Stack the columns before shrinking the text.
 
 ## Fluid display sizes
 Formula (Utopia method): slope = (maxPx - minPx) / (maxVw - minVw); intercept = minPx - slope x minVw. Size = `clamp(min, intercept + slope*100vw, max)` with min and max in rem.

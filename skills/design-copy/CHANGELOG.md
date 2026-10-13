@@ -1,5 +1,9 @@
 # design-copy changelog
 
+## 2026-10-13 (editor-in-chief, benchmark round 1, `kb/tests/benchmark/round1/RANKED.md`)
+- Reference 02: KPI and column labels true in every state ("People in this run", not "People paid" before payment); the commit dialog's confirm button carries the amount.
+- Reference 06: comparison words agree with the direction of the number beside them (FX quoted per USD); every time zoned when a page has more than one zone (`ZONE`, FOUNDATIONS v0.4.5); number plus count noun on the no-break list (also SKILL rule 16).
+
 ## 2026-10-11 (held-out test fixes)
 - `assets/claims_inventory.mjs`: a year written in the date wins over `--year` ("Fri, Jan 15, 2027" under `--year 2026` was a false WEEKDAY flag, `kb/tests/heldout.md`); reads en-GB dates ("Fri 15 January 2027", "Saturday 17 April") and weekday ranges ("Sat 17 & Sun 18 April 2027"); a WEEKDAY flag that fits a year the page writes says which `--year` to pass; new LOCALE flag (a date in the other locale's order for `<html lang>`, an ordinal on en-GB) and STYLE warning (am/pm spacing, weekday comma); `--lang` override; `--self-test` with 17 date cases.
 - `references/06-copy-in-context.md` rule 4 and SKILL rule 15 follow the FOUNDATIONS v0.4.4 locale table.

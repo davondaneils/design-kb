@@ -56,7 +56,7 @@ A build that misses any of these fails, however good the rest is. Each item says
 | Spacing | 4px base: 0, 2, 4, 8, 12, 16, 24, 32, 48, 64, 96, 128 (`--space-0` to `--space-11`). Component padding 4 to 24; layout gaps 16 and up. |
 | Type | Root 16px, ratio 1.25: 12, 14, 16, 20, 25, 31, 39, 49, 61 (`--text-xs` to `--text-5xl`). Body line-height 1.5, headings 1.1 to 1.25, measure 45 to 75ch (66 ideal). Fluid `clamp()` only for 3xl and up. |
 | Color roles | `--color-bg, -surface, -surface-raised, -text, -text-muted, -border, -primary, -on-primary, -accent, -success, -warning, -danger, -info, -focus-ring`, each a `light-dark()` pair over 50 to 950 primitives. |
-| Breakpoints | sm 640, md 768, lg 1024, xl 1280, 2xl 1536, mobile first, written in em (40em, 48em, 64em, 80em, 96em). Container queries for components. |
+| Breakpoints | sm 640, md 768, lg 1024, xl 1280, 2xl 1536, mobile first, written in rem (40rem, 48rem, 64rem, 80rem, 96rem) in media and container queries alike, range syntax (`@media (width >= 48rem)`); never `em` in a container condition (FOUNDATIONS Breakpoints). Container queries for components. |
 | Radius | 0, 4, 8, 12, 16, full (`--radius-none, -sm, -md, -lg, -xl, -full`). |
 | Elevation | 0 to 4 shadow levels; dark themes raise surfaces instead of deepening shadows. |
 | Motion | `--duration-instant` 100ms, `-fast` 150ms, `-base` 200ms, `-slow` 300ms, `-page` 400ms; easing `--ease-standard cubic-bezier(0.2,0,0,1)`, `--ease-enter cubic-bezier(0,0,0,1)`, `--ease-exit cubic-bezier(0.3,0,1,1)`. |
@@ -69,7 +69,7 @@ Full token file, reset and theme switch: `references/02-modern-css.md`.
 | Situation | Do |
 |---|---|
 | Component must work in different column widths | `container: name / inline-size` on its wrapper and `@container`; the wrapper needs a definite width from its parent |
-| Page-level layout change | media query in em, mobile first |
+| Page-level layout change | media query in rem, range syntax (`width >= 48rem`), mobile first |
 | Display headline should scale | `clamp(min rem, a rem + b vw, max rem)` with max at most 2.5 x min; test 200% and 400% zoom |
 | Theme support | `color-scheme: light dark` on `:root`, `light-dark()` tokens, `data-theme` override, inline head script to avoid a flash |
 | Third-party CSS fights you | `@import url(x.css) layer(vendor)`; never raise specificity or add `!important` |

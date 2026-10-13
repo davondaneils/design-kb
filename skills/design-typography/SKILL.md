@@ -18,7 +18,7 @@ Run this list on every answer, spec or review before anything else. State any ru
 | # | Rule | Number |
 |---|---|---|
 | F1 | Type in `rem`; root font size left at the browser default (never `62.5%` or px on `html`) | 1rem = 16px |
-| F2 | Body text size | Web 16px minimum; iOS 17pt (HIG Body); Android 16sp (M3 Body Large) |
+| F2 | Body text size | Web 16px minimum, and the most common size on a marketing page (round 1's was 14; Stripe 16, Linear 15; lint `reading-size`); app UI 14px, line 2 of a phone row included; iOS 17pt (HIG Body); Android 16sp (M3 Body Large) |
 | F3 | Smallest text anywhere, labels and captions only | 12px web; 11pt iOS; never for paragraphs |
 | F4 | Form input text | 16px or larger (iOS Safari zooms below that) |
 | F5 | Paragraph line height, unitless | 1.5 (headings 1.1 to 1.25; display lines of 100px and up may go to 0.95, reference 07) |
@@ -111,9 +111,8 @@ When delivering a type system, give, in this order:
 2. Token table: token, size, line height, weight, tracking, use.
 3. Measure and container widths.
 4. Hierarchy map for the key screens (which token each element uses).
-6. Loading: the path (system, self-hosted or mixed) and total font KB; `@font-face` with ranges, `font-display`, metric fallback per style, preload, subset; what the page looks like with the font blocked.
-6. Loading: `@font-face` with ranges, `font-display`, fallback, preload, subset.
-7. Gate result: F1 to F16 pass, or the documented deviation.
+5. Loading: the path (system, self-hosted or mixed) and total font KB; `@font-face` with ranges, `font-display`, metric fallback per style, preload, subset; what the page looks like with the font blocked.
+6. Gate result: F1 to F16 pass, or the documented deviation.
 
 Write CSS with foundation token names (`--text-*`, `--space-*`, `--color-text`, `--color-text-muted`).
 

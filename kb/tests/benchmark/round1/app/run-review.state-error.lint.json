@@ -1,0 +1,519 @@
+{
+  "file": "kb/tests/benchmark/round1/app/run-review.html?state=error",
+  "date": "2026-10-13T15:02:22.456Z",
+  "checks": {
+    "axe": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "needs review by eye, aria-valid-attr-value: ARIA attributes must conform to valid values (1 nodes)",
+          "scheme": "light",
+          "width": 390,
+          "targets": [
+            "#menu-open"
+          ]
+        },
+        {
+          "message": "needs review by eye, aria-valid-attr-value: ARIA attributes must conform to valid values (1 nodes)",
+          "scheme": "dark",
+          "width": 390,
+          "targets": [
+            "#menu-open"
+          ]
+        }
+      ],
+      "pass": true
+    },
+    "overlay": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "targets": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "nav.crumbs > ol > li > a",
+          "w": 76.8,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr.is-attention > th.person > a",
+          "w": 109.2,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr.is-attention > th.person > a",
+          "w": 86.2,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr.is-attention > th.person > a",
+          "w": 91.7,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 78.6,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 77.3,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 88,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 85.5,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 80.9,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 67,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 96.7,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 95.5,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 94.8,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 71.4,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 84.8,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 92.7,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 68.8,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 97.4,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 95.8,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 68,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 76,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 71.7,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 70.6,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 87,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 89,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 82.9,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 95.6,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 85.5,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 74.8,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 71.7,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 93.6,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 101.9,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 103.6,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 82.5,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 87.2,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 87.1,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 99.9,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 92.6,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people-body > tr > th.person > a",
+          "w": 80.6,
+          "h": 24
+        }
+      ],
+      "pass": true
+    },
+    "measure": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "type-scale": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "spacing": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overflow": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "heading-wrap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "svg-overlap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "primary": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "radius": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "color-scheme": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "typography": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "tabular": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "shadows": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icons": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icon-stroke": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "icon stroke 2.25px vs text stem 1.23px (14px 400)",
+          "sel": "div.app > nav.sidebar > button.ws > svg.logo-mark"
+        }
+      ],
+      "pass": true
+    },
+    "weight": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "occlusion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "squash": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-header": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "run-together": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "word-break": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "grid-edge": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "hidden-content": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "double-space": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "undefined-var": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-layer": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "primitive-in-component": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "error-icon": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "truth": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "proportion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "nav-parity": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus-shape": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "skip-link": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-shift": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "fallback": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "motion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    }
+  },
+  "summary": {
+    "weightKB": {
+      "html": 185,
+      "svg": 18
+    },
+    "focusables": 58,
+    "fallbackShift390": 1,
+    "fallbackShift1440": 1,
+    "motionFound": {
+      "animations": 31,
+      "movingTransitions": 0
+    },
+    "axe": "pass (2 warn)",
+    "overlay": "pass",
+    "targets": "pass (39 warn)",
+    "measure": "pass",
+    "type-scale": "pass",
+    "spacing": "pass",
+    "overflow": "pass",
+    "heading-wrap": "pass",
+    "svg-overlap": "pass",
+    "primary": "pass",
+    "radius": "pass",
+    "color-scheme": "pass",
+    "typography": "pass",
+    "tabular": "pass",
+    "shadows": "pass",
+    "icons": "pass",
+    "icon-stroke": "pass (1 warn)",
+    "weight": "pass",
+    "occlusion": "pass",
+    "squash": "pass",
+    "sticky-header": "pass",
+    "run-together": "pass",
+    "word-break": "pass",
+    "grid-edge": "pass",
+    "hidden-content": "pass",
+    "double-space": "pass",
+    "undefined-var": "pass",
+    "state-layer": "pass",
+    "primitive-in-component": "pass",
+    "error-icon": "pass",
+    "truth": "pass",
+    "proportion": "pass",
+    "nav-parity": "pass",
+    "focus": "pass",
+    "focus-shape": "pass",
+    "sticky-focus": "pass",
+    "skip-link": "pass",
+    "state-shift": "pass",
+    "fallback": "pass",
+    "motion": "pass",
+    "result": "PASS",
+    "fails": 0,
+    "warns": 42
+  }
+}

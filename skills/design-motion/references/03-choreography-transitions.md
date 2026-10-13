@@ -34,7 +34,7 @@ The 30 px slide distance is an opinion consistent with Material's small-offset a
 **Scroll**
 - Never scroll-jack (change scroll speed, direction or snapping the person did not ask for). Val Head: "highly likely to be triggering."
 - Scroll reveals: opacity 0 to 1 and translateY 8 to 16 px, once per element, at `--duration-slow` or bound to `animation-timeline: view()` with `animation-range: entry 0% cover 30%` (opinion on values; MDN for syntax).
-- Never apply a reveal to above-the-fold content or the LCP element. Chromium does not count opacity 0 elements as LCP candidates (web.dev), so a fade-in hero delays LCP. Content must also be visible if JS or the animation never runs: hide only inside `@supports (animation-timeline: view())` or after JS adds a class.
+- Never apply an opacity reveal to the LCP element or other above-the-fold text. The one exception is the hero reveal FOUNDATIONS allows (up to 800ms, once), on the supporting artifact by transform or clip-path. Chromium does not count opacity 0 elements as LCP candidates (web.dev), so a fade-in hero delays LCP. Content must also be visible if JS or the animation never runs: hide only inside `@supports (animation-timeline: view())` or after JS adds a class.
 - Parallax is non-essential motion (WCAG 2.3.3 Understanding); remove it under reduced motion and keep the layer offset small (opinion: background moves under 20 percent of scroll distance).
 - Scroll-driven CSS animations: Chrome 115+, Safari 26+, Firefox behind a flag (research date). They run off the main thread for transform and opacity. Use `@supports (animation-timeline: view())` and treat them as progressive enhancement.
 
@@ -42,11 +42,11 @@ The 30 px slide distance is an opinion consistent with Material's small-offset a
 - Do: product card expands into the product page with the image as the shared element. Don't: slide the whole page left and also zoom the image.
 - Do: bottom nav tabs fade through. Don't: slide bottom nav tabs left and right; they are peers without order (Material).
 - Do: stagger 6 dashboard cards at 40 ms on first load. Don't: stagger 40 rows at 80 ms (3.2 s before the last row appears).
-- Do: reveal mid-page feature blocks on scroll once. Don't: animate the hero headline in from opacity 0.
+- Do: reveal mid-page feature blocks on scroll once, and give the hero's artifact the page's one reveal (up to 800ms, FOUNDATIONS). Don't: animate the hero headline in from opacity 0.
 
 ## Worked examples
 1. **E-commerce grid to product detail (Next.js app router).** Pattern: container transform. The tapped card image gets `view-transition-name: product-hero` just before navigation (set by click handler, then removed), the root crossfades at `--duration-base`, and the image group animates bounds at `--duration-slow` with `--ease-standard`. Back navigation reverses through the same name. Reduced motion: drop the named element so only the root crossfade runs, and shorten it to `--duration-fast`.
-2. **Marketing landing page.** Hero: no entrance animation, fully visible at first paint (protects LCP). Sections below the fold: one reveal each (opacity plus 12 px rise) via `view()` timeline with `@supports` guard. Logo marquee: `linear`, pauses on hover and focus, has a visible pause button because it runs more than 5 seconds next to other content (WCAG 2.2.2). Reduced motion: no reveals, marquee becomes a static wrapped row.
+2. **Marketing landing page.** Hero: headline and action fully visible at first paint (protects LCP); the one hero reveal FOUNDATIONS allows on a marketing page (up to 800ms on `--ease-enter`, played once on load, removed under reduced motion; Stripe reveals `.8s`, `kb/teardowns/stripe-home.md`) plays on the artifact beside it, by transform or clip-path. A page with no motion at all reads as no voice: round 1 measured 1 duration and 1 curve against the exemplars' 5 to 8 and 4 to 9 (`kb/reviews/benchmark-round1-landing.md` scorecard Motion). Sections below the fold: one reveal each (opacity plus 12 px rise) via `view()` timeline with `@supports` guard. Logo marquee: `linear`, pauses on hover and focus, has a visible pause button because it runs more than 5 seconds next to other content (WCAG 2.2.2). Reduced motion: no reveals, marquee becomes a static wrapped row.
 
 ## Hand-offs
 - design-layout owns the spatial model (what is a child, a peer, a step); this chapter maps it to motion.

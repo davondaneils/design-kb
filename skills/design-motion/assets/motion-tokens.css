@@ -6,7 +6,7 @@
   --duration-fast: 150ms;    /* tooltip, small popover, menu, dropdown, most exits */
   --duration-base: 200ms;    /* band 200 to 250ms: dialog, accordion, toast, digit roll, label swap entrance */
   --duration-slow: 300ms;    /* band 300 to 400ms: drawer, sheet, shared element */
-  --duration-page: 400ms;    /* band 400 to 600ms: route change; raise to 600ms only on marketing pages for storytelling */
+  --duration-page: 400ms;    /* route change; never raised: 600ms is the ceiling for a marketing reveal, 800ms the one hero reveal (FOUNDATIONS v0.4.5) */
 
   /* Easing (primitives): Material 3 standard set, the three FOUNDATIONS curves */
   --ease-standard: cubic-bezier(0.2, 0, 0, 1); /* moves and resizes on screen, hover color */

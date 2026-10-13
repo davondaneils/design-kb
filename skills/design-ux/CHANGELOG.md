@@ -1,5 +1,8 @@
 # design-ux changelog
 
+## 0.2.2 (2026-10-13, editor-in-chief, benchmark round 1, `kb/tests/benchmark/round1/RANKED.md`)
+- Phone navigation: the opened menu repeats the primary action and its trigger reads "Close" with `aria-expanded` (SKILL section 3, reference 02 pattern chooser). Round 1 showed 0 links at 390 and a trigger that never changed.
+
 ## 0.2.1 (2026-10-10, editor-in-chief)
 - Checkout field average updated from the outdated 14.88 to Baymard's 2024 figure of 11.3 (via `kb/research/conversion/04-checkout-and-forms.md` C9; baymard.com was blocked from this environment, so the quote was not re-fetched).
 - PR #6 findings folded in with links to `kb/references/patterns/`: onboarding (real product first, permission only when a feature needs it, per-platform primers) and notifications (ask after the first useful moment, one channel per event, needs-you inbox split).

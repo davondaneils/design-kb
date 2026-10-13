@@ -26,7 +26,7 @@ Design arranges a page. Art direction decides what the page is about visually: o
 2. **Write the concept as one sentence with a drawable noun.** "Every bag shows the hill it grew on and the fire that finished it." Then the **reject test**: one line a stranger could use to throw an image out.
 3. **Pick 3 to 5 motifs**, each tied to a fact, and **one loud element** in the brand accent; everything else in neutral line work.
 4. **Map to tokens** before drawing: `--color-illustration-line`, `--color-illustration-accent`, `--color-illustration-surface`, one stroke width, the radius family. Dark mode remaps them.
-5. **Place it**: hero, at least one mid-page section, and one small surface (footer, empty state, 404, OG image). Ban imagery from forms, pricing and checkout.
+5. **Place it**: hero, at least one mid-page section, and one small surface (footer, empty state, 404, OG image). Ban imagery from forms, pricing and checkout. The hero placement is a drawn thing in the first screen at 1440 and 390, not the concept named in the headline: hide the logo and reject the hero if the page could be anyone's (design-playbook-landing `references/signature-moves.md`, reject test; round 1's crossing motif lived only in copy and a below-fold chart, `kb/reviews/benchmark-round1-landing.md` item 11).
 6. **Choose the medium per slot** (table below), build, then run the consistency audit and the worst-pixel check.
 7. **Hand over** the list of drawn stand-ins and the photo request with exact specs (`references/05`).
 

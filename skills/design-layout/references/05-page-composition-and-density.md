@@ -27,7 +27,7 @@ Rules:
 
 - One dashboard, one job (NN/g). Name the decision it supports before placing anything.
 - Top-left gets the most important information (Few). Layout reads: KPI row, then primary trend chart, then breakdowns, then detail tables.
-- KPI row: 3 to 5 tiles (opinion). Each tile: label (muted), value (largest text on the page), delta with direction and comparison period. Equal widths per row.
+- KPI row: 3 to 5 tiles (opinion). Each tile: label (muted), value (largest text on the page), delta with direction and comparison period. Equal widths per row. Exception, review-and-commit screens (approve a run, a payout): the committed amount alone is the largest figure (39px), the other tiles drop to 20px, and the commit with its amount stays reachable on long pages (design-product-ui `references/06-dashboards.md`; `kb/reviews/benchmark-round1-app.md` item 6).
 - Charts: bars and lines first; avoid pies, donuts, gauges and 3D (NN/g). Chart design itself: dataviz.
 - Grid: 12 columns, cards span 3, 4, 6 or 12. Cards in one row share a height (subgrid or `align-items: stretch`). Gap 16 to 24.
 - Global filters (date range, segment) sit in one toolbar above the content, applied to everything; per-card controls only when a card is independent.

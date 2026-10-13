@@ -1,5 +1,10 @@
 # Changelog: design-layout
 
+## 0.2.1 (2026-10-13, editor-in-chief, benchmark round 1, `kb/tests/benchmark/round1/RANKED.md`)
+- Gate rule 4: opened menus and drawers hang their hit-area padding outside the text edge, so link text sits on the logo's edge (round 1: 12px off).
+- Reference 04: a marketing tablet pattern for 640 to 1023 (8 columns, hero 5 + 3, lists 2 up, margin-column text, nav links visible from 768, a one-third empty-space check), opinion.
+- Reference 06: content box 1280 (was 1136 inside 1232, against SKILL and reference 01); alerts as rows are tinted only inside the alert panel, tables mark status with glyph plus word.
+
 ## 0.2 (2026-10-10, wave 2, rendered test)
 - New reference 06, page pacing, signature moves, phone editing and dashboard grids: flatplan with kinds of loudness, the margin column, one directed grid break, data drawn into rules, ruled index over cards, proof next to claim, supporting pane at 2:1 with a 320px floor, alerts as rows, a phone edit verb list (keep, reorder, crop, thumbnail, merge duplicate, shorten label, collapse, defer; never cut a unique fact), tablet and container query rules, the `gap` versus `column-gap` pitfall.
 - SKILL.md: gate rules 18 (phone is edited, not shrunk; source order; no unique fact cut) and 19 (next section peeks at 1440 x 900; one page grid); workflow step 2b (flatplan) and wider test widths; expert moves 14 to 20; expert move 13 now says to re-run the lint after compressing rows; dashboard skeleton row order; reference map row for 06; measure note that `ch` resolves on the element's own font (52ch re-measured: 63 to 68 characters).

@@ -23,6 +23,8 @@
 //            against "Two of us taste"), trial, refund and reply windows, free-shipping thresholds, and subscription
 //            rights said as a verb list ("Skip, swap or cancel" against "Skip, pause or cancel"). Each promise
 //            gets one wording and one number (FOUNDATIONS Content mechanics, Truth)
+//   ZONE     a page that shows times in two or more zones or places has a time with neither ("lands 6:48 pm" beside
+//            "8:52 am ET"); run with --render at 390 too, since reflow can cut the place column
 //   PERIOD   more than one comparison basis on one page ("Compared to: previous 12 weeks" on the control, "vs last
 //            week" on every KPI): name the basis beside each delta and make the control drive them
 // Reads static HTML (scripts, styles and SVG removed; aria-label, alt and placeholder text included).
@@ -191,6 +193,22 @@ for (const [topic, vals] of Object.entries(promises)) {
   if (keys.length < 2) continue;
   warns.push(`PROMISE  ${topic} has ${keys.length} different values: ` + keys.map((k) => `${k} in "${[...vals[k]][0]}"`).join('; ') + '. One promise, one wording, one number.');
 }
+
+// ---- ZONE: on a page with times in more than one zone, every time names its zone or place ----
+// The benchmark hero card printed "lands 6:48 pm" beside "Rates locked 8:52 am ET" once its place column was cut at 390
+// (kb/reviews/benchmark-round1-landing.md, gate 16). A time followed by a zone, "local", or "in <Place>" counts as labelled.
+const TIME = /\b\d{1,2}(?::\d\d)?\s?(?:am|pm)\b|\b(?:[01]?\d|2[0-3]):[0-5]\d\b/gi;
+const ZONE = /^\s*(?:\(?\b(?:[ECMP][SD]?T|UTC|GMT|BST|CES?T|IST|BRT|AES?T|JST|SGT|HKT|[A-Z]{2,4}[SD]?T)\b|(?:,?\s*)?(?:local|your time|their time|in\s+[A-Z][a-z]+|[A-Z][a-z]+ time))/;
+const zones = new Set(); const bare = [];
+for (const b of blocks) {
+  for (const m of b.matchAll(TIME)) {
+    const after = b.slice(m.index + m[0].length, m.index + m[0].length + 24);
+    const z = after.match(ZONE);
+    if (z) zones.add(z[0].trim().replace(/^\(|,\s*/g, '').split(/\s+/)[0].toLowerCase() === 'in' ? 'place' : z[0].trim().replace(/^\(|,\s*/g, ''));
+    else bare.push(`"${m[0]}" in "${b.slice(0, 60)}"`);
+  }
+}
+if (zones.size > 1 && bare.length) warns.push(`ZONE     ${zones.size} zones or places on the page (${[...zones].slice(0, 4).join(', ')}) but ${bare.length} time${bare.length > 1 ? 's' : ''} with none: ${[...new Set(bare)].slice(0, 4).join('; ')}. Label every time with its zone or place, and check each reflowed width with --render (FOUNDATIONS Content mechanics).`);
 
 // ---- PERIOD: one comparison basis per page ----
 const joined = blocks.join(' ');

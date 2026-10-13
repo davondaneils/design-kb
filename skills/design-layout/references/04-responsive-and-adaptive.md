@@ -17,6 +17,15 @@ Sources: research/layout/04. Breakpoints are the foundation set: sm 640, md 768,
 | 640 to 1023 | 8 | navigation rail (icons + short labels) | top bar, menu or condensed links | 1, or list-detail at 768 and up if content is dense |
 | 1024 to 1279 | 12 | rail or sidebar | full top nav | 2 (list-detail, supporting pane) |
 | 1280 and up | 12 | persistent sidebar 240 to 280px | full top nav, centered 1280 container | 2 to 3 |
+### Marketing page at 640 to 1023 (tablet): a layout of its own, not a stretched phone
+Round 1's landing page ran one column at 768 with the right third empty through the steps and the FAQ (`kb/reviews/benchmark-round1-landing.md` gap 14). The teardowns have no tablet rows, so the numbers below are opinion, checked on that render.
+- **8 columns, gutter 24, side margin 32.** Content box is the full width less the margins; text still caps at 52ch.
+- **Hero:** text in columns 1 to 5, the product or art in 6 to 8 at its own aspect (or stacked under the text at full width, never a 700px-tall square). The hero card keeps every fact it shows at 1024; collapse a column into a labelled line, never drop a time zone, a place or a rate.
+- **Lists of 3 or 4 items** (steps, features, stats): 2 columns, the odd one spanning both or sitting beside a heading.
+- **Text sections** (FAQ, story): heading in a margin column (1 to 3), body in 4 to 8, as at 1440 with fewer columns.
+- **Nav:** the two or three top links and the primary action stay visible in the bar from 768; the menu holds the rest.
+- **Check:** on the 768 render no section leaves more than a third of the content box empty for more than one screen height, and the KPI or stat row is 2x2, not four stacked rows.
+
 Cross-check for native and Android apps: Material compact under 600dp uses a bottom bar, medium and expanded use a rail, and two panes are impractical when height is compact (landscape phone, under 480dp).
 
 ### Component rules

@@ -25,7 +25,9 @@ A dashboard is "at-a-glance information" people "can act on quickly" and focuses
 - **Operational or analytical?** Operational (on-call, support, trading floor): alerts and live status first, compact density, auto refresh, freshness prominent (D3). Analytical (weekly product review): the answer line, KPIs, trend with benchmark, breakdowns, then detail tables; default density (D4).
 - **Order (analytical):** answer line, KPI row, primary trend, alerts or breakdowns, detail table. Alerts that need action today move above the trend (D8; opinion on placement).
 - **KPI count.** 3 to 5 per row (design-layout 05). More: the dashboard is answering two questions; split it.
-- **KPI anatomy:** label (muted, `--text-sm`), value (largest text on the page, `--text-2xl` 31 or `--text-3xl` 39 weight 600, tabular figures), delta line (`--text-xs` or `--text-sm`: arrow, signed value, period), optional sparkline (dataviz).
+- **Review-and-commit screens** (approve a payroll run, a payout, an invoice batch: one number is the object of the decision). The committed amount is the single largest figure (`--text-3xl` 39); the other KPIs drop to `--text-lg` 20; the sentence that explains the amount sits under it, not above. The commit button carries the amount ("Approve $265,195.92"; design-copy `references/02-ux-microcopy.md`). On a page taller than two screens, the commit and the amount travel together in a sticky bar at the bottom (design-conversion `references/04-checkout-and-forms.md`, "the summary never leaves"). After commit the screen changes state everywhere: "estimate" becomes "locked", future steps become done, review links go, and a time-boxed lock shows its end time (chapter 05). Round 1 set the $265,195.92 total at the same 31px/600 as "7 currencies", put the explanation above it, and let Approve (107x32, no amount) leave the screen after 900px of a 3,219px page (`kb/reviews/benchmark-round1-app.md` items 6, 10 and gate 16).
+- **KPI labels are true in every state.** A label names what the number counts, not the outcome hoped for: "People in this run", not "People paid" before payment (round 1 showed "People paid 38" under "Nobody has been paid"; design-copy `references/02-ux-microcopy.md`).
+- **KPI anatomy:** label (muted, `--text-sm`), value (largest text on the page, except on review-and-commit screens above, `--text-2xl` 31 or `--text-3xl` 39 weight 600, tabular figures), delta line (`--text-xs` or `--text-sm`: arrow, signed value, period), optional sparkline (dataviz).
 - **Abbreviation.** Tiles abbreviate to 3 significant figures ($184.2k, 48.2k); tables keep full precision (chapter 01). Give screen readers the full value as `<span aria-hidden="true">48.2k</span><span class="sr-only">48,210</span>`. Do not put `aria-label` on a plain `span` or `div`: ARIA prohibits naming generic elements, and axe fails it (`aria-prohibited-attr`; found in the product UI test, `kb/tests/design-product-ui.md`). The same applies to a "no data" dash.
 - **Benchmark over more series.** Compare to the previous period or a target as a dashed gray line; do not add a third color (design-color G5; dataviz).
 - **Customisation.** Mixed audiences (finance, support, founders): let people add and remove widgets, like Stripe Home (D9). Single-role tools: fixed layout.
@@ -34,7 +36,8 @@ A dashboard is "at-a-glance information" people "can act on quickly" and focuses
 ### Numbers
 | Thing | Value | Source |
 |---|---|---|
-| KPIs per row | 3 to 5 | design-layout 05 |
+| KPIs per row | 3 to 5; 2x2 at 768 to 1023, never four stacked rows | design-layout 05 |
+| Committed amount (review-and-commit) | 39px alone; other KPIs 20px; amount on the commit button and in a sticky bar on long pages | `kb/reviews/benchmark-round1-app.md` items 6 and 10; opinion |
 | Answer line | one sentence, `--text-base` 16 or `--text-lg` 20, max about 52ch | opinion; FOUNDATIONS measure |
 | Tile value | 31 to 39px, weight 600, `tabular-nums`, letter-spacing about -0.01 to -0.02em | design-typography; opinion |
 | Abbreviate | 3 significant figures in tiles | opinion, consistent with research 01 T7 |

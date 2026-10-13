@@ -1,5 +1,8 @@
 # Changelog: design-art-direction
 
+## v0.1.3 (2026-10-13, editor-in-chief, benchmark round 1, `kb/tests/benchmark/round1/RANKED.md`)
+- Step 5: the hero placement must be drawn and visible in the first screen, not only named in copy; links the landing playbook's reject test.
+
 ## v0.1.2 (2026-10-10, editor-in-chief)
 - Expert move 15: print the live HTML label onto the product photo (the move the round 3 clean-context critic named the most non-obvious on either page, `kb/reviews/round3-critic.md` section 4), with its limits.
 

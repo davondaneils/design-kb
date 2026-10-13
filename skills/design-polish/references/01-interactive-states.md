@@ -9,7 +9,7 @@ Token names follow `kb/FOUNDATIONS.md`. State colors come from design-color `ref
 ### Fundamentals (non-negotiable)
 1. **Focus is visible on every focusable element**: `outline: 2px solid var(--color-focus-ring); outline-offset: 2px` on `:focus-visible`, 3:1 against the color next to it. [lint presence, judged contrast] (FOUNDATIONS item 9; WCAG 2.4.7, 1.4.11)
 2. **The focus rule never changes anything visible except the ring.** No `border-width`, `padding` or `font-weight` inside `:focus-visible`, and no `border-radius` on elements that paint a fill, border or shadow. The outline already follows the element's radius and takes no space (MDN outline). Giving a transparent text link a small radius on focus, so its ring has soft corners, is fine. The trap is a global `:focus-visible { border-radius: 4px }`: it has the same specificity as `.btn`, so whichever is declared later wins, and a pill or card declared earlier squares off when tabbed to. Write it as `:where(a:focus-visible) { border-radius: 4px }`, which has zero specificity, so every component radius wins. Scoping to `a:not([class])` is not enough: it still beats `.nav a` (0,2,1 vs 0,1,1) and squared the dashboard's 8px nav items in testing. [judged; `polish-audit.mjs` focus-shape]
-3. **Every custom button has a pressed state** that differs from hover ("Always include a press state for a custom button", Apple HIG Buttons). [judged]
+3. **Every custom button has a pressed state** that differs from hover ("Always include a press state for a custom button", Apple HIG Buttons), and from disabled by delta E (CIE76) 15 or more, checked with rest, pressed and disabled side by side on the state sheet. Round 1 went lighter twice on a dark-ink orange (rest `#e45705`, pressed `#ffa984`) and landed 6.5 from disabled (`#f1aa81`, made with `opacity: 0.5`), so a press read as the button switching off (`kb/reviews/benchmark-round1-landing.md` gate 15). [judged]
 4. **No state changes the box size.** Hover, focus, pressed, selected, error and loading keep width and height to the pixel: change `background-color`, `color`, `box-shadow`, `outline`, `transform` or `opacity`; never `border-width`, `padding` or weight on text that sits in a row. Need a thicker error border? Add the second pixel as `box-shadow: inset 0 0 0 1px`. [judged; lint proposal]
 5. **Hover is gated** to `@media (hover: hover) and (pointer: fine)` for anything beyond a color change, because touch devices emulate hover on long tap and leave it stuck (MDN hover). [judged; lint proposal]
 6. **Hover is never the only way** to reveal an action or information. Anything shown on hover is also shown on focus and reachable on touch. [judged]
@@ -29,6 +29,9 @@ Token names follow `kb/FOUNDATIONS.md`. State colors come from design-color `ref
 
 ### Decision rules
 - **If the fill is a solid brand or primary color**: step the color (600 to 700 hover, 800 pressed) per design-color. Do not overlay; overlays on saturated fills shift hue.
+- **If the label is dark ink on a mid fill** (orange, yellow, teal at L above .65): hover and pressed may go lighter or darker, but pressed moves away from the disabled face. Press one step darker (re-measure the dark label on it) or press by `scale(0.97)` and an inset shadow; disabled is `--color-surface-sunken` with a muted label, never `opacity` on the brand fill (a pale brand tint is what a lighter pressed state looks like).
+- **If hover changes text color**: it adds emphasis (`text-muted` to `text`), never removes it. Round 1's FAQ questions dimmed to `text-muted` on hover, lowering contrast at the moment of reading (`kb/reviews/benchmark-round1-landing.md` item 17).
+- **If a class gives a link touch padding** (`min-block-size: 44px`, `inline-flex`): scope it to stand-alone links. On a link inside a sentence it opens one tall line in the paragraph; round 1's `.more` served both and made a 33px line gap among 24px ones (gate 13). Inline links are exempt from 2.5.8 (design-foundations `references/accessibility.md`).
 - **If the element sits on a neutral surface** (ghost button, list row, nav item, menu item): use a state layer of the text color, hover 8%, pressed 10% (Material 3 tokens: hover 0.08, focus 0.10, pressed 0.10, dragged 0.16). On light themes compose it as `color-mix(in oklch, var(--color-text) 8%, transparent)`. Check the result against the text on top.
 - **If a control is unavailable because of something the user can fix** (empty required field): keep it enabled, validate on submit, and show the message. Opinion, backed by design-ux forms guidance.
 - **If it is unavailable for a reason outside the user's control right now** (plan limit, offline): `aria-disabled="true"` plus visible reason text next to it or in a tooltip reachable by focus.
@@ -57,7 +60,7 @@ Token names follow `kb/FOUNDATIONS.md`. State colors come from design-color `ref
 Timing (tokens from FOUNDATIONS and design-motion):
 | Change | Duration | Note |
 |---|---|---|
-| Hover color, background | `--duration-fast` 150ms, `--ease-standard` | Opinion: lists traversed fast (rows, menus, sidebars) get 0ms in and 150ms out, so a cursor sweeping 20 rows does not leave a smear |
+| Hover color, background | `--motion-hover`: `--duration-instant` 100ms, `--ease-standard` (FOUNDATIONS; Linear hover `.1s`, `kb/teardowns/linear-home.md`) | Opinion: lists traversed fast (rows, menus, sidebars) get 0ms in and 100ms out, so a cursor sweeping 20 rows does not leave a smear |
 | Press scale | `--duration-instant` 100ms in; release eases back at fast | Press must feel immediate (0.1 s limit, Nielsen) |
 | Focus ring | none | Opinion: never transition the outline in; a fading ring is a ring a keyboard user waits for |
 | Shadow lift on hover | fast to base | transition `box-shadow` only on few elements (cards), it repaints |
@@ -87,9 +90,9 @@ Timing (tokens from FOUNDATIONS and design-motion):
 - Do keep disabled buttons readable (muted label on a sunken fill). Don't drop them to 40% opacity on top of a colored band, which turns them into a smudge.
 
 ### Worked examples
-**Subscribe button, coffee landing.** Rest: orange 600 fill, white label 5.64:1, inset top highlight `inset 0 1px 0 rgb(255 255 255 / 0.12)`. Hover (pointer): orange 700, 150ms. Pressed: orange 800, `scale(0.98)` (wide button), 100ms. Focus: 2px orange 600 ring, 2px offset; the pill shape is kept. Loading (after submit): label at opacity 0 in place, 16px spinner in white, `aria-busy`, live region says "Starting your subscription". Reduced motion: no scale; colors still change.
+**Subscribe button, coffee landing.** Rest: orange 600 fill, white label 5.64:1, inset top highlight `inset 0 1px 0 rgb(255 255 255 / 0.12)`. Hover (pointer): orange 700, 100ms. Pressed: orange 800, `scale(0.98)` (wide button), 100ms. Focus: 2px orange 600 ring, 2px offset; the pill shape is kept. Loading (after submit): label at opacity 0 in place, 16px spinner in white, `aria-busy`, live region says "Starting your subscription". Reduced motion: no scale; colors still change.
 
-**Sidebar nav item, dashboard.** Rest: muted text, transparent. Hover: 8% text-color layer, 0ms in, 150ms out. Selected: teal 50 background, teal 800 text, weight 600, `aria-current="page"`. Focus: inset ring (`outline-offset: -2px`) so the item above does not clip it. Pressed: 10% layer.
+**Sidebar nav item, dashboard.** Rest: muted text, transparent. Hover: 8% text-color layer, 0ms in, 100ms out. Selected: teal 50 background, teal 800 text, weight 600, `aria-current="page"`. Focus: inset ring (`outline-offset: -2px`) so the item above does not clip it. Pressed: 10% layer.
 
 ### Hand-offs
 - State colors and contrast: design-color `references/ui-tokens-themes.md` (focus and pressed overlays at 10%, Material 3; aligned in FOUNDATIONS v0.3).

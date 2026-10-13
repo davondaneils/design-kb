@@ -1,5 +1,9 @@
 # design-playbook-landing changelog
 
+## 2026-10-13 (editor-in-chief, benchmark round 1, `kb/tests/benchmark/round1/RANKED.md`)
+- `references/signature-moves.md`: the first-screen reject test (hide the logo; the motif is visible and drawn in the first screen, not only named in copy); status line now points at the teardowns.
+- Done means 4 and 6: 768 is a tablet layout, the reject test passes. Load step 9: the one hero reveal plays on the artifact; no motion is not restraint.
+
 ## 2026-10-11 (editor-in-chief, from the held-out test)
 - Section 3b, event and editorial pages: the hero carries the identity at full strength (scale, color field, crop), restraint belongs to the body sections, the hero screenshot must work as the social post, and the hero still owes the category word, locale-correct dates, place and one action. The skilled festival hero came out quieter than the baseline's (`kb/tests/heldout.md`).
 
