@@ -97,6 +97,22 @@ How it works: opening uses the transition declared on `dialog[open]` (the after-
 ```
 This animates layout, so keep it to one panel at a time and small content. Where supported, `interpolate-size: allow-keywords` with `height: auto` is the native alternative (MDN: not Baseline).
 
+**Native `<details>` (FAQ, disclosure)**
+The grid trick above needs a wrapper the browser does not give `<details>`; its closed content lives in the `::details-content` part (MDN `::details-content`; developer.chrome.com "Animate to height: auto").
+```css
+@media (prefers-reduced-motion: no-preference) {
+  :root { interpolate-size: allow-keywords; }        /* lets block-size animate to auto */
+  details::details-content {
+    block-size: 0;
+    overflow-y: clip;
+    transition: block-size var(--duration-base) var(--ease-standard),
+                content-visibility var(--duration-base) allow-discrete;
+  }
+  details[open]::details-content { block-size: auto; }
+}
+```
+Progressive: where either feature is missing, the panel opens instantly and stays correct. Under reduced motion nothing here applies, so it snaps (FOUNDATIONS Motion). Do not hide closed content with `details:not([open]) > :not(summary) { display: none }`: it removes the part this animates (round 1's workaround for a lint bug the lint now handles; `kb/tests/benchmark/round1/landing/BUILD_NOTES.md` skill problem 12).
+
 **Scroll reveal, progressive**
 ```css
 @supports (animation-timeline: view()) {

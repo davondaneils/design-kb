@@ -1,0 +1,523 @@
+{
+  "file": "kb/tests/benchmark/round2/landing/ferry.html",
+  "date": "2026-10-13T16:11:40.241Z",
+  "checks": {
+    "axe": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overlay": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "targets": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "html.js > body > a.skip",
+          "w": 146.1,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "body > header.header > div.wrap.header__bar > a.logo",
+          "w": 88.3,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "header.header > div.wrap.header__bar > div.header__actions > button.menu-btn",
+          "w": 64.2,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#email",
+          "w": 203.5,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#signup > div.signup__row > button.btn.btn--primary",
+          "w": 142.5,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.wrap.grid > div.hero__copy > p.hero__alt > a.link",
+          "w": 105.6,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.wrap.grid > div.cover__copy > p.more > a.link",
+          "w": 150.7,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.calc > div.calc__row > div.stepper > button",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#people",
+          "w": 59,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.calc > div.calc__row > div.stepper > button",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "footer.footer > div.wrap.grid > div.footer__brand > a.logo",
+          "w": 88.3,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div > ul > li > a",
+          "w": 85.6,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div > ul > li > a",
+          "w": 62.1,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div > ul > li > a",
+          "w": 45.4,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div > ul > li > a",
+          "w": 55.2,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div > ul > li > a",
+          "w": 39.6,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div > ul > li > a",
+          "w": 71.8,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div > ul > li > a",
+          "w": 51.4,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div > ul > li > a",
+          "w": 52,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div > ul > li > a",
+          "w": 86,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div > ul > li > a",
+          "w": 75.8,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div > ul > li > a",
+          "w": 42.7,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div > ul > li > a",
+          "w": 48.7,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div > ul > li > a",
+          "w": 40,
+          "h": 32
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div > ul > li > a",
+          "w": 57.4,
+          "h": 32
+        }
+      ],
+      "pass": true
+    },
+    "measure": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "type-scale": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "fluid display size 72px at 1440px (clamp() present)",
+          "size": 72,
+          "count": 3,
+          "examples": [
+            "#hero-title",
+            "div.wrap.grid > div.price__copy > p.price__big > b.price",
+            "#final-title"
+          ]
+        }
+      ],
+      "pass": true
+    },
+    "spacing": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overflow": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "heading-wrap": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "heading ends on a one-word line at 390px (\"01 Fund\")",
+          "sel": "div.wrap.grid > ol.how__steps > li.how__step.rise > h3",
+          "lines": 2,
+          "text": "01 Fund"
+        }
+      ],
+      "pass": true
+    },
+    "svg-overlap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "reading-size": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "selected-state": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "primary": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "radius": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "color-scheme": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "typography": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "tabular": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "shadows": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icons": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icon-stroke": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "weight": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "occlusion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "squash": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-header": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "run-together": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "word-break": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "grid-edge": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "hidden-content": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "double-space": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "undefined-var": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-layer": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "primitive-in-component": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "error-icon": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "truth": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "proportion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "nav-parity": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus-shape": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-focus": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "focused element sits under html.js > body > header.header (WCAG 2.4.11); add scroll-padding-top",
+          "target": "html.js > body > a.skip"
+        }
+      ],
+      "pass": true
+    },
+    "skip-link": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-shift": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "fallback": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "layout moves -161px at 390px when the web fonts fail (worst: div.wrap.grid > div.footer__cols > div > h2); add metric fallbacks (size-adjust, ascent-override). Line count changed in 7 elements: section.proof > div.wrap.grid > figure > blockquote \"We paid 12 people in 7 countries in one \" 4 to 3 lines; div.wrap.grid > figure > blockquote > p \"We paid 12 people in 7 countries in one \" 4 to 3 lines; div.wrap.grid > ol.how__steps > li.how__step.rise > p \"Send dollars to your Ferry balance by AC\" 3 to 2 lines; div.wrap.grid > ol.how__steps > li.how__step.rise > p \"Ferry pays each person in their local cu\" 3 to 2 lines; ... (one element near a wrap point is a copy fix; many is a font metrics fix)",
+          "sel": "div.wrap.grid > div.footer__cols > div > h2",
+          "shift": -161,
+          "rewrapped": [
+            {
+              "sel": "section.proof > div.wrap.grid > figure > blockquote",
+              "from": 4,
+              "to": 3,
+              "text": "We paid 12 people in 7 countries in one "
+            },
+            {
+              "sel": "div.wrap.grid > figure > blockquote > p",
+              "from": 4,
+              "to": 3,
+              "text": "We paid 12 people in 7 countries in one "
+            },
+            {
+              "sel": "div.wrap.grid > ol.how__steps > li.how__step.rise > p",
+              "from": 3,
+              "to": 2,
+              "text": "Send dollars to your Ferry balance by AC"
+            },
+            {
+              "sel": "div.wrap.grid > ol.how__steps > li.how__step.rise > p",
+              "from": 3,
+              "to": 2,
+              "text": "Ferry pays each person in their local cu"
+            },
+            {
+              "sel": "#cover-title",
+              "from": 2,
+              "to": 1,
+              "text": "7 currencies, 13 countries."
+            },
+            {
+              "sel": "div.wrap.grid > div.price__copy > ul.price__list > li",
+              "from": 2,
+              "to": 1,
+              "text": "Employees and contractors on the same ru"
+            },
+            {
+              "sel": "#faq > div.wrap.grid > div.faq__head > p",
+              "from": 2,
+              "to": 1,
+              "text": "Something else? Book a demo and ask a pe"
+            }
+          ]
+        },
+        {
+          "message": "layout moves -48px at 1440px when the web fonts fail (worst: html.js > body > footer.footer); add metric fallbacks (size-adjust, ascent-override). Line count changed in 3 elements: #email-terms \"14 days free, no card needed. Then $12 p\" 3 to 2 lines; div.wrap.grid > ol.how__steps > li.how__step.rise > p \"Check what each person receives in their\" 3 to 2 lines; section.section.final > div.wrap.grid > div.final__inner.rise > p.terms \"14 days free, no card needed. Then $12 p\" 3 to 2 lines (one element near a wrap point is a copy fix; many is a font metrics fix)",
+          "sel": "html.js > body > footer.footer",
+          "shift": -48,
+          "rewrapped": [
+            {
+              "sel": "#email-terms",
+              "from": 3,
+              "to": 2,
+              "text": "14 days free, no card needed. Then $12 p"
+            },
+            {
+              "sel": "div.wrap.grid > ol.how__steps > li.how__step.rise > p",
+              "from": 3,
+              "to": 2,
+              "text": "Check what each person receives in their"
+            },
+            {
+              "sel": "section.section.final > div.wrap.grid > div.final__inner.rise > p.terms",
+              "from": 3,
+              "to": 2,
+              "text": "14 days free, no card needed. Then $12 p"
+            }
+          ]
+        }
+      ],
+      "pass": true
+    },
+    "motion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    }
+  },
+  "summary": {
+    "weightKB": {
+      "html": 175,
+      "svg": 12
+    },
+    "focusables": 39,
+    "fallbackShift390": -161,
+    "fallbackShift1440": -48,
+    "motionFound": {
+      "animations": 9,
+      "movingTransitions": 5
+    },
+    "axe": "pass",
+    "overlay": "pass",
+    "targets": "pass (25 warn)",
+    "measure": "pass",
+    "type-scale": "pass (1 warn)",
+    "spacing": "pass",
+    "overflow": "pass",
+    "heading-wrap": "pass (1 warn)",
+    "svg-overlap": "pass",
+    "reading-size": "pass",
+    "selected-state": "pass",
+    "primary": "pass",
+    "radius": "pass",
+    "color-scheme": "pass",
+    "typography": "pass",
+    "tabular": "pass",
+    "shadows": "pass",
+    "icons": "pass",
+    "icon-stroke": "pass",
+    "weight": "pass",
+    "occlusion": "pass",
+    "squash": "pass",
+    "sticky-header": "pass",
+    "run-together": "pass",
+    "word-break": "pass",
+    "grid-edge": "pass",
+    "hidden-content": "pass",
+    "double-space": "pass",
+    "undefined-var": "pass",
+    "state-layer": "pass",
+    "primitive-in-component": "pass",
+    "error-icon": "pass",
+    "truth": "pass",
+    "proportion": "pass",
+    "nav-parity": "pass",
+    "focus": "pass",
+    "focus-shape": "pass",
+    "sticky-focus": "pass (1 warn)",
+    "skip-link": "pass",
+    "state-shift": "pass",
+    "fallback": "pass (2 warn)",
+    "motion": "pass",
+    "result": "PASS",
+    "fails": 0,
+    "warns": 30
+  }
+}

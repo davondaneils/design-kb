@@ -34,7 +34,7 @@ The one place for accessibility in design-kb. Every playbook and every domain re
 | 1.4.3 | Text contrast | 4.5:1; 3:1 at 24px or 18.66px bold and up |
 | 1.4.4 | Text resizes to 200% without loss | see the fluid type rule in design-frontend reference 02 |
 | 1.4.10 | Reflow with no 2D scroll at 320 CSS px wide (1280px at 400%) | tables and code may scroll in their own box |
-| 1.4.11 | UI component boundaries, states and focus indicators | 3:1 against adjacent colors |
+| 1.4.11 | UI component boundaries, states and focus indicators. A selected segment, tab or chip is a state: 3:1 against its unselected neighbor in fill, ink or border, or +200 weight, or an underline (lint `selected-state`; round 1 measured 1.21:1 light, 1.08:1 dark, `kb/reviews/benchmark-round1-app.md` gate 3) | 3:1 against adjacent colors, measured on every surface the control sits on in both themes; keep 3.3:1 on raised and tinted dark surfaces (round 1: 3.02:1 and 3.04:1) |
 | 1.4.12 | No loss with line-height 1.5, paragraph spacing 2em, letter spacing 0.12em, word spacing 0.16em | never fix heights on text boxes |
 | 1.4.13 | Tooltips and hover cards: dismissible with Esc, hoverable, persistent | |
 | 2.1.1 / 2.1.2 | Everything works by keyboard; no traps | |
@@ -86,7 +86,7 @@ The one place for accessibility in design-kb. Every playbook and every domain re
 ## Targets
 - Default control height 44px on touch, 40px allowed for dense desktop UI, never below 24px (foundation contract, WCAG 2.5.8).
 - Expand small visual targets with padding or a pseudo-element: `.icon-btn { position: relative } .icon-btn::after { content: ""; position: absolute; inset: -8px; }` (opinion, common technique).
-- Inline links in a sentence are exempt from 2.5.8; stacked link lists are not.
+- Inline links in a sentence are exempt from 2.5.8; stacked link lists are not. Never put `min-block-size` or `inline-flex` padding on a class that can sit inside a paragraph: round 1's `.more` link served both and opened a 33px line gap among 24px ones (`kb/reviews/benchmark-round1-landing.md` gap 5). Scope touch padding to stand-alone links (`p > a` stays inline).
 
 ## Motion and reduced motion
 - Default motion is opt-in: wrap animations in `@media (prefers-reduced-motion: no-preference)`. Reduced does not mean none: opacity and color fades may stay at `--duration-fast` (150ms) or less, played once; remove movement, scaling, parallax, zoom, loops and autoplay (FOUNDATIONS v0.4 Motion; the lint fails moving keyframes under reduce and warns on fades over 150ms).

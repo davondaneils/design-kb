@@ -33,7 +33,11 @@ const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
 await page.goto(toUrl(target));
 const icons = await page.evaluate((sel) => {
   const seen = new Map();
+  // Logos are not icons (same rule as tools/lint.mjs): an SVG inside an element whose class or id names logo, brand or
+  // wordmark is skipped, so the default selector works on a page with a logo (benchmark round 1 builder note).
+  const isLogo = (el) => { for (let n = el; n && n.nodeType === 1; n = n.parentElement) if (/logo|brand|wordmark/i.test((n.getAttribute('class') || '') + ' ' + (n.id || ''))) return true; return false; };
   for (const svg of document.querySelectorAll(sel)) {
+    if (isLogo(svg)) continue;
     const r = svg.getBoundingClientRect();
     if (r.width < 10 || r.width > 28 || r.height < 10 || r.height > 28) continue;
     if (svg.closest('svg') !== svg) continue;

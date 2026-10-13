@@ -1,0 +1,1565 @@
+{
+ "url": "kb/tests/benchmark/round1/landing/ferry.html",
+ "measuredAt": "2026-10-13T14:59:47.617Z",
+ "method": "Playwright Chromium, getComputedStyle on visible elements, light scheme, after scroll-through and fonts.ready",
+ "widths": {
+  "390": {
+   "status": 200,
+   "finalUrl": "file:///home/user/design-kb/kb/tests/benchmark/round1/landing/ferry.html",
+   "width": 390,
+   "h1Style": {
+    "font": "\"Ferry Serif\" 39px/42.9px w400 ls -0.585px",
+    "color": "#101214",
+    "top": 130,
+    "width": 358,
+    "align": "start"
+   },
+   "title": "Ferry: cross-border payroll, paid the same day",
+   "description": "Pay employees and contractors in 28 currencies from one USD balance, the same day. $12 per person a month, first 3 people free.",
+   "pageHeight": 10136,
+   "bodyBg": "#ffffff",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "Inter Var 400 600 normal",
+    "Ferry Serif 400 normal",
+    "Ferry Serif 400 italic",
+    "Inter Fallback normal normal",
+    "Ferry Serif Fallback normal normal",
+    "Ferry Serif Fallback normal italic"
+   ],
+   "families": [
+    {
+     "v": "\"Inter Var\", \"Inter Fallback\"",
+     "n": 4623
+    },
+    {
+     "v": "\"Ferry Serif\", \"Ferry Serif Fallback\"",
+     "n": 439
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "14px / lh 21px / w400 / ls normal",
+     "n": 1801,
+     "ex": "p: Pays Fri, Oct 30, 2026 · 12 people · 7 currencies"
+    },
+    {
+     "v": "16px / lh 24px / w400 / ls normal",
+     "n": 1213,
+     "ex": "a: Skip to content"
+    },
+    {
+     "v": "20px / lh 30px / w400 / ls normal",
+     "n": 322,
+     "ex": "p: Fund one balance in US dollars and approve one run. Ferry pa"
+    },
+    {
+     "v": "12px / lh 18px / w600 / ls 0.96px",
+     "n": 218,
+     "ex": "p: Cross-border payroll for teams of 5 to 200"
+    },
+    {
+     "v": "20px / lh 25px / w500 / ls normal",
+     "n": 213,
+     "ex": "summary: What does “the same day” mean?"
+    },
+    {
+     "v": "14px / lh 21px / w500 / ls normal",
+     "n": 199,
+     "ex": "b: Indian rupee"
+    },
+    {
+     "v": "31px / lh 34.1px / w400 / ls -0.31px",
+     "n": 178,
+     "ex": "b: 28"
+    },
+    {
+     "v": "25px / lh 31.25px / w400 / ls -0.125px",
+     "n": 160,
+     "ex": "p: “We paid 12 people through three tools and a spreadsheet of "
+    },
+    {
+     "v": "16px / lh 20px / w600 / ls normal",
+     "n": 152,
+     "ex": "a: Start free trial"
+    },
+    {
+     "v": "14px / lh 21px / w600 / ls normal",
+     "n": 118,
+     "ex": "summary: Menu"
+    },
+    {
+     "v": "14px / lh 21px / w600 / ls 0.56px",
+     "n": 84,
+     "ex": "span: USD"
+    },
+    {
+     "v": "39px / lh 42.9px / w400 / ls -0.585px",
+     "n": 73,
+     "ex": "h1: Payroll in 28 currencies,"
+    },
+    {
+     "v": "20px / lh 25px / w600 / ls normal",
+     "n": 71,
+     "ex": "h3: Fund"
+    },
+    {
+     "v": "12px / lh 18px / w400 / ls normal",
+     "n": 50,
+     "ex": "small: 7 currencies"
+    },
+    {
+     "v": "20px / lh 30px / w500 / ls normal",
+     "n": 36,
+     "ex": "strong: at the rate locked when you approve."
+    },
+    {
+     "v": "12px / lh 18px / w600 / ls normal",
+     "n": 33,
+     "ex": "span: Rates locked 8:52 am ET"
+    },
+    {
+     "v": "16px / lh 24px / w600 / ls normal",
+     "n": 30,
+     "ex": "a: Request a country"
+    },
+    {
+     "v": "16px / lh 24px / w500 / ls normal",
+     "n": 25,
+     "ex": "label: People you pay in a month"
+    },
+    {
+     "v": "12px / lh 18px / w600 / ls 0.48px",
+     "n": 21,
+     "ex": "span: INR"
+    },
+    {
+     "v": "20px / lh 25px / w600 / ls -0.2px",
+     "n": 20,
+     "ex": "p: October 2026 payroll"
+    },
+    {
+     "v": "39px / lh 42.9px / w400 / ls normal",
+     "n": 12,
+     "ex": "b: 3 1"
+    },
+    {
+     "v": "20px / lh 30px / w600 / ls normal",
+     "n": 10,
+     "ex": "dd: $78,034.62"
+    },
+    {
+     "v": "20px / lh 22px / w400 / ls normal",
+     "n": 10,
+     "ex": "small: ET"
+    },
+    {
+     "v": "16px / lh 17.6px / w400 / ls normal",
+     "n": 7,
+     "ex": "small: a month"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#666c75",
+     "n": 2033
+    },
+    {
+     "v": "#101214",
+     "n": 1902
+    },
+    {
+     "v": "#535960",
+     "n": 1120
+    },
+    {
+     "v": "#ffffff",
+     "n": 6
+    },
+    {
+     "v": "#b54000",
+     "n": 1
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#666c75 on #ffffff",
+     "n": 2007,
+     "ex": "5.29:1"
+    },
+    {
+     "v": "#535960 on #f6f7f8",
+     "n": 1120,
+     "ex": "6.6:1"
+    },
+    {
+     "v": "#101214 on #ffffff",
+     "n": 1084,
+     "ex": "18.77:1"
+    },
+    {
+     "v": "#101214 on #f6f7f8",
+     "n": 538,
+     "ex": "17.5:1"
+    },
+    {
+     "v": "#101214 on #e45705",
+     "n": 280,
+     "ex": "5.06:1"
+    },
+    {
+     "v": "#666c75 on #f6f7f8",
+     "n": 26,
+     "ex": "4.94:1"
+    },
+    {
+     "v": "#ffffff on #101214",
+     "n": 6,
+     "ex": "18.77:1"
+    },
+    {
+     "v": "#b54000 on #f6f7f8",
+     "n": 1,
+     "ex": "5.29:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#f6f7f8",
+     "n": 1263
+    },
+    {
+     "v": "#e45705",
+     "n": 490
+    },
+    {
+     "v": "#ffffff",
+     "n": 463
+    },
+    {
+     "v": "#11813c a0.12",
+     "n": 4
+    },
+    {
+     "v": "#101214",
+     "n": 3
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #848b94",
+     "n": 14
+    },
+    {
+     "v": "1px #e7eaec",
+     "n": 6
+    },
+    {
+     "v": "1px #000000 a0",
+     "n": 3
+    }
+   ],
+   "radii": [
+    {
+     "v": "9999px",
+     "n": 28,
+     "ex": "span.chip chip-locked"
+    },
+    {
+     "v": "4px",
+     "n": 16,
+     "ex": "span.code"
+    },
+    {
+     "v": "8px",
+     "n": 11,
+     "ex": "a.skip"
+    },
+    {
+     "v": "16px",
+     "n": 3,
+     "ex": "div.run"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgb(246, 247, 248) 0px 0px 0px 4px",
+     "n": 7,
+     "ex": "i"
+    },
+    {
+     "v": "rgba(31, 34, 37, 0.08) 0px 0px 0px 1px, rgba(31, 34, 37, 0.08) 0px 2px 4px -1px, rgba(31, 34, 37, 0.16) 0px 12px 24px -6px, rgba(255, 255, 255, 0.12) 0px 1px 0px 0px inset",
+     "n": 3,
+     "ex": "a"
+    },
+    {
+     "v": "rgba(255, 255, 255, 0.12) 0px 1px 0px 0px inset",
+     "n": 3,
+     "ex": "a"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "background-color, border-color, scale 0.1s, 0.1s, 0.1s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
+     "n": 6,
+     "ex": "a"
+    },
+    {
+     "v": "background-color, color 0.1s, 0.1s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
+     "n": 3,
+     "ex": "label"
+    },
+    {
+     "v": "background-color, scale 0.1s, 0.1s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
+     "n": 2,
+     "ex": "button"
+    },
+    {
+     "v": "background-color 0.1s cubic-bezier(0.2, 0, 0, 1)",
+     "n": 1,
+     "ex": "summary"
+    }
+   ],
+   "animations": [],
+   "maxWidths": [
+    {
+     "v": "523.25px (rendered 358px)",
+     "n": 8,
+     "ex": "p"
+    },
+    {
+     "v": "246.531px (rendered 171px)",
+     "n": 4,
+     "ex": "span"
+    },
+    {
+     "v": "457.844px (rendered 358px)",
+     "n": 3,
+     "ex": "figcaption"
+    },
+    {
+     "v": "654.062px (rendered 358px)",
+     "n": 2,
+     "ex": "p"
+    },
+    {
+     "v": "640px (rendered 358px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "523.25px (rendered 326px)",
+     "n": 1,
+     "ex": "p"
+    },
+    {
+     "v": "550px (rendered 358px)",
+     "n": 1,
+     "ex": "blockquote"
+    },
+    {
+     "v": "576px (rendered 358px)",
+     "n": 1,
+     "ex": "ul"
+    },
+    {
+     "v": "523.25px (rendered 310px)",
+     "n": 1,
+     "ex": "p"
+    },
+    {
+     "v": "294.528px (rendered 295px)",
+     "n": 1,
+     "ex": "h2"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 64px pb 64px",
+     "n": 6
+    },
+    {
+     "v": "pt 32px pb 0px",
+     "n": 1
+    },
+    {
+     "v": "pt 64px pb 32px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "8px",
+     "n": 42
+    },
+    {
+     "v": "16px",
+     "n": 8
+    },
+    {
+     "v": "8px / col normal",
+     "n": 7
+    },
+    {
+     "v": "12px",
+     "n": 5
+    },
+    {
+     "v": "4px",
+     "n": 4
+    },
+    {
+     "v": "24px",
+     "n": 3
+    },
+    {
+     "v": "48px / col 16px",
+     "n": 3
+    },
+    {
+     "v": "32px",
+     "n": 2
+    },
+    {
+     "v": "32px / col 16px",
+     "n": 2
+    },
+    {
+     "v": "4px / col 12px",
+     "n": 1
+    },
+    {
+     "v": "24px / col 16px",
+     "n": 1
+    },
+    {
+     "v": "8px / col 24px",
+     "n": 1
+    },
+    {
+     "v": "2px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "12px",
+     "n": 39
+    },
+    {
+     "v": "8px",
+     "n": 24
+    },
+    {
+     "v": "16px",
+     "n": 18
+    },
+    {
+     "v": "24px",
+     "n": 14
+    },
+    {
+     "v": "64px",
+     "n": 13
+    },
+    {
+     "v": "2px",
+     "n": 4
+    },
+    {
+     "v": "32px",
+     "n": 2
+    }
+   ],
+   "margins": [
+    {
+     "v": "8px",
+     "n": 14
+    },
+    {
+     "v": "16px",
+     "n": 9
+    },
+    {
+     "v": "12px",
+     "n": 8
+    },
+    {
+     "v": "4px",
+     "n": 7
+    },
+    {
+     "v": "24px",
+     "n": 6
+    },
+    {
+     "v": "48px",
+     "n": 5
+    },
+    {
+     "v": "32px",
+     "n": 4
+    },
+    {
+     "v": "64px",
+     "n": 2
+    },
+    {
+     "v": "2px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "Fund one balance in US dollars and approve one run. Ferry pays every employee and contractor in their local currency tha",
+    "chars": 163,
+    "lines": 5,
+    "charsPerLine": 33,
+    "width": 358,
+    "fontSize": "20px",
+    "lineHeight": "30px",
+    "color": "#666c75"
+   },
+   "rootVars": {
+    "--color-neutral-0": "#ffffff",
+    "--color-neutral-50": "#f6f7f8",
+    "--color-neutral-100": "#e7eaec",
+    "--color-neutral-200": "#d4d8dd",
+    "--color-neutral-300": "#bcc1c9",
+    "--color-neutral-400": "#9ea5ae",
+    "--color-neutral-500": "#848b94",
+    "--color-neutral-600": "#666c75",
+    "--color-neutral-700": "#535960",
+    "--color-neutral-800": "#40454c",
+    "--color-neutral-900": "#2f3338",
+    "--color-neutral-950": "#1f2225",
+    "--color-neutral-975": "#171a1d",
+    "--color-neutral-990": "#101214",
+    "--color-orange-50": "#fff4f0",
+    "--color-orange-100": "#ffe3d6",
+    "--color-orange-200": "#ffcab3",
+    "--color-orange-300": "#ffa984",
+    "--color-orange-400": "#fe7739",
+    "--color-orange-500": "#e45705",
+    "--color-orange-600": "#b54000",
+    "--color-orange-700": "#963201",
+    "--color-orange-800": "#792400",
+    "--color-orange-900": "#5c1800",
+    "--color-green-600": "#11813c",
+    "--color-green-300": "#8fd49d",
+    "--color-red-600": "#c2272d",
+    "--color-red-300": "#ffa59e",
+    "--color-brand": "#e45705",
+    "--color-bg": "light-dark(var(--color-neutral-0), var(--color-neutral-990))",
+    "--color-surface": "light-dark(var(--color-neutral-0), var(--color-neutral-975))",
+    "--color-surface-raised": "light-dark(var(--color-neutral-0), var(--color-neutral-950))",
+    "--color-surface-sunken": "light-dark(var(--color-neutral-50), var(--color-neutral-975))",
+    "--color-text": "light-dark(var(--color-neutral-990), var(--color-neutral-50))",
+    "--color-text-muted": "light-dark(var(--color-neutral-600), var(--color-neutral-400))",
+    "--color-text-muted-on-tint": "light-dark(var(--color-neutral-700), var(--color-neutral-300))",
+    "--color-border": "light-dark(var(--color-neutral-100), var(--color-neutral-900))",
+    "--color-border-strong": "light-dark(var(--color-neutral-500), var(--color-neutral-600))",
+    "--color-primary": "var(--color-orange-500)",
+    "--color-primary-hover": "var(--color-orange-400)",
+    "--color-primary-active": "var(--color-orange-300)",
+    "--color-on-primary": "var(--color-neutral-990)",
+    "--color-accent": "light-dark(var(--color-orange-600), var(--color-orange-400))",
+    "--color-accent-mark": "var(--color-orange-500)",
+    "--color-success": "light-dark(var(--color-green-600), var(--color-green-300))",
+    "--color-danger": "light-dark(var(--color-red-600), var(--color-red-300))",
+    "--color-focus-ring": "light-dark(var(--color-neutral-990), var(--color-neutral-50))",
+    "--color-feature-bg": "var(--color-orange-500)",
+    "--color-feature-text": "var(--color-neutral-990)",
+    "--color-feature-cta": "var(--color-neutral-990)",
+    "--color-feature-cta-hover": "var(--color-neutral-800)",
+    "--color-feature-cta-active": "var(--color-neutral-700)",
+    "--color-on-feature-cta": "var(--color-neutral-50)",
+    "--color-feature-ring": "var(--color-neutral-990)",
+    "--state-hover": "color-mix(in oklch, var(--color-text) 8%, transparent)",
+    "--state-pressed": "color-mix(in oklch, var(--color-text) 10%, transparent)",
+    "--shadow-rgb": "31 34 37",
+    "--shadow-0": "0 0 0 0 transparent",
+    "--shadow-1": "0 1px 2px light-dark(rgb(var(--shadow-rgb) / 0.06), transparent)",
+    "--shadow-3": "0 2px 4px -1px light-dark(rgb(var(--shadow-rgb) / 0.08), transparent), 0 12px 24px -6px light-dark(rgb(var(--shadow-rgb)",
+    "--ring": "0 0 0 1px light-dark(rgb(var(--shadow-rgb) / 0.08), rgb(255 255 255 / 0.08))",
+    "--highlight": "inset 0 1px 0 light-dark(rgb(255 255 255 / 0.12), rgb(255 255 255 / 0.06))",
+    "--elevation-card": "var(--ring), var(--shadow-1)",
+    "--elevation-popover": "var(--ring), var(--shadow-3), var(--highlight)",
+    "--space-0": "0",
+    "--space-1": "2px",
+    "--space-2": "4px",
+    "--space-3": "8px",
+    "--space-4": "12px",
+    "--space-5": "16px",
+    "--space-6": "24px",
+    "--space-7": "32px",
+    "--space-8": "48px",
+    "--space-9": "64px",
+    "--space-10": "96px",
+    "--space-11": "128px",
+    "--text-xs": "0.75rem",
+    "--text-sm": "0.875rem",
+    "--text-base": "1rem",
+    "--text-lg": "1.25rem",
+    "--text-xl": "1.5625rem",
+    "--text-2xl": "1.9375rem",
+    "--text-3xl": "2.4375rem",
+    "--text-4xl": "3.0625rem",
+    "--text-5xl": "3.8125rem",
+    "--text-display": "clamp(3.0625rem, 7vw, 7rem)",
+    "--text-display-2": "clamp(2.4375rem, 5vw, 5rem)",
+    "--leading-tight": "1.1",
+    "--leading-snug": "1.25",
+    "--leading-normal": "1.5",
+    "--weight-regular": "400",
+    "--weight-medium": "500",
+    "--weight-semibold": "600",
+    "--size-measure": "52ch",
+    "--radius-none": "0",
+    "--radius-sm": "4px",
+    "--radius-md": "8px",
+    "--radius-lg": "12px",
+    "--radius-xl": "16px",
+    "--radius-full": "9999px",
+    "--radius-control": "var(--radius-md)",
+    "--radius-card": "var(--radius-xl)",
+    "--size-control-sm": "32px",
+    "--size-control-md": "40px",
+    "--size-control-lg": "48px",
+    "--size-icon-sm": "12px",
+    "--size-icon-md": "16px",
+    "--size-icon-lg": "20px",
+    "--size-icon-xl": "24px",
+    "--icon-stroke": "1.5px",
+    "--duration-instant": "100ms",
+    "--duration-fast": "150ms",
+    "--duration-base": "200ms",
+    "--duration-slow": "300ms",
+    "--duration-page": "400ms",
+    "--ease-standard": "cubic-bezier(0.2, 0, 0, 1)",
+    "--ease-enter": "cubic-bezier(0, 0, 0, 1)",
+    "--ease-exit": "cubic-bezier(0.3, 0, 1, 1)",
+    "--motion-hover": "var(--duration-instant) var(--ease-standard)",
+    "--motion-enter": "var(--duration-base) var(--ease-enter)",
+    "--motion-exit": "var(--duration-fast) var(--ease-exit)",
+    "--font-sans": "\"Inter Var\", \"Inter Fallback\", system-ui, sans-serif",
+    "--font-serif": "\"Ferry Serif\", \"Ferry Serif Fallback\", Georgia, serif",
+    "--gutter": "var(--space-7)",
+    "--space-section": "var(--space-11)"
+   },
+   "blockedSheets": 0,
+   "reducedMotionRules": 1,
+   "h1": [
+    "Payroll in 28 currencies, paid the same day."
+   ],
+   "h2": [
+    "Fund it, approve it, and everyone is paid that day.",
+    "28 currencies, 48 countries, one balance.",
+    "Sample customer story, not a real company",
+    "One price per person. First 3 people free.",
+    "What founders ask before the first run",
+    "Run your next payroll on Ferry.",
+    "Product",
+    "Company",
+    "Resources",
+    "Legal"
+   ],
+   "h3": [
+    "Fund",
+    "Approve",
+    "Everyone paid",
+    "Sample run: Fri, Oct 30, 2026",
+    "Americas 7 currencies",
+    "Europe 10 currencies",
+    "Asia and Pacific 7 currencies",
+    "Middle East and Africa 4 currencies",
+    "Same day means local time.",
+    "Bank holidays are on the run.",
+    "Not on the list?",
+    "What you would pay"
+   ],
+   "nav": [
+    "How it works",
+    "Countries",
+    "Pricing",
+    "Security",
+    "About",
+    "Customers",
+    "Careers",
+    "Contact",
+    "Docs",
+    "Payroll guides",
+    "Status",
+    "Privacy",
+    "Terms",
+    "Licenses"
+   ],
+   "ctas": [
+    "Skip to content [145x48 bg #ffffff fg #101214 r 8px pad 12px 16px 16px/400]",
+    "Start free trial [358x48 bg #e45705 fg #101214 r 8px pad 0px 24px 16px/600]",
+    "Book a demo [358x48 bg #000000 a0 fg #101214 r 8px pad 0px 24px 16px/600]",
+    "Start free trial [310x48 bg #e45705 fg #101214 r 8px pad 0px 24px 16px/600]",
+    "Book a demo [310x48 bg #000000 a0 fg #101214 r 8px pad 0px 24px 16px/600]",
+    "Start free trial [358x48 bg #e45705 fg #101214 r 8px pad 0px 24px 16px/600]",
+    "Book a demo [358x48 bg #000000 a0 fg #101214 r 8px pad 0px 24px 16px/600]"
+   ],
+   "media": {
+    "img": 0,
+    "svg": 22,
+    "video": 0,
+    "canvas": 0
+   }
+  },
+  "1440": {
+   "status": 200,
+   "finalUrl": "file:///home/user/design-kb/kb/tests/benchmark/round1/landing/ferry.html",
+   "width": 1440,
+   "h1Style": {
+    "font": "\"Ferry Serif\" 72px/79.2px w400 ls -1.08px",
+    "color": "#101214",
+    "top": 146,
+    "width": 624,
+    "align": "start"
+   },
+   "title": "Ferry: cross-border payroll, paid the same day",
+   "description": "Pay employees and contractors in 28 currencies from one USD balance, the same day. $12 per person a month, first 3 people free.",
+   "pageHeight": 7144,
+   "bodyBg": "#ffffff",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "Inter Var 400 600 normal",
+    "Ferry Serif 400 normal",
+    "Ferry Serif 400 italic",
+    "Inter Fallback normal normal",
+    "Ferry Serif Fallback normal normal",
+    "Ferry Serif Fallback normal italic"
+   ],
+   "families": [
+    {
+     "v": "\"Inter Var\", \"Inter Fallback\"",
+     "n": 4796
+    },
+    {
+     "v": "\"Ferry Serif\", \"Ferry Serif Fallback\"",
+     "n": 439
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "14px / lh 21px / w400 / ls normal",
+     "n": 1851,
+     "ex": "p: Pays Fri, Oct 30, 2026 · 12 people · 7 currencies"
+    },
+    {
+     "v": "16px / lh 24px / w400 / ls normal",
+     "n": 1213,
+     "ex": "a: Skip to content"
+    },
+    {
+     "v": "20px / lh 30px / w400 / ls normal",
+     "n": 322,
+     "ex": "p: Fund one balance in US dollars and approve one run. Ferry pa"
+    },
+    {
+     "v": "14px / lh 21px / w500 / ls normal",
+     "n": 251,
+     "ex": "a: How it works"
+    },
+    {
+     "v": "12px / lh 18px / w600 / ls 0.96px",
+     "n": 243,
+     "ex": "p: Cross-border payroll for teams of 5 to 200"
+    },
+    {
+     "v": "20px / lh 25px / w500 / ls normal",
+     "n": 213,
+     "ex": "summary: What does “the same day” mean?"
+    },
+    {
+     "v": "49px / lh 53.9px / w400 / ls -0.49px",
+     "n": 178,
+     "ex": "b: 28"
+    },
+    {
+     "v": "39px / lh 46.8px / w400 / ls -0.195px",
+     "n": 160,
+     "ex": "p: “We paid 12 people through three tools and a spreadsheet of "
+    },
+    {
+     "v": "16px / lh 20px / w600 / ls normal",
+     "n": 152,
+     "ex": "a: Start free trial"
+    },
+    {
+     "v": "14px / lh 21px / w600 / ls normal",
+     "n": 114,
+     "ex": "b: INR ₹777,000.00"
+    },
+    {
+     "v": "12px / lh 18px / w400 / ls normal",
+     "n": 89,
+     "ex": "span: 8:30 am ET"
+    },
+    {
+     "v": "14px / lh 21px / w600 / ls 0.56px",
+     "n": 84,
+     "ex": "span: USD"
+    },
+    {
+     "v": "72px / lh 79.2px / w400 / ls -1.08px",
+     "n": 73,
+     "ex": "h1: Payroll in 28 currencies,"
+    },
+    {
+     "v": "20px / lh 25px / w600 / ls normal",
+     "n": 71,
+     "ex": "h3: Fund"
+    },
+    {
+     "v": "20px / lh 30px / w500 / ls normal",
+     "n": 36,
+     "ex": "strong: at the rate locked when you approve."
+    },
+    {
+     "v": "12px / lh 18px / w600 / ls normal",
+     "n": 33,
+     "ex": "span: Rates locked 8:52 am ET"
+    },
+    {
+     "v": "16px / lh 24px / w600 / ls normal",
+     "n": 30,
+     "ex": "a: Request a country"
+    },
+    {
+     "v": "16px / lh 24px / w500 / ls normal",
+     "n": 25,
+     "ex": "label: People you pay in a month"
+    },
+    {
+     "v": "12px / lh 18px / w600 / ls 0.48px",
+     "n": 21,
+     "ex": "span: INR"
+    },
+    {
+     "v": "20px / lh 25px / w600 / ls -0.2px",
+     "n": 20,
+     "ex": "p: October 2026 payroll"
+    },
+    {
+     "v": "39px / lh 42.9px / w400 / ls normal",
+     "n": 12,
+     "ex": "b: 3 1"
+    },
+    {
+     "v": "14px / lh 17.5px / w600 / ls normal",
+     "n": 11,
+     "ex": "a: Book a demo"
+    },
+    {
+     "v": "20px / lh 30px / w600 / ls normal",
+     "n": 10,
+     "ex": "dd: $78,034.62"
+    },
+    {
+     "v": "20px / lh 22px / w400 / ls normal",
+     "n": 10,
+     "ex": "small: ET"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#666c75",
+     "n": 2056
+    },
+    {
+     "v": "#101214",
+     "n": 2013
+    },
+    {
+     "v": "#535960",
+     "n": 1159
+    },
+    {
+     "v": "#ffffff",
+     "n": 6
+    },
+    {
+     "v": "#b54000",
+     "n": 1
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#666c75 on #ffffff",
+     "n": 2030,
+     "ex": "5.29:1"
+    },
+    {
+     "v": "#101214 on #ffffff",
+     "n": 1195,
+     "ex": "18.77:1"
+    },
+    {
+     "v": "#535960 on #f6f7f8",
+     "n": 1159,
+     "ex": "6.6:1"
+    },
+    {
+     "v": "#101214 on #f6f7f8",
+     "n": 538,
+     "ex": "17.5:1"
+    },
+    {
+     "v": "#101214 on #e45705",
+     "n": 280,
+     "ex": "5.06:1"
+    },
+    {
+     "v": "#666c75 on #f6f7f8",
+     "n": 26,
+     "ex": "4.94:1"
+    },
+    {
+     "v": "#ffffff on #101214",
+     "n": 6,
+     "ex": "18.77:1"
+    },
+    {
+     "v": "#b54000 on #f6f7f8",
+     "n": 1,
+     "ex": "5.29:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#f6f7f8",
+     "n": 2628
+    },
+    {
+     "v": "#e45705",
+     "n": 1083
+    },
+    {
+     "v": "#ffffff",
+     "n": 662
+    },
+    {
+     "v": "#11813c a0.12",
+     "n": 4
+    },
+    {
+     "v": "#101214",
+     "n": 3
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #848b94",
+     "n": 14
+    },
+    {
+     "v": "1px #e7eaec",
+     "n": 6
+    },
+    {
+     "v": "1px #000000 a0",
+     "n": 3
+    }
+   ],
+   "radii": [
+    {
+     "v": "9999px",
+     "n": 28,
+     "ex": "span.chip chip-locked"
+    },
+    {
+     "v": "8px",
+     "n": 17,
+     "ex": "a.skip"
+    },
+    {
+     "v": "4px",
+     "n": 16,
+     "ex": "span.code"
+    },
+    {
+     "v": "16px",
+     "n": 3,
+     "ex": "div.run"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "rgb(246, 247, 248) 0px 0px 0px 4px",
+     "n": 7,
+     "ex": "i"
+    },
+    {
+     "v": "rgba(31, 34, 37, 0.08) 0px 0px 0px 1px, rgba(31, 34, 37, 0.08) 0px 2px 4px -1px, rgba(31, 34, 37, 0.16) 0px 12px 24px -6px, rgba(255, 255, 255, 0.12) 0px 1px 0px 0px inset",
+     "n": 3,
+     "ex": "a"
+    },
+    {
+     "v": "rgba(255, 255, 255, 0.12) 0px 1px 0px 0px inset",
+     "n": 3,
+     "ex": "a"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "background-color, border-color, scale 0.1s, 0.1s, 0.1s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
+     "n": 7,
+     "ex": "a"
+    },
+    {
+     "v": "background-color 0.1s cubic-bezier(0.2, 0, 0, 1)",
+     "n": 6,
+     "ex": "a"
+    },
+    {
+     "v": "background-color, color 0.1s, 0.1s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
+     "n": 3,
+     "ex": "label"
+    },
+    {
+     "v": "background-color, scale 0.1s, 0.1s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
+     "n": 2,
+     "ex": "button"
+    }
+   ],
+   "animations": [],
+   "maxWidths": [
+    {
+     "v": "640px (rendered 640px)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "654.062px (rendered 624px)",
+     "n": 1,
+     "ex": "p"
+    },
+    {
+     "v": "654.062px (rendered 640px)",
+     "n": 1,
+     "ex": "p"
+    },
+    {
+     "v": "858px (rendered 843px)",
+     "n": 1,
+     "ex": "blockquote"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 128px pb 128px",
+     "n": 6
+    },
+    {
+     "v": "pt 48px pb 0px",
+     "n": 1
+    },
+    {
+     "v": "pt 64px pb 32px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "8px",
+     "n": 42
+    },
+    {
+     "v": "16px",
+     "n": 8
+    },
+    {
+     "v": "8px / col normal",
+     "n": 7
+    },
+    {
+     "v": "4px",
+     "n": 5
+    },
+    {
+     "v": "12px",
+     "n": 5
+    },
+    {
+     "v": "32px",
+     "n": 5
+    },
+    {
+     "v": "48px / col 32px",
+     "n": 3
+    },
+    {
+     "v": "24px",
+     "n": 2
+    },
+    {
+     "v": "8px / col 24px",
+     "n": 2
+    },
+    {
+     "v": "4px / col 12px",
+     "n": 1
+    },
+    {
+     "v": "24px / col 32px",
+     "n": 1
+    },
+    {
+     "v": "2px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "8px",
+     "n": 40
+    },
+    {
+     "v": "12px",
+     "n": 30
+    },
+    {
+     "v": "16px",
+     "n": 19
+    },
+    {
+     "v": "128px",
+     "n": 12
+    },
+    {
+     "v": "24px",
+     "n": 9
+    },
+    {
+     "v": "32px",
+     "n": 6
+    },
+    {
+     "v": "2px",
+     "n": 4
+    },
+    {
+     "v": "48px",
+     "n": 3
+    },
+    {
+     "v": "64px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "8px",
+     "n": 14
+    },
+    {
+     "v": "16px",
+     "n": 9
+    },
+    {
+     "v": "12px",
+     "n": 8
+    },
+    {
+     "v": "4px",
+     "n": 7
+    },
+    {
+     "v": "24px",
+     "n": 6
+    },
+    {
+     "v": "48px",
+     "n": 5
+    },
+    {
+     "v": "32px",
+     "n": 4
+    },
+    {
+     "v": "64px",
+     "n": 2
+    },
+    {
+     "v": "2px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "Fund one balance in US dollars and approve one run. Ferry pays every employee and contractor in their local currency tha",
+    "chars": 163,
+    "lines": 3,
+    "charsPerLine": 54,
+    "width": 624,
+    "fontSize": "20px",
+    "lineHeight": "30px",
+    "color": "#666c75"
+   },
+   "rootVars": {
+    "--color-neutral-0": "#ffffff",
+    "--color-neutral-50": "#f6f7f8",
+    "--color-neutral-100": "#e7eaec",
+    "--color-neutral-200": "#d4d8dd",
+    "--color-neutral-300": "#bcc1c9",
+    "--color-neutral-400": "#9ea5ae",
+    "--color-neutral-500": "#848b94",
+    "--color-neutral-600": "#666c75",
+    "--color-neutral-700": "#535960",
+    "--color-neutral-800": "#40454c",
+    "--color-neutral-900": "#2f3338",
+    "--color-neutral-950": "#1f2225",
+    "--color-neutral-975": "#171a1d",
+    "--color-neutral-990": "#101214",
+    "--color-orange-50": "#fff4f0",
+    "--color-orange-100": "#ffe3d6",
+    "--color-orange-200": "#ffcab3",
+    "--color-orange-300": "#ffa984",
+    "--color-orange-400": "#fe7739",
+    "--color-orange-500": "#e45705",
+    "--color-orange-600": "#b54000",
+    "--color-orange-700": "#963201",
+    "--color-orange-800": "#792400",
+    "--color-orange-900": "#5c1800",
+    "--color-green-600": "#11813c",
+    "--color-green-300": "#8fd49d",
+    "--color-red-600": "#c2272d",
+    "--color-red-300": "#ffa59e",
+    "--color-brand": "#e45705",
+    "--color-bg": "light-dark(var(--color-neutral-0), var(--color-neutral-990))",
+    "--color-surface": "light-dark(var(--color-neutral-0), var(--color-neutral-975))",
+    "--color-surface-raised": "light-dark(var(--color-neutral-0), var(--color-neutral-950))",
+    "--color-surface-sunken": "light-dark(var(--color-neutral-50), var(--color-neutral-975))",
+    "--color-text": "light-dark(var(--color-neutral-990), var(--color-neutral-50))",
+    "--color-text-muted": "light-dark(var(--color-neutral-600), var(--color-neutral-400))",
+    "--color-text-muted-on-tint": "light-dark(var(--color-neutral-700), var(--color-neutral-300))",
+    "--color-border": "light-dark(var(--color-neutral-100), var(--color-neutral-900))",
+    "--color-border-strong": "light-dark(var(--color-neutral-500), var(--color-neutral-600))",
+    "--color-primary": "var(--color-orange-500)",
+    "--color-primary-hover": "var(--color-orange-400)",
+    "--color-primary-active": "var(--color-orange-300)",
+    "--color-on-primary": "var(--color-neutral-990)",
+    "--color-accent": "light-dark(var(--color-orange-600), var(--color-orange-400))",
+    "--color-accent-mark": "var(--color-orange-500)",
+    "--color-success": "light-dark(var(--color-green-600), var(--color-green-300))",
+    "--color-danger": "light-dark(var(--color-red-600), var(--color-red-300))",
+    "--color-focus-ring": "light-dark(var(--color-neutral-990), var(--color-neutral-50))",
+    "--color-feature-bg": "var(--color-orange-500)",
+    "--color-feature-text": "var(--color-neutral-990)",
+    "--color-feature-cta": "var(--color-neutral-990)",
+    "--color-feature-cta-hover": "var(--color-neutral-800)",
+    "--color-feature-cta-active": "var(--color-neutral-700)",
+    "--color-on-feature-cta": "var(--color-neutral-50)",
+    "--color-feature-ring": "var(--color-neutral-990)",
+    "--state-hover": "color-mix(in oklch, var(--color-text) 8%, transparent)",
+    "--state-pressed": "color-mix(in oklch, var(--color-text) 10%, transparent)",
+    "--shadow-rgb": "31 34 37",
+    "--shadow-0": "0 0 0 0 transparent",
+    "--shadow-1": "0 1px 2px light-dark(rgb(var(--shadow-rgb) / 0.06), transparent)",
+    "--shadow-3": "0 2px 4px -1px light-dark(rgb(var(--shadow-rgb) / 0.08), transparent), 0 12px 24px -6px light-dark(rgb(var(--shadow-rgb)",
+    "--ring": "0 0 0 1px light-dark(rgb(var(--shadow-rgb) / 0.08), rgb(255 255 255 / 0.08))",
+    "--highlight": "inset 0 1px 0 light-dark(rgb(255 255 255 / 0.12), rgb(255 255 255 / 0.06))",
+    "--elevation-card": "var(--ring), var(--shadow-1)",
+    "--elevation-popover": "var(--ring), var(--shadow-3), var(--highlight)",
+    "--space-0": "0",
+    "--space-1": "2px",
+    "--space-2": "4px",
+    "--space-3": "8px",
+    "--space-4": "12px",
+    "--space-5": "16px",
+    "--space-6": "24px",
+    "--space-7": "32px",
+    "--space-8": "48px",
+    "--space-9": "64px",
+    "--space-10": "96px",
+    "--space-11": "128px",
+    "--text-xs": "0.75rem",
+    "--text-sm": "0.875rem",
+    "--text-base": "1rem",
+    "--text-lg": "1.25rem",
+    "--text-xl": "1.5625rem",
+    "--text-2xl": "1.9375rem",
+    "--text-3xl": "2.4375rem",
+    "--text-4xl": "3.0625rem",
+    "--text-5xl": "3.8125rem",
+    "--text-display": "clamp(3.0625rem, 7vw, 7rem)",
+    "--text-display-2": "clamp(2.4375rem, 5vw, 5rem)",
+    "--leading-tight": "1.1",
+    "--leading-snug": "1.25",
+    "--leading-normal": "1.5",
+    "--weight-regular": "400",
+    "--weight-medium": "500",
+    "--weight-semibold": "600",
+    "--size-measure": "52ch",
+    "--radius-none": "0",
+    "--radius-sm": "4px",
+    "--radius-md": "8px",
+    "--radius-lg": "12px",
+    "--radius-xl": "16px",
+    "--radius-full": "9999px",
+    "--radius-control": "var(--radius-md)",
+    "--radius-card": "var(--radius-xl)",
+    "--size-control-sm": "32px",
+    "--size-control-md": "40px",
+    "--size-control-lg": "48px",
+    "--size-icon-sm": "12px",
+    "--size-icon-md": "16px",
+    "--size-icon-lg": "20px",
+    "--size-icon-xl": "24px",
+    "--icon-stroke": "1.5px",
+    "--duration-instant": "100ms",
+    "--duration-fast": "150ms",
+    "--duration-base": "200ms",
+    "--duration-slow": "300ms",
+    "--duration-page": "400ms",
+    "--ease-standard": "cubic-bezier(0.2, 0, 0, 1)",
+    "--ease-enter": "cubic-bezier(0, 0, 0, 1)",
+    "--ease-exit": "cubic-bezier(0.3, 0, 1, 1)",
+    "--motion-hover": "var(--duration-instant) var(--ease-standard)",
+    "--motion-enter": "var(--duration-base) var(--ease-enter)",
+    "--motion-exit": "var(--duration-fast) var(--ease-exit)",
+    "--font-sans": "\"Inter Var\", \"Inter Fallback\", system-ui, sans-serif",
+    "--font-serif": "\"Ferry Serif\", \"Ferry Serif Fallback\", Georgia, serif",
+    "--gutter": "var(--space-7)",
+    "--space-section": "var(--space-11)"
+   },
+   "blockedSheets": 0,
+   "reducedMotionRules": 1,
+   "h1": [
+    "Payroll in 28 currencies, paid the same day."
+   ],
+   "h2": [
+    "Fund it, approve it, and everyone is paid that day.",
+    "28 currencies, 48 countries, one balance.",
+    "Sample customer story, not a real company",
+    "One price per person. First 3 people free.",
+    "What founders ask before the first run",
+    "Run your next payroll on Ferry.",
+    "Product",
+    "Company",
+    "Resources",
+    "Legal"
+   ],
+   "h3": [
+    "Fund",
+    "Approve",
+    "Everyone paid",
+    "Sample run: Fri, Oct 30, 2026",
+    "Americas 7 currencies",
+    "Europe 10 currencies",
+    "Asia and Pacific 7 currencies",
+    "Middle East and Africa 4 currencies",
+    "Same day means local time.",
+    "Bank holidays are on the run.",
+    "Not on the list?",
+    "What you would pay"
+   ],
+   "nav": [
+    "How it works",
+    "Countries",
+    "Pricing",
+    "Security",
+    "Customers",
+    "Sign in",
+    "Book a demo",
+    "How it works",
+    "Countries",
+    "Pricing",
+    "Security",
+    "About",
+    "Customers",
+    "Careers",
+    "Contact",
+    "Docs"
+   ],
+   "ctas": [
+    "Skip to content [145x48 bg #ffffff fg #101214 r 8px pad 12px 16px 16px/400]",
+    "Book a demo [121x40 bg #000000 a0 fg #101214 r 8px pad 0px 16px 14px/600]",
+    "Start free trial [156x48 bg #e45705 fg #101214 r 8px pad 0px 24px 16px/600]",
+    "Book a demo [149x48 bg #000000 a0 fg #101214 r 8px pad 0px 24px 16px/600]",
+    "Start free trial [156x48 bg #e45705 fg #101214 r 8px pad 0px 24px 16px/600]",
+    "Book a demo [149x48 bg #000000 a0 fg #101214 r 8px pad 0px 24px 16px/600]",
+    "Start free trial [156x48 bg #e45705 fg #101214 r 8px pad 0px 24px 16px/600]",
+    "Book a demo [149x48 bg #000000 a0 fg #101214 r 8px pad 0px 24px 16px/600]"
+   ],
+   "media": {
+    "img": 0,
+    "svg": 22,
+    "video": 0,
+    "canvas": 0
+   }
+  }
+ },
+ "head": {
+  "lang": "en-US",
+  "title": "Ferry: cross-border payroll, paid the same day",
+  "description": "Pay employees and contractors in 28 currencies from one USD balance, the same day. $12 per person a month, first 3 people free.",
+  "canonical": "https://ferry.example/",
+  "robots": "index, follow, max-image-preview:large",
+  "viewport": "width=device-width, initial-scale=1",
+  "themeColor": [
+   {
+    "content": "#ffffff",
+    "media": "(prefers-color-scheme: light)"
+   },
+   {
+    "content": "#101214",
+    "media": "(prefers-color-scheme: dark)"
+   }
+  ],
+  "colorScheme": null,
+  "og": [
+   {
+    "key": "og:title",
+    "content": "Ferry: cross-border payroll, paid the same day"
+   },
+   {
+    "key": "og:description",
+    "content": "Pay employees and contractors in 28 currencies from one USD balance, the same day."
+   },
+   {
+    "key": "og:type",
+    "content": "website"
+   },
+   {
+    "key": "og:url",
+    "content": "https://ferry.example/"
+   },
+   {
+    "key": "og:site_name",
+    "content": "Ferry"
+   },
+   {
+    "key": "og:image",
+    "content": "https://ferry.example/og.png"
+   },
+   {
+    "key": "og:image:width",
+    "content": "1200"
+   },
+   {
+    "key": "og:image:height",
+    "content": "630"
+   },
+   {
+    "key": "og:image:alt",
+    "content": "Ferry wordmark and the line: Payroll in 28 currencies, paid the same day."
+   }
+  ],
+  "twitter": [
+   {
+    "key": "twitter:card",
+    "content": "summary_large_image"
+   }
+  ],
+  "jsonld": [
+   {
+    "index": 0,
+    "inHead": true,
+    "bytes": 461,
+    "types": [
+     "WebSite",
+     "Organization",
+     "ImageObject"
+    ],
+    "context": "https://schema.org"
+   }
+  ],
+  "icons": [
+   {
+    "rel": "icon",
+    "type": "image/png",
+    "sizes": "192x192",
+    "media": "",
+    "href": "file:///favicon-192.png"
+   },
+   {
+    "rel": "icon",
+    "type": "image/svg+xml",
+    "sizes": "",
+    "media": "",
+    "href": "data:image/svg+xml,%3Csvg%20xmlns%3D%22h... (data URI)"
+   },
+   {
+    "rel": "apple-touch-icon",
+    "type": "",
+    "sizes": "",
+    "media": "",
+    "href": "file:///apple-touch-icon.png"
+   }
+  ],
+  "order": [
+   "0 meta charset",
+   "1 meta viewport",
+   "2 title",
+   "3 meta description",
+   "4 link canonical",
+   "5 meta robots",
+   "6 meta og:title",
+   "7 meta og:description",
+   "8 meta og:type",
+   "9 meta og:url",
+   "10 meta og:site_name",
+   "11 meta og:image",
+   "12 meta og:image:width",
+   "13 meta og:image:height",
+   "14 meta og:image:alt",
+   "15 meta twitter:card",
+   "16 script inline application/ld+json 463B",
+   "17 meta theme-color",
+   "18 meta theme-color",
+   "19 link icon",
+   "20 link icon",
+   "21 link apple-touch-icon",
+   "22 script inline 277B",
+   "23 style 133435B"
+  ],
+  "positions": {
+   "count": 24,
+   "title": 2,
+   "description": 3,
+   "canonical": 4,
+   "firstOg": 6,
+   "firstJsonLd": 16,
+   "firstStylesheet": 23,
+   "firstScript": 22,
+   "firstLargeInline": 23
+  },
+  "headBytes": 136570,
+  "htmlBytes": 174605,
+  "served": {
+   "bytes": 174320,
+   "headBytes": 136557,
+   "order": [
+    "0 meta charset",
+    "1 meta viewport",
+    "2 title",
+    "3 meta description",
+    "4 link canonical",
+    "5 meta robots",
+    "6 meta og:title",
+    "7 meta og:description",
+    "8 meta og:type",
+    "9 meta og:url",
+    "10 meta og:site_name",
+    "11 meta og:image",
+    "12 meta og:image:width",
+    "13 meta og:image:height",
+    "14 meta og:image:alt",
+    "15 meta twitter:card",
+    "16 script inline application/ld+json",
+    "17 meta theme-color",
+    "18 meta theme-color",
+    "19 link icon",
+    "20 link icon",
+    "21 link apple-touch-icon",
+    "22 script inline",
+    "23 style"
+   ],
+   "over2MB": false
+  }
+ }
+}

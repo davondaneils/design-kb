@@ -6,7 +6,7 @@ The shell is the frame every screen sits in. People see it thousands of times, s
 
 ### Fundamentals (non-negotiable)
 1. **One page header pattern on every screen**: title left, one primary action right, view options and filters directly below (design-playbook-dashboard non-negotiable 1). [judged]
-2. **Current location marked** with `aria-current="page"` plus a non-color cue (weight or a selected surface), and the `<title>` matches the view. [lint partly, judged]
+2. **Current location and selection marked** with `aria-current="page"` (`aria-pressed`, `aria-selected` for segments and tabs) plus a cue that measures: a selected surface counts only at 3:1 against its unselected neighbor; otherwise weight +200, a 3:1 border, or a 2px indicator. Vercel pairs its active-row fill (`#ebebeb`) with dark 600-weight ink (`kb/teardowns/vercel-dashboard.md` "Sidebar"). Round 1's selected filter was white on an n100 track, 1.21:1 light and 1.08:1 dark, same weight (`kb/reviews/benchmark-round1-app.md` gate 3). The `<title>` matches the view. [lint `selected-state`, judged]
 3. **Sidebar at most two levels**; deeper hierarchies move into the content area as a list or split view (N1). [judged]
 4. **Do not hide the sidebar by default** on desktop; let people collapse it (N2). [judged]
 5. **Skip link to `main`** before the shell. [judged]

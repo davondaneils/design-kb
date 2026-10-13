@@ -31,7 +31,8 @@ People use tables for four jobs: find records, compare them, view or edit one, a
 - **Negative numbers** use the true minus U+2212 (`&minus;`), which matches the plus width in tabular figures (design-typography 05). Parentheses only in accounting contexts.
 - **Row actions**: one or two actions, inline as labelled icon buttons in the last column; three or more, a "More" menu in the last column with at most one action pulled out (T33, T34, T37).
 - **Whole-row click**: the primary cell is a real `<a>` to the detail page; a row click handler is an enhancement that forwards to it (T39). Never a row that only works with a mouse.
-- **Sticky**: header row sticky whenever the table is taller than its viewport; first column sticky whenever the table scrolls sideways (T25, T28, T29).
+- **Sticky**: header row sticky whenever the table is taller than its viewport; first column sticky whenever the table scrolls sideways (T25, T28, T29). Round 1 scrolled the header of a 38-row, 1,824px table away (`kb/reviews/benchmark-round1-app.md` item 4).
+- **Status in rows** is a 12 to 16px glyph plus a word in its own cell; never tint a data row. Tinted rows live only inside an alert panel (design-layout reference 06, "Alerts as rows"), so one fact is painted once (Linear "Status colors", `kb/teardowns/linear-app.md` Borrow: "never on the row").
 - **Long tables.** Lookup and admin tables paginate with counts ("21 to 40 of 142") and Previous and Next (Geist, research 01). Over about 500 rows in one scroll, virtualize rows but keep the real row count in the caption and `aria-rowcount`. No infinite scroll on tables people sort, compare or need the footer of (design-ux 02).
 - **Long text cells** truncate to one line with an ellipsis at a column max width; the full text stays in the DOM, so screen readers get it, and a hover or focus card shows it. Paths and IDs truncate in the middle (`/blog/retention-...marks`) because their ends differ (opinion).
 - **Times** in cells: short relative form ("2m ago", "5h ago") switching to a date ("Mar 14, 2026") after 7 days, with the full timestamp in a `<time datetime>` attribute (T44).
@@ -51,7 +52,7 @@ People use tables for four jobs: find records, compare them, view or edit one, a
 | Body text | `--text-sm` 14; never below 14 in compact | design-layout 05 |
 | Sort icon | 12 to 16px, placed on the inside edge (left of a right-aligned label, right of a left-aligned label) | opinion |
 | Selection column | 40px wide, checkbox with a 24px target | WCAG 2.5.8; opinion for width |
-| Phone list item | 2 lines, at least 48px tall, 16px side padding | FOUNDATIONS spacing; opinion |
+| Phone list item | 2 lines, at least 48px tall, 16px side padding; line 1 `--text-base` 16 or `--text-sm` 14, line 2 `--text-sm` 14 (status words, rate, counts), never 12 | FOUNDATIONS spacing; lint `reading-size`; `kb/reviews/benchmark-round1-app.md` item 3 |
 | Bulk action reveal | when 1 or more rows are selected (Carbon) | T36, research 05 B17 |
 
 ## Ceiling: exemplar patterns and signature moves
@@ -65,7 +66,7 @@ People use tables for four jobs: find records, compare them, view or edit one, a
 ### Signature moves
 1. **Shared column edge.** Right-aligned numeric header, sort arrow on its inner side, so header text and every figure end on one vertical line. Generalists put the arrow after the label and break the edge. Reason: the eye scans the edge, not the label (T6; opinion on arrow placement).
 2. **Units live in the header.** "Views", "Avg. time", "Share" with "%" once. Cells become pure figures and the column reads as one shape (T8).
-3. **The row is a link with one door.** The primary cell is the only link; other cells are text; the row hover tints the whole row so the target feels large, while the tab order stays one stop per row plus its menu. Reason: avoids five tab stops per row and keeps screen reader output clean (T17, T39).
+3. **The row is a link with one door.** The primary cell is the only link; other cells are text; the link is stretched over the row (`tr { position: relative }` and `td a::after { content: ""; position: absolute; inset: 0 }`; row menus sit above it with `position: relative; z-index: 1`), so the row *is* the target, 44px or more on touch, while the tab order stays one stop per row plus its menu. A hover tint without the stretch promises a target that does not exist: round 1's phone row was 89px tall with a 109x24 link (`kb/reviews/benchmark-round1-app.md` item 5). Reason: avoids five tab stops per row and keeps screen reader output clean (T17, T39).
 4. **Inline magnitude.** A thin bar (8px, `--radius-full`) beside a share or percentage column gives length encoding without a chart (NN/g dashboards research 06 D5). The figure stays as text; the bar is `aria-hidden`.
 5. **Collapse that keeps the comparison.** On phones the primary cell and the sorted measure stay on line 1, right aligned, so a vertical scan still compares the measure people sorted by. Secondary measures drop to a muted line 2. Generalists either scroll sideways or stack every cell as label and value, which destroys comparison.
 6. **Restore semantics after restyling.** When rows become grid or flex items at phone width, add `role="table|rowgroup|row|columnheader|rowheader|cell"` so Safari still announces a table (T21 to T23).
@@ -77,7 +78,7 @@ People use tables for four jobs: find records, compare them, view or edit one, a
 | "Views" header right aligned over 24,180 | Centered "Views" over right-aligned numbers |
 | 1m 42s, 0m 58s | 1m 42s, 58s |
 | Unit once in the header | "$" in all 400 cells |
-| Primary cell link, row hover tint | Whole row `onclick` with no link |
+| Primary cell link stretched over the row | Whole row `onclick` with no link; a row hover tint over a 24px link |
 | Phone: two-line list item, sorted measure on line 1 | Phone: whole page scrolls sideways |
 | `aria-sort` on one `th` | Sort arrows on every column with no state |
 

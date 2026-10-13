@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Measure a live page's computed CSS for an exemplar teardown.
 //
-// Usage: node kb/teardowns/measure.mjs <url> <out.json> [--widths 1440,390]
+// Usage: node kb/teardowns/measure.mjs <url> <out.json> [--widths 1440,390] [--scheme light|dark]
 //   Works on a local file too (a path or file: URL), which is how the head capture was tested while exemplar hosts
 //   were blocked.
 //
@@ -24,11 +24,24 @@ const url = args[0];
 const out = args[1];
 const wi = args.indexOf('--widths');
 const widths = wi > -1 ? args[wi + 1].split(',').map(Number) : [1440, 390];
+const si = args.indexOf('--scheme');
+const scheme = si > -1 ? args[si + 1] : 'light';
 if (!url || !out) { console.error('Usage: node kb/teardowns/measure.mjs <url> <out.json>'); process.exit(2); }
 
 function collect() {
   const vw = window.innerWidth;
-  const parse = (c) => { const m = c.match(/rgba?\(([^)]+)\)/); if (!m) return null; const p = m[1].split(/[ ,/]+/).filter(Boolean).map(Number); return { r: p[0], g: p[1], b: p[2], a: p.length > 3 ? p[3] : 1 }; };
+  // Computed colors come back as rgb() for sRGB values but stay in their own space for oklch(), lab() and color().
+  // Those are resolved by painting one pixel on a canvas, which converts to sRGB the way the screen does.
+  const cvs = document.createElement('canvas'); cvs.width = cvs.height = 1; const cx = cvs.getContext('2d', { willReadFrequently: true }); const memo = {};
+  const parse = (c) => {
+    const m = c.match(/^rgba?\(([^)]+)\)$/);
+    if (m) { const p = m[1].split(/[ ,/]+/).filter(Boolean).map(Number); return { r: p[0], g: p[1], b: p[2], a: p.length > 3 ? p[3] : 1 }; }
+    if (!/^(oklch|oklab|lab|lch|color|hsl|hwb)\(/.test(c)) return null;
+    if (memo[c]) return memo[c];
+    const am = c.match(/\/\s*([\d.]+)(%?)\s*\)$/); const a = am ? (am[2] ? +am[1] / 100 : +am[1]) : 1;
+    cx.clearRect(0, 0, 1, 1); cx.fillStyle = c.replace(/\s*\/\s*[\d.]+%?\s*\)$/, ')'); cx.fillRect(0, 0, 1, 1);
+    const d = cx.getImageData(0, 0, 1, 1).data; return (memo[c] = { r: d[0], g: d[1], b: d[2], a });
+  };
   const hex = (c) => { const p = parse(c); if (!p) return c; const h = (n) => Math.round(n).toString(16).padStart(2, '0'); return '#' + h(p.r) + h(p.g) + h(p.b) + (p.a < 1 ? ' a' + (+p.a.toFixed(2)) : ''); };
   const lum = (p) => { const f = (v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); }; return 0.2126 * f(p.r) + 0.7152 * f(p.g) + 0.0722 * f(p.b); };
   const ratio = (a, b) => { const l1 = lum(a), l2 = lum(b); return (Math.max(l1, l2) + 0.05) / (Math.min(l1, l2) + 0.05); };
@@ -179,10 +192,10 @@ function rawHeadOrder(html) {
 }
 
 const browser = await launch();
-const result = { url, measuredAt: new Date().toISOString(), method: 'Playwright Chromium, getComputedStyle on visible elements, light scheme, after scroll-through and fonts.ready', widths: {} };
+const result = { url, measuredAt: new Date().toISOString(), method: `Playwright Chromium, getComputedStyle on visible elements, ${scheme} scheme, after scroll-through and fonts.ready`, widths: {} };
 try {
   for (const width of widths) {
-    const ctx = await browser.newContext({ viewport: { width, height: 900 }, colorScheme: 'light', locale: 'en-US',
+    const ctx = await browser.newContext({ viewport: { width, height: 900 }, colorScheme: scheme, locale: 'en-US',
       userAgent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36' });
     const page = await ctx.newPage();
     try {

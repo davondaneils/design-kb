@@ -1,5 +1,10 @@
 # design-polish changelog
 
+## v0.1.2 (2026-10-13, editor-in-chief, benchmark round 1, `kb/tests/benchmark/round1/RANKED.md`)
+- Pressed vs disabled: delta E 15 or more, either direction on dark-ink fills; never `opacity` on a brand fill for disabled. Selected measured at 3:1 or +200 weight. Hover never lowers text contrast.
+- Touch padding scoped to stand-alone links, never `min-block-size` on a class that can sit in a sentence (round 1's 33px line gap).
+- Hover is `--motion-hover` 100ms (was 150ms, against FOUNDATIONS). `polish-tokens.css` no longer puts `none` in shadow tokens; dark popover and modal use `--highlight`.
+
 ## v0.1.1 (2026-10-09, editor-in-chief)
 - Pressed state layer 12% changed to 10% to match FOUNDATIONS v0.3 and design-color. Shadow recipe, `--ring`, `--highlight` and `--color-primary-active` adopted into FOUNDATIONS. Hard checks ported into `tools/lint.mjs`.
 

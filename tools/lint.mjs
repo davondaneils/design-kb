@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Fundamentals lint: the automated half of the fundamentals checklist in kb/FOUNDATIONS.md (v0.4.4).
+// Fundamentals lint: the automated half of the fundamentals checklist in kb/FOUNDATIONS.md (v0.4.5).
 //
 // Usage:
 //   node tools/lint.mjs <html[?query]> [--json out.json] [--out-dir dir] [--quiet] [--states state=a,state=b]
@@ -29,7 +29,18 @@
 //   overlay      text axe could not decide (text over images, textures, gradients, overlaps): the worst pixel
 //                under each text box, measured on a render with all text hidden, against 4.5:1 (3:1 large)
 //   targets      interactive targets at least 24x24 CSS px (inline text links exempt); warn under 44x44 at 390px
-//   measure      body paragraphs 45 to 75 characters per line at 1440px; at most 75 at 390px
+//   measure      body paragraphs 45 to 75 characters per line at 1440px; 35 to 75 at 390px for text under 20px (the floor catches a
+//                two-column grid kept on a phone: 33 per line on the benchmark page, exemplars 34 to 50)
+//   reading-size running text (p, li, dd, blockquote of 60+ characters) mostly under 16px on a marketing page fails
+//                (design-typography F2; Stripe 16, Linear 15). App screens (<html data-lint-page="app"> or a noindex
+//                robots meta): more than a third of all text under 14px at 390 fails, under 12px anywhere fails
+//   phone-facts  a number, price, rate or time visible at 1440 is visible at 390 or sits behind a disclosure (closed
+//                <details> or an aria-controls target): never cut a unique fact (design-layout gate rule 18)
+//   dead-control every enabled button, summary, tab, switch, checkbox and radio changes the page when clicked
+//                (DOM, attribute, value or URL), each tried on a fresh load at 1440, up to 60 controls
+//   selected-state  a control marked aria-pressed, aria-selected or aria-checked "true" must differ from an unselected
+//                peer by 3:1 in fill, ink or border, or by 200 in weight, or by an underline (WCAG 1.4.11; the
+//                benchmark filter, an aria-current link, measured 1.21:1). aria-current counts: a current-page link is a state too
 //   type-scale   every text size on the FOUNDATIONS scale; fluid clamp() sizes of 39px and up allowed (warn);
 //                SVG text renders at 12px or more
 //   spacing      margin, padding and gap on the FOUNDATIONS scale
@@ -137,6 +148,10 @@ if (!target) {
 const helpers = `
   window.__lint = {
     visible(el) {
+      // Content of a closed <details> is not rendered, but Chromium can still report boxes for it (the Ferry FAQ
+      // gave 14 false fails, benchmark round 1). Everything but the <summary> of a closed <details> is hidden.
+      const shut = el.closest('details:not([open])');
+      if (shut && el !== shut && !el.closest('summary')) return false;
       const s = getComputedStyle(el);
       if (s.display === 'none' || s.visibility === 'hidden' || Number(s.opacity) === 0) return false;
       const r = el.getBoundingClientRect();
@@ -383,6 +398,7 @@ async function lintOne(browser, target, outPath) {
 
   // 2 to 6 plus static polish and typography checks, at 390 and 1440 (or the canvas size), light scheme.
   const navByWidth = {};
+  const factsByWidth = {};
   for (const width of MAIN) {
     const { context, page } = await openPage(width, 'light');
     const r = await page.evaluate(({ width, WIDE, TYPE_SCALE, SPACE_SCALE, RADII, STEM }) => {
@@ -566,6 +582,70 @@ async function lintOne(browser, target, outPath) {
         // A same-page anchor whose section is on the page at this width is reachable by scrolling.
         const h = a.getAttribute('href') || '';
         if (h.startsWith('#') && h.length > 1) { let t = null; try { t = document.getElementById(decodeURIComponent(h.slice(1))); } catch { /* bad id */ } if (t && L.visible(t)) out.nav.reachable.push(hrefOf(a)); }
+      }
+
+      // Facts for phone-facts: numbers, money, rates and times in visible text, plus text a disclosure defers.
+      {
+        const FACT = /\b\d{1,2}:\d\d\s?(?:am|pm)\b|[$€£₹]\s?\d[\d,]*(?:\.\d+)?|\b\d{1,3}(?:,\d{3})+(?:\.\d+)?\b|\b\d+\.\d{2,}\b/gi;
+        const deferredRoots = [...document.querySelectorAll('details:not([open]), [aria-controls]')].flatMap((c) => c.matches('details') ? [c] : (c.getAttribute('aria-controls') || '').split(/\s+/).map((id) => document.getElementById(id)).filter(Boolean));
+        const facts = { shown: [], deferred: [] };
+        const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+        for (let n = w.nextNode(); n; n = w.nextNode()) {
+          const el = n.parentElement; if (!el || el.closest('svg, script, style, template, [aria-hidden=true]') || L.skipped(el, 'phone-facts')) continue;
+          const toks = n.textContent.match(FACT); if (!toks) continue;
+          const list = L.visible(el) && !L.inactive(el) ? facts.shown : deferredRoots.some((r) => r.contains(el)) ? facts.deferred : null;
+          if (list) for (const t of toks) list.push({ t: t.replace(/\s+/g, ' ').toLowerCase(), sel: L.sel(el) });
+        }
+        out.facts = facts;
+      }
+
+      // Reading size and selected state (benchmark round 1).
+      {
+        const rgbx = (c) => { const m = c.match(/rgba?\(([^)]+)\)/); if (m) { const v = m[1].split(/[ ,/]+/).filter(Boolean).map(Number); return { r: v[0], g: v[1], b: v[2], a: v.length > 3 ? v[3] : 1 }; }
+          const cv = (window.__cv ||= Object.assign(document.createElement('canvas'), { width: 1, height: 1 })).getContext('2d', { willReadFrequently: true });
+          const am = c.match(/\/\s*([\d.]+)(%?)\s*\)$/); const a = am ? (am[2] ? +am[1] / 100 : +am[1]) : (c === 'transparent' ? 0 : 1);
+          cv.clearRect(0, 0, 1, 1); cv.fillStyle = c.replace(/\s*\/\s*[\d.]+%?\s*\)$/, ')'); cv.fillRect(0, 0, 1, 1); const d = cv.getImageData(0, 0, 1, 1).data; return { r: d[0], g: d[1], b: d[2], a }; };
+        const lumx = ({ r, g, b }) => { const f = (x) => { x /= 255; return x <= 0.04045 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4; }; return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b); };
+        const ratiox = (a, b) => { const [x, y] = [lumx(a), lumx(b)].sort((p, q) => q - p); return Math.round((x + 0.05) / (y + 0.05) * 100) / 100; };
+        const over = (top, base) => ({ r: top.r * top.a + base.r * (1 - top.a), g: top.g * top.a + base.g * (1 - top.a), b: top.b * top.a + base.b * (1 - top.a), a: 1 });
+        // Painted fill of an element: its own background composited over the first ancestor fill.
+        const fillOf = (el) => { const stack = []; for (let n = el; n; n = n.parentElement) { const c = rgbx(getComputedStyle(n).backgroundColor); if (c.a > 0) { stack.push(c); if (c.a >= 0.99) break; } } let out = { r: 255, g: 255, b: 255, a: 1 }; for (const c of stack.reverse()) out = over(c, out); return out; };
+        const isApp = document.documentElement.dataset.lintPage === 'app' || /noindex/i.test(document.querySelector('meta[name=robots]')?.content || '');
+        const chars = new Map(); const para = { small: 0, all: 0, ex: null };
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+        for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+          const el = n.parentElement; const t = n.textContent.replace(/\s+/g, '').length;
+          if (!t || !el || el.closest('svg, script, style, [aria-hidden=true]') || !L.visible(el) || L.inactive(el) || L.skipped(el, 'reading-size')) continue;
+          const fs = Math.round(parseFloat(getComputedStyle(el).fontSize));
+          chars.set(fs, (chars.get(fs) || 0) + t);
+        }
+        for (const el of all.filter((e) => e.matches('p, li, dd, blockquote') && L.visible(e) && !L.skipped(e, 'reading-size') && !e.closest('nav, footer, table, figure, [aria-hidden=true]'))) {
+          if (el.matches('li') && el.querySelector('p')) continue;
+          const t = el.textContent.replace(/\s+/g, ' ').trim().length; if (t < 60) continue;
+          const fs = parseFloat(getComputedStyle(el).fontSize); para.all += t; if (fs < 15.5) { para.small += t; para.ex ||= { sel: L.sel(el), px: fs }; }
+        }
+        const total = [...chars.values()].reduce((a, b) => a + b, 0) || 1;
+        out.reading = { isApp, total, under14: [...chars].filter(([k]) => k < 14).reduce((a, [, v]) => a + v, 0) / total, under12: [...chars].filter(([k]) => k < 12).reduce((a, [, v]) => a + v, 0), para };
+        out.selected = [];
+        const sel = [...document.querySelectorAll('[aria-pressed=true], [aria-selected=true], [aria-checked=true], [aria-current]:not([aria-current=false])')].filter((el) => L.visible(el) && !L.inactive(el) && !L.skipped(el, 'selected-state'));
+        for (const el of sel) {
+          const attr = ['aria-pressed', 'aria-selected', 'aria-checked'].find((a) => el.getAttribute(a) === 'true') || 'aria-current';
+          const same = (p) => p !== el && p.tagName === el.tagName && (p.getAttribute('role') || '') === (el.getAttribute('role') || '') && L.visible(p) && (attr === 'aria-current' ? !p.hasAttribute('aria-current') || p.getAttribute('aria-current') === 'false' : p.getAttribute(attr) !== 'true');
+          let peer = [...(el.parentElement?.children || [])].find(same);
+          if (!peer && el.parentElement?.parentElement) peer = [...el.parentElement.parentElement.querySelectorAll(':scope > * > ' + el.tagName)].find(same);
+          if (!peer) continue;
+          const a = getComputedStyle(el), b = getComputedStyle(peer);
+          const fa = fillOf(el), fb = fillOf(peer);
+          const fill = ratiox(fa, fb);
+          const ink = ratiox(over(rgbx(a.color), fa), over(rgbx(b.color), fb));
+          const weight = Math.abs(parseInt(a.fontWeight, 10) - parseInt(b.fontWeight, 10));
+          const edge = (s, f) => ['Top', 'Right', 'Bottom', 'Left'].some((k) => parseFloat(s['border' + k + 'Width']) >= 1.5 && ratiox(over(rgbx(s['border' + k + 'Color']), f), f) >= 3);
+          const border = edge(a, fa) && !edge(b, fb);
+          const under = /underline/.test(a.textDecorationLine) && !/underline/.test(b.textDecorationLine);
+          const pseudo = ['::before', '::after'].some((ps) => { const p = getComputedStyle(el, ps), q = getComputedStyle(peer, ps); return p.content !== 'none' && p.content !== q.content || (p.content !== 'none' && p.backgroundColor !== q.backgroundColor && ratiox(over(rgbx(p.backgroundColor), fa), fa) >= 3); });
+          if (fill >= 3 || ink >= 3 || weight >= 200 || border || under || pseudo) continue;
+          out.selected.push({ sel: L.sel(el), attr, link: el.matches('a[href]'), text: (el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 24), fill, ink, weight });
+        }
       }
 
       if (width !== WIDE) return out;
@@ -765,7 +845,7 @@ async function lintOne(browser, target, outPath) {
     for (const m of canvas ? [] : r.measure) {
       if (m.cpl > 75) add('measure', 'fail', `line length ${m.cpl} characters at ${width}px (max 75)`, m);
       else if (width === WIDE && m.cpl < 45 && m.lines >= 3) add('measure', 'fail', `line length ${m.cpl} characters at 1440px (min 45)`, m);
-      else if (width === NARROW && m.cpl < 30 && m.lines >= 3) add('measure', 'warn', `short line length ${m.cpl} characters at 390px`, m);
+      else if (width === NARROW && m.cpl < 35 && m.lines >= 3 && m.fontSize < 20) add('measure', 'fail', `line length ${m.cpl} characters at 390px (min 35 for text under 20px)`, m);
     }
     if (canvas) {
       // A fixed canvas is not read at its own size: the UI type scale does not apply, the size it is seen at does.
@@ -787,10 +867,20 @@ async function lintOne(browser, target, outPath) {
     for (const h of canvas ? [] : r.headings) add('heading-wrap', 'warn', `heading ends on a one-word line at ${width}px ("${h.text}")`, h);
     ok('svg-overlap');
     for (const o of r.overlap) add('svg-overlap', 'warn', `text "${o.text}" partly covered by ${o.art} (${o.px}px) at ${width}px`, { sel: o.sel });
+    ok('reading-size');
+    if (!canvas && r.reading) {
+      const R = r.reading;
+      if (!R.isApp && R.para.all >= 300 && R.para.small / R.para.all > 0.5) add('reading-size', 'fail', `${Math.round(100 * R.para.small / R.para.all)}% of running text is under 16px at ${width}px (marketing pages read at 16; design-typography F2)`, R.para.ex);
+      if (R.isApp && width === NARROW && R.under14 > 1 / 3) add('reading-size', 'fail', `${Math.round(100 * R.under14)}% of text is under 14px at 390px (at most a third: headers and timestamps only)`, {});
+      if (R.under12 > 0) add('reading-size', 'fail', `${R.under12} characters under 12px at ${width}px`, {});
+    }
+    ok('selected-state');
+    for (const x of r.selected || []) add('selected-state', 'fail', `selected "${x.text}" (${x.attr}) differs from its unselected peer by fill ${x.fill}:1, ink ${x.ink}:1, weight ${x.weight} at ${width}px (needs 3:1, +200 weight, a 3:1 border or an underline)`, x);
     ok('primary');
     for (const x of r.primary) add('primary', 'fail', `${x.labels.length} filled calls to action in screen ${x.screen} at ${width}px (${x.labels.map((l) => '"' + l + '"').join(', ')}); one primary per view`, { sel: x.sel });
     if (r.stateSheet) report.summary.stateSheet = true;
     navByWidth[width] = r.nav;
+    factsByWidth[width] = r.facts;
 
     if (width === WIDE) {
       ok('radius');
@@ -856,6 +946,42 @@ async function lintOne(browser, target, outPath) {
       seenHref.add(l.href);
       if (!reach.has(l.href)) add('nav-parity', 'warn', `nav destination "${l.text}" (${l.href}) shown at 1440 has no route at 390 (not visible, not in a menu, not linked elsewhere)`);
     }
+  }
+
+  // Phone facts: a number, price, rate or time shown at 1440 is shown, or deferred behind a disclosure, at 390.
+  // design-layout gate rule 18 ("never cut a unique fact; collapse or defer"): both benchmark rounds cut rates, head
+  // counts and the only timestamp at 390 with the rule in the skill (kb/reviews/benchmark-round2-landing.md).
+  ok('phone-facts');
+  if (!canvas && factsByWidth[1440] && factsByWidth[390]) {
+    const narrow = new Set([...factsByWidth[390].shown, ...factsByWidth[390].deferred].map((f) => f.t));
+    const lost = new Map();
+    for (const f of factsByWidth[1440].shown) if (!narrow.has(f.t) && !lost.has(f.t)) lost.set(f.t, f.sel);
+    if (lost.size) add('phone-facts', 'fail', `${lost.size} fact${lost.size > 1 ? 's' : ''} shown at 1440 ${lost.size > 1 ? 'are' : 'is'} gone at 390 (not visible, not behind a disclosure): ${[...lost.keys()].slice(0, 8).map((t) => '"' + t + '"').join(', ')}${lost.size > 8 ? ', ...' : ''}`, { sel: [...lost.values()][0] });
+  }
+
+  // Dead controls: every enabled button, summary, checkbox and radio changes something when clicked (DOM, URL or an
+  // attribute). The round 2 pricing stepper did nothing because its script picked up another [data-step] first; the lint,
+  // the state sheet and the self-review all passed it (kb/reviews/benchmark-round2-landing.md gate 15).
+  ok('dead-control');
+  if (!canvas) {
+    const pick = () => [...document.querySelectorAll('button, summary, [role=button], [role=tab], [role=switch], input[type=checkbox], input[type=radio]')]
+      .filter((el) => window.__lint.visible(el) && !window.__lint.inactive(el) && !window.__lint.skipped(el, 'dead-control') && !el.matches('[disabled], [aria-disabled=true]') && !el.closest('[disabled], dialog:not([open])'));
+    const snap = () => { const h = document.documentElement; let x = 0; const str = h.outerHTML + location.href + [...document.querySelectorAll('input, select, textarea')].map((e) => e.type === 'checkbox' || e.type === 'radio' ? e.checked : e.value).join('|'); for (let i = 0; i < str.length; i++) x = (x * 31 + str.charCodeAt(i)) | 0; return x; };
+    const { context, page } = await openPage(WIDE, 'light');
+    const count = await page.evaluate(`(${pick.toString()})().length`);
+    const max = Math.min(count, 60);
+    for (let i = 0; i < max; i++) {
+      if (i) { await page.goto(toUrl(target), { waitUntil: 'load' }); await settle(page); await page.addScriptTag({ content: helpers }); }
+      const info = await page.evaluate(`(() => { const el = (${pick.toString()})()[${i}]; if (!el) return null; el.setAttribute('data-lint-click', '1'); return { sel: window.__lint.sel(el), text: (el.textContent || el.getAttribute('aria-label') || '').replace(/\\s+/g, ' ').trim().slice(0, 30), before: (${snap.toString()})() }; })()`);
+      if (!info) continue;
+      // The marker itself is part of the snapshot, so take the before value after setting it.
+      try { await page.click('[data-lint-click]', { timeout: 1500 }); } catch { continue; } // covered or detached: occlusion reports it
+      await page.waitForTimeout(250);
+      let after; try { after = await page.evaluate(`(${snap.toString()})()`); } catch { continue; } // navigated away: it did something
+      if (after === info.before) add('dead-control', 'fail', `clicking "${info.text}" changes nothing on the page (no DOM, attribute, value or URL change)`, { sel: info.sel });
+    }
+    if (count > max) report.summary.deadControl = `clicked the first ${max} of ${count} controls`;
+    await context.close();
   }
 
   // Dark: drop shadows on dark surfaces.
@@ -1129,7 +1255,15 @@ async function lintOne(browser, target, outPath) {
 // record each text box and color, hide all text, screenshot, decode in a canvas, take the minimum ratio.
 async function overlayCheck(page, targets, scheme, width, add) {
   const items = await page.evaluate((targets) => {
-    const toRGB = (c) => (c.match(/[\d.]+/g) || []).slice(0, 4).map(Number);
+    // oklch(), lab() and color() keep their own space in computed style; reading their digits as rgb gave 2.24:1 for an
+    // 8.83:1 pair (benchmark round 2). Non-rgb colors are resolved to sRGB by painting one canvas pixel.
+    const cv = document.createElement('canvas'); cv.width = cv.height = 1; const cx = cv.getContext('2d', { willReadFrequently: true });
+    const toRGB = (c) => {
+      if (/^rgba?\(/.test(c)) return (c.match(/[\d.]+/g) || []).slice(0, 4).map(Number);
+      const am = c.match(/\/\s*([\d.]+)(%?)\s*\)$/); const a = am ? (am[2] ? +am[1] / 100 : +am[1]) : 1;
+      cx.clearRect(0, 0, 1, 1); cx.fillStyle = c.replace(/\s*\/\s*[\d.]+%?\s*\)$/, ')'); cx.fillRect(0, 0, 1, 1);
+      const d = cx.getImageData(0, 0, 1, 1).data; return [d[0], d[1], d[2], a];
+    };
     const out = [];
     for (const t of targets) {
       let el; try { el = document.querySelector(t); } catch { continue; }
@@ -1138,7 +1272,7 @@ async function overlayCheck(page, targets, scheme, width, add) {
       const s = getComputedStyle(el);
       const isSvgText = el instanceof SVGElement;
       const rgb = toRGB(isSvgText ? s.fill : s.color);
-      if (isSvgText && !/^rgb/.test(s.fill)) continue; // gradient or pattern fill: judged by eye
+      if (isSvgText && /^url\(|^none/.test(s.fill)) continue; // gradient or pattern fill: judged by eye
       if (rgb.length === 4 && rgb[3] === 0) continue;
       const size = parseFloat(s.fontSize);
       const bold = parseInt(s.fontWeight, 10) >= 700;

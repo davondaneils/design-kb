@@ -24,7 +24,7 @@ A motion proposal that misses any one of these fails, however polished the rest 
 7. **Reduced motion is designed, not deleted.** Under `prefers-reduced-motion: reduce`, movement (translate, scale, rotate, parallax, zoom) is replaced by a crossfade or instant change at the same or shorter token; decorative loops stop; meaning survives (Apple reduced-motion criteria; WCAG 2.3.3).
 8. **WCAG floor.** Auto-playing motion over 5 s beside content has a pause control (2.2.2, A), and so does auto-updating content such as a live KPI (2.2.2 covers both). Never more than 3 flashes per second (2.3.1, A). Hover or focus content stays dismissible and hoverable (1.4.13, AA). Drag has a non-drag alternative (2.5.7, AA). Motion is never the only carrier of meaning.
 9. **Compositor only.** Animate `transform` and `opacity`. Never `width`, `height`, `top`, `left`, `margin`, `padding` or `box-shadow` directly (web.dev).
-10. **First paint is sacred.** Never fade in above-the-fold content or the LCP element from opacity 0; content must be visible if JS or the animation never runs (web.dev LCP). Numbers and charts never animate on arrival: no count-up, no draw-on on analytic screens.
+10. **First paint is sacred.** Never fade in above-the-fold content or the LCP element from opacity 0 (the one hero reveal FOUNDATIONS allows, up to 800ms, moves the supporting artifact by transform or clip-path); content must be visible if JS or the animation never runs (web.dev LCP). Numbers and charts never animate on arrival: no count-up, no draw-on on analytic screens.
 11. **Filmed, not assumed.** Screenshots render end states only. Before hand-over, film every animation in both motion settings and read its real timings from the browser: `assets/motion-audit.mjs` (reference 07). Any off-token duration or curve, animated layout or shadow, movement under reduce, or animated keyboard path fails.
 
 ## 2. Tokens (shared foundation)
@@ -34,7 +34,7 @@ A motion proposal that misses any one of these fails, however polished the rest 
 --duration-fast:    150ms;  /* tooltip, small popover, dropdown, fades, most exits */
 --duration-base:    200ms;  /* 200 to 250: menu, dialog, accordion, toast */
 --duration-slow:    300ms;  /* 300 to 400: drawer, sheet, shared element */
---duration-page:    400ms;  /* 400 to 600: route change; above 400 only for marketing */
+--duration-page:    400ms;  /* route change; 600 is the ceiling, not the token (FOUNDATIONS v0.4.5) */
 --ease-standard: cubic-bezier(0.2, 0, 0, 1);  /* on-screen move or resize */
 --ease-enter:    cubic-bezier(0, 0, 0, 1);    /* decelerate: arriving */
 --ease-exit:     cubic-bezier(0.3, 0, 1, 1);  /* accelerate: leaving for good */
@@ -64,7 +64,7 @@ Names follow FOUNDATIONS (`--ease-*`; v0.1 of this skill said `--easing-*`, now 
 | Dialog | opacity plus scale 0.95 to 1, base, enter, centered; scrim fades in base | opacity plus scale 0.97, fast |
 | Toast | translate from edge plus opacity, base, enter | in swipe direction, fast, exit |
 | Drawer or sheet | translate 100% to 0, slow, enter (or spring) | base, exit (or spring with release velocity) |
-| Accordion | grid rows 0fr to 1fr, base, standard | same, fast |
+| Accordion | native `<details>`: `::details-content` with `interpolate-size: allow-keywords`; custom: grid rows 0fr to 1fr; base, standard | same, fast |
 | Route change | crossfade, base; shared element bounds, slow, standard | outgoing done in first 35% |
 
 **Pick the transition pattern** (Material motion system): one element becomes the next view: container transform. Ordered siblings or steps: shared axis (slide on X or Y, or scale on Z). Unrelated peers such as bottom nav: fade through (outgoing gone by 35 percent of the duration, incoming scales 0.92 to 1). In-view overlays: fade plus small scale.
@@ -81,7 +81,7 @@ Names follow FOUNDATIONS (`--ease-*`; v0.1 of this skill said `--easing-*`, now 
 6. **Asymmetric timing.** Slow where the person is deciding, fast where the system is responding. A dialog enters at base and leaves at fast; a toast arrives at base and flies out at fast.
 7. **Fade through without double exposure.** Outgoing content is fully gone by 35 percent of the duration before incoming fades in from 0.92 scale, so two full-opacity layers never overlap (Material source code).
 8. **Stagger cap.** Step 30 to 50 ms, and the last item starts within 300 ms: at 40 ms, stagger at most 8 items and bring the rest together. Stagger first appearance only, never re-sorts or filters (practitioner, Kowalski range 30 to 80 ms).
-9. **The LCP trap.** Chromium ignores opacity 0 elements as LCP candidates, so a hero fade-in quietly worsens Core Web Vitals. Reveal only below the fold, once, guarded by `@supports (animation-timeline: view())` (web.dev).
+9. **The LCP trap.** Chromium ignores opacity 0 elements as LCP candidates, so a hero fade-in quietly worsens Core Web Vitals (web.dev). The headline paints at once; the one hero reveal FOUNDATIONS allows on a marketing page (up to 800ms on `--ease-enter`, played once on load, removed under reduced motion; Stripe reveals `.8s`, `kb/teardowns/stripe-home.md`) moves the supporting artifact by transform or clip-path. Every other reveal sits below the fold, once, guarded by `@supports (animation-timeline: view())`.
 10. **Scroll is the clock.** Scroll-driven animations use `linear` timing because the person's scroll speed is the easing; add easing and it fights them (opinion).
 11. **Reduce means replace.** Swap `transform` for `opacity` and keep the timing; show the most meaningful still frame of a Lottie or GIF, not frame 0 (Val Head, Smashing; Apple). Since the WCAG 2.3.3 erratum, blur counts as motion too.
 12. **SSR-safe reduced motion.** A reduced-motion hook starts `true` on the server so first paint never animates for someone who opted out (Josh Comeau). In Motion, `<MotionConfig reducedMotion="user">` turns off transform and layout animation and keeps opacity and color automatically.

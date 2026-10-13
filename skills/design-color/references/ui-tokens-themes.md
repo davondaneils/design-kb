@@ -4,7 +4,7 @@ Turning a palette into a token system that survives light mode, dark mode, state
 
 ## Fundamentals (non-negotiable)
 1. **Two layers minimum.** Primitives (`--color-blue-600`) hold values. Semantic roles (`--color-primary`) reference primitives. Components use only semantic roles (FOUNDATIONS).
-2. **The shared role set:** `bg`, `surface`, `surface-raised`, `text`, `text-muted`, `border`, `primary`, `on-primary`, `accent`, `success`, `warning`, `danger`, `info`, `focus-ring`, as `--color-{role}`. Variants use `--color-{role}-{variant}`: `-hover`, `-pressed`, `-subtle`, `-strong`.
+2. **The shared role set:** `bg`, `surface`, `surface-raised`, `surface-sunken`, `text`, `text-muted`, `text-muted-on-tint`, `border`, `border-strong`, `primary`, `on-primary`, `accent`, `success`, `warning`, `danger`, `info`, `focus-ring`, as `--color-{role}`. Variants use `--color-{role}-{variant}`: `-hover`, `-active` (pressed; FOUNDATIONS name), `-subtle`, `-strong`.
 3. **Every fill role has a paired content color that passes contrast** (Material's on-primary pattern). If you add `--color-danger` as a fill, you add its text pairing too.
 4. **One color, one meaning** (Apple HIG). If brand blue is the link color, it is not also decoration on non-interactive text.
 5. **Light and dark map the same roles to different primitives.** Dark mode is a remap, not an inversion (Apple HIG: dark colors "aren't necessarily inversions").
@@ -21,10 +21,10 @@ Primitives come from the ladder in palette-building.md (neutral at hue 260, chro
 | `text` | neutral-900 `#303338` | neutral-50 `#f6f7f8` | 11.8:1 on bg | 17.5:1, Lc 102 |
 | `text-muted` | neutral-600 `#676c75` | neutral-300 `#bdc1c8` | 4.92:1 on bg | 10.4:1, Lc 68 |
 | `border` (decorative) | neutral-200 | neutral-800 | none required | none required |
-| `border-strong` (inputs, controls) | neutral-500 `#858b94` | neutral-600 `#676c75` | 3.20:1 on bg | 3.02:1 on raised, 3.56:1 on bg |
+| `border-strong` (inputs, controls) | neutral-500 `#858b94` | neutral-600 `#676c75` on bg and surface; neutral-500 `#858b94` on `surface-raised` and `*-subtle` tints (remap the token on those surfaces) | 3.20:1 on bg | 3.56:1 on bg, 3.30:1 on surface, 4.65:1 (500) on raised; neutral-600 on raised is 3.02:1, the round 1 near-miss, under the 3.3:1 margin (FOUNDATIONS Color roles) |
 | `primary` (fill) | blue-600 `#1463dc` | blue-600 | white on it 5.46:1 | same |
 | `primary-hover` | blue-700 | blue-700 | darker in both themes keeps the white label passing | |
-| `primary-pressed` | blue-800 | blue-800 | | |
+| `primary-active` (pressed) | blue-800 | blue-800 | | |
 | `on-primary` | white | white | | |
 | `accent` (links, accent text) | blue-600 | blue-300 `#9dc2ff` | 5.46:1 | 10.4:1, Lc 68 |
 | `danger` | red-600 `#c51d28` | red-300 | white on red-600 5.87:1 | |
@@ -70,12 +70,12 @@ Why `primary-hover` goes darker in dark mode too: lightening a 600 fill toward 5
 ## States
 | State | Default (stepped) | Material alternative (overlay) |
 |---|---|---|
-| Hover | fill one step darker (600 to 700); subtle surfaces neutral-100 | content color overlay at 8% |
+| Hover | fill one step darker (600 to 700); subtle surfaces neutral-100; hover adds emphasis and never lowers text contrast (round 1 dimmed an FAQ question to `text-muted` on hover, `kb/reviews/benchmark-round1-landing.md` item 17) | content color overlay at 8% |
 | Focus | 2px `--color-focus-ring`, 2px offset; never remove the outline without replacing it | overlay 10% plus ring (Material 3 focus 0.10) |
-| Pressed | two steps darker (800), `--color-primary-active`; never equal to hover | overlay 10% (Material 3 pressed 0.10) |
+| Pressed | two steps darker (800), `--color-primary-active`; never equal to hover. With dark ink on a mid fill, hover and pressed may go lighter or darker, but pressed moves away from disabled: delta E (CIE76) 15 or more between pressed and disabled, checked side by side on the state sheet (round 1: rest `#e45705`, pressed `#ffa984`, disabled `#f1aa81`, delta E 6.5, `kb/reviews/benchmark-round1-landing.md` gate 15) | overlay 10% (Material 3 pressed 0.10) |
 | Dragged | raise one elevation level | overlay 16% |
-| Selected | `primary-subtle` (100) background, 800 text, plus a non-color mark (check, bar, weight) | |
-| Disabled | neutral-100 fill, neutral-400 text, no hover; exempt from contrast | container 12% opacity, content 38% opacity |
+| Selected | `primary-subtle` (100) background, 800 text, plus a non-color mark (check, bar, weight). The selected face measures 3:1 against its unselected neighbor in fill, ink or border, or adds +200 weight or a 2px bar (lint `selected-state`; a white segment on an n100 track measured 1.21:1 light, 1.08:1 dark, `kb/reviews/benchmark-round1-app.md` gate 3) | |
+| Disabled | neutral-100 fill, neutral-400 text, no hover; exempt from contrast. Never `opacity` on a brand fill: it makes a pale brand tint, the same face a lighter pressed state has | container 12% opacity, content 38% opacity (neutral containers only) |
 | Error | danger-600 border and text, icon, message | |
 
 Overlay values: material-web tokens. Stepped values: our default because they keep the contrast guarantees of the ladder (overlays on unknown backgrounds do not).
@@ -86,6 +86,8 @@ Overlay values: material-web tokens. Stepped values: our default because they ke
 - If the colors go into email or older embeds: ship hex only (opinion; many email clients lack modern CSS color support, check caniemail.com).
 - If a value has no role: add a variant to an existing role before inventing a role. New roles need a reason that survives both themes.
 - If you need elevation in dark mode: lighter surface (990, 975, 950), not darker shadow (FOUNDATIONS; Apple base vs elevated; Material tonal surfaces).
+- If a control sits on a raised or tinted surface: measure its border (input, secondary button, stepper) on that surface in dark, and keep 3.3:1 or more; if it slips, remap `--color-border-strong` one step lighter on that surface. Round 1 passed at 3.02:1 (dark raised card) and 3.04:1 (secondary button on a dark amber tint) by luck (`kb/reviews/benchmark-round1-landing.md` section 1, `kb/reviews/benchmark-round1-app.md` gate 3).
+- If you build the dark theme: retune, do not remap. Decorative hairlines (dividers, card edges, the `border` role) become white alpha, Linear `rgba(255,255,255,.05)` to `.12` (`kb/teardowns/linear-app.md` "Surfaces", "Board card"), so one token sits right on every surface step; control borders that carry 1.4.11 stay solid and measured. Large brand fields (bands, hero panels) drop chroma to the 950 step or chroma .03 to .06 and leave full chroma to the one CTA. Round 1 shipped solid hex hairlines and a full-chroma orange band at the same value on `#101214` (`kb/reviews/benchmark-round1-landing.md` item 15; opinion on the chroma range).
 - If the audience reads long text (docs, news, books): offer dark mode, do not default to it for general audiences; follow the OS setting (NN/g 2020: light mode reads better for most people with normal vision; dark can help some low vision users).
 - If you offer a theme toggle: three options, Light, Dark, System, with System as default.
 - If images or illustrations sit on dark surfaces: tone down large white areas, which glow (Apple HIG).

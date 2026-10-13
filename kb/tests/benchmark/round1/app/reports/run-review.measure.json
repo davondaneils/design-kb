@@ -1,0 +1,1076 @@
+{
+ "url": "kb/tests/benchmark/round1/app/run-review.html",
+ "measuredAt": "2026-10-13T14:43:49.220Z",
+ "method": "Playwright Chromium, getComputedStyle on visible elements, light scheme, after scroll-through and fonts.ready",
+ "widths": {
+  "390": {
+   "status": 200,
+   "finalUrl": "file:///home/user/design-kb/kb/tests/benchmark/round1/app/run-review.html",
+   "width": 390,
+   "h1Style": {
+    "font": "\"Inter Var\" 25px/31.25px w600 ls -0.5px",
+    "color": "oklch(0.25 0.006 250)",
+    "top": 104,
+    "width": 236,
+    "align": "start"
+   },
+   "title": "October 2026 payroll run · Ferry",
+   "description": "",
+   "pageHeight": 5152,
+   "bodyBg": "oklch(0.975 0.001 250)",
+   "htmlBg": "oklch(0.975 0.001 250)",
+   "fontsLoaded": [
+    "Inter Var 400 600 normal",
+    "Inter Fallback normal normal"
+   ],
+   "families": [
+    {
+     "v": "\"Inter Var\", \"Inter Fallback\"",
+     "n": 4393
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "12px / lh 18px / w400 / ls -0.084px",
+     "n": 2019,
+     "ex": "span: vs September,"
+    },
+    {
+     "v": "14px / lh 21px / w400 / ls -0.084px",
+     "n": 1228,
+     "ex": "a: Payroll runs"
+    },
+    {
+     "v": "14px / lh 21px / w500 / ls -0.084px",
+     "n": 523,
+     "ex": "a: Skip to content"
+    },
+    {
+     "v": "14px / lh 21px / w600 / ls -0.084px",
+     "n": 229,
+     "ex": "p: Lucía Fernández"
+    },
+    {
+     "v": "16px / lh 24px / w400 / ls -0.084px",
+     "n": 149,
+     "ex": "p: Up from September. adds and exchange rates take off . Three "
+    },
+    {
+     "v": "12px / lh 18px / w500 / ls -0.084px",
+     "n": 81,
+     "ex": "span: Northwind Labs · Sample"
+    },
+    {
+     "v": "16px / lh 20px / w600 / ls -0.084px",
+     "n": 60,
+     "ex": "h2: Needs attention"
+    },
+    {
+     "v": "14px / lh 21px / w500 / ls normal",
+     "n": 50,
+     "ex": "span: Approve run"
+    },
+    {
+     "v": "25px / lh 31.25px / w600 / ls -0.5px",
+     "n": 20,
+     "ex": "h1: October 2026 payroll"
+    },
+    {
+     "v": "25px / lh 27.5px / w600 / ls -0.5px",
+     "n": 14,
+     "ex": "span: 38"
+    },
+    {
+     "v": "31px / lh 34.1px / w600 / ls -0.62px",
+     "n": 11,
+     "ex": "span: $265,195.92"
+    },
+    {
+     "v": "16px / lh 24px / w600 / ls -0.084px",
+     "n": 9,
+     "ex": "span: $3,033.49"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "oklch(0.53 0.012 250)",
+     "n": 2577
+    },
+    {
+     "v": "oklch(0.25 0.006 250)",
+     "n": 1396
+    },
+    {
+     "v": "oklch(0.46 0.011 250)",
+     "n": 320
+    },
+    {
+     "v": "oklch(0.46 0.099 71)",
+     "n": 89
+    },
+    {
+     "v": "#ffffff",
+     "n": 11
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#ffffff on #ffffff",
+     "n": 11,
+     "ex": "1:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#ffffff",
+     "n": 2010
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px oklch(0.91 0.0045 250)",
+     "n": 8
+    },
+    {
+     "v": "1px oklch(0.46 0.099 71 / 0.18)",
+     "n": 2
+    },
+    {
+     "v": "1px oklch(0.635 0.012 250)",
+     "n": 1
+    }
+   ],
+   "radii": [
+    {
+     "v": "4px",
+     "n": 41,
+     "ex": "a."
+    },
+    {
+     "v": "8px",
+     "n": 8,
+     "ex": "a.skip"
+    },
+    {
+     "v": "9999px",
+     "n": 2,
+     "ex": "span.badge"
+    },
+    {
+     "v": "12px",
+     "n": 1,
+     "ex": "ul.alerts"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "oklch(0.635 0.012 250) 0px 0px 0px 1px inset",
+     "n": 3,
+     "ex": "button"
+    },
+    {
+     "v": "rgba(31, 34, 36, 0.08) 0px 0px 0px 1px, rgba(31, 34, 36, 0.08) 0px 2px 4px -1px, rgba(31, 34, 36, 0.16) 0px 12px 24px -6px",
+     "n": 1,
+     "ex": "a"
+    },
+    {
+     "v": "rgba(255, 255, 255, 0.12) 0px 1px 0px 0px inset, rgba(31, 34, 36, 0.06) 0px 1px 2px 0px",
+     "n": 1,
+     "ex": "button"
+    },
+    {
+     "v": "rgba(31, 34, 36, 0.08) 0px 0px 0px 1px, rgba(31, 34, 36, 0.06) 0px 1px 2px 0px",
+     "n": 1,
+     "ex": "a"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "background-color, box-shadow, transform 0.1s, 0.1s, 0.1s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
+     "n": 5,
+     "ex": "button"
+    },
+    {
+     "v": "background-color 0.1s cubic-bezier(0.2, 0, 0, 1)",
+     "n": 2,
+     "ex": "a"
+    },
+    {
+     "v": "opacity 0.1s cubic-bezier(0.2, 0, 0, 1)",
+     "n": 1,
+     "ex": "span"
+    }
+   ],
+   "animations": [],
+   "maxWidths": [
+    {
+     "v": "459.266px (rendered 298px)",
+     "n": 3,
+     "ex": "p"
+    },
+    {
+     "v": "1600px (rendered 390px)",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "523.25px (rendered 358px)",
+     "n": 1,
+     "ex": "p"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 5
+    },
+    {
+     "v": "pt 16px pb 48px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "8px",
+     "n": 11
+    },
+    {
+     "v": "4px",
+     "n": 11
+    },
+    {
+     "v": "2px / col 12px",
+     "n": 7
+    },
+    {
+     "v": "2px",
+     "n": 5
+    },
+    {
+     "v": "2px / col 4px",
+     "n": 4
+    },
+    {
+     "v": "12px",
+     "n": 4
+    },
+    {
+     "v": "4px / col 8px",
+     "n": 4
+    },
+    {
+     "v": "4px / col 12px",
+     "n": 3
+    },
+    {
+     "v": "24px",
+     "n": 2
+    },
+    {
+     "v": "12px / col 16px",
+     "n": 1
+    },
+    {
+     "v": "8px / col 12px",
+     "n": 1
+    },
+    {
+     "v": "2px / col 16px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "12px",
+     "n": 112
+    },
+    {
+     "v": "16px",
+     "n": 11
+    },
+    {
+     "v": "8px",
+     "n": 6
+    },
+    {
+     "v": "4px",
+     "n": 3
+    },
+    {
+     "v": "2px",
+     "n": 3
+    },
+    {
+     "v": "48px",
+     "n": 1
+    },
+    {
+     "v": "32px",
+     "n": 1
+    }
+   ],
+   "margins": [],
+   "measure": {
+    "text": "Up $3,033.49 from September. Amara Okafor’s first, partial month adds $3,328.89 and exchange rates take off $295.40. Thr",
+    "chars": 161,
+    "lines": 4,
+    "charsPerLine": 40,
+    "width": 358,
+    "fontSize": "16px",
+    "lineHeight": "24px",
+    "color": "oklch(0.25 0.006 250)"
+   },
+   "rootVars": {
+    "--color-neutral-0": "#ffffff",
+    "--color-neutral-50": "oklch(97.5% 0.001 250)",
+    "--color-neutral-100": "oklch(93.5% 0.003 250)",
+    "--color-neutral-150": "oklch(91% 0.0045 250)",
+    "--color-neutral-200": "oklch(88% 0.006 250)",
+    "--color-neutral-300": "oklch(81% 0.009 250)",
+    "--color-neutral-400": "oklch(72% 0.011 250)",
+    "--color-neutral-500": "oklch(63.5% 0.012 250)",
+    "--color-neutral-600": "oklch(53% 0.012 250)",
+    "--color-neutral-700": "oklch(46% 0.011 250)",
+    "--color-neutral-800": "oklch(39% 0.010 250)",
+    "--color-neutral-900": "oklch(32% 0.008 250)",
+    "--color-neutral-925": "oklch(28% 0.007 250)",
+    "--color-neutral-950": "oklch(25% 0.006 250)",
+    "--color-neutral-975": "oklch(21.5% 0.005 250)",
+    "--color-neutral-990": "oklch(18% 0.005 250)",
+    "--color-blue-50": "oklch(97.5% 0.012 248)",
+    "--color-blue-100": "oklch(93.5% 0.032 248)",
+    "--color-blue-300": "oklch(81% 0.099 248)",
+    "--color-blue-400": "oklch(72% 0.152 248)",
+    "--color-blue-600": "oklch(53% 0.142 248)",
+    "--color-blue-700": "oklch(46% 0.124 248)",
+    "--color-blue-800": "oklch(39% 0.105 248)",
+    "--color-blue-sub-dark": "oklch(27% 0.045 248)",
+    "--color-red-50": "oklch(97.5% 0.012 25)",
+    "--color-red-300": "oklch(81% 0.107 25)",
+    "--color-red-600": "oklch(53% 0.2 25)",
+    "--color-red-700": "oklch(46% 0.184 25)",
+    "--color-red-sub-dark": "oklch(25% 0.035 25)",
+    "--color-amber-50": "oklch(97.5% 0.019 85)",
+    "--color-amber-300": "oklch(81% 0.12 79)",
+    "--color-amber-700": "oklch(46% 0.099 71)",
+    "--color-amber-sub-dark": "oklch(25% 0.032 75)",
+    "--color-green-300": "oklch(81% 0.12 150)",
+    "--color-green-700": "oklch(46% 0.126 150)",
+    "--color-brand": "#026fb9",
+    "--color-bg": "light-dark(var(--color-neutral-50), var(--color-neutral-990))",
+    "--color-surface": "light-dark(var(--color-neutral-0), var(--color-neutral-975))",
+    "--color-surface-raised": "light-dark(var(--color-neutral-0), var(--color-neutral-950))",
+    "--color-surface-sunken": "light-dark(var(--color-neutral-100), var(--color-neutral-990))",
+    "--color-surface-selected": "light-dark(var(--color-neutral-150), var(--color-neutral-925))",
+    "--color-text": "light-dark(var(--color-neutral-950), var(--color-neutral-50))",
+    "--color-text-muted": "var(--color-text)",
+    "--color-text-muted-on-tint": "light-dark(var(--color-neutral-700), var(--color-neutral-300))",
+    "--color-border": "var(--color-border-strong)",
+    "--color-border-strong": "light-dark(var(--color-neutral-500), var(--color-neutral-600))",
+    "--color-primary": "var(--color-blue-600)",
+    "--color-primary-hover": "var(--color-blue-700)",
+    "--color-primary-active": "var(--color-blue-800)",
+    "--color-on-primary": "var(--color-neutral-0)",
+    "--color-accent": "light-dark(var(--color-blue-600), var(--color-blue-300))",
+    "--color-success": "light-dark(var(--color-green-700), var(--color-green-300))",
+    "--color-warning": "light-dark(var(--color-amber-700), var(--color-amber-300))",
+    "--color-warning-subtle": "light-dark(var(--color-amber-50), var(--color-amber-sub-dark))",
+    "--color-danger": "light-dark(var(--color-red-600), var(--color-red-300))",
+    "--color-danger-subtle": "light-dark(var(--color-red-50), var(--color-red-sub-dark))",
+    "--color-info": "light-dark(var(--color-blue-600), var(--color-blue-300))",
+    "--color-info-subtle": "light-dark(var(--color-blue-50), var(--color-blue-sub-dark))",
+    "--color-focus-ring": "light-dark(var(--color-blue-600), var(--color-blue-400))",
+    "--color-bar": "light-dark(var(--color-neutral-300), var(--color-neutral-700))",
+    "--color-skeleton": "light-dark(var(--color-neutral-100), var(--color-neutral-925))",
+    "--color-brand-mark": "var(--color-brand)",
+    "--state-hover": "color-mix(in oklch, var(--color-text) 8%, transparent)",
+    "--state-focus": "color-mix(in oklch, var(--color-text) 10%, transparent)",
+    "--state-pressed": "color-mix(in oklch, var(--color-text) 10%, transparent)",
+    "--state-dragged": "color-mix(in oklch, var(--color-text) 16%, transparent)",
+    "--space-0": "0",
+    "--space-1": "2px",
+    "--space-2": "4px",
+    "--space-3": "8px",
+    "--space-4": "12px",
+    "--space-5": "16px",
+    "--space-6": "24px",
+    "--space-7": "32px",
+    "--space-8": "48px",
+    "--space-9": "64px",
+    "--space-10": "96px",
+    "--space-11": "128px",
+    "--text-xs": "0.75rem",
+    "--text-sm": "0.875rem",
+    "--text-base": "1rem",
+    "--text-lg": "1.25rem",
+    "--text-xl": "1.5625rem",
+    "--text-2xl": "1.9375rem",
+    "--text-3xl": "2.4375rem",
+    "--leading-tight": "1.1",
+    "--leading-snug": "1.25",
+    "--leading-normal": "1.5",
+    "--weight-regular": "400",
+    "--weight-medium": "500",
+    "--weight-semibold": "600",
+    "--weight-bold": "700",
+    "--tracking-ui": "-0.006em",
+    "--tracking-display": "-0.02em",
+    "--font-sans": "\"Inter Var\", \"Inter Fallback\", -apple-system, BlinkMacSystemFont, \"Segoe UI Variable Text\", \"Segoe UI\", Roboto, sans-ser",
+    "--size-measure": "52ch",
+    "--radius-none": "0",
+    "--radius-sm": "4px",
+    "--radius-md": "8px",
+    "--radius-lg": "12px",
+    "--radius-xl": "16px",
+    "--radius-full": "9999px",
+    "--radius-control": "var(--radius-md)",
+    "--radius-card": "var(--radius-lg)",
+    "--size-control-sm": "32px",
+    "--size-control-md": "40px",
+    "--size-control-lg": "48px",
+    "--size-touch": "44px",
+    "--size-icon-sm": "12px",
+    "--size-icon-md": "16px",
+    "--size-icon-lg": "20px",
+    "--size-icon-xl": "24px",
+    "--icon-stroke": "1.5px",
+    "--size-sidebar": "240px",
+    "--size-rail": "56px",
+    "--size-topbar": "56px",
+    "--duration-instant": "100ms",
+    "--duration-fast": "150ms",
+    "--duration-base": "200ms",
+    "--duration-slow": "300ms",
+    "--duration-page": "400ms",
+    "--ease-standard": "cubic-bezier(0.2, 0, 0, 1)",
+    "--ease-enter": "cubic-bezier(0, 0, 0, 1)",
+    "--ease-exit": "cubic-bezier(0.3, 0, 1, 1)",
+    "--motion-hover": "var(--duration-instant) var(--ease-standard)",
+    "--motion-enter": "var(--duration-base) var(--ease-enter)",
+    "--motion-exit": "var(--duration-fast) var(--ease-exit)",
+    "--shadow-rgb": "31 34 36",
+    "--shadow-0": "0 0 0 0 transparent",
+    "--shadow-1": "0 0 0 0 transparent",
+    "--shadow-3": "0 0 0 0 transparent",
+    "--shadow-4": "0 0 0 0 transparent",
+    "--ring": "0 0 0 1px rgb(255 255 255 / 0.08)",
+    "--highlight": "inset 0 1px 0 rgb(255 255 255 / 0.06)",
+    "--elevation-card": "var(--ring)",
+    "--elevation-popover": "var(--ring), var(--highlight)",
+    "--elevation-modal": "var(--ring), var(--highlight)"
+   },
+   "blockedSheets": 0,
+   "reducedMotionRules": 5,
+   "h1": [
+    "October 2026 payroll"
+   ],
+   "h2": [
+    "Needs attention",
+    "How this run is paid",
+    "Funding by currency",
+    "People"
+   ],
+   "h3": [],
+   "nav": [
+    "Payroll runs",
+    "All 38",
+    "Needs attention 3"
+   ],
+   "ctas": [
+    "Skip to content [123x44 bg #ffffff fg oklch(0.25 0.006 250) r 8px pad 8px 12px 14px/500]",
+    "All 38 [55x40 bg #ffffff fg oklch(0.25 0.006 250) r 4px pad 0px 8px 14px/500]"
+   ],
+   "media": {
+    "img": 0,
+    "svg": 86,
+    "video": 0,
+    "canvas": 0
+   }
+  },
+  "1440": {
+   "status": 200,
+   "finalUrl": "file:///home/user/design-kb/kb/tests/benchmark/round1/app/run-review.html",
+   "width": 1440,
+   "h1Style": {
+    "font": "\"Inter Var\" 25px/31.25px w600 ls -0.5px",
+    "color": "oklch(0.25 0.006 250)",
+    "top": 56,
+    "width": 236,
+    "align": "start"
+   },
+   "title": "October 2026 payroll run · Ferry",
+   "description": "",
+   "pageHeight": 3219,
+   "bodyBg": "oklch(0.975 0.001 250)",
+   "htmlBg": "oklch(0.975 0.001 250)",
+   "fontsLoaded": [
+    "Inter Var 400 600 normal",
+    "Inter Fallback normal normal"
+   ],
+   "families": [
+    {
+     "v": "\"Inter Var\", \"Inter Fallback\"",
+     "n": 4476
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "14px / lh 21px / w400 / ls -0.084px",
+     "n": 2158,
+     "ex": "a: Payroll runs"
+    },
+    {
+     "v": "14px / lh 21px / w500 / ls -0.084px",
+     "n": 689,
+     "ex": "a: Skip to content"
+    },
+    {
+     "v": "12px / lh 15px / w400 / ls -0.084px",
+     "n": 522,
+     "ex": "span: Content strategist"
+    },
+    {
+     "v": "14px / lh 21px / w600 / ls -0.084px",
+     "n": 363,
+     "ex": "span: Payroll runs"
+    },
+    {
+     "v": "12px / lh 18px / w400 / ls -0.084px",
+     "n": 262,
+     "ex": "p: Sample workspace. Names, amounts and rates are not real."
+    },
+    {
+     "v": "16px / lh 24px / w400 / ls -0.084px",
+     "n": 149,
+     "ex": "p: Up from September. adds and exchange rates take off . Three "
+    },
+    {
+     "v": "12px / lh 18px / w500 / ls -0.084px",
+     "n": 96,
+     "ex": "p: Workspace"
+    },
+    {
+     "v": "16px / lh 20px / w600 / ls -0.084px",
+     "n": 60,
+     "ex": "h2: Needs attention"
+    },
+    {
+     "v": "14px / lh 21px / w500 / ls normal",
+     "n": 50,
+     "ex": "span: Approve run"
+    },
+    {
+     "v": "31px / lh 34.1px / w600 / ls -0.62px",
+     "n": 25,
+     "ex": "span: $265,195.92"
+    },
+    {
+     "v": "12px / lh 18px / w500 / ls normal",
+     "n": 25,
+     "ex": "button: Name"
+    },
+    {
+     "v": "25px / lh 31.25px / w600 / ls -0.5px",
+     "n": 20,
+     "ex": "h1: October 2026 payroll"
+    },
+    {
+     "v": "14px / lh 21px / w400 / ls normal",
+     "n": 18,
+     "ex": "span: , switch workspace"
+    },
+    {
+     "v": "12px / lh 15px / w400 / ls normal",
+     "n": 16,
+     "ex": "span: Sample workspace"
+    },
+    {
+     "v": "14px / lh 17.5px / w600 / ls normal",
+     "n": 14,
+     "ex": "span: Northwind Labs"
+    },
+    {
+     "v": "16px / lh 24px / w600 / ls -0.084px",
+     "n": 9,
+     "ex": "span: $3,033.49"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "oklch(0.25 0.006 250)",
+     "n": 2413
+    },
+    {
+     "v": "oklch(0.53 0.012 250)",
+     "n": 1530
+    },
+    {
+     "v": "oklch(0.46 0.011 250)",
+     "n": 410
+    },
+    {
+     "v": "oklch(0.46 0.099 71)",
+     "n": 112
+    },
+    {
+     "v": "#ffffff",
+     "n": 11
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#ffffff on #ffffff",
+     "n": 11,
+     "ex": "1:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#ffffff",
+     "n": 3876
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px oklch(0.91 0.0045 250)",
+     "n": 5
+    },
+    {
+     "v": "1px oklch(0.46 0.099 71 / 0.18)",
+     "n": 2
+    },
+    {
+     "v": "1px oklch(0.635 0.012 250)",
+     "n": 1
+    }
+   ],
+   "radii": [
+    {
+     "v": "4px",
+     "n": 45,
+     "ex": "a."
+    },
+    {
+     "v": "8px",
+     "n": 17,
+     "ex": "a.skip"
+    },
+    {
+     "v": "9999px",
+     "n": 16,
+     "ex": "span.badge"
+    },
+    {
+     "v": "12px",
+     "n": 1,
+     "ex": "ul.alerts"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "oklch(0.635 0.012 250) 0px 0px 0px 1px inset",
+     "n": 3,
+     "ex": "button"
+    },
+    {
+     "v": "rgba(31, 34, 36, 0.08) 0px 0px 0px 1px, rgba(31, 34, 36, 0.08) 0px 2px 4px -1px, rgba(31, 34, 36, 0.16) 0px 12px 24px -6px",
+     "n": 1,
+     "ex": "a"
+    },
+    {
+     "v": "rgba(255, 255, 255, 0.12) 0px 1px 0px 0px inset, rgba(31, 34, 36, 0.06) 0px 1px 2px 0px",
+     "n": 1,
+     "ex": "button"
+    },
+    {
+     "v": "rgba(31, 34, 36, 0.08) 0px 0px 0px 1px, rgba(31, 34, 36, 0.06) 0px 1px 2px 0px",
+     "n": 1,
+     "ex": "a"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "background-color, color 0.1s, 0.1s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
+     "n": 8,
+     "ex": "a"
+    },
+    {
+     "v": "background-color, box-shadow, transform 0.1s, 0.1s, 0.1s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
+     "n": 4,
+     "ex": "button"
+    },
+    {
+     "v": "background-color 0.1s cubic-bezier(0.2, 0, 0, 1)",
+     "n": 3,
+     "ex": "button"
+    },
+    {
+     "v": "opacity 0.1s cubic-bezier(0.2, 0, 0, 1)",
+     "n": 1,
+     "ex": "span"
+    }
+   ],
+   "animations": [],
+   "maxWidths": [
+    {
+     "v": "1600px (rendered 1200px)",
+     "n": 1,
+     "ex": "div"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 24px pb 64px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "4px",
+     "n": 50
+    },
+    {
+     "v": "8px",
+     "n": 18
+    },
+    {
+     "v": "2px",
+     "n": 13
+    },
+    {
+     "v": "12px",
+     "n": 12
+    },
+    {
+     "v": "2px / col 4px",
+     "n": 4
+    },
+    {
+     "v": "4px / col 8px",
+     "n": 4
+    },
+    {
+     "v": "4px / col 12px",
+     "n": 3
+    },
+    {
+     "v": "2px / col 12px",
+     "n": 3
+    },
+    {
+     "v": "32px",
+     "n": 1
+    },
+    {
+     "v": "12px / col 16px",
+     "n": 1
+    },
+    {
+     "v": "8px / col 12px",
+     "n": 1
+    },
+    {
+     "v": "2px / col 16px",
+     "n": 1
+    },
+    {
+     "v": "24px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "12px",
+     "n": 255
+    },
+    {
+     "v": "8px",
+     "n": 18
+    },
+    {
+     "v": "16px",
+     "n": 17
+    },
+    {
+     "v": "4px",
+     "n": 4
+    },
+    {
+     "v": "2px",
+     "n": 3
+    },
+    {
+     "v": "32px",
+     "n": 2
+    },
+    {
+     "v": "24px",
+     "n": 1
+    },
+    {
+     "v": "64px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "453.5px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "Up $3,033.49 from September. Amara Okafor’s first, partial month adds $3,328.89 and exchange rates take off $295.40. Thr",
+    "chars": 161,
+    "lines": 3,
+    "charsPerLine": 54,
+    "width": 523,
+    "fontSize": "16px",
+    "lineHeight": "24px",
+    "color": "oklch(0.25 0.006 250)"
+   },
+   "rootVars": {
+    "--color-neutral-0": "#ffffff",
+    "--color-neutral-50": "oklch(97.5% 0.001 250)",
+    "--color-neutral-100": "oklch(93.5% 0.003 250)",
+    "--color-neutral-150": "oklch(91% 0.0045 250)",
+    "--color-neutral-200": "oklch(88% 0.006 250)",
+    "--color-neutral-300": "oklch(81% 0.009 250)",
+    "--color-neutral-400": "oklch(72% 0.011 250)",
+    "--color-neutral-500": "oklch(63.5% 0.012 250)",
+    "--color-neutral-600": "oklch(53% 0.012 250)",
+    "--color-neutral-700": "oklch(46% 0.011 250)",
+    "--color-neutral-800": "oklch(39% 0.010 250)",
+    "--color-neutral-900": "oklch(32% 0.008 250)",
+    "--color-neutral-925": "oklch(28% 0.007 250)",
+    "--color-neutral-950": "oklch(25% 0.006 250)",
+    "--color-neutral-975": "oklch(21.5% 0.005 250)",
+    "--color-neutral-990": "oklch(18% 0.005 250)",
+    "--color-blue-50": "oklch(97.5% 0.012 248)",
+    "--color-blue-100": "oklch(93.5% 0.032 248)",
+    "--color-blue-300": "oklch(81% 0.099 248)",
+    "--color-blue-400": "oklch(72% 0.152 248)",
+    "--color-blue-600": "oklch(53% 0.142 248)",
+    "--color-blue-700": "oklch(46% 0.124 248)",
+    "--color-blue-800": "oklch(39% 0.105 248)",
+    "--color-blue-sub-dark": "oklch(27% 0.045 248)",
+    "--color-red-50": "oklch(97.5% 0.012 25)",
+    "--color-red-300": "oklch(81% 0.107 25)",
+    "--color-red-600": "oklch(53% 0.2 25)",
+    "--color-red-700": "oklch(46% 0.184 25)",
+    "--color-red-sub-dark": "oklch(25% 0.035 25)",
+    "--color-amber-50": "oklch(97.5% 0.019 85)",
+    "--color-amber-300": "oklch(81% 0.12 79)",
+    "--color-amber-700": "oklch(46% 0.099 71)",
+    "--color-amber-sub-dark": "oklch(25% 0.032 75)",
+    "--color-green-300": "oklch(81% 0.12 150)",
+    "--color-green-700": "oklch(46% 0.126 150)",
+    "--color-brand": "#026fb9",
+    "--color-bg": "light-dark(var(--color-neutral-50), var(--color-neutral-990))",
+    "--color-surface": "light-dark(var(--color-neutral-0), var(--color-neutral-975))",
+    "--color-surface-raised": "light-dark(var(--color-neutral-0), var(--color-neutral-950))",
+    "--color-surface-sunken": "light-dark(var(--color-neutral-100), var(--color-neutral-990))",
+    "--color-surface-selected": "light-dark(var(--color-neutral-150), var(--color-neutral-925))",
+    "--color-text": "light-dark(var(--color-neutral-950), var(--color-neutral-50))",
+    "--color-text-muted": "var(--color-text)",
+    "--color-text-muted-on-tint": "light-dark(var(--color-neutral-700), var(--color-neutral-300))",
+    "--color-border": "var(--color-border-strong)",
+    "--color-border-strong": "light-dark(var(--color-neutral-500), var(--color-neutral-600))",
+    "--color-primary": "var(--color-blue-600)",
+    "--color-primary-hover": "var(--color-blue-700)",
+    "--color-primary-active": "var(--color-blue-800)",
+    "--color-on-primary": "var(--color-neutral-0)",
+    "--color-accent": "light-dark(var(--color-blue-600), var(--color-blue-300))",
+    "--color-success": "light-dark(var(--color-green-700), var(--color-green-300))",
+    "--color-warning": "light-dark(var(--color-amber-700), var(--color-amber-300))",
+    "--color-warning-subtle": "light-dark(var(--color-amber-50), var(--color-amber-sub-dark))",
+    "--color-danger": "light-dark(var(--color-red-600), var(--color-red-300))",
+    "--color-danger-subtle": "light-dark(var(--color-red-50), var(--color-red-sub-dark))",
+    "--color-info": "light-dark(var(--color-blue-600), var(--color-blue-300))",
+    "--color-info-subtle": "light-dark(var(--color-blue-50), var(--color-blue-sub-dark))",
+    "--color-focus-ring": "light-dark(var(--color-blue-600), var(--color-blue-400))",
+    "--color-bar": "light-dark(var(--color-neutral-300), var(--color-neutral-700))",
+    "--color-skeleton": "light-dark(var(--color-neutral-100), var(--color-neutral-925))",
+    "--color-brand-mark": "var(--color-brand)",
+    "--state-hover": "color-mix(in oklch, var(--color-text) 8%, transparent)",
+    "--state-focus": "color-mix(in oklch, var(--color-text) 10%, transparent)",
+    "--state-pressed": "color-mix(in oklch, var(--color-text) 10%, transparent)",
+    "--state-dragged": "color-mix(in oklch, var(--color-text) 16%, transparent)",
+    "--space-0": "0",
+    "--space-1": "2px",
+    "--space-2": "4px",
+    "--space-3": "8px",
+    "--space-4": "12px",
+    "--space-5": "16px",
+    "--space-6": "24px",
+    "--space-7": "32px",
+    "--space-8": "48px",
+    "--space-9": "64px",
+    "--space-10": "96px",
+    "--space-11": "128px",
+    "--text-xs": "0.75rem",
+    "--text-sm": "0.875rem",
+    "--text-base": "1rem",
+    "--text-lg": "1.25rem",
+    "--text-xl": "1.5625rem",
+    "--text-2xl": "1.9375rem",
+    "--text-3xl": "2.4375rem",
+    "--leading-tight": "1.1",
+    "--leading-snug": "1.25",
+    "--leading-normal": "1.5",
+    "--weight-regular": "400",
+    "--weight-medium": "500",
+    "--weight-semibold": "600",
+    "--weight-bold": "700",
+    "--tracking-ui": "-0.006em",
+    "--tracking-display": "-0.02em",
+    "--font-sans": "\"Inter Var\", \"Inter Fallback\", -apple-system, BlinkMacSystemFont, \"Segoe UI Variable Text\", \"Segoe UI\", Roboto, sans-ser",
+    "--size-measure": "52ch",
+    "--radius-none": "0",
+    "--radius-sm": "4px",
+    "--radius-md": "8px",
+    "--radius-lg": "12px",
+    "--radius-xl": "16px",
+    "--radius-full": "9999px",
+    "--radius-control": "var(--radius-md)",
+    "--radius-card": "var(--radius-lg)",
+    "--size-control-sm": "32px",
+    "--size-control-md": "40px",
+    "--size-control-lg": "48px",
+    "--size-touch": "44px",
+    "--size-icon-sm": "12px",
+    "--size-icon-md": "16px",
+    "--size-icon-lg": "20px",
+    "--size-icon-xl": "24px",
+    "--icon-stroke": "1.5px",
+    "--size-sidebar": "240px",
+    "--size-rail": "56px",
+    "--size-topbar": "56px",
+    "--duration-instant": "100ms",
+    "--duration-fast": "150ms",
+    "--duration-base": "200ms",
+    "--duration-slow": "300ms",
+    "--duration-page": "400ms",
+    "--ease-standard": "cubic-bezier(0.2, 0, 0, 1)",
+    "--ease-enter": "cubic-bezier(0, 0, 0, 1)",
+    "--ease-exit": "cubic-bezier(0.3, 0, 1, 1)",
+    "--motion-hover": "var(--duration-instant) var(--ease-standard)",
+    "--motion-enter": "var(--duration-base) var(--ease-enter)",
+    "--motion-exit": "var(--duration-fast) var(--ease-exit)",
+    "--shadow-rgb": "31 34 36",
+    "--shadow-0": "0 0 0 0 transparent",
+    "--shadow-1": "0 0 0 0 transparent",
+    "--shadow-3": "0 0 0 0 transparent",
+    "--shadow-4": "0 0 0 0 transparent",
+    "--ring": "0 0 0 1px rgb(255 255 255 / 0.08)",
+    "--highlight": "inset 0 1px 0 rgb(255 255 255 / 0.06)",
+    "--elevation-card": "var(--ring)",
+    "--elevation-popover": "var(--ring), var(--highlight)",
+    "--elevation-modal": "var(--ring), var(--highlight)"
+   },
+   "blockedSheets": 0,
+   "reducedMotionRules": 5,
+   "h1": [
+    "October 2026 payroll"
+   ],
+   "h2": [
+    "Needs attention",
+    "How this run is paid",
+    "Funding by currency",
+    "People"
+   ],
+   "h3": [],
+   "nav": [
+    "Home",
+    "Payroll runs",
+    "People",
+    "Payments",
+    "Funding",
+    "Reports",
+    "Settings",
+    "Help",
+    "Payroll runs",
+    "All 38",
+    "Needs attention 3"
+   ],
+   "ctas": [
+    "Skip to content [123x44 bg #ffffff fg oklch(0.25 0.006 250) r 8px pad 8px 12px 14px/500]",
+    "All 38 [55x28 bg #ffffff fg oklch(0.25 0.006 250) r 4px pad 0px 8px 14px/500]"
+   ],
+   "media": {
+    "img": 0,
+    "svg": 86,
+    "video": 0,
+    "canvas": 0
+   }
+  }
+ },
+ "head": {
+  "lang": "en-US",
+  "title": "October 2026 payroll run · Ferry",
+  "description": null,
+  "canonical": null,
+  "robots": "noindex, nofollow",
+  "viewport": "width=device-width, initial-scale=1",
+  "themeColor": [],
+  "colorScheme": "light dark",
+  "og": [],
+  "twitter": [],
+  "jsonld": [],
+  "icons": [
+   {
+    "rel": "icon",
+    "type": "image/svg+xml",
+    "sizes": "",
+    "media": "",
+    "href": "data:image/svg+xml,%3Csvg%20xmlns%3D%22h... (data URI)"
+   },
+   {
+    "rel": "icon",
+    "type": "image/png",
+    "sizes": "64x64",
+    "media": "",
+    "href": "data:image/png;base64,iVBORw0KGgoAAAANSU... (data URI)"
+   }
+  ],
+  "order": [
+   "0 meta charset",
+   "1 meta viewport",
+   "2 title",
+   "3 meta robots",
+   "4 meta color-scheme",
+   "5 link icon",
+   "6 link icon",
+   "7 script inline 376B",
+   "8 style 93901B"
+  ],
+  "positions": {
+   "count": 9,
+   "title": 2,
+   "description": null,
+   "canonical": null,
+   "firstOg": null,
+   "firstJsonLd": null,
+   "firstStylesheet": 8,
+   "firstScript": 7,
+   "firstLargeInline": 8
+  },
+  "headBytes": 97325,
+  "htmlBytes": 178898,
+  "served": {
+   "bytes": 177824,
+   "headBytes": 97312,
+   "order": [
+    "0 meta charset",
+    "1 meta viewport",
+    "2 title",
+    "3 meta robots",
+    "4 meta color-scheme",
+    "5 link icon",
+    "6 link icon",
+    "7 script inline",
+    "8 style"
+   ],
+   "over2MB": false
+  }
+ }
+}

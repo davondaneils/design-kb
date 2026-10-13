@@ -1,5 +1,9 @@
 # design-director changelog
 
+## 2026-10-13 (editor-in-chief, benchmark round 1, `kb/tests/benchmark/round1/RANKED.md`)
+- Section 5, new step 13 **hand-over list**: eleven checks on the renders for the round 1 shortfalls a skill already covered (post-action `?state=`, true KPI labels, selected state 3:1, pressed vs disabled, reading size, zoned times, sticky header and stretched row links, review-and-commit, phone menu, KPIs 2x2 at 768, menu edges and dark borders), each naming its rule's home. The fresh-context critic is now step 14, fix and repeat step 15.
+- Step 11: the motif is drawn in the first screen, not only named.
+
 ## 2026-10-10 (editor-in-chief, round 3 lessons, from `kb/reviews/round3-critic.md`)
 - Build rules: the state truth data-attribute contract (`data-sum-of`, `data-derived-from`, `data-monotonic`, `data-source` and `data-source-stopped`, `data-data="none"`, `data-bar`, `data-share-base`) and headers in a shell (content container, one row, `flex: none` on dots).
 - Self-critique loop: lint runs its layout checks at 390, 768, 1024 and 1440 by default and drives 3 live updates; claims inventory with `--render` per state, PROMISE and PERIOD warnings; judged rows read at 768, 1024 and every state; proportion honesty; new step 13, a fresh-context critic's judged pass is required before claiming the gate.

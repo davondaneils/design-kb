@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lint fixture: benchmark round 1 misses</title>
+<style>
+  body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: #1a1d21; background: #fff; }
+  main { padding: 24px; }
+  .lead { font-size: 14px; max-inline-size: 52ch; }
+  .seg { display: inline-flex; gap: 4px; padding: 4px; background: #eceef1; border-radius: 8px; }
+  .seg button { font: inherit; font-size: 14px; border: 0; padding: 4px 12px; min-block-size: 32px; border-radius: 4px; background: transparent; color: #2c3138; }
+  .seg button[aria-pressed=true] { background: #fff; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .two p { font-size: 16px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Fixture</h1>
+  <!-- reading-size: running text at 14px on a marketing page -->
+  <p class="lead">Fund one balance in US dollars and approve one run each month. Every person is paid in their own currency on the same day, at the rate locked when you approve the run.</p>
+  <p class="lead">Rates are the mid-market rate at the moment you approve, with no markup and no transfer fees, and the run shows when each payment lands in the person's local time.</p>
+  <!-- selected-state: selected segment 1.2:1 against its track, same weight -->
+  <div class="seg" role="group" aria-label="Filter"><button type="button" aria-pressed="true">All 38</button><button type="button" aria-pressed="false">Needs attention 3</button></div>
+  <!-- measure: two columns kept on a phone -->
+  <div class="two"><p>Same day means local time: approve by 9 am Eastern on a business day and every payment lands that day.</p><p>Bank holidays are on the run: if payday is a holiday in someone's country, the run says so before you approve.</p></div>
+</main>
+</body>
+</html>

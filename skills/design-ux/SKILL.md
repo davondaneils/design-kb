@@ -55,7 +55,7 @@ Gate details, numbers and examples: `references/01-fundamentals.md`.
 ## 3. Decision rules by area
 
 ### Navigation and IA (`references/02-navigation-ia.md`)
-- Visible beats hidden. No hamburger on desktop (hidden nav used 27% vs 48%, tasks 39%+ slower; NN/g). On phones keep the two or three most used links visible plus a labelled "Menu" (combo nav used in 89% of tasks).
+- Visible beats hidden. No hamburger on desktop (hidden nav used 27% vs 48%, tasks 39%+ slower; NN/g). On phones keep the two or three most used links visible plus a labelled "Menu" (combo nav used in 89% of tasks). The opened menu repeats the primary action, and its trigger reads "Close" with `aria-expanded="true"` while open: round 1 showed 0 links at 390 and a trigger that read "Menu" open and closed (`kb/reviews/benchmark-round1-landing.md` gap 9).
 - Places, not actions, in navigation. Never hide or disable a section; explain an empty one inside it.
 - Lists: infinite scroll only for goal-less feeds; shops, search and docs use "Load more" or pagination; restore position on Back (Baymard).
 - Filters on shop and content pages: live under 1 s, otherwise batch with "Show 128 results"; mobile tray; removable chips; all in the URL. Filter bars inside apps: design-product-ui `02-find-and-command.md`.

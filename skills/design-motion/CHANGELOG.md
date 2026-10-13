@@ -1,5 +1,10 @@
 # design-motion changelog
 
+## 0.2.1 (2026-10-13, editor-in-chief, benchmark round 1, `kb/tests/benchmark/round1/RANKED.md`)
+- Hero entrance resolved in favor of FOUNDATIONS: one hero reveal per marketing page up to 800ms, on the supporting artifact by transform or clip-path; the headline and LCP element never fade from opacity 0 (SKILL move 9, references 03 and 07). Round 1's builder read "no hero entrance" and shipped no motion voice.
+- `--duration-page` is 400ms; 600ms is the ceiling, not the token (reference 07 no longer says 600 "until the editor decides"; tokens css, reference 02).
+- Native `<details>` animation: `::details-content` with `interpolate-size: allow-keywords`, off under reduced motion (references 04 and 06, SKILL table).
+
 ## 0.2 (2026-10-10)
 - Render-tested on the coffee landing page and the Tally dashboard (`kb/tests/design-motion.md`, run 2): 16 animations added, filmed in both motion settings, all on the tokens; lint PASS before and after on both pages.
 - Fundamentals fix: easing tokens renamed `--easing-*` to `--ease-*` to match FOUNDATIONS (a gate miss in v0.1); `--motion-scale` renamed `--duration-multiplier`; `--motion-hover/enter/exit` pairs added.

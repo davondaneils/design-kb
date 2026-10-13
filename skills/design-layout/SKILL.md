@@ -17,7 +17,7 @@ Check every layout against these before anything else. One miss fails the work, 
 1. Every spacing value is a foundation token: 0, 2, 4, 8, 12, 16, 24, 32, 48, 64, 96, 128 (`--space-0` to `--space-11`). Component padding 4 to 24; layout gaps 16 and up. Off-scale values only as deliberate optical corrections.
 2. Body text measure 45 to 75 characters, 66 ideal (`max-inline-size: 52ch`, which renders 63 to 68 characters in every text face measured, re-measured 2026-10-10; `66ch` renders 81 to 86, see design-typography reference 01). Set it on the text element itself: `ch` resolves against that element's font. Never full-width paragraphs.
 3. Components have no outer margins. The parent sets gaps (`gap`, or `.stack > * + *`).
-4. One alignment system per view. Count the distinct left edges; remove any that carry no meaning.
+4. One alignment system per view. Count the distinct left edges; remove any that carry no meaning. Opened menus and drawers count too: padded hit areas in a list hang their padding outside the text edge (`padding-inline: var(--space-4); margin-inline: calc(-1 * var(--space-4))`), so link text sits on the logo's edge. Round 1's phone menu text sat 12px in from the logo at 390 and 768 (`kb/reviews/benchmark-round1-landing.md` gate 13).
 
 **Hierarchy**
 5. One primary element and one filled primary button per view or distinct region. Secondary actions outline or muted, tertiary as links.

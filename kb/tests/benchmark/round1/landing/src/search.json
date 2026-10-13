@@ -1,0 +1,87 @@
+{
+  "file": "kb/tests/benchmark/round1/landing/ferry.html",
+  "expect": "public",
+  "date": "2026-10-13T14:52:07.460Z",
+  "checks": {
+    "size": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "HTML 170 KB uncompressed (Googlebot cut: 2 MB)"
+        }
+      ]
+    },
+    "head-order": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "search and social tags end by byte 1120, before the first large inline block at byte 3148"
+        }
+      ]
+    },
+    "title": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "\"Ferry: cross-border payroll, paid the same day\" (46 chars)"
+        }
+      ]
+    },
+    "description": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "127 chars"
+        }
+      ]
+    },
+    "headings": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "h1 Payroll in 28 currencies, paid the same day.\n  h2 Fund it, approve it, and everyone is paid that day.\n    h3 Fund\n    h3 Approve\n    h3 Everyone paid\n    h3 Sample run: Fri, Oct 30, 2026\n  h2 28 currencies, 48 countries, one balance.\n    h3 Americas 7 currencies\n    h3 Europe 10 currencies\n    h3 Asia and Pacific 7 currencies\n    h3 Middle East and Africa 4 currencies\n    h3 Same day means local time.\n    h3 Bank holidays are on the run.\n    h3 Not on the list?\n  h2 Sample customer story, not a real company\n  h2 One price per person. First 3 people free.\n    h3 What you would pay\n  h2 What founders ask before the first run\n  h2 Run your next payroll on Ferry.\n  h2 Product\n  h2 Company\n  h2 Resources\n  h2 Legal"
+        }
+      ]
+    },
+    "links": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "39 links, 20 unique destinations"
+        }
+      ]
+    },
+    "social": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "og:image 1200x630, 55 KB"
+        }
+      ]
+    },
+    "structured-data": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "jsonld.js not installed: run npm ci in skills/design-search/assets for the expansion check"
+        },
+        {
+          "message": "1 JSON-LD blocks, 3 typed nodes: WebSite, Organization, ImageObject"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "fail": 0,
+    "warn": 0,
+    "pass": true
+  }
+}

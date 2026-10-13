@@ -1,0 +1,4 @@
+390x844 {"h1":226,"cta":435,"price":523,"runTop":599,"firstLane":809,"next":1278}
+768x1024 {"h1":258,"cta":491,"price":579,"runTop":659,"firstLane":889,"next":1334}
+1024x768 {"h1":329,"cta":592,"price":680,"runTop":129,"firstLane":359,"next":822}
+1440x900 {"h1":369,"cta":602,"price":690,"runTop":129,"firstLane":359,"next":804}

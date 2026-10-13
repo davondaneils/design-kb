@@ -13,7 +13,7 @@
   --duration-fast: 150ms;     /* tooltips, small popovers, fades, dropdowns */
   --duration-base: 200ms;     /* 200 to 250ms band: menus, modals, accordions, toasts */
   --duration-slow: 300ms;     /* 300 to 400ms band: drawers, sheets, shared-element moves */
-  --duration-page: 400ms;     /* 400 to 600ms band: route and page transitions */
+  --duration-page: 400ms;     /* route and page transitions; 600ms is the ceiling, not the token */
   --ease-standard: cubic-bezier(0.2, 0, 0, 1); /* on-screen moves, resizes */
   --ease-enter: cubic-bezier(0, 0, 0, 1);      /* decelerate: arriving */
   --ease-exit: cubic-bezier(0.3, 0, 1, 1);     /* accelerate: leaving for good */

@@ -41,7 +41,7 @@ Words are interface. This skill writes and reviews the copy that sits inside lay
 
 **Mechanics**
 15. Sentence case for headings, buttons, tabs and menus. Numerals except at the start of a sentence. The locale on `<html lang>` picks the mechanics (FOUNDATIONS locale table): one clock (en-US "2:05 pm", en-GB "5:30pm"), dates as "Tue, Oct 13" (en-US) or "Fri 15 January 2027" (en-GB) with the weekday checked, one spelling system, one perspective ("your", not "my" and "your" on one page). One mechanics sheet everywhere. No em dashes (house rule).
-16. Real copy in every layout and every state, at 390 and 1440 px; test the longest realistic string, and never let a line break inside a date, price, range or number and unit (`&nbsp;`, `&#8239;`).
+16. Real copy in every layout and every state, at 390 and 1440 px; test the longest realistic string, and never let a line break inside a date, price, range, number and unit, or number and count noun (`&nbsp;`, `&#8239;`).
 
 ## 2. Page copy: the decision rules (deep: references/01-page-copy-structure.md)
 

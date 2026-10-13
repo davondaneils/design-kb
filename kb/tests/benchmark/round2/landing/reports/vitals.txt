@@ -1,0 +1,6 @@
+kb/tests/benchmark/round2/landing/ferry.html  [mobile, 3 runs, median, gzip]
+  LCP 1068 ms (good)  element: p.hero__sub "Fund one dollar balance. Ferry pays your"
+  CLS 0.000 (good)   INP proxy 0 ms (good) over 0 interactions
+  FCP 1068 ms  TBT 14 ms  TTFB 459 ms  fonts ready 1160 ms  load 1151 ms
+  wire 84.1 KB in 1 requests (document 84.1 KB)  DOM 522 elements
+  main thread at load: script 43 ms, style 112 ms (39x), layout 76 ms (3x)

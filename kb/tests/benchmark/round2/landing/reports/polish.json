@@ -1,0 +1,95 @@
+{
+  "file": "kb/tests/benchmark/round2/landing/ferry.html",
+  "checks": {
+    "radius": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "census: 4px x88, 8px x60, 12px x8, 16px x8, full x16"
+        }
+      ]
+    },
+    "shadow": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "distinct shadows: 4"
+        }
+      ]
+    },
+    "hover-gate": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "icon-stroke": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "icons checked: 0"
+        }
+      ]
+    },
+    "svg-hairline": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "color-scheme": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "tabular": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "1 numeric cells without tabular figures",
+          "examples": [
+            "figure.hero__art > figcaption.hero__cap > time"
+          ]
+        }
+      ],
+      "info": []
+    },
+    "heading-wrap": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "focus-shape": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "elements tested: 39"
+        }
+      ]
+    },
+    "state-shift": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "forced-edge": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "input without border: email"
+        },
+        {
+          "message": "input without border: people"
+        }
+      ],
+      "info": []
+    }
+  },
+  "summary": {
+    "result": "PASS",
+    "fails": 0,
+    "warns": 3
+  }
+}

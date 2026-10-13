@@ -1,0 +1,31 @@
+pass size
+     HTML 164 KB uncompressed (Googlebot cut: 2 MB)
+pass head-order
+     search and social tags end by byte 1217, before the first large inline block at byte 3747
+pass title
+     "Ferry: cross-border payroll from one balance" (44 chars)
+pass description
+     153 chars
+pass headings
+     h1 Cross-border payroll from one balance.
+       h2 Fund once, approve once, everyone is paid.
+         h3 01 Fund
+         h3 02 Approve
+         h3 03 Everyone paid
+       h2 The rate locks when you approve.
+       h2 7 currencies, 13 countries.
+       h2 One price per person. Your first 3 are free.
+       h2 Before you run payroll with us.
+       h2 Your next payroll, in one run.
+       h2 Product
+       h2 Company
+       h2 Help
+       h2 Legal
+pass links
+     35 links, 18 unique destinations
+pass social
+     og:image 1200x630, 57 KB
+pass structured-data
+     jsonld.js not installed: run npm ci in skills/design-search/assets for the expansion check
+     1 JSON-LD blocks, 2 typed nodes: WebSite, Organization
+search-check PASS: 0 fail, 0 warn (public)

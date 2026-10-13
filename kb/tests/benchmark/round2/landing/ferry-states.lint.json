@@ -1,0 +1,531 @@
+{
+  "file": "kb/tests/benchmark/round2/landing/ferry-states.html",
+  "date": "2026-10-13T16:12:03.326Z",
+  "checks": {
+    "axe": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overlay": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "targets": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#e1",
+          "w": 194,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.cell.wide > form.signup > div.signup__row > button.btn.btn--primary",
+          "w": 142.5,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#e2",
+          "w": 194,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.cell.wide > form.signup > div.signup__row.is-focus > button.btn.btn--primary",
+          "w": 142.5,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#e3",
+          "w": 194,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.cell.wide > form.signup > div.signup__row > button.btn.btn--primary",
+          "w": 142.5,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#e4",
+          "w": 194,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.cell.wide > form.signup > div.signup__row > button.btn.btn--primary",
+          "w": 142.5,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#e5",
+          "w": 194,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.cell.wide > form.signup > div.signup__row > button.btn.btn--primary",
+          "w": 142.5,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.signup__done > div > p > button",
+          "w": 63.6,
+          "h": 25
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.row > div.cell > div.stepper > button",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.row > div.cell > div.stepper > input",
+          "w": 59,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.row > div.cell > div.stepper > button",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.row > div.cell > div.stepper > button",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.row > div.cell > div.stepper > input",
+          "w": 59,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.row > div.cell > div.stepper > button.is-hover",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.row > div.cell > div.stepper.is-focus > button",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.row > div.cell > div.stepper.is-focus > input",
+          "w": 59,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.row > div.cell > div.stepper.is-focus > button",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.row > div.cell > div.stepper > button",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.row > div.cell > div.stepper > input",
+          "w": 59,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.row > div.cell > div.stepper > button",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.row > div.cell > div.stepper > button",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.row > div.cell > div.stepper > input",
+          "w": 59,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.row > div.cell > div.stepper > button",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.row > div.cell.wide > nav.nav-demo > a",
+          "w": 77,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.row > div.cell.wide > nav.nav-demo > a.is-hover",
+          "w": 86.9,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.row > div.cell.wide > nav.nav-demo > a",
+          "w": 70.3,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "div.row > div.cell.wide > nav.nav-demo > a.is-focus",
+          "w": 96.9,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section > div.row > div.cell > button.menu-btn",
+          "w": 64.2,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section > div.row > div.cell > button.menu-btn.is-hover",
+          "w": 64.2,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section > div.row > div.cell > button.menu-btn.is-pressed",
+          "w": 61.5,
+          "h": 38.8
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section > div.row > div.cell > button.menu-btn.is-focus",
+          "w": 64.2,
+          "h": 40
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section > div.row > div.cell > a.link",
+          "w": 99.9,
+          "h": 24
+        },
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "section > div.row > div.cell > a.link.is-focus",
+          "w": 99.9,
+          "h": 24
+        }
+      ],
+      "pass": true
+    },
+    "measure": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "type-scale": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "spacing": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "overflow": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "heading-wrap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "svg-overlap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "reading-size": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "selected-state": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "primary": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "radius": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "color-scheme": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "typography": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "tabular": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "shadows": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icons": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icon-stroke": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "weight": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "occlusion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "squash": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-header": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "run-together": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "word-break": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "grid-edge": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "hidden-content": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "double-space": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "undefined-var": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-layer": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "primitive-in-component": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "error-icon": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-sheet": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "truth": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "proportion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "nav-parity": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus-shape": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "skip-link": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-shift": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "fallback": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "layout moves -24px at 390px when the web fonts fail (worst: #main > div.wrap > section); add metric fallbacks (size-adjust, ascent-override). Line count changed in 1 elements: #main > div.wrap > p \"Every interactive control on ferry.html \" 7 to 6 lines (one element near a wrap point is a copy fix; many is a font metrics fix)",
+          "sel": "#main > div.wrap > section",
+          "shift": -24,
+          "rewrapped": [
+            {
+              "sel": "#main > div.wrap > p",
+              "from": 7,
+              "to": 6,
+              "text": "Every interactive control on ferry.html "
+            }
+          ]
+        },
+        {
+          "message": "layout moves 24px at 1440px when the web fonts fail (worst: #main > div.wrap > section); add metric fallbacks (size-adjust, ascent-override). Line count changed in 2 elements: #main > div.wrap > p \"Every interactive control on ferry.html \" 4 to 5 lines; div.cell.wide > div.signup__done > div > p \"Your 14-day trial starts when you open i\" 2 to 1 lines (one element near a wrap point is a copy fix; many is a font metrics fix)",
+          "sel": "#main > div.wrap > section",
+          "shift": 24,
+          "rewrapped": [
+            {
+              "sel": "#main > div.wrap > p",
+              "from": 4,
+              "to": 5,
+              "text": "Every interactive control on ferry.html "
+            },
+            {
+              "sel": "div.cell.wide > div.signup__done > div > p",
+              "from": 2,
+              "to": 1,
+              "text": "Your 14-day trial starts when you open i"
+            }
+          ]
+        }
+      ],
+      "pass": true
+    },
+    "motion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    }
+  },
+  "summary": {
+    "stateSheet": true,
+    "weightKB": {
+      "html": 152,
+      "svg": 2
+    },
+    "focusables": 42,
+    "fallbackShift390": -24,
+    "fallbackShift1440": 24,
+    "motionFound": {
+      "animations": 3,
+      "movingTransitions": 3
+    },
+    "axe": "pass",
+    "overlay": "pass",
+    "targets": "pass (36 warn)",
+    "measure": "pass",
+    "type-scale": "pass",
+    "spacing": "pass",
+    "overflow": "pass",
+    "heading-wrap": "pass",
+    "svg-overlap": "pass",
+    "reading-size": "pass",
+    "selected-state": "pass",
+    "primary": "pass",
+    "radius": "pass",
+    "color-scheme": "pass",
+    "typography": "pass",
+    "tabular": "pass",
+    "shadows": "pass",
+    "icons": "pass",
+    "icon-stroke": "pass",
+    "weight": "pass",
+    "occlusion": "pass",
+    "squash": "pass",
+    "sticky-header": "pass",
+    "run-together": "pass",
+    "word-break": "pass",
+    "grid-edge": "pass",
+    "hidden-content": "pass",
+    "double-space": "pass",
+    "undefined-var": "pass",
+    "state-layer": "pass",
+    "primitive-in-component": "pass",
+    "error-icon": "pass",
+    "state-sheet": "pass",
+    "truth": "pass",
+    "proportion": "pass",
+    "nav-parity": "pass",
+    "focus": "pass",
+    "focus-shape": "pass",
+    "sticky-focus": "pass",
+    "skip-link": "pass",
+    "state-shift": "pass",
+    "fallback": "pass (2 warn)",
+    "motion": "pass",
+    "result": "PASS",
+    "fails": 0,
+    "warns": 38
+  }
+}

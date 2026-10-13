@@ -1,5 +1,8 @@
 # Changelog: design-frontend
 
+## 0.2.1 (2026-10-13, editor-in-chief, from the benchmark round 1 builder notes)
+- Breakpoints in `rem` with range syntax in media and container queries (SKILL defaults and decision rules, references 02, 06, 07), matching FOUNDATIONS; `em` said otherwise (`kb/tests/benchmark/round1/landing/BUILD_NOTES.md` skill problem 9).
+
 ## 0.2 (2026-10-10)
 Render test on the two combined pages (`kb/tests/design-frontend.md`). Both pages refactored to the skill's standard and proven pixel-identical, except for listed intended changes.
 - New reference `references/07-measured-build-quality.md`: pixel-diff proof, lab vitals method (Lighthouse mobile profile, INP proxy), page weight and critical path, the font delivery trade-off with measured numbers, and measured traps (`none` shadows in lists, container query em, `:is()` specificity, UA button padding, pointer UI shift, viewport breakpoints inverted by a rail).
