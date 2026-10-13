@@ -9,7 +9,7 @@ A landing page has one job: make the right visitor understand the offer and take
 
 ## 1. Load in this order
 1. **design-foundations** (always): tokens, the 16-item gate, `references/accessibility.md`.
-2. **website-strategy** if audience, positioning or competitors are not given. No visual decisions before this.
+2. **design-strategy** (always, after foundations): the strategy brief at the depth its section 1 sets; one page for a new site, three lines for an event or campaign page, full (it routes to website-strategy stages 2 to 5) when audience, positioning or competitors are not given. The hero is written from its primary category entry point and category frame. No visual decisions before this.
 3. **Copy**, by the rule in section 2: design-copy `references/01-page-copy-structure.md`, `03-voice-and-tone.md` and `06-copy-in-context.md` (every number is a claim; content mechanics), or copywriting.
 4. **design-layout**: `references/05-page-composition-and-density.md`, `01-grids-and-structure.md`, `04-responsive-and-adaptive.md`, and `06-pacing-signature-and-phone-editing.md` for any page over four sections (write the flatplan before layout and the phone edit list before the 390 build).
 5. **design-typography**: `references/02-selection-pairing.md`, `01-scale-measure-leading.md`, `05-typographic-detail.md`; `06-type-without-web-fonts.md` (system stack, self-hosted or mixed, decided before layout); `07-type-led-pages.md` when type carries the page (display 49 to 112px, leading 0.95, optical margin).
@@ -60,8 +60,9 @@ Festivals, conferences, exhibitions, launches, magazines and feature stories sel
 4. At 390: the category word and the primary action sit in the first 844px; when the page sells, the price and the primary action are both there. At 1440: the next section peeks above 900px. Measure with `kb/tests/design-layout/measure-layout.mjs`.
 5. A term line (renews when, at what price, how to cancel online) sits beside any renewal or subscription CTA (design-conversion).
 6. Side by side with the named closest exemplars, rated close (not clearly below) on hierarchy, type, imagery, rhythm and craft. Event and editorial pages also pass section 3b item 4 (the hero screenshot works as the social post). Pick them from `kb/teardowns/INDEX.md` (Stripe first, then Linear, Vercel, Ramp for product and SaaS) and `references/signature-moves.md`; compare measured numbers, not impressions.
-7. A fresh-context critic has judged the gate (design-director section 5, step 13); a self-review alone does not claim it.
-8. The hand-over names what is still short of the exemplar.
+7. The strategy brief exists at the right depth and `node skills/design-strategy/assets/brief_lint.mjs` passes; the word swap test, covered competitor wall and five-second test are recorded; every public claim has a ledger row with evidence held.
+8. A fresh-context critic has judged the gate (design-director section 5, step 13); a self-review alone does not claim it.
+9. The hand-over names what is still short of the exemplar.
 
 ## 5. Reference map
 | Need | Read |

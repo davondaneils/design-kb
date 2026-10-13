@@ -9,20 +9,21 @@ Product UI is used for hours, not seconds. Every choice favors scanning speed, d
 
 ## 1. Load in this order
 1. **design-foundations** (always): tokens, the 16-item gate, `references/accessibility.md`.
-2. **design-ux**: `references/01-fundamentals.md` (the gate), `02-navigation-ia.md`, `03-forms.md`, `04-states-feedback.md`.
-3. **design-product-ui**: SKILL.md, then `references/01-tables.md`, `05-states-bulk.md` and `06-dashboards.md` for every dashboard; `02-find-and-command.md` and `04-shells-density.md` for multi-screen tools; `03-forms-settings.md` for settings and edit screens.
-4. **design-data**: `references/07-data-shapes-the-ui.md` for every screen over data (state matrix, time zones, money, counts, capability flags), before any state is drawn; the rest of design-data when the job includes the schema, API or access rules.
-5. **design-layout**: `references/05-page-composition-and-density.md`, `01-grids-and-structure.md`, `04-responsive-and-adaptive.md`, `06-pacing-signature-and-phone-editing.md` (dashboard grids). KPI strips and panels inside a collapsible sidebar shell respond to the **content area**, not the viewport: `container-type: inline-size` on the content area and conditions in `rem` (design-frontend `references/07-measured-build-quality.md` finding 13; FOUNDATIONS Breakpoints).
-6. **design-typography**: `references/04-hierarchy-ui-editorial.md`, `05-typographic-detail.md` (tabular numerals), `06-type-without-web-fonts.md` (system stack or one shipped face, so figures align on every OS).
-7. **design-color**: `references/ui-tokens-themes.md` (roles, status colors, themes).
-8. **dataviz**: every chart, sparkline and KPI tile. **design-art-direction** `references/04-visuals-without-image-hosts.md` recipe 3 (sparklines) and the rule "only counts are pictures": product imagery shows a number or the state of a number, nothing decorative.
-9. **design-graphic**: `references/02-icon-systems.md` ("Building a product icon set (code)") for any app with a sidebar or toolbar; never draw icons ad hoc. Run `assets/icon_audit.mjs`.
-10. **design-copy**: `references/02-ux-microcopy.md`, `06-copy-in-context.md` (caveats on affected numbers, one clock).
-11. **design-motion**: `references/04-micro-interactions.md` and `07-motion-on-real-pages.md` (live numbers, label swaps, the palette rule). Fast, rare, never on keyboard-driven actions.
-12. **design-conversion** `references/05-in-product-upgrades.md` when the product has plan limits, trials or usage meters.
-13. **design-search** `references/07-page-build.md`, the app-pages-behind-login rules only: `noindex`, no structured data, no private data in a social card. Check with `search-check.mjs --expect private`.
-14. **design-frontend**: build.
-15. **design-polish** after the lint gate passes: SKILL.md, `references/06-polish-checklist.md` and the references each item names. Then the self-critique loop in design-director.
+2. **design-strategy** at inherit depth (its section 1): the user's moment for this screen, the brand source inherited (tokens, voice), and what the screen must not change. Never rebrand inside a screen job. A new product with no brand on file gets the one-page brief.
+3. **design-ux**: `references/01-fundamentals.md` (the gate), `02-navigation-ia.md`, `03-forms.md`, `04-states-feedback.md`.
+4. **design-product-ui**: SKILL.md, then `references/01-tables.md`, `05-states-bulk.md` and `06-dashboards.md` for every dashboard; `02-find-and-command.md` and `04-shells-density.md` for multi-screen tools; `03-forms-settings.md` for settings and edit screens.
+5. **design-data**: `references/07-data-shapes-the-ui.md` for every screen over data (state matrix, time zones, money, counts, capability flags), before any state is drawn; the rest of design-data when the job includes the schema, API or access rules.
+6. **design-layout**: `references/05-page-composition-and-density.md`, `01-grids-and-structure.md`, `04-responsive-and-adaptive.md`, `06-pacing-signature-and-phone-editing.md` (dashboard grids). KPI strips and panels inside a collapsible sidebar shell respond to the **content area**, not the viewport: `container-type: inline-size` on the content area and conditions in `rem` (design-frontend `references/07-measured-build-quality.md` finding 13; FOUNDATIONS Breakpoints).
+7. **design-typography**: `references/04-hierarchy-ui-editorial.md`, `05-typographic-detail.md` (tabular numerals), `06-type-without-web-fonts.md` (system stack or one shipped face, so figures align on every OS).
+8. **design-color**: `references/ui-tokens-themes.md` (roles, status colors, themes).
+9. **dataviz**: every chart, sparkline and KPI tile. **design-art-direction** `references/04-visuals-without-image-hosts.md` recipe 3 (sparklines) and the rule "only counts are pictures": product imagery shows a number or the state of a number, nothing decorative.
+10. **design-graphic**: `references/02-icon-systems.md` ("Building a product icon set (code)") for any app with a sidebar or toolbar; never draw icons ad hoc. Run `assets/icon_audit.mjs`.
+11. **design-copy**: `references/02-ux-microcopy.md`, `06-copy-in-context.md` (caveats on affected numbers, one clock).
+12. **design-motion**: `references/04-micro-interactions.md` and `07-motion-on-real-pages.md` (live numbers, label swaps, the palette rule). Fast, rare, never on keyboard-driven actions.
+13. **design-conversion** `references/05-in-product-upgrades.md` when the product has plan limits, trials or usage meters.
+14. **design-search** `references/07-page-build.md`, the app-pages-behind-login rules only: `noindex`, no structured data, no private data in a social card. Check with `search-check.mjs --expect private`.
+15. **design-frontend**: build.
+16. **design-polish** after the lint gate passes: SKILL.md, `references/06-polish-checklist.md` and the references each item names. Then the self-critique loop in design-director.
 
 Copy is always design-copy here; direct response copywriting never applies inside a product.
 
