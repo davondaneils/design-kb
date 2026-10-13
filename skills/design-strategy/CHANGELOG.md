@@ -8,6 +8,7 @@
 - `brief_lint.mjs`: Architecture field must name a position when present; full depth warns without Behaviors; self-test 15 of 15 (three new cases).
 - SKILL.md description cut from 1,242 to 901 characters (spec cap 1,024).
 - Drafts `kb/drafts/strategy/01` to `06` re-synced with the references.
+- Second critic pass (`kb/reviews/design-strategy.md`, "v0.1.1 second pass"): parent asset carried across the range except in a house of brands; descriptive names sit one step above generic, not at the bottom; page spill stated as a renderer range (150 to 210 words at 10pt); the hero states the insight in the primary CEP's words; tracking cadence held between 3 and 12 months; Caruso worded as "no evidence of more success"; in-market formula limited to cycles of a year or more; residual codes allowed when heritage is the fact; example curve mapped to `--color-illustration-accent` (still 598 words). Research: Aaker spectrum labels and a reachable copy, USPTO weak-mark wording, Wynter F4 quote, A7 marked superseded.
 
 ## v0.1, critic pass (2026-10-13, `kb/reviews/design-strategy.md`)
 - Fixed: rebrand audit worked example (navy and gold was low fame, not "Avoid solo use"; stand-in now allows several brands per answer and computes fame and uniqueness); fame cannot be measured with fresh-context viewers; new assets are tested for misattribution and learnability, not recognition.

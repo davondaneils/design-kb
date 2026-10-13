@@ -38,7 +38,7 @@ Dunford's sales pitch is built from the positioning in a fixed order: "the setup
 
 | Page section | Pitch step | From the brief |
 |---|---|---|
-| Hero | Insight: what the buyer must believe for our value to matter ("Customer service is a growth driver, not a cost center" [C23]) | Category frame plus the insight; the category word stays in the first screen (design-playbook-landing non-negotiable 2) |
+| Hero | Insight: what the buyer must believe for our value to matter ("Customer service is a growth driver, not a cost center" [C23]) | The insight, said in the primary CEP's words (02), plus the category frame; the category word stays in the first screen (design-playbook-landing non-negotiable 2) |
 | Section 2 | Alternatives and their limits, status quo first | Alternatives field |
 | Section 3 | The perfect world: the criteria a good answer meets | Value, phrased as criteria the buyer agrees with |
 | Section 4 | Our product as the answer, one criterion at a time | Unique attributes and the one true fact |

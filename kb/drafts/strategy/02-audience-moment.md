@@ -38,7 +38,7 @@ The full buyer psychology profile (core complex, 2am thought, benefit ladder, ob
 | Item | Default |
 |---|---|
 | CEPs listed | 5 to 10; 1 for the hero, up to 3 for sections (opinion) |
-| In market at once (B2B) | about 5 percent a quarter, a heuristic [B6][B6b]; for your category, share in market per year = 1 divided by the years between purchases (two years gives "50%" a year, "around 13% in any quarter" [B6b]) |
+| In market at once (B2B) | about 5 percent a quarter, a heuristic [B6][B6b]; for your category, share in market per year = 1 divided by the years between purchases, for cycles of a year or longer (two years gives "50%" a year, "around 13% in any quarter" [B6b]) |
 | Customer phrases collected | 20 to 50 verbatim (design-copy 03) |
 | Anxieties with a design answer | at least 1; usually 2 or 3 (opinion) |
 

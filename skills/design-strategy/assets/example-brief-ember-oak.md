@@ -46,12 +46,12 @@ Flat in: payment errors, delivery problems, security
 |---|---|---|---|---|
 | Expert, not academic | Serif at `--text-display`, sans body, tabular figures | Notebook annotation reads as evidence | O | design-typography 02 |
 | Expert, not academic | Imagery: contour maps, roast curves | Only this roaster has them | O | design-art-direction 01 |
-| Warm, not cute | Warm neutrals; `--color-brand` orange only for the curve | 3.0:1 on white, under 3:1 on neutrals: never text; curve one step darker (1.4.11) | O | design-color palette-building |
+| Warm, not cute | Warm neutrals; orange curve via `--color-illustration-accent` | `--color-brand` is 3.0:1 on white, under 3:1 on neutrals: never text; role one step darker (1.4.11) | O | design-color palette-building |
 | Warm, not cute | Rounded bag silhouette, `--radius-lg` cards | Rounded reads softer (weak lab effect) | E weak | design-graphic 01 |
 | Plain, not blunt | `--motion-enter` once on the hero curve | Calm; reduced motion removes it | O | design-motion 01 |
 Primary distinctive asset: the bag shape printed with a contour map and one orange curve
 Supporting assets: orange at about 10 percent of any surface
-Category codes: kept: bag shots, origin names, a standard subscribe flow; broken: the dominant mountain drawing, replaced by data graphics (emergent)
+Category codes: kept: bag shots, origin names, standard subscribe flow; broken: the dominant mountain drawing, now data graphics (emergent)
 Asset audit (rebrand only): not a rebrand
 
 ## 7. Concept for art direction
