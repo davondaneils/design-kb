@@ -1,0 +1,22 @@
+
+Polish audit: plan.html
+
+  pass  radius
+        i census: 4px x156, 8px x48, 12px x8, full x78
+  pass  shadow  (1 warn)
+        ! 8 distinct box-shadow values (tokens give 5 plus rings)
+        i distinct shadows: 8
+  pass  hover-gate
+  pass  icon-stroke
+        i icons checked: 6
+  pass  svg-hairline  (1 warn)
+        ! 1px SVG line on integer y 684 blurs to 2 gray rows at 1x (use y + 0.5 or crispEdges)  [#p-stream > svg]
+  pass  color-scheme
+  pass  tabular
+  pass  heading-wrap
+  pass  focus-shape
+        i elements tested: 19
+  pass  state-shift
+  pass  forced-edge
+
+  Result: PASS (0 fail, 2 warn)

@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plan: Lymington to Yarmouth, Sat 24 Oct · Halyard</title>
+<meta name="description" content="Passage plan for Wren, Lymington to Yarmouth and back on Saturday 24 October 2026: windows, warnings and timed route. Sample data.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f6f7f8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101214" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/svg+xml" href="{{FAVICON}}">
+<style>{{STYLE}}</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the plan</a>
+<div class="app">
+  <aside class="sidebar" aria-label="Halyard">
+    <a class="brand" href="/plans">{{WORDMARK}}<span class="sr-only">Halyard, saved plans</span></a>
+    <div class="boat-card" data-boat data-sample>
+      <span>Boat</span>
+      <strong data-boat-name>Wren</strong>
+      <span data-boat-desc>7.9 m sloop, plans at 5.0 kn</span>
+    </div>
+    <nav aria-label="Main" class="nav-group">
+      <ul class="nav-list">
+        <li><a href="/plans/new" aria-current="page">{{i:route}}Plan a passage</a></li>
+        <li><a href="/plans">{{i:saved}}Saved plans</a></li>
+        <li><a href="/boats">{{i:boat}}Boats</a></li>
+        <li><a href="/tides">{{i:tide}}Tide tables</a></li>
+        <li><a href="/settings">{{i:settings}}Settings</a></li>
+      </ul>
+    </nav>
+    <div class="usage">
+      <p><strong>Free plan</strong>: <span data-usage>1 of 3</span> plans this month</p>
+      <div class="meter" role="meter" aria-label="Plans used this month" aria-valuemin="0" aria-valuemax="3" aria-valuenow="1" data-meter><span data-meter-fill style="inline-size: 33.333%"></span></div>
+      <a href="/plus" data-plus>Upgrade to Halyard Plus</a>
+    </div>
+  </aside>
+
+  <div class="main-col">
+    <header class="topbar">
+      <a class="brand" href="/plans">{{WORDMARK}}<span class="sr-only">Halyard, saved plans</span></a>
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/plans/new">Plan a passage</a><span aria-hidden="true">/</span><span aria-current="page">Lymington to Yarmouth</span>
+      </nav>
+      <p class="fresh">{{i:info}}Planning aid, not a navigation source</p>
+      <button class="btn btn-ghost btn-sm menu-btn" type="button" aria-expanded="false" aria-controls="nav-panel" data-menu>{{i:menu}}<span data-menu-label>Menu</span></button>
+    </header>
+    <nav class="nav-panel" id="nav-panel" aria-label="Main" hidden>
+      <div class="boat-card" data-sample><span>Boat</span><strong data-boat-name>Wren</strong><span data-boat-desc>7.9 m sloop, plans at 5.0 kn</span></div>
+      <ul class="nav-list">
+        <li><a href="/plans/new" aria-current="page">{{i:route}}Plan a passage</a></li>
+        <li><a href="/plans">{{i:saved}}Saved plans</a></li>
+        <li><a href="/boats">{{i:boat}}Boats</a></li>
+        <li><a href="/tides">{{i:tide}}Tide tables</a></li>
+        <li><a href="/settings">{{i:settings}}Settings</a></li>
+      </ul>
+      <div class="usage">
+        <p><strong>Free plan</strong>: <span data-usage>1 of 3</span> plans this month</p>
+        <a href="/plus" data-plus>Upgrade to Halyard Plus</a>
+      </div>
+    </nav>
+
+    <main id="main" tabindex="-1">
+      <div id="content">
+        <div class="page-head">
+          <div>
+            <h1>Lymington to Yarmouth and back</h1>
+            <p class="page-sub"><span>Saturday 24 October 2026</span><span aria-hidden="true">·</span><span data-boat-line>Wren, 7.9 m sloop</span><span aria-hidden="true">·</span><span>Forecast issued Fri 23 Oct, 18:00 BST</span><span class="tag">Sample data</span></p>
+          </div>
+          <div class="head-actions" data-primary-slot="head"></div>
+        </div>
+
+        <div id="notice" class="notice" role="status" hidden></div>
+
+        <div id="summary">
+          <p class="status verdict" id="verdict"></p>
+          <p class="answer" id="answer"></p>
+          <dl class="facts" id="facts">
+            <div class="fact">
+              <dt id="f-out-l">Leave Lymington</dt>
+              <dd><span class="big"><span class="stack" data-time="out"></span></span></dd>
+              <dd class="note" data-note="out"></dd>
+              <dd class="steppers">
+                <button class="btn btn-secondary btn-sm" type="button" data-step="out" data-by="-10">−10 min<span class="sr-only"> earlier, leave Lymington</span></button>
+                <button class="btn btn-secondary btn-sm" type="button" data-step="out" data-by="10">+10 min<span class="sr-only"> later, leave Lymington</span></button>
+              </dd>
+            </div>
+            <div class="fact">
+              <dt>Leave Yarmouth</dt>
+              <dd><span class="big"><span class="stack" data-time="back"></span></span></dd>
+              <dd class="note" data-note="back"></dd>
+              <dd class="steppers">
+                <button class="btn btn-secondary btn-sm" type="button" data-step="back" data-by="-10">−10 min<span class="sr-only"> earlier, leave Yarmouth</span></button>
+                <button class="btn btn-secondary btn-sm" type="button" data-step="back" data-by="10">+10 min<span class="sr-only"> later, leave Yarmouth</span></button>
+              </dd>
+            </div>
+            <div class="fact">
+              <dt>Home</dt>
+              <dd><span class="big"><span class="stack" data-time="home"></span></span></dd>
+              <dd class="note" data-note="home"></dd>
+            </div>
+            <div class="fact">
+              <dt>Passage</dt>
+              <dd><span class="big num">4.5 nm</span></dd>
+              <dd class="note" data-note="legs"></dd>
+            </div>
+          </dl>
+        </div>
+
+        <section class="panel" aria-labelledby="tl-h" id="timeline">
+          <div class="panel-head">
+            <h2 id="tl-h">Saturday on the water</h2>
+            <p id="tl-sub">Times BST. Drag a departure, or focus it and use the arrow keys.</p>
+          </div>
+          <div class="tl" id="tl">
+            <div class="tl-legend" id="tl-legend">
+              <span><i class="key" style="--key: var(--color-chart-tide)"></i>Tide</span>
+              <span><i class="key" style="--key: var(--color-chart-stream)"></i>Stream</span>
+              <span><i class="key" style="--key: var(--color-chart-wind)"></i>Mean wind</span>
+              <span><i class="key" style="--key: var(--color-chart-gust)"></i>Gust</span>
+              <span data-boat-key><i class="key dash"></i>Wren’s 20 kn limit</span>
+              <span data-boat-key><i class="key hatch"></i>Warning</span>
+              <span data-plan-key><i class="key box" style="--key: var(--color-chart-window); box-shadow: inset 0 2px 0 var(--color-chart-window-edge)"></i>Safe window</span>
+              <span data-plan-key><i class="key box" style="--key: var(--color-chart-leg)"></i>Your passage</span>
+            </div>
+            <div class="tl-rows" id="tl-rows">
+              <div class="tl-row" data-row="axis"><div class="tl-label" aria-hidden="true"></div><div class="tl-plot" id="p-axis"></div></div>
+              <div class="tl-row" data-row="tide"><div class="tl-label"><strong>Tide height</strong><span>Lymington, metres</span></div><div class="tl-plot" id="p-tide" role="img" aria-labelledby="tide-desc"></div></div>
+              <div class="tl-row" data-row="stream"><div class="tl-label"><strong>Tidal stream</strong><span>Needles Channel, knots</span></div><div class="tl-plot" id="p-stream" role="img" aria-labelledby="stream-desc"></div></div>
+              <div class="tl-row" data-row="wind"><div class="tl-label"><strong>Wind</strong><span id="wind-sub">From SW, knots</span></div><div class="tl-plot" id="p-wind" role="img" aria-labelledby="wind-desc"></div></div>
+              <div class="tl-row" data-row="plan"><div class="tl-label"><strong>Your plan</strong><span>Out and back</span></div><div class="tl-plot" id="p-plan"></div></div>
+            </div>
+            <div class="readout" id="readout" aria-hidden="true"></div>
+            <p class="sr-only" id="tide-desc">Tide height at Lymington, sample: low water 03:05 0.6 m, high water 09:20 2.8 m, low water 15:30 0.7 m, high water 21:40 2.9 m.</p>
+            <p class="sr-only" id="stream-desc">Tidal stream in the Needles Channel, sample: east-going until 09:40, west-going 09:40 to 15:50 up to 2.4 kn, east-going after 15:50 up to 2.6 kn.</p>
+            <p class="sr-only" id="wind-desc"></p>
+            <div class="tl-foot">
+              <p id="tl-keys"><span class="kbd">←</span> <span class="kbd">→</span> 5 min, with <span class="kbd">Shift</span> 30 min, <span class="kbd">Page Up</span> 1 hour</p>
+              <p id="tl-crop"></p>
+            </div>
+            <details class="hourly">
+              <summary>{{i:plus}}Show hourly values</summary>
+              <div class="table-wrap" tabindex="0" role="region" aria-label="Hourly values">
+                <table>
+                  <caption class="sr-only">Hourly tide, stream and wind for Saturday 24 October 2026, sample data, times BST</caption>
+                  <thead><tr><th scope="col">Time</th><th scope="col">Tide (m)</th><th scope="col">Stream (kn)</th><th scope="col">Wind (kn)</th><th scope="col">Gust (kn)</th><th scope="col">From</th></tr></thead>
+                  <tbody id="hourly"></tbody>
+                </table>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section class="panel" aria-labelledby="w-h" id="warnings-panel">
+          <div class="panel-head">
+            <h2 id="w-h">Warnings</h2>
+            <p id="w-count"></p>
+          </div>
+          <ol class="warnings" id="warnings"></ol>
+        </section>
+
+        <div class="lower">
+          <figure class="route-fig" id="route" aria-labelledby="route-cap">
+            <div class="map" id="map">
+              <svg viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+                <path class="land" d="M0 0H640V64C600 70 560 62 520 70C470 80 430 70 392 78C368 84 352 96 338 112L330 112C326 96 318 84 300 80C260 72 220 84 170 76C120 68 70 84 0 78Z"/>
+                <path class="land" d="M0 330C60 316 120 322 180 310C230 300 270 292 300 282C318 276 330 266 344 262L354 262C366 270 384 276 420 278C480 282 560 268 640 276V360H0Z"/>
+              </svg>
+              <div class="wipe"><div class="wipe-in">
+                <svg viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+                  <path class="route" d="M334 40L334 112L340 150L352 210L350 248L349 262"/>
+                  <circle class="wp" cx="334" cy="40" r="5"/>
+                  <circle class="wp" cx="334" cy="112" r="4"/>
+                  <circle class="wp" cx="346" cy="180" r="4"/>
+                  <circle class="wp" cx="351" cy="238" r="4"/>
+                  <circle class="wp" cx="349" cy="262" r="5"/>
+                </svg>
+              </div></div>
+              <span class="lbl place start" style="left: 3%; top: 8%">Mainland</span>
+              <span class="lbl place start" style="left: 3%; top: 86%">Isle of Wight</span>
+              <span class="lbl place start" style="left: 3%; top: 46%">The Solent</span>
+              <span class="lbl start" style="left: 55%; top: 8%"><strong>Lymington</strong> <span data-wp="0"></span></span>
+              <span class="lbl start" style="left: 55%; top: 28%">Jack in the Basket <span data-wp="1"></span></span>
+              <span class="lbl start" style="left: 57%; top: 47%">Mid-Solent <span data-wp="2"></span></span>
+              <span class="lbl start" style="left: 58%; top: 64%">Yarmouth entrance <span data-wp="3"></span></span>
+              <span class="lbl start" style="left: 58%; top: 74%"><strong>Yarmouth</strong> <span data-wp="4"></span></span>
+              <div class="north" aria-hidden="true"><svg viewBox="0 0 12 20"><path d="M6 1L10 12H2Z" fill="currentColor"/><path d="M6 12V19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>N</div>
+            </div>
+            <figcaption id="route-cap">Route schematic, not to scale and not for navigation. Times are for your out leg.</figcaption>
+            <table class="wp-table">
+              <caption>Timed waypoints</caption>
+              <thead><tr><th scope="col">Waypoint</th><th scope="col">Distance (nm)</th><th scope="col">Out</th><th scope="col">Back</th></tr></thead>
+              <tbody id="wp-body"></tbody>
+            </table>
+          </figure>
+
+          <div class="side">
+            <section aria-labelledby="tides-h">
+              <h2 id="tides-h">Lymington tides</h2>
+              <table>
+                <caption class="sr-only">High and low water at Lymington, Saturday 24 October 2026, sample, BST</caption>
+                <thead><tr><th scope="col">Event</th><th scope="col">Time (BST)</th><th scope="col">Height</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Low water</th><td>03:05</td><td>0.6 m</td></tr>
+                  <tr><th scope="row">High water</th><td>09:20</td><td>2.8 m</td></tr>
+                  <tr><th scope="row">Low water</th><td>15:30</td><td>0.7 m</td></tr>
+                  <tr><th scope="row">High water</th><td>21:40</td><td>2.9 m</td></tr>
+                  <tr><th scope="row">Sunrise</th><td>07:33</td><td></td></tr>
+                  <tr><th scope="row">Sunset</th><td>17:56</td><td></td></tr>
+                </tbody>
+              </table>
+            </section>
+            <section aria-labelledby="limits-h" id="limits">
+              <h2 id="limits-h">Wren’s limits</h2>
+              <dl class="limits">
+                <div><dt>True wind</dt><dd>up to 20 kn</dd></div>
+                <div><dt>Wind against tide</dt><dd>up to 12 kn</dd></div>
+                <div><dt>Arrive</dt><dd>by sunset</dd></div>
+                <div><dt>Planning speed</dt><dd>5.0 kn</dd></div>
+              </dl>
+              <a class="more" href="/boats/wren">Edit Wren’s limits</a>
+            </section>
+          </div>
+        </div>
+
+        <footer class="safety">
+          <p><strong>Halyard is a planning aid, not a navigation source.</strong> Every tide, stream, wind and route figure on this page is sample data.</p>
+          <p>Before you sail, check the UKHO tide tables, an Admiralty chart and the Met Office inshore waters forecast, and keep a proper lookout.</p>
+        </footer>
+      </div>
+      <!-- Loading: the layout itself, bars at text height -->
+      <div id="skeleton" hidden>
+        <div class="page-head">
+          <div>
+            <h1>Lymington to Yarmouth and back</h1>
+            <p class="page-sub"><span>Saturday 24 October 2026</span><span aria-hidden="true">·</span><span>Wren, 7.9 m sloop</span><span class="tag">Sample data</span></p>
+          </div>
+        </div>
+        <p class="status verdict">Loading the forecast and tides</p>
+        <p class="answer"><span class="sk line"></span><span class="sk short" style="margin-block-start: var(--space-3)"></span></p>
+        <dl class="facts">
+          <div class="fact"><dt>Leave Lymington</dt><dd><span class="sk big"></span><span class="sk short"></span></dd></div>
+          <div class="fact"><dt>Leave Yarmouth</dt><dd><span class="sk big"></span><span class="sk short"></span></dd></div>
+          <div class="fact"><dt>Home</dt><dd><span class="sk big"></span><span class="sk short"></span></dd></div>
+          <div class="fact"><dt>Passage</dt><dd><span class="sk big"></span><span class="sk short"></span></dd></div>
+        </dl>
+        <section class="panel" aria-label="Timeline loading">
+          <div class="panel-head"><h2>Saturday on the water</h2></div>
+          <div class="tl">
+            <div class="tl-rows">
+              <div class="tl-row" data-row="axis"><div class="tl-label" aria-hidden="true"></div><div class="tl-plot"></div></div>
+              <div class="tl-row" data-row="tide"><div class="tl-label"><strong>Tide height</strong></div><div class="tl-plot"><span class="sk-plot"></span></div></div>
+              <div class="tl-row" data-row="stream"><div class="tl-label"><strong>Tidal stream</strong></div><div class="tl-plot"><span class="sk-plot"></span></div></div>
+              <div class="tl-row" data-row="wind"><div class="tl-label"><strong>Wind</strong></div><div class="tl-plot"><span class="sk-plot"></span></div></div>
+              <div class="tl-row" data-row="plan"><div class="tl-label"><strong>Your plan</strong></div><div class="tl-plot"><span class="sk-plot"></span></div></div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+    </main>
+
+    <div class="savebar" id="savebar">
+      <p class="sum" id="savebar-sum"></p>
+      <div data-primary-slot="bar"></div>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" hidden>{{i:clear}}<span id="toast-text"></span></div>
+<p class="sr-only" aria-live="polite" id="live"></p>
+<script>{{MODEL}}</script>
+<script>{{SCRIPT}}</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+Claims inventory: kb/tests/fresh/app/plan.html (78 strings to check against the data)
+
+  1  7.9 m sloop, plans at 5.0 kn
+  2  Free plan: 1 of 3 plans this month
+  3  Saturday 24 October 2026
+  4  Wren, 7.9 m sloop
+  5  Forecast issued Fri 23 Oct, 18:00 BST
+  6  Inside Wren’s limits, 2 cautions
+  7  Leave Lymington at 11:50 and Yarmouth at 16:44. The stream is with you both ways and the mean wind stays inside Wren’s 20 kn limit. The return meets gusts to 23 kn and gets you home 25 min before sunset.
+  8  11:50
+  9  In the out window 10:05 to 12:35
+ 10  −10 min
+ 11  +10 min
+ 12  16:44
+ 13  In the back window 16:15 to 17:10
+ 14  17:31
+ 15  25 min before sunset (17:56)
+ 16  4.5 nm
+ 17  Each way: 44 min out, 47 min back
+ 18  Saturday on the water
+ 19  Wren’s 20 kn limit
+ 20  00:00
+ 21  02:00
+ 22  04:00
+ 23  06:00
+ 24  08:00
+ 25  10:00
+ 26  12:00
+ 27  14:00
+ 28  16:00
+ 29  18:00
+ 30  20:00
+ 31  22:00
+ 32  Sunrise 07:33
+ 33  Sunset 17:56
+ 34  LW 03:05, 0.6 m
+ 35  HW 09:20, 2.8 m
+ 36  LW 15:30, 0.7 m
+ 37  HW 21:40, 2.9 m
+ 38  E 2.3 kn
+ 39  W 2.4 kn
+ 40  E 2.6 kn
+ 41  1
+ 42  2
+ 43  Gust 23 kn
+ 44  Limit 20 kn
+ 45  3
+ 46  Out 11:50 to 12:34
+ 47  Back 16:44 to 17:31
+ 48  Tide height at Lymington, sample: low water 03:05 0.6 m, high water 09:20 2.8 m, low water 15:30 0.7 m, high water 21:40 2.9 m.
+ 49  Tidal stream in the Needles Channel, sample: east-going until 09:40, west-going 09:40 to 15:50 up to 2.4 kn, east-going after 15:50 up to 2.6 kn.
+ 50  Wind, sample forecast, from the south-west: mean 9 kn at sunrise rising to 18 kn at 17:00, gusts up to 23 kn. Wind against tide over Wren’s 12 kn limit 13:20 to 15:25. Gusts over 20 kn 16:00 to 19:00.
+ 51  ← → 5 min, with Shift 30 min, Page Up 1 hour
+ 52  3 warnings, 2 affect your plan
+ 53  Wind against tide, 13:20 to 15:25
+ 54  The west-going stream runs against the SW wind: up to 15 kn of wind against tide. Wren’s limit is 12 kn.
+ 55  Gusts above 20 kn, 16:00 to 19:00
+ 56  Gusts to 23 kn. The mean wind stays at 15 to 18 kn, inside Wren’s 20 kn limit.
+ 57  16:44 to 17:31: reef before you leave Yarmouth
+ 58  Home 25 min before sunset
+ 59  Wren’s limit is to arrive by sunset, 17:56. Halyard flags any arrival with less than 30 min to spare, because a late start or a slow beat home uses it up.
+ 60  home 17:31, 25 min before sunset
+ 61  Lymington 11:50
+ 62  Jack in the Basket 12:01
+ 63  Mid-Solent 12:16
+ 64  Yarmouth entrance 12:32
+ 65  Yarmouth 12:34
+ 66  Lymington Yacht Haven 0.0 11:50 17:31
+ 67  Jack in the Basket 1.1 12:01 17:20
+ 68  Mid-Solent 2.6 12:16 17:05
+ 69  Yarmouth entrance 4.2 12:32 16:48
+ 70  Yarmouth Harbour 4.5 12:34 16:44
+ 71  High and low water at Lymington, Saturday 24 October 2026, sample, BST
+ 72  Low water 03:05 0.6 m
+ 73  High water 09:20 2.8 m
+ 74  Low water 15:30 0.7 m
+ 75  High water 21:40 2.9 m
+ 76  up to 20 kn
+ 77  up to 12 kn
+ 78  5.0 kn
+
+No mechanical flags. Now tick every line above against its source: chart data, price list, policy, log.

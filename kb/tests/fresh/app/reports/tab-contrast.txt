@@ -1,0 +1,14 @@
+#1b4088 on #ffffff: 9.83:1
+#1b4088 on #f1f3f4: 8.83:1
+#1b4088 on #dee1e6: 7.50:1
+#1b4088 on #35363a: 1.23:1
+#1b4088 on #202124: 1.64:1
+#1b4088 on #1e1e1e: 1.70:1
+min 1.23:1 -> FAIL (use a two-tone mark on its own field)
+#ffffff on #ffffff: 1.00:1
+#ffffff on #f1f3f4: 1.11:1
+#ffffff on #dee1e6: 1.31:1
+#ffffff on #35363a: 12.07:1
+#ffffff on #202124: 16.10:1
+#ffffff on #1e1e1e: 16.67:1
+min 1.00:1 -> FAIL (use a two-tone mark on its own field)

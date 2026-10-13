@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en-GB" data-lint-page="state-sheet">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Halyard plan screen, state sheet</title>
+<meta name="description" content="Every control and panel state of the Halyard plan screen, light and dark. Sample data.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" type="image/svg+xml" href="{{FAVICON}}">
+<style>{{STYLE}}</style>
+</head>
+<body>
+<main id="main" style="background: var(--color-surface)">
+  <div class="page-head">
+    <div>
+      <h1>Plan screen, state sheet</h1>
+      <p class="page-sub"><span>Every state of every control on <a href="plan.html">plan.html</a></span><span class="tag">Sample data</span></p>
+    </div>
+  </div>
+
+  <div class="sheet" style="margin-block-start: var(--space-7)">
+    <section aria-labelledby="s-btn">
+      <h2 id="s-btn">Buttons</h2>
+      <div class="sheet-row">
+        <div class="sheet-cell"><span class="cap">Rest</span><button class="btn btn-primary" type="button"><span class="label">Save plan</span></button></div>
+        <div class="sheet-cell"><span class="cap">Hover</span><button class="btn btn-primary is-hover" type="button"><span class="label">Save plan</span></button></div>
+        <div class="sheet-cell"><span class="cap">Focus</span><button class="btn btn-primary is-focus" type="button"><span class="label">Save plan</span></button></div>
+        <div class="sheet-cell"><span class="cap">Pressed</span><button class="btn btn-primary is-pressed" type="button"><span class="label">Save plan</span></button></div>
+        <div class="sheet-cell"><span class="cap">Busy</span><button class="btn btn-primary" type="button" aria-busy="true" aria-disabled="true"><span class="label">Save plan</span><span class="spinner" aria-hidden="true"></span></button></div>
+        <div class="sheet-cell"><span class="cap">Saved (disabled)</span><button class="btn btn-secondary" type="button" aria-disabled="true">{{i:check}}<span class="label">Plan saved</span></button></div>
+      </div>
+      <div class="sheet-row" style="margin-block-start: var(--space-5)">
+        <div class="sheet-cell"><span class="cap">Secondary rest</span><button class="btn btn-secondary btn-sm" type="button">+10 min</button></div>
+        <div class="sheet-cell"><span class="cap">Hover</span><button class="btn btn-secondary btn-sm is-hover" type="button">+10 min</button></div>
+        <div class="sheet-cell"><span class="cap">Focus</span><button class="btn btn-secondary btn-sm is-focus" type="button">+10 min</button></div>
+        <div class="sheet-cell"><span class="cap">Pressed</span><button class="btn btn-secondary btn-sm is-pressed" type="button">+10 min</button></div>
+        <div class="sheet-cell"><span class="cap">At the limit (disabled)</span><button class="btn btn-secondary btn-sm" type="button" aria-disabled="true">+10 min</button></div>
+        <div class="sheet-cell"><span class="cap">Retry</span><button class="btn btn-primary" type="button">{{i:retry}}<span class="label">Retry forecast</span></button></div>
+      </div>
+      <div class="sheet-row" style="margin-block-start: var(--space-5)">
+        <div class="sheet-cell"><span class="cap">Menu, closed</span><button class="btn btn-ghost btn-sm" type="button" aria-expanded="false">{{i:menu}}Menu</button></div>
+        <div class="sheet-cell"><span class="cap">Menu, open</span><button class="btn btn-ghost btn-sm" type="button" aria-expanded="true">{{i:close}}Close</button></div>
+        <div class="sheet-cell"><span class="cap">Ghost hover</span><button class="btn btn-ghost btn-sm is-hover" type="button">{{i:menu}}Menu</button></div>
+        <div class="sheet-cell"><span class="cap">Ghost focus</span><button class="btn btn-ghost btn-sm is-focus" type="button">{{i:menu}}Menu</button></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="s-field">
+      <h2 id="s-field">Fields (Wren’s limits)</h2>
+      <div class="sheet-row" style="align-items: start">
+        <div class="field"><label for="f1">Planning speed (kn)</label><input class="input" id="f1" inputmode="decimal" value="5.0" aria-describedby="f1h"><span class="field-hint" id="f1h">Speed through the water you can hold for hours</span></div>
+        <div class="field"><label for="f2">Wind against tide (kn)</label><input class="input is-focus" id="f2" inputmode="decimal" value="12"><span class="field-hint">Focus</span></div>
+        <div class="field"><label for="f3">True wind limit (kn)</label><input class="input" id="f3" inputmode="decimal" value="45" aria-invalid="true" aria-describedby="f3e"><span class="field-error" id="f3e">{{i:danger}}Enter 5 to 40 kn</span></div>
+        <div class="field"><label for="f4">Arrive by</label><input class="input" id="f4" value="Sunset" disabled><span class="field-hint">Disabled: set by the day</span></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="s-handle">
+      <h2 id="s-handle">Departure handle</h2>
+      <div class="sheet-row">
+        <div class="sheet-cell"><span class="cap">Rest</span><div class="lane"><span class="leg" style="--x: 100px; --w: 40px"></span><div class="handle" style="--x: 100px" role="slider" tabindex="0" aria-label="Leave Lymington, rest" aria-valuemin="360" aria-valuemax="900" aria-valuenow="710" aria-valuetext="11:50">{{i:grip}}</div></div></div>
+        <div class="sheet-cell"><span class="cap">Hover</span><div class="lane"><span class="leg" style="--x: 100px; --w: 40px"></span><div class="handle is-hover" style="--x: 100px" role="slider" tabindex="0" aria-label="Leave Lymington, hover" aria-valuemin="360" aria-valuemax="900" aria-valuenow="710" aria-valuetext="11:50">{{i:grip}}</div></div></div>
+        <div class="sheet-cell"><span class="cap">Focus</span><div class="lane"><span class="leg" style="--x: 100px; --w: 40px"></span><div class="handle is-focus" style="--x: 100px" role="slider" tabindex="0" aria-label="Leave Lymington, focus" aria-valuemin="360" aria-valuemax="900" aria-valuenow="710" aria-valuetext="11:50">{{i:grip}}</div></div></div>
+        <div class="sheet-cell"><span class="cap">Dragging</span><div class="lane"><span class="leg" style="--x: 100px; --w: 40px"></span><div class="handle" data-dragging style="--x: 100px" role="slider" tabindex="0" aria-label="Leave Lymington, dragging" aria-valuemin="360" aria-valuemax="900" aria-valuenow="710" aria-valuetext="11:50">{{i:grip}}</div></div></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="s-nav">
+      <h2 id="s-nav">Navigation and usage</h2>
+      <div class="sheet-row" style="align-items: start">
+        <ul class="nav-list" style="inline-size: 220px; padding-inline: var(--space-3)">
+          <li><a href="#s-nav" aria-current="page">{{i:route}}Plan a passage (current)</a></li>
+          <li><a href="#s-nav" class="is-hover">{{i:saved}}Saved plans (hover)</a></li>
+          <li><a href="#s-nav" class="is-focus">{{i:boat}}Boats (focus)</a></li>
+          <li><a href="#s-nav">{{i:tide}}Tide tables (rest)</a></li>
+        </ul>
+        <div class="usage" style="inline-size: 220px; margin: 0; border: 0; padding: 0">
+          <p><strong>Free plan</strong>: 0 of 3 plans this month</p>
+          <div class="meter" role="meter" aria-label="Plans used, empty" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0"><span style="inline-size: 0%"></span></div>
+          <p><strong>Free plan</strong>: 1 of 3 plans this month</p>
+          <div class="meter" role="meter" aria-label="Plans used, one" aria-valuemin="0" aria-valuemax="3" aria-valuenow="1"><span style="inline-size: 33.333%"></span></div>
+          <p><strong>Free plan</strong>: 3 of 3 plans this month</p>
+          <div class="meter" role="meter" aria-label="Plans used, full" aria-valuemin="0" aria-valuemax="3" aria-valuenow="3"><span style="inline-size: 100%"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="s-status">
+      <h2 id="s-status">Verdicts and warning rows</h2>
+      <div class="sheet-row">
+        <p class="status" data-tone="ok">{{i:clear}}<span>Inside Wren’s limits</span></p>
+        <p class="status" data-tone="warn">{{i:warning}}<span>Inside Wren’s limits, 2 cautions</span></p>
+        <p class="status" data-tone="bad">{{i:danger}}<span>Outside Wren’s limits</span></p>
+        <p class="status" data-tone="unknown">{{i:info}}<span>Wind not checked</span></p>
+      </div>
+      <ol class="warnings" style="margin-block-start: var(--space-5)">
+        <li class="warn"><div class="sev"><span class="badge" data-tone="bad" aria-hidden="true">1</span></div><div><h3>Wind against tide, 13:20 to 15:25</h3><p>Over Wren’s 12 kn limit. Clear of the plan.</p></div><p class="effect"><span class="word" data-tone="ok">{{i:clear}}Clear of your plan</span><span>you are ashore at Yarmouth</span></p></li>
+        <li class="warn"><div class="sev"><span class="badge" data-tone="warn" aria-hidden="true">2</span></div><div><h3>Gusts above 20 kn, 16:00 to 19:00</h3><p>Caution: affects a leg.</p></div><p class="effect"><span class="word" data-tone="warn">{{i:warning}}Affects your return</span><span>16:44 to 17:31: reef before you leave Yarmouth</span></p></li>
+        <li class="warn"><div class="sev"><span class="badge" data-tone="bad" aria-hidden="true">3</span></div><div><h3>Home 12 min after sunset</h3><p>Danger: outside a limit.</p></div><p class="effect"><span class="word" data-tone="bad">{{i:danger}}Outside Wren’s limit</span><span>home 18:08, 12 min after sunset</span></p></li>
+        <li class="warn" data-flash><div class="sev"><span class="badge" data-tone="unknown" aria-hidden="true">1</span></div><div><h3>Wind against tide</h3><p>Not checked, and the one-off flash a stepper press gives a changed row.</p></div><p class="effect"><span class="word" data-tone="unknown">{{i:info}}Not checked</span><span>the wind forecast didn’t load</span></p></li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="s-notice">
+      <h2 id="s-notice">Notices, panels and toast</h2>
+      <div class="notice" data-tone="ok">{{i:clear}}<div class="body"><p><strong>Plan saved.</strong> Find it in <a href="#s-notice">Saved plans</a>.</p><p class="muted">Still open: gusts to 23 kn on the return; home 25 min before sunset.</p></div></div>
+      <div class="notice" data-tone="bad">{{i:danger}}<div class="body"><p><strong>The wind forecast didn’t load.</strong> Tide, stream and daylight are up to date, so the windows below check those only.</p></div></div>
+      <div class="notice">{{i:info}}<div class="body"><h3>Add your boat to see your windows</h3><ol class="steps-list"><li>Add your boat: name, length and planning speed.</li><li>Set its limits.</li></ol></div></div>
+      <div class="sheet-row" style="margin-block-start: var(--space-5); align-items: start">
+        <div class="sheet-cell"><span class="cap">Wind row, failed</span><div class="tl-plot" style="--h: 64px; inline-size: 320px"><div class="row-error">{{i:danger}}<span>Wind forecast not loaded.</span></div></div></div>
+        <div class="sheet-cell" aria-busy="true"><span class="cap">Loading row</span><div class="tl-plot" style="--h: 64px; inline-size: 320px"><span class="sk-plot"></span></div></div>
+        <div class="sheet-cell"><span class="cap">Plan lane, no window</span><div class="tl-plot" style="--h: 64px; inline-size: 320px"><p class="lane-msg" data-tone="bad">{{i:danger}}No safe window: wind over 20 kn.</p></div></div>
+      </div>
+      <div class="toast" role="status" style="position: static; margin: var(--space-5) 0 0">{{i:clear}}<span>Plan saved: out 11:50, back 16:44</span></div>
+    </section>
+  </div>
+</main>
+<script>
+  // Sheet controls only record a click, so every control does something visible to the lint dead-control check.
+  document.addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) b.toggleAttribute('data-clicked'); });
+</script>
+</body>
+</html>

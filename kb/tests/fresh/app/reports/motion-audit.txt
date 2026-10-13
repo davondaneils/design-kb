@@ -1,0 +1,12 @@
+pass  plan-1-stepper-slides-leg  (13 anim, 300 ms; reduce 1 anim)  kb/tests/fresh/app/reports/motion/plan-1-stepper-slides-leg.png
+pass  plan-2-stepper-rolls-time  (13 anim, 300 ms; reduce 1 anim)  kb/tests/fresh/app/reports/motion/plan-2-stepper-rolls-time.png
+pass  plan-3-stepper-flashes-changed-warning  (15 anim, 300 ms; reduce 1 anim)  kb/tests/fresh/app/reports/motion/plan-3-stepper-flashes-changed-warning.png
+pass  plan-4-arrow-key-repeat  (0 anim, 0 ms; reduce 0 anim)  kb/tests/fresh/app/reports/motion/plan-4-arrow-key-repeat.png
+pass  plan-5-shift-arrow-and-page-keys  (0 anim, 0 ms; reduce 0 anim)  kb/tests/fresh/app/reports/motion/plan-5-shift-arrow-and-page-keys.png
+pass  plan-6-drag-departure  (0 anim, 0 ms; reduce 0 anim)  kb/tests/fresh/app/reports/motion/plan-6-drag-departure.png
+pass  plan-7-warning-hover-highlights-span  (1 anim, 150 ms; reduce 1 anim)  kb/tests/fresh/app/reports/motion/plan-7-warning-hover-highlights-span.png
+pass  plan-8-save  (2 anim, 1000 ms; reduce 1 anim)  kb/tests/fresh/app/reports/motion/plan-8-save.png
+pass  plan-9-phone-menu  (2 anim, 300 ms; reduce 1 anim)  kb/tests/fresh/app/reports/motion/plan-9-phone-menu.png
+pass  plan-10-route-reveal  (2 anim, 600 ms; reduce 0 anim)  kb/tests/fresh/app/reports/motion/plan-10-route-reveal.png
+pass  plan-11-hourly-toggle  (1 anim, 200 ms; reduce 0 anim)  kb/tests/fresh/app/reports/motion/plan-11-hourly-toggle.png
+PASS: every filmed animation is on the motion tokens

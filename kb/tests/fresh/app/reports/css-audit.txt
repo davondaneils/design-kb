@@ -1,0 +1,11 @@
+kb/tests/fresh/app/plan.html: PASS  (320 style rules, 1221 declarations, 255 token declarations)
+  layers: none; unlayered rules 320
+  container queries 3 (containers 1), :has() rules 0, media queries 10 distinct, !important 2, inline style attributes 61
+  warn vh-unit: 2
+         .app { min-block-size: 100vh }
+         .sidebar { block-size: 100vh }
+  warn motion-unguarded: 5
+         .btn { transition: background-color var(--motion-hover), color var(--motion-hover), border-color var(--motion-hover), transform var(--motion
+         .btn .label { transition: opacity var(--duration-instant) var(--ease-standard) }
+         .nav-list a { transition: background-color var(--motion-hover), color var(--motion-hover) }
+         .span::after { transition: opacity var(--duration-fast) var(--ease-standard) }

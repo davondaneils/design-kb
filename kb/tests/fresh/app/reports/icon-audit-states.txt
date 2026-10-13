@@ -1,0 +1,17 @@
+icons: 14 distinct (29 on page)
+  size  stroke  pad   ink   soft@1x soft@2x  flags   where
+    16  1.50    2.5    8%   90%     42%    volume  svg.i x1
+    16  1.50    2.0   19%   64%     33%    -  svg.i x1
+    16  1.50    2.0   20%   72%     24%    -  svg.i x3
+    16  1.50    3.0   14%   69%     40%    -  svg.i x1
+    12  solid   1.0   47%   43%     24%    -  svg.i x1
+    12  1.50    3.0    9%  100%     67%    -  svg.i x4
+    16  1.50    1.5   28%   58%     31%    volume  svg.i x1
+    16  1.50    2.0   21%   54%     10%    -  svg.i x1
+    16  1.50    1.5   29%   52%     15%    volume  svg.i x1
+    16  1.50    1.5   16%   71%     38%    -  svg.i x1
+    16  solid   1.5   42%   31%     20%    -  svg.i x4
+    16  solid   1.0   35%   42%     24%    -  svg.i x2
+    16  solid   1.5   47%   33%     19%    -  svg.i x5
+    16  solid   1.5   44%   29%     18%    -  svg.i x3
+PASS (volume flags are prompts to look, not fails)

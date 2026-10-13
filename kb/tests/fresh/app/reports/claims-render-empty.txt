@@ -1,0 +1,39 @@
+Claims inventory: kb/tests/fresh/app/plan.html?state=empty (35 strings to check against the data)
+
+  1  Free plan: 0 of 3 plans this month
+  2  Saturday 24 October 2026
+  3  Forecast issued Fri 23 Oct, 18:00 BST
+  4  Halyard finds windows from your boat’s speed and limits. The tide, stream and wind below are for Saturday 24 October (sample).
+  5  Saturday on the water
+  6  00:00
+  7  02:00
+  8  04:00
+  9  06:00
+ 10  08:00
+ 11  10:00
+ 12  12:00
+ 13  14:00
+ 14  16:00
+ 15  18:00
+ 16  20:00
+ 17  22:00
+ 18  Sunrise 07:33
+ 19  Sunset 17:56
+ 20  LW 03:05, 0.6 m
+ 21  HW 09:20, 2.8 m
+ 22  LW 15:30, 0.7 m
+ 23  HW 21:40, 2.9 m
+ 24  E 2.3 kn
+ 25  W 2.4 kn
+ 26  E 2.6 kn
+ 27  Gust 23 kn
+ 28  Tide height at Lymington, sample: low water 03:05 0.6 m, high water 09:20 2.8 m, low water 15:30 0.7 m, high water 21:40 2.9 m.
+ 29  Tidal stream in the Needles Channel, sample: east-going until 09:40, west-going 09:40 to 15:50 up to 2.4 kn, east-going after 15:50 up to 2.6 kn.
+ 30  Wind, sample forecast, from the south-west: mean 9 kn at sunrise rising to 18 kn at 17:00, gusts up to 23 kn. Gusts over 20 kn 16:00 to 19:00.
+ 31  High and low water at Lymington, Saturday 24 October 2026, sample, BST
+ 32  Low water 03:05 0.6 m
+ 33  High water 09:20 2.8 m
+ 34  Low water 15:30 0.7 m
+ 35  High water 21:40 2.9 m
+
+No mechanical flags. Now tick every line above against its source: chart data, price list, policy, log.

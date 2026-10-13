@@ -1,0 +1,2 @@
+measured kb/tests/fresh/app/plan.html at 1440: status 200
+measured kb/tests/fresh/app/plan.html at 390: status 200

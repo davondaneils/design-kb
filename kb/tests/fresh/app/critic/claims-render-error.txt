@@ -1,0 +1,78 @@
+Claims inventory: kb/tests/fresh/app/plan.html?state=error (74 strings to check against the data)
+
+  1  7.9 m sloop, plans at 5.0 kn
+  2  Free plan: 1 of 3 plans this month
+  3  Saturday 24 October 2026
+  4  Wren, 7.9 m sloop
+  5  Forecast issued Fri 23 Oct, 18:00 BST
+  6  The wind forecast didn’t load. Tide, stream and daylight are up to date, so the windows below check those only.
+  7  Halyard tries again on its own every 5 minutes.
+  8  Leave Lymington at 11:50 and Yarmouth at 16:44. The stream is with you both ways. The wind forecast didn’t load, so this checks the tide and daylight only: retry before you decide.
+  9  11:50
+ 10  In the tide out window 10:05 to 14:35
+ 11  −10 min
+ 12  +10 min
+ 13  16:44
+ 14  In the tide back window 16:15 to 17:10
+ 15  17:31
+ 16  25 min before sunset (17:56)
+ 17  4.5 nm
+ 18  Each way: 44 min out, 47 min back
+ 19  Saturday on the water
+ 20  Wren’s 20 kn limit
+ 21  00:00
+ 22  02:00
+ 23  04:00
+ 24  06:00
+ 25  08:00
+ 26  10:00
+ 27  12:00
+ 28  14:00
+ 29  16:00
+ 30  18:00
+ 31  20:00
+ 32  22:00
+ 33  Sunrise 07:33
+ 34  Sunset 17:56
+ 35  LW 03:05, 0.6 m
+ 36  HW 09:20, 2.8 m
+ 37  LW 15:30, 0.7 m
+ 38  HW 21:40, 2.9 m
+ 39  E 2.3 kn
+ 40  W 2.4 kn
+ 41  E 2.6 kn
+ 42  Wind forecast not loaded. Tide and stream are up to date.
+ 43  3
+ 44  Out 11:50 to 12:34
+ 45  Back 16:44 to 17:31
+ 46  Tide height at Lymington, sample: low water 03:05 0.6 m, high water 09:20 2.8 m, low water 15:30 0.7 m, high water 21:40 2.9 m.
+ 47  Tidal stream in the Needles Channel, sample: east-going until 09:40, west-going 09:40 to 15:50 up to 2.4 kn, east-going after 15:50 up to 2.6 kn.
+ 48  ← → 5 min, with Shift 30 min, Page Up 1 hour
+ 49  3 warnings, 2 not checked
+ 50  1
+ 51  Halyard checks this against Wren’s 12 kn limit once the wind forecast loads.
+ 52  2
+ 53  Halyard checks gusts above 20 kn once the wind forecast loads.
+ 54  Home 25 min before sunset
+ 55  Wren’s limit is to arrive by sunset, 17:56. Halyard flags any arrival with less than 30 min to spare, because a late start or a slow beat home uses it up.
+ 56  home 17:31, 25 min before sunset
+ 57  Lymington 11:50
+ 58  Jack in the Basket 12:01
+ 59  Mid-Solent 12:16
+ 60  Yarmouth entrance 12:32
+ 61  Yarmouth 12:34
+ 62  Lymington Yacht Haven 0.0 11:50 17:31
+ 63  Jack in the Basket 1.1 12:01 17:20
+ 64  Mid-Solent 2.6 12:16 17:05
+ 65  Yarmouth entrance 4.2 12:32 16:48
+ 66  Yarmouth Harbour 4.5 12:34 16:44
+ 67  High and low water at Lymington, Saturday 24 October 2026, sample, BST
+ 68  Low water 03:05 0.6 m
+ 69  High water 09:20 2.8 m
+ 70  Low water 15:30 0.7 m
+ 71  High water 21:40 2.9 m
+ 72  up to 20 kn
+ 73  up to 12 kn
+ 74  5.0 kn
+
+No mechanical flags. Now tick every line above against its source: chart data, price list, policy, log.

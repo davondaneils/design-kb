@@ -1,0 +1,1433 @@
+{
+ "url": "file:///home/user/design-kb/kb/tests/fresh/app/plan.html",
+ "measuredAt": "2026-10-13T21:42:59.263Z",
+ "method": "Playwright Chromium, getComputedStyle on visible elements, light scheme, after scroll-through and fonts.ready",
+ "widths": {
+  "390": {
+   "status": 200,
+   "finalUrl": "file:///home/user/design-kb/kb/tests/fresh/app/plan.html",
+   "width": 390,
+   "h1Style": {
+    "font": "\"Inter Halyard\" 20px/25px w600 ls -0.1px",
+    "color": "#1f2225",
+    "top": 72,
+    "width": 358,
+    "align": "start"
+   },
+   "title": "Plan: Lymington to Yarmouth, Sat 24 Oct · Halyard",
+   "description": "Passage plan for Wren, Lymington to Yarmouth and back on Saturday 24 October 2026: windows, warnings and timed route. Sample data.",
+   "pageHeight": 3251,
+   "bodyBg": "#f6f7f8",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "Inter Halyard 400 620 normal",
+    "Inter Halyard Fallback normal normal"
+   ],
+   "families": [
+    {
+     "v": "\"Inter Halyard\", \"Inter Halyard Fallback\"",
+     "n": 4033
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "14px / lh 21px / w400 / ls normal",
+     "n": 2201,
+     "ex": "a: Skip to the plan"
+    },
+    {
+     "v": "14px / lh 21px / w500 / ls normal",
+     "n": 411,
+     "ex": "span: Inside Wren’s limits, 2 cautions"
+    },
+    {
+     "v": "12px / lh 18px / w400 / ls normal",
+     "n": 345,
+     "ex": "span: Tide"
+    },
+    {
+     "v": "14px / lh 21px / w600 / ls normal",
+     "n": 213,
+     "ex": "h3: Wind against tide, 13:20 to 15:25"
+    },
+    {
+     "v": "12px / lh 16px / w400 / ls normal",
+     "n": 206,
+     "ex": "span: 06:00"
+    },
+    {
+     "v": "16px / lh 24px / w400 / ls normal",
+     "n": 192,
+     "ex": "p: Leave Lymington at and Yarmouth at . The stream is with you "
+    },
+    {
+     "v": "14px / lh 14px / w500 / ls normal",
+     "n": 122,
+     "ex": "span: Menu"
+    },
+    {
+     "v": "12px / lh 18px / w500 / ls normal",
+     "n": 84,
+     "ex": "span: Sample data"
+    },
+    {
+     "v": "12px / lh 16px / w600 / ls normal",
+     "n": 45,
+     "ex": "strong: HW"
+    },
+    {
+     "v": "16px / lh 24px / w600 / ls normal",
+     "n": 38,
+     "ex": "strong: 11:50"
+    },
+    {
+     "v": "12px / lh 18px / w600 / ls normal",
+     "n": 37,
+     "ex": "strong: Tide height"
+    },
+    {
+     "v": "20px / lh 25px / w600 / ls -0.1px",
+     "n": 30,
+     "ex": "h1: Lymington to Yarmouth and back"
+    },
+    {
+     "v": "16px / lh 20px / w600 / ls normal",
+     "n": 29,
+     "ex": "h2: Saturday on the water"
+    },
+    {
+     "v": "14px / lh 17.5px / w700 / ls normal",
+     "n": 22,
+     "ex": "strong: Out 11:50 · Back 16:44"
+    },
+    {
+     "v": "14px / lh 17.5px / w400 / ls normal",
+     "n": 22,
+     "ex": "span: Home 17:31, 2 cautions"
+    },
+    {
+     "v": "25px / lh 31.25px / w600 / ls -0.25px",
+     "n": 21,
+     "ex": "span: 11:50"
+    },
+    {
+     "v": "14px / lh 14px / w600 / ls normal",
+     "n": 9,
+     "ex": "span: Save plan"
+    },
+    {
+     "v": "12px / lh 12px / w600 / ls normal",
+     "n": 6,
+     "ex": "span: 1"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#1f2225",
+     "n": 2342
+    },
+    {
+     "v": "#666d74",
+     "n": 1529
+    },
+    {
+     "v": "#7a4d00",
+     "n": 58
+    },
+    {
+     "v": "#026a3b",
+     "n": 53
+    },
+    {
+     "v": "#3566c7",
+     "n": 36
+    },
+    {
+     "v": "#ffffff",
+     "n": 15
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#1f2225 on #ffffff",
+     "n": 2296,
+     "ex": "15.98:1"
+    },
+    {
+     "v": "#666d74 on #ffffff",
+     "n": 1507,
+     "ex": "5.24:1"
+    },
+    {
+     "v": "#7a4d00 on #ffffff",
+     "n": 58,
+     "ex": "7.27:1"
+    },
+    {
+     "v": "#026a3b on #ffffff",
+     "n": 53,
+     "ex": "6.71:1"
+    },
+    {
+     "v": "#1f2225 on #f6f7f8",
+     "n": 46,
+     "ex": "14.9:1"
+    },
+    {
+     "v": "#3566c7 on #ffffff",
+     "n": 36,
+     "ex": "5.42:1"
+    },
+    {
+     "v": "#666d74 on #f6f7f8",
+     "n": 22,
+     "ex": "4.89:1"
+    },
+    {
+     "v": "#ffffff on #1b4088",
+     "n": 9,
+     "ex": "9.83:1"
+    },
+    {
+     "v": "#ffffff on #7a4d00",
+     "n": 4,
+     "ex": "7.27:1"
+    },
+    {
+     "v": "#ffffff on #c2272d",
+     "n": 2,
+     "ex": "5.8:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#ffffff",
+     "n": 1608
+    },
+    {
+     "v": "#f6f7f8",
+     "n": 46
+    },
+    {
+     "v": "#1b4088 a0.07",
+     "n": 11
+    },
+    {
+     "v": "repeating-linear-gradient(135deg, oklch(0.7197 0.149788 77.1622 / 0.45) 0px, oklch(0.7197 0.149788 77.1622 / 0.45) 1.5px, rgba(0, 0, 0, 0) 1",
+     "n": 7
+    },
+    {
+     "v": "#d4f2dd",
+     "n": 6
+    },
+    {
+     "v": "#1b4088",
+     "n": 5
+    },
+    {
+     "v": "repeating-linear-gradient(135deg, oklch(0.720767 0.173618 25.2234 / 0.45) 0px, oklch(0.720767 0.173618 25.2234 / 0.45) 1.5px, rgba(0, 0, 0, ",
+     "n": 5
+    },
+    {
+     "v": "#7a4d00",
+     "n": 1
+    },
+    {
+     "v": "#c2272d",
+     "n": 1
+    },
+    {
+     "v": "repeating-linear-gradient(135deg, rgb(216, 150, 4) 0px, rgb(216, 150, 4) 2px, rgba(0, 0, 0, 0) 2px, rgba(0, 0, 0, 0) 5px)",
+     "n": 0
+    },
+    {
+     "v": "#03798d",
+     "n": 0
+    },
+    {
+     "v": "#036374",
+     "n": 0
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #d4d8dc",
+     "n": 13
+    },
+    {
+     "v": "1px #848b93",
+     "n": 4
+    },
+    {
+     "v": "1px #000000 a0",
+     "n": 2
+    }
+   ],
+   "radii": [
+    {
+     "v": "4px",
+     "n": 31,
+     "ex": "i.key hatch"
+    },
+    {
+     "v": "9999px",
+     "n": 12,
+     "ex": "span.tag"
+    },
+    {
+     "v": "8px",
+     "n": 8,
+     "ex": "a.skip"
+    },
+    {
+     "v": "12px",
+     "n": 2,
+     "ex": "div.tl"
+    },
+    {
+     "v": "0px 0px 4px 4px",
+     "n": 1,
+     "ex": "span.margin-bracket"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "oklch(0.529622 0.160517 262.239 / 0.45) 1px 0px 0px 0px inset, oklch(0.529622 0.160517 262.239 / 0.45) -1px 0px 0px 0px inset",
+     "n": 8,
+     "ex": "span"
+    },
+    {
+     "v": "rgb(132, 139, 147) 0px 0px 0px 1px inset",
+     "n": 5,
+     "ex": "span"
+    },
+    {
+     "v": "rgb(0, 129, 72) 0px 2px 0px 0px inset",
+     "n": 3,
+     "ex": "i"
+    },
+    {
+     "v": "rgba(31, 34, 37, 0.08) 0px 0px 0px 1px, rgba(31, 34, 37, 0.08) 0px 2px 4px -1px, rgba(31, 34, 37, 0.16) 0px 12px 24px -6px",
+     "n": 1,
+     "ex": "a"
+    },
+    {
+     "v": "rgb(216, 150, 4) 0px 0px 0px 1px inset",
+     "n": 1,
+     "ex": "i"
+    },
+    {
+     "v": "rgba(255, 255, 255, 0.12) 0px 1px 0px 0px inset",
+     "n": 1,
+     "ex": "button"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "background-color, color, border-color, transform 0.1s, 0.1s, 0.1s, 0.1s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
+     "n": 6,
+     "ex": "button"
+    },
+    {
+     "v": "transform 0.6s cubic-bezier(0.2, 0, 0, 1)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "opacity 0.1s cubic-bezier(0.2, 0, 0, 1)",
+     "n": 1,
+     "ex": "span"
+    }
+   ],
+   "animations": [],
+   "maxWidths": [
+    {
+     "v": "459.266px (rendered 330px)",
+     "n": 3,
+     "ex": "p"
+    },
+    {
+     "v": "469.93px (rendered 330px)",
+     "n": 3,
+     "ex": "p"
+    },
+    {
+     "v": "459.266px (rendered 358px)",
+     "n": 2,
+     "ex": "p"
+    },
+    {
+     "v": "545.062px (rendered 358px)",
+     "n": 1,
+     "ex": "p"
+    }
+   ],
+   "sections": [
+    {
+     "v": "pt 0px pb 0px",
+     "n": 5
+    },
+    {
+     "v": "pt 16px pb 0px",
+     "n": 1
+    }
+   ],
+   "gaps": [
+    {
+     "v": "8px",
+     "n": 17
+    },
+    {
+     "v": "4px",
+     "n": 14
+    },
+    {
+     "v": "12px",
+     "n": 6
+    },
+    {
+     "v": "2px",
+     "n": 5
+    },
+    {
+     "v": "2px / col 8px",
+     "n": 4
+    },
+    {
+     "v": "4px / col 16px",
+     "n": 3
+    },
+    {
+     "v": "2px / col 12px",
+     "n": 3
+    },
+    {
+     "v": "32px",
+     "n": 2
+    },
+    {
+     "v": "12px / col 24px",
+     "n": 1
+    },
+    {
+     "v": "8px / col 16px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "4px",
+     "n": 402
+    },
+    {
+     "v": "12px",
+     "n": 195
+    },
+    {
+     "v": "2px",
+     "n": 29
+    },
+    {
+     "v": "8px",
+     "n": 17
+    },
+    {
+     "v": "16px",
+     "n": 6
+    },
+    {
+     "v": "64px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "8px",
+     "n": 6
+    },
+    {
+     "v": "4px",
+     "n": 4
+    },
+    {
+     "v": "32px",
+     "n": 3
+    },
+    {
+     "v": "12px",
+     "n": 2
+    },
+    {
+     "v": "2px",
+     "n": 1
+    },
+    {
+     "v": "16px",
+     "n": 1
+    },
+    {
+     "v": "24px",
+     "n": 1
+    },
+    {
+     "v": "48px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "Leave Lymington at 11:50 and Yarmouth at 16:44. The stream is with you both ways and the mean wind stays inside Wren’s 2",
+    "chars": 203,
+    "lines": 5,
+    "charsPerLine": 41,
+    "width": 358,
+    "fontSize": "16px",
+    "lineHeight": "24px",
+    "color": "#1f2225"
+   },
+   "rootVars": {
+    "--color-neutral-0": "#ffffff",
+    "--color-neutral-50": "#f6f7f8",
+    "--color-neutral-100": "#e7eaec",
+    "--color-neutral-200": "#d4d8dc",
+    "--color-neutral-300": "#bcc2c8",
+    "--color-neutral-400": "#9fa5ad",
+    "--color-neutral-500": "#848b93",
+    "--color-neutral-600": "#666d74",
+    "--color-neutral-700": "#53595f",
+    "--color-neutral-800": "#41464b",
+    "--color-neutral-900": "#2f3337",
+    "--color-neutral-950": "#1f2225",
+    "--color-neutral-975": "#171a1c",
+    "--color-neutral-990": "#101214",
+    "--color-navy-50": "#f3f7ff",
+    "--color-navy-100": "#deeaff",
+    "--color-navy-200": "#c3d8ff",
+    "--color-navy-300": "#9fc1ff",
+    "--color-navy-400": "#71a3ff",
+    "--color-navy-500": "#5387ea",
+    "--color-navy-600": "#3566c7",
+    "--color-navy-700": "#2653a9",
+    "--color-navy-800": "#1b4088",
+    "--color-navy-900": "#132f67",
+    "--color-navy-950": "#0a1f47",
+    "--color-sea-100": "#d1f0f8",
+    "--color-sea-300": "#78d0e5",
+    "--color-sea-400": "#35b6d1",
+    "--color-sea-500": "#019bb5",
+    "--color-sea-600": "#03798d",
+    "--color-sea-700": "#036374",
+    "--color-violet-300": "#c6b3ff",
+    "--color-violet-400": "#ac91f4",
+    "--color-violet-500": "#9275db",
+    "--color-violet-600": "#7455b8",
+    "--color-violet-700": "#5f439b",
+    "--color-amber-50": "#fdf6e9",
+    "--color-amber-200": "#f3d39b",
+    "--color-amber-300": "#eab761",
+    "--color-amber-400": "#d89604",
+    "--color-amber-600": "#926003",
+    "--color-amber-700": "#7a4d00",
+    "--color-amber-800": "#623b00",
+    "--color-red-50": "#fff4f3",
+    "--color-red-200": "#ffc8c3",
+    "--color-red-300": "#ffa59e",
+    "--color-red-400": "#ff726b",
+    "--color-red-600": "#c2272d",
+    "--color-red-700": "#a3141f",
+    "--color-red-800": "#840915",
+    "--color-green-50": "#eefbf2",
+    "--color-green-100": "#d4f2dd",
+    "--color-green-200": "#b1e7c2",
+    "--color-green-300": "#83d7a1",
+    "--color-green-600": "#008148",
+    "--color-green-700": "#026a3b",
+    "--color-green-800": "#01532d",
+    "--color-bg": "var(--color-neutral-990)",
+    "--color-surface": "var(--color-neutral-975)",
+    "--color-surface-raised": "var(--color-neutral-950)",
+    "--color-surface-sunken": "var(--color-neutral-990)",
+    "--color-text": "var(--color-neutral-50)",
+    "--color-text-muted": "var(--color-text)",
+    "--color-text-muted-on-tint": "var(--color-neutral-200)",
+    "--color-border": "var(--color-border-strong)",
+    "--color-border-strong": "var(--color-neutral-500)",
+    "--color-primary": "var(--color-navy-300)",
+    "--color-primary-hover": "var(--color-navy-200)",
+    "--color-primary-active": "var(--color-navy-100)",
+    "--color-on-primary": "var(--color-navy-950)",
+    "--color-primary-subtle": "oklch(25% 0.035 262)",
+    "--color-accent": "var(--color-navy-300)",
+    "--color-focus-ring": "var(--color-navy-300)",
+    "--color-success": "var(--color-green-300)",
+    "--color-success-subtle": "oklch(25% 0.035 155)",
+    "--color-warning": "var(--color-amber-300)",
+    "--color-warning-subtle": "oklch(25% 0.035 75)",
+    "--color-danger": "var(--color-red-300)",
+    "--color-danger-subtle": "oklch(25% 0.035 25)",
+    "--color-info": "var(--color-navy-300)",
+    "--color-disabled-fill": "var(--color-neutral-950)",
+    "--color-disabled-text": "var(--color-neutral-500)",
+    "--color-chart-tide": "var(--color-sea-400)",
+    "--color-chart-tide-wash": "color-mix(in oklch, var(--color-sea-400) 16%, transparent)",
+    "--color-chart-stream": "var(--color-sea-300)",
+    "--color-chart-stream-wash": "color-mix(in oklch, var(--color-sea-400) 14%, transparent)",
+    "--color-chart-wind": "var(--color-violet-400)",
+    "--color-chart-gust": "var(--color-violet-600)",
+    "--color-chart-grid": "rgb(255 255 255 / 0.09)",
+    "--color-chart-limit": "var(--color-neutral-300)",
+    "--color-chart-night": "rgb(0 0 0 / 0.28)",
+    "--color-chart-window": "oklch(30% 0.05 155)",
+    "--color-chart-window-edge": "var(--color-green-300)",
+    "--color-chart-hatch": "var(--color-amber-300)",
+    "--color-chart-hatch-danger": "var(--color-red-300)",
+    "--color-chart-leg": "var(--color-navy-300)",
+    "--color-chart-guide": "color-mix(in oklch, var(--color-navy-300) 45%, transparent)",
+    "--color-map-land": "var(--color-neutral-950)",
+    "--color-map-land-edge": "var(--color-neutral-800)",
+    "--color-map-sea": "var(--color-surface)",
+    "--color-skeleton": "var(--color-neutral-950)",
+    "--shadow-rgb": "31 34 37",
+    "--shadow-0": "0 0 0 0 transparent",
+    "--shadow-1": "0 0 0 0 transparent",
+    "--shadow-2": "0 0 0 0 transparent",
+    "--shadow-3": "0 0 0 0 transparent",
+    "--ring": "0 0 0 1px rgb(255 255 255 / 0.08)",
+    "--highlight": "inset 0 1px 0 rgb(255 255 255 / 0.06)",
+    "--elevation-card": "var(--ring)",
+    "--elevation-popover": "var(--ring), var(--highlight)",
+    "--state-hover": "color-mix(in oklch, var(--color-text) 8%, transparent)",
+    "--state-focus": "color-mix(in oklch, var(--color-text) 10%, transparent)",
+    "--state-pressed": "color-mix(in oklch, var(--color-text) 10%, transparent)",
+    "--state-dragged": "color-mix(in oklch, var(--color-text) 16%, transparent)",
+    "--space-0": "0",
+    "--space-1": "2px",
+    "--space-2": "4px",
+    "--space-3": "8px",
+    "--space-4": "12px",
+    "--space-5": "16px",
+    "--space-6": "24px",
+    "--space-7": "32px",
+    "--space-8": "48px",
+    "--space-9": "64px",
+    "--space-10": "96px",
+    "--space-11": "128px",
+    "--text-xs": "0.75rem",
+    "--text-sm": "0.875rem",
+    "--text-base": "1rem",
+    "--text-lg": "1.25rem",
+    "--text-xl": "1.5625rem",
+    "--text-2xl": "1.9375rem",
+    "--text-3xl": "2.4375rem",
+    "--leading-tight": "1.1",
+    "--leading-snug": "1.25",
+    "--leading-normal": "1.5",
+    "--weight-regular": "400",
+    "--weight-medium": "500",
+    "--weight-semibold": "600",
+    "--font-sans": "\"Inter Halyard\", \"Inter Halyard Fallback\", -apple-system, BlinkMacSystemFont, \"Segoe UI Variable Text\", \"Segoe UI\", Robo",
+    "--size-measure": "52ch",
+    "--radius-none": "0",
+    "--radius-sm": "4px",
+    "--radius-md": "8px",
+    "--radius-lg": "12px",
+    "--radius-xl": "16px",
+    "--radius-full": "9999px",
+    "--radius-control": "var(--radius-md)",
+    "--radius-card": "var(--radius-lg)",
+    "--size-control-sm": "32px",
+    "--size-control-md": "40px",
+    "--size-control-lg": "48px",
+    "--size-icon-sm": "12px",
+    "--size-icon-md": "16px",
+    "--size-icon-lg": "20px",
+    "--size-icon-xl": "24px",
+    "--icon-stroke": "1.5px",
+    "--size-sidebar": "240px",
+    "--size-topbar": "56px",
+    "--lane-label-y": "4px"
+   },
+   "blockedSheets": 0,
+   "reducedMotionRules": 7,
+   "h1": [
+    "Lymington to Yarmouth and back"
+   ],
+   "h2": [
+    "Saturday on the water",
+    "Warnings",
+    "Lymington tides",
+    "Wren’s limits"
+   ],
+   "h3": [
+    "Wind against tide, 13:20 to 15:25",
+    "Gusts above 20 kn, 16:00 to 19:00",
+    "Home 25 min before sunset"
+   ],
+   "nav": [
+    "Halyard, saved plans"
+   ],
+   "ctas": [
+    "Skip to the plan [126x37 bg #ffffff fg #1f2225 r 8px pad 8px 12px 14px/400]",
+    "Menu [88x44 bg #000000 a0 fg #1f2225 r 8px pad 0px 12px 14px/500]",
+    "−10 min earlier, leave Lymington [70x44 bg #ffffff fg #1f2225 r 8px pad 0px 8px 14px/500]",
+    "+10 min later, leave Lymington [70x44 bg #ffffff fg #1f2225 r 8px pad 0px 8px 14px/500]",
+    "−10 min earlier, leave Yarmouth [70x44 bg #ffffff fg #1f2225 r 8px pad 0px 8px 14px/500]",
+    "+10 min later, leave Yarmouth [70x44 bg #ffffff fg #1f2225 r 8px pad 0px 8px 14px/500]",
+    "Save plan [100x44 bg #1b4088 fg #ffffff r 8px pad 0px 16px 14px/600]"
+   ],
+   "media": {
+    "img": 0,
+    "svg": 30,
+    "video": 0,
+    "canvas": 0
+   }
+  },
+  "1440": {
+   "status": 200,
+   "finalUrl": "file:///home/user/design-kb/kb/tests/fresh/app/plan.html",
+   "width": 1440,
+   "h1Style": {
+    "font": "\"Inter Halyard\" 25px/31.25px w600 ls -0.25px",
+    "color": "#1f2225",
+    "top": 88,
+    "width": 678,
+    "align": "start"
+   },
+   "title": "Plan: Lymington to Yarmouth, Sat 24 Oct · Halyard",
+   "description": "Passage plan for Wren, Lymington to Yarmouth and back on Saturday 24 October 2026: windows, warnings and timed route. Sample data.",
+   "pageHeight": 2303,
+   "bodyBg": "#f6f7f8",
+   "htmlBg": "#000000 a0",
+   "fontsLoaded": [
+    "Inter Halyard 400 620 normal",
+    "Inter Halyard Fallback normal normal"
+   ],
+   "families": [
+    {
+     "v": "\"Inter Halyard\", \"Inter Halyard Fallback\"",
+     "n": 4219
+    }
+   ],
+   "typeScale": [
+    {
+     "v": "14px / lh 21px / w400 / ls normal",
+     "n": 2251,
+     "ex": "a: Skip to the plan"
+    },
+    {
+     "v": "14px / lh 21px / w500 / ls normal",
+     "n": 432,
+     "ex": "span: Lymington to Yarmouth"
+    },
+    {
+     "v": "12px / lh 18px / w400 / ls normal",
+     "n": 394,
+     "ex": "span: Boat"
+    },
+    {
+     "v": "12px / lh 16px / w400 / ls normal",
+     "n": 289,
+     "ex": "span: 00:00"
+    },
+    {
+     "v": "14px / lh 21px / w600 / ls normal",
+     "n": 231,
+     "ex": "strong: Wren"
+    },
+    {
+     "v": "16px / lh 24px / w400 / ls normal",
+     "n": 192,
+     "ex": "p: Leave Lymington at and Yarmouth at . The stream is with you "
+    },
+    {
+     "v": "14px / lh 14px / w500 / ls normal",
+     "n": 118,
+     "ex": "button: −10 min"
+    },
+    {
+     "v": "12px / lh 18px / w500 / ls normal",
+     "n": 84,
+     "ex": "span: Sample data"
+    },
+    {
+     "v": "25px / lh 31.25px / w600 / ls -0.25px",
+     "n": 51,
+     "ex": "h1: Lymington to Yarmouth and back"
+    },
+    {
+     "v": "12px / lh 16px / w600 / ls normal",
+     "n": 49,
+     "ex": "strong: LW"
+    },
+    {
+     "v": "12px / lh 18px / w600 / ls normal",
+     "n": 46,
+     "ex": "strong: Free plan"
+    },
+    {
+     "v": "16px / lh 24px / w600 / ls normal",
+     "n": 38,
+     "ex": "strong: 11:50"
+    },
+    {
+     "v": "16px / lh 20px / w600 / ls normal",
+     "n": 29,
+     "ex": "h2: Saturday on the water"
+    },
+    {
+     "v": "14px / lh 14px / w600 / ls normal",
+     "n": 9,
+     "ex": "span: Save plan"
+    },
+    {
+     "v": "12px / lh 12px / w600 / ls normal",
+     "n": 6,
+     "ex": "span: 1"
+    }
+   ],
+   "textColors": [
+    {
+     "v": "#1f2225",
+     "n": 2376
+    },
+    {
+     "v": "#666d74",
+     "n": 1658
+    },
+    {
+     "v": "#3566c7",
+     "n": 59
+    },
+    {
+     "v": "#7a4d00",
+     "n": 58
+    },
+    {
+     "v": "#026a3b",
+     "n": 53
+    },
+    {
+     "v": "#ffffff",
+     "n": 15
+    }
+   ],
+   "contrastPairs": [
+    {
+     "v": "#1f2225 on #ffffff",
+     "n": 2308,
+     "ex": "15.98:1"
+    },
+    {
+     "v": "#666d74 on #ffffff",
+     "n": 1515,
+     "ex": "5.24:1"
+    },
+    {
+     "v": "#666d74 on #f6f7f8",
+     "n": 143,
+     "ex": "4.89:1"
+    },
+    {
+     "v": "#1f2225 on #f6f7f8",
+     "n": 68,
+     "ex": "14.9:1"
+    },
+    {
+     "v": "#7a4d00 on #ffffff",
+     "n": 58,
+     "ex": "7.27:1"
+    },
+    {
+     "v": "#026a3b on #ffffff",
+     "n": 53,
+     "ex": "6.71:1"
+    },
+    {
+     "v": "#3566c7 on #ffffff",
+     "n": 36,
+     "ex": "5.42:1"
+    },
+    {
+     "v": "#3566c7 on #f6f7f8",
+     "n": 23,
+     "ex": "5.05:1"
+    },
+    {
+     "v": "#ffffff on #1b4088",
+     "n": 9,
+     "ex": "9.83:1"
+    },
+    {
+     "v": "#ffffff on #7a4d00",
+     "n": 4,
+     "ex": "7.27:1"
+    },
+    {
+     "v": "#ffffff on #c2272d",
+     "n": 2,
+     "ex": "5.8:1"
+    }
+   ],
+   "backgrounds": [
+    {
+     "v": "#ffffff",
+     "n": 3623
+    },
+    {
+     "v": "#f6f7f8",
+     "n": 283
+    },
+    {
+     "v": "#1b4088 a0.07",
+     "n": 19
+    },
+    {
+     "v": "repeating-linear-gradient(135deg, oklch(0.7197 0.149788 77.1622 / 0.45) 0px, oklch(0.7197 0.149788 77.1622 / 0.45) 1.5px, rgba(0, 0, 0, 0) 1",
+     "n": 12
+    },
+    {
+     "v": "#d4f2dd",
+     "n": 10
+    },
+    {
+     "v": "#252021 a0.08",
+     "n": 9
+    },
+    {
+     "v": "repeating-linear-gradient(135deg, oklch(0.720767 0.173618 25.2234 / 0.45) 0px, oklch(0.720767 0.173618 25.2234 / 0.45) 1.5px, rgba(0, 0, 0, ",
+     "n": 9
+    },
+    {
+     "v": "#1b4088",
+     "n": 5
+    },
+    {
+     "v": "#7a4d00",
+     "n": 1
+    },
+    {
+     "v": "#e7eaec",
+     "n": 1
+    },
+    {
+     "v": "#c2272d",
+     "n": 1
+    },
+    {
+     "v": "#1f2225",
+     "n": 0
+    }
+   ],
+   "borders": [
+    {
+     "v": "1px #d4d8dc",
+     "n": 13
+    },
+    {
+     "v": "1px #848b93",
+     "n": 4
+    },
+    {
+     "v": "1px #000000 a0",
+     "n": 1
+    }
+   ],
+   "radii": [
+    {
+     "v": "4px",
+     "n": 42,
+     "ex": "i.key hatch"
+    },
+    {
+     "v": "9999px",
+     "n": 14,
+     "ex": "div.meter"
+    },
+    {
+     "v": "8px",
+     "n": 12,
+     "ex": "a.skip"
+    },
+    {
+     "v": "12px",
+     "n": 2,
+     "ex": "div.tl"
+    },
+    {
+     "v": "0px 0px 4px 4px",
+     "n": 1,
+     "ex": "span.margin-bracket"
+    }
+   ],
+   "shadows": [
+    {
+     "v": "oklch(0.529622 0.160517 262.239 / 0.45) 1px 0px 0px 0px inset, oklch(0.529622 0.160517 262.239 / 0.45) -1px 0px 0px 0px inset",
+     "n": 8,
+     "ex": "span"
+    },
+    {
+     "v": "rgb(132, 139, 147) 0px 0px 0px 1px inset",
+     "n": 5,
+     "ex": "span"
+    },
+    {
+     "v": "rgb(0, 129, 72) 0px 2px 0px 0px inset",
+     "n": 3,
+     "ex": "i"
+    },
+    {
+     "v": "rgba(31, 34, 37, 0.08) 0px 0px 0px 1px, rgba(31, 34, 37, 0.08) 0px 2px 4px -1px, rgba(31, 34, 37, 0.16) 0px 12px 24px -6px",
+     "n": 1,
+     "ex": "a"
+    },
+    {
+     "v": "rgb(27, 64, 136) 2px 0px 0px 0px inset",
+     "n": 1,
+     "ex": "a"
+    },
+    {
+     "v": "rgb(212, 216, 220) 0px 0px 0px 1px inset",
+     "n": 1,
+     "ex": "div"
+    },
+    {
+     "v": "rgba(255, 255, 255, 0.12) 0px 1px 0px 0px inset",
+     "n": 1,
+     "ex": "button"
+    },
+    {
+     "v": "rgb(216, 150, 4) 0px 0px 0px 1px inset",
+     "n": 1,
+     "ex": "i"
+    }
+   ],
+   "transitions": [
+    {
+     "v": "background-color, color 0.1s, 0.1s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
+     "n": 5,
+     "ex": "a"
+    },
+    {
+     "v": "background-color, color, border-color, transform 0.1s, 0.1s, 0.1s, 0.1s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
+     "n": 5,
+     "ex": "button"
+    },
+    {
+     "v": "transform 0.6s cubic-bezier(0.2, 0, 0, 1)",
+     "n": 2,
+     "ex": "div"
+    },
+    {
+     "v": "opacity 0.1s cubic-bezier(0.2, 0, 0, 1)",
+     "n": 1,
+     "ex": "span"
+    }
+   ],
+   "animations": [],
+   "maxWidths": [],
+   "sections": [],
+   "gaps": [
+    {
+     "v": "4px",
+     "n": 15
+    },
+    {
+     "v": "8px",
+     "n": 14
+    },
+    {
+     "v": "12px",
+     "n": 11
+    },
+    {
+     "v": "2px",
+     "n": 7
+    },
+    {
+     "v": "2px / col 8px",
+     "n": 4
+    },
+    {
+     "v": "4px / col 16px",
+     "n": 3
+    },
+    {
+     "v": "2px / col 12px",
+     "n": 3
+    },
+    {
+     "v": "32px",
+     "n": 2
+    },
+    {
+     "v": "12px / col 24px",
+     "n": 1
+    },
+    {
+     "v": "8px / col 16px",
+     "n": 1
+    }
+   ],
+   "paddings": [
+    {
+     "v": "4px",
+     "n": 402
+    },
+    {
+     "v": "12px",
+     "n": 195
+    },
+    {
+     "v": "2px",
+     "n": 36
+    },
+    {
+     "v": "8px",
+     "n": 28
+    },
+    {
+     "v": "16px",
+     "n": 5
+    },
+    {
+     "v": "32px",
+     "n": 2
+    },
+    {
+     "v": "64px",
+     "n": 1
+    },
+    {
+     "v": "48px",
+     "n": 1
+    },
+    {
+     "v": "128px",
+     "n": 1
+    }
+   ],
+   "margins": [
+    {
+     "v": "8px",
+     "n": 6
+    },
+    {
+     "v": "4px",
+     "n": 4
+    },
+    {
+     "v": "12px",
+     "n": 3
+    },
+    {
+     "v": "32px",
+     "n": 3
+    },
+    {
+     "v": "16px",
+     "n": 2
+    },
+    {
+     "v": "432px",
+     "n": 1
+    },
+    {
+     "v": "2px",
+     "n": 1
+    },
+    {
+     "v": "24px",
+     "n": 1
+    },
+    {
+     "v": "48px",
+     "n": 1
+    }
+   ],
+   "measure": {
+    "text": "Leave Lymington at 11:50 and Yarmouth at 16:44. The stream is with you both ways and the mean wind stays inside Wren’s 2",
+    "chars": 203,
+    "lines": 3,
+    "charsPerLine": 68,
+    "width": 545,
+    "fontSize": "16px",
+    "lineHeight": "24px",
+    "color": "#1f2225"
+   },
+   "rootVars": {
+    "--color-neutral-0": "#ffffff",
+    "--color-neutral-50": "#f6f7f8",
+    "--color-neutral-100": "#e7eaec",
+    "--color-neutral-200": "#d4d8dc",
+    "--color-neutral-300": "#bcc2c8",
+    "--color-neutral-400": "#9fa5ad",
+    "--color-neutral-500": "#848b93",
+    "--color-neutral-600": "#666d74",
+    "--color-neutral-700": "#53595f",
+    "--color-neutral-800": "#41464b",
+    "--color-neutral-900": "#2f3337",
+    "--color-neutral-950": "#1f2225",
+    "--color-neutral-975": "#171a1c",
+    "--color-neutral-990": "#101214",
+    "--color-navy-50": "#f3f7ff",
+    "--color-navy-100": "#deeaff",
+    "--color-navy-200": "#c3d8ff",
+    "--color-navy-300": "#9fc1ff",
+    "--color-navy-400": "#71a3ff",
+    "--color-navy-500": "#5387ea",
+    "--color-navy-600": "#3566c7",
+    "--color-navy-700": "#2653a9",
+    "--color-navy-800": "#1b4088",
+    "--color-navy-900": "#132f67",
+    "--color-navy-950": "#0a1f47",
+    "--color-sea-100": "#d1f0f8",
+    "--color-sea-300": "#78d0e5",
+    "--color-sea-400": "#35b6d1",
+    "--color-sea-500": "#019bb5",
+    "--color-sea-600": "#03798d",
+    "--color-sea-700": "#036374",
+    "--color-violet-300": "#c6b3ff",
+    "--color-violet-400": "#ac91f4",
+    "--color-violet-500": "#9275db",
+    "--color-violet-600": "#7455b8",
+    "--color-violet-700": "#5f439b",
+    "--color-amber-50": "#fdf6e9",
+    "--color-amber-200": "#f3d39b",
+    "--color-amber-300": "#eab761",
+    "--color-amber-400": "#d89604",
+    "--color-amber-600": "#926003",
+    "--color-amber-700": "#7a4d00",
+    "--color-amber-800": "#623b00",
+    "--color-red-50": "#fff4f3",
+    "--color-red-200": "#ffc8c3",
+    "--color-red-300": "#ffa59e",
+    "--color-red-400": "#ff726b",
+    "--color-red-600": "#c2272d",
+    "--color-red-700": "#a3141f",
+    "--color-red-800": "#840915",
+    "--color-green-50": "#eefbf2",
+    "--color-green-100": "#d4f2dd",
+    "--color-green-200": "#b1e7c2",
+    "--color-green-300": "#83d7a1",
+    "--color-green-600": "#008148",
+    "--color-green-700": "#026a3b",
+    "--color-green-800": "#01532d",
+    "--color-bg": "var(--color-neutral-990)",
+    "--color-surface": "var(--color-neutral-975)",
+    "--color-surface-raised": "var(--color-neutral-950)",
+    "--color-surface-sunken": "var(--color-neutral-990)",
+    "--color-text": "var(--color-neutral-50)",
+    "--color-text-muted": "var(--color-text)",
+    "--color-text-muted-on-tint": "var(--color-neutral-200)",
+    "--color-border": "var(--color-border-strong)",
+    "--color-border-strong": "var(--color-neutral-500)",
+    "--color-primary": "var(--color-navy-300)",
+    "--color-primary-hover": "var(--color-navy-200)",
+    "--color-primary-active": "var(--color-navy-100)",
+    "--color-on-primary": "var(--color-navy-950)",
+    "--color-primary-subtle": "oklch(25% 0.035 262)",
+    "--color-accent": "var(--color-navy-300)",
+    "--color-focus-ring": "var(--color-navy-300)",
+    "--color-success": "var(--color-green-300)",
+    "--color-success-subtle": "oklch(25% 0.035 155)",
+    "--color-warning": "var(--color-amber-300)",
+    "--color-warning-subtle": "oklch(25% 0.035 75)",
+    "--color-danger": "var(--color-red-300)",
+    "--color-danger-subtle": "oklch(25% 0.035 25)",
+    "--color-info": "var(--color-navy-300)",
+    "--color-disabled-fill": "var(--color-neutral-950)",
+    "--color-disabled-text": "var(--color-neutral-500)",
+    "--color-chart-tide": "var(--color-sea-400)",
+    "--color-chart-tide-wash": "color-mix(in oklch, var(--color-sea-400) 16%, transparent)",
+    "--color-chart-stream": "var(--color-sea-300)",
+    "--color-chart-stream-wash": "color-mix(in oklch, var(--color-sea-400) 14%, transparent)",
+    "--color-chart-wind": "var(--color-violet-400)",
+    "--color-chart-gust": "var(--color-violet-600)",
+    "--color-chart-grid": "rgb(255 255 255 / 0.09)",
+    "--color-chart-limit": "var(--color-neutral-300)",
+    "--color-chart-night": "rgb(0 0 0 / 0.28)",
+    "--color-chart-window": "oklch(30% 0.05 155)",
+    "--color-chart-window-edge": "var(--color-green-300)",
+    "--color-chart-hatch": "var(--color-amber-300)",
+    "--color-chart-hatch-danger": "var(--color-red-300)",
+    "--color-chart-leg": "var(--color-navy-300)",
+    "--color-chart-guide": "color-mix(in oklch, var(--color-navy-300) 45%, transparent)",
+    "--color-map-land": "var(--color-neutral-950)",
+    "--color-map-land-edge": "var(--color-neutral-800)",
+    "--color-map-sea": "var(--color-surface)",
+    "--color-skeleton": "var(--color-neutral-950)",
+    "--shadow-rgb": "31 34 37",
+    "--shadow-0": "0 0 0 0 transparent",
+    "--shadow-1": "0 0 0 0 transparent",
+    "--shadow-2": "0 0 0 0 transparent",
+    "--shadow-3": "0 0 0 0 transparent",
+    "--ring": "0 0 0 1px rgb(255 255 255 / 0.08)",
+    "--highlight": "inset 0 1px 0 rgb(255 255 255 / 0.06)",
+    "--elevation-card": "var(--ring)",
+    "--elevation-popover": "var(--ring), var(--highlight)",
+    "--state-hover": "color-mix(in oklch, var(--color-text) 8%, transparent)",
+    "--state-focus": "color-mix(in oklch, var(--color-text) 10%, transparent)",
+    "--state-pressed": "color-mix(in oklch, var(--color-text) 10%, transparent)",
+    "--state-dragged": "color-mix(in oklch, var(--color-text) 16%, transparent)",
+    "--space-0": "0",
+    "--space-1": "2px",
+    "--space-2": "4px",
+    "--space-3": "8px",
+    "--space-4": "12px",
+    "--space-5": "16px",
+    "--space-6": "24px",
+    "--space-7": "32px",
+    "--space-8": "48px",
+    "--space-9": "64px",
+    "--space-10": "96px",
+    "--space-11": "128px",
+    "--text-xs": "0.75rem",
+    "--text-sm": "0.875rem",
+    "--text-base": "1rem",
+    "--text-lg": "1.25rem",
+    "--text-xl": "1.5625rem",
+    "--text-2xl": "1.9375rem",
+    "--text-3xl": "2.4375rem",
+    "--leading-tight": "1.1",
+    "--leading-snug": "1.25",
+    "--leading-normal": "1.5",
+    "--weight-regular": "400",
+    "--weight-medium": "500",
+    "--weight-semibold": "600",
+    "--font-sans": "\"Inter Halyard\", \"Inter Halyard Fallback\", -apple-system, BlinkMacSystemFont, \"Segoe UI Variable Text\", \"Segoe UI\", Robo",
+    "--size-measure": "52ch",
+    "--radius-none": "0",
+    "--radius-sm": "4px",
+    "--radius-md": "8px",
+    "--radius-lg": "12px",
+    "--radius-xl": "16px",
+    "--radius-full": "9999px",
+    "--radius-control": "var(--radius-md)",
+    "--radius-card": "var(--radius-lg)",
+    "--size-control-sm": "32px",
+    "--size-control-md": "40px",
+    "--size-control-lg": "48px",
+    "--size-icon-sm": "12px",
+    "--size-icon-md": "16px",
+    "--size-icon-lg": "20px",
+    "--size-icon-xl": "24px",
+    "--icon-stroke": "1.5px",
+    "--size-sidebar": "240px",
+    "--size-topbar": "56px",
+    "--lane-label-y": "4px"
+   },
+   "blockedSheets": 0,
+   "reducedMotionRules": 7,
+   "h1": [
+    "Lymington to Yarmouth and back"
+   ],
+   "h2": [
+    "Saturday on the water",
+    "Warnings",
+    "Lymington tides",
+    "Wren’s limits"
+   ],
+   "h3": [
+    "Wind against tide, 13:20 to 15:25",
+    "Gusts above 20 kn, 16:00 to 19:00",
+    "Home 25 min before sunset"
+   ],
+   "nav": [
+    "Plan a passage",
+    "Saved plans",
+    "Boats",
+    "Tide tables",
+    "Settings",
+    "Plan a passage"
+   ],
+   "ctas": [
+    "Skip to the plan [126x37 bg #ffffff fg #1f2225 r 8px pad 8px 12px 14px/400]",
+    "Save plan [100x40 bg #1b4088 fg #ffffff r 8px pad 0px 16px 14px/600]",
+    "−10 min earlier, leave Lymington [70x32 bg #ffffff fg #1f2225 r 8px pad 0px 8px 14px/500]",
+    "+10 min later, leave Lymington [70x32 bg #ffffff fg #1f2225 r 8px pad 0px 8px 14px/500]",
+    "−10 min earlier, leave Yarmouth [70x32 bg #ffffff fg #1f2225 r 8px pad 0px 8px 14px/500]",
+    "+10 min later, leave Yarmouth [70x32 bg #ffffff fg #1f2225 r 8px pad 0px 8px 14px/500]"
+   ],
+   "media": {
+    "img": 0,
+    "svg": 30,
+    "video": 0,
+    "canvas": 0
+   }
+  }
+ },
+ "head": {
+  "lang": "en-GB",
+  "title": "Plan: Lymington to Yarmouth, Sat 24 Oct · Halyard",
+  "description": "Passage plan for Wren, Lymington to Yarmouth and back on Saturday 24 October 2026: windows, warnings and timed route. Sample data.",
+  "canonical": null,
+  "robots": "noindex, nofollow",
+  "viewport": "width=device-width, initial-scale=1",
+  "themeColor": [
+   {
+    "content": "#f6f7f8",
+    "media": "(prefers-color-scheme: light)"
+   },
+   {
+    "content": "#101214",
+    "media": "(prefers-color-scheme: dark)"
+   }
+  ],
+  "colorScheme": "light dark",
+  "og": [],
+  "twitter": [],
+  "jsonld": [],
+  "icons": [
+   {
+    "rel": "icon",
+    "type": "image/svg+xml",
+    "sizes": "",
+    "media": "",
+    "href": "data:image/svg+xml,%3Csvg%20xmlns%3D%22h... (data URI)"
+   }
+  ],
+  "order": [
+   "0 meta charset",
+   "1 meta viewport",
+   "2 title",
+   "3 meta description",
+   "4 meta robots",
+   "5 meta color-scheme",
+   "6 meta theme-color",
+   "7 meta theme-color",
+   "8 link icon",
+   "9 style 85443B",
+   "10 script inline 45B"
+  ],
+  "positions": {
+   "count": 11,
+   "title": 2,
+   "description": 3,
+   "canonical": null,
+   "firstOg": null,
+   "firstJsonLd": null,
+   "firstStylesheet": 9,
+   "firstScript": 10,
+   "firstLargeInline": 9
+  },
+  "headBytes": 86589,
+  "htmlBytes": 194752,
+  "served": {
+   "bytes": 159382,
+   "headBytes": 86576,
+   "order": [
+    "0 meta charset",
+    "1 meta viewport",
+    "2 title",
+    "3 meta description",
+    "4 meta robots",
+    "5 meta color-scheme",
+    "6 meta theme-color",
+    "7 meta theme-color",
+    "8 link icon",
+    "9 style",
+    "10 script inline"
+   ],
+   "over2MB": false
+  }
+ }
+}
