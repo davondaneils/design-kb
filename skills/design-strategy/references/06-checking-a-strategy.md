@@ -45,6 +45,8 @@ A strategy is checked three ways: is it **distinctive** (it could not be a compe
 - **The covered wall cannot tell us apart**: the expressive code break (05) is too weak or absent. Strengthen the one break; do not add three.
 - **Message test: high clarity, low differentiation**: the words are fine and generic; go back to 03 step 2 (unique attributes), not to copy polish.
 - **Uniqueness falls between tracking rounds while fame holds**: a competitor is using a similar asset. Strengthen co-presentation with the name and the asset's most ownable detail before fame erodes too (05) (opinion).
+- **A viewer reads a device as an error** (missing letters, a mark on a letter, a reversed glyph): it fails design-playbook-brand 2a. Drop it, or make it unmistakably intentional and retest. In the Halden test a viewer said the gapped sentence "looks broken until you realise" and the crossbar "looks like a smudge" (`kb/tests/design-strategy.md`).
+- **No fresh viewer is available**: the check is not passed by default. Any device on the flagged list stays off the first screen and the primary name, and the hand-over says "concept legibility not tested". The Halden builder skipped the test for this reason and shipped a device a viewer read as broken.
 - **A claim has no evidence**: rewrite as the underlying fact or cut it. Never soften "only" to "one of the only"; it is still a claim (opinion).
 
 ## Numbers

@@ -1,5 +1,10 @@
 # Changelog: design-strategy
 
+## v0.1.2 (2026-10-13, gaps from the Halden test, `kb/tests/design-strategy.md`; not yet re-tested)
+- 06 reading results: a viewer reading a device as an error fails playbook-brand 2a; with no fresh viewer, the device stays off the first screen and the hand-over says "concept legibility not tested".
+- 05 expert moves 12 and 13: show what the true fact buys; the weakest field still gets the strongest verifiable fact.
+- design-playbook-brand done item 4: brand color fields checked in dark mode.
+
 ## v0.1.1 (2026-10-13, researcher fixes and strategist gaps from `kb/reviews/design-strategy.md`)
 - Research fixes: Tropicana figures credited to Information Resources Inc. via Ad Age (BusinessWeek relay, 2009-04-02), not Nielsen; Binet and Field chart title corrected to "effectiveness" (`pdftotext -raw`); Dawes 95:5 quote replaced with the paper's own wording on marketingscience.info, plus his caveat ("a heuristic") and the interpurchase method. New rows for Dunford's 20 to 30 percent "no decision" and definition, Neumeier, the services finding, the 2026 benchmark's authors (Phua, Bali, Anesbury, Sharp) and its full-text numbers (12,249 category buyers, HHI values, "Reliance on color alone", the Caruso relay), and Caruso et al. 2025 as its own row (227 redesigns, 86 percent researched, no more success).
 - Grid quadrants renamed to Romaniuk 2018 as cited in the benchmark: "Invest" is now "Investment potential"; "Avoid" is "Avoid solo use".
