@@ -47,7 +47,7 @@ export function lint(raw) {
   const text = stripComments(raw);
 
   // House rules and leftovers
-  if (/—/.test(raw)) fail('em-dash', 'em dash found; house rule: never use em dashes');
+  if (/\u2014/.test(raw)) fail('em-dash', 'em dash found; house rule: never use em dashes');
   const ph = text.match(/\{\{[^}]*\}\}/g);
   if (ph) fail('placeholder', `${ph.length} unfilled {{field}} left, first: ${ph[0]}`);
   if (/\b(TODO|TBD|lorem ipsum)\b/i.test(text)) fail('placeholder', 'TODO, TBD or lorem ipsum left in the brief');
@@ -181,7 +181,7 @@ Reject test: Does it show stone, courses or setting?
 `;
   const cases = [
     ['three-line brief passes', ok, 0],
-    ['em dash fails', ok.replace('a poster', 'a poster — small'), 1],
+    ['em dash fails', ok.replace('a poster', 'a poster \u2014 small'), 1],
     ['placeholder fails', ok.replace('Glasgow is', '{{fact}} Glasgow is'), 1],
     ['moment without when fails', ok.replace(' when April plans are made', ''), 1],
     ['fact without source fails', ok.replace(' (source: city heritage records)', ''), 1],
