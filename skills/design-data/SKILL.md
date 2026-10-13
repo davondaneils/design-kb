@@ -7,7 +7,7 @@ description: Domain reference loaded by design-director or a design playbook (ma
 
 > **Layer: domain reference.** Loaded after `design-foundations` by `design-director` or a `design-playbook-*` skill whenever a screen is drawn over real data, or directly for a narrow data question. Accessibility floor for anything that reaches a screen: design-foundations `references/accessibility.md`. State visuals: design-product-ui `references/05-states-bulk.md`.
 
-Version 0.2.2. Facts current to **2026-10-13** (every time-sensitive fact rechecked against primary sources that day; dates per fact in `kb/research/data/`). Platform facts move: PostgreSQL 19 is in beta, Supabase legacy keys are deprecated by the end of 2026, the GDPR Digital Omnibus is pending. Before advice that depends on a platform behavior, check the fact's date in `references/` and say how old it is. Review due 2027-01-13.
+Version 0.2.3. Facts current to **2026-10-13** (every time-sensitive fact rechecked against primary sources that day; dates per fact in `kb/research/data/`). Platform facts move: PostgreSQL 19 is in beta, Supabase legacy keys are deprecated by the end of 2026, the GDPR Digital Omnibus is pending. Before advice that depends on a platform behavior, check the fact's date in `references/` and say how old it is. Review due 2027-01-13.
 
 The bar: a schema, policy set, API and data-to-screen contract that a senior engineer at Stripe or Supabase and a senior product designer at Linear would approve without comments. Correct first, then fast, then pleasant to evolve, and never a screen that shows something the data cannot supply.
 
@@ -111,6 +111,9 @@ Plural nouns, one level of nesting, POST create (201 plus `Location`), PATCH par
 7. Limits that count rows (seats, capacity) are checked after locking a parent row that always exists (`select ... from orgs where id = $1 for update` for seats, the class row for capacity); a bare count is a race, and locking a subscription row fails when the org has none or two.
 8. Default to hard delete plus a `deleted_records` jsonb archive; `deleted_at` only for a real trash with partial unique indexes and a purge job (opinion, after Brandur Leach). Uniqueness that must survive a cancel or a delete is a partial unique index (a member who cancelled a booking can book again).
 9. Audit log append-only, no foreign keys on purpose, written in the same transaction as the action.
+9a. An invariant holds on every write path, not only the one you tested: "taken never exceeds capacity" is guarded when bookings change and when staff lower the capacity, and by a constraint or trigger the service role cannot bypass. The Crux test's skilled schema guarded bookings and let staff set capacity 2 under 5 taken (`kb/tests/design-data.md`).
+9b. Time-bounded rights are checked against the time of the thing, not now: a 7-day grace that ends Tuesday cannot book a Thursday class. Same for trial ends, pack expiry, cancellation windows (Crux test).
+9c. "One open X per person per tenant" (one active pass, one pending invite) is a partial unique index, and every uniqueness or exclusion rule that spans people is keyed by the tenant too, or its conflict error tells one tenant about another (an instructor-overlap rule keyed on the person told one gym the instructor was busy at another; Crux test).
 
 **Performance**
 10. Composite index order: equality columns, then the range or sort column; rarely more than 3.

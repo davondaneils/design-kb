@@ -1,0 +1,39 @@
+######## X
+NOTICE:  database "t_x" does not exist, skipping
+[u10] confirmed
+[u10] 
+[u11] ERROR:  crux:class_full
+[u11] DETAIL:  {"places_left": 0, "waiting_count": 0}
+[u11] CONTEXT:  PL/pgSQL function private.refuse(text,jsonb) line 3 at RAISE
+[u11] SQL statement "SELECT private.refuse('class_full', jsonb_build_object('places_left', 0, 'waiting_count', waiting))"
+[u11] PL/pgSQL function api.book_class(uuid,boolean,uuid) line 48 at PERFORM
+X last place: taken=1 waitlisted=0
+[u15] confirmed
+[u17] confirmed
+[u14] confirmed
+[u12] waitlisted
+[u11] waitlisted
+[u19] waitlisted
+[u13] waitlisted
+[u10] waitlisted
+[u18] waitlisted
+[u16] waitlisted
+X burst cap 3: confirmed=3 waitlisted=7
+X ranks: 1,2,3,4,5,6,7
+######## Y
+NOTICE:  database "t_y" does not exist, skipping
+[u10] booked
+[u10] 
+[u11] waitlisted
+Y last place: booked=1 waitlisted=1
+[u11] booked
+[u15] booked
+[u18] booked
+[u10] waitlisted
+[u13] waitlisted
+[u12] waitlisted
+[u14] waitlisted
+[u16] waitlisted
+[u19] waitlisted
+[u17] waitlisted
+Y burst cap 3: booked=3 waitlisted=7 | counters booked_count=3 waitlist_count=7

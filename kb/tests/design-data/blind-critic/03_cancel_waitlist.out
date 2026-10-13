@@ -1,0 +1,38 @@
+#### A: cap 2, booked u10 u11, waitlist u12 u13 u14; u10 and u11 cancel at once
+[u10] cancelled
+[u10] 
+[u11] cancelled
+A X: 10=cancelled 11=cancelled 12=confirmed 13=confirmed 14=waitlisted
+[u10] cancelled
+[u10] 
+[u11] cancelled
+A Y: 10=cancelled 11=cancelled 12=booked 13=booked 14=waitlisted | booked_count=2 waitlist_count=1
+#### B: cap 1, booked u10, waitlist u12 u13; u10 double-taps cancel
+[u10] cancelled
+[u10] 
+[u10] cancelled
+B X: 10=cancelled 12=confirmed 13=waitlisted
+[u10] cancelled
+[u10] 
+[u10] cancelled
+B Y: 10=cancelled 12=booked 13=waitlisted | booked_count=1 waitlist_count=1
+#### C: cap 1, booked u10, waitlist u12; u10 cancels while u15 books
+[u10] cancelled
+[u10] 
+[u15] ERROR:  crux:class_full
+[u15] DETAIL:  {"places_left": 0, "waiting_count": 0}
+[u15] CONTEXT:  PL/pgSQL function private.refuse(text,jsonb) line 3 at RAISE
+[u15] SQL statement "SELECT private.refuse('class_full', jsonb_build_object('places_left', 0, 'waiting_count', waiting))"
+[u15] PL/pgSQL function api.book_class(uuid,boolean,uuid) line 48 at PERFORM
+C X: 10=cancelled 12=confirmed
+[u10] cancelled
+[u10] 
+[u15] waitlisted
+C Y: 10=cancelled 12=booked 15=waitlisted | booked_count=1 waitlist_count=1
+#### D: cap 1, booked u10, waitlist u12 u13; staff raises capacity to 2 while u10 cancels
+[u10] cancelled
+[u10] 
+D X: 10=cancelled 12=confirmed 13=confirmed
+[u10] cancelled
+[u10] 
+D Y: 10=cancelled 12=booked 13=booked | booked_count=2 waitlist_count=0

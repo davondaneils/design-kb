@@ -1,0 +1,95 @@
+=========== crux_x
+--- FKs without an index whose leading columns cover the FK columns (any order)
+   tbl    |        conname        |           cols           
+----------+-----------------------+--------------------------
+ classes  | classes_location_fk   | {gym_id,location_id}
+ classes  | classes_class_type_fk | {gym_id,class_type_id}
+ bookings | bookings_pass_fk      | {gym_id,user_id,pass_id}
+(3 rows)
+
+--- columns typed money/float/numeric-without-scale, timestamp without tz, json
+ table_name | column_name  |          data_type          
+------------+--------------+-----------------------------
+ classes    | starts_local | timestamp without time zone
+ classes    | ends_local   | timestamp without time zone
+(2 rows)
+
+--- nullable columns (review)
+   table_name    |                                                       string_agg                                                       
+-----------------+------------------------------------------------------------------------------------------------------------------------
+ audit_events    | actor_id
+ bookings        | cancelled_at, free_cancel_until, cancel_reason, checked_in_by, checked_in_at, waitlisted_at, confirmed_at, promoted_at
+ classes         | cancelled_at, created_by
+ gym_memberships | ended_at
+ gyms            | stripe_account_id
+ passes          | current_period_end, past_due_since, stripe_checkout_session_id, stripe_subscription_id, credits_total
+ stripe_events   | stripe_account_id
+(7 rows)
+
+--- tables without RLS
+ relname 
+---------
+(0 rows)
+
+--- security definer functions without pinned search_path
+ oid 
+-----
+(0 rows)
+
+--- functions executable by anon
+ oid 
+-----
+(0 rows)
+
+--- table privileges for anon
+ table_name | privilege_type 
+------------+----------------
+(0 rows)
+
+=========== crux_y
+--- FKs without an index whose leading columns cover the FK columns (any order)
+      tbl       |                  conname                  |          cols           
+----------------+-------------------------------------------+-------------------------
+ class_sessions | class_sessions_tenant_id_location_id_fkey | {tenant_id,location_id}
+(1 row)
+
+--- columns typed money/float/numeric-without-scale, timestamp without tz, json
+ table_name | column_name | data_type 
+------------+-------------+-----------
+(0 rows)
+
+--- nullable columns (review)
+    table_name    |                                                       string_agg                                                        
+------------------+-------------------------------------------------------------------------------------------------------------------------
+ bookings         | free_cancel_until, checked_in_by, checked_in_at, cancelled_at, subscription_id, class_pack_id, waitlisted_at, booked_at
+ class_packs      | refunded_at
+ class_sessions   | cancel_reason, cancelled_at
+ class_types      | level, archived_at
+ idempotency_keys | response_status, response_body
+ plans            | class_credits, validity_days
+ stripe_events    | processed_at, account_id
+ subscriptions    | grace_until, payment_failed_at, canceled_at
+ tenant_users     | phone, stripe_customer_id
+ tenants          | stripe_account_id
+(10 rows)
+
+--- tables without RLS
+ relname 
+---------
+(0 rows)
+
+--- security definer functions without pinned search_path
+ oid 
+-----
+(0 rows)
+
+--- functions executable by anon
+ oid 
+-----
+(0 rows)
+
+--- table privileges for anon
+ table_name | privilege_type 
+------------+----------------
+(0 rows)
+

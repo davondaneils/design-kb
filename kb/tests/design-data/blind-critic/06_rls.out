@@ -1,0 +1,92 @@
+################ X
+-- member of gym2 only (u20) reading gym1:
+[u20] ERROR:  unterminated quoted string at or near "' audit; commit;"
+[u20] LINE 1: ...s, '||(select count(*) from public.audit_events)||' audit; c...
+[u20]                                                              ^
+-- staff of gym2 (u03) reading gym1:
+[u3] ERROR:  unterminated quoted string at or near "' audit; commit;"
+[u3] LINE 1: ...s, '||(select count(*) from public.audit_events)||' audit; c...
+[u3]                                                              ^
+-- staff of gym1 (u02) reading gym1 (control):
+[u2] ERROR:  unterminated quoted string at or near "' audit; commit;"
+[u2] LINE 1: ...s, '||(select count(*) from public.audit_events)||' audit; c...
+[u2]                                                              ^
+-- member u10 of gym1 reading gym1 (sees only own bookings):
+[u10] ERROR:  unterminated quoted string at or near "' audit; commit;"
+[u10] LINE 1: ...s, '||(select count(*) from public.audit_events)||' audit; c...
+[u10]                                                              ^
+-- staff of gym2 sees u19 (member of both): memberships and bookings rows
+[u3] 1 memberships of u19, gyms=a0000000-0000-0000-0000-000000000002
+[u3] 1 bookings of u19 visible (should be gym2 only: 1)
+-- staff of gym2 check-in on a gym1 booking:
+[u3] ERROR:  crux:not_found
+-- staff of gym2 cancels a gym1 booking:
+[u3] ERROR:  crux:not_found
+-- staff of gym2 reads gym1 schedule:
+[u3] ERROR:  crux:not_found
+-- staff of gym2 attendance for gym1:
+[u4] ERROR:  crux:not_found
+-- member u20 books gym1 class:
+[u20] ERROR:  crux:not_found
+-- member u10 checks themself in:
+[u10] ERROR:  crux:not_found
+-- member u10 updates own booking directly:
+[u10] ERROR:  permission denied for table bookings
+-- member u10 makes self staff:
+-- staff u02 reads idempotency_keys / stripe_events:
+[u2] ERROR:  permission denied for table idempotency_keys
+-- anon reads classes:
+ERROR:  permission denied for table classes
+-- anon calls schedule:
+ERROR:  permission denied for schema api
+-- gym2 staff updates a gym1 class:
+-- gym2 staff reschedules own instructor to overlap... (instructor exclusion leaks across gyms?) skip
+################ Y
+-- member of gym2 only (u20) reading gym1:
+[u20] ERROR:  unterminated quoted string at or near "' locations; commit;"
+[u20] LINE 1: ...enant_id='a0000000-0000-0000-0000-000000000001')||' location...
+[u20]                                                              ^
+-- staff of gym2 (u03) reading gym1:
+[u3] ERROR:  unterminated quoted string at or near "' locations; commit;"
+[u3] LINE 1: ...enant_id='a0000000-0000-0000-0000-000000000001')||' location...
+[u3]                                                              ^
+-- staff of gym1 (u02) reading gym1 (control):
+[u2] ERROR:  unterminated quoted string at or near "' locations; commit;"
+[u2] LINE 1: ...enant_id='a0000000-0000-0000-0000-000000000001')||' location...
+[u2]                                                              ^
+-- member u10 of gym1 reading gym1:
+[u10] ERROR:  unterminated quoted string at or near "' locations; commit;"
+[u10] LINE 1: ...enant_id='a0000000-0000-0000-0000-000000000001')||' location...
+[u10]                                                              ^
+-- staff of gym2 sees u19:
+[u3] 1 memberships of u19, gyms=a0000000-0000-0000-0000-000000000002
+[u3] 1 bookings of u19 visible (should be 1)
+-- member u10 sees instructor/other members' emails?
+[u10] 1 tenant_users rows visible to a plain member
+-- staff of gym2 check-in on gym1 booking:
+[u3] ERROR:  Booking not found
+-- staff of gym2 cancels gym1 booking:
+[u3] ERROR:  Booking not found
+-- staff of gym2 reads gym1 schedule:
+[u3] 0 rows
+-- owner of gym2 attendance for gym1:
+[u4] 0 rows
+-- member u20 books gym1 class:
+[u20] ERROR:  Class not found
+-- member u10 checks themself in:
+[u10] ERROR:  Booking not found
+-- member u10 updates own booking directly:
+[u10] ERROR:  permission denied for table bookings
+-- member u10 makes self staff:
+[u10] ERROR:  permission denied for table tenant_users
+-- staff u02 reads idempotency_keys:
+[u2] ERROR:  permission denied for table idempotency_keys
+-- anon reads classes:
+ERROR:  permission denied for table class_sessions
+-- anon calls week_schedule:
+ERROR:  permission denied for function week_schedule
+-- gym2 staff updates gym1 class:
+-- staff u02 edits a class's booked_count directly:
+[u2] ERROR:  permission denied for table class_sessions
+-- staff u02 in gym1 creates a class in gym1 with instructor from gym2 (u03):
+[u2] ERROR:  insert or update on table "class_sessions" violates foreign key constraint "class_sessions_tenant_id_instructor_user_id_fkey"

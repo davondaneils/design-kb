@@ -1,0 +1,40 @@
+#### X: same member, two different idempotency keys, in parallel
+[u10] confirmed
+[u10] 
+[u10] ERROR:  crux:already_booked
+[u10] DETAIL:  {"id": "e0000000-0000-0000-0000-000000000004", "can": {"book": {"reason": "already_booked", "allowed": false}, "cancel": {"late": false, "allowed": true}, "join_waitlist": {"reason": "already_booked", "allowed": false}, "leave_waitlist": {"reason": "not_waitlisted", "allowed": false}}, "status": "scheduled", "ends_at": "2026-10-16T22:48:38Z", "capacity": 5, "has_ended": false, "starts_at": "2026-10-16T21:18:38Z", "time_zone": "America/Denver", "class_type": {"id": "c0000000-0000-0000-0000-000000000001", "name": "Intro to Bouldering"}, "ends_local": "2026-10-16T16:48:38", "instructor": {"id": "00000000-0000-0000-0000-000000000002", "display_name": "User 02"}, "my_booking": {"id": "01a13721-b580-75c5-9824-6dbb99d04180", "status": "confirmed", "promoted": false, "cancel_reason": null, "waitlist_rank": null, "free_cancel_until": "2026-10-16T09:18:38Z"}, "location_id": "b0000000-0000-0000-0000-000000000001", "places_left": 4, "taken_count": 1, "starts_local": "2026-10-16T15:18:38", "waiting_count": 0, "free_cancel_until_if_booked": "2026-10-16T09:18:38Z"}
+X rows for u10: 1
+#### X: same member, same idempotency key, in parallel (expect one booking, second is a replay)
+[u10] 01a13721-bbc9-75c6-a12d-3bd439263d0d
+[u10] 
+[u10] 01a13721-bbc9-75c6-a12d-3bd439263d0d replay=true
+X rows for u10: 1
+#### X: same key reused for a different class (expect idempotency_key_reused)
+[u10] ERROR:  crux:idempotency_key_reused
+[u10] DETAIL:  {"endpoint": "book_class"}
+#### X: service role inserts a 6th confirmed booking directly into a 5-place class (capacity trigger backstop)
+ERROR:  bookings_class_capacity: class e0000000-0000-0000-0000-000000000004 is over capacity (6 of 5)
+#### X: staff lowers capacity below places taken (api.md promises 409 capacity_below_taken)
+[u2] 2
+X after: capacity=2 taken=5
+#### Y: same member books twice in parallel
+[u10] booked
+[u10] 
+[u10] ERROR:  You already have a place or a waitlist spot in this class
+[u10] DETAIL:  already_booked
+Y rows for u10: 1
+#### Y: service role inserts a booked row directly (counter backstop?)
+ERROR:  permission denied for table bookings
+Y after: capacity=5 booked_count=5 actual booked=5
+#### Y: staff lowers capacity below booked
+[u2] ERROR:  new row for relation "class_sessions" violates check constraint "class_sessions_check1"
+#### Y: late-cancel then rebook -> duplicate rows in week_schedule?
+[u10] booked
+[u10] cancelled
+[u10] booked
+[u10] rows for this class in week_schedule: 1 statuses=booked
+#### X: same scenario via class_view
+[u10] confirmed
+[u10] late_cancelled
+[u10] confirmed
+[u10] rows: 1 my_status=confirmed can_cancel={"late": true, "allowed": true}

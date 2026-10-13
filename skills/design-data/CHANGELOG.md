@@ -1,5 +1,8 @@
 # Changelog: design-data
 
+## v0.2.3 (2026-10-13, gaps from the blind Crux test, `kb/tests/design-data.md`; not yet re-tested)
+- Expert moves 9a to 9c: invariants on every write path (capacity edits), time-bounded rights checked against the event time, tenant-keyed uniqueness and exclusion rules.
+
 ## v0.2.2 (2026-10-13, critic second pass; `kb/reviews/design-data.md`, "v0.2.1 second pass")
 - 06: the canonical delete policy now uses a second security definer helper, `private.my_admin_org_ids()`. The old policy read `memberships` as the caller, so with `memberships` locked down as gate 8 requires an owner's delete matched zero rows (measured on PostgreSQL 16.15).
 - Description trimmed from 1,314 to 1,003 characters (the Agent Skills spec caps `description` at 1,024).
