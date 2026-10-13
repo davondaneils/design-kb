@@ -1,5 +1,9 @@
 # design-director changelog
 
+## 2026-10-13 (editor-in-chief, imagery and motion rework, FOUNDATIONS v0.5)
+- Section 4: art direction writes the **visual plan** before layout; motion writes the **motion plan** (ladder of three to five bands, a product scene on product pages).
+- Section 5, new step 7: `motion-plan-check.mjs` and `visual-plan-check.mjs`, both on `kb/teardowns/choreo-probe.mjs`, the recorder that measured the exemplars (`kb/teardowns/motion-imagery.md`). Later steps renumber: hand-over list 14, critic 15, fix and repeat 16.
+
 ## 2026-10-13 (editor-in-chief, benchmark round 1, `kb/tests/benchmark/round1/RANKED.md`)
 - Section 5, new step 13 **hand-over list**: eleven checks on the renders for the round 1 shortfalls a skill already covered (post-action `?state=`, true KPI labels, selected state 3:1, pressed vs disabled, reading size, zoned times, sticky header and stretched row links, review-and-commit, phone menu, KPIs 2x2 at 768, menu edges and dark borders), each naming its rule's home. The fresh-context critic is now step 14, fix and repeat step 15.
 - Step 11: the motif is drawn in the first screen, not only named.

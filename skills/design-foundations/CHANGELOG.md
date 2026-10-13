@@ -1,5 +1,8 @@
 # design-foundations changelog
 
+## v0.5 (2026-10-13, editor-in-chief)
+- Mirrors FOUNDATIONS v0.5 (exemplar benchmark imagery and motion verdicts; live capture `kb/teardowns/motion-imagery.md`): motion ladder of three to five bands, `--duration-reveal` 600ms, `--stagger` 40ms, `--travel` 16px, stagger and travel ranges, product scenes as the second exception to the 600ms ceiling, and the visual plan (visual on 70% of screens, three or more product fragments, one treatment).
+
 ## v0.4.5 (2026-10-13, editor-in-chief)
 - Mirrors FOUNDATIONS v0.4.5 (benchmark round 1, `kb/tests/benchmark/round1/RANKED.md`): time zones on every time when a page has more than one zone (`ZONE`); number plus count noun on the no-break list; measure floor 35 at 390; `reading-size` and `selected-state` lint checks; control borders measured on raised and tinted dark surfaces at 3.3:1; `text-muted-on-tint` on state layers; `--duration-page` 400ms and hover 100ms; true after every primary action.
 
