@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<title>Classes at Gowanus, Northline Climbing</title>
+<meta name="description" content="Member class schedule for one week at one Northline Climbing location, with places, waitlist and free cancellation times.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230D6657'/%3E%3Cpath d='M9 22.5 14.2 9.5h3.6L23 22.5h-4.1l-3-8.2-3 8.2z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+/* Build note
+   Data contract: every value below comes from GET /v1/schedule (api.md), rendered from the fixture for the
+   ?state= in the URL. Times are formatted once, here, with Intl in en-US and timeZone = location.time_zone.
+   States: ready (default), loading, empty, open, full, booked, late, past-due, pack, no-pass, error.
+   Type: system stack (no web font); production delivery for the app would be the same system stack.
+*/
+@layer reset, tokens, base, components;
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  body, h1, h2, h3, p, ul, ol, figure { margin: 0; }
+  ul, ol { padding: 0; list-style: none; }
+  button { font: inherit; color: inherit; }
+  [hidden] { display: none !important; }
+}
+
+@layer tokens {
+  :root {
+    --space-0: 0; --space-1: 2px; --space-2: 4px; --space-3: 8px; --space-4: 12px; --space-5: 16px;
+    --space-6: 24px; --space-7: 32px; --space-8: 48px; --space-9: 64px;
+    --text-xs: 0.75rem; --text-sm: 0.875rem; --text-base: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.9375rem;
+    --leading-tight: 1.1; --leading-snug: 1.25; --leading-normal: 1.5;
+    --weight-regular: 400; --weight-medium: 500; --weight-semibold: 600;
+    --radius-sm: 4px; --radius-md: 8px; --radius-lg: 12px; --radius-full: 9999px;
+    --radius-control: var(--radius-md); --radius-card: var(--radius-lg);
+    --size-control-md: 40px; --size-control-lg: 48px; --size-touch: 44px;
+    --size-icon-md: 16px; --size-icon-lg: 20px; --icon-stroke: 1.5px;
+    --size-measure: 52ch;
+    --duration-instant: 100ms; --duration-fast: 150ms;
+    --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+    --motion-hover: var(--duration-instant) var(--ease-standard);
+    --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+    /* primitives (design-color ramps, measured: see hand-over) */
+    --color-chalk-50: #F6F6F3; --color-chalk-100: #ECECE7; --color-chalk-300: #C9CBC5; --color-chalk-500: #7C8186;
+    --color-ink-600: #585D62; --color-ink-700: #4D5257; --color-ink-950: #17191B;
+    --color-teal-50: #E3F1EE; --color-teal-700: #0D6657; --color-teal-800: #0A5246; --color-teal-900: #083F36;
+    --color-amber-50: #FBF0D9; --color-amber-800: #7A4D00;
+    --color-red-50: #FBE9E7; --color-red-700: #A8261B;
+    --color-green-700: #1C6B3A; --color-blue-600: #1D5FD1;
+    --color-night-950: #0C0E10; --color-night-900: #111315; --color-night-850: #191C1F; --color-night-800: #22262A;
+    --color-night-600: #3A3F44; --color-night-500: #6B7177; --color-night-300: #A2A7AC; --color-night-250: #B3B8BD; --color-night-50: #ECEDEE;
+    --color-teal-300: #5CCBB4; --color-teal-250: #7AD6C3; --color-teal-200: #96E0D0; --color-teal-950: #062019; --color-teal-925: #16302B;
+    --color-amber-300: #F0B657; --color-amber-950: #2E2414; --color-red-300: #FF8F84; --color-red-950: #341A18;
+    --color-green-300: #6FD39C; --color-blue-300: #7FB0FF;
+
+    --shadow-rgb: 23 25 27;
+    --shadow-1: 0 1px 2px rgb(var(--shadow-rgb) / 0.06);
+    --ring: 0 0 0 1px rgb(var(--shadow-rgb) / 0.08);
+    --highlight: inset 0 1px 0 rgb(255 255 255 / 0.12);
+    --elevation-card: var(--ring), var(--shadow-1);
+
+    --color-bg: var(--color-chalk-50);
+    --color-surface: #FFFFFF;
+    --color-surface-sunken: var(--color-chalk-100);
+    --color-text: var(--color-ink-950);
+    --color-text-muted: var(--color-ink-600);
+    --color-text-muted-on-tint: var(--color-ink-700);
+    --color-border: var(--color-chalk-300);
+    --color-border-strong: var(--color-chalk-500);
+    --color-primary: var(--color-teal-700);
+    --color-primary-hover: var(--color-teal-800);
+    --color-primary-active: var(--color-teal-900);
+    --color-on-primary: #FFFFFF;
+    --color-primary-subtle: var(--color-teal-50);
+    --color-warning: var(--color-amber-800);
+    --color-warning-subtle: var(--color-amber-50);
+    --color-danger: var(--color-red-700);
+    --color-danger-subtle: var(--color-red-50);
+    --color-success: var(--color-green-700);
+    --color-focus-ring: var(--color-blue-600);
+    --state-hover: color-mix(in oklch, var(--color-text) 8%, transparent);
+    --state-pressed: color-mix(in oklch, var(--color-text) 10%, transparent);
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --color-bg: var(--color-night-900);
+      --color-surface: var(--color-night-850);
+      --color-surface-sunken: var(--color-night-950);
+      --color-text: var(--color-night-50);
+      --color-text-muted: var(--color-night-300);
+      --color-text-muted-on-tint: var(--color-night-250);
+      --color-border: var(--color-night-600);
+      --color-border-strong: var(--color-night-500);
+      --color-primary: var(--color-teal-300);
+      --color-primary-hover: var(--color-teal-250);
+      --color-primary-active: var(--color-teal-200);
+      --color-on-primary: var(--color-teal-950);
+      --color-primary-subtle: var(--color-teal-925);
+      --color-warning: var(--color-amber-300);
+      --color-warning-subtle: var(--color-amber-950);
+      --color-danger: var(--color-red-300);
+      --color-danger-subtle: var(--color-red-950);
+      --color-success: var(--color-green-300);
+      --color-focus-ring: var(--color-blue-300);
+      --shadow-1: 0 0 0 0 transparent;
+      --ring: 0 0 0 1px rgb(255 255 255 / 0.08);
+      --highlight: inset 0 1px 0 rgb(255 255 255 / 0.06);
+      --elevation-card: var(--ring), var(--highlight);
+    }
+  }
+  :root[data-theme="dark"] {
+    --color-bg: var(--color-night-900);
+    --color-surface: var(--color-night-850);
+    --color-surface-sunken: var(--color-night-950);
+    --color-text: var(--color-night-50);
+    --color-text-muted: var(--color-night-300);
+    --color-text-muted-on-tint: var(--color-night-250);
+    --color-border: var(--color-night-600);
+    --color-border-strong: var(--color-night-500);
+    --color-primary: var(--color-teal-300);
+    --color-primary-hover: var(--color-teal-250);
+    --color-primary-active: var(--color-teal-200);
+    --color-on-primary: var(--color-teal-950);
+    --color-primary-subtle: var(--color-teal-925);
+    --color-warning: var(--color-amber-300);
+    --color-warning-subtle: var(--color-amber-950);
+    --color-danger: var(--color-red-300);
+    --color-danger-subtle: var(--color-red-950);
+    --color-success: var(--color-green-300);
+    --color-focus-ring: var(--color-blue-300);
+    --shadow-1: 0 0 0 0 transparent;
+    --ring: 0 0 0 1px rgb(255 255 255 / 0.08);
+    --highlight: inset 0 1px 0 rgb(255 255 255 / 0.06);
+    --elevation-card: var(--ring), var(--highlight);
+    color-scheme: dark;
+  }
+  :root[data-theme="light"] { color-scheme: light; }
+}
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; scroll-padding-top: var(--space-6); }
+  body {
+    background: var(--color-bg); color: var(--color-text);
+    font-family: var(--font-sans); font-size: var(--text-base); line-height: var(--leading-normal);
+    font-variant-numeric: tabular-nums;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+  p { max-inline-size: var(--size-measure); }
+  :focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+  .nb { white-space: nowrap; }
+  svg.i { inline-size: var(--size-icon-md); block-size: var(--size-icon-md); flex: none; fill: none; stroke: currentColor; stroke-width: var(--icon-stroke); stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+}
+
+@layer components {
+  .skip { position: absolute; inset-inline-start: var(--space-5); inset-block-start: var(--space-3); display: inline-flex; align-items: center; min-block-size: var(--size-touch); padding: var(--space-3) var(--space-5); background: var(--color-surface); color: var(--color-text); border-radius: var(--radius-control); box-shadow: var(--elevation-card); transform: translateY(-200%); }
+  .skip:focus-visible { transform: none; }
+
+  .shell { max-inline-size: 1200px; margin-inline: auto; padding: var(--space-5) var(--space-5) var(--space-8); }
+  .appbar { display: flex; align-items: center; gap: var(--space-4); padding-block: var(--space-3) var(--space-5); }
+  .logo { inline-size: 32px; block-size: 32px; flex: none; }
+  .logo .field { fill: var(--color-primary); }
+  .logo .mark { fill: var(--color-on-primary); }
+  .appbar-text { display: grid; gap: var(--space-0); min-inline-size: 0; }
+  .gym { font-size: var(--text-sm); color: var(--color-text-muted); line-height: var(--leading-snug); }
+  h1 { font-size: var(--text-xl); line-height: var(--leading-snug); font-weight: var(--weight-semibold); letter-spacing: -0.01em; }
+
+  .layout { display: grid; gap: var(--space-6); }
+  @media (min-width: 64rem) {
+    .layout { grid-template-columns: 340px minmax(0, 1fr); gap: var(--space-8); align-items: start; }
+    .side { position: sticky; top: var(--space-6); }
+    h1 { font-size: var(--text-2xl); }
+  }
+  .side { display: grid; gap: var(--space-5); }
+
+  .card { background: var(--color-surface); border-radius: var(--radius-card); box-shadow: var(--elevation-card); padding: var(--space-5); }
+  .eyebrow { font-size: var(--text-sm); color: var(--color-text-muted); font-weight: var(--weight-medium); }
+  .card h2 { font-size: var(--text-lg); line-height: var(--leading-snug); font-weight: var(--weight-semibold); }
+  .stack-sm { display: grid; gap: var(--space-2); }
+  .stack-md { display: grid; gap: var(--space-4); }
+
+  .mine { display: grid; gap: var(--space-0); margin-block-start: var(--space-4); border-block-start: 1px solid var(--color-border); }
+  .mine a { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-1) var(--space-4); align-items: center; padding-block: var(--space-4); min-block-size: var(--size-touch); color: inherit; text-decoration: none; border-block-end: 1px solid var(--color-border); border-radius: var(--radius-sm); }
+  .mine a:hover { background: var(--state-hover); }
+  .mine li:last-child a { border-block-end: 0; padding-block-end: var(--space-0); }
+  .mine .when { font-size: var(--text-sm); color: var(--color-text-muted); }
+  .mine .what { font-weight: var(--weight-medium); }
+  .mine .tag { grid-row: 1 / span 2; grid-column: 2; }
+
+  .pass { display: grid; gap: var(--space-3); }
+  .pass .line { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-2) var(--space-3); }
+  .pass .name { font-weight: var(--weight-semibold); }
+  .pass .meta { color: var(--color-text-muted); font-size: var(--text-sm); }
+  .alert { background: var(--color-warning-subtle); color: var(--color-text); border-radius: var(--radius-card); padding: var(--space-5); display: grid; gap: var(--space-4); }
+  .alert .head { display: flex; gap: var(--space-3); align-items: center; color: var(--color-warning); font-size: var(--text-lg); line-height: var(--leading-snug); font-weight: var(--weight-semibold); }
+  .banner:empty { display: none; }
+  .banner { margin-block-end: var(--space-6); }
+  .alert p { color: var(--color-text); }
+
+  .weekbar { display: grid; gap: var(--space-4); margin-block-end: var(--space-5); }
+  .weeknav { display: inline-grid; grid-template-columns: 1fr 1fr; padding: var(--space-1); gap: var(--space-1); background: var(--color-surface-sunken); border-radius: var(--radius-lg); justify-self: start; }
+  .weeknav a { display: grid; place-items: center; min-block-size: var(--size-touch); padding-inline: var(--space-5); border-radius: var(--radius-md); color: var(--color-text-muted-on-tint); text-decoration: none; font-weight: var(--weight-medium); font-size: var(--text-sm); }
+  .weeknav a:hover { background: var(--state-hover); }
+  .weeknav a[aria-current="page"] { background: var(--color-surface); color: var(--color-text); box-shadow: var(--elevation-card); }
+  .weekhead { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--space-2) var(--space-5); }
+  .weekhead h2 { font-size: var(--text-lg); font-weight: var(--weight-semibold); line-height: var(--leading-snug); }
+  .weekmeta { font-size: var(--text-sm); color: var(--color-text-muted); }
+
+  .days { display: grid; gap: var(--space-6); }
+  .day h3 { font-size: var(--text-sm); font-weight: var(--weight-semibold); color: var(--color-text-muted); padding-block-end: var(--space-3); display: flex; gap: var(--space-3); align-items: baseline; }
+  .day h3 .today { color: var(--color-primary); }
+  .classes { background: var(--color-surface); border-radius: var(--radius-card); box-shadow: var(--elevation-card); }
+  .cls + .cls { border-block-start: 1px solid var(--color-border); }
+  .none { padding: var(--space-4) var(--space-5); color: var(--color-text-muted); font-size: var(--text-sm); }
+
+  .row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: var(--space-4); inline-size: 100%; min-block-size: 72px; padding: var(--space-4) var(--space-5); background: transparent; border: 0; text-align: start; cursor: pointer; border-radius: var(--radius-card); transition: background-color var(--motion-hover); }
+  .row:hover { background: var(--state-hover); }
+  .row:active { background: var(--state-pressed); }
+  .row .t { font-size: var(--text-sm); color: var(--color-text-muted); }
+  .row .n { font-weight: var(--weight-semibold); line-height: var(--leading-snug); }
+  .row .who { font-size: var(--text-sm); color: var(--color-text-muted); }
+  .row .end { display: flex; align-items: center; gap: var(--space-3); }
+  .row .chev { color: var(--color-text-muted); transition: transform var(--motion-hover); }
+  .row[aria-expanded="true"] .chev { transform: rotate(180deg); }
+  .cls.past .n, .cls.cancelled .n { color: var(--color-text-muted); font-weight: var(--weight-medium); }
+
+  .tag { display: inline-flex; align-items: center; gap: var(--space-2); font-size: var(--text-sm); font-weight: var(--weight-medium); white-space: nowrap; color: var(--color-text-muted); }
+  .tag.ok { color: var(--color-success); }
+  .tag.brand { color: var(--color-primary); }
+  .tag.warn { color: var(--color-warning); }
+  .tag .sub { color: var(--color-text-muted); font-weight: var(--weight-regular); }
+
+  .detail { padding: var(--space-0) var(--space-5) var(--space-5); display: grid; gap: var(--space-4); }
+  .detail .facts { display: grid; gap: var(--space-2); font-size: var(--text-sm); color: var(--color-text-muted); }
+  .detail .facts strong { color: var(--color-text); font-weight: var(--weight-semibold); }
+  .detail .rule { display: flex; gap: var(--space-3); align-items: flex-start; font-size: var(--text-sm); }
+  .detail .rule svg { margin-block-start: var(--space-1); }
+  .detail .rule.warn { color: var(--color-warning); }
+  .detail .rule.warn span { color: var(--color-text); }
+  .actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-3); min-block-size: var(--size-control-lg); padding-block: var(--space-0); padding-inline: var(--space-6); border-radius: var(--radius-control); font-weight: var(--weight-semibold); font-size: var(--text-base); border: 1px solid transparent; cursor: pointer; text-decoration: none; transition: background-color var(--motion-hover), border-color var(--motion-hover); }
+  .btn-primary { background: var(--color-primary); color: var(--color-on-primary); box-shadow: var(--highlight); }
+  .btn-primary:hover { background: var(--color-primary-hover); }
+  .btn-primary:active { background: var(--color-primary-active); }
+  .btn-secondary { background: var(--color-surface); color: var(--color-text); border-color: var(--color-border-strong); }
+  .btn-secondary:hover { background: var(--state-hover); }
+  .btn-secondary:active { background: var(--state-pressed); }
+  .btn-danger { background: var(--color-surface); color: var(--color-danger); border-color: var(--color-danger); }
+  .btn-danger:hover { background: var(--state-hover); }
+  .btn-danger:active { background: var(--state-pressed); }
+  .btn[disabled], .btn[aria-disabled="true"] { background: var(--color-surface-sunken); color: var(--color-text-muted-on-tint); border-color: transparent; box-shadow: none; cursor: not-allowed; }
+  .btn[aria-busy="true"] { cursor: progress; }
+  @media (max-width: 39.99rem) { .detail .btn { inline-size: 100%; } }
+
+  .confirm { display: grid; gap: var(--space-4); padding: var(--space-5); border-radius: var(--radius-lg); background: var(--color-danger-subtle); }
+  .confirm p { color: var(--color-text); font-size: var(--text-sm); }
+
+  .panel { background: var(--color-surface); border-radius: var(--radius-card); box-shadow: var(--elevation-card); padding: var(--space-7) var(--space-6); display: grid; gap: var(--space-4); justify-items: start; }
+  .panel h3 { font-size: var(--text-lg); line-height: var(--leading-snug); font-weight: var(--weight-semibold); }
+  .panel p { color: var(--color-text-muted); }
+  .panel .glyph { color: var(--color-text-muted); }
+  .panel .glyph svg.i { inline-size: var(--size-icon-lg); block-size: var(--size-icon-lg); }
+
+  .sk { background: var(--color-surface-sunken); border-radius: var(--radius-sm); block-size: var(--space-4); }
+  .sk.w40 { inline-size: 40%; } .sk.w60 { inline-size: 60%; } .sk.w25 { inline-size: 25%; } .sk.w80 { inline-size: 80%; }
+  .sk-row { display: grid; gap: var(--space-3); padding: var(--space-5); }
+  .sk-row + .sk-row { border-block-start: 1px solid var(--color-border); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .row, .btn, .row .chev { transition: none; }
+  }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to schedule</a>
+<div class="shell">
+  <header class="appbar">
+    <svg class="logo" viewBox="0 0 32 32" role="img" aria-label="Crux"><rect class="field" width="32" height="32" rx="8"/><path class="mark" d="M9 22.5 14.2 9.5h3.6L23 22.5h-4.1l-3-8.2-3 8.2z"/></svg>
+    <div class="appbar-text">
+      <span class="gym" id="gym-name">Northline Climbing</span>
+      <h1 id="title">Classes at Gowanus</h1>
+    </div>
+  </header>
+  <div class="banner" id="banner"></div>
+  <main id="main" class="layout" tabindex="-1">
+    <div class="side" id="side"></div>
+    <section aria-labelledby="week-title" id="week">
+      <div class="weekbar">
+        <nav class="weeknav" aria-label="Week">
+          <a id="tab-this" href="?state=ready">This week</a>
+          <a id="tab-next" href="?state=empty">Next week</a>
+        </nav>
+        <div class="weekhead">
+          <h2 id="week-title">Oct 12 to 18</h2>
+          <p class="weekmeta" id="week-meta"></p>
+        </div>
+      </div>
+      <div id="week-body"></div>
+    </section>
+  </main>
+</div>
+<div class="sr-only" aria-live="polite" id="live"></div>
+
+<script>
+/* ------------------------------------------------------------------------------------------------------------
+   Fixtures: the GET /v1/schedule response (api.md) for each ?state=. Instants are UTC; class times are wall
+   time at the location plus its zone. Nothing below is formatted until render().
+------------------------------------------------------------------------------------------------------------ */
+const TZ = 'America/New_York';
+const LANG = document.documentElement.lang;
+const AS_OF = '2026-10-13T19:05:00Z';
+
+function baseClasses() {
+  return [
+    { class_id: 'c1', class_type: 'Intro to Bouldering', instructor_name: 'Sam Ortiz', starts_local: '2026-10-12T18:00:00', ends_local: '2026-10-12T19:30:00', starts_at: '2026-10-12T22:00:00Z', ends_at: '2026-10-12T23:30:00Z', class_status: 'scheduled', cancelled_at: null, capacity: 10, taken: 9, places_left: 1, waitlist_count: 0, free_cancel_until: '2026-10-12T10:00:00Z', has_started: true, my_booking: { id: 'b1', status: 'attended', waitlist_position: null, covered: true }, can: { book: { allowed: false, reason: 'class_started' } } },
+    { class_id: 'c2', class_type: 'Lead Climbing Course', instructor_name: 'Priya Natarajan', starts_local: '2026-10-12T19:00:00', ends_local: '2026-10-12T21:00:00', starts_at: '2026-10-12T23:00:00Z', ends_at: '2026-10-13T01:00:00Z', class_status: 'scheduled', cancelled_at: null, capacity: 8, taken: 8, places_left: 0, waitlist_count: 0, free_cancel_until: '2026-10-12T11:00:00Z', has_started: true, my_booking: null, can: { book: { allowed: false, reason: 'class_started' } } },
+    { class_id: 'c3', class_type: 'Youth Club', instructor_name: 'Jordan Lee', starts_local: '2026-10-13T16:30:00', ends_local: '2026-10-13T18:00:00', starts_at: '2026-10-13T20:30:00Z', ends_at: '2026-10-13T22:00:00Z', class_status: 'scheduled', cancelled_at: null, capacity: 12, taken: 9, places_left: 3, waitlist_count: 0, free_cancel_until: '2026-10-13T08:30:00Z', has_started: false, my_booking: null, can: { book: { allowed: true } } },
+    { class_id: 'c4', class_type: 'Intro to Bouldering', instructor_name: 'Sam Ortiz', starts_local: '2026-10-13T19:00:00', ends_local: '2026-10-13T20:30:00', starts_at: '2026-10-13T23:00:00Z', ends_at: '2026-10-14T00:30:00Z', class_status: 'scheduled', cancelled_at: null, capacity: 10, taken: 10, places_left: 0, waitlist_count: 2, free_cancel_until: '2026-10-13T11:00:00Z', has_started: false, my_booking: { id: 'b4', status: 'booked', waitlist_position: null, covered: true }, can: { book: { allowed: false, reason: 'already_booked' } } },
+    { class_id: 'c5', class_type: 'Lead Climbing Course', instructor_name: 'Priya Natarajan', starts_local: '2026-10-14T19:00:00', ends_local: '2026-10-14T21:00:00', starts_at: '2026-10-14T23:00:00Z', ends_at: '2026-10-15T01:00:00Z', class_status: 'scheduled', cancelled_at: null, capacity: 8, taken: 8, places_left: 0, waitlist_count: 3, free_cancel_until: '2026-10-14T11:00:00Z', has_started: false, my_booking: { id: 'b5', status: 'waitlisted', waitlist_position: 2, covered: true }, can: { book: { allowed: false, reason: 'already_booked' } } },
+    { class_id: 'c6', class_type: 'Intro to Bouldering', instructor_name: 'Sam Ortiz', starts_local: '2026-10-15T18:30:00', ends_local: '2026-10-15T20:00:00', starts_at: '2026-10-15T22:30:00Z', ends_at: '2026-10-16T00:00:00Z', class_status: 'scheduled', cancelled_at: null, capacity: 10, taken: 6, places_left: 4, waitlist_count: 0, free_cancel_until: '2026-10-15T10:30:00Z', has_started: false, my_booking: null, can: { book: { allowed: true } } },
+    { class_id: 'c7', class_type: 'Lead Climbing Course', instructor_name: 'Priya Natarajan', starts_local: '2026-10-16T18:00:00', ends_local: '2026-10-16T20:00:00', starts_at: '2026-10-16T22:00:00Z', ends_at: '2026-10-17T00:00:00Z', class_status: 'scheduled', cancelled_at: null, capacity: 8, taken: 5, places_left: 3, waitlist_count: 0, free_cancel_until: '2026-10-16T10:00:00Z', has_started: false, my_booking: { id: 'b7', status: 'booked', waitlist_position: null, covered: true }, can: { book: { allowed: false, reason: 'already_booked' } } },
+    { class_id: 'c8', class_type: 'Youth Club', instructor_name: 'Jordan Lee', starts_local: '2026-10-17T10:00:00', ends_local: '2026-10-17T11:30:00', starts_at: '2026-10-17T14:00:00Z', ends_at: '2026-10-17T15:30:00Z', class_status: 'scheduled', cancelled_at: null, capacity: 12, taken: 12, places_left: 0, waitlist_count: 0, free_cancel_until: '2026-10-17T02:00:00Z', has_started: false, my_booking: null, can: { book: { allowed: true } } },
+    { class_id: 'c9', class_type: 'Intro to Bouldering', instructor_name: 'Sam Ortiz', starts_local: '2026-10-17T14:00:00', ends_local: '2026-10-17T15:30:00', starts_at: '2026-10-17T18:00:00Z', ends_at: '2026-10-17T19:30:00Z', class_status: 'scheduled', cancelled_at: null, capacity: 10, taken: 1, places_left: 9, waitlist_count: 0, free_cancel_until: '2026-10-17T06:00:00Z', has_started: false, my_booking: null, can: { book: { allowed: true } } },
+    { class_id: 'c10', class_type: 'Lead Climbing Course', instructor_name: 'Priya Natarajan', starts_local: '2026-10-18T11:00:00', ends_local: '2026-10-18T12:30:00', starts_at: '2026-10-18T15:00:00Z', ends_at: '2026-10-18T16:30:00Z', class_status: 'cancelled', cancelled_at: '2026-10-13T13:20:00Z', capacity: 8, taken: 0, places_left: 8, waitlist_count: 0, free_cancel_until: '2026-10-18T03:00:00Z', has_started: false, my_booking: null, can: { book: { allowed: false, reason: 'class_cancelled' } } }
+  ];
+}
+
+const MONTHLY = { kind: 'monthly', status: 'active', current_period_end: '2026-11-02T14:00:00Z', cancel_at_period_end: false, price_minor: 13900, currency: 'usd', credits_total: null, credits_left: null, payment_failed_at: null, grace_ends_at: null };
+
+function response(state) {
+  const r = {
+    data: baseClasses(), has_more: false, next_cursor: null,
+    query: { week_start: '2026-10-12', week_end: '2026-10-19', time_zone: TZ },
+    location: { name: 'Gowanus', gym_name: 'Northline Climbing', time_zone: TZ },
+    pass: { ...MONTHLY },
+    summary: { has_any: true, class_count: 10, my_upcoming_booked: 2, my_waitlisted: 1, next_class_starts_local: null },
+    rules: { free_cancel_hours: 12, grace_hours: 168 },
+    today: '2026-10-13', as_of: AS_OF, expanded: null
+  };
+  const byId = (id) => r.data.find((c) => c.class_id === id);
+  if (state === 'open') r.expanded = 'c6';
+  if (state === 'full') r.expanded = 'c5';
+  if (state === 'booked') r.expanded = 'c7';
+  if (state === 'late') r.expanded = 'c4';
+  if (state === 'past-due') {
+    r.pass = { ...MONTHLY, status: 'past_due', payment_failed_at: '2026-10-09T18:12:00Z', grace_ends_at: '2026-10-16T18:12:00Z' };
+    // pass_covers: past_due covers classes that start before grace_ends_at
+    for (const c of r.data) {
+      const after = c.starts_at >= r.pass.grace_ends_at;
+      if (c.my_booking) c.my_booking.covered = !after;
+      if (after && c.can.book.allowed) c.can.book = { allowed: false, reason: 'grace_ends_before_class', reason_at: r.pass.grace_ends_at };
+    }
+    r.expanded = 'c7';
+  }
+  if (state === 'pack') {
+    r.pass = { kind: 'pack', status: 'active', current_period_end: null, cancel_at_period_end: false, price_minor: 22000, currency: 'usd', credits_total: 10, credits_left: 2, payment_failed_at: null, grace_ends_at: null };
+    r.expanded = 'c4';
+  }
+  if (state === 'no-pass') {
+    r.pass = null;
+    for (const c of r.data) {
+      c.my_booking = null;
+      if (c.can.book.allowed || c.can.book.reason === 'already_booked') c.can.book = { allowed: false, reason: 'no_pass' };
+    }
+    byId('c4').taken = 9; byId('c4').places_left = 1; byId('c4').waitlist_count = 0;
+    byId('c5').waitlist_count = 2;
+    byId('c7').taken = 4; byId('c7').places_left = 4;
+    byId('c1').taken = 8; byId('c1').places_left = 2;
+    r.summary.my_upcoming_booked = 0; r.summary.my_waitlisted = 0;
+    r.expanded = 'c6';
+  }
+  if (state === 'empty') {
+    r.data = []; r.query.week_start = '2026-10-19'; r.query.week_end = '2026-10-26';
+    r.summary = { has_any: false, class_count: 0, my_upcoming_booked: 0, my_waitlisted: 0, next_class_starts_local: '2026-10-26T18:00:00' };
+  }
+  return r;
+}
+
+/* ------------------------------------------------------------------------------------------------------------
+   Formatting at the edge: en-US house style ("7 pm", "6:30 pm", "Tue, Oct 13"), in the location's zone.
+------------------------------------------------------------------------------------------------------------ */
+const NB = ' ';
+const timeFmt = new Intl.DateTimeFormat(LANG, { timeZone: TZ, hour: 'numeric', minute: '2-digit' });
+const dateFmt = new Intl.DateTimeFormat(LANG, { timeZone: TZ, weekday: 'short', month: 'short', day: 'numeric' });
+const dayOnlyFmt = new Intl.DateTimeFormat(LANG, { timeZone: 'UTC', weekday: 'short', month: 'short', day: 'numeric' });
+const monthDayFmt = new Intl.DateTimeFormat(LANG, { timeZone: 'UTC', month: 'short', day: 'numeric' });
+const dayNumFmt = new Intl.DateTimeFormat(LANG, { timeZone: 'UTC', day: 'numeric' });
+const localDate = (iso) => new Intl.DateTimeFormat('en-CA', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(iso));
+
+function clock(h, m) {               // 24-hour wall parts to "7 pm" / "6:30 pm"
+  const ap = h < 12 ? 'am' : 'pm';
+  const h12 = h % 12 === 0 ? 12 : h % 12;
+  return { num: m ? `${h12}:${String(m).padStart(2, '0')}` : String(h12), ap };
+}
+function instantClock(iso) {         // an instant, in the location zone
+  const p = Object.fromEntries(timeFmt.formatToParts(new Date(iso)).map((x) => [x.type, x.value]));
+  const h = Number(p.hour) % 12 + (p.dayPeriod === 'PM' ? 12 : 0);
+  const c = clock(h, Number(p.minute));
+  return c.num + NB + c.ap;
+}
+function wallParts(local) { const [d, t] = local.split('T'); const [h, m] = t.split(':').map(Number); return { d, h, m }; }
+function wallRange(a, b) {           // "7 to 8:30 pm", "11 am to 12:30 pm"
+  const s = wallParts(a), e = wallParts(b);
+  const cs = clock(s.h, s.m), ce = clock(e.h, e.m);
+  return cs.ap === ce.ap ? `${cs.num} to ${ce.num}${NB}${ce.ap}` : `${cs.num}${NB}${cs.ap} to ${ce.num}${NB}${ce.ap}`;
+}
+function wallClock(local) { const s = wallParts(local); const c = clock(s.h, s.m); return c.num + NB + c.ap; }
+const nbsp = (s) => s.replace(/ /g, NB);
+const zoneName = (iso) => new Intl.DateTimeFormat(LANG, { timeZone: TZ, timeZoneName: 'longGeneric' }).formatToParts(new Date(iso)).find((x) => x.type === 'timeZoneName').value;
+function closedText(iso, today) {    // "at 7 am today" or "on Fri, Oct 16 at 6 am"
+  return localDate(iso) === today ? `at ${instantClock(iso)} today` : `on ${instantDate(iso)} at ${instantClock(iso)}`;
+}
+function dayLabel(dateStr) { return nbsp(dayOnlyFmt.format(new Date(dateStr + 'T00:00:00Z'))); }  // date-only: UTC, never local
+function instantDate(iso) { return nbsp(dateFmt.format(new Date(iso))); }
+function whenText(iso, today) {      // "today, 7 am" or "Fri, Oct 16, 6 am"
+  return localDate(iso) === today ? `today, ${instantClock(iso)}` : `${instantDate(iso)}, ${instantClock(iso)}`;
+}
+function weekRange(start, endExcl) {
+  const s = new Date(start + 'T00:00:00Z'), e = new Date(new Date(endExcl + 'T00:00:00Z').getTime() - 864e5);
+  const sameMonth = s.getUTCMonth() === e.getUTCMonth();
+  return nbsp(monthDayFmt.format(s)) + ' to' + NB + (sameMonth ? dayNumFmt.format(e) : nbsp(monthDayFmt.format(e)));
+}
+const ordinal = (n) => n + ({ one: 'st', two: 'nd', few: 'rd', other: 'th' })[new Intl.PluralRules(LANG, { type: 'ordinal' }).select(n)];
+const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
+
+/* ------------------------------------------------------------------------------------------------------------
+   Icons: one set, 16px box, 1.5px stroke, round caps and joins, currentColor
+------------------------------------------------------------------------------------------------------------ */
+const ICON = {
+  check: '<path d="M3.5 8.5 6.5 11.5 12.5 4.5"/>',
+  clock: '<circle cx="8" cy="8" r="6"/><path d="M8 4.5V8l2.5 1.5"/>',
+  alert: '<path d="M8 2.5 14 13H2z"/><path d="M8 6.5v3"/><path d="M8 11.2v.1"/>',
+  chev: '<path d="M4 6l4 4 4-4"/>',
+  calendar: '<rect x="2.5" y="3.5" width="11" height="10" rx="2"/><path d="M2.5 6.5h11M5.5 2v3M10.5 2v3"/>',
+  wifi: '<path d="M2 6.5a9 9 0 0 1 12 0"/><path d="M4.2 9a6 6 0 0 1 7.6 0"/><path d="M8 12.2v.1"/>',
+  queue: '<path d="M3 4.5h10M3 8h10M3 11.5h6"/>'
+};
+const icon = (n, label) => `<svg class="i" viewBox="0 0 16 16" ${label ? `role="img" aria-label="${label}"` : 'aria-hidden="true"'}>${ICON[n]}</svg>`;
+
+/* ------------------------------------------------------------------------------------------------------------
+   Render
+------------------------------------------------------------------------------------------------------------ */
+const params = new URLSearchParams(location.search);
+const STATE = params.get('state') || 'ready';
+const $ = (id) => document.getElementById(id);
+
+function statusTag(c, r) {
+  const b = c.my_booking;
+  if (c.class_status === 'cancelled') return `<span class="tag">Cancelled</span>`;
+  if (c.has_started) return b && b.status === 'attended' ? `<span class="tag">${icon('check')}Attended</span>` : `<span class="tag">Ended</span>`;
+  if (b && b.status === 'booked' && b.covered === false) return `<span class="tag warn">${icon('alert')}Booked, at risk</span>`;
+  if (b && b.status === 'booked') return `<span class="tag ok">${icon('check')}Booked</span>`;
+  if (b && b.status === 'waitlisted') return `<span class="tag brand">${icon('queue')}${ordinal(b.waitlist_position)} in line</span>`;
+  if (c.places_left === 0) return `<span class="tag">Full <span class="sub">· ${c.waitlist_count} waiting</span></span>`;
+  return `<span class="tag">${c.places_left} left</span>`;
+}
+
+function reasonText(reason, reasonAt, r) {
+  switch (reason) {
+    case 'grace_ends_before_class': return `This class starts after your payment grace ends (${whenText(reasonAt, r.today)}), so it can be booked once your payment goes through.`;
+    case 'no_pass': return `You need a pass at ${r.location.gym_name} to book classes.`;
+    case 'no_credits_left': return 'Your class pack has no classes left.';
+    case 'payment_required': return 'Your pass is not active. Update your payment to book.';
+    default: return '';
+  }
+}
+
+function detail(c, r) {
+  const b = c.my_booking, id = c.class_id, today = r.today;
+  const fcu = c.free_cancel_until, freeOpen = fcu > r.as_of;
+  const asOf = instantClock(r.as_of);
+  const counts = `<p><strong id="${id}-left" data-num data-derived-from="diff #${id}-cap #${id}-taken">${c.places_left}</strong> of <span id="${id}-cap" data-num>${c.capacity}</span> places left · <span id="${id}-taken" data-num>${c.taken}</span> booked · <span id="${id}-wait" data-num>${c.waitlist_count}</span> waiting · as of ${asOf}</p>`;
+  const packNote = r.pass && r.pass.kind === 'pack' ? ' and uses a class from your pack' : '';
+  if (c.class_status === 'cancelled') {
+    return `<div class="facts"><p>Cancelled by the gym ${whenText(c.cancelled_at, today)}. Any bookings were released free of charge.</p></div>`;
+  }
+  if (c.has_started) {
+    return `<div class="facts"><p>${b && b.status === 'attended' ? 'You attended this class.' : 'This class has ended.'}</p></div>`;
+  }
+  if (b && b.status === 'booked' && b.covered === false) {
+    return `<div class="facts">${counts}</div>
+      <p class="rule warn">${icon('alert')}<span>Your payment grace ends ${whenText(r.pass.grace_ends_at, today)}, before this class starts. If the payment is still due then, this place is released.</span></p>
+      <div class="actions"><button class="btn btn-secondary" data-act="cancel" data-id="${id}">Cancel booking</button></div>`;
+  }
+  if (b && b.status === 'booked') {
+    if (freeOpen) {
+      return `<div class="facts">${counts}</div>
+        <p class="rule">${icon('clock')}<span>Free cancellation until ${whenText(fcu, today)}. After that, cancelling counts as a no-show${packNote}.</span></p>
+        <div class="actions"><button class="btn btn-secondary" data-act="cancel" data-id="${id}">Cancel booking</button></div>`;
+    }
+    const waiting = c.waitlist_count ? ` so the first of the ${plural(c.waitlist_count, 'person', 'people')} waiting gets your place` : '';
+    return `<div class="facts">${counts}</div>
+      <p class="rule warn">${icon('clock')}<span>Free cancellation closed ${closedText(fcu, today)}. If you can’t come, cancel anyway${waiting}. It counts as a no-show${packNote}.</span></p>
+      <div class="actions" id="${id}-actions"><button class="btn btn-danger" data-act="late" data-id="${id}" aria-controls="${id}-confirm">Cancel anyway</button></div>
+      <div class="confirm" id="${id}-confirm" hidden><p>Cancel your place in ${c.class_type}, ${dayLabel(wallParts(c.starts_local).d)} at ${wallClock(c.starts_local)}? This counts as a no-show${packNote}.</p>
+        <div class="actions"><button class="btn btn-danger" data-act="late-yes" data-id="${id}">Cancel and count as no-show</button><button class="btn btn-secondary" data-act="late-no" data-id="${id}">Keep my place</button></div></div>`;
+  }
+  if (b && b.status === 'waitlisted') {
+    return `<div class="facts"><p>You’re <strong>${ordinal(b.waitlist_position)}</strong> of <span data-num>${c.waitlist_count}</span> waiting, as of ${asOf}. All <span data-num>${c.capacity}</span> places are booked.</p></div>
+      <p class="rule">${icon('queue')}<span>If a place opens before the class starts, you’re booked automatically. If that happens after ${whenText(fcu, today)}, cancelling counts as a no-show${packNote}.</span></p>
+      <div class="actions"><button class="btn btn-secondary" data-act="leave" data-id="${id}">Leave waitlist</button></div>`;
+  }
+  if (!c.can.book.allowed) {
+    const why = reasonText(c.can.book.reason, c.can.book.reason_at, r);
+    return `<div class="facts">${counts}</div>
+      <p class="rule warn">${icon('alert')}<span id="${id}-why">${why}</span></p>
+      <div class="actions"><button class="btn" disabled aria-describedby="${id}-why">${c.places_left === 0 ? 'Join waitlist' : 'Book this class'}</button></div>`;
+  }
+  const cancelRule = freeOpen
+    ? `Free cancellation until ${whenText(fcu, today)}. After that, cancelling counts as a no-show${packNote}.`
+    : `This class starts within ${r.rules.free_cancel_hours} hours. Once you book, cancelling counts as a no-show${packNote}.`;
+  const packUse = r.pass && r.pass.kind === 'pack' ? ` Uses 1 of your ${r.pass.credits_left} classes left.` : '';
+  if (c.places_left === 0) {
+    return `<div class="facts">${counts}</div>
+      <p class="rule">${icon('queue')}<span>Join the waitlist and you’re booked automatically if a place opens before the class starts. If that happens after ${whenText(fcu, today)}, cancelling counts as a no-show${packNote}.${r.pass && r.pass.kind === 'pack' ? ' Waiting holds a class from your pack until you get a place or leave.' : ''}</span></p>
+      <div class="actions"><button class="btn btn-primary" data-act="waitlist" data-id="${id}">Join waitlist</button></div>`;
+  }
+  return `<div class="facts">${counts}</div>
+    <p class="rule${freeOpen ? '' : ' warn'}">${icon('clock')}<span>${cancelRule}${packUse}</span></p>
+    <div class="actions"><button class="btn btn-primary" data-act="book" data-id="${id}">Book this class</button></div>`;
+}
+
+function renderSide(r) {
+  const side = $('side');
+  const mine = r.data.filter((c) => c.my_booking && ['booked', 'waitlisted'].includes(c.my_booking.status) && !c.has_started);
+  let pass = '';
+  const p = r.pass;
+  if (!p) {
+    pass = `<section class="card pass" aria-labelledby="pass-h"><h2 id="pass-h">Get a pass to book</h2>
+      <p class="meta">A monthly pass or a class pack lets you book classes at ${r.location.gym_name}.</p>
+      <div class="actions"><button class="btn btn-primary" data-act="passes">See passes</button></div></section>`;
+  } else if (p.status === 'past_due') {
+    pass = `<section class="alert" role="region" aria-labelledby="pay-h">
+      <h2 class="head" id="pay-h">${icon('alert')}<span>Payment failed</span></h2>
+      <p>The payment for your monthly pass failed on ${instantDate(p.payment_failed_at)}. Classes that start before ${instantDate(p.grace_ends_at)}, ${instantClock(p.grace_ends_at)} can still be booked. After that, places you’ve booked are released unless the payment has gone through.</p>
+      <div class="actions"><button class="btn btn-primary" data-act="billing">Update payment</button></div></section>`;
+  } else if (p.kind === 'pack') {
+    pass = `<section class="card pass" aria-labelledby="pass-h"><p class="eyebrow">Your pass</p>
+      <p class="line"><span class="name" id="pass-h">Class pack</span><span class="meta"><span data-num>${p.credits_left}</span> of <span data-num>${p.credits_total}</span> classes left</span></p>
+      <p class="meta">Booked and waitlisted classes each hold one until they end, you cancel in time, or you leave the waitlist.</p></section>`;
+  } else {
+    const end = p.cancel_at_period_end ? 'Ends' : 'Renews';
+    pass = `<section class="card pass" aria-labelledby="pass-h"><p class="eyebrow">Your pass</p>
+      <p class="line"><span class="name" id="pass-h">Monthly pass</span><span class="meta">${end} ${instantDate(p.current_period_end)}</span></p></section>`;
+  }
+  const weekWords = weekRange(r.query.week_start, r.query.week_end);
+  let next = '';
+  if (!mine.length) {
+    next = `<section class="card" aria-labelledby="mine-h"${r.summary.has_any ? '' : ' data-data="none"'}><p class="eyebrow">Your week</p>
+      <h2 id="mine-h">Nothing booked from ${weekWords}</h2></section>`;
+  } else {
+    const items = mine.map((c) => {
+      const d = wallParts(c.starts_local).d;
+      const day = d === r.today ? 'Today' : dayLabel(d);
+      return `<li><a href="#${c.class_id}" data-open="${c.class_id}"><span class="when">${day}, ${wallClock(c.starts_local)}</span><span class="what">${c.class_type}</span>${statusTag(c, r)}</a></li>`;
+    }).join('');
+    const parts = [];
+    if (r.summary.my_upcoming_booked) parts.push(`<span data-num>${r.summary.my_upcoming_booked}</span> booked`);
+    if (r.summary.my_waitlisted) parts.push(`<span data-num>${r.summary.my_waitlisted}</span> on a waitlist`);
+    next = `<section class="card" aria-labelledby="mine-h"><p class="eyebrow">Your week</p>
+      <h2 id="mine-h">${parts.join(', ')}</h2><ul class="mine">${items}</ul></section>`;
+  }
+  if (p && p.status === 'past_due') { $('banner').innerHTML = pass; side.innerHTML = next; }
+  else { $('banner').innerHTML = ''; side.innerHTML = next + pass; }
+}
+
+function render(given) {
+  const thisWeek = STATE !== 'empty';
+  $('tab-this').toggleAttribute('aria-current', false); $('tab-next').toggleAttribute('aria-current', false);
+  (thisWeek ? $('tab-this') : $('tab-next')).setAttribute('aria-current', 'page');
+  const body = $('week-body');
+
+  if (STATE === 'loading') {
+    document.querySelector('#week').setAttribute('aria-busy', 'true');
+    $('week-meta').textContent = 'Loading classes';
+    $('side').innerHTML = `<section class="card" aria-hidden="true"><div class="stack-md"><div class="sk w25"></div><div class="sk w60"></div><div class="sk w80"></div></div></section>`;
+    body.innerHTML = `<div class="classes" aria-hidden="true">${'<div class="sk-row"><div class="sk w25"></div><div class="sk w60"></div><div class="sk w40"></div></div>'.repeat(5)}</div>`;
+    return;
+  }
+  if (STATE === 'error') {
+    $('week-meta').textContent = '';
+    $('side').innerHTML = '';
+    body.innerHTML = `<div class="panel" role="alert"><span class="glyph">${icon('wifi')}</span><h3>Classes didn’t load</h3>
+      <p>Check your connection, then try again. Nothing you booked has changed.</p>
+      <a class="btn btn-primary" href="?state=ready">Try again</a></div>`;
+    return;
+  }
+
+  const r = given || response(STATE);
+  $('week-title').textContent = weekRange(r.query.week_start, r.query.week_end);
+  $('week-meta').textContent = `Times in ${zoneName(r.as_of)}${r.data.length ? `. Places as of ${instantClock(r.as_of)}` : ''}`;
+  renderSide(r);
+
+  if (!r.data.length) {
+    const n = r.summary.next_class_starts_local;
+    body.innerHTML = `<div class="panel" data-data="none"><span class="glyph">${icon('calendar')}</span><h3>No classes at ${r.location.name} from ${weekRange(r.query.week_start, r.query.week_end)}</h3>
+      <p>${n ? `The next class is on ${dayLabel(wallParts(n).d)} at ${wallClock(n)}.` : 'Nothing is scheduled yet.'}</p>
+      <a class="btn btn-secondary" href="?state=ready">Back to this week</a></div>`;
+    return;
+  }
+
+  const groups = new Map();
+  for (const c of r.data) { const d = wallParts(c.starts_local).d; if (!groups.has(d)) groups.set(d, []); groups.get(d).push(c); }
+  const days = [];
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(Date.parse(r.query.week_start + 'T00:00:00Z') + i * 864e5).toISOString().slice(0, 10);
+    const list = groups.get(d) || [];
+    const label = d === r.today ? `<span class="today">Today</span><span>${dayLabel(d)}</span>` : `<span>${dayLabel(d)}</span>`;
+    const rows = list.map((c) => {
+      const open = r.expanded === c.class_id;
+      const cls = ['cls', c.has_started ? 'past' : '', c.class_status === 'cancelled' ? 'cancelled' : ''].join(' ').trim();
+      return `<li class="${cls}" id="${c.class_id}">
+        <button class="row" aria-expanded="${open}" aria-controls="${c.class_id}-d" data-toggle="${c.class_id}">
+          <span class="stack-sm"><span class="t">${wallRange(c.starts_local, c.ends_local)}</span><span class="n">${c.class_type}</span><span class="who">with ${c.instructor_name}</span></span>
+          <span class="end">${statusTag(c, r)}<svg class="i chev" viewBox="0 0 16 16" aria-hidden="true">${ICON.chev}</svg></span>
+        </button>
+        <div class="detail" id="${c.class_id}-d" ${open ? '' : 'hidden'}>${detail(c, r)}</div></li>`;
+    }).join('');
+    days.push(`<li class="day"><h3>${label}</h3>${list.length ? `<ul class="classes">${rows}</ul>` : `<p class="none classes">No classes</p>`}</li>`);
+  }
+  body.innerHTML = `<ol class="days">${days.join('')}</ol>`;
+  window.__r = r;
+}
+
+/* Interactions: one class open at a time; actions show the server's answer. In this mock the answer is the
+   fixture's next state, applied to every related number at once (taken, left, waiting, your week). */
+document.addEventListener('click', (e) => {
+  const t = e.target.closest('[data-toggle], [data-act], [data-open]');
+  if (!t) return;
+  const r = window.__r;
+  if (t.dataset.open) {
+    const row = document.querySelector(`[data-toggle="${t.dataset.open}"]`);
+    if (row && row.getAttribute('aria-expanded') !== 'true') row.click();
+    return;
+  }
+  if (t.dataset.toggle) {
+    const id = t.dataset.toggle, open = t.getAttribute('aria-expanded') === 'true';
+    document.querySelectorAll('.row[aria-expanded="true"]').forEach((b) => { b.setAttribute('aria-expanded', 'false'); $(b.dataset.toggle + '-d').hidden = true; });
+    if (!open) { t.setAttribute('aria-expanded', 'true'); $(id + '-d').hidden = false; }
+    return;
+  }
+  const say = (msg) => { $('live').textContent = msg; };
+  if (t.dataset.act === 'billing') { say('Opening the secure payment page.'); return; }
+  if (t.dataset.act === 'passes') { say('Opening passes.'); return; }
+  const id = t.dataset.id, c = r && r.data.find((x) => x.class_id === id);
+  if (!c) return;
+  const when = `${dayLabel(wallParts(c.starts_local).d)}, ${wallClock(c.starts_local)}`;
+  switch (t.dataset.act) {
+    case 'book': c.taken += 1; c.places_left -= 1; c.my_booking = { id: 'new', status: 'booked', waitlist_position: null, covered: true }; r.summary.my_upcoming_booked += 1; say(`Booked: ${c.class_type}, ${when}.`); break;
+    case 'waitlist': c.waitlist_count += 1; c.my_booking = { id: 'new', status: 'waitlisted', waitlist_position: c.waitlist_count, covered: true }; r.summary.my_waitlisted += 1; say(`You’re ${ordinal(c.waitlist_count)} in line for ${c.class_type}, ${when}.`); break;
+    case 'cancel': c.taken -= 1; c.places_left += 1; c.my_booking = null; r.summary.my_upcoming_booked -= 1; say(`Cancelled: ${c.class_type}, ${when}. No charge.`); break;
+    case 'leave': c.waitlist_count -= 1; c.my_booking = null; r.summary.my_waitlisted -= 1; say(`You left the waitlist for ${c.class_type}, ${when}.`); break;
+    case 'late': $(id + '-confirm').hidden = false; $(id + '-actions').hidden = true; $(id + '-confirm').querySelector('[data-act="late-no"]').focus(); return;
+    case 'late-no': $(id + '-confirm').hidden = true; $(id + '-actions').hidden = false; $(id + '-actions').querySelector('button').focus(); return;
+    case 'late-yes':
+      if (c.waitlist_count > 0) { c.waitlist_count -= 1; } else { c.taken -= 1; c.places_left += 1; }
+      c.my_booking = null; r.summary.my_upcoming_booked -= 1; say(`Cancelled: ${c.class_type}, ${when}. Counted as a no-show.`); break;
+    default: return;
+  }
+  // re-render from the updated response so every related number changes in the same frame
+  r.expanded = id;
+  render(r);
+  const row = document.querySelector(`[data-toggle="${id}"]`); if (row) row.focus();
+});
+
+render();
+</script>
+</body>
+</html>

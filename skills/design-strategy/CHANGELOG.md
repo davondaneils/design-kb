@@ -1,5 +1,8 @@
 # Changelog: design-strategy
 
+## v0.1.3 (2026-10-14, from the Halden re-test)
+- 03 fundamental 4a: check the one true fact against each named competitor's own page before calling it owned; lead with the part they cannot copy.
+
 ## v0.1.2 (2026-10-13, gaps from the Halden test, `kb/tests/design-strategy.md`; not yet re-tested)
 - 06 reading results: a viewer reading a device as an error fails playbook-brand 2a; with no fresh viewer, the device stays off the first screen and the hand-over says "concept legibility not tested".
 - 05 expert moves 12 and 13: show what the true fact buys; the weakest field still gets the strongest verifiable fact.

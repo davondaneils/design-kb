@@ -1,5 +1,8 @@
 # Changelog: design-data
 
+## v0.2.4 (2026-10-14, from the Crux re-test)
+- Move 26: racing retries with the same client id return the one row, never a raw primary key error.
+
 ## v0.2.3 (2026-10-13, gaps from the blind Crux test, `kb/tests/design-data.md`; not yet re-tested)
 - Expert moves 9a to 9c: invariants on every write path (capacity edits), time-bounded rights checked against the event time, tenant-keyed uniqueness and exclusion rules.
 

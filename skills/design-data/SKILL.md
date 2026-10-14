@@ -7,7 +7,7 @@ description: Domain reference loaded by design-director or a design playbook (ma
 
 > **Layer: domain reference.** Loaded after `design-foundations` by `design-director` or a `design-playbook-*` skill whenever a screen is drawn over real data, or directly for a narrow data question. Accessibility floor for anything that reaches a screen: design-foundations `references/accessibility.md`. State visuals: design-product-ui `references/05-states-bulk.md`.
 
-Version 0.2.3. Facts current to **2026-10-13** (every time-sensitive fact rechecked against primary sources that day; dates per fact in `kb/research/data/`). Platform facts move: PostgreSQL 19 is in beta, Supabase legacy keys are deprecated by the end of 2026, the GDPR Digital Omnibus is pending. Before advice that depends on a platform behavior, check the fact's date in `references/` and say how old it is. Review due 2027-01-13.
+Version 0.2.4. Facts current to **2026-10-13** (every time-sensitive fact rechecked against primary sources that day; dates per fact in `kb/research/data/`). Platform facts move: PostgreSQL 19 is in beta, Supabase legacy keys are deprecated by the end of 2026, the GDPR Digital Omnibus is pending. Before advice that depends on a platform behavior, check the fact's date in `references/` and say how old it is. Review due 2027-01-13.
 
 The bar: a schema, policy set, API and data-to-screen contract that a senior engineer at Stripe or Supabase and a senior product designer at Linear would approve without comments. Correct first, then fast, then pleasant to evolve, and never a screen that shows something the data cannot supply.
 
@@ -140,7 +140,7 @@ Plural nouns, one level of nesting, POST create (201 plus `Location`), PATCH par
 23. **"50+" is the honest cheap count**: fetch one extra row. Stripe's own search total is opt-in and accurate only to 10,000.
 24. **Freshness from the server clock**: `as_of` plus the `Date` header, never the device clock or the fetch time.
 25. **Lost updates become a conversation**: `ETag` plus `If-Match`, 412 names who changed what; 428 where people edit together.
-26. **Client ids end the temp-id dance**: `crypto.randomUUID()` for optimistic creates plus one `Idempotency-Key` per intent.
+26. **Client ids end the temp-id dance**: `crypto.randomUUID()` for optimistic creates plus one `Idempotency-Key` per intent. Two retries with the same client id racing each other must both return the one row (`insert ... on conflict (id) do nothing`, then select it); a raw primary key violation reaching the client is a bug (Crux re-test, `kb/tests/design-data.md`).
 27. **Positions and "places left" are computed, never stored**: store the order key, compute rank and remainder at read, let the locked write be the truth and return 409 with `remaining: 0`.
 28. **Sentences are rendered, not stored**: activity rows keep action, actor, target and parameters; the edge renders them in the locale.
 29. **Dimensions are data**: width, height, alt, focal point and placeholder captured on upload; CLS is solved in the schema.

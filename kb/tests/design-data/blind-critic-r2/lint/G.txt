@@ -1,0 +1,853 @@
+
+Fundamentals lint: schedule.html  ->  FAIL (80 fail, 6 warn)
+
+  FAIL  axe
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-12"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-13"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-14"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-15"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-16"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-17"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-18"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+  pass  overlay
+  pass  targets  (1 warn)
+        ! touch target under 44x44 at 390px  [#app > header.top > div.gym > button.loc-btn]
+  pass  measure
+  FAIL  type-scale
+        x font size 13px off the type scale at 390px  [#app > header.top > div.gym > span.gym-name, #app > header.top > div.pass > b, #app > header.top > div.pass > span, #app > div.week-bar > div > div.week-sub]
+        x font size 22px off the type scale at 390px  [#app > header.top > div.gym > button.loc-btn]
+        x font size 15px off the type scale at 390px  [#app > div.week-bar > div > div.week-title, #app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.days > button.day-tab.is-past]
+        x font size 17px off the type scale at 390px  [#app > div.days > button.day-tab.is-past > span.dnum, #app > div.days > button.day-tab.is-today > span.dnum, #app > div.days > button.day-tab > span.dnum, #app > div.days > button.day-tab > span.dnum]
+        x font size 13px off the type scale at 1440px  [#app > header.top > div.gym > span.gym-name, #app > div.week-bar > div > div.week-sub, div.week > section.day.is-past > div.day-head > span.dow, section.day.is-past > article.card.is-done > div.c-row > span.c-dur]
+        x font size 28px off the type scale at 1440px  [#app > header.top > div.gym > button.loc-btn]
+        x font size 17px off the type scale at 1440px  [#app > div.week-bar > div > div.week-title]
+        x font size 15px off the type scale at 1440px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn, section.day.is-past > article.card.is-done > div.c-row > span.c-time, div.week > section.day.is-past > article.card.is-done > h3.c-title]
+  FAIL  spacing
+        x padding-top:14px off the spacing scale at 390px  [#app > header.top, #app > div.week > section.day.is-selected > article.card.is-done, #app > div.week > section.day.is-selected > article.card, #app > div.week > section.day.is-selected > article.card]
+        x padding-bottom:10px off the spacing scale at 390px  [#app > header.top, #app > div.days]
+        x padding-top:6px off the spacing scale at 390px  [#app > div.week-bar, html > body > nav.tabbar]
+        x padding-top:1px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-right:6px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-bottom:1px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-left:6px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-top:7px off the spacing scale at 390px  [#app > div.days > button.day-tab.is-past, #app > div.days > button.day-tab.is-today, #app > div.days > button.day-tab, #app > div.days > button.day-tab]
+        x padding-bottom:6px off the spacing scale at 390px  [#app > div.days > button.day-tab.is-past, #app > div.days > button.day-tab.is-today, #app > div.days > button.day-tab, #app > div.days > button.day-tab]
+        x row-gap:1px off the spacing scale at 390px  [#app > div.days > button.day-tab.is-past, #app > div.days > button.day-tab.is-today, #app > div.days > button.day-tab, #app > div.days > button.day-tab]
+        x column-gap:1px off the spacing scale at 390px  [#app > div.days > button.day-tab.is-past, #app > div.days > button.day-tab.is-today, #app > div.days > button.day-tab, #app > div.days > button.day-tab]
+        x row-gap:3px off the spacing scale at 390px  [#app > div.days > button.day-tab > span.marks, #app > div.days > button.day-tab > span.marks]
+        ... 28 more
+  pass  overflow
+  pass  heading-wrap  (4 warn)
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day.is-past > article.card.is-done > h3.c-title]
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day.is-selected > article.card > h3.c-title]
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day > article.card > h3.c-title]
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day > article.card > h3.c-title]
+  pass  svg-overlap
+  FAIL  primary
+        x 6 filled calls to action in screen 1 at 1440px ("Book", "Book", "Book", "Book", "Book", "Book"); one primary per view  [section.day > article.card > div.c-foot > button.btn.btn-primary]
+  FAIL  radius
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [#app > div.week-bar > div.nav-btns > button.icon-btn]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [#app > div.week-bar > div.nav-btns > button.icon-btn]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [article.card.is-done > div.c-foot > div.c-status > span.badge.b-ok]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day.is-selected > article.card > div.c-foot > button.btn.btn-primary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day.is-selected > article.card > div.c-foot > button.btn.btn-secondary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card > div.c-foot > button.btn.btn-primary]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [article.card.mine-wait > div.c-foot > div.c-status > span.badge.b-wait]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card.mine-wait > div.c-foot > button.btn.btn-secondary]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [article.card.mine-booked > div.c-foot > div.c-status > span.badge.b-ok]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card.mine-booked > div.c-foot > button.btn.btn-secondary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card > div.c-foot > button.btn.btn-secondary]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [article.card.c-cancelled > div.c-foot > div.c-status > span.badge.b-muted]
+        ... 5 more
+  pass  color-scheme
+  pass  typography  (1 warn)
+        ! straight quote or apostrophe: "a place opens you're booked automat" (use ’ ‘ “ ”)  [article.card.mine-wait > div.c-foot > div.c-status > span.c-note]
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke
+  pass  weight
+  pass  occlusion
+  pass  squash
+  FAIL  sticky-header
+        x sticky top bar is 79px tall at 390px but html scroll-padding-top is auto; anchors and focus land under it (WCAG 2.4.11)  [#app > div.days]
+        x sticky top bar is 79px tall at 768px but html scroll-padding-top is auto; anchors and focus land under it (WCAG 2.4.11)  [#app > div.days]
+  pass  run-together
+  FAIL  word-break
+        x text "Join waitlist" runs 10px into its control's padding at 1024px  [section.day.is-selected > article.card > div.c-foot > button.btn.btn-secondary]
+        x text "Leave waitlist" runs 16px into its control's padding at 1024px  [section.day > article.card.mine-wait > div.c-foot > button.btn.btn-secondary]
+        x text "Join waitlist" runs 10px into its control's padding at 1024px  [section.day > article.card > div.c-foot > button.btn.btn-secondary]
+  FAIL  grid-edge
+        x sibling columns miss a shared left edge by 12px at 1024px (7 columns in #app > div.week)  [div.week > section.day > div.day-head > span.dnum]
+        x sibling columns miss a shared left edge by 12px at 1440px (7 columns in #app > div.week)  [div.week > section.day > div.day-head > span.dnum]
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback
+  pass  motion
+
+  JSON: /tmp/claude-0/-home-user-design-kb/6a58f026-c577-5c8c-9a9c-b604a01965c1/scratchpad/blind-data-r2/G/schedule.lint.json
+
+Fundamentals lint: schedule.html?state=default  ->  FAIL (80 fail, 6 warn)
+
+  FAIL  axe
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-12"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-13"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-14"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-15"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-16"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-17"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-18"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+  pass  overlay
+  pass  targets  (1 warn)
+        ! touch target under 44x44 at 390px  [#app > header.top > div.gym > button.loc-btn]
+  pass  measure
+  FAIL  type-scale
+        x font size 13px off the type scale at 390px  [#app > header.top > div.gym > span.gym-name, #app > header.top > div.pass > b, #app > header.top > div.pass > span, #app > div.week-bar > div > div.week-sub]
+        x font size 22px off the type scale at 390px  [#app > header.top > div.gym > button.loc-btn]
+        x font size 15px off the type scale at 390px  [#app > div.week-bar > div > div.week-title, #app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.days > button.day-tab.is-past]
+        x font size 17px off the type scale at 390px  [#app > div.days > button.day-tab.is-past > span.dnum, #app > div.days > button.day-tab.is-today > span.dnum, #app > div.days > button.day-tab > span.dnum, #app > div.days > button.day-tab > span.dnum]
+        x font size 13px off the type scale at 1440px  [#app > header.top > div.gym > span.gym-name, #app > div.week-bar > div > div.week-sub, div.week > section.day.is-past > div.day-head > span.dow, section.day.is-past > article.card.is-done > div.c-row > span.c-dur]
+        x font size 28px off the type scale at 1440px  [#app > header.top > div.gym > button.loc-btn]
+        x font size 17px off the type scale at 1440px  [#app > div.week-bar > div > div.week-title]
+        x font size 15px off the type scale at 1440px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn, section.day.is-past > article.card.is-done > div.c-row > span.c-time, div.week > section.day.is-past > article.card.is-done > h3.c-title]
+  FAIL  spacing
+        x padding-top:14px off the spacing scale at 390px  [#app > header.top, #app > div.week > section.day.is-selected > article.card.is-done, #app > div.week > section.day.is-selected > article.card, #app > div.week > section.day.is-selected > article.card]
+        x padding-bottom:10px off the spacing scale at 390px  [#app > header.top, #app > div.days]
+        x padding-top:6px off the spacing scale at 390px  [#app > div.week-bar, html > body > nav.tabbar]
+        x padding-top:1px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-right:6px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-bottom:1px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-left:6px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-top:7px off the spacing scale at 390px  [#app > div.days > button.day-tab.is-past, #app > div.days > button.day-tab.is-today, #app > div.days > button.day-tab, #app > div.days > button.day-tab]
+        x padding-bottom:6px off the spacing scale at 390px  [#app > div.days > button.day-tab.is-past, #app > div.days > button.day-tab.is-today, #app > div.days > button.day-tab, #app > div.days > button.day-tab]
+        x row-gap:1px off the spacing scale at 390px  [#app > div.days > button.day-tab.is-past, #app > div.days > button.day-tab.is-today, #app > div.days > button.day-tab, #app > div.days > button.day-tab]
+        x column-gap:1px off the spacing scale at 390px  [#app > div.days > button.day-tab.is-past, #app > div.days > button.day-tab.is-today, #app > div.days > button.day-tab, #app > div.days > button.day-tab]
+        x row-gap:3px off the spacing scale at 390px  [#app > div.days > button.day-tab > span.marks, #app > div.days > button.day-tab > span.marks]
+        ... 28 more
+  pass  overflow
+  pass  heading-wrap  (4 warn)
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day.is-past > article.card.is-done > h3.c-title]
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day.is-selected > article.card > h3.c-title]
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day > article.card > h3.c-title]
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day > article.card > h3.c-title]
+  pass  svg-overlap
+  FAIL  primary
+        x 6 filled calls to action in screen 1 at 1440px ("Book", "Book", "Book", "Book", "Book", "Book"); one primary per view  [section.day > article.card > div.c-foot > button.btn.btn-primary]
+  FAIL  radius
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [#app > div.week-bar > div.nav-btns > button.icon-btn]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [#app > div.week-bar > div.nav-btns > button.icon-btn]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [article.card.is-done > div.c-foot > div.c-status > span.badge.b-ok]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day.is-selected > article.card > div.c-foot > button.btn.btn-primary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day.is-selected > article.card > div.c-foot > button.btn.btn-secondary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card > div.c-foot > button.btn.btn-primary]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [article.card.mine-wait > div.c-foot > div.c-status > span.badge.b-wait]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card.mine-wait > div.c-foot > button.btn.btn-secondary]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [article.card.mine-booked > div.c-foot > div.c-status > span.badge.b-ok]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card.mine-booked > div.c-foot > button.btn.btn-secondary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card > div.c-foot > button.btn.btn-secondary]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [article.card.c-cancelled > div.c-foot > div.c-status > span.badge.b-muted]
+        ... 5 more
+  pass  color-scheme
+  pass  typography  (1 warn)
+        ! straight quote or apostrophe: "a place opens you're booked automat" (use ’ ‘ “ ”)  [article.card.mine-wait > div.c-foot > div.c-status > span.c-note]
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke
+  pass  weight
+  pass  occlusion
+  pass  squash
+  FAIL  sticky-header
+        x sticky top bar is 79px tall at 390px but html scroll-padding-top is auto; anchors and focus land under it (WCAG 2.4.11)  [#app > div.days]
+        x sticky top bar is 79px tall at 768px but html scroll-padding-top is auto; anchors and focus land under it (WCAG 2.4.11)  [#app > div.days]
+  pass  run-together
+  FAIL  word-break
+        x text "Join waitlist" runs 10px into its control's padding at 1024px  [section.day.is-selected > article.card > div.c-foot > button.btn.btn-secondary]
+        x text "Leave waitlist" runs 16px into its control's padding at 1024px  [section.day > article.card.mine-wait > div.c-foot > button.btn.btn-secondary]
+        x text "Join waitlist" runs 10px into its control's padding at 1024px  [section.day > article.card > div.c-foot > button.btn.btn-secondary]
+  FAIL  grid-edge
+        x sibling columns miss a shared left edge by 12px at 1024px (7 columns in #app > div.week)  [div.week > section.day > div.day-head > span.dnum]
+        x sibling columns miss a shared left edge by 12px at 1440px (7 columns in #app > div.week)  [div.week > section.day > div.day-head > span.dnum]
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback
+  pass  motion
+
+  JSON: /tmp/claude-0/-home-user-design-kb/6a58f026-c577-5c8c-9a9c-b604a01965c1/scratchpad/blind-data-r2/G/schedule.state-default.lint.json
+
+Fundamentals lint: schedule.html?state=loading  ->  FAIL (31 fail, 4 warn)
+
+  pass  axe  (2 warn)
+        ! needs review by eye, bypass: Page must have means to bypass repeated blocks (1 nodes)
+        ! needs review by eye, bypass: Page must have means to bypass repeated blocks (1 nodes)
+  pass  overlay
+  pass  targets  (1 warn)
+        ! touch target under 44x44 at 390px  [#app > header.top > div.gym > button.loc-btn]
+  pass  measure
+  FAIL  type-scale
+        x font size 13px off the type scale at 390px  [#app > header.top > div.gym > span.gym-name]
+        x font size 22px off the type scale at 390px  [#app > header.top > div.gym > button.loc-btn]
+        x font size 15px off the type scale at 390px  [#app > span.sr]
+        x font size 13px off the type scale at 1440px  [#app > header.top > div.gym > span.gym-name]
+        x font size 28px off the type scale at 1440px  [#app > header.top > div.gym > button.loc-btn]
+        x font size 15px off the type scale at 1440px  [#app > span.sr]
+  FAIL  spacing
+        x padding-top:14px off the spacing scale at 390px  [#app > header.top]
+        x padding-bottom:10px off the spacing scale at 390px  [#app > header.top, #app > div.days]
+        x padding-top:6px off the spacing scale at 390px  [#app > div.week-bar, html > body > nav.tabbar]
+        x margin-bottom:6px off the spacing scale at 390px  [#app > div.week-bar > div > div.sk]
+        x margin-bottom:10px off the spacing scale at 390px  [#app > div.week > div.day.is-selected > div.sk.sk-card, #app > div.week > div.day.is-selected > div.sk.sk-card, #app > div.week > div.day.is-selected > div.sk.sk-card]
+        x padding-bottom:6px off the spacing scale at 390px  [html > body > nav.tabbar]
+        x padding-top:28px off the spacing scale at 1440px  [#app > header.top]
+        x padding-bottom:20px off the spacing scale at 1440px  [#app > div.week-bar]
+        x margin-bottom:6px off the spacing scale at 1440px  [#app > div.week-bar > div > div.sk]
+        x margin-bottom:10px off the spacing scale at 1440px  [#app > div.week > div.day > div.day-head, #app > div.week > div.day > div.sk.sk-card, #app > div.week > div.day > div.sk.sk-card, #app > div.week > div.day.is-selected > div.day-head]
+        x padding-bottom:10px off the spacing scale at 1440px  [#app > div.week > div.day > div.day-head, #app > div.week > div.day.is-selected > div.day-head, #app > div.week > div.day > div.day-head, #app > div.week > div.day > div.day-head]
+        x row-gap:6px off the spacing scale at 1440px  [#app > div.week > div.day > div.day-head, #app > div.week > div.day.is-selected > div.day-head, #app > div.week > div.day > div.day-head, #app > div.week > div.day > div.day-head]
+        ... 1 more
+  pass  overflow
+  pass  heading-wrap
+  pass  svg-overlap
+  pass  primary
+  FAIL  radius
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [#app > header.top > div.sk]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [#app > div.week-bar > div > div.sk]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [#app > div.week-bar > div > div.sk]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [div.week > div.day > div.day-head > div.sk]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [div.week > div.day.is-selected > div.day-head > div.sk]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [div.week > div.day > div.day-head > div.sk]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [div.week > div.day > div.day-head > div.sk]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [div.week > div.day > div.day-head > div.sk]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [div.week > div.day > div.day-head > div.sk]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [div.week > div.day > div.day-head > div.sk]
+  pass  color-scheme
+  pass  typography  (1 warn)
+        ! straight quote or apostrophe: "Loading this week's classes" (use ’ ‘ “ ”)  [#app > span.sr]
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke
+  pass  weight
+  pass  occlusion
+  pass  squash
+  FAIL  sticky-header
+        x sticky top bar is 70px tall at 390px but html scroll-padding-top is auto; anchors and focus land under it (WCAG 2.4.11)  [#app > div.days]
+        x sticky top bar is 70px tall at 768px but html scroll-padding-top is auto; anchors and focus land under it (WCAG 2.4.11)  [#app > div.days]
+  pass  run-together
+  pass  word-break
+  pass  grid-edge
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback
+  pass  motion
+
+  JSON: /tmp/claude-0/-home-user-design-kb/6a58f026-c577-5c8c-9a9c-b604a01965c1/scratchpad/blind-data-r2/G/schedule.state-loading.lint.json
+
+Fundamentals lint: schedule.html?state=available  ->  FAIL (75 fail, 5 warn)
+
+  FAIL  axe
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-12"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-13"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-14"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-15"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-16"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-17"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-18"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+  pass  overlay
+  pass  targets  (1 warn)
+        ! touch target under 44x44 at 390px  [#app > header.top > div.gym > button.loc-btn]
+  pass  measure
+  FAIL  type-scale
+        x font size 13px off the type scale at 390px  [#app > header.top > div.gym > span.gym-name, #app > header.top > div.pass > b, #app > header.top > div.pass > span, #app > div.week-bar > div > div.week-sub]
+        x font size 22px off the type scale at 390px  [#app > header.top > div.gym > button.loc-btn]
+        x font size 15px off the type scale at 390px  [#app > div.week-bar > div > div.week-title, #app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.days > button.day-tab.is-past]
+        x font size 17px off the type scale at 390px  [#app > div.days > button.day-tab.is-past > span.dnum, #app > div.days > button.day-tab.is-today > span.dnum, #app > div.days > button.day-tab > span.dnum, #app > div.days > button.day-tab > span.dnum]
+        x font size 13px off the type scale at 1440px  [#app > header.top > div.gym > span.gym-name, #app > div.week-bar > div > div.week-sub, div.week > section.day.is-past > div.day-head > span.dow, section.day.is-past > article.card.is-done > div.c-row > span.c-dur]
+        x font size 28px off the type scale at 1440px  [#app > header.top > div.gym > button.loc-btn]
+        x font size 17px off the type scale at 1440px  [#app > div.week-bar > div > div.week-title]
+        x font size 15px off the type scale at 1440px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn, section.day.is-past > article.card.is-done > div.c-row > span.c-time, div.week > section.day.is-past > article.card.is-done > h3.c-title]
+  FAIL  spacing
+        x padding-top:14px off the spacing scale at 390px  [#app > header.top, #app > div.week > section.day.is-selected > article.card.is-done, #app > div.week > section.day.is-selected > article.card, #app > div.week > section.day.is-selected > article.card]
+        x padding-bottom:10px off the spacing scale at 390px  [#app > header.top, #app > div.days]
+        x padding-top:6px off the spacing scale at 390px  [#app > div.week-bar, html > body > nav.tabbar]
+        x padding-top:1px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-right:6px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-bottom:1px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-left:6px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-top:7px off the spacing scale at 390px  [#app > div.days > button.day-tab.is-past, #app > div.days > button.day-tab.is-today, #app > div.days > button.day-tab, #app > div.days > button.day-tab]
+        x padding-bottom:6px off the spacing scale at 390px  [#app > div.days > button.day-tab.is-past, #app > div.days > button.day-tab.is-today, #app > div.days > button.day-tab, #app > div.days > button.day-tab]
+        x row-gap:1px off the spacing scale at 390px  [#app > div.days > button.day-tab.is-past, #app > div.days > button.day-tab.is-today, #app > div.days > button.day-tab, #app > div.days > button.day-tab]
+        x column-gap:1px off the spacing scale at 390px  [#app > div.days > button.day-tab.is-past, #app > div.days > button.day-tab.is-today, #app > div.days > button.day-tab, #app > div.days > button.day-tab]
+        x margin-bottom:10px off the spacing scale at 390px  [#app > div.week > section.day.is-selected > article.card.is-done, #app > div.week > section.day.is-selected > article.card, #app > div.week > section.day.is-selected > article.card]
+        ... 26 more
+  pass  overflow
+  pass  heading-wrap  (4 warn)
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day.is-past > article.card.is-done > h3.c-title]
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day.is-selected > article.card > h3.c-title]
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day > article.card > h3.c-title]
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day > article.card > h3.c-title]
+  pass  svg-overlap
+  FAIL  primary
+        x 7 filled calls to action in screen 1 at 1440px ("Book", "Book", "Book", "Book", "Book", "Book", "Book"); one primary per view  [section.day > article.card > div.c-foot > button.btn.btn-primary]
+  FAIL  radius
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [#app > div.week-bar > div.nav-btns > button.icon-btn]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [#app > div.week-bar > div.nav-btns > button.icon-btn]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [article.card.is-done > div.c-foot > div.c-status > span.badge.b-ok]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day.is-selected > article.card > div.c-foot > button.btn.btn-primary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day.is-selected > article.card > div.c-foot > button.btn.btn-secondary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card > div.c-foot > button.btn.btn-primary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card > div.c-foot > button.btn.btn-secondary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card > div.c-foot > button.btn.btn-primary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card > div.c-foot > button.btn.btn-secondary]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [article.card.c-cancelled > div.c-foot > div.c-status > span.badge.b-muted]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card > div.c-foot > button.btn.btn-primary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card > div.c-foot > button.btn.btn-secondary]
+        ... 3 more
+  pass  color-scheme
+  pass  typography
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke
+  pass  weight
+  pass  occlusion
+  pass  squash
+  FAIL  sticky-header
+        x sticky top bar is 79px tall at 390px but html scroll-padding-top is auto; anchors and focus land under it (WCAG 2.4.11)  [#app > div.days]
+        x sticky top bar is 79px tall at 768px but html scroll-padding-top is auto; anchors and focus land under it (WCAG 2.4.11)  [#app > div.days]
+  pass  run-together
+  FAIL  word-break
+        x text "Join waitlist" runs 10px into its control's padding at 1024px  [section.day.is-selected > article.card > div.c-foot > button.btn.btn-secondary]
+        x text "Join waitlist" runs 10px into its control's padding at 1024px  [section.day > article.card > div.c-foot > button.btn.btn-secondary]
+  FAIL  grid-edge
+        x sibling columns miss a shared left edge by 12px at 1024px (7 columns in #app > div.week)  [div.week > section.day > div.day-head > span.dnum]
+        x sibling columns miss a shared left edge by 12px at 1440px (7 columns in #app > div.week)  [div.week > section.day > div.day-head > span.dnum]
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback
+  pass  motion
+
+  JSON: /tmp/claude-0/-home-user-design-kb/6a58f026-c577-5c8c-9a9c-b604a01965c1/scratchpad/blind-data-r2/G/schedule.state-available.lint.json
+
+Fundamentals lint: schedule.html?state=waitlist  ->  FAIL (83 fail, 6 warn)
+
+  FAIL  axe
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-12"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-13"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-14"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-15"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-16"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-17"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-18"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+  pass  overlay
+  pass  targets  (1 warn)
+        ! touch target under 44x44 at 390px  [#app > header.top > div.gym > button.loc-btn]
+  pass  measure
+  FAIL  type-scale
+        x font size 13px off the type scale at 390px  [#app > header.top > div.gym > span.gym-name, #app > header.top > div.pass > b, #app > header.top > div.pass > span, #app > div.week-bar > div > div.week-sub]
+        x font size 22px off the type scale at 390px  [#app > header.top > div.gym > button.loc-btn]
+        x font size 15px off the type scale at 390px  [#app > div.week-bar > div > div.week-title, #app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.days > button.day-tab.is-past]
+        x font size 17px off the type scale at 390px  [#app > div.days > button.day-tab.is-past > span.dnum, #app > div.days > button.day-tab.is-today > span.dnum, #app > div.days > button.day-tab > span.dnum, #app > div.days > button.day-tab > span.dnum]
+        x font size 13px off the type scale at 1440px  [#app > header.top > div.gym > span.gym-name, #app > div.week-bar > div > div.week-sub, div.week > section.day.is-past > div.day-head > span.dow, section.day.is-past > article.card.is-done > div.c-row > span.c-dur]
+        x font size 28px off the type scale at 1440px  [#app > header.top > div.gym > button.loc-btn]
+        x font size 17px off the type scale at 1440px  [#app > div.week-bar > div > div.week-title]
+        x font size 15px off the type scale at 1440px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn, section.day.is-past > article.card.is-done > div.c-row > span.c-time, div.week > section.day.is-past > article.card.is-done > h3.c-title]
+  FAIL  spacing
+        x padding-top:14px off the spacing scale at 390px  [#app > header.top, #app > div.week > section.day.is-selected > article.card, #app > div.week > section.day.is-selected > article.card.mine-wait]
+        x padding-bottom:10px off the spacing scale at 390px  [#app > header.top, #app > div.days]
+        x padding-top:6px off the spacing scale at 390px  [#app > div.week-bar, html > body > nav.tabbar]
+        x padding-top:1px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-right:6px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-bottom:1px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-left:6px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-top:7px off the spacing scale at 390px  [#app > div.days > button.day-tab.is-past, #app > div.days > button.day-tab.is-today, #app > div.days > button.day-tab, #app > div.days > button.day-tab]
+        x padding-bottom:6px off the spacing scale at 390px  [#app > div.days > button.day-tab.is-past, #app > div.days > button.day-tab.is-today, #app > div.days > button.day-tab, #app > div.days > button.day-tab]
+        x row-gap:1px off the spacing scale at 390px  [#app > div.days > button.day-tab.is-past, #app > div.days > button.day-tab.is-today, #app > div.days > button.day-tab, #app > div.days > button.day-tab]
+        x column-gap:1px off the spacing scale at 390px  [#app > div.days > button.day-tab.is-past, #app > div.days > button.day-tab.is-today, #app > div.days > button.day-tab, #app > div.days > button.day-tab]
+        x row-gap:3px off the spacing scale at 390px  [#app > div.days > button.day-tab > span.marks]
+        ... 32 more
+  pass  overflow
+  pass  heading-wrap  (4 warn)
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day.is-past > article.card.is-done > h3.c-title]
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day.is-today > article.card > h3.c-title]
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day > article.card > h3.c-title]
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day > article.card > h3.c-title]
+  pass  svg-overlap
+  FAIL  primary
+        x 7 filled calls to action in screen 1 at 1440px ("Book", "Book", "Book", "Book", "Book", "Book", "Book"); one primary per view  [section.day.is-selected > article.card > div.c-foot > button.btn.btn-primary]
+  FAIL  radius
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [#app > div.week-bar > div.nav-btns > button.icon-btn]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [#app > div.week-bar > div.nav-btns > button.icon-btn]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [article.card.is-done > div.c-foot > div.c-status > span.badge.b-ok]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day.is-today > article.card > div.c-foot > button.btn.btn-primary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day.is-today > article.card > div.c-foot > button.btn.btn-secondary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day.is-selected > article.card > div.c-foot > button.btn.btn-primary]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [article.card.mine-wait > div.c-foot > div.c-status > span.badge.b-wait]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day.is-selected > article.card.mine-wait > div.c-foot > button.btn.btn-secondary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card > div.c-foot > button.btn.btn-primary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card > div.c-foot > button.btn.btn-secondary]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [article.card.c-cancelled > div.c-foot > div.c-status > span.badge.b-muted]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card > div.c-foot > button.btn.btn-primary]
+        ... 4 more
+  pass  color-scheme
+  pass  typography  (1 warn)
+        ! straight quote or apostrophe: "a place opens you're booked automat" (use ’ ‘ “ ”)  [article.card.mine-wait > div.c-foot > div.c-status > span.c-note]
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke
+  pass  weight
+  pass  occlusion
+  pass  squash
+  FAIL  sticky-header
+        x sticky top bar is 79px tall at 390px but html scroll-padding-top is auto; anchors and focus land under it (WCAG 2.4.11)  [#app > div.days]
+        x sticky top bar is 79px tall at 768px but html scroll-padding-top is auto; anchors and focus land under it (WCAG 2.4.11)  [#app > div.days]
+  pass  run-together
+  FAIL  word-break
+        x text "Join waitlist" runs 10px into its control's padding at 1024px  [section.day.is-today > article.card > div.c-foot > button.btn.btn-secondary]
+        x text "Leave waitlist" runs 16px into its control's padding at 1024px  [section.day.is-selected > article.card.mine-wait > div.c-foot > button.btn.btn-secondary]
+        x text "Join waitlist" runs 10px into its control's padding at 1024px  [section.day > article.card > div.c-foot > button.btn.btn-secondary]
+  FAIL  grid-edge
+        x sibling columns miss a shared left edge by 12px at 1024px (7 columns in #app > div.week)  [div.week > section.day > div.day-head > span.dnum]
+        x sibling columns miss a shared left edge by 12px at 1440px (7 columns in #app > div.week)  [div.week > section.day > div.day-head > span.dnum]
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback
+  pass  motion
+
+  JSON: /tmp/claude-0/-home-user-design-kb/6a58f026-c577-5c8c-9a9c-b604a01965c1/scratchpad/blind-data-r2/G/schedule.state-waitlist.lint.json
+
+Fundamentals lint: schedule.html?state=booked  ->  FAIL (83 fail, 5 warn)
+
+  FAIL  axe
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-12"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-13"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-14"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-15"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-16"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-17"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-18"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+  pass  overlay
+  pass  targets  (1 warn)
+        ! touch target under 44x44 at 390px  [#app > header.top > div.gym > button.loc-btn]
+  pass  measure
+  FAIL  type-scale
+        x font size 13px off the type scale at 390px  [#app > header.top > div.gym > span.gym-name, #app > header.top > div.pass > b, #app > header.top > div.pass > span, #app > div.week-bar > div > div.week-sub]
+        x font size 22px off the type scale at 390px  [#app > header.top > div.gym > button.loc-btn]
+        x font size 15px off the type scale at 390px  [#app > div.week-bar > div > div.week-title, #app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.days > button.day-tab.is-past]
+        x font size 17px off the type scale at 390px  [#app > div.days > button.day-tab.is-past > span.dnum, #app > div.days > button.day-tab.is-today > span.dnum, #app > div.days > button.day-tab > span.dnum, #app > div.days > button.day-tab > span.dnum]
+        x font size 13px off the type scale at 1440px  [#app > header.top > div.gym > span.gym-name, #app > div.week-bar > div > div.week-sub, div.week > section.day.is-past > div.day-head > span.dow, section.day.is-past > article.card.is-done > div.c-row > span.c-dur]
+        x font size 28px off the type scale at 1440px  [#app > header.top > div.gym > button.loc-btn]
+        x font size 17px off the type scale at 1440px  [#app > div.week-bar > div > div.week-title]
+        x font size 15px off the type scale at 1440px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn, section.day.is-past > article.card.is-done > div.c-row > span.c-time, div.week > section.day.is-past > article.card.is-done > h3.c-title]
+  FAIL  spacing
+        x padding-top:14px off the spacing scale at 390px  [#app > header.top, #app > div.week > section.day.is-selected > article.card.mine-booked, #app > div.week > section.day.is-selected > article.card]
+        x padding-bottom:10px off the spacing scale at 390px  [#app > header.top, #app > div.days]
+        x padding-top:6px off the spacing scale at 390px  [#app > div.week-bar, html > body > nav.tabbar]
+        x padding-top:1px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-right:6px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-bottom:1px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-left:6px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-top:7px off the spacing scale at 390px  [#app > div.days > button.day-tab.is-past, #app > div.days > button.day-tab.is-today, #app > div.days > button.day-tab, #app > div.days > button.day-tab]
+        x padding-bottom:6px off the spacing scale at 390px  [#app > div.days > button.day-tab.is-past, #app > div.days > button.day-tab.is-today, #app > div.days > button.day-tab, #app > div.days > button.day-tab]
+        x row-gap:1px off the spacing scale at 390px  [#app > div.days > button.day-tab.is-past, #app > div.days > button.day-tab.is-today, #app > div.days > button.day-tab, #app > div.days > button.day-tab]
+        x column-gap:1px off the spacing scale at 390px  [#app > div.days > button.day-tab.is-past, #app > div.days > button.day-tab.is-today, #app > div.days > button.day-tab, #app > div.days > button.day-tab]
+        x row-gap:3px off the spacing scale at 390px  [#app > div.days > button.day-tab > span.marks]
+        ... 32 more
+  pass  overflow
+  pass  heading-wrap  (4 warn)
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day.is-past > article.card.is-done > h3.c-title]
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day.is-today > article.card > h3.c-title]
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day.is-selected > article.card > h3.c-title]
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day > article.card > h3.c-title]
+  pass  svg-overlap
+  FAIL  primary
+        x 6 filled calls to action in screen 1 at 1440px ("Book", "Book", "Book", "Book", "Book", "Book"); one primary per view  [section.day > article.card > div.c-foot > button.btn.btn-primary]
+  FAIL  radius
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [#app > div.week-bar > div.nav-btns > button.icon-btn]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [#app > div.week-bar > div.nav-btns > button.icon-btn]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [article.card.is-done > div.c-foot > div.c-status > span.badge.b-ok]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day.is-today > article.card > div.c-foot > button.btn.btn-primary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day.is-today > article.card > div.c-foot > button.btn.btn-secondary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card > div.c-foot > button.btn.btn-primary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card > div.c-foot > button.btn.btn-secondary]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [article.card.mine-booked > div.c-foot > div.c-status > span.badge.b-ok]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day.is-selected > article.card.mine-booked > div.c-foot > button.btn.btn-secondary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day.is-selected > article.card > div.c-foot > button.btn.btn-secondary]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [article.card.c-cancelled > div.c-foot > div.c-status > span.badge.b-muted]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card > div.c-foot > button.btn.btn-primary]
+        ... 4 more
+  pass  color-scheme
+  pass  typography
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke
+  pass  weight
+  pass  occlusion
+  pass  squash
+  FAIL  sticky-header
+        x sticky top bar is 79px tall at 390px but html scroll-padding-top is auto; anchors and focus land under it (WCAG 2.4.11)  [#app > div.days]
+        x sticky top bar is 79px tall at 768px but html scroll-padding-top is auto; anchors and focus land under it (WCAG 2.4.11)  [#app > div.days]
+  pass  run-together
+  FAIL  word-break
+        x text "Join waitlist" runs 10px into its control's padding at 1024px  [section.day.is-today > article.card > div.c-foot > button.btn.btn-secondary]
+        x text "Join waitlist" runs 10px into its control's padding at 1024px  [section.day > article.card > div.c-foot > button.btn.btn-secondary]
+        x text "Join waitlist" runs 10px into its control's padding at 1024px  [section.day.is-selected > article.card > div.c-foot > button.btn.btn-secondary]
+  FAIL  grid-edge
+        x sibling columns miss a shared left edge by 12px at 1024px (7 columns in #app > div.week)  [div.week > section.day > div.day-head > span.dnum]
+        x sibling columns miss a shared left edge by 12px at 1440px (7 columns in #app > div.week)  [div.week > section.day > div.day-head > span.dnum]
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback
+  pass  motion
+
+  JSON: /tmp/claude-0/-home-user-design-kb/6a58f026-c577-5c8c-9a9c-b604a01965c1/scratchpad/blind-data-r2/G/schedule.state-booked.lint.json
+
+Fundamentals lint: schedule.html?state=late  ->  FAIL (82 fail, 7 warn)
+
+  FAIL  axe
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-12"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-13"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-14"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-15"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-16"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-17"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-18"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+  pass  overlay
+  pass  targets  (1 warn)
+        ! touch target under 44x44 at 390px  [#app > header.top > div.gym > button.loc-btn]
+  pass  measure
+  FAIL  type-scale
+        x font size 13px off the type scale at 390px  [#app > header.top > div.gym > span.gym-name, #app > header.top > div.pass > b, #app > header.top > div.pass > span, #app > div.week-bar > div > div.week-sub]
+        x font size 22px off the type scale at 390px  [#app > header.top > div.gym > button.loc-btn]
+        x font size 15px off the type scale at 390px  [#app > div.week-bar > div > div.week-title, #app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.days > button.day-tab.is-past]
+        x font size 17px off the type scale at 390px  [#app > div.days > button.day-tab.is-past > span.dnum, #app > div.days > button.day-tab.is-today > span.dnum, #app > div.days > button.day-tab > span.dnum, #app > div.days > button.day-tab > span.dnum]
+        x font size 13px off the type scale at 1440px  [#app > header.top > div.gym > span.gym-name, #app > div.week-bar > div > div.week-sub, div.week > section.day.is-past > div.day-head > span.dow, section.day.is-past > article.card.is-done > div.c-row > span.c-dur]
+        x font size 28px off the type scale at 1440px  [#app > header.top > div.gym > button.loc-btn]
+        x font size 17px off the type scale at 1440px  [#app > div.week-bar > div > div.week-title]
+        x font size 15px off the type scale at 1440px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn, section.day.is-past > article.card.is-done > div.c-row > span.c-time, div.week > section.day.is-past > article.card.is-done > h3.c-title]
+  FAIL  spacing
+        x padding-top:14px off the spacing scale at 390px  [#app > header.top, #app > div.week > section.day.is-selected > article.card.is-done, #app > div.week > section.day.is-selected > article.card.mine-booked, #app > div.week > section.day.is-selected > article.card]
+        x padding-bottom:10px off the spacing scale at 390px  [#app > header.top, #app > div.days]
+        x padding-top:6px off the spacing scale at 390px  [#app > div.week-bar, html > body > nav.tabbar]
+        x padding-top:1px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-right:6px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-bottom:1px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-left:6px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-top:7px off the spacing scale at 390px  [#app > div.days > button.day-tab.is-past, #app > div.days > button.day-tab.is-today, #app > div.days > button.day-tab, #app > div.days > button.day-tab]
+        x padding-bottom:6px off the spacing scale at 390px  [#app > div.days > button.day-tab.is-past, #app > div.days > button.day-tab.is-today, #app > div.days > button.day-tab, #app > div.days > button.day-tab]
+        x row-gap:1px off the spacing scale at 390px  [#app > div.days > button.day-tab.is-past, #app > div.days > button.day-tab.is-today, #app > div.days > button.day-tab, #app > div.days > button.day-tab]
+        x column-gap:1px off the spacing scale at 390px  [#app > div.days > button.day-tab.is-past, #app > div.days > button.day-tab.is-today, #app > div.days > button.day-tab, #app > div.days > button.day-tab]
+        x row-gap:3px off the spacing scale at 390px  [#app > div.days > button.day-tab.is-today > span.marks]
+        ... 32 more
+  pass  overflow
+  pass  heading-wrap  (4 warn)
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day.is-past > article.card.is-done > h3.c-title]
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day.is-selected > article.card > h3.c-title]
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day > article.card > h3.c-title]
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day > article.card > h3.c-title]
+  pass  svg-overlap
+  FAIL  primary
+        x 6 filled calls to action in screen 1 at 1440px ("Book", "Book", "Book", "Book", "Book", "Book"); one primary per view  [section.day > article.card > div.c-foot > button.btn.btn-primary]
+  FAIL  radius
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [#app > div.week-bar > div.nav-btns > button.icon-btn]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [#app > div.week-bar > div.nav-btns > button.icon-btn]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [article.card.is-done > div.c-foot > div.c-status > span.badge.b-ok]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [article.card.mine-booked > div.c-foot > div.c-status > span.badge.b-ok]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day.is-selected > article.card.mine-booked > div.c-foot > button.btn.btn-secondary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day.is-selected > article.card > div.c-foot > button.btn.btn-secondary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card > div.c-foot > button.btn.btn-primary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card > div.c-foot > button.btn.btn-secondary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card > div.c-foot > button.btn.btn-primary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card > div.c-foot > button.btn.btn-secondary]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [article.card.c-cancelled > div.c-foot > div.c-status > span.badge.b-muted]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card > div.c-foot > button.btn.btn-primary]
+        ... 4 more
+  pass  color-scheme
+  pass  typography
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke
+  pass  weight
+  pass  occlusion
+  pass  squash
+  FAIL  sticky-header
+        x sticky top bar is 79px tall at 390px but html scroll-padding-top is auto; anchors and focus land under it (WCAG 2.4.11)  [#app > div.days]
+        x sticky top bar is 79px tall at 768px but html scroll-padding-top is auto; anchors and focus land under it (WCAG 2.4.11)  [#app > div.days]
+  pass  run-together
+  FAIL  word-break  (2 warn)
+        x text "Join waitlist" runs 10px into its control's padding at 1024px  [section.day.is-selected > article.card > div.c-foot > button.btn.btn-secondary]
+        x text "Join waitlist" runs 10px into its control's padding at 1024px  [section.day > article.card > div.c-foot > button.btn.btn-secondary]
+        ! "no-show." breaks across two lines at 1024px  [article.card.mine-booked > div.c-foot > div.c-status > span.c-note.warn]
+        ! "no-show." breaks across two lines at 1440px  [article.card.mine-booked > div.c-foot > div.c-status > span.c-note.warn]
+  FAIL  grid-edge
+        x sibling columns miss a shared left edge by 12px at 1024px (7 columns in #app > div.week)  [div.week > section.day > div.day-head > span.dnum]
+        x sibling columns miss a shared left edge by 12px at 1440px (7 columns in #app > div.week)  [div.week > section.day > div.day-head > span.dnum]
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback
+  pass  motion
+
+  JSON: /tmp/claude-0/-home-user-design-kb/6a58f026-c577-5c8c-9a9c-b604a01965c1/scratchpad/blind-data-r2/G/schedule.state-late.lint.json
+
+Fundamentals lint: schedule.html?state=past_due  ->  FAIL (87 fail, 7 warn)
+
+  FAIL  axe
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-12"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-13"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-14"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-15"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-16"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-17"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [button[data-day="2026-10-18"]]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [article[aria-label="Youth Club, Sat, 17 Oct 10:00"] > .c-foot > .btn]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [.is-selected > article:nth-child(4) > .c-foot > .btn]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [.is-selected > article:nth-child(5) > .c-foot > .btn]  Fix any of the following:   Text inside the element is not included in the accessible name
+        x label-content-name-mismatch: Elements must have their visible text as part of their accessible name  [section[aria-label="Sunday 18 October"] > article > .c-foot > .btn]  Fix any of the following:   Text inside the element is not included in the accessible name
+  pass  overlay
+  pass  targets  (1 warn)
+        ! touch target under 44x44 at 390px  [#app > header.top > div.gym > button.loc-btn]
+  pass  measure
+  FAIL  type-scale
+        x font size 13px off the type scale at 390px  [#app > header.top > div.gym > span.gym-name, #app > header.top > div.pass.bad > b, #app > header.top > div.pass.bad > span, #app > div.week-bar > div > div.week-sub]
+        x font size 22px off the type scale at 390px  [#app > header.top > div.gym > button.loc-btn]
+        x font size 15px off the type scale at 390px  [#app > div.week-bar > div > div.week-title, #app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn, div.banner > div.banner-body > div > div.banner-title]
+        x font size 17px off the type scale at 390px  [#app > div.days > button.day-tab.is-past > span.dnum, #app > div.days > button.day-tab.is-today > span.dnum, #app > div.days > button.day-tab > span.dnum, #app > div.days > button.day-tab > span.dnum]
+        x font size 13px off the type scale at 1440px  [#app > header.top > div.gym > span.gym-name, #app > div.week-bar > div > div.week-sub, div.week > section.day.is-past > div.day-head > span.dow, section.day.is-past > article.card.is-done > div.c-row > span.c-dur]
+        x font size 28px off the type scale at 1440px  [#app > header.top > div.gym > button.loc-btn]
+        x font size 17px off the type scale at 1440px  [#app > div.week-bar > div > div.week-title]
+        x font size 15px off the type scale at 1440px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn, div.banner > div.banner-body > div > div.banner-title, #app > div.banner > div.banner-body > button.btn.btn-danger]
+  FAIL  spacing
+        x padding-top:14px off the spacing scale at 390px  [#app > header.top, #app > div.week > section.day.is-selected > article.card, #app > div.week > section.day.is-selected > article.card, #app > div.week > section.day.is-selected > article.card]
+        x padding-bottom:10px off the spacing scale at 390px  [#app > header.top, #app > div.days]
+        x padding-top:6px off the spacing scale at 390px  [#app > div.week-bar, html > body > nav.tabbar]
+        x padding-top:1px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-right:6px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-bottom:1px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-left:6px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x margin-bottom:14px off the spacing scale at 390px  [#app > div.banner]
+        x padding-right:14px off the spacing scale at 390px  [#app > div.banner, #app > div.week > section.day.is-selected > article.card, #app > div.week > section.day.is-selected > article.card, #app > div.week > section.day.is-selected > article.card]
+        x padding-left:14px off the spacing scale at 390px  [#app > div.banner, #app > div.week > section.day.is-selected > article.card, #app > div.week > section.day.is-selected > article.card, #app > div.week > section.day.is-selected > article.card]
+        x margin-bottom:10px off the spacing scale at 390px  [div.banner > div.banner-body > div > p, #app > div.week > section.day.is-selected > article.card, #app > div.week > section.day.is-selected > article.card, #app > div.week > section.day.is-selected > article.card]
+        x row-gap:6px off the spacing scale at 390px  [#app > div.banner > div.banner-body > button.btn.btn-danger, section.day.is-selected > article.card > div.c-foot > button.btn, section.day.is-selected > article.card > div.c-foot > button.btn, section.day.is-selected > article.card > div.c-foot > button.btn]
+        ... 32 more
+  pass  overflow
+  pass  heading-wrap  (4 warn)
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day.is-past > article.card.is-done > h3.c-title]
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day.is-today > article.card > h3.c-title]
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day > article.card > h3.c-title]
+        ! heading ends on a one-word line at 1440px ("Lead Climbing Course")  [div.week > section.day.is-selected > article.card > h3.c-title]
+  pass  svg-overlap  (1 warn)
+        ! text "Intermediate · with Tom" partly covered by body > nav.tabbar > a > svg (22x5px) at 390px  [div.week > section.day.is-selected > article.card > div.c-meta]
+  FAIL  primary
+        x 4 filled calls to action in screen 1 at 1440px ("Update card", "Book", "Book", "Book"); one primary per view  [section.day.is-today > article.card > div.c-foot > button.btn.btn-primary]
+  FAIL  radius
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [#app > div.week-bar > div.nav-btns > button.icon-btn]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [#app > div.week-bar > div.nav-btns > button.icon-btn]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [#app > div.banner > div.banner-body > button.btn.btn-danger]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [article.card.is-done > div.c-foot > div.c-status > span.badge.b-ok]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day.is-today > article.card > div.c-foot > button.btn.btn-primary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day.is-today > article.card > div.c-foot > button.btn.btn-secondary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card > div.c-foot > button.btn.btn-primary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card > div.c-foot > button.btn.btn-secondary]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [article.card.mine-booked > div.c-foot > div.c-status > span.badge.b-ok]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card.mine-booked > div.c-foot > button.btn.btn-secondary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [section.day > article.card > div.c-foot > button.btn.btn-secondary]
+        x radius 6px off the family (0 4 8 12 16 full, or outer minus inset)  [article.card.c-cancelled > div.c-foot > div.c-status > span.badge.b-muted]
+        ... 5 more
+  pass  color-scheme
+  pass  typography  (1 warn)
+        ! straight quote or apostrophe: "last payment didn't go through" (use ’ ‘ “ ”)  [div.banner > div.banner-body > div > div.banner-title]
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke
+  pass  weight
+  pass  occlusion
+  pass  squash
+  FAIL  sticky-header
+        x sticky top bar is 79px tall at 390px but html scroll-padding-top is auto; anchors and focus land under it (WCAG 2.4.11)  [#app > div.days]
+        x sticky top bar is 79px tall at 768px but html scroll-padding-top is auto; anchors and focus land under it (WCAG 2.4.11)  [#app > div.days]
+  pass  run-together
+  FAIL  word-break
+        x text "Join waitlist" runs 10px into its control's padding at 1024px  [section.day.is-today > article.card > div.c-foot > button.btn.btn-secondary]
+        x text "Join waitlist" runs 10px into its control's padding at 1024px  [section.day > article.card > div.c-foot > button.btn.btn-secondary]
+  FAIL  grid-edge
+        x sibling columns miss a shared left edge by 12px at 1024px (7 columns in #app > div.week)  [div.week > section.day > div.day-head > span.dnum]
+        x sibling columns miss a shared left edge by 12px at 1440px (7 columns in #app > div.week)  [div.week > section.day > div.day-head > span.dnum]
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback
+  pass  motion
+
+  JSON: /tmp/claude-0/-home-user-design-kb/6a58f026-c577-5c8c-9a9c-b604a01965c1/scratchpad/blind-data-r2/G/schedule.state-past_due.lint.json
+
+Fundamentals lint: schedule.html?state=empty  ->  FAIL (37 fail, 1 warn)
+
+  pass  axe
+  pass  overlay
+  pass  targets  (1 warn)
+        ! touch target under 44x44 at 390px  [#app > header.top > div.gym > button.loc-btn]
+  pass  measure
+  FAIL  type-scale
+        x font size 13px off the type scale at 390px  [#app > header.top > div.gym > span.gym-name, #app > header.top > div.pass > b, #app > header.top > div.pass > span, #app > div.week-bar > div > div.week-sub]
+        x font size 22px off the type scale at 390px  [#app > header.top > div.gym > button.loc-btn]
+        x font size 15px off the type scale at 390px  [#app > div.week-bar > div > div.week-title, #app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn, #app > section.empty > p]
+        x font size 18px off the type scale at 390px  [#app > section.empty > h2]
+        x font size 13px off the type scale at 1440px  [#app > header.top > div.gym > span.gym-name, #app > div.week-bar > div > div.week-sub]
+        x font size 28px off the type scale at 1440px  [#app > header.top > div.gym > button.loc-btn]
+        x font size 17px off the type scale at 1440px  [#app > div.week-bar > div > div.week-title]
+        x font size 15px off the type scale at 1440px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn, #app > section.empty > p, #app > section.empty > div.actions > button.btn.btn-primary]
+        x font size 18px off the type scale at 1440px  [#app > section.empty > h2]
+  FAIL  spacing
+        x padding-top:14px off the spacing scale at 390px  [#app > header.top]
+        x padding-bottom:10px off the spacing scale at 390px  [#app > header.top]
+        x padding-top:6px off the spacing scale at 390px  [#app > div.week-bar, html > body > nav.tabbar]
+        x padding-top:1px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-right:6px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-bottom:1px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-left:6px off the spacing scale at 390px  [#app > div.week-bar > div.nav-btns > button.icon-btn, #app > div.week-bar > div.nav-btns > button.icon-btn]
+        x padding-right:20px off the spacing scale at 390px  [#app > section.empty]
+        x padding-left:20px off the spacing scale at 390px  [#app > section.empty]
+        x margin-bottom:18px off the spacing scale at 390px  [#app > section.empty > p]
+        x row-gap:6px off the spacing scale at 390px  [#app > section.empty > div.actions > button.btn.btn-primary, #app > section.empty > div.actions > button.btn.btn-secondary]
+        x column-gap:6px off the spacing scale at 390px  [#app > section.empty > div.actions > button.btn.btn-primary, #app > section.empty > div.actions > button.btn.btn-secondary]
+        ... 12 more
+  pass  overflow
+  pass  heading-wrap
+  pass  svg-overlap
+  pass  primary
+  FAIL  radius
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [#app > div.week-bar > div.nav-btns > button.icon-btn]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [#app > div.week-bar > div.nav-btns > button.icon-btn]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [#app > section.empty > div.actions > button.btn.btn-primary]
+        x radius 10px off the family (0 4 8 12 16 full, or outer minus inset)  [#app > section.empty > div.actions > button.btn.btn-secondary]
+  pass  color-scheme
+  pass  typography
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke
+  pass  weight
+  pass  occlusion
+  pass  squash
+  pass  sticky-header
+  pass  run-together
+  pass  word-break
+  pass  grid-edge
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback
+  pass  motion
+
+  JSON: /tmp/claude-0/-home-user-design-kb/6a58f026-c577-5c8c-9a9c-b604a01965c1/scratchpad/blind-data-r2/G/schedule.state-empty.lint.json
