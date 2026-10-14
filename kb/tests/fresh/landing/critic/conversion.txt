@@ -1,0 +1,15 @@
+  pass  primary-per-screen
+  pass  cta-label
+  pass  form-label
+  pass  autocomplete
+  pass  card-number-type
+  pass  paste-block
+  pass  preticked
+  pass  sub-terms
+  pass  pay-total
+  pass  rating-count
+  pass  cart-shipping
+  pass  urgency
+
+conversion audit: no fails
+exit 0

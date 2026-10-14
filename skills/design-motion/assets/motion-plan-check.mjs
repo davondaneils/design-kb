@@ -20,14 +20,14 @@
 //              with no visible [data-scene-pause][aria-controls] button (WCAG 2.2.2)
 //   behavior   a scene that keeps stepping while hovered, while scrolled out of view, or after its pause button is pressed
 //   stagger    a staggered group (3+ same animations started in one burst, outside scenes) whose median gap is
-//              outside 20-80ms (2ms recording tolerance), or whose spread is over 800ms
+//              outside 20-80ms (2ms recording tolerance), or whose spread is over 500ms (text) or 800ms (cards)
 //   travel     an entrance (outside scenes) that travels under 8px or over 50px; a 100% move inside a clipping
 //              parent (a masked line or word rise) is allowed
 //   reduce     under prefers-reduced-motion: reduce, anything that moves, scales, rotates or blurs; any animation
 //              inside a scene; a scene that steps, or that does not rest on its still frame (data-still, else its
 //              last state); a 1200ms+ timeline still running in a product visual; an open <details> whose summary
 //              (icon rotation, opacity, visibility) differs from its no-preference end state
-// Warns: two hover speeds on one page (pick 100 or 150 and hold it); a text stagger spread over 500ms.
+// Warns: two hover speeds on one page (pick 100 or 150 and hold it).
 // Exit 1 on any fail.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -245,16 +245,19 @@ for (const a of finite.filter((x) => x.phase !== 'hover' && !x.scene)) { const k
 const staggers = [];
 for (const [k, g] of Object.entries(groups)) {
   if (g.length < 3) continue;
+  const text = g.filter((a) => /^(span|h[1-6]|p|em|strong|b|i|li)\b/.test(a.target || '')).length / g.length >= 0.6;
   const starts = g.map((a) => a.t + a.delay).sort((x, y) => x - y);
   let burst = [starts[0]];
-  const flush = () => { if (burst.length >= 3) { const gaps = burst.slice(1).map((s, i) => s - burst[i]).filter((d) => d > 4).sort((x, y) => x - y); if (gaps.length >= 2) staggers.push({ key: k, n: burst.length, gap: gaps[Math.floor(gaps.length / 2)], span: burst[burst.length - 1] - burst[0] }); } };
+  const flush = () => { if (burst.length >= 3) { const gaps = burst.slice(1).map((s, i) => s - burst[i]).filter((d) => d > 4).sort((x, y) => x - y); if (gaps.length >= 2) staggers.push({ key: k, text, n: burst.length, gap: gaps[Math.floor(gaps.length / 2)], span: burst[burst.length - 1] - burst[0] }); } };
   for (let i = 1; i < starts.length; i++) { if (starts[i] - starts[i - 1] > 600) { flush(); burst = []; } burst.push(starts[i]); }
   flush();
 }
 for (const s of staggers) {
   if (s.gap < 18 || s.gap > 82) add('fail', 'stagger', `${s.n} items step ${s.gap}ms apart (${s.key}); stagger gaps are 20 to 80ms (--stagger 40ms)`);
-  if (s.span > 800) add('fail', 'stagger', `${s.n} items spread over ${s.span}ms (${s.key}); one group spreads at most 500ms for text, 800ms for cards`);
-  else if (s.span > 500) add('warn', 'stagger', `${s.n} items spread over ${s.span}ms (${s.key}); fine for cards, too long for text (500ms)`);
+  // Text groups (words, lines, headings) are capped at 500ms; card groups at 800ms (FOUNDATIONS v0.5). Fresh-brief critic:
+  // a 594 to 707ms word rise on every heading passed as a warning, so text over 500ms now fails.
+  const limit = s.text ? 500 : 800;
+  if (s.span > limit) add('fail', 'stagger', `${s.n} ${s.text ? 'text' : 'card'} items spread over ${s.span}ms (${s.key}); one group spreads at most ${limit}ms (500 text, 800 cards)`);
 }
 
 // Travel of entrances (outside scenes, not hover).

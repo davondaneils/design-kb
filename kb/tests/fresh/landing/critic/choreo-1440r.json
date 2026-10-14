@@ -1,0 +1,658 @@
+{
+ "url": "file:///home/user/design-kb/kb/tests/fresh/landing/halyard.html",
+ "measuredAt": "2026-10-14T00:06:39.331Z",
+ "viewport": [
+  1440,
+  900
+ ],
+ "scheme": "light",
+ "elapsedMs": 18957,
+ "totals": {
+  "animations": 16,
+  "finite": 16,
+  "loops": 0,
+  "byPhase": [
+   {
+    "v": "hover",
+    "n": 16
+   }
+  ],
+  "reducedMotionRules": 0
+ },
+ "durationLadder": [
+  {
+   "ms": 100,
+   "n": 16
+  }
+ ],
+ "durationsByPhase": {
+  "load": [],
+  "scroll": [],
+  "hover": [
+   "100ms x16"
+  ]
+ },
+ "curves": [
+  {
+   "v": "cubic-bezier(0.2, 0, 0, 1)",
+   "n": 16
+  }
+ ],
+ "propertiesAnimated": [
+  {
+   "v": "backgroundColor",
+   "n": 16
+  }
+ ],
+ "enterStartValues": {
+  "opacity": [],
+  "travel": [],
+  "filter": [],
+  "clipPath": []
+ },
+ "delays": [],
+ "staggers": [],
+ "loops": [],
+ "scrollTriggered": 0,
+ "imagery": {
+  "viewport": [
+   1440,
+   900
+  ],
+  "pageHeight": 8062,
+  "screens": 9,
+  "counts": {
+   "productMock": 14,
+   "photo": 0,
+   "video": 0,
+   "canvas": 0,
+   "svgIllustration": 3,
+   "illustration": 1,
+   "dataViz": 0,
+   "bgImage": 0,
+   "bgGradient": 8
+  },
+  "mocks": [
+   {
+    "y": 121,
+    "w": 1280,
+    "h": 756
+   },
+   {
+    "y": 1489,
+    "w": 1280,
+    "h": 677
+   },
+   {
+    "y": 2368,
+    "w": 709,
+    "h": 569
+   },
+   {
+    "y": 3158,
+    "w": 709,
+    "h": 505
+   },
+   {
+    "y": 5652,
+    "w": 709,
+    "h": 475
+   },
+   {
+    "y": 6844,
+    "w": 709,
+    "h": 378
+   },
+   {
+    "y": 121,
+    "w": 628,
+    "h": 708
+   },
+   {
+    "y": 1645,
+    "w": 411,
+    "h": 320
+   },
+   {
+    "y": 1645,
+    "w": 411,
+    "h": 320
+   },
+   {
+    "y": 1645,
+    "w": 411,
+    "h": 320
+   },
+   {
+    "y": 2368,
+    "w": 709,
+    "h": 539
+   },
+   {
+    "y": 3158,
+    "w": 709,
+    "h": 475
+   },
+   {
+    "y": 5652,
+    "w": 709,
+    "h": 445
+   },
+   {
+    "y": 6844,
+    "w": 709,
+    "h": 348
+   }
+  ],
+  "slices": [
+   {
+    "y": 0,
+    "visualCoverage": 0.77,
+    "byKind": {
+     "product-mock": 1,
+     "bg-gradient": 0.34
+    }
+   },
+   {
+    "y": 900,
+    "visualCoverage": 0.32,
+    "byKind": {
+     "product-mock": 0.45,
+     "bg-gradient": 0.15
+    }
+   },
+   {
+    "y": 1800,
+    "visualCoverage": 0.55,
+    "byKind": {
+     "svg-illustration": 0.11,
+     "product-mock": 0.88,
+     "bg-gradient": 0.34
+    }
+   },
+   {
+    "y": 2700,
+    "visualCoverage": 0.39,
+    "byKind": {
+     "svg-illustration": 0.04,
+     "product-mock": 0.73,
+     "bg-gradient": 0.36
+    }
+   },
+   {
+    "y": 3600,
+    "visualCoverage": 0.28,
+    "byKind": {
+     "svg-illustration": 0.21,
+     "product-mock": 0.05,
+     "illustration": 0.24,
+     "bg-gradient": 0.02
+    }
+   },
+   {
+    "y": 4500,
+    "visualCoverage": 0,
+    "byKind": {}
+   },
+   {
+    "y": 5400,
+    "visualCoverage": 0.26,
+    "byKind": {
+     "product-mock": 0.5,
+     "bg-gradient": 0.24
+    }
+   },
+   {
+    "y": 6300,
+    "visualCoverage": 0.2,
+    "byKind": {
+     "product-mock": 0.39,
+     "bg-gradient": 0.19
+    }
+   },
+   {
+    "y": 7200,
+    "visualCoverage": 0.35,
+    "byKind": {
+     "svg-illustration": 0.33,
+     "product-mock": 0.01
+    }
+   }
+  ],
+  "screensWithVisual": 8
+ },
+ "raw": [
+  {
+   "t": 13856,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgba(0, 0, 0, 0)",
+     "oklab(0.249059 0.0119968 0 / 0.08)"
+    ]
+   },
+   "target": "a",
+   "pseudo": null,
+   "rect": [
+    256,
+    14,
+    111,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 14173,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "oklab(0.249059 0.0119968 0 / 0.08)",
+     "rgba(0, 0, 0, 0)"
+    ]
+   },
+   "target": "a",
+   "pseudo": null,
+   "rect": [
+    256,
+    14,
+    111,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 14173,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgba(0, 0, 0, 0)",
+     "oklab(0.249059 0.0119968 0 / 0.08)"
+    ]
+   },
+   "target": "a",
+   "pseudo": null,
+   "rect": [
+    369,
+    14,
+    89,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 14472,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "oklab(0.249059 0.0119968 0 / 0.08)",
+     "rgba(0, 0, 0, 0)"
+    ]
+   },
+   "target": "a",
+   "pseudo": null,
+   "rect": [
+    369,
+    14,
+    89,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 14472,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgba(0, 0, 0, 0)",
+     "oklab(0.249059 0.0119968 0 / 0.08)"
+    ]
+   },
+   "target": "a",
+   "pseudo": null,
+   "rect": [
+    460,
+    14,
+    71,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 14772,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "oklab(0.249059 0.0119968 0 / 0.08)",
+     "rgba(0, 0, 0, 0)"
+    ]
+   },
+   "target": "a",
+   "pseudo": null,
+   "rect": [
+    460,
+    14,
+    71,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 14772,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgba(0, 0, 0, 0)",
+     "oklab(0.249059 0.0119968 0 / 0.08)"
+    ]
+   },
+   "target": "a",
+   "pseudo": null,
+   "rect": [
+    533,
+    14,
+    67,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 15072,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "oklab(0.249059 0.0119968 0 / 0.08)",
+     "rgba(0, 0, 0, 0)"
+    ]
+   },
+   "target": "a",
+   "pseudo": null,
+   "rect": [
+    533,
+    14,
+    67,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 15072,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgba(0, 0, 0, 0)",
+     "oklab(0.249059 0.0119968 0 / 0.08)"
+    ]
+   },
+   "target": "a.nav__link",
+   "pseudo": null,
+   "rect": [
+    1171,
+    14,
+    69,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 15372,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "oklab(0.249059 0.0119968 0 / 0.08)",
+     "rgba(0, 0, 0, 0)"
+    ]
+   },
+   "target": "a.nav__link",
+   "pseudo": null,
+   "rect": [
+    1171,
+    14,
+    69,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 15372,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgba(0, 0, 0, 0)",
+     "oklab(0.249059 0.0119968 0 / 0.08)"
+    ]
+   },
+   "target": "a.btn.btn--secondary",
+   "pseudo": null,
+   "rect": [
+    1248,
+    16,
+    112,
+    40
+   ],
+   "inView": true
+  },
+  {
+   "t": 15673,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "oklab(0.249059 0.0119968 0 / 0.08)",
+     "rgba(0, 0, 0, 0)"
+    ]
+   },
+   "target": "a.btn.btn--secondary",
+   "pseudo": null,
+   "rect": [
+    1248,
+    16,
+    112,
+    40
+   ],
+   "inView": true
+  },
+  {
+   "t": 15673,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgb(185, 32, 121)",
+     "rgb(156, 13, 101)"
+    ]
+   },
+   "target": "a.btn.btn--primary",
+   "pseudo": null,
+   "rect": [
+    80,
+    632,
+    127,
+    48
+   ],
+   "inView": true
+  },
+  {
+   "t": 15973,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgb(156, 13, 101)",
+     "rgb(185, 32, 121)"
+    ]
+   },
+   "target": "a.btn.btn--primary",
+   "pseudo": null,
+   "rect": [
+    80,
+    632,
+    127,
+    48
+   ],
+   "inView": true
+  },
+  {
+   "t": 15973,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgba(0, 0, 0, 0)",
+     "oklab(0.249059 0.0119968 0 / 0.08)"
+    ]
+   },
+   "target": "a.btn.btn--secondary",
+   "pseudo": null,
+   "rect": [
+    219,
+    632,
+    139,
+    48
+   ],
+   "inView": true
+  },
+  {
+   "t": 16238,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "oklab(0.249059 0.0119968 0 / 0.08)",
+     "rgba(0, 0, 0, 0)"
+    ]
+   },
+   "target": "a.btn.btn--secondary",
+   "pseudo": null,
+   "rect": [
+    219,
+    632,
+    139,
+    48
+   ],
+   "inView": true
+  }
+ ]
+}

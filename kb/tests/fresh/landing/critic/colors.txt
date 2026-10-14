@@ -1,0 +1,26 @@
+light .hero .btn--secondary borderTopColor fg 128,140,151,255 bg 255,255,255,255 3.43
+light .billing borderTopColor fg 29,34,39,255 bg 255,255,255,255 16.03
+light .faq summary .icon color fg 29,34,39,255 bg 255,255,255,255 16.03
+light .feat .icon color fg 185,32,121,255 bg 255,255,255,255 5.92
+light .hero .btn--primary backgroundColor fg 185,32,121,255 bg 255,255,255,255 5.92
+light .win borderTopColor fg 29,34,39,255 bg 245,247,248,255 14.91
+light .alerts .icon color fg 126,74,0,255 bg 255,245,230,255 6.79
+light .plan-card borderTopColor fg 29,34,39,255 bg 255,255,255,255 16.03
+light .menu-btn color fg 29,34,39,255 bg 255,255,255,255 16.03
+light .stn fill fg 2,117,163,255 bg 238,249,255,255 4.82
+light .track--wind .limit borderTopColor fg 126,74,0,255 bg 255,255,255,255 7.33
+light focus ring (outline color var) --color-focus-ring fg 185,32,121,255 bg 255,255,255,255 5.92
+light focus ring on band --color-focus-ring fg 185,32,121,255 bg 250,246,239,255 5.50
+dark .hero .btn--secondary borderTopColor fg 128,140,151,255 bg 14,18,21,255 5.48
+dark .billing borderTopColor fg 245,247,248,255 bg 14,18,21,255 17.51
+dark .faq summary .icon color fg 245,247,248,255 bg 14,18,21,255 17.51
+dark .feat .icon color fg 185,32,121,255 bg 22,26,30,255 2.95
+dark .hero .btn--primary backgroundColor fg 185,32,121,255 bg 14,18,21,255 3.18
+dark .win borderTopColor fg 245,247,248,255 bg 29,34,39,255 14.91
+dark .alerts .icon color fg 239,181,99,255 bg 46,29,0,255 8.87
+dark .plan-card borderTopColor fg 245,247,248,255 bg 14,18,21,255 17.51
+dark .menu-btn color fg 245,247,248,255 bg 14,18,21,255 17.51
+dark .stn fill fg 72,176,231,255 bg 22,26,30,255 7.20
+dark .track--wind .limit borderTopColor fg 239,181,99,255 bg 22,26,30,255 9.54
+dark focus ring (outline color var) --color-focus-ring fg 255,159,200,255 bg 14,18,21,255 9.90
+dark focus ring on band --color-focus-ring fg 255,159,200,255 bg 22,26,30,255 9.20

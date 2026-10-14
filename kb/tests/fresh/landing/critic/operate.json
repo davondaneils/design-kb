@@ -1,0 +1,1230 @@
+[
+ {
+  "w": 1440,
+  "name": "pause",
+  "how": "mouse",
+  "diff": {
+   "pause": [
+    "false",
+    "true"
+   ],
+   "paused": [
+    false,
+    true
+   ]
+  },
+  "focus": ""
+ },
+ {
+  "w": 1440,
+  "name": "pause",
+  "how": "Enter",
+  "diff": {
+   "pause": [
+    "false",
+    "true"
+   ],
+   "paused": [
+    false,
+    true
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 1440,
+  "name": "pause",
+  "how": "Space",
+  "diff": {
+   "pause": [
+    "false",
+    "true"
+   ],
+   "paused": [
+    false,
+    true
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 1440,
+  "name": "yearly",
+  "how": "mouse",
+  "diff": {
+   "billing": [
+    "month",
+    "year"
+   ],
+   "pressedM": [
+    "true",
+    "false"
+   ],
+   "pressedY": [
+    "false",
+    "true"
+   ],
+   "price": [
+    "£4.99 a month",
+    "£39 a year"
+   ],
+   "sub": [
+    "Or £39 a year, which works out at £3.25 a month",
+    "£3.25 a month, £20.88 less than paying monthly"
+   ],
+   "cta": [
+    "Get Plus, £4.99 a month",
+    "Get Plus, £39 a year"
+   ],
+   "href": [
+    "/plus/?billing=month",
+    "/plus/?billing=year"
+   ],
+   "terms": [
+    "Renews every month until you cancel. Cancel online in Settings at any time; Plus runs to the end of the month you have paid for.",
+    "Renews every year until you cancel. Cancel online in Settings at any time; Plus runs to the end of the year you have paid for."
+   ],
+   "paused": [
+    false,
+    true
+   ]
+  },
+  "focus": ""
+ },
+ {
+  "w": 1440,
+  "name": "yearly",
+  "how": "Enter",
+  "diff": {
+   "billing": [
+    "month",
+    "year"
+   ],
+   "pressedM": [
+    "true",
+    "false"
+   ],
+   "pressedY": [
+    "false",
+    "true"
+   ],
+   "price": [
+    "£4.99 a month",
+    "£39 a year"
+   ],
+   "sub": [
+    "Or £39 a year, which works out at £3.25 a month",
+    "£3.25 a month, £20.88 less than paying monthly"
+   ],
+   "cta": [
+    "Get Plus, £4.99 a month",
+    "Get Plus, £39 a year"
+   ],
+   "href": [
+    "/plus/?billing=month",
+    "/plus/?billing=year"
+   ],
+   "terms": [
+    "Renews every month until you cancel. Cancel online in Settings at any time; Plus runs to the end of the month you have paid for.",
+    "Renews every year until you cancel. Cancel online in Settings at any time; Plus runs to the end of the year you have paid for."
+   ],
+   "paused": [
+    false,
+    true
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 1440,
+  "name": "yearly",
+  "how": "Space",
+  "diff": {
+   "billing": [
+    "month",
+    "year"
+   ],
+   "pressedM": [
+    "true",
+    "false"
+   ],
+   "pressedY": [
+    "false",
+    "true"
+   ],
+   "price": [
+    "£4.99 a month",
+    "£39 a year"
+   ],
+   "sub": [
+    "Or £39 a year, which works out at £3.25 a month",
+    "£3.25 a month, £20.88 less than paying monthly"
+   ],
+   "cta": [
+    "Get Plus, £4.99 a month",
+    "Get Plus, £39 a year"
+   ],
+   "href": [
+    "/plus/?billing=month",
+    "/plus/?billing=year"
+   ],
+   "terms": [
+    "Renews every month until you cancel. Cancel online in Settings at any time; Plus runs to the end of the month you have paid for.",
+    "Renews every year until you cancel. Cancel online in Settings at any time; Plus runs to the end of the year you have paid for."
+   ],
+   "paused": [
+    false,
+    true
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 1440,
+  "name": "monthly-from-yearly",
+  "how": "mouse",
+  "diff": {
+   "billing": [
+    "year",
+    "month"
+   ],
+   "pressedM": [
+    "false",
+    "true"
+   ],
+   "pressedY": [
+    "true",
+    "false"
+   ],
+   "price": [
+    "£39 a year",
+    "£4.99 a month"
+   ],
+   "sub": [
+    "£3.25 a month, £20.88 less than paying monthly",
+    "Or £39 a year, which works out at £3.25 a month"
+   ],
+   "cta": [
+    "Get Plus, £39 a year",
+    "Get Plus, £4.99 a month"
+   ],
+   "href": [
+    "/plus/?billing=year",
+    "/plus/?billing=month"
+   ],
+   "terms": [
+    "Renews every year until you cancel. Cancel online in Settings at any time; Plus runs to the end of the year you have paid for.",
+    "Renews every month until you cancel. Cancel online in Settings at any time; Plus runs to the end of the month you have paid for."
+   ]
+  },
+  "focus": ""
+ },
+ {
+  "w": 1440,
+  "name": "monthly-from-yearly",
+  "how": "Enter",
+  "diff": {
+   "billing": [
+    "year",
+    "month"
+   ],
+   "pressedM": [
+    "false",
+    "true"
+   ],
+   "pressedY": [
+    "true",
+    "false"
+   ],
+   "price": [
+    "£39 a year",
+    "£4.99 a month"
+   ],
+   "sub": [
+    "£3.25 a month, £20.88 less than paying monthly",
+    "Or £39 a year, which works out at £3.25 a month"
+   ],
+   "cta": [
+    "Get Plus, £39 a year",
+    "Get Plus, £4.99 a month"
+   ],
+   "href": [
+    "/plus/?billing=year",
+    "/plus/?billing=month"
+   ],
+   "terms": [
+    "Renews every year until you cancel. Cancel online in Settings at any time; Plus runs to the end of the year you have paid for.",
+    "Renews every month until you cancel. Cancel online in Settings at any time; Plus runs to the end of the month you have paid for."
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 1440,
+  "name": "monthly-from-yearly",
+  "how": "Space",
+  "diff": {
+   "billing": [
+    "year",
+    "month"
+   ],
+   "pressedM": [
+    "false",
+    "true"
+   ],
+   "pressedY": [
+    "true",
+    "false"
+   ],
+   "price": [
+    "£39 a year",
+    "£4.99 a month"
+   ],
+   "sub": [
+    "£3.25 a month, £20.88 less than paying monthly",
+    "Or £39 a year, which works out at £3.25 a month"
+   ],
+   "cta": [
+    "Get Plus, £39 a year",
+    "Get Plus, £4.99 a month"
+   ],
+   "href": [
+    "/plus/?billing=year",
+    "/plus/?billing=month"
+   ],
+   "terms": [
+    "Renews every year until you cancel. Cancel online in Settings at any time; Plus runs to the end of the year you have paid for.",
+    "Renews every month until you cancel. Cancel online in Settings at any time; Plus runs to the end of the month you have paid for."
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 1440,
+  "name": "monthly-when-monthly",
+  "how": "mouse",
+  "diff": {
+   "paused": [
+    false,
+    true
+   ]
+  },
+  "focus": ""
+ },
+ {
+  "w": 1440,
+  "name": "monthly-when-monthly",
+  "how": "Enter",
+  "diff": {
+   "paused": [
+    false,
+    true
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 1440,
+  "name": "monthly-when-monthly",
+  "how": "Space",
+  "diff": {
+   "paused": [
+    false,
+    true
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 1440,
+  "name": "faq1",
+  "how": "mouse",
+  "diff": {
+   "faqOpen": [
+    "00000",
+    "10000"
+   ],
+   "paused": [
+    false,
+    true
+   ]
+  },
+  "focus": ""
+ },
+ {
+  "w": 1440,
+  "name": "faq1",
+  "how": "Enter",
+  "diff": {
+   "faqOpen": [
+    "00000",
+    "10000"
+   ],
+   "paused": [
+    false,
+    true
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 1440,
+  "name": "faq1",
+  "how": "Space",
+  "diff": {
+   "faqOpen": [
+    "00000",
+    "10000"
+   ],
+   "paused": [
+    false,
+    true
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 1440,
+  "name": "faq3",
+  "how": "mouse",
+  "diff": {
+   "faqOpen": [
+    "00000",
+    "00100"
+   ],
+   "paused": [
+    false,
+    true
+   ]
+  },
+  "focus": ""
+ },
+ {
+  "w": 1440,
+  "name": "faq3",
+  "how": "Enter",
+  "diff": {
+   "faqOpen": [
+    "00000",
+    "00100"
+   ],
+   "paused": [
+    false,
+    true
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 1440,
+  "name": "faq3",
+  "how": "Space",
+  "diff": {
+   "faqOpen": [
+    "00000",
+    "00100"
+   ],
+   "paused": [
+    false,
+    true
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 1440,
+  "name": "faq5",
+  "how": "mouse",
+  "diff": {
+   "faqOpen": [
+    "00000",
+    "00001"
+   ],
+   "paused": [
+    false,
+    true
+   ]
+  },
+  "focus": ""
+ },
+ {
+  "w": 1440,
+  "name": "faq5",
+  "how": "Enter",
+  "diff": {
+   "faqOpen": [
+    "00000",
+    "00001"
+   ],
+   "paused": [
+    false,
+    true
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 1440,
+  "name": "faq5",
+  "how": "Space",
+  "diff": {
+   "faqOpen": [
+    "00000",
+    "00001"
+   ],
+   "paused": [
+    false,
+    true
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 1440,
+  "name": "faq1-close",
+  "how": "mouse",
+  "diff": {
+   "faqOpen": [
+    "10000",
+    "00000"
+   ]
+  },
+  "focus": ""
+ },
+ {
+  "w": 1440,
+  "name": "faq1-close",
+  "how": "Enter",
+  "diff": {
+   "faqOpen": [
+    "10000",
+    "00000"
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 1440,
+  "name": "faq1-close",
+  "how": "Space",
+  "diff": {
+   "faqOpen": [
+    "10000",
+    "00000"
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 390,
+  "name": "pause",
+  "how": "mouse",
+  "diff": {
+   "pause": [
+    "false",
+    "true"
+   ]
+  },
+  "focus": ""
+ },
+ {
+  "w": 390,
+  "name": "pause",
+  "how": "Enter",
+  "diff": {
+   "pause": [
+    "false",
+    "true"
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 390,
+  "name": "pause",
+  "how": "Space",
+  "diff": {
+   "pause": [
+    "false",
+    "true"
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 390,
+  "name": "pause",
+  "how": "tap",
+  "diff": {
+   "pause": [
+    "false",
+    "true"
+   ]
+  },
+  "focus": ""
+ },
+ {
+  "w": 390,
+  "name": "yearly",
+  "how": "mouse",
+  "diff": {
+   "billing": [
+    "month",
+    "year"
+   ],
+   "pressedM": [
+    "true",
+    "false"
+   ],
+   "pressedY": [
+    "false",
+    "true"
+   ],
+   "price": [
+    "£4.99 a month",
+    "£39 a year"
+   ],
+   "sub": [
+    "Or £39 a year, which works out at £3.25 a month",
+    "£3.25 a month, £20.88 less than paying monthly"
+   ],
+   "cta": [
+    "Get Plus, £4.99 a month",
+    "Get Plus, £39 a year"
+   ],
+   "href": [
+    "/plus/?billing=month",
+    "/plus/?billing=year"
+   ],
+   "terms": [
+    "Renews every month until you cancel. Cancel online in Settings at any time; Plus runs to the end of the month you have paid for.",
+    "Renews every year until you cancel. Cancel online in Settings at any time; Plus runs to the end of the year you have paid for."
+   ]
+  },
+  "focus": ""
+ },
+ {
+  "w": 390,
+  "name": "yearly",
+  "how": "Enter",
+  "diff": {
+   "billing": [
+    "month",
+    "year"
+   ],
+   "pressedM": [
+    "true",
+    "false"
+   ],
+   "pressedY": [
+    "false",
+    "true"
+   ],
+   "price": [
+    "£4.99 a month",
+    "£39 a year"
+   ],
+   "sub": [
+    "Or £39 a year, which works out at £3.25 a month",
+    "£3.25 a month, £20.88 less than paying monthly"
+   ],
+   "cta": [
+    "Get Plus, £4.99 a month",
+    "Get Plus, £39 a year"
+   ],
+   "href": [
+    "/plus/?billing=month",
+    "/plus/?billing=year"
+   ],
+   "terms": [
+    "Renews every month until you cancel. Cancel online in Settings at any time; Plus runs to the end of the month you have paid for.",
+    "Renews every year until you cancel. Cancel online in Settings at any time; Plus runs to the end of the year you have paid for."
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 390,
+  "name": "yearly",
+  "how": "Space",
+  "diff": {
+   "billing": [
+    "month",
+    "year"
+   ],
+   "pressedM": [
+    "true",
+    "false"
+   ],
+   "pressedY": [
+    "false",
+    "true"
+   ],
+   "price": [
+    "£4.99 a month",
+    "£39 a year"
+   ],
+   "sub": [
+    "Or £39 a year, which works out at £3.25 a month",
+    "£3.25 a month, £20.88 less than paying monthly"
+   ],
+   "cta": [
+    "Get Plus, £4.99 a month",
+    "Get Plus, £39 a year"
+   ],
+   "href": [
+    "/plus/?billing=month",
+    "/plus/?billing=year"
+   ],
+   "terms": [
+    "Renews every month until you cancel. Cancel online in Settings at any time; Plus runs to the end of the month you have paid for.",
+    "Renews every year until you cancel. Cancel online in Settings at any time; Plus runs to the end of the year you have paid for."
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 390,
+  "name": "yearly",
+  "how": "tap",
+  "diff": {
+   "billing": [
+    "month",
+    "year"
+   ],
+   "pressedM": [
+    "true",
+    "false"
+   ],
+   "pressedY": [
+    "false",
+    "true"
+   ],
+   "price": [
+    "£4.99 a month",
+    "£39 a year"
+   ],
+   "sub": [
+    "Or £39 a year, which works out at £3.25 a month",
+    "£3.25 a month, £20.88 less than paying monthly"
+   ],
+   "cta": [
+    "Get Plus, £4.99 a month",
+    "Get Plus, £39 a year"
+   ],
+   "href": [
+    "/plus/?billing=month",
+    "/plus/?billing=year"
+   ],
+   "terms": [
+    "Renews every month until you cancel. Cancel online in Settings at any time; Plus runs to the end of the month you have paid for.",
+    "Renews every year until you cancel. Cancel online in Settings at any time; Plus runs to the end of the year you have paid for."
+   ]
+  },
+  "focus": ""
+ },
+ {
+  "w": 390,
+  "name": "monthly-from-yearly",
+  "how": "mouse",
+  "diff": {
+   "billing": [
+    "year",
+    "month"
+   ],
+   "pressedM": [
+    "false",
+    "true"
+   ],
+   "pressedY": [
+    "true",
+    "false"
+   ],
+   "price": [
+    "£39 a year",
+    "£4.99 a month"
+   ],
+   "sub": [
+    "£3.25 a month, £20.88 less than paying monthly",
+    "Or £39 a year, which works out at £3.25 a month"
+   ],
+   "cta": [
+    "Get Plus, £39 a year",
+    "Get Plus, £4.99 a month"
+   ],
+   "href": [
+    "/plus/?billing=year",
+    "/plus/?billing=month"
+   ],
+   "terms": [
+    "Renews every year until you cancel. Cancel online in Settings at any time; Plus runs to the end of the year you have paid for.",
+    "Renews every month until you cancel. Cancel online in Settings at any time; Plus runs to the end of the month you have paid for."
+   ]
+  },
+  "focus": ""
+ },
+ {
+  "w": 390,
+  "name": "monthly-from-yearly",
+  "how": "Enter",
+  "diff": {
+   "billing": [
+    "year",
+    "month"
+   ],
+   "pressedM": [
+    "false",
+    "true"
+   ],
+   "pressedY": [
+    "true",
+    "false"
+   ],
+   "price": [
+    "£39 a year",
+    "£4.99 a month"
+   ],
+   "sub": [
+    "£3.25 a month, £20.88 less than paying monthly",
+    "Or £39 a year, which works out at £3.25 a month"
+   ],
+   "cta": [
+    "Get Plus, £39 a year",
+    "Get Plus, £4.99 a month"
+   ],
+   "href": [
+    "/plus/?billing=year",
+    "/plus/?billing=month"
+   ],
+   "terms": [
+    "Renews every year until you cancel. Cancel online in Settings at any time; Plus runs to the end of the year you have paid for.",
+    "Renews every month until you cancel. Cancel online in Settings at any time; Plus runs to the end of the month you have paid for."
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 390,
+  "name": "monthly-from-yearly",
+  "how": "Space",
+  "diff": {
+   "billing": [
+    "year",
+    "month"
+   ],
+   "pressedM": [
+    "false",
+    "true"
+   ],
+   "pressedY": [
+    "true",
+    "false"
+   ],
+   "price": [
+    "£39 a year",
+    "£4.99 a month"
+   ],
+   "sub": [
+    "£3.25 a month, £20.88 less than paying monthly",
+    "Or £39 a year, which works out at £3.25 a month"
+   ],
+   "cta": [
+    "Get Plus, £39 a year",
+    "Get Plus, £4.99 a month"
+   ],
+   "href": [
+    "/plus/?billing=year",
+    "/plus/?billing=month"
+   ],
+   "terms": [
+    "Renews every year until you cancel. Cancel online in Settings at any time; Plus runs to the end of the year you have paid for.",
+    "Renews every month until you cancel. Cancel online in Settings at any time; Plus runs to the end of the month you have paid for."
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 390,
+  "name": "monthly-from-yearly",
+  "how": "tap",
+  "diff": {
+   "billing": [
+    "year",
+    "month"
+   ],
+   "pressedM": [
+    "false",
+    "true"
+   ],
+   "pressedY": [
+    "true",
+    "false"
+   ],
+   "price": [
+    "£39 a year",
+    "£4.99 a month"
+   ],
+   "sub": [
+    "£3.25 a month, £20.88 less than paying monthly",
+    "Or £39 a year, which works out at £3.25 a month"
+   ],
+   "cta": [
+    "Get Plus, £39 a year",
+    "Get Plus, £4.99 a month"
+   ],
+   "href": [
+    "/plus/?billing=year",
+    "/plus/?billing=month"
+   ],
+   "terms": [
+    "Renews every year until you cancel. Cancel online in Settings at any time; Plus runs to the end of the year you have paid for.",
+    "Renews every month until you cancel. Cancel online in Settings at any time; Plus runs to the end of the month you have paid for."
+   ]
+  },
+  "focus": ""
+ },
+ {
+  "w": 390,
+  "name": "monthly-when-monthly",
+  "how": "mouse",
+  "diff": {},
+  "focus": ""
+ },
+ {
+  "w": 390,
+  "name": "monthly-when-monthly",
+  "how": "Enter",
+  "diff": {},
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 390,
+  "name": "monthly-when-monthly",
+  "how": "Space",
+  "diff": {},
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 390,
+  "name": "monthly-when-monthly",
+  "how": "tap",
+  "diff": {},
+  "focus": ""
+ },
+ {
+  "w": 390,
+  "name": "faq1",
+  "how": "mouse",
+  "diff": {
+   "faqOpen": [
+    "00000",
+    "10000"
+   ]
+  },
+  "focus": ""
+ },
+ {
+  "w": 390,
+  "name": "faq1",
+  "how": "Enter",
+  "diff": {
+   "faqOpen": [
+    "00000",
+    "10000"
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 390,
+  "name": "faq1",
+  "how": "Space",
+  "diff": {
+   "faqOpen": [
+    "00000",
+    "10000"
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 390,
+  "name": "faq1",
+  "how": "tap",
+  "diff": {
+   "faqOpen": [
+    "00000",
+    "10000"
+   ]
+  },
+  "focus": ""
+ },
+ {
+  "w": 390,
+  "name": "faq3",
+  "how": "mouse",
+  "diff": {
+   "faqOpen": [
+    "00000",
+    "00100"
+   ]
+  },
+  "focus": ""
+ },
+ {
+  "w": 390,
+  "name": "faq3",
+  "how": "Enter",
+  "diff": {
+   "faqOpen": [
+    "00000",
+    "00100"
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 390,
+  "name": "faq3",
+  "how": "Space",
+  "diff": {
+   "faqOpen": [
+    "00000",
+    "00100"
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 390,
+  "name": "faq3",
+  "how": "tap",
+  "diff": {
+   "faqOpen": [
+    "00000",
+    "00100"
+   ]
+  },
+  "focus": ""
+ },
+ {
+  "w": 390,
+  "name": "faq5",
+  "how": "mouse",
+  "diff": {
+   "faqOpen": [
+    "00000",
+    "00001"
+   ]
+  },
+  "focus": ""
+ },
+ {
+  "w": 390,
+  "name": "faq5",
+  "how": "Enter",
+  "diff": {
+   "faqOpen": [
+    "00000",
+    "00001"
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 390,
+  "name": "faq5",
+  "how": "Space",
+  "diff": {
+   "faqOpen": [
+    "00000",
+    "00001"
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 390,
+  "name": "faq5",
+  "how": "tap",
+  "diff": {
+   "faqOpen": [
+    "00000",
+    "00001"
+   ]
+  },
+  "focus": ""
+ },
+ {
+  "w": 390,
+  "name": "faq1-close",
+  "how": "mouse",
+  "diff": {
+   "faqOpen": [
+    "10000",
+    "00000"
+   ]
+  },
+  "focus": ""
+ },
+ {
+  "w": 390,
+  "name": "faq1-close",
+  "how": "Enter",
+  "diff": {
+   "faqOpen": [
+    "10000",
+    "00000"
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 390,
+  "name": "faq1-close",
+  "how": "Space",
+  "diff": {
+   "faqOpen": [
+    "10000",
+    "00000"
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 390,
+  "name": "faq1-close",
+  "how": "tap",
+  "diff": {
+   "faqOpen": [
+    "10000",
+    "00000"
+   ]
+  },
+  "focus": ""
+ },
+ {
+  "w": 390,
+  "name": "menu",
+  "how": "mouse",
+  "diff": {
+   "menu": [
+    "false",
+    "true"
+   ],
+   "navShown": [
+    false,
+    true
+   ]
+  },
+  "focus": ""
+ },
+ {
+  "w": 390,
+  "name": "menu",
+  "how": "Enter",
+  "diff": {
+   "menu": [
+    "false",
+    "true"
+   ],
+   "navShown": [
+    false,
+    true
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 390,
+  "name": "menu",
+  "how": "Space",
+  "diff": {
+   "menu": [
+    "false",
+    "true"
+   ],
+   "navShown": [
+    false,
+    true
+   ]
+  },
+  "focus": "solid 2px 2px rgb(185, 32, 121)"
+ },
+ {
+  "w": 390,
+  "name": "menu",
+  "how": "tap",
+  "diff": {
+   "menu": [
+    "false",
+    "true"
+   ],
+   "navShown": [
+    false,
+    true
+   ]
+  },
+  "focus": ""
+ },
+ {
+  "w": 390,
+  "name": "menu extras",
+  "navItems": [
+   "How it works:236x48",
+   "Coverage:236x48",
+   "Pricing:236x48",
+   "Safety:236x48",
+   "Sign in:112x48",
+   "Get the app:112x48"
+  ],
+  "esc": {
+   "menu": "false",
+   "focusOnBtn": true
+  },
+  "afterLink": {
+   "url": "chrome-error://chromewebdata/",
+   "hasMenu": false
+  }
+ },
+ {
+  "w": 1440,
+  "name": "tab order",
+  "order": [
+   "Skip to content [solid 2px off 2px] y8 vis1",
+   "Halyard home [solid 2px off 2px] y14 vis1",
+   "How it works [solid 2px off 2px] y14 vis1",
+   "Coverage [solid 2px off 2px] y14 vis1",
+   "Pricing [solid 2px off 2px] y14 vis1",
+   "Safety [solid 2px off 2px] y14 vis1",
+   "Sign in [solid 2px off 2px] y14 vis1",
+   "Get the app [solid 2px off 2px] y16 vis1",
+   "Plan a sail [solid 2px off 2px] y641 vis1",
+   "Get the app [solid 2px off 2px] y641 vis1",
+   "Pause animation [solid 2px off 2px] y846 vis1",
+   "Monthly [solid 2px off 2px] y4801 vis1",
+   "Yearly\nSave £20.88 [solid 2px off 2px] y4801 vis1",
+   "Plan a sail [solid 2px off 2px] y5310 vis1",
+   "Get Plus, £4.99 a month [solid 2px off 2px] y5252 vis1",
+   "Can I navigate with Halyard? [solid 2px off 2px] y6425 vis1",
+   "Which boats is it for? [solid 2px off 2px] y6474 vis1",
+   "Where does it work? [solid 2px off 2px] y6523 vis1",
+   "What does Plus cost, and how [solid 2px off 2px] y6572 vis1",
+   "Does it work without a signa [solid 2px off 2px] y6621 vis1",
+   "Plan a sail [solid 2px off 2px] y7152 vis1",
+   "Get the app [solid 2px off 2px] y7152 vis1",
+   "Plan a sail [solid 2px off 2px] y7430 vis1",
+   "iPhone app [solid 2px off 2px] y7474 vis1",
+   "Android app [solid 2px off 2px] y7518 vis1",
+   "Pricing [solid 2px off 2px] y7562 vis1",
+   "How it works [solid 2px off 2px] y7430 vis1",
+   "Coverage [solid 2px off 2px] y7474 vis1",
+   "Safety and sources [solid 2px off 2px] y7518 vis1",
+   "Contact [solid 2px off 2px] y7562 vis1",
+   "About [solid 2px off 2px] y7430 vis1",
+   "Privacy [solid 2px off 2px] y7474 vis1",
+   "Terms [solid 2px off 2px] y7518 vis1",
+   "Skip to content\nHow it works [none 0px off 0px] y0 vis0"
+  ]
+ }
+]

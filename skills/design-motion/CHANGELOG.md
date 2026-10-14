@@ -1,5 +1,8 @@
 # design-motion changelog
 
+## 0.3.1 (2026-10-14, from the fresh-brief critic, `kb/reviews/fresh-landing.md`)
+- `assets/motion-plan-check.mjs`: a text stagger group (words, lines, headings) spreading over 500ms now fails instead of warning; cards keep the 800ms cap. The Halyard page's 612 to 693ms word rises passed as warnings before.
+
 ## 0.3 (2026-10-13, domain-specialist, from the exemplar benchmark's motion verdict and the live choreography capture)
 Why: both benchmark rounds rated motion "clearly below" Stripe and Linear; the builders followed v0.2 and shipped one transition duration, one curve and a single hero reveal, with no product state change animating, and reduced motion deleted the FAQ's open state (`kb/tests/benchmark/RESULTS.md`, `kb/reviews/benchmark-round2-landing.md`). The live capture (`kb/teardowns/motion-imagery.md`) showed what the exemplars actually run: duration ladders of 3 to 20 values, product mock-ups on scripted timelines with holds, masked word rises at 325ms and 50ms gaps. Built on FOUNDATIONS v0.5 (motion ladder, `--duration-reveal`, `--stagger`, `--travel`, product scenes).
 - SKILL.md: new required sections before any code: the **motion plan** table (each moving thing, job, band, duration, curve, trigger, reduced-motion end state), the **ladder** (three to five bands, one hover speed per page) and the **product scene** (states a buyer would name, beats 1200 to 4500ms with holds, loop 12s or less, rest 2s or more, seam, in view only, pause on hover, focus, hidden tab and a button, still frame under reduce, totals that re-foot).
