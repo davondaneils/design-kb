@@ -1,0 +1,157 @@
+### T1 last place race (cap 2, 1 booked, two parallel bookers; first holds txn 2s)
+booked
+u12|booked
+
+u13|waitlisted
+counter|2|1|2
+### T1b burst: 20 parallel bookers for capacity 5
+booked=5 waitlisted=15
+counters|5|15|5
+### T2 two simultaneous cancels vs waitlist (cap 2: 11,12 booked; 13,14,15 waiting)
+booked
+booked
+waitlisted
+waitlisted
+waitlisted
+cancelled
+
+cancelled
+00000000-0000-0000-0000-000000000011|cancelled
+00000000-0000-0000-0000-000000000012|cancelled
+00000000-0000-0000-0000-000000000013|booked
+00000000-0000-0000-0000-000000000014|booked
+00000000-0000-0000-0000-000000000015|waitlisted
+counters|2|1
+### T2b booked cancel racing a waitlisted member leaving (cap 1: 11 booked; 12,13 waiting)
+cancelled
+
+cancelled
+00000000-0000-0000-0000-000000000011|cancelled
+00000000-0000-0000-0000-000000000012|cancelled
+00000000-0000-0000-0000-000000000013|booked
+counters|1|0
+### T3 double booking: sequential and parallel same member
+booked
+ERROR:  You already have a place or a waitlist spot in this class
+DETAIL:  already_booked
+CONTEXT:  PL/pgSQL function private.fail(text,text,text) line 3 at RAISE
+SQL statement "SELECT private.fail('already_booked', 'You already have a place or a waitlist spot in this class', '23505')"
+PL/pgSQL function public.book_class(uuid) line 22 at PERFORM
+booked
+ERROR:  You already have a place or a waitlist spot in this class
+DETAIL:  already_booked
+CONTEXT:  PL/pgSQL function private.fail(text,text,text) line 3 at RAISE
+SQL statement "SELECT private.fail('already_booked', 'You already have a place or a waitlist spot in this class', '23505')"
+PL/pgSQL function public.book_class(uuid) line 22 at PERFORM
+00000000-0000-0000-0000-000000000018|1
+00000000-0000-0000-0000-000000000019|1
+-- direct insert bypassing function (as table owner):
+ERROR:  duplicate key value violates unique constraint "bookings_one_live_idx"
+DETAIL:  Key (session_id, member_user_id)=(aaaaaaaa-5555-0000-0000-000000000004, 00000000-0000-0000-0000-000000000018) already exists.
+-- member direct insert through API role:
+ERROR:  permission denied for table bookings
+### T4 cross-gym isolation
+-- member of B only (20) reading A:
+sessions|0
+bookings|0
+tenant_users|1
+week_schedule A|0
+-- member 20 books gym A class:
+ERROR:  Class not found
+DETAIL:  session_not_found
+CONTEXT:  PL/pgSQL function private.fail(text,text,text) line 3 at RAISE
+SQL statement "SELECT private.fail('session_not_found', 'Class not found', 'P0002')"
+PL/pgSQL function public.book_class(uuid) line 10 at PERFORM
+-- staff of B (3) reading people:
+tenant_users visible|bbbbbbbb-0000-0000-0000-000000000000|5
+A bookings|0
+A subs|0
+-- staff B sees m19's A row?
+bbbbbbbb-0000-0000-0000-000000000000|Both A and B
+-- staff B cancels gym A booking:
+ERROR:  Booking not found
+DETAIL:  booking_not_found
+CONTEXT:  PL/pgSQL function private.fail(text,text,text) line 3 at RAISE
+SQL statement "SELECT private.fail('booking_not_found', 'Booking not found', 'P0002')"
+PL/pgSQL function public.cancel_booking(uuid) line 9 at PERFORM
+-- staff B checks in gym A booking:
+ERROR:  Booking not found
+DETAIL:  booking_not_found
+CONTEXT:  PL/pgSQL function private.fail(text,text,text) line 3 at RAISE
+SQL statement "SELECT private.fail('booking_not_found', 'Booking not found', 'P0002')"
+PL/pgSQL function public.check_in(uuid) line 8 at PERFORM
+-- staff B updates gym A class capacity:
+-- staff B cancels gym A class:
+ERROR:  Class not found
+DETAIL:  session_not_found
+CONTEXT:  PL/pgSQL function private.fail(text,text,text) line 3 at RAISE
+SQL statement "SELECT private.fail('session_not_found', 'Class not found', 'P0002')"
+PL/pgSQL function public.cancel_session(uuid,text) line 7 at PERFORM
+-- staff B attendance report on A:
+0
+-- staff B inserts class in B pointing at A location:
+ERROR:  insert or update on table "class_sessions" violates foreign key constraint "class_sessions_tenant_id_location_id_fkey"
+DETAIL:  Key is not present in table "locations".
+-- anon reads:
+ERROR:  permission denied for table class_sessions
+### T5 staff lowers capacity below booked (s8 cap 3, book 3, set 2)
+ERROR:  new row for relation "class_sessions" violates check constraint "class_sessions_check1"
+after|3|3
+-- staff raises capacity with waitlist (book 14 to waitlist, then cap 4):
+waitlisted
+4|3|1
+booked
+-- staff edits counters directly:
+ERROR:  permission denied for table class_sessions
+### T6 grace: member 16 past_due, grace ends in 2 days
+-- class in 1 day:
+booked
+-- class in 5 days (after grace):
+ERROR:  You need an active pass or class credits to book
+DETAIL:  no_entitlement
+CONTEXT:  PL/pgSQL function private.fail(text,text,text) line 3 at RAISE
+SQL statement "SELECT private.fail('no_entitlement', 'You need an active pass or class credits to book', 'P0003')"
+PL/pgSQL function public.book_class(uuid) line 26 at PERFORM
+-- member 17 no pass:
+ERROR:  You need an active pass or class credits to book
+DETAIL:  no_entitlement
+CONTEXT:  PL/pgSQL function private.fail(text,text,text) line 3 at RAISE
+SQL statement "SELECT private.fail('no_entitlement', 'You need an active pass or class credits to book', 'P0003')"
+PL/pgSQL function public.book_class(uuid) line 26 at PERFORM
+### T7 second open monthly pass same member same gym; same member other gym
+ERROR:  duplicate key value violates unique constraint "subscriptions_one_open_idx"
+DETAIL:  Key (tenant_id, member_user_id)=(aaaaaaaa-0000-0000-0000-000000000000, 00000000-0000-0000-0000-000000000011) already exists.
+ok other gym
+### T8 12-hour rule (class s3 starts in 6h)
+-- 11 books now (inside 12h) then cancels at once:
+booked|01:00:00
+cancelled
+-- 12 booked 3 days ago (seeded with the normal deadline), cancels now:
+late_cancelled
+-- retry same cancel:
+late_cancelled
+### T9 cross-gym exclusion leak: dual instructor 5 teaches A s7; staff B schedules overlapping B class
+ERROR:  conflicting key value violates exclusion constraint "class_sessions_instructor_no_overlap"
+DETAIL:  Key conflicts with existing key.
+### T10 pack credits: one credit, two parallel bookings on different classes
+booked
+ERROR:  You need an active pass or class credits to book
+DETAIL:  no_entitlement
+CONTEXT:  PL/pgSQL function private.fail(text,text,text) line 3 at RAISE
+SQL statement "SELECT private.fail('no_entitlement', 'You need an active pass or class credits to book', 'P0003')"
+PL/pgSQL function public.book_class(uuid) line 35 at PERFORM
+pack bookings|1
+credits_used|1
+-- 17 joins a full class waitlist with 0 credits left:
+ERROR:  You need an active pass or class credits to book
+DETAIL:  no_entitlement
+CONTEXT:  PL/pgSQL function private.fail(text,text,text) line 3 at RAISE
+SQL statement "SELECT private.fail('no_entitlement', 'You need an active pass or class credits to book', 'P0003')"
+PL/pgSQL function public.book_class(uuid) line 26 at PERFORM
+### T11 week_schedule shape as member 11 (this week and next)
+Wed 07:11|10|0|0||
+Thu 01:11|10|3|0||
+Thu 03:11|10|0|0||
+Fri 01:11|5|5|15||
+Sat 01:11|2|2|1|booked|
+Sun 01:11|2|2|1||

@@ -40,3 +40,19 @@ Other gaps: no people or proof (the 40 percent referral fact is unused); dark mo
 2. design-strategy `references/05`: "show the true fact" rule: when the fact is a quantity (90 minutes, 4 years), the page shows what it buys, step by step.
 3. design-strategy `references/05`: proof is an identity input; when proof is the weakest field, the page uses the strongest fact available (here the referral share) rather than leaving proof empty.
 4. Dark mode for a brand-color field: remap the field to a role that keeps the identity, check the button stays in system (design-color `ui-tokens-themes.md` has the rule; the playbook-brand done list should name dark renders of brand fields).
+
+## Re-test on v0.1.2 (2026-10-14)
+Same brief, same baseline, a fresh with-skill build (`skilled-r2/`, forbidden to read the earlier entries or scores) and a fresh blind critic with new labels (K = baseline, L = with skill). The builder ran three rounds of five-second tests with fresh `claude -p` viewers (the session had no subagent tool) and fixed what they flagged (a slashed zero read as odd, "No commission" read as jargon, an unsourced "4 in 10"); answers in `skilled-r2/handover.md` and `skilled-r2/five-second/`. The critic ran four more fresh viewers (`blind-critic-r2/viewers/`). Report: `blind-critic-r2.md`.
+
+A first scoring of this round was voided: the script that stripped skill names from the blind copies cut the end of a CSS comment in the skilled page, so the critic saw it unstyled. The blind copies were rebuilt with exact string replacements and checked to lint the same as the originals before the second critic ran.
+
+| Rubric area | With skill (r2) | Baseline |
+|---|---|---|
+| 1. Strategy rigor | 7 | 5 (capped: false "unique" claim, aftercare is matched by Specsavers) |
+| 2. Strategy to design | 8 | 5 |
+| 3. Voice | 7 | 7 |
+| 4. Screen fundamentals | 8 | 5 (capped: lint FAIL 42, axe label-in-name) |
+| 5. Expert moves | 7 | 5 |
+| **Total /50** | **37** (round 1: 37) | **27** (round 1: 30) |
+
+The round 1 failures are gone: no viewer read any device as an error; section 2 shows what the 90 minutes hold step by step; the referral share stands in for missing reviews; the dark field keeps its hue. The total did not move because the critic found new gaps: "90 minutes" led the hero while Amplifon's UK FAQ gives consultations of up to one and a half hours (rule added in v0.1.3, 03 fundamental 4a: check the fact on each competitor's own page; lead with the part they cannot copy, here the owners seeing every patient); no faces or registration numbers; a mark that reads like an analytics icon; the audience is thin on the adult child, the referring GP and people who bought elsewhere.

@@ -1,0 +1,167 @@
+### T1 last place race (cap 2, 1 booked, two parallel bookers; first holds txn 2s)
+booked
+u12|booked
+
+ERROR:  class_full
+DETAIL:  {"remaining" : 0}
+CONTEXT:  PL/pgSQL function app.book_class(uuid,uuid,text) line 47 at RAISE
+u13 retry with waitlist intent|waitlisted
+taken|2|waiting|1
+### T1b burst: 20 parallel bookers for capacity 5
+booked=5 waitlisted=15
+### T2 two simultaneous cancels vs waitlist (cap 2: 11,12 booked; 13,14,15 waiting)
+booked
+booked
+waitlisted
+waitlisted
+waitlisted
+cancelled
+
+cancelled
+00000000-0000-0000-0000-000000000011|cancelled
+00000000-0000-0000-0000-000000000012|cancelled
+00000000-0000-0000-0000-000000000013|booked
+00000000-0000-0000-0000-000000000014|booked
+00000000-0000-0000-0000-000000000015|waitlisted
+### T2b booked cancel racing a waitlisted member leaving (cap 1: 11 booked; 12,13 waiting)
+cancelled
+
+cancelled
+00000000-0000-0000-0000-000000000011|cancelled
+00000000-0000-0000-0000-000000000012|cancelled
+00000000-0000-0000-0000-000000000013|booked
+### T3 double booking: sequential, parallel, idempotent retry with same id
+booked
+ERROR:  duplicate key value violates unique constraint "bookings_one_live_per_member"
+DETAIL:  Key (class_id, user_id)=(aaaaaaaa-5555-0000-0000-000000000004, 00000000-0000-0000-0000-000000000018) already exists.
+CONTEXT:  SQL statement "insert into public.bookings (id, gym_id, class_id, user_id, pass_id, status)
+    values (p_booking_id, c.gym_id, c.id, me, pick.pass_id, 'booked') returning *"
+PL/pgSQL function app.book_class(uuid,uuid,text) line 41 at SQL statement
+booked
+ERROR:  duplicate key value violates unique constraint "bookings_one_live_per_member"
+DETAIL:  Key (class_id, user_id)=(aaaaaaaa-5555-0000-0000-000000000004, 00000000-0000-0000-0000-000000000019) already exists.
+CONTEXT:  SQL statement "insert into public.bookings (id, gym_id, class_id, user_id, pass_id, status)
+    values (p_booking_id, c.gym_id, c.id, me, pick.pass_id, 'booked') returning *"
+PL/pgSQL function app.book_class(uuid,uuid,text) line 41 at SQL statement
+00000000-0000-0000-0000-000000000018|1
+00000000-0000-0000-0000-000000000019|1
+first|booked
+retry same id|booked
+ERROR:  booking id already used
+CONTEXT:  PL/pgSQL function app.book_class(uuid,uuid,text) line 19 at RAISE
+-- parallel retries with the same id:
+booked
+ERROR:  duplicate key value violates unique constraint "bookings_pkey"
+DETAIL:  Key (id)=(01aea36c-373c-4df9-91ae-80a0a03c2c55) already exists.
+CONTEXT:  SQL statement "insert into public.bookings (id, gym_id, class_id, user_id, pass_id, status)
+    values (p_booking_id, c.gym_id, c.id, me, pick.pass_id, 'booked') returning *"
+PL/pgSQL function app.book_class(uuid,uuid,text) line 41 at SQL statement
+-- direct insert bypassing function (as table owner):
+ERROR:  duplicate key value violates unique constraint "bookings_one_live_per_member"
+DETAIL:  Key (class_id, user_id)=(aaaaaaaa-5555-0000-0000-000000000004, 00000000-0000-0000-0000-000000000018) already exists.
+-- member direct insert through API role:
+ERROR:  permission denied for table bookings
+### T4 cross-gym isolation
+-- member of B only (20) reading A:
+classes|0
+bookings|0
+gym_members|1
+profiles|1
+ERROR:  location_not_found
+CONTEXT:  PL/pgSQL function app.schedule(uuid,date) line 10 at RAISE
+-- member 20 books gym A class:
+ERROR:  class_not_found
+CONTEXT:  PL/pgSQL function app.book_class(uuid,uuid,text) line 28 at RAISE
+-- staff of B (3) reading people:
+gym_members visible|bbbbbbbb-0000-0000-0000-000000000000|5
+A bookings|0
+A passes|0
+profiles visible|5
+-- staff B sees m19's A row?
+bbbbbbbb-0000-0000-0000-000000000000|B019
+-- staff B sees profile of A-only member 11?
+0
+-- staff B cancels gym A booking:
+ERROR:  booking_not_found
+CONTEXT:  PL/pgSQL function app.cancel_booking(uuid,boolean) line 12 at RAISE
+-- staff B checks in gym A booking:
+ERROR:  booking_not_found
+CONTEXT:  PL/pgSQL function app.check_in(uuid) line 9 at RAISE
+-- staff B updates gym A class capacity:
+-- staff B cancels gym A class:
+-- staff B attendance on A:
+ERROR:  gym_not_found
+CONTEXT:  PL/pgSQL function app.attendance(uuid,timestamp with time zone,timestamp with time zone) line 4 at RAISE
+-- staff B inserts class in B pointing at A location:
+ERROR:  insert or update on table "classes" violates foreign key constraint "classes_location_fk"
+DETAIL:  Key is not present in table "locations".
+-- staff B (not owner) adds member 11 to gym B to see their profile:
+ERROR:  new row violates row-level security policy for table "gym_members"
+-- owner B adds member 11 (A only) to gym B, then reads profile:
+profile now visible|Person 11
+-- anon reads:
+ERROR:  permission denied for table classes
+### T5 staff lowers capacity below booked (s8 cap 3, book 3, set 2)
+ERROR:  capacity 2 is below the 3 places already taken
+DETAIL:  {"taken" : 3}
+CONTEXT:  PL/pgSQL function private.classes_before_write() line 29 at RAISE
+after|3
+-- staff raises capacity with waitlist (14 waits, then cap 4):
+waitlisted
+4
+booked
+-- staff edits derived starts_at directly:
+ERROR:  permission denied for table classes
+### T6 grace: member 16 past_due, grace ends in 2 days
+-- class in 1 day:
+booked
+-- class in 5 days (after grace):
+ERROR:  grace_ends_before_class
+DETAIL:  {"reason" : "grace_ends_before_class", "reason_at" : "2026-10-16T00:11:23.308475+00:00"}
+CONTEXT:  PL/pgSQL function app.book_class(uuid,uuid,text) line 33 at RAISE
+-- member 17 no pass:
+ERROR:  no_pass
+DETAIL:  {"reason" : "no_pass", "reason_at" : null}
+CONTEXT:  PL/pgSQL function app.book_class(uuid,uuid,text) line 33 at RAISE
+-- schedule flags for 16 (class 4 and 5):
+aaaaaaaa-5555-0000-0000-000000000004|f|already_booked|f
+aaaaaaaa-5555-0000-0000-000000000005|f|grace_ends_before_class|t
+### T7 second open monthly pass same member same gym; same member other gym
+ERROR:  duplicate key value violates unique constraint "passes_one_open_subscription"
+DETAIL:  Key (gym_id, user_id)=(aaaaaaaa-0000-0000-0000-000000000000, 00000000-0000-0000-0000-000000000011) already exists.
+ok other gym
+### T8 12-hour rule (class s3 starts in 6h)
+-- 11 books now (inside 12h) then cancels without accept_late:
+booked
+ERROR:  free_cancel_closed
+DETAIL:  {"free_cancel_until" : "2026-10-13T18:11:23+00:00"}
+CONTEXT:  PL/pgSQL function app.cancel_booking(uuid,boolean) line 27 at RAISE
+-- with accept_late:
+late_cancelled
+-- retry:
+late_cancelled
+-- class 5 days out, free cancel:
+booked
+cancelled
+### T9 cross-gym exclusion: dual instructor 5 teaches A s7; staff B schedules overlapping B class
+created in B
+-- same gym overlap still caught:
+ERROR:  conflicting key value violates exclusion constraint "classes_instructor_no_overlap"
+DETAIL:  Key conflicts with existing key.
+### T10 pack credits: one credit, two parallel bookings on different classes
+booked
+ERROR:  no_credits_left
+CONTEXT:  PL/pgSQL function private.bookings_before_write() line 60 at RAISE
+SQL statement "insert into public.bookings (id, gym_id, class_id, user_id, pass_id, status)
+    values (p_booking_id, c.gym_id, c.id, me, pick.pass_id, 'booked') returning *"
+PL/pgSQL function app.book_class(uuid,uuid,text) line 41 at SQL statement
+pack bookings|1
+### T11 DST: skipped wall time
+ERROR:  that local time does not exist at this location (a daylight saving change skips it)
+### T12 schedule shape as member 11
+Wed 07:11|10|0|10|0|late_cancelled||t|
+Thu 01:11|10|6|4|0|||t|
+Thu 03:11|10|0|10|0|||t|
+Fri 01:11|5|5|0|15|||t|
+Sat 01:11|2|2|0|1|booked||f|already_booked
+Sun 01:11|2|2|0|1|cancelled||t|
