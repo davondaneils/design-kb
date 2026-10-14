@@ -27,3 +27,4 @@ Full read: `agency/PAGE-READ-2026-10-14.md` in the project files. Lessons for an
 - Words repeated verbatim lose force ("London is still open" 5 times plus the sticky bar). Repeats should escalate.
 - If the closing letter is the only part that feels human, it is the page's real skeleton: use its sentence order for the sections.
 - Twenty identical section entrances (same spacing, same headline position, same fade) tell the eye "separate cards". Group into acts with different ground, let bridge lines share a screen with the next section, and vary density.
+- Process cause: the 20 sections were split across four parallel builders, each polishing its own sections, so nobody owned the thread between them. For a long sales page, write the whole argument top to bottom in one pass first (one author, bridges included), then split the build.
