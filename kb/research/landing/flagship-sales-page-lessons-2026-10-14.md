@@ -17,3 +17,13 @@ These are field notes, not sourced facts. They come from one owner's reactions o
 ## Process mistakes to avoid
 - Building three directions solo, without the pipeline, produced "horrible" work. The skills only help when they are loaded and followed.
 - Drifting from the approved outline. Reread it before each new round, because the outline said the hero subject and the loud kind of section 3 long before the builds wandered.
+
+## Why the page read as disconnected pieces (deep read, 2026-10-14)
+
+Full read: `agency/PAGE-READ-2026-10-14.md` in the project files. Lessons for any long sales page (opinion, from Sugarman's slippery slide, Bencivenga's Rule of One and Halbert's letter form):
+- A section that states a finished conclusion as its headline ("Your quote reads as the top choice") closes its own loop. Twenty of those read as a feature grid, not an argument. 13 of 20 headlines on this page began with "You" or "Your".
+- Each section should end by opening the next; the only working open loop on the page (section 15 into the price) was the model for the rest.
+- A mirrored payoff (the referral that fails in section 2 and succeeds in section 6) needs a literal callback: same objects, same words. Without it the reader doesn't feel the mirror.
+- Words repeated verbatim lose force ("London is still open" 5 times plus the sticky bar). Repeats should escalate.
+- If the closing letter is the only part that feels human, it is the page's real skeleton: use its sentence order for the sections.
+- Twenty identical section entrances (same spacing, same headline position, same fade) tell the eye "separate cards". Group into acts with different ground, let bridge lines share a screen with the next section, and vary density.
