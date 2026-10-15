@@ -15,6 +15,8 @@
 //    {A,B}-detail.jpg (10 fps around the clip's biggest change); <dir>/ours-stills.jpg (opening, result, ending: the
 //    article's three stills); <dir>/QUESTIONS.md (the critic's form). The key goes to <dir>/../.<name>.blind-key.json,
 //    outside the folder the critic is given.
+//    stills: the same filming for ours only (no exemplars, no key, no network): <dir>/ours-N.mp4, ours-N-overview.jpg
+//    and ours-stills.jpg. The builder's own review tool (reference 09 section 6); the gate itself stays prepare.
 // 2. Judge: a fresh critic (no build context, no file paths but <dir>) opens the images, answers QUESTIONS.md and
 //    writes <dir>/answers.json. It is told one clip in each pair is world class and asked which, how sure, what gave it
 //    away, and the one moment it would remember from each clip.
@@ -36,8 +38,8 @@ const cmd = args[0];
 const flag = (n, d) => { const i = args.indexOf('--' + n); return i === -1 ? d : args[i + 1]; };
 const flags = (n) => args.flatMap((a, i) => (a === '--' + n ? [args[i + 1]] : []));
 const out = flag('out', null);
-if (!['prepare', 'grade'].includes(cmd) || !out) {
-  console.error('usage: blind-gate.mjs prepare <page> --out dir --moment kind:selector [...]\n       blind-gate.mjs grade --out dir');
+if (!['prepare', 'stills', 'grade'].includes(cmd) || !out) {
+  console.error('usage: blind-gate.mjs prepare <page> --out dir --moment kind:selector [...]\n       blind-gate.mjs stills <page> --out dir --moment kind:selector [...]\n       blind-gate.mjs grade --out dir');
   process.exit(2);
 }
 const keyFile = path.join(path.dirname(path.resolve(out)), '.' + path.basename(path.resolve(out)) + '.blind-key.json');
@@ -84,14 +86,8 @@ async function prepare() {
         if (vis) startAt = Date.now() - t0 - 250; else await page.waitForTimeout(50);
       }
     }
-    for (const st of script) {
-      try {
-        if (st.wait) await page.waitForTimeout(st.wait);
-        else if (st.scroll != null) await page.evaluate((y) => scrollTo(0, y), st.scroll);
-        else if (st.eval) await page.evaluate(st.eval);
-        else if (st.click) await page.click(st.click, { timeout: 3000 });
-      } catch (e) { console.error('  step', JSON.stringify(st).slice(0, 60), e.message.split('\n')[0]); }
-    }
+    // Scroll to the element before the script's wait, so the clip opens on the settled scene, not on the scroll
+    // and the section's own reveal (the critic read both as a cut to a blank frame).
     let box = crop;
     if (cropEl) {
       box = await page.evaluate(([sel]) => {
@@ -102,6 +98,14 @@ async function prepare() {
         return [x, y, Math.min(innerWidth - x, Math.ceil(r.width + 2 * pad)), Math.min(innerHeight - y, Math.ceil(r.height + 2 * pad))].join(',');
       }, [cropEl]);
       if (!box) console.error(`  ${cropEl} not found on the page`);
+    }
+    for (const st of script) {
+      try {
+        if (st.wait) await page.waitForTimeout(st.wait);
+        else if (st.scroll != null) await page.evaluate((y) => scrollTo(0, y), st.scroll);
+        else if (st.eval) await page.evaluate(st.eval);
+        else if (st.click) await page.click(st.click, { timeout: 3000 });
+      } catch (e) { console.error('  step', JSON.stringify(st).slice(0, 60), e.message.split('\n')[0]); }
     }
     if (startAt == null) startAt = Date.now() - t0;
     await page.waitForTimeout(record + trimLead);
@@ -153,6 +157,11 @@ async function prepare() {
     console.log(`trial ${i + 1}: ${m.kind} ${m.sel} against ${ex.id}`);
     const a = await film({ url: toUrl(target), viewport: { width: W, height: H }, colorScheme: scheme, record: ex.record,
       cropEl: hero ? null : m.sel, crop: hero ? `0,0,${W},${H}` : null, script: hero ? [] : [{ wait: 1200 }] }, `ours-${i + 1}`);
+    if (cmd === 'stills') {
+      fs.copyFileSync(a.file, path.join(out, `ours-${i + 1}.mp4`));
+      sheet(a.file, path.join(out, `ours-${i + 1}-overview.jpg`), 2, 0, ex.record / 1000, 6);
+      ours.push(a.file); continue;
+    }
     const b = await film({ url: ex.url, script: ex.script, crop: ex.crop, record: ex.record, startOnText: ex.startOnText, trimLead: ex.trimLead || 0 }, `ex-${i + 1}`);
     const oursIsA = rand() < 0.5;
     const dir = path.join(out, `trial-${i + 1}`); fs.mkdirSync(dir, { recursive: true });
@@ -172,6 +181,7 @@ async function prepare() {
   const dur = +sh('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', main]).trim();
   const tiles = [0.15, 0.55, 0.97].map((f, k) => { const o = path.join(tmp, `still-${k}.png`); sh('ffmpeg', ['-y', '-loglevel', 'error', '-ss', String(dur * f), '-i', main, '-frames:v', '1', o]); return o; });
   sh('ffmpeg', ['-y', '-loglevel', 'error', ...tiles.flatMap((t) => ['-i', t]), '-filter_complex', 'hstack=inputs=3', path.join(out, 'ours-stills.jpg')]);
+  if (cmd === 'stills') { fs.rmSync(tmp, { recursive: true, force: true }); console.log(`wrote ours-stills.jpg and ${ours.length} clip(s) to ${out}`); return; }
   fs.writeFileSync(keyFile, JSON.stringify(key, null, 1));
   fs.writeFileSync(path.join(out, 'QUESTIONS.md'), questions(key.trials.length));
   fs.rmSync(tmp, { recursive: true, force: true });

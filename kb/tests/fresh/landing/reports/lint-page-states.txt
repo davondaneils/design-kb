@@ -1,5 +1,5 @@
 
-Fundamentals lint: halyard.html  ->  PASS (0 fail, 8 warn)
+Fundamentals lint: halyard.html  ->  PASS (0 fail, 13 warn)
 
   pass  axe
   pass  overlay
@@ -15,8 +15,13 @@ Fundamentals lint: halyard.html  ->  PASS (0 fail, 8 warn)
         ! heading ends on a one-word line at 390px ("What sailors say")  [#proof-title]
         ! heading ends on a one-word line at 1440px ("What sailors say")  [#proof-title]
         ! heading ends on a one-word line at 1440px ("Where it works. Poole to Chichester Harbour.")  [#cover-title]
-  pass  svg-overlap  (1 warn)
-        ! text "Yarmouth" partly covered by div.stage.stage--side > div.frag.route-card > div.map.map--route > svg (55x9px) at 390px  [div.stage.stage--side > div.frag.route-card > div.map.map--route > span.maplab.maplab--minor]
+  pass  svg-overlap  (6 warn)
+        ! text "Checking" partly covered by #hero-scene > span.shot-cursor > svg (9x11px) at 390px  [span.find > span.swap > span.swap-track > span]
+        ! text "18:00" partly covered by #hero-scene > span.shot-cursor > svg (20x4px) at 390px  [div.app__plot > div.plot > div.axis > span]
+        ! text "Plan saved for Saturday" partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 390px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
+        ! text "Checking" partly covered by #hero-scene > span.shot-cursor > svg (9x11px) at 1440px  [span.find > span.swap > span.swap-track > span]
+        ! text "18:00" partly covered by #hero-scene > span.shot-cursor > svg (6x4px) at 1440px  [div.app__plot > div.plot > div.axis > span]
+        ... 1 more warnings
   pass  reading-size
   pass  selected-state
   pass  primary
@@ -51,12 +56,12 @@ Fundamentals lint: halyard.html  ->  PASS (0 fail, 8 warn)
   pass  skip-link
   pass  state-shift
   pass  fallback  (1 warn)
-        ! layout moves 54px at 1440px when the web fonts fail (worst: #route); add metric fallbacks (size-adjust, ascent-override). Line count changed in 1 elements: #how-title "How a window is found. Three tests, ever" 2 to 3 lines (one element near a wrap point is a copy fix; many is a font metrics fix)  [#route]
+        ! layout moves 54px at 1440px when the web fonts fail (worst: #route); add metric fallbacks (size-adjust, ascent-override). Line count changed in 2 elements: #how-title "How a window is found. Three tests, ever" 2 to 3 lines; div.sec-head > div.billing-wrap > div.billing > button "Yearly Save £20.88" 2 to 1 lines (one element near a wrap point is a copy fix; many is a font metrics fix)  [#route]
   pass  motion
 
-  JSON: kb/tests/fresh/landing/reports/lint/halyard.lint.json
+  JSON: kb/tests/fresh/landing/halyard.lint.json
 
-Fundamentals lint: halyard.html?state=yearly  ->  PASS (0 fail, 8 warn)
+Fundamentals lint: halyard.html?state=yearly  ->  PASS (0 fail, 13 warn)
 
   pass  axe
   pass  overlay
@@ -72,8 +77,13 @@ Fundamentals lint: halyard.html?state=yearly  ->  PASS (0 fail, 8 warn)
         ! heading ends on a one-word line at 390px ("What sailors say")  [#proof-title]
         ! heading ends on a one-word line at 1440px ("What sailors say")  [#proof-title]
         ! heading ends on a one-word line at 1440px ("Where it works. Poole to Chichester Harbour.")  [#cover-title]
-  pass  svg-overlap  (1 warn)
-        ! text "Yarmouth" partly covered by div.stage.stage--side > div.frag.route-card > div.map.map--route > svg (55x9px) at 390px  [div.stage.stage--side > div.frag.route-card > div.map.map--route > span.maplab.maplab--minor]
+  pass  svg-overlap  (6 warn)
+        ! text "Checking" partly covered by #hero-scene > span.shot-cursor > svg (9x11px) at 390px  [span.find > span.swap > span.swap-track > span]
+        ! text "18:00" partly covered by #hero-scene > span.shot-cursor > svg (20x4px) at 390px  [div.app__plot > div.plot > div.axis > span]
+        ! text "Plan saved for Saturday" partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 390px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
+        ! text "Checking" partly covered by #hero-scene > span.shot-cursor > svg (9x11px) at 1440px  [span.find > span.swap > span.swap-track > span]
+        ! text "18:00" partly covered by #hero-scene > span.shot-cursor > svg (6x4px) at 1440px  [div.app__plot > div.plot > div.axis > span]
+        ... 1 more warnings
   pass  reading-size
   pass  selected-state
   pass  primary
@@ -108,12 +118,12 @@ Fundamentals lint: halyard.html?state=yearly  ->  PASS (0 fail, 8 warn)
   pass  skip-link
   pass  state-shift
   pass  fallback  (1 warn)
-        ! layout moves 54px at 1440px when the web fonts fail (worst: #route); add metric fallbacks (size-adjust, ascent-override). Line count changed in 1 elements: #how-title "How a window is found. Three tests, ever" 2 to 3 lines (one element near a wrap point is a copy fix; many is a font metrics fix)  [#route]
+        ! layout moves 54px at 1440px when the web fonts fail (worst: #route); add metric fallbacks (size-adjust, ascent-override). Line count changed in 2 elements: #how-title "How a window is found. Three tests, ever" 2 to 3 lines; div.sec-head > div.billing-wrap > div.billing > button "Yearly Save £20.88" 2 to 1 lines (one element near a wrap point is a copy fix; many is a font metrics fix)  [#route]
   pass  motion
 
-  JSON: kb/tests/fresh/landing/reports/lint/halyard.state-yearly.lint.json
+  JSON: kb/tests/fresh/landing/halyard.state-yearly.lint.json
 
-Fundamentals lint: halyard.html?state=menu  ->  PASS (0 fail, 8 warn)
+Fundamentals lint: halyard.html?state=menu  ->  PASS (0 fail, 11 warn)
 
   pass  axe
   pass  overlay
@@ -129,8 +139,11 @@ Fundamentals lint: halyard.html?state=menu  ->  PASS (0 fail, 8 warn)
         ! heading ends on a one-word line at 390px ("What sailors say")  [#proof-title]
         ! heading ends on a one-word line at 1440px ("What sailors say")  [#proof-title]
         ! heading ends on a one-word line at 1440px ("Where it works. Poole to Chichester Harbour.")  [#cover-title]
-  pass  svg-overlap  (1 warn)
-        ! text "Yarmouth" partly covered by div.stage.stage--side > div.frag.route-card > div.map.map--route > svg (55x9px) at 390px  [div.stage.stage--side > div.frag.route-card > div.map.map--route > span.maplab.maplab--minor]
+  pass  svg-overlap  (4 warn)
+        ! text "Checking" partly covered by #hero-scene > span.shot-cursor > svg (9x11px) at 390px  [span.find > span.swap > span.swap-track > span]
+        ! text "18:00" partly covered by #hero-scene > span.shot-cursor > svg (20x4px) at 390px  [div.app__plot > div.plot > div.axis > span]
+        ! text "Plan saved for Saturday" partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 390px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
+        ! text "Plan saved for Saturday" partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 1440px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
   pass  reading-size
   pass  selected-state
   pass  primary
@@ -165,12 +178,12 @@ Fundamentals lint: halyard.html?state=menu  ->  PASS (0 fail, 8 warn)
   pass  skip-link
   pass  state-shift
   pass  fallback  (1 warn)
-        ! layout moves 54px at 1440px when the web fonts fail (worst: #route); add metric fallbacks (size-adjust, ascent-override). Line count changed in 1 elements: #how-title "How a window is found. Three tests, ever" 2 to 3 lines (one element near a wrap point is a copy fix; many is a font metrics fix)  [#route]
+        ! layout moves 54px at 1440px when the web fonts fail (worst: #route); add metric fallbacks (size-adjust, ascent-override). Line count changed in 2 elements: #how-title "How a window is found. Three tests, ever" 2 to 3 lines; div.sec-head > div.billing-wrap > div.billing > button "Yearly Save £20.88" 2 to 1 lines (one element near a wrap point is a copy fix; many is a font metrics fix)  [#route]
   pass  motion
 
-  JSON: kb/tests/fresh/landing/reports/lint/halyard.state-menu.lint.json
+  JSON: kb/tests/fresh/landing/halyard.state-menu.lint.json
 
-Fundamentals lint: halyard.html?state=faq  ->  PASS (0 fail, 8 warn)
+Fundamentals lint: halyard.html?state=faq  ->  PASS (0 fail, 11 warn)
 
   pass  axe
   pass  overlay
@@ -186,8 +199,11 @@ Fundamentals lint: halyard.html?state=faq  ->  PASS (0 fail, 8 warn)
         ! heading ends on a one-word line at 390px ("What sailors say")  [#proof-title]
         ! heading ends on a one-word line at 1440px ("What sailors say")  [#proof-title]
         ! heading ends on a one-word line at 1440px ("Where it works. Poole to Chichester Harbour.")  [#cover-title]
-  pass  svg-overlap  (1 warn)
-        ! text "Yarmouth" partly covered by div.stage.stage--side > div.frag.route-card > div.map.map--route > svg (55x9px) at 390px  [div.stage.stage--side > div.frag.route-card > div.map.map--route > span.maplab.maplab--minor]
+  pass  svg-overlap  (4 warn)
+        ! text "Checking" partly covered by #hero-scene > span.shot-cursor > svg (9x11px) at 390px  [span.find > span.swap > span.swap-track > span]
+        ! text "18:00" partly covered by #hero-scene > span.shot-cursor > svg (20x4px) at 390px  [div.app__plot > div.plot > div.axis > span]
+        ! text "Plan saved for Saturday" partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 390px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
+        ! text "Plan saved for Saturday" partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 1440px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
   pass  reading-size
   pass  selected-state
   pass  primary
@@ -222,12 +238,12 @@ Fundamentals lint: halyard.html?state=faq  ->  PASS (0 fail, 8 warn)
   pass  skip-link
   pass  state-shift
   pass  fallback  (1 warn)
-        ! layout moves 54px at 1440px when the web fonts fail (worst: #route); add metric fallbacks (size-adjust, ascent-override). Line count changed in 1 elements: #how-title "How a window is found. Three tests, ever" 2 to 3 lines (one element near a wrap point is a copy fix; many is a font metrics fix)  [#route]
+        ! layout moves 54px at 1440px when the web fonts fail (worst: #route); add metric fallbacks (size-adjust, ascent-override). Line count changed in 2 elements: #how-title "How a window is found. Three tests, ever" 2 to 3 lines; div.sec-head > div.billing-wrap > div.billing > button "Yearly Save £20.88" 2 to 1 lines (one element near a wrap point is a copy fix; many is a font metrics fix)  [#route]
   pass  motion
 
-  JSON: kb/tests/fresh/landing/reports/lint/halyard.state-faq.lint.json
+  JSON: kb/tests/fresh/landing/halyard.state-faq.lint.json
 
-Fundamentals lint: halyard.html?state=paused  ->  PASS (0 fail, 8 warn)
+Fundamentals lint: halyard.html?state=paused  ->  PASS (0 fail, 13 warn)
 
   pass  axe
   pass  overlay
@@ -243,8 +259,13 @@ Fundamentals lint: halyard.html?state=paused  ->  PASS (0 fail, 8 warn)
         ! heading ends on a one-word line at 390px ("What sailors say")  [#proof-title]
         ! heading ends on a one-word line at 1440px ("What sailors say")  [#proof-title]
         ! heading ends on a one-word line at 1440px ("Where it works. Poole to Chichester Harbour.")  [#cover-title]
-  pass  svg-overlap  (1 warn)
-        ! text "Yarmouth" partly covered by div.stage.stage--side > div.frag.route-card > div.map.map--route > svg (55x9px) at 390px  [div.stage.stage--side > div.frag.route-card > div.map.map--route > span.maplab.maplab--minor]
+  pass  svg-overlap  (6 warn)
+        ! text "Checking" partly covered by #hero-scene > span.shot-cursor > svg (9x11px) at 390px  [span.find > span.swap > span.swap-track > span]
+        ! text "18:00" partly covered by #hero-scene > span.shot-cursor > svg (20x4px) at 390px  [div.app__plot > div.plot > div.axis > span]
+        ! text "Plan saved for Saturday" partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 390px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
+        ! text "Checking" partly covered by #hero-scene > span.shot-cursor > svg (9x11px) at 1440px  [span.find > span.swap > span.swap-track > span]
+        ! text "18:00" partly covered by #hero-scene > span.shot-cursor > svg (6x4px) at 1440px  [div.app__plot > div.plot > div.axis > span]
+        ... 1 more warnings
   pass  reading-size
   pass  selected-state
   pass  primary
@@ -279,8 +300,8 @@ Fundamentals lint: halyard.html?state=paused  ->  PASS (0 fail, 8 warn)
   pass  skip-link
   pass  state-shift
   pass  fallback  (1 warn)
-        ! layout moves 54px at 1440px when the web fonts fail (worst: #route); add metric fallbacks (size-adjust, ascent-override). Line count changed in 1 elements: #how-title "How a window is found. Three tests, ever" 2 to 3 lines (one element near a wrap point is a copy fix; many is a font metrics fix)  [#route]
+        ! layout moves 54px at 1440px when the web fonts fail (worst: #route); add metric fallbacks (size-adjust, ascent-override). Line count changed in 2 elements: #how-title "How a window is found. Three tests, ever" 2 to 3 lines; div.sec-head > div.billing-wrap > div.billing > button "Yearly Save £20.88" 2 to 1 lines (one element near a wrap point is a copy fix; many is a font metrics fix)  [#route]
   pass  motion
 
-  JSON: kb/tests/fresh/landing/reports/lint/halyard.state-paused.lint.json
+  JSON: kb/tests/fresh/landing/halyard.state-paused.lint.json
 exit 0

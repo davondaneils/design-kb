@@ -1,5 +1,14 @@
 # design-motion changelog
 
+## 0.4.1 (2026-10-15, from the first blind-gate rounds on the Halyard rebuild)
+Why: the rebuilt Halyard passed every presence check and the blind critic still told it apart in all four trials (confidence 3 to 4), while naming a memorable moment in three. Its corrections were specific and repeatable, so they became rules.
+- Reference 09 section 7: ten rules from the gate rounds (payoff in the first look, waiting is not a moment, the screen never disagrees with itself, show the change, time follows the data, the tip leads, overlays sit inside their surface, nothing on screen is dead, no decoration behind the product, status follows the thing), each with what the critic saw and what enforces it.
+- `motion-plan-check.mjs`: new fail `payoff` (a scene in the first screen whose result shot starts after 4500ms). Fixed: the last beat of a scene is now measured (the scene is watched for one full play plus its rest), and a scene that plays once holds its last beat for good; the first beat now waits for the section's own scroll reveal before counting words.
+- `blind-gate.mjs`: new `stills` command (ours only, no exemplars, no key) so builders have the three-stills tool; scene clips now open on the settled scene, not on the scroll and the section's reveal (the critic read that as a cut to a blank frame).
+- `moments.css`: the cursor is painted from `--color-surface` and `--color-text`, so its markup carries no hard-coded colour (lint `icons`). Reference 09 says how to author the no-JS still for swaps and stacks.
+- `moments.js`: a play that opens on its aim beat now shows the cursor travel (it snapped to the target, because `scene.js` finishes transitions while setting the first state); found by the Halyard builder.
+- SKILL.md fundamental 10: opacity is allowed on an `aria-hidden` hero artifact that is not the LCP element (Linear's staging).
+
 ## 0.4 (2026-10-15, from the fresh brief's filmed verdict and the frame-level moment study)
 Why: the fresh brief passed every v0.3 motion check and the recordings were "not anything special" (Davon). The checks measured presence, not quality. Nine exemplar moments were filmed and traced frame by frame (`kb/moments/STUDY.md`; tools `kb/moments/film.mjs`, `trace.mjs`, `sheet.sh`); FOUNDATIONS v0.6 adds the tokens.
 - New `assets/moments.css` and `assets/moments.js`: the moment kit. swap (Stripe checkout: 833ms rolls on `(.78,0,.22,1)`, browser group 150 to 250ms behind), stack (Sonner: rise from 100%, older items scale .95 and -14px per level), event shot (cursor on a spring sampled into CSS `linear()`, press scale .97, camera push 1.00 to 1.03), and the shot-plan runner.

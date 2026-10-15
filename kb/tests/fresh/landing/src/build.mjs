@@ -11,6 +11,8 @@ import * as D from './data.mjs';
 const here = path.dirname(fileURLToPath(import.meta.url));
 const out = path.resolve(here, '..');
 const asset = (f) => fs.readFileSync(path.join(here, 'assets', f));
+// Inlined scripts must not close their own <script> element (moments.js shows a shot plan tag in a comment).
+const kit = (f) => fs.readFileSync(path.resolve(here, '../../../../../skills/design-motion/assets', f), 'utf8').replace(/<\/script/g, '<\\/script');
 const b64 = (f) => asset(f).toString('base64');
 
 // ---------- helpers ----------
@@ -87,15 +89,28 @@ function lightTrack({ labels = true, latest = false } = {}) {
       <span class="tag tag--low tag--end" style="--x:${pct(D.sun.set)}">${D.sun.set}</span>` : ''}${latest ? `
       <span class="mark" style="--x:${pct(D.latestLeave)}"></span>` : ''}</div>`;
 }
-function rowTrack(row) {
+function rowTrack(row, { cls = '' } = {}) {
   const cuts = row.cuts.map((c) => `<i class="cut cut--${c.why}" style="--x0:${pct(c.from)};--x1:${pct(c.to)};--d:${frac(c.from).toFixed(3)}"></i>`).join('');
-  return `<div class="track track--row">${cuts}<span class="win" style="--x0:${pct(row.win[0])};--x1:${pct(row.win[1])};--i:${row.i}"></span></div>`;
+  return `<div class="track track--row${cls ? ' ' + cls : ''}">${cuts}${row.lost ? `<i class="lost" style="--x0:${pct(row.lost[0])};--x1:${pct(row.lost[1])}"></i>` : ''}<span class="win" style="--x0:${pct(row.win[0])};--x1:${pct(row.win[1])};--i:${row.i};--e:${frac(row.win[1]).toFixed(3)}"></span></div>`;
 }
 
+// ---------- the moment kit (design-motion assets/moments.js): swap values and stack items, authored on a frame ----------
+// moments.js picks the value to show from data-seen; the HTML is written on the frame it is built for (the still frame on
+// the page, each frame on the state sheet), so it is right without JavaScript and under reduced motion.
+const lastSeen = (list, seen) => { let i = -1; for (const st of seen) { const k = list.indexOf(st); if (k !== -1) i = k; } return Math.max(0, i); };
+function swap(list, values, seen, { group = 0, cls = '', style = '' } = {}) {
+  return `<span class="swap${cls ? ' ' + cls : ''}" data-swap="${list.join(' ')}"${group ? ` data-swap-group="${group}"` : ''} style="--swap-i:${lastSeen(list, seen)};--swap-count:${values.length}${style ? ';' + style : ''}"><span class="swap-track">${values.map((v) => `<span>${v}</span>`).join('')}</span></span>`;
+}
+const sceneAttrs = (beats, seen, { id, rest, still }) => `${id ? `id="${id}" ` : ''}data-scene data-beats="${beats.map(([s, ms]) => s + ':' + ms).join(' ')}" data-rest="${rest}" data-still="${still}" data-state="${seen.at(-1)}" data-seen="${seen.join(' ')}"`;
+const seenTo = (beats, state) => beats.slice(0, beats.findIndex(([s]) => s === state) + 1).map(([s]) => s);
+const plan = (shots) => `<script type="application/json" data-shot-plan>${JSON.stringify({ shots })}</script>`;
+const CURSOR = '<span class="shot-cursor" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3 2l13 7.5-5.6 1.4 3.2 6-2.4 1.2-3.2-6L3 16z" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>';
+const tm = (t) => `<time datetime="2026-10-24T${t}+01:00">${t}</time>`;
+
 // The hero plot: lanes plus the two rows, with the sweep that the scene drives.
-function heroPlot() {
+function heroPlot(seen = HERO_BEATS.map(([s]) => s)) {
   const rows = D.rows.map((r) => `
-      <div class="row-head"><span class="row-name"><b>${r.name}</b> ${r.leg}</span><span class="slot row-slot"><span class="s-check">Checking</span><span class="s-win">Leave ${r.win[0]} to ${r.win[1]}</span></span></div>
+      <div class="row-head"><span class="row-name"><b>${r.name}</b> ${r.leg}</span>${swap(['aim', 'press'], ['<span class="s-none">Not checked</span>', `<span class="s-win">Leave ${r.win[0]} to ${r.win[1]}</span>`], seen, { cls: 'row-slot', style: `--e:${frac(r.win[1]).toFixed(3)}` })}</div>
       <span class="lab lab--row"></span>${rowTrack(r)}`).join('');
   return `<div class="plot">
       <span class="lab"></span>${axisRow()}
@@ -141,23 +156,148 @@ function coverageMap() {
       ${labels}
     </div>`;
 }
-// Route chart: West Solent, x = (lon + 1.60) * 1266, y = (50.80 - lat) * 2000.
+// Route chart: West Solent, x = (lon + 1.60) * 1266, y = (50.80 - lat) * 2000. The planned track is drawn faint; each
+// leg is its own path that appears when the boat reaches the mark at its end (route scene). Returns the boat position
+// at each mark in the SVG's own units (CSS transforms on SVG elements use user units).
+const ROUTE_W = 443, ROUTE_H = 220;
+const routeXY = (lo, la) => P(lo, la, -1.60, 50.80, 2000);
+const LEG_TRACK = { jack: [0, 2], hamstead: [2, 3], gurnard: [3, 4], cowes: [4, 5] }; // track indices per leg
 function routeChart() {
-  const W = 443, H = 220;
-  const f = (lo, la) => P(lo, la, -1.60, 50.80, 2000);
+  const W = ROUTE_W, H = ROUTE_H, f = routeXY;
   const main = poly([...D.route.mainland, [-1.25, 50.85], [-1.60, 50.85]], f);
   const iow = poly([...D.route.wight, [-1.60, 50.65], [-1.25, 50.65]], f);
   const pts = D.route.track.map(([lo, la]) => f(lo, la));
-  const line = 'M' + pts.map((p) => p.join(' ')).join('L');
+  const line = (a, b) => 'M' + pts.slice(a, b + 1).map((p) => p.join(' ')).join('L');
+  const legs = Object.entries(LEG_TRACK).map(([st, [a, b]]) => `<path class="route leg" data-leg="${st}" d="${line(a, b)}"/>`).join('');
   const wps = D.route.waypoints.map((w) => { const [x, y] = f(w.lon, w.lat); return `<circle class="wp" cx="${x}" cy="${y}" r="4"/>`; }).join('');
-  const labels = D.route.labels.map((l) => { const [x, y] = f(l.lon, l.lat); return `<span class="maplab${l.water ? ' maplab--water' : ''}${l.minor ? ' maplab--minor' : ''}${l.anchor ? ' maplab--' + l.anchor : ''}" style="--x:${(x / W * 100).toFixed(2)}%;--y:${(y / H * 100).toFixed(2)}%">${l.name}</span>`; }).join('');
+  const labels = D.route.labels.map((l) => { const [x, y] = f(l.lon, l.lat); return `<span class="maplab${l.water ? ' maplab--water' : ''}${l.minor ? ' maplab--minor' : ''}${l.wide ? ' maplab--wide' : ''}${l.anchor ? ' maplab--' + l.anchor : ''}" style="--x:${(x / W * 100).toFixed(2)}%;--y:${(y / H * 100).toFixed(2)}%">${l.name}</span>`; }).join('');
   return `<div class="map map--route" style="--ar:${W}/${H}">
       <svg viewBox="0 0 ${W} ${H}" aria-hidden="true" focusable="false">
         <path class="land" d="${main}"/><path class="land" d="${iow}"/>
-        <path class="route" d="${line}"/>${wps}
+        <path class="route route--plan" d="${line(0, pts.length - 1)}"/>${legs}${wps}
+        <circle class="boat" cx="0" cy="0" r="6"/>
       </svg>
       ${labels}
     </div>`;
+}
+
+// ---------- scenes (design-motion v0.4: shot plan, moment kit) ----------
+// Each builder writes the scene on one frame: the page gets the still frame (id, shot plan, cursor), the state sheet
+// gets every frame. Beats are per scene (FOUNDATIONS: never tokens).
+const HERO_BEATS = [['aim', 1500], ['press', 2400], ['window', 4400]];
+// The status line rolls to "2 windows found" just after the sweep passes the last window's close (CSS adds --offset).
+const LAST_CLOSE = Math.max(...D.rows.map((r) => frac(r.win[1]))).toFixed(3);
+function heroScene(state = 'window', { id = 'hero-scene' } = {}) {
+  const seen = seenTo(HERO_BEATS, state);
+  const shots = [
+    { state: 'aim', owner: '.app', aim: '.find' },
+    { state: 'press', owner: '.app', press: '.find' },
+    { state: 'window', owner: '.plan', read: '.plan__head', push: '.app' },
+  ];
+  return `<div class="scene" ${sceneAttrs(HERO_BEATS, seen, { id, rest: 4000, still: 'window' })}>
+            ${id ? plan(shots) : ''}
+            <div class="frag app">
+              <div class="app__bar">
+                <div class="app__title"><b>Lymington to Cowes and back</b><span class="muted">Sat&nbsp;24&nbsp;Oct · BST</span></div>
+                <div class="status">
+                  ${swap(['aim', 'press'], ['Ready to check', '2 windows found'], seen, { cls: 'status__slot', style: `--e:${LAST_CLOSE}` })}
+                  <span class="status__prog"></span>
+                </div>
+              </div>
+              <div class="app__limits"><span class="chip">Wren, 7.9&nbsp;m sloop</span><span class="chip">Wind ≤&nbsp;20&nbsp;kn</span><span class="chip">Against tide ≤&nbsp;12&nbsp;kn</span><span class="chip">Home by sunset</span><span class="find">${swap(['aim', 'press', 'window'], ['Find windows', 'Checking', 'Find windows'], seen)}</span></div>
+              <div class="app__plot">${heroPlot(seen)}</div>
+              <div class="plan">
+                <div class="plan__head"><b>Proposed plan</b><span><span class="muted">Daylight to spare</span><b class="spare">3&nbsp;h 46&nbsp;min</b></span></div>
+                <ol class="plan__legs">
+                  <li><span>Leave Lymington</span><b>08:30</b></li>
+                  <li><span>Arrive Cowes</span><b>10:10</b></li>
+                  <li><span>Leave Cowes</span><b>12:30</b></li>
+                  <li><span>Home</span><b>14:10</b></li>
+                </ol>
+              </div>
+            </div>
+            ${CURSOR}
+          </div>`;
+}
+
+const WARN_BEATS = [['fri18', 2400], ['saved', 2400], ['fri21', 4500]];
+function warnScene(state = 'fri21', { id = 'warn-scene' } = {}) {
+  const seen = seenTo(WARN_BEATS, state);
+  const F = D.forecast, list = ['fri18', 'fri21'];
+  const back = D.rows[1];
+  const was = mins(F.before.closes) - mins(back.win[0]), now = mins(back.win[1]) - mins(back.win[0]);
+  const windCut = back.cuts.find((c) => c.why === 'wind');
+  const cutNow = mins(windCut.to) - mins(windCut.from), cutWas = mins(windCut.to) - mins(F.before.closes);
+  const lostMin = mins(F.before.closes) - mins(F.after.closes);
+  // One beat per forecast. The 21:00 forecast changes the card and the note together: the note swaps its contents in
+  // place (the saved note leaves, then the alert arrives), so nothing on screen ever disagrees for longer than 0.3s.
+  const shots = [
+    { state: 'fri18', owner: '.warn-panel', read: '.wp-win' },
+    { state: 'saved', owner: '.notes', read: '.face--saved b' },
+    { state: 'fri21', owner: '.notes', read: '.alert__lead' },
+  ];
+  const note = (cls, time, body) => `<div class="face ${cls}"><div class="alert__app"><span>{{SYMBOL_SMALL}}Halyard</span><span class="muted">Fri ${time}</span></div><div class="alert__msg">${body}</div></div>`;
+  return `<div class="warn-stage" ${sceneAttrs(WARN_BEATS, seen, { id, rest: 3000, still: 'fri21' })} style="--was:${(was / now).toFixed(4)};--cut-was:${(cutWas / cutNow).toFixed(4)}">
+              ${id ? plan(shots) : ''}
+              <div class="frag warn-panel">
+                <div class="frag__head"><b>Back: Cowes to Lymington</b><span class="chip chip--forecast">${swap(list, [`Forecast Fri ${F.before.issued}`, `Forecast Fri ${F.after.issued}`], seen)}</span></div>
+                <div class="frag__body">
+                  <div class="wwin">
+                    <div class="wwin__head"><span class="muted">Window</span><b class="wp-win">Leave ${back.win[0]} to ${swap(list, [F.before.closes, F.after.closes], seen)}</b></div>
+                    <div class="plot plot--warn"><span class="lab"></span>${axisRow(['06:00', '12:00', '18:00'])}<span class="lab">Back</span>${rowTrack({ ...back, lost: [F.after.closes, F.before.closes] }, { cls: 'track--moves' })}</div>
+                  </div>
+                  <div class="warn-row">${swap(list, [tm(F.before.against), tm(F.after.against)], seen, { cls: 'warn-t' })}<span><b>Wind against tide</b><br><span class="muted">W 15&nbsp;kn on a 2.4&nbsp;kn W-going stream</span></span></div>
+                  <div class="warn-row"><span class="warn-t">${tm('16:00')}</span><span><b>Gusts 23&nbsp;kn</b><br><span class="muted">Limit 20&nbsp;kn</span></span></div>
+                  <div class="warn-row"><span class="warn-t">${tm(D.latestLeave)}</span><span><b>Latest to leave Cowes</b><br><span class="muted">Sunset ${D.sun.set}</span></span></div>
+                </div>
+              </div>
+              <ol class="notes">
+                <li class="frag alert">
+                  ${note('face--saved', F.savedAt, `<b>Plan saved for Saturday</b>Out ${D.rows[0].win[0]} to ${D.rows[0].win[1]}, back ${back.win[0]} to ${F.before.closes}. You will hear if a new forecast moves either window.`)}
+                  ${note('face--moved', F.alertAt, `<span class="alert__lead"><b>Back window moved</b>Now closes ${F.after.closes}, ${lostMin} minutes earlier.</span> The ${F.after.issued} forecast brings the wind on sooner. Your 12:30 start still works.`)}
+                </li>
+              </ol>
+            </div>`;
+}
+
+// State sheet: one frame per beat, with what the viewer should see in it.
+const FRAME_NOTES = {
+  aim: 'Saturday loaded; the cursor goes to Find windows', press: 'Pressed: the sweep lands each window as it passes',
+  window: '2 windows found, plan in the card (still)',
+  fri18: '18:00 forecast: back window to 13:45', saved: 'Plan saved at 18:10: the note arrives', fri21: '21:00 forecast: window to 13:20, alert in place (still)',
+  leave: 'Leave Lymington 08:30', jack: 'Jack in the Basket 08:48, 1.5 nm', hamstead: 'Hamstead Ledge 09:17, 4.6 nm',
+  gurnard: 'Gurnard 09:59, 9.2 nm', cowes: 'Arrive Cowes 10:10, 10.5 nm (still)',
+};
+const frame = (html, st, beats) => {
+  const i = beats.findIndex(([s]) => s === st);
+  return `<figure class="frame"><div class="stage stage--side" aria-hidden="true"${st === 'aim' || st === 'press' ? ' data-frame-aim=".find"' : ''}>${html}</div><figcaption class="frame-cap"><span>${i + 1} ${st}, ${beats[i][1]}&nbsp;ms</span><span>${FRAME_NOTES[st]}</span></figcaption></figure>`;
+};
+
+// Route: one beat per leg. Each leg's sailing time on screen is scaled to its minutes on the water (18, 29, 42 and
+// 11 min become 600, 1200, 1600 and 400ms: token values, or scene lengths of 1200ms and over), then the boat holds at
+// the mark long enough to read it. Beat = sail + the place name landing + a 1000ms read; the loop stays under 12000ms.
+const LEG_MS = { jack: 600, hamstead: 1200, gurnard: 1600, cowes: 400 };
+const ROUTE_BEATS = [['leave', 1500], ['jack', 2200], ['hamstead', 2800], ['gurnard', 3200], ['cowes', 2200]];
+function routeScene(state = 'cowes', { id = 'route-scene' } = {}) {
+  const seen = seenTo(ROUTE_BEATS, state);
+  const i = D.marks.findIndex((m) => m.state === state);
+  const list = D.marks.map((m) => m.state);
+  let run = 0; const sailed = D.marks.map((m, k) => { run += k ? D.legs[k].nm : 0; return run.toFixed(1); });
+  // Leg speed: distance over time for the leg being sailed (the stream is in it); 0.0 at the quay.
+  const speed = D.marks.map((m, k) => (k ? (D.legs[k].nm / ((mins(D.legs[k].t) - mins(D.legs[k - 1].t)) / 60)).toFixed(1) : '0.0'));
+  const at = D.marks.map((m) => { const w = D.route.waypoints[m.wp]; const [x, y] = routeXY(w.lon, w.lat); return `--at-${m.state}:translate(${x}px, ${y}px)`; }).join(';');
+  const shots = D.marks.map((m, k) => (k < D.marks.length - 1 ? { state: m.state, owner: '.boat', read: '.rs-time' } : { state: m.state, owner: '.route-strip', read: '.rs-now' }));
+  const legs = Object.entries(LEG_MS).map(([st, ms]) => st + ':' + ms).join(' ');
+  return `<div class="frag route-card" ${sceneAttrs(ROUTE_BEATS, seen, { id, rest: 2400, still: 'cowes' })} data-legs="${legs}" style="${at}">
+            ${id ? plan(shots) : ''}
+            <div class="frag__head"><b>Out: Lymington to Cowes</b><span class="chip chip--win">Leave 08:30</span></div>
+            {{ROUTE_CHART}}
+            <div class="route-strip">
+              <span class="rs-now">${swap(list, D.marks.map((m) => m.label), seen, { cls: 'muted rs-label' })}<b class="rs-time" data-steps="${D.marks.map((m) => m.t).join(' ')}">${D.marks[i].t}</b></span>
+              <span><span class="muted">Distance sailed</span><b class="rs-nm" data-steps="${sailed.join(' ')}">${sailed[i]}&nbsp;nm</b></span>
+              <span><span class="muted">Leg speed</span><b>${swap(list, speed.map((v) => v + '&nbsp;kn'), seen, { group: 1 })}</b></span>
+            </div>
+          </div>`;
 }
 
 // ---------- logo ----------
@@ -202,7 +342,12 @@ const vars = {
   SYMBOL_PATHS: symbolPaths,
   WORDMARK: wordmark('logo__word'),
   WORDMARK_BIG: wordmark('signoff__word'),
-  HERO_PLOT: heroPlot(),
+  HERO_SCENE: heroScene(),
+  WARN_SCENE: warnScene(),
+  ROUTE_SCENE: routeScene(),
+  HERO_FRAMES: HERO_BEATS.map(([st]) => frame(heroScene(st, { id: '' }), st, HERO_BEATS)).join('\n'),
+  WARN_FRAMES: WARN_BEATS.map(([st]) => frame(warnScene(st, { id: '' }), st, WARN_BEATS)).join('\n'),
+  ROUTE_FRAMES: ROUTE_BEATS.map(([st]) => frame(routeScene(st, { id: '' }), st, ROUTE_BEATS)).join('\n'),
   MINI_PLOT: miniPlot(),
   AXIS: axisRow(['06:00', '12:00', '18:00']),
   TIDE_TRACK: tideTrack(),
@@ -213,10 +358,12 @@ const vars = {
   SYMBOL_SMALL: symbol('alert__logo'),
   ROUTE_CHART: routeChart(),
   COVERAGE_MAP: coverageMap(),
-  SCENE_JS: asset('scene.js').toString(),
+  // The moment kit, inlined from the skill so the page stays one file and never drifts from it.
+  SCENE_JS: kit('scene.js'),
+  MOMENTS_JS: kit('moments.js'),
+  MOMENTS_CSS: kit('moments.css'),
 };
 const pageTpl = fs.readFileSync(path.join(here, 'page.html'), 'utf8');
-vars.FRAME_BODY = pageTpl.match(/<div class="frag app">([\s\S]*?<div class="app__plot">\{\{HERO_PLOT\}\}<\/div>)/)[1];
 function fill(tpl) {
   let html = tpl.replace(/\{\{icon:(\w+)(?::([\w-]+))?\}\}/g, (_, n, c) => icon(n, c || ''));
   for (let pass = 0; pass < 2; pass++) html = html.replace(/\{\{(\w+)\}\}/g, (m, k) => { if (!(k in vars)) throw new Error('unknown placeholder ' + k); return vars[k]; });

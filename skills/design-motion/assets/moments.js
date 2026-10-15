@@ -99,13 +99,25 @@
       const shot = shots[state] || {};
       scene.querySelectorAll('[data-owner]').forEach((e) => e.removeAttribute('data-owner'));
       q(shot.owner)?.setAttribute('data-owner', '');
+      const first = (scene.dataset.beats || '').trim().split(/\s+/)[0]?.split(':')[0];
       if (shot.aim && cursor) {
         const t = q(shot.aim);
         if (t) {
           const a = scene.getBoundingClientRect(), b = t.getBoundingClientRect();
           // Aim a little below and right of center, where a hand lands on a button, not dead center.
-          cursor.style.setProperty('--cx', Math.round(b.left - a.left + b.width * 0.55) + 'px');
-          cursor.style.setProperty('--cy', Math.round(b.top - a.top + b.height * 0.6) + 'px');
+          const aim = () => {
+            cursor.style.setProperty('--cx', Math.round(b.left - a.left + b.width * 0.55) + 'px');
+            cursor.style.setProperty('--cy', Math.round(b.top - a.top + b.height * 0.6) + 'px');
+          };
+          if (state === first) {
+            // A play that opens on its aim: snap the cursor to the park point with no transition, then aim two
+            // frames later, so the travel is seen (scene.js finishes every transition it starts while setting state).
+            cursor.style.transition = 'none';
+            cursor.style.setProperty('--cx', Math.round(a.width * 0.86) + 'px');
+            cursor.style.setProperty('--cy', Math.round(a.height * 0.92) + 'px');
+            getComputedStyle(cursor).transform; cursor.style.transition = '';
+            requestAnimationFrame(() => requestAnimationFrame(() => { if (scene.getAttribute('data-state') === state) aim(); }));
+          } else aim();
         }
       }
       if (shot.press) {
@@ -121,7 +133,6 @@
       }
       if (shot.push) q(shot.push)?.setAttribute('data-pushing', '');
       // The first state of a play resets the camera and parks the cursor where the plan's first aim will start.
-      const first = (scene.dataset.beats || '').trim().split(/\s+/)[0]?.split(':')[0];
       if (state === first) {
         scene.querySelectorAll('[data-pushing]').forEach((e) => e.removeAttribute('data-pushing'));
         // Park the cursor at the lower right: it enters the frame on its first aim, it never pops in.

@@ -1,6 +1,6 @@
 {
   "file": "kb/tests/fresh/landing/halyard-states.html",
-  "date": "2026-10-13T23:50:11.212Z",
+  "date": "2026-10-15T05:03:16.146Z",
   "checks": {
     "axe": {
       "fail": [],
@@ -51,7 +51,44 @@
     },
     "svg-overlap": {
       "fail": [],
-      "warn": [],
+      "warn": [
+        {
+          "message": "text \"Find windows\" partly covered by div.stage.stage--side > div.scene > span.shot-cursor > svg (20x5px) at 390px",
+          "sel": "span.find > span.swap > span.swap-track > span"
+        },
+        {
+          "message": "text \"Leave Lymington\" partly covered by div.stage.stage--side > div.frag.route-card > div.map.map--route > svg (96x4px) at 390px",
+          "sel": "span.rs-now > span.swap.muted > span.swap-track > span"
+        },
+        {
+          "message": "text \"08:30\" partly covered by div.stage.stage--side > div.frag.route-card > div.map.map--route > svg (40x9px) at 390px",
+          "sel": "b.rs-time > span.swap > span.swap-track > span"
+        },
+        {
+          "message": "text \"0.0 nm\" partly covered by div.stage.stage--side > div.frag.route-card > div.map.map--route > svg (47x9px) at 390px",
+          "sel": "b > span.swap > span.swap-track > span"
+        },
+        {
+          "message": "text \"Find windows\" partly covered by div.stage.stage--side > div.scene > span.shot-cursor > svg (20x5px) at 1440px",
+          "sel": "span.find > span.swap > span.swap-track > span"
+        },
+        {
+          "message": "text \"Plan saved for Saturday\" partly covered by li.frag.alert > div.alert__app > span > svg.alert__logo (9x11px) at 1440px",
+          "sel": "ol.notes.stack > li.frag.alert > div.alert__msg > b"
+        },
+        {
+          "message": "text \"Leave Lymington\" partly covered by div.stage.stage--side > div.frag.route-card > div.map.map--route > svg (96x4px) at 1440px",
+          "sel": "span.rs-now > span.swap.muted > span.swap-track > span"
+        },
+        {
+          "message": "text \"08:30\" partly covered by div.stage.stage--side > div.frag.route-card > div.map.map--route > svg (40x9px) at 1440px",
+          "sel": "b.rs-time > span.swap > span.swap-track > span"
+        },
+        {
+          "message": "text \"0.0 nm\" partly covered by div.stage.stage--side > div.frag.route-card > div.map.map--route > svg (47x9px) at 1440px",
+          "sel": "b > span.swap > span.swap-track > span"
+        }
+      ],
       "pass": true
     },
     "reading-size": {
@@ -269,15 +306,15 @@
   "summary": {
     "stateSheet": true,
     "weightKB": {
-      "html": 223,
-      "svg": 27
+      "html": 272,
+      "svg": 35
     },
     "focusables": 34,
     "fallbackShift390": -54,
     "fallbackShift1440": 0,
     "motionFound": {
-      "animations": 9,
-      "movingTransitions": 56
+      "animations": 3,
+      "movingTransitions": 89
     },
     "axe": "pass",
     "overlay": "pass",
@@ -287,7 +324,7 @@
     "spacing": "pass",
     "overflow": "pass",
     "heading-wrap": "pass",
-    "svg-overlap": "pass",
+    "svg-overlap": "pass (9 warn)",
     "reading-size": "pass",
     "selected-state": "pass",
     "primary": "pass",
@@ -326,6 +363,6 @@
     "motion": "pass",
     "result": "PASS",
     "fails": 0,
-    "warns": 3
+    "warns": 12
   }
 }

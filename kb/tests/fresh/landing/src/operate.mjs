@@ -11,9 +11,10 @@ const page_url = pathToFileURL(path.resolve(here, '../halyard.html')).href;
 
 // Each control: how to find it, what to read before and after, what the change must be.
 const controls = [
-  { name: 'Pause animation', width: 1440, sel: '[data-scene-pause]',
-    read: () => ({ pressed: document.querySelector('[data-scene-pause]').getAttribute('aria-pressed'), paused: document.querySelector('#hero-scene').hasAttribute('data-scene-paused') }),
-    expect: (a, b) => a.pressed === 'false' && b.pressed === 'true' && b.paused },
+  // One pause button per scene (WCAG 2.2.2). Each is checked on its own scene: pressed and the scene holds.
+  ...['hero-scene', 'route-scene', 'warn-scene'].map((id) => ({ name: `Pause ${id}`, width: 1440, sel: `[data-scene-pause][aria-controls="${id}"]`,
+    read: new Function(`return { pressed: document.querySelector('[aria-controls="${id}"]').getAttribute('aria-pressed'), paused: document.getElementById('${id}').hasAttribute('data-scene-paused') && document.getElementById('${id}').dataset.state };`),
+    expect: (a, b) => a.pressed === 'false' && b.pressed === 'true' && !!b.paused })),
   { name: 'Billing: Yearly', width: 1440, sel: '[data-billing-set="year"]',
     read: () => ({ billing: document.getElementById('plus').dataset.billing, cta: document.querySelector('[data-plus-cta]').textContent, href: document.querySelector('[data-plus-cta]').getAttribute('href'), terms: document.querySelector('[data-plus-terms]').textContent.slice(0, 30), pressed: document.querySelector('[data-billing-set="year"]').getAttribute('aria-pressed') }),
     expect: (a, b) => a.billing === 'month' && b.billing === 'year' && b.cta === 'Get Plus, £39 a year' && b.href.includes('year') && b.terms.startsWith('Renews every year') && b.pressed === 'true' },
@@ -81,7 +82,17 @@ const sums = await page.evaluate(() => {
     { what: 'Latest to leave Cowes: sunset minus passage', shown: '16:16', computed: (() => { const m = toMin('17:56') - 100; return `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`; })() },
     { what: 'Yearly price per month: £39 / 12', shown: '£3.25', computed: '£' + (39 / 12).toFixed(2) },
     { what: 'Yearly saving: 12 x £4.99 minus £39', shown: '£20.88', computed: '£' + (12 * 4.99 - 39).toFixed(2) },
-    { what: 'Back window moved: was 13:45, now 13:20', shown: '25 minutes', computed: (toMin('13:45') - toMin('13:20')) + ' minutes' },
+    // Scene numbers, read from the still frames as displayed (each scene's last state).
+    { what: 'Alert: minutes earlier = 18:00 forecast close minus 21:00 close', shown: (document.querySelector('#warn-scene .alert__lead').textContent.match(/(\d+) minutes/) || [])[1] + ' minutes',
+      computed: (() => { const vals = [...document.querySelectorAll('#warn-scene .wp-win .swap-track > span')].map((e) => e.textContent.trim()); return (toMin(vals[0]) - toMin(vals[1])) + ' minutes'; })() },
+    { what: 'Alert close time = window close on the panel', shown: (document.querySelector('#warn-scene .alert__lead').textContent.match(/closes (\d\d:\d\d)/) || [])[1], computed: [...document.querySelectorAll('#warn-scene .wp-win .swap-track > span')].at(-1).textContent.trim() },
+    { what: 'Window close + passage = wind-against-tide start (21:00 forecast)', shown: [...document.querySelectorAll('#warn-scene .warn-t')][0].querySelectorAll('time')[1].textContent, computed: (() => { const m = toMin([...document.querySelectorAll('#warn-scene .wp-win .swap-track > span')].at(-1).textContent.trim()) + 100; return `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`; })() },
+    { what: 'Window close + passage = wind-against-tide start (18:00 forecast)', shown: [...document.querySelectorAll('#warn-scene .warn-t')][0].querySelectorAll('time')[0].textContent, computed: (() => { const m = toMin([...document.querySelectorAll('#warn-scene .wp-win .swap-track > span')][0].textContent.trim()) + 100; return `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`; })() },
+    { what: 'Route scene: distance sailed at each mark = legs added up', shown: document.querySelector('#route-scene .rs-nm').dataset.steps,
+      computed: (() => { let r = 0; return [0, ...legs].map((n) => (r += n).toFixed(1)).join(' '); })() },
+    { what: 'Route scene: times at each mark = the legs table', shown: document.querySelector('#route-scene .rs-time').dataset.steps, computed: times.join(' ') },
+    { what: 'Route scene: leg speed = leg distance over leg time', shown: [...document.querySelectorAll('#route-scene .route-strip > span:nth-child(3) .swap-track > span')].map((e) => e.textContent.replace(/\s*kn/, '').trim()).join(' '),
+      computed: ['0.0', ...legs.map((n, i) => (n / ((toMin(times[i + 1]) - toMin(times[i])) / 60)).toFixed(1))].join(' ') },
     { what: 'Height stations listed', shown: '14', computed: String(document.querySelectorAll('.stations li').length) },
   ];
 });

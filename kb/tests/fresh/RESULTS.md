@@ -56,3 +56,19 @@ Date: 2026-10-13 to 14. Brief: `briefs.md`, committed before any build. Built by
 3. **One product scene where Stripe runs four**, and the same word rise on every heading, spreading 612 to 693ms. `motion-plan-check.mjs` now fails text staggers over 500ms (it only warned).
 5. **The two pages disagree with each other.** The site puts high water at Lymington at 10:58 and the app at 09:20 for the same Saturday, because each builder made its own sample model; a shared dataset in the brief would have prevented it.
 4. **Sample models a domain expert would reject** (the app treats a cross-stream passage as with the stream; the site reverses the Met Office area name "Selsey Bill to Lyme Regis"). design-copy has no rule for this.
+
+## Blind gate on Halyard's motion (design-motion 0.4 and 0.4.1, 2026-10-15)
+Four trials, each pairing a Halyard moment with an exemplar moment filmed the same way: hero against Linear's hero, and the event, swap and route scenes against Stripe's checkout. A fresh critic judged each round (`skills/design-motion/assets/blind-gate.mjs`; answers and grades in `kb/tests/fresh/landing/gate/`).
+
+| Round | Page | Told apart (confidence) | Memorable moment named in ours | Verdict |
+|---|---|---|---|---|
+| v03 | old page (0.3) | 2 trials run: 3, 4 | 2 of 2 | fail |
+| v04 | rebuild, round 1 | 4, 3, 3, 3 | 3 of 4 | fail |
+| v05 | rebuild, round 2 | 3, 5, 4, 3 | 4 of 4 | fail |
+
+What moved: a memorable moment in every clip, the answer now inside the first look, no overhanging panel, no decorative halo, no frame where two facts disagree. What did not: the critic picked the exemplar every time, and in v04 and v05 recognised Linear and Stripe by their content in every trial.
+
+Honest limits of the gate as built:
+1. **Recognition defeats "tell apart".** Any critic who knows Stripe's checkout picks it whatever the craft of the other clip, so the tell-apart rule cannot be passed by an original page. The confidence numbers measure recognition as much as craft.
+2. **One critic is noisy.** v04 asked for counters that run while the boat moves; v05 called the same counters unreadable. v04 asked for an earlier press; v05 said the start state was not held long enough. Corrections from one critic are leads, not orders.
+3. The v05 corrections that both critics agree on are real and open: several things change at once in the hero sweep and the swap (one owner at a time is not yet met), results are held too briefly at the climax, and the text in the product mocks is small at a 960px frame.

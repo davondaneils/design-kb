@@ -1,6 +1,12 @@
-pass  Pause animation                mouse          
-pass  Pause animation                Enter          focus ring yes
-pass  Pause animation                Space          focus ring yes
+pass  Pause hero-scene               mouse          
+pass  Pause hero-scene               Enter          focus ring yes
+pass  Pause hero-scene               Space          focus ring yes
+pass  Pause route-scene              mouse          
+pass  Pause route-scene              Enter          focus ring yes
+pass  Pause route-scene              Space          focus ring yes
+pass  Pause warn-scene               mouse          
+pass  Pause warn-scene               Enter          focus ring yes
+pass  Pause warn-scene               Space          focus ring yes
 pass  Billing: Yearly                mouse          
 pass  Billing: Yearly                Enter          focus ring yes
 pass  Billing: Yearly                Space          focus ring yes
@@ -34,7 +40,13 @@ pass  Daylight to spare: sunset 17:56 minus home: shown 3 h 46 min, re-added 3 h
 pass  Latest to leave Cowes: sunset minus passage: shown 16:16, re-added 16:16
 pass  Yearly price per month: £39 / 12: shown £3.25, re-added £3.25
 pass  Yearly saving: 12 x £4.99 minus £39: shown £20.88, re-added £20.88
-pass  Back window moved: was 13:45, now 13:20: shown 25 minutes, re-added 25 minutes
+pass  Alert: minutes earlier = 18:00 forecast close minus 21:00 close: shown 25 minutes, re-added 25 minutes
+pass  Alert close time = window close on the panel: shown 13:20, re-added 13:20
+pass  Window close + passage = wind-against-tide start (21:00 forecast): shown 15:00, re-added 15:00
+pass  Window close + passage = wind-against-tide start (18:00 forecast): shown 15:25, re-added 15:25
+pass  Route scene: distance sailed at each mark = legs added up: shown 0.0 1.5 4.6 9.2 10.5, re-added 0.0 1.5 4.6 9.2 10.5
+pass  Route scene: times at each mark = the legs table: shown 08:30 08:48 09:17 09:59 10:10, re-added 08:30 08:48 09:17 09:59 10:10
+pass  Route scene: leg speed = leg distance over leg time: shown 0.0 5.0 6.4 6.6 7.1, re-added 0.0 5.0 6.4 6.6 7.1
 pass  Height stations listed: shown 14, re-added 14
 PASS: every control works by mouse, Enter and Space; every total re-adds
 exit 0

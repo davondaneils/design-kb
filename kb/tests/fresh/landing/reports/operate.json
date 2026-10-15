@@ -1,7 +1,7 @@
 {
   "controls": [
     {
-      "control": "Pause animation",
+      "control": "Pause hero-scene",
       "how": "mouse",
       "ok": true,
       "focusVisible": null,
@@ -11,11 +11,11 @@
       },
       "after": {
         "pressed": "true",
-        "paused": true
+        "paused": "aim"
       }
     },
     {
-      "control": "Pause animation",
+      "control": "Pause hero-scene",
       "how": "Enter",
       "ok": true,
       "focusVisible": true,
@@ -25,11 +25,11 @@
       },
       "after": {
         "pressed": "true",
-        "paused": true
+        "paused": "aim"
       }
     },
     {
-      "control": "Pause animation",
+      "control": "Pause hero-scene",
       "how": "Space",
       "ok": true,
       "focusVisible": true,
@@ -39,7 +39,91 @@
       },
       "after": {
         "pressed": "true",
-        "paused": true
+        "paused": "aim"
+      }
+    },
+    {
+      "control": "Pause route-scene",
+      "how": "mouse",
+      "ok": true,
+      "focusVisible": null,
+      "before": {
+        "pressed": "false",
+        "paused": "leave"
+      },
+      "after": {
+        "pressed": "true",
+        "paused": "leave"
+      }
+    },
+    {
+      "control": "Pause route-scene",
+      "how": "Enter",
+      "ok": true,
+      "focusVisible": true,
+      "before": {
+        "pressed": "false",
+        "paused": "leave"
+      },
+      "after": {
+        "pressed": "true",
+        "paused": "leave"
+      }
+    },
+    {
+      "control": "Pause route-scene",
+      "how": "Space",
+      "ok": true,
+      "focusVisible": true,
+      "before": {
+        "pressed": "false",
+        "paused": "leave"
+      },
+      "after": {
+        "pressed": "true",
+        "paused": "leave"
+      }
+    },
+    {
+      "control": "Pause warn-scene",
+      "how": "mouse",
+      "ok": true,
+      "focusVisible": null,
+      "before": {
+        "pressed": "false",
+        "paused": "fri18"
+      },
+      "after": {
+        "pressed": "true",
+        "paused": "fri18"
+      }
+    },
+    {
+      "control": "Pause warn-scene",
+      "how": "Enter",
+      "ok": true,
+      "focusVisible": true,
+      "before": {
+        "pressed": "false",
+        "paused": "fri18"
+      },
+      "after": {
+        "pressed": "true",
+        "paused": "fri18"
+      }
+    },
+    {
+      "control": "Pause warn-scene",
+      "how": "Space",
+      "ok": true,
+      "focusVisible": true,
+      "before": {
+        "pressed": "false",
+        "paused": "fri18"
+      },
+      "after": {
+        "pressed": "true",
+        "paused": "fri18"
       }
     },
     {
@@ -426,9 +510,45 @@
       "ok": true
     },
     {
-      "what": "Back window moved: was 13:45, now 13:20",
+      "what": "Alert: minutes earlier = 18:00 forecast close minus 21:00 close",
       "shown": "25 minutes",
       "computed": "25 minutes",
+      "ok": true
+    },
+    {
+      "what": "Alert close time = window close on the panel",
+      "shown": "13:20",
+      "computed": "13:20",
+      "ok": true
+    },
+    {
+      "what": "Window close + passage = wind-against-tide start (21:00 forecast)",
+      "shown": "15:00",
+      "computed": "15:00",
+      "ok": true
+    },
+    {
+      "what": "Window close + passage = wind-against-tide start (18:00 forecast)",
+      "shown": "15:25",
+      "computed": "15:25",
+      "ok": true
+    },
+    {
+      "what": "Route scene: distance sailed at each mark = legs added up",
+      "shown": "0.0 1.5 4.6 9.2 10.5",
+      "computed": "0.0 1.5 4.6 9.2 10.5",
+      "ok": true
+    },
+    {
+      "what": "Route scene: times at each mark = the legs table",
+      "shown": "08:30 08:48 09:17 09:59 10:10",
+      "computed": "08:30 08:48 09:17 09:59 10:10",
+      "ok": true
+    },
+    {
+      "what": "Route scene: leg speed = leg distance over leg time",
+      "shown": "0.0 5.0 6.4 6.6 7.1",
+      "computed": "0.0 5.0 6.4 6.6 7.1",
       "ok": true
     },
     {

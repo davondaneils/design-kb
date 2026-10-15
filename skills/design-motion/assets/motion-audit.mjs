@@ -22,7 +22,10 @@
 //              --duration-reveal, 800 only for the one hero reveal, 1000 only for text that blurs in); inside a
 //              [data-scene] any 1200 to 12000 ms (scene beats and fills are set per scene in data-beats, never as
 //              tokens); loops (infinite) are reported, not judged
-//   easing     one of the three token curves, linear, or steps(1) (cursors, pixel grids); the CSS default `ease` fails
+//   easing     one of the three token curves, linear, or steps(1) (cursors, pixel grids); the CSS default `ease` fails.
+//              v0.6 (FOUNDATIONS Motion): also --ease-swap and --ease-drawer, and the page's own --ease-spring (the
+//              linear() curve moments.js writes) at its --duration-spring; an 800ms swap inside a scene is the
+//              --duration-swap token, not a second hero reveal
 //   property   transform, translate, scale, rotate and opacity pass; paint-only properties (color, fill, stroke,
 //              stroke-dashoffset) pass on control-sized elements and warn above 200x200 px (40,000 px2); filter: blur() of
 //              10 px or less passes (a text blur-in, as Linear reveals text) and warns above 150,000 px2; layout and other
@@ -48,6 +51,8 @@ const EASINGS = {
   linear: 'linear',
   'steps(1)': 'steps(1)',
   'steps(1, end)': 'steps(1)',
+  'cubic-bezier(0.78, 0, 0.22, 1)': 'swap',
+  'cubic-bezier(0.32, 0.72, 0, 1)': 'drawer',
   'step-end': 'steps(1)',
 };
 const COMPOSITOR = new Set(['transform', 'translate', 'scale', 'rotate', 'opacity']);
@@ -94,6 +99,8 @@ async function film(sc, mode) {
   const started = await page.waitForFunction(() => window.__first && performance.now() - window.__first > 80, null, { timeout: sc.wait || 1500 })
     .then(() => true).catch(() => false);
   await page.evaluate(() => { window.__stop = true; });
+  // v0.6: the spring tokens are written at run time by moments.js, so read them from the page.
+  const spring = await page.evaluate(() => { const cs = getComputedStyle(document.documentElement); return { ease: cs.getPropertyValue('--ease-spring').trim(), ms: parseFloat(cs.getPropertyValue('--duration-spring')) || null }; });
   const anims = started ? await page.evaluate(() => {
     const describe = (el) => {
       if (!el) return '?';
@@ -137,14 +144,19 @@ async function film(sc, mode) {
     const loop = a.iterations === Infinity || a.iterations === 'Infinity';
     const ms = Math.round(a.duration);
     const blurs = a.props.filter && new Set(a.props.filter).size > 1 && blurOnly(a.props.filter);
+    // A linear() curve with stops is the sampled spring when the page defines one (the browser reformats the numbers).
+    const isSpring = /^linear\(/.test(spring.ease) && /^linear\(.+,/.test(a.easing);
+    const isSwap = a.scene && EASINGS[a.easing.replace(/\s+/g, ' ')] === 'swap';
     if (a.scene && ms >= SCENE_MS[0] && ms <= SCENE_MS[1]) { /* a scene beat or fill: set per scene, not a token */ }
+    else if (isSpring && spring.ms && Math.abs(ms - spring.ms) <= 1) { /* --duration-spring on --ease-spring (v0.6) */ }
     else if (!loop && !TOKENS_MS.includes(ms)) add('fail', `duration ${ms} ms is off the token set`, a);
     else if (!loop && ms === 1000 && !blurs) add('fail', '1000 ms is only for text that blurs in (FOUNDATIONS v0.5 reveal band)', a);
     else if (!loop && ms > 1000) add('fail', `duration ${ms} ms is over the 1000 ms reveal ceiling outside a [data-scene]`, a);
-    else if (!loop && ms > 600 && ms <= 800) heroReveals.push(a);
+    else if (!loop && ms > 600 && ms <= 800 && !(isSwap && ms === 800)) heroReveals.push(a);
     const curves = a.easing !== 'linear' ? [a.easing] : a.keyframeEasings;
     a.curve = curves.map((c) => EASINGS[c.replace(/\s+/g, ' ')] || c).join(', ');
-    for (const c of curves) if (!EASINGS[c.replace(/\s+/g, ' ')]) add('fail', `easing ${c} is not a token curve, linear or steps(1)`, a);
+    if (isSpring) a.curve = 'spring';
+    else for (const c of curves) if (!EASINGS[c.replace(/\s+/g, ' ')]) add('fail', `easing ${c} is not a token curve, linear or steps(1)`, a);
     for (const p of Object.keys(a.props)) {
       const changes = new Set(a.props[p]).size > 1;
       if (!changes) continue;

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Halyard home page: state sheet</title>
 <meta name="robots" content="noindex">
-<meta name="description" content="Every state of every control and of the hero scene on the Halyard home page, side by side.">
+<meta name="description" content="Every state of every control and every frame of the three scenes on the Halyard home page, side by side.">
 <style>{{PAGE_CSS}}</style>
 <style>
   /* State sheet only: hover, focus and pressed drawn with the page's own tokens so they can be seen at rest. */
@@ -40,7 +40,7 @@
   .spec-menu .nav__end > * { justify-content: center; min-block-size: var(--size-control-lg); }
   .spec-menu .menu-btn { display: inline-flex; }
   .spec-menu .menu-btn .i-menu { display: none; }
-  .frame-cap { display: flex; justify-content: space-between; gap: var(--space-4); font: var(--text-xs)/var(--leading-normal) var(--font-mono); color: var(--color-text-muted); margin-block-start: var(--space-3); }
+  .frame-cap { display: flex; justify-content: space-between; gap: var(--space-4); font: var(--text-sm)/var(--leading-normal) var(--font-mono); color: var(--color-text-muted); margin-block-start: var(--space-3); }
   .frame .app { inline-size: 100%; }
 </style>
 </head>
@@ -106,9 +106,9 @@
       <h2 id="g-menu">Phone menu and scene pause</h2>
       <div class="grid grid--wide">
         <div class="cell"><span class="lbl">menu button, closed</span><button class="btn btn--quiet" type="button" aria-expanded="false" data-spec-expand>{{icon:menu}}Menu</button></div>
-        <div class="cell"><span class="lbl">pause, playing</span><button class="btn btn--quiet pause" type="button" aria-pressed="false" data-spec-press>{{icon:pause:i-pause}}{{icon:play:i-play}}Pause animation</button></div>
-        <div class="cell"><span class="lbl">pause, paused</span><button class="btn btn--quiet pause" type="button" aria-pressed="true" data-spec-press>{{icon:pause:i-pause}}{{icon:play:i-play}}Pause animation</button></div>
-        <div class="cell"><span class="lbl">pause, focus</span><button class="btn btn--quiet pause is-focus" type="button" aria-pressed="false" data-spec-press>{{icon:pause:i-pause}}{{icon:play:i-play}}Pause animation</button></div>
+        <div class="cell"><span class="lbl">pause, playing</span><button class="btn btn--quiet pause" type="button" aria-pressed="false" data-spec-press>{{icon:pause}}Pause animation</button></div>
+        <div class="cell"><span class="lbl">pause, paused</span><button class="btn btn--quiet pause" type="button" aria-pressed="true" data-spec-press>{{icon:pause}}Pause animation</button></div>
+        <div class="cell"><span class="lbl">pause, focus</span><button class="btn btn--quiet pause is-focus" type="button" aria-pressed="false" data-spec-press>{{icon:pause}}Pause animation</button></div>
       </div>
       <div class="cell" style="margin-block-start: var(--space-6)"><span class="lbl">menu open, phone width</span>
         <div class="spec-menu">
@@ -125,13 +125,25 @@
 
     <section class="group" aria-labelledby="g-scene">
       <h2 id="g-scene">Hero scene, frame by frame</h2>
-      <p class="body">Beats: day 1600&nbsp;ms, tide 2000, wind 2400, light 2000, window 3600, then a 4000&nbsp;ms rest. The window frame is the still shown under reduced motion and without JavaScript.</p>
+      <p class="body">The event: Saturday is loaded and held while the title and limits are read; the cursor goes to Find windows and presses it; a 1200&nbsp;ms sweep lands each window as the line passes its close, and the status follows 100&nbsp;ms later; the plan rises inside the card. Then a 4000&nbsp;ms rest on the last frame, which is also the still under reduced motion and without JavaScript.</p>
       <div class="grid grid--frames" style="margin-block-start: var(--space-6)">
-        <figure class="frame"><div class="stage stage--side" aria-hidden="true"><div class="scene" data-scene data-state="day" data-seen="day"><div class="frag app">{{FRAME_BODY}}</div></div></div><figcaption class="frame-cap"><span>1 day</span><span>Reading Saturday for Wren</span></figcaption></figure>
-        <figure class="frame"><div class="stage stage--side" aria-hidden="true"><div class="scene" data-scene data-state="tide" data-seen="day tide"><div class="frag app">{{FRAME_BODY}}</div></div></div><figcaption class="frame-cap"><span>2 tide</span><span>Tide with you: tide cuts</span></figcaption></figure>
-        <figure class="frame"><div class="stage stage--side" aria-hidden="true"><div class="scene" data-scene data-state="wind" data-seen="day tide wind"><div class="frag app">{{FRAME_BODY}}</div></div></div><figcaption class="frame-cap"><span>3 wind</span><span>Wind inside Wren’s limits: wind cut, bars over a limit</span></figcaption></figure>
-        <figure class="frame"><div class="stage stage--side" aria-hidden="true"><div class="scene" data-scene data-state="light" data-seen="day tide wind light"><div class="frag app">{{FRAME_BODY}}</div></div></div><figcaption class="frame-cap"><span>4 light</span><span>Home before dark: light cuts</span></figcaption></figure>
-        <figure class="frame"><div class="stage stage--side" aria-hidden="true"><div class="scene" data-scene data-state="window" data-seen="day tide wind light window"><div class="frag app">{{FRAME_BODY}}</div><div class="frag plan"><div class="plan__head"><b>Proposed plan</b><span><span class="muted">Daylight to spare</span><b class="spare">3&nbsp;h 46&nbsp;min</b></span></div><ol class="plan__legs"><li><span>Leave Lymington</span><b>08:30</b></li><li><span>Arrive Cowes</span><b>10:10</b></li><li><span>Leave Cowes</span><b>12:30</b></li><li><span>Home</span><b>14:10</b></li></ol></div></div></div><figcaption class="frame-cap"><span>5 window (still)</span><span>2 windows found, plan card in</span></figcaption></figure>
+{{HERO_FRAMES}}
+      </div>
+    </section>
+
+    <section class="group" aria-labelledby="g-warn">
+      <h2 id="g-warn">Warnings scene, frame by frame</h2>
+      <p class="body">Swap: the 21:00 forecast rolls the back window from 13:45 to 13:20 in place, the lost 25 minutes show as a hatched sliver that fades, and the note on the phone swaps to the alert at the same moment, so the card and the note never disagree. Rest 3000&nbsp;ms on the 21:00 frame (the still).</p>
+      <div class="grid grid--frames" style="margin-block-start: var(--space-6)">
+{{WARN_FRAMES}}
+      </div>
+    </section>
+
+    <section class="group" aria-labelledby="g-route">
+      <h2 id="g-route">Route scene, frame by frame</h2>
+      <p class="body">The boat sails each leg in time scaled to its minutes, drawing the line as its tip; the clock and the distance count up as it goes and the place name lands on arrival; leg speed changes per leg. Frames show the boat at each mark. Rest 2400&nbsp;ms on Cowes (the still).</p>
+      <div class="grid grid--frames" style="margin-block-start: var(--space-6)">
+{{ROUTE_FRAMES}}
       </div>
     </section>
   </div>
@@ -144,6 +156,14 @@
   }));
   document.querySelectorAll('[data-spec-press]').forEach((b) => b.addEventListener('click', () => b.setAttribute('aria-pressed', String(b.getAttribute('aria-pressed') !== 'true'))));
   document.querySelectorAll('[data-spec-expand]').forEach((b) => b.addEventListener('click', () => b.setAttribute('aria-expanded', String(b.getAttribute('aria-expanded') !== 'true'))));
+  // Aim and press frames: put the cursor where moments.js puts it (just below and right of the button's centre).
+  document.querySelectorAll('[data-frame-aim]').forEach((st) => {
+    const scene = st.querySelector('[data-scene]'), t = scene.querySelector(st.dataset.frameAim), c = scene.querySelector('.shot-cursor');
+    const a = scene.getBoundingClientRect(), b = t.getBoundingClientRect();
+    c.style.setProperty('--cx', Math.round(b.left - a.left + b.width * 0.55) + 'px');
+    c.style.setProperty('--cy', Math.round(b.top - a.top + b.height * 0.6) + 'px');
+    if (scene.dataset.state === 'press') { t.setAttribute('data-press-target', ''); t.setAttribute('data-pressed', ''); c.setAttribute('data-pressed', ''); }
+  });
 </script>
 </body>
 </html>

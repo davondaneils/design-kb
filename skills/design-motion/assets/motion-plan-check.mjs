@@ -33,6 +33,7 @@
 //   read       a shot's "read" text held for less than max(1000, 300 + 330ms per visible word) after the change
 //              settles (reading aloud, Brysbaert 2019; kb/moments/STUDY.md)
 //   quiet      anything outside the owner that starts moving after the change settles, in the same beat
+//   payoff     a scene in the first screen whose result shot starts more than 4500ms into the play
 //   depth      (reference 10) a blocking <script src> for motion, three, cobe, rive, gsap or lottie in the head; a
 //              <canvas> whose pixels change 700ms apart under reduced motion
 // Warns: two hover speeds on one page (pick 100 or 150 and hold it).
@@ -133,7 +134,11 @@ const RECORDER = () => {
       const r = document.createRange(); r.selectNodeContents(n); const b = r.getBoundingClientRect();
       if (b.width < 1 || b.height < 1) continue;
       const cx = b.left + b.width / 2, cy = b.top + b.height / 2;
-      if (clips.some((c) => cx < c.left || cx > c.right || cy < c.top || cy > c.bottom)) continue;
+      // Clips between the read element and this text count too: a kit swap (.swap) masks its other values inside
+      // the read element itself, and those values must not be counted as words to read.
+      const inner = [];
+      for (let a = n.parentElement; a && a !== el; a = a.parentElement) { const st = getComputedStyle(a); if (/hidden|clip/.test(st.overflow + st.overflowX + st.overflowY)) inner.push(a.getBoundingClientRect()); }
+      if ([...clips, ...inner].some((c) => cx < c.left || cx > c.right || cy < c.top || cy > c.bottom)) continue;
       words += txt.split(/\s+/).filter(Boolean).length;
     }
     return words;
@@ -148,7 +153,8 @@ const RECORDER = () => {
     window.__mp.beats.push(rec);
     const counts = (a) => {
       const e = a.effect, tm = e?.getTiming?.() || {}, el = e?.target;
-      if (!el || !scene.contains(el) || tm.iterations === Infinity) return false;
+      // The scene's own section revealing on scroll counts too: until it lands, the first beat is not legible yet.
+      if (!el || !(scene.contains(el) || el.contains(scene)) || tm.iterations === Infinity) return false;
       if (push.some((p) => p === el)) return false;                                        // the camera push runs the whole beat
       if (/linear/.test(String(tm.easing)) && (e.getComputedTiming().duration || 0) >= 1200) return false; // fills along a time axis
       // In its active interval: a transition still waiting out its delay is not motion yet.
@@ -190,7 +196,7 @@ const SCENES = () => [...document.querySelectorAll('[data-scene]')].map((el) => 
   const visible = (b) => { const r = b.getBoundingClientRect(); const s = getComputedStyle(b); return r.width >= 24 && r.height >= 24 && s.visibility !== 'hidden' && !b.hidden; };
   return { id: el.id || 'scene', hasId: !!el.id, beats, still: el.dataset.still || (beats.length ? beats[beats.length - 1].state : null), state: el.getAttribute('data-state'),
     loop: el.dataset.loop !== 'false', rest: toMs(el.dataset.rest) ?? toMs(restCss) ?? 0, pauseButtons: btns.length, pauseVisible: btns.some(visible),
-    plan: plan === 'invalid' ? 'invalid' : plan ? 'ok' : null, shots: shotInfo };
+    plan: plan === 'invalid' ? 'invalid' : plan ? 'ok' : null, shots: shotInfo, top: Math.round(el.getBoundingClientRect().top + scrollY) };
 });
 
 // What an open disclosure's summary shows: transform, opacity and visibility of its parts and pseudo-elements.
@@ -236,7 +242,9 @@ async function record(reduce) {
     };
     await loc.scrollIntoViewIfNeeded().catch(() => {});
     await page.mouse.move(1, 1);
-    await changes('scene:' + s.id, Math.min(14000, total + 700));
+    // Long enough to see one whole play and the restart after the rest, so the last beat (often the scene's main
+    // read) is measured against the next play's first beat.
+    await changes('scene:' + s.id, Math.min(20000, total + (s.rest || 0) + 1200));
     if (reduce) continue;
     // Hover: the scene holds still while pointed at.
     await loc.hover({ position: { x: 8, y: 8 } }).catch(() => {});
@@ -347,6 +355,12 @@ for (const s of A.scenes) {
   // The event: aim, then press, then a result to read (the article's event shot; Raycast's hotkey closer).
   const iAim = s.shots.findIndex((x) => x.aim), iPress = s.shots.findIndex((x, i) => x.press && i > iAim), iRes = s.shots.findIndex((x, i) => x.read && i > iPress);
   if (iAim !== -1 && iPress !== -1 && iRes !== -1) eventOk = true;
+  // The payoff lands while the first look lasts: a scene in the first screen shows its result by 4500ms (Linear's
+  // product is on screen 1.1s after its headline; round 1 of the Halyard gate: "the answer never appears in 6s").
+  if (iRes !== -1 && s.top < H) {
+    const at = s.beats.slice(0, s.beats.findIndex((b) => b.state === s.shots[iRes].state)).reduce((a, b) => a + (b.ms || 0), 0);
+    if (at > 4500) add(needScene ? 'fail' : 'warn', 'payoff', `#${s.id} is in the first screen and reaches its result "${s.shots[iRes].state}" ${at}ms in; the first look shows the result by 4500ms`);
+  }
 }
 if (needScene && A.scenes.length && !eventOk) add('fail', 'event', 'no scene acts out an event: a shot with "aim" (the cursor on the action), a later shot with "press", then a shot with "read" (the result)');
 const beatsRec = A.beats || [];
@@ -356,7 +370,8 @@ for (let i = 0; i < beatsRec.length; i++) {
   const sc = A.scenes.find((x) => x.id === b.id); if (!sc) continue;
   const next = beatsRec.slice(i + 1).find((x) => x.id === b.id);
   const beatMs = (sc.beats.find((x) => x.state === b.state) || {}).ms || 0;
-  const end = next ? next.t : null;
+  // A scene that plays once rests on its last beat for good: that beat's hold has no end.
+  const end = next ? next.t : !sc.loop && b.state === sc.beats[sc.beats.length - 1]?.state ? b.t + 60000 : null;
   if (end == null || end - b.t < beatMs * 0.9) continue; // a beat cut short by the check's own hover or pause tests
   const k = b.id + ':' + b.state;
   const hold = b.settled == null ? 0 : end - b.settled;

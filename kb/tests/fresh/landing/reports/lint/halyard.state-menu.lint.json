@@ -1,6 +1,6 @@
 {
   "file": "kb/tests/fresh/landing/halyard.html?state=menu",
-  "date": "2026-10-13T23:51:00.827Z",
+  "date": "2026-10-15T05:00:03.362Z",
   "checks": {
     "axe": {
       "fail": [],
@@ -87,8 +87,8 @@
       "fail": [],
       "warn": [
         {
-          "message": "text \"Yarmouth\" partly covered by div.stage.stage--side > div.frag.route-card > div.map.map--route > svg (55x9px) at 390px",
-          "sel": "div.stage.stage--side > div.frag.route-card > div.map.map--route > span.maplab.maplab--minor"
+          "message": "text \"Home\" partly covered by #hero-scene > span.shot-cursor > svg (20x9px) at 1440px",
+          "sel": "div.frag.plan > ol.plan__legs > li > span"
         }
       ],
       "pass": true
@@ -285,15 +285,15 @@
   },
   "summary": {
     "weightKB": {
-      "html": 239,
-      "svg": 25
+      "html": 265,
+      "svg": 26
     },
     "focusables": 32,
     "fallbackShift390": 0,
     "fallbackShift1440": 54,
     "motionFound": {
-      "animations": 2,
-      "movingTransitions": 9
+      "animations": 1,
+      "movingTransitions": 25
     },
     "axe": "pass",
     "overlay": "pass",

@@ -118,10 +118,28 @@ export const route = {
   ],
   labels: [
     { name: 'Lymington', lon: -1.532, lat: 50.757, anchor: 'above' },
-    { name: 'Hamstead Ledge', lon: -1.44, lat: 50.729, anchor: 'below', minor: true },
+    { name: 'Hamstead Ledge', lon: -1.44, lat: 50.7265, anchor: 'below', minor: true },
     { name: 'Cowes', lon: -1.3, lat: 50.779, anchor: 'above' },
-    { name: 'Yarmouth', lon: -1.5, lat: 50.7, anchor: 'below', minor: true },
-    { name: 'The Solent', lon: -1.39, lat: 50.755, water: true },
+    { name: 'Yarmouth', lon: -1.5, lat: 50.711, anchor: 'above', minor: true, wide: true },
+    { name: 'The Solent', lon: -1.43, lat: 50.762, water: true },
     { name: 'Isle of Wight', lon: -1.36, lat: 50.705, minor: true },
   ],
 };
+
+// The forecast change acted out in the warnings scene (sample). The Friday 18:00 forecast had the westerly over Wren's
+// against-tide limit from 15:25, so the back window closed at 13:45 (15:25 minus the 1 h 40 min passage). The 21:00
+// forecast brings it on at 15:00, so the window closes at 13:20, 25 minutes earlier. The alert goes out at 21:05.
+export const forecast = {
+  before: { issued: '18:00', closes: '13:45', against: '15:25' },
+  after: { issued: '21:00', closes: '13:20', against: '15:00' },
+  savedAt: '18:10', alertAt: '21:05',
+};
+
+// The route scene: the boat at each mark, the clock and the distance sailed so far (legs above, added up).
+export const marks = [
+  { state: 'leave', label: 'Leave Lymington', t: '08:30', wp: 0 },
+  { state: 'jack', label: 'Jack in the Basket', t: '08:48', wp: 1 },
+  { state: 'hamstead', label: 'Hamstead Ledge', t: '09:17', wp: 2 },
+  { state: 'gurnard', label: 'Gurnard', t: '09:59', wp: 3 },
+  { state: 'cowes', label: 'Arrive Cowes', t: '10:10', wp: 4 },
+];

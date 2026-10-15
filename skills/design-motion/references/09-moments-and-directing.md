@@ -27,7 +27,7 @@ Everything below is measured unless marked **opinion**. The directing method (ev
     ]}
   </script>
   ...
-  <span class="shot-cursor" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3 2l13 7.5-5.6 1.4 3.2 6-2.4 1.2-3.2-6L3 16z" fill="#fff" stroke="#111" stroke-width="1.2" stroke-linejoin="round"/></svg></span>
+  <span class="shot-cursor" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3 2l13 7.5-5.6 1.4 3.2 6-2.4 1.2-3.2-6L3 16z"/></svg></span>
 </div>
 <button type="button" data-scene-pause aria-controls="send-scene" aria-pressed="false">Pause animation</button>
 <script src="scene.js"></script><script src="moments.js"></script>
@@ -55,7 +55,9 @@ Load `motion-tokens.css`, `moments.css`, then `scene.js` and `moments.js`. Each 
 | **stack** | Sonner (400ms entry from 100% of its height; older items scale .95 and -14px per level) | `<ol class="stack" data-stack><li data-at="paid">...</li></ol>` | An item joins when its state is reached; older items step back; the fourth fades |
 | **event shot** | the article's event, Raycast's closing hotkey, Linear's staging | `.shot-cursor` plus `aim`, `press`, `push` in the plan | Cursor travels on a spring (`spring(300, 26)` sampled into CSS `linear()`, about 520ms, 2.6% overshoot) to just below and right of center; press is scale .97 for two `--duration-instant`; the push is 1.00 to 1.03 over the beat |
 
-The cursor parks at the lower right on the first beat and enters the frame on its first aim; it is hidden in the still frame and under reduced motion (a still with a cursor reads as a screenshot of someone else's screen; **opinion**). Working fixture: `assets/fixtures/moments-demo.html` (all three, passes `motion-plan-check.mjs`); failing fixture: `assets/fixtures/moments-bad.html` (no plan, two owners, no event, a short hold, a quiet break: five fails).
+The cursor parks at the lower right on the first beat and enters the frame on its first aim; it is hidden in the still frame and under reduced motion (a still with a cursor reads as a screenshot of someone else's screen; **opinion**). **Without JS the markup is the still.** `moments.js` positions swaps and stacks; before it runs (or if it never does) a swap shows its first value and stack items are hidden. So author the still in the markup: put the still's index in `style="--swap-i: 2; --swap-count: 3"` on each `.swap`, and `data-in data-depth="0"` (newest) to `data-depth="2"` on the stack items the still shows. The cursor needs no colours in its markup: `moments.css` paints `.shot-cursor path` from `--color-surface` and `--color-text`, so write `<path d="..."/>` only (a hard-coded fill fails lint `icons`). A play may open on its aim beat: `moments.js` snaps the cursor to the park point and starts the travel two frames later, so it is seen. **Entrances go on the section around the scene, not inside it**: `scene.js` finishes every transition inside the scene when it sets the first state on load (so nothing plays backwards), which also finishes an entrance placed there.
+
+Working fixture: `assets/fixtures/moments-demo.html` (all three, passes `motion-plan-check.mjs`); failing fixture: `assets/fixtures/moments-bad.html` (no plan, two owners, no event, a short hold, a quiet break: five fails).
 
 Curves by job, from the study:
 | Job | Curve | Token |
@@ -98,12 +100,29 @@ node skills/design-motion/assets/blind-gate.mjs grade --out gate/
 
 ## 6. Review loop (from the article, adapted)
 
-1. **Three stills before movement:** the opening, the result and the ending (`blind-gate.mjs prepare` writes `ours-stills.jpg`). Is the main text readable, is the result visible, is anything cropped or overlapping, does the ending have room? Fix those before touching timing.
+1. **Three stills before movement:** the opening, the result and the ending (`blind-gate.mjs stills page.html --out dir --moment scene:#id` films only ours and writes `ours-stills.jpg`; builders run this, not `prepare`). Is the main text readable, is the result visible, is anything cropped or overlapping, does the ending have room? Fix those before touching timing.
 2. **Then the event:** watch the press and the result at normal speed and read the result aloud. Extend any hold that ends before you finish (the check does this arithmetic; the read-aloud test catches what the word count cannot, like a long account number).
 3. **Then the boundaries:** the seam between plays and the hand-over between scenes. A seam that shows the story running backwards is a fail (`scene.js` resets under the fade).
 4. **Corrections in four fields**, never "make it smoother": `where: B 2.40s, the receipt | problem: the cursor drifts across it at 2.9s | change: hold the cursor still until the seam | keep: the press timing`.
 
-## 7. Myths
+## 7. What blind critics catch: rules from the gate rounds
+
+Each rule below cost a gate round on the Halyard test page (`kb/tests/fresh/landing/gate/`); the presence checks passed every one. Apply them while writing the shot plan, not after the critic finds them.
+
+| Rule | What the critic saw | Enforced by |
+|---|---|---|
+| **The first look shows the payoff.** A scene in the first screen reaches its result by 4.5s (Linear's product arrives 1.1s after its headline) | "the answer never appears" in a 6s hero clip; the press landed at 5s | `payoff` in `motion-plan-check.mjs` |
+| **Waiting is not a moment.** A scan or search beat runs about 1.2s, and each result lands the moment it is found, not all at the end | 3s of sweeping before any answer; "the sweep reads as decoration" | shot plan review (the scan beat has no `read`) |
+| **The screen never disagrees with itself.** When one fact changes, everything that shows it changes within `--offset` (100ms, at most 300) | a notice said 13:45 for 3s after the card said 13:20 | three stills plus the read-aloud pass (section 6) |
+| **Show the change, not only the new value.** A loss or gain gets its own mark for one beat (the lost 25 minutes as a hatched sliver fading over 600ms) | "the edge pulls in a few pixels and is easy to miss" | shot plan: the result shot's `read` names the change |
+| **Time on screen follows the data.** A route leg, a step, a bar gets screen time in proportion to what it stands for, within the beat limits | every leg got the same time, 11 minutes or 42 | **opinion**; review |
+| **The tip leads.** A line drawn by a moving dot is drawn with the dot as its tip, same curve, same duration; counters run while the thing moves | the line trailed the dot by 0.3s; time and distance jumped after the dot stopped | review at 10 frames a second (the gate's detail sheet) |
+| **Overlays sit inside their surface.** A result panel seats inside the card or keeps a clear gap with aligned edges | the plan panel overhung the card's bottom and right edges, in both rounds | `lint.mjs` overlap |
+| **Nothing on screen is dead.** A field that never changes in a moving scene is removed or made to move | "With you" in the Stream column never changed | review |
+| **No decoration behind the product.** A flat surface or one quiet tint; glows and rainbow halos lose the eye | flagged in both rounds | design-graphic imagery rules |
+| **Status follows the thing.** A header count updates `--offset` after the items it counts land, never before | "2 windows found" changed before the windows | `quiet` (the header is not the owner) |
+
+## 8. Myths
 
 | Myth | Correction |
 |---|---|

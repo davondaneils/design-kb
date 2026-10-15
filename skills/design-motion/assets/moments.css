@@ -54,6 +54,7 @@
   transform: translate(var(--cx, -40px), var(--cy, -40px)); pointer-events: none;
   filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.35));
 }
+.shot-cursor path { fill: var(--color-surface, Canvas); stroke: var(--color-text, CanvasText); stroke-width: 1.2; stroke-linejoin: round; }
 .shot-cursor svg { inline-size: 100%; block-size: 100%; display: block; transform-origin: 2px 2px; }
 .shot-cursor[data-pressed] svg { transform: scale(0.88); }
 [data-press-target][data-pressed] { transform: scale(0.97); filter: brightness(0.94); }
@@ -62,9 +63,12 @@
 @media (prefers-reduced-motion: no-preference) {
   [data-scene]:not([data-scene-still]) .shot-cursor { transition: transform var(--duration-spring) var(--ease-spring); }
   [data-scene]:not([data-scene-still]) .shot-cursor svg { transition: transform var(--duration-instant) var(--ease-standard); }
-  [data-scene]:not([data-scene-still]) [data-press-target] { transition: transform var(--duration-instant) var(--ease-standard), filter var(--duration-instant) var(--ease-standard); }
-  /* The push is linear-ish and slow: a camera, not an object (the article: 1.00 to 1.03 over about 3s). */
-  [data-scene]:not([data-scene-still]) [data-push][data-pushing] { transition: transform var(--beat, 3000ms) cubic-bezier(0.4, 0, 0.6, 1); }
+  /* Only the scale transitions: the brightness step is instant, because filter is not a compositor property
+     (fundamental 9; motion-audit fails a filter other than blur). */
+  [data-scene]:not([data-scene-still]) [data-press-target] { transition: transform var(--duration-instant) var(--ease-standard); }
+  /* The push is slow, over the whole beat: a camera, not an object (the article: 1.00 to 1.03 over about 3s). On a
+     token curve (fundamental 4): --ease-standard does most of the push early and settles for the rest of the beat. */
+  [data-scene]:not([data-scene-still]) [data-push][data-pushing] { transition: transform var(--beat, 3000ms) var(--ease-standard); }
 }
 /* Still frame: no cursor (a still with a cursor reads as a screenshot of someone else's screen). */
 [data-scene][data-scene-still] .shot-cursor { display: none; }
