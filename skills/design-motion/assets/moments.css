@@ -11,7 +11,7 @@
    Under reduced motion nothing here moves: scene.js shows the still frame and every transition below is removed. */
 
 :root {
-  /* v0.6 tokens (FOUNDATIONS Motion). Primitives, so a page may tune them in one place. */
+  /* v0.6 tokens (FOUNDATIONS Motion), repeated from motion-tokens.css so this file works on its own. */
   --duration-swap: 800ms;                       /* an in-place value roll inside a scene (Stripe 833ms) */
   --ease-swap: cubic-bezier(0.78, 0, 0.22, 1);  /* in-place swap: both ends visible, so accelerate out and land */
   --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);/* large surfaces and stacks: fast start, long settle (Vaul 500ms) */

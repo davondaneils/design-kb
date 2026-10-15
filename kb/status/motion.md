@@ -6,12 +6,14 @@
 | Layer | reference |
 | Skill | design-motion |
 | Branch | restructure (merged from wave/motion on 2026-10-10) |
-| Status (editor-in-chief) | v0.3 drafted, needs critic and tester |
+| Status (editor-in-chief) | v0.4 drafted (shot plans, moment kit, blind gate, depth tier); proof is the Halyard rebuild |
 | Shipped version (librarian) | none (v0.2 proposed) |
 | Reuses | none |
-| Last updated | 2026-10-13 |
+| Last updated | 2026-10-15 |
 
 ## Where it stands
+v0.4 (2026-10-15): the fresh brief passed every v0.3 check and the filmed motion was "not anything special". Nine exemplar moments studied frame by frame (`kb/moments/STUDY.md`); moment kit (`assets/moments.js`), shot plans read by `motion-plan-check.mjs` (plan, event, read, quiet, depth), blind gate (`assets/blind-gate.mjs`), references 09 and 10. FOUNDATIONS v0.6. See CHANGELOG 0.4.
+
 v0.3 (2026-10-13): reworked after the benchmark rated motion "clearly below" twice. Required motion plan, ladder and product scene in SKILL.md; new reference 08; new `assets/scene.js` and `assets/motion-plan-check.mjs` (FAILS the round 2 Ferry page, PASSES `assets/fixtures/scene-good.html`, which lints clean); audit accepts reveal, blur-in, scene and `steps(1)` values from FOUNDATIONS v0.5. See CHANGELOG 0.3.
 
 v0.2 render-tested (`kb/tests/design-motion.md`, run 2). Both test pages gained purposeful motion; 16 animations filmed with `skills/design-motion/assets/motion-audit.mjs`, all on the tokens, none moving under reduced motion. Lint PASS before and after on both pages and all states. Critic round 2 approved (`kb/reviews/design-motion.md`), including a 20 percent citation re-fetch. New reference 07 and the audit tool.

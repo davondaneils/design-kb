@@ -1,4 +1,4 @@
-/* design-motion v0.3: motion tokens on the design-kb shared foundation (kb/FOUNDATIONS.md v0.5, Motion and Token schema).
+/* design-motion v0.4: motion tokens on the design-kb shared foundation (kb/FOUNDATIONS.md v0.6, Motion and Token schema).
    Names and values match FOUNDATIONS. Extend, do not redefine. */
 :root {
   /* Durations (primitives), one band per job (FOUNDATIONS v0.5 motion ladder) */
@@ -31,9 +31,15 @@
      Usage: calc(var(--duration-base) * var(--duration-multiplier)) */
   --duration-multiplier: 1;
 
-  /* Optional extensions (practitioner curves, opt in per project; not FOUNDATIONS tokens) */
+  /* v0.6 (kb/moments/STUDY.md): inside scenes and for large surfaces */
+  --duration-swap: 800ms;                         /* in-place value roll inside a scene (Stripe checkout 833ms, traced) */
+  --ease-swap: cubic-bezier(0.78, 0, 0.22, 1);    /* swap of something already on screen: both ends visible */
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);  /* sheets, drawers, stacks: fast start, long settle (Vaul 500ms) */
+  --offset: 100ms;                                /* lead to follower, 80 to 250ms */
+  /* --ease-spring and --duration-spring are written by moments.js (spring 300/26, about 520ms). */
+
+  /* Optional extension (practitioner curve, opt in per project; not a FOUNDATIONS token) */
   /* --ease-enter-strong: cubic-bezier(0.23, 1, 0.32, 1); */
-  /* --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1); */
 }
 
 /* Smooth scrolling only when motion is welcome */

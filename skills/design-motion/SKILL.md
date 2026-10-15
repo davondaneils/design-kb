@@ -1,15 +1,15 @@
 ---
 name: design-motion
-description: Domain reference loaded by design-director or a design playbook (design-playbook-landing, -dashboard, -mobile, -brand); do not trigger on its own for a page, screen or brand job. Covers the motion plan, the duration ladder, product scenes (mock-ups that act out the product on scripted beats), purpose and restraint, timing and easing, choreography, micro-interactions, reduced motion that keeps end states, performance, implementation in CSS, WAAPI and Motion, motion on data and live numbers, and measuring motion on a built page (motion-plan-check, motion-audit, scene.js). Load it directly only when the user names it or asks a narrow question inside this domain alone.
+description: Domain reference loaded by design-director or a design playbook (design-playbook-landing, -dashboard, -mobile, -brand); do not trigger on its own for a page, screen or brand job. Covers the motion plan, the duration ladder, product scenes (mock-ups that act out the product on scripted beats), shot plans and the moment kit (swap, stack, event shot), the blind side-by-side gate, the depth tier (springs, layout, WebGL, Rive), purpose and restraint, timing and easing, choreography, micro-interactions, reduced motion that keeps end states, performance, implementation in CSS, WAAPI and Motion, motion on data and live numbers, and measuring motion on a built page (motion-plan-check, motion-audit, scene.js, moments.js, blind-gate). Load it directly only when the user names it or asks a narrow question inside this domain alone.
 ---
 
 # design-motion
 
-> **Layer: domain reference.** Loaded after `design-foundations` by `design-director` or a `design-playbook-*` skill. Accessibility floor for every rule here: design-foundations `references/accessibility.md`. Numbers match `kb/FOUNDATIONS.md` v0.5 (Motion).
+> **Layer: domain reference.** Loaded after `design-foundations` by `design-director` or a `design-playbook-*` skill. Accessibility floor for every rule here: design-foundations `references/accessibility.md`. Numbers match `kb/FOUNDATIONS.md` v0.6 (Motion).
 
 Motion is information about change: what happened, where it came from, where it went. On a product page it is also the product's best demo: Stripe's longest timelines all run inside product mock-ups that act out a payment, not on the page around them (`kb/teardowns/motion-imagery.md` section 2). This skill makes Claude decide what moves, plan it as a ladder of jobs, and build it to that standard, safely for everyone.
 
-Why this version exists: both benchmark builders followed v0.2 and shipped one transition duration, one curve and a single generic hero reveal; Stripe ran 20 durations, scripted product scenes with holds and a 22-word masked headline rise (`kb/tests/benchmark/RESULTS.md`; `kb/reviews/benchmark-round2-landing.md` Motion row). Sections 2 to 4 are now required and measured.
+Why this version exists: v0.3 made motion present (a ladder, a scene with holds) and the fresh brief passed every check, yet the filmed result was "not anything special" (Davon, 2026-10-15; `kb/tests/fresh/RESULTS.md`). Presence is not quality. v0.4 adds what the remembered moments do, measured frame by frame on nine exemplar moments (`kb/moments/STUDY.md`): a **shot plan** per scene that the check reads (one owner per beat, reading holds counted from legibility, an event with a press), a **moment kit** rebuilt from Stripe, Sonner and the event shot (`assets/moments.js`), a **blind gate** where a fresh critic must fail to tell our moment from an exemplar's (`assets/blind-gate.mjs`), and a **depth tier** with limits (reference 10). Sections 2 to 4b are required and measured.
 
 ## 1. Fundamentals gate (non-negotiable, check first)
 
@@ -25,7 +25,8 @@ A motion proposal that misses any one of these fails, however polished the rest 
 8. **WCAG floor.** Anything that starts by itself, lasts over 5 seconds and sits beside other content has a visible pause control (2.2.2, A): every looping scene, marquee and live KPI. Never more than 3 flashes per second (2.3.1). Hover or focus content stays dismissible and hoverable (1.4.13). Drag has a non-drag alternative (2.5.7). Motion is never the only carrier of meaning.
 9. **Compositor only.** Animate `transform` and `opacity`. Never `width`, `height`, `top`, `left`, `margin`, `padding` or `box-shadow`. One exception: `filter: blur()` of 10px or less on a text block as it enters (Linear, measured), removed under reduce.
 10. **First paint is sacred.** Never fade or mask in the headline, the LCP element or other first-screen text (Chromium ignores opacity 0 elements as LCP candidates, web.dev). The one hero reveal moves the supporting artifact by transform. Content is visible if JS or the animation never runs. Numbers and charts never animate on arrival.
-11. **Measured, not assumed.** Before hand-over: `assets/motion-plan-check.mjs` exits 0 at 1440 and 390 (ladder, scene, stagger, travel, reduce, end states), and `assets/motion-audit.mjs` films every user action in both settings and passes (tokens, curves, properties, keyboard paths). Then look at every strip.
+11. **Measured, not assumed.** Before hand-over: `assets/motion-plan-check.mjs` exits 0 at 1440 and 390 (ladder, scene, shot plan, reading holds, quiet, event, stagger, travel, reduce, end states, depth), and `assets/motion-audit.mjs` films every user action in both settings and passes (tokens, curves, properties, keyboard paths). Then look at every strip.
+12. **Judged blind.** On a product or landing page the motion verdict is `assets/blind-gate.mjs`: a fresh critic sees our moments beside exemplar moments, unlabeled, and the build passes only when the critic cannot reliably tell them apart and names a memorable moment in every one of ours (reference 09 section 5). Self-review and passing checks are not the verdict.
 
 ## 2. The motion plan (required, written before any motion code)
 
@@ -63,6 +64,17 @@ A scene is a mock-up that acts out the product's core state change on a scripted
 6. **Numbers in the scene are true.** Totals re-foot from the lines as displayed, after every beat; mark them `data-sum-of` so the lint re-adds them (the round 2 hero total was $0.69 off).
 7. **Build it with `assets/scene.js`** (steps `data-state` from `data-beats`; CSS owns all motion) and check it with `assets/motion-plan-check.mjs`. Full code: reference 08.
 
+## 4b. Direct the scene: the shot plan and the moment kit (v0.4)
+
+A scene that only steps states is a slideshow. Direct it (full method: reference 09; study: `kb/moments/STUDY.md`):
+1. **Write a shot plan inside the scene** (`<script type="application/json" data-shot-plan>`): one shot per beat naming its `owner`, the text to `read`, and for the event the `aim`, `press` and result. `motion-plan-check.mjs` fails a scene without one, a beat with no single owner, a product page with no event (`plan`, `event`).
+2. **One owner at a time.** Once a beat's change settles, nothing outside the owner starts moving (`quiet`). Followers start within an `--offset` (100ms; Stripe's browser follows its phone by 150 to 250ms).
+3. **Reading hold from legibility:** after the change settles, `max(1000ms, 300ms + 330ms per visible word)` (reading aloud, Brysbaert 2019) (`read`).
+4. **Act out an event:** start state, cursor on the action, the press, the result owning the screen with the longest beat. Optional camera push 1.00 to 1.03 over the result's beat.
+5. **Change in place; start from the kit.** `assets/moments.css` and `assets/moments.js`: **swap** (values roll in masks on `--ease-swap` `(.78,0,.22,1)`, `--duration-swap` 800ms, cascading by `--stagger`, a second group `--offset` x 1.5 behind: Stripe's checkout), **stack** (items rise from 100% of their height, older ones step back scale .95 and -14px per level: Sonner), **event shot** (cursor on a sampled spring, press scale .97, push). Fixtures: `assets/fixtures/moments-demo.html` (passes), `moments-bad.html` (five fails).
+6. **Three stills before timing.** Opening, result, ending (`blind-gate.mjs prepare` writes them): if they do not tell the story with motion off, timing will not save it.
+7. **Depth only through the tier.** Springs with velocity, layout, globes, 3D and Rive follow reference 10: lazy, a poster, a still under reduce, off-screen stop, budgets (`depth`).
+
 ## 5. Tokens (shared foundation)
 
 ```css
@@ -80,6 +92,12 @@ A scene is a mock-up that acts out the product's core state change on a scripted
 --motion-hover: var(--duration-instant) var(--ease-standard);
 --motion-enter: var(--duration-base) var(--ease-enter);
 --motion-exit:  var(--duration-fast) var(--ease-exit);
+/* v0.6, inside scenes and for large surfaces (kb/moments/STUDY.md) */
+--duration-swap: 800ms;                         /* an in-place value roll inside a scene (Stripe 833ms) */
+--ease-swap:  cubic-bezier(0.78, 0, 0.22, 1);   /* swap of something already on screen (Stripe) */
+--ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);  /* sheets, drawers, stacks (Vaul) */
+--offset: 100ms;                                /* lead to follower, 80 to 250ms */
+/* --ease-spring, --duration-spring: written by assets/moments.js from spring(300, 26), about 520ms */
 ```
 Keywords, not tokens: `linear` (loops, scroll-linked, progress fills, time axes) and `steps(1)` (carets, pixel grids). Scene beats live in `data-beats`. Drop-in file: `assets/motion-tokens.css`. Use the low end of a band by default; tablet about x1.3, watch about x0.7 (Material 1).
 
@@ -142,7 +160,7 @@ Learned from the live capture of the exemplars (`kb/teardowns/motion-imagery.md`
 
 23. **Spend the motion budget on the product, not the page.** Stripe's long durations sit almost entirely in `payments-graphic__*` and `connect-platform-graphic__*`; Raycast's are keys pressed and a cursor typing; Linear's an agent working. Generic fade-ups are the minority of runtime. A page with ten fade-ups and a static product is upside down.
 24. **Hold keyframes.** A state is held by repeating its value (`opacity: 0, 0, 0, 1, 1`), so most of a beat is still. Opinion: the move takes at most about a third of its beat; the rest is reading time.
-25. **Value stacks, never text swaps.** Stripe pre-renders every value of a mock-up label in a clipped slot and slides the stack `translateY(0)` to `-100%` (11 `*-values` slots on 1420ms timelines, symmetric in-out `cubic-bezier(.78,0,.22,1)`; raw `data/choreo/stripe-home-1440.json`). No reflow, no layout jump, and the old value leaves in the direction time flows. Ours: past values at -100%, current at 0, future at 100%, `--duration-slow` on `--ease-standard`.
+25. **Value stacks, never text swaps.** Stripe pre-renders every value of a mock-up label in a clipped slot and slides the stack `translateY(0)` to `-100%` (11 `*-values` slots on 1420ms timelines, symmetric in-out `cubic-bezier(.78,0,.22,1)`; raw `data/choreo/stripe-home-1440.json`; frame-traced at 833ms per roll, `kb/moments/data/stripe-checkout.trace.json`). No reflow, no layout jump, and the old value leaves in the direction time flows. Inside a scene: the kit's **swap** (`--duration-swap` on `--ease-swap`). A label a person changes by hand: `--duration-slow` on `--ease-standard`.
 26. **Masked rises for text, short and tight.** Stripe's headline: 22 word spans from `translateY(-100%)` inside a mask, 325ms each, 50ms apart, 500ms in all. Ours: `--duration-slow` and `--stagger` on section headings, with the mask padded by `--space-2` (and pulled back by the same negative margin) so descenders are not cut. Not on the h1 (fundamental 10).
 27. **Blur-in for text on dark.** Linear brings 8 lines in from `opacity 0, blur(10px), translateY(20%)` over 1000ms, 33ms apart. Blur reads as focus being pulled and hides the shimmer of thin light text moving on dark (opinion). Text blocks only, 10px at most, never under reduce.
 28. **Split the fade from the move.** Mercury fades over 670ms on a near-linear curve and moves 50px on a slight overshoot, the move starting 150ms after the fade. The element is present before it lands, so nothing ghosts across the screen at low opacity (opinion). Ours: opacity on `--ease-standard`, transform on `--ease-enter` delayed `--duration-fast`.
@@ -162,13 +180,18 @@ Learned from the live capture of the exemplars (`kb/teardowns/motion-imagery.md`
 - [ ] Reduce: nothing moves or blurs; every end state kept; scenes still; loops stopped
 - [ ] Pause control on anything over 5 s; no flashing; tooltips meet 1.4.13; drag alternative
 - [ ] Only transform and opacity (plus text blur-in); no fade on the LCP element
+- [ ] Every scene has a shot plan: one owner per beat, reading holds from legibility, an event (aim, press, result), nothing else moving during a hold
+- [ ] Depth-tier uses (reference 10): lazy, poster, still under reduce, stopped off screen, within budget
 - [ ] `motion-plan-check.mjs` exits 0 at 1440 and 390; `motion-audit.mjs` passes every scenario; every strip looked at
+- [ ] Product or landing page: `blind-gate.mjs grade` exits 0 with a fresh critic (hero plus every scene)
 
 ## 9. Reference map
 
 | Read | When |
 |---|---|
 | `references/08-product-scenes-and-choreography.md` | Always on a product or landing page: scene code (ledger with re-footing total), masked heading rise, split card reveal, a full worked motion plan |
+| `references/09-moments-and-directing.md` | Always on a product or landing page: the shot plan, the moment kit, the nine studied moments as decisions, the blind gate, the review loop (three stills, four-field corrections) |
+| `references/10-depth-tier.md` | A moment that needs velocity springs, layout animation, a globe, 3D or Rive: which tool, measured sizes, budgets, lazy loading, reduced motion |
 | `references/01-purpose-restraint.md` | Deciding whether to animate; brand vs task motion |
 | `references/02-timing-easing.md` | The ladder in detail, durations, easing, springs, device scaling |
 | `references/03-choreography-transitions.md` | Sequences, stagger, page and route transitions, View Transitions, scroll reveals, parallax |
@@ -178,7 +201,9 @@ Learned from the live capture of the exemplars (`kb/teardowns/motion-imagery.md`
 | `references/07-motion-on-real-pages.md` | Charts, live numbers, label swaps, modality-aware dialogs, filming |
 | `assets/motion-tokens.css` | Drop-in tokens, including `--duration-reveal`, `--stagger`, `--travel` |
 | `assets/scene.js` | Scene runner: `data-beats`, holds, rest, seam, pause on hover, focus, hidden tab, off screen and button; still frame under reduce |
-| `assets/motion-plan-check.mjs` | `node skills/design-motion/assets/motion-plan-check.mjs page.html [--width 390] [--no-scene]`: ladder, scene, behavior, stagger, travel, reduce, end states. Fixture: `assets/fixtures/scene-good.html` |
+| `assets/moments.css`, `assets/moments.js` | The moment kit: swap, stack, event shot (cursor, press, push), shot-plan runner, sampled spring. Load after `scene.js` |
+| `assets/blind-gate.mjs` | `prepare <page> --out dir --moment hero:top --moment event:#scene`, then a fresh critic answers `QUESTIONS.md`, then `grade --out dir`. Exemplars: `assets/exemplar-moments.json` |
+| `assets/motion-plan-check.mjs` | `node skills/design-motion/assets/motion-plan-check.mjs page.html [--width 390] [--no-scene]`: ladder, scene, shot plan, read, quiet, event, behavior, stagger, travel, reduce, end states, depth. Fixtures: `scene-good.html`, `moments-demo.html` (pass); `moments-bad.html`, `depth-bad.html` (fail) |
 | `assets/motion-audit.mjs` | `node skills/design-motion/assets/motion-audit.mjs <scenarios.mjs> <outdir>`: films each action in both settings and checks tokens, curves, properties, reduce, keyboard paths |
 
 ## 10. Related skills

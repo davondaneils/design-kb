@@ -1,5 +1,14 @@
 # design-motion changelog
 
+## 0.4 (2026-10-15, from the fresh brief's filmed verdict and the frame-level moment study)
+Why: the fresh brief passed every v0.3 motion check and the recordings were "not anything special" (Davon). The checks measured presence, not quality. Nine exemplar moments were filmed and traced frame by frame (`kb/moments/STUDY.md`; tools `kb/moments/film.mjs`, `trace.mjs`, `sheet.sh`); FOUNDATIONS v0.6 adds the tokens.
+- New `assets/moments.css` and `assets/moments.js`: the moment kit. swap (Stripe checkout: 833ms rolls on `(.78,0,.22,1)`, browser group 150 to 250ms behind), stack (Sonner: rise from 100%, older items scale .95 and -14px per level), event shot (cursor on a spring sampled into CSS `linear()`, press scale .97, camera push 1.00 to 1.03), and the shot-plan runner.
+- `assets/scene.js`: dispatches `scene:state` synchronously on each state and resets under the seam with transitions finished, so moments never play backwards between loops.
+- `assets/motion-plan-check.mjs`: new fails `plan` (no shot plan, a beat with no single owner), `event` (no aim, press, result), `read` (hold after the change settles under max(1000, 300 + 330ms per visible word)), `quiet` (something outside the owner moves during the hold), `depth` (blocking library script, a canvas drawing under reduce). Fixed: scene behavior tests counted other scenes' steps, so pages with two or more scenes could fail falsely. Fixtures: `moments-demo.html` passes; `moments-bad.html` fails plan, plan, event, read, quiet; `depth-bad.html` fails both depth rules.
+- New `assets/blind-gate.mjs` and `assets/exemplar-moments.json`: films our moments and paired exemplar moments (Stripe checkout, Linear hero, Sonner) the same way, strips labels, shuffles, writes overview and detail strips and the three stills; a fresh critic answers; `grade` passes only when the critic cannot reliably tell ours apart and names a memorable moment in each.
+- New references 09 (moments and directing: shot plan, kit, nine moments as decisions, blind gate, review loop with three stills and four-field corrections; method from the Remotion article linked in x.com/skunzu/status/2110097012339200134) and 10 (depth tier: Motion, FLIP, cobe, three.js, Rive, Remotion, with sizes measured from jsDelivr and the limits every use meets).
+- SKILL.md: fundamental 12 (judged blind), section 4b (direct the scene), v0.6 tokens, expert move 25 measured at frame level, checklist and reference map.
+
 ## 0.3.1 (2026-10-14, from the fresh-brief critic, `kb/reviews/fresh-landing.md`)
 - `assets/motion-plan-check.mjs`: a text stagger group (words, lines, headings) spreading over 500ms now fails instead of warning; cards keep the 800ms cap. The Halyard page's 612 to 693ms word rises passed as warnings before.
 

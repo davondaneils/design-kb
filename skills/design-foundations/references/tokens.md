@@ -112,7 +112,7 @@ One schema for every domain. Primitives hold raw values; semantic tokens point a
 | Radius | `--radius-{none,sm,md,lg,xl,full}` (0, 4, 8, 12, 16, 9999px) | `--radius-control`, `--radius-card` | design-layout |
 | State | (uses the text color) | `--state-{hover,focus,pressed,dragged}`: `color-mix(in oklch, var(--color-text) 8% / 10% / 10% / 16%, transparent)`, the state layers above; filled controls use `--color-primary-hover` and `--color-primary-active` instead | design-color with design-polish |
 | Elevation | `--shadow-{0..4}`, `--shadow-rgb` (tint, as space-separated RGB) | `--elevation-{card,popover,modal}` (ring plus shadow), `--ring` (1px edge), `--highlight` (dark-theme top edge) | design-layout with design-polish (recipe above) |
-| Motion | `--duration-{instant,fast,base,slow,page,reveal}`, `--ease-{standard,enter,exit}`, `--stagger` (40ms), `--travel` (16px); the `linear` keyword for loops, scroll-linked and time-axis motion; `steps(1)` for cursors and pixel-grid figures | `--motion-{hover,enter,exit}` (values in Motion above); scene beats are set per scene in `data-beats`, never as tokens | design-motion |
+| Motion | `--duration-{instant,fast,base,slow,page,reveal}`, `--ease-{standard,enter,exit}`, `--stagger` (40ms), `--travel` (16px); v0.6: `--duration-swap` (800ms), `--ease-swap`, `--ease-drawer`, `--offset` (100ms), `--ease-spring` and `--duration-spring` (written by design-motion `moments.js`); the `linear` keyword for loops, scroll-linked and time-axis motion; `steps(1)` for cursors and pixel-grid figures | `--motion-{hover,enter,exit}` (values in Motion above); scene beats are set per scene in `data-beats`, never as tokens | design-motion |
 | Icon | `--size-icon-{sm,md,lg,xl}` (12, 16, 20, 24) | `--icon-stroke` (1.5px) | design-graphic with design-polish |
 | Size | `--size-control-{sm,md,lg}` (32, 40, 48) | `--size-measure` (52ch) | design-layout; measure: design-typography |
 | Breakpoint | sm 640, md 768, lg 1024, xl 1280, 2xl 1536 (media and container queries cannot read custom properties, so use the numbers; container conditions in `rem`: 40rem, 48rem, 64rem, 80rem, 96rem) | | design-layout |
@@ -139,6 +139,7 @@ Paste into `@layer tokens`. Values are the contract above; color primitives and 
   --size-icon-sm: 12px; --size-icon-md: 16px; --size-icon-lg: 20px; --size-icon-xl: 24px; --icon-stroke: 1.5px;
 
   --duration-instant: 100ms; --duration-fast: 150ms; --duration-base: 200ms; --duration-slow: 300ms; --duration-page: 400ms; --duration-reveal: 600ms; --stagger: 40ms; --travel: 16px;
+  --duration-swap: 800ms; --ease-swap: cubic-bezier(0.78, 0, 0.22, 1); --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1); --offset: 100ms; /* v0.6 */
   --ease-standard: cubic-bezier(0.2, 0, 0, 1); --ease-enter: cubic-bezier(0, 0, 0, 1); --ease-exit: cubic-bezier(0.3, 0, 1, 1);
   --motion-hover: var(--duration-instant) var(--ease-standard);
   --motion-enter: var(--duration-base) var(--ease-enter);

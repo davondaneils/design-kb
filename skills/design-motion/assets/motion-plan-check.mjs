@@ -33,6 +33,8 @@
 //   read       a shot's "read" text held for less than max(1000, 300 + 330ms per visible word) after the change
 //              settles (reading aloud, Brysbaert 2019; kb/moments/STUDY.md)
 //   quiet      anything outside the owner that starts moving after the change settles, in the same beat
+//   depth      (reference 10) a blocking <script src> for motion, three, cobe, rive, gsap or lottie in the head; a
+//              <canvas> whose pixels change 700ms apart under reduced motion
 // Warns: two hover speeds on one page (pick 100 or 150 and hold it).
 // Exit 1 on any fail.
 import fs from 'node:fs';
@@ -271,10 +273,24 @@ async function record(reduce) {
     ends.push(await page.evaluate(END_STATE, i));
     await page.evaluate((i) => { document.querySelectorAll('details')[i].open = false; }, i);
   }
+  // Depth tier (reference 10): blocking library scripts, and canvases that keep drawing under reduced motion.
+  const blocking = await page.evaluate(() => [...document.querySelectorAll('head script[src]')]
+    .filter((x) => !x.async && !x.defer && x.type !== 'module' && /(motion|three|cobe|rive|gsap|lottie)/i.test(x.src)).map((x) => x.src));
+  const canvases = [];
+  if (reduce) {
+    const n = Math.min(6, await page.evaluate(() => document.querySelectorAll('canvas').length));
+    for (let i = 0; i < n; i++) {
+      const c = page.locator('canvas').nth(i);
+      const box = await c.boundingBox().catch(() => null); if (!box || box.width < 40 || box.height < 40) continue;
+      await c.scrollIntoViewIfNeeded().catch(() => {}); await page.waitForTimeout(300);
+      const a = await c.screenshot().catch(() => null); await page.waitForTimeout(700); const b = await c.screenshot().catch(() => null);
+      if (a && b) canvases.push({ i, changed: !a.equals(b) });
+    }
+  }
   const endScenes = await page.evaluate(SCENES);
   const data = await page.evaluate(() => window.__mp);
   await browser.close();
-  return { ...data, scenes: endScenes, behavior, ends };
+  return { ...data, scenes: endScenes, behavior, ends, blocking, canvases };
 }
 
 const band = (ms) => (ms <= 150 ? 'press/hover' : ms < 400 ? 'UI change' : ms < 600 ? 'entrance' : ms < 1200 ? 'reveal' : 'scene');
@@ -398,6 +414,10 @@ for (const s of R.scenes) {
   if (steps.size > 1) add('fail', 'reduce', `scene #${s.id} steps through ${[...steps].join(', ')} under reduced motion`);
   if (s.state !== s.still) add('fail', 'reduce', `scene #${s.id} shows "${s.state ?? 'no state'}" under reduced motion; it must rest on its still frame "${s.still}" (load assets/scene.js or set data-state)`);
 }
+
+// Depth tier (reference 10).
+for (const src of A.blocking) add('fail', 'depth', `${src} loads as a blocking script in the head; depth-tier libraries load lazily (dynamic import near the viewport), never on the first paint's path`);
+for (const c of R.canvases.filter((x) => x.changed)) add('fail', 'depth', `canvas ${c.i + 1} keeps drawing under reduced motion; draw one still frame (or keep the poster) and stop`);
 
 // End states survive reduced motion: an open disclosure looks open in both settings (benchmark round 2: the FAQ icon
 // lost its open rotation under reduce, kb/reviews/benchmark-round2-landing.md gap 3).

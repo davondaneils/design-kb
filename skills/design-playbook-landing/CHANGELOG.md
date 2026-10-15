@@ -1,5 +1,8 @@
 # design-playbook-landing changelog
 
+## 2026-10-15 (editor-in-chief, motion depth: shot plans, moment kit, blind gate, FOUNDATIONS v0.6)
+- Load step 9 adds design-motion references 09 (moments and directing) and 10 (depth tier, only when needed). Done means 6 requires a shot plan with an event; new 6b requires the blind gate to pass (FOUNDATIONS v0.6).
+
 ## 2026-10-13 (editor-in-chief, imagery and motion rework, FOUNDATIONS v0.5)
 - Load steps 7 and 9 name the new references (art direction 06, motion 08); "light touch" replaced: restraint is in the page, the product scene runs on its own beats.
 - Done means 6: the motion and visual plan checks exit 0. `references/signature-moves.md`: move 10 rewritten from the live capture, new move 11 (a picture on almost every screen, the product many times), move 6 "regular" not "identical" plus two or three column starts (benchmark round 2 gap 9).
