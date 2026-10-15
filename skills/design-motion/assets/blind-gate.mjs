@@ -62,7 +62,9 @@ async function prepare() {
   const tmp = fs.mkdtempSync(path.join(path.dirname(path.resolve(out)), '.gate-'));
 
   // Film one clip. Returns { file, ms } with the clip trimmed to start at `startAt` (ms from context start).
-  async function film({ url, script = [], crop, cropEl, record, startOnText, still, viewport = { width: 1440, height: 900 }, colorScheme = 'light' }, name) {
+  // trimLead: record up to that many ms extra and start the clip 300ms before the first visible change (a page that
+  // stays blank while it loads, as Linear's hero does headless, would otherwise hand the critic seconds of black).
+  async function film({ url, script = [], crop, cropEl, record, startOnText, trimLead = 0, viewport = { width: 1440, height: 900 }, colorScheme = 'light' }, name) {
     const browser = await launch();
     const dir = path.join(tmp, name); fs.mkdirSync(dir, { recursive: true });
     const ctx = await browser.newContext({ viewport, deviceScaleFactor: 1, colorScheme, reducedMotion: 'no-preference', recordVideo: { dir, size: viewport },
@@ -73,7 +75,12 @@ async function prepare() {
     let startAt = null;
     if (startOnText) {
       for (let i = 0; i < 300 && startAt == null; i++) {
-        const vis = await page.evaluate((s) => { const e = document.querySelector(s); return !!e && parseFloat(getComputedStyle(e).opacity) > 0.02 && e.getBoundingClientRect().height > 0; }, startOnText).catch(() => false);
+        // Visible means: some match has a box and the product of its and its ancestors' opacity is over 0.02.
+        const vis = await page.evaluate((s) => [...document.querySelectorAll(s)].some((e) => {
+          if (!e.getBoundingClientRect().height) return false;
+          let op = 1; for (let a = e; a; a = a.parentElement) op *= parseFloat(getComputedStyle(a).opacity);
+          return op > 0.02;
+        }), startOnText).catch(() => false);
         if (vis) startAt = Date.now() - t0 - 250; else await page.waitForTimeout(50);
       }
     }
@@ -97,11 +104,15 @@ async function prepare() {
       if (!box) console.error(`  ${cropEl} not found on the page`);
     }
     if (startAt == null) startAt = Date.now() - t0;
-    await page.waitForTimeout(record);
+    await page.waitForTimeout(record + trimLead);
     const video = page.video();
     await ctx.close(); await browser.close();
     const raw = await video.path();
     const [x, y, w, h] = (box || `0,0,${viewport.width},${viewport.height}`).split(',').map(Number);
+    if (trimLead) {
+      const lead = firstChange(raw, startAt / 1000, (record + trimLead) / 1000);
+      startAt += Math.max(0, Math.min(trimLead, lead * 1000 - 300));
+    }
     const file = path.join(tmp, name + '.mp4');
     // Fit every clip into the same 960x600 frame on the same neutral ground, so size and framing give nothing away.
     sh('ffmpeg', ['-y', '-loglevel', 'error', '-ss', String(startAt / 1000), '-t', String(record / 1000), '-i', raw, '-vf',
@@ -110,6 +121,14 @@ async function prepare() {
     return { file, ms: record };
   }
 
+  // Seconds from ss to the first frame that differs visibly from the one before.
+  const firstChange = (file, ss, dur) => {
+    let log = '';
+    try { log = execFileSync('ffmpeg', ['-ss', String(ss), '-t', String(dur), '-i', file, '-vf', "select='gte(scene,0)',metadata=print:file=-", '-an', '-f', 'null', '-'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }); } catch (e) { log = e.stdout || ''; }
+    const pts = [...log.matchAll(/pts_time:([\d.]+)[\s\S]*?scene_score=([\d.]+)/g)].map((m) => [+m[1], +m[2]]);
+    const hit = pts.find((p) => p[1] > 0.004);
+    return hit ? hit[0] : 0;
+  };
   // Frames per second of change in a clip, to place the detail strip on the biggest change.
   const busiest = (file) => {
     const log = (() => { try { return execFileSync('ffmpeg', ['-i', file, '-vf', "select='gte(scene,0)',metadata=print:file=-", '-an', '-f', 'null', '-'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }); } catch (e) { return e.stdout || ''; } })();
@@ -134,7 +153,7 @@ async function prepare() {
     console.log(`trial ${i + 1}: ${m.kind} ${m.sel} against ${ex.id}`);
     const a = await film({ url: toUrl(target), viewport: { width: W, height: H }, colorScheme: scheme, record: ex.record,
       cropEl: hero ? null : m.sel, crop: hero ? `0,0,${W},${H}` : null, script: hero ? [] : [{ wait: 1200 }] }, `ours-${i + 1}`);
-    const b = await film({ url: ex.url, script: ex.script, crop: ex.crop, record: ex.record, startOnText: ex.startOnText }, `ex-${i + 1}`);
+    const b = await film({ url: ex.url, script: ex.script, crop: ex.crop, record: ex.record, startOnText: ex.startOnText, trimLead: ex.trimLead || 0 }, `ex-${i + 1}`);
     const oursIsA = rand() < 0.5;
     const dir = path.join(out, `trial-${i + 1}`); fs.mkdirSync(dir, { recursive: true });
     const pair = oursIsA ? { A: a, B: b } : { A: b, B: a };

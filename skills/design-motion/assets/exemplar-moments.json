@@ -38,8 +38,8 @@
    ],
    "crop": "0,0,1440,900",
    "record": 6000,
-   "startOnText": "h1",
-   "script": []
+   "script": [],
+   "startOnText": "h1 [class*='titleLine']:not(.show-mobile)"
   },
   {
    "id": "sonner-toasts",
