@@ -1,5 +1,8 @@
 # design-director changelog
 
+## 2026-10-15 (editor-in-chief, Flagship owner review)
+- Self-critique loop: new step 12, the humanize pass (design-art-direction `references/humanize-pass.md`) on the renders before the exemplar comparison and the fresh-context critic; later steps renumbered (critic is now step 14; references in the landing and dashboard playbooks and design-strategy 06 updated).
+
 ## 2026-10-10 (editor-in-chief, round 3 lessons, from `kb/reviews/round3-critic.md`)
 - Build rules: the state truth data-attribute contract (`data-sum-of`, `data-derived-from`, `data-monotonic`, `data-source` and `data-source-stopped`, `data-data="none"`, `data-bar`, `data-share-base`) and headers in a shell (content container, one row, `flex: none` on dots).
 - Self-critique loop: lint runs its layout checks at 390, 768, 1024 and 1440 by default and drives 3 live updates; claims inventory with `--render` per state, PROMISE and PERIOD warnings; judged rows read at 768, 1024 and every state; proportion honesty; new step 13, a fresh-context critic's judged pass is required before claiming the gate.

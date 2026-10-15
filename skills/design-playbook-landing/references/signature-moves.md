@@ -28,3 +28,5 @@ Name two in the brief and compare against both.
 
 ## Where pages fall short (from the color pilot)
 The pilot's coffee page passed the gate and still rated clearly below the exemplars: no real imagery (a CSS bag stood in), a fallback serif instead of a chosen face, no signature layout move, no motion (`kb/tests/design-color.md`). Moves 1, 2 and 8 are the ones to check first.
+
+A page can pass every gate and still read "clean but no soul" (the Flagship sales page, 2026-10-14): run the humanize pass, design-art-direction `references/humanize-pass.md`, on the renders before the fresh-context critic.

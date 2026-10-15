@@ -61,7 +61,7 @@ Festivals, conferences, exhibitions, launches, magazines and feature stories sel
 5. A term line (renews when, at what price, how to cancel online) sits beside any renewal or subscription CTA (design-conversion).
 6. Side by side with the named closest exemplars, rated close (not clearly below) on hierarchy, type, imagery, rhythm and craft. Event and editorial pages also pass section 3b item 4 (the hero screenshot works as the social post). Pick them from `kb/teardowns/INDEX.md` (Stripe first, then Linear, Vercel, Ramp for product and SaaS) and `references/signature-moves.md`; compare measured numbers, not impressions.
 7. The strategy brief exists at the right depth and `node skills/design-strategy/assets/brief_lint.mjs` passes; the word swap test, covered competitor wall and five-second test are recorded; every public claim has a ledger row with evidence held.
-8. A fresh-context critic has judged the gate (design-director section 5, step 13); a self-review alone does not claim it.
+8. A fresh-context critic has judged the gate (design-director section 5, step 14); a self-review alone does not claim it.
 9. The hand-over names what is still short of the exemplar.
 
 ## 5. Reference map
