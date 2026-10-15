@@ -1,0 +1,70 @@
+/* moments.css (design-motion v0.4): the three rebuilt exemplar moments, keyed off the state that scene.js steps.
+   Study and numbers: kb/moments/STUDY.md. Load after motion-tokens.css; pair with scene.js and moments.js.
+
+   swap   values roll inside a mask, top to bottom, a following group 150ms behind (Stripe checkout: 833ms rolls on
+          (.78,0,.22,1), browser group 150 to 250ms after the phone, 7.5s holds)
+   stack  new items rise from 100% of their height; older items step back scale .95 and -14px per level, three shown
+          (Sonner: 400ms entry, restack in the same 400ms, exits about half as long)
+   shot   a cursor travels on a spring to the control, the press registers, the result owns the screen; optional
+          1.00 to 1.03 push over the result's beat (the article's event shot, Raycast's closing hotkey)
+
+   Under reduced motion nothing here moves: scene.js shows the still frame and every transition below is removed. */
+
+:root {
+  /* v0.6 tokens (FOUNDATIONS Motion). Primitives, so a page may tune them in one place. */
+  --duration-swap: 800ms;                       /* an in-place value roll inside a scene (Stripe 833ms) */
+  --ease-swap: cubic-bezier(0.78, 0, 0.22, 1);  /* in-place swap: both ends visible, so accelerate out and land */
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);/* large surfaces and stacks: fast start, long settle (Vaul 500ms) */
+  --offset: 100ms;                              /* between a lead element and the one that follows it (80 to 250) */
+  /* --ease-spring and --duration-spring are written by moments.js from a spring (stiffness 300, damping 26):
+     about 520ms with a 2.6% overshoot. Fallback until the script runs: */
+  --ease-spring: cubic-bezier(0.2, 0, 0, 1);
+  --duration-spring: 520ms;
+}
+
+/* ---------- swap: <span class="swap" data-swap="usd eur jpy"><span class="swap-track"><span>$5.46</span><span>EUR 26.89</span><span>JPY 5,000</span></span></span>
+   One value per listed state; the track moves by whole lines. --swap-i and --swap-n are written by moments.js. */
+.swap { display: inline-grid; overflow: hidden; vertical-align: bottom; block-size: var(--swap-h, 1lh); }
+.swap-track { display: grid; transform: translateY(calc(var(--swap-i, 0) * -100% / var(--swap-count, 1))); }
+.swap-track > * { block-size: var(--swap-h, 1lh); white-space: nowrap; }
+@media (prefers-reduced-motion: no-preference) {
+  [data-scene]:not([data-scene-still]) .swap-track {
+    transition: transform var(--duration-swap) var(--ease-swap) calc(var(--swap-n, 0) * var(--stagger) + var(--swap-group, 0) * var(--offset) * 1.5);
+  }
+}
+
+/* ---------- stack: <ol class="stack" data-stack><li data-at="paid">...</li>...</ol>
+   Items appear when their state has been reached (data-seen); --depth is 0 for the newest. */
+.stack { display: grid; }
+.stack > * { grid-area: 1 / 1; align-self: end; transform-origin: 50% 0; }
+.stack > :not([data-in]) { opacity: 0; transform: translateY(100%); visibility: hidden; }
+.stack > [data-in] { opacity: 1; transform: translateY(calc(var(--depth, 0) * -14px)) scale(calc(1 - var(--depth, 0) * 0.05)); }
+.stack > [data-in][data-depth-hidden] { opacity: 0; }
+.stack > [data-in]:not([data-depth="0"]) { pointer-events: none; }
+@media (prefers-reduced-motion: no-preference) {
+  [data-scene]:not([data-scene-still]) .stack > * {
+    transition: transform var(--duration-reveal) var(--ease-drawer), opacity var(--duration-page) var(--ease-standard), visibility 0s;
+  }
+}
+
+/* ---------- shot: a cursor inside the scene, moved by moments.js through --cx / --cy (px from the scene's corner) */
+[data-scene] { position: relative; }
+.shot-cursor {
+  position: absolute; inset-inline-start: 0; inset-block-start: 0; inline-size: 20px; block-size: 20px; z-index: 3;
+  transform: translate(var(--cx, -40px), var(--cy, -40px)); pointer-events: none;
+  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.35));
+}
+.shot-cursor svg { inline-size: 100%; block-size: 100%; display: block; transform-origin: 2px 2px; }
+.shot-cursor[data-pressed] svg { transform: scale(0.88); }
+[data-press-target][data-pressed] { transform: scale(0.97); filter: brightness(0.94); }
+[data-scene] [data-push] { transform-origin: 50% 40%; }
+[data-scene] [data-push][data-pushing] { transform: scale(1.03); }
+@media (prefers-reduced-motion: no-preference) {
+  [data-scene]:not([data-scene-still]) .shot-cursor { transition: transform var(--duration-spring) var(--ease-spring); }
+  [data-scene]:not([data-scene-still]) .shot-cursor svg { transition: transform var(--duration-instant) var(--ease-standard); }
+  [data-scene]:not([data-scene-still]) [data-press-target] { transition: transform var(--duration-instant) var(--ease-standard), filter var(--duration-instant) var(--ease-standard); }
+  /* The push is linear-ish and slow: a camera, not an object (the article: 1.00 to 1.03 over about 3s). */
+  [data-scene]:not([data-scene-still]) [data-push][data-pushing] { transition: transform var(--beat, 3000ms) cubic-bezier(0.4, 0, 0.6, 1); }
+}
+/* Still frame: no cursor (a still with a cursor reads as a screenshot of someone else's screen). */
+[data-scene][data-scene-still] .shot-cursor { display: none; }

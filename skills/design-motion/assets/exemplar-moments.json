@@ -1,0 +1,62 @@
+{
+ "note": "Exemplar moments the blind gate films live and pairs against a build's moments. Study and timing: kb/moments/STUDY.md. crop is x,y,w,h in CSS px at 1440x900 after the script runs; it frames the product region and leaves out logos and navigation. kinds: what each exemplar is the bar for. Raycast's closing keyboard (kb/moments/STUDY.md moment 5) is not used: its keys light on a timer the camera cannot catch reliably.",
+ "pairs": {
+  "scene": "stripe-checkout-scene",
+  "swap": "stripe-checkout-scene",
+  "event": "stripe-checkout-scene",
+  "hero": "linear-hero-load",
+  "stack": "sonner-toasts"
+ },
+ "moments": [
+  {
+   "id": "stripe-checkout-scene",
+   "url": "https://stripe.com",
+   "kinds": [
+    "scene",
+    "swap",
+    "event"
+   ],
+   "crop": "40,120,760,620",
+   "record": 12000,
+   "script": [
+    {
+     "wait": 9000
+    },
+    {
+     "scroll": 820
+    },
+    {
+     "wait": 1200
+    }
+   ]
+  },
+  {
+   "id": "linear-hero-load",
+   "url": "https://linear.app",
+   "kinds": [
+    "hero"
+   ],
+   "crop": "0,0,1440,900",
+   "record": 6000,
+   "startOnText": "h1",
+   "script": []
+  },
+  {
+   "id": "sonner-toasts",
+   "url": "https://sonner.emilkowal.ski",
+   "kinds": [
+    "stack"
+   ],
+   "crop": "960,560,480,340",
+   "record": 7000,
+   "script": [
+    {
+     "wait": 2500
+    },
+    {
+     "eval": "window.__b=[...document.querySelectorAll('button')].find(b=>/render a toast/i.test(b.textContent)); [300,1300,2300].forEach(t=>setTimeout(()=>__b.click(),t))"
+    }
+   ]
+  }
+ ]
+}

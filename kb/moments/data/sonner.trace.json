@@ -1,0 +1,322 @@
+{
+ "target": "https://sonner.emilkowal.ski",
+ "sels": [
+  "[data-sonner-toast]"
+ ],
+ "frames": 336,
+ "ms": 6500,
+ "elements": [
+  {
+   "selector": "[data-sonner-toast]",
+   "index": 0,
+   "text": "SonnerAn opinionated toa",
+   "segments": [
+    {
+     "start": 213,
+     "end": 613,
+     "ms": 400,
+     "open": false,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, 73.6875)",
+      "opacity": "0",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       1060,
+       876,
+       356,
+       74
+      ]
+     },
+     "to": {
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       1060,
+       802,
+       356,
+       74
+      ],
+      "text": "SonnerAn opinionated toa"
+     }
+    },
+    {
+     "start": 913,
+     "end": 1313,
+     "ms": 400,
+     "open": false,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       1060,
+       802,
+       356,
+       74
+      ]
+     },
+     "to": {
+      "transform": "matrix(0.95, 0, 0, 0.95, 0, -14)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       1069,
+       790,
+       338,
+       70
+      ],
+      "text": "SonnerAn opinionated toa"
+     }
+    },
+    {
+     "start": 1613,
+     "end": 2013,
+     "ms": 400,
+     "open": false,
+     "from": {
+      "transform": "matrix(0.95, 0, 0, 0.95, 0, -14)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       1069,
+       790,
+       338,
+       70
+      ]
+     },
+     "to": {
+      "transform": "matrix(0.9, 0, 0, 0.9, 0, -28)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       1078,
+       778,
+       320,
+       66
+      ],
+      "text": "SonnerAn opinionated toa"
+     }
+    },
+    {
+     "start": 4213,
+     "end": 4396,
+     "ms": 183,
+     "open": true,
+     "from": {
+      "transform": "matrix(0.9, 0, 0, 0.9, 0, -28)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       1078,
+       778,
+       320,
+       66
+      ]
+     },
+     "to": {
+      "transform": "matrix(0.963216, 0, 0, 0.963216, 0, 8.33315)",
+      "opacity": "0.00390872",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       1067,
+       812,
+       343,
+       71
+      ],
+      "text": "SonnerAn opinionated toa"
+     }
+    }
+   ],
+   "holds": [
+    300,
+    300,
+    2200
+   ]
+  },
+  {
+   "selector": "[data-sonner-toast]",
+   "index": 1,
+   "text": "SonnerAn opinionated toa",
+   "segments": [
+    {
+     "start": 913,
+     "end": 1329,
+     "ms": 416,
+     "open": false,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, 73.6875)",
+      "opacity": "0",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       1060,
+       876,
+       356,
+       74
+      ]
+     },
+     "to": {
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       1060,
+       802,
+       356,
+       74
+      ],
+      "text": "SonnerAn opinionated toa"
+     }
+    },
+    {
+     "start": 1613,
+     "end": 2013,
+     "ms": 400,
+     "open": false,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       1060,
+       802,
+       356,
+       74
+      ]
+     },
+     "to": {
+      "transform": "matrix(0.95, 0, 0, 0.95, 0, -14)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       1069,
+       790,
+       338,
+       70
+      ],
+      "text": "SonnerAn opinionated toa"
+     }
+    },
+    {
+     "start": 4913,
+     "end": 5096,
+     "ms": 183,
+     "open": true,
+     "from": {
+      "transform": "matrix(0.95, 0, 0, 0.95, 0, -14)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       1069,
+       790,
+       338,
+       70
+      ]
+     },
+     "to": {
+      "transform": "matrix(0.981612, 0, 0, 0.981612, 0, 13.4869)",
+      "opacity": "0.00389525",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       1063,
+       816,
+       349,
+       72
+      ],
+      "text": "SonnerAn opinionated toa"
+     }
+    }
+   ],
+   "holds": [
+    284,
+    2900
+   ]
+  },
+  {
+   "selector": "[data-sonner-toast]",
+   "index": 2,
+   "text": "SonnerAn opinionated toa",
+   "segments": [
+    {
+     "start": 1613,
+     "end": 2013,
+     "ms": 400,
+     "open": false,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, 73.6875)",
+      "opacity": "0",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       1060,
+       876,
+       356,
+       74
+      ]
+     },
+     "to": {
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       1060,
+       802,
+       356,
+       74
+      ],
+      "text": "SonnerAn opinionated toa"
+     }
+    },
+    {
+     "start": 5613,
+     "end": 5796,
+     "ms": 183,
+     "open": true,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       1060,
+       802,
+       356,
+       74
+      ]
+     },
+     "to": {
+      "transform": "matrix(1, 0, 0, 1, 0, 55.8176)",
+      "opacity": "0.242509",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       1060,
+       858,
+       356,
+       74
+      ],
+      "text": "SonnerAn opinionated toa"
+     }
+    }
+   ],
+   "holds": [
+    3600
+   ]
+  }
+ ]
+}

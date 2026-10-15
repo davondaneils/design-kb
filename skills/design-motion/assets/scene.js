@@ -18,7 +18,8 @@
  *   data-seen="queued sending"    every state reached in this play, so CSS can keep earlier changes ([data-seen~="sending"])
  *   style --beat: 2400ms           the current beat's length, for CSS that fills a beat (a progress bar)
  *   data-scene-seam                for one --duration-fast before a replay: CSS fades the mock out, the state resets
- *                                  underneath, and it fades back in, so the story never plays backwards
+ *                                  underneath with no transitions, and it fades back in, so the story never plays backwards
+ *   event scene:state              dispatched synchronously on every state change (moments.js listens to it)
  *   data-scene-paused              while paused for any reason
  *
  * It pauses while hovered, while focus is inside, while the tab is hidden, while less than a third of the scene is on
@@ -70,10 +71,15 @@
       el.dataset.state = b.state;
       el.dataset.seen = beats.slice(0, i + 1).map((x) => x.state).join(' ');
       el.style.setProperty('--beat', b.ms + 'ms');
+      // Synchronous, so a listener (moments.js) can change styles inside the same frame as the state.
+      el.dispatchEvent(new CustomEvent('scene:state', { detail: { state: b.state, index: i } }));
     };
+    // Change state with no transitions (load and the seam): flush styles, then finish what that started.
+    const jump = (i) => { show(i); getComputedStyle(el).opacity; el.getAnimations({ subtree: true }).forEach((a) => a.finish()); };
     const schedule = (ms, fn) => { clearTimeout(timer); left = ms; startedAt = performance.now(); timer = setTimeout(fn, ms); };
     const next = () => {
-      if (phase === 'seam') { el.removeAttribute('data-scene-seam'); show(0); phase = 'beat'; return schedule(beats[0].ms, next); }
+      // Reset under the seam (the mock is faded out), with no transitions, then fade back in on the first state.
+      if (phase === 'seam') { jump(0); el.removeAttribute('data-scene-seam'); phase = 'beat'; return schedule(beats[0].ms, next); }
       if (index < beats.length - 1) { show(index + 1); phase = 'beat'; return schedule(beats[index].ms, next); }
       if (phase === 'beat' && loop) { phase = 'rest'; return schedule(rest, next); }   // hold the last frame
       if (phase === 'rest') { phase = 'seam'; el.setAttribute('data-scene-seam', ''); return schedule(seamMs, next); }
@@ -104,9 +110,7 @@
 
     // The HTML is authored on the still frame (right without JS and under reduce). Jump to the first state with no
     // transition, so the story never plays backwards on load: flush styles, then finish the transitions that created.
-    show(0);
-    getComputedStyle(el).opacity;
-    el.getAnimations({ subtree: true }).forEach((a) => a.finish());
+    jump(0);
     el.addEventListener('pointerenter', () => pause('hover'));
     el.addEventListener('pointerleave', () => play('hover'));
     el.addEventListener('focusin', () => pause('focus'));

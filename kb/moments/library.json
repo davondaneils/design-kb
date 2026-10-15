@@ -1,0 +1,17 @@
+{
+  "note": "Exemplar moments filmed for study and for the blind gate. Re-film: node kb/moments/film-library.mjs [id]. Crops are CSS px at the stated viewport.",
+  "moments": [
+    {"id": "stripe-hero-load", "url": "https://stripe.com", "width": 1440, "height": 900, "script": [{"wait": 15000}]},
+    {"id": "stripe-checkout-scene", "url": "https://stripe.com", "width": 1440, "height": 900, "script": [{"wait": 11000}, {"smooth": [820, 600]}, {"wait": 14000}]},
+    {"id": "stripe-connect-scene", "url": "https://stripe.com", "width": 1440, "height": 900, "script": [{"wait": 11000}, {"smooth": [1400, 400]}, {"wait": 600}, {"smooth": [2350, 700]}, {"wait": 14000}]},
+    {"id": "stripe-integrations", "url": "https://stripe.com", "width": 1440, "height": 900, "script": [{"wait": 11000}, {"scroll": 9200}, {"wait": 800}, {"smooth": [10300, 800]}, {"wait": 12000}]},
+    {"id": "linear-hero-load", "url": "https://linear.app", "width": 1440, "height": 900, "script": [{"wait": 12000}]},
+    {"id": "linear-intake-scene", "url": "https://linear.app", "width": 1440, "height": 900, "script": [{"wait": 7000}, {"scroll": 2000}, {"wait": 600}, {"smooth": [2900, 700]}, {"wait": 12000}]},
+    {"id": "linear-cycle-scene", "url": "https://linear.app", "width": 1440, "height": 900, "script": [{"wait": 7000}, {"scroll": 3800}, {"wait": 600}, {"smooth": [4700, 700]}, {"wait": 10000}]},
+    {"id": "raycast-extension-cards", "url": "https://www.raycast.com", "width": 1440, "height": 900, "script": [{"wait": 4000}, {"scroll": 1300}, {"wait": 600}, {"smooth": [2160, 700]}, {"wait": 6000}]},
+    {"id": "raycast-keyboard", "url": "https://www.raycast.com", "width": 1440, "height": 900, "script": [{"wait": 4000}, {"scroll": 12500}, {"wait": 600}, {"eval": "window.scrollTo({top: document.documentElement.scrollHeight, behavior: 'smooth'})"}, {"wait": 12000}]},
+    {"id": "apple-built-to-go", "url": "https://www.apple.com/macbook-air/", "width": 1440, "height": 900, "script": [{"wait": 7000}, {"scroll": 1500}, {"wait": 1000}, {"smooth": [3300, 5000]}, {"wait": 3000}]},
+    {"id": "sonner-toasts", "url": "https://sonner.emilkowal.ski", "width": 1440, "height": 900, "script": [{"wait": 3000}, {"eval": "[...document.querySelectorAll('button')].find(b=>/render a toast/i.test(b.textContent))?.scrollIntoView({block:'center'})"}, {"wait": 800}, {"eval": "window.__b=[...document.querySelectorAll('button')].find(b=>/render a toast/i.test(b.textContent)); const r=__b.getBoundingClientRect(); window.__xy=[r.x+r.width/2,r.y+r.height/2]"}, {"click": "button:has-text('Render a toast')"}, {"wait": 700}, {"click": "button:has-text('Render a toast')"}, {"wait": 700}, {"click": "button:has-text('Render a toast')"}, {"wait": 1500}, {"move": [1300, 820, 25]}, {"wait": 2500}, {"move": [700, 300, 25]}, {"wait": 5000}]},
+    {"id": "vaul-drawer", "url": "https://vaul.emilkowal.ski", "width": 1440, "height": 900, "script": [{"wait": 3000}, {"click": "button:has-text('Open Drawer')"}, {"wait": 2500}, {"eval": "document.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true}))"}, {"wait": 2000}]}
+  ]
+}

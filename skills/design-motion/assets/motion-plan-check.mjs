@@ -27,6 +27,12 @@
 //              inside a scene; a scene that steps, or that does not rest on its still frame (data-still, else its
 //              last state); a 1200ms+ timeline still running in a product visual; an open <details> whose summary
 //              (icon rotation, opacity, visibility) differs from its no-preference end state
+//   plan       (v0.4) a scene with no shot plan (<script type="application/json" data-shot-plan>, assets/moments.js), a
+//              beat with no shot, a shot whose owner does not match exactly one element
+//   event      a product page whose scenes never act out an event: a shot with "aim", a later "press", then a "read"
+//   read       a shot's "read" text held for less than max(1000, 300 + 330ms per visible word) after the change
+//              settles (reading aloud, Brysbaert 2019; kb/moments/STUDY.md)
+//   quiet      anything outside the owner that starts moving after the change settles, in the same beat
 // Warns: two hover speeds on one page (pick 100 or 150 and hold it).
 // Exit 1 on any fail.
 import fs from 'node:fs';
@@ -102,18 +108,87 @@ const RECORDER = () => {
   };
   requestAnimationFrame(tick);
   new MutationObserver((list) => {
-    for (const m of list) if (m.target.hasAttribute && m.target.hasAttribute('data-scene')) window.__mp.states.push({ t: Math.round(performance.now()), id: m.target.id || 'scene', state: m.target.getAttribute('data-state'), phase: window.__mp.phase });
+    for (const m of list) if (m.target.hasAttribute && m.target.hasAttribute('data-scene')) {
+      window.__mp.states.push({ t: Math.round(performance.now()), id: m.target.id || 'scene', state: m.target.getAttribute('data-state'), phase: window.__mp.phase });
+      watchBeat(m.target);
+    }
   }).observe(document, { subtree: true, attributes: true, attributeFilter: ['data-state'] });
+
+  // Shot plans (moments.js): for each beat, when the change settles, how many words of the shot's "read" text are
+  // visible, and what else in the scene moves after that while the owner should have the screen to itself.
+  window.__mp.beats = [];
+  const planOf = (scene) => { try { return JSON.parse(scene.querySelector('script[data-shot-plan]')?.textContent || 'null'); } catch { return 'invalid'; } };
+  const visibleWords = (el) => {
+    if (!el) return 0;
+    const clips = [];
+    for (let a = el; a && a !== document.body; a = a.parentElement) { const st = getComputedStyle(a); if (/hidden|clip/.test(st.overflow + st.overflowX + st.overflowY)) clips.push(a.getBoundingClientRect()); }
+    let words = 0;
+    const walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    for (let n = walk.nextNode(); n; n = walk.nextNode()) {
+      const txt = n.textContent.trim(); if (!txt) continue;
+      let op = 1; for (let a = n.parentElement; a && a !== document.body; a = a.parentElement) { const st = getComputedStyle(a); op *= parseFloat(st.opacity); if (st.visibility === 'hidden' || st.display === 'none') op = 0; }
+      if (op < 0.5) continue;
+      const r = document.createRange(); r.selectNodeContents(n); const b = r.getBoundingClientRect();
+      if (b.width < 1 || b.height < 1) continue;
+      const cx = b.left + b.width / 2, cy = b.top + b.height / 2;
+      if (clips.some((c) => cx < c.left || cx > c.right || cy < c.top || cy > c.bottom)) continue;
+      words += txt.split(/\s+/).filter(Boolean).length;
+    }
+    return words;
+  };
+  const watchBeat = (scene) => {
+    const plan = planOf(scene); if (!plan || plan === 'invalid') return;
+    const state = scene.getAttribute('data-state');
+    const shot = (plan.shots || []).find((x) => x.state === state); if (!shot) return;
+    const owner = shot.owner ? scene.querySelector(shot.owner) : null;
+    const push = (plan.shots || []).map((x) => x.push && scene.querySelector(x.push)).filter(Boolean);
+    const rec = { id: scene.id || 'scene', state, t: Math.round(performance.now()), settled: null, words: null, read: shot.read || null, quiet: [] };
+    window.__mp.beats.push(rec);
+    const counts = (a) => {
+      const e = a.effect, tm = e?.getTiming?.() || {}, el = e?.target;
+      if (!el || !scene.contains(el) || tm.iterations === Infinity) return false;
+      if (push.some((p) => p === el)) return false;                                        // the camera push runs the whole beat
+      if (/linear/.test(String(tm.easing)) && (e.getComputedTiming().duration || 0) >= 1200) return false; // fills along a time axis
+      // In its active interval: a transition still waiting out its delay is not motion yet.
+      return a.playState === 'running' && e.getComputedTiming().progress !== null && (a.currentTime ?? 0) >= (tm.delay || 0);
+    };
+    const seen = new WeakSet();
+    const poll = () => {
+      if (scene.getAttribute('data-state') !== state) return;
+      const running = document.getAnimations().filter(counts);
+      if (rec.settled == null) {
+        if (!running.length) { rec.settled = Math.round(performance.now()); rec.words = shot.read ? visibleWords(scene.querySelector(shot.read)) : null; running.forEach((a) => seen.add(a)); }
+      } else {
+        for (const a of running) {
+          if (seen.has(a)) continue; seen.add(a);
+          const el = a.effect.target;
+          const moves = (() => { try { return a.effect.getKeyframes().some((k) => k.transform || k.translate || k.scale || k.rotate || k.filter); } catch { return false; } })();
+          if (!moves) continue;
+          if (owner && (owner === el || owner.contains(el))) continue;
+          // The press and its release, and the cursor that makes it, are part of an aim or press beat's change.
+          const cursor = scene.querySelector('.shot-cursor'), pressed = shot.press ? scene.querySelector(shot.press) : null;
+          if ((shot.aim || shot.press) && ((cursor && cursor.contains(el)) || (pressed && pressed.contains(el)))) continue;
+          rec.quiet.push(el.className && typeof el.className === 'string' ? el.tagName.toLowerCase() + '.' + el.className.trim().split(/\s+/)[0] : el.tagName.toLowerCase());
+        }
+      }
+      setTimeout(poll, 50);
+    };
+    setTimeout(poll, 60);
+  };
 };
 
 const SCENES = () => [...document.querySelectorAll('[data-scene]')].map((el) => {
+  const planTag = el.querySelector('script[data-shot-plan]');
+  let plan = null; try { plan = planTag ? JSON.parse(planTag.textContent) : null; } catch { plan = 'invalid'; }
+  const shotInfo = plan && plan !== 'invalid' ? (plan.shots || []).map((x) => ({ ...x, ownerFound: x.owner ? el.querySelectorAll(x.owner).length : 0, readFound: x.read ? el.querySelectorAll(x.read).length : null })) : null;
   const toMs = (v) => (v == null || v === '' ? null : /ms$/.test(v) ? parseFloat(v) : /s$/.test(v) ? parseFloat(v) * 1000 : parseFloat(v));
   const beats = (el.dataset.beats || '').trim().split(/\s+/).filter(Boolean).map((b) => { const [s, ms] = b.split(':'); return { state: s, ms: toMs(ms) }; });
   const restCss = getComputedStyle(el).getPropertyValue('--scene-rest').trim();
   const btns = el.id ? [...document.querySelectorAll(`[data-scene-pause][aria-controls~="${el.id}"]`)] : [];
   const visible = (b) => { const r = b.getBoundingClientRect(); const s = getComputedStyle(b); return r.width >= 24 && r.height >= 24 && s.visibility !== 'hidden' && !b.hidden; };
   return { id: el.id || 'scene', hasId: !!el.id, beats, still: el.dataset.still || (beats.length ? beats[beats.length - 1].state : null), state: el.getAttribute('data-state'),
-    loop: el.dataset.loop !== 'false', rest: toMs(el.dataset.rest) ?? toMs(restCss) ?? 0, pauseButtons: btns.length, pauseVisible: btns.some(visible) };
+    loop: el.dataset.loop !== 'false', rest: toMs(el.dataset.rest) ?? toMs(restCss) ?? 0, pauseButtons: btns.length, pauseVisible: btns.some(visible),
+    plan: plan === 'invalid' ? 'invalid' : plan ? 'ok' : null, shots: shotInfo };
 });
 
 // What an open disclosure's summary shows: transform, opacity and visibility of its parts and pseudo-elements.
@@ -154,7 +229,8 @@ async function record(reduce) {
       await page.evaluate((p) => { window.__mp.phase = p; }, phase);
       const n0 = await page.evaluate(() => window.__mp.states.length);
       await page.waitForTimeout(ms);
-      return page.evaluate((n) => window.__mp.states.slice(n).length, n0);
+      // Count this scene's steps only: other scenes on screen keep playing, as they should.
+      return page.evaluate(([n, id]) => window.__mp.states.slice(n).filter((x) => x.id === id).length, [n0, s.id]);
     };
     await loc.scrollIntoViewIfNeeded().catch(() => {});
     await page.mouse.move(1, 1);
@@ -237,6 +313,50 @@ const productTimeline = finite.concat(loopsInProduct).filter((a) => a.product &&
 if (!sceneOk.length && !productTimeline.length) {
   if (needScene) add('fail', 'scene', 'no product scene: nothing acts out the product. Add a [data-scene] mock-up with 3+ states on data-beats (assets/scene.js), or a 1200ms+ keyframed timeline inside [data-visual="product"] (FOUNDATIONS v0.5 Product scenes)');
 }
+// Shot plans (v0.4, kb/moments/STUDY.md): every scene directs its beats; one owner per beat; text held long enough to
+// read aloud from the moment it is legible; nothing else moves during that hold; a product page acts out one event.
+const readMs = (words) => Math.max(1000, 300 + 330 * words);
+let eventOk = false;
+for (const s of A.scenes) {
+  if (!s.plan) { add(needScene ? 'fail' : 'warn', 'plan', `#${s.id} has no shot plan (<script type="application/json" data-shot-plan> with one shot per beat; assets/moments.js)`); continue; }
+  if (s.plan === 'invalid') { add('fail', 'plan', `#${s.id} shot plan is not valid JSON`); continue; }
+  const states = s.beats.map((b) => b.state), shotStates = s.shots.map((x) => x.state);
+  const missing = states.filter((x) => !shotStates.includes(x));
+  if (missing.length) add('fail', 'plan', `#${s.id} beats ${missing.join(', ')} have no shot; every beat names what owns the screen`);
+  for (const x of s.shots) {
+    if (!states.includes(x.state)) add('fail', 'plan', `#${s.id} shot "${x.state}" is not a beat in data-beats`);
+    if (!x.owner || x.ownerFound !== 1) add('fail', 'plan', `#${s.id} shot "${x.state}" owner "${x.owner ?? ''}" matches ${x.ownerFound} element(s); one beat, one owner`);
+    if (x.read && !x.readFound) add('fail', 'plan', `#${s.id} shot "${x.state}" read "${x.read}" matches nothing`);
+  }
+  // The event: aim, then press, then a result to read (the article's event shot; Raycast's hotkey closer).
+  const iAim = s.shots.findIndex((x) => x.aim), iPress = s.shots.findIndex((x, i) => x.press && i > iAim), iRes = s.shots.findIndex((x, i) => x.read && i > iPress);
+  if (iAim !== -1 && iPress !== -1 && iRes !== -1) eventOk = true;
+}
+if (needScene && A.scenes.length && !eventOk) add('fail', 'event', 'no scene acts out an event: a shot with "aim" (the cursor on the action), a later shot with "press", then a shot with "read" (the result)');
+const beatsRec = A.beats || [];
+const byBeat = {};
+for (let i = 0; i < beatsRec.length; i++) {
+  const b = beatsRec[i];
+  const sc = A.scenes.find((x) => x.id === b.id); if (!sc) continue;
+  const next = beatsRec.slice(i + 1).find((x) => x.id === b.id);
+  const beatMs = (sc.beats.find((x) => x.state === b.state) || {}).ms || 0;
+  const end = next ? next.t : null;
+  if (end == null || end - b.t < beatMs * 0.9) continue; // a beat cut short by the check's own hover or pause tests
+  const k = b.id + ':' + b.state;
+  const hold = b.settled == null ? 0 : end - b.settled;
+  const r = byBeat[k] || (byBeat[k] = { id: b.id, state: b.state, holds: [], words: b.words, read: b.read, quiet: new Set() });
+  r.holds.push(hold); if (b.words != null) r.words = Math.max(r.words ?? 0, b.words);
+  b.quiet.forEach((q) => r.quiet.add(q));
+}
+for (const r of Object.values(byBeat)) {
+  const hold = Math.min(...r.holds);
+  if (r.read) {
+    const need = readMs(r.words || 0);
+    if (hold < need) add('fail', 'read', `#${r.id} "${r.state}": ${r.words} word(s) of ${r.read} are held ${hold}ms after the change settles; reading aloud needs ${need}ms (max(1000, 300 + 330 per word), Brysbaert 2019)`);
+  }
+  if (r.quiet.size) add('fail', 'quiet', `#${r.id} "${r.state}": ${[...r.quiet].slice(0, 4).join(', ')} moved after the change settled, while the owner should have the screen (one owner at a time)`);
+}
+
 for (const b of A.behavior) if (b.steps) add('fail', 'behavior', `#${b.id} kept stepping ${b.test === 'off screen' ? 'while off screen' : b.test === 'hover' ? 'while hovered' : 'after its pause button was pressed'} (${b.steps} state change(s))`);
 
 // Stagger (outside scenes, not hover).
@@ -295,7 +415,7 @@ const summary = {
   productTimelines: productTimeline.map((a) => `${a.target} ${a.dur}ms`).slice(0, 8),
   reversed: A.anims.filter((a) => a.dur > 0 && a.dur < 100).map((a) => `${a.phase} ${a.target} ${a.name} ${a.dur}ms`).slice(0, 8),
   staggers, entrances: entrances.map((a) => ({ target: a.target, from: a.travelFrom, mask: a.mask, dur: a.dur })).slice(0, 20),
-  behavior: A.behavior, findings,
+  behavior: A.behavior, beats: Object.values(byBeat).map((r) => ({ ...r, quiet: [...r.quiet] })), findings,
 };
 const jsonOut = flag('--json', null);
 if (jsonOut) { fs.mkdirSync(path.dirname(path.resolve(jsonOut)), { recursive: true }); fs.writeFileSync(jsonOut, JSON.stringify(summary, null, 1)); }
@@ -306,5 +426,6 @@ console.log(`  bands ${Object.keys(bands).length}: ${bandList.join('; ') || 'non
 console.log(`  scenes ${A.scenes.length ? summary.scenes.map((s) => `#${s.id} [${s.beats.map((b) => b.state + ':' + b.ms).join(' ')}] seen ${s.statesSeen.join('>') || 'none'}`).join(', ') : 'none'}${productTimeline.length ? `; product timelines ${summary.productTimelines.join(', ')}` : ''}`);
 console.log(`  staggers ${staggers.map((s) => `${s.n}@${s.gap}ms over ${s.span}ms`).join(', ') || 'none'}; entrances ${entrances.length} (${entrances.filter((a) => a.mask).length} masked)`);
 for (const f of findings) console.log(`  ${f.level.padEnd(4)} ${f.check.padEnd(8)} ${f.msg}`);
-console.log(fails ? `FAIL: ${fails} motion plan check(s) failed` : 'PASS: ladder, scene, stagger, travel and reduced motion meet FOUNDATIONS v0.5');
+for (const r of summary.beats) console.log(`  beat #${r.id} ${r.state}: hold ${Math.min(...r.holds)}ms after settle${r.read ? `, ${r.words} word(s) to read (needs ${readMs(r.words || 0)}ms)` : ''}`);
+console.log(fails ? `FAIL: ${fails} motion plan check(s) failed` : 'PASS: ladder, scene, shot plan, stagger, travel and reduced motion meet FOUNDATIONS v0.6');
 process.exit(fails ? 1 : 0);

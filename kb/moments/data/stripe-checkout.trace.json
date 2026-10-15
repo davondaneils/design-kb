@@ -1,0 +1,752 @@
+{
+ "target": "https://stripe.com",
+ "sels": [
+  ".payments-graphic__terminal-payment-amount-values",
+  ".payments-graphic__terminal-pay-label-values",
+  ".payments-graphic__checkout-payment-table-row-label-block-contents",
+  ".payments-graphic__checkout-payment-table-row-value-block-contents",
+  ".payments-graphic__checkout-header-logos",
+  ".payments-graphic__checkout-input-values",
+  ".payments-graphic__checkout-payment-methods-item",
+  ".payments-graphic__checkout-payment-button"
+ ],
+ "frames": 1138,
+ "ms": 22000,
+ "elements": [
+  {
+   "selector": ".payments-graphic__terminal-payment-amount-values",
+   "index": 0,
+   "text": "$5.46€26.89¥5,000$5.46",
+   "segments": [
+    {
+     "start": 4021,
+     "end": 4854,
+     "ms": 833,
+     "open": false,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       179,
+       481,
+       154,
+       30
+      ]
+     },
+     "to": {
+      "transform": "matrix(1, 0, 0, 1, 0, -30)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       179,
+       451,
+       154,
+       30
+      ],
+      "text": "$5.46€26.89¥5,000$5.46"
+     }
+    },
+    {
+     "start": 12521,
+     "end": 13371,
+     "ms": 850,
+     "open": false,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, -30)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       179,
+       451,
+       154,
+       30
+      ]
+     },
+     "to": {
+      "transform": "matrix(1, 0, 0, 1, 0, -60)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       179,
+       421,
+       154,
+       30
+      ],
+      "text": "$5.46€26.89¥5,000$5.46"
+     }
+    },
+    {
+     "start": 21120,
+     "end": 21954,
+     "ms": 834,
+     "open": false,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, -60)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       179,
+       421,
+       154,
+       30
+      ]
+     },
+     "to": {
+      "transform": "matrix(1, 0, 0, 1, 0, -90)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       179,
+       391,
+       154,
+       30
+      ],
+      "text": "$5.46€26.89¥5,000$5.46"
+     }
+    }
+   ],
+   "holds": [
+    7667,
+    7749
+   ]
+  },
+  {
+   "selector": ".payments-graphic__terminal-pay-label-values",
+   "index": 0,
+   "text": "Pay RoasteryCartsy bezah",
+   "segments": [
+    {
+     "start": 3938,
+     "end": 4954,
+     "ms": 1016,
+     "open": false,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       179,
+       460,
+       154,
+       15
+      ]
+     },
+     "to": {
+      "transform": "matrix(1, 0, 0, 1, 0, -15)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       179,
+       445,
+       154,
+       15
+      ],
+      "text": "Pay RoasteryCartsy bezah"
+     }
+    },
+    {
+     "start": 12437,
+     "end": 13437,
+     "ms": 1000,
+     "open": false,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, -15)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       179,
+       445,
+       154,
+       15
+      ]
+     },
+     "to": {
+      "transform": "matrix(1, 0, 0, 1, 0, -30)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       179,
+       430,
+       154,
+       15
+      ],
+      "text": "Pay RoasteryCartsy bezah"
+     }
+    },
+    {
+     "start": 21037,
+     "end": 22020,
+     "ms": 983,
+     "open": true,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, -30)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       179,
+       430,
+       154,
+       15
+      ]
+     },
+     "to": {
+      "transform": "matrix(1, 0, 0, 1, 0, -44.9976)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       179,
+       415,
+       154,
+       15
+      ],
+      "text": "Pay RoasteryCartsy bezah"
+     }
+    }
+   ],
+   "holds": [
+    7483,
+    7600
+   ]
+  },
+  {
+   "selector": ".payments-graphic__checkout-payment-table-row-label-block-contents",
+   "index": 0,
+   "text": "SubtotalZwischensumme小計S",
+   "segments": [
+    {
+     "start": 4271,
+     "end": 5338,
+     "ms": 1067,
+     "open": false,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       746,
+       636,
+       76,
+       16
+      ]
+     },
+     "to": {
+      "transform": "matrix(1, 0, 0, 1, 0, -16)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       746,
+       620,
+       76,
+       16
+      ],
+      "text": "SubtotalZwischensumme小計S"
+     }
+    },
+    {
+     "start": 12754,
+     "end": 13804,
+     "ms": 1050,
+     "open": false,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, -16)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       746,
+       620,
+       76,
+       16
+      ]
+     },
+     "to": {
+      "transform": "matrix(1, 0, 0, 1, 0, -32)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       746,
+       604,
+       76,
+       16
+      ],
+      "text": "SubtotalZwischensumme小計S"
+     }
+    },
+    {
+     "start": 21354,
+     "end": 22020,
+     "ms": 666,
+     "open": true,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, -32)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       746,
+       604,
+       76,
+       16
+      ]
+     },
+     "to": {
+      "transform": "matrix(1, 0, 0, 1, 0, -45.4719)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       746,
+       590,
+       76,
+       16
+      ],
+      "text": "SubtotalZwischensumme小計S"
+     }
+    }
+   ],
+   "holds": [
+    7416,
+    7550
+   ]
+  },
+  {
+   "selector": ".payments-graphic__checkout-payment-table-row-value-block-contents",
+   "index": 0,
+   "text": "$150.00€41.70¥1,886$150.",
+   "segments": [
+    {
+     "start": 4171,
+     "end": 5238,
+     "ms": 1067,
+     "open": false,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       895,
+       636,
+       37,
+       16
+      ]
+     },
+     "to": {
+      "transform": "matrix(1, 0, 0, 1, 0, -16)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       895,
+       620,
+       37,
+       16
+      ],
+      "text": "$150.00€41.70¥1,886$150."
+     }
+    },
+    {
+     "start": 12704,
+     "end": 13754,
+     "ms": 1050,
+     "open": false,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, -16)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       895,
+       620,
+       37,
+       16
+      ]
+     },
+     "to": {
+      "transform": "matrix(1, 0, 0, 1, 0, -32)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       895,
+       604,
+       37,
+       16
+      ],
+      "text": "$150.00€41.70¥1,886$150."
+     }
+    },
+    {
+     "start": 21304,
+     "end": 22020,
+     "ms": 716,
+     "open": true,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, -32)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       895,
+       604,
+       37,
+       16
+      ]
+     },
+     "to": {
+      "transform": "matrix(1, 0, 0, 1, 0, -46.4993)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       895,
+       589,
+       37,
+       16
+      ],
+      "text": "$150.00€41.70¥1,886$150."
+     }
+    }
+   ],
+   "holds": [
+    7466,
+    7550
+   ]
+  },
+  {
+   "selector": ".payments-graphic__checkout-header-logos",
+   "index": 0,
+   "text": "",
+   "segments": [
+    {
+     "start": 4171,
+     "end": 5238,
+     "ms": 1067,
+     "open": false,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       438,
+       409,
+       70,
+       16
+      ]
+     },
+     "to": {
+      "transform": "matrix(1, 0, 0, 1, 0, -16)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       438,
+       393,
+       70,
+       16
+      ],
+      "text": ""
+     }
+    },
+    {
+     "start": 12704,
+     "end": 13754,
+     "ms": 1050,
+     "open": false,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, -16)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       438,
+       393,
+       70,
+       16
+      ]
+     },
+     "to": {
+      "transform": "matrix(1, 0, 0, 1, 0, -32)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       438,
+       377,
+       70,
+       16
+      ],
+      "text": ""
+     }
+    },
+    {
+     "start": 21304,
+     "end": 22020,
+     "ms": 716,
+     "open": true,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, -32)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       438,
+       377,
+       70,
+       16
+      ]
+     },
+     "to": {
+      "transform": "matrix(1, 0, 0, 1, 0, -46.4993)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       438,
+       363,
+       70,
+       16
+      ],
+      "text": ""
+     }
+    }
+   ],
+   "holds": [
+    7466,
+    7550
+   ]
+  },
+  {
+   "selector": ".payments-graphic__checkout-input-values",
+   "index": 0,
+   "text": "jane.diaz@stripe.comdami",
+   "segments": [
+    {
+     "start": 4171,
+     "end": 5238,
+     "ms": 1067,
+     "open": false,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       439,
+       492,
+       239,
+       20
+      ]
+     },
+     "to": {
+      "transform": "matrix(1, 0, 0, 1, 0, -20)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       439,
+       472,
+       239,
+       20
+      ],
+      "text": "jane.diaz@stripe.comdami"
+     }
+    },
+    {
+     "start": 12704,
+     "end": 13754,
+     "ms": 1050,
+     "open": false,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, -20)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       439,
+       472,
+       239,
+       20
+      ]
+     },
+     "to": {
+      "transform": "matrix(1, 0, 0, 1, 0, -40)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       439,
+       452,
+       239,
+       20
+      ],
+      "text": "jane.diaz@stripe.comdami"
+     }
+    },
+    {
+     "start": 21304,
+     "end": 22020,
+     "ms": 716,
+     "open": true,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, -40)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       439,
+       452,
+       239,
+       20
+      ]
+     },
+     "to": {
+      "transform": "matrix(1, 0, 0, 1, 0, -58.1241)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       439,
+       433,
+       239,
+       20
+      ],
+      "text": "jane.diaz@stripe.comdami"
+     }
+    }
+   ],
+   "holds": [
+    7466,
+    7550
+   ]
+  },
+  {
+   "selector": ".payments-graphic__checkout-payment-methods-item",
+   "index": 0,
+   "text": "CardKarteカードCardカード番号有効期",
+   "segments": [],
+   "holds": []
+  },
+  {
+   "selector": ".payments-graphic__checkout-payment-button",
+   "index": 0,
+   "text": "ContinueWeiter続行Continue",
+   "segments": [
+    {
+     "start": 4271,
+     "end": 5338,
+     "ms": 1067,
+     "open": false,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, -168)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       438,
+       820,
+       241,
+       29
+      ]
+     },
+     "to": {
+      "transform": "matrix(1, 0, 0, 1, 0, -225)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       438,
+       763,
+       241,
+       29
+      ],
+      "text": "ContinueWeiter続行Continue"
+     }
+    },
+    {
+     "start": 12754,
+     "end": 13804,
+     "ms": 1050,
+     "open": false,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, -225)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       438,
+       763,
+       241,
+       29
+      ]
+     },
+     "to": {
+      "transform": "matrix(1, 0, 0, 1, 0, -178)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       438,
+       810,
+       241,
+       29
+      ],
+      "text": "ContinueWeiter続行Continue"
+     }
+    },
+    {
+     "start": 21404,
+     "end": 22020,
+     "ms": 616,
+     "open": true,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, -178)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       438,
+       810,
+       241,
+       29
+      ]
+     },
+     "to": {
+      "transform": "matrix(1, 0, 0, 1, 0, -169.58)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       438,
+       818,
+       241,
+       29
+      ],
+      "text": "ContinueWeiter続行Continue"
+     }
+    }
+   ],
+   "holds": [
+    7416,
+    7600
+   ]
+  }
+ ]
+}
