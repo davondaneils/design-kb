@@ -1,0 +1,9 @@
+Claims inventory: kb/tests/fresh/app/plan.html?state=loading (5 strings to check against the data)
+
+  1  7.9 m sloop, plans at 5.0 kn
+  2  Free plan: 1 of 3 plans this month
+  3  Saturday 24 October 2026
+  4  Wren, 7.9 m sloop
+  5  Saturday on the water
+
+No mechanical flags. Now tick every line above against its source: chart data, price list, policy, log.

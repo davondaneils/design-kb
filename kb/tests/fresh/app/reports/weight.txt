@@ -1,0 +1,9 @@
+kb/tests/fresh/app/plan.html
+  total        155.7 KB raw     58.6 KB gzip     53.3 KB brotli
+  fonts         36.7 KB raw     27.7 KB gzip  (24% of raw)
+  dataUrls       0.0 KB raw      0.0 KB gzip  (0% of raw)
+  css           46.7 KB raw      9.8 KB gzip  (30% of raw)
+  svg           10.4 KB raw      2.3 KB gzip  (7% of raw)
+  script        46.0 KB raw     14.4 KB gzip  (30% of raw)
+  html          15.8 KB raw      3.8 KB gzip  (10% of raw)
+  before first paint (end of <head>):    39.0 KB gzip,    36.5 KB brotli

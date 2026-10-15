@@ -1,0 +1,1295 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Halyard passage planner: Solent, Poole and Chichester Harbour</title>
+<meta name="description" content="Halyard reads tide, wind and daylight for your yacht or dayboat and marks the window to sail. Free for one boat; Halyard Plus is £4.99 a month or £39 a year.">
+<meta name="robots" content="max-image-preview:large">
+<link rel="canonical" href="https://halyard.example/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Halyard">
+<meta property="og:title" content="Halyard: know when to go">
+<meta property="og:description" content="Tide, wind and daylight for your boat on one strip, with the window to sail marked. For the Solent, Poole and Chichester Harbour.">
+<meta property="og:url" content="https://halyard.example/">
+<meta property="og:image" content="https://halyard.example/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Halyard day strip for Lymington to Cowes and back, with two sailing windows marked in magenta.">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1215" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" sizes="96x96" href="{{FAVICON}}">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://halyard.example/#website",
+      "name": "Halyard",
+      "url": "https://halyard.example/",
+      "inLanguage": "en-GB",
+      "publisher": { "@id": "https://halyard.example/#org" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://halyard.example/#org",
+      "name": "Halyard",
+      "url": "https://halyard.example/",
+      "logo": "https://halyard.example/logo-512.png"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Halyard",
+      "applicationCategory": "TravelApplication",
+      "operatingSystem": "iOS, Android, Web",
+      "description": "A passage planner for 6 to 12 metre yachts and dayboats sailing from the Solent, Poole and Chichester Harbour.",
+      "offers": [
+        { "@type": "Offer", "name": "Halyard Plus", "price": "4.99", "priceCurrency": "GBP", "availability": "https://schema.org/InStock" },
+        { "@type": "Offer", "name": "Halyard Plus", "price": "39", "priceCurrency": "GBP", "availability": "https://schema.org/InStock" }
+      ],
+      "publisher": { "@id": "https://halyard.example/#org" }
+    }
+  ]
+}
+</script>
+<script>document.documentElement.classList.add('js');</script>
+<style>
+/* Halyard home page. Brief 1, kb/tests/fresh/briefs.md. Tokens follow kb/FOUNDATIONS.md v0.6.
+   Concept: Halyard draws your day the way a chart draws the sea. Tide, wind and light are lines on one strip, and the
+   window where they agree is marked in chart magenta, the one loud colour on the page.
+
+   Visual plan (design-art-direction reference 06). Treatment "echo-fill": every product fragment sits on the same
+   day fill (night, dawn at 07:33, day, dusk at 17:56, night, as fractions of 24 hours), one shell (--radius-lg inside
+   a --radius-xl stage), one elevation (--elevation-fragment), one caption style (mono FIG n, "Sample data").
+   | Screen            | Visual                                   | Kind          | Job                                   |
+   | Hero              | F1 day strip + F2 plan card, scene       | product       | show how a window is found            |
+   | Proof             | none: three sample quotes                | type beat     | quote                                 |
+   | How (3 cards)     | F3 tide and stream, F4 wind, F5 light    | product x3    | one test each                         |
+   | Route             | F6 route card with chart illustration    | product       | the plan to the minute                |
+   | Warnings          | F7 warnings panel + F8 phone alert       | product       | what happens when the window moves    |
+   | Coverage          | coast map, 14 stations, 8 stream points  | illustration  | where it works, and where it does not |
+   | Pricing           | none                                     | type beat     | pricing                               |
+   | Safety            | F9 "Before you go" checklist             | product       | the planning-aid promise in the app   |
+   | Questions         | none                                     | type beat     | faq                                   |
+   | Final CTA         | F10 mini strip                           | product       | the answer, once more                 |
+   | Footer            | full-width wordmark                      | identity      | sign-off                              |
+
+   Motion plan (design-motion v0.4: SKILL.md sections 2 to 4b, references 08 and 09). Hover is --duration-instant everywhere.
+   Shot plans live inside each scene (<script data-shot-plan>); BUILD_NOTES.md has them as tables with the reasons.
+   | Moving thing              | Job          | Band        | Duration                                | Curve              | Trigger           | Reduced motion          |
+   | Links, buttons, summary   | feedback     | press/hover | --duration-instant; press 0.97          | --ease-standard    | hover, press      | colour only, kept       |
+   | Hero product (stage)      | staging      | entrance    | the one hero reveal, 800ms after 1000ms | --ease-enter       | load, once        | in place                |
+   | Hero scene (event)        | explain      | scene       | day 2600, aim 1400, press 1200, check 2400, window 4400; rest 4000 | per part | in view, loops | still: 2 windows, plan card |
+   |   cursor                  | the hand     | entrance    | --duration-spring (about 520ms)         | --ease-spring      | aim beat          | hidden                  |
+   |   button press, label     | feedback     | press / swap| --duration-instant; --duration-swap     | standard; swap     | press beat        | label at rest           |
+   |   sweep, status progress  | scan the day | scene       | beat minus --duration-reveal            | linear (time axis) | check beat        | hidden / full           |
+   |   cuts, over-limit bars   | state change | UI change   | --duration-slow, delayed by their hour  | --ease-standard    | as the sweep passes | all shown             |
+   |   windows, labels, plan   | the answer   | reveal/swap | --duration-reveal 80ms apart; --duration-swap; plan +--duration-slow | enter; swap | window beat | shown          |
+   |   camera push 1.00 to 1.03| emphasis     | scene       | the window beat                         | --ease-standard    | window beat       | none                    |
+   | Warnings scene (swap, stack) | explain   | scene       | fri18 3000, fri21 3000, alert 4200; rest 3000 | swap; drawer  | in view, loops    | still: alert in stack   |
+   | Route scene (boat, swap)  | explain      | scene       | leave 1500, 3 marks 2300, cowes 3600; rest 2400 | standard; swap | in view, loops | still: boat at Cowes |
+   | How heading words         | attention    | UI change   | --duration-slow, --stagger (one heading only) | --ease-enter | in view, once     | in place                |
+   | Stages and cards          | orientation  | reveal      | --duration-reveal, 80ms apart, 16px     | standard + enter   | in view, once     | in place                |
+   | Card fragments            | one beat     | reveal      | --duration-reveal                       | linear (time-axis wipe); enter (bars) | in view, once | in place |
+   | Price value, FAQ icon     | state change | UI change   | --duration-slow / --duration-base       | --ease-standard    | toggle, open      | end state, no move      | */
+{{FONTS}}
+@layer tokens, base, layout, components, fragments, moments, motion;
+
+/* The moment kit (design-motion assets/moments.css), inlined at build time in its own layer so the page can tune it. */
+@layer moments {
+{{MOMENTS_CSS}}
+}
+
+@layer tokens {
+  :root {
+    color-scheme: light dark;
+    /* primitives: read only inside this token block (oklch ramps, design-color assets/oklch_scale.py) */
+    --color-slate-50: #f5f7f8; --color-slate-100: #e6eaed; --color-slate-200: #d2d8de; --color-slate-300: #b8c2cb;
+    --color-slate-400: #9aa6b1; --color-slate-500: #808c97; --color-slate-600: #626d78; --color-slate-700: #4f5963;
+    --color-slate-800: #3d464e; --color-slate-900: #2d343a; --color-slate-950: #1d2227; --color-slate-975: #161a1e; --color-slate-990: #0e1215;
+    --color-magenta-50: #fff3f7; --color-magenta-100: #ffe0eb; --color-magenta-200: #ffc4db; --color-magenta-300: #ff9fc8;
+    --color-magenta-400: #fa69b0; --color-magenta-600: #b92079; --color-magenta-700: #9c0d65; --color-magenta-800: #7d0350; --color-magenta-950: #410229;
+    --color-sea-50: #eef9ff; --color-sea-100: #d3eeff; --color-sea-200: #aedffd; --color-sea-300: #7fcbf7; --color-sea-400: #48b0e7;
+    --color-sea-600: #0275a3; --color-sea-700: #006086; --color-sea-800: #024b6a; --color-sea-900: #013850; --color-sea-950: #002537;
+    --color-buff-50: #faf6ef; --color-buff-100: #f1e9d7; --color-buff-200: #e5d6b7; --color-buff-800: #5b3f10; --color-buff-900: #442e0b;
+    --color-amber-50: #fff5e6; --color-amber-300: #efb563; --color-amber-400: #de920c; --color-amber-700: #7e4a00; --color-amber-950: #2e1d00;
+    --color-white: #ffffff;
+    --shadow-rgb: 29 34 39;
+
+    /* semantic roles, light */
+    --color-bg: var(--color-white);
+    --color-band: var(--color-buff-50);
+    --color-surface: var(--color-white);
+    --color-surface-sunken: var(--color-slate-50);
+    --color-text: var(--color-slate-950);
+    --color-text-muted: var(--color-slate-600);
+    --color-border: var(--color-slate-200);
+    --color-border-strong: var(--color-slate-500);
+    --color-primary: var(--color-magenta-600);
+    --color-primary-hover: var(--color-magenta-700);
+    --color-primary-active: var(--color-magenta-800);
+    --color-on-primary: var(--color-white);
+    --color-accent-text: var(--color-magenta-700);
+    --color-focus-ring: var(--color-magenta-600);
+    --color-warning: var(--color-amber-700);
+    --color-warning-subtle: var(--color-amber-50);
+    --color-selected: var(--color-slate-950);
+    --color-on-selected: var(--color-white);
+    --color-segment-on: var(--color-white);
+    /* illustration roles: the chart's own colours */
+    --color-tide: var(--color-sea-600);
+    --color-tide-fill: var(--color-sea-100);
+    --color-stream: var(--color-sea-50);
+    --color-stream-fair: var(--color-sea-200);
+    --color-stream-ink: var(--color-sea-800);
+    --color-wind: var(--color-slate-300);
+    --color-wind-over: var(--color-amber-400);
+    --color-limit: var(--color-amber-700);
+    --color-night: var(--color-slate-800);
+    --color-day: var(--color-buff-100);
+    --color-track: var(--color-slate-50);
+    --color-cut: var(--color-slate-300);
+    --color-window: var(--color-magenta-600);
+    --color-window-fill: var(--color-magenta-100);
+    --color-window-ink: var(--color-magenta-800);
+    --color-land: var(--color-buff-100);
+    --color-land-edge: var(--color-buff-200);
+    --color-water: var(--color-sea-50);
+    --color-water-ink: var(--color-sea-700);
+    --color-logo-field: var(--color-slate-950);
+    --color-logo-wave: var(--color-white);
+    --color-sky-night: #dde6ee;
+    --color-sky-dawn: #f8e1e8;
+    --color-sky-day: #f6efe2;
+
+    /* space, type, radius (FOUNDATIONS v0.5) */
+    --space-0: 0; --space-1: 2px; --space-2: 4px; --space-3: 8px; --space-4: 12px; --space-5: 16px; --space-6: 24px;
+    --space-7: 32px; --space-8: 48px; --space-9: 64px; --space-10: 96px; --space-11: 128px;
+    --text-xs: 0.75rem; --text-sm: 0.875rem; --text-base: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem;
+    --text-2xl: 1.9375rem; --text-3xl: 2.4375rem; --text-4xl: 3.0625rem; --text-5xl: 3.8125rem;
+    --text-display: clamp(3.8125rem, 0.25rem + 7.5vw, 6.5rem);
+    --leading-tight: 1.1; --leading-snug: 1.25; --leading-normal: 1.5; --leading-display: 1.1;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI Variable Text", "Segoe UI", Roboto, Inter, "Helvetica Neue", Arial, sans-serif;
+    --font-serif: "Literata Display", "Literata Display Fallback", Georgia, serif;
+    --font-mono: "JetBrains Mono Halyard", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    --weight-regular: 400; --weight-medium: 500; --weight-semibold: 600;
+    --radius-sm: 4px; --radius-md: 8px; --radius-lg: 12px; --radius-xl: 16px; --radius-full: 9999px;
+    --size-control-sm: 32px; --size-control-md: 40px; --size-control-lg: 48px; --size-touch: 44px;
+    --size-icon-sm: 12px; --size-icon-md: 16px; --size-icon-lg: 20px; --size-icon-xl: 24px; --icon-stroke: 1.5px;
+    --size-measure: 52ch;
+
+    /* elevation */
+    --shadow-0: 0 0 0 0 transparent;
+    --shadow-1: 0 1px 2px rgb(var(--shadow-rgb) / 0.06);
+    --ring: 0 0 0 1px rgb(var(--shadow-rgb) / 0.08);
+    --highlight: inset 0 1px 0 rgb(255 255 255 / 0.12);
+    --elevation-card: var(--ring), var(--shadow-1);
+    /* below-only stacked shadow for fragments: each layer's negative spread equals its y offset (reference 06) */
+    --elevation-fragment: var(--ring), 0 32px 48px -32px rgb(var(--shadow-rgb) / 0.25), 0 16px 32px -16px rgb(var(--shadow-rgb) / 0.10);
+
+    /* motion (design-motion assets/motion-tokens.css) */
+    --duration-instant: 100ms; --duration-fast: 150ms; --duration-base: 200ms; --duration-slow: 300ms;
+    --duration-page: 400ms; --duration-reveal: 600ms; --stagger: 40ms; --travel: 16px;
+    --ease-standard: cubic-bezier(0.2, 0, 0, 1); --ease-enter: cubic-bezier(0, 0, 0, 1); --ease-exit: cubic-bezier(0.3, 0, 1, 1);
+    --motion-hover: var(--duration-instant) var(--ease-standard);
+    --motion-enter: var(--duration-base) var(--ease-enter);
+    --motion-exit: var(--duration-fast) var(--ease-exit);
+    --state-hover: color-mix(in oklch, var(--color-text) 8%, transparent);
+    --state-pressed: color-mix(in oklch, var(--color-text) 10%, transparent);
+
+    /* the visual treatment, stated once: the day itself as the fill (dawn 07:33 = 31.5%, dusk 17:56 = 74.7% of 24 h) */
+    --visual-treatment: echo-fill;
+    --visual-fill: linear-gradient(90deg, var(--color-sky-night) 0%, var(--color-sky-night) 22%, var(--color-sky-dawn) 31.5%, var(--color-sky-day) 42%, var(--color-sky-day) 64%, var(--color-sky-dawn) 74.7%, var(--color-sky-night) 86%, var(--color-sky-night) 100%);
+    --fragment-scale: 1;
+    --lab-w: 52px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bg: var(--color-slate-990);
+      --color-band: var(--color-slate-975);
+      --color-surface: var(--color-slate-975);
+      --color-surface-sunken: var(--color-slate-950);
+      --color-text: var(--color-slate-50);
+      --color-text-muted: var(--color-slate-300);
+      --color-border: rgb(255 255 255 / 0.1);
+      --color-border-strong: var(--color-slate-500);
+      --color-primary: var(--color-magenta-600);
+      --color-primary-hover: var(--color-magenta-700);
+      --color-primary-active: var(--color-magenta-800);
+      --color-on-primary: var(--color-white);
+      --color-accent-text: var(--color-magenta-300);
+      --color-focus-ring: var(--color-magenta-300);
+      --color-warning: var(--color-amber-300);
+      --color-warning-subtle: var(--color-amber-950);
+      --color-selected: var(--color-slate-50);
+      --color-on-selected: var(--color-slate-990);
+      --color-segment-on: var(--color-slate-800);
+      --color-tide: var(--color-sea-400);
+      --color-tide-fill: var(--color-sea-950);
+      --color-stream: var(--color-sea-950);
+      --color-stream-fair: var(--color-sea-800);
+      --color-stream-ink: var(--color-sea-100);
+      --color-wind: var(--color-slate-700);
+      --color-wind-over: var(--color-amber-300);
+      --color-limit: var(--color-amber-300);
+      --color-night: var(--color-slate-990);
+      --color-day: var(--color-buff-800);
+      --color-track: var(--color-slate-950);
+      --color-cut: var(--color-slate-700);
+      --color-window: var(--color-magenta-400);
+      --color-window-fill: var(--color-magenta-950);
+      --color-window-ink: var(--color-magenta-200);
+      --color-land: var(--color-slate-900);
+      --color-land-edge: var(--color-slate-800);
+      --color-water: var(--color-slate-975);
+      --color-water-ink: var(--color-sea-300);
+      --color-logo-field: var(--color-slate-50);
+      --color-logo-wave: var(--color-slate-990);
+      --color-sky-night: #10171d;
+      --color-sky-dawn: #2a1621;
+      --color-sky-day: #1f2327;
+      --shadow-1: 0 0 0 0 transparent;
+      --ring: 0 0 0 1px rgb(255 255 255 / 0.08);
+      --highlight: inset 0 1px 0 rgb(255 255 255 / 0.06);
+      --elevation-card: var(--ring);
+      --elevation-fragment: var(--ring), var(--highlight);
+    }
+  }
+}
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html { scroll-padding-top: var(--space-6); -webkit-text-size-adjust: 100%; }
+  body { margin: 0; font: var(--weight-regular) var(--text-base)/var(--leading-normal) var(--font-sans); background: var(--color-bg); color: var(--color-text); text-rendering: optimizeLegibility; }
+  h1, h2, h3, p, figure, blockquote, ol, ul, dl, dd { margin: 0; }
+  ol, ul { padding: 0; list-style: none; }
+  a { color: var(--color-accent-text); text-decoration-thickness: 1px; text-underline-offset: 0.2em; transition: color var(--motion-hover), text-decoration-color var(--motion-hover); }
+  :focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+  .vh { position: absolute !important; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .icon { inline-size: var(--size-icon-md); block-size: var(--size-icon-md); flex: none; fill: none; stroke: currentColor; stroke-width: var(--icon-stroke); stroke-linecap: round; stroke-linejoin: round; }
+  .icon--sm { inline-size: var(--size-icon-sm); block-size: var(--size-icon-sm); }
+  .num, time { font-variant-numeric: tabular-nums; }
+  .skip { position: absolute; z-index: 10; inset-inline-start: var(--space-5); inset-block-start: var(--space-3); display: inline-flex; align-items: center; min-block-size: var(--size-touch); padding: var(--space-3) var(--space-5); border-radius: var(--radius-md); background: var(--color-surface); color: var(--color-text); box-shadow: var(--elevation-card); transform: translateY(-200%); }
+  .skip:focus { transform: none; }
+}
+
+@layer layout {
+  .wrap { inline-size: min(1280px, 100% - 2 * var(--space-5)); margin-inline: auto; }
+  @media (width >= 48rem) { .wrap { inline-size: min(1280px, 100% - 2 * var(--space-7)); } }
+  section { padding-block: var(--space-9); }
+  @media (width >= 64rem) { section { padding-block: var(--space-10); } }
+  .band { background: var(--color-band); }
+
+  /* headings */
+  h1, h2, h3 { text-wrap: balance; }
+  h1 { font: var(--weight-medium) var(--text-display)/var(--leading-display) var(--font-serif); letter-spacing: -0.02em; font-variation-settings: "opsz" 72; }
+  @media (width >= 80rem) { h1 { --leading-display: 0.95; } }
+  h2 { font: var(--weight-medium) var(--text-2xl)/var(--leading-tight) var(--font-serif); letter-spacing: -0.01em; word-spacing: 0.06em; max-inline-size: 24ch; font-variation-settings: "opsz" 72; }
+  @media (width >= 48rem) { h2 { font-size: var(--text-3xl); } }
+  @media (width >= 80rem) { h2 { font-size: var(--text-4xl); } }
+  h3 { font-size: var(--text-lg); line-height: var(--leading-snug); font-weight: var(--weight-semibold); letter-spacing: -0.005em; }
+  .w--muted > span { color: var(--color-text-muted); }
+  .w { display: inline-block; overflow: clip; vertical-align: bottom; padding-block-end: var(--space-3); margin-block-end: calc(-1 * var(--space-3)); }
+  .w > span { display: inline-block; }
+  .eyebrow { font-size: var(--text-sm); font-weight: var(--weight-medium); color: var(--color-text-muted); }
+  .lead { font-size: var(--text-lg); line-height: 1.5; color: var(--color-text-muted); max-inline-size: 38ch; }
+  .lead strong { color: var(--color-text); font-weight: var(--weight-medium); }
+  .body { color: var(--color-text-muted); max-inline-size: var(--size-measure); }
+  .body + .body { margin-block-start: var(--space-4); }
+  .sec-head { display: grid; gap: var(--space-5); margin-block-end: var(--space-8); }
+  @media (width >= 64rem) { .sec-head { grid-template-columns: 7fr 5fr; align-items: end; gap: var(--space-6); } }
+  .sec-head .body { max-inline-size: 44ch; }
+  .sec-head > .billing-wrap { justify-self: end; }
+
+  /* split: copy beside a stage */
+  .split { display: grid; gap: var(--space-8); align-items: center; }
+  @media (width >= 64rem) {
+    .split { grid-template-columns: 5fr 7fr; gap: var(--space-9); }
+    .split--flip { grid-template-columns: 7fr 5fr; }
+    .split--flip > :first-child { order: 2; }
+  }
+  .copy > * + * { margin-block-start: var(--space-5); }
+  .copy h2 + .body { margin-block-start: var(--space-6); }
+}
+
+@layer components {
+  /* buttons: one filled primary per screen; the rest are outlined or quiet */
+  .btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: var(--space-3); min-block-size: var(--size-control-md); padding: 0 var(--space-5); border: 1px solid transparent; border-radius: var(--radius-md); font: var(--weight-semibold) var(--text-sm)/1.2 var(--font-sans); text-decoration: none; white-space: nowrap; cursor: pointer; background: transparent; color: var(--color-text); transition: background-color var(--motion-hover), border-color var(--motion-hover), color var(--motion-hover), transform var(--motion-hover); }
+  .btn--lg { min-block-size: var(--size-control-lg); padding: 0 var(--space-6); font-size: var(--text-base); }
+  .btn--primary { background: var(--color-primary); color: var(--color-on-primary); box-shadow: var(--highlight); }
+  .btn--secondary { border-color: var(--color-border-strong); color: var(--color-text); }
+  .btn--quiet { color: var(--color-text); }
+  .btn--block { inline-size: 100%; }
+  @media (prefers-reduced-motion: no-preference) { .btn:active { transform: scale(0.97); } }
+  .btn--primary:active { background: var(--color-primary-active); }
+  .btn--secondary:active, .btn--quiet:active { background: var(--state-pressed); }
+  @media (hover: hover) {
+    .btn--primary:hover { background: var(--color-primary-hover); }
+    .btn--secondary:hover, .btn--quiet:hover { background: var(--state-hover); }
+    a:hover { text-decoration-color: currentColor; }
+  }
+  .btn[aria-disabled="true"], .btn:disabled { background: var(--color-surface-sunken); color: var(--color-text-muted); border-color: var(--color-border); box-shadow: var(--shadow-0); cursor: not-allowed; transform: none; }
+  @media (prefers-reduced-motion: no-preference) { .btn[aria-busy="true"] .spin { animation: spin var(--duration-reveal) linear infinite; } }
+  .actions { display: flex; flex-wrap: wrap; gap: var(--space-4); }
+
+  /* header */
+  .site-head { position: relative; z-index: 5; border-block-end: 1px solid var(--color-border); background: var(--color-bg); }
+  .head__in { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); min-block-size: 72px; }
+  .logo { display: inline-flex; align-items: center; gap: var(--space-3); min-block-size: var(--size-touch); color: var(--color-text); text-decoration: none; border-radius: var(--radius-sm); }
+  .logo__symbol { inline-size: 28px; block-size: 28px; }
+  .logo__word { block-size: 24px; inline-size: auto; aspect-ratio: 522.5 / 136; margin-block-start: var(--space-2); }
+  .logo__field { fill: var(--color-logo-field); }
+  .logo__wave { stroke: var(--color-logo-wave); }
+  .logo__win { fill: var(--color-primary); }
+  .nav { display: flex; align-items: center; gap: var(--space-6); flex: 1; justify-content: space-between; }
+  .nav ul { display: flex; gap: var(--space-1); margin-inline-start: var(--space-6); }
+  .nav ul a, .nav__link { display: inline-flex; align-items: center; min-block-size: var(--size-touch); padding: 0 var(--space-4); border-radius: var(--radius-md); color: var(--color-text); text-decoration: none; font-size: var(--text-sm); font-weight: var(--weight-medium); transition: background-color var(--motion-hover); }
+  @media (hover: hover) { .nav ul a:hover, .nav__link:hover { background: var(--state-hover); } }
+  .nav__end { display: flex; align-items: center; gap: var(--space-3); }
+  .menu-btn { display: none; }
+  @media (width < 48rem) {
+    .menu-btn { display: inline-flex; min-block-size: var(--size-touch); }
+    .nav { display: none; }
+    .head__in { flex-wrap: wrap; column-gap: var(--space-4); row-gap: 0; }
+    .site-head[data-open] .nav { display: grid; flex: 1 0 100%; order: 3; gap: var(--space-5); padding: var(--space-3) 0 var(--space-6); border-block-start: 1px solid var(--color-border); }
+    .site-head[data-open] .nav ul { display: grid; margin: 0; }
+    .site-head[data-open] .nav ul a { inline-size: 100%; min-block-size: var(--size-control-lg); font-size: var(--text-base); padding: 0 var(--space-3); }
+    .site-head[data-open] .nav__end { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+    .site-head[data-open] .nav__end > * { justify-content: center; min-block-size: var(--size-control-lg); }
+    .menu-btn[aria-expanded="true"] .i-menu, .menu-btn[aria-expanded="false"] .i-close { display: none; }
+    .menu-btn[aria-expanded="true"] .m-open, .menu-btn[aria-expanded="false"] .m-close { display: none; }
+  }
+  @media (width >= 48rem) and (width < 64rem) { .nav ul { margin-inline-start: 0; } .nav ul a { padding: 0 var(--space-3); } }
+
+  /* hero */
+  .hero { padding-block: var(--space-8) var(--space-9); }
+  .hero__grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-8); }
+  @media (width >= 80rem) { .hero { padding-block: var(--space-8) var(--space-10); } .hero__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-6); align-items: center; } }
+  .hero__copy > * + * { margin-block-start: var(--space-6); }
+  .hero__copy .eyebrow + h1 { margin-block-start: var(--space-5); }
+  .hero__copy .actions { margin-block-start: var(--space-7); }
+  .reassure { font-size: var(--text-sm); color: var(--color-text-muted); max-inline-size: 48ch; }
+  @media (width >= 64rem) and (width < 80rem) { .hero__copy { display: grid; grid-template-columns: 7fr 5fr; column-gap: var(--space-8); align-items: end; } .hero__copy > * { grid-column: 1; } .hero__copy > .lead, .hero__copy > .actions, .hero__copy > .reassure { grid-column: 2; } .hero__copy > .lead { grid-row: 2; align-self: end; margin: 0; } .hero__copy > .actions { grid-row: 3; } .hero__copy > .reassure { grid-row: 4; } .hero__copy h1 { grid-row: 2 / 5; align-self: start; } }
+
+  /* figure system: one caption style for every visual */
+  .fig { display: flex; gap: var(--space-3); font: var(--text-xs)/var(--leading-normal) var(--font-mono); color: var(--color-text-muted); }
+  .fig__n { color: var(--color-text); flex: none; }
+  .fig-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3) var(--space-5); margin-block-start: var(--space-4); }
+  .fig-foot .fig { flex: 1 1 20rem; }
+  figure > .fig { margin-block-start: var(--space-4); }
+  .pause { flex: none; min-block-size: var(--size-touch); font-weight: var(--weight-medium); }
+  .btn.pause[aria-pressed="true"] { background: var(--color-selected); color: var(--color-on-selected); }
+  .pause[aria-pressed="true"] .i-pause, .pause[aria-pressed="false"] .i-play { display: none; }
+
+  /* proof */
+  .quotes, .quotes__side { display: grid; gap: var(--space-7); }
+  @media (width >= 48rem) { .quotes__side { grid-template-columns: 1fr 1fr; gap: var(--space-6); } }
+  @media (width >= 64rem) { .quotes { grid-template-columns: 8fr 4fr; column-gap: var(--space-9); row-gap: var(--space-6); } .quotes__side { grid-template-columns: 1fr; gap: var(--space-7); grid-column: 2; grid-row: 1 / span 2; } .quotes .note { grid-column: 1; align-self: end; } }
+  @media (width < 64rem) { .quotes .note { order: 3; } }
+  .quote.quote--lead blockquote { font-size: var(--text-xl); line-height: 1.3; letter-spacing: -0.01em; }
+  @media (width >= 64rem) { .quote.quote--lead blockquote { font-size: var(--text-2xl); line-height: 1.25; } .quote--lead { border-block-start-color: var(--color-text); } }
+  .quotes__side .quote blockquote { font-size: var(--text-base); line-height: 1.5; }
+  .quote { display: grid; gap: var(--space-4); align-content: start; padding-block-start: var(--space-5); border-block-start: 1px solid var(--color-border-strong); }
+  .quote blockquote { font: var(--weight-regular) var(--text-lg)/1.4 var(--font-serif); letter-spacing: -0.005em; }
+  @media (width >= 48rem) { .quote blockquote p { text-indent: -0.42em; } }
+  .quote figcaption { font-size: var(--text-sm); color: var(--color-text-muted); }
+  .quote figcaption b { color: var(--color-text); font-weight: var(--weight-semibold); }
+  .note { margin: 0; font: var(--text-xs)/var(--leading-normal) var(--font-mono); color: var(--color-text-muted); }
+
+  /* how: three cards */
+  .cards { display: grid; gap: var(--space-6); }
+  @media (width >= 64rem) { .cards { grid-template-columns: repeat(3, 1fr); } }
+  @media (width >= 48rem) and (width < 64rem) { .cards { grid-template-columns: 1fr 1fr; } .cards > :last-child { grid-column: 1 / -1; } }
+  .card { display: grid; grid-template-rows: auto 1fr; gap: var(--space-6); align-content: start; }
+  .card__body > * + * { margin-block-start: var(--space-3); }
+  .card__body p { color: var(--color-text-muted); max-inline-size: var(--size-measure); }
+
+  /* route table */
+  .legs { inline-size: 100%; border-collapse: collapse; font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
+  .legs caption { text-align: start; font-weight: var(--weight-semibold); font-size: var(--text-sm); padding-block-end: var(--space-3); }
+  .legs th, .legs td { padding: var(--space-3) 0; border-block-end: 1px solid var(--color-border); text-align: start; vertical-align: baseline; }
+  .legs thead th { font-size: var(--text-xs); font-weight: var(--weight-medium); color: var(--color-text-muted); }
+  .legs td:first-child, .legs th:first-child { inline-size: 5.5ch; padding-inline-end: var(--space-4); }
+  .legs .r { text-align: end; }
+  .legs tfoot td, .legs tfoot th { border-block-end: 0; font-weight: var(--weight-semibold); }
+  .legs tbody th { font-weight: var(--weight-regular); }
+
+  /* warnings list */
+  .alerts { display: grid; gap: var(--space-4); }
+  .alerts li { display: grid; grid-template-columns: auto 1fr; gap: var(--space-4); align-items: start; padding: var(--space-4) var(--space-5); border-radius: var(--radius-lg); background: var(--color-warning-subtle); color: var(--color-text); }
+  .alerts .icon { color: var(--color-warning); margin-block-start: var(--space-1); }
+  .alerts b { font-weight: var(--weight-semibold); }
+
+  /* coverage */
+  .cover { display: grid; gap: var(--space-8); }
+  @media (width >= 64rem) { .cover { grid-template-columns: 4fr 8fr; gap: var(--space-9); align-items: start; } }
+  .lists { display: grid; gap: var(--space-7); margin-block-start: var(--space-8); }
+  @media (width >= 48rem) { .lists { grid-template-columns: 2fr 1fr; gap: var(--space-8); } }
+  .lists h3 { font-size: var(--text-base); margin-block-end: var(--space-4); }
+  .stations { columns: 2; column-gap: var(--space-6); font-size: var(--text-sm); }
+  @media (width >= 64rem) { .stations { columns: 3; } }
+  .stations li { padding-block: var(--space-1); break-inside: avoid; }
+  .marks { display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-6); margin-block-end: var(--space-5); font-size: var(--text-sm); color: var(--color-text-muted); }
+  .marks span { display: inline-flex; align-items: center; gap: var(--space-3); }
+  .marks i { display: inline-block; inline-size: 10px; block-size: 10px; border-radius: var(--radius-full); background: var(--color-tide); }
+  .marks i.d { border-radius: 0; transform: rotate(45deg); background: var(--color-text); inline-size: 9px; block-size: 9px; }
+  .notlist { display: grid; gap: var(--space-3); font-size: var(--text-sm); }
+  .notlist li { display: grid; grid-template-columns: auto 1fr; gap: var(--space-3); align-items: start; }
+  .notlist .icon { color: var(--color-text-muted); margin-block-start: var(--space-1); }
+
+  /* pricing */
+  .billing { display: inline-flex; gap: var(--space-1); padding: var(--space-1); border-radius: var(--radius-lg); background: var(--color-surface-sunken); box-shadow: inset 0 0 0 1px var(--color-border); }
+  .billing button { display: inline-flex; align-items: center; gap: var(--space-3); min-block-size: var(--size-touch); padding: 0 var(--space-5); border: 0; border-radius: var(--radius-md); background: transparent; color: var(--color-text); font: var(--weight-medium) var(--text-sm)/1 var(--font-sans); cursor: pointer; transition: background-color var(--motion-hover), color var(--motion-hover); }
+  .billing button small { font-size: var(--text-xs); color: var(--color-accent-text); font-weight: var(--weight-semibold); }
+  .billing button { font-weight: var(--weight-regular); }
+  .billing button[aria-pressed="true"] { background: var(--color-segment-on); font-weight: var(--weight-semibold); box-shadow: var(--elevation-card); }
+  @media (hover: hover) { .billing button[aria-pressed="false"]:hover { background: var(--state-hover); } }
+  .plans { display: grid; gap: var(--space-6); margin-block-start: var(--space-7); }
+  @media (width >= 48rem) { .plans { grid-template-columns: 1fr 1fr; } }
+  @media (width >= 64rem) { .plans { grid-template-columns: 5fr 7fr; } }
+  .plan-card { display: flex; flex-direction: column; gap: var(--space-5); padding: var(--space-7); border-radius: var(--radius-xl); background: var(--color-surface); box-shadow: var(--elevation-card); }
+  .plan-card .btn { margin-block-start: auto; }
+  .plan-card--plus { box-shadow: var(--ring), inset 0 0 0 2px var(--color-primary); }
+  .plan-card h3 { display: flex; align-items: center; gap: var(--space-3); }
+  .price { font: var(--weight-medium) var(--text-5xl)/1 var(--font-serif); letter-spacing: -0.02em; font-variant-numeric: tabular-nums lining-nums; font-variation-settings: "opsz" 72; }
+  .price small { font: var(--weight-regular) var(--text-base)/1 var(--font-sans); letter-spacing: 0; color: var(--color-text-muted); }
+  .price-sub { font-size: var(--text-sm); color: var(--color-text-muted); }
+  .slot { display: inline-grid; overflow: clip; }
+  .slot > * { grid-area: 1 / 1; }
+  .feat { display: grid; gap: var(--space-3); padding-block: var(--space-5); border-block: 1px solid var(--color-border); }
+  .feat li { display: grid; grid-template-columns: auto 1fr; gap: var(--space-3); align-items: start; }
+  .feat .icon { color: var(--color-primary); margin-block-start: var(--space-1); }
+  .terms { font-size: var(--text-sm); color: var(--color-text-muted); max-inline-size: var(--size-measure); }
+  [data-billing="month"] .v-year, [data-billing="year"] .v-month { visibility: hidden; transform: translateY(100%); }
+  [data-billing="year"] .v-month { transform: translateY(-100%); }
+
+  /* safety */
+  .sources { display: grid; gap: var(--space-4); margin-block-start: var(--space-6); font-size: var(--text-sm); }
+  .sources div { display: grid; gap: var(--space-1); padding-block-start: var(--space-4); border-block-start: 1px solid var(--color-border); }
+  @media (width >= 48rem) { .sources div { grid-template-columns: 12rem 1fr; gap: var(--space-5); } }
+  .sources dt { font-weight: var(--weight-semibold); }
+  .sources dd { color: var(--color-text-muted); }
+  .aid { padding: var(--space-5) var(--space-6); border-radius: var(--radius-lg); background: var(--color-band); border-inline-start: 4px solid var(--color-primary); font-weight: var(--weight-medium); max-inline-size: var(--size-measure); }
+
+  /* questions */
+  .faq-grid { display: grid; gap: var(--space-7); }
+  @media (width >= 64rem) { .faq-grid { grid-template-columns: 4fr 8fr; gap: var(--space-9); } }
+  .faq details { border-block-end: 1px solid var(--color-border); }
+  .faq details:first-child { border-block-start: 1px solid var(--color-border); }
+  .faq summary { display: flex; justify-content: space-between; align-items: center; gap: var(--space-5); min-block-size: var(--size-control-lg); padding: var(--space-4) var(--space-3); margin-inline: calc(-1 * var(--space-3)); border-radius: var(--radius-md); cursor: pointer; list-style: none; font-weight: var(--weight-medium); transition: background-color var(--motion-hover); }
+  .faq summary::-webkit-details-marker { display: none; }
+  @media (hover: hover) { .faq summary:hover { background: var(--state-hover); } }
+  .faq details[open] summary .icon { transform: rotate(45deg); }
+  .faq details p { padding-block-end: var(--space-5); color: var(--color-text-muted); max-inline-size: var(--size-measure); }
+
+  /* final */
+  .final { display: grid; gap: var(--space-8); align-items: center; }
+  @media (width >= 64rem) { .final { grid-template-columns: 5fr 7fr; gap: var(--space-9); } }
+
+  /* footer */
+  .site-foot { padding-block: var(--space-9) var(--space-7); border-block-start: 1px solid var(--color-border); font-size: var(--text-sm); }
+  .foot__grid { display: grid; gap: var(--space-8); }
+  @media (width >= 64rem) { .foot__grid { grid-template-columns: 5fr 7fr; } }
+  .foot__aid { display: grid; gap: var(--space-4); align-content: start; max-inline-size: 44ch; }
+  .foot__aid p:first-child { font-weight: var(--weight-medium); }
+  .foot__aid p + p { color: var(--color-text-muted); }
+  .foot__nav { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }
+  @media (width >= 48rem) { .foot__nav { grid-template-columns: repeat(3, 1fr); } }
+  .foot__nav h2 { font: var(--weight-semibold) var(--text-sm)/var(--leading-normal) var(--font-sans); letter-spacing: 0; margin-block-end: var(--space-3); }
+  .foot__nav a { display: inline-flex; align-items: center; min-block-size: var(--size-touch); color: var(--color-text-muted); text-decoration: none; }
+  @media (hover: hover) { .foot__nav a:hover { color: var(--color-text); text-decoration: underline; } }
+  .signoff { margin-block: var(--space-9) var(--space-6); color: var(--color-text); }
+  .signoff__word { display: block; inline-size: 100%; block-size: auto; aspect-ratio: 522.5 / 136; }
+  .foot__legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-3) var(--space-6); color: var(--color-text-muted); }
+}
+
+@layer fragments {
+  /* stage: the window that crops fragments; carries the day fill */
+  .stage { position: relative; overflow: clip; border-radius: var(--radius-xl); background: var(--visual-fill); }
+  .stage::after { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 0 0 0 1px var(--color-border); pointer-events: none; }
+  .stage--hero { padding: var(--space-7) var(--space-5) var(--space-8); background: var(--color-surface-sunken); }   /* one quiet tint: nothing behind the card competes with the chart */
+  @media (width >= 48rem) { .stage--hero { padding: var(--space-8); } }
+  @media (width >= 80rem) { .stage--hero { padding: var(--space-8) var(--space-7); } }
+  .stage--card { padding: var(--space-7) var(--space-5); display: grid; align-content: start; }
+  @media (width >= 64rem) { .stage--card { min-block-size: 320px; } }
+  .stage--side { padding: var(--space-7) var(--space-5); }
+  @media (width >= 48rem) { .stage--side { padding: var(--space-9) var(--space-8); } }
+
+  /* fragment shell: one chrome for every fragment */
+  .frag { position: relative; background: var(--color-surface); color: var(--color-text); border-radius: var(--radius-lg); box-shadow: var(--elevation-fragment); font-size: var(--text-xs); line-height: var(--leading-normal); font-variant-numeric: tabular-nums; }
+  .frag b { font-weight: var(--weight-semibold); }
+  .frag .muted { color: var(--color-text-muted); }
+  .chip { display: inline-flex; align-items: center; gap: var(--space-2); padding: 0 var(--space-3); border-radius: var(--radius-sm); background: var(--color-surface-sunken); color: var(--color-text); white-space: nowrap; font-weight: var(--weight-medium); }
+  .chip--win { background: var(--color-window-fill); color: var(--color-window-ink); }
+  .chip--fair { background: var(--color-stream-fair); color: var(--color-text); }
+  .chip--warn { background: var(--color-warning-subtle); color: var(--color-warning); }
+  .frag__head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding: var(--space-4) var(--space-5); border-block-end: 1px solid var(--color-border); }
+  .frag__body { padding: var(--space-4) var(--space-5) var(--space-5); }
+
+  /* the plot: lanes on one time axis */
+  .plot { position: relative; display: grid; grid-template-columns: var(--lab-w) minmax(0, 1fr); column-gap: var(--space-4); row-gap: var(--space-3); align-items: center; }
+  .lab { color: var(--color-text-muted); }
+  .axis { position: relative; block-size: 18px; border-block-end: 1px solid var(--color-border); font: var(--text-xs)/1 var(--font-mono); color: var(--color-text-muted); }
+  .axis span { position: absolute; inset-inline-start: var(--x); inset-block-start: 0; transform: translateX(-50%); }
+  .track { position: relative; }
+  .tag { position: absolute; inset-inline-start: var(--x); display: inline-flex; align-items: center; gap: var(--space-2); white-space: nowrap; color: var(--color-text-muted); transform: translateX(-50%); line-height: 16px; }
+  .tag--top { inset-block-start: 0; }
+  .tag--bot, .tag--low { inset-block-end: 0; }
+  .tag--end { transform: translateX(-100%); }
+  .tag--start { transform: none; }
+  .track--tide { block-size: 76px; }
+  .track--tide .tide { position: absolute; inset: calc(var(--space-5) + var(--space-1)) 0; inline-size: 100%; block-size: calc(100% - 2 * (var(--space-5) + var(--space-1))); overflow: visible; }
+  .tide__area { fill: var(--color-tide-fill); }
+  .tide__line { fill: none; stroke: var(--color-tide); stroke-width: 2px; vector-effect: non-scaling-stroke; }
+  .track--stream { block-size: 22px; }
+  .seg { position: absolute; inset-block: 0; inset-inline-start: var(--x0); inline-size: calc(var(--x1) - var(--x0)); display: flex; align-items: center; justify-content: center; background: var(--color-stream); box-shadow: inset 1px 0 0 var(--color-surface); color: var(--color-stream-ink); overflow: hidden; }
+  .seg:first-child { border-start-start-radius: var(--radius-sm); border-end-start-radius: var(--radius-sm); }
+  .seg:last-child { border-start-end-radius: var(--radius-sm); border-end-end-radius: var(--radius-sm); }
+  .seg b { font-weight: var(--weight-semibold); white-space: nowrap; }
+  .seg--fair { background: var(--color-stream-fair); color: var(--color-text); }
+  .track--wind { block-size: 64px; border-block-end: 1px solid var(--color-border); }
+  .bar { position: absolute; inset-block-end: 0; inset-inline-start: var(--x); inline-size: calc(var(--w) - 3px); block-size: calc(var(--v) * 100%); border-radius: var(--radius-sm) var(--radius-sm) 0 0; background: var(--color-wind); transform-origin: bottom; }
+  .bar::after { content: ""; position: absolute; inset-inline: 0; inset-block-end: calc((var(--g) / var(--v)) * 100% - 2px); block-size: 2px; background: currentColor; color: var(--color-text-muted); }
+  .bar--over { background: var(--color-wind-over); }
+  .bar--over::after { color: var(--color-limit); }
+  .limit { position: absolute; inset-inline: 0; inset-block-end: var(--y); border-block-start: 1px dashed var(--color-limit); }
+  .track--light { block-size: 32px; }
+  .track--light::before { content: ""; position: absolute; inset-inline: 0; inset-block-start: 0; block-size: 12px; border-radius: var(--radius-sm); background: var(--color-day); }
+  .night { position: absolute; inset-block-start: 0; block-size: 12px; inset-inline-start: var(--x0); inline-size: calc(var(--x1) - var(--x0)); background: var(--color-night); }
+  .night:first-child { border-radius: var(--radius-sm) 0 0 var(--radius-sm); }
+  .night:nth-child(2) { border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+  .mark { position: absolute; inset-inline-start: var(--x); inset-block: calc(-1 * var(--space-2)) calc(var(--space-4) + var(--space-1)); border-inline-start: 2px solid var(--color-text); }
+  .track--row { block-size: 20px; border-radius: var(--radius-sm); background: var(--color-track); }
+  .cut { position: absolute; inset-block: 0; inset-inline-start: var(--x0); inline-size: calc(var(--x1) - var(--x0)); background: repeating-linear-gradient(-45deg, var(--color-cut) 0 1.5px, transparent 1.5px 6px); }
+  .cut:first-child { border-radius: var(--radius-sm) 0 0 var(--radius-sm); }
+  .win { position: absolute; inset-block: calc(-1 * var(--space-2)); inset-inline-start: var(--x0); inline-size: calc(var(--x1) - var(--x0)); border-radius: var(--radius-sm); background: var(--color-window-fill); box-shadow: inset 0 0 0 2px var(--color-window); transform-origin: left center; }
+  .plot__rule { grid-column: 1 / -1; block-size: 1px; background: var(--color-border); margin-block: var(--space-2); }
+  .row-head { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-4); margin-block-start: var(--space-2); position: relative; z-index: 1; background: var(--color-surface); }
+  .row-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--color-text-muted); }
+  .row-name b { color: var(--color-text); margin-inline-end: var(--space-2); }
+  .row-slot { font-weight: var(--weight-semibold); white-space: nowrap; justify-items: end; }
+  .s-check, .s-none { color: var(--color-text-muted); }
+  .status__slot { justify-items: end; text-align: end; font-weight: var(--weight-semibold); }
+  .row-slot .swap-track { justify-items: end; }
+  .find { margin-inline-start: auto; display: inline-grid; justify-items: center; min-inline-size: 112px; padding: var(--space-1) var(--space-4); border-radius: var(--radius-sm); background: var(--color-primary); color: var(--color-on-primary); font-weight: var(--weight-semibold); white-space: nowrap; }
+  .s-win { color: var(--color-window-ink); }
+  .sweep-lane { position: absolute; inset-block: calc(18px + var(--space-3)) 0; inset-inline-start: calc(var(--lab-w) + var(--space-4)); inset-inline-end: 0; overflow: clip; pointer-events: none; }
+  .sweep { position: absolute; inset: 0; opacity: 0; transform: translateX(-100%); background: linear-gradient(90deg, transparent 70%, color-mix(in oklch, var(--color-window) 10%, transparent)); }
+  .sweep::after { content: ""; position: absolute; inset-block: 0; inset-inline-end: 0; inline-size: 2px; background: var(--color-window); }
+
+  /* hero composition: app window, plan card in front */
+  .scene { position: relative; display: grid; inline-size: min(100%, 720px); margin-inline: auto; }
+  .app { inline-size: min(100%, 680px); }
+  .app__bar { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-4); padding: var(--space-4) var(--space-5); border-block-end: 1px solid var(--color-border); }
+  .app__title { display: grid; }
+  .app__title b { font-size: var(--text-sm); }
+  .status { display: grid; justify-items: end; gap: var(--space-2); text-align: end; }
+  .status__slot { justify-items: end; font-weight: var(--weight-semibold); color: var(--color-text); }
+  .status__prog { inline-size: 100%; block-size: 2px; border-radius: var(--radius-full); background: var(--color-window); transform-origin: left; }
+  .app__limits { display: flex; flex-wrap: wrap; gap: var(--space-2); padding: var(--space-3) var(--space-5); border-block-end: 1px solid var(--color-border); }
+  .app__plot { padding: var(--space-4) var(--space-5) var(--space-5); }
+  .app__foot { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); padding: var(--space-3) var(--space-5); border-block-start: 1px solid var(--color-border); color: var(--color-text-muted); }
+  .key { display: inline-flex; align-items: center; gap: var(--space-3); }
+  .key::before { content: ""; inline-size: 20px; block-size: 10px; border-radius: var(--radius-sm); }
+  .key--cut::before { background: repeating-linear-gradient(-45deg, var(--color-cut) 0 1.5px, var(--color-track) 1.5px 6px); }
+  .key--win::before { background: var(--color-window-fill); box-shadow: inset 0 0 0 2px var(--color-window); }
+  .key--over::before { background: var(--color-wind-over); }
+  /* The plan sits inside the card under the Back row, on the card's own edges (no overhang). */
+  .plan { border-block-start: 1px solid var(--color-border); }
+  .plan__head { display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); padding: var(--space-3) var(--space-5); border-block-end: 1px solid var(--color-border); }
+  .plan__head > span { display: inline-flex; gap: var(--space-3); align-items: center; }
+  .plan__legs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .plan__legs li { display: grid; gap: var(--space-1); padding: var(--space-3) var(--space-5) var(--space-4); }
+  .plan__legs li + li { box-shadow: inset 1px 0 0 var(--color-border); }
+  .plan__legs li:nth-child(3) { box-shadow: inset 2px 0 0 var(--color-window); }
+  .plan__legs span { color: var(--color-text-muted); white-space: nowrap; }
+  .plan__legs b { font-size: var(--text-lg); line-height: var(--leading-snug); font-weight: var(--weight-semibold); }
+  .plan__head b.spare { color: var(--color-window-ink); }
+
+  /* card fragments */
+  .lane-card .frag__body { padding-block-start: var(--space-4); }
+  .lane-card .plot { --lab-w: 44px; }
+  .lane-card .track--wind { block-size: 96px; }
+  .lane-card__note { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); margin-block-start: var(--space-4); color: var(--color-text-muted); }
+  .mark-tag { color: var(--color-text); font-weight: var(--weight-semibold); }
+
+  /* route */
+  .route-card { overflow: clip; }
+  .map { position: relative; aspect-ratio: var(--ar); }
+  .map svg { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; }
+  .map--route { background: var(--color-water); border-block-end: 1px solid var(--color-border); }
+  .land { fill: var(--color-land); stroke: var(--color-land-edge); stroke-width: 1px; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+  .route { fill: none; stroke: var(--color-window); stroke-width: 2.5px; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+  .wp { fill: var(--color-surface); stroke: var(--color-window); stroke-width: 2px; vector-effect: non-scaling-stroke; }
+  .route--plan { stroke: var(--color-border-strong); stroke-width: 1.5px; stroke-dasharray: 4 4; }
+  .boat { fill: var(--color-window); stroke: var(--color-surface); stroke-width: 2.5px; vector-effect: non-scaling-stroke; }
+  .route-strip .swap-track > * { text-align: start; }
+  .maplab { position: absolute; inset-inline-start: var(--x); inset-block-start: var(--y); transform: translate(-50%, -50%); font-size: var(--text-xs); font-weight: var(--weight-semibold); color: var(--color-text); white-space: nowrap; line-height: 16px; }
+  .maplab--minor { font-weight: var(--weight-regular); color: var(--color-text-muted); }
+  /* The route card is small on the state sheet: its place names take the full ink so they hold 4.5:1 on land and water. */
+  .map--route .maplab--minor { color: var(--color-text); }
+  @media (width < 48rem) { .maplab--wide { display: none; } }   /* a place off the route; at 390 it would sit on Hamstead Ledge */
+  .maplab--water { font: italic var(--weight-regular) var(--text-sm)/1 var(--font-serif); color: var(--color-water-ink); }
+  .maplab--end { transform: translate(-100%, -50%) translateX(-6px); }
+  .maplab--start { transform: translate(6px, -50%); }
+  .maplab--below { transform: translate(-50%, 6px); }
+  .maplab--above { transform: translate(-50%, calc(-100% - 6px)); }
+  .maplab--off-west { transform: translate(0, -50%); }
+  .maplab--off-east { transform: translate(-100%, -50%); }
+  .route-strip { display: grid; grid-template-columns: repeat(3, auto); justify-content: space-between; gap: var(--space-4); padding: var(--space-4) var(--space-5); }
+  .route-strip span { display: grid; }
+  .route-strip b { font-size: var(--text-sm); }
+
+  /* coverage map (illustration) */
+  .stage--map { padding: var(--space-5); background: var(--color-water); border-radius: var(--radius-xl); }
+  .stage--map .map svg .off { opacity: 0.9; }
+  .hatch-line { stroke: var(--color-cut); stroke-width: 2px; }
+  .edge { stroke: var(--color-border-strong); stroke-width: 1px; stroke-dasharray: 4 4; vector-effect: non-scaling-stroke; fill: none; }
+  .stn { fill: var(--color-tide); stroke: var(--color-surface); stroke-width: 2px; vector-effect: non-scaling-stroke; }
+  .dia { fill: var(--color-text); stroke: var(--color-surface); stroke-width: 1.5px; vector-effect: non-scaling-stroke; }
+  @media (width < 48rem) { .stage--map :is(.maplab--minor, .maplab--water) { display: none; } .stage--map .maplab--off-east { display: block; } .stage--map { padding: var(--space-3); } .stn { r: 10px; } }
+
+  /* warnings: panel and phone alert */
+  .warn-stage { display: grid; }
+  .warn-panel { inline-size: min(100%, 440px); }
+  .warn-row { display: grid; grid-template-columns: 56px 1fr; gap: var(--space-4); padding-block: var(--space-3); border-block-end: 1px solid var(--color-border); }
+  .warn-row:last-child { border-block-end: 0; }
+  .warn-row time { font-variant-numeric: tabular-nums; }
+  .warn-panel .frag__body { padding-block-end: var(--space-8); }
+  .notes { inline-size: min(100%, 392px); justify-self: end; margin-block-start: calc(-1 * var(--space-7)); margin-inline-end: calc(-1 * var(--space-3)); padding: 0; list-style: none; }
+  @media (width >= 48rem) { .notes { margin-inline-end: 0; } }
+  .alert { display: grid; border-radius: var(--radius-xl); }   /* a card of parts (app row, message), not running text */
+  .alert__lead b { display: block; }
+  .wwin { display: grid; gap: var(--space-3); padding-block: var(--space-2) var(--space-4); border-block-end: 1px solid var(--color-border); }
+  .wwin__head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-4); }
+  .wp-win { color: var(--color-window-ink); font-weight: var(--weight-semibold); white-space: nowrap; }
+  .plot--warn { --lab-w: 36px; row-gap: var(--space-2); }
+  .warn-t { font-family: var(--font-mono); color: var(--color-warning); font-weight: 450; }
+  .alert__app { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); padding: var(--space-4) var(--space-5) 0; color: var(--color-text-muted); }
+  .alert__app span { display: inline-flex; align-items: center; gap: var(--space-3); color: var(--color-text); font-weight: var(--weight-semibold); }
+  .alert__logo { inline-size: 18px; block-size: 18px; }
+  .alert__msg { padding: var(--space-2) var(--space-5) var(--space-4); }
+  .alert__msg b { display: block; }
+
+  /* before you go */
+  .check { inline-size: min(100%, 400px); margin-inline: auto; }
+  .check li { display: grid; grid-template-columns: auto 1fr; gap: var(--space-3); padding-block: var(--space-3); border-block-end: 1px solid var(--color-border); }
+  .check li:last-child { border-block-end: 0; }
+  .tick { display: grid; place-items: center; inline-size: 16px; block-size: 16px; border-radius: var(--radius-sm); box-shadow: inset 0 0 0 1.5px var(--color-border-strong); }
+  .tick--on { background: var(--color-text); box-shadow: none; color: var(--color-surface); }
+  .tick .icon { inline-size: var(--size-icon-sm); block-size: var(--size-icon-sm); }
+  .check__foot { padding: var(--space-3) var(--space-5); border-block-start: 1px solid var(--color-border); color: var(--color-text-muted); }
+
+  /* final mini strip */
+  .mini { inline-size: min(100%, 560px); margin-inline: auto; }
+  .plot--mini { --lab-w: 36px; }
+
+  /* phone: same fragments, tighter */
+  @media (width < 48rem) {
+    :root { --lab-w: 40px; }
+    .app__bar { padding: var(--space-3) var(--space-4); }
+    .app__limits, .app__foot, .frag__head { padding-inline: var(--space-4); }
+    .app__plot, .frag__body { padding-inline: var(--space-4); }
+    .plot { column-gap: var(--space-3); }
+    .sweep-lane { inset-inline-start: calc(var(--lab-w) + var(--space-3)); }
+    .plan__legs { grid-template-columns: 1fr 1fr; }
+    .plan__legs li:nth-child(n+3) { border-block-start: 1px solid var(--color-border); }
+    .plan__legs li:nth-child(3) { box-shadow: inset 2px 0 0 var(--color-window); }
+    .plan__legs li:nth-child(odd):not(:nth-child(3)) { box-shadow: none; }
+  }
+}
+
+@layer motion {
+  @keyframes spin { to { transform: rotate(1turn); } }
+  @keyframes word-rise { from { transform: translateY(100%); } to { transform: none; } }
+  @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes rise { from { transform: translateY(var(--travel)); } to { transform: none; } }
+  @keyframes wipe { from { transform: scaleX(1); } to { transform: scaleX(0); } }
+  @keyframes bar-rise { from { transform: scaleY(0); } to { transform: none; } }
+  @keyframes sweep { from { opacity: 1; transform: translateX(-100%); } 90% { opacity: 1; } to { opacity: 0; transform: none; } }
+  @keyframes prog { from { transform: scaleX(0); } to { transform: none; } }
+  @keyframes hero-in { from { opacity: 0; transform: translateY(var(--space-4)); } }
+  @keyframes lost { from, 57% { opacity: 1; } to { opacity: 0; } }
+
+  /* ---- Scenes. The HTML is authored on each scene's still frame; earlier states hide later facts. The moment kit
+     (moments.css, layer "moments") rolls the swaps, raises the stack and moves the cursor; the rules here are each
+     scene's own parts. Shot plans sit inside each scene; BUILD_NOTES.md has them as tables. ---- */
+  /* No cursor until moments.js parks it, so none without JS. Arrow drawn in tokens: ink fill, surface outline. */
+  /* Rest point (until moments.js aims it): over the chart, hidden. Shown only while it aims and presses. */
+  #hero-scene .shot-cursor { --cx: min(45vw, 320px); --cy: 280px; opacity: 0; }
+  .shot-cursor path { fill: var(--color-text); stroke: var(--color-surface); }
+  /* The hand leaves once the press lands: the result owns the screen, and the arrow must not sit on the plan. */
+  #hero-scene:is([data-state="aim"], [data-state="press"]):not([data-scene-still]) .shot-cursor:not([data-rest]) { opacity: 1; }
+
+  /* Hero, "find the window": day > aim > press > check > window */
+  [data-scene] .find[data-pressed] { background: var(--color-primary-active); filter: none; }
+  .scene:not([data-seen~="press"]) .cut { opacity: 0; }
+  .scene:not([data-seen~="press"]) .win { opacity: 0; transform: translateY(calc(-1 * var(--space-3))); }
+  .scene:not([data-seen~="press"]) .bar--over { background: var(--color-wind); }
+  .scene:not([data-seen~="press"]) .bar--over::after { color: var(--color-text-muted); }
+  .scene:not([data-seen~="window"]) .plan { opacity: 0; transform: translateY(var(--space-3)); }
+  .scene:not([data-seen~="press"]) .status__prog { transform: scaleX(0); }
+
+  /* Warnings, "the forecast moves the window": fri18 > fri21 > alert. The 18:00 frame stretches the window to 13:45
+     and starts the wind cut there (scales of the authored 21:00 geometry, computed in build.mjs). */
+  .warn-stage:not([data-seen~="fri21"]) .track--moves .win { transform: scaleX(var(--was)); }
+  .warn-stage:not([data-seen~="fri21"]) .track--moves .cut--wind { transform: scaleX(var(--cut-was)); }
+  .track--moves .cut--wind { transform-origin: right center; }
+  .warn-stage[data-seen~="fri21"] .chip--forecast { background: var(--color-warning-subtle); color: var(--color-warning); }
+  /* One note, its contents swapped in place: the saved note leaves, then the alert arrives in the same card. */
+  .face { grid-area: 1 / 1; }
+  .warn-stage:not([data-seen~="fri21"]) .face--moved { opacity: 0; transform: translateY(var(--space-3)); }
+  .warn-stage[data-seen~="fri21"] .face--saved { opacity: 0; transform: translateY(calc(-1 * var(--space-3))); }
+  .warn-stage:not([data-seen~="saved"]) .notes .alert { opacity: 0; transform: translateY(var(--space-3)); }
+  /* The 25 minutes lost: a hatched sliver where the window used to end, shown as the edge pulls in, then faded. */
+  .lost { position: absolute; inset-block: calc(-1 * var(--space-2)); inset-inline-start: var(--x0); inline-size: calc(var(--x1) - var(--x0)); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; background: repeating-linear-gradient(-45deg, var(--color-warning) 0 1.5px, transparent 1.5px 4px); box-shadow: inset 0 0 0 1.5px var(--color-warning); opacity: 0; pointer-events: none; }
+
+  /* Route, "one plan, to the minute": the boat at each mark; each leg appears as it is sailed. */
+  .boat { transform: var(--at-cowes); }
+  [data-state="leave"] .boat { transform: var(--at-leave); }
+  [data-state="jack"] .boat { transform: var(--at-jack); }
+  [data-state="hamstead"] .boat { transform: var(--at-hamstead); }
+  [data-state="gurnard"] .boat { transform: var(--at-gurnard); }
+  .route-card:not([data-seen~="jack"]) .leg[data-leg="jack"], .route-card:not([data-seen~="hamstead"]) .leg[data-leg="hamstead"],
+  .route-card:not([data-seen~="gurnard"]) .leg[data-leg="gurnard"], .route-card:not([data-seen~="cowes"]) .leg[data-leg="cowes"] { opacity: 0; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    /* The one hero reveal (Linear's staging): the headline owns the first second; the product arrives after it, by
+       transform with its fade, 800ms on --ease-enter. The h1 and lead never wait. */
+    .hero-go .stage--hero { animation: hero-in var(--duration-page) var(--ease-enter) both; }
+    /* Until scene.js has set the first beat the HTML shows the still (the answer); keep the card out of the first paint. */
+    .js:not(.hero-go) .stage--hero { opacity: 0; }
+    /* The chips and the chart follow the card by --offset each. Keyed on .hero-go (set after scene.js has started the
+       scene, which finishes every animation inside it on its first jump). */
+    .hero-go #hero-scene .app__limits { animation: hero-in var(--duration-page) var(--ease-enter) var(--offset) both; }
+    .hero-go #hero-scene .app__plot { animation: hero-in var(--duration-page) var(--ease-enter) calc(var(--offset) * 2) both; }
+
+    [data-scene] { transition: opacity var(--duration-fast) var(--ease-standard); }
+    [data-scene][data-scene-seam] { opacity: 0; }
+    #hero-scene:not([data-scene-still]) .shot-cursor { transition: transform var(--duration-spring) var(--ease-spring), opacity var(--duration-fast) var(--ease-exit); }
+    /* The calm hold: the card is in by about 600ms; the hand waits until the title and chips have been read. */
+    #hero-scene[data-state="aim"] .shot-cursor { transition-delay: calc(var(--duration-reveal) + var(--offset)); }
+    [data-scene]:not([data-scene-still]) .find { transition: transform var(--duration-instant) var(--ease-standard), background-color var(--duration-instant) var(--ease-standard); }
+    /* The sweep crosses 05:00 to 20:00 in 1200ms, starting once the press has landed; everything it finds lands as
+       the line passes: cuts at their start, over-limit bars at their hour, each window (and its row label) at its
+       close, and the status line --offset after the last window. */
+    .scene { --sweep-at: var(--duration-slow); --sweep-ms: calc(var(--duration-reveal) * 2); }
+    .scene .cut { transition: opacity var(--duration-slow) var(--ease-standard) calc(var(--sweep-at) + var(--d) * var(--sweep-ms)); }
+    .scene .bar { transition: background-color var(--duration-slow) var(--ease-standard) calc(var(--sweep-at) + var(--i) / 15 * var(--sweep-ms)); }
+    .scene .win { transition: opacity var(--duration-slow) var(--ease-enter) calc(var(--sweep-at) + var(--e) * var(--sweep-ms)), transform var(--duration-slow) var(--ease-enter) calc(var(--sweep-at) + var(--e) * var(--sweep-ms)); }
+    .scene[data-state="press"] .row-slot .swap-track { transition-delay: calc(var(--sweep-at) + var(--e) * var(--sweep-ms)); }
+    .scene[data-state="press"] .status__slot .swap-track { transition-delay: calc(var(--sweep-at) + var(--e) * var(--sweep-ms) + var(--offset)); }
+    .scene .plan { transition: opacity var(--duration-page) var(--ease-standard), transform var(--duration-page) var(--ease-enter); }
+    .scene[data-state="aim"] :is(.cut, .bar, .win, .plan) { transition: none; }
+    .scene[data-state="press"] .sweep { animation: sweep var(--sweep-ms) linear var(--sweep-at) both; }
+    .scene[data-state="press"] .status__prog { animation: prog var(--sweep-ms) linear var(--sweep-at) both; }
+    .warn-stage .track--moves :is(.win, .cut--wind) { transition: transform var(--duration-swap) var(--ease-swap) var(--stagger); }
+    .warn-stage .chip--forecast { transition: background-color var(--duration-slow) var(--ease-standard), color var(--duration-slow) var(--ease-standard); }
+    .warn-stage .face--saved { transition: opacity var(--duration-fast) var(--ease-exit), transform var(--duration-fast) var(--ease-exit); }
+    .warn-stage[data-state="saved"] .notes .alert { transition: opacity var(--duration-page) var(--ease-enter), transform var(--duration-page) var(--ease-enter); }
+    .warn-stage .face--moved { transition: opacity var(--duration-page) var(--ease-enter) var(--duration-fast), transform var(--duration-page) var(--ease-enter) var(--duration-fast); }
+    .warn-stage[data-state="fri21"] .lost { animation: lost calc(var(--duration-swap) + var(--duration-reveal)) var(--ease-standard) both; }
+    /* Route: the page script sails the boat along each leg's own path and draws the leg with it (same path, same
+       duration, same curve), and counts the clock and distance as it goes; the place name lands on arrival. */
+    .route-card .rs-label .swap-track { transition-delay: var(--land, 0ms); }
+
+    /* pricing value stack and FAQ icon: UI change band */
+    .slot > * { transition: transform var(--duration-slow) var(--ease-standard), visibility var(--duration-slow) linear; }
+    .faq summary .icon { transition: transform var(--duration-base) var(--ease-standard); }
+
+    /* reveal on scroll, once; content is visible without JS and under reduced motion */
+    .js #how[data-reveal]:not([data-in]) .w > span { transform: translateY(100%); }
+    .js #how[data-reveal][data-in] .w > span { animation: word-rise var(--duration-slow) var(--ease-enter) calc(min(var(--i), 8) * var(--stagger) * var(--k, 1)) both; }
+    .js [data-reveal]:not([data-in]) .rv { opacity: 0; }
+    .js [data-reveal][data-in] .rv { animation: fade var(--duration-reveal) var(--ease-standard) calc(var(--r, 0) * var(--stagger) * 2) both, rise var(--duration-reveal) var(--ease-enter) calc(var(--duration-fast) + var(--r, 0) * var(--stagger) * 2) both; }
+    /* A figure that holds a scene only fades in: the scene starts as it scrolls in, and its first beat owns the
+       movement (a rising figure would move under the owner). */
+    .js [data-reveal][data-in] .rv:has([data-scene]) { animation: fade var(--duration-reveal) var(--ease-standard) both; }
+    .js [data-reveal] .wipe { position: absolute; inset-block: 0; inset-inline: calc(var(--lab-w) + var(--space-4)) 0; background: var(--color-surface); transform-origin: right center; pointer-events: none; }
+    .js [data-reveal]:not([data-in]) .wipe { transform: scaleX(1); }
+    .js [data-reveal][data-in] .wipe { animation: wipe var(--duration-reveal) linear calc(var(--duration-slow) + var(--r, 0) * var(--stagger) * 2) both; }
+    .js [data-reveal]:not([data-in]) .grow .bar { transform: scaleY(0); }
+    .js [data-reveal][data-in] .grow .bar { animation: bar-rise var(--duration-reveal) var(--ease-enter) calc(var(--duration-slow) + var(--i) * var(--stagger) / 2) both; }
+  }
+  .wipe-wrap { position: relative; }
+  .wipe { display: none; }
+  @media (prefers-reduced-motion: no-preference) { .js .wipe { display: block; } .js [data-reveal][data-in] .wipe { transform: scaleX(0); } }
+}
+</style>
+</head>
+<body data-page="product">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head" id="top">
+  <div class="wrap head__in">
+    <a class="logo" href="/" aria-label="Halyard home">{{SYMBOL}}{{WORDMARK}}</a>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="/how-it-works/">How it works</a></li>
+        <li><a href="/coverage/">Coverage</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/safety/">Safety</a></li>
+      </ul>
+      <div class="nav__end">
+        <a class="nav__link" href="/sign-in/">Sign in</a>
+        <a class="btn btn--secondary" href="/app/">Get the app</a>
+      </div>
+    </nav>
+    <button class="btn btn--quiet menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" data-menu>{{icon:menu:i-menu}}{{icon:close:i-close}}<span class="m-open">Menu</span><span class="m-close">Close</span></button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <p class="eyebrow">Passage planning for the Solent, Poole and Chichester Harbour</p>
+        <h1 id="hero-title">Know when to&nbsp;go.</h1>
+        <p class="lead">Halyard reads the tide, the wind and the daylight for your boat, hour by hour, and marks the window when all three agree.</p>
+        <div class="actions">
+          <a class="btn btn--primary btn--lg" href="/plan/">Plan a sail</a>
+          <a class="btn btn--secondary btn--lg" href="/app/">Get the app</a>
+        </div>
+        <p class="reassure">For 6&nbsp;to&nbsp;12&nbsp;metre yachts and dayboats. Free for one boat and three plans a month, on iPhone, Android and the web.</p>
+      </div>
+      <figure class="hero__fig">
+        <div class="stage stage--hero" data-visual="product" aria-hidden="true">
+          {{HERO_SCENE}}
+        </div>
+        <div class="fig-foot">
+          <figcaption class="fig"><span class="fig__n">FIG 0.1</span><span>Wren, a 7.9&nbsp;m sloop, Lymington to Cowes and back on Saturday&nbsp;24&nbsp;October&nbsp;2026: two windows, out 07:33 to 09:30 and back 11:10 to 13:20. Sample data.</span></figcaption>
+          <button class="btn btn--quiet pause" type="button" data-scene-pause aria-controls="hero-scene" aria-pressed="false">{{icon:pause}}Pause animation</button>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section class="band proof" data-beat="type" data-beat-name="quote" aria-labelledby="proof-title">
+    <div class="wrap">
+      <h2 class="vh" id="proof-title">What sailors say</h2>
+      <div class="quotes">
+        <figure class="quote quote--lead">
+          <blockquote><p>“Friday night used to be four tabs and a tide table. Now I open one strip and the answer is already marked.”</p></blockquote>
+          <figcaption><b>Sam</b>, Westerly 26, Lymington</figcaption>
+        </figure>
+        <p class="note">Sample quotes written for this design. Not real customers.</p>
+        <div class="quotes__side">
+        <figure class="quote">
+          <blockquote><p>“It told me the gusts went over my limit after four. We were back on the mooring by three.”</p></blockquote>
+          <figcaption><b>Priya</b>, dayboat, Chichester Harbour</figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote><p>“The wind-against-tide warning for the Needles Channel is the one I would have missed.”</p></blockquote>
+          <figcaption><b>Tom</b>, Contessa 32, Poole</figcaption>
+        </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" data-reveal aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="how-title" data-split>How a window is found.|Three tests, every hour of the day.</h2>
+        <p class="body">You set your boat’s limits once. For each hour, Halyard asks whether the stream is with you, whether the wind is inside your limits and whether you will be home before dark. Where all three say yes, you have a window.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <figure class="rv" style="--r:0">
+            <div class="stage stage--card" data-visual="product" aria-hidden="true">
+              <div class="frag lane-card">
+                <div class="frag__head"><b>Tide and stream</b><span class="chip chip--fair">With you 05:40 to 11:10</span></div>
+                <div class="frag__body wipe-wrap" style="--r:0">
+                  <div class="plot"><span class="lab"></span>{{AXIS}}<span class="lab">Tide</span>{{TIDE_TRACK}}<span class="lab">Stream</span>{{STREAM_TRACK_FAIR}}</div>
+                  <span class="wipe"></span>
+                </div>
+              </div>
+            </div>
+            <figcaption class="fig"><span class="fig__n">FIG 0.2</span><span>Tide at Lymington and the Solent stream. Sample data.</span></figcaption>
+          </figure>
+          <div class="card__body">
+            <h3>Tide with you</h3>
+            <p>Halyard sends you out on a fair stream and back on the next one. On Saturday it runs east from 05:40 to 11:10, then west until 17:50: out in the morning, back after the turn.</p>
+          </div>
+        </article>
+        <article class="card">
+          <figure class="rv" style="--r:1">
+            <div class="stage stage--card" data-visual="product" aria-hidden="true">
+              <div class="frag lane-card">
+                <div class="frag__head"><b>Wind, knots</b><span class="chip chip--warn">Over a limit from 15:00</span></div>
+                <div class="frag__body grow">
+                  <div class="plot"><span class="lab"></span>{{AXIS}}<span class="lab">Wind</span>{{WIND_TRACK}}</div>
+                  <div class="lane-card__note"><span class="key key--over">Over a limit</span><span>Dashed line: 20&nbsp;kn</span></div>
+                </div>
+              </div>
+            </div>
+            <figcaption class="fig"><span class="fig__n">FIG 0.3</span><span>Hourly wind and gusts against Wren’s limits. Sample data.</span></figcaption>
+          </figure>
+          <div class="card__body">
+            <h3>Wind inside your limits</h3>
+            <p>Set the most your boat and crew will take. Wren’s limits are 20&nbsp;kn of wind and 12&nbsp;kn against the tide. From 15:00 a 15&nbsp;kn westerly meets the west-going stream, so the afternoon is cut.</p>
+          </div>
+        </article>
+        <article class="card">
+          <figure class="rv" style="--r:2">
+            <div class="stage stage--card" data-visual="product" aria-hidden="true">
+              <div class="frag lane-card">
+                <div class="frag__head"><b>Daylight</b><span class="chip chip--win">Leave Cowes by 16:16</span></div>
+                <div class="frag__body wipe-wrap" style="--r:2">
+                  <div class="plot"><span class="lab"></span>{{AXIS}}<span class="lab">Light</span>{{LIGHT_TRACK_LATEST}}<span class="lab">Back</span>{{BACK_ROW}}</div>
+                  <span class="wipe"></span>
+                </div>
+              </div>
+            </div>
+            <figcaption class="fig"><span class="fig__n">FIG 0.4</span><span>Sunrise 07:33, sunset 17:56, and the latest time to leave Cowes. Sample data.</span></figcaption>
+          </figure>
+          <div class="card__body">
+            <h3>Home before dark</h3>
+            <p>Halyard works back from sunset to the latest time you can leave. Sunset at Lymington is 17:56 and the passage takes 1&nbsp;h 40&nbsp;min, so Wren leaves Cowes by 16:16.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="route" class="band" data-reveal aria-labelledby="route-title">
+    <div class="wrap split">
+      <div class="copy">
+        <h2 id="route-title" data-split>One plan, to the minute.|Out at 08:30, home by 14:10.</h2>
+        <p class="body">Halyard times each leg at your boat’s speed with the stream added, so you know where you will be at each mark and how much daylight you have left. On Saturday that is 3&nbsp;h 46&nbsp;min to spare before sunset.</p>
+        <table class="legs" id="legs">
+          <caption>Out: Lymington to Cowes, Saturday&nbsp;24&nbsp;October&nbsp;2026 (sample)</caption>
+          <thead><tr><th scope="col">Time</th><th scope="col">Mark</th><th scope="col" class="r">Leg</th></tr></thead>
+          <tbody>
+            <tr><td><time datetime="2026-10-24T08:30+01:00">08:30</time></td><th scope="row">Leave Lymington Town Quay</th><td class="r"></td></tr>
+            <tr><td><time datetime="2026-10-24T08:48+01:00">08:48</time></td><th scope="row">Jack in the Basket</th><td class="r"><span class="nm" data-num>1.5</span>&nbsp;nm</td></tr>
+            <tr><td><time datetime="2026-10-24T09:17+01:00">09:17</time></td><th scope="row">Hamstead Ledge</th><td class="r"><span class="nm" data-num>3.1</span>&nbsp;nm</td></tr>
+            <tr><td><time datetime="2026-10-24T09:59+01:00">09:59</time></td><th scope="row">Gurnard</th><td class="r"><span class="nm" data-num>4.6</span>&nbsp;nm</td></tr>
+            <tr><td><time datetime="2026-10-24T10:10+01:00">10:10</time></td><th scope="row">Cowes</th><td class="r"><span class="nm" data-num>1.3</span>&nbsp;nm</td></tr>
+          </tbody>
+          <tfoot><tr><td></td><th scope="row">Total, 1&nbsp;h 40&nbsp;min</th><td class="r"><span data-sum-of="#legs .nm">10.5</span>&nbsp;nm</td></tr></tfoot>
+        </table>
+      </div>
+      <figure class="rv">
+        <div class="stage stage--side" data-visual="product" aria-hidden="true">
+          {{ROUTE_SCENE}}
+        </div>
+        <div class="fig-foot">
+          <figcaption class="fig"><span class="fig__n">FIG 0.5</span><span>The out leg on Saturday, mark by mark: the clock and the distance sailed at each mark. Illustration, not a chart: not for navigation. Sample data.</span></figcaption>
+          <button class="btn btn--quiet pause" type="button" data-scene-pause aria-controls="route-scene" aria-pressed="false">{{icon:pause}}Pause animation</button>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section id="warnings" data-reveal aria-labelledby="warn-title">
+    <div class="wrap split split--flip">
+      <div class="copy">
+        <h2 id="warn-title" data-split>Warnings before you need them.|Halyard keeps watching after you plan.</h2>
+        <p class="body">When a new forecast moves your window, you hear about it the evening before, not off Hurst Point. These are the warnings for Wren on Saturday:</p>
+        <ul class="alerts">
+          <li>{{icon:warn}}<span><b>Wind against tide from 15:00.</b> A 15&nbsp;kn westerly against a 2.4&nbsp;kn west-going stream. Wren’s limit is 12&nbsp;kn.</span></li>
+          <li>{{icon:warn}}<span><b>Gusts to 23&nbsp;kn from 16:00.</b> Wren’s limit is 20&nbsp;kn.</span></li>
+          <li>{{icon:warn}}<span><b>Home after dark if you leave Cowes after 16:16.</b> Sunset at Lymington is 17:56.</span></li>
+        </ul>
+      </div>
+      <figure class="rv">
+        <div class="stage stage--side" data-visual="product" aria-hidden="true">
+          {{WARN_SCENE}}
+        </div>
+        <div class="fig-foot">
+          <figcaption class="fig"><span class="fig__n">FIG 0.6</span><span>The back window on the evening of 23 October: the 21:00 forecast moves it from 13:45 to 13:20, and the alert arrives on your phone. Sample data.</span></figcaption>
+          <button class="btn btn--quiet pause" type="button" data-scene-pause aria-controls="warn-scene" aria-pressed="false">{{icon:pause}}Pause animation</button>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section id="coverage" class="band" data-reveal aria-labelledby="cover-title">
+    <div class="wrap">
+      <div class="cover">
+        <div class="copy">
+          <h2 id="cover-title" data-split>Where it works.|Poole to Chichester Harbour.</h2>
+          <p class="body">Every height station and stream point is checked against the official predictions before it goes live. Outside these waters Halyard says so plainly and does not guess.</p>
+        </div>
+        <figure class="rv">
+          <div class="marks" aria-hidden="true"><span><i></i>Tidal height station</span><span><i class="d"></i>Tidal stream point</span></div>
+          <div class="stage stage--map" data-visual="illustration" aria-hidden="true">{{COVERAGE_MAP}}</div>
+          <figcaption class="fig"><span class="fig__n">FIG 0.7</span><span>Coverage from Anvil Point to Selsey Bill. Illustration, not a chart. Sample data.</span></figcaption>
+        </figure>
+      </div>
+      <div class="lists">
+        <div>
+          <h3>Covered: 14 tidal height stations and 8 stream points</h3>
+          <ul class="stations">
+            <li>Poole Town Quay</li><li>Poole Harbour Entrance</li><li>Christchurch Entrance</li><li>Hurst Point</li><li>Lymington</li><li>Yarmouth</li><li>Bucklers Hard</li><li>Cowes</li><li>Southampton</li><li>Warsash</li><li>Portsmouth</li><li>Ryde</li><li>Bembridge Harbour</li><li>Chichester Harbour Entrance</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Not covered</h3>
+          <ul class="notlist">
+            <li>{{icon:minus}}<span>West of Anvil Point, including Portland and its race</span></li>
+            <li>{{icon:minus}}<span>East of Selsey Bill</span></li>
+            <li>{{icon:minus}}<span>Channel crossings</span></li>
+            <li>{{icon:minus}}<span>Rivers above the tidal limit</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" data-beat="type" data-beat-name="pricing" data-reveal aria-labelledby="price-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="price-title" data-split>Free for the odd sail.|Plus for every weekend.</h2>
+        <div class="billing-wrap"><div class="billing" role="group" aria-label="Billing period"><button type="button" aria-pressed="true" data-billing-set="month">Monthly</button><button type="button" aria-pressed="false" data-billing-set="year">Yearly <small>Save £20.88</small></button></div></div>
+      </div>
+      <div class="plans">
+        <article class="plan-card" aria-labelledby="free-title">
+          <h3 id="free-title">Free</h3>
+          <p class="price">£0</p>
+          <div class="price-sub">For one boat, three plans a month</div>
+          <ul class="feat">
+            <li>{{icon:check}}<span>Tide, stream, wind and daylight for every covered harbour</span></li>
+            <li>{{icon:check}}<span>Windows found against your boat’s limits</span></li>
+            <li>{{icon:check}}<span>Plans on iPhone, Android and the web</span></li>
+          </ul>
+          <a class="btn btn--secondary btn--lg btn--block" href="/plan/">Plan a sail</a>
+        </article>
+        <article class="plan-card plan-card--plus" id="plus" data-billing="month" aria-labelledby="plus-title">
+          <h3 id="plus-title">Halyard Plus</h3>
+          <p class="price"><span class="slot"><span class="v-month">£4.99 <small>a month</small></span><span class="v-year">£39 <small>a year</small></span></span></p>
+          <div class="price-sub"><span class="slot"><span class="v-month">Or £39 a year, which works out at £3.25 a month</span><span class="v-year">£3.25 a month, £20.88 less than paying monthly</span></span></div>
+          <ul class="feat">
+            <li>{{icon:check}}<span>Up to five boats and unlimited plans</span></li>
+            <li>{{icon:check}}<span>Warnings when a new forecast moves your window</span></li>
+            <li>{{icon:check}}<span>Plans kept on your phone for when you lose signal</span></li>
+            <li>{{icon:check}}<span>Seven days ahead, not three</span></li>
+          </ul>
+          <a class="btn btn--primary btn--lg btn--block" href="/plus/?billing=month" data-plus-cta>Get Plus, £4.99 a month</a>
+          <p class="terms" data-plus-terms>Renews every month until you cancel. Cancel online in Settings at any time; Plus runs to the end of the month you have paid for.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="safety" class="band" data-reveal aria-labelledby="safety-title">
+    <div class="wrap split">
+      <div class="copy">
+        <h2 id="safety-title" data-split>A planning aid, not a pilot.|The decision to go stays with you.</h2>
+        <p class="aid">Halyard is a planning aid. It is not a substitute for official tide tables, charts or forecasts, or for your own judgement on the day.</p>
+        <p class="body">Check the latest forecast and the official tidal predictions before you leave, carry the charts for your passage, and tell someone ashore when you expect to be back.</p>
+        <dl class="sources">
+          <div><dt>Tide times and heights</dt><dd>Predictions for 14 stations, worked out from each station’s published tidal constants</dd></div>
+          <div><dt>Tidal streams</dt><dd>Direction and rate at 8 points, from the published stream atlas for the area</dd></div>
+          <div><dt>Wind</dt><dd>Hourly forecast from a numerical weather model, updated every 6 hours</dd></div>
+          <div><dt>Sunrise and sunset</dt><dd>Calculated for each harbour’s position and date, in UK time</dd></div>
+        </dl>
+      </div>
+      <figure class="rv">
+        <div class="stage stage--side" data-visual="product" aria-hidden="true">
+          <div class="frag check">
+            <div class="frag__head"><b>Before you go</b><span class="chip">Sat&nbsp;24&nbsp;Oct, 07:45</span></div>
+            <ul class="frag__body">
+              <li><span class="tick tick--on">{{icon:check}}</span><span><b>Read the 06:00 inshore forecast</b><br><span class="muted">Lyme Regis to Selsey Bill</span></span></li>
+              <li><span class="tick tick--on">{{icon:check}}</span><span><b>Check times in the official tide tables</b><br><span class="muted">HW Lymington 10:58</span></span></li>
+              <li><span class="tick"></span><span><b>Leave your plan with someone ashore</b><br><span class="muted">Back by 14:10</span></span></li>
+              <li><span class="tick"></span><span><b>VHF on, channel 16</b><br><span class="muted">Solent Coastguard</span></span></li>
+            </ul>
+            <div class="check__foot">Halyard is a planning aid. Not for navigation.</div>
+          </div>
+        </div>
+        <figcaption class="fig"><span class="fig__n">FIG 0.8</span><span>The checklist Halyard shows on the morning of a plan. Sample data.</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="faq" class="faq-sec" data-beat="type" data-beat-name="faq" data-reveal aria-labelledby="faq-title">
+    <div class="wrap faq-grid">
+      <h2 id="faq-title" data-split>Questions.|Asked on the pontoon.</h2>
+      <div class="faq">
+        <details><summary>Can I navigate with Halyard?{{icon:plus}}</summary><p>No. Halyard is a planning aid for choosing when to go. It is not a substitute for official tide tables, charts or forecasts, and its maps are illustrations, not charts.</p></details>
+        <details><summary>Which boats is it for?{{icon:plus}}</summary><p>Yachts and dayboats from 6 to 12 metres. You set the length, cruising speed and limits for each boat, and Halyard times every leg at that speed with the stream added.</p></details>
+        <details><summary>Where does it work?{{icon:plus}}</summary><p>From Anvil Point to Selsey Bill: Poole Harbour, the Solent and Chichester Harbour, with 14 tidal height stations and 8 stream points. It does not cover Channel crossings or anywhere west of Anvil Point or east of Selsey Bill.</p></details>
+        <details><summary>What does Plus cost, and how do I cancel?{{icon:plus}}</summary><p>Plus is £4.99 a month or £39 a year. Cancel online in Settings at any time; Plus runs to the end of the period you have paid for, then your account goes back to Free.</p></details>
+        <details><summary>Does it work without a signal?{{icon:plus}}</summary><p>With Plus, your plans and the day’s data are kept on your phone, so they open at sea. New warnings arrive when you are back in signal.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="start" class="band" data-reveal aria-labelledby="final-title">
+    <div class="wrap final">
+      <div class="copy">
+        <h2 id="final-title" data-split>Find your next window.|Pick a boat, a harbour and a day.</h2>
+        <p class="body">Halyard reads the tide, wind and daylight and marks when to go. Free for one boat and three plans a month.</p>
+        <div class="actions">
+          <a class="btn btn--primary btn--lg" href="/plan/">Plan a sail</a>
+          <a class="btn btn--secondary btn--lg" href="/app/">Get the app</a>
+        </div>
+      </div>
+      <figure class="rv">
+        <div class="stage stage--side" data-visual="product" aria-hidden="true">
+          <div class="frag mini">
+            <div class="frag__head"><b>Wren, Sat&nbsp;24&nbsp;Oct</b><span class="chip chip--win">2 windows</span></div>
+            <div class="frag__body">{{MINI_PLOT}}</div>
+            <div class="app__foot"><span class="key key--win">Out 07:33 to 09:30</span><span class="key key--win">Back 11:10 to 13:20</span></div>
+          </div>
+        </div>
+        <figcaption class="fig"><span class="fig__n">FIG 0.9</span><span>Saturday’s two windows for Wren. Sample data.</span></figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div class="foot__aid">
+        <p>Halyard is a planning aid. It is not a substitute for official tide tables, charts or forecasts.</p>
+        <p>Figures on this page are sample data for Saturday&nbsp;24&nbsp;October&nbsp;2026 at Lymington, in British Summer Time.</p>
+      </div>
+      <nav class="foot__nav" aria-label="Footer">
+        <div><h2>Product</h2><ul><li><a href="/plan/">Plan a sail</a></li><li><a href="/app/ios/">iPhone app</a></li><li><a href="/app/android/">Android app</a></li><li><a href="/pricing/">Pricing</a></li></ul></div>
+        <div><h2>Help</h2><ul><li><a href="/how-it-works/">How it works</a></li><li><a href="/coverage/">Coverage</a></li><li><a href="/safety/">Safety and sources</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+        <div><h2>Company</h2><ul><li><a href="/about/">About</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+      </nav>
+    </div>
+    <div class="signoff">{{WORDMARK_BIG}}</div>
+    <p class="foot__legal"><span>© 2026 Halyard</span><span>Made for the south coast</span></p>
+  </div>
+</footer>
+
+<script>
+{{SCENE_JS}}
+</script>
+<script>
+{{MOMENTS_JS}}
+</script>
+<script>
+(() => {
+  'use strict';
+  // Reveal once on scroll. Sections gain data-in; content is visible without JS and under reduced motion.
+  const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+    if (e.isIntersecting) { e.target.setAttribute('data-in', ''); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+  document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
+
+  // Hero: the chips and chart follow the card in. Started after scene.js's first jump, which finishes every animation
+  // inside a scene (so an entrance defined from the start would be skipped).
+  requestAnimationFrame(() => document.documentElement.classList.add('hero-go'));
+  // Each loop the hand comes in from its rest point: on the result beat (cursor already faded out) it is sent back
+  // there with no transition, so the next aim travels again.
+  const hero = document.getElementById('hero-scene'), cur = hero && hero.querySelector('.shot-cursor');
+  const rest = () => { cur.style.transition = 'none'; cur.setAttribute('data-rest', ''); cur.style.removeProperty('--cx'); cur.style.removeProperty('--cy'); void getComputedStyle(cur).transform; };
+  // moments.js parks the hand on the button as soon as the aim beat is set (also on the load jump, where scene.js
+  // finishes the travel at once). So on each aim beat: back to the rest point, then aim again from there, as moments.js
+  // does (a little below and right of the button's centre), so the travel always plays.
+  const aimFrom = () => {
+    const t = hero.querySelector('.find'); if (!t || hero.dataset.state !== 'aim' || hero.hasAttribute('data-scene-still')) return;
+    rest();
+    const a = hero.getBoundingClientRect(), r = t.getBoundingClientRect();
+    cur.style.removeProperty('transition'); cur.removeAttribute('data-rest');
+    cur.style.setProperty('--cx', Math.round(r.left - a.left + r.width * 0.55) + 'px');
+    cur.style.setProperty('--cy', Math.round(r.top - a.top + r.height * 0.6) + 'px');
+  };
+  if (cur) {
+    hero.addEventListener('scene:state', (e) => {
+      if (e.detail.state === 'window') rest();
+      else if (e.detail.state === 'aim') requestAnimationFrame(aimFrom);
+      else { cur.style.removeProperty('transition'); cur.removeAttribute('data-rest'); }
+    });
+    requestAnimationFrame(aimFrom);
+  }
+
+  // Route scene: on each leg the boat follows the leg's own path and the solid line is drawn with the boat as its
+  // tip (one path, one duration, one curve: --ease-standard, which eases out of and into each mark). The clock and the
+  // distance count up with the boat. Durations per leg come from data-legs (scaled to the leg's minutes).
+  const card = document.getElementById('route-scene');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+  if (card) {
+    const legMs = Object.fromEntries(card.dataset.legs.split(' ').map((p) => p.split(':')).map(([k, v]) => [k, +v]));
+    const states = card.dataset.beats.split(' ').map((b) => b.split(':')[0]);
+    const svg = card.querySelector('.map--route svg'), boat = svg.querySelector('.boat');
+    const timeEl = card.querySelector('.rs-time'), nmEl = card.querySelector('.rs-nm');
+    const times = timeEl.dataset.steps.split(' '), nms = nmEl.dataset.steps.split(' ').map(Number);
+    const toMin = (t) => +t.slice(0, 2) * 60 + +t.slice(3);
+    const fmt = (m) => String(Math.floor(m / 60)).padStart(2, '0') + ':' + String(m % 60).padStart(2, '0');
+    const ease = getComputedStyle(document.documentElement).getPropertyValue('--ease-standard').trim() || 'ease-in-out';
+    const pageMs = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--duration-page')) || 400;
+    let anims = [], raf = 0;
+    const readout = (k, p) => {
+      const a = Math.max(0, k - 1), t0 = toMin(times[a]), t1 = toMin(times[k]);
+      timeEl.textContent = fmt(Math.floor(t0 + (t1 - t0) * p));
+      nmEl.innerHTML = (nms[a] + (nms[k] - nms[a]) * p).toFixed(1) + '&nbsp;nm';
+    };
+    const stop = () => { anims.forEach((x) => x.cancel()); anims = []; cancelAnimationFrame(raf); };
+    const sail = (st, k) => {
+      stop();
+      const ms = legMs[st];
+      if (!ms || reduce.matches) { card.style.setProperty('--land', '0ms'); readout(k, 1); return; }
+      // The place name starts its roll so it lands as the boat arrives (a swap takes --duration-swap; half of it is
+      // the landing), never before the boat leaves.
+      card.style.setProperty('--land', Math.max(0, ms - pageMs) + 'ms');
+      const leg = svg.querySelector(`.leg[data-leg="${st}"]`);
+      const pts = leg.getAttribute('d').slice(1).split('L').map((q) => q.trim().split(/\s+/).map(Number));
+      const cum = [0]; for (let i = 1; i < pts.length; i++) cum.push(cum[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
+      const L = cum.at(-1) || 1, timing = { duration: ms, easing: ease };
+      anims.push(boat.animate(pts.map(([x, y], i) => ({ transform: `translate(${x}px, ${y}px)`, offset: cum[i] / L })), timing));
+      // The stroke does not scale (vector-effect), so its dashes are in screen pixels.
+      const len = leg.getTotalLength() * (svg.getScreenCTM()?.a || 1) + 2;
+      leg.style.strokeDasharray = `${len} ${len}`;
+      anims.push(leg.animate([{ strokeDashoffset: len }, { strokeDashoffset: 0 }], timing));
+      if (card.hasAttribute('data-scene-paused')) anims.forEach((x) => x.pause());
+      const tick = () => {
+        const x = anims[0]; if (!x) return;
+        const p = x.effect.getComputedTiming().progress;
+        readout(k, x.playState === 'finished' || p == null ? 1 : p);
+        if (x.playState !== 'finished') raf = requestAnimationFrame(tick);
+      };
+      readout(k, 0); raf = requestAnimationFrame(tick);
+    };
+    card.addEventListener('scene:state', (e) => sail(e.detail.state, e.detail.index));
+    new MutationObserver(() => {
+      const paused = card.hasAttribute('data-scene-paused') || card.hasAttribute('data-scene-still');
+      anims.forEach((x) => { if (paused && x.playState === 'running') x.pause(); else if (!paused && x.playState === 'paused') x.play(); });
+    }).observe(card, { attributes: true, attributeFilter: ['data-scene-paused', 'data-scene-still'] });
+    // scene.js has already jumped to the first state before this script ran: match the readout to it.
+    if (!card.hasAttribute('data-scene-still')) readout(Math.max(0, states.indexOf(card.dataset.state)), 1);
+  }
+
+  // Phone menu.
+  const head = document.querySelector('.site-head');
+  const menuBtn = document.querySelector('[data-menu]');
+  const setMenu = (open) => { menuBtn.setAttribute('aria-expanded', String(open)); open ? head.setAttribute('data-open', '') : head.removeAttribute('data-open'); };
+  menuBtn.addEventListener('click', () => setMenu(menuBtn.getAttribute('aria-expanded') !== 'true'));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && head.hasAttribute('data-open')) { setMenu(false); menuBtn.focus(); } });
+
+  // Billing toggle: the price, the term line and the button change together.
+  const plus = document.getElementById('plus');
+  const cta = plus.querySelector('[data-plus-cta]');
+  const terms = plus.querySelector('[data-plus-terms]');
+  const copy = {
+    month: { cta: 'Get Plus, £4.99 a month', href: '/plus/?billing=month', terms: 'Renews every month until you cancel. Cancel online in Settings at any time; Plus runs to the end of the month you have paid for.' },
+    year: { cta: 'Get Plus, £39 a year', href: '/plus/?billing=year', terms: 'Renews every year until you cancel. Cancel online in Settings at any time; Plus runs to the end of the year you have paid for.' },
+  };
+  const toggles = document.querySelectorAll('[data-billing-set]');
+  const setBilling = (period) => {
+    plus.dataset.billing = period;
+    toggles.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.billingSet === period)));
+    cta.textContent = copy[period].cta; cta.setAttribute('href', copy[period].href); terms.textContent = copy[period].terms;
+  };
+  toggles.forEach((b) => b.addEventListener('click', () => setBilling(b.dataset.billingSet)));
+
+  // Review states: ?state=yearly | menu | faq | paused
+  const state = new URLSearchParams(location.search).get('state');
+  if (state === 'yearly') setBilling('year');
+  if (state === 'menu') setMenu(true);
+  if (state === 'faq') document.querySelector('.faq details').open = true;
+  if (state === 'paused') document.querySelector('[data-scene-pause]').click();
+})();
+</script>
+</body>
+</html>

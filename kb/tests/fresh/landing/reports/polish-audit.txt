@@ -1,0 +1,23 @@
+
+Polish audit: halyard.html
+
+  pass  radius
+        i census: 4px x156, 8px x84, 12px x56, 16px x48, full x8
+  pass  shadow  (1 warn)
+        ! 10 distinct box-shadow values (tokens give 5 plus rings)
+        i distinct shadows: 10
+  pass  hover-gate
+  pass  icon-stroke
+        i icons checked: 23
+  pass  svg-hairline
+  pass  color-scheme
+  pass  tabular  (1 warn)
+        ! 1 numeric cells without tabular figures
+  pass  heading-wrap
+  pass  focus-shape
+        i elements tested: 32
+  pass  state-shift
+  pass  forced-edge
+
+  Result: PASS (0 fail, 2 warn)
+exit 0

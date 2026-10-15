@@ -1,0 +1,38 @@
+pass size
+     HTML 226 KB uncompressed (Googlebot cut: 2 MB)
+pass head-order
+     search and social tags end by byte 1252, before the first large inline block at byte 6507
+pass title
+     "Halyard passage planner: Solent, Poole and Chichester Harbour" (61 chars)
+pass description
+     157 chars
+pass headings
+     h1 Know when to go.
+       h2 What sailors say
+       h2 How a window is found. Three tests, every hour of the day.
+         h3 Tide with you
+         h3 Wind inside your limits
+         h3 Home before dark
+       h2 One plan, to the minute. Out at 08:30, home by 14:10.
+       h2 Warnings before you need them. Halyard keeps watching after you plan.
+       h2 Where it works. Poole to Chichester Harbour.
+         h3 Covered: 14 tidal height stations and 8 stream points
+         h3 Not covered
+       h2 Free for the odd sail. Plus for every weekend.
+         h3 Free
+         h3 Halyard Plus
+       h2 A planning aid, not a pilot. The decision to go stays with you.
+       h2 Questions. Asked on the pontoon.
+       h2 Find your next window. Pick a boat, a harbour and a day.
+       h2 Product
+       h2 Help
+       h2 Company
+pass links
+     25 links, 16 unique destinations
+warn dates
+     warn: 9 relative dates outside <time datetime>: a quoted passage loses its week. "on Saturday", "Friday", "On Saturday", "On Saturday", "Saturday", "on Saturday", "on Saturday", "Saturday", "Saturday"
+pass structured-data
+     jsonld.js not installed: run npm ci in skills/design-search/assets for the expansion check
+     1 JSON-LD blocks, 5 typed nodes: WebSite, Organization, SoftwareApplication, Offer, Offer
+search-check PASS: 0 fail, 1 warn (public)
+exit 0

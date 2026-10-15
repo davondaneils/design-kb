@@ -1,0 +1,15 @@
+WAT span [ '13:21', '15:25' ] claimed max 15 | gust span [ '16:01', '18:59' ] claimed max 23
+
+WAT claim false for 33 departures, e.g.: back 12:15: leg sees 12, page says 15; back 12:20: leg sees 12, page says 15; back 12:25: leg sees 12, page says 15; back 12:30: leg sees 13, page says 15; back 12:35: leg sees 13, page says 15; out 12:40: leg sees 12, page says 15
+
+Gust claim false for 53 departures, e.g.: out 15:10: leg sees 20, page says 23; back 15:10: leg sees 20, page says 23; out 15:15: leg sees 20, page says 23; back 15:15: leg sees 21, page says 23 ... back 18:50: leg sees 20, page says 23; out 18:55: leg sees 20, page says 23; back 18:55: leg sees 20, page says 23
+
+Slack-but-fair labelled "against" for 18 departures, e.g.: back 08:30: min fair stream 0.41 kn (never foul), page says "stream against you"; back 08:35: min fair stream 0.29 kn (never foul), page says "stream against you"; back 08:40: min fair stream 0.20 kn (never foul), page says "stream against you"; back 08:45: min fair stream 0.08 kn (never foul), page says "stream against you"
+stream at 00:00 -2.05 (sr text says east-going until 09:40)
+stream at 01:00 -2.16 (sr text says east-going until 09:40)
+stream at 02:00 -1.63 (sr text says east-going until 09:40)
+stream at 03:00 -0.60 (sr text says east-going until 09:40)
+
+default out 11:50 12:34 44 min; back 16:44 17:31 47 min; margin 25
+avg SOG out 6.14 kn; back 5.74 kn
+out windows [ [ '10:05', '12:37' ] ] back windows [ [ '07:33', '08:25' ], [ '16:13', '17:10' ] ]

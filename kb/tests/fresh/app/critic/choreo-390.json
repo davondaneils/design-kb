@@ -1,0 +1,522 @@
+{
+ "url": "file:///home/user/design-kb/kb/tests/fresh/app/plan.html",
+ "measuredAt": "2026-10-13T21:43:37.408Z",
+ "viewport": [
+  390,
+  844
+ ],
+ "scheme": "light",
+ "elapsedMs": 13505,
+ "totals": {
+  "animations": 14,
+  "finite": 14,
+  "loops": 0,
+  "byPhase": [
+   {
+    "v": "hover",
+    "n": 12
+   },
+   {
+    "v": "scroll",
+    "n": 2
+   }
+  ],
+  "reducedMotionRules": 7
+ },
+ "durationLadder": [
+  {
+   "ms": 100,
+   "n": 12
+  },
+  {
+   "ms": 600,
+   "n": 2
+  }
+ ],
+ "durationsByPhase": {
+  "load": [],
+  "scroll": [
+   "600ms x2"
+  ],
+  "hover": [
+   "100ms x12"
+  ]
+ },
+ "curves": [
+  {
+   "v": "cubic-bezier(0.2, 0, 0, 1)",
+   "n": 14
+  }
+ ],
+ "propertiesAnimated": [
+  {
+   "v": "backgroundColor",
+   "n": 12
+  },
+  {
+   "v": "transform",
+   "n": 2
+  }
+ ],
+ "enterStartValues": {
+  "opacity": [],
+  "travel": [
+   {
+    "v": "-100%",
+    "n": 1
+   },
+   {
+    "v": "100%",
+    "n": 1
+   }
+  ],
+  "filter": [],
+  "clipPath": []
+ },
+ "delays": [],
+ "staggers": [],
+ "loops": [],
+ "scrollTriggered": 2,
+ "imagery": {
+  "viewport": [
+   390,
+   844
+  ],
+  "pageHeight": 3251,
+  "screens": 3.9,
+  "counts": {
+   "productMock": 2,
+   "photo": 0,
+   "video": 0,
+   "canvas": 0,
+   "svgIllustration": 3,
+   "illustration": 0,
+   "dataViz": 0,
+   "bgImage": 0,
+   "bgGradient": 0
+  },
+  "mocks": [
+   {
+    "y": 662,
+    "w": 358,
+    "h": 740
+   },
+   {
+    "y": 1966,
+    "w": 356,
+    "h": 200
+   }
+  ],
+  "slices": [
+   {
+    "y": 0,
+    "visualCoverage": 0.2,
+    "byKind": {
+     "product-mock": 0.2
+    }
+   },
+   {
+    "y": 844,
+    "visualCoverage": 0.58,
+    "byKind": {
+     "svg-illustration": 0.1,
+     "product-mock": 0.61
+    }
+   },
+   {
+    "y": 1688,
+    "visualCoverage": 0.23,
+    "byKind": {
+     "svg-illustration": 0.43,
+     "product-mock": 0.22
+    }
+   },
+   {
+    "y": 2532,
+    "visualCoverage": 0,
+    "byKind": {}
+   }
+  ],
+  "screensWithVisual": 3
+ },
+ "raw": [
+  {
+   "t": 5469,
+   "phase": "scroll",
+   "scrollY": 1518,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 600,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(-100%)",
+     "none"
+    ]
+   },
+   "target": "div.wipe",
+   "pseudo": null,
+   "rect": [
+    17,
+    1767,
+    356,
+    199
+   ],
+   "inView": true
+  },
+  {
+   "t": 5470,
+   "phase": "scroll",
+   "scrollY": 1518,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 600,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "div.wipe-in",
+   "pseudo": null,
+   "rect": [
+    17,
+    1966,
+    356,
+    199
+   ],
+   "inView": true
+  },
+  {
+   "t": 9819,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgba(0, 0, 0, 0)",
+     "oklab(0.250103 0.00719737 0 / 0.08)"
+    ]
+   },
+   "target": "button.btn.btn-ghost",
+   "pseudo": null,
+   "rect": [
+    286,
+    6,
+    88,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 10119,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "oklab(0.250103 0.00719737 0 / 0.08)",
+     "rgba(0, 0, 0, 0)"
+    ]
+   },
+   "target": "button.btn.btn-ghost",
+   "pseudo": null,
+   "rect": [
+    286,
+    6,
+    88,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 10119,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgb(255, 255, 255)",
+     "oklab(0.250103 0.00719737 0 / 0.08)"
+    ]
+   },
+   "target": "button.btn.btn-secondary",
+   "pseudo": null,
+   "rect": [
+    16,
+    451,
+    70,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 10419,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "oklab(0.250103 0.00719737 0 / 0.08)",
+     "rgb(255, 255, 255)"
+    ]
+   },
+   "target": "button.btn.btn-secondary",
+   "pseudo": null,
+   "rect": [
+    16,
+    451,
+    70,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 10419,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgb(255, 255, 255)",
+     "oklab(0.250103 0.00719737 0 / 0.08)"
+    ]
+   },
+   "target": "button.btn.btn-secondary",
+   "pseudo": null,
+   "rect": [
+    94,
+    451,
+    70,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 10719,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "oklab(0.250103 0.00719737 0 / 0.08)",
+     "rgb(255, 255, 255)"
+    ]
+   },
+   "target": "button.btn.btn-secondary",
+   "pseudo": null,
+   "rect": [
+    94,
+    451,
+    70,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 10719,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgb(255, 255, 255)",
+     "oklab(0.250103 0.00719737 0 / 0.08)"
+    ]
+   },
+   "target": "button.btn.btn-secondary",
+   "pseudo": null,
+   "rect": [
+    207,
+    451,
+    70,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 11019,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "oklab(0.250103 0.00719737 0 / 0.08)",
+     "rgb(255, 255, 255)"
+    ]
+   },
+   "target": "button.btn.btn-secondary",
+   "pseudo": null,
+   "rect": [
+    207,
+    451,
+    70,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 11019,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgb(255, 255, 255)",
+     "oklab(0.250103 0.00719737 0 / 0.08)"
+    ]
+   },
+   "target": "button.btn.btn-secondary",
+   "pseudo": null,
+   "rect": [
+    285,
+    451,
+    70,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 11319,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "oklab(0.250103 0.00719737 0 / 0.08)",
+     "rgb(255, 255, 255)"
+    ]
+   },
+   "target": "button.btn.btn-secondary",
+   "pseudo": null,
+   "rect": [
+    285,
+    451,
+    70,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 11319,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgb(27, 64, 136)",
+     "rgb(19, 47, 103)"
+    ]
+   },
+   "target": "button.btn.btn-primary",
+   "pseudo": null,
+   "rect": [
+    274,
+    792,
+    100,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 11585,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgb(19, 47, 103)",
+     "rgb(27, 64, 136)"
+    ]
+   },
+   "target": "button.btn.btn-primary",
+   "pseudo": null,
+   "rect": [
+    274,
+    792,
+    100,
+    44
+   ],
+   "inView": true
+  }
+ ]
+}

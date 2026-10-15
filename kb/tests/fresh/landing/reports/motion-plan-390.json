@@ -1,0 +1,525 @@
+{
+ "page": "kb/tests/fresh/landing/halyard.html",
+ "width": 390,
+ "needScene": true,
+ "measuredAt": "2026-10-15T06:14:13.998Z",
+ "animations": 188,
+ "reduceAnimations": 6,
+ "ladder": [
+  100,
+  150,
+  200,
+  300,
+  400,
+  519,
+  600,
+  800,
+  1200,
+  1400,
+  1600,
+  4400
+ ],
+ "bands": [
+  "scene 1200/1400/1600/4400",
+  "press/hover 100/150",
+  "entrance 400/519",
+  "UI change 200/300",
+  "reveal 600/800"
+ ],
+ "scenes": [
+  {
+   "id": "hero-scene",
+   "hasId": true,
+   "beats": [
+    {
+     "state": "aim",
+     "ms": 1500
+    },
+    {
+     "state": "press",
+     "ms": 2400
+    },
+    {
+     "state": "window",
+     "ms": 4400
+    }
+   ],
+   "still": "window",
+   "state": "window",
+   "loop": true,
+   "rest": 4000,
+   "pauseButtons": 1,
+   "pauseVisible": true,
+   "plan": "ok",
+   "shots": [
+    {
+     "state": "aim",
+     "owner": ".app",
+     "aim": ".find",
+     "ownerFound": 1,
+     "readFound": null
+    },
+    {
+     "state": "press",
+     "owner": ".app",
+     "press": ".find",
+     "ownerFound": 1,
+     "readFound": null
+    },
+    {
+     "state": "window",
+     "owner": ".plan",
+     "read": ".plan__head",
+     "push": ".app",
+     "ownerFound": 1,
+     "readFound": 1
+    }
+   ],
+   "top": 704,
+   "statesSeen": [
+    "aim",
+    "press",
+    "window"
+   ]
+  },
+  {
+   "id": "route-scene",
+   "hasId": true,
+   "beats": [
+    {
+     "state": "leave",
+     "ms": 1500
+    },
+    {
+     "state": "jack",
+     "ms": 2200
+    },
+    {
+     "state": "hamstead",
+     "ms": 2800
+    },
+    {
+     "state": "gurnard",
+     "ms": 3200
+    },
+    {
+     "state": "cowes",
+     "ms": 2200
+    }
+   ],
+   "still": "cowes",
+   "state": "jack",
+   "loop": true,
+   "rest": 2400,
+   "pauseButtons": 1,
+   "pauseVisible": true,
+   "plan": "ok",
+   "shots": [
+    {
+     "state": "leave",
+     "owner": ".boat",
+     "read": ".rs-time",
+     "ownerFound": 1,
+     "readFound": 1
+    },
+    {
+     "state": "jack",
+     "owner": ".boat",
+     "read": ".rs-time",
+     "ownerFound": 1,
+     "readFound": 1
+    },
+    {
+     "state": "hamstead",
+     "owner": ".boat",
+     "read": ".rs-time",
+     "ownerFound": 1,
+     "readFound": 1
+    },
+    {
+     "state": "gurnard",
+     "owner": ".boat",
+     "read": ".rs-time",
+     "ownerFound": 1,
+     "readFound": 1
+    },
+    {
+     "state": "cowes",
+     "owner": ".route-strip",
+     "read": ".rs-now",
+     "ownerFound": 1,
+     "readFound": 1
+    }
+   ],
+   "top": 4903,
+   "statesSeen": [
+    "leave",
+    "jack",
+    "hamstead",
+    "gurnard",
+    "cowes"
+   ]
+  },
+  {
+   "id": "warn-scene",
+   "hasId": true,
+   "beats": [
+    {
+     "state": "fri18",
+     "ms": 2400
+    },
+    {
+     "state": "saved",
+     "ms": 2400
+    },
+    {
+     "state": "fri21",
+     "ms": 4500
+    }
+   ],
+   "still": "fri21",
+   "state": "fri18",
+   "loop": true,
+   "rest": 3000,
+   "pauseButtons": 1,
+   "pauseVisible": true,
+   "plan": "ok",
+   "shots": [
+    {
+     "state": "fri18",
+     "owner": ".warn-panel",
+     "read": ".wp-win",
+     "ownerFound": 1,
+     "readFound": 1
+    },
+    {
+     "state": "saved",
+     "owner": ".notes",
+     "read": ".face--saved b",
+     "ownerFound": 1,
+     "readFound": 1
+    },
+    {
+     "state": "fri21",
+     "owner": ".notes",
+     "read": ".alert__lead",
+     "ownerFound": 1,
+     "readFound": 1
+    }
+   ],
+   "top": 6107,
+   "statesSeen": [
+    "fri18",
+    "saved",
+    "fri21"
+   ]
+  }
+ ],
+ "productTimelines": [],
+ "reversed": [],
+ "staggers": [
+  {
+   "key": "300|cubic-bezier(0, 0, 0, 1)|transform",
+   "text": true,
+   "n": 12,
+   "gap": 20,
+   "span": 161
+  },
+  {
+   "key": "600|cubic-bezier(0.2, 0, 0, 1)|opacity",
+   "text": false,
+   "n": 3,
+   "gap": 81,
+   "span": 161
+  },
+  {
+   "key": "600|cubic-bezier(0, 0, 0, 1)|transform",
+   "text": true,
+   "n": 18,
+   "gap": 20,
+   "span": 431
+  }
+ ],
+ "entrances": [
+  {
+   "target": "div.stage.stage--hero",
+   "from": 12,
+   "mask": false,
+   "dur": 400
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "span",
+   "from": 34,
+   "mask": true,
+   "dur": 300
+  },
+  {
+   "target": "figure.rv",
+   "from": 16,
+   "mask": false,
+   "dur": 600
+  },
+  {
+   "target": "figure.rv",
+   "from": 16,
+   "mask": false,
+   "dur": 600
+  },
+  {
+   "target": "figure.rv",
+   "from": 16,
+   "mask": false,
+   "dur": 600
+  },
+  {
+   "target": "figure.rv",
+   "from": 16,
+   "mask": false,
+   "dur": 600
+  },
+  {
+   "target": "figure.rv",
+   "from": 16,
+   "mask": false,
+   "dur": 600
+  },
+  {
+   "target": "figure.rv",
+   "from": 16,
+   "mask": false,
+   "dur": 600
+  }
+ ],
+ "behavior": [
+  {
+   "id": "hero-scene",
+   "test": "hover",
+   "steps": 0
+  },
+  {
+   "id": "hero-scene",
+   "test": "pause button",
+   "steps": 0
+  },
+  {
+   "id": "hero-scene",
+   "test": "off screen",
+   "steps": 0
+  },
+  {
+   "id": "route-scene",
+   "test": "hover",
+   "steps": 0
+  },
+  {
+   "id": "route-scene",
+   "test": "pause button",
+   "steps": 0
+  },
+  {
+   "id": "route-scene",
+   "test": "off screen",
+   "steps": 0
+  },
+  {
+   "id": "warn-scene",
+   "test": "hover",
+   "steps": 0
+  },
+  {
+   "id": "warn-scene",
+   "test": "pause button",
+   "steps": 0
+  },
+  {
+   "id": "warn-scene",
+   "test": "off screen",
+   "steps": 0
+  }
+ ],
+ "beats": [
+  {
+   "id": "hero-scene",
+   "state": "aim",
+   "holds": [
+    855,
+    11974,
+    1288
+   ],
+   "words": null,
+   "read": null,
+   "quiet": []
+  },
+  {
+   "id": "route-scene",
+   "state": "leave",
+   "holds": [
+    5100,
+    36527,
+    1340
+   ],
+   "words": 1,
+   "read": ".rs-time",
+   "quiet": []
+  },
+  {
+   "id": "warn-scene",
+   "state": "fri18",
+   "holds": [
+    6013,
+    62942
+   ],
+   "words": 4,
+   "read": ".wp-win",
+   "quiet": []
+  },
+  {
+   "id": "hero-scene",
+   "state": "press",
+   "holds": [
+    465,
+    71819
+   ],
+   "words": null,
+   "read": null,
+   "quiet": []
+  },
+  {
+   "id": "hero-scene",
+   "state": "window",
+   "holds": [
+    7683
+   ],
+   "words": 9,
+   "read": ".plan__head",
+   "quiet": []
+  },
+  {
+   "id": "route-scene",
+   "state": "jack",
+   "holds": [
+    1131
+   ],
+   "words": 1,
+   "read": ".rs-time",
+   "quiet": []
+  },
+  {
+   "id": "route-scene",
+   "state": "hamstead",
+   "holds": [
+    1178
+   ],
+   "words": 1,
+   "read": ".rs-time",
+   "quiet": []
+  },
+  {
+   "id": "route-scene",
+   "state": "gurnard",
+   "holds": [
+    1120
+   ],
+   "words": 1,
+   "read": ".rs-time",
+   "quiet": []
+  },
+  {
+   "id": "route-scene",
+   "state": "cowes",
+   "holds": [
+    3761
+   ],
+   "words": 3,
+   "read": ".rs-now",
+   "quiet": []
+  },
+  {
+   "id": "warn-scene",
+   "state": "saved",
+   "holds": [
+    1933
+   ],
+   "words": 4,
+   "read": ".face--saved b",
+   "quiet": []
+  },
+  {
+   "id": "warn-scene",
+   "state": "fri21",
+   "holds": [
+    6732
+   ],
+   "words": 9,
+   "read": ".alert__lead",
+   "quiet": []
+  }
+ ],
+ "findings": []
+}

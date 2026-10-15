@@ -47,7 +47,7 @@ Copy is always design-copy here; direct response copywriting never applies insid
 2. Every state is rendered and linted, not only the ready page: expose states through a `?state=` parameter (or equivalent), **including a post-action state for every primary action** (`?state=approved`, `?state=sent`), rendered, linted and claim-checked with `claims_inventory.mjs --render` like any other (lint `truth` drives live ticks, not clicks, so only this URL catches a screen that goes false after its own action; `kb/tests/benchmark/round1/RANKED.md` row 1); run `node tools/lint.mjs page.html --states state=loading,state=empty,...` and render each state URL. Build a state sheet (every control in every state; empty, loading, error and partial panels). Every `[judged]` row holds on those screenshots.
 3. `search-check.mjs --expect private` exits 0 (the page carries `noindex`); `claims_inventory.mjs --render` exits 0, every `PERIOD` warning is fixed, and every number in copy matches the data on screen in every state and after one live update; the lint's `truth` and `proportion` checks pass with the data-attribute contract in place; renders at 390, 768, 1024 and 1440, and the 768 and 1024 shots are read, not only taken.
 4. Side by side with the closest exemplar, rated close on density, hierarchy, chrome restraint and craft: the Linear app first, then the Stripe and Vercel dashboards (`kb/teardowns/INDEX.md`, `linear-app.md`, `stripe-dashboard.md`, `vercel-dashboard.md`; `references/signature-moves.md`).
-5. A fresh-context critic has judged the gate (design-director section 5, step 14).
+5. A fresh-context critic has judged the gate (design-director section 5, step 15).
 6. The hand-over names what is still short of the exemplar.
 
 ## 4. Reference map

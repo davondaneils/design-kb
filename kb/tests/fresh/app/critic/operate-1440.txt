@@ -1,0 +1,239 @@
+-- default load: page out 11:50 back 16:44 home 17:31; expected out 11:50 back 16:44 home 17:31, margin 25
+  ok   times
+  ok   home note "25 min before sunset (17:56)" ~ "25 min before sunset"
+  ok   legs "Each way: 44 min out, 47 min back"
+  ok   lane label back "Back 16:44 to 17:31"
+  FAIL waypoint ends "Lymington Yacht Haven0.011:5017:31" / "Yarmouth Harbour4.512:3416:44"
+   verdict: Inside Wren’s limits, 2 cautions
+   answer: Leave Lymington at 11:50 and Yarmouth at 16:44. The stream is with you both ways and the mean wind stays inside Wren’s 20 kn limit. The return meets gusts to 23 kn and gets you home 25 min before sunset.
+   count: 3 warnings, 2 affect your plan
+   warn: Wind against tide, 13:20 to 15:25 || Clear of your planyou are ashore at Yarmouth
+   warn: Gusts above 20 kn, 16:00 to 19:00 || Affects your return16:44 to 17:31: reef before you leave Yarmouth
+   warn: Home 25 min before sunset || Affects your returnhome 17:31, 25 min before sunset
+   notes: In the out window 10:05 to 12:35 | In the back window 16:15 to 17:10
+   sum: Out 11:50 · Back 16:44Home 17:31, 2 cautions
+   aria: 11:50, inside the window [360,920] ; 16:44, inside the window [784,1140]
+  ok   count re-derived 2
+-- mouse +10 out: page out 12:00 back 16:44 home 17:31; expected out 12:00 back 16:44 home 17:31, margin 25
+  ok   times
+  ok   home note "25 min before sunset (17:56)" ~ "25 min before sunset"
+  ok   legs "Each way: 44 min out, 47 min back"
+  ok   lane label back "Back 16:44 to 17:31"
+  FAIL waypoint ends "Lymington Yacht Haven0.012:0017:31" / "Yarmouth Harbour4.512:4416:44"
+   verdict: Inside Wren’s limits, 2 cautions
+   answer: Leave Lymington at 12:00 and Yarmouth at 16:44. The stream is with you both ways and the mean wind stays inside Wren’s 20 kn limit. The return meets gusts to 23 kn and gets you home 25 min before sunset.
+   count: 3 warnings, 2 affect your plan
+   warn: Wind against tide, 13:20 to 15:25 || Clear of your planyou are ashore at Yarmouth
+   warn: Gusts above 20 kn, 16:00 to 19:00 || Affects your return16:44 to 17:31: reef before you leave Yarmouth
+   warn: Home 25 min before sunset || Affects your returnhome 17:31, 25 min before sunset
+   notes: In the out window 10:05 to 12:35 | In the back window 16:15 to 17:10
+   sum: Out 12:00 · Back 16:44Home 17:31, 2 cautions
+   aria: 12:00, inside the window [360,920] ; 16:44, inside the window [794,1140]
+  ok   count re-derived 2
+-- Enter -10 back: page out 12:00 back 16:34 home 17:22; expected out 12:00 back 16:34 home 17:22, margin 34
+  ok   times
+  ok   home note "34 min before sunset (17:56)" ~ "34 min before sunset"
+  ok   legs "Each way: 44 min out, 48 min back"
+  ok   lane label back "Back 16:34 to 17:22"
+  FAIL waypoint ends "Lymington Yacht Haven0.012:0017:22" / "Yarmouth Harbour4.512:4416:34"
+   verdict: Inside Wren’s limits, 1 caution
+   answer: Leave Lymington at 12:00 and Yarmouth at 16:34. The stream is with you both ways and the mean wind stays inside Wren’s 20 kn limit. The return meets gusts to 23 kn and gets you home 34 min before sunset.
+   count: 3 warnings, 1 affects your plan
+   warn: Wind against tide, 13:20 to 15:25 || Clear of your planyou are ashore at Yarmouth
+   warn: Gusts above 20 kn, 16:00 to 19:00 || Affects your return16:34 to 17:22: reef before you leave Yarmouth
+   warn: Home 34 min before sunset || Clear of your planhome 17:22, 34 min before sunset
+   notes: In the out window 10:05 to 12:35 | In the back window 16:15 to 17:10
+   sum: Out 12:00 · Back 16:34Home 17:22, 1 caution
+   aria: 12:00, inside the window [360,911] ; 16:34, inside the window [794,1140]
+  ok   count re-derived 1
+-- Space -10 back: page out 12:00 back 16:24 home 17:13; expected out 12:00 back 16:24 home 17:13, margin 43
+  ok   times
+  ok   home note "43 min before sunset (17:56)" ~ "43 min before sunset"
+  ok   legs "Each way: 44 min out, 49 min back"
+  ok   lane label back "Back 16:24 to 17:13"
+  FAIL waypoint ends "Lymington Yacht Haven0.012:0017:13" / "Yarmouth Harbour4.512:4416:24"
+   verdict: Inside Wren’s limits, 1 caution
+   answer: Leave Lymington at 12:00 and Yarmouth at 16:24. The stream is with you both ways and the mean wind stays inside Wren’s 20 kn limit. The return meets gusts to 23 kn and gets you home 43 min before sunset.
+   count: 3 warnings, 1 affects your plan
+   warn: Wind against tide, 13:20 to 15:25 || Clear of your planyou are ashore at Yarmouth
+   warn: Gusts above 20 kn, 16:00 to 19:00 || Affects your return16:24 to 17:13: reef before you leave Yarmouth
+   warn: Home 43 min before sunset || Clear of your planhome 17:13, 43 min before sunset
+   notes: In the out window 10:05 to 12:35 | In the back window 16:15 to 17:10
+   sum: Out 12:00 · Back 16:24Home 17:13, 1 caution
+   aria: 12:00, inside the window [360,902] ; 16:24, inside the window [794,1140]
+  ok   count re-derived 1
+-- ArrowRight x3 out: page out 12:15 back 16:24 home 17:13; expected out 12:15 back 16:24 home 17:13, margin 43
+  ok   times
+  ok   home note "43 min before sunset (17:56)" ~ "43 min before sunset"
+  ok   legs "Each way: 44 min out, 49 min back"
+  ok   lane label back "Back 16:24 to 17:13"
+  FAIL waypoint ends "Lymington Yacht Haven0.012:1517:13" / "Yarmouth Harbour4.512:5916:24"
+   verdict: Inside Wren’s limits, 1 caution
+   answer: Leave Lymington at 12:15 and Yarmouth at 16:24. The stream is with you both ways and the mean wind stays inside Wren’s 20 kn limit. The return meets gusts to 23 kn and gets you home 43 min before sunset.
+   count: 3 warnings, 1 affects your plan
+   warn: Wind against tide, 13:20 to 15:25 || Clear of your planyou are ashore at Yarmouth
+   warn: Gusts above 20 kn, 16:00 to 19:00 || Affects your return16:24 to 17:13: reef before you leave Yarmouth
+   warn: Home 43 min before sunset || Clear of your planhome 17:13, 43 min before sunset
+   notes: In the out window 10:05 to 12:35 | In the back window 16:15 to 17:10
+   sum: Out 12:15 · Back 16:24Home 17:13, 1 caution
+   aria: 12:15, inside the window [360,902] ; 16:24, inside the window [809,1140]
+  ok   count re-derived 1
+-- Shift+ArrowLeft out: page out 11:45 back 16:24 home 17:13; expected out 11:45 back 16:24 home 17:13, margin 43
+  ok   times
+  ok   home note "43 min before sunset (17:56)" ~ "43 min before sunset"
+  ok   legs "Each way: 45 min out, 49 min back"
+  ok   lane label back "Back 16:24 to 17:13"
+  FAIL waypoint ends "Lymington Yacht Haven0.011:4517:13" / "Yarmouth Harbour4.512:3016:24"
+   verdict: Inside Wren’s limits, 1 caution
+   answer: Leave Lymington at 11:45 and Yarmouth at 16:24. The stream is with you both ways and the mean wind stays inside Wren’s 20 kn limit. The return meets gusts to 23 kn and gets you home 43 min before sunset.
+   count: 3 warnings, 1 affects your plan
+   warn: Wind against tide, 13:20 to 15:25 || Clear of your planyou are ashore at Yarmouth
+   warn: Gusts above 20 kn, 16:00 to 19:00 || Affects your return16:24 to 17:13: reef before you leave Yarmouth
+   warn: Home 43 min before sunset || Clear of your planhome 17:13, 43 min before sunset
+   notes: In the out window 10:05 to 12:35 | In the back window 16:15 to 17:10
+   sum: Out 11:45 · Back 16:24Home 17:13, 1 caution
+   aria: 11:45, inside the window [360,902] ; 16:24, inside the window [780,1140]
+  ok   count re-derived 1
+-- PageUp out (into WAT?): page out 12:45 back 16:24 home 17:13; expected out 12:45 back 16:24 home 17:13, margin 43
+  ok   times
+  ok   home note "43 min before sunset (17:56)" ~ "43 min before sunset"
+  ok   legs "Each way: 44 min out, 49 min back"
+  ok   lane label back "Back 16:24 to 17:13"
+  FAIL waypoint ends "Lymington Yacht Haven0.012:4517:13" / "Yarmouth Harbour4.513:2916:24"
+   verdict: Outside Wren’s limits
+   answer: Leave Lymington at 12:45 and Yarmouth at 16:24. The stream is with you both ways and the mean wind stays inside Wren’s 20 kn limit. Your out leg crosses up to 15 kn of wind against tide, over the 12 kn limit. The return meets gusts to 23 kn and gets you home 43 min before sunset.
+   count: 3 warnings, 2 affect your plan
+   warn: Wind against tide, 13:20 to 15:25 || Outside Wren’s limityour out leg crosses it
+   warn: Gusts above 20 kn, 16:00 to 19:00 || Affects your return16:24 to 17:13: reef before you leave Yarmouth
+   warn: Home 43 min before sunset || Clear of your planhome 17:13, 43 min before sunset
+   notes: Outside the out window: wind against tide over 12 kn | In the back window 16:15 to 17:10
+   sum: Out 12:45 · Back 16:24Home 17:13, outside limits
+   aria: 12:45, outside the window: wind against tide over 12 kn [360,902] ; 16:24, inside the window [839,1140]
+  ok   count re-derived 2
+Home -> 06:00 Outside the out window: before sunrise, stream against you
+-- Home out: page out 06:00 back 16:24 home 17:13; expected out 06:00 back 16:24 home 17:13, margin 43
+  ok   times
+  ok   home note "43 min before sunset (17:56)" ~ "43 min before sunset"
+  ok   legs "Each way: 70 min out, 49 min back"
+  ok   lane label back "Back 16:24 to 17:13"
+  FAIL waypoint ends "Lymington Yacht Haven0.006:0017:13" / "Yarmouth Harbour4.507:1016:24"
+   verdict: Outside Wren’s limits
+   answer: Leave Lymington at 06:00 and Yarmouth at 16:24. The stream is against you on the out leg and the mean wind stays inside Wren’s 20 kn limit. The return meets gusts to 23 kn and gets you home 43 min before sunset.
+   count: 3 warnings, 2 affect your plan
+   warn: Wind against tide, 13:20 to 15:25 || Clear of your planyou are ashore at Yarmouth
+   warn: Gusts above 20 kn, 16:00 to 19:00 || Affects your return16:24 to 17:13: reef before you leave Yarmouth
+   warn: Leaving before sunrise || Outside Wren’s limityou leave Lymington before sunrise, 07:33
+   notes: Outside the out window: before sunrise, stream against you | In the back window 16:15 to 17:10
+   sum: Out 06:00 · Back 16:24Home 17:13, outside limits
+   aria: 06:00, outside the window: before sunrise, stream against you [360,902] ; 16:24, inside the window [460,1140]
+  FAIL count re-derived 1
+End -> 15:02 Outside the out window: stream against you, wind against tide over 12 kn
+-- End out: page out 15:02 back 16:24 home 17:13; expected out 15:02 back 16:24 home 17:13, margin 43
+  ok   times
+  ok   home note "43 min before sunset (17:56)" ~ "43 min before sunset"
+  ok   legs "Each way: 52 min out, 49 min back"
+  ok   lane label back "Back 16:24 to 17:13"
+  FAIL waypoint ends "Lymington Yacht Haven0.015:0217:13" / "Yarmouth Harbour4.515:5416:24"
+   verdict: Outside Wren’s limits
+   answer: Leave Lymington at 15:02 and Yarmouth at 16:24. The stream is against you on the out leg and the mean wind stays inside Wren’s 20 kn limit. Your out leg crosses up to 15 kn of wind against tide, over the 12 kn limit. The return meets gusts to 23 kn and gets you home 43 min before sunset.
+   count: 3 warnings, 2 affect your plan
+   warn: Wind against tide, 13:20 to 15:25 || Outside Wren’s limityour out leg crosses it
+   warn: Gusts above 20 kn, 16:00 to 19:00 || Affects your return16:24 to 17:13: reef before you leave Yarmouth
+   warn: Home 43 min before sunset || Clear of your planhome 17:13, 43 min before sunset
+   notes: Outside the out window: stream against you, wind against tide over 12 kn | In the back window 16:25 to 17:10
+   sum: Out 15:02 · Back 16:24Home 17:13, outside limits
+   aria: 15:02, outside the window: stream against you, wind against tide over 12 kn [360,902] ; 16:24, inside the window [984,1140]
+  ok   count re-derived 2
+-- PageUp back (after sunset): page out 15:02 back 17:24 home 18:09; expected out 15:02 back 17:24 home 18:09, margin -13
+  ok   times
+  ok   home note "13 min after sunset (17:56)" ~ "13 min after sunset"
+  ok   legs "Each way: 52 min out, 45 min back"
+  ok   lane label back "Back 17:24 to 18:09"
+  FAIL waypoint ends "Lymington Yacht Haven0.015:0218:09" / "Yarmouth Harbour4.515:5417:24"
+   verdict: Outside Wren’s limits
+   answer: Leave Lymington at 15:02 and Yarmouth at 17:24. The stream is against you on the out leg and the mean wind stays inside Wren’s 20 kn limit. Your out leg crosses up to 15 kn of wind against tide, over the 12 kn limit. The return meets gusts to 23 kn and gets you home 13 min after sunset.
+   count: 3 warnings, 3 affect your plan
+   warn: Wind against tide, 13:20 to 15:25 || Outside Wren’s limityour out leg crosses it
+   warn: Gusts above 20 kn, 16:00 to 19:00 || Affects your return17:24 to 18:09: reef before you leave Yarmouth
+   warn: Home 13 min after sunset || Outside Wren’s limithome 18:09, 13 min after sunset
+   notes: Outside the out window: stream against you, wind against tide over 12 kn | Outside the back window: after sunset
+   sum: Out 15:02 · Back 17:24Home 18:09, outside limits
+   aria: 15:02, outside the window: stream against you, wind against tide over 12 kn [360,955] ; 17:24, outside the window: after sunset [984,1140]
+  ok   count re-derived 3
+-- End back: page out 15:02 back 19:00 home 19:44; expected out 15:02 back 19:00 home 19:44, margin -108
+  ok   times
+  ok   home note "1 h 48 min after sunset (17:56)" ~ "1 h 48 min after sunset"
+  ok   legs "Each way: 52 min out, 44 min back"
+  ok   lane label back "Back 19:00 to 19:44"
+  FAIL waypoint ends "Lymington Yacht Haven0.015:0219:44" / "Yarmouth Harbour4.515:5419:00"
+   verdict: Outside Wren’s limits
+   answer: Leave Lymington at 15:02 and Yarmouth at 19:00. The stream is against you on the out leg and the mean wind stays inside Wren’s 20 kn limit. Your out leg crosses up to 15 kn of wind against tide, over the 12 kn limit. The return gets you home 1 h 48 min after sunset.
+   count: 3 warnings, 2 affect your plan
+   warn: Wind against tide, 13:20 to 15:25 || Outside Wren’s limityour out leg crosses it
+   warn: Gusts above 20 kn, 16:00 to 19:00 || Clear of your planyou are ashore at Yarmouth
+   warn: Home 1 h 48 min after sunset || Outside Wren’s limithome 19:44, 1 h 48 min after sunset
+   notes: Outside the out window: stream against you, wind against tide over 12 kn | Outside the back window: after sunset
+   sum: Out 15:02 · Back 19:00Home 19:44, outside limits
+   aria: 15:02, outside the window: stream against you, wind against tide over 12 kn [360,1040] ; 19:00, outside the window: after sunset [984,1140]
+  ok   count re-derived 2
+-- mouse drag back to ~16:00: page out 11:50 back 16:00 home 16:51; expected out 11:50 back 16:00 home 16:51, margin 65
+  ok   times
+  ok   home note "1 h 05 min before sunset (17:56)" ~ "1 h 05 min before sunset"
+  ok   legs "Each way: 44 min out, 51 min back"
+  ok   lane label back "Back 16:00 to 16:51"
+  FAIL waypoint ends "Lymington Yacht Haven0.011:5016:51" / "Yarmouth Harbour4.512:3416:00"
+   verdict: Outside Wren’s limits
+   answer: Leave Lymington at 11:50 and Yarmouth at 16:00. The stream is against you on the return and the mean wind stays inside Wren’s 20 kn limit. The return meets gusts to 23 kn and gets you home 1 h 05 min before sunset.
+   count: 3 warnings, 1 affects your plan
+   warn: Wind against tide, 13:20 to 15:25 || Clear of your planyou are ashore at Yarmouth
+   warn: Gusts above 20 kn, 16:00 to 19:00 || Affects your return16:00 to 16:51: reef before you leave Yarmouth
+   warn: Home 1 h 05 min before sunset || Clear of your planhome 16:51, 1 h 05 min before sunset
+   notes: In the out window 10:05 to 12:35 | Outside the back window: stream against you
+   sum: Out 11:50 · Back 16:00Home 16:51, outside limits
+   aria: 11:50, inside the window [360,880] ; 16:00, outside the window: stream against you [784,1140]
+  ok   count re-derived 1
+-- mouse drag out to ~13:20 (WAT): page out 11:50 back 16:00 home 16:51; expected out 11:50 back 16:00 home 16:51, margin 65
+  ok   times
+  ok   home note "1 h 05 min before sunset (17:56)" ~ "1 h 05 min before sunset"
+  ok   legs "Each way: 44 min out, 51 min back"
+  ok   lane label back "Back 16:00 to 16:51"
+  FAIL waypoint ends "Lymington Yacht Haven0.011:5016:51" / "Yarmouth Harbour4.512:3416:00"
+   verdict: Outside Wren’s limits
+   answer: Leave Lymington at 11:50 and Yarmouth at 16:00. The stream is against you on the return and the mean wind stays inside Wren’s 20 kn limit. The return meets gusts to 23 kn and gets you home 1 h 05 min before sunset.
+   count: 3 warnings, 1 affects your plan
+   warn: Wind against tide, 13:20 to 15:25 || Clear of your planyou are ashore at Yarmouth
+   warn: Gusts above 20 kn, 16:00 to 19:00 || Affects your return16:00 to 16:51: reef before you leave Yarmouth
+   warn: Home 1 h 05 min before sunset || Clear of your planhome 16:51, 1 h 05 min before sunset
+   notes: In the out window 10:05 to 12:35 | Outside the back window: stream against you
+   sum: Out 11:50 · Back 16:00Home 16:51, outside limits
+   aria: 11:50, inside the window [360,880] ; 16:00, outside the window: stream against you [784,1140]
+  ok   count re-derived 1
+save busy: Save plan|btn btn-primary|true / Save plan|btn btn-primary|true Saving the plan.
+saved: ?state=saved 2 of 3 Plan saved|btn btn-secondary|true / Plan saved|btn btn-secondary|true | Plan saved. Find it in Saved plans.Still open: gusts to 23 kn on the return; home 25 min before sunset. | Plan saved.
+after change:  2 of 3 Save plan|btn btn-primary|null / Save plan|btn btn-primary|null | notice: Plan saved. Find it in Saved plans.Still open: gusts to 23 kn on the return; home 25 min before sunset.
+re-saved: ?state=saved 2 of 3 | Plan saved. Find it in Saved plans.Still open: gusts to 23 kn on the return; home 25 min before sunset.
+reload ?state=saved: 11:50 16:44 2 of 3 Plan saved. Find it in Saved plans.Still open: gusts to 23 kn on the return; home 25 min before sunset.
+error: Wind not checked: tide and daylight only | Leave Lymington at 11:50 and Yarmouth at 16:44. The stream is with you both ways. The wind forecast didn’t load, so this checks the tide and daylight only: retry before you decide. | 3 warnings, 2 not checked | Wind against tide || Not checkedthe wind forecast didn’t load ## Gusts || Not checkedthe wind forecast didn’t load ## Home 25 min before sunset || Affects your returnhome 17:31, 25 min before sunset | The wind forecast didn’t load. Tide, stream and daylight are up to date, so the windows below check those only.Halyard tries again on its own every 5 minutes.
+-- error state numbers (tide only): page out 11:50 back 16:44 home 17:31; expected out 11:50 back 16:44 home 17:31, margin 25
+  ok   times
+  ok   home note "25 min before sunset (17:56)" ~ "25 min before sunset"
+  ok   legs "Each way: 44 min out, 47 min back"
+  ok   lane label back "Back 16:44 to 17:31"
+  FAIL waypoint ends "Lymington Yacht Haven0.011:5017:31" / "Yarmouth Harbour4.512:3416:44"
+   verdict: Wind not checked: tide and daylight only
+   answer: Leave Lymington at 11:50 and Yarmouth at 16:44. The stream is with you both ways. The wind forecast didn’t load, so this checks the tide and daylight only: retry before you decide.
+   count: 3 warnings, 2 not checked
+   warn: Wind against tide || Not checkedthe wind forecast didn’t load
+   warn: Gusts || Not checkedthe wind forecast didn’t load
+   warn: Home 25 min before sunset || Affects your returnhome 17:31, 25 min before sunset
+   notes: In the tide out window 10:05 to 14:35 | In the tide back window 16:15 to 17:10
+   sum: Out 11:50 · Back 16:44Home 17:31
+   aria: 11:50, inside the window [360,920] ; 16:44, inside the window [784,1140]
+  FAIL count re-derived 2
+retry t+100: ?state=loading Loading the forecast.
+retry done:  Inside Wren’s limits, 2 cautions Forecast loaded.
+nowindow: No safe window this day | No safe window on Saturday 24 October. The mean wind is over Wren’s 20 kn limit from 05:40 to 20:20, gusting 34 kn. Try another day, or sail somewhere more sheltered. | 2 warnings, no safe window this day | Wind above Wren’s 20 kn limit, 05:40 to 20:20 || No safe windowit covers the whole day, sunrise to sunset ## Wind against tide, 10:05 to 15:25 || Over Wren’s limitup to 24 kn | No safe windowWind over 20 kn all day
+empty:  |  | No boat yetAdd one to see windows | Add your boat to see your windowsHalyard finds windows from your boat’s speed and limits. The tide, stream and wind below are for Saturday 24 October (sample).Add your boat: name, length and planning speed.Set its limits: true wind, wind against tide, arrive by sunset.Halyard marks the out and back windows and warns you when they close.
+readout 14:00: 14:00Tide1.0 mStreamW 1.9 knWind13 kn SWGust18 knLeave LymingtonWind against tideLeave YarmouthStream against | expected tide 1.0 stream -1.9 wind 13 gust 18
+
+FAILS 16

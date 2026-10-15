@@ -1,0 +1,57 @@
+
+Fundamentals lint: plan-states.html  ->  PASS (0 fail, 29 warn)
+
+  pass  axe
+  pass  overlay
+  pass  targets  (28 warn)
+        ! touch target under 44x44 at 390px  [section > div.sheet-row > div.sheet-cell > button.btn.btn-primary]
+        ! touch target under 44x44 at 390px  [section > div.sheet-row > div.sheet-cell > button.btn.btn-primary]
+        ! touch target under 44x44 at 390px  [section > div.sheet-row > div.sheet-cell > button.btn.btn-primary]
+        ! touch target under 44x44 at 390px  [section > div.sheet-row > div.sheet-cell > button.btn.btn-primary]
+        ! touch target under 44x44 at 390px  [section > div.sheet-row > div.sheet-cell > button.btn.btn-primary]
+        ... 23 more warnings
+  pass  measure
+  pass  type-scale
+  pass  spacing
+  pass  overflow
+  pass  heading-wrap
+  pass  svg-overlap
+  pass  reading-size
+  pass  selected-state
+  pass  primary
+  pass  radius
+  pass  color-scheme
+  pass  typography
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke
+  pass  weight
+  pass  occlusion
+  pass  squash
+  pass  sticky-header
+  pass  run-together
+  pass  word-break
+  pass  grid-edge
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  state-sheet
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  phone-facts
+  pass  dead-control
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback  (1 warn)
+        ! layout moves 23px at 1440px when the web fonts fail (worst: #main > div.sheet > section); add metric fallbacks (size-adjust, ascent-override). Line count changed in 4 elements: div.sheet > section > ol.warnings > li.warn "2Gusts above 20 kn, 16:00 to 19:00Cautio" 4 to 5 lines; section > ol.warnings > li.warn > p.effect "Affects your return16:44 to 17:31: reef " 1 to 2 lines; div.sheet > section > ol.warnings > li.warn "1Wind against tideNot checked, and the o" 5 to 4 lines; section > div.notice > div.body > p.muted "Still open: gusts to 23 kn on the return" 1 to 2 lines (one element near a wrap point is a copy fix; many is a font metrics fix)  [#main > div.sheet > section]
+  pass  motion
+
+  JSON: kb/tests/fresh/app/reports/lint-states.json

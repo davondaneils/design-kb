@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en-GB" data-lint-page="state-sheet">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Halyard home page: state sheet</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Every state of every control and every frame of the three scenes on the Halyard home page, side by side.">
+<style>{{PAGE_CSS}}</style>
+<style>
+  /* State sheet only: hover, focus and pressed drawn with the page's own tokens so they can be seen at rest. */
+  .sheet { padding-block: var(--space-8) var(--space-10); }
+  .sheet h1 { font-size: var(--text-4xl); line-height: var(--leading-tight); }
+  .sheet > .wrap > p { margin-block-start: var(--space-4); color: var(--color-text-muted); max-inline-size: var(--size-measure); }
+  .group { margin-block-start: var(--space-9); padding-block: 0; }
+  .group > h2 { font-size: var(--text-2xl); max-inline-size: none; margin-block-end: var(--space-5); }
+  .grid { display: grid; gap: var(--space-5); grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); align-items: start; }
+  .grid--wide { grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr)); }
+  .grid--frames { grid-template-columns: minmax(0, 1fr); }
+  @media (width >= 64rem) { .grid--frames { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .cell { display: grid; gap: var(--space-3); align-content: start; justify-items: start; }
+  .cell--wide { grid-column: span 2; }
+  @media (width < 48rem) { .cell--wide { grid-column: 1 / -1; } }
+  .grid--faq { grid-template-columns: repeat(auto-fill, minmax(min(100%, 30rem), 1fr)); }
+  .cell > .lbl { font: var(--text-xs)/var(--leading-normal) var(--font-mono); color: var(--color-text-muted); }
+  .btn--primary.is-hover { background: var(--color-primary-hover); }
+  .btn--primary.is-pressed { background: var(--color-primary-active); transform: scale(0.97); }
+  .btn--secondary.is-hover, .btn--quiet.is-hover, .nav__link.is-hover { background: var(--state-hover); }
+  .btn--secondary.is-pressed, .btn--quiet.is-pressed { background: var(--state-pressed); transform: scale(0.97); }
+  .is-focus { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+  .faq summary.is-hover { background: var(--state-hover); }
+  .billing button.is-hover { background: var(--state-hover); }
+  .spec-menu { position: relative; inline-size: min(100%, 390px); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: clip; }
+  .spec-menu .site-head { border: 0; }
+  .spec-menu .head__in { padding-inline: var(--space-5); }
+  .spec-menu .nav { position: static; display: grid; gap: var(--space-5); padding: var(--space-3) var(--space-5) var(--space-6); border-block-start: 1px solid var(--color-border); }
+  .spec-menu .nav ul { display: grid; margin: 0; }
+  .spec-menu .nav ul a { inline-size: 100%; min-block-size: var(--size-control-lg); font-size: var(--text-base); padding: 0 var(--space-3); }
+  .spec-menu .nav__end { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+  .spec-menu .nav__end > * { justify-content: center; min-block-size: var(--size-control-lg); }
+  .spec-menu .menu-btn { display: inline-flex; }
+  .spec-menu .menu-btn .i-menu { display: none; }
+  .frame-cap { display: flex; justify-content: space-between; gap: var(--space-4); font: var(--text-sm)/var(--leading-normal) var(--font-mono); color: var(--color-text-muted); margin-block-start: var(--space-3); }
+  .frame .app { inline-size: 100%; }
+</style>
+</head>
+<body>
+<main class="sheet" id="main">
+  <div class="wrap">
+    <h1>Halyard home page: state sheet</h1>
+    <p>Every control on halyard.html in every state it can take, and the hero scene frame by frame. Hover, focus and pressed are drawn at rest with the same tokens the page uses. Sample data throughout.</p>
+
+    <section class="group" aria-labelledby="g-buttons">
+      <h2 id="g-buttons">Buttons</h2>
+      <div class="grid">
+        <div class="cell"><span class="lbl">primary / default</span><a class="btn btn--primary btn--lg" href="/plan/">Plan a sail</a></div>
+        <div class="cell"><span class="lbl">primary / hover</span><a class="btn btn--primary btn--lg is-hover" href="/plan/">Plan a sail</a></div>
+        <div class="cell"><span class="lbl">primary / focus</span><a class="btn btn--primary btn--lg is-focus" href="/plan/">Plan a sail</a></div>
+        <div class="cell"><span class="lbl">primary / pressed</span><a class="btn btn--primary btn--lg is-pressed" href="/plan/">Plan a sail</a></div>
+        <div class="cell"><span class="lbl">primary / disabled</span><button class="btn btn--primary btn--lg" type="button" disabled>Get Plus</button></div>
+        <div class="cell"><span class="lbl">primary / busy</span><button class="btn btn--primary btn--lg" type="button" aria-busy="true" aria-disabled="true">{{icon:spinner:spin}}Starting Plus</button></div>
+        <div class="cell"><span class="lbl">secondary / default</span><a class="btn btn--secondary btn--lg" href="/app/">Get the app</a></div>
+        <div class="cell"><span class="lbl">secondary / hover</span><a class="btn btn--secondary btn--lg is-hover" href="/app/">Get the app</a></div>
+        <div class="cell"><span class="lbl">secondary / focus</span><a class="btn btn--secondary btn--lg is-focus" href="/app/">Get the app</a></div>
+        <div class="cell"><span class="lbl">secondary / pressed</span><a class="btn btn--secondary btn--lg is-pressed" href="/app/">Get the app</a></div>
+        <div class="cell"><span class="lbl">secondary / disabled</span><button class="btn btn--secondary btn--lg" type="button" disabled>Plan a sail</button></div>
+        <div class="cell cell--wide"><span class="lbl">nav link / default, hover, focus</span><span class="nav__end" style="flex-wrap: wrap"><a class="nav__link" href="/coverage/">Coverage</a><a class="nav__link is-hover" href="/coverage/">Coverage</a><a class="nav__link is-focus" href="/coverage/">Coverage</a></span></div>
+      </div>
+    </section>
+
+    <section class="group" aria-labelledby="g-billing">
+      <h2 id="g-billing">Billing toggle and the Plus card</h2>
+      <div class="grid grid--wide">
+        <div class="cell"><span class="lbl">monthly selected (default)</span><div class="billing" role="group" aria-label="Billing period, monthly"><button type="button" aria-pressed="true" data-spec-toggle>Monthly</button><button type="button" aria-pressed="false" data-spec-toggle>Yearly <small>Save £20.88</small></button></div></div>
+        <div class="cell"><span class="lbl">yearly selected</span><div class="billing" role="group" aria-label="Billing period, yearly"><button type="button" aria-pressed="false" data-spec-toggle>Monthly</button><button type="button" aria-pressed="true" data-spec-toggle>Yearly <small>Save £20.88</small></button></div></div>
+        <div class="cell"><span class="lbl">unselected / hover, focus</span><div class="billing" role="group" aria-label="Billing period, hover"><button type="button" aria-pressed="true" data-spec-toggle>Monthly</button><button type="button" aria-pressed="false" class="is-hover is-focus" data-spec-toggle>Yearly <small>Save £20.88</small></button></div></div>
+      </div>
+      <div class="plans">
+        <article class="plan-card plan-card--plus" data-billing="month" aria-label="Plus, monthly">
+          <span class="lbl fig">Plus card, monthly</span>
+          <p class="price"><span class="slot"><span class="v-month">£4.99 <small>a month</small></span><span class="v-year">£39 <small>a year</small></span></span></p>
+          <div class="price-sub"><span class="slot"><span class="v-month">Or £39 a year, which works out at £3.25 a month</span><span class="v-year">£3.25 a month, £20.88 less than paying monthly</span></span></div>
+          <a class="btn btn--primary btn--lg btn--block" href="/plus/?billing=month">Get Plus, £4.99 a month</a>
+          <p class="terms">Renews every month until you cancel. Cancel online in Settings at any time; Plus runs to the end of the month you have paid for.</p>
+        </article>
+        <article class="plan-card plan-card--plus" data-billing="year" aria-label="Plus, yearly">
+          <span class="lbl fig">Plus card, yearly</span>
+          <p class="price"><span class="slot"><span class="v-month">£4.99 <small>a month</small></span><span class="v-year">£39 <small>a year</small></span></span></p>
+          <div class="price-sub"><span class="slot"><span class="v-month">Or £39 a year, which works out at £3.25 a month</span><span class="v-year">£3.25 a month, £20.88 less than paying monthly</span></span></div>
+          <a class="btn btn--primary btn--lg btn--block" href="/plus/?billing=year">Get Plus, £39 a year</a>
+          <p class="terms">Renews every year until you cancel. Cancel online in Settings at any time; Plus runs to the end of the year you have paid for.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="group faq" aria-labelledby="g-faq">
+      <h2 id="g-faq">Questions</h2>
+      <div class="grid grid--faq">
+        <div class="cell" style="justify-items: stretch"><span class="lbl">closed</span><details><summary>Which boats is it for?{{icon:plus}}</summary><p>Yachts and dayboats from 6 to 12 metres.</p></details></div>
+        <div class="cell" style="justify-items: stretch"><span class="lbl">closed / hover</span><details><summary class="is-hover">Which boats is it for?{{icon:plus}}</summary><p>Yachts and dayboats from 6 to 12 metres.</p></details></div>
+        <div class="cell" style="justify-items: stretch"><span class="lbl">open</span><details open><summary>Can I navigate with Halyard?{{icon:plus}}</summary><p>No. Halyard is a planning aid for choosing when to go. It is not a substitute for official tide tables, charts or forecasts.</p></details></div>
+      </div>
+    </section>
+
+    <section class="group" aria-labelledby="g-menu">
+      <h2 id="g-menu">Phone menu and scene pause</h2>
+      <div class="grid grid--wide">
+        <div class="cell"><span class="lbl">menu button, closed</span><button class="btn btn--quiet" type="button" aria-expanded="false" data-spec-expand>{{icon:menu}}Menu</button></div>
+        <div class="cell"><span class="lbl">pause, playing</span><button class="btn btn--quiet pause" type="button" aria-pressed="false" data-spec-press>{{icon:pause}}Pause animation</button></div>
+        <div class="cell"><span class="lbl">pause, paused</span><button class="btn btn--quiet pause" type="button" aria-pressed="true" data-spec-press>{{icon:pause}}Pause animation</button></div>
+        <div class="cell"><span class="lbl">pause, focus</span><button class="btn btn--quiet pause is-focus" type="button" aria-pressed="false" data-spec-press>{{icon:pause}}Pause animation</button></div>
+      </div>
+      <div class="cell" style="margin-block-start: var(--space-6)"><span class="lbl">menu open, phone width</span>
+        <div class="spec-menu">
+          <div class="site-head" data-open>
+            <div class="head__in"><span class="logo">{{SYMBOL}}{{WORDMARK}}</span><button class="btn btn--quiet menu-btn" type="button" aria-expanded="true" data-spec-expand>{{icon:menu:i-menu}}{{icon:close:i-close}}<span class="m-open">Menu</span><span class="m-close">Close</span></button></div>
+            <nav class="nav" aria-label="Main, menu open">
+              <ul><li><a href="/how-it-works/">How it works</a></li><li><a href="/coverage/">Coverage</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/safety/">Safety</a></li></ul>
+              <div class="nav__end"><a class="nav__link" href="/sign-in/">Sign in</a><a class="btn btn--secondary" href="/app/">Get the app</a></div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="group" aria-labelledby="g-scene">
+      <h2 id="g-scene">Hero scene, frame by frame</h2>
+      <p class="body">The event: Saturday is loaded and held while the title and limits are read; the cursor goes to Find windows and presses it; a 1200&nbsp;ms sweep lands each window as the line passes its close, and the status follows 100&nbsp;ms later; the plan rises inside the card. Then a 4000&nbsp;ms rest on the last frame, which is also the still under reduced motion and without JavaScript.</p>
+      <div class="grid grid--frames" style="margin-block-start: var(--space-6)">
+{{HERO_FRAMES}}
+      </div>
+    </section>
+
+    <section class="group" aria-labelledby="g-warn">
+      <h2 id="g-warn">Warnings scene, frame by frame</h2>
+      <p class="body">Swap: the 21:00 forecast rolls the back window from 13:45 to 13:20 in place, the lost 25 minutes show as a hatched sliver that fades, and the note on the phone swaps to the alert at the same moment, so the card and the note never disagree. Rest 3000&nbsp;ms on the 21:00 frame (the still).</p>
+      <div class="grid grid--frames" style="margin-block-start: var(--space-6)">
+{{WARN_FRAMES}}
+      </div>
+    </section>
+
+    <section class="group" aria-labelledby="g-route">
+      <h2 id="g-route">Route scene, frame by frame</h2>
+      <p class="body">The boat sails each leg in time scaled to its minutes, drawing the line as its tip; the clock and the distance count up as it goes and the place name lands on arrival; leg speed changes per leg. Frames show the boat at each mark. Rest 2400&nbsp;ms on Cowes (the still).</p>
+      <div class="grid grid--frames" style="margin-block-start: var(--space-6)">
+{{ROUTE_FRAMES}}
+      </div>
+    </section>
+  </div>
+</main>
+<script>
+  // Specimens work like the real controls, so each one can be operated here too.
+  document.querySelectorAll('[data-spec-toggle]').forEach((b) => b.addEventListener('click', () => {
+    b.parentElement.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    b.parentElement.dataset.last = b.textContent.trim(); // a click on the selected option is still recorded
+  }));
+  document.querySelectorAll('[data-spec-press]').forEach((b) => b.addEventListener('click', () => b.setAttribute('aria-pressed', String(b.getAttribute('aria-pressed') !== 'true'))));
+  document.querySelectorAll('[data-spec-expand]').forEach((b) => b.addEventListener('click', () => b.setAttribute('aria-expanded', String(b.getAttribute('aria-expanded') !== 'true'))));
+  // Aim and press frames: put the cursor where moments.js puts it (just below and right of the button's centre).
+  document.querySelectorAll('[data-frame-aim]').forEach((st) => {
+    const scene = st.querySelector('[data-scene]'), t = scene.querySelector(st.dataset.frameAim), c = scene.querySelector('.shot-cursor');
+    const a = scene.getBoundingClientRect(), b = t.getBoundingClientRect();
+    c.style.setProperty('--cx', Math.round(b.left - a.left + b.width * 0.55) + 'px');
+    c.style.setProperty('--cy', Math.round(b.top - a.top + b.height * 0.6) + 'px');
+    if (scene.dataset.state === 'press') { t.setAttribute('data-press-target', ''); t.setAttribute('data-pressed', ''); c.setAttribute('data-pressed', ''); }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+
+Fundamentals lint: halyard.html  ->  PASS (0 fail, 8 warn)
+
+  pass  axe
+  pass  overlay
+  pass  targets  (2 warn)
+        ! touch target under 44x44 at 390px  [div > ul > li > a]
+        ! touch target under 44x44 at 390px  [div > ul > li > a]
+  pass  measure
+  pass  type-scale  (1 warn)
+        ! fluid display size 104px at 1440px (clamp() present)  [#hero-title]
+  pass  spacing
+  pass  overflow
+  pass  heading-wrap  (3 warn)
+        ! heading ends on a one-word line at 390px ("What sailors say")  [#proof-title]
+        ! heading ends on a one-word line at 1440px ("What sailors say")  [#proof-title]
+        ! heading ends on a one-word line at 1440px ("Where it works. Poole to Chichester Harbour.")  [#cover-title]
+  pass  svg-overlap  (1 warn)
+        ! text "Yarmouth" partly covered by div.stage.stage--side > div.frag.route-card > div.map.map--route > svg (55x9px) at 390px  [div.stage.stage--side > div.frag.route-card > div.map.map--route > span.maplab.maplab--minor]
+  pass  reading-size
+  pass  selected-state
+  pass  primary
+  pass  radius
+  pass  color-scheme
+  pass  typography
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke
+  pass  weight
+  pass  occlusion
+  pass  squash
+  pass  sticky-header
+  pass  run-together
+  pass  word-break
+  pass  grid-edge
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  phone-facts
+  pass  dead-control
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback  (1 warn)
+        ! layout moves 54px at 1440px when the web fonts fail (worst: #route); add metric fallbacks (size-adjust, ascent-override). Line count changed in 1 elements: #how-title "How a window is found. Three tests, ever" 2 to 3 lines (one element near a wrap point is a copy fix; many is a font metrics fix)  [#route]
+  pass  motion
+
+  JSON: kb/tests/fresh/landing/halyard.lint.json
+exit 0

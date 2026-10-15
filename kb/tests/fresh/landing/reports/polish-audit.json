@@ -1,0 +1,92 @@
+{
+  "file": "kb/tests/fresh/landing/halyard.html",
+  "checks": {
+    "radius": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "census: 4px x156, 8px x84, 12px x56, 16px x48, full x8"
+        }
+      ]
+    },
+    "shadow": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "10 distinct box-shadow values (tokens give 5 plus rings)"
+        }
+      ],
+      "info": [
+        {
+          "message": "distinct shadows: 10"
+        }
+      ]
+    },
+    "hover-gate": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "icon-stroke": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "icons checked: 23"
+        }
+      ]
+    },
+    "svg-hairline": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "color-scheme": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "tabular": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "1 numeric cells without tabular figures",
+          "examples": [
+            "#plus > div.price-sub"
+          ]
+        }
+      ],
+      "info": []
+    },
+    "heading-wrap": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "focus-shape": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "elements tested: 32"
+        }
+      ]
+    },
+    "state-shift": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    },
+    "forced-edge": {
+      "fail": [],
+      "warn": [],
+      "info": []
+    }
+  },
+  "summary": {
+    "result": "PASS",
+    "fails": 0,
+    "warns": 2
+  }
+}

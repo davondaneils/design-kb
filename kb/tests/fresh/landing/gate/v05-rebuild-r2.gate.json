@@ -1,0 +1,198 @@
+{
+ "page": "kb/tests/fresh/landing/halyard.html",
+ "graded": "2026-10-15T06:31:51.279Z",
+ "pass": false,
+ "trials": 4,
+ "toldApart": 4,
+ "noMemorableMoment": 0,
+ "rows": [
+  {
+   "trial": 1,
+   "kind": "hero",
+   "exemplar": "linear-hero-load",
+   "ours": "B",
+   "stronger": "A",
+   "confidence": 3,
+   "toldApart": true,
+   "memorable": "the scan line sweeping the day and the good wind hours turning amber behind it",
+   "exemplarMemorable": "the agent chat panel ('Fix the dimmed ride rows...') appearing on top of the live issue view",
+   "tells": [
+    "A is recognizably the Linear homepage hero (dark UI, 'The product development system for teams and agents')",
+    "A gives one owner at a time: headline resolves 0.0 to 1.3s, product UI fades up 1.3 to 2.0s, the agent panel arrives alone at about 3.5s and then holds",
+    "A's headline is blurred and unreadable for its first 1.2s, a slow brand move but it lands in place with no overshoot",
+    "B has a real product action (cursor presses Find windows at 2.6s, a scan line sweeps the chart 3.0 to 4.75s) but stacks four changes at once in a small card: sweep line, pink bands, bars turning amber, window chips appearing",
+    "B's Proposed plan row only appears at 4.75s and the button flips back from Checking to Find windows around 5.5s, so the payoff is barely held inside the clip",
+    "Most text inside B's card is too small to read at this scale while it changes"
+   ],
+   "corrections": [
+    {
+     "where": "B 3.00s to 4.75s, the chart sweep",
+     "problem": "sweep line, pink highlight bands, bar recolor and window chips all change together, so nothing owns the screen",
+     "change": "run the sweep alone first, then recolor bars, then drop the Out and Back chips about 0.1s apart",
+     "keep": "the left to right sweep direction and its roughly 1.7s length"
+    },
+    {
+     "where": "B 4.75s, Proposed plan row (08:30 / 10:10 / 12:30 / 14:10)",
+     "problem": "the answer appears last and is held for about 1s before the button state resets",
+     "change": "hold the plan at least 2.5s with nothing else moving, then reset",
+     "keep": "the plan entering in place under the chart"
+    },
+    {
+     "where": "B 5.50s, Find windows button",
+     "problem": "button reverts from Checking to Find windows while the plan is still being read, pulling the eye back up",
+     "change": "keep the button in a settled done state until the loop restarts",
+     "keep": "the Checking state during the sweep"
+    },
+    {
+     "where": "B 0.00s to 0.50s, card build",
+     "problem": "the card fades in as a gray skeleton and the cursor is already on the button by 1.0s, so the empty state is never read",
+     "change": "hold the filled but unchecked chart about 1.5s before the cursor moves",
+     "keep": "the card staying fixed in place"
+    },
+    {
+     "where": "B whole clip, card text",
+     "problem": "labels like 'Not checked' and 'Leave 07:33 to 09:30' are tiny relative to the frame",
+     "change": "scale the card up or crop to it so result text is legible",
+     "keep": "the headline layout on the left"
+    }
+   ],
+   "pass": false
+  },
+  {
+   "trial": 2,
+   "kind": "event",
+   "exemplar": "stripe-checkout-scene",
+   "ours": "A",
+   "stronger": "B",
+   "confidence": 5,
+   "toldApart": true,
+   "memorable": "the wind bars turning amber behind the sweep",
+   "exemplarMemorable": "the whole checkout translating from a US coffee order to a German Cartsy order in place, line by line",
+   "tells": [
+    "B is recognizably Stripe (Roastery terminal, Link button, 'Accept and optimize payments globally')",
+    "B holds the $5.46 Roastery state about 4.5s, then at 4.9 to 5.7s rolls every line in place top to bottom into Cartsy, EUR 26.89, German copy",
+    "B offsets the phone and the checkout page by roughly 0.1 to 0.2s, and each line rolls with a short stagger",
+    "B holds the new state about 6.5s untouched",
+    "A runs the Halyard sweep with crosshair, bands, bar recolor and chips simultaneously at 1.0 to 2.5s",
+    "A's button returns from Checking to Find windows at about 3.9s, then nothing at all happens for 8s"
+   ],
+   "corrections": [
+    {
+     "where": "A 1.00s to 2.50s, chart sweep",
+     "problem": "crosshair, pink bands, bar recolor and window chips all move at once",
+     "change": "sequence them: sweep, then bars, then chips about 0.1s apart",
+     "keep": "the single left to right sweep"
+    },
+    {
+     "where": "A 3.30s, Proposed plan row",
+     "problem": "the plan fades in while the header and button are still changing",
+     "change": "let the header and button settle first, then bring the plan in alone",
+     "keep": "the plan appearing in place under the chart"
+    },
+    {
+     "where": "A 4.00s to 12.00s, whole card",
+     "problem": "eight seconds of a frozen result with no second beat or loop",
+     "change": "after a 3s hold, loop back or show one follow on action such as saving the plan",
+     "keep": "a long, still hold on the result"
+    },
+    {
+     "where": "A 0.00s, start state",
+     "problem": "the clip opens with the cursor already on Find windows, so the unchecked state is only seen for about 0.8s",
+     "change": "hold the unchecked chart 1.5s before the press",
+     "keep": "the press timing once the cursor arrives"
+    }
+   ],
+   "pass": false
+  },
+  {
+   "trial": 3,
+   "kind": "swap",
+   "exemplar": "stripe-checkout-scene",
+   "ours": "A",
+   "stronger": "B",
+   "confidence": 4,
+   "toldApart": true,
+   "memorable": "the Back window bar trimming its right edge as the 21:00 forecast arrives",
+   "exemplarMemorable": "the checkout rolling from $5.46 to EUR 26.89 in place",
+   "tells": [
+    "B is the same Stripe clip: a single in place rolling swap at about 4.9s with a stagger and long holds either side",
+    "A (Halyard) is in place and event driven: the first notification slides in at 1.3s, a second replaces it at about 4.0s, then the Back window shrinks from 13:45 to 13:20 with an amber hatch",
+    "A swaps the notification by fading it out and in (3.8 to 4.1s), not in place, and the whole stage dims at about 3.5s",
+    "At about 4.0 to 4.5s A changes the forecast label, notification text, window bar, end time and the 15:25 to 15:00 row together, so the eye has no single target",
+    "A ends with a fade to an empty background at 11.6 to 11.7s and a hard reset"
+   ],
+   "corrections": [
+    {
+     "where": "A 4.00s to 4.50s, card and notification",
+     "problem": "forecast label, notification, window bar, Leave time and the 15:00 row all change at once",
+     "change": "order it: notification lands, then 0.3s later the bar trims, then the time text rolls, then the 15:00 row",
+     "keep": "the amber hatch showing the lost 25 minutes"
+    },
+    {
+     "where": "A 3.50s to 4.10s, notification swap",
+     "problem": "the first notification fades out and the stage dims before the new one fades in, a cut rather than an update",
+     "change": "roll the notification text in place inside the same container, no dim",
+     "keep": "the notification position and size"
+    },
+    {
+     "where": "A 1.40s to 3.80s, first notification",
+     "problem": "three lines of body text get about 2.4s, short for reading aloud",
+     "change": "hold it at least 3s before the forecast update",
+     "keep": "the slide in from the bottom right"
+    },
+    {
+     "where": "A 11.60s, loop reset",
+     "problem": "everything fades to a blank background and the start state pops back",
+     "change": "reverse the trim in place or cross dissolve the card only",
+     "keep": "the long hold on the moved window before the reset"
+    }
+   ],
+   "pass": false
+  },
+  {
+   "trial": 4,
+   "kind": "scene",
+   "exemplar": "stripe-checkout-scene",
+   "ours": "A",
+   "stronger": "B",
+   "confidence": 3,
+   "toldApart": true,
+   "memorable": "the route line drawing leg by leg with the clock counting up",
+   "exemplarMemorable": "the checkout translating to a German order in place",
+   "tells": [
+    "B is the same Stripe clip; its one change is a staggered in place roll with long holds",
+    "A (Halyard map) is a well built route playback: the dot eases into each waypoint (distance steps shrink from 0.9nm to 0.1nm per 0.1s near Hamstead Ledge) and the place name rolls in place on arrival",
+    "A holds each waypoint about 1 to 1.7s (Jack in the Basket 1.0 to 2.6s, Hamstead Ledge 4.0 to 5.7s, Gurnard 8.0 to 9.2s)",
+    "A's clock, distance and speed tick on every frame while sailing, so the bottom numbers are never still long enough to read until a stop",
+    "A has no single climax: arrival at Cowes (10.1s) gets the same treatment as every waypoint and only about 1.9s before the clip ends"
+   ],
+   "corrections": [
+    {
+     "where": "A 10.10s, arrival at Cowes",
+     "problem": "the arrival is treated like any other waypoint and held under 2s",
+     "change": "make arrival the climax: settle the dot, roll 'Arrive Cowes 10:10' and the total, then hold 3s",
+     "keep": "the ease into the final point"
+    },
+    {
+     "where": "A 2.90s to 4.00s and 5.80s to 7.90s, bottom readout",
+     "problem": "time, distance and speed tick every frame, so nothing is readable while the boat moves",
+     "change": "tick only the clock while sailing, and update distance and speed on arrival at each waypoint",
+     "keep": "the counters sitting in fixed positions"
+    },
+    {
+     "where": "A 3.45s, Leg speed 5.0 to 6.4 kn",
+     "problem": "the speed rolls while the dot is still moving and before the leg name changes",
+     "change": "change leg speed at the same moment the leg name rolls, about 0.1s after it",
+     "keep": "the vertical roll on the number"
+    },
+    {
+     "where": "A 0.00s to 0.90s, start",
+     "problem": "the dot starts moving almost immediately, so 'Leave Lymington 08:30' is barely held",
+     "change": "hold the start state 1.5s",
+     "keep": "the Leave 08:30 tag at top right"
+    }
+   ],
+   "pass": false
+  }
+ ]
+}

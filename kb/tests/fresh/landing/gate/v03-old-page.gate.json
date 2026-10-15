@@ -1,0 +1,116 @@
+{
+ "page": "/tmp/claude-0/-home-user-design-kb/e4ca0cf7-123a-5b05-be92-69a6f3011a7b/scratchpad/gates/halyard-v03.html",
+ "graded": "2026-10-15T04:00:12.788Z",
+ "pass": false,
+ "trials": 2,
+ "toldApart": 2,
+ "noMemorableMoment": 0,
+ "rows": [
+  {
+   "trial": 1,
+   "kind": "hero",
+   "exemplar": "linear-hero-load",
+   "ours": "A",
+   "stronger": "B",
+   "confidence": 3,
+   "toldApart": true,
+   "memorable": "the playhead sweeping the tide, wind and light rows while the wind bars over the limit turn orange at 4.0s",
+   "exemplarMemorable": "the Linear agent panel rising into the issue view with the request and 'Thinking...'",
+   "tells": [
+    "B looks like Linear's homepage (dark UI, 'The product development system for teams and agents', Linear agent panel); judged on craft anyway",
+    "B stages one thing at a time: headline blurs in and sharpens 0.2s to 1.1s, subhead lands about 0.2s later, the app frame fades up 1.3s to 2.0s, then nothing moves until the agent panel rises at about 3.6s",
+    "B's agent panel arrives in place inside the app frame with a short rise and settles, then 'Thinking...' appears about 0.5s later as a second, smaller beat",
+    "A's headline and buttons never move, so the card owns the screen, which is right, but inside the card the playhead, a pink glow band, the dimming of the whole chart, the hatching in the Out and Back rows and the status label all change together at 1.6s to 2.0s",
+    "A's status label crossfades 'Reading Saturday for Wren' to 'Tide with you' with garbled half states at 1.7s to 1.9s, and at roughly 7px it is unreadable at this size",
+    "A never reaches its payoff in 6s: both Out and Back rows still say 'Checking' at 5.5s, so the product's answer is missing",
+    "A's pastel rainbow wash behind the card is decorative and fights the pink playhead color"
+   ],
+   "corrections": [
+    {
+     "where": "A 0.0s to 6.0s, Out and Back rows",
+     "problem": "the clip ends with both rows still reading 'Checking'; the user never sees the window the product found",
+     "change": "end on the result: mark the go windows in the Out and Back rows and show the leave and return times, held at least 2.5s",
+     "keep": "the static headline and the card as the single moving area"
+    },
+    {
+     "where": "A 0.0s to 5.5s, status label top right of the card",
+     "problem": "the label carrying the whole story ('Reading Saturday for Wren', 'Tide with you', 'Wind inside Wren's limits') is about 7px and sits in a corner far from the playhead",
+     "change": "set it at body size or larger and place it next to the row being checked so the eye does not leave the playhead",
+     "keep": "the roughly 2s hold on each label"
+    },
+    {
+     "where": "A 1.6s to 1.9s, status label swap",
+     "problem": "the crossfade shows both strings overlapping as unreadable glyph soup for about 0.3s",
+     "change": "roll the old label out and the new one in place (out 120ms, in 200ms, ease-out) with no overlap",
+     "keep": "the swap starting as the playhead starts its pass"
+    },
+    {
+     "where": "A 1.6s and 4.0s, chart dimming plus glow band",
+     "problem": "playhead, pink glow, chart-wide dimming and row hatching all start in the same frame, so nothing owns the beat",
+     "change": "start the playhead first, then dim the rows not under test about 0.1s later, and drop the glow band entirely",
+     "keep": "the orange recolor of the over-limit wind bars, which is the best moment"
+    },
+    {
+     "where": "A whole clip, background behind the card",
+     "problem": "the pastel rainbow gradient is decoration and competes with the pink and orange data colors",
+     "change": "use a flat neutral surface so only data carries color",
+     "keep": "the card's soft shadow and position"
+    }
+   ],
+   "pass": false
+  },
+  {
+   "trial": 2,
+   "kind": "scene",
+   "exemplar": "stripe-checkout-scene",
+   "ours": "A",
+   "stronger": "B",
+   "confidence": 4,
+   "toldApart": true,
+   "memorable": "the two pink windows snapping onto the Out and Back rows and the proposed plan with leave times appearing at 8.3s",
+   "exemplarMemorable": "the terminal price rolling from $5.46 to €26.89 in place while the whole checkout translates to German line by line",
+   "tells": [
+    "B looks like Stripe's payments section (Roastery terminal to Cartsy checkout, Link button); judged on craft anyway",
+    "B changes in place: at 4.6s to 4.8s the phone's 'Pay Roastery' / '$5.46' / 'Tap, insert, or swipe to pay' roll up line by line into 'Cartsy bezahlen' / '€26.89' / German subtitle, each line about 0.05s to 0.1s after the one above",
+    "B then cascades the same roll across the line items (4.9s) and the checkout panel (4.95s to 5.15s: ROASTERY to CARTSY, Email to E-Mail, Card to Karte, Klarna added), a tenth-of-a-second offset between related parts",
+    "B holds each state about 4.5s with nothing else moving, so every price and label can be read aloud",
+    "A tells a complete product story (tide pass 0.5s, wind pass 2.9s, light pass 6.0s, '2 windows found' at 7.8s, proposed plan 08:30 / 10:10 / 12:30 / 14:10 at 8.3s held to 12s), but takes 7.8s of scanning to reach the answer",
+    "A's criterion labels at top right are tiny and the chart repeatedly washes pale under the pink glow band, so the frame reads as busy during each pass",
+    "A's proposed plan card rises into a position overlapping the bottom edge of the main card and the frame rather than living inside the layout"
+   ],
+   "corrections": [
+    {
+     "where": "A 0.5s to 7.8s, the three scanning passes",
+     "problem": "7.8s of scanning before any answer; the payoff arrives in the last third and each pass looks alike",
+     "change": "run the three passes at about 1.2s each (or one pass checking all three rows) so '2 windows found' lands by about 4.5s, then hold the plan for 4s",
+     "keep": "the order tide, wind, light and the orange recolor of over-limit wind bars at 2.9s"
+    },
+    {
+     "where": "A 0.5s, 2.9s and 6.0s, criterion label top right",
+     "problem": "'Tide with you', 'Wind inside Wren's limits', 'Home before dark' are about 7px and swap via a crossfade, so the narration of the passes is unreadable",
+     "change": "enlarge to body size and roll each label in place under the playhead, out 120ms then in 200ms",
+     "keep": "each label holding for its whole pass"
+    },
+    {
+     "where": "A 8.2s to 8.5s, proposed plan card",
+     "problem": "the card rises to overlap the main card's bottom edge and hangs at the frame edge, so the climax looks unplaced",
+     "change": "give the plan its own slot inside the card below Back, revealed in place with a 200ms ease-out, its four times staggered 0.08s",
+     "keep": "the 08:30 / 10:10 / 12:30 / 14:10 content and the 3.5s hold"
+    },
+    {
+     "where": "A 0.5s to 7.5s, pink glow band and chart dimming",
+     "problem": "the soft pink band behind the playhead and the full-chart fade to pale are decorative and make the frame flicker between passes",
+     "change": "drop the glow, keep a 1px playhead, and dim only the rows not being tested",
+     "keep": "the playhead pace and left to right direction"
+    },
+    {
+     "where": "A whole clip, rainbow background",
+     "problem": "pastel rainbow wash behind the card adds color that means nothing",
+     "change": "flat neutral background",
+     "keep": "card framing and shadow"
+    }
+   ],
+   "pass": false
+  }
+ ]
+}

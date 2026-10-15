@@ -1,0 +1,62 @@
+{
+ "sizes": {
+  "14px": 2308,
+  "12px": 865,
+  "25px": 51,
+  "16px": 257
+ },
+ "weights": {
+  "400": 2478,
+  "500": 544,
+  "600": 459
+ },
+ "navRows": [
+  40,
+  40,
+  40,
+  40,
+  40
+ ],
+ "warnRows": [
+  110,
+  111,
+  132
+ ],
+ "facts": [
+  139,
+  139,
+  139,
+  139
+ ],
+ "tlRows": [
+  40,
+  81,
+  71,
+  105,
+  73
+ ],
+ "wpRows": [
+  30,
+  30,
+  30,
+  30,
+  30
+ ],
+ "topbar": [
+  56
+ ],
+ "h1": "25px/31.25px 600 -0.25px",
+ "h2": "16px/20px 600 normal",
+ "big": "25px/31.25px 600 -0.25px",
+ "answer": "16px/24px 400 normal",
+ "headings": [
+  "H1:Lymington to Yarmouth an",
+  "H2:Saturday on the water",
+  "H2:Warnings",
+  "H3:Wind against tide, 13:20",
+  "H3:Gusts above 20 kn, 16:00",
+  "H3:Home 25 min before sunse",
+  "H2:Lymington tides",
+  "H2:Wren’s limits"
+ ]
+}

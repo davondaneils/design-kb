@@ -21,7 +21,7 @@ WCAG 2.2: 1.1.1 (text alternatives), 1.4.1 (use of color), 1.4.3 and 1.4.11 (con
 - **Write the concept as one sentence with a noun you can draw.** "Warm craft" fails. "Every bag shows the hill it grew on and the fire that finished it" passes: you can draw a hill and a curve.
 - **Then write the reject test**: one line a stranger could use to throw out an image ("Does it show a place, a material or a measurement from this coffee? If not, cut it.").
 - **Pick 3 to 5 motifs** (recurring visual elements), each tied to a fact. Fewer than 3 looks thin; more than 5 dilutes. (opinion)
-- **Choose where imagery is banned.** Forms, pricing tables, legal and checkout get none. On a landing page, imagery on about every other section matches the playbook's alternating density move. (opinion)
+- **Choose where imagery is banned.** Forms, pricing tables, legal and checkout get none. On a marketing page the remaining slices carry a visual with a named job: at least 70% of screen-height slices at 1440 and 390, with the empty ones named as type-only beats (FOUNDATIONS v0.5 visual plan; Stripe 14 of 17, Linear 10 of 12; method and check in 06). The earlier "about every other section" rule planned half that and is withdrawn.
 - **Map the concept to tokens** before drawing: `--color-illustration-line`, `--color-illustration-accent`, `--color-illustration-surface`, plus a stroke width and radius. Components use these; dark mode remaps them (design-graphic 04 uses the same token pattern).
 - **If the user supplies photos later**, the concept must already say how they will be treated (crop family, grade, where text never sits), so the photo lands in the system instead of breaking it (see 02 and 05).
 
@@ -32,7 +32,7 @@ WCAG 2.2: 1.1.1 (text alternatives), 1.4.1 (use of color), 1.4.3 and 1.4.11 (con
 | Treatments per set | 1 |
 | Brand accent share of any illustration | one element, roughly 10 percent of the drawn area or less (opinion, matches design-color's "one orange moment" rule) |
 | Line weight in illustration | one stroke, 1 or 1.5px at 1x for line art; 2px only when it sits beside the 2px icon set (design-graphic 02) |
-| Places the concept appears | at least 3 on a landing page (hero, one mid-page section, one small surface such as footer, empty state or OG image) |
+| Places the concept appears | every visual in the visual plan (70% of slices, 06), plus at least one small surface such as footer, empty state or OG image |
 
 ## Ceiling: exemplar patterns
 Measured from page text (WebFetch, 2026-10-09), not pixels; exemplar hosts block screenshots from this environment.
@@ -88,6 +88,7 @@ Brief: specialty roaster, Portland, brand orange `#F26B21`, "premium and warm, n
 - design-graphic 01, 02, 04: logo, icon grid and illustration style spec; the concept supplies the motifs, graphic supplies the spec format.
 - design-color: illustration tokens and their dark remap.
 - design-layout: where imagery sits in the section rhythm.
+- 06 (this skill): the visual plan that places the concept on every slice, and the product fragment set for software.
 - design-motion: whether motifs move (default: they do not).
 - dataviz: any graphic that a user reads values from.
 

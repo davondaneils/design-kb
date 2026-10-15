@@ -1,0 +1,9 @@
+kb/tests/fresh/landing/halyard.html: PASS  (414 style rules, 1302 declarations, 213 token declarations)
+  layers: tokens, base, layout, components, fragments, motion; unlayered rules 0
+  container queries 0 (containers 0), :has() rules 0, media queries 10 distinct, !important 2, inline style attributes 209
+  warn motion-unguarded: 5
+         a { transition: color var(--motion-hover), text-decoration-color var(--motion-hover) }
+         .btn { transition: background-color var(--motion-hover), border-color var(--motion-hover), color var(--motion-hover), transform var(--motion
+         .nav ul a, .nav__link { transition: background-color var(--motion-hover) }
+         .billing button { transition: background-color var(--motion-hover), color var(--motion-hover) }
+exit 0

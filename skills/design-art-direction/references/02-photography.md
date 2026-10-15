@@ -42,6 +42,9 @@ Research notes: `kb/research/art-direction/02-photography.md` (Ph-numbers). Buil
 | Photo behind text | See 03: planned negative space or a solid panel first |
 | Photo in dark theme | Same file; lower the surrounding surface, not the photo. Only if a photo is mostly white, add a 1px `--color-border` frame so it does not glow (opinion) |
 
+### State the treatment in the visual plan
+When photos are in the set, the plan's treatment line names **one grade, one light direction and one background tone per section** (Apple: one lighting setup and one background tone per section; Mercury: one warm desaturated grade across 16 photos; `kb/teardowns/motion-imagery.md` section 3). Photos share the stage radius and the figure caption with every other visual (06 section 5).
+
 ### Sequence a set
 - Alternate scale: wide, close, detail. Never two close-ups of faces side by side looking away from each other. (opinion)
 - Faces and gaze point into the page, toward the copy they support (gaze cueing, see 03).

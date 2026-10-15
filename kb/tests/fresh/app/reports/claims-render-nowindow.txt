@@ -1,0 +1,56 @@
+Claims inventory: kb/tests/fresh/app/plan.html?state=nowindow (52 strings to check against the data)
+
+  1  7.9 m sloop, plans at 5.0 kn
+  2  Free plan: 1 of 3 plans this month
+  3  Saturday 24 October 2026
+  4  Wren, 7.9 m sloop
+  5  Forecast issued Fri 23 Oct, 18:00 BST
+  6  No safe window on Saturday 24 October. The mean wind is over Wren’s 20 kn limit from 05:40 to 20:20, gusting 34 kn. Try another day, or sail somewhere more sheltered.
+  7  Saturday on the water
+  8  Wren’s 20 kn limit
+  9  00:00
+ 10  02:00
+ 11  04:00
+ 12  06:00
+ 13  08:00
+ 14  10:00
+ 15  12:00
+ 16  14:00
+ 17  16:00
+ 18  18:00
+ 19  20:00
+ 20  22:00
+ 21  Sunrise 07:33
+ 22  Sunset 17:56
+ 23  LW 03:05, 0.6 m
+ 24  HW 09:20, 2.8 m
+ 25  LW 15:30, 0.7 m
+ 26  HW 21:40, 2.9 m
+ 27  E 2.3 kn
+ 28  W 2.4 kn
+ 29  E 2.6 kn
+ 30  1
+ 31  2
+ 32  Gust 34 kn
+ 33  Limit 20 kn
+ 34  No safe window: wind over 20 kn, 05:40 to 20:20.
+ 35  Tide height at Lymington, sample: low water 03:05 0.6 m, high water 09:20 2.8 m, low water 15:30 0.7 m, high water 21:40 2.9 m.
+ 36  Tidal stream in the Needles Channel, sample: east-going until 09:40, west-going 09:40 to 15:50 up to 2.4 kn, east-going after 15:50 up to 2.6 kn.
+ 37  Wind, sample forecast, from the south-west: mean 21 kn at sunrise rising to 27 kn at 17:00, gusts up to 34 kn. Wind against tide over Wren’s 12 kn limit 10:05 to 15:25.
+ 38  2 warnings, no safe window this day
+ 39  Wind above Wren’s 20 kn limit, 05:40 to 20:20
+ 40  Mean wind up to 27 kn from the SW, gusting 34 kn. Wren’s limit is 20 kn true wind.
+ 41  Wind against tide, 10:05 to 15:25
+ 42  The west-going stream runs against the SW wind: up to 24 kn of wind against tide. Wren’s limit is 12 kn.
+ 43  Over Wren’s limit
+ 44  up to 24 kn
+ 45  High and low water at Lymington, Saturday 24 October 2026, sample, BST
+ 46  Low water 03:05 0.6 m
+ 47  High water 09:20 2.8 m
+ 48  Low water 15:30 0.7 m
+ 49  High water 21:40 2.9 m
+ 50  up to 20 kn
+ 51  up to 12 kn
+ 52  5.0 kn
+
+No mechanical flags. Now tick every line above against its source: chart data, price list, policy, log.

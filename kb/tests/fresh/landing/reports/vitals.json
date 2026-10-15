@@ -1,0 +1,56 @@
+{
+  "page": "kb/tests/fresh/landing/halyard.html",
+  "profile": "mobile",
+  "runs": 3,
+  "encoding": "gzip",
+  "lcp": 1104,
+  "fcp": 1104,
+  "cls": 0,
+  "inp": 0,
+  "tbt": 121,
+  "ttfb": 459.19999999925494,
+  "fontsReady": 1436.8999999985099,
+  "load": 1395.8999999985099,
+  "bytes": 105942,
+  "docBytes": 105942,
+  "requests": 1,
+  "dom": 988,
+  "mainThread": {
+    "script": 19.137999999999998,
+    "style": 126.847,
+    "layout": 189.856,
+    "task": 640.081,
+    "styleCount": 7,
+    "layoutCount": 5
+  },
+  "lcpElement": "h1#hero-title \"Know when to go.\"",
+  "worstInteractions": [],
+  "interactions": 0,
+  "shifts": [],
+  "steps": [],
+  "verdict": {
+    "lcp": "good",
+    "cls": "good",
+    "inp": "good"
+  },
+  "perRun": [
+    {
+      "lcp": 1104,
+      "cls": 0,
+      "inp": 0,
+      "tbt": 101
+    },
+    {
+      "lcp": 1148,
+      "cls": 0,
+      "inp": 0,
+      "tbt": 121
+    },
+    {
+      "lcp": 1032,
+      "cls": 0,
+      "inp": 0,
+      "tbt": 155
+    }
+  ]
+}

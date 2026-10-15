@@ -1,0 +1,21 @@
+pass  hero-reveal  (3 anim, 600 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/hero-reveal.png
+pass  hero-aim  (1 anim, 150 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/hero-aim.png
+pass  hero-press  (25 anim, 1867 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/hero-press.png
+pass  hero-window  (3 anim, 100 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/hero-window.png
+pass  warn-saved  (2 anim, 400 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/warn-saved.png
+pass  warn-forecast-swap  (12 anim, 1400 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/warn-forecast-swap.png
+pass  route-leg  (4 anim, 1000 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/route-leg.png
+pass  route-leg-long  (4 anim, 2000 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/route-leg-long.png
+pass  route-pause-click  (2 anim, 100 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/route-pause-click.png
+pass  pause-click  (2 anim, 100 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/pause-click.png
+pass  primary-hover  (1 anim, 100 ms; reduce 1 anim)  kb/tests/fresh/landing/reports/motion-audit/primary-hover.png
+pass  billing-yearly-click  (10 anim, 300 ms; reduce 2 anim)  kb/tests/fresh/landing/reports/motion-audit/billing-yearly-click.png
+pass  billing-yearly-keyboard  (10 anim, 300 ms; reduce 2 anim)  kb/tests/fresh/landing/reports/motion-audit/billing-yearly-keyboard.png
+pass  faq-open-click  (2 anim, 200 ms; reduce 1 anim)  kb/tests/fresh/landing/reports/motion-audit/faq-open-click.png
+pass  faq-open-enter  (1 anim, 200 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/faq-open-enter.png
+pass  menu-open-390  (1 anim, 100 ms; reduce 1 anim)  kb/tests/fresh/landing/reports/motion-audit/menu-open-390.png
+pass  reveal-how  (35 anim, 1180 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/reveal-how.png
+pass  reveal-route  (1 anim, 600 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/reveal-route.png
+pass  reveal-warnings-390  (1 anim, 600 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/reveal-warnings-390.png
+PASS: every filmed animation is on the motion tokens
+exit 0

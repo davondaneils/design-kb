@@ -1,6 +1,6 @@
 # Fundamentals checklist
 
-Mirror of `kb/FOUNDATIONS.md` v0.4.5. FOUNDATIONS is the source of truth.
+Mirror of `kb/FOUNDATIONS.md` v0.5. FOUNDATIONS is the source of truth.
 
 Every rendered test page must pass every item. One miss fails the page, however good the rest is. `[lint]` items are hard gates enforced by `node tools/lint.mjs <page.html>` (nonzero exit on any fail); `[judged]` items are checked by the tester on the screenshots from `node tools/render.mjs` at 390, 768, 1024 and 1440px.
 
