@@ -54,6 +54,16 @@ Run every candidate through all of these, side by side, before presenting:
 - **Color versions:** full color, one color dark, one color light (reversed artwork), and if needed a version for photography backgrounds.
 - **Misuse page:** do not stretch, recolor, outline, add effects, rotate, or place on busy images without the approved treatment.
 
+### Lockup proportion (symbol beside a wordmark)
+No guide publishes a universal ratio; the good ones anchor to one unit taken from the logo and finish by eye for equal weight ("Visual balancing should give all logos the same weight") [R21]. Rules:
+1. **Pick one unit from the logo and build everything on it:** the symbol height X [R20], a letter height such as the "e" [R22], or a glyph part such as the wordmark's dot [R23]. Gap, clear space and alignment are all fractions of it.
+2. **Align to type metrics, not the text box.** The symbol spans ascender to baseline, or cap line to baseline, or sits centered on the cap height [R22]. A second line (descriptor, "Inc.", "Build Co.") hangs below like a tagline and is never included in the symbol's height. Sizing to the whole block is the most common reason a lockup looks "off" [M5].
+3. **Match visual weight, not height.** Compact, roughly square symbols balance at about 1.5 to 2 times the cap height; wide or dense symbols carry more ink per unit of height and sit nearer 1 to 1.25 times (Flagship: a 1.5:1 three-flag symbol balanced at 1.08 times cap height) [M5]. Allow about 10 percent of optical adjustment after measuring [R24]. (opinion on the ranges) The popular "golden ratio" rule (symbol = 1.618 times the wordmark height) is unsourced and never says which height; on one mixed-case wordmark its readings spread 40 percent. If used, read it on the x-height for mixed case and the cap height for all caps, as a start only [R27][M5].
+4. **Gap = 1/4 to 1/3 of the symbol height** [R20][M5]. Open it toward 1/3 when the first letter's serif or sidebearing already adds space. (opinion)
+5. **Align uneven symbols optically.** A heavy base or light points shift the perceived center; center secondary text on the symbol's optical center [R20][R25].
+6. **Render, then choose.** Set 4 or 5 proportions side by side at display size and at header size (about 160 to 200 px) and pick by eye; header size exposes a symbol that is too heavy faster than the large view does.
+7. **Freeze it.** Ship the lockup as one artwork with the spacing written in units; never re-space or rescale the parts in use [R26].
+
 ### The wordmark is artwork: outlining it (on a page, always)
 A wordmark set as live text in a web font changes with font loading, fallback metrics, user font settings and the next font update; the mark must not. Outline it.
 1. **License.** OFL fonts may be used for logos, and artwork made with them is not under the OFL ("creating any kind of graphic using a font under the OFL does not make the resulting artwork subject to the OFL", OFL FAQ 1.13) [G1][G2]. Commercial fonts: check the EULA's logo clause.
@@ -82,7 +92,7 @@ Drop detail one step at each tier (Ember & Oak: two rings at tier 1, one ring at
 - **Choose the type before the symbol.** For wordmark-led brands the letterforms carry most of the recognition; start from a typeface with good bones and customize 1 to 3 letters rather than drawing from scratch. Check the font license allows logo use and modification. (opinion; see design-typography for selection)
 - **Draw a dark mode version, not just a reversed one.** A full color mark on `--color-bg` in a dark theme often needs its brand color lifted one or two ramp steps to hold presence; specify it as its own artwork. (opinion; see design-color for ramps)
 - **Check the avatar circle.** Most platforms crop avatars to circles; the symbol must sit inside the inscribed circle with clear space, optically centered. (opinion)
-- **Fix the lockup proportion by eye.** A symbol beside a wordmark usually reads balanced at about 1.5 to 2 times the cap height, centered on the cap height rather than the full text box. (opinion; confirm visually)
+- **Fix the lockup proportion by eye, after measuring.** Size the symbol to the type metrics, never the text box, and match visual weight rather than height: wide symbols sit well below the usual 1.5 to 2 times cap height. Full rules under Lockup proportion above [R20][R21][M5].
 - **Plan for ink spread and thread.** For small print, stamps and embroidery, open the counters and add small notches at tight joins so they do not fill in. (opinion, type design ink trap practice)
 - **AI tools are for exploration only.** The US Copyright Office (January 2025) says AI outputs are protectable "only where a human author has determined sufficient expressive elements," and "not the mere provision of prompts." A client must own its mark, so redraw any AI-explored idea by hand and keep the process files. [R19]
 - **Own a color, not a palette.** Recognition attaches to one dominant color used at scale (see design-color for ramps and contrast).
@@ -151,4 +161,13 @@ Brief: specialty roaster, concept "the hill and the fire" (design-art-direction)
 - [G7] MDN, prefers-color-scheme (SVG inherits from the OS or the embedding element): https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme
 - [M3][M4] Measured, `kb/research/graphic/07-marks-icons-rendered.md`
 - [R19] US Copyright Office, Part 2 report announcement (Jan 2025): https://www.copyright.gov/newsnet/2025/1060.html
+- [R20] Frappe identity (symbol height as unit X, gap X/4, optical center): https://frappe.io/design/identity
+- [R21] Afterpay brand collaborations (equal visual weight): https://afterpay.com/en-US/for-retailers/resources/marketing/brand-tools/brand-collaborations
+- [R22] Scale logo guidelines ("e" unit, cap height and baseline alignment): https://brand.scale.com/logo
+- [R23] GOV.UK brand hierarchy (dot width sets spacing): https://brand.design-system.service.gov.uk/logo-system/brand-hierarchy
+- [R24] Sport Chek co-branding (plus or minus 10 percent for balance): https://brand-qa2.canadiantire.ca/en/sport-chek/design-system/foundations/co-branding-partnerships.html
+- [R25] Metafy logo (optical alignment of an uneven symbol): https://brand.metafy.gg/latest/brand/logo-gakad5JR
+- [R26] Scrums.com brand (never recombine at another spacing or scale): https://www.scrums.com/company/sorted-ui/brand
+- [R27] Enthof, the optimal logomark and logotype ratio (golden ratio claim, no sources, opinion tier): https://enthof.com/graphic-designing/the-optimal-logomark-and-logotype-ratio/
+- [M5] Measured, `kb/research/graphic/08-lockup-proportion.md`
 - Practitioner references (opinion tier, for inspiration and current practice, not specs): LogoArchive by Richard Baird, Brand New by UnderConsideration, Standards.site, David Airey's resource list https://www.davidairey.com/resources

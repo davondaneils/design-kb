@@ -87,7 +87,7 @@ A strategy is checked three ways: is it **distinctive** (it could not be a compe
 - Ledger: dates weekday-checked against 2027; prices matched the ticket offers.
 
 ## Where this domain is usually wrong
-1. **"We reviewed it ourselves."** The builder cannot be a cold viewer; the house tests showed self-review passing what a fresh critic failed (design-director step 13) [F2].
+1. **"We reviewed it ourselves."** The builder cannot be a cold viewer; the house tests showed self-review passing what a fresh critic failed (design-director step 14) [F2].
 2. **"Five users told us they liked it."** Small tests find problems; they do not measure preference or fame. Use recognition and the four message dimensions, not liking (05, [F3]).
 3. **"Puffery is fine."** Obvious exaggeration is allowed; claims a consumer takes as objective need evidence held first (CAP 3.2 and 3.7; FTC) (03).
 

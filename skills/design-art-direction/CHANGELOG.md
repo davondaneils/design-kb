@@ -1,5 +1,8 @@
 # Changelog: design-art-direction
 
+## v0.1.3 (2026-10-15, editor-in-chief)
+- New reference `references/humanize-pass.md`: the "soulless but correct" symptom checklist (12 items, run on renders), the moves that fix each as decision rules with numbers, what reads as tacky, the placeholder rule, and how the pass stays inside the fundamentals gate. From the owner's review of the Flagship sales page (`kb/research/landing/flagship-sales-page-lessons-2026-10-14.md`). Linked from the reference map.
+
 ## v0.1.2 (2026-10-10, editor-in-chief)
 - Expert move 15: print the live HTML label onto the product photo (the move the round 3 clean-context critic named the most non-obvious on either page, `kb/reviews/round3-critic.md` section 4), with its limits.
 

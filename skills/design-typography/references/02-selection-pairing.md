@@ -27,7 +27,20 @@ Before any face is proposed, it must pass every check:
 - **If** you pair a serif and a sans **then** match x-height ratio (normalize with `font-size-adjust: ex-height from-font` declared on the parent or `:root`, never on the second face itself, where it measures that face and does nothing; reference 06) and match the era or construction: humanist with humanist, geometric with geometric or a modern serif, grotesque with a transitional or Scotch serif (Seltzer, historical method; the specific era pairings are common practice, opinion).
 - **If** two candidate faces are from the same category and look similar **then** do not pair them; use one in two weights instead.
 - **If** the client says "make it look premium" **then** reduce, do not add: one family, fewer weights, more space, larger size contrast, tighter display tracking (opinion, consistent across top studios).
+- **If** the two faces differ on an axis you cannot see when squinting (grotesk plus mono, grotesk plus grotesk) **then** it is not a brand pairing. It can be fine for product UI; for brand voice pick an axis that reads at a glance (serif against sans, wide against narrow, high contrast against low).
 - **If** distinctiveness matters **then** avoid the defaults: Roboto, Open Sans and Poppins are among the most used families on the web (Web Almanac 2024). Inter is very common in product UI too. Common is fine for UI; it is weak for brand voice.
+
+## Brand type selection method (expert move)
+Category-first picking (choose a grotesk, then a mono, from whatever is free) yields pairs that all look alike. Top identity work runs in this order (research 07; practitioner sources, opinion):
+1. **Ask the budget first.** Free (Google, Fontsource) or a commercial license (Klim, Grilli Type, Commercial Type, Pangram Pangram, Dinamo and similar). The answer changes the candidate pool, so it comes before any shortlist.
+2. **Voice words from the strategy.** Three words from the brand brief (for example "earned, quiet, exact"), not from a font catalogue. Every candidate gets a one-line voice, a "fits for" and a "why" (Mushich).
+3. **Lineage.** Ask which letterforms carry the brand's story: the drafting tradition, a period, a place, a craft. Pick faces from that lineage, not from a category (Damiba).
+4. **Tension pair.** Each face brings one half of the story, so "neither font carries the brand alone" (Damiba). One gives authority, the other gives the edge. Two faces that agree on everything add nothing.
+5. **Ownability.** Stock and open-source faces can be installed by anyone (Damiba). If the type must be recognisable as the brand, prefer a commercial face, a less common free one, or a distinctive axis setting (width, opsz, a stylistic set) held consistently.
+6. **Display settings.** Premium headlines run tight: start tracking at -2% and test toward -4% on large display; Mushich uses -3% to -7% and leading 0.8 to 0.9. Our FOUNDATIONS floor is line-height 1.1 for headings and 0.95 at 100px and up, so go to the floor first and flag anything tighter as a deviation.
+7. **Show directions that differ in concept, not category.** Three boards, each naming its voice in three words and its lineage in one line, all set in the real copy.
+
+Search map: a broader taxonomy than serif, sans and mono finds better candidates. Brett from Designjoy files picks under retro serif, editorial, quirky, grotesk, retro sans, extended (wide), chunky and bitmap. Use the categories that fit the voice words to widen the search, then run the fundamentals checks.
 
 ## Starting points by brief (opinion; verify each against the checks above)
 All of these are OFL (free, self-hostable) unless marked commercial.

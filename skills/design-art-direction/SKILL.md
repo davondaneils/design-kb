@@ -102,6 +102,7 @@ Imagery only where it carries a number or a state: sparklines beside KPIs, empty
 | `references/03-composition-and-overlays.md` | Focal point, gaze, rule-of-thirds evidence, text over images, forced colors, the worst-pixel check |
 | `references/04-visuals-without-image-hosts.md` | Contours, data curves, sparklines, grain, patterns, flow fields, CSS objects, honest slots, budgets |
 | `references/05-requesting-photography.md` | Exact photo specs, the copy-paste request, the slot contract code |
+| `references/humanize-pass.md` | A page that passes every gate and still reads "clean but no soul": the 12-symptom checklist run on renders, the moves that fix each (people, warm accent, light, object buttons, mark pattern, type moments, grid breaks, ticker, micro-interactions, founder video), what reads as tacky, the placeholder rule. Run by design-director in the self-critique loop |
 
 ## 8. Related skills
 design-graphic (logos, icons, illustration style spec, shot briefs, social graphics, export), design-color (illustration tokens, contrast math), design-layout (hero and section composition), design-typography (annotation type, display type when there is no image), design-motion (if motifs move), design-frontend (image delivery, LCP, inline vs external SVG), dataviz (any chart a user reads values from), website-strategy (the facts and positioning the concept is built on).
