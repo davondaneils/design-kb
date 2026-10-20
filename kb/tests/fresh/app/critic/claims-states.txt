@@ -1,0 +1,23 @@
+Claims inventory: kb/tests/fresh/app/plan-states.html (19 strings to check against the data)
+
+  1  +10 min
+  2  Enter 5 to 40 kn
+  3  Free plan: 0 of 3 plans this month
+  4  Free plan: 1 of 3 plans this month
+  5  Free plan: 3 of 3 plans this month
+  6  Inside Wren’s limits, 2 cautions
+  7  1
+  8  Wind against tide, 13:20 to 15:25
+  9  Over Wren’s 12 kn limit. Clear of the plan.
+ 10  2
+ 11  Gusts above 20 kn, 16:00 to 19:00
+ 12  16:44 to 17:31: reef before you leave Yarmouth
+ 13  3
+ 14  Home 12 min after sunset
+ 15  home 18:08, 12 min after sunset
+ 16  Still open: gusts to 23 kn on the return; home 25 min before sunset.
+ 17  The wind forecast didn’t load. Tide, stream and daylight are up to date, so the windows below check those only.
+ 18  No safe window: wind over 20 kn.
+ 19  Plan saved: out 11:50, back 16:44
+
+No mechanical flags. Now tick every line above against its source: chart data, price list, policy, log.

@@ -1,0 +1,196 @@
+{
+ "page": "kb/tests/fresh/landing/halyard.html",
+ "graded": "2026-10-15T05:16:37.891Z",
+ "pass": false,
+ "trials": 4,
+ "toldApart": 4,
+ "noMemorableMoment": 1,
+ "rows": [
+  {
+   "trial": 1,
+   "kind": "hero",
+   "exemplar": "linear-hero-load",
+   "ours": "B",
+   "stronger": "A",
+   "confidence": 4,
+   "toldApart": true,
+   "memorable": null,
+   "exemplarMemorable": "the agent panel sliding in over the issue and starting to think",
+   "tells": [
+    "A is the Linear homepage hero; B is a passage-planning product called Halyard",
+    "A sequences one thing at a time: headline blurs in 0.3 to 1.0s, subline at 1.2s, app window rises 1.3 to 1.9s, then the agent panel arrives about 3.5s and runs",
+    "A's climax is the product acting: the agent chat panel opens over the issue and starts 'Thinking'",
+    "B's card fades in late (0.96 to 1.5s) while the headline sits static, then nothing happens until the cursor presses Find windows near 5s; the clip ends on 'Checking' with no result",
+    "B's iridescent gradient behind the card is decorative and competes with the data"
+   ],
+   "corrections": [
+    {
+     "where": "B 5.0 to 6.0s, Find windows button",
+     "problem": "the press lands in the last second, so the payoff (windows found) never appears in the moment",
+     "change": "press at about 2.0s so the scan and the found windows land by 4.5s, then hold the result 1.5s",
+     "keep": "the cursor travel into the button and the label changing to Checking in place"
+    },
+    {
+     "where": "B 1.5 to 4.8s, whole card",
+     "problem": "3.3s of a static card after its entrance with nothing owning the screen",
+     "change": "cut the dead hold to about 1.2s, enough to read the route title and the four constraint chips",
+     "keep": "the card entrance easing"
+    },
+    {
+     "where": "B 0.96 to 1.5s, card entrance",
+     "problem": "card fades from near white with a soft blur, reading as loading rather than arriving",
+     "change": "rise 8 to 12px with opacity over about 400ms on a decelerating curve, chips and chart offset about 80ms behind the header",
+     "keep": "the headline already in place on the left"
+    },
+    {
+     "where": "B throughout, gradient backdrop",
+     "problem": "the rainbow halo is decoration that pulls the eye off the tide chart",
+     "change": "replace with a flat neutral surface or a single quiet tint",
+     "keep": "the card shadow"
+    }
+   ],
+   "pass": false
+  },
+  {
+   "trial": 2,
+   "kind": "event",
+   "exemplar": "stripe-checkout-scene",
+   "ours": "B",
+   "stronger": "A",
+   "confidence": 3,
+   "toldApart": true,
+   "memorable": "the scan line sweeping the day and leaving two pink windows behind",
+   "exemplarMemorable": "the checkout re-localizing from $5.46 to EUR 26.89 row by row in place",
+   "tells": [
+    "A is the Stripe homepage payments module; B is the Halyard planning card",
+    "A changes everything in place around 4.9 to 5.4s: the price, line items and checkout fields roll vertically from the US roastery to a German Cartsy checkout with a staggered offset of roughly a tenth of a second per row",
+    "A holds each state about 5s, long enough to read the price and line items aloud",
+    "B does tell a full product story (press at 3.3s, scan sweep 4.5 to 6.5s, wind bars turn amber, two windows and a proposed plan by 7.5 to 8s) and holds the result 4s",
+    "B's scan lasts about 3s, a loading state the viewer just waits through; the plan panel breaks out past the card edge and the card itself rescales between 0.0 and 0.1s"
+   ],
+   "corrections": [
+    {
+     "where": "B 4.5 to 7.5s, scan line and 'Checking 05:00 to 20:00'",
+     "problem": "about 3s of sweeping before any answer appears, so the product's result arrives late and the sweep reads as decoration",
+     "change": "run the sweep in about 1.2s and drop each window into its row the moment the line passes it",
+     "keep": "the wind bars turning amber as the line crosses the over-limit hours"
+    },
+    {
+     "where": "B 7.5 to 8.0s, Proposed plan panel",
+     "problem": "it slides up overlapping and overhanging the card's bottom edge and right edge, so two surfaces fight for ownership",
+     "change": "seat the plan inside the card below the Back row, or give it a clear gap and align its right edge to the card",
+     "keep": "the four large times and the 'Daylight to spare 3 h 46 min' figure"
+    },
+    {
+     "where": "B 0.0 to 0.1s, whole card",
+     "problem": "the card jumps in scale and position at the start of the clip",
+     "change": "start the card at its final size and position",
+     "keep": "the two-second calm hold before the cursor moves"
+    },
+    {
+     "where": "B 7.5s, header status",
+     "problem": "'2 windows found' replaces 'Checking' in small type at the top right while the eye is on the chart",
+     "change": "let the found windows themselves carry the news first, then update the header about 100ms later",
+     "keep": "the underline under the status"
+    }
+   ],
+   "pass": false
+  },
+  {
+   "trial": 3,
+   "kind": "swap",
+   "exemplar": "stripe-checkout-scene",
+   "ours": "A",
+   "stronger": "B",
+   "confidence": 3,
+   "toldApart": true,
+   "memorable": "the forecast badge flipping from Fri 18:00 to Fri 21:00",
+   "exemplarMemorable": "the checkout re-localizing row by row in place",
+   "tells": [
+    "B is the same Stripe payments module, rolling the whole checkout to a new locale in place at about 5s",
+    "A (Halyard) updates the forecast badge, window end time and first warning time with in-place vertical rolls at 3.4 to 3.8s, which is good",
+    "A's notification still reads 'back 11:10 to 13:45' for about 3s after the card already says 13:20, so the screen contradicts itself",
+    "A's key change is tiny: the pink window shrinks a few pixels for 25 minutes, so the moment that matters is the least visible",
+    "A opens with a cut from the hero to blank white and a fade (0.0 to 0.4s)"
+   ],
+   "corrections": [
+    {
+     "where": "A 3.6 to 6.5s, Halyard notification",
+     "problem": "the old notification still says 13:45 while the card above says 13:20, so the information on screen is wrong for 3s",
+     "change": "bring the 'Back window moved' notification in within about 0.3s of the card update, or update the card after the notification arrives",
+     "keep": "the notification copy 'Now closes 13:20, 25 minutes earlier'"
+    },
+    {
+     "where": "A 3.6 to 3.8s, Back window bar",
+     "problem": "the window's right edge pulls in a few pixels and is easy to miss",
+     "change": "flash the lost 25 minutes as a hatched sliver that fades over about 600ms so the loss is visible",
+     "keep": "the window staying in place on the timeline"
+    },
+    {
+     "where": "A 6.4 to 6.8s, notification swap",
+     "problem": "the new notification pushes in under the old one so two cards overlap for a moment",
+     "change": "cross-swap the notification contents in place, or slide the old one out before the new one lands",
+     "keep": "the 'Fri 21:05' timestamp"
+    },
+    {
+     "where": "A 0.0 to 0.4s, opening",
+     "problem": "hard cut from the hero to a white frame, then a fade",
+     "change": "start on the settled card, or move into it with a continuous scroll",
+     "keep": "the two-second calm hold before the forecast changes"
+    }
+   ],
+   "pass": false
+  },
+  {
+   "trial": 4,
+   "kind": "scene",
+   "exemplar": "stripe-checkout-scene",
+   "ours": "A",
+   "stronger": "B",
+   "confidence": 3,
+   "toldApart": true,
+   "memorable": "the dot stepping through the Solent with the clock advancing",
+   "exemplarMemorable": "the checkout re-localizing row by row in place",
+   "tells": [
+    "B is again the Stripe payments module with its in-place locale swap",
+    "A (Halyard) moves a boat dot through Jack in the Basket, Hamstead Ledge, Gurnard and Cowes, about 1.5s per leg, with the readout updating after each arrival",
+    "In A the solid track is drawn after the dot arrives (dot reaches the waypoint at 7.0s, line fills 7.2 to 7.4s), so the trail lags its own cause",
+    "In A every leg takes about the same time although the legs span 18, 29, 42 and 11 minutes, so screen time does not match passage time",
+    "In A the Stream field reads 'With you' for the whole passage and never earns its place; the readout numbers jump rather than count"
+   ],
+   "corrections": [
+    {
+     "where": "A 6.6 to 7.4s, Hamstead Ledge to Gurnard leg",
+     "problem": "the dot travels first and the solid line is drawn behind it about 0.3s later",
+     "change": "draw the solid track with the dot as its leading tip on the same curve and duration",
+     "keep": "the dashed future route ahead of the dot"
+    },
+    {
+     "where": "A 1.7 to 10.0s, all legs",
+     "problem": "each leg gets the same screen time regardless of how long it takes on the water",
+     "change": "scale each leg's duration to its minutes (11 min leg shortest, 42 min leg longest) with a short ease in and out at each waypoint",
+     "keep": "the brief pause at each named waypoint"
+    },
+    {
+     "where": "A 2.4s, 5.0s, 7.4s, readout row",
+     "problem": "time and distance roll to the new value only after the dot stops, and jump rather than track progress",
+     "change": "count time and distance up continuously as the dot moves, and roll the place name in at arrival",
+     "keep": "the three-column readout and its type sizes"
+    },
+    {
+     "where": "A 0.0 to 0.4s, opening",
+     "problem": "blank cream frame and fade before the map appears",
+     "change": "start on the settled map",
+     "keep": "the 1.5s hold at Lymington before departure"
+    },
+    {
+     "where": "A throughout, Stream column",
+     "problem": "'With you' never changes, so it is dead information on screen",
+     "change": "change it when the stream turns, or replace it with a value that moves, such as speed over ground",
+     "keep": "the column position"
+    }
+   ],
+   "pass": false
+  }
+ ]
+}

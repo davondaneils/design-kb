@@ -1,0 +1,7199 @@
+{
+ "url": "file:///home/user/design-kb/kb/tests/fresh/landing/halyard.html",
+ "measuredAt": "2026-10-14T00:05:55.949Z",
+ "viewport": [
+  1440,
+  900
+ ],
+ "scheme": "light",
+ "elapsedMs": 19423,
+ "totals": {
+  "animations": 245,
+  "finite": 245,
+  "loops": 0,
+  "byPhase": [
+   {
+    "v": "scroll",
+    "n": 113
+   },
+   {
+    "v": "hover",
+    "n": 75
+   },
+   {
+    "v": "load",
+    "n": 57
+   }
+  ],
+  "reducedMotionRules": 0
+ },
+ "durationLadder": [
+  {
+   "ms": 100,
+   "n": 18
+  },
+  {
+   "ms": 300,
+   "n": 182
+  },
+  {
+   "ms": 600,
+   "n": 37
+  },
+  {
+   "ms": 1000,
+   "n": 2
+  },
+  {
+   "ms": 1400,
+   "n": 4
+  },
+  {
+   "ms": 1800,
+   "n": 2
+  }
+ ],
+ "durationsByPhase": {
+  "load": [
+   "300ms x51",
+   "1000ms x2",
+   "1400ms x2",
+   "1800ms x2"
+  ],
+  "scroll": [
+   "300ms x80",
+   "600ms x33"
+  ],
+  "hover": [
+   "300ms x51",
+   "100ms x18",
+   "600ms x4",
+   "1400ms x2"
+  ]
+ },
+ "curves": [
+  {
+   "v": "cubic-bezier(0.2, 0, 0, 1)",
+   "n": 117
+  },
+  {
+   "v": "cubic-bezier(0, 0, 0, 1)",
+   "n": 106
+  },
+  {
+   "v": "linear",
+   "n": 22
+  }
+ ],
+ "propertiesAnimated": [
+  {
+   "v": "transform",
+   "n": 124
+  },
+  {
+   "v": "opacity",
+   "n": 82
+  },
+  {
+   "v": "backgroundColor",
+   "n": 23
+  },
+  {
+   "v": "visibility",
+   "n": 12
+  },
+  {
+   "v": "opacity+transform",
+   "n": 4
+  }
+ ],
+ "enterStartValues": {
+  "opacity": [
+   {
+    "v": "1",
+    "n": 21
+   },
+   {
+    "v": "0.3",
+    "n": 15
+   },
+   {
+    "v": "0",
+    "n": 13
+   }
+  ],
+  "travel": [
+   {
+    "v": "100%",
+    "n": 82
+   },
+   {
+    "v": "16px",
+    "n": 8
+   },
+   {
+    "v": "-100%",
+    "n": 2
+   }
+  ],
+  "filter": [],
+  "clipPath": []
+ },
+ "delays": [
+  {
+   "v": "160",
+   "n": 23
+  },
+  {
+   "v": "80",
+   "n": 10
+  },
+  {
+   "v": "40",
+   "n": 8
+  },
+  {
+   "v": "120",
+   "n": 8
+  },
+  {
+   "v": "60",
+   "n": 7
+  },
+  {
+   "v": "20",
+   "n": 6
+  },
+  {
+   "v": "100",
+   "n": 6
+  },
+  {
+   "v": "140",
+   "n": 6
+  },
+  {
+   "v": "150",
+   "n": 6
+  },
+  {
+   "v": "300",
+   "n": 4
+  },
+  {
+   "v": "420",
+   "n": 2
+  },
+  {
+   "v": "460",
+   "n": 2
+  }
+ ],
+ "staggers": [
+  {
+   "key": "scroll|300|cubic-bezier(0, 0, 0, 1)|transform",
+   "n": 23,
+   "medianGap": 20,
+   "span": 626
+  },
+  {
+   "key": "scroll|300|cubic-bezier(0, 0, 0, 1)|transform",
+   "n": 22,
+   "medianGap": 20,
+   "span": 611
+  },
+  {
+   "key": "scroll|600|cubic-bezier(0, 0, 0, 1)|transform",
+   "n": 19,
+   "medianGap": 20,
+   "span": 465
+  },
+  {
+   "key": "scroll|300|cubic-bezier(0, 0, 0, 1)|transform",
+   "n": 18,
+   "medianGap": 20,
+   "span": 693
+  },
+  {
+   "key": "scroll|300|cubic-bezier(0, 0, 0, 1)|transform",
+   "n": 17,
+   "medianGap": 20,
+   "span": 160
+  },
+  {
+   "key": "scroll|600|cubic-bezier(0.2, 0, 0, 1)|opacity",
+   "n": 4,
+   "medianGap": 80,
+   "span": 465
+  }
+ ],
+ "loops": [],
+ "scrollTriggered": 113,
+ "imagery": {
+  "viewport": [
+   1440,
+   900
+  ],
+  "pageHeight": 8080,
+  "screens": 9,
+  "counts": {
+   "productMock": 14,
+   "photo": 0,
+   "video": 0,
+   "canvas": 0,
+   "svgIllustration": 3,
+   "illustration": 1,
+   "dataViz": 0,
+   "bgImage": 0,
+   "bgGradient": 8
+  },
+  "mocks": [
+   {
+    "y": 121,
+    "w": 1280,
+    "h": 774
+   },
+   {
+    "y": 1507,
+    "w": 1280,
+    "h": 677
+   },
+   {
+    "y": 2386,
+    "w": 709,
+    "h": 569
+   },
+   {
+    "y": 3176,
+    "w": 709,
+    "h": 505
+   },
+   {
+    "y": 5670,
+    "w": 709,
+    "h": 475
+   },
+   {
+    "y": 6862,
+    "w": 709,
+    "h": 378
+   },
+   {
+    "y": 121,
+    "w": 628,
+    "h": 708
+   },
+   {
+    "y": 1663,
+    "w": 411,
+    "h": 320
+   },
+   {
+    "y": 1663,
+    "w": 411,
+    "h": 320
+   },
+   {
+    "y": 1663,
+    "w": 411,
+    "h": 320
+   },
+   {
+    "y": 2386,
+    "w": 709,
+    "h": 539
+   },
+   {
+    "y": 3176,
+    "w": 709,
+    "h": 475
+   },
+   {
+    "y": 5670,
+    "w": 709,
+    "h": 445
+   },
+   {
+    "y": 6862,
+    "w": 709,
+    "h": 348
+   }
+  ],
+  "slices": [
+   {
+    "y": 0,
+    "visualCoverage": 0.79,
+    "byKind": {
+     "product-mock": 1,
+     "bg-gradient": 0.34
+    }
+   },
+   {
+    "y": 900,
+    "visualCoverage": 0.29,
+    "byKind": {
+     "product-mock": 0.42,
+     "bg-gradient": 0.13
+    }
+   },
+   {
+    "y": 1800,
+    "visualCoverage": 0.56,
+    "byKind": {
+     "svg-illustration": 0.1,
+     "product-mock": 0.9,
+     "bg-gradient": 0.35
+    }
+   },
+   {
+    "y": 2700,
+    "visualCoverage": 0.38,
+    "byKind": {
+     "svg-illustration": 0.05,
+     "product-mock": 0.73,
+     "bg-gradient": 0.36
+    }
+   },
+   {
+    "y": 3600,
+    "visualCoverage": 0.29,
+    "byKind": {
+     "svg-illustration": 0.21,
+     "product-mock": 0.07,
+     "illustration": 0.24,
+     "bg-gradient": 0.03
+    }
+   },
+   {
+    "y": 4500,
+    "visualCoverage": 0,
+    "byKind": {}
+   },
+   {
+    "y": 5400,
+    "visualCoverage": 0.26,
+    "byKind": {
+     "product-mock": 0.5,
+     "bg-gradient": 0.24
+    }
+   },
+   {
+    "y": 6300,
+    "visualCoverage": 0.19,
+    "byKind": {
+     "product-mock": 0.37,
+     "bg-gradient": 0.19
+    }
+   },
+   {
+    "y": 7200,
+    "visualCoverage": 0.36,
+    "byKind": {
+     "svg-illustration": 0.33,
+     "product-mock": 0.03,
+     "bg-gradient": 0.01
+    }
+   }
+  ],
+  "screensWithVisual": 8
+ },
+ "raw": [
+  {
+   "t": 127,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "prog-a",
+   "dur": 1000,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleX(0)",
+     "none"
+    ]
+   },
+   "target": "span.status__prog",
+   "pseudo": null,
+   "rect": [
+    1156,
+    203,
+    156,
+    2
+   ],
+   "inView": true
+  },
+  {
+   "t": 127,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "sweep-a",
+   "dur": 1000,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "1",
+     "0"
+    ],
+    "transform": [
+     "translateX(-100%)",
+     "none"
+    ]
+   },
+   "target": "span.sweep",
+   "pseudo": null,
+   "rect": [
+    844,
+    280,
+    468,
+    377
+   ],
+   "inView": true
+  },
+  {
+   "t": 1743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "none",
+     "translateY(-100%)"
+    ]
+   },
+   "target": "span.st.st--day",
+   "pseudo": null,
+   "rect": [
+    1156,
+    181,
+    156,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 1743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "visibility",
+   "dur": 300,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {},
+   "target": "span.st.st--day",
+   "pseudo": null,
+   "rect": [
+    1156,
+    181,
+    156,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 1743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span.st.st--tide",
+   "pseudo": null,
+   "rect": [
+    1234,
+    199,
+    78,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 1743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "visibility",
+   "dur": 300,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {},
+   "target": "span.st.st--tide",
+   "pseudo": null,
+   "rect": [
+    1234,
+    199,
+    78,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 1743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    844,
+    465,
+    28,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 1743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    875,
+    463,
+    28,
+    20
+   ],
+   "inView": true
+  },
+  {
+   "t": 1743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    906,
+    463,
+    28,
+    20
+   ],
+   "inView": true
+  },
+  {
+   "t": 1743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    938,
+    460,
+    28,
+    23
+   ],
+   "inView": true
+  },
+  {
+   "t": 1743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    969,
+    458,
+    28,
+    25
+   ],
+   "inView": true
+  },
+  {
+   "t": 1744,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    1000,
+    458,
+    28,
+    25
+   ],
+   "inView": true
+  },
+  {
+   "t": 1744,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    1031,
+    455,
+    28,
+    28
+   ],
+   "inView": true
+  },
+  {
+   "t": 1744,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    1062,
+    455,
+    28,
+    28
+   ],
+   "inView": true
+  },
+  {
+   "t": 1744,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    1094,
+    453,
+    28,
+    30
+   ],
+   "inView": true
+  },
+  {
+   "t": 1744,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    1125,
+    453,
+    28,
+    30
+   ],
+   "inView": true
+  },
+  {
+   "t": 1744,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    1156,
+    445,
+    28,
+    38
+   ],
+   "inView": true
+  },
+  {
+   "t": 1744,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    1187,
+    440,
+    28,
+    43
+   ],
+   "inView": true
+  },
+  {
+   "t": 1744,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    1218,
+    440,
+    28,
+    43
+   ],
+   "inView": true
+  },
+  {
+   "t": 1744,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    1250,
+    443,
+    28,
+    40
+   ],
+   "inView": true
+  },
+  {
+   "t": 1744,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    1281,
+    445,
+    28,
+    38
+   ],
+   "inView": true
+  },
+  {
+   "t": 1744,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.night.g",
+   "pseudo": null,
+   "rect": [
+    844,
+    492,
+    80,
+    12
+   ],
+   "inView": true
+  },
+  {
+   "t": 1744,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.night.g",
+   "pseudo": null,
+   "rect": [
+    1248,
+    492,
+    64,
+    12
+   ],
+   "inView": true
+  },
+  {
+   "t": 1744,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ]
+   },
+   "target": "i.cut.cut--tide",
+   "pseudo": null,
+   "rect": [
+    844,
+    579,
+    21,
+    20
+   ],
+   "inView": true
+  },
+  {
+   "t": 1744,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 420,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ]
+   },
+   "target": "i.cut.cut--tide",
+   "pseudo": null,
+   "rect": [
+    984,
+    579,
+    328,
+    20
+   ],
+   "inView": true
+  },
+  {
+   "t": 1744,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ]
+   },
+   "target": "i.cut.cut--tide",
+   "pseudo": null,
+   "rect": [
+    844,
+    637,
+    192,
+    20
+   ],
+   "inView": true
+  },
+  {
+   "t": 1744,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 1042,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ]
+   },
+   "target": "i.cut.cut--tide",
+   "pseudo": null,
+   "rect": [
+    1192,
+    637,
+    120,
+    20
+   ],
+   "inView": true
+  },
+  {
+   "t": 1744,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "prog-b",
+   "dur": 1400,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleX(0)",
+     "none"
+    ]
+   },
+   "target": "span.status__prog",
+   "pseudo": null,
+   "rect": [
+    1156,
+    203,
+    0,
+    2
+   ],
+   "inView": true
+  },
+  {
+   "t": 1744,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "sweep-b",
+   "dur": 1400,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "1",
+     "0"
+    ],
+    "transform": [
+     "translateX(-100%)",
+     "none"
+    ]
+   },
+   "target": "span.sweep",
+   "pseudo": null,
+   "rect": [
+    376,
+    280,
+    468,
+    377
+   ],
+   "inView": true
+  },
+  {
+   "t": 3742,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "none",
+     "translateY(-100%)"
+    ]
+   },
+   "target": "span.st.st--tide",
+   "pseudo": null,
+   "rect": [
+    1234,
+    181,
+    78,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 3742,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "visibility",
+   "dur": 300,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {},
+   "target": "span.st.st--tide",
+   "pseudo": null,
+   "rect": [
+    1234,
+    181,
+    78,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 3742,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span.st.st--wind",
+   "pseudo": null,
+   "rect": [
+    1167,
+    199,
+    145,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 3742,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "visibility",
+   "dur": 300,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {},
+   "target": "span.st.st--wind",
+   "pseudo": null,
+   "rect": [
+    1167,
+    199,
+    145,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 3743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "svg.tide.g",
+   "pseudo": null,
+   "rect": [
+    844,
+    324,
+    468,
+    40
+   ],
+   "inView": true
+  },
+  {
+   "t": 3743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    844,
+    465,
+    28,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 3743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    875,
+    463,
+    28,
+    20
+   ],
+   "inView": true
+  },
+  {
+   "t": 3743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    906,
+    463,
+    28,
+    20
+   ],
+   "inView": true
+  },
+  {
+   "t": 3743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    938,
+    460,
+    28,
+    23
+   ],
+   "inView": true
+  },
+  {
+   "t": 3743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    969,
+    458,
+    28,
+    25
+   ],
+   "inView": true
+  },
+  {
+   "t": 3743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    1000,
+    458,
+    28,
+    25
+   ],
+   "inView": true
+  },
+  {
+   "t": 3743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    1031,
+    455,
+    28,
+    28
+   ],
+   "inView": true
+  },
+  {
+   "t": 3743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    1062,
+    455,
+    28,
+    28
+   ],
+   "inView": true
+  },
+  {
+   "t": 3743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    1094,
+    453,
+    28,
+    30
+   ],
+   "inView": true
+  },
+  {
+   "t": 3743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    1125,
+    453,
+    28,
+    30
+   ],
+   "inView": true
+  },
+  {
+   "t": 3743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgb(184, 194, 203)",
+     "rgb(222, 146, 12)"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    1156,
+    445,
+    28,
+    38
+   ],
+   "inView": true
+  },
+  {
+   "t": 3743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    1156,
+    445,
+    28,
+    38
+   ],
+   "inView": true
+  },
+  {
+   "t": 3743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgb(184, 194, 203)",
+     "rgb(222, 146, 12)"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    1187,
+    440,
+    28,
+    43
+   ],
+   "inView": true
+  },
+  {
+   "t": 3743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    1187,
+    440,
+    28,
+    43
+   ],
+   "inView": true
+  },
+  {
+   "t": 3743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgb(184, 194, 203)",
+     "rgb(222, 146, 12)"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    1218,
+    440,
+    28,
+    43
+   ],
+   "inView": true
+  },
+  {
+   "t": 3743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    1218,
+    440,
+    28,
+    43
+   ],
+   "inView": true
+  },
+  {
+   "t": 3743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgb(184, 194, 203)",
+     "rgb(222, 146, 12)"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    1250,
+    443,
+    28,
+    40
+   ],
+   "inView": true
+  },
+  {
+   "t": 3743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    1250,
+    443,
+    28,
+    40
+   ],
+   "inView": true
+  },
+  {
+   "t": 3743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgb(184, 194, 203)",
+     "rgb(222, 146, 12)"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    1281,
+    445,
+    28,
+    38
+   ],
+   "inView": true
+  },
+  {
+   "t": 3743,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    1281,
+    445,
+    28,
+    38
+   ],
+   "inView": true
+  },
+  {
+   "t": 3744,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 1001,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ]
+   },
+   "target": "i.cut.cut--wind",
+   "pseudo": null,
+   "rect": [
+    1104,
+    637,
+    88,
+    20
+   ],
+   "inView": true
+  },
+  {
+   "t": 3744,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "prog-a",
+   "dur": 1800,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleX(0)",
+     "none"
+    ]
+   },
+   "target": "span.status__prog",
+   "pseudo": null,
+   "rect": [
+    1156,
+    203,
+    0,
+    2
+   ],
+   "inView": true
+  },
+  {
+   "t": 3744,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "sweep-a",
+   "dur": 1800,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "1",
+     "0"
+    ],
+    "transform": [
+     "translateX(-100%)",
+     "none"
+    ]
+   },
+   "target": "span.sweep",
+   "pseudo": null,
+   "rect": [
+    376,
+    280,
+    468,
+    377
+   ],
+   "inView": true
+  },
+  {
+   "t": 4992,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    80,
+    1561,
+    107,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 4992,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 20,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    200,
+    1561,
+    26,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 4992,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 40,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    238,
+    1561,
+    184,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 4992,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 60,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    435,
+    1561,
+    38,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 4992,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 80,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    485,
+    1561,
+    152,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 4992,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 100,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    650,
+    1561,
+    137,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 4992,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 120,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    80,
+    1615,
+    121,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 4992,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 140,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    214,
+    1615,
+    124,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 4992,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 160,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    350,
+    1615,
+    113,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 4992,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 160,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    475,
+    1615,
+    46,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 4993,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 160,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    534,
+    1615,
+    74,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 4993,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 160,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    621,
+    1615,
+    92,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 4993,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "fade",
+   "dur": 600,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.2, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ]
+   },
+   "target": "figure.rv",
+   "pseudo": null,
+   "rect": [
+    80,
+    1679,
+    411,
+    368
+   ],
+   "inView": true
+  },
+  {
+   "t": 4993,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "rise",
+   "dur": 600,
+   "delay": 150,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(16px)",
+     "none"
+    ]
+   },
+   "target": "figure.rv",
+   "pseudo": null,
+   "rect": [
+    80,
+    1679,
+    411,
+    368
+   ],
+   "inView": true
+  },
+  {
+   "t": 4993,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "wipe",
+   "dur": 600,
+   "delay": 300,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleX(1)",
+     "scaleX(0)"
+    ]
+   },
+   "target": "span.wipe",
+   "pseudo": null,
+   "rect": [
+    160,
+    1754,
+    315,
+    160
+   ],
+   "inView": true
+  },
+  {
+   "t": 4993,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "fade",
+   "dur": 600,
+   "delay": 80,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.2, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ]
+   },
+   "target": "figure.rv",
+   "pseudo": null,
+   "rect": [
+    515,
+    1679,
+    411,
+    368
+   ],
+   "inView": true
+  },
+  {
+   "t": 4993,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "rise",
+   "dur": 600,
+   "delay": 230,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(16px)",
+     "none"
+    ]
+   },
+   "target": "figure.rv",
+   "pseudo": null,
+   "rect": [
+    515,
+    1679,
+    411,
+    368
+   ],
+   "inView": true
+  },
+  {
+   "t": 4993,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "bar-rise",
+   "dur": 600,
+   "delay": 300,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleY(0)",
+     "none"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    603,
+    1887,
+    16,
+    0
+   ],
+   "inView": true
+  },
+  {
+   "t": 4993,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "bar-rise",
+   "dur": 600,
+   "delay": 320,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleY(0)",
+     "none"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    622,
+    1887,
+    16,
+    0
+   ],
+   "inView": true
+  },
+  {
+   "t": 4993,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "bar-rise",
+   "dur": 600,
+   "delay": 340,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleY(0)",
+     "none"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    641,
+    1887,
+    16,
+    0
+   ],
+   "inView": true
+  },
+  {
+   "t": 4993,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "bar-rise",
+   "dur": 600,
+   "delay": 360,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleY(0)",
+     "none"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    661,
+    1887,
+    16,
+    0
+   ],
+   "inView": true
+  },
+  {
+   "t": 4993,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "bar-rise",
+   "dur": 600,
+   "delay": 380,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleY(0)",
+     "none"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    680,
+    1887,
+    16,
+    0
+   ],
+   "inView": true
+  },
+  {
+   "t": 4993,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "bar-rise",
+   "dur": 600,
+   "delay": 400,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleY(0)",
+     "none"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    700,
+    1887,
+    16,
+    0
+   ],
+   "inView": true
+  },
+  {
+   "t": 4993,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "bar-rise",
+   "dur": 600,
+   "delay": 420,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleY(0)",
+     "none"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    719,
+    1887,
+    16,
+    0
+   ],
+   "inView": true
+  },
+  {
+   "t": 4993,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "bar-rise",
+   "dur": 600,
+   "delay": 440,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleY(0)",
+     "none"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    738,
+    1887,
+    16,
+    0
+   ],
+   "inView": true
+  },
+  {
+   "t": 4993,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "bar-rise",
+   "dur": 600,
+   "delay": 460,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleY(0)",
+     "none"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    758,
+    1887,
+    16,
+    0
+   ],
+   "inView": true
+  },
+  {
+   "t": 4993,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "bar-rise",
+   "dur": 600,
+   "delay": 480,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleY(0)",
+     "none"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    777,
+    1887,
+    16,
+    0
+   ],
+   "inView": true
+  },
+  {
+   "t": 4993,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "bar-rise",
+   "dur": 600,
+   "delay": 500,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleY(0)",
+     "none"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    796,
+    1887,
+    16,
+    0
+   ],
+   "inView": true
+  },
+  {
+   "t": 4993,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "bar-rise",
+   "dur": 600,
+   "delay": 520,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleY(0)",
+     "none"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    816,
+    1887,
+    16,
+    0
+   ],
+   "inView": true
+  },
+  {
+   "t": 4993,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "bar-rise",
+   "dur": 600,
+   "delay": 540,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleY(0)",
+     "none"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    835,
+    1887,
+    16,
+    0
+   ],
+   "inView": true
+  },
+  {
+   "t": 4993,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "bar-rise",
+   "dur": 600,
+   "delay": 560,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleY(0)",
+     "none"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    855,
+    1887,
+    16,
+    0
+   ],
+   "inView": true
+  },
+  {
+   "t": 4993,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "bar-rise",
+   "dur": 600,
+   "delay": 580,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleY(0)",
+     "none"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    874,
+    1887,
+    16,
+    0
+   ],
+   "inView": true
+  },
+  {
+   "t": 4993,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "fade",
+   "dur": 600,
+   "delay": 160,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.2, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ]
+   },
+   "target": "figure.rv",
+   "pseudo": null,
+   "rect": [
+    949,
+    1679,
+    411,
+    368
+   ],
+   "inView": true
+  },
+  {
+   "t": 4993,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "rise",
+   "dur": 600,
+   "delay": 310,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(16px)",
+     "none"
+    ]
+   },
+   "target": "figure.rv",
+   "pseudo": null,
+   "rect": [
+    949,
+    1679,
+    411,
+    368
+   ],
+   "inView": true
+  },
+  {
+   "t": 4993,
+   "phase": "scroll",
+   "scrollY": 1080,
+   "kind": "CSSAnimation",
+   "name": "wipe",
+   "dur": 600,
+   "delay": 460,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleX(1)",
+     "scaleX(0)"
+    ]
+   },
+   "target": "span.wipe",
+   "pseudo": null,
+   "rect": [
+    1029,
+    1754,
+    315,
+    114
+   ],
+   "inView": true
+  },
+  {
+   "t": 5457,
+   "phase": "scroll",
+   "scrollY": 1620,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    80,
+    2430,
+    93,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 5457,
+   "phase": "scroll",
+   "scrollY": 1620,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 20,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    185,
+    2430,
+    118,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 5457,
+   "phase": "scroll",
+   "scrollY": 1620,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 40,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    316,
+    2430,
+    47,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 5458,
+   "phase": "scroll",
+   "scrollY": 1620,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 60,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    375,
+    2430,
+    74,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 5458,
+   "phase": "scroll",
+   "scrollY": 1620,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 80,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    80,
+    2484,
+    180,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 5458,
+   "phase": "scroll",
+   "scrollY": 1620,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 100,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    272,
+    2484,
+    85,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 5458,
+   "phase": "scroll",
+   "scrollY": 1620,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 120,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    370,
+    2484,
+    43,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 5458,
+   "phase": "scroll",
+   "scrollY": 1620,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 140,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    425,
+    2484,
+    144,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 5458,
+   "phase": "scroll",
+   "scrollY": 1620,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 160,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    80,
+    2537,
+    130,
+    54
+   ],
+   "inView": false
+  },
+  {
+   "t": 5458,
+   "phase": "scroll",
+   "scrollY": 1620,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 160,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    223,
+    2537,
+    56,
+    54
+   ],
+   "inView": false
+  },
+  {
+   "t": 5458,
+   "phase": "scroll",
+   "scrollY": 1620,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 160,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    291,
+    2537,
+    125,
+    54
+   ],
+   "inView": false
+  },
+  {
+   "t": 5458,
+   "phase": "scroll",
+   "scrollY": 1620,
+   "kind": "CSSAnimation",
+   "name": "fade",
+   "dur": 600,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.2, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ]
+   },
+   "target": "figure.rv",
+   "pseudo": null,
+   "rect": [
+    651,
+    2402,
+    709,
+    569
+   ],
+   "inView": true
+  },
+  {
+   "t": 5458,
+   "phase": "scroll",
+   "scrollY": 1620,
+   "kind": "CSSAnimation",
+   "name": "rise",
+   "dur": 600,
+   "delay": 150,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(16px)",
+     "none"
+    ]
+   },
+   "target": "figure.rv",
+   "pseudo": null,
+   "rect": [
+    651,
+    2402,
+    709,
+    569
+   ],
+   "inView": true
+  },
+  {
+   "t": 6356,
+   "phase": "scroll",
+   "scrollY": 2700,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    853,
+    3210,
+    221,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 6356,
+   "phase": "scroll",
+   "scrollY": 2700,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 20,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    1087,
+    3210,
+    148,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 6356,
+   "phase": "scroll",
+   "scrollY": 2700,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 40,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    1248,
+    3210,
+    84,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 6356,
+   "phase": "scroll",
+   "scrollY": 2700,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 60,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    853,
+    3264,
+    112,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 6356,
+   "phase": "scroll",
+   "scrollY": 2700,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 80,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    978,
+    3264,
+    136,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 6356,
+   "phase": "scroll",
+   "scrollY": 2700,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 100,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    1126,
+    3264,
+    185,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 6356,
+   "phase": "scroll",
+   "scrollY": 2700,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 120,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    853,
+    3318,
+    131,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 6356,
+   "phase": "scroll",
+   "scrollY": 2700,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 140,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    997,
+    3318,
+    212,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 6356,
+   "phase": "scroll",
+   "scrollY": 2700,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 160,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    853,
+    3372,
+    110,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 6356,
+   "phase": "scroll",
+   "scrollY": 2700,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 160,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    976,
+    3372,
+    84,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 6356,
+   "phase": "scroll",
+   "scrollY": 2700,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 160,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    1072,
+    3372,
+    118,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 6356,
+   "phase": "scroll",
+   "scrollY": 2700,
+   "kind": "CSSAnimation",
+   "name": "fade",
+   "dur": 600,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.2, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ]
+   },
+   "target": "figure.rv",
+   "pseudo": null,
+   "rect": [
+    80,
+    3192,
+    709,
+    505
+   ],
+   "inView": true
+  },
+  {
+   "t": 6356,
+   "phase": "scroll",
+   "scrollY": 2700,
+   "kind": "CSSAnimation",
+   "name": "rise",
+   "dur": 600,
+   "delay": 150,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(16px)",
+     "none"
+    ]
+   },
+   "target": "figure.rv",
+   "pseudo": null,
+   "rect": [
+    80,
+    3192,
+    709,
+    505
+   ],
+   "inView": true
+  },
+  {
+   "t": 6809,
+   "phase": "scroll",
+   "scrollY": 3240,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    80,
+    3946,
+    152,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 6809,
+   "phase": "scroll",
+   "scrollY": 3240,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 40,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    244,
+    3946,
+    33,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 6809,
+   "phase": "scroll",
+   "scrollY": 3240,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 80,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    80,
+    4000,
+    156,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 6809,
+   "phase": "scroll",
+   "scrollY": 3240,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 120,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    248,
+    4000,
+    127,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 6809,
+   "phase": "scroll",
+   "scrollY": 3240,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 160,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    80,
+    4054,
+    47,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 6809,
+   "phase": "scroll",
+   "scrollY": 3240,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 200,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    139,
+    4054,
+    249,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 6809,
+   "phase": "scroll",
+   "scrollY": 3240,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 240,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    80,
+    4108,
+    212,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 6809,
+   "phase": "scroll",
+   "scrollY": 3240,
+   "kind": "CSSAnimation",
+   "name": "fade",
+   "dur": 600,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.2, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ]
+   },
+   "target": "figure.rv",
+   "pseudo": null,
+   "rect": [
+    549,
+    3908,
+    811,
+    450
+   ],
+   "inView": true
+  },
+  {
+   "t": 6809,
+   "phase": "scroll",
+   "scrollY": 3240,
+   "kind": "CSSAnimation",
+   "name": "rise",
+   "dur": 600,
+   "delay": 150,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(16px)",
+     "none"
+    ]
+   },
+   "target": "figure.rv",
+   "pseudo": null,
+   "rect": [
+    549,
+    3908,
+    811,
+    450
+   ],
+   "inView": true
+  },
+  {
+   "t": 7722,
+   "phase": "scroll",
+   "scrollY": 4320,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    80,
+    4793,
+    101,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 7722,
+   "phase": "scroll",
+   "scrollY": 4320,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 20,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    193,
+    4793,
+    68,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 7722,
+   "phase": "scroll",
+   "scrollY": 4320,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 40,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    274,
+    4793,
+    74,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 7722,
+   "phase": "scroll",
+   "scrollY": 4320,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 60,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    361,
+    4793,
+    90,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 7722,
+   "phase": "scroll",
+   "scrollY": 4320,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 80,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    463,
+    4793,
+    95,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 7722,
+   "phase": "scroll",
+   "scrollY": 4320,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 100,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    80,
+    4847,
+    97,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 7722,
+   "phase": "scroll",
+   "scrollY": 4320,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 120,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    189,
+    4847,
+    68,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 7722,
+   "phase": "scroll",
+   "scrollY": 4320,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 140,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    270,
+    4847,
+    124,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 7722,
+   "phase": "scroll",
+   "scrollY": 4320,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 160,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    407,
+    4847,
+    219,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 8173,
+   "phase": "scroll",
+   "scrollY": 4860,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    80,
+    5636,
+    33,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 8173,
+   "phase": "scroll",
+   "scrollY": 4860,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 20,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    125,
+    5636,
+    208,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 8173,
+   "phase": "scroll",
+   "scrollY": 4860,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 40,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    346,
+    5636,
+    87,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 8173,
+   "phase": "scroll",
+   "scrollY": 4860,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 60,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    446,
+    5636,
+    77,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 8173,
+   "phase": "scroll",
+   "scrollY": 4860,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 80,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    80,
+    5690,
+    26,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 8173,
+   "phase": "scroll",
+   "scrollY": 4860,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 100,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    118,
+    5690,
+    123,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 8173,
+   "phase": "scroll",
+   "scrollY": 4860,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 120,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    254,
+    5690,
+    89,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 8173,
+   "phase": "scroll",
+   "scrollY": 4860,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 140,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    355,
+    5690,
+    192,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 8173,
+   "phase": "scroll",
+   "scrollY": 4860,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 160,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    80,
+    5744,
+    47,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 8173,
+   "phase": "scroll",
+   "scrollY": 4860,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 160,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    139,
+    5744,
+    55,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 8173,
+   "phase": "scroll",
+   "scrollY": 4860,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 160,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    207,
+    5744,
+    111,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 8173,
+   "phase": "scroll",
+   "scrollY": 4860,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 160,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    331,
+    5744,
+    104,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 8173,
+   "phase": "scroll",
+   "scrollY": 4860,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 160,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    448,
+    5744,
+    99,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 8173,
+   "phase": "scroll",
+   "scrollY": 4860,
+   "kind": "CSSAnimation",
+   "name": "fade",
+   "dur": 600,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.2, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ]
+   },
+   "target": "figure.rv",
+   "pseudo": null,
+   "rect": [
+    651,
+    5686,
+    709,
+    475
+   ],
+   "inView": true
+  },
+  {
+   "t": 8173,
+   "phase": "scroll",
+   "scrollY": 4860,
+   "kind": "CSSAnimation",
+   "name": "rise",
+   "dur": 600,
+   "delay": 150,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(16px)",
+     "none"
+    ]
+   },
+   "target": "figure.rv",
+   "pseudo": null,
+   "rect": [
+    651,
+    5686,
+    709,
+    475
+   ],
+   "inView": true
+  },
+  {
+   "t": 9089,
+   "phase": "scroll",
+   "scrollY": 5940,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    80,
+    6478,
+    244,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 9089,
+   "phase": "scroll",
+   "scrollY": 5940,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 40,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    337,
+    6478,
+    138,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 9089,
+   "phase": "scroll",
+   "scrollY": 5940,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 80,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    80,
+    6532,
+    59,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 9089,
+   "phase": "scroll",
+   "scrollY": 5940,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 120,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    152,
+    6532,
+    74,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 9089,
+   "phase": "scroll",
+   "scrollY": 5940,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 160,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    239,
+    6532,
+    211,
+    54
+   ],
+   "inView": true
+  },
+  {
+   "t": 9089,
+   "phase": "scroll",
+   "scrollY": 5940,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    80,
+    6956,
+    105,
+    54
+   ],
+   "inView": false
+  },
+  {
+   "t": 9089,
+   "phase": "scroll",
+   "scrollY": 5940,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 20,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    198,
+    6956,
+    107,
+    54
+   ],
+   "inView": false
+  },
+  {
+   "t": 9089,
+   "phase": "scroll",
+   "scrollY": 5940,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 40,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    317,
+    6956,
+    102,
+    54
+   ],
+   "inView": false
+  },
+  {
+   "t": 9089,
+   "phase": "scroll",
+   "scrollY": 5940,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 60,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    80,
+    7010,
+    196,
+    54
+   ],
+   "inView": false
+  },
+  {
+   "t": 9089,
+   "phase": "scroll",
+   "scrollY": 5940,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 80,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    289,
+    7010,
+    98,
+    54
+   ],
+   "inView": false
+  },
+  {
+   "t": 9089,
+   "phase": "scroll",
+   "scrollY": 5940,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 100,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    399,
+    7010,
+    26,
+    54
+   ],
+   "inView": false
+  },
+  {
+   "t": 9089,
+   "phase": "scroll",
+   "scrollY": 5940,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 120,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    438,
+    7010,
+    118,
+    54
+   ],
+   "inView": false
+  },
+  {
+   "t": 9089,
+   "phase": "scroll",
+   "scrollY": 5940,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 140,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    80,
+    7064,
+    26,
+    54
+   ],
+   "inView": false
+  },
+  {
+   "t": 9089,
+   "phase": "scroll",
+   "scrollY": 5940,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 160,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    118,
+    7064,
+    192,
+    54
+   ],
+   "inView": false
+  },
+  {
+   "t": 9089,
+   "phase": "scroll",
+   "scrollY": 5940,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 160,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    323,
+    7064,
+    87,
+    54
+   ],
+   "inView": false
+  },
+  {
+   "t": 9089,
+   "phase": "scroll",
+   "scrollY": 5940,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 160,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    422,
+    7064,
+    26,
+    54
+   ],
+   "inView": false
+  },
+  {
+   "t": 9089,
+   "phase": "scroll",
+   "scrollY": 5940,
+   "kind": "CSSAnimation",
+   "name": "word-rise",
+   "dur": 300,
+   "delay": 160,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span",
+   "pseudo": null,
+   "rect": [
+    461,
+    7064,
+    92,
+    54
+   ],
+   "inView": false
+  },
+  {
+   "t": 9089,
+   "phase": "scroll",
+   "scrollY": 5940,
+   "kind": "CSSAnimation",
+   "name": "fade",
+   "dur": 600,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.2, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ]
+   },
+   "target": "figure.rv",
+   "pseudo": null,
+   "rect": [
+    651,
+    6878,
+    709,
+    378
+   ],
+   "inView": false
+  },
+  {
+   "t": 9089,
+   "phase": "scroll",
+   "scrollY": 5940,
+   "kind": "CSSAnimation",
+   "name": "rise",
+   "dur": 600,
+   "delay": 150,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0, 0, 0, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(16px)",
+     "none"
+    ]
+   },
+   "target": "figure.rv",
+   "pseudo": null,
+   "rect": [
+    651,
+    6878,
+    709,
+    378
+   ],
+   "inView": false
+  },
+  {
+   "t": 13908,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgba(0, 0, 0, 0)",
+     "oklab(0.249059 0.0119968 0 / 0.08)"
+    ]
+   },
+   "target": "a",
+   "pseudo": null,
+   "rect": [
+    256,
+    14,
+    111,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 14008,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "none",
+     "translateY(-100%)"
+    ]
+   },
+   "target": "span.st.st--wind",
+   "pseudo": null,
+   "rect": [
+    1167,
+    181,
+    145,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 14009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "visibility",
+   "dur": 300,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {},
+   "target": "span.st.st--wind",
+   "pseudo": null,
+   "rect": [
+    1167,
+    181,
+    145,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 14009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span.st.st--light",
+   "pseudo": null,
+   "rect": [
+    1207,
+    199,
+    105,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 14009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "visibility",
+   "dur": 300,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {},
+   "target": "span.st.st--light",
+   "pseudo": null,
+   "rect": [
+    1207,
+    199,
+    105,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 14009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    844,
+    465,
+    28,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 14009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    875,
+    463,
+    28,
+    20
+   ],
+   "inView": true
+  },
+  {
+   "t": 14009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    906,
+    463,
+    28,
+    20
+   ],
+   "inView": true
+  },
+  {
+   "t": 14009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    938,
+    460,
+    28,
+    23
+   ],
+   "inView": true
+  },
+  {
+   "t": 14009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    969,
+    458,
+    28,
+    25
+   ],
+   "inView": true
+  },
+  {
+   "t": 14009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    1000,
+    458,
+    28,
+    25
+   ],
+   "inView": true
+  },
+  {
+   "t": 14009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    1031,
+    455,
+    28,
+    28
+   ],
+   "inView": true
+  },
+  {
+   "t": 14009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    1062,
+    455,
+    28,
+    28
+   ],
+   "inView": true
+  },
+  {
+   "t": 14009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    1094,
+    453,
+    28,
+    30
+   ],
+   "inView": true
+  },
+  {
+   "t": 14009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    1125,
+    453,
+    28,
+    30
+   ],
+   "inView": true
+  },
+  {
+   "t": 14009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    1156,
+    445,
+    28,
+    38
+   ],
+   "inView": true
+  },
+  {
+   "t": 14009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    1187,
+    440,
+    28,
+    43
+   ],
+   "inView": true
+  },
+  {
+   "t": 14009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    1218,
+    440,
+    28,
+    43
+   ],
+   "inView": true
+  },
+  {
+   "t": 14009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    1250,
+    443,
+    28,
+    40
+   ],
+   "inView": true
+  },
+  {
+   "t": 14009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.3"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    1281,
+    445,
+    28,
+    38
+   ],
+   "inView": true
+  },
+  {
+   "t": 14009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.night.g",
+   "pseudo": null,
+   "rect": [
+    844,
+    492,
+    80,
+    12
+   ],
+   "inView": true
+  },
+  {
+   "t": 14009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.night.g",
+   "pseudo": null,
+   "rect": [
+    1248,
+    492,
+    64,
+    12
+   ],
+   "inView": true
+  },
+  {
+   "t": 14009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 62,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ]
+   },
+   "target": "i.cut.cut--light",
+   "pseudo": null,
+   "rect": [
+    865,
+    579,
+    59,
+    20
+   ],
+   "inView": true
+  },
+  {
+   "t": 14009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 1051,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ]
+   },
+   "target": "i.cut.cut--light",
+   "pseudo": null,
+   "rect": [
+    1196,
+    637,
+    116,
+    20
+   ],
+   "inView": true
+  },
+  {
+   "t": 14009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "prog-b",
+   "dur": 1400,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleX(0)",
+     "none"
+    ]
+   },
+   "target": "span.status__prog",
+   "pseudo": null,
+   "rect": [
+    1156,
+    203,
+    0,
+    2
+   ],
+   "inView": true
+  },
+  {
+   "t": 14009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "sweep-b",
+   "dur": 1400,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "1",
+     "0"
+    ],
+    "transform": [
+     "translateX(-100%)",
+     "none"
+    ]
+   },
+   "target": "span.sweep",
+   "pseudo": null,
+   "rect": [
+    376,
+    280,
+    468,
+    377
+   ],
+   "inView": true
+  },
+  {
+   "t": 14224,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "oklab(0.249059 0.0119968 0 / 0.08)",
+     "rgba(0, 0, 0, 0)"
+    ]
+   },
+   "target": "a",
+   "pseudo": null,
+   "rect": [
+    256,
+    14,
+    111,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 14224,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgba(0, 0, 0, 0)",
+     "oklab(0.249059 0.0119968 0 / 0.08)"
+    ]
+   },
+   "target": "a",
+   "pseudo": null,
+   "rect": [
+    369,
+    14,
+    89,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 14539,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "oklab(0.249059 0.0119968 0 / 0.08)",
+     "rgba(0, 0, 0, 0)"
+    ]
+   },
+   "target": "a",
+   "pseudo": null,
+   "rect": [
+    369,
+    14,
+    89,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 14539,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgba(0, 0, 0, 0)",
+     "oklab(0.249059 0.0119968 0 / 0.08)"
+    ]
+   },
+   "target": "a",
+   "pseudo": null,
+   "rect": [
+    460,
+    14,
+    71,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 14839,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "oklab(0.249059 0.0119968 0 / 0.08)",
+     "rgba(0, 0, 0, 0)"
+    ]
+   },
+   "target": "a",
+   "pseudo": null,
+   "rect": [
+    460,
+    14,
+    71,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 14839,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgba(0, 0, 0, 0)",
+     "oklab(0.249059 0.0119968 0 / 0.08)"
+    ]
+   },
+   "target": "a",
+   "pseudo": null,
+   "rect": [
+    533,
+    14,
+    67,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 15139,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "oklab(0.249059 0.0119968 0 / 0.08)",
+     "rgba(0, 0, 0, 0)"
+    ]
+   },
+   "target": "a",
+   "pseudo": null,
+   "rect": [
+    533,
+    14,
+    67,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 15139,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgba(0, 0, 0, 0)",
+     "oklab(0.249059 0.0119968 0 / 0.08)"
+    ]
+   },
+   "target": "a.nav__link",
+   "pseudo": null,
+   "rect": [
+    1171,
+    14,
+    69,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 15442,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "oklab(0.249059 0.0119968 0 / 0.08)",
+     "rgba(0, 0, 0, 0)"
+    ]
+   },
+   "target": "a.nav__link",
+   "pseudo": null,
+   "rect": [
+    1171,
+    14,
+    69,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 15442,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgba(0, 0, 0, 0)",
+     "oklab(0.249059 0.0119968 0 / 0.08)"
+    ]
+   },
+   "target": "a.btn.btn--secondary",
+   "pseudo": null,
+   "rect": [
+    1248,
+    16,
+    112,
+    40
+   ],
+   "inView": true
+  },
+  {
+   "t": 15756,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "oklab(0.249059 0.0119968 0 / 0.08)",
+     "rgba(0, 0, 0, 0)"
+    ]
+   },
+   "target": "a.btn.btn--secondary",
+   "pseudo": null,
+   "rect": [
+    1248,
+    16,
+    112,
+    40
+   ],
+   "inView": true
+  },
+  {
+   "t": 15756,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgb(185, 32, 121)",
+     "rgb(156, 13, 101)"
+    ]
+   },
+   "target": "a.btn.btn--primary",
+   "pseudo": null,
+   "rect": [
+    80,
+    641,
+    127,
+    48
+   ],
+   "inView": true
+  },
+  {
+   "t": 16008,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "none",
+     "translateY(-100%)"
+    ]
+   },
+   "target": "span.st.st--light",
+   "pseudo": null,
+   "rect": [
+    1207,
+    181,
+    105,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 16008,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "visibility",
+   "dur": 300,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {},
+   "target": "span.st.st--light",
+   "pseudo": null,
+   "rect": [
+    1207,
+    181,
+    105,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 16008,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span.st.st--window",
+   "pseudo": null,
+   "rect": [
+    1212,
+    199,
+    100,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 16008,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "visibility",
+   "dur": 300,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {},
+   "target": "span.st.st--window",
+   "pseudo": null,
+   "rect": [
+    1212,
+    199,
+    100,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "svg.tide.g",
+   "pseudo": null,
+   "rect": [
+    844,
+    324,
+    468,
+    40
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    844,
+    465,
+    28,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    875,
+    463,
+    28,
+    20
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    906,
+    463,
+    28,
+    20
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    938,
+    460,
+    28,
+    23
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    969,
+    458,
+    28,
+    25
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    1000,
+    458,
+    28,
+    25
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    1031,
+    455,
+    28,
+    28
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    1062,
+    455,
+    28,
+    28
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    1094,
+    453,
+    28,
+    30
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar",
+   "pseudo": null,
+   "rect": [
+    1125,
+    453,
+    28,
+    30
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    1156,
+    445,
+    28,
+    38
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    1187,
+    440,
+    28,
+    43
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    1218,
+    440,
+    28,
+    43
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    1250,
+    443,
+    28,
+    40
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.3",
+     "1"
+    ]
+   },
+   "target": "span.bar.bar--over",
+   "pseudo": null,
+   "rect": [
+    1281,
+    445,
+    28,
+    38
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "none",
+     "translateY(-100%)"
+    ]
+   },
+   "target": "span.s-check",
+   "pseudo": null,
+   "rect": [
+    1257,
+    553,
+    55,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "visibility",
+   "dur": 300,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {},
+   "target": "span.s-check",
+   "pseudo": null,
+   "rect": [
+    1257,
+    553,
+    55,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span.s-win",
+   "pseudo": null,
+   "rect": [
+    1188,
+    571,
+    124,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "visibility",
+   "dur": 300,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {},
+   "target": "span.s-win",
+   "pseudo": null,
+   "rect": [
+    1188,
+    571,
+    124,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 600,
+   "delay": 0,
+   "easing": "cubic-bezier(0, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleX(0)",
+     "none"
+    ]
+   },
+   "target": "span.win",
+   "pseudo": null,
+   "rect": [
+    924,
+    575,
+    0,
+    28
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "none",
+     "translateY(-100%)"
+    ]
+   },
+   "target": "span.s-check",
+   "pseudo": null,
+   "rect": [
+    1257,
+    611,
+    55,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "visibility",
+   "dur": 300,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {},
+   "target": "span.s-check",
+   "pseudo": null,
+   "rect": [
+    1257,
+    611,
+    55,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 300,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(100%)",
+     "none"
+    ]
+   },
+   "target": "span.s-win",
+   "pseudo": null,
+   "rect": [
+    1188,
+    629,
+    124,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "visibility",
+   "dur": 300,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {},
+   "target": "span.s-win",
+   "pseudo": null,
+   "rect": [
+    1188,
+    629,
+    124,
+    18
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 600,
+   "delay": 80,
+   "easing": "cubic-bezier(0, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleX(0)",
+     "none"
+    ]
+   },
+   "target": "span.win",
+   "pseudo": null,
+   "rect": [
+    1036,
+    633,
+    0,
+    28
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 600,
+   "delay": 300,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ]
+   },
+   "target": "div.frag.plan",
+   "pseudo": null,
+   "rect": [
+    864,
+    697,
+    480,
+    100
+   ],
+   "inView": true
+  },
+  {
+   "t": 16009,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 600,
+   "delay": 300,
+   "easing": "cubic-bezier(0, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(16px)",
+     "none"
+    ]
+   },
+   "target": "div.frag.plan",
+   "pseudo": null,
+   "rect": [
+    864,
+    697,
+    480,
+    100
+   ],
+   "inView": true
+  },
+  {
+   "t": 16056,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgb(156, 13, 101)",
+     "rgb(185, 32, 121)"
+    ]
+   },
+   "target": "a.btn.btn--primary",
+   "pseudo": null,
+   "rect": [
+    80,
+    641,
+    127,
+    48
+   ],
+   "inView": true
+  },
+  {
+   "t": 16056,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgba(0, 0, 0, 0)",
+     "oklab(0.249059 0.0119968 0 / 0.08)"
+    ]
+   },
+   "target": "a.btn.btn--secondary",
+   "pseudo": null,
+   "rect": [
+    219,
+    641,
+    139,
+    48
+   ],
+   "inView": true
+  },
+  {
+   "t": 16373,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "oklab(0.249059 0.0119968 0 / 0.08)",
+     "rgba(0, 0, 0, 0)"
+    ]
+   },
+   "target": "a.btn.btn--secondary",
+   "pseudo": null,
+   "rect": [
+    219,
+    641,
+    139,
+    48
+   ],
+   "inView": true
+  },
+  {
+   "t": 16373,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgba(0, 0, 0, 0)",
+     "oklab(0.249059 0.0119968 0 / 0.08)"
+    ]
+   },
+   "target": "button.btn.btn--quiet",
+   "pseudo": null,
+   "rect": [
+    1192,
+    846,
+    168,
+    44
+   ],
+   "inView": true
+  },
+  {
+   "t": 16638,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "cubic-bezier(0.2, 0, 0, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "oklab(0.249059 0.0119968 0 / 0.08)",
+     "rgba(0, 0, 0, 0)"
+    ]
+   },
+   "target": "button.btn.btn--quiet",
+   "pseudo": null,
+   "rect": [
+    1192,
+    846,
+    168,
+    44
+   ],
+   "inView": true
+  }
+ ]
+}

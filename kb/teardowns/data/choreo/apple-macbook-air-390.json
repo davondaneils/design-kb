@@ -1,0 +1,2327 @@
+{
+ "url": "https://www.apple.com/macbook-air/",
+ "measuredAt": "2026-10-13T20:08:24.606Z",
+ "viewport": [
+  390,
+  844
+ ],
+ "scheme": "light",
+ "elapsedMs": 77084,
+ "totals": {
+  "animations": 62,
+  "finite": 62,
+  "loops": 0,
+  "byPhase": [
+   {
+    "v": "load",
+    "n": 28
+   },
+   {
+    "v": "hover",
+    "n": 19
+   },
+   {
+    "v": "scroll",
+    "n": 15
+   }
+  ],
+  "reducedMotionRules": 40
+ },
+ "durationLadder": [
+  {
+   "ms": 20,
+   "n": 1
+  },
+  {
+   "ms": 100,
+   "n": 18
+  },
+  {
+   "ms": 230,
+   "n": 11
+  },
+  {
+   "ms": 240,
+   "n": 11
+  },
+  {
+   "ms": 320,
+   "n": 8
+  },
+  {
+   "ms": 500,
+   "n": 7
+  },
+  {
+   "ms": 1000,
+   "n": 3
+  },
+  {
+   "ms": 1500,
+   "n": 2
+  },
+  {
+   "ms": 1830,
+   "n": 1
+  }
+ ],
+ "durationsByPhase": {
+  "load": [
+   "240ms x11",
+   "100ms x8",
+   "320ms x6",
+   "1000ms x3"
+  ],
+  "scroll": [
+   "500ms x7",
+   "100ms x3",
+   "1500ms x2",
+   "20ms x1",
+   "230ms x1",
+   "1830ms x1"
+  ],
+  "hover": [
+   "230ms x10",
+   "100ms x7",
+   "320ms x2"
+  ]
+ },
+ "curves": [
+  {
+   "v": "linear",
+   "n": 23
+  },
+  {
+   "v": "cubic-bezier(0.4, 0, 0.6, 1)",
+   "n": 19
+  },
+  {
+   "v": "ease",
+   "n": 11
+  },
+  {
+   "v": "cubic-bezier(0.42, 0, 0.58, 1)",
+   "n": 3
+  },
+  {
+   "v": "ease-out",
+   "n": 3
+  },
+  {
+   "v": "ease-in",
+   "n": 3
+  }
+ ],
+ "propertiesAnimated": [
+  {
+   "v": "opacity",
+   "n": 21
+  },
+  {
+   "v": "opacity+transform",
+   "n": 17
+  },
+  {
+   "v": "transform",
+   "n": 15
+  },
+  {
+   "v": "backgroundColor",
+   "n": 3
+  },
+  {
+   "v": "color",
+   "n": 2
+  },
+  {
+   "v": "height",
+   "n": 2
+  },
+  {
+   "v": "fill",
+   "n": 2
+  }
+ ],
+ "enterStartValues": {
+  "opacity": [
+   {
+    "v": "1",
+    "n": 19
+   },
+   {
+    "v": "0",
+    "n": 13
+   },
+   {
+    "v": "0.16709",
+    "n": 1
+   }
+  ],
+  "travel": [
+   {
+    "v": "-8px",
+    "n": 6
+   },
+   {
+    "v": "-49px",
+    "n": 1
+   }
+  ],
+  "filter": [],
+  "clipPath": []
+ },
+ "delays": [
+  {
+   "v": "1800",
+   "n": 3
+  },
+  {
+   "v": "1000",
+   "n": 2
+  },
+  {
+   "v": "200",
+   "n": 1
+  },
+  {
+   "v": "220",
+   "n": 1
+  },
+  {
+   "v": "240",
+   "n": 1
+  },
+  {
+   "v": "260",
+   "n": 1
+  },
+  {
+   "v": "280",
+   "n": 1
+  },
+  {
+   "v": "300",
+   "n": 1
+  },
+  {
+   "v": "500",
+   "n": 1
+  }
+ ],
+ "staggers": [
+  {
+   "key": "load|320|cubic-bezier(0.4, 0, 0.6, 1)|opacity,transform",
+   "n": 6,
+   "medianGap": 20,
+   "span": 101
+  }
+ ],
+ "loops": [],
+ "scrollTriggered": 15,
+ "imagery": {
+  "viewport": [
+   390,
+   844
+  ],
+  "pageHeight": 35099,
+  "screens": 41.6,
+  "counts": {
+   "productMock": 2,
+   "photo": 1,
+   "video": 2,
+   "canvas": 0,
+   "svgIllustration": 0,
+   "bgImage": 0,
+   "bgGradient": 8
+  },
+  "mocks": [
+   {
+    "y": 27412,
+    "w": 358,
+    "h": 7050
+   },
+   {
+    "y": 34925,
+    "w": 358,
+    "h": 174
+   }
+  ],
+  "slices": [
+   {
+    "y": 0,
+    "visualCoverage": 0.34,
+    "byKind": {
+     "small-raster": 0.7,
+     "video": 0.35,
+     "bg-gradient": 0.57
+    }
+   },
+   {
+    "y": 844,
+    "visualCoverage": 0.44,
+    "byKind": {
+     "small-raster": 1,
+     "photo-or-raster": 0.03,
+     "bg-gradient": 0.11
+    }
+   },
+   {
+    "y": 1688,
+    "visualCoverage": 0.48,
+    "byKind": {
+     "photo-or-raster": 0.35,
+     "small-raster": 0.29
+    }
+   },
+   {
+    "y": 2532,
+    "visualCoverage": 0.46,
+    "byKind": {
+     "small-raster": 1
+    }
+   },
+   {
+    "y": 3376,
+    "visualCoverage": 0.42,
+    "byKind": {
+     "small-raster": 1
+    }
+   },
+   {
+    "y": 4220,
+    "visualCoverage": 0.38,
+    "byKind": {
+     "small-raster": 0.62,
+     "bg-gradient": 0.11
+    }
+   },
+   {
+    "y": 5064,
+    "visualCoverage": 0.06,
+    "byKind": {
+     "small-raster": 0.05
+    }
+   },
+   {
+    "y": 5908,
+    "visualCoverage": 0.47,
+    "byKind": {
+     "small-raster": 0.48
+    }
+   },
+   {
+    "y": 6752,
+    "visualCoverage": 0,
+    "byKind": {
+     "bg-gradient": 0.17
+    }
+   },
+   {
+    "y": 7596,
+    "visualCoverage": 0.48,
+    "byKind": {
+     "small-raster": 0.55
+    }
+   },
+   {
+    "y": 8440,
+    "visualCoverage": 0.26,
+    "byKind": {
+     "small-raster": 0.26
+    }
+   },
+   {
+    "y": 9284,
+    "visualCoverage": 0.17,
+    "byKind": {
+     "small-raster": 0.17,
+     "video": 0.01
+    }
+   },
+   {
+    "y": 10128,
+    "visualCoverage": 0.36,
+    "byKind": {
+     "small-raster": 0.81,
+     "bg-gradient": 0.11
+    }
+   },
+   {
+    "y": 10972,
+    "visualCoverage": 0.2,
+    "byKind": {
+     "small-raster": 0.91
+    }
+   },
+   {
+    "y": 11816,
+    "visualCoverage": 0.23,
+    "byKind": {
+     "small-raster": 1
+    }
+   },
+   {
+    "y": 12660,
+    "visualCoverage": 0.34,
+    "byKind": {
+     "small-raster": 1,
+     "bg-gradient": 0.07
+    }
+   },
+   {
+    "y": 13504,
+    "visualCoverage": 0.23,
+    "byKind": {
+     "small-raster": 0.22,
+     "bg-gradient": 0.04
+    }
+   },
+   {
+    "y": 14348,
+    "visualCoverage": 0.27,
+    "byKind": {
+     "small-raster": 0.98,
+     "bg-gradient": 0.17
+    }
+   },
+   {
+    "y": 15192,
+    "visualCoverage": 0,
+    "byKind": {}
+   },
+   {
+    "y": 16036,
+    "visualCoverage": 0,
+    "byKind": {
+     "small-raster": 0.01
+    }
+   },
+   {
+    "y": 16880,
+    "visualCoverage": 0.49,
+    "byKind": {
+     "small-raster": 0.49
+    }
+   },
+   {
+    "y": 17724,
+    "visualCoverage": 0.52,
+    "byKind": {
+     "small-raster": 0.53,
+     "bg-gradient": 0.17
+    }
+   },
+   {
+    "y": 18568,
+    "visualCoverage": 0.09,
+    "byKind": {
+     "small-raster": 0.11
+    }
+   },
+   {
+    "y": 19412,
+    "visualCoverage": 0.06,
+    "byKind": {
+     "small-raster": 0.08
+    }
+   },
+   {
+    "y": 20256,
+    "visualCoverage": 0.05,
+    "byKind": {
+     "small-raster": 0.06
+    }
+   },
+   {
+    "y": 21100,
+    "visualCoverage": 0.26,
+    "byKind": {
+     "small-raster": 0.26
+    }
+   },
+   {
+    "y": 21944,
+    "visualCoverage": 0.33,
+    "byKind": {
+     "small-raster": 0.33
+    }
+   },
+   {
+    "y": 22788,
+    "visualCoverage": 0.5,
+    "byKind": {
+     "small-raster": 0.53
+    }
+   },
+   {
+    "y": 23632,
+    "visualCoverage": 0.53,
+    "byKind": {
+     "small-raster": 0.55
+    }
+   },
+   {
+    "y": 24476,
+    "visualCoverage": 0.81,
+    "byKind": {
+     "small-raster": 0.83
+    }
+   },
+   {
+    "y": 25320,
+    "visualCoverage": 0,
+    "byKind": {}
+   },
+   {
+    "y": 26164,
+    "visualCoverage": 0,
+    "byKind": {}
+   },
+   {
+    "y": 27008,
+    "visualCoverage": 0.47,
+    "byKind": {
+     "product-mock": 0.48
+    }
+   },
+   {
+    "y": 27852,
+    "visualCoverage": 0.9,
+    "byKind": {
+     "product-mock": 0.92
+    }
+   },
+   {
+    "y": 28696,
+    "visualCoverage": 0.9,
+    "byKind": {
+     "product-mock": 0.92
+    }
+   },
+   {
+    "y": 29540,
+    "visualCoverage": 0.9,
+    "byKind": {
+     "product-mock": 0.92
+    }
+   },
+   {
+    "y": 30384,
+    "visualCoverage": 0.9,
+    "byKind": {
+     "product-mock": 0.92
+    }
+   },
+   {
+    "y": 31228,
+    "visualCoverage": 0.9,
+    "byKind": {
+     "product-mock": 0.92
+    }
+   },
+   {
+    "y": 32072,
+    "visualCoverage": 0.9,
+    "byKind": {
+     "product-mock": 0.92
+    }
+   },
+   {
+    "y": 32916,
+    "visualCoverage": 0.9,
+    "byKind": {
+     "product-mock": 0.92
+    }
+   },
+   {
+    "y": 33760,
+    "visualCoverage": 0.74,
+    "byKind": {
+     "product-mock": 0.76
+    }
+   },
+   {
+    "y": 34604,
+    "visualCoverage": 0.18,
+    "byKind": {
+     "product-mock": 0.19
+    }
+   }
+  ],
+  "screensWithVisual": 33
+ },
+ "raw": [
+  {
+   "t": 1786,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "animate-background-f5f5f7-f5f5f7",
+   "dur": 1000,
+   "delay": 1800,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.42, 0, 0.58, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgb(245, 245, 247)",
+     "rgb(245, 245, 247)"
+    ]
+   },
+   "target": "div.ac-ribbon__upgrade-2026-content-wrapper",
+   "pseudo": null,
+   "rect": [
+    0,
+    48,
+    390,
+    92
+   ],
+   "inView": true
+  },
+  {
+   "t": 1787,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "animate-color-1d1d1f-1d1d1f",
+   "dur": 1000,
+   "delay": 1800,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.42, 0, 0.58, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "color": [
+     "rgb(29, 29, 31)",
+     "rgb(29, 29, 31)"
+    ]
+   },
+   "target": "div.ac-ribbon__upgrade-2026-content.row",
+   "pseudo": null,
+   "rect": [
+    24,
+    64,
+    341,
+    60
+   ],
+   "inView": true
+  },
+  {
+   "t": 1787,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "animate-color-06c-06c",
+   "dur": 1000,
+   "delay": 1800,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.42, 0, 0.58, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "color": [
+     "rgb(0, 102, 204)",
+     "rgb(0, 102, 204)"
+    ]
+   },
+   "target": "a.icon-wrapper.ac-ribbon__upgrade-2026-link",
+   "pseudo": null,
+   "rect": [
+    221,
+    106,
+    87,
+    16
+   ],
+   "inView": true
+  },
+  {
+   "t": 2002,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "globalnav-chevron-hover-off",
+   "dur": 240,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.4, 0, 0.6, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0"
+    ],
+    "transform": [
+     "scale(1)",
+     "scale(0.8)"
+    ]
+   },
+   "target": "span.globalnav-link-chevron",
+   "pseudo": null,
+   "rect": [
+    362,
+    41,
+    28,
+    47
+   ],
+   "inView": true
+  },
+  {
+   "t": 2002,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "globalnav-chevron-hover-off",
+   "dur": 240,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.4, 0, 0.6, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0"
+    ],
+    "transform": [
+     "scale(1)",
+     "scale(0.8)"
+    ]
+   },
+   "target": "span.globalnav-link-chevron",
+   "pseudo": null,
+   "rect": [
+    362,
+    87,
+    28,
+    47
+   ],
+   "inView": true
+  },
+  {
+   "t": 2003,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "globalnav-chevron-hover-off",
+   "dur": 240,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.4, 0, 0.6, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0"
+    ],
+    "transform": [
+     "scale(1)",
+     "scale(0.8)"
+    ]
+   },
+   "target": "span.globalnav-link-chevron",
+   "pseudo": null,
+   "rect": [
+    362,
+    133,
+    28,
+    47
+   ],
+   "inView": true
+  },
+  {
+   "t": 2003,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "globalnav-chevron-hover-off",
+   "dur": 240,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.4, 0, 0.6, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0"
+    ],
+    "transform": [
+     "scale(1)",
+     "scale(0.8)"
+    ]
+   },
+   "target": "span.globalnav-link-chevron",
+   "pseudo": null,
+   "rect": [
+    362,
+    179,
+    28,
+    47
+   ],
+   "inView": true
+  },
+  {
+   "t": 2003,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "globalnav-chevron-hover-off",
+   "dur": 240,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.4, 0, 0.6, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0"
+    ],
+    "transform": [
+     "scale(1)",
+     "scale(0.8)"
+    ]
+   },
+   "target": "span.globalnav-link-chevron",
+   "pseudo": null,
+   "rect": [
+    362,
+    225,
+    28,
+    47
+   ],
+   "inView": true
+  },
+  {
+   "t": 2003,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "globalnav-chevron-hover-off",
+   "dur": 240,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.4, 0, 0.6, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0"
+    ],
+    "transform": [
+     "scale(1)",
+     "scale(0.8)"
+    ]
+   },
+   "target": "span.globalnav-link-chevron",
+   "pseudo": null,
+   "rect": [
+    362,
+    271,
+    28,
+    47
+   ],
+   "inView": true
+  },
+  {
+   "t": 2007,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "globalnav-chevron-hover-off",
+   "dur": 240,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.4, 0, 0.6, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0"
+    ],
+    "transform": [
+     "scale(1)",
+     "scale(0.8)"
+    ]
+   },
+   "target": "span.globalnav-link-chevron",
+   "pseudo": null,
+   "rect": [
+    362,
+    317,
+    28,
+    47
+   ],
+   "inView": true
+  },
+  {
+   "t": 2008,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "globalnav-chevron-hover-off",
+   "dur": 240,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.4, 0, 0.6, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0"
+    ],
+    "transform": [
+     "scale(1)",
+     "scale(0.8)"
+    ]
+   },
+   "target": "span.globalnav-link-chevron",
+   "pseudo": null,
+   "rect": [
+    362,
+    363,
+    28,
+    47
+   ],
+   "inView": true
+  },
+  {
+   "t": 2008,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "globalnav-chevron-hover-off",
+   "dur": 240,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.4, 0, 0.6, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0"
+    ],
+    "transform": [
+     "scale(1)",
+     "scale(0.8)"
+    ]
+   },
+   "target": "span.globalnav-link-chevron",
+   "pseudo": null,
+   "rect": [
+    362,
+    409,
+    28,
+    47
+   ],
+   "inView": true
+  },
+  {
+   "t": 2008,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "globalnav-chevron-hover-off",
+   "dur": 240,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.4, 0, 0.6, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0"
+    ],
+    "transform": [
+     "scale(1)",
+     "scale(0.8)"
+    ]
+   },
+   "target": "span.globalnav-link-chevron",
+   "pseudo": null,
+   "rect": [
+    362,
+    455,
+    28,
+    47
+   ],
+   "inView": true
+  },
+  {
+   "t": 2008,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "globalnav-chevron-hover-off",
+   "dur": 240,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.4, 0, 0.6, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0"
+    ],
+    "transform": [
+     "scale(1)",
+     "scale(0.8)"
+    ]
+   },
+   "target": "span.globalnav-link-chevron",
+   "pseudo": null,
+   "rect": [
+    362,
+    501,
+    28,
+    47
+   ],
+   "inView": true
+  },
+  {
+   "t": 2114,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "globalnav-search-fade-and-slide",
+   "dur": 320,
+   "delay": 200,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.4, 0, 0.6, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ],
+    "transform": [
+     "translateY(-8px)",
+     "translateY(0px)"
+    ]
+   },
+   "target": "h2.globalnav-searchresults-header",
+   "pseudo": null,
+   "rect": [
+    48,
+    135,
+    294,
+    21
+   ],
+   "inView": true
+  },
+  {
+   "t": 2114,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "globalnav-search-fade-and-slide",
+   "dur": 320,
+   "delay": 220,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.4, 0, 0.6, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ],
+    "transform": [
+     "translateY(-8px)",
+     "translateY(0px)"
+    ]
+   },
+   "target": "li.globalnav-searchresults-list-item",
+   "pseudo": null,
+   "rect": [
+    36,
+    165,
+    318,
+    33
+   ],
+   "inView": true
+  },
+  {
+   "t": 2115,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "globalnav-search-fade-and-slide",
+   "dur": 320,
+   "delay": 240,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.4, 0, 0.6, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ],
+    "transform": [
+     "translateY(-8px)",
+     "translateY(0px)"
+    ]
+   },
+   "target": "li.globalnav-searchresults-list-item",
+   "pseudo": null,
+   "rect": [
+    36,
+    204,
+    318,
+    33
+   ],
+   "inView": true
+  },
+  {
+   "t": 2115,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "globalnav-search-fade-and-slide",
+   "dur": 320,
+   "delay": 260,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.4, 0, 0.6, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ],
+    "transform": [
+     "translateY(-8px)",
+     "translateY(0px)"
+    ]
+   },
+   "target": "li.globalnav-searchresults-list-item",
+   "pseudo": null,
+   "rect": [
+    36,
+    243,
+    318,
+    33
+   ],
+   "inView": true
+  },
+  {
+   "t": 2115,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "globalnav-search-fade-and-slide",
+   "dur": 320,
+   "delay": 280,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.4, 0, 0.6, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ],
+    "transform": [
+     "translateY(-8px)",
+     "translateY(0px)"
+    ]
+   },
+   "target": "li.globalnav-searchresults-list-item",
+   "pseudo": null,
+   "rect": [
+    36,
+    282,
+    318,
+    33
+   ],
+   "inView": true
+  },
+  {
+   "t": 2115,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSAnimation",
+   "name": "globalnav-search-fade-and-slide",
+   "dur": 320,
+   "delay": 300,
+   "easing": "linear",
+   "kfEasing": [
+    "cubic-bezier(0.4, 0, 0.6, 1)"
+   ],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ],
+    "transform": [
+     "translateY(-8px)",
+     "translateY(0px)"
+    ]
+   },
+   "target": "li.globalnav-searchresults-list-item",
+   "pseudo": null,
+   "rect": [
+    36,
+    321,
+    318,
+    33
+   ],
+   "inView": true
+  },
+  {
+   "t": 3702,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 100,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ]
+   },
+   "target": "button.play-pause-button",
+   "pseudo": null,
+   "rect": [
+    228,
+    1227,
+    36,
+    36
+   ],
+   "inView": false
+  },
+  {
+   "t": 3702,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 100,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ]
+   },
+   "target": "button.play-pause-button",
+   "pseudo": null,
+   "rect": [
+    1348,
+    1227,
+    36,
+    36
+   ],
+   "inView": false
+  },
+  {
+   "t": 3702,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 100,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.42"
+    ]
+   },
+   "target": "button.paddlenav-arrow.paddles-previous",
+   "pseudo": null,
+   "rect": [
+    274,
+    1321,
+    36,
+    36
+   ],
+   "inView": false
+  },
+  {
+   "t": 3702,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 100,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.42"
+    ]
+   },
+   "target": "button.paddlenav-arrow.paddles-previous",
+   "pseudo": null,
+   "rect": [
+    274,
+    4523,
+    36,
+    36
+   ],
+   "inView": false
+  },
+  {
+   "t": 3702,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 100,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.42"
+    ]
+   },
+   "target": "button.paddlenav-arrow.paddles-previous",
+   "pseudo": null,
+   "rect": [
+    274,
+    11366,
+    36,
+    36
+   ],
+   "inView": false
+  },
+  {
+   "t": 3702,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 100,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.42"
+    ]
+   },
+   "target": "button.paddlenav-arrow.paddles-previous",
+   "pseudo": null,
+   "rect": [
+    274,
+    13328,
+    36,
+    36
+   ],
+   "inView": false
+  },
+  {
+   "t": 3702,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 100,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.42"
+    ]
+   },
+   "target": "button.paddlenav-arrow.paddles-previous",
+   "pseudo": null,
+   "rect": [
+    274,
+    25301,
+    36,
+    36
+   ],
+   "inView": false
+  },
+  {
+   "t": 3702,
+   "phase": "load",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 100,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.42"
+    ]
+   },
+   "target": "button.paddlenav-arrow.paddles-previous",
+   "pseudo": null,
+   "rect": [
+    274,
+    25795,
+    36,
+    36
+   ],
+   "inView": false
+  },
+  {
+   "t": 5782,
+   "phase": "scroll",
+   "scrollY": 506,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 100,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0"
+    ]
+   },
+   "target": "button.play-pause-button",
+   "pseudo": null,
+   "rect": [
+    228,
+    1227,
+    36,
+    36
+   ],
+   "inView": true
+  },
+  {
+   "t": 5832,
+   "phase": "scroll",
+   "scrollY": 506,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 100,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0"
+    ]
+   },
+   "target": "button.play-pause-button",
+   "pseudo": null,
+   "rect": [
+    1348,
+    1227,
+    36,
+    36
+   ],
+   "inView": true
+  },
+  {
+   "t": 5985,
+   "phase": "scroll",
+   "scrollY": 1012,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 230,
+   "delay": 0,
+   "easing": "ease",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(-49px)",
+     "translateY(0px)"
+    ]
+   },
+   "target": "div.ac-ln-wrapper",
+   "pseudo": null,
+   "rect": [
+    0,
+    963,
+    390,
+    48
+   ],
+   "inView": false
+  },
+  {
+   "t": 6931,
+   "phase": "scroll",
+   "scrollY": 2024,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 1830,
+   "delay": 0,
+   "easing": "ease-out",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ]
+   },
+   "target": "div.gradient-background.animate",
+   "pseudo": null,
+   "rect": [
+    0,
+    140,
+    390,
+    479
+   ],
+   "inView": false
+  },
+  {
+   "t": 13894,
+   "phase": "scroll",
+   "scrollY": 9614,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 100,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ]
+   },
+   "target": "button.play-pause-button",
+   "pseudo": null,
+   "rect": [
+    228,
+    11107,
+    36,
+    36
+   ],
+   "inView": false
+  },
+  {
+   "t": 13940,
+   "phase": "scroll",
+   "scrollY": 9614,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 17,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.16709",
+     "0"
+    ]
+   },
+   "target": "button.play-pause-button",
+   "pseudo": null,
+   "rect": [
+    228,
+    11107,
+    36,
+    36
+   ],
+   "inView": false
+  },
+  {
+   "t": 19867,
+   "phase": "scroll",
+   "scrollY": 16192,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 500,
+   "delay": 0,
+   "easing": "ease-in",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ]
+   },
+   "target": "div.pin.hardware-pin-1",
+   "pseudo": null,
+   "rect": [
+    122,
+    16128,
+    1,
+    47
+   ],
+   "inView": false
+  },
+  {
+   "t": 19867,
+   "phase": "scroll",
+   "scrollY": 16192,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 1500,
+   "delay": 0,
+   "easing": "ease-out",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleY(0)",
+     "scaleY(1)"
+    ]
+   },
+   "target": "div.pin.hardware-pin-1",
+   "pseudo": "::after",
+   "rect": [
+    122,
+    16128,
+    1,
+    47
+   ],
+   "inView": false
+  },
+  {
+   "t": 19867,
+   "phase": "scroll",
+   "scrollY": 16192,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 500,
+   "delay": 0,
+   "easing": "ease-in",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ]
+   },
+   "target": "div.pin.hardware-pin-2",
+   "pseudo": null,
+   "rect": [
+    206,
+    16063,
+    1,
+    101
+   ],
+   "inView": false
+  },
+  {
+   "t": 19867,
+   "phase": "scroll",
+   "scrollY": 16192,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 500,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleY(0)",
+     "scaleY(1)"
+    ]
+   },
+   "target": "div.pin.hardware-pin-2",
+   "pseudo": "::after",
+   "rect": [
+    206,
+    16063,
+    1,
+    101
+   ],
+   "inView": false
+  },
+  {
+   "t": 19867,
+   "phase": "scroll",
+   "scrollY": 16192,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 500,
+   "delay": 500,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleX(0)",
+     "scaleX(1)"
+    ]
+   },
+   "target": "span.pin-prongs",
+   "pseudo": null,
+   "rect": [
+    206,
+    16163,
+    0,
+    1
+   ],
+   "inView": false
+  },
+  {
+   "t": 19867,
+   "phase": "scroll",
+   "scrollY": 16192,
+   "kind": "CSSTransition",
+   "name": "height",
+   "dur": 500,
+   "delay": 1000,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "height": [
+     "0px",
+     "12px"
+    ]
+   },
+   "target": "span.pin-prongs",
+   "pseudo": "::before",
+   "rect": [
+    206,
+    16163,
+    0,
+    1
+   ],
+   "inView": false
+  },
+  {
+   "t": 19867,
+   "phase": "scroll",
+   "scrollY": 16192,
+   "kind": "CSSTransition",
+   "name": "height",
+   "dur": 500,
+   "delay": 1000,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "height": [
+     "0px",
+     "12px"
+    ]
+   },
+   "target": "span.pin-prongs",
+   "pseudo": "::after",
+   "rect": [
+    206,
+    16163,
+    0,
+    1
+   ],
+   "inView": false
+  },
+  {
+   "t": 19867,
+   "phase": "scroll",
+   "scrollY": 16192,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 500,
+   "delay": 0,
+   "easing": "ease-in",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0",
+     "1"
+    ]
+   },
+   "target": "div.pin.hardware-pin-3",
+   "pseudo": null,
+   "rect": [
+    226,
+    16303,
+    1,
+    60
+   ],
+   "inView": true
+  },
+  {
+   "t": 19867,
+   "phase": "scroll",
+   "scrollY": 16192,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 1500,
+   "delay": 0,
+   "easing": "ease-out",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "scaleY(0)",
+     "scaleY(1)"
+    ]
+   },
+   "target": "div.pin.hardware-pin-3",
+   "pseudo": "::after",
+   "rect": [
+    226,
+    16303,
+    1,
+    60
+   ],
+   "inView": true
+  },
+  {
+   "t": 38830,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 230,
+   "delay": 0,
+   "easing": "ease",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(0px)",
+     "translateY(-49px)"
+    ]
+   },
+   "target": "div.ac-ln-wrapper",
+   "pseudo": null,
+   "rect": [
+    0,
+    48,
+    390,
+    48
+   ],
+   "inView": true
+  },
+  {
+   "t": 65098,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 320,
+   "delay": 0,
+   "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.8",
+     "1"
+    ]
+   },
+   "target": "button#globalnav-menutrigger-button.globalnav-menutrigger-button",
+   "pseudo": null,
+   "rect": [
+    342,
+    0,
+    48,
+    48
+   ],
+   "inView": true
+  },
+  {
+   "t": 65413,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 317,
+   "delay": 0,
+   "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.99835",
+     "0.8"
+    ]
+   },
+   "target": "button#globalnav-menutrigger-button.globalnav-menutrigger-button",
+   "pseudo": null,
+   "rect": [
+    342,
+    0,
+    48,
+    48
+   ],
+   "inView": true
+  },
+  {
+   "t": 66669,
+   "phase": "hover",
+   "scrollY": 821,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 230,
+   "delay": 0,
+   "easing": "ease",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(-49px)",
+     "translateY(0px)"
+    ]
+   },
+   "target": "div.ac-ln-wrapper",
+   "pseudo": null,
+   "rect": [
+    0,
+    772,
+    390,
+    48
+   ],
+   "inView": false
+  },
+  {
+   "t": 66794,
+   "phase": "hover",
+   "scrollY": 821,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 230,
+   "delay": 0,
+   "easing": "ease",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(-49px)",
+     "translateY(0px)"
+    ]
+   },
+   "target": "div.ac-ln-wrapper",
+   "pseudo": null,
+   "rect": [
+    0,
+    772,
+    390,
+    48
+   ],
+   "inView": false
+  },
+  {
+   "t": 67645,
+   "phase": "hover",
+   "scrollY": 414,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 230,
+   "delay": 0,
+   "easing": "ease",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(0px)",
+     "translateY(-49px)"
+    ]
+   },
+   "target": "div.ac-ln-wrapper",
+   "pseudo": null,
+   "rect": [
+    0,
+    414,
+    390,
+    48
+   ],
+   "inView": true
+  },
+  {
+   "t": 68528,
+   "phase": "hover",
+   "scrollY": 821,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 230,
+   "delay": 0,
+   "easing": "ease",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(-49px)",
+     "translateY(0px)"
+    ]
+   },
+   "target": "div.ac-ln-wrapper",
+   "pseudo": null,
+   "rect": [
+    0,
+    775,
+    390,
+    48
+   ],
+   "inView": true
+  },
+  {
+   "t": 68645,
+   "phase": "hover",
+   "scrollY": 821,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 100,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.42",
+     "1"
+    ]
+   },
+   "target": "button.paddlenav-arrow.paddles-previous",
+   "pseudo": null,
+   "rect": [
+    274,
+    1321,
+    36,
+    36
+   ],
+   "inView": true
+  },
+  {
+   "t": 68895,
+   "phase": "hover",
+   "scrollY": 1227,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 100,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "1",
+     "0.42"
+    ]
+   },
+   "target": "button.paddlenav-arrow.paddles-next",
+   "pseudo": null,
+   "rect": [
+    330,
+    1321,
+    36,
+    36
+   ],
+   "inView": true
+  },
+  {
+   "t": 69377,
+   "phase": "hover",
+   "scrollY": 414,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 230,
+   "delay": 0,
+   "easing": "ease",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(0px)",
+     "translateY(-49px)"
+    ]
+   },
+   "target": "div.ac-ln-wrapper",
+   "pseudo": null,
+   "rect": [
+    0,
+    411,
+    390,
+    48
+   ],
+   "inView": true
+  },
+  {
+   "t": 69595,
+   "phase": "hover",
+   "scrollY": 414,
+   "kind": "CSSTransition",
+   "name": "opacity",
+   "dur": 100,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "opacity": [
+     "0.42",
+     "1"
+    ]
+   },
+   "target": "button.paddlenav-arrow.paddles-next",
+   "pseudo": null,
+   "rect": [
+    330,
+    1321,
+    36,
+    36
+   ],
+   "inView": false
+  },
+  {
+   "t": 70163,
+   "phase": "hover",
+   "scrollY": 917,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgb(232, 232, 237)",
+     "rgb(236, 236, 240)"
+    ]
+   },
+   "target": "button.paddlenav-arrow.paddles-previous",
+   "pseudo": null,
+   "rect": [
+    274,
+    1321,
+    36,
+    36
+   ],
+   "inView": true
+  },
+  {
+   "t": 70163,
+   "phase": "hover",
+   "scrollY": 917,
+   "kind": "CSSTransition",
+   "name": "fill",
+   "dur": 100,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {},
+   "target": "path",
+   "pseudo": null,
+   "rect": [
+    287,
+    1332,
+    9,
+    14
+   ],
+   "inView": true
+  },
+  {
+   "t": 70178,
+   "phase": "hover",
+   "scrollY": 917,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 230,
+   "delay": 0,
+   "easing": "ease",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(-49px)",
+     "translateY(0px)"
+    ]
+   },
+   "target": "div.ac-ln-wrapper",
+   "pseudo": null,
+   "rect": [
+    0,
+    871,
+    390,
+    48
+   ],
+   "inView": true
+  },
+  {
+   "t": 70430,
+   "phase": "hover",
+   "scrollY": 917,
+   "kind": "CSSTransition",
+   "name": "background-color",
+   "dur": 100,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "backgroundColor": [
+     "rgb(236, 236, 240)",
+     "rgb(232, 232, 237)"
+    ]
+   },
+   "target": "button.paddlenav-arrow.paddles-previous",
+   "pseudo": null,
+   "rect": [
+    274,
+    1321,
+    36,
+    36
+   ],
+   "inView": true
+  },
+  {
+   "t": 70430,
+   "phase": "hover",
+   "scrollY": 917,
+   "kind": "CSSTransition",
+   "name": "fill",
+   "dur": 100,
+   "delay": 0,
+   "easing": "linear",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {},
+   "target": "path",
+   "pseudo": null,
+   "rect": [
+    287,
+    1332,
+    9,
+    14
+   ],
+   "inView": true
+  },
+  {
+   "t": 70464,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 230,
+   "delay": 0,
+   "easing": "ease",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(0px)",
+     "translateY(-49px)"
+    ]
+   },
+   "target": "div.ac-ln-wrapper",
+   "pseudo": null,
+   "rect": [
+    0,
+    45,
+    390,
+    48
+   ],
+   "inView": true
+  },
+  {
+   "t": 71397,
+   "phase": "hover",
+   "scrollY": 844,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 230,
+   "delay": 0,
+   "easing": "ease",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(-49px)",
+     "translateY(0px)"
+    ]
+   },
+   "target": "div.ac-ln-wrapper",
+   "pseudo": null,
+   "rect": [
+    0,
+    798,
+    390,
+    48
+   ],
+   "inView": true
+  },
+  {
+   "t": 76479,
+   "phase": "hover",
+   "scrollY": 0,
+   "kind": "CSSTransition",
+   "name": "transform",
+   "dur": 230,
+   "delay": 0,
+   "easing": "ease",
+   "kfEasing": [],
+   "iterations": 1,
+   "props": {
+    "transform": [
+     "translateY(0px)",
+     "translateY(-49px)"
+    ]
+   },
+   "target": "div.ac-ln-wrapper",
+   "pseudo": null,
+   "rect": [
+    0,
+    45,
+    390,
+    48
+   ],
+   "inView": true
+  }
+ ]
+}

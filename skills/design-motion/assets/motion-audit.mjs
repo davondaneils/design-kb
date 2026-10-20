@@ -18,12 +18,19 @@
 //     frames: 6, wait: 1500 }           // optional: frames per row; ms to wait for the first animation to start
 //
 // Checks per animation (fail unless noted):
-//   duration   on the token set 100, 150, 200, 250, 300, 400, 500, 600, 800 ms (800 only for one hero reveal, FOUNDATIONS v0.4); loops (infinite) are reported, not judged
-//   easing     one of the three token curves or linear; the CSS default `ease` fails
+//   duration   on the token set 100, 150, 200, 250, 300, 400, 500, 600, 800, 1000 ms (FOUNDATIONS v0.5: 600 is
+//              --duration-reveal, 800 only for the one hero reveal, 1000 only for text that blurs in); inside a
+//              [data-scene] any 1200 to 12000 ms (scene beats and fills are set per scene in data-beats, never as
+//              tokens); loops (infinite) are reported, not judged
+//   easing     one of the three token curves, linear, or steps(1) (cursors, pixel grids); the CSS default `ease` fails.
+//              v0.6 (FOUNDATIONS Motion): also --ease-swap and --ease-drawer, and the page's own --ease-spring (the
+//              linear() curve moments.js writes) at its --duration-spring; an 800ms swap inside a scene is the
+//              --duration-swap token, not a second hero reveal
 //   property   transform, translate, scale, rotate and opacity pass; paint-only properties (color, fill, stroke,
-//              stroke-dashoffset) pass on control-sized elements and warn above 200x200 px (40,000 px2); layout and blur properties
-//              (width, height, top, left, margin, padding, box-shadow, filter, clip-path) fail
-//   reduce     under prefers-reduced-motion: reduce, anything that moves (transform family with changing values) fails;
+//              stroke-dashoffset) pass on control-sized elements and warn above 200x200 px (40,000 px2); filter: blur() of
+//              10 px or less passes (a text blur-in, as Linear reveals text) and warns above 150,000 px2; layout and other
+//              paint properties (width, height, top, left, margin, padding, box-shadow, other filters, clip-path) fail
+//   reduce     under prefers-reduced-motion: reduce, anything that moves (transform family or blur with changing values) fails;
 //              an opacity or color change longer than 150 ms warns
 //   expect     a scenario marked expect: 'none' fails if anything animates
 // Exit code 1 when any check fails.
@@ -35,16 +42,23 @@ const here = path.dirname(new URL(import.meta.url).pathname);
 const toolsDir = process.env.DESIGN_KB_TOOLS || path.resolve(here, '../../../tools');
 const { launch, toUrl } = await import(pathToFileURL(path.join(toolsDir, 'browser.mjs')).href);
 
-const TOKENS_MS = [100, 150, 200, 250, 300, 400, 500, 600, 800];
+const TOKENS_MS = [100, 150, 200, 250, 300, 400, 500, 600, 800, 1000];
+const SCENE_MS = [1200, 12000]; // inside [data-scene]: beats 1200 to 4500, a whole keyframed timeline up to 12 s
 const EASINGS = {
   'cubic-bezier(0.2, 0, 0, 1)': 'standard',
   'cubic-bezier(0, 0, 0, 1)': 'enter',
   'cubic-bezier(0.3, 0, 1, 1)': 'exit',
   linear: 'linear',
+  'steps(1)': 'steps(1)',
+  'steps(1, end)': 'steps(1)',
+  'cubic-bezier(0.78, 0, 0.22, 1)': 'swap',
+  'cubic-bezier(0.32, 0.72, 0, 1)': 'drawer',
+  'step-end': 'steps(1)',
 };
 const COMPOSITOR = new Set(['transform', 'translate', 'scale', 'rotate', 'opacity']);
 const PAINT = new Set(['color', 'backgroundColor', 'borderColor', 'outlineColor', 'fill', 'stroke', 'strokeDashoffset', 'visibility', 'display', 'overlay', 'textDecorationColor']);
-const MOVING = new Set(['transform', 'translate', 'scale', 'rotate']);
+const MOVING = new Set(['transform', 'translate', 'scale', 'rotate', 'filter']);
+const blurOnly = (vals) => vals.every((v) => /^(none|blur\((\d+(\.\d+)?)px\))$/.test(v) && !(parseFloat((v.match(/blur\(([\d.]+)/) || [0, 0])[1]) > 10));
 
 const args = process.argv.slice(2);
 const flag = (n) => { const i = args.indexOf(n); return i === -1 ? null : args[i + 1]; };
@@ -85,6 +99,8 @@ async function film(sc, mode) {
   const started = await page.waitForFunction(() => window.__first && performance.now() - window.__first > 80, null, { timeout: sc.wait || 1500 })
     .then(() => true).catch(() => false);
   await page.evaluate(() => { window.__stop = true; });
+  // v0.6: the spring tokens are written at run time by moments.js, so read them from the page.
+  const spring = await page.evaluate(() => { const cs = getComputedStyle(document.documentElement); return { ease: cs.getPropertyValue('--ease-spring').trim(), ms: parseFloat(cs.getPropertyValue('--duration-spring')) || null }; });
   const anims = started ? await page.evaluate(() => {
     const describe = (el) => {
       if (!el) return '?';
@@ -112,8 +128,8 @@ async function film(sc, mode) {
         target: describe(el) + (a.effect.pseudoElement || ''),
         duration: t.duration, delay: t.delay, iterations: t.iterations, easing: t.easing,
         keyframeEasings: [...new Set(kf.slice(0, -1).map((k) => k.easing))],
-        props, area: Math.round(r.width * r.height), offset: cmax - (a.currentTime || 0), // started this much later than the first
-        
+ props, area: Math.round(r.width * r.height), offset: cmax - (a.currentTime || 0), // started this much later than the first
+        scene: !!(el && el.closest && el.closest('[data-scene]')),
       };
     });
   }) : [];
@@ -127,16 +143,25 @@ async function film(sc, mode) {
   for (const a of anims) {
     const loop = a.iterations === Infinity || a.iterations === 'Infinity';
     const ms = Math.round(a.duration);
-    if (!loop && !TOKENS_MS.includes(ms)) add('fail', `duration ${ms} ms is off the token set`, a);
-    if (!loop && ms > 800) add('fail', `duration ${ms} ms is over the 800 ms hero ceiling`, a);
-    else if (!loop && ms > 600) heroReveals.push(a);
+    const blurs = a.props.filter && new Set(a.props.filter).size > 1 && blurOnly(a.props.filter);
+    // A linear() curve with stops is the sampled spring when the page defines one (the browser reformats the numbers).
+    const isSpring = /^linear\(/.test(spring.ease) && /^linear\(.+,/.test(a.easing);
+    const isSwap = a.scene && EASINGS[a.easing.replace(/\s+/g, ' ')] === 'swap';
+    if (a.scene && ms >= SCENE_MS[0] && ms <= SCENE_MS[1]) { /* a scene beat or fill: set per scene, not a token */ }
+    else if (isSpring && spring.ms && Math.abs(ms - spring.ms) <= 1) { /* --duration-spring on --ease-spring (v0.6) */ }
+    else if (!loop && !TOKENS_MS.includes(ms)) add('fail', `duration ${ms} ms is off the token set`, a);
+    else if (!loop && ms === 1000 && !blurs) add('fail', '1000 ms is only for text that blurs in (FOUNDATIONS v0.5 reveal band)', a);
+    else if (!loop && ms > 1000) add('fail', `duration ${ms} ms is over the 1000 ms reveal ceiling outside a [data-scene]`, a);
+    else if (!loop && ms > 600 && ms <= 800 && !(isSwap && ms === 800)) heroReveals.push(a);
     const curves = a.easing !== 'linear' ? [a.easing] : a.keyframeEasings;
     a.curve = curves.map((c) => EASINGS[c.replace(/\s+/g, ' ')] || c).join(', ');
-    for (const c of curves) if (!EASINGS[c.replace(/\s+/g, ' ')]) add('fail', `easing ${c} is not a token curve`, a);
+    if (isSpring) a.curve = 'spring';
+    else for (const c of curves) if (!EASINGS[c.replace(/\s+/g, ' ')]) add('fail', `easing ${c} is not a token curve, linear or steps(1)`, a);
     for (const p of Object.keys(a.props)) {
       const changes = new Set(a.props[p]).size > 1;
       if (!changes) continue;
       if (COMPOSITOR.has(p)) continue;
+      if (p === 'filter' && blurOnly(a.props[p])) { if (a.area > 150000) add('warn', `blur animates on ${a.area} px2; keep blur-ins to text blocks`, a); continue; }
       if (PAINT.has(p)) { a.paint = true; if (a.area > 40000 && p !== 'visibility' && p !== 'display' && p !== 'overlay') add('warn', `${p} animates on ${a.area} px2 (paint each frame)`, a); continue; }
       add('fail', `${p} animates (layout or heavy paint); use transform or opacity`, a);
     }
@@ -146,7 +171,8 @@ async function film(sc, mode) {
       else if (!loop && ms > 150) add('warn', `${ms} ms change under reduced motion; keep crossfades at 150 ms or less`, a);
     }
   }
-  // 601 to 800 ms is allowed only for one unprompted hero reveal per marketing page (FOUNDATIONS v0.4, opinion).
+  // 601 to 800 ms is allowed only for one unprompted hero reveal per marketing page (FOUNDATIONS v0.4, opinion);
+  // 600 is --duration-reveal (v0.5) and scenes run on their own beats.
   for (const a of heroReveals) add('warn', `${Math.round(a.duration)} ms is over 600 ms: allowed only as the page's one hero reveal on load, never on a user action`, a);
   if (new Set(heroReveals.map((a) => a.name)).size > 1) add('fail', `${new Set(heroReveals.map((a) => a.name)).size} different animations run over 600 ms; one hero reveal per page`);
 

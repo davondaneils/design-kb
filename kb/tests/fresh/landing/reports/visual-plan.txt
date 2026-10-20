@@ -1,0 +1,8 @@
+visual-plan-check kb/tests/fresh/landing/halyard.html (product page)
+  1440 (labelled visuals): visual on 6 of 8 counted slices (75%; 10 slices, type beats excused: pricing); product fragments 8 (probe heuristic 14)
+        cover by slice: 37% 11% 38% 35% 32% beat 25% 14% 40% stub
+  390 (labelled visuals): visual on 10 of 12 counted slices (83%; 16 slices, type beats excused: quote, pricing, pricing); product fragments 8 (probe heuristic 16)
+        cover by slice: 18% 68% beat 49% 32% 20% 16% 52% 18% beat beat 0% 41% 32% 9% stub
+  treatment: echo-fill
+PASS
+exit 0

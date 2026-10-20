@@ -13,13 +13,29 @@
   --duration-fast: 150ms;     /* tooltips, small popovers, fades, dropdowns */
   --duration-base: 200ms;     /* 200 to 250ms band: menus, modals, accordions, toasts */
   --duration-slow: 300ms;     /* 300 to 400ms band: drawers, sheets, shared-element moves */
-  --duration-page: 400ms;     /* route and page transitions; 600ms is the ceiling, not the token */
+  --duration-page: 400ms;     /* route and page transitions, first-screen entrance; the hero reveal may run to 800ms */
+  --duration-reveal: 600ms;   /* a block entering on scroll, once; text that blurs in may run to 1000ms */
+  --stagger: 40ms;            /* gap between siblings, 20 to 80ms */
+  --travel: 16px;             /* entrance travel, 8 to 50px, or a 100% rise inside a mask */
   --ease-standard: cubic-bezier(0.2, 0, 0, 1); /* on-screen moves, resizes */
   --ease-enter: cubic-bezier(0, 0, 0, 1);      /* decelerate: arriving */
   --ease-exit: cubic-bezier(0.3, 0, 1, 1);     /* accelerate: leaving for good */
 }
 ```
 The three curves are the Material 3 standard set (material-components-android Motion.md). Use the low end of each band by default; move up the band only for larger surfaces, longer travel or larger screens.
+
+## The ladder (FOUNDATIONS v0.5)
+A page that moves uses three to five duration bands, one per job, and names them in its motion plan (SKILL.md sections 2 and 3). Measured: every exemplar that moves uses three or more; the benchmark pages used one (`kb/teardowns/motion-imagery.md` section 2).
+
+| Band | Tokens | Jobs | Exemplars (measured) |
+|---|---|---|---|
+| Press and hover | `--duration-instant` or `--duration-fast`, one per page | color, press, underline | Linear 100 and 160, Stripe 150, Raycast 250 |
+| UI change | `--duration-base` to `--duration-slow` (200 to 400) | menu, tab, accordion, value-stack swap, masked word rise | Stripe 240 to 400, Mercury accordion 300 |
+| Entrance | `--duration-page` (400); one hero reveal to 800 | route change, hero artifact | Stripe hero reveal 800 |
+| Reveal on scroll | `--duration-reveal` (600); text blur-in to 1000 | a block entering once | Mercury 670, Linear 1000 |
+| Product scene | beats 1200 to 4500 in `data-beats` | the product acting out its state change | Stripe 1420, 2260, 4480ms beats |
+
+If two moves share a job they share a band; a page whose ladder has one rung reads as having no voice (benchmark round 2 critic).
 
 ## Decision rules
 **Pick duration**
@@ -29,7 +45,9 @@ The three curves are the Material 3 standard set (material-components-android Mo
 | Tooltip, small popover, fade, dropdown | `--duration-fast` | Practitioner range 125 to 250 ms (Kowalski) |
 | Menu, dialog, accordion, toast, card expand | `--duration-base` | NN/g modal-size changes 200 to 300 ms |
 | Drawer, bottom sheet, side panel, shared element | `--duration-slow` | NN/g large moves up to 400 ms |
-| Route or page change, full-screen takeover | `--duration-page` at 400 ms | 600 ms only for marketing storytelling (see conflicts) |
+| Route or page change, full-screen takeover | `--duration-page` at 400 ms | 600 ms is the ceiling for anything triggered |
+| Block revealed on scroll (marketing) | `--duration-reveal` at 600 ms | Once; fade and move split (reference 08) |
+| Product scene beat | set per scene in `data-beats`, 1200 to 4500 ms | Only inside a mock-up, never on a control (reference 08) |
 
 - Exit: about 20 to 30 percent shorter than its entrance, or one token lower (NN/g; Material 1). A `--duration-base` dialog exits at `--duration-fast`.
 - Device: tablets about 30 percent longer than phones, watches about 30 percent shorter, desktop pointer UIs shorter and simpler (Material 1). Implement as a multiplier on tokens, not new tokens.
@@ -44,7 +62,10 @@ The three curves are the Material 3 standard set (material-components-android Mo
 | Element closes in place (menu, popover, tooltip) | Opacity with `--ease-standard` at `--duration-fast` or less (opinion: an accelerate curve on an in-place close reads as lag; Kowalski: "ease-in is discouraged for UI") |
 | Element moves or resizes while staying on screen | `--ease-standard` |
 | Hover color or background shift | `--ease-standard` (or CSS `ease`) |
-| Continuous motion: progress bars, spinners, marquees, hold-to-confirm fill | `linear` |
+| Continuous motion: progress bars, spinners, marquees, hold-to-confirm fill, a scene's progress fill | `linear` |
+| Anything that should feel digital: a caret, a terminal line, a pixel or dot grid | `steps(1)` (Raycast caret 1100 ms, Linear dot grid 2800 ms, `kb/teardowns/motion-imagery.md`) |
+| A label or value swapping in place inside a mock-up (value stack) | `--ease-standard` at `--duration-slow` |
+| A block revealed on scroll | opacity on `--ease-standard`, transform on `--ease-enter` delayed `--duration-fast` (Mercury splits them the same way) |
 | Anything the user drags, flicks or can interrupt mid-flight | Spring (below) |
 
 Never use `linear` for a moving object that starts or stops (NN/g). Never use the browser default `ease` as an unexamined default for entrances; it starts slower than `--ease-enter` (opinion, Kowalski).
@@ -66,7 +87,9 @@ Never use `linear` for a moving object that starts or stops (NN/g). Never use th
 - Pure CSS spring: generate a `linear()` easing with Jake Archibald's linear() generator and use it with a fixed duration (MDN linear(), Baseline since Dec 2023). This loses velocity hand-off, so use it only for non-interruptible moments.
 
 ## Numbers summary
-- Shared tokens: 100, 150, 200 (to 250), 300 (to 400), 400 (to 600) ms.
+- Shared tokens: 100, 150, 200 (to 250), 300 (to 400), 400 (page), 600 (reveal) ms; 800 once for the hero reveal; 1000 only for a text blur-in; scene beats 1200 to 4500 ms in `data-beats`.
+- Stagger 20 to 80 ms (`--stagger` 40); travel 8 to 50 px (`--travel` 16) or a masked 100%.
+- `--ease-enter` (0, 0, 0, 1) is already a stronger deceleration than the exemplars' strong ease-outs (Stripe quart `(.25,1,.5,1)`, cubic `(.33,1,.68,1)`), so it covers their entrances without a new token.
 - Reference systems: Material 3 durations 50 to 1000 ms in 50 ms steps; Carbon 70, 110, 150, 240, 400, 700 ms.
 - Carbon productive easing (0.2,0,0.38,0.9) and expressive (0.4,0.14,0.3,1) are useful when a client is on Carbon; otherwise stay on the shared set.
 - Practitioner extension curves (opinion, Kowalski): strong ease-out `cubic-bezier(0.23, 1, 0.32, 1)` for snappy UI entrances; drawer `cubic-bezier(0.32, 0.72, 0, 1)` for iOS-like sheets. If a project adopts them, add them as `--ease-enter-strong` and `--ease-drawer`; do not redefine the shared tokens.

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moment kit, demo fixture</title>
+<meta name="description" content="Fixture for design-motion v0.4: the three rebuilt exemplar moments (swap, stack, event shot) running from shot plans.">
+<link rel="stylesheet" href="../moments.css">
+<style>
+/* Fixture for design-motion v0.4 moments (kb/moments/STUDY.md). Three scenes, each with a shot plan.
+   | Scene     | Moment rebuilt            | Beats (ms)                         | Owner per beat                          |
+   | #swap     | Stripe checkout swap      | usd 4000, eur 4000, jpy 4000       | phone amount, then its rows, then the browser (group 1, +150ms) |
+   | #stack    | Sonner stack              | a 2000, b 2000, c 2000, d 3600     | the newest toast                        |
+   | #event    | event shot (cursor, press, result, push) | draft 2400, aim 1400, press 1200, sent 4400 | invoice, cursor, button, receipt |
+   Reduced motion: each scene shows its still frame (data-still); no cursor. */
+:root {
+  color-scheme: light dark;
+  --space-2: 4px; --space-3: 8px; --space-4: 12px; --space-5: 16px; --space-6: 24px; --space-7: 32px; --space-8: 48px; --space-9: 64px;
+  --text-xs: 12px; --text-sm: 14px; --text-base: 16px; --text-lg: 20px; --text-xl: 25px; --text-2xl: 31px;
+  --radius-sm: 4px; --radius-md: 8px; --radius-lg: 12px; --radius-full: 9999px;
+  --color-bg: #ffffff; --color-surface: #f5f6f8; --color-surface-raised: #ffffff;
+  --color-text: #1a1d21; --color-text-muted: #545c67; --color-border: #d4d8de;
+  --color-primary: #1f5fd1; --color-on-primary: #ffffff; --color-success: #17713c; --color-focus-ring: #1f5fd1;
+  --shadow-card: 0 30px 45px -30px rgb(50 50 93 / 0.25), 0 0 0 1px rgb(20 30 60 / 0.06);
+  --duration-instant: 100ms; --duration-fast: 150ms; --duration-base: 200ms; --duration-slow: 300ms;
+  --duration-page: 400ms; --duration-reveal: 600ms; --stagger: 40ms; --travel: 16px;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1); --ease-enter: cubic-bezier(0, 0, 0, 1); --ease-exit: cubic-bezier(0.3, 0, 1, 1);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0f1115; --color-surface: #171a20; --color-surface-raised: #1d2128;
+    --color-text: #eef0f3; --color-text-muted: #a6aeb9; --color-border: #3a414b;
+    --color-primary: #8ab4ff; --color-on-primary: #0f1115; --color-success: #63d394; --color-focus-ring: #8ab4ff;
+    --shadow-card: 0 30px 45px -30px rgb(0 0 0 / 0.6), 0 0 0 1px rgb(255 255 255 / 0.08);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--color-bg); color: var(--color-text); font: var(--text-base)/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-inline-size: 1120px; margin-inline: auto; padding: var(--space-8) var(--space-5); display: grid; gap: var(--space-9); }
+h1 { font-size: var(--text-2xl); line-height: 1.2; margin: 0; }
+h2 { font-size: var(--text-lg); margin: 0 0 var(--space-3); }
+p { margin: 0; color: var(--color-text-muted); max-inline-size: 52ch; }
+section { display: grid; gap: var(--space-5); }
+.stage { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-7) var(--space-6); min-block-size: 360px; display: grid; place-items: center; }
+.card { background: var(--color-surface-raised); border-radius: var(--radius-lg); box-shadow: var(--shadow-card); }
+.pause { justify-self: start; font: inherit; font-size: var(--text-sm); color: var(--color-text); background: transparent; border: 1px solid var(--color-border); border-radius: var(--radius-full); padding: var(--space-3) var(--space-5); min-block-size: 44px; cursor: pointer; }
+.pause:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+.ui { font-size: var(--text-xs); line-height: 1.4; }
+.ui .muted { color: var(--color-text-muted); }
+.num { font-variant-numeric: tabular-nums; }
+
+/* Scene 1: swap */
+.pay { display: grid; grid-template-columns: 240px 340px; gap: var(--space-6); align-items: end; }
+.phone { padding: var(--space-5); border: 6px solid var(--color-text); border-radius: 28px; block-size: 300px; display: grid; align-content: start; gap: var(--space-4); }
+.phone .amount { font-size: var(--text-xl); font-weight: 650; --swap-h: 1.25em; line-height: 1.25; }
+.rows { display: grid; gap: var(--space-2); }
+.row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-3); }
+.row > .swap:first-child { min-inline-size: 0; }
+.row > :last-child { justify-self: end; }
+.row .swap { --swap-h: 1.4em; }
+.browser { padding: var(--space-5); display: grid; gap: var(--space-4); block-size: 300px; align-content: start; }
+.browser .brand { font-weight: 700; letter-spacing: 0.04em; --swap-h: 1.4em; }
+.field { border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: var(--space-3); --swap-h: 1.4em; }
+.btn-ui { background: var(--color-primary); color: var(--color-on-primary); border-radius: var(--radius-sm); padding: var(--space-3); text-align: center; font-weight: 600; --swap-h: 1.4em; }
+
+/* Scene 2: stack */
+.feed { inline-size: 360px; }
+.toast { padding: var(--space-4) var(--space-5); display: grid; gap: var(--space-2); }
+.toast b { font-size: var(--text-sm); }
+
+/* Scene 3: event shot */
+.invoice { inline-size: 420px; padding: var(--space-6); display: grid; gap: var(--space-4); overflow: hidden; }
+.invoice-title { font-size: var(--text-lg); font-weight: 650; margin: 0; }
+.send { justify-self: end; background: var(--color-primary); color: var(--color-on-primary); border-radius: var(--radius-sm); padding: var(--space-3) var(--space-5); font-weight: 600; font-size: var(--text-sm); }
+.receipt { display: flex; gap: var(--space-3); align-items: center; padding: var(--space-4); border-radius: var(--radius-md); background: color-mix(in srgb, var(--color-success) 12%, var(--color-surface-raised)); font-size: var(--text-sm); }
+.receipt svg { flex: none; }
+#event:not([data-seen~="sent"]) .receipt { opacity: 0; transform: translateY(var(--travel)); }
+#event[data-seen~="sent"] .send { opacity: 0.4; }
+@media (prefers-reduced-motion: no-preference) {
+  #event:not([data-scene-still]) .receipt { transition: opacity var(--duration-page) var(--ease-standard), transform var(--duration-page) var(--ease-enter); }
+  #event:not([data-scene-still]) .send { transition: opacity var(--duration-base) var(--ease-standard), transform var(--duration-instant) var(--ease-standard); }
+  [data-scene] .mock { transition: opacity var(--duration-fast) var(--ease-standard); }
+}
+[data-scene][data-scene-seam] .mock { opacity: 0; }
+@media (max-width: 40rem) { .pay { grid-template-columns: 1fr; } .browser { display: none; } .invoice, .feed { inline-size: 100%; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Moment kit</h1>
+
+  <section aria-labelledby="h-swap">
+    <div><h2 id="h-swap">Swap in place</h2><p>Values roll inside masks; the layout never moves. The browser follows the phone by one offset.</p></div>
+    <div class="stage">
+      <div class="mock pay" id="swap" data-scene data-beats="usd:4000 eur:4000 jpy:4000" data-rest="2400" data-still="usd" aria-hidden="true">
+        <script type="application/json" data-shot-plan>
+          {"shots": [
+            {"state": "usd", "owner": ".phone", "read": ".phone .amount"},
+            {"state": "eur", "owner": ".phone", "read": ".phone .amount"},
+            {"state": "jpy", "owner": ".phone", "read": ".phone .amount"}
+          ]}
+        </script>
+        <div class="phone card ui">
+          <span class="muted"><span class="swap" data-swap="usd eur jpy"><span class="swap-track"><span>Pay Northwind</span><span>Northwind bezahlen</span><span>Northwind に支払う</span></span></span></span>
+          <span class="amount num"><span class="swap" data-swap="usd eur jpy"><span class="swap-track"><span>$18.40</span><span>€16.90</span><span>¥2,800</span></span></span></span>
+          <div class="rows num">
+            <div class="row"><span class="swap" data-swap="usd eur jpy"><span class="swap-track"><span>Oat flat white</span><span>Hafer-Flat-White</span><span>オーツ フラットホワイト</span></span></span><span class="swap" data-swap="usd eur jpy"><span class="swap-track"><span>$6.20</span><span>€5.70</span><span>¥950</span></span></span></div>
+            <div class="row"><span class="swap" data-swap="usd eur jpy"><span class="swap-track"><span>Rye loaf</span><span>Roggenbrot</span><span>ライ麦パン</span></span></span><span class="swap" data-swap="usd eur jpy"><span class="swap-track"><span>$12.20</span><span>€11.20</span><span>¥1,850</span></span></span></div>
+            <div class="row"><b>Total</b><b><span class="swap" data-swap="usd eur jpy"><span class="swap-track"><span>$18.40</span><span>€16.90</span><span>¥2,800</span></span></span></b></div>
+          </div>
+        </div>
+        <div class="browser card ui">
+          <span class="brand"><span class="swap" data-swap="usd eur jpy" data-swap-group="1"><span class="swap-track"><span>NORTHWIND</span><span>NORTHWIND.DE</span><span>NORTHWIND.JP</span></span></span></span>
+          <span class="field"><span class="swap" data-swap="usd eur jpy" data-swap-group="1"><span class="swap-track"><span>mara.ellis@example.com</span><span>jonas.weber@example.de</span><span>aoi.tanaka@example.jp</span></span></span></span>
+          <span class="field"><span class="swap" data-swap="usd eur jpy" data-swap-group="1"><span class="swap-track"><span>Card ending 4242</span><span>Klarna, in 3 Raten</span><span>Konbini payment</span></span></span></span>
+          <span class="btn-ui"><span class="swap" data-swap="usd eur jpy" data-swap-group="1"><span class="swap-track"><span>Pay $18.40</span><span>€16.90 zahlen</span><span>¥2,800 を支払う</span></span></span></span>
+        </div>
+      </div>
+    </div>
+    <button class="pause" type="button" data-scene-pause aria-controls="swap" aria-pressed="false">Pause animation</button>
+  </section>
+
+  <section aria-labelledby="h-stack">
+    <div><h2 id="h-stack">Stack</h2><p>Each new item rises from its own height; older items step back by scale and offset. Three stay visible.</p></div>
+    <div class="stage">
+      <div class="mock feed" id="stack" data-scene data-beats="a:2000 b:2000 c:2000 d:3600" data-rest="2400" data-still="d" aria-hidden="true">
+        <script type="application/json" data-shot-plan>
+          {"shots": [
+            {"state": "a", "owner": "[data-at='a']", "read": "[data-at='a'] b"},
+            {"state": "b", "owner": "[data-at='b']", "read": "[data-at='b'] b"},
+            {"state": "c", "owner": "[data-at='c']", "read": "[data-at='c'] b"},
+            {"state": "d", "owner": "[data-at='d']", "read": "[data-at='d']"}
+          ]}
+        </script>
+        <ol class="stack" data-stack style="list-style: none; margin: 0; padding: 0;">
+          <li class="toast card ui" data-at="a"><b>Payout sent</b><span class="muted num">$2,140.00 to Chase ending 0912</span></li>
+          <li class="toast card ui" data-at="b"><b>Invoice paid</b><span class="muted num">Arcadia Studio paid $860.00</span></li>
+          <li class="toast card ui" data-at="c"><b>New customer</b><span class="muted">Linnea Berg started a trial</span></li>
+          <li class="toast card ui" data-at="d"><b>Payment received</b><span class="muted num">$1,240.00 from Harbor &amp; Pine</span></li>
+        </ol>
+      </div>
+    </div>
+    <button class="pause" type="button" data-scene-pause aria-controls="stack" aria-pressed="false">Pause animation</button>
+  </section>
+
+  <section aria-labelledby="h-event">
+    <div><h2 id="h-event">Event shot</h2><p>Start state, cursor on the action, the press, then the result owns the screen for its reading hold.</p></div>
+    <div class="stage">
+      <div class="mock" id="event" data-scene data-beats="draft:2400 aim:1400 press:1200 sent:4400" data-rest="2400" data-still="sent" aria-hidden="true">
+        <script type="application/json" data-shot-plan>
+          {"shots": [
+            {"state": "draft", "owner": ".invoice", "read": ".invoice-title"},
+            {"state": "aim", "owner": ".shot-cursor", "aim": ".send"},
+            {"state": "press", "owner": ".send", "press": ".send"},
+            {"state": "sent", "owner": ".receipt", "read": ".receipt", "push": ".invoice"}
+          ]}
+        </script>
+        <div class="invoice card ui">
+          <p class="invoice-title">Invoice 0142, Arcadia Studio</p>
+          <div class="rows num">
+            <div class="row"><span>Brand system, phase 2</span><span>$6,400.00</span></div>
+            <div class="row"><span>Motion guidelines</span><span>$1,800.00</span></div>
+            <div class="row"><b>Due Nov 14</b><b>$8,200.00</b></div>
+          </div>
+          <span class="send">Send invoice</span>
+          <div class="receipt"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="currentColor" opacity=".2"/><path d="M4.5 8.2l2.2 2.2 4.8-4.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sent to billing@arcadia.studio. Due in 30 days.</span></div>
+        </div>
+        <span class="shot-cursor" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3 2l13 7.5-5.6 1.4 3.2 6-2.4 1.2-3.2-6L3 16z" fill="#fff" stroke="#111" stroke-width="1.2" stroke-linejoin="round"/></svg></span>
+      </div>
+    </div>
+    <button class="pause" type="button" data-scene-pause aria-controls="event" aria-pressed="false">Pause animation</button>
+  </section>
+</main>
+<script src="../scene.js"></script>
+<script src="../moments.js"></script>
+</body>
+</html>

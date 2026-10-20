@@ -1,0 +1,84 @@
+{
+  "file": "kb/tests/fresh/landing/halyard.html",
+  "layers": [
+    "tokens",
+    "base",
+    "layout",
+    "components",
+    "fragments",
+    "motion"
+  ],
+  "layerRules": {
+    "tokens": 2,
+    "base": 14,
+    "layout": 30,
+    "components": 169,
+    "fragments": 158,
+    "motion": 41
+  },
+  "unlayered": 0,
+  "styleRules": 414,
+  "decls": 1302,
+  "tokens": 213,
+  "media": {
+    "(prefers-color-scheme: dark)": 1,
+    "(width >= 48rem)": 12,
+    "(width >= 64rem)": 13,
+    "(width >= 80rem)": 4,
+    "(prefers-reduced-motion: no-preference)": 4,
+    "(hover: hover)": 5,
+    "(width < 48rem)": 3,
+    "(width >= 48rem) and (width < 64rem)": 2,
+    "(width >= 64rem) and (width < 80rem)": 1,
+    "(width < 64rem)": 1
+  },
+  "containerRules": 0,
+  "containers": 0,
+  "has": 0,
+  "important": [
+    "base :: [hidden] { display }",
+    "base :: .vh { position }"
+  ],
+  "findings": {
+    "motion-unguarded": [
+      "a { transition: color var(--motion-hover), text-decoration-color var(--motion-hover) }",
+      ".btn { transition: background-color var(--motion-hover), border-color var(--motion-hover), color var(--motion-hover), transform var(--motion-hover) }",
+      ".nav ul a, .nav__link { transition: background-color var(--motion-hover) }",
+      ".billing button { transition: background-color var(--motion-hover), color var(--motion-hover) }",
+      ".faq summary { transition: background-color var(--motion-hover) }"
+    ]
+  },
+  "inlineStyleAttrs": 209,
+  "counts": {
+    "raw-color": 0,
+    "primitive-in-component": 0,
+    "raw-space": 0,
+    "font-size-px": 0,
+    "type-token-px": 0,
+    "transition-all": 0,
+    "id-selector": 0,
+    "hover-unguarded": 0,
+    "physical-property": 0,
+    "vh-unit": 0,
+    "motion-unguarded": 5,
+    "media-min-max-syntax": 0,
+    "component-token-primitive": 0
+  },
+  "levels": {
+    "raw-color": "fail",
+    "primitive-in-component": "fail",
+    "raw-space": "fail",
+    "font-size-px": "fail",
+    "type-token-px": "fail",
+    "transition-all": "fail",
+    "id-selector": "warn",
+    "hover-unguarded": "fail",
+    "physical-property": "warn",
+    "vh-unit": "warn",
+    "motion-unguarded": "warn",
+    "media-min-max-syntax": "warn",
+    "component-token-primitive": "warn"
+  },
+  "layered": true,
+  "verdict": "pass"
+}

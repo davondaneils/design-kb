@@ -1,0 +1,96 @@
+{
+  "file": "kb/tests/fresh/landing/halyard.html",
+  "expect": "public",
+  "date": "2026-10-13T23:52:33.642Z",
+  "checks": {
+    "size": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "HTML 226 KB uncompressed (Googlebot cut: 2 MB)"
+        }
+      ]
+    },
+    "head-order": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "search and social tags end by byte 1252, before the first large inline block at byte 6507"
+        }
+      ]
+    },
+    "title": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "\"Halyard passage planner: Solent, Poole and Chichester Harbour\" (61 chars)"
+        }
+      ]
+    },
+    "description": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "157 chars"
+        }
+      ]
+    },
+    "headings": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "h1 Know when to go.\n  h2 What sailors say\n  h2 How a window is found. Three tests, every hour of the day.\n    h3 Tide with you\n    h3 Wind inside your limits\n    h3 Home before dark\n  h2 One plan, to the minute. Out at 08:30, home by 14:10.\n  h2 Warnings before you need them. Halyard keeps watching after you plan.\n  h2 Where it works. Poole to Chichester Harbour.\n    h3 Covered: 14 tidal height stations and 8 stream points\n    h3 Not covered\n  h2 Free for the odd sail. Plus for every weekend.\n    h3 Free\n    h3 Halyard Plus\n  h2 A planning aid, not a pilot. The decision to go stays with you.\n  h2 Questions. Asked on the pontoon.\n  h2 Find your next window. Pick a boat, a harbour and a day.\n  h2 Product\n  h2 Help\n  h2 Company"
+        }
+      ]
+    },
+    "links": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "25 links, 16 unique destinations"
+        }
+      ]
+    },
+    "dates": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "9 relative dates outside <time datetime>: a quoted passage loses its week. \"on Saturday\", \"Friday\", \"On Saturday\", \"On Saturday\", \"Saturday\", \"on Saturday\", \"on Saturday\", \"Saturday\", \"Saturday\""
+        }
+      ],
+      "info": []
+    },
+    "social": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "og:image 1200x630, 64 KB"
+        }
+      ]
+    },
+    "structured-data": {
+      "fail": [],
+      "warn": [],
+      "info": [
+        {
+          "message": "jsonld.js not installed: run npm ci in skills/design-search/assets for the expansion check"
+        },
+        {
+          "message": "1 JSON-LD blocks, 5 typed nodes: WebSite, Organization, SoftwareApplication, Offer, Offer"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "fail": 0,
+    "warn": 1,
+    "pass": true
+  }
+}

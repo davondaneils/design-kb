@@ -19,6 +19,7 @@
 - If the action is a keyboard shortcut or keyboard navigation (arrowing through a list, switching tabs, opening a palette with Cmd+K), do not animate the result (Kowalski, Freiberg). Activating a button with Enter or Space is not a shortcut: the result animates like a click. Scrolling a focused item into view uses the browser default.
 - If you cannot name which of the five jobs the motion does, cut it.
 - If the motion serves the brand only, it belongs on a rare moment or a marketing page, never in a task flow (Carbon: expressive "sparingly for significant moments").
+- If the page shows a product that changes state, the largest motion budget goes to a product scene that acts out that change, not to the page around it. Restraint means a calm page, not a still product: Stripe's longest timelines all run inside its mock-ups (`kb/teardowns/motion-imagery.md` section 2; reference 08).
 - If the motion pulls attention away from the task (pulsing badges, shaking upsell buttons, countdown motion), treat it as a dark pattern and cut it (NN/g).
 - If the product is a productivity tool, default to Carbon's "productive" character: short, subtle, ease-out. If it is a consumer brand moment, "expressive" is allowed for that moment only.
 

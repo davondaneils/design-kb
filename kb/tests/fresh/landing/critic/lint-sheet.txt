@@ -1,0 +1,54 @@
+
+Fundamentals lint: halyard-states.html  ->  PASS (0 fail, 3 warn)
+
+  pass  axe
+  pass  overlay
+  pass  targets  (1 warn)
+        ! touch target under 44x44 at 390px  [section.group > div.grid.grid--wide > div.cell > button.btn.btn--quiet]
+  pass  measure
+  pass  type-scale
+  pass  spacing
+  pass  overflow
+  pass  heading-wrap
+  pass  svg-overlap
+  pass  reading-size
+  pass  selected-state
+  pass  primary
+  pass  radius
+  pass  color-scheme
+  pass  typography
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke  (1 warn)
+        ! icon stroke 1.5px vs text stem 2.03px (16px 600)  [div.grid > div.cell > button.btn.btn--primary > svg.icon.spin]
+  pass  weight
+  pass  occlusion
+  pass  squash
+  pass  sticky-header
+  pass  run-together
+  pass  word-break
+  pass  grid-edge
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  state-sheet
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  phone-facts
+  pass  dead-control
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback  (1 warn)
+        ! layout moves -54px at 390px when the web fonts fail (worst: #main > div.wrap > section.group); add metric fallbacks (size-adjust, ascent-override). Line count changed in 3 elements: #main > div.wrap > h1 "Halyard home page: state sheet" 3 to 2 lines; div.grid.grid--wide > div.cell > div.billing > button "Yearly Save £20.88" 1 to 2 lines; div.grid.grid--wide > div.cell > div.billing > button.is-hover.is-focus "Yearly Save £20.88" 1 to 2 lines (one element near a wrap point is a copy fix; many is a font metrics fix)  [#main > div.wrap > section.group]
+  pass  motion
+
+  JSON: kb/tests/fresh/landing/critic/halyard-states.lint.json
+exit 0

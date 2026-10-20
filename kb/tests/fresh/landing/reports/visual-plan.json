@@ -1,0 +1,306 @@
+{
+ "target": "kb/tests/fresh/landing/halyard.html",
+ "productPage": true,
+ "min": 0.7,
+ "widths": [
+  {
+   "width": 1440,
+   "source": "labelled visuals",
+   "slices": 9,
+   "counted": 8,
+   "withVisual": 7,
+   "share": 0.88,
+   "fragments": 8,
+   "probeProductMock": 14,
+   "beats": [
+    "pricing"
+   ],
+   "sliceTable": [
+    {
+     "y": 0,
+     "cover": 0.36,
+     "probeCover": 0.79,
+     "kinds": {
+      "product-mock": 1,
+      "bg-gradient": 0.34
+     },
+     "beat": "",
+     "stub": false
+    },
+    {
+     "y": 900,
+     "cover": 0.14,
+     "probeCover": 0.29,
+     "kinds": {
+      "product-mock": 0.42,
+      "bg-gradient": 0.13
+     },
+     "beat": "",
+     "stub": false
+    },
+    {
+     "y": 1800,
+     "cover": 0.35,
+     "probeCover": 0.56,
+     "kinds": {
+      "svg-illustration": 0.1,
+      "product-mock": 0.9,
+      "bg-gradient": 0.35
+     },
+     "beat": "",
+     "stub": false
+    },
+    {
+     "y": 2700,
+     "cover": 0.36,
+     "probeCover": 0.38,
+     "kinds": {
+      "svg-illustration": 0.05,
+      "product-mock": 0.73,
+      "bg-gradient": 0.36
+     },
+     "beat": "",
+     "stub": false
+    },
+    {
+     "y": 3600,
+     "cover": 0.27,
+     "probeCover": 0.29,
+     "kinds": {
+      "svg-illustration": 0.21,
+      "product-mock": 0.07,
+      "illustration": 0.24,
+      "bg-gradient": 0.03
+     },
+     "beat": "",
+     "stub": false
+    },
+    {
+     "y": 4500,
+     "cover": 0,
+     "probeCover": 0,
+     "kinds": {},
+     "beat": "pricing",
+     "stub": false
+    },
+    {
+     "y": 5400,
+     "cover": 0.25,
+     "probeCover": 0.26,
+     "kinds": {
+      "product-mock": 0.5,
+      "bg-gradient": 0.24
+     },
+     "beat": "",
+     "stub": false
+    },
+    {
+     "y": 6300,
+     "cover": 0.19,
+     "probeCover": 0.19,
+     "kinds": {
+      "product-mock": 0.37,
+      "bg-gradient": 0.19
+     },
+     "beat": "",
+     "stub": false
+    },
+    {
+     "y": 7200,
+     "cover": 0.35,
+     "probeCover": 0.36,
+     "kinds": {
+      "svg-illustration": 0.33,
+      "product-mock": 0.03,
+      "bg-gradient": 0.01
+     },
+     "beat": "",
+     "stub": false
+    }
+   ]
+  },
+  {
+   "width": 390,
+   "source": "labelled visuals",
+   "slices": 15,
+   "counted": 11,
+   "withVisual": 9,
+   "share": 0.82,
+   "fragments": 8,
+   "probeProductMock": 17,
+   "beats": [
+    "quote",
+    "pricing",
+    "pricing",
+    "faq"
+   ],
+   "sliceTable": [
+    {
+     "y": 0,
+     "cover": 0.18,
+     "probeCover": 0.77,
+     "kinds": {
+      "product-mock": 1,
+      "bg-gradient": 0.19
+     },
+     "beat": "",
+     "stub": false
+    },
+    {
+     "y": 844,
+     "cover": 0.65,
+     "probeCover": 0.81,
+     "kinds": {
+      "product-mock": 1,
+      "bg-gradient": 0.68
+     },
+     "beat": "",
+     "stub": false
+    },
+    {
+     "y": 1688,
+     "cover": 0,
+     "probeCover": 0.18,
+     "kinds": {
+      "product-mock": 0.18
+     },
+     "beat": "quote",
+     "stub": false
+    },
+    {
+     "y": 2532,
+     "cover": 0.52,
+     "probeCover": 0.9,
+     "kinds": {
+      "product-mock": 1,
+      "bg-gradient": 0.54
+     },
+     "beat": "",
+     "stub": false
+    },
+    {
+     "y": 3376,
+     "cover": 0.32,
+     "probeCover": 0.77,
+     "kinds": {
+      "product-mock": 1,
+      "bg-gradient": 0.3
+     },
+     "beat": "",
+     "stub": false
+    },
+    {
+     "y": 4220,
+     "cover": 0.23,
+     "probeCover": 0.23,
+     "kinds": {
+      "svg-illustration": 0.14,
+      "product-mock": 0.46,
+      "bg-gradient": 0.23
+     },
+     "beat": "",
+     "stub": false
+    },
+    {
+     "y": 5064,
+     "cover": 0.14,
+     "probeCover": 0.2,
+     "kinds": {
+      "svg-illustration": 0.02,
+      "product-mock": 0.33,
+      "bg-gradient": 0.13
+     },
+     "beat": "",
+     "stub": false
+    },
+    {
+     "y": 5908,
+     "cover": 0.43,
+     "probeCover": 0.47,
+     "kinds": {
+      "product-mock": 0.95,
+      "bg-gradient": 0.45
+     },
+     "beat": "",
+     "stub": false
+    },
+    {
+     "y": 6752,
+     "cover": 0.2,
+     "probeCover": 0.2,
+     "kinds": {
+      "svg-illustration": 0.16,
+      "illustration": 0.19
+     },
+     "beat": "",
+     "stub": false
+    },
+    {
+     "y": 7596,
+     "cover": 0,
+     "probeCover": 0,
+     "kinds": {},
+     "beat": "pricing",
+     "stub": false
+    },
+    {
+     "y": 8440,
+     "cover": 0,
+     "probeCover": 0,
+     "kinds": {},
+     "beat": "pricing",
+     "stub": false
+    },
+    {
+     "y": 9284,
+     "cover": 0.27,
+     "probeCover": 0.27,
+     "kinds": {
+      "product-mock": 0.54,
+      "bg-gradient": 0.27
+     },
+     "beat": "",
+     "stub": false
+    },
+    {
+     "y": 10128,
+     "cover": 0.14,
+     "probeCover": 0.18,
+     "kinds": {
+      "product-mock": 0.34,
+      "bg-gradient": 0.14
+     },
+     "beat": "faq",
+     "stub": false
+    },
+    {
+     "y": 10972,
+     "cover": 0.29,
+     "probeCover": 0.36,
+     "kinds": {
+      "product-mock": 0.67,
+      "bg-gradient": 0.31
+     },
+     "beat": "",
+     "stub": false
+    },
+    {
+     "y": 11816,
+     "cover": 0.09,
+     "probeCover": 0.09,
+     "kinds": {
+      "svg-illustration": 0.1
+     },
+     "beat": "",
+     "stub": false
+    }
+   ]
+  }
+ ],
+ "treatments": [
+  "echo-fill"
+ ],
+ "fails": [],
+ "warns": [],
+ "probeJson": null
+}

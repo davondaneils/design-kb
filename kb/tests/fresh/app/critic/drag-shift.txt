@@ -1,0 +1,4 @@
+pointer y 510; handle now 12:00 spans y 494 to 526; pointer on the handle
+pointer y 510; handle now 12:20 spans y 494 to 526; pointer on the handle
+pointer y 510; handle now 12:40 spans y 515 to 547; pointer OFF the handle
+pointer y 510; handle now 12:50 spans y 515 to 547; pointer OFF the handle

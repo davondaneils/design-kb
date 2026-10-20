@@ -1,0 +1,20 @@
+
+Polish audit: plan-states.html
+
+  pass  radius
+        i census: 4px x44, 8px x116, full x44
+  pass  shadow
+        i distinct shadows: 6
+  pass  hover-gate
+  pass  icon-stroke
+        i icons checked: 10
+  pass  svg-hairline
+  pass  color-scheme
+  pass  tabular
+  pass  heading-wrap
+  pass  focus-shape
+        i elements tested: 30
+  pass  state-shift
+  pass  forced-edge
+
+  Result: PASS (0 fail, 0 warn)

@@ -1,0 +1,89 @@
+
+== default @390 light
+ positions {"verdict":162,"facts":334,"timeline":662,"planLane":1182,"warnings":1434,"route":1965,"pageH":3251}
+ BREAKS: 10:05 to 12:35  [note] | 16:15 to 17:10  [note] | 12 kn  [P] | 18 kn  [P]
+ CLIPPED: Gust (kn) right 416 > box 361 (auto) | From right 514 > box 361 (auto) | Back right 431 > box 374 (clip)
+
+== empty @390 light
+ positions {"verdict":null,"facts":null,"timeline":485,"planLane":916,"warnings":null,"route":1142,"pageH":1973}
+ CLIPPED: Gust (kn) right 416 > box 361 (auto) | From right 514 > box 361 (auto)
+
+== error @390 light
+ positions {"verdict":311,"facts":459,"timeline":787,"planLane":1307,"warnings":1559,"route":2023,"pageH":3309}
+ CLIPPED: Gust (kn) right 416 > box 361 (auto) | From right 469 > box 361 (auto) | Back right 431 > box 374 (clip)
+
+== loading @390 light
+ positions {"verdict":null,"facts":null,"timeline":null,"planLane":null,"warnings":null,"route":null,"pageH":1034}
+
+== nowindow @390 light
+ positions {"verdict":162,"facts":null,"timeline":318,"planLane":771,"warnings":997,"route":1329,"pageH":2380}
+ BREAKS: 34 kn  [P] | 12 kn  [P]
+ CLIPPED: Gust (kn) right 416 > box 361 (auto) | From right 514 > box 361 (auto)
+
+== saved @390 light
+ positions {"verdict":269,"facts":441,"timeline":769,"planLane":1289,"warnings":1541,"route":2072,"pageH":3358}
+ BREAKS: 10:05 to 12:35  [note] | 16:15 to 17:10  [note] | 12 kn  [P] | 18 kn  [P]
+ CLIPPED: Gust (kn) right 416 > box 361 (auto) | From right 514 > box 361 (auto) | Back right 431 > box 374 (clip)
+
+== default @768 light
+ positions {"verdict":205,"facts":329,"timeline":603,"planLane":994,"warnings":1174,"route":1594,"pageH":2963}
+ BREAKS: 20 kn  [P]
+
+== empty @768 light
+ positions {"verdict":null,"facts":null,"timeline":432,"planLane":801,"warnings":null,"route":963,"pageH":1895}
+
+== error @768 light
+ positions {"verdict":312,"facts":436,"timeline":710,"planLane":1101,"warnings":1281,"route":1680,"pageH":3049}
+
+== loading @768 light
+ positions {"verdict":null,"facts":null,"timeline":null,"planLane":null,"warnings":null,"route":null,"pageH":929}
+
+== nowindow @768 light
+ positions {"verdict":205,"facts":null,"timeline":337,"planLane":706,"warnings":868,"route":1156,"pageH":2308}
+ BREAKS: 20 kn  [P]
+
+== saved @768 light
+ positions {"verdict":291,"facts":415,"timeline":689,"planLane":1080,"warnings":1260,"route":1680,"pageH":3049}
+ BREAKS: 20 kn  [P]
+
+== default @1024 light
+ positions {"verdict":213,"facts":337,"timeline":611,"planLane":1002,"warnings":1182,"route":1602,"pageH":2971}
+ BREAKS: 20 kn  [P]
+
+== empty @1024 light
+ positions {"verdict":null,"facts":null,"timeline":440,"planLane":809,"warnings":null,"route":971,"pageH":1903}
+
+== error @1024 light
+ positions {"verdict":320,"facts":444,"timeline":718,"planLane":1109,"warnings":1289,"route":1688,"pageH":3057}
+
+== loading @1024 light
+ positions {"verdict":null,"facts":null,"timeline":null,"planLane":null,"warnings":null,"route":null,"pageH":937}
+
+== nowindow @1024 light
+ positions {"verdict":213,"facts":null,"timeline":345,"planLane":714,"warnings":876,"route":1164,"pageH":2316}
+ BREAKS: 20 kn  [P]
+
+== saved @1024 light
+ positions {"verdict":299,"facts":423,"timeline":697,"planLane":1088,"warnings":1268,"route":1688,"pageH":3057}
+ BREAKS: 20 kn  [P]
+
+== default @1440 light
+ positions {"verdict":161,"facts":285,"timeline":458,"planLane":827,"warnings":1007,"route":1427,"pageH":2303}
+ BREAKS: 20 kn  [P]
+
+== empty @1440 light
+ positions {"verdict":null,"facts":null,"timeline":388,"planLane":757,"warnings":null,"route":919,"pageH":1578}
+
+== error @1440 light
+ positions {"verdict":268,"facts":392,"timeline":565,"planLane":934,"warnings":1114,"route":1513,"pageH":2389}
+
+== loading @1440 light
+ positions {"verdict":null,"facts":null,"timeline":null,"planLane":null,"warnings":null,"route":null,"pageH":901}
+
+== nowindow @1440 light
+ positions {"verdict":161,"facts":null,"timeline":293,"planLane":662,"warnings":824,"route":1112,"pageH":1792}
+ BREAKS: 20 kn  [P]
+
+== saved @1440 light
+ positions {"verdict":247,"facts":371,"timeline":544,"planLane":913,"warnings":1093,"route":1513,"pageH":2389}
+ BREAKS: 20 kn  [P]

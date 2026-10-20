@@ -1,0 +1,90 @@
+{
+ "target": "https://vaul.emilkowal.ski",
+ "sels": [
+  "[data-vaul-drawer]",
+  "[data-vaul-overlay]",
+  "[vaul-drawer-wrapper]"
+ ],
+ "frames": 140,
+ "ms": 2500,
+ "elements": [
+  {
+   "selector": "[data-vaul-drawer]",
+   "index": 0,
+   "text": "Drawer for React.This co",
+   "segments": [
+    {
+     "start": 214,
+     "end": 731,
+     "ms": 517,
+     "open": false,
+     "from": {
+      "transform": "matrix(1, 0, 0, 1, 0, 864)",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       0,
+       900,
+       1440,
+       864
+      ]
+     },
+     "to": {
+      "transform": "none",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       0,
+       36,
+       1440,
+       864
+      ],
+      "text": "Drawer for React.This co"
+     }
+    }
+   ],
+   "holds": []
+  },
+  {
+   "selector": "[data-vaul-overlay]",
+   "index": 0,
+   "text": "",
+   "segments": [
+    {
+     "start": 214,
+     "end": 714,
+     "ms": 500,
+     "open": false,
+     "from": {
+      "transform": "none",
+      "opacity": "0",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       0,
+       0,
+       1440,
+       900
+      ]
+     },
+     "to": {
+      "transform": "none",
+      "opacity": "1",
+      "clip": "none",
+      "filter": "none",
+      "box": [
+       0,
+       0,
+       1440,
+       900
+      ],
+      "text": ""
+     }
+    }
+   ],
+   "holds": []
+  }
+ ]
+}

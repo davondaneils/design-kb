@@ -1,0 +1,37 @@
+Claims inventory: kb/tests/fresh/app/plan.html?state=empty (33 strings to check against the data)
+
+  1  Plan: Lymington to Yarmouth, Sat 24 Oct · Halyard Skip to the plan
+  2  7.9 m sloop, plans at 5.0 kn
+  3  : 1 of 3
+  4  Saturday 24 October 2026
+  5  Wren, 7.9 m sloop
+  6  Forecast issued Fri 23 Oct, 18:00 BST
+  7  −10 min earlier, leave Lymington
+  8  +10 min later, leave Lymington
+  9  −10 min earlier, leave Yarmouth
+ 10  +10 min later, leave Yarmouth
+ 11  4.5 nm
+ 12  Saturday on the water
+ 13  Wren’s 20 kn limit
+ 14  Tide height at Lymington, sample: low water 03:05 0.6 m, high water 09:20 2.8 m, low water 15:30 0.7 m, high water 21:40 2.9 m.
+ 15  Tidal stream in the Needles Channel, sample: east-going until 09:40, west-going 09:40 to 15:50 up to 2.4 kn, east-going after 15:50 up to 2.6 kn.
+ 16  5 min, with Shift
+ 17  30 min, Page Up
+ 18  1 hour
+ 19  Show hourly values Hourly tide, stream and wind for Saturday 24 October 2026, sample data, times BST
+ 20  High and low water at Lymington, Saturday 24 October 2026, sample, BST
+ 21  03:05
+ 22  0.6 m
+ 23  09:20
+ 24  2.8 m
+ 25  15:30
+ 26  0.7 m
+ 27  21:40
+ 28  2.9 m
+ 29  07:33
+ 30  17:56
+ 31  up to 20 kn
+ 32  up to 12 kn
+ 33  5.0 kn
+
+No mechanical flags. Now tick every line above against its source: chart data, price list, policy, log.

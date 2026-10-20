@@ -1,0 +1,85 @@
+[
+  {
+    "trial": 1,
+    "stronger": "A",
+    "confidence": 2,
+    "scores": { "A": 7, "B": 6 },
+    "tells": [
+      "B reads as Linear's homepage hero (dark UI, 'product development system for teams and agents')",
+      "B holds its headline as a blur for about 1.0s (0.5s to 1.4s) before it snaps sharp at 1.5s, so the first second of text is unreadable",
+      "B's product UI fades up as one block 1.6s to 2.3s; the only product action is a small agent panel appearing at the lower right at about 4.0s",
+      "A's card builds from an empty skeleton at 0.0s to full chart by 0.5s, then a cursor presses 'Find windows' at about 1.5s",
+      "A's scan line sweeps across the chart 1.7s to 2.5s and the wind bars turn amber as it passes, then '2 windows found' and the out/back windows land by 3.0s",
+      "A's proposed plan (08:30, 10:10, 12:30, 14:10) arrives at 3.5s and holds still to the end, about 2.5s"
+    ],
+    "memorable": { "A": "the scan line sweeping the forecast and the sailable windows lighting up behind it", "B": "the headline sharpening out of blur" },
+    "corrections": [
+      { "where": "B 0.50s to 1.40s, the headline", "problem": "headline sits blurred and unreadable for about a second; the blur is decoration, not information", "change": "bring the headline in sharp with a short opacity and 8px rise over 0.4s so it is readable from 0.6s", "keep": "the dark field and the order headline, subhead, then product" },
+      { "where": "B 1.60s to 2.30s, the product window", "problem": "the whole app UI fades up as one flat block, so nothing in it owns the screen", "change": "let the frame land first, then reveal the issue pane and activity rows top to bottom with about 0.1s offsets", "keep": "the restrained fade and the position under the headline" },
+      { "where": "B 4.00s, the agent panel at lower right", "problem": "the one product action is small, at the edge and arrives after attention has left", "change": "make the agent reply the climax: draw the eye to it with the rest of the UI held still, and hold its text at least 2.5s", "keep": "that the action happens inside the real UI, in place" },
+      { "where": "B 2.40s, subhead and nav links", "problem": "subhead and the small links at the right appear late and faint, competing with the UI fade", "change": "land the subhead with the headline, before the product starts moving", "keep": "the low contrast hierarchy of the subhead" }
+    ]
+  },
+  {
+    "trial": 2,
+    "stronger": "B",
+    "confidence": 4,
+    "scores": { "A": 6, "B": 8 },
+    "tells": [
+      "B reads as Stripe's homepage payments section ($5.46 terminal and 'Accept and optimize payments globally')",
+      "B's capture jumps from the hero to the section at 0.35s; that is a scroll in the filming, not the design, and I ignored it",
+      "B holds the $5.46 terminal and checkout still for about 4.7s, then every line rolls vertically in place to the German/euro version (Pay Roastery to Carby bezahlen, $5.46 to EUR 26.89) with rows staggered about 0.1s, done by 5.6s",
+      "B then holds the new state still for over 6s",
+      "A holds the finished plan for 6.0s, then washes the whole card to white 6.5s to 6.9s and restarts: the reset is a fade through blank, not an in-place change",
+      "A's cursor clicks 'Find windows' at about 7.8s, the scan sweeps 8.3s to 9.6s, windows land at 9.5s and the proposed plan grows the card's height at about 10.5s"
+    ],
+    "memorable": { "A": "the scan line lighting up the windows", "B": "the whole checkout rolling from dollars and English to euros and German in place" },
+    "corrections": [
+      { "where": "A 6.50s to 6.94s, the whole card", "problem": "the loop resets by fading the entire card to a near blank frame, which reads as a cut and throws away the reader's place", "change": "reset in place: roll the status back to 'Ready to check', fade the amber bars and windows out with the chart frame held still", "keep": "the 6s hold on the finished plan before the reset" },
+      { "where": "A 9.50s to 10.50s, the proposed plan row", "problem": "the plan appears by growing the card taller, so the layout shifts under the windows just as they land", "change": "reserve the plan row's height from the start (placeholder or dimmed values) and fill it in place", "keep": "plan arriving after the windows, about 0.5s later" },
+      { "where": "A 7.00s to 7.80s, the cursor", "problem": "cursor wanders across the chart for almost a second before the press, drawing the eye away from the chart", "change": "start the cursor near the button and press within 0.4s of the reset settling", "keep": "the visible press on 'Find windows' as the cause of everything after" },
+      { "where": "A 8.30s to 9.60s, scan line and wind bars", "problem": "bars, stream, windows and status all change during the sweep, so no single thing owns the screen", "change": "let the scan own the sweep, then land the out window, then the back window, about 0.1s apart", "keep": "the scan line moving left to right in time" }
+    ]
+  },
+  {
+    "trial": 3,
+    "stronger": "A",
+    "confidence": 4,
+    "scores": { "A": 8, "B": 7 },
+    "tells": [
+      "A is the same Stripe payments sequence as trial 2 B; the jump at 0.35s is the capture scrolling",
+      "A holds the first state 4.8s, rolls every line in place 4.9s to 5.6s with row offsets near 0.1s, then holds 6s",
+      "B shows the old state (Forecast Fri 18:00, leave 11:10 to 13:45, 15:25) for only about 0.8s before it changes",
+      "B's change cascades in place about 0.1s apart: forecast badge rolls at 0.86s, end time 13:45 to 13:20 at 0.96s, the window gains a hatched cut at 1.06s, 15:25 rolls to 15:00, then the notification swaps at 1.16s to 1.36s",
+      "B's old notification fades to an empty card at 1.16s before the new text arrives, a brief blank",
+      "B then holds still for over 10s with nothing further happening"
+    ],
+    "memorable": { "A": "the checkout rolling into German and euros in place", "B": "the window end time rolling back and a hatched slice appearing on the bar" },
+    "corrections": [
+      { "where": "B 0.00s to 0.86s, the 'before' state", "problem": "the old forecast, window end 13:45 and 'Plan saved' are visible for under a second, so the viewer never reads what is about to change", "change": "hold the before state at least 2.5s, ideally with the 13:45 end time in a resting focus", "keep": "the in-place digit rolls and the 0.1s cascade" },
+      { "where": "B 1.06s, the window bar", "problem": "the hatched slice is about 6px wide and is the actual news, but it is the smallest thing that moves", "change": "animate the window's right edge retracting from 13:45 to 13:20 over 0.4s with a landing ease, leaving the hatch behind", "keep": "the hatch pattern as the record of the lost time" },
+      { "where": "B 1.16s, the notification", "problem": "the old notification empties to a blank card before the new text appears, a visible gap", "change": "cross the texts in place (old out up, new in from below) with no empty frame", "keep": "the notification arriving last as the explanation" },
+      { "where": "B 1.40s to 12.00s, whole clip", "problem": "everything is over by 1.4s and the remaining 10s are static, so the climax is crammed at the start", "change": "place the change after a 2.5s read and hold the result about 4s, then loop", "keep": "the long readable hold on the explanatory notification" }
+    ]
+  },
+  {
+    "trial": 4,
+    "stronger": "B",
+    "confidence": 4,
+    "scores": { "A": 7, "B": 8 },
+    "tells": [
+      "B is the same Stripe payments sequence again; first state held about 4.8s, in-place roll to the euro/German version 4.9s to 5.6s, then held over 6s",
+      "A draws the route leg by leg: the dot reaches Gurnard at about 1.4s and the readout changes Hamstead Ledge 09:17 4.6 nm to Gurnard 09:59 9.2 nm at 1.5s to 1.9s",
+      "A's readouts change by fading the label then the value about 0.1s apart, with a short frame where the label is blank",
+      "A arrives at Cowes at about 3.9s (10:10, 10.5 nm, 7.1 kn) and holds still for about 6s",
+      "A resets at 9.88s by fading the whole card to a fully blank frame at 10.08s, then the empty route reappears at 10.18s"
+    ],
+    "memorable": { "A": "the boat drawing the route to Cowes as the distance ticks up", "B": "the checkout switching currency and language in place" },
+    "corrections": [
+      { "where": "A 9.88s to 10.18s, the whole card", "problem": "the reset fades the card to a fully blank frame, a cut that loses the map and the reader's place", "change": "keep the map still and retract the route line back to Lymington in place, resetting the readout with a roll", "keep": "the long hold on the arrival before the reset" },
+      { "where": "A 1.50s and 3.40s, the readout values", "problem": "values fade out and in, leaving a beat where the label is blank and the number is ghosted", "change": "roll the digits in place (09:17 to 09:59, 4.6 to 9.2 nm) so the number is never absent", "keep": "the label leading the value by about 0.1s" },
+      { "where": "A 0.80s to 1.40s, the leg line", "problem": "the line and the dot move at near constant speed and stop at each waypoint without settling", "change": "ease each leg out so the dot decelerates into the waypoint, with a small settle on arrival at Cowes as the climax", "keep": "the leg-by-leg pacing of about 2s per leg" },
+      { "where": "A 3.90s, arrival at Cowes", "problem": "arrival changes only the readout colour; the climax is no bigger than the waypoints before it", "change": "mark arrival once: the Cowes pin fills and the 10:10 lands a beat after, with the rest held still", "keep": "the magenta arrival time and the restraint of a single accent" }
+    ]
+  }
+]

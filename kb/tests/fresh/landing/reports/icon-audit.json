@@ -1,0 +1,155 @@
+[
+ {
+  "w": 12,
+  "h": 12,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "svg.icon.icon--sm",
+  "count": 2,
+  "ink1": 0.21157407407407403,
+  "soft1": 0.9666666666666667,
+  "ink2": 0.21399101307189525,
+  "soft2": 0.5769230769230769,
+  "pad": 0.5,
+  "flags": []
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "svg.icon.i-pause",
+  "count": 1,
+  "ink1": 0.11807598039215676,
+  "soft1": 0.6875,
+  "ink2": 0.11881127450980383,
+  "soft2": 0.5238095238095238,
+  "pad": 2.5,
+  "flags": []
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "svg.icon",
+  "count": 3,
+  "ink1": 0.22665441176470563,
+  "soft1": 0.788235294117647,
+  "ink2": 0.2382774203431372,
+  "soft2": 0.44936708860759494,
+  "pad": 1,
+  "flags": [
+   "volume"
+  ]
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "svg.icon",
+  "count": 4,
+  "ink1": 0.059191176470588254,
+  "soft1": 1,
+  "ink2": 0.05939031862745094,
+  "soft2": 0.5238095238095238,
+  "pad": 2.5,
+  "flags": [
+   "volume"
+  ]
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "svg.icon",
+  "count": 7,
+  "ink1": 0.08478860294117646,
+  "soft1": 0.6857142857142857,
+  "ink2": 0.08483072916666667,
+  "soft2": 0.4,
+  "pad": 2.5,
+  "flags": []
+ },
+ {
+  "w": 12,
+  "h": 12,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "svg.icon",
+  "count": 2,
+  "ink1": 0.08545751633986925,
+  "soft1": 0.875,
+  "ink2": 0.0848856209150327,
+  "soft2": 0.5230769230769231,
+  "pad": 2,
+  "flags": [
+   "volume"
+  ]
+ },
+ {
+  "w": 16,
+  "h": 16,
+  "stroke": 1.5,
+  "caps": [
+   "round"
+  ],
+  "joins": [
+   "round"
+  ],
+  "colors": [],
+  "solid": false,
+  "where": "svg.icon",
+  "count": 5,
+  "ink1": 0.12132352941176477,
+  "soft1": 0.9090909090909091,
+  "ink2": 0.12172947303921561,
+  "soft2": 0.5,
+  "pad": 2,
+  "flags": []
+ }
+]

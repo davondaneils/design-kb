@@ -1,0 +1,341 @@
+
+Fundamentals lint: plan.html  ->  PASS (0 fail, 14 warn)
+
+  pass  axe
+  pass  overlay
+  pass  targets  (5 warn)
+        ! touch target under 44x44 at 390px  [html.js > body > a.skip]
+        ! touch target under 44x44 at 390px  [#p-plan > div.handle]
+        ! touch target under 44x44 at 390px  [#p-plan > div.handle]
+        ! touch target under 44x44 at 390px  [#tl > details.hourly > summary]
+        ! touch target under 44x44 at 390px  [#limits > a.more]
+  pass  measure
+  pass  type-scale
+  pass  spacing
+  pass  overflow
+  pass  heading-wrap
+  pass  svg-overlap  (8 warn)
+        ! text "Gust" partly covered by #p-wind > svg (30x4px) at 390px  [#p-wind > span.lbl]
+        ! text "23 kn" partly covered by #p-wind > svg (33x4px) at 390px  [#p-wind > span.lbl > strong]
+        ! text "Out 11:50 · Back 16:44" partly covered by #p-axis > svg (144x11px) at 390px  [#savebar-sum > strong]
+        ! text "Save plan" partly covered by #p-axis > svg (66x2px) at 390px  [#savebar > div > button.btn.btn-primary > span.label]
+        ! text "Gust" partly covered by #p-stream > svg (30x3px) at 1440px  [#p-wind > span.lbl]
+        ... 3 more warnings
+  pass  reading-size
+  pass  selected-state
+  pass  primary
+  pass  radius
+  pass  color-scheme
+  pass  typography
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke
+  pass  weight
+  pass  occlusion
+  pass  squash
+  pass  sticky-header
+  pass  run-together
+  pass  word-break
+  pass  grid-edge
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  phone-facts
+  pass  dead-control
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback  (1 warn)
+        ! layout moves 47px at 1440px when the web fonts fail (worst: #content > div.lower > div.side > section); add metric fallbacks (size-adjust, ascent-override). Line count changed in 4 elements: #answer "Leave Lymington at 11:50 and Yarmouth at" 3 to 4 lines; #warn-gust "2 Gusts above 20 kn, 16:00 to 19:00Gusts" 4 to 5 lines; #warn-gust > p.effect "Affects your return16:44 to 17:31: reef " 1 to 2 lines; #content > footer.safety > p "Before you sail, check the UKHO tide tab" 2 to 3 lines (one element near a wrap point is a copy fix; many is a font metrics fix)  [#content > div.lower > div.side > section]
+  pass  motion
+
+  JSON: kb/tests/fresh/app/plan.lint.json
+
+Fundamentals lint: plan.html?state=empty  ->  PASS (0 fail, 12 warn)
+
+  pass  axe
+  pass  overlay
+  pass  targets  (2 warn)
+        ! touch target under 44x44 at 390px  [html.js > body > a.skip]
+        ! touch target under 44x44 at 390px  [#tl > details.hourly > summary]
+  pass  measure
+  pass  type-scale
+  pass  spacing
+  pass  overflow
+  pass  heading-wrap
+  pass  svg-overlap  (8 warn)
+        ! text "Gust" partly covered by #p-wind > svg (30x4px) at 390px  [#p-wind > span.lbl]
+        ! text "23 kn" partly covered by #p-wind > svg (33x4px) at 390px  [#p-wind > span.lbl > strong]
+        ! text "No boat yet" partly covered by #p-wind > svg (65x17px) at 390px  [#savebar-sum > strong]
+        ! text "Add one to see windows" partly covered by #p-wind > svg (149x17px) at 390px  [#savebar-sum > span]
+        ! text "Gust" partly covered by #p-stream > svg (30x3px) at 1440px  [#p-wind > span.lbl]
+        ... 3 more warnings
+  pass  reading-size
+  pass  selected-state
+  pass  primary
+  pass  radius
+  pass  color-scheme
+  pass  typography
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke  (1 warn)
+        ! icon stroke 1.5px vs text stem 1.06px (12px 400)  [#p-plan > p.lane-msg > svg.i]
+  pass  weight
+  pass  occlusion
+  pass  squash
+  pass  sticky-header
+  pass  run-together
+  pass  word-break
+  pass  grid-edge
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  phone-facts
+  pass  dead-control
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback  (1 warn)
+        ! layout moves 22px at 1440px when the web fonts fail (worst: #tl-h); add metric fallbacks (size-adjust, ascent-override). Line count changed in 2 elements: #notice > div.body > p "Halyard finds windows from your boat’s s" 2 to 3 lines; #content > footer.safety > p "Before you sail, check the UKHO tide tab" 2 to 3 lines (one element near a wrap point is a copy fix; many is a font metrics fix)  [#tl-h]
+  pass  motion
+
+  JSON: kb/tests/fresh/app/plan.state-empty.lint.json
+
+Fundamentals lint: plan.html?state=error  ->  PASS (0 fail, 5 warn)
+
+  pass  axe
+  pass  overlay
+  pass  targets  (5 warn)
+        ! touch target under 44x44 at 390px  [html.js > body > a.skip]
+        ! touch target under 44x44 at 390px  [#p-plan > div.handle]
+        ! touch target under 44x44 at 390px  [#p-plan > div.handle]
+        ! touch target under 44x44 at 390px  [#tl > details.hourly > summary]
+        ! touch target under 44x44 at 390px  [#limits > a.more]
+  pass  measure
+  pass  type-scale
+  pass  spacing
+  pass  overflow
+  pass  heading-wrap
+  pass  svg-overlap
+  pass  reading-size
+  pass  selected-state
+  pass  primary
+  pass  radius
+  pass  color-scheme
+  pass  typography
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke
+  pass  weight
+  pass  occlusion
+  pass  squash
+  pass  sticky-header
+  pass  run-together
+  pass  word-break
+  pass  grid-edge
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  phone-facts
+  pass  dead-control
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback
+  pass  motion
+
+  JSON: kb/tests/fresh/app/plan.state-error.lint.json
+
+Fundamentals lint: plan.html?state=loading  ->  PASS (0 fail, 1 warn)
+
+  pass  axe
+  pass  overlay
+  pass  targets  (1 warn)
+        ! touch target under 44x44 at 390px  [html.js > body > a.skip]
+  pass  measure
+  pass  type-scale
+  pass  spacing
+  pass  overflow
+  pass  heading-wrap
+  pass  svg-overlap
+  pass  reading-size
+  pass  selected-state
+  pass  primary
+  pass  radius
+  pass  color-scheme
+  pass  typography
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke
+  pass  weight
+  pass  occlusion
+  pass  squash
+  pass  sticky-header
+  pass  run-together
+  pass  word-break
+  pass  grid-edge
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  phone-facts
+  pass  dead-control
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback
+  pass  motion
+
+  JSON: kb/tests/fresh/app/plan.state-loading.lint.json
+
+Fundamentals lint: plan.html?state=nowindow  ->  PASS (0 fail, 7 warn)
+
+  pass  axe
+  pass  overlay
+  pass  targets  (3 warn)
+        ! touch target under 44x44 at 390px  [html.js > body > a.skip]
+        ! touch target under 44x44 at 390px  [#tl > details.hourly > summary]
+        ! touch target under 44x44 at 390px  [#limits > a.more]
+  pass  measure
+  pass  type-scale
+  pass  spacing
+  pass  overflow
+  pass  heading-wrap
+  pass  svg-overlap  (4 warn)
+        ! text "No safe window" partly covered by #p-plan > svg (96x17px) at 390px  [#savebar-sum > strong]
+        ! text "Choose another day" partly covered by #p-plan > svg (136x11px) at 390px  [#savebar > div > a.btn.btn-primary]
+        ! text "Gust" partly covered by #p-stream > svg (30x8px) at 1440px  [#p-wind > span.lbl]
+        ! text "34 kn" partly covered by #p-stream > svg (33x8px) at 1440px  [#p-wind > span.lbl > strong]
+  pass  reading-size
+  pass  selected-state
+  pass  primary
+  pass  radius
+  pass  color-scheme
+  pass  typography
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke
+  pass  weight
+  pass  occlusion
+  pass  squash
+  pass  sticky-header
+  pass  run-together
+  pass  word-break
+  pass  grid-edge
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  phone-facts
+  pass  dead-control
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback
+  pass  motion
+
+  JSON: kb/tests/fresh/app/plan.state-nowindow.lint.json
+
+Fundamentals lint: plan.html?state=saved  ->  PASS (0 fail, 12 warn)
+
+  pass  axe
+  pass  overlay
+  pass  targets  (5 warn)
+        ! touch target under 44x44 at 390px  [html.js > body > a.skip]
+        ! touch target under 44x44 at 390px  [#p-plan > div.handle]
+        ! touch target under 44x44 at 390px  [#p-plan > div.handle]
+        ! touch target under 44x44 at 390px  [#tl > details.hourly > summary]
+        ! touch target under 44x44 at 390px  [#limits > a.more]
+  pass  measure
+  pass  type-scale
+  pass  spacing
+  pass  overflow
+  pass  heading-wrap
+  pass  svg-overlap  (6 warn)
+        ! text "Gust" partly covered by #p-wind > svg (30x4px) at 390px  [#p-wind > span.lbl]
+        ! text "23 kn" partly covered by #p-wind > svg (33x4px) at 390px  [#p-wind > span.lbl > strong]
+        ! text "Gust" partly covered by #p-stream > svg (30x3px) at 1440px  [#p-wind > span.lbl]
+        ! text "Gust" partly covered by #p-wind > svg (30x5px) at 1440px  [#p-wind > span.lbl]
+        ! text "23 kn" partly covered by #p-stream > svg (33x3px) at 1440px  [#p-wind > span.lbl > strong]
+        ... 1 more warnings
+  pass  reading-size
+  pass  selected-state
+  pass  primary
+  pass  radius
+  pass  color-scheme
+  pass  typography
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke
+  pass  weight
+  pass  occlusion
+  pass  squash
+  pass  sticky-header
+  pass  run-together
+  pass  word-break
+  pass  grid-edge
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  phone-facts
+  pass  dead-control
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback  (1 warn)
+        ! layout moves 68px at 1440px when the web fonts fail (worst: #content > div.lower > div.side > section); add metric fallbacks (size-adjust, ascent-override). Line count changed in 4 elements: #notice > div.body > p.muted "Still open: gusts to 23 kn on the return" 1 to 2 lines; #answer "Leave Lymington at 11:50 and Yarmouth at" 3 to 4 lines; #warn-gust > p.effect "Affects your return16:44 to 17:31: reef " 1 to 2 lines; #content > footer.safety > p "Before you sail, check the UKHO tide tab" 2 to 3 lines (one element near a wrap point is a copy fix; many is a font metrics fix)  [#content > div.lower > div.side > section]
+  pass  motion
+
+  JSON: kb/tests/fresh/app/plan.state-saved.lint.json

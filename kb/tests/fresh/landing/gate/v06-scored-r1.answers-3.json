@@ -1,0 +1,87 @@
+[
+  {
+    "trial": 1,
+    "stronger": "A",
+    "confidence": 3,
+    "scores": { "A": 8, "B": 7 },
+    "tells": [
+      "A is recognizably the Linear homepage hero: headline resolves from blur in about 0.6s, subhead follows about 0.1s later, app fades up at 1.2s to 1.7s, then the agent panel arrives at about 3s as the climax",
+      "A gives one thing the screen at a time: headline, then product, then the agent action",
+      "B is a real product moment (Find windows, scan sweep, bars turn amber, '2 windows found', plan panel at about 4.5s), all changed in place",
+      "B's button label crossfades 'Find windows' and 'Checking' on top of each other around 1.8s, a visible double-text frame",
+      "B's pink scan line sweeps the whole chart for about 1.5s; the sweep is more decoration than information",
+      "B's result text ('2 windows found', 'Leave 07:33 to 09:30') is tiny relative to the sweep that precedes it"
+    ],
+    "memorable": { "A": "the headline sharpening out of blur and the agent panel opening on the issue", "B": "the wind bars turning amber as the scan line passes" },
+    "corrections": [
+      { "where": "B 1.80s, Find windows button", "problem": "old and new labels are drawn on top of each other for a frame or two", "change": "slide the old label out before the new one enters (or roll it vertically inside a clipped box), no overlap", "keep": "the press timing right after the cursor lands" },
+      { "where": "B 2.0s to 3.5s, pink scan line", "problem": "a 1.5s full-width sweep with a pink wash competes with the bars it is judging", "change": "shorten to about 0.8s with an ease-out and drop the wash, let the amber bars carry the result", "keep": "the left-to-right order so the windows resolve in time order" },
+      { "where": "B 3.0s, '2 windows found' status", "problem": "the answer appears as small corner text while attention is on the chart", "change": "land the status change in the same beat as the last bar turning amber and give it a brief emphasis", "keep": "the in-place status swap" },
+      { "where": "B 4.5s, proposed plan panel", "problem": "the plan arrives while the eye is still on the bars and the clip ends 1.5s later", "change": "hold the plan at least 2.5s with nothing else moving", "keep": "the plan as the final state" }
+    ]
+  },
+  {
+    "trial": 2,
+    "stronger": "B",
+    "confidence": 4,
+    "scores": { "A": 7, "B": 8 },
+    "tells": [
+      "B is recognizably Stripe's payments section: the terminal price rolls in place from $5.46 to EUR 26.89 at about 4.7s and the checkout card follows about 0.1s to 0.2s later",
+      "B holds the first state still for about 4.5s, long enough to read",
+      "B changes language, currency and merchant without a cut; the product's own localization is the climax",
+      "A runs the full Halyard flow: click, sweep, amber bars, two windows, plan rows; the result then holds for about 7s",
+      "A's plan rows fade in from about 3.6s to 4.0s while the button label is still switching back, two changes competing",
+      "B's checkout panel shows a brief reflow mid-swap (jumbled rows at about 5.05s)"
+    ],
+    "memorable": { "A": "the bars turning amber behind the sweep", "B": "the price changing currency in place on the terminal" },
+    "corrections": [
+      { "where": "A 0.9s to 2.5s, scan line and pink wash", "problem": "the sweep is slow and decorative and the pink wash lowers contrast on the chart labels", "change": "cut the sweep to about 0.8s, no wash, ease out at the right edge", "keep": "bars turning amber as the line passes them" },
+      { "where": "A 3.6s to 4.0s, proposed plan rows and button", "problem": "the plan rows appear while the button label switches back to Find windows", "change": "settle the button first, then reveal the plan 0.1s later as its own beat", "keep": "the plan times 08:30, 10:10, 12:30, 14:10 as the final read" },
+      { "where": "A 2.5s, '2 windows found' and Leave rows", "problem": "the answer lives in small text at the card edges, easy to miss", "change": "stagger Out and Back leave rows about 0.1s apart and let the windows on the strips pulse once", "keep": "the in-place swaps from 'Not checked'" },
+      { "where": "A 1.0s, button press", "problem": "the label crossfade shows two labels at once", "change": "roll the label in a clipped box", "keep": "press timing" }
+    ]
+  },
+  {
+    "trial": 3,
+    "stronger": "B",
+    "confidence": 4,
+    "scores": { "A": 7, "B": 8 },
+    "tells": [
+      "B is the same Stripe terminal and checkout swap: long hold, in-place price roll, related panel offset by about a tenth of a second",
+      "A is a forecast-change story: 'Plan saved' notification at 1.4s, then at about 4.0s it is replaced by 'Back window moved' while the card updates",
+      "A's updates are staged well: forecast badge rolls 18:00 to 21:00, window end rolls 13:45 to 13:20, the bar trims with a hatched slice, 15:25 rolls to 15:00, roughly 0.1s to 0.2s apart",
+      "A's first notification (about 25 words of times) is on screen only about 2.4s, too short to read aloud",
+      "A's pastel gradient background is decorative and the loop resets with a full fade to blank at 11.6s",
+      "A's notification change is a crossfade swap rather than an update in place, and it lands a beat before the card change it describes"
+    ],
+    "memorable": { "A": "the window bar trimming 25 minutes off its end with a hatched slice", "B": "the price changing currency in place on the terminal" },
+    "corrections": [
+      { "where": "A 1.4s to 3.8s, 'Plan saved for Saturday' notification", "problem": "about 25 words with four times are held 2.4s, not readable aloud", "change": "hold it 5s or shorten it to 'Plan saved. Out 07:33, back 11:10.'", "keep": "its gentle fade and rise entrance" },
+      { "where": "A 3.9s to 4.1s, notification swap", "problem": "the new notification arrives before the card shows the change, so the text explains something not yet visible", "change": "move the card first (badge, then end time, then bar trim), then bring the notification 0.2s after the bar settles", "keep": "the 0.1s offsets between badge, end time and 15:00 row" },
+      { "where": "A 4.3s, hatched trim on the window bar", "problem": "the trimmed slice is a few pixels wide and is the real news", "change": "animate the bar's right edge shrinking with an ease-out over about 0.4s and keep the hatched slice visible for a second", "keep": "the amber accent on changed values" },
+      { "where": "A 11.6s, loop reset", "problem": "the whole card fades to blank and pops back", "change": "reset by crossfading only the changed values back, or hold the end state", "keep": "the 7s hold on the final state" },
+      { "where": "A whole clip, background", "problem": "the pastel gradient competes with a calm card", "change": "use a flat neutral background", "keep": "the card's soft shadow" }
+    ]
+  },
+  {
+    "trial": 4,
+    "stronger": "B",
+    "confidence": 4,
+    "scores": { "A": 6, "B": 8 },
+    "tells": [
+      "B is the same Stripe terminal and checkout localization: long read hold, in-place price roll, staggered panel",
+      "A animates a boat marker leg by leg along a passage from Lymington to Cowes while the place, clock, distance and speed readouts tick",
+      "A's readouts change on almost every frame while moving, so the numbers never sit still long enough to read until the waypoints",
+      "A's leg speed changes before the marker reaches the waypoint (5.0 to 6.4 kn around 3.4s, while the place still says Jack in the Basket)",
+      "A has a one-frame rendering glitch at about 3.7s where the land washes to blurry white",
+      "A's arrival at Cowes (about 9.9s) has no landing: the dot fills and stops, the speed updates a beat later"
+    ],
+    "memorable": { "A": "the route line drawing itself across the Solent", "B": "the price changing currency in place on the terminal" },
+    "corrections": [
+      { "where": "A 3.7s, map land layer", "problem": "the land washes to blurry white for a frame, a visible glitch", "change": "fix the tile or layer repaint so the map never redraws during the animation", "keep": "the map art and labels" },
+      { "where": "A 3.4s to 4.0s, Leg speed and place readouts", "problem": "speed switches to the next leg while the place label still names the previous waypoint", "change": "update place, time and speed together the moment the marker reaches the waypoint, 0.1s apart left to right", "keep": "the pause at each waypoint" },
+      { "where": "A 0.5s to 9.9s, clock and distance readouts", "problem": "numbers tick every frame while the marker moves, unreadable and busy", "change": "freeze readouts during travel and roll them to the new value at each waypoint, or tick in larger steps", "keep": "the monotonic distance values" },
+      { "where": "A 9.9s, arrival at Cowes", "problem": "the climax is the same as every other waypoint and the speed updates late", "change": "ease the marker into Cowes, give the destination a single emphasis, and hold 'Arrive Cowes 10:10' at least 2.5s", "keep": "the solid route line replacing the dashed plan" }
+    ]
+  }
+]

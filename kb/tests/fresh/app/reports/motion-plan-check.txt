@@ -1,0 +1,6 @@
+motion-plan-check kb/tests/fresh/app/plan.html at 1440px
+  animations 14 (reduce 10); ladder 100/200/600 ms
+  bands 3: reveal 600; press/hover 100; UI change 200
+  scenes none
+  staggers none; entrances 2 (2 masked)
+PASS: ladder, scene, stagger, travel and reduced motion meet FOUNDATIONS v0.5

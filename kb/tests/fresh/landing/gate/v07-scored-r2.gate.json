@@ -1,0 +1,412 @@
+{
+ "page": "kb/tests/fresh/landing/halyard.html",
+ "graded": "2026-10-20T18:29:00.725Z",
+ "rule": "median craft score within 1 of the exemplar, and a memorable moment named by most critics, in every trial",
+ "pass": false,
+ "critics": 3,
+ "rows": [
+  {
+   "trial": 1,
+   "kind": "hero",
+   "exemplar": "linear-hero-load",
+   "ours": "A",
+   "scoreOurs": 7,
+   "scoreExemplar": 6,
+   "gap": -1,
+   "memorableCount": 3,
+   "critics": 3,
+   "toldApart": 0,
+   "recognised": 3,
+   "per": [
+    {
+     "critic": "answers-1.json",
+     "stronger": "A",
+     "confidence": 2,
+     "toldApart": false,
+     "ours": 7,
+     "exemplar": 6,
+     "memorable": "the scan line sweeping the forecast and the sailable windows lighting up behind it",
+     "recognised": true,
+     "corrections": []
+    },
+    {
+     "critic": "answers-2.json",
+     "stronger": "A",
+     "confidence": 2,
+     "toldApart": false,
+     "ours": 6,
+     "exemplar": 6,
+     "memorable": "the scan line sweeping the forecast and turning the good wind hours amber behind it",
+     "recognised": true,
+     "corrections": []
+    },
+    {
+     "critic": "answers-3.json",
+     "stronger": "A",
+     "confidence": 2,
+     "toldApart": false,
+     "ours": 7,
+     "exemplar": 6,
+     "memorable": "the scrub line sweeping across the hours and the wind bars turning amber behind it",
+     "recognised": true,
+     "corrections": []
+    }
+   ],
+   "pass": true
+  },
+  {
+   "trial": 2,
+   "kind": "event",
+   "exemplar": "stripe-checkout-scene",
+   "ours": "A",
+   "scoreOurs": 6,
+   "scoreExemplar": 8,
+   "gap": 2,
+   "memorableCount": 3,
+   "critics": 3,
+   "toldApart": 3,
+   "recognised": 3,
+   "per": [
+    {
+     "critic": "answers-1.json",
+     "stronger": "B",
+     "confidence": 4,
+     "toldApart": true,
+     "ours": 6,
+     "exemplar": 8,
+     "memorable": "the scan line lighting up the windows",
+     "recognised": true,
+     "corrections": [
+      {
+       "where": "A 6.50s to 6.94s, the whole card",
+       "problem": "the loop resets by fading the entire card to a near blank frame, which reads as a cut and throws away the reader's place",
+       "change": "reset in place: roll the status back to 'Ready to check', fade the amber bars and windows out with the chart frame held still",
+       "keep": "the 6s hold on the finished plan before the reset"
+      },
+      {
+       "where": "A 9.50s to 10.50s, the proposed plan row",
+       "problem": "the plan appears by growing the card taller, so the layout shifts under the windows just as they land",
+       "change": "reserve the plan row's height from the start (placeholder or dimmed values) and fill it in place",
+       "keep": "plan arriving after the windows, about 0.5s later"
+      },
+      {
+       "where": "A 7.00s to 7.80s, the cursor",
+       "problem": "cursor wanders across the chart for almost a second before the press, drawing the eye away from the chart",
+       "change": "start the cursor near the button and press within 0.4s of the reset settling",
+       "keep": "the visible press on 'Find windows' as the cause of everything after"
+      },
+      {
+       "where": "A 8.30s to 9.60s, scan line and wind bars",
+       "problem": "bars, stream, windows and status all change during the sweep, so no single thing owns the screen",
+       "change": "let the scan own the sweep, then land the out window, then the back window, about 0.1s apart",
+       "keep": "the scan line moving left to right in time"
+      }
+     ]
+    },
+    {
+     "critic": "answers-2.json",
+     "stronger": "B",
+     "confidence": 5,
+     "toldApart": true,
+     "ours": 6,
+     "exemplar": 9,
+     "memorable": "the scan line turning wind bars amber",
+     "recognised": true,
+     "corrections": [
+      {
+       "where": "A 6.40s to 6.95s, whole card",
+       "problem": "loop resets by fading the entire card to near white and back, a cut disguised as a dissolve",
+       "change": "reset in place: amber bars fade to gray, windows retract, status rolls back to 'Ready to check', staggered 0.1s, about 0.5s total",
+       "keep": "the cursor then travelling to Find windows"
+      },
+      {
+       "where": "A 8.40s to 9.60s, scan and results",
+       "problem": "scan, bar fill, Out window, Back window and status all change within about 1.2s so no single change is watched",
+       "change": "let the scan finish first, then land Out, then Back 0.1s later, then roll the status to '2 windows found', and slow the scan to about 1.5s",
+       "keep": "bars turning amber exactly as the scan line passes them"
+      },
+      {
+       "where": "A 7.70s, Find windows button",
+       "problem": "the cursor is tiny and the press has little feedback before the button text swaps",
+       "change": "add a clear press state (scale 0.97 for 100ms) and hold 'Checking' for the length of the scan",
+       "keep": "the button label changing in place rather than a spinner"
+      }
+     ]
+    },
+    {
+     "critic": "answers-3.json",
+     "stronger": "B",
+     "confidence": 4,
+     "toldApart": true,
+     "ours": 6,
+     "exemplar": 8,
+     "memorable": "the scrub line passing over the hours as the bars turn amber",
+     "recognised": true,
+     "corrections": [
+      {
+       "where": "A 6.60s to 6.90s, whole card",
+       "problem": "the card washes out to a near-blank frame and rebuilds, which reads as a cut and throws away the result",
+       "change": "reset in place: clear the windows and plan rows (0.2s, bottom up) and return bars to grey while the card frame, chart and labels stay put",
+       "keep": "the 6s hold on the finished result before the reset"
+      },
+      {
+       "where": "A 7.00s to 7.70s, cursor",
+       "problem": "cursor drifts in from the lower right for about 0.7s before the click; the eye follows the arrow, not the product",
+       "change": "start the cursor near the button and click by 7.3s, or drop the cursor and press the button itself",
+       "keep": "the button press as the trigger for the sweep"
+      },
+      {
+       "where": "A 8.50s to 9.50s, scrub line and status",
+       "problem": "status label, button label, sweep line and bar colours all change at once; no single owner",
+       "change": "let the sweep own the screen; change the status label 0.1s after the sweep ends, not during it",
+       "keep": "the bars turning amber as the line passes them"
+      },
+      {
+       "where": "A 9.50s to 10.50s, Out, Back and plan rows",
+       "problem": "windows and the plan row arrive within about 1s of each other, so the plan times are read while windows are still landing",
+       "change": "hold the found windows 1s before the plan row comes in, rows offset by 0.1s",
+       "keep": "the in-place 'Not checked' to 'Leave 07:33 to 09:30' change"
+      }
+     ]
+    }
+   ],
+   "pass": false
+  },
+  {
+   "trial": 3,
+   "kind": "swap",
+   "exemplar": "stripe-checkout-scene",
+   "ours": "B",
+   "scoreOurs": 7,
+   "scoreExemplar": 8,
+   "gap": 1,
+   "memorableCount": 3,
+   "critics": 3,
+   "toldApart": 3,
+   "recognised": 3,
+   "per": [
+    {
+     "critic": "answers-1.json",
+     "stronger": "A",
+     "confidence": 4,
+     "toldApart": true,
+     "ours": 7,
+     "exemplar": 8,
+     "memorable": "the window end time rolling back and a hatched slice appearing on the bar",
+     "recognised": true,
+     "corrections": [
+      {
+       "where": "B 0.00s to 0.86s, the 'before' state",
+       "problem": "the old forecast, window end 13:45 and 'Plan saved' are visible for under a second, so the viewer never reads what is about to change",
+       "change": "hold the before state at least 2.5s, ideally with the 13:45 end time in a resting focus",
+       "keep": "the in-place digit rolls and the 0.1s cascade"
+      },
+      {
+       "where": "B 1.06s, the window bar",
+       "problem": "the hatched slice is about 6px wide and is the actual news, but it is the smallest thing that moves",
+       "change": "animate the window's right edge retracting from 13:45 to 13:20 over 0.4s with a landing ease, leaving the hatch behind",
+       "keep": "the hatch pattern as the record of the lost time"
+      },
+      {
+       "where": "B 1.16s, the notification",
+       "problem": "the old notification empties to a blank card before the new text appears, a visible gap",
+       "change": "cross the texts in place (old out up, new in from below) with no empty frame",
+       "keep": "the notification arriving last as the explanation"
+      },
+      {
+       "where": "B 1.40s to 12.00s, whole clip",
+       "problem": "everything is over by 1.4s and the remaining 10s are static, so the climax is crammed at the start",
+       "change": "place the change after a 2.5s read and hold the result about 4s, then loop",
+       "keep": "the long readable hold on the explanatory notification"
+      }
+     ]
+    },
+    {
+     "critic": "answers-2.json",
+     "stronger": "A",
+     "confidence": 4,
+     "toldApart": true,
+     "ours": 7,
+     "exemplar": 9,
+     "memorable": "the return window shrinking and leaving a hatched sliver where the lost 25 minutes were",
+     "recognised": true,
+     "corrections": [
+      {
+       "where": "B 1.10s to 1.30s, the notification",
+       "problem": "old message disappears and the card sits empty before the new one fades in",
+       "change": "cross-roll the text in place, or slide the new notification over the old with no empty frame",
+       "keep": "the notification arriving last, after the window has moved"
+      },
+      {
+       "where": "B 0.80s to 1.20s, forecast label, window time, bar and 15:25 row",
+       "problem": "four changes land in about 0.4s, faster than they can be followed",
+       "change": "spread the chain over about 1.2s: forecast label, pause 0.3s, window bar shrink, then the Leave time and the 15:00 row 0.1s apart",
+       "keep": "the order cause first (new forecast) then effect (window shortens)"
+      },
+      {
+       "where": "B 0.50s, Forecast Fri 18:00 tag",
+       "problem": "the highlight that signals a new forecast is faint and brief",
+       "change": "hold the highlighted tag 0.4s before the time rolls so the viewer knows why the window moves",
+       "keep": "the amber tint as the only accent besides the brand pink"
+      }
+     ]
+    },
+    {
+     "critic": "answers-3.json",
+     "stronger": "A",
+     "confidence": 3,
+     "toldApart": true,
+     "ours": 7,
+     "exemplar": 8,
+     "memorable": "the window bar shrinking and its lost slice turning hatched",
+     "recognised": true,
+     "corrections": [
+      {
+       "where": "B 0.86s to 1.46s, cause and effect order",
+       "problem": "the data changes first and the notification that explains it arrives last, so the viewer sees numbers move with no reason, then reads the reason",
+       "change": "land the 'Back window moved' notification first, hold it 1s, then roll the forecast label, the end time and the bar in that order",
+       "keep": "the vertical digit rolls and the hatched lost slice"
+      },
+      {
+       "where": "B 1.16s, notification card",
+       "problem": "the card blanks to empty white for a frame before the new message fades in: a cut inside a card",
+       "change": "crossfade the old text out and the new text in with 0.1s overlap, card never empty",
+       "keep": "the card's position and size"
+      },
+      {
+       "where": "B 0.86s to 1.10s, label, time, bar and rows",
+       "problem": "four related changes fire within about 0.25s, too fast to follow the chain from forecast to window",
+       "change": "space them about 0.15s apart and give the bar shrink 0.4s with an ease-out that lands",
+       "keep": "everything changing in place, no layout shift"
+      },
+      {
+       "where": "B 1.50s to 12.00s, whole card",
+       "problem": "about 10.5s of static hold; nothing points the eye to the new 13:20 or the 'Your 12:30 start still works' line",
+       "change": "after 1.5s of hold, briefly highlight the 12:30 start on the bar to answer 'am I still OK', then rest",
+       "keep": "the long hold on readable text"
+      }
+     ]
+    }
+   ],
+   "pass": true
+  },
+  {
+   "trial": 4,
+   "kind": "scene",
+   "exemplar": "stripe-checkout-scene",
+   "ours": "A",
+   "scoreOurs": 6,
+   "scoreExemplar": 8,
+   "gap": 2,
+   "memorableCount": 3,
+   "critics": 3,
+   "toldApart": 3,
+   "recognised": 3,
+   "per": [
+    {
+     "critic": "answers-1.json",
+     "stronger": "B",
+     "confidence": 4,
+     "toldApart": true,
+     "ours": 7,
+     "exemplar": 8,
+     "memorable": "the boat drawing the route to Cowes as the distance ticks up",
+     "recognised": true,
+     "corrections": [
+      {
+       "where": "A 9.88s to 10.18s, the whole card",
+       "problem": "the reset fades the card to a fully blank frame, a cut that loses the map and the reader's place",
+       "change": "keep the map still and retract the route line back to Lymington in place, resetting the readout with a roll",
+       "keep": "the long hold on the arrival before the reset"
+      },
+      {
+       "where": "A 1.50s and 3.40s, the readout values",
+       "problem": "values fade out and in, leaving a beat where the label is blank and the number is ghosted",
+       "change": "roll the digits in place (09:17 to 09:59, 4.6 to 9.2 nm) so the number is never absent",
+       "keep": "the label leading the value by about 0.1s"
+      },
+      {
+       "where": "A 0.80s to 1.40s, the leg line",
+       "problem": "the line and the dot move at near constant speed and stop at each waypoint without settling",
+       "change": "ease each leg out so the dot decelerates into the waypoint, with a small settle on arrival at Cowes as the climax",
+       "keep": "the leg-by-leg pacing of about 2s per leg"
+      },
+      {
+       "where": "A 3.90s, arrival at Cowes",
+       "problem": "arrival changes only the readout colour; the climax is no bigger than the waypoints before it",
+       "change": "mark arrival once: the Cowes pin fills and the 10:10 lands a beat after, with the rest held still",
+       "keep": "the magenta arrival time and the restraint of a single accent"
+      }
+     ]
+    },
+    {
+     "critic": "answers-2.json",
+     "stronger": "B",
+     "confidence": 5,
+     "toldApart": true,
+     "ours": 6,
+     "exemplar": 9,
+     "memorable": "the route drawing across the Solent waypoint by waypoint",
+     "recognised": true,
+     "corrections": [
+      {
+       "where": "A 9.88s to 10.18s, whole card",
+       "problem": "the card fades out to a blank frame and back, which reads as a cut",
+       "change": "reset in place: retract the solid route back to dashed in 0.5s while the stats roll down to 0.0, with no blank frame",
+       "keep": "the dashed route and Leave 08:30 start state"
+      },
+      {
+       "where": "A 1.40s to 2.00s, footer stats",
+       "problem": "the waypoint label fades to nothing before the new one appears, so the readout blinks",
+       "change": "roll the label, time, distance and speed in place, 0.05s apart, no empty state",
+       "keep": "the stats updating exactly when the dot reaches each waypoint"
+      },
+      {
+       "where": "A 3.50s to 4.00s, arrival at Cowes",
+       "problem": "arrival is the climax but looks the same as the earlier waypoints",
+       "change": "give Arrive Cowes 10:10 a single settle (dot scale 1.0 to 1.3 to 1.0 over 300ms, time in brand color) and hold it 3s",
+       "keep": "the restrained map with no decorative motion"
+      }
+     ]
+    },
+    {
+     "critic": "answers-3.json",
+     "stronger": "B",
+     "confidence": 4,
+     "toldApart": true,
+     "ours": 6,
+     "exemplar": 8,
+     "memorable": "the dot sailing the route as the distance and arrival time tick up",
+     "recognised": true,
+     "corrections": [
+      {
+       "where": "A 9.88s to 10.18s, whole card",
+       "problem": "card fades to a blank frame at 10.08s then reappears at the start state: a cut that drops the map and the result",
+       "change": "keep the map and labels on screen; retract the drawn route back to Lymington over 0.5s and roll the readout back to 08:30 in place",
+       "keep": "the 6s hold on 'Arrive Cowes 10:10'"
+      },
+      {
+       "where": "A 1.00s to 2.00s, readout under the map",
+       "problem": "the waypoint label and time cross-fade with both versions ghosted at 1.5s, and the readout changes while the dot is still moving",
+       "change": "roll the readout values vertically at the moment the dot reaches each waypoint, 0.1s after arrival",
+       "keep": "one readout row with three fixed columns"
+      },
+      {
+       "where": "A 0.50s to 3.50s, dot travel between waypoints",
+       "problem": "movement between waypoints looks constant speed and stops dead at each mark",
+       "change": "ease in and out per leg (about 0.8s per leg) with a short settle at each waypoint",
+       "keep": "the leg-by-leg order and the dashed line turning solid behind the dot"
+      },
+      {
+       "where": "A 2.00s to 3.50s, Gurnard to Cowes",
+       "problem": "the intermediate readout 'Gurnard 09:59' holds about 1.5s, short against three values to read",
+       "change": "hold each intermediate readout at least 2s, or show only the arrival readout and let the map carry the progress",
+       "keep": "the arrival time 10:10 in the accent colour"
+      }
+     ]
+    }
+   ],
+   "pass": false
+  }
+ ]
+}

@@ -1,0 +1,84 @@
+[
+  {
+    "trial": 1,
+    "stronger": "A",
+    "confidence": 2,
+    "scores": { "A": 7, "B": 6 },
+    "tells": [
+      "A is the Linear homepage hero (dark UI, 'product development system for teams and agents')",
+      "A runs a strict one-at-a-time order: headline blurs in 0.1 to 0.6s, subhead at about 1.0s, app screenshot rises 1.2 to 1.7s, agent panel last at about 2.5s, then holds still",
+      "A's headline is unreadable for its first 0.5s (blur plus low opacity), a generic blur-in rather than a product move",
+      "B tells a real product story in place: cursor presses Find windows at about 1.75s, a pink scan line sweeps the timeline 2.0 to 3.2s, wind bars turn amber behind it, '2 windows found' at about 3.5s, plan row with times at about 4.5s",
+      "B's button still reads 'Checking' from 3.5s to about 5.2s while the header already says '2 windows found': two contradictory states on screen at once",
+      "B's scan band is a wide pink wash over the whole chart, more decoration than information, and the plan row appears only 1.5s before the clip ends"
+    ],
+    "memorable": { "A": "the product screenshot settling under the headline after the text has finished", "B": "the scan line turning wind bars amber as it passes" },
+    "corrections": [
+      { "where": "B 3.5s to 5.2s, Find windows button", "problem": "button still says 'Checking' for about 1.7s after the header announces '2 windows found'", "change": "switch the button back to 'Find windows' in the same frame the header count lands, or 0.1s after it", "keep": "the header count rolling in place" },
+      { "where": "B 4.5s to 6.0s, proposed plan row", "problem": "the climax (leave 08:30, arrive 10:10, back 12:30, home 14:10) is on screen only about 1.5s before the clip ends", "change": "bring the plan in about 0.5s after the windows land and hold it at least 2.5s with nothing else moving", "keep": "the plan appearing in place under the Out and Back rows" },
+      { "where": "B 2.0s to 3.2s, scan sweep", "problem": "a wide pink gradient band washes over tide, stream and wind rows, competing with the amber bars it is revealing", "change": "reduce to a 1px line with no band, so the bars changing color are the only thing that draws the eye", "keep": "left to right order and roughly 1.2s duration" },
+      { "where": "B 1.5s to 1.75s, cursor and button", "problem": "the cursor sits on the button and the press reads as a color flip with no pressed state", "change": "add a 100ms pressed scale (0.97) before the label changes", "keep": "the cursor arriving before the scan starts" }
+    ]
+  },
+  {
+    "trial": 2,
+    "stronger": "B",
+    "confidence": 4,
+    "scores": { "A": 6, "B": 8 },
+    "tells": [
+      "B is the Stripe homepage payments section (phone terminal plus web checkout)",
+      "B holds the US checkout still for about 4.5s, then changes it in place: the phone's price rolls $5.46 to EUR 26.89 at about 4.7s and the web checkout rows roll to the German Cartsy store about 0.1 to 0.2s later, line by line top to bottom",
+      "B's change is the product's own capability (localized currency and payment methods) and every value lands and then holds for 6s+",
+      "A (same sailing planner card as trial 1) does its whole story in 1.0 to 3.9s, then sits completely static for about 8s",
+      "A shows 'Checking' on the button from 2.5s to 3.9s while the header already says '2 windows found'",
+      "B detail at 0.2s shows a hard cut from the page hero, which is capture, not the motion itself"
+    ],
+    "memorable": { "A": "wind bars turning amber behind the scan line", "B": "the phone price rolling from dollars to euros with the web checkout following a beat later" },
+    "corrections": [
+      { "where": "A 2.5s to 3.9s, Find windows button", "problem": "button reads 'Checking' while the header already reports '2 windows found'", "change": "resolve the button state in the same frame as the header count", "keep": "the count changing in place in the header" },
+      { "where": "A 4.0s to 12.0s, whole card", "problem": "about 8s of nothing after a 3s story; the pacing is front loaded and the climax gets no build", "change": "slow the sweep to about 1.6s, land windows, wait 0.6s, then reveal the plan, and loop after a 3s hold", "keep": "the order: press, scan, windows, plan" },
+      { "where": "A 1.0s to 2.5s, scan band", "problem": "a broad pink wash moves across every row at once and decorates rather than informs", "change": "replace with a thin line and let only the amber bars and the Out and Back blocks change", "keep": "left to right direction" },
+      { "where": "A 2.0s to 2.5s, Out and Back blocks", "problem": "both outlined windows appear while the scan is still running, so two things own the screen", "change": "draw the Out window when the scan passes it and the Back window 0.1s after the scan finishes", "keep": "the pink outline treatment of the windows" }
+    ]
+  },
+  {
+    "trial": 3,
+    "stronger": "B",
+    "confidence": 3,
+    "scores": { "A": 7, "B": 8 },
+    "tells": [
+      "B is the Stripe homepage payments section: in-place currency and locale roll on phone then web, about 0.1 to 0.2s apart, long holds either side",
+      "A has a good causal chain: 'Plan saved' notification at 1.5s, replaced at about 4.0s by 'Back window moved', then header to 'Forecast Fri 21:00' (amber), window end time rolls 13:45 to 13:20, the box trims with a hatched sliver, row time 15:25 to 15:00, offsets about 0.1s each",
+      "A's hatched 25 minute sliver fades out by about 5.0s, so the evidence of what changed disappears before the reader finds it",
+      "A crossfades the two notifications through a near empty frame (about 3.9s), and the notification change happens far from where the eye is when the card updates",
+      "A holds the final state about 7s, then fades the whole card to blank at 11.6s to loop"
+    ],
+    "memorable": { "A": "the back window trimming 25 minutes with a hatched sliver as the forecast time turns amber", "B": "dollars rolling to euros on the phone, then the web checkout following" },
+    "corrections": [
+      { "where": "A 4.4s to 5.0s, back window box", "problem": "the hatched 25 minute sliver fades out within about 0.6s, so the change is unreadable after the fact", "change": "keep the trimmed sliver hatched (in the muted amber) for the rest of the hold", "keep": "the box shrinking from the right edge in place" },
+      { "where": "A 4.0s to 4.6s, notification versus card", "problem": "the new notification and four card values all change within 0.6s at opposite corners, so nothing owns the screen", "change": "let the notification land first and hold 1.0s, then run the card cascade (header, time, box, row) at 0.1s offsets", "keep": "the 0.1s offsets inside the card cascade" },
+      { "where": "A 3.8s to 4.1s, notification swap", "problem": "old toast fades out before the new one fades in, leaving an empty slot", "change": "slide the new toast in over the old one, or replace its contents in place", "keep": "the toast position bottom right" },
+      { "where": "A 1.5s to 3.9s, 'Plan saved' toast", "problem": "two lines of dense body text held about 2.4s, short for reading aloud", "change": "hold at least 3.5s or cut the body to one line", "keep": "the plain, specific wording" }
+    ]
+  },
+  {
+    "trial": 4,
+    "stronger": "B",
+    "confidence": 3,
+    "scores": { "A": 6, "B": 8 },
+    "tells": [
+      "B is the Stripe homepage payments section, same in-place locale roll as trials 2 and 3",
+      "A animates a boat dot along a Solent route with distance, time and leg speed ticking, pausing at waypoints (Jack in the Basket about 1.0 to 2.8s, Hamstead Ledge about 4.0 to 5.7s, Gurnard about 8.0 to 9.4s), arriving Cowes 10:10 at about 9.9s",
+      "A shows a one frame map rendering flash at about 3.7s: tiles wash white like a fog smear",
+      "A changes leg speed 5.0 to 6.4 kn at about 3.4s while the waypoint label still says Jack in the Basket, so the label lags the number by about 0.6s",
+      "A keeps the time and distance digits ticking continuously between waypoints, so the bottom bar is never still while the dot moves"
+    ],
+    "memorable": { "A": "the dot pausing at each waypoint while the readout settles", "B": "the phone price rolling from dollars to euros" },
+    "corrections": [
+      { "where": "A 3.7s, map", "problem": "one frame flash where the map tiles wash white", "change": "preload or keep the map layer static so it never rerenders during the move", "keep": "the route and labels" },
+      { "where": "A 3.4s to 4.0s, footer readout", "problem": "leg speed changes to 6.4 kn before the waypoint label changes from Jack in the Basket to Hamstead Ledge, so the readout contradicts itself", "change": "update label, time and leg speed together on arrival, label first and numbers 0.1s after", "keep": "the rolling digit transitions" },
+      { "where": "A 0.0s to 9.9s, readout between waypoints", "problem": "time and distance tick every frame while the dot moves, so the eye is split between map and footer", "change": "let the dot move alone and roll the numbers only when it arrives at each waypoint", "keep": "the pauses of about 1.5s at waypoints" },
+      { "where": "A 9.9s to 12.0s, arrival", "problem": "arrival at Cowes is the climax but gets the same treatment as every other waypoint and only about 2s of hold", "change": "give arrival a distinct landing (dot settles with a slight overshoot, 'Arrive Cowes 10:10' emphasized) and hold 3s", "keep": "the full route line staying drawn" }
+    ]
+  }
+]

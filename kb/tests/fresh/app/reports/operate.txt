@@ -1,0 +1,134 @@
+ok   default: 11:50 / 16:44 / home 17:31
+ok   default: "25 min before sunset (17:56)"
+ok   default count "3 warnings, 2 affect your plan"
+ok   default windows: "In the out window 10:05 to 12:35" / "In the back window 16:15 to 17:10"
+   warnings: Wind against tide, 13:20 to 15:25 | Clear of your planyou are ashore at Yarmouth
+             Gusts above 20 kn, 16:00 to 19:00 | Affects your return16:44 to 17:31: reef before you leave Yarmouth
+             Home 25 min before sunset | Affects your returnhome 17:31, 25 min before sunset
+ok   default: home 17:31 = model 17:31
+ok   default: slider values 710/1004 match facts 710/1004
+ok   default: legs "Each way: 44 min out, 47 min back"
+ok   default: waypoint table ends agree (11:50..12:34, 16:44..17:31)
+ok   default: lane label "Back 16:44 to 17:31"
+ok   default: save bar "Out 11:50 · Back 16:44Home 17:31, 2 cautions"
+ok   default: home note "25 min before sunset (17:56)" (margin 25)
+ok   default: answer names the times
+ok   default: count "3 warnings, 2 affect your plan"
+ok   mouse back +20: home 17:50 = model 17:50
+ok   mouse back +20: slider values 710/1024 match facts 710/1024
+ok   mouse back +20: legs "Each way: 44 min out, 46 min back"
+ok   mouse back +20: waypoint table ends agree (11:50..12:34, 17:04..17:50)
+ok   mouse back +20: lane label "Back 17:04 to 17:50"
+ok   mouse back +20: save bar "Out 11:50 · Back 17:04Home 17:50, 2 cautions"
+ok   mouse back +20: home note "6 min before sunset (17:56)" (margin 6)
+ok   mouse back +20: answer names the times
+ok   mouse back +20: count "3 warnings, 2 affect your plan"
+ok   back now 17:04
+    Home 6 min before sunset | Affects your returnhome 17:50, 6 min before sunset
+ok   Enter+Space out -20: 11:30
+ok   enter/space: home 17:50 = model 17:50
+ok   enter/space: slider values 690/1024 match facts 690/1024
+ok   enter/space: legs "Each way: 45 min out, 46 min back"
+ok   enter/space: waypoint table ends agree (11:30..12:15, 17:04..17:50)
+ok   enter/space: lane label "Back 17:04 to 17:50"
+ok   enter/space: save bar "Out 11:30 · Back 17:04Home 17:50, 2 cautions"
+ok   enter/space: home note "6 min before sunset (17:56)" (margin 6)
+ok   enter/space: answer names the times
+ok   enter/space: count "3 warnings, 2 affect your plan"
+ok   ArrowLeft x6 back: 16:34
+ok   arrows: home 17:22 = model 17:22
+ok   arrows: slider values 690/994 match facts 690/994
+ok   arrows: legs "Each way: 45 min out, 48 min back"
+ok   arrows: waypoint table ends agree (11:30..12:15, 16:34..17:22)
+ok   arrows: lane label "Back 16:34 to 17:22"
+ok   arrows: save bar "Out 11:30 · Back 16:34Home 17:22, 1 caution"
+ok   arrows: home note "34 min before sunset (17:56)" (margin 34)
+ok   arrows: answer names the times
+ok   arrows: count "3 warnings, 1 affects your plan"
+ok   Shift+Right: 17:04
+ok   PageDown: 16:04
+ok   pagedown: home 16:54 = model 16:54
+ok   pagedown: slider values 690/964 match facts 690/964
+ok   pagedown: legs "Each way: 45 min out, 50 min back"
+ok   pagedown: waypoint table ends agree (11:30..12:15, 16:04..16:54)
+ok   pagedown: lane label "Back 16:04 to 16:54"
+ok   pagedown: save bar "Out 11:30 · Back 16:04Home 16:54, outside limits"
+ok   pagedown: home note "1 h 02 min before sunset (17:56)" (margin 62)
+ok   pagedown: answer names the times
+ok   pagedown: count "3 warnings, 1 affects your plan"
+    16:04 back: Outside the back window: stream against you | Outside Wren’s limits | Wind against tide, 13:20 to 15:25 | Clear of your planyou are ashore at Yarmouth
+    Home -> 12:45 Outside Wren’s limits
+ok   home key: home 13:55 = model 13:55
+ok   home key: slider values 690/765 match facts 690/765
+ok   home key: legs "Each way: 45 min out, 70 min back"
+ok   home key: waypoint table ends agree (11:30..12:15, 12:45..13:55)
+ok   home key: lane label "Back 12:45 to 13:55"
+ok   home key: save bar "Out 11:30 · Back 12:45Home 13:55, outside limits"
+ok   home key: home note "4 h 01 min before sunset (17:56)" (margin 241)
+ok   home key: answer names the times
+ok   home key: count "3 warnings, 1 affects your plan"
+    End -> 19:00 1 h 48 min after sunset (17:56) Outside Wren’s limits
+ok   end key: home 19:44 = model 19:44
+ok   end key: slider values 690/1140 match facts 690/1140
+ok   end key: legs "Each way: 45 min out, 44 min back"
+ok   end key: waypoint table ends agree (11:30..12:15, 19:00..19:44)
+ok   end key: lane label "Back 19:00 to 19:44"
+ok   end key: save bar "Out 11:30 · Back 19:00Home 19:44, outside limits"
+ok   end key: home note "1 h 48 min after sunset (17:56)" (margin -108)
+ok   end key: answer names the times
+ok   end key: count "3 warnings, 1 affects your plan"
+ok   out End clamps: out 17:20 arr 18:30 back 19:00
+ok   out end: home 19:44 = model 19:44
+ok   out end: slider values 1040/1140 match facts 1040/1140
+ok   out end: legs "Each way: 70 min out, 44 min back"
+ok   out end: waypoint table ends agree (17:20..18:30, 19:00..19:44)
+ok   out end: lane label "Back 19:00 to 19:44"
+ok   out end: save bar "Out 17:20 · Back 19:00Home 19:44, outside limits"
+ok   out end: home note "1 h 48 min after sunset (17:56)" (margin -108)
+ok   out end: answer names the times
+ok   out end: count "3 warnings, 2 affect your plan"
+ok   mouse drag back to 16:00: 16:00
+ok   drag runs no animation: 0 anims, data-anim=false
+ok   drag 16:00: home 16:51 = model 16:51
+ok   drag 16:00: slider values 710/960 match facts 710/960
+ok   drag 16:00: legs "Each way: 44 min out, 51 min back"
+ok   drag 16:00: waypoint table ends agree (11:50..12:34, 16:00..16:51)
+ok   drag 16:00: lane label "Back 16:00 to 16:51"
+ok   drag 16:00: save bar "Out 11:50 · Back 16:00Home 16:51, outside limits"
+ok   drag 16:00: home note "1 h 05 min before sunset (17:56)" (margin 65)
+ok   drag 16:00: answer names the times
+ok   drag 16:00: count "3 warnings, 1 affects your plan"
+    16:00 back: Outside Wren’s limits | Wind against tide, 13:20 to 15:25 | Clear of your planyou are ashore at Yarmouth || Gusts above 20 kn, 16:00 to 19:00 | Affects your return16:00 to 16:51: reef before you leave Yarmouth || Home 1 h 05 min before sunset | Clear of your planhome 16:51, 1 h 05 min before sunset
+ok   save shows busy
+ok   saved: {"btn":"Plan saved","notice":"Plan saved. Find it in Saved plans.Still open: return outside its window: stream against you; gusts to 23 kn on the return.","usage":"2 of 3","toast":false} ?state=saved
+ok   edit after save returns to unsaved: {"btn":"Save plan","notice":true,"usage":"2 of 3"}
+ok   hourly table opens
+ok   hover warning 2 highlights span 2
+ok   crosshair readout: 14:00Tide1.0 mStreamW 1.9 knWind13 kn SWGust18 knLeave LymingtonWind against tideLeave YarmouthStream against
+ok   retry flow ["?state=loading","true"] -> ["","Inside Wren’s limits, 2 cautions"]
+ok   tap Menu opens: true,false,Close
+ok   tap Close closes
+ok   tap out +10: 12:00
+ok   touch step: home 17:31 = model 17:31
+ok   touch step: slider values 720/1004 match facts 720/1004
+ok   touch step: legs "Each way: 44 min out, 47 min back"
+ok   touch step: waypoint table ends agree (12:00..12:44, 16:44..17:31)
+ok   touch step: lane label "Back 16:44 to 17:31"
+ok   touch step: save bar "Out 12:00 · Back 16:44Home 17:31, 2 cautions"
+ok   touch step: home note "25 min before sunset (17:56)" (margin 25)
+ok   touch step: answer names the times
+ok   touch step: count "3 warnings, 2 affect your plan"
+ok   touch drag back to 17:00: 17:00
+ok   touch drag: home 17:46 = model 17:46
+ok   touch drag: slider values 720/1020 match facts 720/1020
+ok   touch drag: legs "Each way: 44 min out, 46 min back"
+ok   touch drag: waypoint table ends agree (12:00..12:44, 17:00..17:46)
+ok   touch drag: lane label "Back 17:00 to 17:46"
+ok   touch drag: save bar "Out 12:00 · Back 17:00Home 17:46, 2 cautions"
+ok   touch drag: home note "10 min before sunset (17:56)" (margin 10)
+ok   touch drag: answer names the times
+ok   touch drag: count "3 warnings, 2 affect your plan"
+    17:00 back: 10 min before sunset (17:56) Inside Wren’s limits, 2 cautions | Home 10 min before sunset | Affects your returnhome 17:46, 10 min before sunset
+ok   tap Save plan in save bar
+
+123 checks, 0 failed

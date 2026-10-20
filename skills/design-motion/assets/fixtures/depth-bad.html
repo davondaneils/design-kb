@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Depth tier, failing fixture</title>
+<meta name="description" content="Failing fixture for motion-plan-check depth: a blocking library script in the head and a canvas that keeps drawing under reduced motion.">
+<script src="https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.min.js"></script>
+<style>body { margin: 0; font: 16px/1.5 system-ui, sans-serif; } main { padding: 48px 16px; } canvas { display: block; inline-size: 320px; block-size: 320px; }</style>
+</head>
+<body>
+<main>
+  <h1>Depth tier, failing fixture</h1>
+  <canvas width="320" height="320" aria-hidden="true"></canvas>
+</main>
+<script>
+// Ignores prefers-reduced-motion on purpose: motion-plan-check must fail this canvas (reference 10, fundamental 4).
+const c = document.querySelector('canvas'), g = c.getContext('2d'); let t = 0;
+(function draw() { t += 0.05; g.clearRect(0, 0, 320, 320); g.beginPath(); g.arc(160 + Math.cos(t) * 80, 160, 24, 0, 7); g.fill(); requestAnimationFrame(draw); })();
+</script>
+</body>
+</html>

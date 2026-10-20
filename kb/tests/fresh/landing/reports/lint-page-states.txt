@@ -1,0 +1,300 @@
+
+Fundamentals lint: halyard.html  ->  PASS (0 fail, 11 warn)
+
+  pass  axe
+  pass  overlay
+  pass  targets  (2 warn)
+        ! touch target under 44x44 at 390px  [div > ul > li > a]
+        ! touch target under 44x44 at 390px  [div > ul > li > a]
+  pass  measure
+  pass  type-scale  (1 warn)
+        ! fluid display size 104px at 1440px (clamp() present)  [#hero-title]
+  pass  spacing
+  pass  overflow
+  pass  heading-wrap  (3 warn)
+        ! heading ends on a one-word line at 390px ("What sailors say")  [#proof-title]
+        ! heading ends on a one-word line at 1440px ("What sailors say")  [#proof-title]
+        ! heading ends on a one-word line at 1440px ("Where it works. Poole to Chichester Harbour.")  [#cover-title]
+  pass  svg-overlap  (4 warn)
+        ! text "Find windows" partly covered by #hero-scene > span.shot-cursor > svg (20x5px) at 390px  [span.find > span.swap.roll > span.swap-track > span]
+        ! text "Plan saved." partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 390px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
+        ! text "Find windows" partly covered by #hero-scene > span.shot-cursor > svg (20x5px) at 1440px  [span.find > span.swap.roll > span.swap-track > span]
+        ! text "Plan saved." partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 1440px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
+  pass  reading-size
+  pass  selected-state
+  pass  primary
+  pass  radius
+  pass  color-scheme
+  pass  typography
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke
+  pass  weight
+  pass  occlusion
+  pass  squash
+  pass  sticky-header
+  pass  run-together
+  pass  word-break
+  pass  grid-edge
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  phone-facts
+  pass  dead-control
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback  (1 warn)
+        ! layout moves 54px at 1440px when the web fonts fail (worst: #route); add metric fallbacks (size-adjust, ascent-override). Line count changed in 2 elements: #how-title "How a window is found. Three tests, ever" 2 to 3 lines; div.sec-head > div.billing-wrap > div.billing > button "Yearly Save £20.88" 2 to 1 lines (one element near a wrap point is a copy fix; many is a font metrics fix)  [#route]
+  pass  motion
+
+  JSON: kb/tests/fresh/landing/halyard.lint.json
+
+Fundamentals lint: halyard.html?state=yearly  ->  PASS (0 fail, 11 warn)
+
+  pass  axe
+  pass  overlay
+  pass  targets  (2 warn)
+        ! touch target under 44x44 at 390px  [div > ul > li > a]
+        ! touch target under 44x44 at 390px  [div > ul > li > a]
+  pass  measure
+  pass  type-scale  (1 warn)
+        ! fluid display size 104px at 1440px (clamp() present)  [#hero-title]
+  pass  spacing
+  pass  overflow
+  pass  heading-wrap  (3 warn)
+        ! heading ends on a one-word line at 390px ("What sailors say")  [#proof-title]
+        ! heading ends on a one-word line at 1440px ("What sailors say")  [#proof-title]
+        ! heading ends on a one-word line at 1440px ("Where it works. Poole to Chichester Harbour.")  [#cover-title]
+  pass  svg-overlap  (4 warn)
+        ! text "Find windows" partly covered by #hero-scene > span.shot-cursor > svg (20x5px) at 390px  [span.find > span.swap.roll > span.swap-track > span]
+        ! text "Plan saved." partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 390px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
+        ! text "18:00" partly covered by #hero-scene > span.shot-cursor > svg (6x11px) at 1440px  [div.app__plot > div.plot > div.axis > span]
+        ! text "Plan saved." partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 1440px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
+  pass  reading-size
+  pass  selected-state
+  pass  primary
+  pass  radius
+  pass  color-scheme
+  pass  typography
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke
+  pass  weight
+  pass  occlusion
+  pass  squash
+  pass  sticky-header
+  pass  run-together
+  pass  word-break
+  pass  grid-edge
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  phone-facts
+  pass  dead-control
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback  (1 warn)
+        ! layout moves 54px at 1440px when the web fonts fail (worst: #route); add metric fallbacks (size-adjust, ascent-override). Line count changed in 2 elements: #how-title "How a window is found. Three tests, ever" 2 to 3 lines; div.sec-head > div.billing-wrap > div.billing > button "Yearly Save £20.88" 2 to 1 lines (one element near a wrap point is a copy fix; many is a font metrics fix)  [#route]
+  pass  motion
+
+  JSON: kb/tests/fresh/landing/halyard.state-yearly.lint.json
+
+Fundamentals lint: halyard.html?state=menu  ->  PASS (0 fail, 11 warn)
+
+  pass  axe
+  pass  overlay
+  pass  targets  (2 warn)
+        ! touch target under 44x44 at 390px  [div > ul > li > a]
+        ! touch target under 44x44 at 390px  [div > ul > li > a]
+  pass  measure
+  pass  type-scale  (1 warn)
+        ! fluid display size 104px at 1440px (clamp() present)  [#hero-title]
+  pass  spacing
+  pass  overflow
+  pass  heading-wrap  (3 warn)
+        ! heading ends on a one-word line at 390px ("What sailors say")  [#proof-title]
+        ! heading ends on a one-word line at 1440px ("What sailors say")  [#proof-title]
+        ! heading ends on a one-word line at 1440px ("Where it works. Poole to Chichester Harbour.")  [#cover-title]
+  pass  svg-overlap  (4 warn)
+        ! text "Find windows" partly covered by #hero-scene > span.shot-cursor > svg (20x5px) at 390px  [span.find > span.swap.roll > span.swap-track > span]
+        ! text "Plan saved." partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 390px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
+        ! text "18:00" partly covered by #hero-scene > span.shot-cursor > svg (6x11px) at 1440px  [div.app__plot > div.plot > div.axis > span]
+        ! text "Plan saved." partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 1440px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
+  pass  reading-size
+  pass  selected-state
+  pass  primary
+  pass  radius
+  pass  color-scheme
+  pass  typography
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke
+  pass  weight
+  pass  occlusion
+  pass  squash
+  pass  sticky-header
+  pass  run-together
+  pass  word-break
+  pass  grid-edge
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  phone-facts
+  pass  dead-control
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback  (1 warn)
+        ! layout moves 54px at 1440px when the web fonts fail (worst: #route); add metric fallbacks (size-adjust, ascent-override). Line count changed in 2 elements: #how-title "How a window is found. Three tests, ever" 2 to 3 lines; div.sec-head > div.billing-wrap > div.billing > button "Yearly Save £20.88" 2 to 1 lines (one element near a wrap point is a copy fix; many is a font metrics fix)  [#route]
+  pass  motion
+
+  JSON: kb/tests/fresh/landing/halyard.state-menu.lint.json
+
+Fundamentals lint: halyard.html?state=faq  ->  PASS (0 fail, 10 warn)
+
+  pass  axe
+  pass  overlay
+  pass  targets  (2 warn)
+        ! touch target under 44x44 at 390px  [div > ul > li > a]
+        ! touch target under 44x44 at 390px  [div > ul > li > a]
+  pass  measure
+  pass  type-scale  (1 warn)
+        ! fluid display size 104px at 1440px (clamp() present)  [#hero-title]
+  pass  spacing
+  pass  overflow
+  pass  heading-wrap  (3 warn)
+        ! heading ends on a one-word line at 390px ("What sailors say")  [#proof-title]
+        ! heading ends on a one-word line at 1440px ("What sailors say")  [#proof-title]
+        ! heading ends on a one-word line at 1440px ("Where it works. Poole to Chichester Harbour.")  [#cover-title]
+  pass  svg-overlap  (3 warn)
+        ! text "Find windows" partly covered by #hero-scene > span.shot-cursor > svg (20x5px) at 390px  [span.find > span.swap.roll > span.swap-track > span]
+        ! text "Plan saved." partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 390px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
+        ! text "Plan saved." partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 1440px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
+  pass  reading-size
+  pass  selected-state
+  pass  primary
+  pass  radius
+  pass  color-scheme
+  pass  typography
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke
+  pass  weight
+  pass  occlusion
+  pass  squash
+  pass  sticky-header
+  pass  run-together
+  pass  word-break
+  pass  grid-edge
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  phone-facts
+  pass  dead-control
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback  (1 warn)
+        ! layout moves 54px at 1440px when the web fonts fail (worst: #route); add metric fallbacks (size-adjust, ascent-override). Line count changed in 2 elements: #how-title "How a window is found. Three tests, ever" 2 to 3 lines; div.sec-head > div.billing-wrap > div.billing > button "Yearly Save £20.88" 2 to 1 lines (one element near a wrap point is a copy fix; many is a font metrics fix)  [#route]
+  pass  motion
+
+  JSON: kb/tests/fresh/landing/halyard.state-faq.lint.json
+
+Fundamentals lint: halyard.html?state=paused  ->  PASS (0 fail, 11 warn)
+
+  pass  axe
+  pass  overlay
+  pass  targets  (2 warn)
+        ! touch target under 44x44 at 390px  [div > ul > li > a]
+        ! touch target under 44x44 at 390px  [div > ul > li > a]
+  pass  measure
+  pass  type-scale  (1 warn)
+        ! fluid display size 104px at 1440px (clamp() present)  [#hero-title]
+  pass  spacing
+  pass  overflow
+  pass  heading-wrap  (3 warn)
+        ! heading ends on a one-word line at 390px ("What sailors say")  [#proof-title]
+        ! heading ends on a one-word line at 1440px ("What sailors say")  [#proof-title]
+        ! heading ends on a one-word line at 1440px ("Where it works. Poole to Chichester Harbour.")  [#cover-title]
+  pass  svg-overlap  (4 warn)
+        ! text "Find windows" partly covered by #hero-scene > span.shot-cursor > svg (20x5px) at 390px  [span.find > span.swap.roll > span.swap-track > span]
+        ! text "Plan saved." partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 390px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
+        ! text "18:00" partly covered by #hero-scene > span.shot-cursor > svg (6x11px) at 1440px  [div.app__plot > div.plot > div.axis > span]
+        ! text "Plan saved." partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 1440px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
+  pass  reading-size
+  pass  selected-state
+  pass  primary
+  pass  radius
+  pass  color-scheme
+  pass  typography
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke
+  pass  weight
+  pass  occlusion
+  pass  squash
+  pass  sticky-header
+  pass  run-together
+  pass  word-break
+  pass  grid-edge
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  phone-facts
+  pass  dead-control
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback  (1 warn)
+        ! layout moves 54px at 1440px when the web fonts fail (worst: #route); add metric fallbacks (size-adjust, ascent-override). Line count changed in 2 elements: #how-title "How a window is found. Three tests, ever" 2 to 3 lines; div.sec-head > div.billing-wrap > div.billing > button "Yearly Save £20.88" 2 to 1 lines (one element near a wrap point is a copy fix; many is a font metrics fix)  [#route]
+  pass  motion
+
+  JSON: kb/tests/fresh/landing/halyard.state-paused.lint.json
+exit 0

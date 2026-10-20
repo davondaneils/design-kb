@@ -1,0 +1,11 @@
+kb/tests/fresh/landing/halyard.html
+  total        226.1 KB raw    103.2 KB gzip     94.8 KB brotli
+  fonts         90.6 KB raw     68.2 KB gzip  (40% of raw)
+  dataUrls       0.0 KB raw      0.0 KB gzip  (0% of raw)
+  css           56.7 KB raw     11.6 KB gzip  (25% of raw)
+  svg           23.7 KB raw      4.6 KB gzip  (10% of raw)
+  script        11.6 KB raw      4.2 KB gzip  (5% of raw)
+  html          43.4 KB raw     11.5 KB gzip  (19% of raw)
+  before first paint (end of <head>):    84.3 KB gzip,    81.4 KB brotli
+  before LCP element (#hero-title):        87.3 KB gzip,    83.6 KB brotli
+exit 0

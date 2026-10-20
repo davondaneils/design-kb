@@ -1,0 +1,6 @@
+kb/tests/fresh/app/plan.html  [mobile, 5 runs, median, gzip]
+  LCP 832 ms (good)  element: p#answer.answer "Leave Lymington at 11:50 and Yarmouth at"
+  CLS 0.000 (good)   INP proxy 0 ms (good) over 0 interactions
+  FCP 812 ms  TBT 227 ms  TTFB 460 ms  fonts ready 1328 ms  load 1211 ms
+  wire 58.8 KB in 1 requests (document 58.8 KB)  DOM 771 elements
+  main thread at load: script 251 ms, style 41 ms (21x), layout 197 ms (18x)

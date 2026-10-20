@@ -1,0 +1,85 @@
+[
+  {
+    "trial": 1,
+    "stronger": "A",
+    "confidence": 2,
+    "scores": { "A": 7, "B": 6 },
+    "tells": [
+      "B is the Linear homepage hero (logo and nav read 'Linear' at full size)",
+      "B's headline sits blurred and unreadable from 0.5s to 1.4s before it sharpens; the blur is decorative, not information",
+      "B's app screenshot fades up dim from 1.5s to 2.2s, then the agent chat panel slides in at about 4.0s with 'Thinking...': the product action arrives late and small in the corner",
+      "A's status label changes in place: 'Ready to check' to 'Checking' to '2 windows found', while the button reads 'Checking' then 'Find windows'",
+      "A's red scrub line sweeps left to right from about 1.7s to 2.5s and the wind bars turn amber as it passes them: the motion is the computation",
+      "A's Out and Back rows fill with windows around 3.0s, then 'Proposed plan' times land at 3.5s and hold to the end (about 2.5s)",
+      "A's card builds from a blank card in under 0.5s at the start, with rows popping in rather than one owner"
+    ],
+    "memorable": { "A": "the scrub line sweeping across the hours and the wind bars turning amber behind it", "B": "the agent panel opening in the corner with 'Thinking...'" },
+    "corrections": [
+      { "where": "B 0.50s to 1.40s, headline", "problem": "headline is blurred and unreadable for about 0.9s; the first second of the hero carries no information", "change": "cut the blur to a 0.25s fade with an 8px rise, headline readable by 0.4s", "keep": "the headline first, product second order" },
+      { "where": "B 1.50s to 2.20s, app screenshot", "problem": "screenshot fades up at low contrast with nothing happening inside it; it is a picture, not a product moment", "change": "once it lands, start one in-product action within 0.5s (an issue moving or a status changing in place)", "keep": "the slow, even fade of the frame itself" },
+      { "where": "B 4.00s, agent chat panel", "problem": "the product's own action, the agent, appears as a small corner panel and ends on 'Thinking...' with no result in the clip", "change": "show the agent's result land in the issue (a PR link or status change) by about 5.0s and hold it 2s", "keep": "the panel sliding in from its anchor in place, no cut" },
+      { "where": "B 2.40s, subhead and 'New Loops' link", "problem": "subhead and link fade in after the screenshot, so reading order runs headline, picture, then back up to the subhead", "change": "bring the subhead in 0.1s after the headline, before the screenshot", "keep": "the 0.1s scale offsets between related lines" }
+    ]
+  },
+  {
+    "trial": 2,
+    "stronger": "B",
+    "confidence": 4,
+    "scores": { "A": 6, "B": 8 },
+    "tells": [
+      "B is Stripe's homepage payments module (Roastery checkout, jane.diaz@stripe.com, Link button)",
+      "B holds the $5.46 Roastery state for about 4.8s, then swaps to the CARTSY euro checkout in place around 5.2s to 5.7s: the phone total rolls vertically from $5.46 to EUR 26.89 while the browser rows change top to bottom with small offsets",
+      "B then holds the new merchant for over 6s; every line can be read aloud",
+      "B's jump from the hero to the module at 0.4s is a scroll in the capture, not the site's motion",
+      "A is a result state held for 6.2s, then the whole card fades to near white from 6.6s to 6.9s and rebuilds blank: a reset by fade-out, not a change in place",
+      "A replays: cursor clicks 'Find windows' near 7.7s, scrub line sweeps 8.5s to 9.5s, windows land around 9.5s, plan row at 10.5s"
+    ],
+    "memorable": { "A": "the scrub line passing over the hours as the bars turn amber", "B": "the price rolling from dollars to euros in place on the phone" },
+    "corrections": [
+      { "where": "A 6.60s to 6.90s, whole card", "problem": "the card washes out to a near-blank frame and rebuilds, which reads as a cut and throws away the result", "change": "reset in place: clear the windows and plan rows (0.2s, bottom up) and return bars to grey while the card frame, chart and labels stay put", "keep": "the 6s hold on the finished result before the reset" },
+      { "where": "A 7.00s to 7.70s, cursor", "problem": "cursor drifts in from the lower right for about 0.7s before the click; the eye follows the arrow, not the product", "change": "start the cursor near the button and click by 7.3s, or drop the cursor and press the button itself", "keep": "the button press as the trigger for the sweep" },
+      { "where": "A 8.50s to 9.50s, scrub line and status", "problem": "status label, button label, sweep line and bar colours all change at once; no single owner", "change": "let the sweep own the screen; change the status label 0.1s after the sweep ends, not during it", "keep": "the bars turning amber as the line passes them" },
+      { "where": "A 9.50s to 10.50s, Out, Back and plan rows", "problem": "windows and the plan row arrive within about 1s of each other, so the plan times are read while windows are still landing", "change": "hold the found windows 1s before the plan row comes in, rows offset by 0.1s", "keep": "the in-place 'Not checked' to 'Leave 07:33 to 09:30' change" }
+    ]
+  },
+  {
+    "trial": 3,
+    "stronger": "A",
+    "confidence": 3,
+    "scores": { "A": 8, "B": 7 },
+    "tells": [
+      "A is the same Stripe payments module as trial 2 B: $5.46 Roastery held to about 5.1s, then the merchant swaps in place with the price rolling vertically",
+      "A's rows change top to bottom with roughly 0.1s offsets and the new state holds about 6s",
+      "B updates in place: forecast label rolls 18:00 to 21:00 at about 0.86s, window end rolls 13:45 to 13:20 at about 0.96s, the bar shrinks and the lost slice turns hatched at about 1.1s, row times roll at about 1.1s",
+      "B's notification card empties to a blank white card at about 1.16s, then 'Back window moved' fades in by 1.46s",
+      "B then holds the final state for about 10.5s with nothing moving"
+    ],
+    "memorable": { "A": "the price rolling from dollars to euros on the phone", "B": "the window bar shrinking and its lost slice turning hatched" },
+    "corrections": [
+      { "where": "B 0.86s to 1.46s, cause and effect order", "problem": "the data changes first and the notification that explains it arrives last, so the viewer sees numbers move with no reason, then reads the reason", "change": "land the 'Back window moved' notification first, hold it 1s, then roll the forecast label, the end time and the bar in that order", "keep": "the vertical digit rolls and the hatched lost slice" },
+      { "where": "B 1.16s, notification card", "problem": "the card blanks to empty white for a frame before the new message fades in: a cut inside a card", "change": "crossfade the old text out and the new text in with 0.1s overlap, card never empty", "keep": "the card's position and size" },
+      { "where": "B 0.86s to 1.10s, label, time, bar and rows", "problem": "four related changes fire within about 0.25s, too fast to follow the chain from forecast to window", "change": "space them about 0.15s apart and give the bar shrink 0.4s with an ease-out that lands", "keep": "everything changing in place, no layout shift" },
+      { "where": "B 1.50s to 12.00s, whole card", "problem": "about 10.5s of static hold; nothing points the eye to the new 13:20 or the 'Your 12:30 start still works' line", "change": "after 1.5s of hold, briefly highlight the 12:30 start on the bar to answer 'am I still OK', then rest", "keep": "the long hold on readable text" }
+    ]
+  },
+  {
+    "trial": 4,
+    "stronger": "B",
+    "confidence": 4,
+    "scores": { "A": 6, "B": 8 },
+    "tells": [
+      "B is the Stripe payments module again, same swap as trial 2 B and trial 3 A, around 5.0s to 5.6s, held over 6s after",
+      "A animates a route on a map: the boat dot advances leg by leg from Hamstead Ledge 09:17 to Gurnard 09:59 to Arrive Cowes 10:10, with the readout below updating per leg",
+      "A's readout label cross-fades with a visibly ghosted frame at about 1.5s",
+      "A holds the arrival 10:10 for about 6s (4.0s to 9.9s), then fades the whole card to a fully blank frame at 10.08s and snaps back to 'Leave Lymington 08:30', a reset by cut",
+      "A's dot travel and line fill read as linear motion between waypoints; it arrives rather than settles"
+    ],
+    "memorable": { "A": "the dot sailing the route as the distance and arrival time tick up", "B": "the price rolling from dollars to euros in place" },
+    "corrections": [
+      { "where": "A 9.88s to 10.18s, whole card", "problem": "card fades to a blank frame at 10.08s then reappears at the start state: a cut that drops the map and the result", "change": "keep the map and labels on screen; retract the drawn route back to Lymington over 0.5s and roll the readout back to 08:30 in place", "keep": "the 6s hold on 'Arrive Cowes 10:10'" },
+      { "where": "A 1.00s to 2.00s, readout under the map", "problem": "the waypoint label and time cross-fade with both versions ghosted at 1.5s, and the readout changes while the dot is still moving", "change": "roll the readout values vertically at the moment the dot reaches each waypoint, 0.1s after arrival", "keep": "one readout row with three fixed columns" },
+      { "where": "A 0.50s to 3.50s, dot travel between waypoints", "problem": "movement between waypoints looks constant speed and stops dead at each mark", "change": "ease in and out per leg (about 0.8s per leg) with a short settle at each waypoint", "keep": "the leg-by-leg order and the dashed line turning solid behind the dot" },
+      { "where": "A 2.00s to 3.50s, Gurnard to Cowes", "problem": "the intermediate readout 'Gurnard 09:59' holds about 1.5s, short against three values to read", "change": "hold each intermediate readout at least 2s, or show only the arrival readout and let the map carry the progress", "keep": "the arrival time 10:10 in the accent colour" }
+    ]
+  }
+]
