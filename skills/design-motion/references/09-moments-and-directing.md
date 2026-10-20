@@ -104,7 +104,7 @@ node skills/design-motion/assets/blind-gate.mjs grade --out gate/
 
 1. **Three stills before movement:** the opening, the result and the ending (`blind-gate.mjs stills page.html --out dir --moment scene:#id` films only ours and writes `ours-stills.jpg`; builders run this, not `prepare`). Is the main text readable, is the result visible, is anything cropped or overlapping, does the ending have room? Fix those before touching timing.
 2. **Then the event:** watch the press and the result at normal speed and read the result aloud. Extend any hold that ends before you finish (the check does this arithmetic; the read-aloud test catches what the word count cannot, like a long account number).
-3. **Then the boundaries:** the seam between plays and the hand-over between scenes. A seam that shows the story running backwards is a fail (`scene.js` resets under the fade).
+3. **Then the boundaries:** the seam between plays and the hand-over between scenes. A replay that rewinds step by step, or fades the whole frame to blank, is a fail (`scene.js` returns to the first state in place, in one change).
 4. **Corrections in four fields**, never "make it smoother": `where: B 2.40s, the receipt | problem: the cursor drifts across it at 2.9s | change: hold the cursor still until the seam | keep: the press timing`.
 
 ## 7. What blind critics catch: rules from the gate rounds

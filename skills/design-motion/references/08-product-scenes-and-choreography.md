@@ -28,7 +28,7 @@ Why this chapter exists: both benchmark builders shipped one transition duration
 ## Principles
 1. **The product is the protagonist.** The page around it is calm so the scene can move (measured: Stripe's long timelines live in `payments-graphic__*`, Raycast's in keys and a typing cursor, Linear's in an agent working; same file, section 2, pattern 1).
 2. **A scene is mostly stillness.** States are held long enough to read; the move between them is a UI-band transition (Stripe's keyframes repeat values to hold: `translateY(-16px), -16px, -16px, 0, 0` on a 4480ms timeline).
-3. **Time only flows forward.** Values leave in the direction time flows and the story never rewinds; the replay goes through a seam.
+3. **Time only flows forward.** Values leave in the direction time flows and the story never rewinds step by step; the replay returns to the first state in place, in one change (v0.4.3, below).
 4. **Every move has a band.** If two moves share a job they share a duration; if they share a duration they share a job (opinion, from the ladder).
 
 ## Decision rules
@@ -49,7 +49,7 @@ Why this chapter exists: both benchmark builders shipped one transition duration
 |---|---|---|
 | Scene beat | 1200 to 4500ms; hold 1000ms or more | Stripe 1420, 2260, 4480ms |
 | Scene loop | 12000ms or less; rest 2000ms or more on the last frame | Stripe 11950ms timeline, 4000ms delay before replay |
-| Scene seam | mock-up opacity to 0 over `--duration-fast`, reset, back | opinion |
+| Scene replay | in place: the first state returns in one change on its own curves (`data-seam="fade"` for the old fade seam) | gate round v07, 3 of 3 critics |
 | Value stack swap | `--duration-slow`, `--ease-standard`, 100% of the slot | Stripe 1420ms timelines, `translateY(0)` to `-100%` |
 | Progress fill | `linear`, `calc(var(--beat) - var(--duration-reveal))` | Raycast 5000ms linear to `.95` |
 | Masked word rise | `--duration-slow`, `--ease-enter`, `--stagger` apart, from 100% | Stripe 325ms, 50ms apart, 22 words, 500ms |
@@ -202,7 +202,7 @@ The benchmark's Ferry page through the same check: three bands (100, 200, 400), 
 
 ## Ceiling: expert moves
 1. **Value stacks over text swaps** (Stripe, 11 slots on 1420ms timelines): no reflow, direction carries meaning.
-2. **The seam.** Fade the mock-up out over `--duration-fast`, reset underneath, fade in. A scene that rewinds visibly (Paid sliding back to Queued) teaches the wrong story.
+2. **The replay.** Return to the first state in place, in one change on the state's own curves (`scene.js` default since v0.4.3), never a blank frame: three of three blind critics read the whole-mock fade as a cut (gate round v07). A scene that rewinds step by step (Paid sliding back through Sending to Queued) still teaches the wrong story; one in-place change does not. `data-seam="fade"` keeps the fade-out seam where an in-place return cannot be shown.
 3. **Rest on the proof.** The rest frame, the reduce still and the screenshot are the same frame: the one with the final number. Opinion: choose the still first and script backwards from it.
 4. **Pause on hover is a reading aid**, not only compliance: someone pointing at the mock-up is reading it (opinion).
 5. **One full scene per screen.** Other fragments play one beat once when they enter (opinion; competing loops split attention).

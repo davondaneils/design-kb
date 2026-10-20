@@ -2,8 +2,8 @@
  "page": "kb/tests/fresh/landing/halyard.html",
  "width": 1440,
  "needScene": true,
- "measuredAt": "2026-10-15T06:11:29.415Z",
- "animations": 197,
+ "measuredAt": "2026-10-20T18:09:47.051Z",
+ "animations": 268,
  "reduceAnimations": 16,
  "ladder": [
   100,
@@ -15,16 +15,14 @@
   600,
   800,
   1200,
-  1400,
-  1600,
-  4400
+  1700
  ],
  "bands": [
-  "scene 1200/1400/1600/4400",
-  "press/hover 100/150",
   "entrance 400/519",
-  "reveal 600/800",
-  "UI change 200/300"
+  "press/hover 100/150",
+  "UI change 200/300",
+  "scene 1200/1700",
+  "reveal 600/800"
  ],
  "scenes": [
   {
@@ -33,11 +31,11 @@
    "beats": [
     {
      "state": "aim",
-     "ms": 1500
+     "ms": 1200
     },
     {
      "state": "press",
-     "ms": 2400
+     "ms": 1800
     },
     {
      "state": "window",
@@ -70,7 +68,6 @@
      "state": "window",
      "owner": ".plan",
      "read": ".plan__head",
-     "push": ".app",
      "ownerFound": 1,
      "readFound": 1
     }
@@ -92,19 +89,19 @@
     },
     {
      "state": "jack",
-     "ms": 2200
+     "ms": 1900
     },
     {
      "state": "hamstead",
-     "ms": 2800
+     "ms": 2100
     },
     {
      "state": "gurnard",
-     "ms": 3200
+     "ms": 2300
     },
     {
      "state": "cowes",
-     "ms": 2200
+     "ms": 4100
     }
    ],
    "still": "cowes",
@@ -170,7 +167,7 @@
     },
     {
      "state": "saved",
-     "ms": 2400
+     "ms": 3000
     },
     {
      "state": "fri21",
@@ -178,9 +175,9 @@
     }
    ],
    "still": "fri21",
-   "state": "fri18",
-   "loop": true,
-   "rest": 3000,
+   "state": "fri21",
+   "loop": false,
+   "rest": 0,
    "pauseButtons": 1,
    "pauseVisible": true,
    "plan": "ok",
@@ -195,7 +192,7 @@
     {
      "state": "saved",
      "owner": ".notes",
-     "read": ".face--saved b",
+     "read": ".face--saved .alert__msg",
      "ownerFound": 1,
      "readFound": 1
     },
@@ -230,14 +227,14 @@
    "text": false,
    "n": 4,
    "gap": 81,
-   "span": 448
+   "span": 451
   },
   {
    "key": "600|cubic-bezier(0, 0, 0, 1)|transform",
    "text": true,
    "n": 18,
    "gap": 20,
-   "span": 430
+   "span": 431
   }
  ],
  "entrances": [
@@ -408,9 +405,9 @@
    "id": "route-scene",
    "state": "leave",
    "holds": [
-    2848,
-    34139,
-    1290
+    2843,
+    33261,
+    1293
    ],
    "words": 1,
    "read": ".rs-time",
@@ -421,7 +418,7 @@
    "state": "fri18",
    "holds": [
     3294,
-    60666
+    62551
    ],
    "words": 4,
    "read": ".wp-win",
@@ -431,8 +428,8 @@
    "id": "hero-scene",
    "state": "aim",
    "holds": [
-    836,
-    1339
+    132,
+    1042
    ],
    "words": null,
    "read": null,
@@ -442,8 +439,8 @@
    "id": "hero-scene",
    "state": "press",
    "holds": [
-    6916,
-    69965
+    8123,
+    1639
    ],
    "words": null,
    "read": null,
@@ -453,7 +450,7 @@
    "id": "hero-scene",
    "state": "window",
    "holds": [
-    7685
+    8091
    ],
    "words": 9,
    "read": ".plan__head",
@@ -463,7 +460,7 @@
    "id": "route-scene",
    "state": "jack",
    "holds": [
-    1133
+    1033
    ],
    "words": 1,
    "read": ".rs-time",
@@ -473,7 +470,7 @@
    "id": "route-scene",
    "state": "hamstead",
    "holds": [
-    1178
+    1078
    ],
    "words": 1,
    "read": ".rs-time",
@@ -483,7 +480,7 @@
    "id": "route-scene",
    "state": "gurnard",
    "holds": [
-    1166
+    1066
    ],
    "words": 1,
    "read": ".rs-time",
@@ -493,7 +490,7 @@
    "id": "route-scene",
    "state": "cowes",
    "holds": [
-    3781
+    5682
    ],
    "words": 3,
    "read": ".rs-now",
@@ -503,17 +500,17 @@
    "id": "warn-scene",
    "state": "saved",
    "holds": [
-    1985
+    2587
    ],
-   "words": 4,
-   "read": ".face--saved b",
+   "words": 6,
+   "read": ".face--saved .alert__msg",
    "quiet": []
   },
   {
    "id": "warn-scene",
    "state": "fri21",
    "holds": [
-    6729
+    58880
    ],
    "words": 9,
    "read": ".alert__lead",

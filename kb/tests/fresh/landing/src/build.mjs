@@ -21,6 +21,12 @@ const AX0 = mins(D.axis.from), AX1 = mins(D.axis.to), SPAN = AX1 - AX0;
 const frac = (t) => (mins(t) - AX0) / SPAN;
 const pct = (t) => +(frac(t) * 100).toFixed(2) + '%';
 const nb = (s) => s.replace(/ /g, '&nbsp;');
+// The hero sweep runs on --ease-standard (cubic-bezier(0.2, 0, 0, 1)): fast across the morning, easing out at the right
+// edge. sweepAt(x) is the fraction of the sweep's duration at which the line reaches x (0 to 1 across the day), so
+// whatever the line finds can land exactly as it passes.
+const bez = (p1, p2) => (s) => 3 * (1 - s) ** 2 * s * p1 + 3 * (1 - s) * s * s * p2 + s ** 3;
+const SX = bez(0.2, 0), SY = bez(0, 1);
+const sweepAt = (x) => { let lo = 0, hi = 1; for (let k = 0; k < 40; k++) { const m = (lo + hi) / 2; if (SY(m) < x) lo = m; else hi = m; } return +SX(lo).toFixed(3); };
 
 // Icons: one 16px grid, 1.5 stroke, round caps and joins, currentColor (FOUNDATIONS Icons).
 const ICONS = {
@@ -80,7 +86,7 @@ function windTrack({ limit = true, from = 5, to = 19 } = {}) {
   const hours = D.wind.filter((w) => w.h >= from && w.h <= to);
   return `<div class="track track--wind" data-lane="wind">${limit ? `<span class="limit" style="--y:${(D.boat.wind / D.windMax * 100).toFixed(1)}%"></span>` : ''}${hours.map((w, i) => {
     const over = w.gust > D.boat.wind || (w.against && w.kn > D.boat.against);
-    return `<span class="bar${over ? ' bar--over' : ''}" style="--x:${((w.h * 60 - AX0) / SPAN * 100).toFixed(2)}%;--w:${(60 / SPAN * 100).toFixed(3)}%;--v:${(w.kn / D.windMax).toFixed(3)};--g:${(w.gust / D.windMax).toFixed(3)};--i:${i}"></span>`;
+    return `<span class="bar${over ? ' bar--over' : ''}" style="--x:${((w.h * 60 - AX0) / SPAN * 100).toFixed(2)}%;--w:${(60 / SPAN * 100).toFixed(3)}%;--v:${(w.kn / D.windMax).toFixed(3)};--g:${(w.gust / D.windMax).toFixed(3)};--i:${i};--tb:${sweepAt((w.h * 60 + 30 - AX0) / SPAN)}"></span>`;
   }).join('')}</div>`;
 }
 function lightTrack({ labels = true, latest = false } = {}) {
@@ -90,8 +96,8 @@ function lightTrack({ labels = true, latest = false } = {}) {
       <span class="mark" style="--x:${pct(D.latestLeave)}"></span>` : ''}</div>`;
 }
 function rowTrack(row, { cls = '' } = {}) {
-  const cuts = row.cuts.map((c) => `<i class="cut cut--${c.why}" style="--x0:${pct(c.from)};--x1:${pct(c.to)};--d:${frac(c.from).toFixed(3)}"></i>`).join('');
-  return `<div class="track track--row${cls ? ' ' + cls : ''}">${cuts}${row.lost ? `<i class="lost" style="--x0:${pct(row.lost[0])};--x1:${pct(row.lost[1])}"></i>` : ''}<span class="win" style="--x0:${pct(row.win[0])};--x1:${pct(row.win[1])};--i:${row.i};--e:${frac(row.win[1]).toFixed(3)}"></span></div>`;
+  const cuts = row.cuts.map((c) => `<i class="cut cut--${c.why}" style="--x0:${pct(c.from)};--x1:${pct(c.to)};--d:${sweepAt(frac(c.from))}"></i>`).join('');
+  return `<div class="track track--row${cls ? ' ' + cls : ''}">${cuts}${row.lost ? `<i class="lost" style="--x0:${pct(row.lost[0])};--x1:${pct(row.lost[1])}"></i>` : ''}<span class="win" style="--x0:${pct(row.win[0])};--x1:${pct(row.win[1])};--row:${row.i}"></span></div>`;
 }
 
 // ---------- the moment kit (design-motion assets/moments.js): swap values and stack items, authored on a frame ----------
@@ -99,9 +105,9 @@ function rowTrack(row, { cls = '' } = {}) {
 // the page, each frame on the state sheet), so it is right without JavaScript and under reduced motion.
 const lastSeen = (list, seen) => { let i = -1; for (const st of seen) { const k = list.indexOf(st); if (k !== -1) i = k; } return Math.max(0, i); };
 function swap(list, values, seen, { group = 0, cls = '', style = '' } = {}) {
-  return `<span class="swap${cls ? ' ' + cls : ''}" data-swap="${list.join(' ')}"${group ? ` data-swap-group="${group}"` : ''} style="--swap-i:${lastSeen(list, seen)};--swap-count:${values.length}${style ? ';' + style : ''}"><span class="swap-track">${values.map((v) => `<span>${v}</span>`).join('')}</span></span>`;
+  return `<span class="swap${cls ? ' ' + cls : ''}" data-swap="${list.join(' ')}"${group ? ` data-swap-group="${group}"` : ''} style="--swap-i:${lastSeen(list, seen)};--swap-count:${values.length}${style ? ';' + style : ''}"><span class="swap-track">${values.map((v, k) => `<span${k === lastSeen(list, seen) ? ' data-on' : ''}>${v}</span>`).join('')}</span></span>`;
 }
-const sceneAttrs = (beats, seen, { id, rest, still }) => `${id ? `id="${id}" ` : ''}data-scene data-beats="${beats.map(([s, ms]) => s + ':' + ms).join(' ')}" data-rest="${rest}" data-still="${still}" data-state="${seen.at(-1)}" data-seen="${seen.join(' ')}"`;
+const sceneAttrs = (beats, seen, { id, rest, still, loop = true }) => `${id ? `id="${id}" ` : ''}data-scene data-beats="${beats.map(([s, ms]) => s + ':' + ms).join(' ')}"${loop ? ` data-rest="${rest}"` : ' data-loop="false"'} data-still="${still}" data-state="${seen.at(-1)}" data-seen="${seen.join(' ')}"`;
 const seenTo = (beats, state) => beats.slice(0, beats.findIndex(([s]) => s === state) + 1).map(([s]) => s);
 const plan = (shots) => `<script type="application/json" data-shot-plan>${JSON.stringify({ shots })}</script>`;
 const CURSOR = '<span class="shot-cursor" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3 2l13 7.5-5.6 1.4 3.2 6-2.4 1.2-3.2-6L3 16z" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>';
@@ -110,7 +116,7 @@ const tm = (t) => `<time datetime="2026-10-24T${t}+01:00">${t}</time>`;
 // The hero plot: lanes plus the two rows, with the sweep that the scene drives.
 function heroPlot(seen = HERO_BEATS.map(([s]) => s)) {
   const rows = D.rows.map((r) => `
-      <div class="row-head"><span class="row-name"><b>${r.name}</b> ${r.leg}</span>${swap(['aim', 'press'], ['<span class="s-none">Not checked</span>', `<span class="s-win">Leave ${r.win[0]} to ${r.win[1]}</span>`], seen, { cls: 'row-slot', style: `--e:${frac(r.win[1]).toFixed(3)}` })}</div>
+      <div class="row-head"><span class="row-name"><b>${r.name}</b> ${r.leg}</span>${swap(['aim', 'press'], ['<span class="s-none">Not checked</span>', `<span class="s-win">Leave ${r.win[0]} to ${r.win[1]}</span>`], seen, { cls: 'row-slot roll', style: `--row:${r.i}` })}</div>
       <span class="lab lab--row"></span>${rowTrack(r)}`).join('');
   return `<div class="plot">
       <span class="lab"></span>${axisRow()}
@@ -184,15 +190,16 @@ function routeChart() {
 // ---------- scenes (design-motion v0.4: shot plan, moment kit) ----------
 // Each builder writes the scene on one frame: the page gets the still frame (id, shot plan, cursor), the state sheet
 // gets every frame. Beats are per scene (FOUNDATIONS: never tokens).
-const HERO_BEATS = [['aim', 1500], ['press', 2400], ['window', 4400]];
-// The status line rolls to "2 windows found" just after the sweep passes the last window's close (CSS adds --offset).
-const LAST_CLOSE = Math.max(...D.rows.map((r) => frac(r.win[1]))).toFixed(3);
+// aim: the card settles and the hand travels (in by about 1.0s). press: the sweep, then the result in order (bars as
+// the line passes, Out row, Back row, the count, the button back, --offset apart), all settled by 1700ms. window: the
+// plan alone, its own beat, landing about 3.5s from load and held with nothing else moving.
+const HERO_BEATS = [['aim', 1200], ['press', 1800], ['window', 4400]];
 function heroScene(state = 'window', { id = 'hero-scene' } = {}) {
   const seen = seenTo(HERO_BEATS, state);
   const shots = [
     { state: 'aim', owner: '.app', aim: '.find' },
     { state: 'press', owner: '.app', press: '.find' },
-    { state: 'window', owner: '.plan', read: '.plan__head', push: '.app' },
+    { state: 'window', owner: '.plan', read: '.plan__head' },
   ];
   return `<div class="scene" ${sceneAttrs(HERO_BEATS, seen, { id, rest: 4000, still: 'window' })}>
             ${id ? plan(shots) : ''}
@@ -200,11 +207,11 @@ function heroScene(state = 'window', { id = 'hero-scene' } = {}) {
               <div class="app__bar">
                 <div class="app__title"><b>Lymington to Cowes and back</b><span class="muted">Sat&nbsp;24&nbsp;Oct · BST</span></div>
                 <div class="status">
-                  ${swap(['aim', 'press'], ['Ready to check', '2 windows found'], seen, { cls: 'status__slot', style: `--e:${LAST_CLOSE}` })}
+                  ${swap(['aim', 'press'], ['Ready to check', '2 windows found'], seen, { cls: 'status__slot roll' })}
                   <span class="status__prog"></span>
                 </div>
               </div>
-              <div class="app__limits"><span class="chip">Wren, 7.9&nbsp;m sloop</span><span class="chip">Wind ≤&nbsp;20&nbsp;kn</span><span class="chip">Against tide ≤&nbsp;12&nbsp;kn</span><span class="chip">Home by sunset</span><span class="find">${swap(['aim', 'press', 'window'], ['Find windows', 'Checking', 'Find windows'], seen)}</span></div>
+              <div class="app__limits"><span class="chip">Wren, 7.9&nbsp;m sloop</span><span class="chip">Wind ≤&nbsp;20&nbsp;kn</span><span class="chip">Against tide ≤&nbsp;12&nbsp;kn</span><span class="chip">Home by sunset</span><span class="find">${swap(['aim', 'press', 'window'], ['Find windows', 'Checking', 'Find windows'], seen, { cls: 'roll' })}</span></div>
               <div class="app__plot">${heroPlot(seen)}</div>
               <div class="plan">
                 <div class="plan__head"><b>Proposed plan</b><span><span class="muted">Daylight to spare</span><b class="spare">3&nbsp;h 46&nbsp;min</b></span></div>
@@ -220,7 +227,7 @@ function heroScene(state = 'window', { id = 'hero-scene' } = {}) {
           </div>`;
 }
 
-const WARN_BEATS = [['fri18', 2400], ['saved', 2400], ['fri21', 4500]];
+const WARN_BEATS = [['fri18', 2400], ['saved', 3000], ['fri21', 4500]];
 function warnScene(state = 'fri21', { id = 'warn-scene' } = {}) {
   const seen = seenTo(WARN_BEATS, state);
   const F = D.forecast, list = ['fri18', 'fri21'];
@@ -229,15 +236,16 @@ function warnScene(state = 'fri21', { id = 'warn-scene' } = {}) {
   const windCut = back.cuts.find((c) => c.why === 'wind');
   const cutNow = mins(windCut.to) - mins(windCut.from), cutWas = mins(windCut.to) - mins(F.before.closes);
   const lostMin = mins(F.before.closes) - mins(F.after.closes);
-  // One beat per forecast. The 21:00 forecast changes the card and the note together: the note swaps its contents in
-  // place (the saved note leaves, then the alert arrives), so nothing on screen ever disagrees for longer than 0.3s.
+  // The plan is saved (one line), then the 21:00 forecast moves the card first (badge, end time, bar trim, --offset
+  // apart) and only then does the note swap to "Back window moved", so it never explains a change not yet on screen.
+  // Plays once and holds the end state (no loop, so no reset through a blank card).
   const shots = [
     { state: 'fri18', owner: '.warn-panel', read: '.wp-win' },
-    { state: 'saved', owner: '.notes', read: '.face--saved b' },
+    { state: 'saved', owner: '.notes', read: '.face--saved .alert__msg' },
     { state: 'fri21', owner: '.notes', read: '.alert__lead' },
   ];
   const note = (cls, time, body) => `<div class="face ${cls}"><div class="alert__app"><span>{{SYMBOL_SMALL}}Halyard</span><span class="muted">Fri ${time}</span></div><div class="alert__msg">${body}</div></div>`;
-  return `<div class="warn-stage" ${sceneAttrs(WARN_BEATS, seen, { id, rest: 3000, still: 'fri21' })} style="--was:${(was / now).toFixed(4)};--cut-was:${(cutWas / cutNow).toFixed(4)}">
+  return `<div class="warn-stage" ${sceneAttrs(WARN_BEATS, seen, { id, still: 'fri21', loop: false })} style="--was:${(was / now).toFixed(4)};--cut-was:${(cutWas / cutNow).toFixed(4)}">
               ${id ? plan(shots) : ''}
               <div class="frag warn-panel">
                 <div class="frag__head"><b>Back: Cowes to Lymington</b><span class="chip chip--forecast">${swap(list, [`Forecast Fri ${F.before.issued}`, `Forecast Fri ${F.after.issued}`], seen)}</span></div>
@@ -253,7 +261,7 @@ function warnScene(state = 'fri21', { id = 'warn-scene' } = {}) {
               </div>
               <ol class="notes">
                 <li class="frag alert">
-                  ${note('face--saved', F.savedAt, `<b>Plan saved for Saturday</b>Out ${D.rows[0].win[0]} to ${D.rows[0].win[1]}, back ${back.win[0]} to ${F.before.closes}. You will hear if a new forecast moves either window.`)}
+                  ${note('face--saved', F.savedAt, `<b>Plan saved.</b> Out ${D.rows[0].win[0]}, back ${back.win[0]}.`)}
                   ${note('face--moved', F.alertAt, `<span class="alert__lead"><b>Back window moved</b>Now closes ${F.after.closes}, ${lostMin} minutes earlier.</span> The ${F.after.issued} forecast brings the wind on sooner. Your 12:30 start still works.`)}
                 </li>
               </ol>
@@ -262,25 +270,26 @@ function warnScene(state = 'fri21', { id = 'warn-scene' } = {}) {
 
 // State sheet: one frame per beat, with what the viewer should see in it.
 const FRAME_NOTES = {
-  aim: 'Saturday loaded; the cursor goes to Find windows', press: 'Pressed: the sweep lands each window as it passes',
-  window: '2 windows found, plan in the card (still)',
-  fri18: '18:00 forecast: back window to 13:45', saved: 'Plan saved at 18:10: the note arrives', fri21: '21:00 forecast: window to 13:20, alert in place (still)',
+  aim: 'Saturday loaded; the cursor goes to Find windows', press: 'Pressed: bars as the line passes, then Out, Back, the count, the button',
+  window: 'The plan, its own beat (still)',
+  fri18: '18:00 forecast: back window to 13:45', saved: 'Plan saved at 18:10: the note arrives', fri21: '21:00 forecast: card moves, then the alert (still)',
   leave: 'Leave Lymington 08:30', jack: 'Jack in the Basket 08:48, 1.5 nm', hamstead: 'Hamstead Ledge 09:17, 4.6 nm',
   gurnard: 'Gurnard 09:59, 9.2 nm', cowes: 'Arrive Cowes 10:10, 10.5 nm (still)',
 };
 const frame = (html, st, beats) => {
   const i = beats.findIndex(([s]) => s === st);
-  return `<figure class="frame"><div class="stage stage--side" aria-hidden="true"${st === 'aim' || st === 'press' ? ' data-frame-aim=".find"' : ''}>${html}</div><figcaption class="frame-cap"><span>${i + 1} ${st}, ${beats[i][1]}&nbsp;ms</span><span>${FRAME_NOTES[st]}</span></figcaption></figure>`;
+  return `<figure class="frame"><div class="stage stage--side stage--flat" aria-hidden="true"${st === 'aim' || st === 'press' ? ' data-frame-aim=".find"' : ''}>${html}</div><figcaption class="frame-cap"><span>${i + 1} ${st}, ${beats[i][1]}&nbsp;ms</span><span>${FRAME_NOTES[st]}</span></figcaption></figure>`;
 };
 
-// Route: one beat per leg. Each leg's sailing time on screen is scaled to its minutes on the water (18, 29, 42 and
-// 11 min become 600, 1200, 1600 and 400ms: token values, or scene lengths of 1200ms and over), then the boat holds at
-// the mark long enough to read it. Beat = sail + the place name landing + a 1000ms read; the loop stays under 12000ms.
-const LEG_MS = { jack: 600, hamstead: 1200, gurnard: 1600, cowes: 400 };
-const ROUTE_BEATS = [['leave', 1500], ['jack', 2200], ['hamstead', 2800], ['gurnard', 3200], ['cowes', 2200]];
+// Route: one beat per leg. Each leg's sailing time on screen is scaled to its minutes on the water (18, 29 and 42 min
+// become 400, 600 and 800ms, the --duration-page, --duration-reveal and --duration-swap tokens, about 21ms a minute).
+// The last leg (11 min) arrives on the spring (--duration-spring on --ease-spring): it settles into Cowes. On arrival the
+// place name rolls first, then the time, distance and leg speed together --offset after; the readout holds still
+// while the boat moves. Middle stops hold about 1.0s past the roll (a 1-word read); Cowes, the climax, holds 3s+ (loop 11900ms).
+const LEG_MS = { jack: 400, hamstead: 600, gurnard: 800, cowes: 'spring' };
+const ROUTE_BEATS = [['leave', 1500], ['jack', 1900], ['hamstead', 2100], ['gurnard', 2300], ['cowes', 4100]];
 function routeScene(state = 'cowes', { id = 'route-scene' } = {}) {
   const seen = seenTo(ROUTE_BEATS, state);
-  const i = D.marks.findIndex((m) => m.state === state);
   const list = D.marks.map((m) => m.state);
   let run = 0; const sailed = D.marks.map((m, k) => { run += k ? D.legs[k].nm : 0; return run.toFixed(1); });
   // Leg speed: distance over time for the leg being sailed (the stream is in it); 0.0 at the quay.
@@ -293,9 +302,9 @@ function routeScene(state = 'cowes', { id = 'route-scene' } = {}) {
             <div class="frag__head"><b>Out: Lymington to Cowes</b><span class="chip chip--win">Leave 08:30</span></div>
             {{ROUTE_CHART}}
             <div class="route-strip">
-              <span class="rs-now">${swap(list, D.marks.map((m) => m.label), seen, { cls: 'muted rs-label' })}<b class="rs-time" data-steps="${D.marks.map((m) => m.t).join(' ')}">${D.marks[i].t}</b></span>
-              <span><span class="muted">Distance sailed</span><b class="rs-nm" data-steps="${sailed.join(' ')}">${sailed[i]}&nbsp;nm</b></span>
-              <span><span class="muted">Leg speed</span><b>${swap(list, speed.map((v) => v + '&nbsp;kn'), seen, { group: 1 })}</b></span>
+              <span class="rs-now">${swap(list, D.marks.map((m) => m.label), seen, { cls: 'muted rs-label roll' })}<b class="rs-time" data-steps="${D.marks.map((m) => m.t).join(' ')}">${swap(list, D.marks.map((m) => m.t), seen, { cls: 'rs-read roll' })}</b></span>
+              <span><span class="muted">Distance sailed</span><b class="rs-nm" data-steps="${sailed.join(' ')}">${swap(list, sailed.map((v) => v + '&nbsp;nm'), seen, { cls: 'rs-read roll' })}</b></span>
+              <span><span class="muted">Leg speed</span><b>${swap(list, speed.map((v) => v + '&nbsp;kn'), seen, { cls: 'rs-read roll' })}</b></span>
             </div>
           </div>`;
 }

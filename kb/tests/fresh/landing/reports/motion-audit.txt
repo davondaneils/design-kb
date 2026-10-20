@@ -1,11 +1,14 @@
-pass  hero-reveal  (3 anim, 600 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/hero-reveal.png
+pass  hero-reveal  (4 anim, 650 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/hero-reveal.png
 pass  hero-aim  (1 anim, 150 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/hero-aim.png
-pass  hero-press  (25 anim, 1867 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/hero-press.png
+pass  hero-press  (38 anim, 1700 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/hero-press.png
 pass  hero-window  (3 anim, 100 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/hero-window.png
 pass  warn-saved  (2 anim, 400 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/warn-saved.png
-pass  warn-forecast-swap  (12 anim, 1400 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/warn-forecast-swap.png
-pass  route-leg  (4 anim, 1000 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/route-leg.png
-pass  route-leg-long  (4 anim, 2000 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/route-leg-long.png
+pass  warn-forecast-swap  (12 anim, 1050 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/warn-forecast-swap.png
+pass  route-leg  (14 anim, 800 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/route-leg.png
+pass  route-leg-long  (14 anim, 1200 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/route-leg-long.png
+      warn [no-preference] 800 ms is over 600 ms: allowed only as the page's one hero reveal on load, never on a user action circle.boat (script)
+      warn [no-preference] 800 ms is over 600 ms: allowed only as the page's one hero reveal on load, never on a user action path.route.leg (script)
+pass  route-arrive  (16 anim, 919 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/route-arrive.png
 pass  route-pause-click  (2 anim, 100 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/route-pause-click.png
 pass  pause-click  (2 anim, 100 ms; reduce 0 anim)  kb/tests/fresh/landing/reports/motion-audit/pause-click.png
 pass  primary-hover  (1 anim, 100 ms; reduce 1 anim)  kb/tests/fresh/landing/reports/motion-audit/primary-hover.png

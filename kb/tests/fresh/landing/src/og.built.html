@@ -29,16 +29,16 @@
    Shot plans live inside each scene (<script data-shot-plan>); BUILD_NOTES.md has them as tables with the reasons.
    | Moving thing              | Job          | Band        | Duration                                | Curve              | Trigger           | Reduced motion          |
    | Links, buttons, summary   | feedback     | press/hover | --duration-instant; press 0.97          | --ease-standard    | hover, press      | colour only, kept       |
-   | Hero product (stage)      | staging      | entrance    | the one hero reveal, 800ms after 1000ms | --ease-enter       | load, once        | in place                |
-   | Hero scene (event)        | explain      | scene       | day 2600, aim 1400, press 1200, check 2400, window 4400; rest 4000 | per part | in view, loops | still: 2 windows, plan card |
-   |   cursor                  | the hand     | entrance    | --duration-spring (about 520ms)         | --ease-spring      | aim beat          | hidden                  |
-   |   button press, label     | feedback     | press / swap| --duration-instant; --duration-swap     | standard; swap     | press beat        | label at rest           |
-   |   sweep, status progress  | scan the day | scene       | beat minus --duration-reveal            | linear (time axis) | check beat        | hidden / full           |
-   |   cuts, over-limit bars   | state change | UI change   | --duration-slow, delayed by their hour  | --ease-standard    | as the sweep passes | all shown             |
-   |   windows, labels, plan   | the answer   | reveal/swap | --duration-reveal 80ms apart; --duration-swap; plan +--duration-slow | enter; swap | window beat | shown          |
-   |   camera push 1.00 to 1.03| emphasis     | scene       | the window beat                         | --ease-standard    | window beat       | none                    |
-   | Warnings scene (swap, stack) | explain   | scene       | fri18 3000, fri21 3000, alert 4200; rest 3000 | swap; drawer  | in view, loops    | still: alert in stack   |
-   | Route scene (boat, swap)  | explain      | scene       | leave 1500, 3 marks 2300, cowes 3600; rest 2400 | standard; swap | in view, loops | still: boat at Cowes |
+   | Hero product (stage)      | staging      | entrance    | 12px rise with opacity, 400ms; chips and chart +--offset each | --ease-enter | load, once | in place     |
+   | Hero scene (event)        | explain      | scene       | aim 1200, press 1800, window 4400; rest 4000 | per part      | in view, loops    | still: 2 windows, plan  |
+   |   cursor                  | the hand     | entrance    | --duration-spring after 500ms; leaves with the button | --ease-spring | aim beat     | hidden                  |
+   |   button, labels, count   | feedback     | UI change   | rolls of --duration-page, value fading through | --ease-swap  | press beat        | end values              |
+   |   sweep line, progress    | scan the day | scene       | 1200ms from +200ms                      | --ease-standard    | press beat        | hidden / full           |
+   |   cuts, over-limit bars   | state change | UI change   | --duration-slow, as the line passes     | --ease-standard    | press beat        | all shown               |
+   |   windows (Out, Back)     | the answer   | UI change   | --duration-slow at +1000 and +1100ms; one ring-out each | --ease-enter | press beat     | shown                   |
+   |   plan                    | the climax   | entrance    | --duration-page, its own beat, then still | enter            | window beat       | shown                   |
+   | Warnings scene (swap)     | explain      | scene       | fri18 2400, saved 3000, fri21 4500; plays once, holds | swap; enter; exit | in view, once | still: 21:00 frame |
+   | Route scene (boat, rolls) | explain      | scene       | leave 1500, jack 1900, hamstead 2100, gurnard 2300, cowes 4100; rest 2400 | standard; spring; swap | in view, loops | still: boat at Cowes |
    | How heading words         | attention    | UI change   | --duration-slow, --stagger (one heading only) | --ease-enter | in view, once     | in place                |
    | Stages and cards          | orientation  | reveal      | --duration-reveal, 80ms apart, 16px     | standard + enter   | in view, once     | in place                |
    | Card fragments            | one beat     | reveal      | --duration-reveal                       | linear (time-axis wipe); enter (bars) | in view, once | in place |
@@ -544,6 +544,7 @@
   .stage--card { padding: var(--space-7) var(--space-5); display: grid; align-content: start; }
   @media (width >= 64rem) { .stage--card { min-block-size: 320px; } }
   .stage--side { padding: var(--space-7) var(--space-5); }
+  .stage--flat { background: var(--color-surface-sunken); }   /* the scene stages: one quiet tint, like the hero */
   @media (width >= 48rem) { .stage--side { padding: var(--space-9) var(--space-8); } }
 
   /* fragment shell: one chrome for every fragment */
@@ -594,6 +595,8 @@
   .cut { position: absolute; inset-block: 0; inset-inline-start: var(--x0); inline-size: calc(var(--x1) - var(--x0)); background: repeating-linear-gradient(-45deg, var(--color-cut) 0 1.5px, transparent 1.5px 6px); }
   .cut:first-child { border-radius: var(--radius-sm) 0 0 var(--radius-sm); }
   .win { position: absolute; inset-block: calc(-1 * var(--space-2)); inset-inline-start: var(--x0); inline-size: calc(var(--x1) - var(--x0)); border-radius: var(--radius-sm); background: var(--color-window-fill); box-shadow: inset 0 0 0 2px var(--color-window); transform-origin: left center; }
+  /* The window's one emphasis as it lands (hero press beat): its outline rings out once and fades. */
+  .win::after { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: 0 0 0 2px var(--color-window); opacity: 0; pointer-events: none; }
   .plot__rule { grid-column: 1 / -1; block-size: 1px; background: var(--color-border); margin-block: var(--space-2); }
   .row-head { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-4); margin-block-start: var(--space-2); position: relative; z-index: 1; background: var(--color-surface); }
   .row-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--color-text-muted); }
@@ -605,7 +608,8 @@
   .find { margin-inline-start: auto; display: inline-grid; justify-items: center; min-inline-size: 112px; padding: var(--space-1) var(--space-4); border-radius: var(--radius-sm); background: var(--color-primary); color: var(--color-on-primary); font-weight: var(--weight-semibold); white-space: nowrap; }
   .s-win { color: var(--color-window-ink); }
   .sweep-lane { position: absolute; inset-block: calc(18px + var(--space-3)) 0; inset-inline-start: calc(var(--lab-w) + var(--space-4)); inset-inline-end: 0; overflow: clip; pointer-events: none; }
-  .sweep { position: absolute; inset: 0; opacity: 0; transform: translateX(-100%); background: linear-gradient(90deg, transparent 70%, color-mix(in oklch, var(--color-window) 10%, transparent)); }
+  /* A thin line only: the amber bars and the windows carry the result, not a wash. */
+  .sweep { position: absolute; inset: 0; opacity: 0; transform: translateX(-100%); }
   .sweep::after { content: ""; position: absolute; inset-block: 0; inset-inline-end: 0; inline-size: 2px; background: var(--color-window); }
 
   /* hero composition: app window, plan card in front */
@@ -737,22 +741,41 @@
   @keyframes rise { from { transform: translateY(var(--travel)); } to { transform: none; } }
   @keyframes wipe { from { transform: scaleX(1); } to { transform: scaleX(0); } }
   @keyframes bar-rise { from { transform: scaleY(0); } to { transform: none; } }
-  @keyframes sweep { from { opacity: 1; transform: translateX(-100%); } 90% { opacity: 1; } to { opacity: 0; transform: none; } }
+  @keyframes sweep { from { opacity: 1; transform: translateX(-100%); } to { opacity: 1; transform: none; } }
+  @keyframes out { to { opacity: 0; } }
+  @keyframes ping { from { opacity: 1; transform: none; } to { opacity: 0; transform: scale(1.06, 1.8); } }
+  /* The button's two rolls in one beat: to Checking on the press, back to Find windows once the count is in. Timed on
+     the press beat: 0 to 400ms (--duration-page) and 1300 to 1700ms (--btn-at), each on --ease-swap; the value fades
+     through as in every roll (out over the first 200ms, in over the next). */
+  @keyframes find-roll {
+    0% { transform: translateY(0); animation-timing-function: cubic-bezier(0.78, 0, 0.22, 1); }
+    23.53%, 76.47% { transform: translateY(calc(-100% / 3)); animation-timing-function: cubic-bezier(0.78, 0, 0.22, 1); }
+    100% { transform: translateY(calc(-200% / 3)); }
+  }
+  @keyframes find-1 { 0% { opacity: 1; } 11.76%, 100% { opacity: 0; } }
+  @keyframes find-2 { 0%, 11.76% { opacity: 0; } 23.53%, 76.47% { opacity: 1; } 88.24%, 100% { opacity: 0; } }
+  @keyframes find-3 { 0%, 88.24% { opacity: 0; } 100% { opacity: 1; } }
   @keyframes prog { from { transform: scaleX(0); } to { transform: none; } }
   @keyframes hero-in { from { opacity: 0; transform: translateY(var(--space-4)); } }
-  @keyframes lost { from, 57% { opacity: 1; } to { opacity: 0; } }
 
   /* ---- Scenes. The HTML is authored on each scene's still frame; earlier states hide later facts. The moment kit
      (moments.css, layer "moments") rolls the swaps, raises the stack and moves the cursor; the rules here are each
      scene's own parts. Shot plans sit inside each scene; BUILD_NOTES.md has them as tables. ---- */
   /* No cursor until moments.js parks it, so none without JS. Arrow drawn in tokens: ink fill, surface outline. */
-  /* Rest point (until moments.js aims it): over the chart, hidden. Shown only while it aims and presses. */
-  #hero-scene .shot-cursor { --cx: min(45vw, 320px); --cy: 280px; opacity: 0; }
+  /* moments.js parks the hand at the lower right on each play's aim beat and sends it to the button from there. Shown
+     only while it aims and presses; it leaves when the button resolves. */
+  #hero-scene .shot-cursor { opacity: 0; }
   .shot-cursor path { fill: var(--color-text); stroke: var(--color-surface); }
   /* The hand leaves once the press lands: the result owns the screen, and the arrow must not sit on the plan. */
-  #hero-scene:is([data-state="aim"], [data-state="press"]):not([data-scene-still]) .shot-cursor:not([data-rest]) { opacity: 1; }
+  .hero-go #hero-scene[data-state="press"]:not([data-scene-still]) .shot-cursor { opacity: 1; }
 
-  /* Hero, "find the window": day > aim > press > check > window */
+  /* A roll: the kit swap (a clipped box, the track moves by whole lines) with the value fading through, the old one
+     out in the first half and the new one in over the second, so two labels never show at once. data-on marks the
+     value shown; build.mjs writes it on the authored frame, the page script keeps it in step with the scene. */
+  .roll .swap-track > * { opacity: 0; }
+  .roll .swap-track > [data-on] { opacity: 1; }
+
+  /* Hero, "find the window": aim > press > window */
   [data-scene] .find[data-pressed] { background: var(--color-primary-active); filter: none; }
   .scene:not([data-seen~="press"]) .cut { opacity: 0; }
   .scene:not([data-seen~="press"]) .win { opacity: 0; transform: translateY(calc(-1 * var(--space-3))); }
@@ -772,8 +795,10 @@
   .warn-stage:not([data-seen~="fri21"]) .face--moved { opacity: 0; transform: translateY(var(--space-3)); }
   .warn-stage[data-seen~="fri21"] .face--saved { opacity: 0; transform: translateY(calc(-1 * var(--space-3))); }
   .warn-stage:not([data-seen~="saved"]) .notes .alert { opacity: 0; transform: translateY(var(--space-3)); }
-  /* The 25 minutes lost: a hatched sliver where the window used to end, shown as the edge pulls in, then faded. */
+  .face--saved .alert__msg b { display: inline; }   /* one line: "Plan saved. Out 07:33, back 11:10." */
+  /* The 25 minutes lost: a hatched sliver where the window used to end, shown as the edge pulls in and kept. */
   .lost { position: absolute; inset-block: calc(-1 * var(--space-2)); inset-inline-start: var(--x0); inline-size: calc(var(--x1) - var(--x0)); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; background: repeating-linear-gradient(-45deg, var(--color-warning) 0 1.5px, transparent 1.5px 4px); box-shadow: inset 0 0 0 1.5px var(--color-warning); opacity: 0; pointer-events: none; }
+  .warn-stage[data-seen~="fri21"] .lost { opacity: 1; }
 
   /* Route, "one plan, to the minute": the boat at each mark; each leg appears as it is sailed. */
   .boat { transform: var(--at-cowes); }
@@ -783,6 +808,9 @@
   [data-state="gurnard"] .boat { transform: var(--at-gurnard); }
   .route-card:not([data-seen~="jack"]) .leg[data-leg="jack"], .route-card:not([data-seen~="hamstead"]) .leg[data-leg="hamstead"],
   .route-card:not([data-seen~="gurnard"]) .leg[data-leg="gurnard"], .route-card:not([data-seen~="cowes"]) .leg[data-leg="cowes"] { opacity: 0; }
+  /* Cowes, the climax: "Arrive Cowes 10:10" takes the full ink and the window colour as the boat settles. */
+  .route-card[data-seen~="cowes"] .rs-label { color: var(--color-text); font-weight: var(--weight-semibold); }
+  .route-card[data-seen~="cowes"] .rs-time { color: var(--color-window-ink); }
 
   @media (prefers-reduced-motion: no-preference) {
     /* The one hero reveal (Linear's staging): the headline owns the first second; the product arrives after it, by
@@ -798,31 +826,58 @@
     [data-scene] { transition: opacity var(--duration-fast) var(--ease-standard); }
     [data-scene][data-scene-seam] { opacity: 0; }
     #hero-scene:not([data-scene-still]) .shot-cursor { transition: transform var(--duration-spring) var(--ease-spring), opacity var(--duration-fast) var(--ease-exit); }
-    /* The calm hold: the card is in by about 600ms; the hand waits until the title and chips have been read. */
-    #hero-scene[data-state="aim"] .shot-cursor { transition-delay: calc(var(--duration-reveal) + var(--offset)); }
+    /* The calm hold: the card and its chips are in by about 500ms; then the hand travels in. */
+    #hero-scene[data-state="aim"] .shot-cursor { transition-delay: calc(var(--duration-page) + var(--offset)); }
+    /* It fades in as it sets off. An animation, not a transition: the kit parks it with transitions off. */
+    .hero-go #hero-scene[data-state="aim"]:not([data-scene-still]) .shot-cursor { animation: fade var(--duration-fast) var(--ease-standard) calc(var(--duration-page) + var(--offset)) both; }
     [data-scene]:not([data-scene-still]) .find { transition: transform var(--duration-instant) var(--ease-standard), background-color var(--duration-instant) var(--ease-standard); }
-    /* The sweep crosses 05:00 to 20:00 in 1200ms, starting once the press has landed; everything it finds lands as
-       the line passes: cuts at their start, over-limit bars at their hour, each window (and its row label) at its
-       close, and the status line --offset after the last window. */
-    .scene { --sweep-at: var(--duration-slow); --sweep-ms: calc(var(--duration-reveal) * 2); }
+
+    /* Rolls (see .roll above): the track on --ease-swap over --duration-page, the value fading through, from --roll-at. */
+    [data-scene]:not([data-scene-still]) .roll .swap-track { transition: transform var(--duration-page) var(--ease-swap) var(--roll-at, 0ms); }
+    [data-scene]:not([data-scene-still]) .roll .swap-track > * { transition: opacity var(--duration-base) var(--ease-exit) var(--roll-at, 0ms); }
+    [data-scene]:not([data-scene-still]) .roll .swap-track > [data-on] { transition: opacity var(--duration-base) var(--ease-enter) calc(var(--roll-at, 0ms) + var(--duration-base)); }
+
+    /* Hero press beat, in order. The press (two --duration-instant); the line crosses 05:00 to 20:00 from --sweep-at
+       over --sweep-ms (1200ms) on --ease-standard, fast across the morning and easing out at the right edge; cuts and
+       over-limit bars change as it passes (their --d and --tb are the eased times, from build.mjs); when it is 95% of
+       the way across (--res-at, 800ms in) the
+       Out row lands, the Back row --offset later, then the count, then the button rolls back (--btn-at) and the hand
+       leaves. Each window rings out once as it lands. Settled by 1700ms; the plan waits for its own beat. */
+    .scene { --sweep-at: var(--duration-base); --sweep-ms: calc(var(--duration-reveal) * 2); --res-at: calc(var(--sweep-at) + var(--duration-swap)); --btn-at: calc(var(--res-at) + var(--offset) * 3); }
     .scene .cut { transition: opacity var(--duration-slow) var(--ease-standard) calc(var(--sweep-at) + var(--d) * var(--sweep-ms)); }
-    .scene .bar { transition: background-color var(--duration-slow) var(--ease-standard) calc(var(--sweep-at) + var(--i) / 15 * var(--sweep-ms)); }
-    .scene .win { transition: opacity var(--duration-slow) var(--ease-enter) calc(var(--sweep-at) + var(--e) * var(--sweep-ms)), transform var(--duration-slow) var(--ease-enter) calc(var(--sweep-at) + var(--e) * var(--sweep-ms)); }
-    .scene[data-state="press"] .row-slot .swap-track { transition-delay: calc(var(--sweep-at) + var(--e) * var(--sweep-ms)); }
-    .scene[data-state="press"] .status__slot .swap-track { transition-delay: calc(var(--sweep-at) + var(--e) * var(--sweep-ms) + var(--offset)); }
+    .scene .bar { transition: background-color var(--duration-slow) var(--ease-standard) calc(var(--sweep-at) + var(--tb) * var(--sweep-ms)); }
+    .scene .win { transition: opacity var(--duration-slow) var(--ease-enter) calc(var(--res-at) + var(--row) * var(--offset)), transform var(--duration-slow) var(--ease-enter) calc(var(--res-at) + var(--row) * var(--offset)); }
+    .scene[data-state="press"] .win::after { animation: ping var(--duration-page) var(--ease-standard) calc(var(--res-at) + var(--row) * var(--offset) + var(--duration-base)); }
+    .scene[data-state="press"] .row-slot { --roll-at: calc(var(--res-at) + var(--row) * var(--offset)); }
+    .scene[data-state="press"] .status__slot { --roll-at: calc(var(--res-at) + var(--offset) * 2); }
+    .scene[data-state="press"] .find .swap-track { animation: find-roll calc(var(--btn-at) + var(--duration-page)) linear both; }
+    .scene[data-state="press"] .find .swap-track > :nth-child(1) { animation: find-1 calc(var(--btn-at) + var(--duration-page)) linear both; }
+    .scene[data-state="press"] .find .swap-track > :nth-child(2) { animation: find-2 calc(var(--btn-at) + var(--duration-page)) linear both; }
+    .scene[data-state="press"] .find .swap-track > :nth-child(3) { animation: find-3 calc(var(--btn-at) + var(--duration-page)) linear both; }
+    #hero-scene[data-state="press"] .shot-cursor { animation: out var(--duration-fast) var(--ease-exit) var(--btn-at) forwards; }
+    .scene[data-state="press"] .sweep { animation: sweep var(--sweep-ms) var(--ease-standard) var(--sweep-at) forwards, out var(--duration-fast) var(--ease-exit) calc(var(--sweep-at) + var(--sweep-ms)) forwards; }
+    .scene[data-state="press"] .status__prog { animation: prog var(--sweep-ms) var(--ease-standard) var(--sweep-at) both; }
+    /* The plan: its own beat, after everything has settled. */
     .scene .plan { transition: opacity var(--duration-page) var(--ease-standard), transform var(--duration-page) var(--ease-enter); }
-    .scene[data-state="aim"] :is(.cut, .bar, .win, .plan) { transition: none; }
-    .scene[data-state="press"] .sweep { animation: sweep var(--sweep-ms) linear var(--sweep-at) both; }
-    .scene[data-state="press"] .status__prog { animation: prog var(--sweep-ms) linear var(--sweep-at) both; }
-    .warn-stage .track--moves :is(.win, .cut--wind) { transition: transform var(--duration-swap) var(--ease-swap) var(--stagger); }
+    .scene[data-state="aim"] :is(.cut, .bar, .win, .plan, .swap-track, .swap-track > *) { transition: none; }
+
+    /* Warnings, fri21: the card moves first (badge, then the end time --offset later, then the bar trim, the lost
+       sliver and the against-tide time), then the note swaps to "Back window moved" once the card shows the change. */
+    .warn-stage .chip--forecast .swap-track { transition-delay: 0ms; }
+    .warn-stage .wp-win .swap-track { transition-delay: var(--offset); }
+    .warn-stage .warn-t .swap-track { transition-delay: calc(var(--offset) * 2); }
+    .warn-stage .track--moves :is(.win, .cut--wind) { transition: transform var(--duration-swap) var(--ease-swap) calc(var(--offset) * 2); }
+    .warn-stage[data-state="fri21"] .lost { transition: opacity var(--duration-slow) var(--ease-standard) calc(var(--offset) * 2); }
     .warn-stage .chip--forecast { transition: background-color var(--duration-slow) var(--ease-standard), color var(--duration-slow) var(--ease-standard); }
-    .warn-stage .face--saved { transition: opacity var(--duration-fast) var(--ease-exit), transform var(--duration-fast) var(--ease-exit); }
+    .warn-stage .face--saved { transition: opacity var(--duration-fast) var(--ease-exit) calc(var(--duration-page) + var(--offset)), transform var(--duration-fast) var(--ease-exit) calc(var(--duration-page) + var(--offset)); }
     .warn-stage[data-state="saved"] .notes .alert { transition: opacity var(--duration-page) var(--ease-enter), transform var(--duration-page) var(--ease-enter); }
-    .warn-stage .face--moved { transition: opacity var(--duration-page) var(--ease-enter) var(--duration-fast), transform var(--duration-page) var(--ease-enter) var(--duration-fast); }
-    .warn-stage[data-state="fri21"] .lost { animation: lost calc(var(--duration-swap) + var(--duration-reveal)) var(--ease-standard) both; }
+    .warn-stage .face--moved { transition: opacity var(--duration-page) var(--ease-enter) calc(var(--duration-page) + var(--offset) + var(--duration-fast)), transform var(--duration-page) var(--ease-enter) calc(var(--duration-page) + var(--offset) + var(--duration-fast)); }
     /* Route: the page script sails the boat along each leg's own path and draws the leg with it (same path, same
-       duration, same curve), and counts the clock and distance as it goes; the place name lands on arrival. */
-    .route-card .rs-label .swap-track { transition-delay: var(--land, 0ms); }
+       duration, same curve) and sets --land to the arrival time. The readout holds still while the boat moves; on
+       arrival the place name rolls first, then the time, distance and speed together, --offset after. */
+    .route-card .rs-label { --roll-at: calc(var(--land, 0ms) - var(--offset)); }
+    .route-card .rs-read { --roll-at: var(--land, 0ms); }
+    .route-card :is(.rs-label, .rs-time) { transition: color var(--duration-slow) var(--ease-standard) var(--land, 0ms); }
 
     /* pricing value stack and FAQ icon: UI change band */
     .slot > * { transition: transform var(--duration-slow) var(--ease-standard), visibility var(--duration-slow) linear; }
@@ -865,7 +920,7 @@
       <div class="frag__body"><div class="plot plot--mini">
       <span class="lab"></span><div class="axis"><span style="--x:6.67%">06:00</span><span style="--x:26.67%">09:00</span><span style="--x:46.67%">12:00</span><span style="--x:66.67%">15:00</span><span style="--x:86.67%">18:00</span></div>
       <span class="lab">Light</span><div class="track track--light" data-lane="light"><span class="night g" style="--x0:0%;--x1:17%"></span><span class="night g" style="--x0:86.22%;--x1:100%"></span></div>
-      <span class="lab lab--row">Out</span><div class="track track--row"><i class="cut cut--tide" style="--x0:0%;--x1:4.44%;--d:0.000"></i><i class="cut cut--light" style="--x0:4.44%;--x1:17%;--d:0.044"></i><i class="cut cut--tide" style="--x0:30%;--x1:100%;--d:0.300"></i><span class="win" style="--x0:17%;--x1:30%;--i:0;--e:0.300"></span></div><span class="lab lab--row">Back</span><div class="track track--row"><i class="cut cut--tide" style="--x0:0%;--x1:41.11%;--d:0.000"></i><i class="cut cut--wind" style="--x0:55.56%;--x1:74.44%;--d:0.556"></i><i class="cut cut--tide" style="--x0:74.44%;--x1:100%;--d:0.744"></i><i class="cut cut--light" style="--x0:75.11%;--x1:100%;--d:0.751"></i><span class="win" style="--x0:41.11%;--x1:55.56%;--i:1;--e:0.556"></span></div>
+      <span class="lab lab--row">Out</span><div class="track track--row"><i class="cut cut--tide" style="--x0:0%;--x1:4.44%;--d:0"></i><i class="cut cut--light" style="--x0:4.44%;--x1:17%;--d:0.06"></i><i class="cut cut--tide" style="--x0:30%;--x1:100%;--d:0.136"></i><span class="win" style="--x0:17%;--x1:30%;--row:0"></span></div><span class="lab lab--row">Back</span><div class="track track--row"><i class="cut cut--tide" style="--x0:0%;--x1:41.11%;--d:0"></i><i class="cut cut--wind" style="--x0:55.56%;--x1:74.44%;--d:0.224"></i><i class="cut cut--tide" style="--x0:74.44%;--x1:100%;--d:0.344"></i><i class="cut cut--light" style="--x0:75.11%;--x1:100%;--d:0.35"></i><span class="win" style="--x0:41.11%;--x1:55.56%;--row:1"></span></div>
     </div></div>
       <div class="app__foot"><span class="key key--win">Out 07:33 to 09:30</span><span class="key key--win">Back 11:10 to 13:20</span></div>
     </div>

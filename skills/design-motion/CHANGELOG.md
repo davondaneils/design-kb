@@ -1,5 +1,8 @@
 # design-motion changelog
 
+## 0.4.3 (2026-10-20, scored gate round v07)
+- `scene.js`: replays in place by default. At the end of the rest the first state returns with its transitions running, like any state change; `data-seam="fade"` keeps the old whole-mock fade. All three critics in v07 (and two of three in v06) read the fade as a cut to a blank frame. SKILL.md loop rules, reference 08 and reference 09 updated.
+
 ## 0.4.2 (2026-10-20, Davon's decision after three blind rounds)
 - `blind-gate.mjs`: scored. Critics score each clip 1 to 10 for motion craft; `grade` reads every `answers*.json` (three critics), passes a trial when our median is within 1 point of the exemplar's and most critics name a memorable moment, and records tell-apart and brand recognition without grading them. Reference 09 section 5, SKILL.md fundamental 12, FOUNDATIONS v0.6.1 and the landing playbook updated.
 

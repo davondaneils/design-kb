@@ -1,5 +1,5 @@
 
-Fundamentals lint: halyard.html  ->  PASS (0 fail, 13 warn)
+Fundamentals lint: halyard.html  ->  PASS (0 fail, 11 warn)
 
   pass  axe
   pass  overlay
@@ -15,13 +15,11 @@ Fundamentals lint: halyard.html  ->  PASS (0 fail, 13 warn)
         ! heading ends on a one-word line at 390px ("What sailors say")  [#proof-title]
         ! heading ends on a one-word line at 1440px ("What sailors say")  [#proof-title]
         ! heading ends on a one-word line at 1440px ("Where it works. Poole to Chichester Harbour.")  [#cover-title]
-  pass  svg-overlap  (6 warn)
-        ! text "Checking" partly covered by #hero-scene > span.shot-cursor > svg (9x11px) at 390px  [span.find > span.swap > span.swap-track > span]
-        ! text "18:00" partly covered by #hero-scene > span.shot-cursor > svg (20x4px) at 390px  [div.app__plot > div.plot > div.axis > span]
-        ! text "Plan saved for Saturday" partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 390px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
-        ! text "Checking" partly covered by #hero-scene > span.shot-cursor > svg (9x11px) at 1440px  [span.find > span.swap > span.swap-track > span]
-        ! text "18:00" partly covered by #hero-scene > span.shot-cursor > svg (6x4px) at 1440px  [div.app__plot > div.plot > div.axis > span]
-        ... 1 more warnings
+  pass  svg-overlap  (4 warn)
+        ! text "Find windows" partly covered by #hero-scene > span.shot-cursor > svg (20x5px) at 390px  [span.find > span.swap.roll > span.swap-track > span]
+        ! text "Plan saved." partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 390px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
+        ! text "Find windows" partly covered by #hero-scene > span.shot-cursor > svg (20x5px) at 1440px  [span.find > span.swap.roll > span.swap-track > span]
+        ! text "Plan saved." partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 1440px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
   pass  reading-size
   pass  selected-state
   pass  primary
@@ -61,7 +59,7 @@ Fundamentals lint: halyard.html  ->  PASS (0 fail, 13 warn)
 
   JSON: kb/tests/fresh/landing/halyard.lint.json
 
-Fundamentals lint: halyard.html?state=yearly  ->  PASS (0 fail, 13 warn)
+Fundamentals lint: halyard.html?state=yearly  ->  PASS (0 fail, 11 warn)
 
   pass  axe
   pass  overlay
@@ -77,13 +75,11 @@ Fundamentals lint: halyard.html?state=yearly  ->  PASS (0 fail, 13 warn)
         ! heading ends on a one-word line at 390px ("What sailors say")  [#proof-title]
         ! heading ends on a one-word line at 1440px ("What sailors say")  [#proof-title]
         ! heading ends on a one-word line at 1440px ("Where it works. Poole to Chichester Harbour.")  [#cover-title]
-  pass  svg-overlap  (6 warn)
-        ! text "Checking" partly covered by #hero-scene > span.shot-cursor > svg (9x11px) at 390px  [span.find > span.swap > span.swap-track > span]
-        ! text "18:00" partly covered by #hero-scene > span.shot-cursor > svg (20x4px) at 390px  [div.app__plot > div.plot > div.axis > span]
-        ! text "Plan saved for Saturday" partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 390px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
-        ! text "Checking" partly covered by #hero-scene > span.shot-cursor > svg (9x11px) at 1440px  [span.find > span.swap > span.swap-track > span]
-        ! text "18:00" partly covered by #hero-scene > span.shot-cursor > svg (6x4px) at 1440px  [div.app__plot > div.plot > div.axis > span]
-        ... 1 more warnings
+  pass  svg-overlap  (4 warn)
+        ! text "Find windows" partly covered by #hero-scene > span.shot-cursor > svg (20x5px) at 390px  [span.find > span.swap.roll > span.swap-track > span]
+        ! text "Plan saved." partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 390px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
+        ! text "18:00" partly covered by #hero-scene > span.shot-cursor > svg (6x11px) at 1440px  [div.app__plot > div.plot > div.axis > span]
+        ! text "Plan saved." partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 1440px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
   pass  reading-size
   pass  selected-state
   pass  primary
@@ -140,10 +136,10 @@ Fundamentals lint: halyard.html?state=menu  ->  PASS (0 fail, 11 warn)
         ! heading ends on a one-word line at 1440px ("What sailors say")  [#proof-title]
         ! heading ends on a one-word line at 1440px ("Where it works. Poole to Chichester Harbour.")  [#cover-title]
   pass  svg-overlap  (4 warn)
-        ! text "Checking" partly covered by #hero-scene > span.shot-cursor > svg (9x11px) at 390px  [span.find > span.swap > span.swap-track > span]
-        ! text "18:00" partly covered by #hero-scene > span.shot-cursor > svg (20x4px) at 390px  [div.app__plot > div.plot > div.axis > span]
-        ! text "Plan saved for Saturday" partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 390px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
-        ! text "Plan saved for Saturday" partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 1440px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
+        ! text "Find windows" partly covered by #hero-scene > span.shot-cursor > svg (20x5px) at 390px  [span.find > span.swap.roll > span.swap-track > span]
+        ! text "Plan saved." partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 390px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
+        ! text "18:00" partly covered by #hero-scene > span.shot-cursor > svg (6x11px) at 1440px  [div.app__plot > div.plot > div.axis > span]
+        ! text "Plan saved." partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 1440px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
   pass  reading-size
   pass  selected-state
   pass  primary
@@ -183,7 +179,7 @@ Fundamentals lint: halyard.html?state=menu  ->  PASS (0 fail, 11 warn)
 
   JSON: kb/tests/fresh/landing/halyard.state-menu.lint.json
 
-Fundamentals lint: halyard.html?state=faq  ->  PASS (0 fail, 11 warn)
+Fundamentals lint: halyard.html?state=faq  ->  PASS (0 fail, 10 warn)
 
   pass  axe
   pass  overlay
@@ -199,11 +195,10 @@ Fundamentals lint: halyard.html?state=faq  ->  PASS (0 fail, 11 warn)
         ! heading ends on a one-word line at 390px ("What sailors say")  [#proof-title]
         ! heading ends on a one-word line at 1440px ("What sailors say")  [#proof-title]
         ! heading ends on a one-word line at 1440px ("Where it works. Poole to Chichester Harbour.")  [#cover-title]
-  pass  svg-overlap  (4 warn)
-        ! text "Checking" partly covered by #hero-scene > span.shot-cursor > svg (9x11px) at 390px  [span.find > span.swap > span.swap-track > span]
-        ! text "18:00" partly covered by #hero-scene > span.shot-cursor > svg (20x4px) at 390px  [div.app__plot > div.plot > div.axis > span]
-        ! text "Plan saved for Saturday" partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 390px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
-        ! text "Plan saved for Saturday" partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 1440px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
+  pass  svg-overlap  (3 warn)
+        ! text "Find windows" partly covered by #hero-scene > span.shot-cursor > svg (20x5px) at 390px  [span.find > span.swap.roll > span.swap-track > span]
+        ! text "Plan saved." partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 390px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
+        ! text "Plan saved." partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 1440px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
   pass  reading-size
   pass  selected-state
   pass  primary
@@ -243,7 +238,7 @@ Fundamentals lint: halyard.html?state=faq  ->  PASS (0 fail, 11 warn)
 
   JSON: kb/tests/fresh/landing/halyard.state-faq.lint.json
 
-Fundamentals lint: halyard.html?state=paused  ->  PASS (0 fail, 13 warn)
+Fundamentals lint: halyard.html?state=paused  ->  PASS (0 fail, 11 warn)
 
   pass  axe
   pass  overlay
@@ -259,13 +254,11 @@ Fundamentals lint: halyard.html?state=paused  ->  PASS (0 fail, 13 warn)
         ! heading ends on a one-word line at 390px ("What sailors say")  [#proof-title]
         ! heading ends on a one-word line at 1440px ("What sailors say")  [#proof-title]
         ! heading ends on a one-word line at 1440px ("Where it works. Poole to Chichester Harbour.")  [#cover-title]
-  pass  svg-overlap  (6 warn)
-        ! text "Checking" partly covered by #hero-scene > span.shot-cursor > svg (9x11px) at 390px  [span.find > span.swap > span.swap-track > span]
-        ! text "18:00" partly covered by #hero-scene > span.shot-cursor > svg (20x4px) at 390px  [div.app__plot > div.plot > div.axis > span]
-        ! text "Plan saved for Saturday" partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 390px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
-        ! text "Checking" partly covered by #hero-scene > span.shot-cursor > svg (9x11px) at 1440px  [span.find > span.swap > span.swap-track > span]
-        ! text "18:00" partly covered by #hero-scene > span.shot-cursor > svg (6x4px) at 1440px  [div.app__plot > div.plot > div.axis > span]
-        ... 1 more warnings
+  pass  svg-overlap  (4 warn)
+        ! text "Find windows" partly covered by #hero-scene > span.shot-cursor > svg (20x5px) at 390px  [span.find > span.swap.roll > span.swap-track > span]
+        ! text "Plan saved." partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 390px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
+        ! text "18:00" partly covered by #hero-scene > span.shot-cursor > svg (6x11px) at 1440px  [div.app__plot > div.plot > div.axis > span]
+        ! text "Plan saved." partly covered by div.face.face--moved > div.alert__app > span > svg.alert__logo (18x3px) at 1440px  [li.frag.alert > div.face.face--saved > div.alert__msg > b]
   pass  reading-size
   pass  selected-state
   pass  primary

@@ -1,18 +1,18 @@
 motion-plan-check kb/tests/fresh/landing/halyard.html at 390px
-  animations 188 (reduce 6); ladder 100/150/200/300/400/519/600/800/1200/1400/1600/4400 ms
-  bands 5: scene 1200/1400/1600/4400; press/hover 100/150; entrance 400/519; UI change 200/300; reveal 600/800
-  scenes #hero-scene [aim:1500 press:2400 window:4400] seen aim>press>window, #route-scene [leave:1500 jack:2200 hamstead:2800 gurnard:3200 cowes:2200] seen leave>jack>hamstead>gurnard>cowes, #warn-scene [fri18:2400 saved:2400 fri21:4500] seen fri18>saved>fri21
-  staggers 12@20ms over 161ms, 3@81ms over 161ms, 18@20ms over 431ms; entrances 19 (12 masked)
-  beat #hero-scene aim: hold 855ms after settle
-  beat #route-scene leave: hold 1340ms after settle, 1 word(s) to read (needs 1000ms)
-  beat #warn-scene fri18: hold 6013ms after settle, 4 word(s) to read (needs 1620ms)
-  beat #hero-scene press: hold 465ms after settle
-  beat #hero-scene window: hold 7683ms after settle, 9 word(s) to read (needs 3270ms)
-  beat #route-scene jack: hold 1131ms after settle, 1 word(s) to read (needs 1000ms)
-  beat #route-scene hamstead: hold 1178ms after settle, 1 word(s) to read (needs 1000ms)
-  beat #route-scene gurnard: hold 1120ms after settle, 1 word(s) to read (needs 1000ms)
-  beat #route-scene cowes: hold 3761ms after settle, 3 word(s) to read (needs 1290ms)
-  beat #warn-scene saved: hold 1933ms after settle, 4 word(s) to read (needs 1620ms)
-  beat #warn-scene fri21: hold 6732ms after settle, 9 word(s) to read (needs 3270ms)
+  animations 258 (reduce 6); ladder 100/150/200/300/400/519/600/800/1200/1700 ms
+  bands 5: entrance 400/519; press/hover 100/150; UI change 200/300; reveal 600/800; scene 1200/1700
+  scenes #hero-scene [aim:1200 press:1800 window:4400] seen aim>press>window, #route-scene [leave:1500 jack:1900 hamstead:2100 gurnard:2300 cowes:4100] seen leave>jack>hamstead>gurnard>cowes, #warn-scene [fri18:2400 saved:3000 fri21:4500] seen fri18>saved>fri21
+  staggers 12@20ms over 160ms, 3@80ms over 160ms, 18@20ms over 430ms; entrances 19 (12 masked)
+  beat #hero-scene aim: hold 460ms after settle
+  beat #route-scene leave: hold 1292ms after settle, 1 word(s) to read (needs 1000ms)
+  beat #warn-scene fri18: hold 6018ms after settle, 4 word(s) to read (needs 1620ms)
+  beat #hero-scene press: hold 1639ms after settle
+  beat #hero-scene window: hold 8140ms after settle, 9 word(s) to read (needs 3270ms)
+  beat #route-scene jack: hold 1081ms after settle, 1 word(s) to read (needs 1000ms)
+  beat #route-scene hamstead: hold 1081ms after settle, 1 word(s) to read (needs 1000ms)
+  beat #route-scene gurnard: hold 1033ms after settle, 1 word(s) to read (needs 1000ms)
+  beat #route-scene cowes: hold 5683ms after settle, 3 word(s) to read (needs 1290ms)
+  beat #warn-scene saved: hold 2536ms after settle, 6 word(s) to read (needs 2280ms)
+  beat #warn-scene fri21: hold 58879ms after settle, 9 word(s) to read (needs 3270ms)
 PASS: ladder, scene, shot plan, stagger, travel and reduced motion meet FOUNDATIONS v0.6
 exit 0

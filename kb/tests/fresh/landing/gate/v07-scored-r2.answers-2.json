@@ -1,0 +1,78 @@
+[
+  {
+    "trial": 1,
+    "stronger": "A",
+    "confidence": 2,
+    "scores": { "A": 6, "B": 6 },
+    "tells": [
+      "B looks like the Linear homepage hero: blurred headline sharpening over about 1.5s, then a dim app screenshot fading up",
+      "B spends 0 to 1.4s on a headline that is too blurred to read, and the product only becomes legible near 2.0s",
+      "B's one product action (the agent panel with 'Thinking...') appears at about 4.0s and the clip ends before it resolves",
+      "A tells a cause and effect story in place: cursor presses Find windows at about 1.5s, a scan line sweeps the chart, wind bars turn amber left to right behind it, Out and Back windows land, status reads '2 windows found'",
+      "A's whole card assembles in about 0.4s with no staging, and Checking, scan, windows and plan all happen inside roughly 2s, so several things compete at once"
+    ],
+    "memorable": { "A": "the scan line sweeping the forecast and turning the good wind hours amber behind it", "B": "none" },
+    "corrections": [
+      { "where": "B 0.50s to 1.40s, the headline", "problem": "headline sits blurred and unreadable for about a second before it resolves", "change": "shorten the blur to 0.4s or replace it with a 0.3s opacity and 8px rise, so the headline is readable by 0.6s", "keep": "the headline arriving before the product shot" },
+      { "where": "B 1.50s to 2.40s, the app screenshot", "problem": "product fades up as one dim block, nothing inside it is the focus", "change": "bring the screenshot in fully legible, then let one element (the issue title) settle 0.1s after the frame", "keep": "the restrained dark palette and lack of decorative motion" },
+      { "where": "B 4.00s to 6.00s, the agent panel", "problem": "the product's real action starts late and stops on 'Thinking...', so there is no payoff", "change": "start the agent panel by 2.5s and show its result (the PR or status change) landing in place, held 2s", "keep": "the panel sliding in from the corner without covering the issue title" }
+    ]
+  },
+  {
+    "trial": 2,
+    "stronger": "B",
+    "confidence": 5,
+    "scores": { "A": 6, "B": 9 },
+    "tells": [
+      "B looks like the Stripe homepage payments section",
+      "B holds the $5.46 Roastery state about 4.5s, then every text line rolls vertically in place to the German Cartsy state",
+      "B staggers the roll: phone header and amount first near 5.0s, line items about 0.1 to 0.2s later, then the checkout brand and fields, so the eye follows one wave",
+      "A repeats the find-windows sequence: good sweep and amber bars, but the loop resets with a full fade through white at about 6.5s to 6.9s",
+      "A's result state holds about 6s while the find action itself plays in under 2s"
+    ],
+    "memorable": { "A": "the scan line turning wind bars amber", "B": "the whole terminal and checkout rolling from dollars to euros and English to German in place" },
+    "corrections": [
+      { "where": "A 6.40s to 6.95s, whole card", "problem": "loop resets by fading the entire card to near white and back, a cut disguised as a dissolve", "change": "reset in place: amber bars fade to gray, windows retract, status rolls back to 'Ready to check', staggered 0.1s, about 0.5s total", "keep": "the cursor then travelling to Find windows" },
+      { "where": "A 8.40s to 9.60s, scan and results", "problem": "scan, bar fill, Out window, Back window and status all change within about 1.2s so no single change is watched", "change": "let the scan finish first, then land Out, then Back 0.1s later, then roll the status to '2 windows found', and slow the scan to about 1.5s", "keep": "bars turning amber exactly as the scan line passes them" },
+      { "where": "A 7.70s, Find windows button", "problem": "the cursor is tiny and the press has little feedback before the button text swaps", "change": "add a clear press state (scale 0.97 for 100ms) and hold 'Checking' for the length of the scan", "keep": "the button label changing in place rather than a spinner" }
+    ]
+  },
+  {
+    "trial": 3,
+    "stronger": "A",
+    "confidence": 4,
+    "scores": { "A": 9, "B": 7 },
+    "tells": [
+      "A looks like the Stripe homepage payments section, same moment as trial 2 B",
+      "A rolls every string in place with a tenth-of-a-second stagger and holds each state about 4.5s",
+      "B changes in place well: forecast label rolls from Fri 18:00 to Fri 21:00, window end rolls 13:45 to 13:20, the window bar shrinks with a hatched cut-off, then 15:25 rolls to 15:00, offsets about 0.1s",
+      "B's whole update finishes in about 0.6s, then nothing moves for 10s",
+      "B's notification swap leaves an empty card for about 0.1s at 1.16s before the new message fades in"
+    ],
+    "memorable": { "A": "dollars rolling to euros across terminal and checkout", "B": "the return window shrinking and leaving a hatched sliver where the lost 25 minutes were" },
+    "corrections": [
+      { "where": "B 1.10s to 1.30s, the notification", "problem": "old message disappears and the card sits empty before the new one fades in", "change": "cross-roll the text in place, or slide the new notification over the old with no empty frame", "keep": "the notification arriving last, after the window has moved" },
+      { "where": "B 0.80s to 1.20s, forecast label, window time, bar and 15:25 row", "problem": "four changes land in about 0.4s, faster than they can be followed", "change": "spread the chain over about 1.2s: forecast label, pause 0.3s, window bar shrink, then the Leave time and the 15:00 row 0.1s apart", "keep": "the order cause first (new forecast) then effect (window shortens)" },
+      { "where": "B 0.50s, Forecast Fri 18:00 tag", "problem": "the highlight that signals a new forecast is faint and brief", "change": "hold the highlighted tag 0.4s before the time rolls so the viewer knows why the window moves", "keep": "the amber tint as the only accent besides the brand pink" }
+    ]
+  },
+  {
+    "trial": 4,
+    "stronger": "B",
+    "confidence": 5,
+    "scores": { "A": 6, "B": 9 },
+    "tells": [
+      "B looks like the Stripe homepage payments section again",
+      "A plays the route leg by leg: the line draws to Hamstead Ledge, Gurnard, then Cowes, and the footer stats change at each waypoint",
+      "A's footer label goes blank around 1.50s while it swaps, and each intermediate state holds only about 1.5s",
+      "A resets with a fade through a fully blank white frame at about 10.08s",
+      "A's arrival at Cowes (about 3.6s) lands with no emphasis, then the frame sits still for about 6s"
+    ],
+    "memorable": { "A": "the route drawing across the Solent waypoint by waypoint", "B": "the in-place currency and language roll" },
+    "corrections": [
+      { "where": "A 9.88s to 10.18s, whole card", "problem": "the card fades out to a blank frame and back, which reads as a cut", "change": "reset in place: retract the solid route back to dashed in 0.5s while the stats roll down to 0.0, with no blank frame", "keep": "the dashed route and Leave 08:30 start state" },
+      { "where": "A 1.40s to 2.00s, footer stats", "problem": "the waypoint label fades to nothing before the new one appears, so the readout blinks", "change": "roll the label, time, distance and speed in place, 0.05s apart, no empty state", "keep": "the stats updating exactly when the dot reaches each waypoint" },
+      { "where": "A 3.50s to 4.00s, arrival at Cowes", "problem": "arrival is the climax but looks the same as the earlier waypoints", "change": "give Arrive Cowes 10:10 a single settle (dot scale 1.0 to 1.3 to 1.0 over 300ms, time in brand color) and hold it 3s", "keep": "the restrained map with no decorative motion" }
+    ]
+  }
+]

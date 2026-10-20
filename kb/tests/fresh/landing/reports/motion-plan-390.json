@@ -2,8 +2,8 @@
  "page": "kb/tests/fresh/landing/halyard.html",
  "width": 390,
  "needScene": true,
- "measuredAt": "2026-10-15T06:14:13.998Z",
- "animations": 188,
+ "measuredAt": "2026-10-20T18:12:28.003Z",
+ "animations": 258,
  "reduceAnimations": 6,
  "ladder": [
   100,
@@ -15,16 +15,14 @@
   600,
   800,
   1200,
-  1400,
-  1600,
-  4400
+  1700
  ],
  "bands": [
-  "scene 1200/1400/1600/4400",
-  "press/hover 100/150",
   "entrance 400/519",
+  "press/hover 100/150",
   "UI change 200/300",
-  "reveal 600/800"
+  "reveal 600/800",
+  "scene 1200/1700"
  ],
  "scenes": [
   {
@@ -33,11 +31,11 @@
    "beats": [
     {
      "state": "aim",
-     "ms": 1500
+     "ms": 1200
     },
     {
      "state": "press",
-     "ms": 2400
+     "ms": 1800
     },
     {
      "state": "window",
@@ -70,7 +68,6 @@
      "state": "window",
      "owner": ".plan",
      "read": ".plan__head",
-     "push": ".app",
      "ownerFound": 1,
      "readFound": 1
     }
@@ -92,19 +89,19 @@
     },
     {
      "state": "jack",
-     "ms": 2200
+     "ms": 1900
     },
     {
      "state": "hamstead",
-     "ms": 2800
+     "ms": 2100
     },
     {
      "state": "gurnard",
-     "ms": 3200
+     "ms": 2300
     },
     {
      "state": "cowes",
-     "ms": 2200
+     "ms": 4100
     }
    ],
    "still": "cowes",
@@ -170,7 +167,7 @@
     },
     {
      "state": "saved",
-     "ms": 2400
+     "ms": 3000
     },
     {
      "state": "fri21",
@@ -178,9 +175,9 @@
     }
    ],
    "still": "fri21",
-   "state": "fri18",
-   "loop": true,
-   "rest": 3000,
+   "state": "fri21",
+   "loop": false,
+   "rest": 0,
    "pauseButtons": 1,
    "pauseVisible": true,
    "plan": "ok",
@@ -195,7 +192,7 @@
     {
      "state": "saved",
      "owner": ".notes",
-     "read": ".face--saved b",
+     "read": ".face--saved .alert__msg",
      "ownerFound": 1,
      "readFound": 1
     },
@@ -223,21 +220,21 @@
    "text": true,
    "n": 12,
    "gap": 20,
-   "span": 161
+   "span": 160
   },
   {
    "key": "600|cubic-bezier(0.2, 0, 0, 1)|opacity",
    "text": false,
    "n": 3,
-   "gap": 81,
-   "span": 161
+   "gap": 80,
+   "span": 160
   },
   {
    "key": "600|cubic-bezier(0, 0, 0, 1)|transform",
    "text": true,
    "n": 18,
    "gap": 20,
-   "span": 431
+   "span": 430
   }
  ],
  "entrances": [
@@ -408,9 +405,9 @@
    "id": "hero-scene",
    "state": "aim",
    "holds": [
-    855,
-    11974,
-    1288
+    460,
+    11691,
+    989
    ],
    "words": null,
    "read": null,
@@ -420,9 +417,9 @@
    "id": "route-scene",
    "state": "leave",
    "holds": [
-    5100,
-    36527,
-    1340
+    5104,
+    36068,
+    1292
    ],
    "words": 1,
    "read": ".rs-time",
@@ -432,8 +429,8 @@
    "id": "warn-scene",
    "state": "fri18",
    "holds": [
-    6013,
-    62942
+    6018,
+    65174
    ],
    "words": 4,
    "read": ".wp-win",
@@ -443,8 +440,8 @@
    "id": "hero-scene",
    "state": "press",
    "holds": [
-    465,
-    71819
+    1639,
+    73351
    ],
    "words": null,
    "read": null,
@@ -454,7 +451,7 @@
    "id": "hero-scene",
    "state": "window",
    "holds": [
-    7683
+    8140
    ],
    "words": 9,
    "read": ".plan__head",
@@ -464,7 +461,7 @@
    "id": "route-scene",
    "state": "jack",
    "holds": [
-    1131
+    1081
    ],
    "words": 1,
    "read": ".rs-time",
@@ -474,7 +471,7 @@
    "id": "route-scene",
    "state": "hamstead",
    "holds": [
-    1178
+    1081
    ],
    "words": 1,
    "read": ".rs-time",
@@ -484,7 +481,7 @@
    "id": "route-scene",
    "state": "gurnard",
    "holds": [
-    1120
+    1033
    ],
    "words": 1,
    "read": ".rs-time",
@@ -494,7 +491,7 @@
    "id": "route-scene",
    "state": "cowes",
    "holds": [
-    3761
+    5683
    ],
    "words": 3,
    "read": ".rs-now",
@@ -504,17 +501,17 @@
    "id": "warn-scene",
    "state": "saved",
    "holds": [
-    1933
+    2536
    ],
-   "words": 4,
-   "read": ".face--saved b",
+   "words": 6,
+   "read": ".face--saved .alert__msg",
    "quiet": []
   },
   {
    "id": "warn-scene",
    "state": "fri21",
    "holds": [
-    6732
+    58879
    ],
    "words": 9,
    "read": ".alert__lead",

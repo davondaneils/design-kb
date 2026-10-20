@@ -17,8 +17,12 @@
  *   data-state="sending"          the current state (CSS: [data-state="sending"] .row-live { ... })
  *   data-seen="queued sending"    every state reached in this play, so CSS can keep earlier changes ([data-seen~="sending"])
  *   style --beat: 2400ms           the current beat's length, for CSS that fills a beat (a progress bar)
- *   data-scene-seam                for one --duration-fast before a replay: CSS fades the mock out, the state resets
- *                                  underneath with no transitions, and it fades back in, so the story never plays backwards
+ *   data-scene-seam                only with data-seam="fade": for one --duration-fast before a replay, CSS fades the mock
+ *                                  out, the state resets underneath with no transitions, and it fades back in.
+ *                                  The default replay (data-seam absent or "in-place") returns to the first state with
+ *                                  its transitions running, in place, like any other state change (Stripe's checkout
+ *                                  cycles back the same way). Three of three blind critics read the whole-mock fade as a
+ *                                  cut to a blank frame (gate round v07, kb/tests/fresh/landing/gate/).
  *   event scene:state              dispatched synchronously on every state change (moments.js listens to it)
  *   data-scene-paused              while paused for any reason
  *
@@ -82,6 +86,7 @@
       if (phase === 'seam') { jump(0); el.removeAttribute('data-scene-seam'); phase = 'beat'; return schedule(beats[0].ms, next); }
       if (index < beats.length - 1) { show(index + 1); phase = 'beat'; return schedule(beats[index].ms, next); }
       if (phase === 'beat' && loop) { phase = 'rest'; return schedule(rest, next); }   // hold the last frame
+      if (phase === 'rest' && el.dataset.seam !== 'fade') { show(0); phase = 'beat'; return schedule(beats[0].ms, next); } // replay in place
       if (phase === 'rest') { phase = 'seam'; el.setAttribute('data-scene-seam', ''); return schedule(seamMs, next); }
       phase = 'done'; // played once: stay on the last state
     };
@@ -127,7 +132,10 @@
     }
     // Someone turns on reduced motion while the page is open: stop on the still frame.
     reduceQuery.addEventListener('change', (q) => { if (q.matches) toStill(); });
-    return (el.__scene = { pause: () => pause('user'), play: () => play('user'), still: toStill });
+    // restart: back to the first state with no transitions and play from there (blind-gate.mjs films each scene
+    // from its opening, not from wherever the scroll left it).
+    const restart = () => { if (phase === 'done' && reduceQuery.matches) return; clearTimeout(timer); el.removeAttribute('data-scene-seam'); jump(0); phase = 'beat'; if (!reasons.size) schedule(beats[0].ms, next); else left = beats[0].ms; };
+    return (el.__scene = { pause: () => pause('user'), play: () => play('user'), still: toStill, restart });
   }
 
   const init = (root = document) => root.querySelectorAll('[data-scene]').forEach(setup);

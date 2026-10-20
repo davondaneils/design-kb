@@ -112,6 +112,9 @@ async function prepare() {
       // kb/moments films and in gate round v06, where all three critics flagged it as a page glitch). Start after it.
       const since = Date.now() - t0;
       if (cropEl && since < 5400) await page.waitForTimeout(5400 - since); // a hero films from load, so it keeps it
+      // Film the scene from its opening state: restart it (scene.js) now, so a scene that plays once is not caught
+      // after its change (gate round v07: "the before state is visible for under a second").
+      if (cropEl) await page.evaluate((sel) => { const e = document.querySelector(sel); const s = e?.closest('[data-scene]') || e?.querySelector('[data-scene]'); s?.__scene?.restart?.(); }, cropEl).catch(() => {});
       startAt = Date.now() - t0;
     }
     await page.waitForTimeout(record + trimLead);
