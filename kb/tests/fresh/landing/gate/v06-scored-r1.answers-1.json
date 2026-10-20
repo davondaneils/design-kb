@@ -1,0 +1,86 @@
+[
+  {
+    "trial": 1,
+    "stronger": "B",
+    "confidence": 2,
+    "scores": { "A": 6, "B": 7 },
+    "tells": [
+      "A looks like Linear's hero: headline blurs in from 0.07s to 0.68s, the app window fades up 1.2s to 1.7s, the agent panel blurs in at about 3.0s",
+      "A is clean and restrained but the clip is a page load; the product's own action ends at 'Thinking...' with no result inside 6s",
+      "A's agent panel drops on top of the Properties column with a blur pop rather than growing from anything the viewer pressed",
+      "B shows a cursor press on 'Find windows' at 0.0s, a scan line sweeps the chart left to right 1.0s to 2.0s, wind bars turn amber behind it and the Out and Back rows fill as the line passes: cause and effect read in place",
+      "B's state is wrong for about 2.4s: the header says '2 windows found' from 2.2s while the button still reads 'Checking' until about 4.6s",
+      "B's 'Not checked' labels crossfade into 'Leave 07:33 to 09:30' while overlapping (1.8s), a brief double-text frame",
+      "B adds the Proposed plan row at about 4.4s, then the clip ends at 6s, so the result gets under 2s of hold"
+    ],
+    "memorable": { "A": "the headline sharpening out of a blur", "B": "the scan line sweeping the forecast and turning the windy hours amber" },
+    "corrections": [
+      { "where": "A 2.9s to 3.1s, agent panel", "problem": "the panel blurs in over the Properties column with no trigger, so it reads as a pop-up rather than the product acting", "change": "show the prompt being sent from a visible input, then grow the panel from that input over about 250ms", "keep": "the quiet single-element entrance and the dark palette" },
+      { "where": "A 3.0s to 6.0s, 'Thinking...' line", "problem": "the climax never arrives; the clip holds a spinner-like state for 3s", "change": "land the agent's first concrete output (a diff or PR link) by about 4.5s and hold it 1.5s", "keep": "the pacing of the headline reveal" },
+      { "where": "A 0.07s to 0.68s, headline", "problem": "the blur reveal leaves the headline unreadable for most of the first 0.6s", "change": "shorten the blur phase to about 300ms so the line is legible by 0.35s", "keep": "the soft focus-pull character" }
+    ]
+  },
+  {
+    "trial": 2,
+    "stronger": "B",
+    "confidence": 4,
+    "scores": { "A": 6, "B": 8 },
+    "tells": [
+      "B looks like Stripe's homepage payments module: the terminal and the web checkout swap merchant, currency and language in place",
+      "B's swap at about 4.9s: the price rolls vertically from $5.46 to EUR 26.89, line items slide sideways, the checkout form follows about 0.1s after the phone",
+      "B holds each state about 4.5s, long enough to read every line aloud",
+      "B's clip opens with a scroll cut from the hero at 0.1s and the module is cropped at the right edge, a capture issue more than a craft one",
+      "A presses 'Find windows', sweeps the chart 1.0s to 2.4s, fills the rows, then adds the plan at about 3.6s",
+      "A's button keeps saying 'Checking' from 2.4s to 3.9s while the header already says '2 windows found'",
+      "A goes fully static from about 4.0s to 12s with no second beat"
+    ],
+    "memorable": { "A": "the scan line turning the windy hours amber", "B": "the total rolling from dollars to euros while the receipt slides into German" },
+    "corrections": [
+      { "where": "A 2.4s to 3.9s, the 'Checking' button", "problem": "the button state contradicts the '2 windows found' header for 1.5s", "change": "flip the button back to 'Find windows' within 100ms of the last row filling", "keep": "the left-to-right sweep and the rows filling as it passes" },
+      { "where": "A 2.2s, header, wind bars, Out and Back rows", "problem": "header, bars and both row labels all change in the same 200ms, so nothing owns the screen", "change": "order it: bars first, rows 100ms later, header count last", "keep": "the amber color of the windy hours" },
+      { "where": "A 1.8s, 'Not checked' to 'Leave 07:33 to 09:30'", "problem": "old and new labels overlap in a crossfade for a frame or two", "change": "roll the new label up into place and fade the old one out before it enters", "keep": "the pink time-window chip on the timeline" },
+      { "where": "A 3.5s to 3.7s, Proposed plan", "problem": "the payoff arrives last and smallest at the bottom of the card", "change": "hold the plan at least 2.5s and give it a single short emphasis, such as the times rolling in", "keep": "the 4-column plan layout" }
+    ]
+  },
+  {
+    "trial": 3,
+    "stronger": "B",
+    "confidence": 2,
+    "scores": { "A": 7, "B": 8 },
+    "tells": [
+      "B is the same Stripe payments module as trial 2: in-place roll of the total and staggered slide of the line items around 4.9s",
+      "A tells a real product story: 'Plan saved' notification at about 1.4s, then at 4.0s a new notification 'Back window moved' and the card updates to match",
+      "A's update chain is ordered: the forecast chip highlights and rolls 18:00 to 21:00, then '13:45' rolls to '13:20', then the window shrinks leaving a hatched remainder that fades by about 5.1s, and '15:25' rolls to '15:00'",
+      "A's offsets between those changes are roughly 0.1s to 0.2s, close to right",
+      "A's notification swap and the chip highlight start in the same 100ms, so two things compete at the key moment",
+      "A loops by fading the whole card through blank at 11.6s, a hard visible reset"
+    ],
+    "memorable": { "A": "the return window shrinking and its cut-off piece fading out as hatching", "B": "the dollar total rolling into euros in place" },
+    "corrections": [
+      { "where": "A 3.9s to 4.1s, notification and forecast chip", "problem": "the new notification and the forecast chip highlight start together, so the eye splits", "change": "let the notification land first, then start the chip 150ms later as its consequence", "keep": "the roll of 18:00 to 21:00 and 13:45 to 13:20" },
+      { "where": "A 1.0s to 1.4s, first notification", "problem": "the 'Plan saved' card is three lines and reads for about 2.6s before it is replaced", "change": "hold it 3.5s or cut it to one line", "keep": "the notification sliding in at the card's lower right" },
+      { "where": "A 11.6s, loop reset", "problem": "the whole card fades through blank, a visible cut", "change": "reverse the update in place or hold on the final state", "keep": "the 7s hold of the final state" }
+    ]
+  },
+  {
+    "trial": 4,
+    "stronger": "B",
+    "confidence": 3,
+    "scores": { "A": 7, "B": 8 },
+    "tells": [
+      "B is the same Stripe payments module as trials 2 and 3",
+      "A draws the route waypoint by waypoint and pauses at each (Jack in the Basket 1.0s to 3.0s, Hamstead Ledge 4.0s to 6.0s, Gurnard 8.0s to 9.4s), with time, distance and speed counting in the footer",
+      "A's counters tick every frame while the boat moves, which is fine, but leg speed changes to 6.4 kn at 3.4s while the label still says Jack in the Basket",
+      "A shows a one-frame map wash-out at 3.7s where the land tints turn white",
+      "A arrives at Cowes at about 10.1s and the clip ends 1.9s later, so the destination hold is shorter than the waypoint holds",
+      "A's path is steady and linear in speed; each leg stops dead at the waypoint rather than easing in"
+    ],
+    "memorable": { "A": "the line drawing itself across the Solent while the clock ticks", "B": "the total rolling from dollars to euros in place" },
+    "corrections": [
+      { "where": "A 3.7s, map", "problem": "a frame where the map tints wash to white", "change": "fix the render so the map stays solid through every frame", "keep": "the muted chart palette" },
+      { "where": "A 3.4s to 3.9s, footer", "problem": "leg speed changes before the waypoint label does, so the readout disagrees with the map", "change": "change label, time and speed together on arrival, label first by about 100ms", "keep": "the live counting of time and distance" },
+      { "where": "A each waypoint arrival, the moving dot", "problem": "the dot moves at constant speed and stops dead", "change": "ease out over the last 150ms into each waypoint", "keep": "the pause length at each waypoint" },
+      { "where": "A 10.1s to 12.0s, arrival at Cowes", "problem": "the payoff gets less hold than the intermediate waypoints", "change": "hold the arrival at least 3s with the total time emphasized", "keep": "the dashed preview line ahead of the drawn route" }
+    ]
+  }
+]

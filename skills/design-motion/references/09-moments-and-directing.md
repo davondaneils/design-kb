@@ -11,7 +11,7 @@ Everything below is measured unless marked **opinion**. The directing method (ev
 3. **The reading hold is counted from legibility.** Time left in the beat after the change settles is at least `max(1000ms, 300ms + 330ms per visible word)` (reading aloud, 183 words a minute, Brysbaert 2019). A number or price is one word. `read` fails below it.
 4. **A product page acts out one event.** Start state, cursor on the action, the press registering, the result owning the screen (`event`). The press is what makes cause and effect visible; a fill bar has no cause.
 5. **Changes happen in place.** Roll the value, restack the list, sharpen the text; do not cut to a new picture. Every one of the nine studied moments changes what is already there.
-6. **The blind gate is the motion verdict.** A fresh critic sees our moment beside an exemplar's, unlabeled, and must fail to tell them apart and must name a moment in ours it would describe to a friend (section 5). Self-review is not the verdict.
+6. **The blind gate is the motion verdict.** Three fresh critics see our moment beside an exemplar's, unlabeled, and score both 1 to 10; our median must be within 1 point and most must name a moment in ours they would describe to a friend (section 5). Self-review is not the verdict.
 
 ## 2. Writing the shot plan
 
@@ -86,17 +86,19 @@ From `kb/moments/STUDY.md`; each line is the decision, not the brand.
 # 1. Film ours and the paired exemplars, strip labels, shuffle (live; needs network)
 node skills/design-motion/assets/blind-gate.mjs prepare page.html --out gate/ \
   --moment hero:top --moment event:#send-scene --moment swap:#fx-scene
-# 2. A fresh critic (no build context) opens gate/trial-*/{A,B}-overview.jpg and -detail.jpg, answers gate/QUESTIONS.md,
-#    writes gate/answers.json
+# 2. Three fresh critics (no build context, none sees another's answers) open gate/trial-*/{A,B}-overview.jpg and
+#    -detail.jpg, answer gate/QUESTIONS.md, and write gate/answers-1.json, answers-2.json, answers-3.json
 # 3. Grade
 node skills/design-motion/assets/blind-gate.mjs grade --out gate/
 ```
 
 - Pairs (`assets/exemplar-moments.json`): scene, swap and event against Stripe's checkout; hero against Linear's hero; stack against Sonner. Every clip is cropped to the product region, fitted to the same 960x600 gray frame and filmed the same way, so framing gives nothing away.
-- A trial passes when the critic picks ours as the stronger clip, calls them the same, or picks the exemplar with confidence 1 or 2 of 5, **and** names a memorable moment in ours. The gate passes when every trial has a memorable moment in ours and at most one trial was told apart with confidence 3 or more.
+- Each critic scores both clips 1 to 10 for motion craft (10 the best in the world, 8 to 9 what a top product team ships, 6 to 7 strong with visible faults, 4 to 5 competent and forgettable). A trial passes when **our median score is within 1 point of the exemplar's** and **most critics name a memorable moment in ours**; the gate passes when every trial does. Which clip the critic picked, how sure, and whether it recognised the brand are recorded, not graded.
+- Why scored, not tell-apart (Davon, 2026-10-20): in three rounds on Halyard every critic recognised Stripe and Linear by their content, so "cannot tell which is ours" could not be passed by any original page; and one critic's corrections reversed the last one's. Three critics and a median damp both.
+- Corrections that two or more critics give are acted on first; a correction only one critic gives is a lead, not an order.
 - The critic's corrections come back in four fields (where, problem, change, keep), tied to a timestamp, at most five per clip, ordered: missing information and unreadable text first, then timing, then visual detail. Apply them, then run the gate again with a **new** critic; a critic who has seen the earlier round is no longer blind.
 - The key is written outside the folder the critic gets. Do not paste paths, brand names or the build note into the critic's prompt.
-- Limits, stated plainly: one critic is a noisy judge (three trials and the confidence rule damp it, they do not remove it); a critic may recognise an exemplar by its content and is asked to say so; the gate judges the moment, not the page around it.
+- Limits, stated plainly: three critics damp the noise, they do not remove it; a critic who recognises the exemplar may still score it up for its name (the questions ask them to score what is on screen); the gate judges the moment, not the page around it.
 
 ## 6. Review loop (from the article, adapted)
 

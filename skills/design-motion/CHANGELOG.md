@@ -1,5 +1,8 @@
 # design-motion changelog
 
+## 0.4.2 (2026-10-20, Davon's decision after three blind rounds)
+- `blind-gate.mjs`: scored. Critics score each clip 1 to 10 for motion craft; `grade` reads every `answers*.json` (three critics), passes a trial when our median is within 1 point of the exemplar's and most critics name a memorable moment, and records tell-apart and brand recognition without grading them. Reference 09 section 5, SKILL.md fundamental 12, FOUNDATIONS v0.6.1 and the landing playbook updated.
+
 ## 0.4.1 (2026-10-15, from the first blind-gate rounds on the Halyard rebuild)
 Why: the rebuilt Halyard passed every presence check and the blind critic still told it apart in all four trials (confidence 3 to 4), while naming a memorable moment in three. Its corrections were specific and repeatable, so they became rules.
 - Reference 09 section 7: ten rules from the gate rounds (payoff in the first look, waiting is not a moment, the screen never disagrees with itself, show the change, time follows the data, the tip leads, overlays sit inside their surface, nothing on screen is dead, no decoration behind the product, status follows the thing), each with what the critic saw and what enforces it.

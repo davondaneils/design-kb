@@ -107,7 +107,13 @@ async function prepare() {
         else if (st.click) await page.click(st.click, { timeout: 3000 });
       } catch (e) { console.error('  step', JSON.stringify(st).slice(0, 60), e.message.split('\n')[0]); }
     }
-    if (startAt == null) startAt = Date.now() - t0;
+    if (startAt == null) {
+      // Playwright's recording shows one washed-out frame about 5.0s after the context starts, on every page (seen in
+      // kb/moments films and in gate round v06, where all three critics flagged it as a page glitch). Start after it.
+      const since = Date.now() - t0;
+      if (cropEl && since < 5400) await page.waitForTimeout(5400 - since); // a hero films from load, so it keeps it
+      startAt = Date.now() - t0;
+    }
     await page.waitForTimeout(record + trimLead);
     const video = page.video();
     await ctx.close(); await browser.close();
@@ -197,9 +203,11 @@ For each clip you have: \`A.mp4\` / \`B.mp4\` (if you can play video), \`A-overv
 
 What to look for: does one thing own the screen at a time; is every piece of text held still long enough to read aloud; do changes happen in place or cut; is the product's own action the climax; are offsets between related things about a tenth of a second; do curves land rather than stop; is anything decorative.
 
-If you recognize a brand, say so in "tells", then judge the craft anyway.
+If you recognize a brand, say so in "tells", then judge the craft anyway: the score is for what is on screen, not for who made it.
 
-Write \`answers.json\` in this folder: an array with one object per trial.
+Score each clip 1 to 10 for motion craft, on this scale: 10 the best work in the world; 8 to 9 what a top product team ships; 6 to 7 strong professional work with visible faults; 4 to 5 competent and forgettable; 1 to 3 faults that block understanding. Score the clips independently: the same score for both is allowed.
+
+Write the answers file you were told to write (\`answers.json\` if none was named) in this folder: an array with one object per trial.
 
 \`\`\`json
 [
@@ -207,6 +215,7 @@ Write \`answers.json\` in this folder: an array with one object per trial.
     "trial": 1,
     "stronger": "A",            // "A", "B" or "same": which clip shows the stronger motion craft
     "confidence": 4,            // 1 (coin flip) to 5 (certain)
+    "scores": { "A": 6, "B": 9 },   // motion craft, 1 to 10 each, on the scale above
     "tells": ["B holds the total for under a second", "A's rows roll in place top to bottom"],
     "memorable": { "A": "the price changing currency in place", "B": "none" },   // the one moment you would describe to a friend; "none" if there is none
     "corrections": [            // up to five, for the weaker clip only, each tied to a timestamp
@@ -223,30 +232,39 @@ Corrections use four fields: where (clip, time, element), problem (what you saw)
 function grade() {
   if (!fs.existsSync(keyFile)) { console.error(`no key at ${keyFile}; run prepare first`); process.exit(2); }
   const key = JSON.parse(fs.readFileSync(keyFile, 'utf8'));
-  const ansFile = path.join(out, 'answers.json');
-  if (!fs.existsSync(ansFile)) { console.error(`no answers at ${ansFile}; a fresh critic answers QUESTIONS.md first`); process.exit(2); }
-  const raw = fs.readFileSync(ansFile, 'utf8').replace(/\/\/[^\n]*/g, '');
-  const answers = JSON.parse(raw);
+  // One answers file per critic: answers.json, or answers-1.json, answers-2.json, ... (v0.4.2: three critics).
+  const files = fs.readdirSync(out).filter((f) => /^answers(-\d+)?\.json$/.test(f)).sort();
+  if (!files.length) { console.error(`no answers in ${out}; fresh critics answer QUESTIONS.md first`); process.exit(2); }
+  const critics = files.map((f) => ({ file: f, answers: JSON.parse(fs.readFileSync(path.join(out, f), 'utf8').replace(/\/\/[^\n]*/g, '')) }));
   const blank = (s) => !s || /^\s*(none|nothing|n\/?a|-|no)\b/i.test(String(s));
+  const median = (xs) => { const v = xs.filter((x) => Number.isFinite(x)).sort((m, n) => m - n); if (!v.length) return null; const h = v.length >> 1; return v.length % 2 ? v[h] : (v[h - 1] + v[h]) / 2; };
   const rows = key.trials.map((t) => {
-    const a = answers.find((x) => +x.trial === t.trial) || {};
     const ex = t.ours === 'A' ? 'B' : 'A';
-    const toldApart = a.stronger === ex && +a.confidence >= 3;
-    const memorable = (a.memorable || {})[t.ours];
-    return { trial: t.trial, kind: t.kind, exemplar: t.exemplar, ours: t.ours, stronger: a.stronger, confidence: a.confidence,
-      toldApart, memorable: blank(memorable) ? null : memorable, exemplarMemorable: (a.memorable || {})[ex] || null,
-      tells: a.tells || [], corrections: (a.corrections || []).filter((c) => String(c.where || '').trim().startsWith(t.ours)),
-      pass: !toldApart && !blank(memorable) };
+    const per = critics.map(({ file, answers }) => {
+      const a = answers.find((x) => +x.trial === t.trial) || {};
+      const sc = a.scores || {};
+      return { critic: file, stronger: a.stronger, confidence: +a.confidence, toldApart: a.stronger === ex && +a.confidence >= 3,
+        ours: +sc[t.ours], exemplar: +sc[ex], memorable: blank((a.memorable || {})[t.ours]) ? null : a.memorable[t.ours],
+        recognised: (a.tells || []).some((x) => /recogni[sz]e|brand|stripe|linear|sonner/i.test(x)),
+        corrections: (a.corrections || []).filter((c) => String(c.where || '').trim().startsWith(t.ours)) };
+    });
+    const ours = median(per.map((x) => x.ours)), exemplar = median(per.map((x) => x.exemplar));
+    const gap = ours == null || exemplar == null ? null : +(exemplar - ours).toFixed(1);
+    const moments = per.filter((x) => x.memorable).length;
+    // Scored: the median craft score of ours is within 1 point of the exemplar's, and most critics remember a moment.
+    // With no scores (a v0.4 answers file), fall back to the tell-apart rule.
+    const scored = gap != null;
+    const pass = (scored ? gap <= 1 : per.every((x) => !x.toldApart)) && moments * 2 > per.length;
+    return { trial: t.trial, kind: t.kind, exemplar: t.exemplar, ours: t.ours, scoreOurs: ours, scoreExemplar: exemplar, gap,
+      memorableCount: moments, critics: per.length, toldApart: per.filter((x) => x.toldApart).length, recognised: per.filter((x) => x.recognised).length, per, pass };
   });
-  const told = rows.filter((r) => r.toldApart).length;
-  const noMoment = rows.filter((r) => !r.memorable).length;
-  const pass = noMoment === 0 && told <= 1 && rows.length >= 1;
-  const result = { page: key.page, graded: new Date().toISOString(), pass, trials: rows.length, toldApart: told, noMemorableMoment: noMoment, rows };
+  const pass = rows.length >= 1 && rows.every((r) => r.pass);
+  const result = { page: key.page, graded: new Date().toISOString(), rule: 'median craft score within 1 of the exemplar, and a memorable moment named by most critics, in every trial', pass, critics: critics.length, rows };
   fs.writeFileSync(path.join(out, 'gate.json'), JSON.stringify(result, null, 1));
-  console.log(`blind gate: ${key.page}`);
-  for (const r of rows) console.log(`  trial ${r.trial} ${r.kind.padEnd(6)} vs ${r.exemplar.padEnd(22)} ours=${r.ours} picked=${r.stronger} conf=${r.confidence} ${r.toldApart ? 'TOLD APART' : 'not told apart'}; memorable: ${r.memorable ? JSON.stringify(r.memorable) : 'NONE'}`);
-  for (const r of rows) for (const c of r.corrections) console.log(`  fix (trial ${r.trial}) where: ${c.where} | problem: ${c.problem} | change: ${c.change} | keep: ${c.keep}`);
-  console.log(pass ? 'PASS: the critic could not reliably tell ours from the exemplars and remembered a moment in every trial'
-    : `FAIL: ${told} trial(s) told apart with confidence 3+, ${noMoment} trial(s) with no memorable moment in ours`);
+  console.log(`blind gate: ${key.page} (${critics.length} critic(s))`);
+  for (const r of rows) console.log(`  trial ${r.trial} ${r.kind.padEnd(6)} vs ${r.exemplar.padEnd(22)} ours ${r.scoreOurs ?? '-'} vs ${r.scoreExemplar ?? '-'} (gap ${r.gap ?? '-'}); memorable ${r.memorableCount}/${r.critics}; told apart ${r.toldApart}/${r.critics}, recognised ${r.recognised}/${r.critics} ${r.pass ? 'PASS' : 'FAIL'}`);
+  for (const r of rows) for (const x of r.per) for (const c of x.corrections) console.log(`  fix (trial ${r.trial}, ${x.critic}) where: ${c.where} | problem: ${c.problem} | change: ${c.change} | keep: ${c.keep}`);
+  console.log(pass ? 'PASS: in every trial our median craft score is within 1 point of the exemplar and most critics remember a moment'
+    : `FAIL: ${rows.filter((r) => !r.pass).length} of ${rows.length} trial(s) miss (gap over 1, or no memorable moment for most critics)`);
   process.exit(pass ? 0 : 1);
 }
