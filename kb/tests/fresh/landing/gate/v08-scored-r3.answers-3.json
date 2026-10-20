@@ -1,0 +1,86 @@
+[
+  {
+    "trial": 1,
+    "stronger": "B",
+    "confidence": 3,
+    "scores": { "A": 6, "B": 8 },
+    "tells": [
+      "B is recognizably Linear: headline blurs and lifts in at 0.3 to 1.1s, subline follows about 0.1s later, the app window rises at 1.5 to 2.0s, the agent panel arrives last at about 3.4s",
+      "B gives one thing the screen at a time and the headline is fully still by 1.2s and never moves again",
+      "B's climax (the agent panel, 'Thinking...') is small, low in the frame and partly cropped, so the product action is quieter than the load-in",
+      "A tells a real cause and effect story (Find windows, a scrub line sweeps the day at 1.7 to 2.6s, bars turn amber, two windows land, plan times fill at 5.0s) but packs it into 6s",
+      "A's card skeleton fills almost all at once at 0.2 to 0.4s, so tide, stream, wind and light rows arrive as one block rather than in an order",
+      "A's button label changes Find windows to Checking to Find windows in under 3s and the plan row times appear at 5.0s with under 1s left to read them"
+    ],
+    "memorable": { "A": "the scrub line sweeping the day and wind bars turning amber behind it", "B": "the headline sharpening out of blur before the app rises underneath" },
+    "corrections": [
+      { "where": "A 0.20s to 0.40s, the chart rows", "problem": "tide, stream, wind and light all appear in one 0.2s step, nothing tells the eye where to start", "change": "reveal rows top to bottom with about 0.08s offsets, tide first, total under 0.5s", "keep": "the empty card frame appearing first" },
+      { "where": "A 5.00s to 6.00s, Proposed plan times", "problem": "08:30, 10:10, 12:30, 14:10 arrive with under a second before the clip ends; they cannot be read aloud", "change": "start the plan fill by 4.2s and hold the finished card at least 2.5s", "keep": "the plan filling after the windows, as their consequence" },
+      { "where": "A 1.70s to 2.60s, scrub line and the cursor", "problem": "the cursor sits on the button while the line sweeps; two moving things compete", "change": "move the cursor off or fade it as the sweep starts so the sweep owns the screen", "keep": "the sweep speed and the amber bars trailing it" },
+      { "where": "A 3.00s to 4.00s, Out and Back window boxes", "problem": "the windows appear with a near cut and the status 'Not checked' flips to times in the same frame", "change": "grow each window box from the sweep position over about 0.25s with an ease out, Out first then Back 0.1s later, then update the times text", "keep": "the pink window boxes and their placement" }
+    ]
+  },
+  {
+    "trial": 2,
+    "stronger": "B",
+    "confidence": 5,
+    "scores": { "A": 5, "B": 9 },
+    "tells": [
+      "B is recognizably Stripe: the checkout changes merchant, language and currency in place at about 4.8 to 5.6s",
+      "B's price rolls vertically $5.46 to EUR 26.89 inside its slot, line items and merchant name follow in short offsets, the product image swaps last",
+      "B holds the starting state about 4.5s and the result about 6s, every string readable aloud",
+      "A opens on a finished state and then cuts back to an empty plan at about 0.7s: a reset the viewer sees, not a change in place",
+      "A's useful sequence (click at 2.0s, sweep 2.5 to 3.6s, windows at 3.8 to 4.0s, plan at 5.5s) is sound, but in a narrow frame the bars and labels are tiny",
+      "A then holds the final state about 6s with nothing changing; the story is front loaded"
+    ],
+    "memorable": { "A": "the sweep line passing and the windows appearing behind it", "B": "the dollar price rolling into a euro price as the whole checkout changes country" },
+    "corrections": [
+      { "where": "A 0.00s to 0.70s, whole card", "problem": "the clip starts on the answer and then cuts to a blank plan, which reads as a glitch and spoils the payoff", "change": "start on the unchecked state, or crossfade the reset over 0.3s while off the reader's focus", "keep": "the looping structure" },
+      { "where": "A 2.00s to 2.50s, Find windows button", "problem": "press state and label change to Checking happen in one frame with the cursor covering the label", "change": "show a 0.1s press scale, then let the label change with the cursor already moving away", "keep": "the cursor click as the trigger" },
+      { "where": "A 3.84s to 4.13s, status header", "problem": "'Ready to check' blinks to empty and then '2 windows found' while the windows land at the same moment, two reading targets at once", "change": "land the windows first, then change the header 0.1 to 0.15s later in place", "keep": "the wording '2 windows found'" },
+      { "where": "A 6.00s to 12.00s, final state", "problem": "6s of still frame after a crowded 4s; time is spent where nothing happens", "change": "spread the click, sweep and plan fill across 1s to 7s and hold the result 3 to 4s", "keep": "the order click, sweep, windows, plan" }
+    ]
+  },
+  {
+    "trial": 3,
+    "stronger": "B",
+    "confidence": 4,
+    "scores": { "A": 7, "B": 9 },
+    "tells": [
+      "B is the Stripe checkout locale swap: one in place change, a rolling price, short offsets, long holds",
+      "A is a well staged consequence: a 'Plan saved' toast at 3.0s, the forecast chip turns amber at about 6.2s, the window's end trims with a hatched slice at 6.9 to 7.1s, the time rolls to 13:20 at 7.5s, 15:25 rolls to 15:00 at 7.6s, the toast changes to 'Back window moved' at 7.7s",
+      "A's offsets between related items are close to 0.1s and the changes are in place",
+      "A's toast swap overlaps old and new text at 7.6 to 7.7s, so for two frames both messages are ghosted on top of each other",
+      "A's chip, window, time, row and toast all change inside about 1.5s, the eye has five targets and no single climax",
+      "A's card sits small in the top left of the frame with a large empty area"
+    ],
+    "memorable": { "A": "the window trimming itself with a hatched sliver as the new forecast arrives", "B": "the price rolling from dollars into euros" },
+    "corrections": [
+      { "where": "A 7.60s to 7.70s, notification toast", "problem": "old 'Plan saved' and new 'Back window moved' text are both visible and overlapping, unreadable for those frames", "change": "fade or slide the old message fully out in about 0.12s before the new one enters, or roll it vertically in its slot", "keep": "the toast staying in the same place and the new wording" },
+      { "where": "A 6.20s to 7.70s, chip, window, times, row and toast", "problem": "five changes in 1.5s with no one owning the screen", "change": "make the window trim the climax with a 0.3s hold before the text updates, then update the times and the toast together after it", "keep": "the cause first order: forecast chip, then window, then text" },
+      { "where": "A 3.00s to 6.00s, Plan saved toast", "problem": "the toast arrives and then 3s pass with nothing new; the setup is long relative to the payoff", "change": "trim the idle hold to about 1.5s and give the after state at least 3s", "keep": "the toast text 'Plan saved. Out 07:33, back 11:10.'" }
+    ]
+  },
+  {
+    "trial": 4,
+    "stronger": "A",
+    "confidence": 5,
+    "scores": { "A": 9, "B": 4 },
+    "tells": [
+      "A is the Stripe checkout locale swap, same craft as before: in place, ordered, long holds",
+      "B draws a route along waypoints at a steady pace, but 'Distance sailed 0.0 nm' and 'Average speed 0.0 kn' never move while the boat sails",
+      "B's stats jump from 0.0 to 10.5 nm and 6.3 kn and the label from Leave Lymington to Arrive Cowes in one step at about 8.2s, the payoff happens as a cut",
+      "B's loop cuts from the near finished route back to Lymington at about 2.5s with no transition",
+      "B's dot travels at constant speed and stops dead at waypoints (about 3.0 to 4.0s it sits on the first waypoint)",
+      "B shows a one frame map rendering glitch at about 9.9s"
+    ],
+    "memorable": { "A": "the price rolling from dollars to euros with the rest of the checkout following", "B": "the route line drawing across the Solent" },
+    "corrections": [
+      { "where": "B 2.50s to 8.20s, Distance sailed and Average speed", "problem": "the numbers read 0.0 the whole voyage, so the stats carry no information while the boat moves", "change": "count distance up with the dot's progress and settle speed in the last 0.5s, tabular figures so nothing jitters", "keep": "the stat labels and their positions" },
+      { "where": "B 8.20s, Leave Lymington to Arrive Cowes", "problem": "label, time and both stats change in one cut", "change": "when the dot lands, roll the time 08:30 to 10:10 in place and the label with it, 0.1s after the dot settles", "keep": "the final values 10:10, 10.5 nm, 6.3 kn" },
+      { "where": "B 2.40s to 2.50s, route reset", "problem": "the drawn route snaps back to empty mid frame, a visible cut", "change": "fade the drawn line out over 0.3s after a hold at Cowes, then restart", "keep": "the dashed planned route under the drawn one" },
+      { "where": "B 3.00s to 7.80s, the boat dot", "problem": "linear motion with hard stops at waypoints reads mechanical", "change": "ease the dot through waypoints without stopping and ease out into Cowes", "keep": "the dot as the only moving thing during the sail" },
+      { "where": "B 9.90s, map", "problem": "one frame where the land and water fills smear", "change": "fix the render so the map is stable during the hold", "keep": "the map colors and labels" }
+    ]
+  }
+]

@@ -622,7 +622,6 @@
   .app__title b { font-size: var(--text-sm); }
   .status { display: grid; justify-items: end; gap: var(--space-2); text-align: end; }
   .status__slot { justify-items: end; font-weight: var(--weight-semibold); color: var(--color-text); }
-  .status__prog { inline-size: 100%; block-size: 2px; border-radius: var(--radius-full); background: var(--color-window); transform-origin: left; }
   .app__limits { display: flex; flex-wrap: wrap; gap: var(--space-2); padding: var(--space-3) var(--space-5); border-block-end: 1px solid var(--color-border); }
   .app__plot { padding: var(--space-4) var(--space-5) var(--space-5); }
   .app__foot { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); padding: var(--space-3) var(--space-5); border-block-start: 1px solid var(--color-border); color: var(--color-text-muted); }
@@ -632,7 +631,7 @@
   .key--win::before { background: var(--color-window-fill); box-shadow: inset 0 0 0 2px var(--color-window); }
   .key--over::before { background: var(--color-wind-over); }
   /* The plan sits inside the card under the Back row, on the card's own edges (no overhang). */
-  .plan { border-block-start: 1px solid var(--color-border); }
+  .plan { border-block-start: 1px solid var(--color-border); container-type: inline-size; }
   .plan__head { display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); padding: var(--space-3) var(--space-5); border-block-end: 1px solid var(--color-border); }
   .plan__head > span { display: inline-flex; gap: var(--space-3); align-items: center; }
   .plan__legs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -641,6 +640,13 @@
   .plan__legs li:nth-child(3) { box-shadow: inset 2px 0 0 var(--color-window); }
   .plan__legs span { color: var(--color-text-muted); white-space: nowrap; }
   .plan__legs b { font-size: var(--text-lg); line-height: var(--leading-snug); font-weight: var(--weight-semibold); }
+  /* A narrow plan (the state sheet's small frames) takes the phone's two columns, so labels never run together. */
+  @container (inline-size < 30rem) {
+    .plan__legs { grid-template-columns: 1fr 1fr; }
+    .plan__legs li:nth-child(n+3) { border-block-start: 1px solid var(--color-border); }
+    .plan__legs li:nth-child(3) { box-shadow: inset 2px 0 0 var(--color-window); }
+    .plan__legs li:nth-child(odd):not(:nth-child(3)) { box-shadow: none; }
+  }
   .plan__head b.spare { color: var(--color-window-ink); }
 
   /* card fragments */
@@ -747,33 +753,31 @@
   @keyframes out { to { opacity: 0; } }
   @keyframes ping { from { opacity: 1; transform: none; } to { opacity: 0; transform: scale(1.06, 1.8); } }
   /* The button's two rolls in one beat: to Checking on the press, back to Find windows once the count is in. Timed on
-     the press beat: 0 to 400ms (--duration-page) and 1300 to 1700ms (--btn-at), each on --ease-swap; the value fades
-     through as in every roll (out over the first 200ms, in over the next). */
+     the press beat (2100ms): 0 to 400ms (--duration-page) and 1700 to 2100ms (--btn-at), each on --ease-swap; the value
+     fades through as in every roll (out over the first 200ms, in over the next). */
   @keyframes find-roll {
     0% { transform: translateY(0); animation-timing-function: cubic-bezier(0.78, 0, 0.22, 1); }
-    23.53%, 76.47% { transform: translateY(calc(-100% / 3)); animation-timing-function: cubic-bezier(0.78, 0, 0.22, 1); }
+    19.05%, 80.95% { transform: translateY(calc(-100% / 3)); animation-timing-function: cubic-bezier(0.78, 0, 0.22, 1); }
     100% { transform: translateY(calc(-200% / 3)); }
   }
-  @keyframes find-1 { 0% { opacity: 1; } 11.76%, 100% { opacity: 0; } }
-  @keyframes find-2 { 0%, 11.76% { opacity: 0; } 23.53%, 76.47% { opacity: 1; } 88.24%, 100% { opacity: 0; } }
-  @keyframes find-3 { 0%, 88.24% { opacity: 0; } 100% { opacity: 1; } }
-  @keyframes prog { from { transform: scaleX(0); } to { transform: none; } }
+  @keyframes find-1 { 0% { opacity: 1; } 9.52%, 100% { opacity: 0; } }
+  @keyframes find-2 { 0%, 9.52% { opacity: 0; } 19.05%, 80.95% { opacity: 1; } 90.48%, 100% { opacity: 0; } }
+  @keyframes find-3 { 0%, 90.48% { opacity: 0; } 100% { opacity: 1; } }
   @keyframes hero-in { from { opacity: 0; transform: translateY(var(--space-4)); } }
 
   /* ---- Scenes. The HTML is authored on each scene's still frame; earlier states hide later facts. The moment kit
-     (moments.css, layer "moments") rolls the swaps, raises the stack and moves the cursor; the rules here are each
-     scene's own parts. Shot plans sit inside each scene; BUILD_NOTES.md has them as tables. ---- */
-  /* No cursor until moments.js parks it, so none without JS. Arrow drawn in tokens: ink fill, surface outline. */
-  /* moments.js parks the hand at the lower right on each play's aim beat and sends it to the button from there. Shown
-     only while it aims and presses; it leaves when the button resolves. */
+     (moments.css, layer "moments") rolls the swaps and moves the cursor; the rules here are each scene's own parts.
+     Every scene replays in place (scene.js default): the first state returns with its transitions running, so each
+     scene's first state carries a short reset. Shot plans sit inside each scene; BUILD_NOTES.md has them as tables. ---- */
+  /* Arrow drawn in tokens: ink fill, surface outline. The page parks it beside the button on each aim beat (the kit
+     parks it at the lower right); shown only while it aims and presses; it leaves when the button resolves. */
   #hero-scene .shot-cursor { opacity: 0; }
   .shot-cursor path { fill: var(--color-text); stroke: var(--color-surface); }
-  /* The hand leaves once the press lands: the result owns the screen, and the arrow must not sit on the plan. */
   .hero-go #hero-scene[data-state="press"]:not([data-scene-still]) .shot-cursor { opacity: 1; }
 
   /* A roll: the kit swap (a clipped box, the track moves by whole lines) with the value fading through, the old one
-     out in the first half and the new one in over the second, so two labels never show at once. data-on marks the
-     value shown; build.mjs writes it on the authored frame, the page script keeps it in step with the scene. */
+     out in the first half and the new one in over the second. data-on marks the value shown; build.mjs writes it on
+     the authored frame, the page script keeps it in step with the scene. Used for the hero's labels. */
   .roll .swap-track > * { opacity: 0; }
   .roll .swap-track > [data-on] { opacity: 1; }
 
@@ -783,40 +787,49 @@
   .scene:not([data-seen~="press"]) .win { opacity: 0; transform: translateY(calc(-1 * var(--space-3))); }
   .scene:not([data-seen~="press"]) .bar--over { background: var(--color-wind); }
   .scene:not([data-seen~="press"]) .bar--over::after { color: var(--color-text-muted); }
-  .scene:not([data-seen~="window"]) .plan { opacity: 0; transform: translateY(var(--space-3)); }
-  .scene:not([data-seen~="press"]) .status__prog { transform: scaleX(0); }
+  /* The plan row is there from the start (the card never grows): its values sit on placeholders until the plan lands. */
+  .pv { position: relative; }
+  .pv::before { content: ""; position: absolute; inset-block: 25%; inset-inline-start: 0; inline-size: 3.2em; border-radius: var(--radius-sm); background: var(--color-track); opacity: 0; }
+  .spare.pv::before { inset-inline: auto 0; inline-size: 5.5em; }
+  .scene:not([data-seen~="window"]) .pv::before { opacity: 1; }
+  .scene:not([data-seen~="window"]) .pv > span { opacity: 0; transform: translateY(var(--space-2)); }
+  .pv > span { display: inline-block; }
 
-  /* Warnings, "the forecast moves the window": fri18 > fri21 > alert. The 18:00 frame stretches the window to 13:45
+  /* Warnings, "the forecast moves the window": fri18 > saved > fri21. The 18:00 frame stretches the window to 13:45
      and starts the wind cut there (scales of the authored 21:00 geometry, computed in build.mjs). */
   .warn-stage:not([data-seen~="fri21"]) .track--moves .win { transform: scaleX(var(--was)); }
   .warn-stage:not([data-seen~="fri21"]) .track--moves .cut--wind { transform: scaleX(var(--cut-was)); }
   .track--moves .cut--wind { transform-origin: right center; }
   .warn-stage[data-seen~="fri21"] .chip--forecast { background: var(--color-warning-subtle); color: var(--color-warning); }
-  /* One note, its contents swapped in place: the saved note leaves, then the alert arrives in the same card. */
+  /* One note card; its texts cross in place (old out up, new in from below, overlapping), clipped to the card. */
+  .notes .alert { overflow: clip; }
   .face { grid-area: 1 / 1; }
-  .warn-stage:not([data-seen~="fri21"]) .face--moved { opacity: 0; transform: translateY(var(--space-3)); }
-  .warn-stage[data-seen~="fri21"] .face--saved { opacity: 0; transform: translateY(calc(-1 * var(--space-3))); }
+  .warn-stage:not([data-seen~="fri21"]) .face--moved { opacity: 0; transform: translateY(var(--space-4)); }
+  .warn-stage[data-seen~="fri21"] .face--saved { opacity: 0; transform: translateY(calc(-1 * var(--space-4))); }
   .warn-stage:not([data-seen~="saved"]) .notes .alert { opacity: 0; transform: translateY(var(--space-3)); }
   .face--saved .alert__msg b { display: inline; }   /* one line: "Plan saved. Out 07:33, back 11:10." */
-  /* The 25 minutes lost: a hatched sliver where the window used to end, shown as the edge pulls in and kept. */
+  /* The 25 minutes lost: a hatched sliver where the window used to end, left as the edge pulls in, and kept. */
   .lost { position: absolute; inset-block: calc(-1 * var(--space-2)); inset-inline-start: var(--x0); inline-size: calc(var(--x1) - var(--x0)); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; background: repeating-linear-gradient(-45deg, var(--color-warning) 0 1.5px, transparent 1.5px 4px); box-shadow: inset 0 0 0 1.5px var(--color-warning); opacity: 0; pointer-events: none; }
   .warn-stage[data-seen~="fri21"] .lost { opacity: 1; }
 
-  /* Route, "one plan, to the minute": the boat at each mark; each leg appears as it is sailed. */
-  .boat { transform: var(--at-cowes); }
-  [data-state="leave"] .boat { transform: var(--at-leave); }
-  [data-state="jack"] .boat { transform: var(--at-jack); }
-  [data-state="hamstead"] .boat { transform: var(--at-hamstead); }
-  [data-state="gurnard"] .boat { transform: var(--at-gurnard); }
+  /* Route, "one plan, to the minute": the boat at each mark (its group moves; the dot itself settles); each leg
+     appears as it is sailed; the Cowes pin fills on arrival. */
+  .boat-g { transform: var(--at-cowes); }
+  [data-state="leave"] .boat-g { transform: var(--at-leave); }
+  [data-state="jack"] .boat-g { transform: var(--at-jack); }
+  [data-state="hamstead"] .boat-g { transform: var(--at-hamstead); }
+  [data-state="gurnard"] .boat-g { transform: var(--at-gurnard); }
+  .boat { transform-box: fill-box; transform-origin: center; }
   .route-card:not([data-seen~="jack"]) .leg[data-leg="jack"], .route-card:not([data-seen~="hamstead"]) .leg[data-leg="hamstead"],
   .route-card:not([data-seen~="gurnard"]) .leg[data-leg="gurnard"], .route-card:not([data-seen~="cowes"]) .leg[data-leg="cowes"] { opacity: 0; }
-  /* Cowes, the climax: "Arrive Cowes 10:10" takes the full ink and the window colour as the boat settles. */
+  .route-card[data-seen~="cowes"] .wp--end { fill: var(--color-window); }
+  /* Cowes, the climax: "Arrive Cowes 10:10" takes the full ink and the window colour. */
   .route-card[data-seen~="cowes"] .rs-label { color: var(--color-text); font-weight: var(--weight-semibold); }
   .route-card[data-seen~="cowes"] .rs-time { color: var(--color-window-ink); }
 
   @media (prefers-reduced-motion: no-preference) {
-    /* The one hero reveal (Linear's staging): the headline owns the first second; the product arrives after it, by
-       transform with its fade, 800ms on --ease-enter. The h1 and lead never wait. */
+    /* The one hero reveal (Linear's staging): the headline owns the first second; the product arrives after it, a 12px
+       rise with its fade, 400ms on --ease-enter. The h1 and lead never wait. */
     .hero-go .stage--hero { animation: hero-in var(--duration-page) var(--ease-enter) both; }
     /* Until scene.js has set the first beat the HTML shows the still (the answer); keep the card out of the first paint. */
     .js:not(.hero-go) .stage--hero { opacity: 0; }
@@ -825,13 +838,12 @@
     .hero-go #hero-scene .app__limits { animation: hero-in var(--duration-page) var(--ease-enter) var(--offset) both; }
     .hero-go #hero-scene .app__plot { animation: hero-in var(--duration-page) var(--ease-enter) calc(var(--offset) * 2) both; }
 
-    [data-scene] { transition: opacity var(--duration-fast) var(--ease-standard); }
-    [data-scene][data-scene-seam] { opacity: 0; }
     #hero-scene:not([data-scene-still]) .shot-cursor { transition: transform var(--duration-spring) var(--ease-spring), opacity var(--duration-fast) var(--ease-exit); }
-    /* The calm hold: the card and its chips are in by about 500ms; then the hand travels in. */
-    #hero-scene[data-state="aim"] .shot-cursor { transition-delay: calc(var(--duration-page) + var(--offset)); }
-    /* It fades in as it sets off. An animation, not a transition: the kit parks it with transitions off. */
-    .hero-go #hero-scene[data-state="aim"]:not([data-scene-still]) .shot-cursor { animation: fade var(--duration-fast) var(--ease-standard) calc(var(--duration-page) + var(--offset)) both; }
+    /* The hand waits until the card is in (and, on a replay, the reset is done), then sets off from beside the button
+       and presses at 1200ms: about 0.5s from setting off to the press. It fades in as it sets off: an animation, not a
+       transition, because the kit parks it with transitions off. */
+    #hero-scene[data-state="aim"] .shot-cursor { transition-delay: calc(var(--duration-reveal) + var(--offset)); }
+    .hero-go #hero-scene[data-state="aim"]:not([data-scene-still]) .shot-cursor { animation: fade var(--duration-fast) var(--ease-standard) calc(var(--duration-reveal) + var(--offset)) both; }
     [data-scene]:not([data-scene-still]) .find { transition: transform var(--duration-instant) var(--ease-standard), background-color var(--duration-instant) var(--ease-standard); }
 
     /* Rolls (see .roll above): the track on --ease-swap over --duration-page, the value fading through, from --roll-at. */
@@ -839,16 +851,28 @@
     [data-scene]:not([data-scene-still]) .roll .swap-track > * { transition: opacity var(--duration-base) var(--ease-exit) var(--roll-at, 0ms); }
     [data-scene]:not([data-scene-still]) .roll .swap-track > [data-on] { transition: opacity var(--duration-base) var(--ease-enter) calc(var(--roll-at, 0ms) + var(--duration-base)); }
 
-    /* Hero press beat, in order. The press (two --duration-instant); the line crosses 05:00 to 20:00 from --sweep-at
-       over --sweep-ms (1200ms) on --ease-standard, fast across the morning and easing out at the right edge; cuts and
-       over-limit bars change as it passes (their --d and --tb are the eased times, from build.mjs); when it is 95% of
-       the way across (--res-at, 800ms in) the
-       Out row lands, the Back row --offset later, then the count, then the button rolls back (--btn-at) and the hand
-       leaves. Each window rings out once as it lands. Settled by 1700ms; the plan waits for its own beat. */
-    .scene { --sweep-at: var(--duration-base); --sweep-ms: calc(var(--duration-reveal) * 2); --res-at: calc(var(--sweep-at) + var(--duration-swap)); --btn-at: calc(var(--res-at) + var(--offset) * 3); }
-    .scene .cut { transition: opacity var(--duration-slow) var(--ease-standard) calc(var(--sweep-at) + var(--d) * var(--sweep-ms)); }
-    .scene .bar { transition: background-color var(--duration-slow) var(--ease-standard) calc(var(--sweep-at) + var(--tb) * var(--sweep-ms)); }
-    .scene .win { transition: opacity var(--duration-slow) var(--ease-enter) calc(var(--res-at) + var(--row) * var(--offset)), transform var(--duration-slow) var(--ease-enter) calc(var(--res-at) + var(--row) * var(--offset)); }
+    /* Hero reset (the aim beat of a replay, in place, about 0.6s, --offset apart): the plan's values go back to their
+       placeholders and the amber bars to grey (0), the windows and cuts retract and the row labels roll back (+100),
+       the count rolls back to "Ready to check" (+200). Card chrome and chart stay put; the button already reads Find
+       windows, so it does not move. On load the aim beat is jumped to, so none of this runs. */
+    .scene[data-state="aim"] .bar { transition: background-color var(--duration-slow) var(--ease-standard); }
+    .scene[data-state="aim"] :is(.win, .cut) { transition: opacity var(--duration-slow) var(--ease-exit) var(--offset), transform var(--duration-slow) var(--ease-exit) var(--offset); }
+    .scene[data-state="aim"] .pv > span { transition: opacity var(--duration-fast) var(--ease-exit), transform var(--duration-fast) var(--ease-exit); }
+    .scene[data-state="aim"] .pv::before { transition: opacity var(--duration-fast) var(--ease-standard); }
+    .scene[data-state="aim"] .row-slot { --roll-at: var(--offset); }
+    .scene[data-state="aim"] .status__slot { --roll-at: calc(var(--offset) * 2); }
+    #hero-scene[data-state="aim"] .find :is(.swap-track, .swap-track > *) { transition: none; }
+
+    /* Hero press beat: the line owns the screen. The press (two --duration-instant); the line crosses 05:00 to 20:00
+       from --sweep-at over --sweep-ms (1200ms) on --ease-standard, fast across the morning and easing out at the right
+       edge, and the over-limit bars and cuts change as it passes (their --tb and --d are the eased times, build.mjs).
+       Only when it has arrived (--res-at) does the Out row land, the Back row --offset later, then the count, then the
+       button rolls back (--btn-at) and the hand leaves. Each window rings out once. Settled by 2100ms; the found
+       windows then hold 1s before the plan. */
+    .scene { --sweep-at: var(--duration-base); --sweep-ms: calc(var(--duration-reveal) * 2); --res-at: calc(var(--sweep-at) + var(--sweep-ms)); --btn-at: calc(var(--res-at) + var(--offset) * 3); }
+    .scene[data-state="press"] .cut { transition: opacity var(--duration-slow) var(--ease-standard) calc(var(--sweep-at) + var(--d) * var(--sweep-ms)); }
+    .scene[data-state="press"] .bar { transition: background-color var(--duration-slow) var(--ease-standard) calc(var(--sweep-at) + var(--tb) * var(--sweep-ms)); }
+    .scene[data-state="press"] .win { transition: opacity var(--duration-slow) var(--ease-enter) calc(var(--res-at) + var(--row) * var(--offset)), transform var(--duration-slow) var(--ease-enter) calc(var(--res-at) + var(--row) * var(--offset)); }
     .scene[data-state="press"] .win::after { animation: ping var(--duration-page) var(--ease-standard) calc(var(--res-at) + var(--row) * var(--offset) + var(--duration-base)); }
     .scene[data-state="press"] .row-slot { --roll-at: calc(var(--res-at) + var(--row) * var(--offset)); }
     .scene[data-state="press"] .status__slot { --roll-at: calc(var(--res-at) + var(--offset) * 2); }
@@ -857,29 +881,34 @@
     .scene[data-state="press"] .find .swap-track > :nth-child(2) { animation: find-2 calc(var(--btn-at) + var(--duration-page)) linear both; }
     .scene[data-state="press"] .find .swap-track > :nth-child(3) { animation: find-3 calc(var(--btn-at) + var(--duration-page)) linear both; }
     #hero-scene[data-state="press"] .shot-cursor { animation: out var(--duration-fast) var(--ease-exit) var(--btn-at) forwards; }
-    .scene[data-state="press"] .sweep { animation: sweep var(--sweep-ms) var(--ease-standard) var(--sweep-at) forwards, out var(--duration-fast) var(--ease-exit) calc(var(--sweep-at) + var(--sweep-ms)) forwards; }
-    .scene[data-state="press"] .status__prog { animation: prog var(--sweep-ms) var(--ease-standard) var(--sweep-at) both; }
-    /* The plan: its own beat, after everything has settled. */
-    .scene .plan { transition: opacity var(--duration-page) var(--ease-standard), transform var(--duration-page) var(--ease-enter); }
-    .scene[data-state="aim"] :is(.cut, .bar, .win, .plan, .swap-track, .swap-track > *) { transition: none; }
+    .scene[data-state="press"] .sweep { animation: sweep var(--sweep-ms) var(--ease-standard) var(--sweep-at) forwards, out var(--duration-fast) var(--ease-exit) var(--res-at) forwards; }
+    /* The plan: its own beat. Its values rise onto the placeholders, --stagger apart; nothing else moves. */
+    .scene[data-state="window"] .pv > span { transition: opacity var(--duration-page) var(--ease-enter) calc(var(--i, 0) * var(--stagger)), transform var(--duration-page) var(--ease-enter) calc(var(--i, 0) * var(--stagger)); }
+    .scene[data-state="window"] .pv::before { transition: opacity var(--duration-fast) var(--ease-exit) calc(var(--i, 0) * var(--stagger)); }
 
-    /* Warnings, fri21: the card moves first (badge, then the end time --offset later, then the bar trim, the lost
-       sliver and the against-tide time), then the note swaps to "Back window moved" once the card shows the change. */
-    .warn-stage .chip--forecast .swap-track { transition-delay: 0ms; }
-    .warn-stage .wp-win .swap-track { transition-delay: var(--offset); }
-    .warn-stage .warn-t .swap-track { transition-delay: calc(var(--offset) * 2); }
-    .warn-stage .track--moves :is(.win, .cut--wind) { transition: transform var(--duration-swap) var(--ease-swap) calc(var(--offset) * 2); }
-    .warn-stage[data-state="fri21"] .lost { transition: opacity var(--duration-slow) var(--ease-standard) calc(var(--offset) * 2); }
-    .warn-stage .chip--forecast { transition: background-color var(--duration-slow) var(--ease-standard), color var(--duration-slow) var(--ease-standard); }
-    .warn-stage .face--saved { transition: opacity var(--duration-fast) var(--ease-exit) calc(var(--duration-page) + var(--offset)), transform var(--duration-fast) var(--ease-exit) calc(var(--duration-page) + var(--offset)); }
+    /* Warnings, fri21, spread over about 1.2s so it can be followed: the forecast tag rolls (0 to 400ms), then tints to the warning colour through the 300ms pause (so the chain has no dead gap); the
+       bar's right edge retracts over --duration-page on --ease-enter, leaving the hatch (700ms); then the Leave time
+       (1100ms) and the 15:00 row (1200ms) roll, --offset apart; then the note's texts cross in place (1300ms). */
+    .warn-stage { --edge-at: calc(var(--duration-page) + var(--duration-slow)); --text-at: calc(var(--edge-at) + var(--duration-page)); }
+    .warn-stage .chip--forecast .swap-track { transition-duration: var(--duration-page); transition-delay: 0ms; }
+    .warn-stage .wp-win .swap-track { transition-duration: var(--duration-page); transition-delay: var(--text-at); }
+    .warn-stage .warn-t .swap-track { transition-duration: var(--duration-page); transition-delay: calc(var(--text-at) + var(--offset)); }
+    .warn-stage .track--moves :is(.win, .cut--wind) { transition: transform var(--duration-page) var(--ease-enter) var(--edge-at); }
+    .warn-stage[data-state="fri21"] .lost { transition: opacity var(--duration-page) var(--ease-standard) var(--edge-at); }
+    .warn-stage .chip--forecast { transition: background-color var(--duration-slow) var(--ease-standard) var(--duration-page), color var(--duration-slow) var(--ease-standard) var(--duration-page); }
     .warn-stage[data-state="saved"] .notes .alert { transition: opacity var(--duration-page) var(--ease-enter), transform var(--duration-page) var(--ease-enter); }
-    .warn-stage .face--moved { transition: opacity var(--duration-page) var(--ease-enter) calc(var(--duration-page) + var(--offset) + var(--duration-fast)), transform var(--duration-page) var(--ease-enter) calc(var(--duration-page) + var(--offset) + var(--duration-fast)); }
-    /* Route: the page script sails the boat along each leg's own path and draws the leg with it (same path, same
-       duration, same curve) and sets --land to the arrival time. The readout holds still while the boat moves; on
-       arrival the place name rolls first, then the time, distance and speed together, --offset after. */
-    .route-card .rs-label { --roll-at: calc(var(--land, 0ms) - var(--offset)); }
-    .route-card .rs-read { --roll-at: var(--land, 0ms); }
-    .route-card :is(.rs-label, .rs-time) { transition: color var(--duration-slow) var(--ease-standard) var(--land, 0ms); }
+    .warn-stage[data-state="fri21"] .face--saved { transition: opacity var(--duration-slow) var(--ease-exit) calc(var(--text-at) + var(--offset) * 2), transform var(--duration-page) var(--ease-swap) calc(var(--text-at) + var(--offset) * 2); }
+    .warn-stage[data-state="fri21"] .face--moved { transition: opacity var(--duration-page) var(--ease-enter) calc(var(--text-at) + var(--offset) * 2), transform var(--duration-page) var(--ease-swap) calc(var(--text-at) + var(--offset) * 2); }
+
+    /* Route: the page script sails the boat along each leg's own path on --ease-swap and draws the leg with it (same
+       path, duration and curve), settles the dot at each mark, and sets --land (the arrival) and --land-label (when the
+       readout changes: on arrival, or a beat later at Cowes). The readout rolls in place (the kit swap, 400ms): the
+       place first, then the time, distance and speed, --offset/2 apart. On the replay the line retracts to Lymington
+       while the readout rolls back. */
+    .route-card .rs-label .swap-track { transition-duration: var(--duration-page); transition-delay: var(--land-label, 0ms); }
+    .route-card .rs-v .swap-track { transition-duration: var(--duration-page); transition-delay: calc(var(--land-label, 0ms) + var(--offset) * (var(--k) + 1) / 2); }
+    .route-card :is(.rs-label, .rs-time) { transition: color var(--duration-slow) var(--ease-standard) var(--land-label, 0ms); }
+    .route-card .wp--end { transition: fill var(--duration-base) var(--ease-standard) var(--land, 0ms); }
 
     /* pricing value stack and FAQ icon: UI change band */
     .slot > * { transition: transform var(--duration-slow) var(--ease-standard), visibility var(--duration-slow) linear; }
@@ -1024,14 +1053,13 @@
       <h2 id="g-scene">Hero scene, frame by frame</h2>
       <p class="body">The event: Saturday is loaded and held while the title and limits are read; the cursor goes to Find windows and presses it; a 1200&nbsp;ms sweep lands each window as the line passes its close, and the status follows 100&nbsp;ms later; the plan rises inside the card. Then a 4000&nbsp;ms rest on the last frame, which is also the still under reduced motion and without JavaScript.</p>
       <div class="grid grid--frames" style="margin-block-start: var(--space-6)">
-<figure class="frame"><div class="stage stage--side stage--flat" aria-hidden="true" data-frame-aim=".find"><div class="scene" data-scene data-beats="aim:1200 press:1800 window:4400" data-rest="4000" data-still="window" data-state="aim" data-seen="aim">
+<figure class="frame"><div class="stage stage--side stage--flat" aria-hidden="true" data-frame-aim=".find"><div class="scene" data-scene data-beats="aim:1200 press:3100 window:4400" data-rest="4000" data-still="window" data-state="aim" data-seen="aim">
             
             <div class="frag app">
               <div class="app__bar">
                 <div class="app__title"><b>Lymington to Cowes and back</b><span class="muted">Sat&nbsp;24&nbsp;Oct · BST</span></div>
                 <div class="status">
                   <span class="swap status__slot roll" data-swap="aim press" style="--swap-i:0;--swap-count:2"><span class="swap-track"><span data-on>Ready to check</span><span>2 windows found</span></span></span>
-                  <span class="status__prog"></span>
                 </div>
               </div>
               <div class="app__limits"><span class="chip">Wren, 7.9&nbsp;m sloop</span><span class="chip">Wind ≤&nbsp;20&nbsp;kn</span><span class="chip">Against tide ≤&nbsp;12&nbsp;kn</span><span class="chip">Home by sunset</span><span class="find"><span class="swap roll" data-swap="aim press window" style="--swap-i:0;--swap-count:3"><span class="swap-track"><span data-on>Find windows</span><span>Checking</span><span>Find windows</span></span></span></span></div>
@@ -1053,25 +1081,24 @@
       <span class="sweep-lane" aria-hidden="true"><span class="sweep"></span></span>
     </div></div>
               <div class="plan">
-                <div class="plan__head"><b>Proposed plan</b><span><span class="muted">Daylight to spare</span><b class="spare">3&nbsp;h 46&nbsp;min</b></span></div>
+                <div class="plan__head"><b>Proposed plan</b><span><span class="muted">Daylight to spare</span><b class="spare pv"><span>3&nbsp;h 46&nbsp;min</span></b></span></div>
                 <ol class="plan__legs">
-                  <li><span>Leave Lymington</span><b>08:30</b></li>
-                  <li><span>Arrive Cowes</span><b>10:10</b></li>
-                  <li><span>Leave Cowes</span><b>12:30</b></li>
-                  <li><span>Home</span><b>14:10</b></li>
+                  <li><span>Leave Lymington</span><b class="pv" style="--i:0"><span>08:30</span></b></li>
+                  <li><span>Arrive Cowes</span><b class="pv" style="--i:1"><span>10:10</span></b></li>
+                  <li><span>Leave Cowes</span><b class="pv" style="--i:2"><span>12:30</span></b></li>
+                  <li><span>Home</span><b class="pv" style="--i:3"><span>14:10</span></b></li>
                 </ol>
               </div>
             </div>
             <span class="shot-cursor" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3 2l13 7.5-5.6 1.4 3.2 6-2.4 1.2-3.2-6L3 16z" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </div></div><figcaption class="frame-cap"><span>1 aim, 1200&nbsp;ms</span><span>Saturday loaded; the cursor goes to Find windows</span></figcaption></figure>
-<figure class="frame"><div class="stage stage--side stage--flat" aria-hidden="true" data-frame-aim=".find"><div class="scene" data-scene data-beats="aim:1200 press:1800 window:4400" data-rest="4000" data-still="window" data-state="press" data-seen="aim press">
+          </div></div><figcaption class="frame-cap"><span>1 aim, 1200&nbsp;ms</span><span>Saturday loaded; plan row reserved; the hand beside the button</span></figcaption></figure>
+<figure class="frame"><div class="stage stage--side stage--flat" aria-hidden="true" data-frame-aim=".find"><div class="scene" data-scene data-beats="aim:1200 press:3100 window:4400" data-rest="4000" data-still="window" data-state="press" data-seen="aim press">
             
             <div class="frag app">
               <div class="app__bar">
                 <div class="app__title"><b>Lymington to Cowes and back</b><span class="muted">Sat&nbsp;24&nbsp;Oct · BST</span></div>
                 <div class="status">
                   <span class="swap status__slot roll" data-swap="aim press" style="--swap-i:1;--swap-count:2"><span class="swap-track"><span>Ready to check</span><span data-on>2 windows found</span></span></span>
-                  <span class="status__prog"></span>
                 </div>
               </div>
               <div class="app__limits"><span class="chip">Wren, 7.9&nbsp;m sloop</span><span class="chip">Wind ≤&nbsp;20&nbsp;kn</span><span class="chip">Against tide ≤&nbsp;12&nbsp;kn</span><span class="chip">Home by sunset</span><span class="find"><span class="swap roll" data-swap="aim press window" style="--swap-i:1;--swap-count:3"><span class="swap-track"><span>Find windows</span><span data-on>Checking</span><span>Find windows</span></span></span></span></div>
@@ -1093,25 +1120,24 @@
       <span class="sweep-lane" aria-hidden="true"><span class="sweep"></span></span>
     </div></div>
               <div class="plan">
-                <div class="plan__head"><b>Proposed plan</b><span><span class="muted">Daylight to spare</span><b class="spare">3&nbsp;h 46&nbsp;min</b></span></div>
+                <div class="plan__head"><b>Proposed plan</b><span><span class="muted">Daylight to spare</span><b class="spare pv"><span>3&nbsp;h 46&nbsp;min</span></b></span></div>
                 <ol class="plan__legs">
-                  <li><span>Leave Lymington</span><b>08:30</b></li>
-                  <li><span>Arrive Cowes</span><b>10:10</b></li>
-                  <li><span>Leave Cowes</span><b>12:30</b></li>
-                  <li><span>Home</span><b>14:10</b></li>
+                  <li><span>Leave Lymington</span><b class="pv" style="--i:0"><span>08:30</span></b></li>
+                  <li><span>Arrive Cowes</span><b class="pv" style="--i:1"><span>10:10</span></b></li>
+                  <li><span>Leave Cowes</span><b class="pv" style="--i:2"><span>12:30</span></b></li>
+                  <li><span>Home</span><b class="pv" style="--i:3"><span>14:10</span></b></li>
                 </ol>
               </div>
             </div>
             <span class="shot-cursor" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3 2l13 7.5-5.6 1.4 3.2 6-2.4 1.2-3.2-6L3 16z" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </div></div><figcaption class="frame-cap"><span>2 press, 1800&nbsp;ms</span><span>Pressed: bars as the line passes, then Out, Back, the count, the button</span></figcaption></figure>
-<figure class="frame"><div class="stage stage--side stage--flat" aria-hidden="true"><div class="scene" data-scene data-beats="aim:1200 press:1800 window:4400" data-rest="4000" data-still="window" data-state="window" data-seen="aim press window">
+          </div></div><figcaption class="frame-cap"><span>2 press, 3100&nbsp;ms</span><span>Pressed: the line alone, bars turn; then Out, Back, the count, the button</span></figcaption></figure>
+<figure class="frame"><div class="stage stage--side stage--flat" aria-hidden="true"><div class="scene" data-scene data-beats="aim:1200 press:3100 window:4400" data-rest="4000" data-still="window" data-state="window" data-seen="aim press window">
             
             <div class="frag app">
               <div class="app__bar">
                 <div class="app__title"><b>Lymington to Cowes and back</b><span class="muted">Sat&nbsp;24&nbsp;Oct · BST</span></div>
                 <div class="status">
                   <span class="swap status__slot roll" data-swap="aim press" style="--swap-i:1;--swap-count:2"><span class="swap-track"><span>Ready to check</span><span data-on>2 windows found</span></span></span>
-                  <span class="status__prog"></span>
                 </div>
               </div>
               <div class="app__limits"><span class="chip">Wren, 7.9&nbsp;m sloop</span><span class="chip">Wind ≤&nbsp;20&nbsp;kn</span><span class="chip">Against tide ≤&nbsp;12&nbsp;kn</span><span class="chip">Home by sunset</span><span class="find"><span class="swap roll" data-swap="aim press window" style="--swap-i:2;--swap-count:3"><span class="swap-track"><span>Find windows</span><span>Checking</span><span data-on>Find windows</span></span></span></span></div>
@@ -1133,17 +1159,17 @@
       <span class="sweep-lane" aria-hidden="true"><span class="sweep"></span></span>
     </div></div>
               <div class="plan">
-                <div class="plan__head"><b>Proposed plan</b><span><span class="muted">Daylight to spare</span><b class="spare">3&nbsp;h 46&nbsp;min</b></span></div>
+                <div class="plan__head"><b>Proposed plan</b><span><span class="muted">Daylight to spare</span><b class="spare pv"><span>3&nbsp;h 46&nbsp;min</span></b></span></div>
                 <ol class="plan__legs">
-                  <li><span>Leave Lymington</span><b>08:30</b></li>
-                  <li><span>Arrive Cowes</span><b>10:10</b></li>
-                  <li><span>Leave Cowes</span><b>12:30</b></li>
-                  <li><span>Home</span><b>14:10</b></li>
+                  <li><span>Leave Lymington</span><b class="pv" style="--i:0"><span>08:30</span></b></li>
+                  <li><span>Arrive Cowes</span><b class="pv" style="--i:1"><span>10:10</span></b></li>
+                  <li><span>Leave Cowes</span><b class="pv" style="--i:2"><span>12:30</span></b></li>
+                  <li><span>Home</span><b class="pv" style="--i:3"><span>14:10</span></b></li>
                 </ol>
               </div>
             </div>
             <span class="shot-cursor" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3 2l13 7.5-5.6 1.4 3.2 6-2.4 1.2-3.2-6L3 16z" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </div></div><figcaption class="frame-cap"><span>3 window, 4400&nbsp;ms</span><span>The plan, its own beat (still)</span></figcaption></figure>
+          </div></div><figcaption class="frame-cap"><span>3 window, 4400&nbsp;ms</span><span>The plan lands in its reserved row (still)</span></figcaption></figure>
       </div>
     </section>
 
@@ -1151,7 +1177,7 @@
       <h2 id="g-warn">Warnings scene, frame by frame</h2>
       <p class="body">Swap: the 21:00 forecast rolls the back window from 13:45 to 13:20 in place, the lost 25 minutes show as a hatched sliver that fades, and the note on the phone swaps to the alert at the same moment, so the card and the note never disagree. Rest 3000&nbsp;ms on the 21:00 frame (the still).</p>
       <div class="grid grid--frames" style="margin-block-start: var(--space-6)">
-<figure class="frame"><div class="stage stage--side stage--flat" aria-hidden="true"><div class="warn-stage" data-scene data-beats="fri18:2400 saved:3000 fri21:4500" data-loop="false" data-still="fri21" data-state="fri18" data-seen="fri18" style="--was:1.1923;--cut-was:0.8529">
+<figure class="frame"><div class="stage stage--side stage--flat" aria-hidden="true"><div class="warn-stage" data-scene data-beats="fri18:2600 saved:3000 fri21:4500" data-loop="false" data-still="fri21" data-state="fri18" data-seen="fri18" style="--was:1.1923;--cut-was:0.8529">
               
               <div class="frag warn-panel">
                 <div class="frag__head"><b>Back: Cowes to Lymington</b><span class="chip chip--forecast"><span class="swap" data-swap="fri18 fri21" style="--swap-i:0;--swap-count:2"><span class="swap-track"><span data-on>Forecast Fri 18:00</span><span>Forecast Fri 21:00</span></span></span></span></div>
@@ -1171,8 +1197,8 @@
                   <div class="face face--moved"><div class="alert__app"><span><svg class="alert__logo" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect class="logo__field" width="32" height="32" rx="8"/><path class="logo__wave" d="M5 18.5c3.2 0 4.6-6 8-6s4.6 6 7.5 6 3.8-3 6.5-3" fill="none" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/><rect class="logo__win" x="10.5" y="22.5" width="10" height="3" rx="1.5"/></svg>Halyard</span><span class="muted">Fri 21:05</span></div><div class="alert__msg"><span class="alert__lead"><b>Back window moved</b>Now closes 13:20, 25 minutes earlier.</span> The 21:00 forecast brings the wind on sooner. Your 12:30 start still works.</div></div>
                 </li>
               </ol>
-            </div></div><figcaption class="frame-cap"><span>1 fri18, 2400&nbsp;ms</span><span>18:00 forecast: back window to 13:45</span></figcaption></figure>
-<figure class="frame"><div class="stage stage--side stage--flat" aria-hidden="true"><div class="warn-stage" data-scene data-beats="fri18:2400 saved:3000 fri21:4500" data-loop="false" data-still="fri21" data-state="saved" data-seen="fri18 saved" style="--was:1.1923;--cut-was:0.8529">
+            </div></div><figcaption class="frame-cap"><span>1 fri18, 2600&nbsp;ms</span><span>18:00 forecast: back window to 13:45</span></figcaption></figure>
+<figure class="frame"><div class="stage stage--side stage--flat" aria-hidden="true"><div class="warn-stage" data-scene data-beats="fri18:2600 saved:3000 fri21:4500" data-loop="false" data-still="fri21" data-state="saved" data-seen="fri18 saved" style="--was:1.1923;--cut-was:0.8529">
               
               <div class="frag warn-panel">
                 <div class="frag__head"><b>Back: Cowes to Lymington</b><span class="chip chip--forecast"><span class="swap" data-swap="fri18 fri21" style="--swap-i:0;--swap-count:2"><span class="swap-track"><span data-on>Forecast Fri 18:00</span><span>Forecast Fri 21:00</span></span></span></span></div>
@@ -1193,7 +1219,7 @@
                 </li>
               </ol>
             </div></div><figcaption class="frame-cap"><span>2 saved, 3000&nbsp;ms</span><span>Plan saved at 18:10: the note arrives</span></figcaption></figure>
-<figure class="frame"><div class="stage stage--side stage--flat" aria-hidden="true"><div class="warn-stage" data-scene data-beats="fri18:2400 saved:3000 fri21:4500" data-loop="false" data-still="fri21" data-state="fri21" data-seen="fri18 saved fri21" style="--was:1.1923;--cut-was:0.8529">
+<figure class="frame"><div class="stage stage--side stage--flat" aria-hidden="true"><div class="warn-stage" data-scene data-beats="fri18:2600 saved:3000 fri21:4500" data-loop="false" data-still="fri21" data-state="fri21" data-seen="fri18 saved fri21" style="--was:1.1923;--cut-was:0.8529">
               
               <div class="frag warn-panel">
                 <div class="frag__head"><b>Back: Cowes to Lymington</b><span class="chip chip--forecast"><span class="swap" data-swap="fri18 fri21" style="--swap-i:1;--swap-count:2"><span class="swap-track"><span>Forecast Fri 18:00</span><span data-on>Forecast Fri 21:00</span></span></span></span></div>
@@ -1221,91 +1247,91 @@
       <h2 id="g-route">Route scene, frame by frame</h2>
       <p class="body">The boat sails each leg in time scaled to its minutes, drawing the line as its tip; the clock and the distance count up as it goes and the place name lands on arrival; leg speed changes per leg. Frames show the boat at each mark. Rest 2400&nbsp;ms on Cowes (the still).</p>
       <div class="grid grid--frames" style="margin-block-start: var(--space-6)">
-<figure class="frame"><div class="stage stage--side stage--flat" aria-hidden="true"><div class="frag route-card" data-scene data-beats="leave:1500 jack:1900 hamstead:2100 gurnard:2300 cowes:4100" data-rest="2400" data-still="cowes" data-state="leave" data-seen="leave" data-legs="jack:400 hamstead:600 gurnard:800 cowes:spring" style="--at-leave:translate(86.1px, 92px);--at-jack:translate(101.3px, 124px);--at-hamstead:translate(202.6px, 132px);--at-gurnard:translate(341.8px, 74px);--at-cowes:translate(379.8px, 56px)">
+<figure class="frame"><div class="stage stage--side stage--flat" aria-hidden="true"><div class="frag route-card" data-scene data-beats="leave:2000 jack:1200 hamstead:1200 gurnard:1600 cowes:4400" data-rest="2400" data-still="cowes" data-state="leave" data-seen="leave" data-legs="jack:600 hamstead:800 gurnard:1200 cowes:400" style="--at-leave:translate(86.1px, 92px);--at-jack:translate(101.3px, 124px);--at-hamstead:translate(202.6px, 132px);--at-gurnard:translate(341.8px, 74px);--at-cowes:translate(379.8px, 56px)">
             
             <div class="frag__head"><b>Out: Lymington to Cowes</b><span class="chip chip--win">Leave 08:30</span></div>
             <div class="map map--route" style="--ar:443/220">
       <svg viewBox="0 0 443 220" aria-hidden="true" focusable="false">
         <path class="land" d="M0 152L44.3 172L62 190L55.7 164L76 134L84.8 120L78.5 88L91.2 86L98.7 114L126.6 108L177.2 84L246.9 36L303.8 28L341.8 0L367.1 -36L443.1 -60L443.1 -100L0 -100Z"/><path class="land" d="M443.1 70L417.8 84L392.5 70L379.8 64L354.5 86L303.8 114L246.9 144L211.4 150L164.6 176L126.6 184L88.6 186L69.6 240L0 260L0 300L443.1 300Z"/>
-        <path class="route route--plan" d="M86.1 92L93.7 112L101.3 124L202.6 132L341.8 74L379.8 56"/><path class="route leg" data-leg="jack" d="M86.1 92L93.7 112L101.3 124"/><path class="route leg" data-leg="hamstead" d="M101.3 124L202.6 132"/><path class="route leg" data-leg="gurnard" d="M202.6 132L341.8 74"/><path class="route leg" data-leg="cowes" d="M341.8 74L379.8 56"/><circle class="wp" cx="86.1" cy="92" r="4"/><circle class="wp" cx="101.3" cy="124" r="4"/><circle class="wp" cx="202.6" cy="132" r="4"/><circle class="wp" cx="341.8" cy="74" r="4"/><circle class="wp" cx="379.8" cy="56" r="4"/>
-        <circle class="boat" cx="0" cy="0" r="6"/>
+        <path class="route route--plan" d="M86.1 92L93.7 112L101.3 124L202.6 132L341.8 74L379.8 56"/><path class="route leg" data-leg="jack" d="M86.1 92L93.7 112L101.3 124"/><path class="route leg" data-leg="hamstead" d="M101.3 124L202.6 132"/><path class="route leg" data-leg="gurnard" d="M202.6 132L341.8 74"/><path class="route leg" data-leg="cowes" d="M341.8 74L379.8 56"/><circle class="wp" cx="86.1" cy="92" r="4"/><circle class="wp" cx="101.3" cy="124" r="4"/><circle class="wp" cx="202.6" cy="132" r="4"/><circle class="wp" cx="341.8" cy="74" r="4"/><circle class="wp wp--end" cx="379.8" cy="56" r="4"/>
+        <g class="boat-g"><circle class="boat" cx="0" cy="0" r="6"/></g>
       </svg>
       <span class="maplab maplab--above" style="--x:19.44%;--y:39.09%">Lymington</span><span class="maplab maplab--minor maplab--below" style="--x:45.73%;--y:66.82%">Hamstead Ledge</span><span class="maplab maplab--above" style="--x:85.73%;--y:19.09%">Cowes</span><span class="maplab maplab--minor maplab--wide maplab--above" style="--x:28.58%;--y:80.91%">Yarmouth</span><span class="maplab maplab--water" style="--x:48.58%;--y:34.55%">The Solent</span><span class="maplab maplab--minor" style="--x:68.58%;--y:86.36%">Isle of Wight</span>
     </div>
             <div class="route-strip">
-              <span class="rs-now"><span class="swap muted rs-label roll" data-swap="leave jack hamstead gurnard cowes" style="--swap-i:0;--swap-count:5"><span class="swap-track"><span data-on>Leave Lymington</span><span>Jack in the Basket</span><span>Hamstead Ledge</span><span>Gurnard</span><span>Arrive Cowes</span></span></span><b class="rs-time" data-steps="08:30 08:48 09:17 09:59 10:10"><span class="swap rs-read roll" data-swap="leave jack hamstead gurnard cowes" style="--swap-i:0;--swap-count:5"><span class="swap-track"><span data-on>08:30</span><span>08:48</span><span>09:17</span><span>09:59</span><span>10:10</span></span></span></b></span>
-              <span><span class="muted">Distance sailed</span><b class="rs-nm" data-steps="0.0 1.5 4.6 9.2 10.5"><span class="swap rs-read roll" data-swap="leave jack hamstead gurnard cowes" style="--swap-i:0;--swap-count:5"><span class="swap-track"><span data-on>0.0&nbsp;nm</span><span>1.5&nbsp;nm</span><span>4.6&nbsp;nm</span><span>9.2&nbsp;nm</span><span>10.5&nbsp;nm</span></span></span></b></span>
-              <span><span class="muted">Leg speed</span><b><span class="swap rs-read roll" data-swap="leave jack hamstead gurnard cowes" style="--swap-i:0;--swap-count:5"><span class="swap-track"><span data-on>0.0&nbsp;kn</span><span>5.0&nbsp;kn</span><span>6.4&nbsp;kn</span><span>6.6&nbsp;kn</span><span>7.1&nbsp;kn</span></span></span></b></span>
+              <span class="rs-now"><span class="swap muted rs-label" data-swap="leave cowes" style="--swap-i:0;--swap-count:2"><span class="swap-track"><span data-on>Leave Lymington</span><span>Arrive Cowes</span></span></span><b class="rs-time" data-steps="08:30 10:10"><span class="swap rs-v" data-swap="leave cowes" style="--swap-i:0;--swap-count:2;--k:1"><span class="swap-track"><span data-on>08:30</span><span>10:10</span></span></span></b></span>
+              <span><span class="muted">Distance sailed</span><b class="rs-nm" data-steps="0.0 10.5"><span class="swap rs-v" data-swap="leave cowes" style="--swap-i:0;--swap-count:2;--k:2"><span class="swap-track"><span data-on>0.0&nbsp;nm</span><span>10.5&nbsp;nm</span></span></span></b></span>
+              <span><span class="muted">Average speed</span><b class="rs-kn"><span class="swap rs-v" data-swap="leave cowes" style="--swap-i:0;--swap-count:2;--k:3"><span class="swap-track"><span data-on>0.0&nbsp;kn</span><span>6.3&nbsp;kn</span></span></span></b></span>
             </div>
-          </div></div><figcaption class="frame-cap"><span>1 leave, 1500&nbsp;ms</span><span>Leave Lymington 08:30</span></figcaption></figure>
-<figure class="frame"><div class="stage stage--side stage--flat" aria-hidden="true"><div class="frag route-card" data-scene data-beats="leave:1500 jack:1900 hamstead:2100 gurnard:2300 cowes:4100" data-rest="2400" data-still="cowes" data-state="jack" data-seen="leave jack" data-legs="jack:400 hamstead:600 gurnard:800 cowes:spring" style="--at-leave:translate(86.1px, 92px);--at-jack:translate(101.3px, 124px);--at-hamstead:translate(202.6px, 132px);--at-gurnard:translate(341.8px, 74px);--at-cowes:translate(379.8px, 56px)">
+          </div></div><figcaption class="frame-cap"><span>1 leave, 2000&nbsp;ms</span><span>Leave Lymington 08:30</span></figcaption></figure>
+<figure class="frame"><div class="stage stage--side stage--flat" aria-hidden="true"><div class="frag route-card" data-scene data-beats="leave:2000 jack:1200 hamstead:1200 gurnard:1600 cowes:4400" data-rest="2400" data-still="cowes" data-state="jack" data-seen="leave jack" data-legs="jack:600 hamstead:800 gurnard:1200 cowes:400" style="--at-leave:translate(86.1px, 92px);--at-jack:translate(101.3px, 124px);--at-hamstead:translate(202.6px, 132px);--at-gurnard:translate(341.8px, 74px);--at-cowes:translate(379.8px, 56px)">
             
             <div class="frag__head"><b>Out: Lymington to Cowes</b><span class="chip chip--win">Leave 08:30</span></div>
             <div class="map map--route" style="--ar:443/220">
       <svg viewBox="0 0 443 220" aria-hidden="true" focusable="false">
         <path class="land" d="M0 152L44.3 172L62 190L55.7 164L76 134L84.8 120L78.5 88L91.2 86L98.7 114L126.6 108L177.2 84L246.9 36L303.8 28L341.8 0L367.1 -36L443.1 -60L443.1 -100L0 -100Z"/><path class="land" d="M443.1 70L417.8 84L392.5 70L379.8 64L354.5 86L303.8 114L246.9 144L211.4 150L164.6 176L126.6 184L88.6 186L69.6 240L0 260L0 300L443.1 300Z"/>
-        <path class="route route--plan" d="M86.1 92L93.7 112L101.3 124L202.6 132L341.8 74L379.8 56"/><path class="route leg" data-leg="jack" d="M86.1 92L93.7 112L101.3 124"/><path class="route leg" data-leg="hamstead" d="M101.3 124L202.6 132"/><path class="route leg" data-leg="gurnard" d="M202.6 132L341.8 74"/><path class="route leg" data-leg="cowes" d="M341.8 74L379.8 56"/><circle class="wp" cx="86.1" cy="92" r="4"/><circle class="wp" cx="101.3" cy="124" r="4"/><circle class="wp" cx="202.6" cy="132" r="4"/><circle class="wp" cx="341.8" cy="74" r="4"/><circle class="wp" cx="379.8" cy="56" r="4"/>
-        <circle class="boat" cx="0" cy="0" r="6"/>
+        <path class="route route--plan" d="M86.1 92L93.7 112L101.3 124L202.6 132L341.8 74L379.8 56"/><path class="route leg" data-leg="jack" d="M86.1 92L93.7 112L101.3 124"/><path class="route leg" data-leg="hamstead" d="M101.3 124L202.6 132"/><path class="route leg" data-leg="gurnard" d="M202.6 132L341.8 74"/><path class="route leg" data-leg="cowes" d="M341.8 74L379.8 56"/><circle class="wp" cx="86.1" cy="92" r="4"/><circle class="wp" cx="101.3" cy="124" r="4"/><circle class="wp" cx="202.6" cy="132" r="4"/><circle class="wp" cx="341.8" cy="74" r="4"/><circle class="wp wp--end" cx="379.8" cy="56" r="4"/>
+        <g class="boat-g"><circle class="boat" cx="0" cy="0" r="6"/></g>
       </svg>
       <span class="maplab maplab--above" style="--x:19.44%;--y:39.09%">Lymington</span><span class="maplab maplab--minor maplab--below" style="--x:45.73%;--y:66.82%">Hamstead Ledge</span><span class="maplab maplab--above" style="--x:85.73%;--y:19.09%">Cowes</span><span class="maplab maplab--minor maplab--wide maplab--above" style="--x:28.58%;--y:80.91%">Yarmouth</span><span class="maplab maplab--water" style="--x:48.58%;--y:34.55%">The Solent</span><span class="maplab maplab--minor" style="--x:68.58%;--y:86.36%">Isle of Wight</span>
     </div>
             <div class="route-strip">
-              <span class="rs-now"><span class="swap muted rs-label roll" data-swap="leave jack hamstead gurnard cowes" style="--swap-i:1;--swap-count:5"><span class="swap-track"><span>Leave Lymington</span><span data-on>Jack in the Basket</span><span>Hamstead Ledge</span><span>Gurnard</span><span>Arrive Cowes</span></span></span><b class="rs-time" data-steps="08:30 08:48 09:17 09:59 10:10"><span class="swap rs-read roll" data-swap="leave jack hamstead gurnard cowes" style="--swap-i:1;--swap-count:5"><span class="swap-track"><span>08:30</span><span data-on>08:48</span><span>09:17</span><span>09:59</span><span>10:10</span></span></span></b></span>
-              <span><span class="muted">Distance sailed</span><b class="rs-nm" data-steps="0.0 1.5 4.6 9.2 10.5"><span class="swap rs-read roll" data-swap="leave jack hamstead gurnard cowes" style="--swap-i:1;--swap-count:5"><span class="swap-track"><span>0.0&nbsp;nm</span><span data-on>1.5&nbsp;nm</span><span>4.6&nbsp;nm</span><span>9.2&nbsp;nm</span><span>10.5&nbsp;nm</span></span></span></b></span>
-              <span><span class="muted">Leg speed</span><b><span class="swap rs-read roll" data-swap="leave jack hamstead gurnard cowes" style="--swap-i:1;--swap-count:5"><span class="swap-track"><span>0.0&nbsp;kn</span><span data-on>5.0&nbsp;kn</span><span>6.4&nbsp;kn</span><span>6.6&nbsp;kn</span><span>7.1&nbsp;kn</span></span></span></b></span>
+              <span class="rs-now"><span class="swap muted rs-label" data-swap="leave cowes" style="--swap-i:0;--swap-count:2"><span class="swap-track"><span data-on>Leave Lymington</span><span>Arrive Cowes</span></span></span><b class="rs-time" data-steps="08:30 10:10"><span class="swap rs-v" data-swap="leave cowes" style="--swap-i:0;--swap-count:2;--k:1"><span class="swap-track"><span data-on>08:30</span><span>10:10</span></span></span></b></span>
+              <span><span class="muted">Distance sailed</span><b class="rs-nm" data-steps="0.0 10.5"><span class="swap rs-v" data-swap="leave cowes" style="--swap-i:0;--swap-count:2;--k:2"><span class="swap-track"><span data-on>0.0&nbsp;nm</span><span>10.5&nbsp;nm</span></span></span></b></span>
+              <span><span class="muted">Average speed</span><b class="rs-kn"><span class="swap rs-v" data-swap="leave cowes" style="--swap-i:0;--swap-count:2;--k:3"><span class="swap-track"><span data-on>0.0&nbsp;kn</span><span>6.3&nbsp;kn</span></span></span></b></span>
             </div>
-          </div></div><figcaption class="frame-cap"><span>2 jack, 1900&nbsp;ms</span><span>Jack in the Basket 08:48, 1.5 nm</span></figcaption></figure>
-<figure class="frame"><div class="stage stage--side stage--flat" aria-hidden="true"><div class="frag route-card" data-scene data-beats="leave:1500 jack:1900 hamstead:2100 gurnard:2300 cowes:4100" data-rest="2400" data-still="cowes" data-state="hamstead" data-seen="leave jack hamstead" data-legs="jack:400 hamstead:600 gurnard:800 cowes:spring" style="--at-leave:translate(86.1px, 92px);--at-jack:translate(101.3px, 124px);--at-hamstead:translate(202.6px, 132px);--at-gurnard:translate(341.8px, 74px);--at-cowes:translate(379.8px, 56px)">
+          </div></div><figcaption class="frame-cap"><span>2 jack, 1200&nbsp;ms</span><span>At Jack in the Basket (the map carries it)</span></figcaption></figure>
+<figure class="frame"><div class="stage stage--side stage--flat" aria-hidden="true"><div class="frag route-card" data-scene data-beats="leave:2000 jack:1200 hamstead:1200 gurnard:1600 cowes:4400" data-rest="2400" data-still="cowes" data-state="hamstead" data-seen="leave jack hamstead" data-legs="jack:600 hamstead:800 gurnard:1200 cowes:400" style="--at-leave:translate(86.1px, 92px);--at-jack:translate(101.3px, 124px);--at-hamstead:translate(202.6px, 132px);--at-gurnard:translate(341.8px, 74px);--at-cowes:translate(379.8px, 56px)">
             
             <div class="frag__head"><b>Out: Lymington to Cowes</b><span class="chip chip--win">Leave 08:30</span></div>
             <div class="map map--route" style="--ar:443/220">
       <svg viewBox="0 0 443 220" aria-hidden="true" focusable="false">
         <path class="land" d="M0 152L44.3 172L62 190L55.7 164L76 134L84.8 120L78.5 88L91.2 86L98.7 114L126.6 108L177.2 84L246.9 36L303.8 28L341.8 0L367.1 -36L443.1 -60L443.1 -100L0 -100Z"/><path class="land" d="M443.1 70L417.8 84L392.5 70L379.8 64L354.5 86L303.8 114L246.9 144L211.4 150L164.6 176L126.6 184L88.6 186L69.6 240L0 260L0 300L443.1 300Z"/>
-        <path class="route route--plan" d="M86.1 92L93.7 112L101.3 124L202.6 132L341.8 74L379.8 56"/><path class="route leg" data-leg="jack" d="M86.1 92L93.7 112L101.3 124"/><path class="route leg" data-leg="hamstead" d="M101.3 124L202.6 132"/><path class="route leg" data-leg="gurnard" d="M202.6 132L341.8 74"/><path class="route leg" data-leg="cowes" d="M341.8 74L379.8 56"/><circle class="wp" cx="86.1" cy="92" r="4"/><circle class="wp" cx="101.3" cy="124" r="4"/><circle class="wp" cx="202.6" cy="132" r="4"/><circle class="wp" cx="341.8" cy="74" r="4"/><circle class="wp" cx="379.8" cy="56" r="4"/>
-        <circle class="boat" cx="0" cy="0" r="6"/>
+        <path class="route route--plan" d="M86.1 92L93.7 112L101.3 124L202.6 132L341.8 74L379.8 56"/><path class="route leg" data-leg="jack" d="M86.1 92L93.7 112L101.3 124"/><path class="route leg" data-leg="hamstead" d="M101.3 124L202.6 132"/><path class="route leg" data-leg="gurnard" d="M202.6 132L341.8 74"/><path class="route leg" data-leg="cowes" d="M341.8 74L379.8 56"/><circle class="wp" cx="86.1" cy="92" r="4"/><circle class="wp" cx="101.3" cy="124" r="4"/><circle class="wp" cx="202.6" cy="132" r="4"/><circle class="wp" cx="341.8" cy="74" r="4"/><circle class="wp wp--end" cx="379.8" cy="56" r="4"/>
+        <g class="boat-g"><circle class="boat" cx="0" cy="0" r="6"/></g>
       </svg>
       <span class="maplab maplab--above" style="--x:19.44%;--y:39.09%">Lymington</span><span class="maplab maplab--minor maplab--below" style="--x:45.73%;--y:66.82%">Hamstead Ledge</span><span class="maplab maplab--above" style="--x:85.73%;--y:19.09%">Cowes</span><span class="maplab maplab--minor maplab--wide maplab--above" style="--x:28.58%;--y:80.91%">Yarmouth</span><span class="maplab maplab--water" style="--x:48.58%;--y:34.55%">The Solent</span><span class="maplab maplab--minor" style="--x:68.58%;--y:86.36%">Isle of Wight</span>
     </div>
             <div class="route-strip">
-              <span class="rs-now"><span class="swap muted rs-label roll" data-swap="leave jack hamstead gurnard cowes" style="--swap-i:2;--swap-count:5"><span class="swap-track"><span>Leave Lymington</span><span>Jack in the Basket</span><span data-on>Hamstead Ledge</span><span>Gurnard</span><span>Arrive Cowes</span></span></span><b class="rs-time" data-steps="08:30 08:48 09:17 09:59 10:10"><span class="swap rs-read roll" data-swap="leave jack hamstead gurnard cowes" style="--swap-i:2;--swap-count:5"><span class="swap-track"><span>08:30</span><span>08:48</span><span data-on>09:17</span><span>09:59</span><span>10:10</span></span></span></b></span>
-              <span><span class="muted">Distance sailed</span><b class="rs-nm" data-steps="0.0 1.5 4.6 9.2 10.5"><span class="swap rs-read roll" data-swap="leave jack hamstead gurnard cowes" style="--swap-i:2;--swap-count:5"><span class="swap-track"><span>0.0&nbsp;nm</span><span>1.5&nbsp;nm</span><span data-on>4.6&nbsp;nm</span><span>9.2&nbsp;nm</span><span>10.5&nbsp;nm</span></span></span></b></span>
-              <span><span class="muted">Leg speed</span><b><span class="swap rs-read roll" data-swap="leave jack hamstead gurnard cowes" style="--swap-i:2;--swap-count:5"><span class="swap-track"><span>0.0&nbsp;kn</span><span>5.0&nbsp;kn</span><span data-on>6.4&nbsp;kn</span><span>6.6&nbsp;kn</span><span>7.1&nbsp;kn</span></span></span></b></span>
+              <span class="rs-now"><span class="swap muted rs-label" data-swap="leave cowes" style="--swap-i:0;--swap-count:2"><span class="swap-track"><span data-on>Leave Lymington</span><span>Arrive Cowes</span></span></span><b class="rs-time" data-steps="08:30 10:10"><span class="swap rs-v" data-swap="leave cowes" style="--swap-i:0;--swap-count:2;--k:1"><span class="swap-track"><span data-on>08:30</span><span>10:10</span></span></span></b></span>
+              <span><span class="muted">Distance sailed</span><b class="rs-nm" data-steps="0.0 10.5"><span class="swap rs-v" data-swap="leave cowes" style="--swap-i:0;--swap-count:2;--k:2"><span class="swap-track"><span data-on>0.0&nbsp;nm</span><span>10.5&nbsp;nm</span></span></span></b></span>
+              <span><span class="muted">Average speed</span><b class="rs-kn"><span class="swap rs-v" data-swap="leave cowes" style="--swap-i:0;--swap-count:2;--k:3"><span class="swap-track"><span data-on>0.0&nbsp;kn</span><span>6.3&nbsp;kn</span></span></span></b></span>
             </div>
-          </div></div><figcaption class="frame-cap"><span>3 hamstead, 2100&nbsp;ms</span><span>Hamstead Ledge 09:17, 4.6 nm</span></figcaption></figure>
-<figure class="frame"><div class="stage stage--side stage--flat" aria-hidden="true"><div class="frag route-card" data-scene data-beats="leave:1500 jack:1900 hamstead:2100 gurnard:2300 cowes:4100" data-rest="2400" data-still="cowes" data-state="gurnard" data-seen="leave jack hamstead gurnard" data-legs="jack:400 hamstead:600 gurnard:800 cowes:spring" style="--at-leave:translate(86.1px, 92px);--at-jack:translate(101.3px, 124px);--at-hamstead:translate(202.6px, 132px);--at-gurnard:translate(341.8px, 74px);--at-cowes:translate(379.8px, 56px)">
+          </div></div><figcaption class="frame-cap"><span>3 hamstead, 1200&nbsp;ms</span><span>At Hamstead Ledge</span></figcaption></figure>
+<figure class="frame"><div class="stage stage--side stage--flat" aria-hidden="true"><div class="frag route-card" data-scene data-beats="leave:2000 jack:1200 hamstead:1200 gurnard:1600 cowes:4400" data-rest="2400" data-still="cowes" data-state="gurnard" data-seen="leave jack hamstead gurnard" data-legs="jack:600 hamstead:800 gurnard:1200 cowes:400" style="--at-leave:translate(86.1px, 92px);--at-jack:translate(101.3px, 124px);--at-hamstead:translate(202.6px, 132px);--at-gurnard:translate(341.8px, 74px);--at-cowes:translate(379.8px, 56px)">
             
             <div class="frag__head"><b>Out: Lymington to Cowes</b><span class="chip chip--win">Leave 08:30</span></div>
             <div class="map map--route" style="--ar:443/220">
       <svg viewBox="0 0 443 220" aria-hidden="true" focusable="false">
         <path class="land" d="M0 152L44.3 172L62 190L55.7 164L76 134L84.8 120L78.5 88L91.2 86L98.7 114L126.6 108L177.2 84L246.9 36L303.8 28L341.8 0L367.1 -36L443.1 -60L443.1 -100L0 -100Z"/><path class="land" d="M443.1 70L417.8 84L392.5 70L379.8 64L354.5 86L303.8 114L246.9 144L211.4 150L164.6 176L126.6 184L88.6 186L69.6 240L0 260L0 300L443.1 300Z"/>
-        <path class="route route--plan" d="M86.1 92L93.7 112L101.3 124L202.6 132L341.8 74L379.8 56"/><path class="route leg" data-leg="jack" d="M86.1 92L93.7 112L101.3 124"/><path class="route leg" data-leg="hamstead" d="M101.3 124L202.6 132"/><path class="route leg" data-leg="gurnard" d="M202.6 132L341.8 74"/><path class="route leg" data-leg="cowes" d="M341.8 74L379.8 56"/><circle class="wp" cx="86.1" cy="92" r="4"/><circle class="wp" cx="101.3" cy="124" r="4"/><circle class="wp" cx="202.6" cy="132" r="4"/><circle class="wp" cx="341.8" cy="74" r="4"/><circle class="wp" cx="379.8" cy="56" r="4"/>
-        <circle class="boat" cx="0" cy="0" r="6"/>
+        <path class="route route--plan" d="M86.1 92L93.7 112L101.3 124L202.6 132L341.8 74L379.8 56"/><path class="route leg" data-leg="jack" d="M86.1 92L93.7 112L101.3 124"/><path class="route leg" data-leg="hamstead" d="M101.3 124L202.6 132"/><path class="route leg" data-leg="gurnard" d="M202.6 132L341.8 74"/><path class="route leg" data-leg="cowes" d="M341.8 74L379.8 56"/><circle class="wp" cx="86.1" cy="92" r="4"/><circle class="wp" cx="101.3" cy="124" r="4"/><circle class="wp" cx="202.6" cy="132" r="4"/><circle class="wp" cx="341.8" cy="74" r="4"/><circle class="wp wp--end" cx="379.8" cy="56" r="4"/>
+        <g class="boat-g"><circle class="boat" cx="0" cy="0" r="6"/></g>
       </svg>
       <span class="maplab maplab--above" style="--x:19.44%;--y:39.09%">Lymington</span><span class="maplab maplab--minor maplab--below" style="--x:45.73%;--y:66.82%">Hamstead Ledge</span><span class="maplab maplab--above" style="--x:85.73%;--y:19.09%">Cowes</span><span class="maplab maplab--minor maplab--wide maplab--above" style="--x:28.58%;--y:80.91%">Yarmouth</span><span class="maplab maplab--water" style="--x:48.58%;--y:34.55%">The Solent</span><span class="maplab maplab--minor" style="--x:68.58%;--y:86.36%">Isle of Wight</span>
     </div>
             <div class="route-strip">
-              <span class="rs-now"><span class="swap muted rs-label roll" data-swap="leave jack hamstead gurnard cowes" style="--swap-i:3;--swap-count:5"><span class="swap-track"><span>Leave Lymington</span><span>Jack in the Basket</span><span>Hamstead Ledge</span><span data-on>Gurnard</span><span>Arrive Cowes</span></span></span><b class="rs-time" data-steps="08:30 08:48 09:17 09:59 10:10"><span class="swap rs-read roll" data-swap="leave jack hamstead gurnard cowes" style="--swap-i:3;--swap-count:5"><span class="swap-track"><span>08:30</span><span>08:48</span><span>09:17</span><span data-on>09:59</span><span>10:10</span></span></span></b></span>
-              <span><span class="muted">Distance sailed</span><b class="rs-nm" data-steps="0.0 1.5 4.6 9.2 10.5"><span class="swap rs-read roll" data-swap="leave jack hamstead gurnard cowes" style="--swap-i:3;--swap-count:5"><span class="swap-track"><span>0.0&nbsp;nm</span><span>1.5&nbsp;nm</span><span>4.6&nbsp;nm</span><span data-on>9.2&nbsp;nm</span><span>10.5&nbsp;nm</span></span></span></b></span>
-              <span><span class="muted">Leg speed</span><b><span class="swap rs-read roll" data-swap="leave jack hamstead gurnard cowes" style="--swap-i:3;--swap-count:5"><span class="swap-track"><span>0.0&nbsp;kn</span><span>5.0&nbsp;kn</span><span>6.4&nbsp;kn</span><span data-on>6.6&nbsp;kn</span><span>7.1&nbsp;kn</span></span></span></b></span>
+              <span class="rs-now"><span class="swap muted rs-label" data-swap="leave cowes" style="--swap-i:0;--swap-count:2"><span class="swap-track"><span data-on>Leave Lymington</span><span>Arrive Cowes</span></span></span><b class="rs-time" data-steps="08:30 10:10"><span class="swap rs-v" data-swap="leave cowes" style="--swap-i:0;--swap-count:2;--k:1"><span class="swap-track"><span data-on>08:30</span><span>10:10</span></span></span></b></span>
+              <span><span class="muted">Distance sailed</span><b class="rs-nm" data-steps="0.0 10.5"><span class="swap rs-v" data-swap="leave cowes" style="--swap-i:0;--swap-count:2;--k:2"><span class="swap-track"><span data-on>0.0&nbsp;nm</span><span>10.5&nbsp;nm</span></span></span></b></span>
+              <span><span class="muted">Average speed</span><b class="rs-kn"><span class="swap rs-v" data-swap="leave cowes" style="--swap-i:0;--swap-count:2;--k:3"><span class="swap-track"><span data-on>0.0&nbsp;kn</span><span>6.3&nbsp;kn</span></span></span></b></span>
             </div>
-          </div></div><figcaption class="frame-cap"><span>4 gurnard, 2300&nbsp;ms</span><span>Gurnard 09:59, 9.2 nm</span></figcaption></figure>
-<figure class="frame"><div class="stage stage--side stage--flat" aria-hidden="true"><div class="frag route-card" data-scene data-beats="leave:1500 jack:1900 hamstead:2100 gurnard:2300 cowes:4100" data-rest="2400" data-still="cowes" data-state="cowes" data-seen="leave jack hamstead gurnard cowes" data-legs="jack:400 hamstead:600 gurnard:800 cowes:spring" style="--at-leave:translate(86.1px, 92px);--at-jack:translate(101.3px, 124px);--at-hamstead:translate(202.6px, 132px);--at-gurnard:translate(341.8px, 74px);--at-cowes:translate(379.8px, 56px)">
+          </div></div><figcaption class="frame-cap"><span>4 gurnard, 1600&nbsp;ms</span><span>At Gurnard</span></figcaption></figure>
+<figure class="frame"><div class="stage stage--side stage--flat" aria-hidden="true"><div class="frag route-card" data-scene data-beats="leave:2000 jack:1200 hamstead:1200 gurnard:1600 cowes:4400" data-rest="2400" data-still="cowes" data-state="cowes" data-seen="leave jack hamstead gurnard cowes" data-legs="jack:600 hamstead:800 gurnard:1200 cowes:400" style="--at-leave:translate(86.1px, 92px);--at-jack:translate(101.3px, 124px);--at-hamstead:translate(202.6px, 132px);--at-gurnard:translate(341.8px, 74px);--at-cowes:translate(379.8px, 56px)">
             
             <div class="frag__head"><b>Out: Lymington to Cowes</b><span class="chip chip--win">Leave 08:30</span></div>
             <div class="map map--route" style="--ar:443/220">
       <svg viewBox="0 0 443 220" aria-hidden="true" focusable="false">
         <path class="land" d="M0 152L44.3 172L62 190L55.7 164L76 134L84.8 120L78.5 88L91.2 86L98.7 114L126.6 108L177.2 84L246.9 36L303.8 28L341.8 0L367.1 -36L443.1 -60L443.1 -100L0 -100Z"/><path class="land" d="M443.1 70L417.8 84L392.5 70L379.8 64L354.5 86L303.8 114L246.9 144L211.4 150L164.6 176L126.6 184L88.6 186L69.6 240L0 260L0 300L443.1 300Z"/>
-        <path class="route route--plan" d="M86.1 92L93.7 112L101.3 124L202.6 132L341.8 74L379.8 56"/><path class="route leg" data-leg="jack" d="M86.1 92L93.7 112L101.3 124"/><path class="route leg" data-leg="hamstead" d="M101.3 124L202.6 132"/><path class="route leg" data-leg="gurnard" d="M202.6 132L341.8 74"/><path class="route leg" data-leg="cowes" d="M341.8 74L379.8 56"/><circle class="wp" cx="86.1" cy="92" r="4"/><circle class="wp" cx="101.3" cy="124" r="4"/><circle class="wp" cx="202.6" cy="132" r="4"/><circle class="wp" cx="341.8" cy="74" r="4"/><circle class="wp" cx="379.8" cy="56" r="4"/>
-        <circle class="boat" cx="0" cy="0" r="6"/>
+        <path class="route route--plan" d="M86.1 92L93.7 112L101.3 124L202.6 132L341.8 74L379.8 56"/><path class="route leg" data-leg="jack" d="M86.1 92L93.7 112L101.3 124"/><path class="route leg" data-leg="hamstead" d="M101.3 124L202.6 132"/><path class="route leg" data-leg="gurnard" d="M202.6 132L341.8 74"/><path class="route leg" data-leg="cowes" d="M341.8 74L379.8 56"/><circle class="wp" cx="86.1" cy="92" r="4"/><circle class="wp" cx="101.3" cy="124" r="4"/><circle class="wp" cx="202.6" cy="132" r="4"/><circle class="wp" cx="341.8" cy="74" r="4"/><circle class="wp wp--end" cx="379.8" cy="56" r="4"/>
+        <g class="boat-g"><circle class="boat" cx="0" cy="0" r="6"/></g>
       </svg>
       <span class="maplab maplab--above" style="--x:19.44%;--y:39.09%">Lymington</span><span class="maplab maplab--minor maplab--below" style="--x:45.73%;--y:66.82%">Hamstead Ledge</span><span class="maplab maplab--above" style="--x:85.73%;--y:19.09%">Cowes</span><span class="maplab maplab--minor maplab--wide maplab--above" style="--x:28.58%;--y:80.91%">Yarmouth</span><span class="maplab maplab--water" style="--x:48.58%;--y:34.55%">The Solent</span><span class="maplab maplab--minor" style="--x:68.58%;--y:86.36%">Isle of Wight</span>
     </div>
             <div class="route-strip">
-              <span class="rs-now"><span class="swap muted rs-label roll" data-swap="leave jack hamstead gurnard cowes" style="--swap-i:4;--swap-count:5"><span class="swap-track"><span>Leave Lymington</span><span>Jack in the Basket</span><span>Hamstead Ledge</span><span>Gurnard</span><span data-on>Arrive Cowes</span></span></span><b class="rs-time" data-steps="08:30 08:48 09:17 09:59 10:10"><span class="swap rs-read roll" data-swap="leave jack hamstead gurnard cowes" style="--swap-i:4;--swap-count:5"><span class="swap-track"><span>08:30</span><span>08:48</span><span>09:17</span><span>09:59</span><span data-on>10:10</span></span></span></b></span>
-              <span><span class="muted">Distance sailed</span><b class="rs-nm" data-steps="0.0 1.5 4.6 9.2 10.5"><span class="swap rs-read roll" data-swap="leave jack hamstead gurnard cowes" style="--swap-i:4;--swap-count:5"><span class="swap-track"><span>0.0&nbsp;nm</span><span>1.5&nbsp;nm</span><span>4.6&nbsp;nm</span><span>9.2&nbsp;nm</span><span data-on>10.5&nbsp;nm</span></span></span></b></span>
-              <span><span class="muted">Leg speed</span><b><span class="swap rs-read roll" data-swap="leave jack hamstead gurnard cowes" style="--swap-i:4;--swap-count:5"><span class="swap-track"><span>0.0&nbsp;kn</span><span>5.0&nbsp;kn</span><span>6.4&nbsp;kn</span><span>6.6&nbsp;kn</span><span data-on>7.1&nbsp;kn</span></span></span></b></span>
+              <span class="rs-now"><span class="swap muted rs-label" data-swap="leave cowes" style="--swap-i:1;--swap-count:2"><span class="swap-track"><span>Leave Lymington</span><span data-on>Arrive Cowes</span></span></span><b class="rs-time" data-steps="08:30 10:10"><span class="swap rs-v" data-swap="leave cowes" style="--swap-i:1;--swap-count:2;--k:1"><span class="swap-track"><span>08:30</span><span data-on>10:10</span></span></span></b></span>
+              <span><span class="muted">Distance sailed</span><b class="rs-nm" data-steps="0.0 10.5"><span class="swap rs-v" data-swap="leave cowes" style="--swap-i:1;--swap-count:2;--k:2"><span class="swap-track"><span>0.0&nbsp;nm</span><span data-on>10.5&nbsp;nm</span></span></span></b></span>
+              <span><span class="muted">Average speed</span><b class="rs-kn"><span class="swap rs-v" data-swap="leave cowes" style="--swap-i:1;--swap-count:2;--k:3"><span class="swap-track"><span>0.0&nbsp;kn</span><span data-on>6.3&nbsp;kn</span></span></span></b></span>
             </div>
-          </div></div><figcaption class="frame-cap"><span>5 cowes, 4100&nbsp;ms</span><span>Arrive Cowes 10:10, 10.5 nm (still)</span></figcaption></figure>
+          </div></div><figcaption class="frame-cap"><span>5 cowes, 4400&nbsp;ms</span><span>Arrive Cowes 10:10, 10.5 nm, 6.3 kn average (still)</span></figcaption></figure>
       </div>
     </section>
   </div>

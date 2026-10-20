@@ -1,4 +1,4 @@
-Claims inventory: kb/tests/fresh/landing/halyard.html (118 strings to check against the data)
+Claims inventory: kb/tests/fresh/landing/halyard.html (112 strings to check against the data)
 
   1  For 6 to 12 metre yachts and dayboats. Free for one boat and three plans a month, on iPhone, Android and the web.
   2  Lymington to Cowes and back Sat 24 Oct · BST
@@ -57,67 +57,61 @@ Claims inventory: kb/tests/fresh/landing/halyard.html (118 strings to check agai
  55  10.5
  56  Out: Lymington to Cowes Leave 08:30
  57  0.0 nm
- 58  1.5 nm
- 59  4.6 nm
- 60  9.2 nm
- 61  10.5 nm
- 62  0.0 kn
- 63  5.0 kn
- 64  6.4 kn
- 65  6.6 kn
- 66  7.1 kn
- 67  FIG 0.5
- 68  The out leg on Saturday, mark by mark: the clock and the distance sailed at each mark. Illustration, not a chart: not for navigation. Sample data.
- 69  When a new forecast moves your window, you hear about it the evening before, not off Hurst Point. These are the warnings for Wren on Saturday:
- 70  Wind against tide from 15:00. A 15 kn westerly against a 2.4 kn west-going stream. Wren’s limit is 12 kn.
- 71  Gusts to 23 kn from 16:00. Wren’s limit is 20 kn.
- 72  Home after dark if you leave Cowes after 16:16. Sunset at Lymington is 17:56.
- 73  Back: Cowes to Lymington Forecast Fri 18:00
- 74  Forecast Fri 21:00
- 75  Leave 11:10 to 13:45
- 76  13:20
- 77  15:25
- 78  Wind against tide W 15 kn on a 2.4 kn W-going stream
- 79  16:00
- 80  Gusts 23 kn Limit 20 kn
- 81  16:16
- 82  Latest to leave Cowes Sunset 17:56
- 83  Fri 18:10
- 84  Plan saved. Out 07:33, back 11:10.
- 85  Fri 21:05
- 86  Back window moved Now closes 13:20, 25 minutes earlier.
- 87  The 21:00 forecast brings the wind on sooner. Your 12:30 start still works.
- 88  FIG 0.6
- 89  The back window on the evening of 23 October: the 21:00 forecast moves it from 13:45 to 13:20, and the alert arrives on your phone. Sample data.
- 90  FIG 0.7
- 91  Covered: 14 tidal height stations and 8 stream points
- 92  Yearly Save £20.88
- 93  £0
- 94  £4.99 a month
- 95  £39 a year
- 96  Or £39 a year, which works out at £3.25 a month
- 97  £3.25 a month, £20.88 less than paying monthly
- 98  Up to five boats and unlimited plans
- 99  Get Plus, £4.99 a month
-100  Predictions for 14 stations, worked out from each station’s published tidal constants
-101  Direction and rate at 8 points, from the published stream atlas for the area
-102  Hourly forecast from a numerical weather model, updated every 6 hours
-103  Before you go Sat 24 Oct, 07:45
-104  Read the 06:00 inshore forecast Lyme Regis to Selsey Bill
-105  Check times in the official tide tables HW Lymington 10:58
-106  Leave your plan with someone ashore Back by 14:10
-107  VHF on, channel 16 Solent Coastguard
-108  FIG 0.8
-109  Which boats is it for? Yachts and dayboats from 6 to 12 metres. You set the length, cruising speed and limits for each boat, and Halyard times every leg at that speed with the stream added.
-110  Where does it work? From Anvil Point to Selsey Bill: Poole Harbour, the Solent and Chichester Harbour, with 14 tidal height stations and 8 stream points. It does not cover Channel crossings or anywhere west of Anvil Point or east of Selsey Bill.
-111  What does Plus cost, and how do I cancel? Plus is £4.99 a month or £39 a year. Cancel online in Settings at any time; Plus runs to the end of the period you have paid for, then your account goes back to Free.
-112  Wren, Sat 24 Oct 2 windows
-113  Out 07:33 to 09:30
-114  Back 11:10 to 13:20
-115  FIG 0.9
-116  Saturday’s two windows for Wren. Sample data.
-117  Figures on this page are sample data for Saturday 24 October 2026 at Lymington, in British Summer Time.
-118  © 2026 Halyard
+ 58  10.5 nm
+ 59  0.0 kn
+ 60  6.3 kn
+ 61  FIG 0.5
+ 62  The out leg on Saturday, mark by mark: the clock and the distance sailed at each mark. Illustration, not a chart: not for navigation. Sample data.
+ 63  When a new forecast moves your window, you hear about it the evening before, not off Hurst Point. These are the warnings for Wren on Saturday:
+ 64  Wind against tide from 15:00. A 15 kn westerly against a 2.4 kn west-going stream. Wren’s limit is 12 kn.
+ 65  Gusts to 23 kn from 16:00. Wren’s limit is 20 kn.
+ 66  Home after dark if you leave Cowes after 16:16. Sunset at Lymington is 17:56.
+ 67  Back: Cowes to Lymington Forecast Fri 18:00
+ 68  Forecast Fri 21:00
+ 69  Leave 11:10 to 13:45
+ 70  13:20
+ 71  15:25
+ 72  Wind against tide W 15 kn on a 2.4 kn W-going stream
+ 73  16:00
+ 74  Gusts 23 kn Limit 20 kn
+ 75  16:16
+ 76  Latest to leave Cowes Sunset 17:56
+ 77  Fri 18:10
+ 78  Plan saved. Out 07:33, back 11:10.
+ 79  Fri 21:05
+ 80  Back window moved Now closes 13:20, 25 minutes earlier.
+ 81  The 21:00 forecast brings the wind on sooner. Your 12:30 start still works.
+ 82  FIG 0.6
+ 83  The back window on the evening of 23 October: the 21:00 forecast moves it from 13:45 to 13:20, and the alert arrives on your phone. Sample data.
+ 84  FIG 0.7
+ 85  Covered: 14 tidal height stations and 8 stream points
+ 86  Yearly Save £20.88
+ 87  £0
+ 88  £4.99 a month
+ 89  £39 a year
+ 90  Or £39 a year, which works out at £3.25 a month
+ 91  £3.25 a month, £20.88 less than paying monthly
+ 92  Up to five boats and unlimited plans
+ 93  Get Plus, £4.99 a month
+ 94  Predictions for 14 stations, worked out from each station’s published tidal constants
+ 95  Direction and rate at 8 points, from the published stream atlas for the area
+ 96  Hourly forecast from a numerical weather model, updated every 6 hours
+ 97  Before you go Sat 24 Oct, 07:45
+ 98  Read the 06:00 inshore forecast Lyme Regis to Selsey Bill
+ 99  Check times in the official tide tables HW Lymington 10:58
+100  Leave your plan with someone ashore Back by 14:10
+101  VHF on, channel 16 Solent Coastguard
+102  FIG 0.8
+103  Which boats is it for? Yachts and dayboats from 6 to 12 metres. You set the length, cruising speed and limits for each boat, and Halyard times every leg at that speed with the stream added.
+104  Where does it work? From Anvil Point to Selsey Bill: Poole Harbour, the Solent and Chichester Harbour, with 14 tidal height stations and 8 stream points. It does not cover Channel crossings or anywhere west of Anvil Point or east of Selsey Bill.
+105  What does Plus cost, and how do I cancel? Plus is £4.99 a month or £39 a year. Cancel online in Settings at any time; Plus runs to the end of the period you have paid for, then your account goes back to Free.
+106  Wren, Sat 24 Oct 2 windows
+107  Out 07:33 to 09:30
+108  Back 11:10 to 13:20
+109  FIG 0.9
+110  Saturday’s two windows for Wren. Sample data.
+111  Figures on this page are sample data for Saturday 24 October 2026 at Lymington, in British Summer Time.
+112  © 2026 Halyard
 
 No mechanical flags. Now tick every line above against its source: chart data, price list, policy, log.
 exit 0

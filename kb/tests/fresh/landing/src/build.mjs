@@ -175,13 +175,13 @@ function routeChart() {
   const pts = D.route.track.map(([lo, la]) => f(lo, la));
   const line = (a, b) => 'M' + pts.slice(a, b + 1).map((p) => p.join(' ')).join('L');
   const legs = Object.entries(LEG_TRACK).map(([st, [a, b]]) => `<path class="route leg" data-leg="${st}" d="${line(a, b)}"/>`).join('');
-  const wps = D.route.waypoints.map((w) => { const [x, y] = f(w.lon, w.lat); return `<circle class="wp" cx="${x}" cy="${y}" r="4"/>`; }).join('');
+  const wps = D.route.waypoints.map((w, k, all) => { const [x, y] = f(w.lon, w.lat); return `<circle class="wp${k === all.length - 1 ? ' wp--end' : ''}" cx="${x}" cy="${y}" r="4"/>`; }).join('');
   const labels = D.route.labels.map((l) => { const [x, y] = f(l.lon, l.lat); return `<span class="maplab${l.water ? ' maplab--water' : ''}${l.minor ? ' maplab--minor' : ''}${l.wide ? ' maplab--wide' : ''}${l.anchor ? ' maplab--' + l.anchor : ''}" style="--x:${(x / W * 100).toFixed(2)}%;--y:${(y / H * 100).toFixed(2)}%">${l.name}</span>`; }).join('');
   return `<div class="map map--route" style="--ar:${W}/${H}">
       <svg viewBox="0 0 ${W} ${H}" aria-hidden="true" focusable="false">
         <path class="land" d="${main}"/><path class="land" d="${iow}"/>
         <path class="route route--plan" d="${line(0, pts.length - 1)}"/>${legs}${wps}
-        <circle class="boat" cx="0" cy="0" r="6"/>
+        <g class="boat-g"><circle class="boat" cx="0" cy="0" r="6"/></g>
       </svg>
       ${labels}
     </div>`;
@@ -190,10 +190,11 @@ function routeChart() {
 // ---------- scenes (design-motion v0.4: shot plan, moment kit) ----------
 // Each builder writes the scene on one frame: the page gets the still frame (id, shot plan, cursor), the state sheet
 // gets every frame. Beats are per scene (FOUNDATIONS: never tokens).
-// aim: the card settles and the hand travels (in by about 1.0s). press: the sweep, then the result in order (bars as
-// the line passes, Out row, Back row, the count, the button back, --offset apart), all settled by 1700ms. window: the
-// plan alone, its own beat, landing about 3.5s from load and held with nothing else moving.
-const HERO_BEATS = [['aim', 1200], ['press', 1800], ['window', 4400]];
+// aim: the card settles, the hand sets off from beside the button and presses at 1200ms (on a replay, the last result
+// resets in place first, about 0.6s). press: the line sweeps the day alone (bars turn as it passes); only when it
+// arrives do the Out row, the Back row, the count and the button land, --offset apart; settled by 2100ms, the found
+// windows hold 1s. window: the plan's values land in their reserved row, its own beat, held with nothing moving.
+const HERO_BEATS = [['aim', 1200], ['press', 3100], ['window', 4400]];
 function heroScene(state = 'window', { id = 'hero-scene' } = {}) {
   const seen = seenTo(HERO_BEATS, state);
   const shots = [
@@ -208,18 +209,17 @@ function heroScene(state = 'window', { id = 'hero-scene' } = {}) {
                 <div class="app__title"><b>Lymington to Cowes and back</b><span class="muted">Sat&nbsp;24&nbsp;Oct · BST</span></div>
                 <div class="status">
                   ${swap(['aim', 'press'], ['Ready to check', '2 windows found'], seen, { cls: 'status__slot roll' })}
-                  <span class="status__prog"></span>
                 </div>
               </div>
               <div class="app__limits"><span class="chip">Wren, 7.9&nbsp;m sloop</span><span class="chip">Wind ≤&nbsp;20&nbsp;kn</span><span class="chip">Against tide ≤&nbsp;12&nbsp;kn</span><span class="chip">Home by sunset</span><span class="find">${swap(['aim', 'press', 'window'], ['Find windows', 'Checking', 'Find windows'], seen, { cls: 'roll' })}</span></div>
               <div class="app__plot">${heroPlot(seen)}</div>
               <div class="plan">
-                <div class="plan__head"><b>Proposed plan</b><span><span class="muted">Daylight to spare</span><b class="spare">3&nbsp;h 46&nbsp;min</b></span></div>
+                <div class="plan__head"><b>Proposed plan</b><span><span class="muted">Daylight to spare</span><b class="spare pv"><span>3&nbsp;h 46&nbsp;min</span></b></span></div>
                 <ol class="plan__legs">
-                  <li><span>Leave Lymington</span><b>08:30</b></li>
-                  <li><span>Arrive Cowes</span><b>10:10</b></li>
-                  <li><span>Leave Cowes</span><b>12:30</b></li>
-                  <li><span>Home</span><b>14:10</b></li>
+                  <li><span>Leave Lymington</span><b class="pv" style="--i:0"><span>08:30</span></b></li>
+                  <li><span>Arrive Cowes</span><b class="pv" style="--i:1"><span>10:10</span></b></li>
+                  <li><span>Leave Cowes</span><b class="pv" style="--i:2"><span>12:30</span></b></li>
+                  <li><span>Home</span><b class="pv" style="--i:3"><span>14:10</span></b></li>
                 </ol>
               </div>
             </div>
@@ -227,7 +227,7 @@ function heroScene(state = 'window', { id = 'hero-scene' } = {}) {
           </div>`;
 }
 
-const WARN_BEATS = [['fri18', 2400], ['saved', 3000], ['fri21', 4500]];
+const WARN_BEATS = [['fri18', 2600], ['saved', 3000], ['fri21', 4500]];
 function warnScene(state = 'fri21', { id = 'warn-scene' } = {}) {
   const seen = seenTo(WARN_BEATS, state);
   const F = D.forecast, list = ['fri18', 'fri21'];
@@ -270,41 +270,43 @@ function warnScene(state = 'fri21', { id = 'warn-scene' } = {}) {
 
 // State sheet: one frame per beat, with what the viewer should see in it.
 const FRAME_NOTES = {
-  aim: 'Saturday loaded; the cursor goes to Find windows', press: 'Pressed: bars as the line passes, then Out, Back, the count, the button',
-  window: 'The plan, its own beat (still)',
+  aim: 'Saturday loaded; plan row reserved; the hand beside the button', press: 'Pressed: the line alone, bars turn; then Out, Back, the count, the button',
+  window: 'The plan lands in its reserved row (still)',
   fri18: '18:00 forecast: back window to 13:45', saved: 'Plan saved at 18:10: the note arrives', fri21: '21:00 forecast: card moves, then the alert (still)',
-  leave: 'Leave Lymington 08:30', jack: 'Jack in the Basket 08:48, 1.5 nm', hamstead: 'Hamstead Ledge 09:17, 4.6 nm',
-  gurnard: 'Gurnard 09:59, 9.2 nm', cowes: 'Arrive Cowes 10:10, 10.5 nm (still)',
+  leave: 'Leave Lymington 08:30', jack: 'At Jack in the Basket (the map carries it)', hamstead: 'At Hamstead Ledge',
+  gurnard: 'At Gurnard', cowes: 'Arrive Cowes 10:10, 10.5 nm, 6.3 kn average (still)',
 };
 const frame = (html, st, beats) => {
   const i = beats.findIndex(([s]) => s === st);
   return `<figure class="frame"><div class="stage stage--side stage--flat" aria-hidden="true"${st === 'aim' || st === 'press' ? ' data-frame-aim=".find"' : ''}>${html}</div><figcaption class="frame-cap"><span>${i + 1} ${st}, ${beats[i][1]}&nbsp;ms</span><span>${FRAME_NOTES[st]}</span></figcaption></figure>`;
 };
 
-// Route: one beat per leg. Each leg's sailing time on screen is scaled to its minutes on the water (18, 29 and 42 min
-// become 400, 600 and 800ms, the --duration-page, --duration-reveal and --duration-swap tokens, about 21ms a minute).
-// The last leg (11 min) arrives on the spring (--duration-spring on --ease-spring): it settles into Cowes. On arrival the
-// place name rolls first, then the time, distance and leg speed together --offset after; the readout holds still
-// while the boat moves. Middle stops hold about 1.0s past the roll (a 1-word read); Cowes, the climax, holds 3s+ (loop 11900ms).
-const LEG_MS = { jack: 400, hamstead: 600, gurnard: 800, cowes: 'spring' };
-const ROUTE_BEATS = [['leave', 1500], ['jack', 1900], ['hamstead', 2100], ['gurnard', 2300], ['cowes', 4100]];
+// Route: one beat per leg; the map carries the progress. Each leg is sailed in time scaled to its minutes (18, 29 and
+// 42 min become 600, 800 and 1200ms, about 30ms a minute; the last 11 min, 400ms), on --ease-swap, so the boat eases
+// out of each mark and decelerates into the next, with a short settle there. The readout shows the departure and the
+// arrival only (a middle stop is too short to read three values; the map shows where the boat is): at Cowes the pin
+// fills, the boat settles once (1.0 to 1.3 to 1.0), then "Arrive Cowes 10:10" lands, the values --offset/2 apart, and
+// everything holds 3s+. The replay is in place: the line retracts to Lymington as the readout rolls back.
+const LEG_MS = { jack: 600, hamstead: 800, gurnard: 1200, cowes: 400 };
+const ROUTE_BEATS = [['leave', 2000], ['jack', 1200], ['hamstead', 1200], ['gurnard', 1600], ['cowes', 4400]];
 function routeScene(state = 'cowes', { id = 'route-scene' } = {}) {
   const seen = seenTo(ROUTE_BEATS, state);
-  const list = D.marks.map((m) => m.state);
-  let run = 0; const sailed = D.marks.map((m, k) => { run += k ? D.legs[k].nm : 0; return run.toFixed(1); });
-  // Leg speed: distance over time for the leg being sailed (the stream is in it); 0.0 at the quay.
-  const speed = D.marks.map((m, k) => (k ? (D.legs[k].nm / ((mins(D.legs[k].t) - mins(D.legs[k - 1].t)) / 60)).toFixed(1) : '0.0'));
+  const list = ['leave', 'cowes'];
+  const first = D.marks[0], last = D.marks.at(-1);
+  const total = D.legs.reduce((s, l) => s + (l.nm || 0), 0);
+  const minutes = mins(last.t) - mins(first.t);
+  const avg = (total / (minutes / 60)).toFixed(1);
   const at = D.marks.map((m) => { const w = D.route.waypoints[m.wp]; const [x, y] = routeXY(w.lon, w.lat); return `--at-${m.state}:translate(${x}px, ${y}px)`; }).join(';');
-  const shots = D.marks.map((m, k) => (k < D.marks.length - 1 ? { state: m.state, owner: '.boat', read: '.rs-time' } : { state: m.state, owner: '.route-strip', read: '.rs-now' }));
+  const shots = D.marks.map((m, k) => (k === 0 ? { state: m.state, owner: '.boat', read: '.rs-time' } : k < D.marks.length - 1 ? { state: m.state, owner: '.boat' } : { state: m.state, owner: '.route-strip', read: '.rs-now' }));
   const legs = Object.entries(LEG_MS).map(([st, ms]) => st + ':' + ms).join(' ');
   return `<div class="frag route-card" ${sceneAttrs(ROUTE_BEATS, seen, { id, rest: 2400, still: 'cowes' })} data-legs="${legs}" style="${at}">
             ${id ? plan(shots) : ''}
             <div class="frag__head"><b>Out: Lymington to Cowes</b><span class="chip chip--win">Leave 08:30</span></div>
             {{ROUTE_CHART}}
             <div class="route-strip">
-              <span class="rs-now">${swap(list, D.marks.map((m) => m.label), seen, { cls: 'muted rs-label roll' })}<b class="rs-time" data-steps="${D.marks.map((m) => m.t).join(' ')}">${swap(list, D.marks.map((m) => m.t), seen, { cls: 'rs-read roll' })}</b></span>
-              <span><span class="muted">Distance sailed</span><b class="rs-nm" data-steps="${sailed.join(' ')}">${swap(list, sailed.map((v) => v + '&nbsp;nm'), seen, { cls: 'rs-read roll' })}</b></span>
-              <span><span class="muted">Leg speed</span><b>${swap(list, speed.map((v) => v + '&nbsp;kn'), seen, { cls: 'rs-read roll' })}</b></span>
+              <span class="rs-now">${swap(list, [first.label, last.label], seen, { cls: 'muted rs-label' })}<b class="rs-time" data-steps="${first.t} ${last.t}">${swap(list, [first.t, last.t], seen, { cls: 'rs-v', style: '--k:1' })}</b></span>
+              <span><span class="muted">Distance sailed</span><b class="rs-nm" data-steps="0.0 ${total.toFixed(1)}">${swap(list, ['0.0&nbsp;nm', total.toFixed(1) + '&nbsp;nm'], seen, { cls: 'rs-v', style: '--k:2' })}</b></span>
+              <span><span class="muted">Average speed</span><b class="rs-kn">${swap(list, ['0.0&nbsp;kn', avg + '&nbsp;kn'], seen, { cls: 'rs-v', style: '--k:3' })}</b></span>
             </div>
           </div>`;
 }

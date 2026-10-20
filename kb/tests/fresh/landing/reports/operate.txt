@@ -44,9 +44,9 @@ pass  Alert: minutes earlier = 18:00 forecast close minus 21:00 close: shown 25 
 pass  Alert close time = window close on the panel: shown 13:20, re-added 13:20
 pass  Window close + passage = wind-against-tide start (21:00 forecast): shown 15:00, re-added 15:00
 pass  Window close + passage = wind-against-tide start (18:00 forecast): shown 15:25, re-added 15:25
-pass  Route scene: distance sailed at each mark = legs added up: shown 0.0 1.5 4.6 9.2 10.5, re-added 0.0 1.5 4.6 9.2 10.5
-pass  Route scene: times at each mark = the legs table: shown 08:30 08:48 09:17 09:59 10:10, re-added 08:30 08:48 09:17 09:59 10:10
-pass  Route scene: leg speed = leg distance over leg time: shown 0.0 5.0 6.4 6.6 7.1, re-added 0.0 5.0 6.4 6.6 7.1
+pass  Route scene: distance sailed, departure and arrival = legs added up: shown 0.0 10.5, re-added 0.0 10.5
+pass  Route scene: times, departure and arrival = the legs table: shown 08:30 10:10, re-added 08:30 10:10
+pass  Route scene: average speed = distance over time, Lymington to Cowes: shown 0.0 6.3, re-added 0.0 6.3
 pass  Height stations listed: shown 14, re-added 14
 PASS: every control works by mouse, Enter and Space; every total re-adds
 exit 0

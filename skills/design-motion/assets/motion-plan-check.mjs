@@ -165,7 +165,11 @@ const RECORDER = () => {
       if (scene.getAttribute('data-state') !== state) return;
       const running = document.getAnimations().filter(counts);
       if (rec.settled == null) {
-        if (!running.length) { rec.settled = Math.round(performance.now()); rec.words = shot.read ? visibleWords(scene.querySelector(shot.read)) : null; running.forEach((a) => seen.add(a)); }
+        // A transition still waiting out its delay is part of the same change: a staged chain with a deliberate pause
+        // settles after its last step, not in the pause (the Halyard builder, round 4).
+        const waiting = document.getAnimations().some((a) => { const e = a.effect, tm = e?.getTiming?.() || {}, el = e?.target;
+          return el && (scene.contains(el) || el.contains(scene)) && tm.iterations !== Infinity && a.playState === 'running' && (a.currentTime ?? 0) < (tm.delay || 0); });
+        if (!running.length && !waiting) { rec.settled = Math.round(performance.now()); rec.words = shot.read ? visibleWords(scene.querySelector(shot.read)) : null; running.forEach((a) => seen.add(a)); }
       } else {
         for (const a of running) {
           if (seen.has(a)) continue; seen.add(a);
