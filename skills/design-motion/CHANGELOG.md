@@ -1,6 +1,7 @@
 # design-motion changelog
 
-## 0.4.3 (2026-10-20, scored gate round v07)
+## 0.4.3 (2026-10-20, scored gate rounds v07 and v08)
+- Reference 09: keep the best-scored version of each moment, revert a round that lowers a median, stop after three rounds; re-plan instead of patching when a round regresses (Halyard round 4 lost on every moment).
 - `motion-plan-check.mjs`: a beat settles after its last delayed step, so a staged chain with a deliberate pause no longer fails `quiet`. Reference 09: a looping scene writes its own in-place reset choreography.
 - `scene.js`: replays in place by default. At the end of the rest the first state returns with its transitions running, like any state change; `data-seam="fade"` keeps the old whole-mock fade. All three critics in v07 (and two of three in v06) read the fade as a cut to a blank frame. SKILL.md loop rules, reference 08 and reference 09 updated.
 

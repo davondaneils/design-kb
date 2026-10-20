@@ -72,3 +72,14 @@ Honest limits of the gate as built:
 1. **Recognition defeats "tell apart".** Any critic who knows Stripe's checkout picks it whatever the craft of the other clip, so the tell-apart rule cannot be passed by an original page. The confidence numbers measure recognition as much as craft.
 2. **One critic is noisy.** v04 asked for counters that run while the boat moves; v05 called the same counters unreadable. v04 asked for an earlier press; v05 said the start state was not held long enough. Corrections from one critic are leads, not orders.
 3. The v05 corrections that both critics agree on are real and open: several things change at once in the hero sweep and the swap (one owner at a time is not yet met), results are held too briefly at the climax, and the text in the product mocks is small at a 960px frame.
+
+### Scored gate (design-motion 0.4.2 and 0.4.3, Davon's decision 2026-10-20)
+Three fresh critics per round score each clip 1 to 10 for motion craft; a trial passes when our median is within 1 point of the exemplar's and most critics name a memorable moment in ours.
+
+| Round | Page | Hero vs Linear | Event vs Stripe | Swap vs Stripe | Route vs Stripe | Passed |
+|---|---|---|---|---|---|---|
+| v06 | rebuild after 2 correction rounds | 7 vs 7 | 6 vs 8 | 7 vs 8 | 6 vs 8 | 2 of 4 |
+| v07 | round 3 (12 agreed fixes) | 7 vs 6 | 6 vs 8 | 7 vs 8 | 6 vs 8 | 2 of 4 |
+| v08 | round 4 (13 agreed fixes, in-place replay) | 6 vs 8 | 6 vs 9 | 7 vs 9 | 5 vs 9 | 0 of 4 |
+
+The committed page is the v07 version (best scored); round 4 is kept in git history (commit 8ce4ece). What this says: the system now produces moments three critics out of three remember, and two of four that score within a point of Stripe and Linear; the event and route scenes stay two points short; and applying critics' corrections as patches stopped helping after the first round and then made things worse. Exemplar scores also moved between rounds (Stripe 8 to 9, Linear 6 to 8) with the same clips, which is the noise floor of three critics.

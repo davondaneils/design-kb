@@ -88,11 +88,11 @@ const sums = await page.evaluate(() => {
     { what: 'Alert close time = window close on the panel', shown: (document.querySelector('#warn-scene .alert__lead').textContent.match(/closes (\d\d:\d\d)/) || [])[1], computed: [...document.querySelectorAll('#warn-scene .wp-win .swap-track > span')].at(-1).textContent.trim() },
     { what: 'Window close + passage = wind-against-tide start (21:00 forecast)', shown: [...document.querySelectorAll('#warn-scene .warn-t')][0].querySelectorAll('time')[1].textContent, computed: (() => { const m = toMin([...document.querySelectorAll('#warn-scene .wp-win .swap-track > span')].at(-1).textContent.trim()) + 100; return `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`; })() },
     { what: 'Window close + passage = wind-against-tide start (18:00 forecast)', shown: [...document.querySelectorAll('#warn-scene .warn-t')][0].querySelectorAll('time')[0].textContent, computed: (() => { const m = toMin([...document.querySelectorAll('#warn-scene .wp-win .swap-track > span')][0].textContent.trim()) + 100; return `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`; })() },
-    { what: 'Route scene: distance sailed, departure and arrival = legs added up', shown: document.querySelector('#route-scene .rs-nm').dataset.steps,
-      computed: ['0.0', legs.reduce((s, n) => s + n, 0).toFixed(1)].join(' ') },
-    { what: 'Route scene: times, departure and arrival = the legs table', shown: document.querySelector('#route-scene .rs-time').dataset.steps, computed: [times[0], times.at(-1)].join(' ') },
-    { what: 'Route scene: average speed = distance over time, Lymington to Cowes', shown: [...document.querySelectorAll('#route-scene .rs-kn .swap-track > span')].map((e) => e.textContent.replace(/\s*kn/, '').trim()).join(' '),
-      computed: ['0.0', (legs.reduce((s, n) => s + n, 0) / ((toMin(times.at(-1)) - toMin(times[0])) / 60)).toFixed(1)].join(' ') },
+    { what: 'Route scene: distance sailed at each mark = legs added up', shown: document.querySelector('#route-scene .rs-nm').dataset.steps,
+      computed: (() => { let r = 0; return [0, ...legs].map((n) => (r += n).toFixed(1)).join(' '); })() },
+    { what: 'Route scene: times at each mark = the legs table', shown: document.querySelector('#route-scene .rs-time').dataset.steps, computed: times.join(' ') },
+    { what: 'Route scene: leg speed = leg distance over leg time', shown: [...document.querySelectorAll('#route-scene .route-strip > span:nth-child(3) .swap-track > span')].map((e) => e.textContent.replace(/\s*kn/, '').trim()).join(' '),
+      computed: ['0.0', ...legs.map((n, i) => (n / ((toMin(times[i + 1]) - toMin(times[i])) / 60)).toFixed(1))].join(' ') },
     { what: 'Height stations listed', shown: '14', computed: String(document.querySelectorAll('.stations li').length) },
   ];
 });

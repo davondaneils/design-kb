@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-20T19:10:30.079Z",
+  "date": "2026-10-20T18:17:19.009Z",
   "tokensMs": [
     100,
     150,
@@ -22,7 +22,7 @@
       "rows": [
         {
           "mode": "no-preference",
-          "end": 850,
+          "end": 650,
           "animations": [
             {
               "i": 0,
@@ -93,7 +93,7 @@
               "name": "fade",
               "target": "span.shot-cursor",
               "duration": 150,
-              "delay": 700,
+              "delay": 500,
               "iterations": 1,
               "easing": "linear",
               "keyframeEasings": [
@@ -125,518 +125,13 @@
       "rows": [
         {
           "mode": "no-preference",
-          "end": 1219,
+          "end": 150,
           "animations": [
             {
               "i": 0,
               "type": "CSSTransition",
-              "name": "transform",
-              "target": "span.swap-track",
-              "duration": 400,
-              "delay": 200,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 3597,
-              "offset": 0,
-              "scene": true,
-              "curve": "swap",
-              "props": [
-                "transform"
-              ]
-            },
-            {
-              "i": 1,
-              "type": "CSSTransition",
               "name": "opacity",
-              "target": "span",
-              "duration": 200,
-              "delay": 400,
-              "iterations": 1,
-              "easing": "cubic-bezier(0, 0, 0, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1798,
-              "offset": 0,
-              "scene": true,
-              "curve": "enter",
-              "props": [
-                "opacity"
-              ]
-            },
-            {
-              "i": 2,
-              "type": "CSSTransition",
-              "name": "opacity",
-              "target": "span",
-              "duration": 200,
-              "delay": 200,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.3, 0, 1, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1798,
-              "offset": 0,
-              "scene": true,
-              "curve": "exit",
-              "props": [
-                "opacity"
-              ]
-            },
-            {
-              "i": 3,
-              "type": "CSSTransition",
-              "name": "background-color",
-              "target": "span.bar.bar--over",
-              "duration": 300,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.2, 0, 0, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1065,
-              "offset": 0,
-              "scene": true,
-              "curve": "standard",
-              "paint": true,
-              "props": [
-                "backgroundColor"
-              ]
-            },
-            {
-              "i": 4,
-              "type": "CSSTransition",
-              "name": "background-color",
-              "target": "span.bar.bar--over",
-              "duration": 300,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.2, 0, 0, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1207,
-              "offset": 0,
-              "scene": true,
-              "curve": "standard",
-              "paint": true,
-              "props": [
-                "backgroundColor"
-              ]
-            },
-            {
-              "i": 5,
-              "type": "CSSTransition",
-              "name": "background-color",
-              "target": "span.bar.bar--over",
-              "duration": 300,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.2, 0, 0, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1207,
-              "offset": 0,
-              "scene": true,
-              "curve": "standard",
-              "paint": true,
-              "props": [
-                "backgroundColor"
-              ]
-            },
-            {
-              "i": 6,
-              "type": "CSSTransition",
-              "name": "background-color",
-              "target": "span.bar.bar--over",
-              "duration": 300,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.2, 0, 0, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1136,
-              "offset": 0,
-              "scene": true,
-              "curve": "standard",
-              "paint": true,
-              "props": [
-                "backgroundColor"
-              ]
-            },
-            {
-              "i": 7,
-              "type": "CSSTransition",
-              "name": "background-color",
-              "target": "span.bar.bar--over",
-              "duration": 300,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.2, 0, 0, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1065,
-              "offset": 0,
-              "scene": true,
-              "curve": "standard",
-              "paint": true,
-              "props": [
-                "backgroundColor"
-              ]
-            },
-            {
-              "i": 8,
-              "type": "CSSTransition",
-              "name": "transform",
-              "target": "span.swap-track",
-              "duration": 400,
-              "delay": 100,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 4474,
-              "offset": 0,
-              "scene": true,
-              "curve": "swap",
-              "props": [
-                "transform"
-              ]
-            },
-            {
-              "i": 9,
-              "type": "CSSTransition",
-              "name": "opacity",
-              "target": "span",
-              "duration": 200,
-              "delay": 300.00000000000006,
-              "iterations": 1,
-              "easing": "cubic-bezier(0, 0, 0, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1322,
-              "offset": 0,
-              "scene": true,
-              "curve": "enter",
-              "props": [
-                "opacity"
-              ]
-            },
-            {
-              "i": 10,
-              "type": "CSSTransition",
-              "name": "opacity",
-              "target": "span",
-              "duration": 200,
-              "delay": 100,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.3, 0, 1, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 2237,
-              "offset": 0,
-              "scene": true,
-              "curve": "exit",
-              "props": [
-                "opacity"
-              ]
-            },
-            {
-              "i": 11,
-              "type": "CSSTransition",
-              "name": "opacity",
-              "target": "i.cut.cut--tide",
-              "duration": 300,
-              "delay": 100,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.3, 0, 1, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 415,
-              "offset": 0,
-              "scene": true,
-              "curve": "exit",
-              "props": [
-                "opacity"
-              ]
-            },
-            {
-              "i": 12,
-              "type": "CSSTransition",
-              "name": "opacity",
-              "target": "i.cut.cut--light",
-              "duration": 300,
-              "delay": 100,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.3, 0, 1, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1175,
-              "offset": 0,
-              "scene": true,
-              "curve": "exit",
-              "props": [
-                "opacity"
-              ]
-            },
-            {
-              "i": 13,
-              "type": "CSSTransition",
-              "name": "opacity",
-              "target": "i.cut.cut--tide",
-              "duration": 300,
-              "delay": 100,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.3, 0, 1, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 6552,
-              "offset": 0,
-              "scene": true,
-              "curve": "exit",
-              "props": [
-                "opacity"
-              ]
-            },
-            {
-              "i": 14,
-              "type": "CSSTransition",
-              "name": "opacity",
-              "target": "span.win",
-              "duration": 300,
-              "delay": 100,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.3, 0, 1, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1703,
-              "offset": 0,
-              "scene": true,
-              "curve": "exit",
-              "props": [
-                "opacity"
-              ]
-            },
-            {
-              "i": 15,
-              "type": "CSSTransition",
-              "name": "transform",
-              "target": "span.win",
-              "duration": 300,
-              "delay": 100,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.3, 0, 1, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1703,
-              "offset": 0,
-              "scene": true,
-              "curve": "exit",
-              "props": [
-                "transform"
-              ]
-            },
-            {
-              "i": 16,
-              "type": "CSSTransition",
-              "name": "transform",
-              "target": "span.swap-track",
-              "duration": 400,
-              "delay": 100,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 4474,
-              "offset": 0,
-              "scene": true,
-              "curve": "swap",
-              "props": [
-                "transform"
-              ]
-            },
-            {
-              "i": 17,
-              "type": "CSSTransition",
-              "name": "opacity",
-              "target": "span",
-              "duration": 200,
-              "delay": 300.00000000000006,
-              "iterations": 1,
-              "easing": "cubic-bezier(0, 0, 0, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1322,
-              "offset": 0,
-              "scene": true,
-              "curve": "enter",
-              "props": [
-                "opacity"
-              ]
-            },
-            {
-              "i": 18,
-              "type": "CSSTransition",
-              "name": "opacity",
-              "target": "span",
-              "duration": 200,
-              "delay": 100,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.3, 0, 1, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 2237,
-              "offset": 0,
-              "scene": true,
-              "curve": "exit",
-              "props": [
-                "opacity"
-              ]
-            },
-            {
-              "i": 19,
-              "type": "CSSTransition",
-              "name": "opacity",
-              "target": "i.cut.cut--tide",
-              "duration": 300,
-              "delay": 100,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.3, 0, 1, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 3848,
-              "offset": 0,
-              "scene": true,
-              "curve": "exit",
-              "props": [
-                "opacity"
-              ]
-            },
-            {
-              "i": 20,
-              "type": "CSSTransition",
-              "name": "opacity",
-              "target": "i.cut.cut--wind",
-              "duration": 300,
-              "delay": 100,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.3, 0, 1, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1767,
-              "offset": 0,
-              "scene": true,
-              "curve": "exit",
-              "props": [
-                "opacity"
-              ]
-            },
-            {
-              "i": 21,
-              "type": "CSSTransition",
-              "name": "opacity",
-              "target": "i.cut.cut--tide",
-              "duration": 300,
-              "delay": 100,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.3, 0, 1, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 2392,
-              "offset": 0,
-              "scene": true,
-              "curve": "exit",
-              "props": [
-                "opacity"
-              ]
-            },
-            {
-              "i": 22,
-              "type": "CSSTransition",
-              "name": "opacity",
-              "target": "i.cut.cut--light",
-              "duration": 300,
-              "delay": 100,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.3, 0, 1, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 2330,
-              "offset": 0,
-              "scene": true,
-              "curve": "exit",
-              "props": [
-                "opacity"
-              ]
-            },
-            {
-              "i": 23,
-              "type": "CSSTransition",
-              "name": "opacity",
-              "target": "span.win",
-              "duration": 300,
-              "delay": 100,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.3, 0, 1, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1894,
-              "offset": 0,
-              "scene": true,
-              "curve": "exit",
-              "props": [
-                "opacity"
-              ]
-            },
-            {
-              "i": 24,
-              "type": "CSSTransition",
-              "name": "transform",
-              "target": "span.win",
-              "duration": 300,
-              "delay": 100,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.3, 0, 1, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1894,
-              "offset": 0,
-              "scene": true,
-              "curve": "exit",
-              "props": [
-                "transform"
-              ]
-            },
-            {
-              "i": 25,
-              "type": "CSSTransition",
-              "name": "opacity",
-              "target": "b.spare.pv::before",
+              "target": "div#hero-scene.scene",
               "duration": 150,
               "delay": 0,
               "iterations": 1,
@@ -644,332 +139,12 @@
               "keyframeEasings": [
                 "linear"
               ],
-              "area": 1109,
+              "area": 355884,
               "offset": 0,
               "scene": true,
               "curve": "standard",
               "props": [
                 "opacity"
-              ]
-            },
-            {
-              "i": 26,
-              "type": "CSSTransition",
-              "name": "opacity",
-              "target": "span",
-              "duration": 150,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.3, 0, 1, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1109,
-              "offset": 0,
-              "scene": true,
-              "curve": "exit",
-              "props": [
-                "opacity"
-              ]
-            },
-            {
-              "i": 27,
-              "type": "CSSTransition",
-              "name": "transform",
-              "target": "span",
-              "duration": 150,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.3, 0, 1, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1109,
-              "offset": 0,
-              "scene": true,
-              "curve": "exit",
-              "props": [
-                "transform"
-              ]
-            },
-            {
-              "i": 28,
-              "type": "CSSTransition",
-              "name": "opacity",
-              "target": "b.pv::before",
-              "duration": 150,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.2, 0, 0, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 2725,
-              "offset": 0,
-              "scene": true,
-              "curve": "standard",
-              "props": [
-                "opacity"
-              ]
-            },
-            {
-              "i": 29,
-              "type": "CSSTransition",
-              "name": "opacity",
-              "target": "span",
-              "duration": 150,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.3, 0, 1, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1429,
-              "offset": 0,
-              "scene": true,
-              "curve": "exit",
-              "props": [
-                "opacity"
-              ]
-            },
-            {
-              "i": 30,
-              "type": "CSSTransition",
-              "name": "transform",
-              "target": "span",
-              "duration": 150,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.3, 0, 1, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1429,
-              "offset": 0,
-              "scene": true,
-              "curve": "exit",
-              "props": [
-                "transform"
-              ]
-            },
-            {
-              "i": 31,
-              "type": "CSSTransition",
-              "name": "opacity",
-              "target": "b.pv::before",
-              "duration": 150,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.2, 0, 0, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 2725,
-              "offset": 0,
-              "scene": true,
-              "curve": "standard",
-              "props": [
-                "opacity"
-              ]
-            },
-            {
-              "i": 32,
-              "type": "CSSTransition",
-              "name": "opacity",
-              "target": "span",
-              "duration": 150,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.3, 0, 1, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1429,
-              "offset": 0,
-              "scene": true,
-              "curve": "exit",
-              "props": [
-                "opacity"
-              ]
-            },
-            {
-              "i": 33,
-              "type": "CSSTransition",
-              "name": "transform",
-              "target": "span",
-              "duration": 150,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.3, 0, 1, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1429,
-              "offset": 0,
-              "scene": true,
-              "curve": "exit",
-              "props": [
-                "transform"
-              ]
-            },
-            {
-              "i": 34,
-              "type": "CSSTransition",
-              "name": "opacity",
-              "target": "b.pv::before",
-              "duration": 150,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.2, 0, 0, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 2725,
-              "offset": 0,
-              "scene": true,
-              "curve": "standard",
-              "props": [
-                "opacity"
-              ]
-            },
-            {
-              "i": 35,
-              "type": "CSSTransition",
-              "name": "opacity",
-              "target": "span",
-              "duration": 150,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.3, 0, 1, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1429,
-              "offset": 0,
-              "scene": true,
-              "curve": "exit",
-              "props": [
-                "opacity"
-              ]
-            },
-            {
-              "i": 36,
-              "type": "CSSTransition",
-              "name": "transform",
-              "target": "span",
-              "duration": 150,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.3, 0, 1, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1429,
-              "offset": 0,
-              "scene": true,
-              "curve": "exit",
-              "props": [
-                "transform"
-              ]
-            },
-            {
-              "i": 37,
-              "type": "CSSTransition",
-              "name": "opacity",
-              "target": "b.pv::before",
-              "duration": 150,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.2, 0, 0, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 2725,
-              "offset": 0,
-              "scene": true,
-              "curve": "standard",
-              "props": [
-                "opacity"
-              ]
-            },
-            {
-              "i": 38,
-              "type": "CSSTransition",
-              "name": "opacity",
-              "target": "span",
-              "duration": 150,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.3, 0, 1, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1429,
-              "offset": 0,
-              "scene": true,
-              "curve": "exit",
-              "props": [
-                "opacity"
-              ]
-            },
-            {
-              "i": 39,
-              "type": "CSSTransition",
-              "name": "transform",
-              "target": "span",
-              "duration": 150,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.3, 0, 1, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1429,
-              "offset": 0,
-              "scene": true,
-              "curve": "exit",
-              "props": [
-                "transform"
-              ]
-            },
-            {
-              "i": 40,
-              "type": "CSSAnimation",
-              "name": "fade",
-              "target": "span.shot-cursor",
-              "duration": 150,
-              "delay": 700,
-              "iterations": 1,
-              "easing": "linear",
-              "keyframeEasings": [
-                "cubic-bezier(0.2, 0, 0, 1)"
-              ],
-              "area": 400,
-              "offset": 0,
-              "scene": true,
-              "curve": "standard",
-              "props": [
-                "opacity"
-              ]
-            },
-            {
-              "i": 41,
-              "type": "CSSTransition",
-              "name": "transform",
-              "target": "span.shot-cursor",
-              "duration": 519,
-              "delay": 700,
-              "iterations": 1,
-              "easing": "linear(0.0003 0%, 0.0281 2.5%, 0.0899 5%, 0.1732 7.5%, 0.2682 10%, 0.3673 12.5%, 0.4651 15%, 0.5577 17.5%, 0.6426 20%, 0.7183 22.5%, 0.7843 25%, 0.8365 27.5%, 0.8841 30%, 0.9228 32.5%, 0.9537 35%, 0.9776 37.5%, 0.9955 40%, 1.0085 42.5%, 1.0173 45%, 1.0228 47.5%, 1.0257 50%, 1.0267 52.5%, 1.0262 55%, 1.0248 57.5%, 1.0226 60%, 1.0202 62.5%, 1.0175 65%, 1.0149 67.5%, 1.0124 70%, 1.0101 72.5%, 1.008 75%, 1.0063 77.5%, 1.0047 80%, 1.0034 82.5%, 1.0023 85%, 1.0014 87.5%, 1.0007 90%, 1.0002 92.5%, 0.9998 95%, 0.9996 97.5%, 1 100%)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 400,
-              "offset": 0,
-              "scene": true,
-              "curve": "spring",
-              "props": [
-                "transform"
               ]
             }
           ]
@@ -990,7 +165,7 @@
       "rows": [
         {
           "mode": "no-preference",
-          "end": 2100,
+          "end": 1700,
           "animations": [
             {
               "i": 0,
@@ -998,7 +173,7 @@
               "name": "transform",
               "target": "span.swap-track",
               "duration": 400,
-              "delay": 1599.9999999999998,
+              "delay": 1200,
               "iterations": 1,
               "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
               "keyframeEasings": [
@@ -1018,7 +193,7 @@
               "name": "opacity",
               "target": "span",
               "duration": 200,
-              "delay": 1599.9999999999998,
+              "delay": 1200,
               "iterations": 1,
               "easing": "cubic-bezier(0.3, 0, 1, 1)",
               "keyframeEasings": [
@@ -1038,7 +213,7 @@
               "name": "opacity",
               "target": "span",
               "duration": 200,
-              "delay": 1799.9999999999998,
+              "delay": 1400,
               "iterations": 1,
               "easing": "cubic-bezier(0, 0, 0, 1)",
               "keyframeEasings": [
@@ -1163,7 +338,7 @@
               "name": "transform",
               "target": "span.swap-track",
               "duration": 400,
-              "delay": 1400,
+              "delay": 1000,
               "iterations": 1,
               "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
               "keyframeEasings": [
@@ -1183,7 +358,7 @@
               "name": "opacity",
               "target": "span",
               "duration": 200,
-              "delay": 1400,
+              "delay": 1000,
               "iterations": 1,
               "easing": "cubic-bezier(0.3, 0, 1, 1)",
               "keyframeEasings": [
@@ -1203,7 +378,7 @@
               "name": "opacity",
               "target": "span",
               "duration": 200,
-              "delay": 1599.9999999999998,
+              "delay": 1200,
               "iterations": 1,
               "easing": "cubic-bezier(0, 0, 0, 1)",
               "keyframeEasings": [
@@ -1283,7 +458,7 @@
               "name": "opacity",
               "target": "span.win",
               "duration": 300,
-              "delay": 1400,
+              "delay": 1000,
               "iterations": 1,
               "easing": "cubic-bezier(0, 0, 0, 1)",
               "keyframeEasings": [
@@ -1303,7 +478,7 @@
               "name": "transform",
               "target": "span.win",
               "duration": 300,
-              "delay": 1400,
+              "delay": 1000,
               "iterations": 1,
               "easing": "cubic-bezier(0, 0, 0, 1)",
               "keyframeEasings": [
@@ -1323,7 +498,7 @@
               "name": "transform",
               "target": "span.swap-track",
               "duration": 400,
-              "delay": 1500,
+              "delay": 1100,
               "iterations": 1,
               "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
               "keyframeEasings": [
@@ -1343,7 +518,7 @@
               "name": "opacity",
               "target": "span",
               "duration": 200,
-              "delay": 1500,
+              "delay": 1100,
               "iterations": 1,
               "easing": "cubic-bezier(0.3, 0, 1, 1)",
               "keyframeEasings": [
@@ -1363,7 +538,7 @@
               "name": "opacity",
               "target": "span",
               "duration": 200,
-              "delay": 1700,
+              "delay": 1300,
               "iterations": 1,
               "easing": "cubic-bezier(0, 0, 0, 1)",
               "keyframeEasings": [
@@ -1463,7 +638,7 @@
               "name": "opacity",
               "target": "span.win",
               "duration": 300,
-              "delay": 1500,
+              "delay": 1100,
               "iterations": 1,
               "easing": "cubic-bezier(0, 0, 0, 1)",
               "keyframeEasings": [
@@ -1483,7 +658,7 @@
               "name": "transform",
               "target": "span.win",
               "duration": 300,
-              "delay": 1500,
+              "delay": 1100,
               "iterations": 1,
               "easing": "cubic-bezier(0, 0, 0, 1)",
               "keyframeEasings": [
@@ -1500,9 +675,29 @@
             {
               "i": 25,
               "type": "CSSAnimation",
+              "name": "prog",
+              "target": "span.status__prog",
+              "duration": 1200,
+              "delay": 200,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "cubic-bezier(0.2, 0, 0, 1)"
+              ],
+              "area": 0,
+              "offset": 0,
+              "scene": true,
+              "curve": "standard",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 26,
+              "type": "CSSAnimation",
               "name": "find-roll",
               "target": "span.swap-track",
-              "duration": 2100,
+              "duration": 1700.0000000000002,
               "delay": 0,
               "iterations": 1,
               "easing": "linear",
@@ -1518,31 +713,11 @@
               ]
             },
             {
-              "i": 26,
+              "i": 27,
               "type": "CSSAnimation",
               "name": "find-1",
               "target": "span",
-              "duration": 2100,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "linear",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1442,
-              "offset": 0,
-              "scene": true,
-              "curve": "linear",
-              "props": [
-                "opacity"
-              ]
-            },
-            {
-              "i": 27,
-              "type": "CSSAnimation",
-              "name": "find-2",
-              "target": "span",
-              "duration": 2100,
+              "duration": 1700.0000000000002,
               "delay": 0,
               "iterations": 1,
               "easing": "linear",
@@ -1560,9 +735,9 @@
             {
               "i": 28,
               "type": "CSSAnimation",
-              "name": "find-3",
+              "name": "find-2",
               "target": "span",
-              "duration": 2100,
+              "duration": 1700.0000000000002,
               "delay": 0,
               "iterations": 1,
               "easing": "linear",
@@ -1580,10 +755,30 @@
             {
               "i": 29,
               "type": "CSSAnimation",
+              "name": "find-3",
+              "target": "span",
+              "duration": 1700.0000000000002,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "linear",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 1442,
+              "offset": 0,
+              "scene": true,
+              "curve": "linear",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 30,
+              "type": "CSSAnimation",
               "name": "ping",
               "target": "span.win::after",
               "duration": 400,
-              "delay": 1599.9999999999998,
+              "delay": 1200,
               "iterations": 1,
               "easing": "linear",
               "keyframeEasings": [
@@ -1599,12 +794,12 @@
               ]
             },
             {
-              "i": 30,
+              "i": 31,
               "type": "CSSAnimation",
               "name": "ping",
               "target": "span.win::after",
               "duration": 400,
-              "delay": 1700,
+              "delay": 1300,
               "iterations": 1,
               "easing": "linear",
               "keyframeEasings": [
@@ -1620,7 +815,7 @@
               ]
             },
             {
-              "i": 31,
+              "i": 32,
               "type": "CSSAnimation",
               "name": "sweep",
               "target": "span.sweep",
@@ -1641,7 +836,7 @@
               ]
             },
             {
-              "i": 32,
+              "i": 33,
               "type": "CSSAnimation",
               "name": "out",
               "target": "span.sweep",
@@ -1661,12 +856,12 @@
               ]
             },
             {
-              "i": 33,
+              "i": 34,
               "type": "CSSAnimation",
               "name": "out",
               "target": "span.shot-cursor",
               "duration": 150,
-              "delay": 1700,
+              "delay": 1300,
               "iterations": 1,
               "easing": "linear",
               "keyframeEasings": [
@@ -1681,7 +876,7 @@
               ]
             },
             {
-              "i": 34,
+              "i": 35,
               "type": "CSSTransition",
               "name": "background-color",
               "target": "span.find",
@@ -1702,7 +897,7 @@
               ]
             },
             {
-              "i": 35,
+              "i": 36,
               "type": "CSSTransition",
               "name": "transform",
               "target": "span.find",
@@ -1722,7 +917,7 @@
               ]
             },
             {
-              "i": 36,
+              "i": 37,
               "type": "CSSTransition",
               "name": "transform",
               "target": "svg",
@@ -1900,7 +1095,7 @@
       "rows": [
         {
           "mode": "no-preference",
-          "end": 1700,
+          "end": 1050,
           "animations": [
             {
               "i": 0,
@@ -1908,7 +1103,7 @@
               "name": "background-color",
               "target": "span.chip.chip--forecast",
               "duration": 300,
-              "delay": 400,
+              "delay": 0,
               "iterations": 1,
               "easing": "cubic-bezier(0.2, 0, 0, 1)",
               "keyframeEasings": [
@@ -1929,7 +1124,7 @@
               "name": "color",
               "target": "span.chip.chip--forecast",
               "duration": 300,
-              "delay": 400,
+              "delay": 0,
               "iterations": 1,
               "easing": "cubic-bezier(0.2, 0, 0, 1)",
               "keyframeEasings": [
@@ -1949,7 +1144,7 @@
               "type": "CSSTransition",
               "name": "transform",
               "target": "span.swap-track",
-              "duration": 400,
+              "duration": 800,
               "delay": 0,
               "iterations": 1,
               "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
@@ -1969,8 +1164,8 @@
               "type": "CSSTransition",
               "name": "transform",
               "target": "span.swap-track",
-              "duration": 400,
-              "delay": 1100,
+              "duration": 800,
+              "delay": 100,
               "iterations": 1,
               "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
               "keyframeEasings": [
@@ -1989,17 +1184,17 @@
               "type": "CSSTransition",
               "name": "transform",
               "target": "i.cut.cut--wind",
-              "duration": 400,
-              "delay": 700,
+              "duration": 800,
+              "delay": 200,
               "iterations": 1,
-              "easing": "cubic-bezier(0, 0, 0, 1)",
+              "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
               "keyframeEasings": [
                 "linear"
               ],
               "area": 1159,
               "offset": 0,
               "scene": true,
-              "curve": "enter",
+              "curve": "swap",
               "props": [
                 "transform"
               ]
@@ -2009,8 +1204,8 @@
               "type": "CSSTransition",
               "name": "opacity",
               "target": "i.lost",
-              "duration": 400,
-              "delay": 700,
+              "duration": 300,
+              "delay": 200,
               "iterations": 1,
               "easing": "cubic-bezier(0.2, 0, 0, 1)",
               "keyframeEasings": [
@@ -2029,17 +1224,17 @@
               "type": "CSSTransition",
               "name": "transform",
               "target": "span.win",
-              "duration": 400,
-              "delay": 700,
+              "duration": 800,
+              "delay": 200,
               "iterations": 1,
-              "easing": "cubic-bezier(0, 0, 0, 1)",
+              "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
               "keyframeEasings": [
                 "linear"
               ],
               "area": 1737,
               "offset": 0,
               "scene": true,
-              "curve": "enter",
+              "curve": "swap",
               "props": [
                 "transform"
               ]
@@ -2049,8 +1244,8 @@
               "type": "CSSTransition",
               "name": "transform",
               "target": "span.swap-track",
-              "duration": 400,
-              "delay": 1200.0000000000002,
+              "duration": 800,
+              "delay": 200,
               "iterations": 1,
               "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
               "keyframeEasings": [
@@ -2069,8 +1264,8 @@
               "type": "CSSTransition",
               "name": "opacity",
               "target": "div.face.face--saved",
-              "duration": 300,
-              "delay": 1300,
+              "duration": 150,
+              "delay": 500,
               "iterations": 1,
               "easing": "cubic-bezier(0.3, 0, 1, 1)",
               "keyframeEasings": [
@@ -2089,17 +1284,17 @@
               "type": "CSSTransition",
               "name": "transform",
               "target": "div.face.face--saved",
-              "duration": 400,
-              "delay": 1300,
+              "duration": 150,
+              "delay": 500,
               "iterations": 1,
-              "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
+              "easing": "cubic-bezier(0.3, 0, 1, 1)",
               "keyframeEasings": [
                 "linear"
               ],
               "area": 39200,
               "offset": 0,
               "scene": true,
-              "curve": "swap",
+              "curve": "exit",
               "props": [
                 "transform"
               ]
@@ -2110,7 +1305,7 @@
               "name": "opacity",
               "target": "div.face.face--moved",
               "duration": 400,
-              "delay": 1300,
+              "delay": 650,
               "iterations": 1,
               "easing": "cubic-bezier(0, 0, 0, 1)",
               "keyframeEasings": [
@@ -2130,16 +1325,16 @@
               "name": "transform",
               "target": "div.face.face--moved",
               "duration": 400,
-              "delay": 1300,
+              "delay": 650,
               "iterations": 1,
-              "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
+              "easing": "cubic-bezier(0, 0, 0, 1)",
               "keyframeEasings": [
                 "linear"
               ],
               "area": 39200,
               "offset": 0,
               "scene": true,
-              "curve": "swap",
+              "curve": "enter",
               "props": [
                 "transform"
               ]
@@ -2162,21 +1357,21 @@
       "rows": [
         {
           "mode": "no-preference",
-          "end": 900,
+          "end": 800,
           "animations": [
             {
               "i": 0,
-              "type": "Animation",
-              "name": "(script)",
-              "target": "g.boat-g",
-              "duration": 600,
-              "delay": 0,
+              "type": "CSSTransition",
+              "name": "transform",
+              "target": "span.swap-track",
+              "duration": 400,
+              "delay": 300.00000000000006,
               "iterations": 1,
               "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
               "keyframeEasings": [
                 "linear"
               ],
-              "area": 274,
+              "area": 9259,
               "offset": 0,
               "scene": true,
               "curve": "swap",
@@ -2186,32 +1381,231 @@
             },
             {
               "i": 1,
-              "type": "Animation",
-              "name": "(script)",
-              "target": "path.route.leg",
-              "duration": 600,
-              "delay": 0,
+              "type": "CSSTransition",
+              "name": "opacity",
+              "target": "span",
+              "duration": 200,
+              "delay": 300.00000000000006,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.3, 0, 1, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 1852,
+              "offset": 0,
+              "scene": true,
+              "curve": "exit",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 2,
+              "type": "CSSTransition",
+              "name": "opacity",
+              "target": "span",
+              "duration": 200,
+              "delay": 500,
+              "iterations": 1,
+              "easing": "cubic-bezier(0, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 1852,
+              "offset": 0,
+              "scene": true,
+              "curve": "enter",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 3,
+              "type": "CSSTransition",
+              "name": "transform",
+              "target": "span.swap-track",
+              "duration": 400,
+              "delay": 400,
               "iterations": 1,
               "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
               "keyframeEasings": [
                 "linear"
               ],
-              "area": 926,
+              "area": 4200,
               "offset": 0,
               "scene": true,
               "curve": "swap",
-              "paint": true,
               "props": [
-                "strokeDashoffset"
+                "transform"
               ]
             },
             {
-              "i": 2,
+              "i": 4,
+              "type": "CSSTransition",
+              "name": "opacity",
+              "target": "span",
+              "duration": 200,
+              "delay": 400,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.3, 0, 1, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 840,
+              "offset": 0,
+              "scene": true,
+              "curve": "exit",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 5,
+              "type": "CSSTransition",
+              "name": "opacity",
+              "target": "span",
+              "duration": 200,
+              "delay": 600.0000000000001,
+              "iterations": 1,
+              "easing": "cubic-bezier(0, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 840,
+              "offset": 0,
+              "scene": true,
+              "curve": "enter",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 6,
+              "type": "CSSTransition",
+              "name": "transform",
+              "target": "span.swap-track",
+              "duration": 400,
+              "delay": 400,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 5867,
+              "offset": 0,
+              "scene": true,
+              "curve": "swap",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 7,
+              "type": "CSSTransition",
+              "name": "opacity",
+              "target": "span",
+              "duration": 200,
+              "delay": 400,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.3, 0, 1, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 1173,
+              "offset": 0,
+              "scene": true,
+              "curve": "exit",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 8,
+              "type": "CSSTransition",
+              "name": "opacity",
+              "target": "span",
+              "duration": 200,
+              "delay": 600.0000000000001,
+              "iterations": 1,
+              "easing": "cubic-bezier(0, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 1173,
+              "offset": 0,
+              "scene": true,
+              "curve": "enter",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 9,
+              "type": "CSSTransition",
+              "name": "transform",
+              "target": "span.swap-track",
+              "duration": 400,
+              "delay": 400,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 4428,
+              "offset": 0,
+              "scene": true,
+              "curve": "swap",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 10,
+              "type": "CSSTransition",
+              "name": "opacity",
+              "target": "span",
+              "duration": 200,
+              "delay": 400,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.3, 0, 1, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 886,
+              "offset": 0,
+              "scene": true,
+              "curve": "exit",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 11,
+              "type": "CSSTransition",
+              "name": "opacity",
+              "target": "span",
+              "duration": 200,
+              "delay": 600.0000000000001,
+              "iterations": 1,
+              "easing": "cubic-bezier(0, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 886,
+              "offset": 0,
+              "scene": true,
+              "curve": "enter",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 12,
               "type": "Animation",
               "name": "(script)",
               "target": "circle.boat",
-              "duration": 300,
-              "delay": 600,
+              "duration": 400,
+              "delay": 0,
               "iterations": 1,
               "easing": "cubic-bezier(0.2, 0, 0, 1)",
               "keyframeEasings": [
@@ -2222,7 +1616,28 @@
               "scene": true,
               "curve": "standard",
               "props": [
-                "scale"
+                "transform"
+              ]
+            },
+            {
+              "i": 13,
+              "type": "Animation",
+              "name": "(script)",
+              "target": "path.route.leg",
+              "duration": 400,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.2, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 926,
+              "offset": 0,
+              "scene": true,
+              "curve": "standard",
+              "paint": true,
+              "props": [
+                "strokeDashoffset"
               ]
             }
           ]
@@ -2239,25 +1654,38 @@
       "url": "kb/tests/fresh/landing/halyard.html",
       "strip": "kb/tests/fresh/landing/reports/motion-audit/route-leg-long.png",
       "result": "PASS",
-      "findings": [],
+      "findings": [
+        {
+          "level": "warn",
+          "msg": "800 ms is over 600 ms: allowed only as the page's one hero reveal on load, never on a user action",
+          "target": "circle.boat (script)",
+          "mode": "no-preference"
+        },
+        {
+          "level": "warn",
+          "msg": "800 ms is over 600 ms: allowed only as the page's one hero reveal on load, never on a user action",
+          "target": "path.route.leg (script)",
+          "mode": "no-preference"
+        }
+      ],
       "rows": [
         {
           "mode": "no-preference",
-          "end": 1500,
+          "end": 1200,
           "animations": [
             {
               "i": 0,
-              "type": "Animation",
-              "name": "(script)",
-              "target": "g.boat-g",
-              "duration": 1200,
-              "delay": 0,
+              "type": "CSSTransition",
+              "name": "transform",
+              "target": "span.swap-track",
+              "duration": 400,
+              "delay": 700.0000000000001,
               "iterations": 1,
               "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
               "keyframeEasings": [
                 "linear"
               ],
-              "area": 274,
+              "area": 9259,
               "offset": 0,
               "scene": true,
               "curve": "swap",
@@ -2267,32 +1695,231 @@
             },
             {
               "i": 1,
-              "type": "Animation",
-              "name": "(script)",
-              "target": "path.route.leg",
-              "duration": 1200,
-              "delay": 0,
+              "type": "CSSTransition",
+              "name": "opacity",
+              "target": "span",
+              "duration": 200,
+              "delay": 700.0000000000001,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.3, 0, 1, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 1852,
+              "offset": 0,
+              "scene": true,
+              "curve": "exit",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 2,
+              "type": "CSSTransition",
+              "name": "opacity",
+              "target": "span",
+              "duration": 200,
+              "delay": 900.0000000000001,
+              "iterations": 1,
+              "easing": "cubic-bezier(0, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 1852,
+              "offset": 0,
+              "scene": true,
+              "curve": "enter",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 3,
+              "type": "CSSTransition",
+              "name": "transform",
+              "target": "span.swap-track",
+              "duration": 400,
+              "delay": 800,
               "iterations": 1,
               "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
               "keyframeEasings": [
                 "linear"
               ],
-              "area": 15375,
+              "area": 4200,
               "offset": 0,
               "scene": true,
               "curve": "swap",
-              "paint": true,
               "props": [
-                "strokeDashoffset"
+                "transform"
               ]
             },
             {
-              "i": 2,
+              "i": 4,
+              "type": "CSSTransition",
+              "name": "opacity",
+              "target": "span",
+              "duration": 200,
+              "delay": 800,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.3, 0, 1, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 840,
+              "offset": 0,
+              "scene": true,
+              "curve": "exit",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 5,
+              "type": "CSSTransition",
+              "name": "opacity",
+              "target": "span",
+              "duration": 200,
+              "delay": 1000,
+              "iterations": 1,
+              "easing": "cubic-bezier(0, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 840,
+              "offset": 0,
+              "scene": true,
+              "curve": "enter",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 6,
+              "type": "CSSTransition",
+              "name": "transform",
+              "target": "span.swap-track",
+              "duration": 400,
+              "delay": 800,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 5867,
+              "offset": 0,
+              "scene": true,
+              "curve": "swap",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 7,
+              "type": "CSSTransition",
+              "name": "opacity",
+              "target": "span",
+              "duration": 200,
+              "delay": 800,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.3, 0, 1, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 1173,
+              "offset": 0,
+              "scene": true,
+              "curve": "exit",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 8,
+              "type": "CSSTransition",
+              "name": "opacity",
+              "target": "span",
+              "duration": 200,
+              "delay": 1000,
+              "iterations": 1,
+              "easing": "cubic-bezier(0, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 1173,
+              "offset": 0,
+              "scene": true,
+              "curve": "enter",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 9,
+              "type": "CSSTransition",
+              "name": "transform",
+              "target": "span.swap-track",
+              "duration": 400,
+              "delay": 800,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 4428,
+              "offset": 0,
+              "scene": true,
+              "curve": "swap",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 10,
+              "type": "CSSTransition",
+              "name": "opacity",
+              "target": "span",
+              "duration": 200,
+              "delay": 800,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.3, 0, 1, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 886,
+              "offset": 0,
+              "scene": true,
+              "curve": "exit",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 11,
+              "type": "CSSTransition",
+              "name": "opacity",
+              "target": "span",
+              "duration": 200,
+              "delay": 1000,
+              "iterations": 1,
+              "easing": "cubic-bezier(0, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 886,
+              "offset": 0,
+              "scene": true,
+              "curve": "enter",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 12,
               "type": "Animation",
               "name": "(script)",
               "target": "circle.boat",
-              "duration": 300,
-              "delay": 1200,
+              "duration": 800,
+              "delay": 0,
               "iterations": 1,
               "easing": "cubic-bezier(0.2, 0, 0, 1)",
               "keyframeEasings": [
@@ -2303,7 +1930,28 @@
               "scene": true,
               "curve": "standard",
               "props": [
-                "scale"
+                "transform"
+              ]
+            },
+            {
+              "i": 13,
+              "type": "Animation",
+              "name": "(script)",
+              "target": "path.route.leg",
+              "duration": 800,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.2, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 15375,
+              "offset": 0,
+              "scene": true,
+              "curve": "standard",
+              "paint": true,
+              "props": [
+                "strokeDashoffset"
               ]
             }
           ]
@@ -2324,109 +1972,108 @@
       "rows": [
         {
           "mode": "no-preference",
-          "end": 1300,
+          "end": 919,
           "animations": [
             {
               "i": 0,
               "type": "CSSTransition",
-              "name": "fill",
-              "target": "circle.wp.wp--end",
-              "duration": 200,
-              "delay": 400,
+              "name": "color",
+              "target": "span.swap.muted",
+              "duration": 300,
+              "delay": 519,
               "iterations": 1,
               "easing": "cubic-bezier(0.2, 0, 0, 1)",
               "keyframeEasings": [
                 "linear"
               ],
-              "area": 122,
+              "area": 1905,
               "offset": 0,
               "scene": true,
               "curve": "standard",
               "paint": true,
               "props": [
-                "fill"
+                "color"
               ]
             },
             {
               "i": 1,
               "type": "CSSTransition",
-              "name": "color",
-              "target": "span.swap.muted",
-              "duration": 300,
-              "delay": 700,
+              "name": "transform",
+              "target": "span.swap-track",
+              "duration": 400,
+              "delay": 419.00000000000006,
               "iterations": 1,
-              "easing": "cubic-bezier(0.2, 0, 0, 1)",
+              "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
               "keyframeEasings": [
                 "linear"
               ],
-              "area": 1772,
+              "area": 9523,
               "offset": 0,
               "scene": true,
-              "curve": "standard",
-              "paint": true,
+              "curve": "swap",
               "props": [
-                "color"
+                "transform"
               ]
             },
             {
               "i": 2,
               "type": "CSSTransition",
-              "name": "transform",
-              "target": "span.swap-track",
-              "duration": 400,
-              "delay": 700,
+              "name": "opacity",
+              "target": "span",
+              "duration": 200,
+              "delay": 419.00000000000006,
               "iterations": 1,
-              "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
+              "easing": "cubic-bezier(0.3, 0, 1, 1)",
               "keyframeEasings": [
                 "linear"
               ],
-              "area": 3543,
+              "area": 1905,
               "offset": 0,
               "scene": true,
-              "curve": "swap",
+              "curve": "exit",
               "props": [
-                "transform"
+                "opacity"
               ]
             },
             {
               "i": 3,
               "type": "CSSTransition",
+              "name": "opacity",
+              "target": "span",
+              "duration": 200,
+              "delay": 619,
+              "iterations": 1,
+              "easing": "cubic-bezier(0, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 1905,
+              "offset": 0,
+              "scene": true,
+              "curve": "enter",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 4,
+              "type": "CSSTransition",
               "name": "color",
               "target": "b.rs-time",
               "duration": 300,
-              "delay": 700,
+              "delay": 519,
               "iterations": 1,
               "easing": "cubic-bezier(0.2, 0, 0, 1)",
               "keyframeEasings": [
                 "linear"
               ],
-              "area": 2067,
+              "area": 2222,
               "offset": 0,
               "scene": true,
               "curve": "standard",
               "paint": true,
               "props": [
                 "color"
-              ]
-            },
-            {
-              "i": 4,
-              "type": "CSSTransition",
-              "name": "transform",
-              "target": "span.swap-track",
-              "duration": 400,
-              "delay": 800,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1680,
-              "offset": 0,
-              "scene": true,
-              "curve": "swap",
-              "props": [
-                "transform"
               ]
             },
             {
@@ -2435,13 +2082,13 @@
               "name": "transform",
               "target": "span.swap-track",
               "duration": 400,
-              "delay": 850.0000000000001,
+              "delay": 519,
               "iterations": 1,
               "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
               "keyframeEasings": [
                 "linear"
               ],
-              "area": 2347,
+              "area": 4200,
               "offset": 0,
               "scene": true,
               "curve": "swap",
@@ -2452,352 +2099,201 @@
             {
               "i": 6,
               "type": "CSSTransition",
-              "name": "transform",
-              "target": "span.swap-track",
-              "duration": 400,
-              "delay": 900.0000000000001,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1771,
-              "offset": 0,
-              "scene": true,
-              "curve": "swap",
-              "props": [
-                "transform"
-              ]
-            },
-            {
-              "i": 7,
-              "type": "Animation",
-              "name": "(script)",
-              "target": "g.boat-g",
-              "duration": 400,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 274,
-              "offset": 0,
-              "scene": true,
-              "curve": "swap",
-              "props": [
-                "transform"
-              ]
-            },
-            {
-              "i": 8,
-              "type": "Animation",
-              "name": "(script)",
-              "target": "path.route.leg",
-              "duration": 400,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1303,
-              "offset": 0,
-              "scene": true,
-              "curve": "swap",
-              "paint": true,
-              "props": [
-                "strokeDashoffset"
-              ]
-            },
-            {
-              "i": 9,
-              "type": "Animation",
-              "name": "(script)",
-              "target": "circle.boat",
-              "duration": 300,
-              "delay": 400,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.2, 0, 0, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 274,
-              "offset": 0,
-              "scene": true,
-              "curve": "standard",
-              "props": [
-                "scale"
-              ]
-            }
-          ]
-        },
-        {
-          "mode": "reduce",
-          "end": 0,
-          "animations": []
-        }
-      ]
-    },
-    {
-      "name": "route-reset",
-      "url": "kb/tests/fresh/landing/halyard.html",
-      "strip": "kb/tests/fresh/landing/reports/motion-audit/route-reset.png",
-      "result": "PASS",
-      "findings": [],
-      "rows": [
-        {
-          "mode": "no-preference",
-          "end": 600,
-          "animations": [
-            {
-              "i": 0,
-              "type": "CSSTransition",
-              "name": "fill",
-              "target": "circle.wp.wp--end",
+              "name": "opacity",
+              "target": "span",
               "duration": 200,
-              "delay": 0,
+              "delay": 519,
               "iterations": 1,
-              "easing": "cubic-bezier(0.2, 0, 0, 1)",
+              "easing": "cubic-bezier(0.3, 0, 1, 1)",
               "keyframeEasings": [
                 "linear"
               ],
-              "area": 122,
+              "area": 840,
               "offset": 0,
               "scene": true,
-              "curve": "standard",
-              "paint": true,
+              "curve": "exit",
               "props": [
-                "fill"
-              ]
-            },
-            {
-              "i": 1,
-              "type": "CSSTransition",
-              "name": "color",
-              "target": "span.swap.muted",
-              "duration": 300,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.2, 0, 0, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1726,
-              "offset": 0,
-              "scene": true,
-              "curve": "standard",
-              "paint": true,
-              "props": [
-                "color"
-              ]
-            },
-            {
-              "i": 2,
-              "type": "CSSTransition",
-              "name": "transform",
-              "target": "span.swap-track",
-              "duration": 400,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 3452,
-              "offset": 0,
-              "scene": true,
-              "curve": "swap",
-              "props": [
-                "transform"
-              ]
-            },
-            {
-              "i": 3,
-              "type": "CSSTransition",
-              "name": "color",
-              "target": "b.rs-time",
-              "duration": 300,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.2, 0, 0, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 2013,
-              "offset": 0,
-              "scene": true,
-              "curve": "standard",
-              "paint": true,
-              "props": [
-                "color"
-              ]
-            },
-            {
-              "i": 4,
-              "type": "CSSTransition",
-              "name": "transform",
-              "target": "span.swap-track",
-              "duration": 400,
-              "delay": 100,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1680,
-              "offset": 0,
-              "scene": true,
-              "curve": "swap",
-              "props": [
-                "transform"
-              ]
-            },
-            {
-              "i": 5,
-              "type": "CSSTransition",
-              "name": "transform",
-              "target": "span.swap-track",
-              "duration": 400,
-              "delay": 150.00000000000003,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 2347,
-              "offset": 0,
-              "scene": true,
-              "curve": "swap",
-              "props": [
-                "transform"
-              ]
-            },
-            {
-              "i": 6,
-              "type": "CSSTransition",
-              "name": "transform",
-              "target": "span.swap-track",
-              "duration": 400,
-              "delay": 200,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1771,
-              "offset": 0,
-              "scene": true,
-              "curve": "swap",
-              "props": [
-                "transform"
+                "opacity"
               ]
             },
             {
               "i": 7,
-              "type": "Animation",
-              "name": "(script)",
-              "target": "g.boat-g",
-              "duration": 600,
-              "delay": 0,
+              "type": "CSSTransition",
+              "name": "opacity",
+              "target": "span",
+              "duration": 200,
+              "delay": 719.0000000000001,
               "iterations": 1,
-              "easing": "cubic-bezier(0.2, 0, 0, 1)",
+              "easing": "cubic-bezier(0, 0, 0, 1)",
               "keyframeEasings": [
                 "linear"
               ],
-              "area": 274,
+              "area": 840,
               "offset": 0,
               "scene": true,
-              "curve": "standard",
+              "curve": "enter",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 8,
+              "type": "CSSTransition",
+              "name": "transform",
+              "target": "span.swap-track",
+              "duration": 400,
+              "delay": 519,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 5867,
+              "offset": 0,
+              "scene": true,
+              "curve": "swap",
               "props": [
                 "transform"
               ]
             },
             {
-              "i": 8,
-              "type": "Animation",
-              "name": "(script)",
-              "target": "path.route.leg",
-              "duration": 600,
-              "delay": 0,
-              "iterations": 1,
-              "easing": "cubic-bezier(0.2, 0, 0, 1)",
-              "keyframeEasings": [
-                "linear"
-              ],
-              "area": 1303,
-              "offset": 0,
-              "scene": true,
-              "curve": "standard",
-              "paint": true,
-              "props": [
-                "opacity",
-                "strokeDashoffset"
-              ]
-            },
-            {
               "i": 9,
-              "type": "Animation",
-              "name": "(script)",
-              "target": "path.route.leg",
-              "duration": 600,
-              "delay": 0,
+              "type": "CSSTransition",
+              "name": "opacity",
+              "target": "span",
+              "duration": 200,
+              "delay": 519,
               "iterations": 1,
-              "easing": "cubic-bezier(0.2, 0, 0, 1)",
+              "easing": "cubic-bezier(0.3, 0, 1, 1)",
               "keyframeEasings": [
                 "linear"
               ],
-              "area": 15375,
+              "area": 1173,
               "offset": 0,
               "scene": true,
-              "curve": "standard",
-              "paint": true,
+              "curve": "exit",
               "props": [
-                "opacity",
-                "strokeDashoffset"
+                "opacity"
               ]
             },
             {
               "i": 10,
-              "type": "Animation",
-              "name": "(script)",
-              "target": "path.route.leg",
-              "duration": 600,
-              "delay": 0,
+              "type": "CSSTransition",
+              "name": "opacity",
+              "target": "span",
+              "duration": 200,
+              "delay": 719.0000000000001,
               "iterations": 1,
-              "easing": "cubic-bezier(0.2, 0, 0, 1)",
+              "easing": "cubic-bezier(0, 0, 0, 1)",
               "keyframeEasings": [
                 "linear"
               ],
-              "area": 1543,
+              "area": 1173,
               "offset": 0,
               "scene": true,
-              "curve": "standard",
-              "paint": true,
+              "curve": "enter",
               "props": [
-                "opacity",
-                "strokeDashoffset"
+                "opacity"
               ]
             },
             {
               "i": 11,
-              "type": "Animation",
-              "name": "(script)",
-              "target": "path.route.leg",
-              "duration": 600,
-              "delay": 0,
+              "type": "CSSTransition",
+              "name": "transform",
+              "target": "span.swap-track",
+              "duration": 400,
+              "delay": 519,
               "iterations": 1,
-              "easing": "cubic-bezier(0.2, 0, 0, 1)",
+              "easing": "cubic-bezier(0.78, 0, 0.22, 1)",
               "keyframeEasings": [
                 "linear"
               ],
-              "area": 926,
+              "area": 4428,
               "offset": 0,
               "scene": true,
-              "curve": "standard",
+              "curve": "swap",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 12,
+              "type": "CSSTransition",
+              "name": "opacity",
+              "target": "span",
+              "duration": 200,
+              "delay": 519,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.3, 0, 1, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 886,
+              "offset": 0,
+              "scene": true,
+              "curve": "exit",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 13,
+              "type": "CSSTransition",
+              "name": "opacity",
+              "target": "span",
+              "duration": 200,
+              "delay": 719.0000000000001,
+              "iterations": 1,
+              "easing": "cubic-bezier(0, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 886,
+              "offset": 0,
+              "scene": true,
+              "curve": "enter",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 14,
+              "type": "Animation",
+              "name": "(script)",
+              "target": "circle.boat",
+              "duration": 519,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "linear(0.0003 0%, 0.0281 2.5%, 0.0899 5%, 0.1732 7.5%, 0.2682 10%, 0.3673 12.5%, 0.4651 15%, 0.5577 17.5%, 0.6426 20%, 0.7183 22.5%, 0.7843 25%, 0.8365 27.5%, 0.8841 30%, 0.9228 32.5%, 0.9537 35%, 0.9776 37.5%, 0.9955 40%, 1.0085 42.5%, 1.0173 45%, 1.0228 47.5%, 1.0257 50%, 1.0267 52.5%, 1.0262 55%, 1.0248 57.5%, 1.0226 60%, 1.0202 62.5%, 1.0175 65%, 1.0149 67.5%, 1.0124 70%, 1.0101 72.5%, 1.008 75%, 1.0063 77.5%, 1.0047 80%, 1.0034 82.5%, 1.0023 85%, 1.0014 87.5%, 1.0007 90%, 1.0002 92.5%, 0.9998 95%, 0.9996 97.5%, 1 100%)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 274,
+              "offset": 0,
+              "scene": true,
+              "curve": "spring",
+              "props": [
+                "transform"
+              ]
+            },
+            {
+              "i": 15,
+              "type": "Animation",
+              "name": "(script)",
+              "target": "path.route.leg",
+              "duration": 519,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "linear(0.0003 0%, 0.0281 2.5%, 0.0899 5%, 0.1732 7.5%, 0.2682 10%, 0.3673 12.5%, 0.4651 15%, 0.5577 17.5%, 0.6426 20%, 0.7183 22.5%, 0.7843 25%, 0.8365 27.5%, 0.8841 30%, 0.9228 32.5%, 0.9537 35%, 0.9776 37.5%, 0.9955 40%, 1.0085 42.5%, 1.0173 45%, 1.0228 47.5%, 1.0257 50%, 1.0267 52.5%, 1.0262 55%, 1.0248 57.5%, 1.0226 60%, 1.0202 62.5%, 1.0175 65%, 1.0149 67.5%, 1.0124 70%, 1.0101 72.5%, 1.008 75%, 1.0063 77.5%, 1.0047 80%, 1.0034 82.5%, 1.0023 85%, 1.0014 87.5%, 1.0007 90%, 1.0002 92.5%, 0.9998 95%, 0.9996 97.5%, 1 100%)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 1303,
+              "offset": 0,
+              "scene": true,
+              "curve": "spring",
               "paint": true,
               "props": [
-                "opacity",
                 "strokeDashoffset"
               ]
             }

@@ -1,18 +1,18 @@
 motion-plan-check kb/tests/fresh/landing/halyard.html at 1440px
-  animations 291 (reduce 16); ladder 100/150/200/300/400/519/600/800/1200/2100 ms
-  bands 5: entrance 400/519; press/hover 100/150; UI change 200/300; scene 1200/2100; reveal 600/800
-  scenes #hero-scene [aim:1200 press:3100 window:4400] seen aim>press>window, #route-scene [leave:2000 jack:1200 hamstead:1200 gurnard:1600 cowes:4400] seen leave>jack>hamstead>gurnard>cowes, #warn-scene [fri18:2600 saved:3000 fri21:4500] seen fri18>saved>fri21
-  staggers 12@20ms over 160ms, 4@80ms over 450ms, 18@20ms over 430ms; entrances 19 (12 masked)
-  beat #route-scene leave: hold 1335ms after settle, 1 word(s) to read (needs 1000ms)
-  beat #warn-scene fri18: hold 3283ms after settle, 4 word(s) to read (needs 1620ms)
-  beat #hero-scene aim: hold 532ms after settle
-  beat #hero-scene press: hold 9405ms after settle
-  beat #hero-scene window: hold 7839ms after settle, 9 word(s) to read (needs 3270ms)
-  beat #route-scene jack: hold 284ms after settle
-  beat #route-scene hamstead: hold 81ms after settle
-  beat #route-scene gurnard: hold 84ms after settle
-  beat #route-scene cowes: hold 5429ms after settle, 3 word(s) to read (needs 1290ms)
-  beat #warn-scene saved: hold 2583ms after settle, 6 word(s) to read (needs 2280ms)
-  beat #warn-scene fri21: hold 58268ms after settle, 9 word(s) to read (needs 3270ms)
+  animations 268 (reduce 16); ladder 100/150/200/300/400/519/600/800/1200/1700 ms
+  bands 5: entrance 400/519; press/hover 100/150; UI change 200/300; scene 1200/1700; reveal 600/800
+  scenes #hero-scene [aim:1200 press:1800 window:4400] seen aim>press>window, #route-scene [leave:1500 jack:1900 hamstead:2100 gurnard:2300 cowes:4100] seen leave>jack>hamstead>gurnard>cowes, #warn-scene [fri18:2400 saved:3000 fri21:4500] seen fri18>saved>fri21
+  staggers 12@20ms over 160ms, 4@81ms over 451ms, 18@20ms over 431ms; entrances 19 (12 masked)
+  beat #route-scene leave: hold 1293ms after settle, 1 word(s) to read (needs 1000ms)
+  beat #warn-scene fri18: hold 3294ms after settle, 4 word(s) to read (needs 1620ms)
+  beat #hero-scene aim: hold 132ms after settle
+  beat #hero-scene press: hold 1639ms after settle
+  beat #hero-scene window: hold 8091ms after settle, 9 word(s) to read (needs 3270ms)
+  beat #route-scene jack: hold 1033ms after settle, 1 word(s) to read (needs 1000ms)
+  beat #route-scene hamstead: hold 1078ms after settle, 1 word(s) to read (needs 1000ms)
+  beat #route-scene gurnard: hold 1066ms after settle, 1 word(s) to read (needs 1000ms)
+  beat #route-scene cowes: hold 5682ms after settle, 3 word(s) to read (needs 1290ms)
+  beat #warn-scene saved: hold 2587ms after settle, 6 word(s) to read (needs 2280ms)
+  beat #warn-scene fri21: hold 58880ms after settle, 9 word(s) to read (needs 3270ms)
 PASS: ladder, scene, shot plan, stagger, travel and reduced motion meet FOUNDATIONS v0.6
 exit 0
