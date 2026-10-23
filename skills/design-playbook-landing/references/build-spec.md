@@ -55,7 +55,7 @@ Radius family 12. Hairline 1px --color-border; shadow --shadow-1 on raised cards
 
 MOTION
 Moving moments: <1. hero clip plays once, holds last frame> <2. pinned how-it-works stage> <3. none>.
-Reveals below the fold: opacity + 12px rise, 600ms, --ease-enter, once.
+Reveals below the fold: opacity + 12px rise, 600ms, --ease-reveal, once.
 Hero H1 never starts at opacity 0. Reduced motion: stills and crossfades.
 
 SECTIONS (one block each, in order)

@@ -101,7 +101,7 @@ Everything below marked **(S1)** etc. is what the source does or says. Lines mar
 | easeInQuint | `cubic-bezier(0.64, 0, 0.78, 0)` | Leaving for good; close to `--ease-exit` |
 | easeOutBack, easeInOutBack, Elastic, Bounce | `cubic-bezier(0.34, 1.56, 0.64, 1)` and others | Overshoot. Rare brand moments only, never opacity or colour (design-motion expert move 3) |
 
-The half-time figures are computed from the curves (x = 0.5). Adopting easeOutQuint as a token is a change to FOUNDATIONS, so it is proposed, not applied (see `kb/status/motion.md`).
+The half-time figures are computed from the curves (x = 0.5). Adopted as `--ease-reveal` in FOUNDATIONS v0.4.5 on 2026-10-23 (Davon approved).
 
 ## E. The 12 sites from the X post (S4)
 | Site | What it is (checked 2026-10-23) | Keep? |

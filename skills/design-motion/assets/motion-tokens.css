@@ -8,10 +8,11 @@
   --duration-slow: 300ms;    /* band 300 to 400ms: drawer, sheet, shared element */
   --duration-page: 400ms;    /* band 400 to 600ms: route change; raise to 600ms only on marketing pages for storytelling */
 
-  /* Easing (primitives): Material 3 standard set, the three FOUNDATIONS curves */
+  /* Easing (primitives): Material 3 standard set, the FOUNDATIONS curves (v0.4.5 adds --ease-reveal) */
   --ease-standard: cubic-bezier(0.2, 0, 0, 1); /* moves and resizes on screen, hover color */
   --ease-enter: cubic-bezier(0, 0, 0, 1);      /* decelerate: arriving */
   --ease-exit: cubic-bezier(0.3, 0, 1, 1);     /* accelerate: leaving for good, keep short */
+  --ease-reveal: cubic-bezier(0.22, 1, 0.36, 1); /* easeOutQuint: marketing section reveals and the one hero reveal only */
   /* linear is not a token: use the keyword for loops, scroll-linked motion and reveals whose x axis is time. */
 
   /* Semantic pairs (FOUNDATIONS --motion-{hover,enter,exit}): a duration plus a curve, for transition shorthands.

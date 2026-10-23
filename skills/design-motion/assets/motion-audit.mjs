@@ -19,7 +19,7 @@
 //
 // Checks per animation (fail unless noted):
 //   duration   on the token set 100, 150, 200, 250, 300, 400, 500, 600, 800 ms (800 only for one hero reveal, FOUNDATIONS v0.4); loops (infinite) are reported, not judged
-//   easing     one of the three token curves or linear; the CSS default `ease` fails
+//   easing     one of the four token curves or linear; the CSS default `ease` fails
 //   property   transform, translate, scale, rotate and opacity pass; paint-only properties (color, fill, stroke,
 //              stroke-dashoffset) pass on control-sized elements and warn above 200x200 px (40,000 px2); layout and blur properties
 //              (width, height, top, left, margin, padding, box-shadow, filter, clip-path) fail
@@ -40,6 +40,7 @@ const EASINGS = {
   'cubic-bezier(0.2, 0, 0, 1)': 'standard',
   'cubic-bezier(0, 0, 0, 1)': 'enter',
   'cubic-bezier(0.3, 0, 1, 1)': 'exit',
+  'cubic-bezier(0.22, 1, 0.36, 1)': 'reveal',
   linear: 'linear',
 };
 const COMPOSITOR = new Set(['transform', 'translate', 'scale', 'rotate', 'opacity']);

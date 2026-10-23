@@ -32,7 +32,7 @@ Everything in design-motion section 1 still applies. On a cinematic page these a
 
 **Easing on a cinematic page**
 - Scrubbed by scroll: `linear` mapping from progress to frame or pose (expert move 10). Smooth the input, not the curve: a damped follow toward the scroll target (Scrolltide: Threshold) is fine; an ease on top fights the reader.
-- Played (reveals, triggered states): the shared tokens. Opinion, proposed in `kb/status/motion.md`: marketing reveals at 600ms read calmer on easeOutQuint `cubic-bezier(0.22, 1, 0.36, 1)` (easings.net), which is 97% settled at half time against 89% for `--ease-enter`. Until FOUNDATIONS adopts it, use `--ease-enter`.
+- Played reveals on a marketing page: `--ease-reveal` (easeOutQuint `cubic-bezier(0.22, 1, 0.36, 1)`, FOUNDATIONS v0.4.5), which is 97% settled at half time against 89% for `--ease-enter`, so the screen goes still sooner. Triggered states and UI keep the other tokens.
 - A card that grows from its rectangle to the viewport and back (FLIP): `--ease-standard`, or easeInOutCubic `cubic-bezier(0.65, 0, 0.35, 1)` as the motionin sections use (opinion).
 - Never Back, Elastic or Bounce on a calm brand (they overshoot), and never on opacity or colour (expert move 3).
 

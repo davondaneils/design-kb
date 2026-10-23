@@ -50,11 +50,13 @@ Never `none` inside a shadow token: tokens get composed into lists (`box-shadow:
 State layers on neutral surfaces (Material 3, m3.material.io "States", accessed 2026-10-09): hover 8 percent, focus 10 percent, pressed 10 percent, dragged 16 percent of the content color. Pressed must still differ from hover: on filled controls use `--color-primary-active`, one ramp step past hover.
 
 ## Motion
-Durations: instant 0 to 100ms, fast 150ms, base 200 to 250ms, slow 300 to 400ms, page 400 to 600ms. Easing: standard `cubic-bezier(0.2, 0, 0, 1)`, enter (decelerate) `cubic-bezier(0, 0, 0, 1)`, exit (accelerate) `cubic-bezier(0.3, 0, 1, 1)`. Always honor `prefers-reduced-motion`.
+Durations: instant 0 to 100ms, fast 150ms, base 200 to 250ms, slow 300 to 400ms, page 400 to 600ms. Easing: standard `cubic-bezier(0.2, 0, 0, 1)`, enter (decelerate) `cubic-bezier(0, 0, 0, 1)`, exit (accelerate) `cubic-bezier(0.3, 0, 1, 1)`, reveal (marketing only) `cubic-bezier(0.22, 1, 0.36, 1)`. Always honor `prefers-reduced-motion`.
+
+- **`--ease-reveal` is for marketing pages only:** below-the-fold section reveals and the one hero reveal, at 400 to 800ms. It is easeOutQuint (easings.net): 97% settled at half its duration against 89% for `--ease-enter`, so a screen goes still sooner on long reveals; Scrolltide runs its whole homepage on it (249 elements, measured 2026-10-23, `kb/research/motion/08-cinematic-scroll.md`). Product UI, menus, dialogs and anything a person triggers keep `--ease-enter`.
 
 - **Semantic pairs** (a duration plus a curve, for transition shorthands; design-motion `assets/motion-tokens.css`): `--motion-hover: var(--duration-instant) var(--ease-standard)`, `--motion-enter: var(--duration-base) var(--ease-enter)`, `--motion-exit: var(--duration-fast) var(--ease-exit)`. Use: `transition: background-color var(--motion-hover)`.
 - **`linear` is allowed** for loops (spinners, marquees), scroll-linked motion (the scroll is the easing) and reveals whose x axis is time (a chart drawing on along a date axis). Never on an object that starts and stops (design-motion SKILL.md fundamental 6 and signature move 17).
-- **Marketing reveal ceiling (opinion).** Anything a person triggers stays at 600ms or less. A marketing page may give **one hero reveal per page** up to **800ms**, on `--ease-enter` or a strong ease-out, played once on load and removed under reduced motion. Measured exemplars do this: Stripe reveal transforms `.8s cubic-bezier(.165,.84,.44,1)` (`kb/teardowns/stripe-home.md`) and Raycast extension cards `.7s cubic-bezier(.215,.61,.355,1)` (`kb/teardowns/raycast-home.md`). NN/g puts most UI animation at 100 to 500ms and says about 500ms starts to "feel like a drag" (`kb/research/motion/02-timing-easing.md`), which is why the exception covers one unprompted entrance only. Everywhere else, 600ms is the ceiling.
+- **Marketing reveal ceiling (opinion).** Anything a person triggers stays at 600ms or less. A marketing page may give **one hero reveal per page** up to **800ms**, on `--ease-reveal`, played once on load and removed under reduced motion. Measured exemplars do this: Stripe reveal transforms `.8s cubic-bezier(.165,.84,.44,1)` (`kb/teardowns/stripe-home.md`) and Raycast extension cards `.7s cubic-bezier(.215,.61,.355,1)` (`kb/teardowns/raycast-home.md`). NN/g puts most UI animation at 100 to 500ms and says about 500ms starts to "feel like a drag" (`kb/research/motion/02-timing-easing.md`), which is why the exception covers one unprompted entrance only. Everywhere else, 600ms is the ceiling.
 - **Reduced motion** (`prefers-reduced-motion: reduce`): nothing moves, scales, rotates or resizes. Opacity and color changes may stay at `--duration-fast` (150ms) or less, played once; loops stop. The lint fails any animation whose keyframes change position, size or transform under reduce, and warns on opacity or color animations over 150ms or looping. This replaces the v0.3 lint's flat 100ms threshold, which failed the 150ms fades that `accessibility.md` allows.
 - Scripts read motion tokens from CSS (`getComputedStyle`); no millisecond literals in JS (design-motion).
 
@@ -105,7 +107,7 @@ One schema for every domain. Primitives hold raw values; semantic tokens point a
 | Radius | `--radius-{none,sm,md,lg,xl,full}` (0, 4, 8, 12, 16, 9999px) | `--radius-control`, `--radius-card` | design-layout |
 | State | (uses the text color) | `--state-{hover,focus,pressed,dragged}`: `color-mix(in oklch, var(--color-text) 8% / 10% / 10% / 16%, transparent)`, the state layers above; filled controls use `--color-primary-hover` and `--color-primary-active` instead | design-color with design-polish |
 | Elevation | `--shadow-{0..4}`, `--shadow-rgb` (tint, as space-separated RGB) | `--elevation-{card,popover,modal}` (ring plus shadow), `--ring` (1px edge), `--highlight` (dark-theme top edge) | design-layout with design-polish (recipe above) |
-| Motion | `--duration-{instant,fast,base,slow,page}`, `--ease-{standard,enter,exit}`; the `linear` keyword for loops, scroll-linked and time-axis motion | `--motion-{hover,enter,exit}` (values in Motion above) | design-motion |
+| Motion | `--duration-{instant,fast,base,slow,page}`, `--ease-{standard,enter,exit,reveal}`; the `linear` keyword for loops, scroll-linked and time-axis motion | `--motion-{hover,enter,exit}` (values in Motion above) | design-motion |
 | Icon | `--size-icon-{sm,md,lg,xl}` (12, 16, 20, 24) | `--icon-stroke` (1.5px) | design-graphic with design-polish |
 | Size | `--size-control-{sm,md,lg}` (32, 40, 48) | `--size-measure` (52ch) | design-layout; measure: design-typography |
 | Breakpoint | sm 640, md 768, lg 1024, xl 1280, 2xl 1536 (media and container queries cannot read custom properties, so use the numbers; container conditions in `rem`: 40rem, 48rem, 64rem, 80rem, 96rem) | | design-layout |
@@ -132,7 +134,7 @@ Paste into `@layer tokens`. Values are the contract above; color primitives and 
   --size-icon-sm: 12px; --size-icon-md: 16px; --size-icon-lg: 20px; --size-icon-xl: 24px; --icon-stroke: 1.5px;
 
   --duration-instant: 100ms; --duration-fast: 150ms; --duration-base: 200ms; --duration-slow: 300ms; --duration-page: 400ms;
-  --ease-standard: cubic-bezier(0.2, 0, 0, 1); --ease-enter: cubic-bezier(0, 0, 0, 1); --ease-exit: cubic-bezier(0.3, 0, 1, 1);
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1); --ease-enter: cubic-bezier(0, 0, 0, 1); --ease-exit: cubic-bezier(0.3, 0, 1, 1); --ease-reveal: cubic-bezier(0.22, 1, 0.36, 1);
   --motion-hover: var(--duration-instant) var(--ease-standard);
   --motion-enter: var(--duration-base) var(--ease-enter);
   --motion-exit: var(--duration-fast) var(--ease-exit);

@@ -22,7 +22,7 @@ v0.2 render-tested (`kb/tests/design-motion.md`, run 2). Both test pages gained 
 ## 2026-10-23: cinematic scroll (from Davon's references)
 New research `kb/research/motion/08-cinematic-scroll.md` (Scrolltide catalogue and eBook samples, motionin.design, easings.net, the 12 sites from an X post) and new reference `references/08-cinematic-scroll.md`; landing playbook gains `references/build-spec.md`. Not yet through critic or tester.
 
-**Proposal to the editor-in-chief (FOUNDATIONS change, not applied):** add a marketing-only reveal curve `--ease-reveal: cubic-bezier(0.22, 1, 0.36, 1)` (easeOutQuint). Reason: at the 600ms marketing reveal it is 97% settled at half time against 89% for `--ease-enter`, so the screen goes still sooner; Scrolltide runs 249 elements on it (measured 2026-10-23). Until decided, reveals keep `--ease-enter`.
+**Adopted as FOUNDATIONS v0.4.5 (Davon approved, 2026-10-23):** a marketing-only reveal curve `--ease-reveal: cubic-bezier(0.22, 1, 0.36, 1)` (easeOutQuint). Reason: at the 600ms marketing reveal it is 97% settled at half time against 89% for `--ease-enter`, so the screen goes still sooner; Scrolltide runs 249 elements on it (measured 2026-10-23). Marketing reveals use it; UI keeps `--ease-enter`.
 
 ## Next step
 Librarian: ship v0.2 and update INDEX and TOPIC_MAP. Editor: decide the pipeline notes.
