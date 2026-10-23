@@ -88,6 +88,14 @@ Where to go deeper on type: choosing and pairing typefaces, scale, measure and l
 - **Tier:** 4
 - **Checked:** Klim home and blog index (about 115,000 words of essays, Söhne, Financier and National 2 design-information posts), Red Dot project page; accessed 2026-10-10. Not yet used in kb/research.
 
+### Font In Logo (identification tool)
+- **Who / what:** A searchable index of the fonts behind famous brand logos and film, TV and game titles, with "verified" matches and free alternatives.
+- **Best for:** answering "what face is that logo set in" fast during brand research or a competitor wall.
+- **Why it meets the bar:** has a verified, source-checked tier. Opinion: many entries name a free look-alike (for example Orbitron for Star Wars) rather than the real, often custom, face; trust only the verified tier and confirm on the foundry's or the brand's own page. Fonts In Use stays the better source for type in context.
+- **Link:** https://www.fontinlogo.com/
+- **Tier:** 5 (verified entries 4)
+- **Checked:** home page, the verified filter and sample entries. Lead from the Bardhyl Bytyqi X post. Accessed 2026-10-23.
+
 ## Considered and dropped
 - **Tim Brown, Flexible Typesetting, and other A Book Apart titles:** well regarded, but not verified this session, so left out.
 - **Other foundries (Commercial Type, Grilli Type, Dinamo, Pangram Pangram and others):** worth browsing, but Klim is the one with a deep, public essay archive. Typewolf's "24 independent type foundries" post is a better list than this file could be.

@@ -133,6 +133,7 @@ Then: the job each row does (section 1, rule 1), interruption behavior, WCAG not
 | `references/05-accessibility-performance.md` | Reduced-motion matrix, WCAG detail, vestibular triggers, performance rules, audits |
 | `references/06-implementation.md` | Code: CSS, `@starting-style`, WAAPI, View Transitions, Motion (React), Lottie and dotLottie |
 | `references/07-motion-on-real-pages.md` | Charts, live numbers, label swaps, modality-aware dialogs, and how to film and time motion on a rendered page |
+| `references/08-cinematic-scroll.md` | Scroll-driven films, frame sequences, pinned stages and chapters on marketing pages; making the frames; easing on a cinematic page |
 | `assets/motion-tokens.css` | Drop-in token file, with the `--motion-*` pairs and the script pattern for reading tokens |
 | `assets/motion-audit.mjs` | Films each animation (no-preference and reduce rows) and checks durations, curves, properties and reduce against the tokens. Usage: `node skills/design-motion/assets/motion-audit.mjs <scenarios.mjs> <outdir>`; example scenarios `kb/tests/design-motion/scenarios.mjs` |
 

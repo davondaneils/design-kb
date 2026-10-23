@@ -152,13 +152,13 @@ Where to look when a question spans domains: the X accounts whose shipped work e
 - **Tier:** 4
 - **Checked:** home page description. Accessed 2026-10-10.
 
-### Godly (gallery/teardown)
-- **Who / what:** A hand-picked gallery of websites plus branding, product, typography, motion, editorial and packaging work.
-- **Best for:** art direction and expressive marketing sites, with filters by font and style.
+### Recent, formerly Godly (gallery/teardown)
+- **Who / what:** A hand-picked design feed: websites, interfaces, branding, motion, illustration, posters and print, plus launch videos, OG images, app screenshots and app icons. godly.website now redirects to recent.design (`?ref=godly`).
+- **Best for:** art direction and expressive marketing sites; the launch video and OG image views are useful for a launch page.
 - **Why it meets the bar:** tight curation; links to live sites so the work can be inspected. Opinion: the best gallery for bold web design; check usability separately because the bar is visual.
-- **Link:** https://godly.website/
+- **Link:** https://recent.design/ (old link https://godly.website/ redirects)
 - **Tier:** 4
-- **Checked:** home page categories and description. Accessed 2026-10-10.
+- **Checked:** godly.website returns 301 to recent.design; home page categories (Web, Interface, Branding, Motion, Illustration, Posters, Print). Accessed 2026-10-23. Earlier check of godly.website home page, 2026-10-10.
 
 ### Land-book (gallery/teardown)
 - **Who / what:** A curated, daily-updated gallery of landing pages, with views by section, headlines, motion and OG images.
@@ -167,6 +167,30 @@ Where to look when a question spans domains: the X accounts whose shipped work e
 - **Link:** https://land-book.com/
 - **Tier:** 4
 - **Checked:** home page and filters. Accessed 2026-10-10.
+
+### Landdding (gallery/teardown)
+- **Who / what:** A daily, community-upvoted gallery of landing pages and website templates (about 2.5k designs, 40 categories), across Webflow, Framer, WordPress, Wix and Squarespace.
+- **Best for:** finding landing pages by industry that Land-book is thin on: Real Estate, Architecture, Furniture and Interiors, Medical, Non-Profit.
+- **Why it meets the bar:** live sites by named designers, filterable by category; updated daily. Opinion: broader and less edited than Land-book, so pick from it and then inspect the live site.
+- **Link:** https://landdding.com/
+- **Tier:** 4
+- **Checked:** home page counts and category list. Lead from the X post by Bardhyl Bytyqi (https://x.com/BardhylBytyqi/status/2113012232015450311, tier 5). Accessed 2026-10-23.
+
+### Footer (gallery/teardown)
+- **Who / what:** A curated gallery of website footers only, sorted by type: Typographic, Small Type, Illustrative, Grid, Flat, Animated, Cards, Bright, Dark, Large Type, Bold.
+- **Best for:** the footer, the most rebuilt and least designed band on a site; seeing a giant wordmark, an illustrated footer or a CTA-and-footer in one side by side.
+- **Why it meets the bar:** single-purpose, edited ("Editor's Choice"), links to live sites. Opinion: the fastest way to stop footers looking like a link dump.
+- **Link:** https://www.footer.design/
+- **Tier:** 4
+- **Checked:** home page filters and the Editor's Choice list. Lead from the same X post. Accessed 2026-10-23.
+
+### Scrolltide (prompt library, eBook)
+- **Who / what:** A paid library of build prompts for scroll-driven sites: 128 landing page and hero templates (6 free), 66 components, 20 sections (features, pricing, contact, CTA, footer), 55 shader backgrounds, 14 app UI screens, and the eBook "Prompt to Motion" (374 pages, Edition 01, August 2026). Each template has a preview recording of the real build.
+- **Best for:** cinematic scroll mechanics (frame sequences, pinned stages, chapter copy over film), and the method of writing a build as a spec of values with a never-list. Mined into design-motion `references/08-cinematic-scroll.md` and design-playbook-landing `references/build-spec.md`.
+- **Why it meets the bar:** the preview recordings are inspectable builds and each catalogue entry names its mechanism ("240 decoded WebP frames", "plays once and freezes into its own final frame"). Opinion: the best public catalogue of scroll mechanics right now; its own homepage uses a countdown banner and a mid-scroll pop-up, which we do not copy. Prompts are behind a login ($39 a month, $144 a year or $299 once at the time of checking).
+- **Link:** https://www.scrolltide.co/ ; eBook https://www.scrolltide.co/ebook
+- **Tier:** 5 for claims; 4 for the recordings
+- **Checked:** every catalogue page, the "Why Scrolltide" page with its build-prompt excerpt, the eBook page and its 12 public sample spreads, five preview videos, homepage computed styles at 1440 x 900. Accessed 2026-10-23. Research: `kb/research/motion/08-cinematic-scroll.md`.
 
 ### Growth.Design (gallery/teardown)
 - **Who / what:** Illustrated UX case studies (52 listed) that walk through a real product flow and name the psychology at work.
@@ -177,6 +201,7 @@ Where to look when a question spans domains: the X accounts whose shipped work e
 - **Checked:** case studies index page. Accessed 2026-10-10.
 
 ## Considered and dropped
+- **From the Bardhyl Bytyqi X post (2026-10-23):** modulify.ai (an AI site builder, the author's own product, not a reference); wonderlist.design (127 Figma templates sold at $329 to $999 behind a countdown banner; templates, not shipped work); backgrounds.supply (1,273 decorative and AI backgrounds; conflicts with signature move 1, never a gradient blob); on.design (invite-only community behind a login, not inspectable).
 - **Dribbble and Behance:** mostly concept shots, not shipped products; fails "inspectable shipped work".
 - **Large GitHub "design resources" lists** (for example bradtraversy/design-resources-for-developers, about 67k stars): freebie dumps with no editorial bar; designresourc.es and similar directories have the same problem.
 - **Awwwards:** overlaps Godly for inspiration; rewards spectacle over usability (opinion). Not checked further.

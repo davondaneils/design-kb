@@ -1,5 +1,9 @@
 # design-motion changelog
 
+## 0.3 draft (2026-10-23)
+- New `references/08-cinematic-scroll.md`: scroll-driven films, frame sequences, pinned stages and chapters. Fundamentals (the scene must earn its place, three moments move, visible first paint, native scroll, reduced motion tells the story, a phone budget, contrast on the worst frame), a mechanism picker, making the frames (plate and layout, photographer's slots, one change between frames), easing on a cinematic page, 16 expert moves. From Scrolltide, motionin.design and easings.net (`kb/research/motion/08-cinematic-scroll.md`). Not yet through critic or tester.
+- Proposal, not applied: `--ease-reveal` easeOutQuint for marketing reveals (`kb/status/motion.md`).
+
 ## 0.2 (2026-10-10)
 - Render-tested on the coffee landing page and the Tally dashboard (`kb/tests/design-motion.md`, run 2): 16 animations added, filmed in both motion settings, all on the tokens; lint PASS before and after on both pages.
 - Fundamentals fix: easing tokens renamed `--easing-*` to `--ease-*` to match FOUNDATIONS (a gate miss in v0.1); `--motion-scale` renamed `--duration-multiplier`; `--motion-hover/enter/exit` pairs added.
