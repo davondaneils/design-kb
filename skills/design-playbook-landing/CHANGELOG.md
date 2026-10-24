@@ -1,5 +1,9 @@
 # design-playbook-landing changelog
 
+## 2026-10-24 (lessons from the Stand Firm cinematic rebuild)
+- Load step 10: for a cinematic or "wow" brief, read design-motion 08 at the flatplan (step 4) so the story beats and their components are the layout; motion is signed off from a screen recording.
+- `references/build-spec.md`: a FILM block in the skeleton (keyframes, frame sizes, load order, beat table) and expert move 6, each section names its component.
+
 ## 2026-10-23 (from Davon's references: Scrolltide and an X post of resource sites)
 - New `references/build-spec.md`: decide in values before the first line; the sixteen decisions mapped to the skills that answer them, a house never-list, a six-block spec skeleton on our tokens, five expert moves. Loaded at step 2, after the strategy brief.
 - Load step 10 adds design-motion `08-cinematic-scroll.md` for scroll-driven pages; reference map links the build spec, the cinematic reference and the gallery lists.

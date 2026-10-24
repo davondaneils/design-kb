@@ -58,6 +58,13 @@ Moving moments: <1. hero clip plays once, holds last frame> <2. pinned how-it-wo
 Reveals below the fold: opacity + 12px rise, 600ms, --ease-reveal, once.
 Hero H1 never starts at opacity 0. Reduced motion: stills and crossfades.
 
+FILM (only when scroll drives a frame sequence; design-motion 08)
+Source: 4 keyframes in one look, 3 clips with shared seam frames, cut at frame 29.5 under a lightning flash.
+Frames: 137, 1600x900 WebP q52 (about 4.8 MB) plus 540x960 portrait crops for phones (about 1.7 MB).
+Load order: every 8th, 4th, 2nd, 1st. Poster <img> for frame 0. Input smoothing cur += (target - cur) * 0.2.
+Beats (frames in, full, out, gone): b0 -1 -1 5 14 | b1 33 40 58 64 | b2 80 88 100 106 | b3 127 134 end.
+Track 640svh on JS with motion allowed; reduced motion and no JS get stacked stills.
+
 SECTIONS (one block each, in order)
 01 Hero: H1 (value line), one supporting line, one filled action, one proof line.
 02 Proof: one ruled row of three numbers with sources.
@@ -73,3 +80,4 @@ Focus ring 2px, offset 2px, --color-focus-ring. Contrast 4.5:1 body, 3:1 display
 3. **Plan where the empty third goes** before any image is made: which side of each hero or chapter image stays empty and unlit for type (Scrolltide stage 3; design-motion 08, "make the frames").
 4. **Log two columns in the critique loop**: what the build got right on its own, and what a person had to decide. Count turns, not hours (Scrolltide eBook p296). The second column is the material for the next skill update.
 5. **Versions in one place.** Tool and model names live in one dated line of the spec; everything else is mechanism, so the spec survives a tool change (Scrolltide eBook p6).
+6. **Each section names its component.** On a cinematic page the SECTIONS block names the mechanism per beat ("Lie: strike, then Focus Reveal"; "Walls: Zoom Reveal into Scroll Index, 5 chapters"), chosen from design-motion 08's component table. A section with no named component is a still on purpose (Stand Firm v4, `kb/research/motion/08-cinematic-scroll.md` section G).

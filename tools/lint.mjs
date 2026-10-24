@@ -353,6 +353,12 @@ async function lintOne(browser, target, outPath) {
   for (const scheme of ['light', 'dark']) {
     for (const width of MAIN) {
       const { context, page } = await openPage(width, scheme);
+      // Measure from the top of the page. A state that leaves the page scrolled (an error state scrolls to its field) on
+      // a page with scroll-driven stages is caught mid-pose (eased scroll followers still travelling), and the overlay
+      // check reads boxes at the scroll position but pixels from a full-page capture painted in another pose (Stand
+      // Firm v4 error state: header text "1:1" over a solid header, a beat half faded). 600ms lets eased poses settle.
+      await page.evaluate(() => scrollTo(0, 0));
+      await page.waitForTimeout(600);
       await page.addScriptTag({ content: axeSource });
       const res = await page.evaluate(async (tags) => {
         // eslint-disable-next-line no-undef
@@ -909,6 +915,12 @@ async function lintOne(browser, target, outPath) {
         .filter((e) => window.__lint.visible(e) || e.matches('a[href^="#"]'))
         .filter((e) => !main.contains(e) && (main.compareDocumentPosition(e) & Node.DOCUMENT_POSITION_PRECEDING));
       return { main: true, count: f.length };
+    });
+    // A state that leaves focus in the page (an error state focuses the bad field, as it should) would start the Tab
+    // walk mid-page and fail the skip link for the wrong reason: restart sequential focus at the top of the document.
+    await page.evaluate(() => {
+      if (!document.activeElement || document.activeElement === document.body) return;
+      const t = document.createElement('span'); t.tabIndex = -1; document.body.prepend(t); t.focus({ preventScroll: true }); t.remove();
     });
     for (let i = 0; i < Math.min(count + 2, 200); i++) {
       await page.keyboard.press('Tab');

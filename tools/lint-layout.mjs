@@ -11,7 +11,8 @@
 //                 against 80px), so in-page jumps and Shift+Tab land under it (WCAG 2.4.11)
 //   overflow      horizontal scroll at any lint width, not only 390
 //   run-together  text in two separate boxes (cells, flex items) that sits on one line with less than 0.2em
-//                 between them, so it reads as one word ("Sep 30$2.62", "Pauseupdates")
+//                 between them, so it reads as one word ("Sep 30$2.62", "Pauseupdates"); sibling one-letter boxes
+//                 (a word split per letter for kinetic type) are one word on purpose and pass
 //   word-break    a word split across two lines inside a control, label or table cell ("Pour-" / "over"),
 //                 or text that runs into the control's padding; elsewhere a mid-word break is a warning
 //   double-space  a flex or grid gap next to a no-break space at an item's edge, or two spaces in a row where one is
@@ -140,7 +141,11 @@ export async function layoutChecks(page, width) {
         const touchesWS = /\s$/.test(prev.text) || /^\s/.test(cur.text);
         const lastA = aEnd.slice(-1), firstB = bStart.charAt(0);
         const joinable = /[\p{L}\p{N}.)]/u.test(lastA) && /[\p{L}\p{N}$€£(#+−]/u.test(firstB) && !(/\p{N}/u.test(lastA) && UNIT_AFTER.test(bStart));
-        if (vo > Math.min(a.height, b.height) * 0.5 && gap < Math.max(2, fsz * 0.2) && gap > -fsz && !touchesWS && joinable) {
+        // One word split into a box per letter for kinetic type (Stand Firm v4 footer: each letter rises on its own):
+        // sibling boxes holding one character each are one word on purpose, so the letters are meant to touch.
+        const word = (x) => (x.parentElement.childElementCount === 1 ? x.parentElement.parentElement : x.parentElement); // a letter may sit in its own mask box
+        const splitWord = word(prev.box) === word(cur.box) && [...aEnd].length === 1 && [...bStart].length === 1;
+        if (vo > Math.min(a.height, b.height) * 0.5 && gap < Math.max(2, fsz * 0.2) && gap > -fsz && !touchesWS && joinable && !splitWord) {
           out.together.push({ sel: L.sel(el), prevSel: L.sel(prev.el), gap: Math.round(gap * 10) / 10, text: (aEnd.slice(-14) + bStart.slice(0, 14)).replace(/\s+/g, ' ') });
         }
       }
