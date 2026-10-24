@@ -918,8 +918,9 @@ async function lintOne(browser, target, outPath) {
     });
     // A state that leaves focus in the page (an error state focuses the bad field, as it should) would start the Tab
     // walk mid-page and fail the skip link for the wrong reason: restart sequential focus at the top of the document.
+    // A URL with a #fragment does the same with focus still on body (the fragment is the focus starting point), so
+    // restart every time (Stand Firm buy page, ?state=quiz lands on #buy).
     await page.evaluate(() => {
-      if (!document.activeElement || document.activeElement === document.body) return;
       const t = document.createElement('span'); t.tabIndex = -1; document.body.prepend(t); t.focus({ preventScroll: true }); t.remove();
     });
     for (let i = 0; i < Math.min(count + 2, 200); i++) {
