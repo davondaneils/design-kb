@@ -60,17 +60,17 @@ try {
       const page = await context.newPage();
       try {
         await page.goto(toUrl(opts.target), { waitUntil: isRemote ? 'domcontentloaded' : 'load', timeout: 45000 });
-        if (isRemote) {
-          await page.waitForLoadState('networkidle', { timeout: 15000 }).catch(() => {});
-          // Scroll through once so lazy images load, then return to top.
-          await page.evaluate(async () => {
-            const step = window.innerHeight;
-            const max = Math.min(document.body.scrollHeight, 20000);
-            for (let y = 0; y < max; y += step) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 150)); }
-            window.scrollTo(0, 0);
-          }).catch(() => {});
-          await page.waitForTimeout(800);
-        }
+        if (isRemote) await page.waitForLoadState('networkidle', { timeout: 15000 }).catch(() => {});
+        // Scroll through once so lazy images load and observers fire, then return to top. Local files too:
+        // a full-page shot taken from the top leaves every loading="lazy" image blank (Stand Firm v3 was judged
+        // from renders with four empty chapters because this step only ran for remote URLs).
+        await page.evaluate(async () => {
+          const step = window.innerHeight;
+          const max = Math.min(document.body.scrollHeight, 20000);
+          for (let y = 0; y < max; y += step) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 120)); }
+          window.scrollTo(0, 0);
+        }).catch(() => {});
+        await page.waitForTimeout(600);
         await page.evaluate(() => document.fonts && document.fonts.ready).catch(() => {});
         const ext = opts.jpeg ? 'jpg' : 'png';
         const file = path.join(opts.outdir, `${base}-${width}-${scheme}.${ext}`);

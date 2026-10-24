@@ -53,7 +53,7 @@ Add to it as the job goes: each new trigger, each file read, each decision a per
 
 ## 4. Hand-over gate (required, not optional)
 1. `node tools/check.mjs <page.html> [--states a,b] [--sells] [--private]` from the repo root (after `npm ci` in `tools/`). It runs the brief lint, renders at 390, 768, 1024 and 1440, the fundamentals lint, the claims inventory, the search check, the conversion and icon audits when they apply, the CSS audit and the polish audit, and writes `check-<page>/check-report.md`. It must exit 0. Fix every FAIL; read every WARN.
-2. Do every judged step the report lists (director section 5 steps 1, 3, 7 to 13), ticking each with what you saw. Motion is judged from a recording, never from screenshots.
+2. Do every judged step the report lists (director section 5 steps 1, 3, 7 to 13), ticking each with what you saw. Motion is judged from a recording, never from screenshots. Before judging a section, count its pictures in the render against its `<img>` tags: a section judged without its images is not judged (Stand Firm v3: four empty chapters passed a critic because the renders had skipped every lazy image).
 3. A fresh-context critic pass (director section 5 step 13), or the hand-over says "gate not claimed: self-review only".
 4. The hand-over attaches `design-log.md` and `check-report.md`, then names the three biggest gaps against the exemplars.
 

@@ -45,6 +45,7 @@ Sources: kb/research/frontend/05-images-fonts.md. Opinion is marked (opinion).
 | Decorative background in CSS | fine, never for the LCP element |
 - Always set `width` and `height` (any pair in the right ratio) so the browser reserves space. With `img { height: auto }` in the reset the CSS width still controls the size.
 - Chrome starts fetching lazy images about 1250px before they enter the viewport on 4G; you cannot tune it (web.dev).
+- A lazy image is blank in any full-page capture taken from the top without scrolling. `tools/render.mjs` scrolls through every page first (fixed 2026-10-24; before that only remote URLs scrolled, and four chapter photos were missing from every Stand Firm v3 render). A screenshot script of your own must do the same, or mark the images it judges `loading="eager"` for the run.
 
 ## Fonts
 Strategy decision:

@@ -57,6 +57,7 @@ One page for a single product or subscription; a stepped flow when shipping meth
 4. **The summary never leaves.** On phones a sticky one-line "Total $18, every 2 weeks" bar opens the full summary; the pay button repeats the amount.
 5. **Defer every question that can wait.** Grind preference, brew method and delivery day can be asked on the confirmation page with defaults applied. Each one moved out of checkout is a field the buyer does not pay for. Opinion built on C9 and C10.
 6. **Sign-up is one field.** Trials and newsletters ask for email only, with the next step stated ("We will email a sign-in link"). Every extra field needs a reason the user would accept.
+7. **The lead page's result is drawn into the checkout.** When a quiz or calculator feeds the sale, pass its result as data (wall name and four scores in the query string, validated as 0 to 100 on arrival) and redraw it where the buyer decides: the Stand Firm checkout shows the dad's own four-wall plan, low wall dashed, beside "Mark, your plan starts with your Brothers wall. The other three are already standing." The same data writes one line under the hero lede and tags the matching chapter. A banner that restates the result is the floor; a figure the buyer watched himself build, back on the page that sells the fix, is the move (Stand Firm v4, 2026-10-24).
 
 ## Do and don't
 | Do | Don't |
