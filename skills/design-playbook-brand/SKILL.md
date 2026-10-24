@@ -13,6 +13,7 @@ An identity is a system that has to work at 16px and on a billboard, in one colo
 3. **Name what you did not build** in one line of the hand-over ("Not built: guidelines page, logo kit; say if you want them"). Never pad the delivery to look complete (opinion).
 
 ## 1. Load in this order
+Preflight first, even when this playbook triggered on its own: design-director `references/preflight.md` (trigger table, read log in `design-log.md`, hand-over gate with `node tools/check.mjs`).
 1. **design-foundations** (always): tokens and the accessibility floor apply to every brand color and type choice used on screen.
 2. **design-strategy** at the depth section 0 sets (it routes to website-strategy for full depth); `references/05-strategy-to-visual-identity.md` for the identity decision table, distinctive assets, category codes and the asset audit. No mark before the brief.
 3. **design-graphic**: `references/01-logo-identity.md` (concept, competitor wall, mark types, clear space, minimum sizes).

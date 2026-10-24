@@ -1,13 +1,16 @@
 ---
 name: design-director
-description: Entry point for any design job that produces a page, screen or brand: "design a landing page", "build a homepage", "make a dashboard", "design this app screen", "settings page", "internal tool", "brand identity", "make it look like Stripe or Linear", "redesign this UI", "make this look professional", "position this brand", "brand strategy for a site", "who is this page for". Always loads design-foundations, picks the job playbook, pulls the domain references the playbook names, and ends with a render, lint, fact, search and exemplar loop (max 3 rounds). Not for a single narrow question inside one domain (for example "check this contrast ratio").
+description: Entry point for any design job that produces a page, screen or brand: "design a landing page", "build a homepage", "make a dashboard", "design this app screen", "settings page", "internal tool", "brand identity", "make it look like Stripe or Linear", "redesign this UI", "make this look professional", "position this brand", "brand strategy for a site", "who is this page for". Starts with references/preflight.md (read order, trigger table, read log), always loads design-foundations, picks the job playbook, pulls the domain references the playbook names, and ends with a render, lint, fact, search and exemplar loop (max 3 rounds). Not for a single narrow question inside one domain (for example "check this contrast ratio").
 ---
 
 # design-director
 
 You are the art director. You do not hold the deep knowledge; you load the right layers in the right order, make the parts agree, and check the result on real pixels before you hand it over.
 
-## 1. The three layers
+## 0. Preflight
+Read `references/preflight.md` first, every job: the load order, the trigger table that adds files when the work touches fonts, color, imagery, motion, conversion or data, and the read log (`design-log.md`) the hand-over attaches. Where each resource and tool lives: `references/resource-index.md`.
+
+## 1. The layers
 | Layer | Skills | When |
 |---|---|---|
 | Foundations | design-foundations | Always, first. Tokens, the 16-item gate, accessibility, content mechanics. |
@@ -34,7 +37,7 @@ What each reference is for, in one line:
 | design-search | technical SEO, on-page, structured data, AI answers, the built-page gate (`assets/search-check.mjs`) |
 | design-data | the data layer behind a screen: schema, access rules, API, auth, and what each data decision lets the screen truthfully show (reference 07) |
 
-The user's own skills plug in where a playbook or design-strategy says: website-strategy (full discovery and client proposals, routed by design-strategy), crafting-voice-identity (a full voice guide), copywriting, sales-funnels, dataviz. UI pattern examples (what the best shipped products do, linked): `kb/references/patterns/`.
+The user's own skills plug in where a playbook or design-strategy says: website-strategy (full discovery and client proposals, routed by design-strategy), crafting-voice-identity (a full voice guide), copywriting, sales-funnels, dataviz. UI pattern examples (what the best shipped products do, linked): `kb/references/patterns/`. The reference library (books, practitioners, galleries, Scrolltide, easings.net): `kb/references/`, indexed in `references/resource-index.md`.
 
 ## 2. Always first
 1. Load **design-foundations**. Use its token names and values; FOUNDATIONS wins any disagreement between domains. Flag the conflict.
@@ -79,6 +82,8 @@ The user's own skills plug in where a playbook or design-strategy says: website-
 - **Build proof** (design-frontend): lint, `css-audit.mjs`, a pixel diff for any refactor, `vitals.mjs` and `weight.mjs`, with the numbers in the delivery note.
 
 ## 5. Self-critique loop (always, before you hand over)
+Run the automated half in one command: `node tools/check.mjs page.html --states a,b [--sells] [--private]`. It runs steps 1 to 6, the CSS audit and the polish audit, writes `check-<page>/check-report.md` with a pass or fail per step and the judged steps still to do, and exits 1 on any fail. The steps below say what each check is and what stays judged.
+
 1. **Render** every state the page has, not only the default: `node tools/render.mjs page.html out/ --widths 390,768,1024,1440` (light and dark), each `?state=` URL and the state sheet. Tablet failures (a 700px-tall image at 768, crowded art at 1024) are invisible at 390 and 1440. Render in-page states full page and dialog states with `--viewport-only`. Look at every screenshot.
 2. **Lint**: `node tools/lint.mjs page.html --states state=a,state=b` and the state sheet. The layout checks run at 390, 768, 1024 and 1440 by default (`--widths`; never narrow it to 390 and 1440): controls covered by other elements (`occlusion`), squashed flex children and one-word-per-line text (`squash`), sticky bars taller than `scroll-padding-top`, text in separate boxes running together ("Sep 30$2.62", `run-together`), words broken inside controls and cells (`word-break`), sibling columns off a shared edge (`grid-edge`), blank controls (`hidden-content`) and state sheet coverage. The `truth` and `proportion` checks drive 3 live updates (`--ticks`) and compare related numbers. Fix every fail. Read every warning and decide. Every check here passed on round 3 while a clean-context critic found 7 gate failures by eye; these checks now flag a finding behind each of the 7 (some as warnings), and the parts they cannot see stay judged (step 10).
 3. **Fact check**: `node skills/design-copy/assets/claims_inventory.mjs page.html --year <year>`, and with `--render` for strings built by script and for each `?state=` URL. It must exit 0 (wrong weekday, mixed clocks, relative dates in money copy). Fix or name in the hand-over every `PROMISE` warning (one promise said with two values: "48 h" against "ship the next day"; "tasted twice" against "Two of us taste") and every `PERIOD` warning (more than one comparison basis on one page). Then tick every listed claim against its source (chart data, price list, log), **in every state and after one live update**, not only the first frame of the default state. Fluent copy is not checked copy: three false numbers once passed the critic, the tester and a blind rank, and round 3 showed numbers in an empty state that it cannot have. Check states and numbers against the data-to-screen contract table (design-data SKILL.md, output format) when one exists. Every public claim also has a row in the strategy brief's claims ledger (design-strategy `references/06-checking-a-strategy.md`): "only", "first" and "fastest" ship only with evidence held (FTC reasonable basis; CAP Code 3.7), otherwise the page says the underlying fact.
