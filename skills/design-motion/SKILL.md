@@ -20,7 +20,7 @@ A motion proposal that misses any one of these fails, however polished the rest 
 3. **Never block.** Input stays live during every animation; any animation can be interrupted and retargeted (Apple HIG: "let people cancel motion").
 4. **Tokens only, in CSS and in scripts.** Durations and easing come from the shared tokens (section 2); scripts read them with `getComputedStyle`. No ad hoc `0.35s ease-in-out`. Every entry of a `transition` list names a curve: an entry without one runs on `ease`, the initial value (MDN), even `visibility`.
 5. **Within the band.** UI people trigger stays between 100 and 400 ms; nothing repeated exceeds 500 ms (NN/g); only marketing storytelling reaches 600 ms. Exits are one token shorter than entrances.
-6. **Right curve.** Enter decelerates, permanent exit accelerates, on-screen moves use standard, continuous motion is linear, anything dragged or flicked is a spring. Never `linear` on an object that starts and stops. A reveal whose x axis is time (a log, a price history) is a clock, not an object: linear (reference 07).
+6. **Right curve.** Enter decelerates (a marketing reveal decelerates on `--ease-reveal`), permanent exit accelerates, on-screen moves use standard, continuous motion is linear, anything dragged or flicked is a spring. Never `linear` on an object that starts and stops. A reveal whose x axis is time (a log, a price history) is a clock, not an object: linear (reference 07).
 7. **Reduced motion is designed, not deleted.** Under `prefers-reduced-motion: reduce`, movement (translate, scale, rotate, parallax, zoom) is replaced by a crossfade or instant change at the same or shorter token; decorative loops stop; meaning survives (Apple reduced-motion criteria; WCAG 2.3.3).
 8. **WCAG floor.** Auto-playing motion over 5 s beside content has a pause control (2.2.2, A), and so does auto-updating content such as a live KPI (2.2.2 covers both). Never more than 3 flashes per second (2.3.1, A). Hover or focus content stays dismissible and hoverable (1.4.13, AA). Drag has a non-drag alternative (2.5.7, AA). Motion is never the only carrier of meaning.
 9. **Compositor only.** Animate `transform` and `opacity`. Never `width`, `height`, `top`, `left`, `margin`, `padding` or `box-shadow` directly (web.dev).
@@ -34,10 +34,11 @@ A motion proposal that misses any one of these fails, however polished the rest 
 --duration-fast:    150ms;  /* tooltip, small popover, dropdown, fades, most exits */
 --duration-base:    200ms;  /* 200 to 250: menu, dialog, accordion, toast */
 --duration-slow:    300ms;  /* 300 to 400: drawer, sheet, shared element */
---duration-page:    400ms;  /* route change; 600 is the ceiling, not the token (FOUNDATIONS v0.4.5) */
+--duration-page:    400ms;  /* route change; 600 is the ceiling, not the token (FOUNDATIONS v0.4.6) */
 --ease-standard: cubic-bezier(0.2, 0, 0, 1);  /* on-screen move or resize */
 --ease-enter:    cubic-bezier(0, 0, 0, 1);    /* decelerate: arriving */
 --ease-exit:     cubic-bezier(0.3, 0, 1, 1);  /* accelerate: leaving for good */
+--ease-reveal:   cubic-bezier(0.22, 1, 0.36, 1); /* easeOutQuint: marketing reveals only (FOUNDATIONS v0.4.5) */
 /* Semantic pairs (FOUNDATIONS --motion-*), for transition shorthands */
 --motion-hover: var(--duration-instant) var(--ease-standard);
 --motion-enter: var(--duration-base) var(--ease-enter);
@@ -133,6 +134,7 @@ Then: the job each row does (section 1, rule 1), interruption behavior, WCAG not
 | `references/05-accessibility-performance.md` | Reduced-motion matrix, WCAG detail, vestibular triggers, performance rules, audits |
 | `references/06-implementation.md` | Code: CSS, `@starting-style`, WAAPI, View Transitions, Motion (React), Lottie and dotLottie |
 | `references/07-motion-on-real-pages.md` | Charts, live numbers, label swaps, modality-aware dialogs, and how to film and time motion on a rendered page |
+| `references/08-cinematic-scroll.md` | Scroll-driven films, frame sequences, pinned stages and chapters on marketing pages; making the frames; easing on a cinematic page |
 | `assets/motion-tokens.css` | Drop-in token file, with the `--motion-*` pairs and the script pattern for reading tokens |
 | `assets/motion-audit.mjs` | Films each animation (no-preference and reduce rows) and checks durations, curves, properties and reduce against the tokens. Usage: `node skills/design-motion/assets/motion-audit.mjs <scenarios.mjs> <outdir>`; example scenarios `kb/tests/design-motion/scenarios.mjs` |
 

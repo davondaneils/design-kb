@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Halden Hearing: free hearing tests in Clifton, Bristol</title>
+<meta name="description" content="Free 90-minute hearing tests in Clifton, Bristol, with independent audiologists Priya Nair and Tom Ashby. No commission. Hearing aids from £1,495 a pair.">
+<link rel="canonical" href="https://haldenhearing.example/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Halden Hearing">
+<meta property="og:title" content="Halden Hearing: free hearing tests in Clifton, Bristol">
+<meta property="og:description" content="Ninety minutes to find the words you have been missing. Two independent audiologists, no commission.">
+<meta property="og:url" content="https://haldenhearing.example/">
+<meta property="og:image" content="https://haldenhearing.example/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The sentence 'Are you coming for Sunday lunch?' shown twice: once with the f and the S missing, once in full, beside the Halden wordmark.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#4f2038" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#361426" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="{{FAVSVG}}" type="image/svg+xml">
+<link rel="icon" href="{{FAVPNG}}" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="{{FAVPNG}}">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://haldenhearing.example/#website",
+      "name": "Halden Hearing",
+      "url": "https://haldenhearing.example/"
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://haldenhearing.example/#clinic",
+      "name": "Halden Hearing",
+      "url": "https://haldenhearing.example/",
+      "telephone": "0117 496 0732",
+      "logo": "https://haldenhearing.example/logo-512.png",
+      "image": "https://haldenhearing.example/og.png",
+      "priceRange": "£65 to £3,995",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Clifton Village",
+        "addressLocality": "Bristol",
+        "postalCode": "BS8",
+        "addressCountry": "GB"
+      },
+      "employee": [
+        { "@type": "Person", "name": "Priya Nair", "jobTitle": "Audiologist" },
+        { "@type": "Person", "name": "Tom Ashby", "jobTitle": "Audiologist" }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+{{FONTS}}
+@font-face {
+  font-family: "Halden Literata fallback";
+  src: local("Georgia"), local("Times New Roman"), local("Liberation Serif");
+  size-adjust: 118.21%; ascent-override: 99.57%; descent-override: 26.06%; line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Halden Literata fallback";
+  font-style: italic;
+  src: local("Georgia Italic"), local("Times New Roman Italic"), local("Liberation Serif Italic");
+  size-adjust: 114.11%; ascent-override: 103.15%; descent-override: 26.99%; line-gap-override: 0%;
+}
+
+/* ---------- Tokens (FOUNDATIONS v0.4.4 names) ---------- */
+:root {
+  color-scheme: light dark;
+
+  /* Primitives: damson H350 C0.12, ochre H75 C0.14 (shift -15), warm neutral H60 C0.014 (oklch_scale.py) */
+  --color-damson-200: #f7c8dd;
+  --color-damson-300: #eea9c9;
+  --color-damson-600: #9e4b75;
+  --color-damson-700: #843b61;
+  --color-damson-800: #692c4c;
+  --color-damson-900: #4f2038;
+  --color-damson-950: #361426;
+  --color-damson-975: #2a0f1d;
+  --color-ochre-300: #e6b970;
+  --color-ochre-500: #b97d00;
+  --color-paper-50: #fbf6ee;
+  --color-paper-100: #f3ebdf;
+  --color-paper-200: #e6dccd;
+  --color-neutral-300: #c6bfba;
+  --color-neutral-400: #aba39c;
+  --color-neutral-500: #918982;
+  --color-neutral-700: #5e5651;
+  --color-neutral-800: #4a443f;
+  --color-neutral-900: #36322e;
+  --color-neutral-950: #24211e;
+  --color-neutral-975: #1c1917;
+  --color-neutral-990: #13110f;
+  --color-brand: #4f2038;
+
+  /* Roles, light and dark (remapped, never inverted) */
+  --color-bg: light-dark(var(--color-paper-50), var(--color-neutral-990));
+  --color-surface: light-dark(var(--color-paper-100), var(--color-neutral-975));
+  --color-surface-sunken: light-dark(var(--color-paper-200), var(--color-neutral-950));
+  --color-text: light-dark(var(--color-neutral-950), var(--color-paper-50));
+  --color-text-muted: light-dark(var(--color-neutral-800), var(--color-neutral-300));
+  --color-text-muted-on-tint: light-dark(var(--color-neutral-800), var(--color-neutral-300));
+  --color-border: light-dark(var(--color-paper-200), var(--color-neutral-900));
+  --color-border-strong: light-dark(var(--color-neutral-500), var(--color-neutral-500));
+  --color-primary: light-dark(var(--color-damson-800), var(--color-damson-300));
+  --color-primary-hover: light-dark(var(--color-damson-900), var(--color-damson-200));
+  --color-primary-active: light-dark(var(--color-damson-950), var(--color-paper-100));
+  --color-on-primary: light-dark(var(--color-paper-50), var(--color-damson-950));
+  --color-accent: light-dark(var(--color-damson-700), var(--color-damson-300));
+  --color-link: light-dark(var(--color-damson-800), var(--color-damson-200));
+  --color-focus-ring: light-dark(var(--color-damson-700), var(--color-ochre-300));
+  --color-logo-bar: light-dark(var(--color-ochre-500), var(--color-ochre-300));
+  --color-illustration-accent: var(--color-ochre-300);
+  --color-feature: light-dark(var(--color-damson-900), var(--color-damson-975));
+  --color-on-feature: var(--color-paper-50);
+  --color-on-feature-muted: var(--color-damson-200);
+
+  --state-hover: color-mix(in oklch, var(--color-text) 8%, transparent);
+  --state-focus: color-mix(in oklch, var(--color-text) 10%, transparent);
+  --state-pressed: color-mix(in oklch, var(--color-text) 10%, transparent);
+
+  --space-0: 0; --space-1: 2px; --space-2: 4px; --space-3: 8px; --space-4: 12px; --space-5: 16px;
+  --space-6: 24px; --space-7: 32px; --space-8: 48px; --space-9: 64px; --space-10: 96px; --space-11: 128px;
+  --space-gutter: var(--space-5);
+  --space-section: var(--space-9);
+
+  --text-xs: 0.75rem; --text-sm: 0.875rem; --text-base: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem;
+  --text-2xl: 1.9375rem; --text-3xl: 2.4375rem; --text-4xl: 3.0625rem; --text-5xl: 3.8125rem;
+  --text-display: clamp(3.0625rem, 1.9rem + 4vw, 5.5rem);
+  --text-display-2: clamp(2.4375rem, 1.9rem + 2.2vw, 3.8125rem);
+  --text-sentence: var(--text-2xl);
+  --leading-tight: 1.1; --leading-snug: 1.25; --leading-normal: 1.5;
+  --weight-regular: 400; --weight-medium: 500; --weight-semibold: 600; --weight-bold: 700;
+  --size-measure: 52ch;
+
+  --font-serif: "Halden Literata", "Halden Literata fallback", Georgia, serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI Variable Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --radius-none: 0; --radius-sm: 4px; --radius-md: 8px; --radius-lg: 12px; --radius-full: 9999px;
+  --radius-control: var(--radius-md);
+  --size-control-lg: 48px;
+
+  --duration-instant: 100ms; --duration-fast: 150ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --motion-hover: var(--duration-instant) var(--ease-standard);
+}
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
+.theme-feature {
+  --color-text: var(--color-on-feature);
+  --color-text-muted: var(--color-on-feature-muted);
+  --color-primary: var(--color-paper-50);
+  --color-primary-hover: var(--color-paper-100);
+  --color-primary-active: var(--color-paper-200);
+  --color-on-primary: var(--color-damson-950);
+  --color-link: var(--color-paper-50);
+  --color-focus-ring: var(--color-ochre-300);
+  --color-logo-bar: var(--color-ochre-300);
+  --color-border: var(--color-damson-700);
+}
+@media (min-width: 40rem) { :root { --space-gutter: var(--space-6); } }
+@media (min-width: 64rem) { :root { --space-gutter: var(--space-8); --space-section: var(--space-10); } }
+@media (min-width: 80rem) { :root { --space-section: var(--space-11); } }
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-padding-top: var(--space-6); -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--color-bg); color: var(--color-text);
+  font-family: var(--font-sans); font-size: var(--text-lg); line-height: var(--leading-normal);
+  font-synthesis: none; -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, p, ul, dl, dd, figure { margin: 0; }
+a { color: var(--color-link); text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: 0; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.nb { white-space: nowrap; }
+.skip { position: absolute; left: var(--space-5); top: var(--space-3); padding: var(--space-3) var(--space-5); background: var(--color-bg); color: var(--color-text); border-radius: var(--radius-control); transform: translateY(-200%); }
+.skip:focus-visible { transform: none; }
+.wrap { max-inline-size: 76rem; margin-inline: auto; padding-inline: var(--space-gutter); }
+
+/* ---------- Feature field (hero) ---------- */
+.feature { background: var(--color-feature); color: var(--color-text); }
+.masthead { display: flex; align-items: center; justify-content: space-between; gap: var(--space-5); padding-block: var(--space-5); }
+.home-link { display: inline-flex; align-items: center; min-block-size: var(--size-control-lg); color: var(--color-text); border-radius: var(--radius-sm); }
+.wordmark { display: block; block-size: 26px; inline-size: auto; }
+.wordmark-bar { fill: var(--color-logo-bar); }
+.phone { display: inline-flex; align-items: center; min-block-size: var(--size-control-lg); font-size: var(--text-base); font-weight: var(--weight-semibold); }
+.phone .label { display: none; color: var(--color-text-muted); font-weight: var(--weight-regular); margin-inline-end: var(--space-3); }
+
+.hero { display: grid; gap: var(--space-6); padding-block: var(--space-7) var(--space-section); }
+.eyebrow { font-size: var(--text-base); font-weight: var(--weight-semibold); color: var(--color-text-muted); margin-block-end: var(--space-5); }
+.hero h1 {
+  font-family: var(--font-serif); font-weight: var(--weight-medium); font-size: var(--text-display);
+  line-height: 1.02; letter-spacing: -0.015em; text-wrap: balance; max-inline-size: 20ch;
+  translate: -0.03em 0;
+}
+.hero h1 em { font-style: italic; }
+.lede { margin-block-start: var(--space-6); max-inline-size: 30rem; color: var(--color-text); }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4) var(--space-6); margin-block-start: var(--space-7); }
+.button {
+  display: inline-flex; align-items: center; justify-content: center; min-block-size: var(--size-control-lg);
+  padding-inline: var(--space-6); border-radius: var(--radius-control);
+  background: var(--color-primary); color: var(--color-on-primary);
+  font: var(--weight-semibold) var(--text-lg)/1.2 var(--font-sans); text-decoration: none;
+  transition: background-color var(--motion-hover);
+}
+.button:hover { background: var(--color-primary-hover); }
+.button:active { background: var(--color-primary-active); }
+.actions .call { display: inline-flex; align-items: center; min-block-size: var(--size-control-lg); font-size: var(--text-lg); }
+.reassure { margin-block-start: var(--space-5); font-size: var(--text-base); color: var(--color-text-muted); }
+
+/* The concept: one sentence, as heard and as said */
+.sentence { border-block-start: 1px solid var(--color-border); padding-block-start: var(--space-6); margin-block-start: var(--space-6); max-inline-size: 34rem; }
+.sentence dl { display: grid; gap: var(--space-6); }
+.sentence dt { font-size: var(--text-base); font-weight: var(--weight-semibold); color: var(--color-text-muted); margin-block-end: var(--space-2); }
+.sentence dd { font-family: var(--font-serif); font-size: var(--text-sentence); line-height: var(--leading-snug); letter-spacing: -0.005em; }
+.heard { font-style: italic; }
+.gap {
+  display: inline-block; inline-size: 0.5em; block-size: 0.09em; margin-inline-end: 0.06em;
+  background: var(--color-illustration-accent); vertical-align: 0.02em; border-radius: var(--radius-full);
+}
+.said mark {
+  background: none; color: inherit;
+  text-decoration: underline; text-decoration-color: var(--color-illustration-accent);
+  text-decoration-thickness: 0.09em; text-underline-offset: 0.16em;
+}
+.sentence figcaption { margin-block-start: var(--space-6); font-size: var(--text-base); color: var(--color-text-muted); max-inline-size: 30rem; }
+.sentence figcaption a { color: var(--color-text-muted); }
+
+/* ---------- Section 2: why time, and what it costs ---------- */
+.why { padding-block: var(--space-section); }
+.why-grid { display: grid; gap: var(--space-8); }
+.why h2 {
+  font-family: var(--font-serif); font-weight: var(--weight-medium); font-size: var(--text-display-2);
+  line-height: var(--leading-tight); letter-spacing: -0.01em; text-wrap: balance; max-inline-size: 16ch;
+}
+.story { margin-block-start: var(--space-6); display: grid; gap: var(--space-5); max-inline-size: var(--size-measure); }
+.source { font-size: var(--text-base); color: var(--color-text-muted); }
+.source a { color: var(--color-text-muted); }
+.promises { list-style: none; padding: 0; margin-block-start: var(--space-7); display: grid; gap: var(--space-5); max-inline-size: var(--size-measure); }
+.promises li { display: grid; grid-template-columns: var(--space-6) 1fr; gap: var(--space-4); }
+.promises li::before {
+  content: ""; inline-size: var(--space-6); block-size: 4px; margin-block-start: 0.7em;
+  background: var(--color-logo-bar); border-radius: var(--radius-full);
+}
+.promises strong { font-weight: var(--weight-semibold); }
+
+.ledger { align-self: start; border-block-start: 2px solid var(--color-text); padding-block-start: var(--space-5); }
+.ledger h3 { font-size: var(--text-base); font-weight: var(--weight-semibold); color: var(--color-text-muted); }
+.ledger dl { margin-block-start: var(--space-3); }
+.ledger .row { display: grid; gap: var(--space-2); padding-block: var(--space-5); border-block-end: 1px solid var(--color-border-strong); }
+.ledger dt { font-size: var(--text-lg); font-weight: var(--weight-semibold); }
+.ledger .price {
+  font-family: var(--font-serif); font-weight: var(--weight-medium); font-size: var(--text-2xl);
+  line-height: var(--leading-snug); font-variant-numeric: tabular-nums lining-nums; letter-spacing: -0.01em;
+}
+.ledger .note { font-size: var(--text-base); color: var(--color-text-muted); }
+.ledger .next { margin-block-start: var(--space-6); display: grid; gap: var(--space-4); justify-items: start; }
+.ledger .next p { font-size: var(--text-base); color: var(--color-text-muted); }
+
+/* ---------- Footer ---------- */
+.foot { border-block-start: 1px solid var(--color-border-strong); padding-block: var(--space-8); font-size: var(--text-base); }
+.foot-grid { display: grid; gap: var(--space-6); }
+.foot .wordmark { block-size: 22px; color: var(--color-text); }
+.foot address { font-style: normal; color: var(--color-text-muted); margin-block-start: var(--space-4); }
+.foot nav ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-6); }
+.foot nav a { display: inline-flex; align-items: center; min-block-size: var(--size-control-lg); }
+
+@media (min-width: 48rem) {
+  .wordmark { block-size: 30px; }
+  .phone .label { display: inline; }
+  .ledger .price { font-size: var(--text-3xl); }
+}
+@media (min-width: 64rem) {
+  .hero { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "head head" "copy art"; column-gap: var(--space-9); row-gap: var(--space-7); align-items: start; padding-block: var(--space-6) var(--space-8); }
+  .why { padding-block-start: var(--space-10); }
+  .hero-head { grid-area: head; } .hero-copy { grid-area: copy; } .sentence { grid-area: art; margin-block-start: 0; }
+  .wordmark { block-size: 34px; }
+  .why-grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: var(--space-9); }
+  .foot-grid { grid-template-columns: 1fr auto; align-items: end; }
+}
+@media (prefers-reduced-motion: reduce) { .button { transition: none; } }
+@media (forced-colors: active) { .gap { background: CanvasText; } .promises li::before { background: CanvasText; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="feature theme-feature">
+  <header class="wrap masthead">
+    <a class="home-link" href="/" aria-label="Halden Hearing, home">{{MARK}}</a>
+    <a class="phone" href="tel:+441174960732"><span class="label">Call us</span><span class="nb">0117&nbsp;496&nbsp;0732</span></a>
+  </header>
+  <main id="main">
+    <section class="wrap hero" aria-labelledby="hero-title">
+      <div class="hero-head">
+        <p class="eyebrow">Independent audiologists in Clifton, Bristol</p>
+        <h1 id="hero-title">Ninety minutes to find the words you’ve been <em>missing.</em></h1>
+      </div>
+      <div class="hero-copy">
+        <p class="lede">A free hearing test with one of us, Priya Nair or Tom Ashby. We are not paid commission, so the test is about your hearing, not a sale.</p>
+        <div class="actions">
+          <a class="button" href="/book/">Book a free hearing test</a>
+          <a class="call" href="tel:+441174960732"><span>or call <span class="nb">0117&nbsp;496&nbsp;0732</span></span></a>
+        </div>
+        <p class="reassure">90&nbsp;minutes. Free. No obligation to buy anything.</p>
+      </div>
+      <figure class="sentence" aria-labelledby="sentence-cap">
+        <dl>
+          <div>
+            <dt>What you might hear</dt>
+            <dd class="heard"><span aria-hidden="true">Are you coming <span class="nb"><span class="gap"></span>or</span> <span class="nb"><span class="gap"></span>unday</span> lunch?</span><span class="sr-only">Are you coming, gap, or, gap, unday lunch? The f and the S are missing.</span></dd>
+          </div>
+          <div>
+            <dt>What was said</dt>
+            <dd class="said">Are you coming <mark>f</mark>or <mark>S</mark>unday lunch?</dd>
+          </div>
+        </dl>
+        <figcaption id="sentence-cap">Age-related hearing loss often takes the quiet, high sounds first, such as s, f and th. Voices stay loud; words go missing. Source: <a href="https://medlineplus.gov/ency/article/001045.htm">MedlinePlus</a>.</figcaption>
+      </figure>
+    </section>
+  </main>
+</div>
+
+<section class="why" aria-labelledby="why-title">
+  <div class="wrap why-grid">
+    <div>
+      <h2 id="why-title">We left a national chain to give hearing tests more time.</h2>
+      <div class="story">
+        <p>We, Priya Nair and Tom Ashby, worked for a national chain until 2024. We opened Halden Hearing in Clifton with one clinic room, one soundproof booth and one rule: every appointment is 90&nbsp;minutes.</p>
+        <p>On average, people wait 10&nbsp;years between noticing hearing loss and getting help. If that is you, you are in good company.</p>
+        <p class="source">Source: RNID, <a href="https://rnid.org.uk/wp-content/uploads/2020/05/Hearing-Matters-Report.pdf">Hearing Matters</a>, 2020.</p>
+      </div>
+      <ul class="promises">
+        <li><span><strong>No commission.</strong> We sell hearing aids from four manufacturers and earn nothing extra on any of them.</span></li>
+        <li><span><strong>Four years of aftercare</strong> comes with every pair of hearing aids.</span></li>
+        <li><span><strong>Bought your hearing aids elsewhere?</strong> We fit and adjust them, and remove earwax.</span></li>
+      </ul>
+    </div>
+    <aside class="ledger" aria-labelledby="ledger-title">
+      <h3 id="ledger-title">What it costs</h3>
+      <dl>
+        <div class="row">
+          <dt>Hearing test</dt>
+          <dd class="price">Free</dd>
+          <dd class="note">90&nbsp;minutes. No obligation to buy anything.</dd>
+        </div>
+        <div class="row">
+          <dt>Earwax removal</dt>
+          <dd class="price">£65</dd>
+        </div>
+        <div class="row">
+          <dt>Hearing aids, a pair</dt>
+          <dd class="price"><span class="nb">£1,495 to £3,995</span></dd>
+          <dd class="note">Includes four years of aftercare.</dd>
+        </div>
+      </dl>
+      <div class="next">
+        <a class="button" href="/book/">Book a free hearing test</a>
+        <p>Or call <a href="tel:+441174960732" class="nb">0117&nbsp;496&nbsp;0732</a>. Bring someone with you if you like.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      {{MARK}}
+      <address>Halden Hearing, Clifton Village, Bristol BS8<br>Telephone <a href="tel:+441174960732" class="nb">0117&nbsp;496&nbsp;0732</a></address>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="/hearing-tests/">Hearing tests</a></li>
+        <li><a href="/hearing-aids/">Hearing aids</a></li>
+        <li><a href="/earwax-removal/">Earwax removal</a></li>
+        <li><a href="/about/">Priya and Tom</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

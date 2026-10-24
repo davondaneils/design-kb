@@ -8,8 +8,8 @@ Source: `RANKED.md` (the "Fix in this PR" column, "Above the gate" and "Tool def
 | 1 | `skills/design-copy/references/02-ux-microcopy.md` | KPI and column labels true in every state ("People in this run") |
 | 1 | `skills/design-product-ui/references/06-dashboards.md` | KPI labels true in every state; after commit the screen changes state everywhere |
 | 1, 3, 5, 9, 12, 13, Both rows | `skills/design-director/SKILL.md` | New section 5 step 13, an 11-line hand-over list of checks on the renders, each naming its rule's home; critic is step 14 |
-| 1 to 16 (FOUNDATIONS) | `kb/FOUNDATIONS.md` | v0.4.5 with change-log entry: zones, count noun no-break, 35 floor at 390, `reading-size`, borders at 3.3:1 on raised and tinted dark surfaces, selected states, post-action states, `--duration-page` 400ms, hover 100ms |
-| FOUNDATIONS mirror | `skills/design-foundations/SKILL.md`, `references/tokens.md`, `references/fundamentals-checklist.md`, `CHANGELOG.md` | Mirrors v0.4.5 (rows 3, 5, 6, 16; color roles; content mechanics; motion) |
+| 1 to 16 (FOUNDATIONS) | `kb/FOUNDATIONS.md` | v0.4.6 with change-log entry: zones, count noun no-break, 35 floor at 390, `reading-size`, borders at 3.3:1 on raised and tinted dark surfaces, selected states, post-action states, `--duration-page` 400ms, hover 100ms |
+| FOUNDATIONS mirror | `skills/design-foundations/SKILL.md`, `references/tokens.md`, `references/fundamentals-checklist.md`, `CHANGELOG.md` | Mirrors v0.4.6 (rows 3, 5, 6, 16; color roles; content mechanics; motion) |
 | 2 | `kb/FOUNDATIONS.md` Content mechanics, `skills/design-copy/references/06-copy-in-context.md` | A page with times in more than one zone labels every time, at every width; `ZONE` named |
 | 3 | `skills/design-product-ui/SKILL.md` rule 14, `references/04-shells-density.md` fundamental 2 | A selected surface counts only at 3:1 against its neighbor, else +200 weight, a 3:1 border or a 2px indicator |
 | 3 | `skills/design-foundations/references/accessibility.md` | 1.4.11 row names selected states and the 3.3:1 margin |

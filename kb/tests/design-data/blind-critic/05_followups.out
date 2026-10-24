@@ -1,0 +1,21 @@
+#### Y: grant service_role as Supabase's default privileges would, then insert a 6th booked row directly
+inserted
+Y after: capacity=5 booked_count=5 actual booked=6
+#### Free-cancel deadline for a fresh booking made 6h before start (brief: 12h rule)
+[u10] Y status=booked free_cancel_until - now = 01:00:00 (starts in 6h)
+[u10] X status=confirmed can.cancel={"late": true, "allowed": true}
+#### Y: late cancel (deadline forced into the past) then rebook; count rows in week_schedule
+[u10] cancel -> late_cancelled
+[u10] rebook -> booked
+[u10] rows for this class in week_schedule: 2 statuses=late_cancelled,booked
+#### Pack: one credit left, two classes booked in parallel
+[u12] booked
+[u12] 
+[u12] ERROR:  You need an active pass or class credits to book
+[u12] DETAIL:  no_entitlement
+Y pack credits_used=10/10 bookings=1
+[u12] confirmed
+[u12] 
+[u12] ERROR:  crux:no_access
+[u12] DETAIL:  {"reason": "no_credits_left"}
+X pack credits_left=0 bookings=1

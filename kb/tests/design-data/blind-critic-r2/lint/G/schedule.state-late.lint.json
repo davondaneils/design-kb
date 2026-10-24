@@ -1,0 +1,979 @@
+{
+  "file": "/tmp/claude-0/-home-user-design-kb/6a58f026-c577-5c8c-9a9c-b604a01965c1/scratchpad/blind-data-r2/G/schedule.html?state=late",
+  "date": "2026-10-14T00:15:55.290Z",
+  "checks": {
+    "axe": {
+      "fail": [
+        {
+          "message": "label-content-name-mismatch: Elements must have their visible text as part of their accessible name",
+          "scheme": "light",
+          "width": 390,
+          "target": "button[data-day=\"2026-10-12\"]",
+          "why": "Fix any of the following:   Text inside the element is not included in the accessible name"
+        },
+        {
+          "message": "label-content-name-mismatch: Elements must have their visible text as part of their accessible name",
+          "scheme": "light",
+          "width": 390,
+          "target": "button[data-day=\"2026-10-13\"]",
+          "why": "Fix any of the following:   Text inside the element is not included in the accessible name"
+        },
+        {
+          "message": "label-content-name-mismatch: Elements must have their visible text as part of their accessible name",
+          "scheme": "light",
+          "width": 390,
+          "target": "button[data-day=\"2026-10-14\"]",
+          "why": "Fix any of the following:   Text inside the element is not included in the accessible name"
+        },
+        {
+          "message": "label-content-name-mismatch: Elements must have their visible text as part of their accessible name",
+          "scheme": "light",
+          "width": 390,
+          "target": "button[data-day=\"2026-10-15\"]",
+          "why": "Fix any of the following:   Text inside the element is not included in the accessible name"
+        },
+        {
+          "message": "label-content-name-mismatch: Elements must have their visible text as part of their accessible name",
+          "scheme": "light",
+          "width": 390,
+          "target": "button[data-day=\"2026-10-16\"]",
+          "why": "Fix any of the following:   Text inside the element is not included in the accessible name"
+        },
+        {
+          "message": "label-content-name-mismatch: Elements must have their visible text as part of their accessible name",
+          "scheme": "light",
+          "width": 390,
+          "target": "button[data-day=\"2026-10-17\"]",
+          "why": "Fix any of the following:   Text inside the element is not included in the accessible name"
+        },
+        {
+          "message": "label-content-name-mismatch: Elements must have their visible text as part of their accessible name",
+          "scheme": "light",
+          "width": 390,
+          "target": "button[data-day=\"2026-10-18\"]",
+          "why": "Fix any of the following:   Text inside the element is not included in the accessible name"
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "overlay": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "targets": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "touch target under 44x44 at 390px",
+          "sel": "#app > header.top > div.gym > button.loc-btn",
+          "w": 109.2,
+          "h": 32
+        }
+      ],
+      "pass": true
+    },
+    "measure": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "type-scale": {
+      "fail": [
+        {
+          "message": "font size 13px off the type scale at 390px",
+          "size": 13,
+          "count": 15,
+          "examples": [
+            "#app > header.top > div.gym > span.gym-name",
+            "#app > header.top > div.pass > b",
+            "#app > header.top > div.pass > span",
+            "#app > div.week-bar > div > div.week-sub"
+          ]
+        },
+        {
+          "message": "font size 22px off the type scale at 390px",
+          "size": 22,
+          "count": 1,
+          "examples": [
+            "#app > header.top > div.gym > button.loc-btn"
+          ]
+        },
+        {
+          "message": "font size 15px off the type scale at 390px",
+          "size": 15,
+          "count": 15,
+          "examples": [
+            "#app > div.week-bar > div > div.week-title",
+            "#app > div.week-bar > div.nav-btns > button.icon-btn",
+            "#app > div.week-bar > div.nav-btns > button.icon-btn",
+            "#app > div.days > button.day-tab.is-past"
+          ]
+        },
+        {
+          "message": "font size 17px off the type scale at 390px",
+          "size": 17,
+          "count": 10,
+          "examples": [
+            "#app > div.days > button.day-tab.is-past > span.dnum",
+            "#app > div.days > button.day-tab.is-today > span.dnum",
+            "#app > div.days > button.day-tab > span.dnum",
+            "#app > div.days > button.day-tab > span.dnum"
+          ]
+        },
+        {
+          "message": "font size 13px off the type scale at 1440px",
+          "size": 13,
+          "count": 53,
+          "examples": [
+            "#app > header.top > div.gym > span.gym-name",
+            "#app > div.week-bar > div > div.week-sub",
+            "div.week > section.day.is-past > div.day-head > span.dow",
+            "section.day.is-past > article.card.is-done > div.c-row > span.c-dur"
+          ]
+        },
+        {
+          "message": "font size 28px off the type scale at 1440px",
+          "size": 28,
+          "count": 1,
+          "examples": [
+            "#app > header.top > div.gym > button.loc-btn"
+          ]
+        },
+        {
+          "message": "font size 17px off the type scale at 1440px",
+          "size": 17,
+          "count": 1,
+          "examples": [
+            "#app > div.week-bar > div > div.week-title"
+          ]
+        },
+        {
+          "message": "font size 15px off the type scale at 1440px",
+          "size": 15,
+          "count": 45,
+          "examples": [
+            "#app > div.week-bar > div.nav-btns > button.icon-btn",
+            "#app > div.week-bar > div.nav-btns > button.icon-btn",
+            "section.day.is-past > article.card.is-done > div.c-row > span.c-time",
+            "div.week > section.day.is-past > article.card.is-done > h3.c-title"
+          ]
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "spacing": {
+      "fail": [
+        {
+          "message": "padding-top:14px off the spacing scale at 390px",
+          "value": "padding-top:14",
+          "count": 4,
+          "examples": [
+            "#app > header.top",
+            "#app > div.week > section.day.is-selected > article.card.is-done",
+            "#app > div.week > section.day.is-selected > article.card.mine-booked",
+            "#app > div.week > section.day.is-selected > article.card"
+          ]
+        },
+        {
+          "message": "padding-bottom:10px off the spacing scale at 390px",
+          "value": "padding-bottom:10",
+          "count": 2,
+          "examples": [
+            "#app > header.top",
+            "#app > div.days"
+          ]
+        },
+        {
+          "message": "padding-top:6px off the spacing scale at 390px",
+          "value": "padding-top:6",
+          "count": 2,
+          "examples": [
+            "#app > div.week-bar",
+            "html > body > nav.tabbar"
+          ]
+        },
+        {
+          "message": "padding-top:1px off the spacing scale at 390px",
+          "value": "padding-top:1",
+          "count": 2,
+          "examples": [
+            "#app > div.week-bar > div.nav-btns > button.icon-btn",
+            "#app > div.week-bar > div.nav-btns > button.icon-btn"
+          ]
+        },
+        {
+          "message": "padding-right:6px off the spacing scale at 390px",
+          "value": "padding-right:6",
+          "count": 2,
+          "examples": [
+            "#app > div.week-bar > div.nav-btns > button.icon-btn",
+            "#app > div.week-bar > div.nav-btns > button.icon-btn"
+          ]
+        },
+        {
+          "message": "padding-bottom:1px off the spacing scale at 390px",
+          "value": "padding-bottom:1",
+          "count": 2,
+          "examples": [
+            "#app > div.week-bar > div.nav-btns > button.icon-btn",
+            "#app > div.week-bar > div.nav-btns > button.icon-btn"
+          ]
+        },
+        {
+          "message": "padding-left:6px off the spacing scale at 390px",
+          "value": "padding-left:6",
+          "count": 2,
+          "examples": [
+            "#app > div.week-bar > div.nav-btns > button.icon-btn",
+            "#app > div.week-bar > div.nav-btns > button.icon-btn"
+          ]
+        },
+        {
+          "message": "padding-top:7px off the spacing scale at 390px",
+          "value": "padding-top:7",
+          "count": 7,
+          "examples": [
+            "#app > div.days > button.day-tab.is-past",
+            "#app > div.days > button.day-tab.is-today",
+            "#app > div.days > button.day-tab",
+            "#app > div.days > button.day-tab"
+          ]
+        },
+        {
+          "message": "padding-bottom:6px off the spacing scale at 390px",
+          "value": "padding-bottom:6",
+          "count": 8,
+          "examples": [
+            "#app > div.days > button.day-tab.is-past",
+            "#app > div.days > button.day-tab.is-today",
+            "#app > div.days > button.day-tab",
+            "#app > div.days > button.day-tab"
+          ]
+        },
+        {
+          "message": "row-gap:1px off the spacing scale at 390px",
+          "value": "row-gap:1",
+          "count": 7,
+          "examples": [
+            "#app > div.days > button.day-tab.is-past",
+            "#app > div.days > button.day-tab.is-today",
+            "#app > div.days > button.day-tab",
+            "#app > div.days > button.day-tab"
+          ]
+        },
+        {
+          "message": "column-gap:1px off the spacing scale at 390px",
+          "value": "column-gap:1",
+          "count": 7,
+          "examples": [
+            "#app > div.days > button.day-tab.is-past",
+            "#app > div.days > button.day-tab.is-today",
+            "#app > div.days > button.day-tab",
+            "#app > div.days > button.day-tab"
+          ]
+        },
+        {
+          "message": "row-gap:3px off the spacing scale at 390px",
+          "value": "row-gap:3",
+          "count": 1,
+          "examples": [
+            "#app > div.days > button.day-tab.is-today > span.marks"
+          ]
+        },
+        {
+          "message": "column-gap:3px off the spacing scale at 390px",
+          "value": "column-gap:3",
+          "count": 1,
+          "examples": [
+            "#app > div.days > button.day-tab.is-today > span.marks"
+          ]
+        },
+        {
+          "message": "margin-bottom:10px off the spacing scale at 390px",
+          "value": "margin-bottom:10",
+          "count": 3,
+          "examples": [
+            "#app > div.week > section.day.is-selected > article.card.is-done",
+            "#app > div.week > section.day.is-selected > article.card.mine-booked",
+            "#app > div.week > section.day.is-selected > article.card"
+          ]
+        },
+        {
+          "message": "padding-right:14px off the spacing scale at 390px",
+          "value": "padding-right:14",
+          "count": 3,
+          "examples": [
+            "#app > div.week > section.day.is-selected > article.card.is-done",
+            "#app > div.week > section.day.is-selected > article.card.mine-booked",
+            "#app > div.week > section.day.is-selected > article.card"
+          ]
+        },
+        {
+          "message": "padding-left:14px off the spacing scale at 390px",
+          "value": "padding-left:14",
+          "count": 3,
+          "examples": [
+            "#app > div.week > section.day.is-selected > article.card.is-done",
+            "#app > div.week > section.day.is-selected > article.card.mine-booked",
+            "#app > div.week > section.day.is-selected > article.card"
+          ]
+        },
+        {
+          "message": "row-gap:10px off the spacing scale at 390px",
+          "value": "row-gap:10",
+          "count": 6,
+          "examples": [
+            "div.week > section.day.is-selected > article.card.is-done > div.c-row",
+            "div.week > section.day.is-selected > article.card.is-done > div.c-foot",
+            "div.week > section.day.is-selected > article.card.mine-booked > div.c-row",
+            "div.week > section.day.is-selected > article.card.mine-booked > div.c-foot"
+          ]
+        },
+        {
+          "message": "column-gap:10px off the spacing scale at 390px",
+          "value": "column-gap:10",
+          "count": 6,
+          "examples": [
+            "div.week > section.day.is-selected > article.card.is-done > div.c-row",
+            "div.week > section.day.is-selected > article.card.is-done > div.c-foot",
+            "div.week > section.day.is-selected > article.card.mine-booked > div.c-row",
+            "div.week > section.day.is-selected > article.card.mine-booked > div.c-foot"
+          ]
+        },
+        {
+          "message": "margin-bottom:1px off the spacing scale at 390px",
+          "value": "margin-bottom:1",
+          "count": 3,
+          "examples": [
+            "div.week > section.day.is-selected > article.card.is-done > h3.c-title",
+            "div.week > section.day.is-selected > article.card.mine-booked > h3.c-title",
+            "div.week > section.day.is-selected > article.card > h3.c-title"
+          ]
+        },
+        {
+          "message": "margin-top:10px off the spacing scale at 390px",
+          "value": "margin-top:10",
+          "count": 2,
+          "examples": [
+            "div.week > section.day.is-selected > article.card.mine-booked > div.meter",
+            "div.week > section.day.is-selected > article.card > div.meter"
+          ]
+        },
+        {
+          "message": "padding-top:3px off the spacing scale at 390px",
+          "value": "padding-top:3",
+          "count": 1,
+          "examples": [
+            "article.card.mine-booked > div.c-foot > div.c-status > span.badge.b-ok"
+          ]
+        },
+        {
+          "message": "padding-bottom:3px off the spacing scale at 390px",
+          "value": "padding-bottom:3",
+          "count": 1,
+          "examples": [
+            "article.card.mine-booked > div.c-foot > div.c-status > span.badge.b-ok"
+          ]
+        },
+        {
+          "message": "row-gap:5px off the spacing scale at 390px",
+          "value": "row-gap:5",
+          "count": 1,
+          "examples": [
+            "article.card.mine-booked > div.c-foot > div.c-status > span.badge.b-ok"
+          ]
+        },
+        {
+          "message": "column-gap:5px off the spacing scale at 390px",
+          "value": "column-gap:5",
+          "count": 1,
+          "examples": [
+            "article.card.mine-booked > div.c-foot > div.c-status > span.badge.b-ok"
+          ]
+        },
+        {
+          "message": "row-gap:6px off the spacing scale at 390px",
+          "value": "row-gap:6",
+          "count": 2,
+          "examples": [
+            "section.day.is-selected > article.card.mine-booked > div.c-foot > button.btn.btn-secondary",
+            "section.day.is-selected > article.card > div.c-foot > button.btn.btn-secondary"
+          ]
+        },
+        {
+          "message": "column-gap:6px off the spacing scale at 390px",
+          "value": "column-gap:6",
+          "count": 2,
+          "examples": [
+            "section.day.is-selected > article.card.mine-booked > div.c-foot > button.btn.btn-secondary",
+            "section.day.is-selected > article.card > div.c-foot > button.btn.btn-secondary"
+          ]
+        },
+        {
+          "message": "padding-top:28px off the spacing scale at 1440px",
+          "value": "padding-top:28",
+          "count": 1,
+          "examples": [
+            "#app > header.top"
+          ]
+        },
+        {
+          "message": "padding-bottom:20px off the spacing scale at 1440px",
+          "value": "padding-bottom:20",
+          "count": 1,
+          "examples": [
+            "#app > div.week-bar"
+          ]
+        },
+        {
+          "message": "padding-top:1px off the spacing scale at 1440px",
+          "value": "padding-top:1",
+          "count": 2,
+          "examples": [
+            "#app > div.week-bar > div.nav-btns > button.icon-btn",
+            "#app > div.week-bar > div.nav-btns > button.icon-btn"
+          ]
+        },
+        {
+          "message": "padding-right:6px off the spacing scale at 1440px",
+          "value": "padding-right:6",
+          "count": 2,
+          "examples": [
+            "#app > div.week-bar > div.nav-btns > button.icon-btn",
+            "#app > div.week-bar > div.nav-btns > button.icon-btn"
+          ]
+        },
+        {
+          "message": "padding-bottom:1px off the spacing scale at 1440px",
+          "value": "padding-bottom:1",
+          "count": 2,
+          "examples": [
+            "#app > div.week-bar > div.nav-btns > button.icon-btn",
+            "#app > div.week-bar > div.nav-btns > button.icon-btn"
+          ]
+        },
+        {
+          "message": "padding-left:6px off the spacing scale at 1440px",
+          "value": "padding-left:6",
+          "count": 2,
+          "examples": [
+            "#app > div.week-bar > div.nav-btns > button.icon-btn",
+            "#app > div.week-bar > div.nav-btns > button.icon-btn"
+          ]
+        },
+        {
+          "message": "margin-bottom:10px off the spacing scale at 1440px",
+          "value": "margin-bottom:10",
+          "count": 23,
+          "examples": [
+            "#app > div.week > section.day.is-past > div.day-head",
+            "#app > div.week > section.day.is-past > article.card.is-done",
+            "#app > div.week > section.day.is-past > article.card.is-done",
+            "#app > div.week > section.day.is-past > article.card.is-done"
+          ]
+        },
+        {
+          "message": "padding-bottom:10px off the spacing scale at 1440px",
+          "value": "padding-bottom:10",
+          "count": 23,
+          "examples": [
+            "#app > div.week > section.day.is-past > div.day-head",
+            "#app > div.week > section.day.is-past > article.card.is-done",
+            "#app > div.week > section.day.is-past > article.card.is-done",
+            "#app > div.week > section.day.is-past > article.card.is-done"
+          ]
+        },
+        {
+          "message": "row-gap:6px off the spacing scale at 1440px",
+          "value": "row-gap:6",
+          "count": 18,
+          "examples": [
+            "#app > div.week > section.day.is-past > div.day-head",
+            "#app > div.week > section.day.is-selected > div.day-head",
+            "section.day.is-selected > article.card.mine-booked > div.c-foot > button.btn.btn-secondary",
+            "section.day.is-selected > article.card > div.c-foot > button.btn.btn-secondary"
+          ]
+        },
+        {
+          "message": "column-gap:6px off the spacing scale at 1440px",
+          "value": "column-gap:6",
+          "count": 18,
+          "examples": [
+            "#app > div.week > section.day.is-past > div.day-head",
+            "#app > div.week > section.day.is-selected > div.day-head",
+            "section.day.is-selected > article.card.mine-booked > div.c-foot > button.btn.btn-secondary",
+            "section.day.is-selected > article.card > div.c-foot > button.btn.btn-secondary"
+          ]
+        },
+        {
+          "message": "column-gap:10px off the spacing scale at 1440px",
+          "value": "column-gap:10",
+          "count": 32,
+          "examples": [
+            "div.week > section.day.is-past > article.card.is-done > div.c-row",
+            "div.week > section.day.is-past > article.card.is-done > div.c-foot",
+            "div.week > section.day.is-past > article.card.is-done > div.c-row",
+            "div.week > section.day.is-past > article.card.is-done > div.c-foot"
+          ]
+        },
+        {
+          "message": "margin-bottom:1px off the spacing scale at 1440px",
+          "value": "margin-bottom:1",
+          "count": 16,
+          "examples": [
+            "div.week > section.day.is-past > article.card.is-done > h3.c-title",
+            "div.week > section.day.is-past > article.card.is-done > h3.c-title",
+            "div.week > section.day.is-past > article.card.is-done > h3.c-title",
+            "div.week > section.day.is-selected > article.card.is-done > h3.c-title"
+          ]
+        },
+        {
+          "message": "row-gap:10px off the spacing scale at 1440px",
+          "value": "row-gap:10",
+          "count": 16,
+          "examples": [
+            "div.week > section.day.is-past > article.card.is-done > div.c-foot",
+            "div.week > section.day.is-past > article.card.is-done > div.c-foot",
+            "div.week > section.day.is-past > article.card.is-done > div.c-foot",
+            "div.week > section.day.is-selected > article.card.is-done > div.c-foot"
+          ]
+        },
+        {
+          "message": "padding-top:3px off the spacing scale at 1440px",
+          "value": "padding-top:3",
+          "count": 3,
+          "examples": [
+            "article.card.is-done > div.c-foot > div.c-status > span.badge.b-ok",
+            "article.card.mine-booked > div.c-foot > div.c-status > span.badge.b-ok",
+            "article.card.c-cancelled > div.c-foot > div.c-status > span.badge.b-muted"
+          ]
+        },
+        {
+          "message": "padding-bottom:3px off the spacing scale at 1440px",
+          "value": "padding-bottom:3",
+          "count": 3,
+          "examples": [
+            "article.card.is-done > div.c-foot > div.c-status > span.badge.b-ok",
+            "article.card.mine-booked > div.c-foot > div.c-status > span.badge.b-ok",
+            "article.card.c-cancelled > div.c-foot > div.c-status > span.badge.b-muted"
+          ]
+        },
+        {
+          "message": "row-gap:5px off the spacing scale at 1440px",
+          "value": "row-gap:5",
+          "count": 3,
+          "examples": [
+            "article.card.is-done > div.c-foot > div.c-status > span.badge.b-ok",
+            "article.card.mine-booked > div.c-foot > div.c-status > span.badge.b-ok",
+            "article.card.c-cancelled > div.c-foot > div.c-status > span.badge.b-muted"
+          ]
+        },
+        {
+          "message": "column-gap:5px off the spacing scale at 1440px",
+          "value": "column-gap:5",
+          "count": 3,
+          "examples": [
+            "article.card.is-done > div.c-foot > div.c-status > span.badge.b-ok",
+            "article.card.mine-booked > div.c-foot > div.c-status > span.badge.b-ok",
+            "article.card.c-cancelled > div.c-foot > div.c-status > span.badge.b-muted"
+          ]
+        },
+        {
+          "message": "margin-top:10px off the spacing scale at 1440px",
+          "value": "margin-top:10",
+          "count": 11,
+          "examples": [
+            "div.week > section.day.is-selected > article.card.mine-booked > div.meter",
+            "div.week > section.day.is-selected > article.card > div.meter",
+            "div.week > section.day > article.card > div.meter",
+            "div.week > section.day > article.card > div.meter"
+          ]
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "overflow": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "heading-wrap": {
+      "fail": [],
+      "warn": [
+        {
+          "message": "heading ends on a one-word line at 1440px (\"Lead Climbing Course\")",
+          "sel": "div.week > section.day.is-past > article.card.is-done > h3.c-title",
+          "lines": 2,
+          "text": "Lead Climbing Course"
+        },
+        {
+          "message": "heading ends on a one-word line at 1440px (\"Lead Climbing Course\")",
+          "sel": "div.week > section.day.is-selected > article.card > h3.c-title",
+          "lines": 2,
+          "text": "Lead Climbing Course"
+        },
+        {
+          "message": "heading ends on a one-word line at 1440px (\"Lead Climbing Course\")",
+          "sel": "div.week > section.day > article.card > h3.c-title",
+          "lines": 2,
+          "text": "Lead Climbing Course"
+        },
+        {
+          "message": "heading ends on a one-word line at 1440px (\"Lead Climbing Course\")",
+          "sel": "div.week > section.day > article.card > h3.c-title",
+          "lines": 2,
+          "text": "Lead Climbing Course"
+        }
+      ],
+      "pass": true
+    },
+    "svg-overlap": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "primary": {
+      "fail": [
+        {
+          "message": "6 filled calls to action in screen 1 at 1440px (\"Book\", \"Book\", \"Book\", \"Book\", \"Book\", \"Book\"); one primary per view",
+          "sel": "section.day > article.card > div.c-foot > button.btn.btn-primary"
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "radius": {
+      "fail": [
+        {
+          "message": "radius 10px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "#app > div.week-bar > div.nav-btns > button.icon-btn",
+          "value": 10
+        },
+        {
+          "message": "radius 10px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "#app > div.week-bar > div.nav-btns > button.icon-btn",
+          "value": 10
+        },
+        {
+          "message": "radius 6px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "article.card.is-done > div.c-foot > div.c-status > span.badge.b-ok",
+          "value": 6
+        },
+        {
+          "message": "radius 6px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "article.card.mine-booked > div.c-foot > div.c-status > span.badge.b-ok",
+          "value": 6
+        },
+        {
+          "message": "radius 10px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "section.day.is-selected > article.card.mine-booked > div.c-foot > button.btn.btn-secondary",
+          "value": 10
+        },
+        {
+          "message": "radius 10px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "section.day.is-selected > article.card > div.c-foot > button.btn.btn-secondary",
+          "value": 10
+        },
+        {
+          "message": "radius 10px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "section.day > article.card > div.c-foot > button.btn.btn-primary",
+          "value": 10
+        },
+        {
+          "message": "radius 10px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "section.day > article.card > div.c-foot > button.btn.btn-secondary",
+          "value": 10
+        },
+        {
+          "message": "radius 10px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "section.day > article.card > div.c-foot > button.btn.btn-primary",
+          "value": 10
+        },
+        {
+          "message": "radius 10px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "section.day > article.card > div.c-foot > button.btn.btn-secondary",
+          "value": 10
+        },
+        {
+          "message": "radius 6px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "article.card.c-cancelled > div.c-foot > div.c-status > span.badge.b-muted",
+          "value": 6
+        },
+        {
+          "message": "radius 10px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "section.day > article.card > div.c-foot > button.btn.btn-primary",
+          "value": 10
+        },
+        {
+          "message": "radius 10px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "section.day > article.card > div.c-foot > button.btn.btn-secondary",
+          "value": 10
+        },
+        {
+          "message": "radius 10px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "section.day > article.card > div.c-foot > button.btn.btn-primary",
+          "value": 10
+        },
+        {
+          "message": "radius 10px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "section.day > article.card > div.c-foot > button.btn.btn-primary",
+          "value": 10
+        },
+        {
+          "message": "radius 10px off the family (0 4 8 12 16 full, or outer minus inset)",
+          "sel": "section.day > article.card > div.c-foot > button.btn.btn-primary",
+          "value": 10
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "color-scheme": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "typography": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "tabular": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "shadows": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icons": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "icon-stroke": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "weight": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "occlusion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "squash": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-header": {
+      "fail": [
+        {
+          "message": "sticky top bar is 79px tall at 390px but html scroll-padding-top is auto; anchors and focus land under it (WCAG 2.4.11)",
+          "sel": "#app > div.days",
+          "width": 390
+        },
+        {
+          "message": "sticky top bar is 79px tall at 768px but html scroll-padding-top is auto; anchors and focus land under it (WCAG 2.4.11)",
+          "sel": "#app > div.days",
+          "width": 768
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "run-together": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "word-break": {
+      "fail": [
+        {
+          "message": "text \"Join waitlist\" runs 10px into its control's padding at 1024px",
+          "sel": "section.day.is-selected > article.card > div.c-foot > button.btn.btn-secondary",
+          "width": 1024
+        },
+        {
+          "message": "text \"Join waitlist\" runs 10px into its control's padding at 1024px",
+          "sel": "section.day > article.card > div.c-foot > button.btn.btn-secondary",
+          "width": 1024
+        }
+      ],
+      "warn": [
+        {
+          "message": "\"no-show.\" breaks across two lines at 1024px",
+          "sel": "article.card.mine-booked > div.c-foot > div.c-status > span.c-note.warn",
+          "width": 1024
+        },
+        {
+          "message": "\"no-show.\" breaks across two lines at 1440px",
+          "sel": "article.card.mine-booked > div.c-foot > div.c-status > span.c-note.warn",
+          "width": 1440
+        }
+      ],
+      "pass": false
+    },
+    "grid-edge": {
+      "fail": [
+        {
+          "message": "sibling columns miss a shared left edge by 12px at 1024px (7 columns in #app > div.week)",
+          "sel": "div.week > section.day > div.day-head > span.dnum",
+          "width": 1024
+        },
+        {
+          "message": "sibling columns miss a shared left edge by 12px at 1440px (7 columns in #app > div.week)",
+          "sel": "div.week > section.day > div.day-head > span.dnum",
+          "width": 1440
+        }
+      ],
+      "warn": [],
+      "pass": false
+    },
+    "hidden-content": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "double-space": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "undefined-var": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-layer": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "primitive-in-component": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "error-icon": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "truth": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "proportion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "nav-parity": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "focus-shape": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "sticky-focus": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "skip-link": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "state-shift": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "fallback": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    },
+    "motion": {
+      "fail": [],
+      "warn": [],
+      "pass": true
+    }
+  },
+  "summary": {
+    "weightKB": {
+      "html": 55,
+      "svg": 2
+    },
+    "focusables": 14,
+    "motionFound": {
+      "animations": 0,
+      "movingTransitions": 0
+    },
+    "axe": "FAIL (7)",
+    "overlay": "pass",
+    "targets": "pass (1 warn)",
+    "measure": "pass",
+    "type-scale": "FAIL (8)",
+    "spacing": "FAIL (44)",
+    "overflow": "pass",
+    "heading-wrap": "pass (4 warn)",
+    "svg-overlap": "pass",
+    "primary": "FAIL (1)",
+    "radius": "FAIL (16)",
+    "color-scheme": "pass",
+    "typography": "pass",
+    "tabular": "pass",
+    "shadows": "pass",
+    "icons": "pass",
+    "icon-stroke": "pass",
+    "weight": "pass",
+    "occlusion": "pass",
+    "squash": "pass",
+    "sticky-header": "FAIL (2)",
+    "run-together": "pass",
+    "word-break": "FAIL (2)",
+    "grid-edge": "FAIL (2)",
+    "hidden-content": "pass",
+    "double-space": "pass",
+    "undefined-var": "pass",
+    "state-layer": "pass",
+    "primitive-in-component": "pass",
+    "error-icon": "pass",
+    "truth": "pass",
+    "proportion": "pass",
+    "nav-parity": "pass",
+    "focus": "pass",
+    "focus-shape": "pass",
+    "sticky-focus": "pass",
+    "skip-link": "pass",
+    "state-shift": "pass",
+    "fallback": "pass",
+    "motion": "pass",
+    "result": "FAIL",
+    "fails": 82,
+    "warns": 7
+  }
+}

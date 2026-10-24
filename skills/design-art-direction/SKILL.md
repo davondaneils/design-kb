@@ -22,7 +22,7 @@ Design arranges a page. Art direction decides what the page is about visually: o
 10. **Imagery cannot outrank the primary action.** Blur the screenshot: the headline and the action still win.
 
 ## 2. The method (in order)
-1. **Find the fact.** What is true, specific and drawable about this brand: origin, material, process, a measurement, the product's own output? Mood words ("warm", "premium") are not a concept. Positioning comes from website-strategy.
+1. **Find the fact.** What is true, specific and drawable about this brand: origin, material, process, a measurement, the product's own output? Mood words ("warm", "premium") are not a concept. Positioning and the one true fact come from the design-strategy brief (which routes to website-strategy for full discovery).
 2. **Write the concept as one sentence with a drawable noun.** "Every bag shows the hill it grew on and the fire that finished it." Then the **reject test**: one line a stranger could use to throw an image out.
 3. **Pick 3 to 5 motifs**, each tied to a fact, and **one loud element** in the brand accent; everything else in neutral line work.
 4. **Map to tokens** before drawing: `--color-illustration-line`, `--color-illustration-accent`, `--color-illustration-surface`, one stroke width, the radius family. Dark mode remaps them.

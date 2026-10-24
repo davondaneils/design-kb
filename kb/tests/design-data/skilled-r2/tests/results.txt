@@ -1,0 +1,111 @@
+schema loaded on PostgreSQL 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1)
+== 10_last_place_race.sh
+PASS seed: 7 of 8 places taken before the race
+PASS race (book): exactly 8 of 8 places taken after 20 concurrent bookings, got 8
+PASS race (book): the 19 losers left no rows (they got 409 class_full)
+PASS race (waitlist): 8 booked and 19 waitlisted, got 8 and 19
+PASS race (waitlist): 19 distinct queue keys, so ranks 1 to 19 are unambiguous
+PASS interleaved: second booking waited 1.5s for the class lock, then got class_full (error:23514:bookings_within_capacity)
+PASS interleaved: 8 of 8 taken
+== 20_waitlist_two_cancels.sh
+PASS seed: 8 of 8 booked, 3 waiting
+PASS after two concurrent cancels: still exactly 8 booked, got 8
+PASS promoted: the first two in the queue (Ww1, Ww2), each once
+PASS third in queue still waiting
+PASS third member now reads rank 1 (computed at read, never stored), got 1
+PASS late cancel without accept_late is refused (409 free-cancel-closed)
+PASS late cancel with accept_late: late_cancelled, and the waiting member got the place
+PASS cancelling twice is idempotent
+== 30_double_booking.sh
+PASS retry with the same client id returns the same booking (one row)
+PASS a second booking with a new id is refused by the partial unique index
+PASS two concurrent bookings from two devices: one row
+PASS after an on-time cancel the member can book the class again
+PASS service role direct insert of a duplicate is refused
+== 40_cross_gym_isolation.sh
+PASS staff A reads 0 of gym B's member rows
+PASS staff A reads 0 of gym B's bookings (the shared member's gym B booking included)
+PASS staff A reads 0 of gym B's passes
+PASS staff A cannot read the profile of a person who belongs only to gym B
+PASS staff A reads 0 of gym B's classes
+PASS staff A does read its own gym's 2 bookings (the deny is not an empty table)
+PASS a member reads only their own booking, not other members'
+PASS a gym B member reads 0 of gym A's classes
+PASS staff A checking in a gym B booking gets not found (404, no probe)
+PASS staff A cancelling a gym B booking gets not found
+PASS staff A reading gym B's schedule gets not found
+PASS attendance of another gym: not found
+PASS staff A inserting a class into gym B is refused by RLS
+PASS staff A updating gym B's class changes nothing (read back as owner)
+PASS staff A cannot add themselves to gym B
+PASS staff cannot promote themselves to owner (owners only)
+PASS a member cannot write a booking row directly (no grant; writes go through app functions)
+PASS a member cannot write their pass (the Stripe sync owns it)
+PASS anon reads nothing (grants revoked)
+PASS the shared member acts in gym B with their gym B pass (already booked there)
+== 50_capacity_lowering.sh
+PASS staff set capacity 2 under 5 taken: refused, capacity stays 8
+PASS capacity 5 with 5 taken: allowed (full, not over)
+PASS service role cannot lower it either (trigger, not app code)
+PASS capacity 6 sent while 2 bookings were in flight: waited, counted 7, refused
+PASS service role insert past capacity: refused
+PASS raising capacity by 1 promotes the first in line only
+PASS a cancelled class releases every booking and queue entry
+== 60_grace_and_credits.sh
+PASS past due, class before grace ends: booked
+PASS past due, class after grace ends: refused (error:23514:bookings_pass_covers_class)
+PASS schedule flag for that class: can_book false, reason grace_ends_before_class, reason_at = grace end (false,grace_ends_before_class,true)
+PASS service role cannot book it either (trigger)
+PASS promotion skips the member whose grace ends before the class and promotes the next
+PASS one credit, two concurrent bookings: one place taken
+PASS credits left reads 0
+PASS schedule says why: no_credits_left (no_credits_left)
+PASS an on-time cancel returns the credit
+PASS a booking for a class after the grace end reads booked but not covered (booked,false)
+PASS unpaid: the uncovered place is released free and the next in line is booked
+== 70_open_passes.sh
+PASS second open subscription at the same gym: refused
+PASS a past_due one counts as open too (it would double-bill once paid)
+PASS an open subscription at another gym is allowed, and its existence is never tested against gym A's rows
+PASS after the old one is canceled a new subscription is allowed
+PASS packs stack by design (credits are spent oldest first)
+PASS past_due without a grace end is impossible
+== 80_tenant_keyed_uniqueness.sh
+PASS the same instructor teaching at the same hour at another gym: allowed, gym B learns nothing about gym A
+PASS overlapping classes for one instructor in one gym: refused
+PASS duplicate desk code inside one gym: refused
+PASS the same desk code in two gyms: allowed
+PASS the same name again in one gym, other case: refused
+PASS the same class type name in two gyms: allowed (case-folded per gym)
+PASS catalog audit: no people-spanning unique or exclusion rule outside the gym key []
+listed: bookings.bookings_one_live_per_member
+listed: class_types.class_types_id_gym_unique
+listed: class_types.class_types_name_unique
+listed: classes.classes_id_gym_unique
+listed: gym_members.gym_members_member_code_unique
+listed: gyms.gyms_slug_unique
+listed: gyms.gyms_stripe_account_unique
+listed: locations.locations_id_gym_unique
+listed: locations.locations_name_unique
+listed: passes.passes_id_member_unique
+listed: passes.passes_one_open_subscription
+listed: passes.passes_payment_intent_unique
+listed: passes.passes_subscription_unique
+listed: stripe_customers.stripe_customers_customer_unique
+== 85_wall_time.sh
+PASS a class at 2:30 am on 2027-03-14 (skipped in New York) is refused
+PASS 6 pm EDT on 2027-03-14 derives 22:00 UTC (22:00)
+PASS after the zone changes, re-deriving keeps 6 pm on the wall (23:00 UTC in Chicago) (23:00)
+PASS an invalid IANA zone is refused
+== 90_gate_audit.sh
+PASS every table has a primary key []
+PASS RLS enabled on every public table []
+PASS every foreign key has an index led by its columns []
+PASS no float, money, char(n), and timestamp without zone only for wall-time truth []
+PASS anon can execute no private or app function []
+PASS authenticated can execute only the four policy helpers in private []
+PASS every security definer function pins search_path to empty []
+== 95_explain_schedule.sh
+  Index Scan using classes_location_week_idx on classes c  (cost=0.29..11.87 rows=3 width=16)
+    Index Cond: ((location_id = '1dd47def-9880-4138-9d50-3ed0d585093e'::uuid) AND (gym_id = 'e0f694cd-47d0-4f83-9f7c-b008c6ab463a'::uuid) AND (starts_local >= '2026-03-02 00:00:00'::timestamp without time zone) AND (starts_local < '2026-03-09 00:00:00'::timestamp without time zone))
+PASS week query on 12,000 classes uses classes_location_week_idx

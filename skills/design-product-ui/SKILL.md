@@ -149,6 +149,7 @@ Dashboards
 - Status and theme tokens: design-color `references/ui-tokens-themes.md`.
 - Charts, sparklines, KPI visuals: dataviz.
 - Microcopy for states, commands, confirmations: design-copy `references/02-ux-microcopy.md`.
+- Data condition and response field behind each panel state, capability flags with reasons (fundamental 11), server totals: design-data `references/07-data-shapes-the-ui.md`.
 - Markup and build: design-frontend.
 
 ## 8. Where defaults may change

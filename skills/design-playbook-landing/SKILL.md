@@ -9,17 +9,18 @@ A landing page has one job: make the right visitor understand the offer and take
 
 ## 1. Load in this order
 1. **design-foundations** (always): tokens, the 16-item gate, `references/accessibility.md`.
-2. **website-strategy** if audience, positioning or competitors are not given. No visual decisions before this.
+2. **design-strategy** (always, after foundations): the strategy brief at the depth its section 1 sets; one page for a new site, three lines for an event or campaign page, full (it routes to website-strategy stages 2 to 5) when audience, positioning or competitors are not given. The hero is written from its primary category entry point and category frame. No visual decisions before this. Then write the build spec (`references/build-spec.md`): the sixteen decisions as values and the never-list, in a file beside the brief, re-read before every edit pass.
 3. **Copy**, by the rule in section 2: design-copy `references/01-page-copy-structure.md`, `03-voice-and-tone.md` and `06-copy-in-context.md` (every number is a claim; content mechanics), or copywriting.
 4. **design-layout**: `references/05-page-composition-and-density.md`, `01-grids-and-structure.md`, `04-responsive-and-adaptive.md`, and `06-pacing-signature-and-phone-editing.md` for any page over four sections (write the flatplan before layout and the phone edit list before the 390 build).
 5. **design-typography**: `references/02-selection-pairing.md`, `01-scale-measure-leading.md`, `05-typographic-detail.md`; `06-type-without-web-fonts.md` (system stack, self-hosted or mixed, decided before layout); `07-type-led-pages.md` when type carries the page (display 49 to 112px, leading 0.95, optical margin).
 6. **design-color**: `references/palette-building.md`, `ui-tokens-themes.md`.
 7. **design-art-direction**, right after color: SKILL.md, then `references/01-concept-and-consistency.md` and `04-visuals-without-image-hosts.md` (always); `02-photography.md` and `03-composition-and-overlays.md` when photos exist or text sits on images or textures; `05-requesting-photography.md` at hand-over. Write the one-sentence concept and its reject test before layout. design-graphic `references/03-photography-direction.md` and `04-illustration.md` for the craft of each image; `references/01-logo-identity.md` (outlining workflow, responsive tiers, favicon) when the brief supplies no logo files.
 8. **When the page sells** (pricing, subscription, shop, booking, checkout): **design-conversion** SKILL.md, then the references its section names (`01-cta-hierarchy.md`, `02-proof-and-trust.md`, `03-pricing-and-plans.md`, `04-checkout-and-forms.md`); then **design-ux** `references/07-commerce-flows.md`, `03-forms.md` and `02-navigation-ia.md` (purchase flow, field budget, no dead ends). Funnel step order and offers stay with sales-funnels.
-9. **design-motion**: `references/01-purpose-restraint.md`, `04-micro-interactions.md`; add `03-choreography-transitions.md` (reveals and LCP) and `07-motion-on-real-pages.md` when the page shows data or a drawing that could reveal. Light touch: one hero reveal may run to 800ms, on the hero artifact by transform or clip-path (the headline paints at once), everything else 600ms or less (FOUNDATIONS Motion; design-motion move 9). No motion at all is not restraint: round 1 shipped 1 duration and 1 curve against the exemplars' 5 to 8 (`kb/reviews/benchmark-round1-landing.md` scorecard Motion).
-10. **design-frontend**: build; `references/05-images-fonts.md` for LCP and font loading, `07-measured-build-quality.md` for the proof step.
-11. **design-search**: `references/07-page-build.md` first (it applies the rest to a built page), then `02-on-page-content.md` and `03-structured-data.md`.
-12. **design-polish** after the lint gate passes and before the exemplar comparison: SKILL.md, `references/06-polish-checklist.md`, and the reference each failing item names. Build a state sheet for every interactive control. Then the self-critique loop in design-director.
+9. **design-data** `references/07-data-shapes-the-ui.md` only for sites with accounts, shops or bookings: stock levels, "places left", prices and dates from a catalog are data claims with a source field, not typed copy.
+10. **design-motion**: `references/01-purpose-restraint.md`, `04-micro-interactions.md`; add `03-choreography-transitions.md` (reveals and LCP) and `07-motion-on-real-pages.md` when the page shows data or a drawing that could reveal; add `08-cinematic-scroll.md` when scroll drives a film, a pinned object or chapters (product reveals, launches, studios, hospitality). Light touch: one hero reveal may run to 800ms, on the hero artifact by transform or clip-path (the headline paints at once), everything else 600ms or less (FOUNDATIONS Motion; design-motion move 9). No motion at all is not restraint: round 1 shipped 1 duration and 1 curve against the exemplars' 5 to 8 (`kb/reviews/benchmark-round1-landing.md` scorecard Motion).
+11. **design-frontend**: build; `references/05-images-fonts.md` for LCP and font loading, `07-measured-build-quality.md` for the proof step.
+12. **design-search**: `references/07-page-build.md` first (it applies the rest to a built page), then `02-on-page-content.md` and `03-structured-data.md`.
+13. **design-polish** after the lint gate passes and before the exemplar comparison: SKILL.md, `references/06-polish-checklist.md`, and the reference each failing item names. Build a state sheet for every interactive control. Then the self-critique loop in design-director.
 
 ## 2. Which copy skill
 - **copywriting (direct response)** when the page sells in one sitting through a long argument: sales pages, long-form sales letters, VSL pages, advertorials, funnel steps (opt-in, order form, upsell), promo emails and ads. Pair with sales-funnels when the page is one step in a funnel.
@@ -59,13 +60,17 @@ Festivals, conferences, exhibitions, launches, magazines and feature stories sel
 4. At 390: the category word and the primary action sit in the first 844px; when the page sells, the price and the primary action are both there. At 768: a tablet layout, not a stretched phone (design-layout `references/04-responsive-and-adaptive.md`, marketing tablet pattern). At 1440: the next section peeks above 900px. Measure with `kb/tests/design-layout/measure-layout.mjs`.
 5. A term line (renews when, at what price, how to cancel online) sits beside any renewal or subscription CTA (design-conversion).
 6. Side by side with the named closest exemplars, rated close (not clearly below) on hierarchy, type, imagery, rhythm and craft. Every page passes the first-screen reject test (logo hidden, the motif is drawn in the first screen; `references/signature-moves.md`). Event and editorial pages also pass section 3b item 4 (the hero screenshot works as the social post). Pick them from `kb/teardowns/INDEX.md` (Stripe first, then Linear, Vercel, Ramp for product and SaaS) and `references/signature-moves.md`; compare measured numbers, not impressions.
-7. A fresh-context critic has judged the gate (design-director section 5, step 14); a self-review alone does not claim it.
-8. The hand-over names what is still short of the exemplar.
+7. The strategy brief exists at the right depth and `node skills/design-strategy/assets/brief_lint.mjs` passes; the word swap test, covered competitor wall and five-second test are recorded; every public claim has a ledger row with evidence held.
+8. A fresh-context critic has judged the gate (design-director section 5, step 14); a self-review alone does not claim it.
+9. The hand-over names what is still short of the exemplar.
 
 ## 5. Reference map
 | Need | Read |
 |---|---|
 | Closest exemplar by site type, and the moves the marketing exemplars share | `references/signature-moves.md` |
+| The build spec: sixteen decisions as values, the never-list, a skeleton | `references/build-spec.md` |
+| Scroll-driven films, pinned stages and chapters | design-motion `references/08-cinematic-scroll.md` |
+| Where to find sections, footers, motion and landing references | `kb/references/00-general.md` (galleries), `kb/references/motion.md` |
 | Measured exemplar values (type steps, colors, radii, durations) and the contrast misses not to copy | `kb/teardowns/INDEX.md`, then `stripe-home.md`, `linear-home.md`, `vercel-home.md`, `ramp-home.md` |
 | Checkout and upgrade UI examples | `kb/references/patterns/11-checkout-and-upgrade.md` |
 | Section order for common landing page types | design-copy `references/01-page-copy-structure.md`, design-layout `references/05-page-composition-and-density.md` |

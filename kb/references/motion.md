@@ -80,6 +80,30 @@ Where to go deeper on when to animate, timing and easing, gestures, and reduced 
 - **Tier:** 4 (practitioner tool docs)
 - **Checked:** home page (Motion Studio announced 22 Sep 2026). Accessed 2026-10-10.
 
+### easings.net (reference)
+- **Who / what:** The Penner easing functions (Sine, Quad, Cubic, Quart, Quint, Expo, Circ, Back, Elastic, Bounce, each in, out and in-out) drawn as curves, with the CSS `cubic-bezier` value for every one that CSS can express.
+- **Best for:** looking up a named curve as a value: easeOutQuint `cubic-bezier(0.22, 1, 0.36, 1)`, easeOutExpo `cubic-bezier(0.16, 1, 0.3, 1)`, easeInOutCubic `cubic-bezier(0.65, 0, 0.35, 1)`, easeInQuint `cubic-bezier(0.64, 0, 0.78, 0)`.
+- **Why it meets the bar:** the curves are the standard set every animation library ships; the page gives exact values. Opinion: use it to name and compare curves, then map the choice to our tokens; Back, Elastic and Bounce overshoot and are for rare brand moments only.
+- **Link:** https://easings.net/
+- **Tier:** 4
+- **Checked:** all 24 CSS values on the page. Accessed 2026-10-23. Research: `kb/research/motion/08-cinematic-scroll.md` section D.
+
+### 60fps (gallery)
+- **Who / what:** A curated collection of UI animation and interaction details from shipped iOS and web apps: about 2,110 shots from 494 apps, plus app sites, motion, snippets and storyboards, with an MCP for agents.
+- **Best for:** seeing how a shipped app animates one moment (a like, a tab switch, a loader, a card stack) before specifying it.
+- **Why it meets the bar:** recordings of real products, named and dated. Opinion: the motion counterpart to Mobbin.
+- **Link:** https://60fps.design/
+- **Tier:** 4
+- **Checked:** home page counts and categories. Lead from the Bardhyl Bytyqi X post (tier 5). Accessed 2026-10-23.
+
+### Scrolltide and Motion sections (prompt libraries)
+- **Who / what:** Two "copy the prompt" libraries of scroll-driven and interactive web sections. Scrolltide: 128 templates, 66 components, 55 shaders (full entry in `00-general.md`). Motion sections (motionin.design): portfolio, hero, interactive, product showcase and immersive sections, free and paid, whose catalogue prints each section's full mechanism.
+- **Best for:** the mechanism behind a cinematic or interactive section: frame sequences scrubbed on a canvas, clips that hold their final frame, pinned stages, FLIP expands, focal voids, distance-based emitters, snap-to-slot walls, and their reduced-motion paths.
+- **Why it meets the bar:** each entry describes its mechanism precisely enough to check against the recording. Opinion: tier 5 sources with unusually exact descriptions; take the mechanism, not the spectacle. Mined into design-motion `references/08-cinematic-scroll.md`.
+- **Link:** https://www.scrolltide.co/ ; https://motionin.design/
+- **Tier:** 5 (recordings tier 4)
+- **Checked:** both catalogues in full. Accessed 2026-10-23.
+
 ## Considered and dropped
 - **Dan Saffer, Microinteractions (O'Reilly 2013):** cited in kb/research/motion/04 but not re-verified this session; strong on triggers, rules and feedback, weaker on motion itself.
 - **Issara Willenskomer, UX in Motion:** well known, not verified this session.

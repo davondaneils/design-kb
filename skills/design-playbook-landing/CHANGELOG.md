@@ -1,5 +1,10 @@
 # design-playbook-landing changelog
 
+## 2026-10-23 (from Davon's references: Scrolltide and an X post of resource sites)
+- New `references/build-spec.md`: decide in values before the first line; the sixteen decisions mapped to the skills that answer them, a house never-list, a six-block spec skeleton on our tokens, five expert moves. Loaded at step 2, after the strategy brief.
+- Load step 10 adds design-motion `08-cinematic-scroll.md` for scroll-driven pages; reference map links the build spec, the cinematic reference and the gallery lists.
+- Signature move 11: one section shape, repeated.
+
 ## 2026-10-13 (editor-in-chief, benchmark round 1, `kb/tests/benchmark/round1/RANKED.md`)
 - `references/signature-moves.md`: the first-screen reject test (hide the logo; the motif is visible and drawn in the first screen, not only named in copy); status line now points at the teardowns.
 - Done means 4 and 6: 768 is a tablet layout, the reject test passes. Load step 9: the one hero reveal plays on the artifact; no motion is not restraint.
