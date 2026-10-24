@@ -42,7 +42,7 @@ The first five references make a page correct. This one makes it hold attention 
 ### Numbers
 | What | Value |
 |---|---|
-| Page grid from lg (1024) | 12 columns, gap 32 (`--space-7`), content box 1136 inside a 1232 max with 48 padding |
+| Page grid from lg (1024) | 12 columns, gap 32 (`--space-7`), content box `min(1280px, 100% - 2 * var(--space-7))` centered (SKILL.md structure table, reference 01) |
 | Margin column | columns 1 to 3 (about 260px at 1440); body columns 4 to 12 (about 844px) |
 | Hero split | 7 + 5 on the same 12 columns; reuse it for the offer band so the price sits under the bag |
 | Section padding | 64 phone, 128 desktop; 64 to 96 between blocks inside a long section; the section after the hero opens at 96 so it peeks |
@@ -70,7 +70,7 @@ Opinion, from memory: the exemplar hosts were blocked again on 2026-10-10, so th
 5. **A ruled index instead of a card row.** Two-pixel rule to open, hairline per row, thumbnail art, serif name at the largest size in the row, price and action at the row end. On a phone each row is about 200px instead of 440.
 6. **Echo the split.** The hero's 7 + 5, reused in the offer band and the ledger, stacks the bag, the price and the paid amount on one vertical line. Readers feel the alignment before they see it.
 7. **Supporting pane beside the trend.** On a dashboard, the panel that explains the chart takes the right third and stretches to the chart's height, its footnote pinned to the bottom. The explanation is in the first screen next to the thing it explains.
-8. **Alerts as rows.** Title, detail, and time with the action pushed right, one line each, tinted full-bleed inside one panel. The row tint carries severity, the icon and the word ("Error:", "Warning:") carry meaning without color.
+8. **Alerts as rows.** Title, detail, and time with the action pushed right, one line each, tinted full-bleed inside the one alert panel and nowhere else. The row tint carries severity, the icon and the word ("Error:", "Warning:") carry meaning without color. When the same item also appears in a data table, the table marks it with a glyph plus word, never a second tint, so one fact is painted once (Linear "never on the row", `kb/teardowns/linear-app.md` Borrow; round 1 painted three table rows and the panel amber, `kb/reviews/benchmark-round1-app.md` item 14).
 
 ### Phone editing (the list, section by section)
 Write it as a table in the hand-over. Verbs, in order of preference: **keep, reorder (source order), crop, thumbnail, merge duplicate, shorten label, collapse, defer**. Never: cut a unique fact.

@@ -20,7 +20,9 @@ Usage:
 
 License check first: under the SIL OFL a subset or an axis-limited instance is a Modified Version.
 If the font's copyright line declares a Reserved Font Name, the modified file may not use that name
-(OFL FAQ 2.6, 2.7). Commercial EULAs often forbid modification and inlining entirely. Read the license.
+(OFL FAQ 2.6, 2.7). `--family` changes only the CSS family name, not the name table inside the file:
+for a Reserved Font Name, rename the name table too (name IDs 1, 4, 6, 16 with fontTools) before shipping.
+Commercial EULAs often forbid modification and inlining entirely. Read the license.
 """
 import argparse
 import base64
@@ -37,7 +39,7 @@ LATIN_CORE = (
     + [(c, c) for c in (0x131, 0x152, 0x153, 0x2C6, 0x2DA, 0x2DC)]
     + [(0x2009, 0x200B), (0x2013, 0x2014), (0x2018, 0x201E), (0x2020, 0x2022), (0x2026, 0x2026),
        (0x2030, 0x2030), (0x2032, 0x2033), (0x2039, 0x203A), (0x2044, 0x2044), (0x202F, 0x202F),
-       (0x20AC, 0x20AC), (0x2122, 0x2122), (0x2190, 0x2193), (0x2212, 0x2212), (0x00D7, 0x00D7)]
+       (0x20AC, 0x20AC), (0x20B9, 0x20B9), (0x2122, 0x2122), (0x2190, 0x2193), (0x2212, 0x2212), (0x00D7, 0x00D7)]
 )
 
 # Sample used to compare average character widths (lowercase-heavy English, like body copy).

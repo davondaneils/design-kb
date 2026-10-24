@@ -11,7 +11,7 @@
   --shadow-rgb: 31 34 36;
   --ring: 0 0 0 1px rgb(var(--shadow-rgb) / 0.08);
   --highlight: inset 0 1px 0 rgb(255 255 255 / 0.12);   /* top edge catch light on filled buttons */
-  --shadow-0: none;
+  --shadow-0: 0 0 0 0 transparent;          /* never none: tokens compose into lists (FOUNDATIONS) */
   --shadow-1: 0 1px 2px rgb(var(--shadow-rgb) / 0.06);
   --shadow-2: 0 1px 2px rgb(var(--shadow-rgb) / 0.06), 0 4px 12px -2px rgb(var(--shadow-rgb) / 0.08);
   --shadow-3: 0 2px 4px -1px rgb(var(--shadow-rgb) / 0.08), 0 12px 24px -6px rgb(var(--shadow-rgb) / 0.16);
@@ -34,11 +34,12 @@
     /* Elevation in dark = lighter surface. Shadows go; a white ring and a top highlight draw the edge. */
     --ring: 0 0 0 1px rgb(255 255 255 / 0.08);
     --highlight: inset 0 1px 0 rgb(255 255 255 / 0.06);
-    --shadow-1: none; --shadow-2: none; --shadow-3: none; --shadow-4: none;
+    --shadow-1: 0 0 0 0 transparent; --shadow-2: 0 0 0 0 transparent;
+    --shadow-3: 0 0 0 0 transparent; --shadow-4: 0 0 0 0 transparent;
     --elevation-card: var(--ring);
     --elevation-card-hover: 0 0 0 1px rgb(255 255 255 / 0.14);
-    --elevation-popover: var(--ring), inset 0 1px 0 rgb(255 255 255 / 0.05);
-    --elevation-modal: var(--ring), inset 0 1px 0 rgb(255 255 255 / 0.05);
+    --elevation-popover: var(--ring), var(--highlight);
+    --elevation-modal: var(--ring), var(--highlight);
   }
 }
 

@@ -1,0 +1,9 @@
+pass  hero-lanes  (21 anim, 640 ms; reduce 0 anim)  kb/tests/benchmark/round2/landing/shots/motion/hero-lanes.png
+pass  menu-pointer  (2 anim, 200 ms; reduce 1 anim)  kb/tests/benchmark/round2/landing/shots/motion/menu-pointer.png
+pass  menu-keyboard  (0 anim, 0 ms; reduce 0 anim)  kb/tests/benchmark/round2/landing/shots/motion/menu-keyboard.png
+pass  faq-open  (1 anim, 200 ms; reduce 1 anim)  kb/tests/benchmark/round2/landing/shots/motion/faq-open.png
+      warn [reduce] 200 ms change under reduced motion; keep crossfades at 150 ms or less svg.icon.icon--lg color
+pass  stepper-press  (3 anim, 100 ms; reduce 2 anim)  kb/tests/benchmark/round2/landing/shots/motion/stepper-press.png
+pass  stepper-keyboard  (0 anim, 0 ms; reduce 0 anim)  kb/tests/benchmark/round2/landing/shots/motion/stepper-keyboard.png
+pass  signup-sent  (1 anim, 200 ms; reduce 0 anim)  kb/tests/benchmark/round2/landing/shots/motion/signup-sent.png
+PASS: every filmed animation is on the motion tokens

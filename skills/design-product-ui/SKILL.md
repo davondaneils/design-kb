@@ -31,8 +31,8 @@ Forms and settings
 
 Shell and density
 13. Same page header on every screen: title left, one primary action right, view options below.
-14. Location marked with `aria-current` plus a non-color cue; sidebar at most two levels; skip link.
-15. Density changes row height and padding only; UI text stays 14px or more, targets 24px or more; coarse pointers never get compact.
+14. Location and selection marked with `aria-current` (or `aria-pressed`, `aria-selected`) plus a cue that measures: a selected fill counts only at 3:1 against its unselected neighbor, otherwise weight +200, a 3:1 border or a 2px indicator (lint `selected-state`; round 1's filter measured 1.21:1 light and 1.08:1 dark, `kb/reviews/benchmark-round1-app.md` gate 3); sidebar at most two levels; skip link.
+15. Density changes row height and padding only; UI text stays 14px or more, on phones too (line 2 of a collapsed row is 14px); 12px only for column headers, timestamps and meta, never for status words or the data a row is checked for (lint `reading-size`; round 1 set 48% of phone text at 12px); targets 24px or more; coarse pointers never get compact.
 
 States and bulk
 16. Every panel has designed ready, loading, empty, no-results, partial failure, stale and no-permission states that keep its size.
@@ -48,14 +48,14 @@ Dashboards
 |---|---|---|
 | Row height | 32 compact, 40 default, 48 comfortable | design-layout 05; Carbon |
 | Cell padding inline | 12 compact, 16 default; outer cells match panel padding | design-layout 05 |
-| UI text | `--text-sm` 14; headers and meta `--text-xs` 12 at 4.5:1 | FOUNDATIONS |
+| UI text | `--text-sm` 14, line 2 of a phone row included; column headers and timestamps `--text-xs` 12 at 4.5:1, at most a third of the text at 390 | FOUNDATIONS; lint `reading-size` |
 | Selection column | 40px wide, 24px checkbox target | WCAG 2.5.8 |
 | Sidebar | 240px at lg+, 56px icon rail md to lg, drawer under md | opinion; design-ux 02 |
 | Top bar | 56px (48 compact): 8 or 12 padding around 40 (32) controls | opinion |
 | Palette | 560 to 640px wide, 12 to 20vh from top, 40px rows, under 100 ms per keystroke (aim 50) | Superhuman; opinion |
 | Loading | none under 1 s; skeleton first load; determinate from 3 s with known size | Primer; Vercel |
 | Undo toast | 5 s minimum, pauses on hover and focus | design-ux 04 |
-| KPIs | 3 to 5 per row; value 31 to 39px weight 600; tiles abbreviate to 3 significant figures (full value in an sr-only span, never `aria-label` on a span), tables never | design-layout 05; opinion |
+| KPIs | 3 to 5 per row, 2x2 at 768; value 31 to 39px weight 600 (a review-and-commit screen sets the committed amount alone at 39 and the counts at 20); tiles abbreviate to 3 significant figures (full value in an sr-only span, never `aria-label` on a span), tables never | design-layout 05; opinion |
 | Bulk actions | bar on first selection; hide on phones only under 490px and only if non-essential | Carbon; Polaris |
 
 ## 3. Decision rules
@@ -64,8 +64,9 @@ Dashboards
 - Table or grid: read-only cells plus a link and a menu per row is a table; spreadsheet-like editing is a grid with one tab stop.
 - Row actions: 1 or 2 inline as labelled icon buttons in the last column; 3 or more in a "More" menu with at most one pulled out.
 - The primary cell is the real link; whole-row click only forwards to it.
-- Responsive, in this order: (1) cut columns by priority; (2) collapse rows to two-line list items, primary cell and the sorted measure on line 1, restoring ARIA table roles because Safari drops table semantics on `display` changes; (3) scroll inside a focusable, labelled box with a locked first column and a visible cut-off cue, only for true multi-measure comparison.
-- Sticky header whenever the table is taller than its viewport, with `scroll-padding-top` so focus is never hidden (WCAG 2.4.11).
+- Responsive, in this order: (1) cut columns by priority; (2) collapse rows to two-line list items, primary cell and the sorted measure on line 1, line 2 at 14px, restoring ARIA table roles because Safari drops table semantics on `display` changes; (3) scroll inside a focusable, labelled box with a locked first column and a visible cut-off cue, only for true multi-measure comparison.
+- Sticky header whenever the table is taller than its viewport, with `scroll-padding-top` so focus is never hidden (WCAG 2.4.11). Round 1 shipped a 1,824px table without one.
+- Status in a table is a 12 to 16px glyph plus a word; never a tinted row (Linear "Status colors": "never on the row", `kb/teardowns/linear-app.md`). A tinted row belongs only inside an alert panel, so one fact is never painted twice.
 - Pagination with counts for lookup tables; virtualize past about 500 rows; no infinite scroll.
 
 ### Find and command (`references/02-find-and-command.md`)
@@ -93,17 +94,20 @@ Dashboards
 - Permission: show the frame and who can grant access, with "Request access"; hide only if the panel's existence is sensitive.
 - Notifications inbox: two tabs, "needs you" (assigned, mentioned, review requested) and everything else, each with a count; every row names its reason; triage by keyboard (Done, snooze, read toggle) with a way back. One channel per event: an item read in the inbox never also arrives by email. Push permission is asked after the first useful moment, not on first sign-in. Examples: `kb/references/patterns/09-notifications.md` (Linear Priority and Other, GitHub reason labels and Done).
 - First run: the real product with labelled sample data, not a tour; permissions (notifications, integrations) are asked when the feature that needs them is first used (design-ux `references/05-onboarding.md`; examples in `kb/references/patterns/01-onboarding.md`).
+- **Commit dialog** (approve, pay, send, delete many): restates every open warning with its effect on the amount ("BRL costs 2.6% more than its 30-day average: +$123.53"), or requires each to be resolved or acknowledged; round 1's dialog named one of three. The confirm button carries the amount ("Approve $265,195.92").
+- **Time-boxed commitments** (a rate lock, a hold, a reservation) show the absolute end time ("Rates locked until 11:22 am ET") and, while the screen is open, a live countdown in a polite region that announces at most each minute (WCAG 2.2.2).
 - Bulk: tri-state header checkbox (native `indeterminate`), Shift range, `X` toggle, "Select all N matching", verb plus noun actions with the count, row menus disabled while selecting; undo for reversible, confirm with count for irreversible.
 
 ### Dashboards (`references/06-dashboards.md`)
 - Operational (on-call): status and alerts first, compact, auto refresh, freshness prominent. Analytical (weekly review): answer line, KPIs, trend with benchmark, breakdowns, detail table.
 - Alerts needing action today go before the charts.
 - Benchmark as a dashed gray line, not another color. Every chart through dataviz.
+- **Review-and-commit** (approve a run, a payout, an invoice batch): the committed amount is the single largest figure on the screen (39px; counts drop to 20) with its explanation under it, not above; the amount is on the commit button; on a page taller than two screens the commit and the amount travel together in a sticky bar (design-conversion `references/04-checkout-and-forms.md`, "the summary never leaves"). Round 1 set the $265,195.92 total at the same 31px as "7 currencies", and Approve left the screen after 900px of 3,219 (`kb/reviews/benchmark-round1-app.md` items 6 and 10). Full rules: `references/06-dashboards.md`.
 
 ## 4. Expert moves (above the gate)
 1. **Shared column edge.** Right-aligned numeric headers with the sort arrow on the inner side, so header and figures end on one line.
 2. **Units in the header, figures in the cells.** The column reads as one shape.
-3. **The row has one door.** Primary cell link plus row hover tint: a big target, one tab stop per row, clean screen reader output.
+3. **The row has one door.** The primary cell link is stretched over the row (`a::after { content: ""; position: absolute; inset: 0 }` on a `position: relative` row): the row *is* the target, 44px or more on touch, one tab stop per row, clean screen reader output. A hover tint alone only makes the target feel large (round 1: a 109x24 link in an 89px row).
 4. **Collapse that keeps the comparison.** On phones the sorted measure stays right aligned on line 1 of each item; secondary measures drop to a muted line 2.
 5. **Restore table roles after restyling** rows as grid or flex, or Safari stops announcing a table.
 6. **Middle truncation** for paths and IDs, whose ends differ (opinion).

@@ -24,7 +24,8 @@
   - Buttons: "Delete plan" (danger style) / "Keep plan"
 - Prefer undo over confirmation for reversible actions: "Plan archived. Undo" (NN/g: routine confirmations train users to click through).
 - Typed confirmation ("Type the project name to delete") only for irreversible, high-blast-radius actions.
-- Money buttons show the amount: "Pay $48.00", "Send $250 to Maya".
+- Money buttons show the amount: "Pay $48.00", "Send $250 to Maya", "Approve $265,195.92". The confirm button in a commit dialog too, not only the page button (round 1's dialog said "Approve run", `kb/reviews/benchmark-round1-app.md` item 10).
+- KPI and column labels are true in every state: name what the number counts, not the outcome you hope for. "People in this run", not "People paid" before payment; a filtered view reads "Showing 3 of 38" and never changes what a repeated label counts (round 2's heading read "People in this run 3" beside the summary's "People in this run 38", lint `label-number`); round 1 showed "People paid 38" under "Nobody has been paid" (`kb/reviews/benchmark-round1-app.md` gate 16). Read every label against the empty, error and post-action states.
 - Absolute dates (with weekday) for money, deadlines and legal timing: "Arrives by Fri, Oct 10". Relative dates ("by Friday", "tomorrow") are ambiguous across time zones and after midnight. Relative is fine for low-stakes recency ("Edited 2 hours ago"). (Added after testing; opinion consistent with NN/g "precise" error and status guidance.)
 - Toggles and checkboxes: label names the setting positively; the control carries the state. "Email me receipts", not "Disable receipt emails".
 - Loading button text states the action in progress: "Saving..." then "Saved". Keep width stable (hand-off: design-frontend).

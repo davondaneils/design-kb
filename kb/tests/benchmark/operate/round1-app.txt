@@ -1,0 +1,159 @@
+Operated checks: round1/app/run-review.html  ->  FAIL (8 fail, 7 warn)
+
+  FAIL  dead-control
+        x clicking "Northwind Labs Sample workspace , switch" changes nothing on the page (no DOM, attribute, value or URL change)  [body > div.app > nav.sidebar > button.ws]
+        x clicking "Send reminder" changes nothing on the page (no DOM, attribute, value or URL change)  [#alert-bank > button.btn.btn-secondary]
+        x clicking "Review rate" changes nothing on the page (no DOM, attribute, value or URL change)  [#alert-rate > button.btn.btn-secondary]
+        x clicking "Check proration" changes nothing on the page (no DOM, attribute, value or URL change)  [#alert-hire > button.btn.btn-secondary]
+  FAIL  press-state
+        x "Status" looks the same held down as at rest; every custom button has a pressed state (design-polish 01 rule 3)  [thead > tr > th > button.sort]
+        x "All 38" looks the same held down as at rest; every custom button has a pressed state (design-polish 01 rule 3)  [#f-all]
+        ! "Send reminder" pressed looks the same as hover; pressed moves one step past hover  [#alert-bank > button.btn.btn-secondary]
+        ! "Review rate" pressed looks the same as hover; pressed moves one step past hover  [#alert-rate > button.btn.btn-secondary]
+        ! "Check proration" pressed looks the same as hover; pressed moves one step past hover  [#alert-hire > button.btn.btn-secondary]
+        ! "Name" pressed looks the same as hover; pressed moves one step past hover  [thead > tr > th > button.sort]
+        ! "Country" pressed looks the same as hover; pressed moves one step past hover  [thead > tr > th.hide-md > button.sort]
+        ! "Currency" pressed looks the same as hover; pressed moves one step past hover  [thead > tr > th > button.sort]
+  pass  disclosure
+  pass  focus-obscured
+  pass  stepper
+  pass  countdown
+  pass  label-number
+  FAIL  stale-commit
+        x after "Approve run" the page still says "Rates as of 9:41 am ET, Tue, Oct 27, estimates until you app", "Up $3,033.49 from September. Amara Okafor’s first, partial m", "Approve by Wed, Oct 28, 5 pm ET"; every sentence is true after the action
+  FAIL  contradiction
+        x after "Approve run": "Ferry then debits Chase operating ··4417 and pays everyone on Fri, Oct" shares a dialog with its exception "Lucía Fernández’s pay is held in your Ferry balance until she adds ban"; write "37 of 38" or name who is left out  [#approve-dialog]
+        ! "Everyone is paid Fri, Oct 30" and "Lucía Fernández’s pay is held in your Ferry balance until she adds ban" are on the same page; a universal never shares a screen with its exception
+
+  1440px "Approve run"
+    + Approve the October 2026 run?
+    + Rates lock for 30 minutes when you approve. Ferry then debits Chase operating ··4417 and pays everyone on Fri, Oct 30.
+    + Debit, at current rates
+    + Lucía Fernández’s pay is held in your Ferry balance until she adds bank details.
+    + Keep reviewing
+
+
+  1440px "Keep reviewing"
+
+    - Approve the October 2026 run?
+    - Rates lock for 30 minutes when you approve. Ferry then debits Chase operating ··4417 and pays everyone on Fri, Oct 30.
+    - Debit, at current rates
+    - Lucía Fernández’s pay is held in your Ferry balance until she adds bank details.
+    - Keep reviewing
+
+  1440px "Approve run"
+    + Approved
+    + Approved. Rates are locked for 30 minutes while Ferry debits Chase operating ··4417.
+    - Draft
+    - Approve run
+    - Approve the October 2026 run?
+    - Rates lock for 30 minutes when you approve. Ferry then debits Chase operating ··4417 and pays everyone on Fri, Oct 30.
+    - Debit, at current rates
+    - Lucía Fernández’s pay is held in your Ferry balance until she adds bank details.
+    - Keep reviewing
+    - Approve run
+
+  1440px "Name"
+    + Sorted by Name, ascending
+
+
+  1440px "Country"
+    + Sorted by Country, ascending
+
+
+  1440px "Currency"
+    + Sorted by Currency, ascending
+
+
+  1440px "Status"
+    + Sorted by Status, descending
+
+
+  390px "Open navigation"
+    + Northwind Labs
+    + Sample workspace
+    + Home
+    + Payments
+    + Funding
+    + Reports
+    + Workspace
+    + Settings
+    + Help
+
+
+  390px "Close navigation"
+
+    - Northwind Labs
+    - Sample workspace
+    - Home
+    - Payments
+    - Funding
+    - Reports
+    - Workspace
+    - Settings
+    - Help
+
+Operated checks: round1/app/run-review.html?state=error  ->  FAIL (5 fail, 3 warn)
+
+  FAIL  dead-control
+        x clicking "Northwind Labs Sample workspace , switch" changes nothing on the page (no DOM, attribute, value or URL change)  [body > div.app > nav.sidebar > button.ws]
+        x clicking "Use another account" changes nothing on the page (no DOM, attribute, value or URL change)  [#actions > button.btn.btn-secondary]
+  FAIL  press-state
+        x "Status" looks the same held down as at rest; every custom button has a pressed state (design-polish 01 rule 3)  [thead > tr > th > button.sort]
+        x "All 38" looks the same held down as at rest; every custom button has a pressed state (design-polish 01 rule 3)  [#f-all]
+        ! "Name" pressed looks the same as hover; pressed moves one step past hover  [thead > tr > th > button.sort]
+        ! "Country" pressed looks the same as hover; pressed moves one step past hover  [thead > tr > th.hide-md > button.sort]
+        ! "Currency" pressed looks the same as hover; pressed moves one step past hover  [thead > tr > th > button.sort]
+  pass  disclosure
+  pass  focus-obscured
+  pass  stepper
+  pass  countdown
+  pass  label-number
+  pass  stale-commit
+  FAIL  contradiction
+        x "Nobody has been paid" sits on the same screen as "People paid 38"  [div.page > dl.kpis > div.kpi > dt]
+
+  1440px "Retry funding"
+    + Retrying the debit
+
+
+  1440px "Name"
+    + Sorted by Name, ascending
+
+
+  1440px "Country"
+    + Sorted by Country, ascending
+
+
+  1440px "Currency"
+    + Sorted by Currency, ascending
+
+
+  1440px "Status"
+    + Sorted by Status, descending
+
+
+  390px "Open navigation"
+    + Northwind Labs
+    + Sample workspace
+    + Home
+    + Payments
+    + Funding
+    + Reports
+    + Workspace
+    + Settings
+    + Help
+
+
+  390px "Close navigation"
+
+    - Northwind Labs
+    - Sample workspace
+    - Home
+    - Payments
+    - Funding
+    - Reports
+    - Workspace
+    - Settings
+    - Help
+

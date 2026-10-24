@@ -1,5 +1,10 @@
 # Changelog: design-typography
 
+## 0.3.1 (2026-10-13, editor-in-chief, benchmark round 1, `kb/tests/benchmark/round1/RANKED.md`)
+- F2: 16px is the most common size on a marketing page, 14px for app UI and phone row line 2 (lint `reading-size`). Reference 01: measure floor 35 at 390.
+- Output format: the two items numbered 6 merged into one Loading item (5). Reference 07: `--text-display-2` max 80px, as in FOUNDATIONS (was 76).
+- `font_kit.py` keeps the rupee (U+20B9) in `LATIN_CORE` and says `--family` does not rename the name table; reference 06 says how to add a missing glyph from latin-ext with `unicode-range`.
+
 ## 0.3.0 (2026-10-11, editor-in-chief, from the held-out test)
 - New `references/08-high-contrast-faces.md` and `assets/hairline.py`: Didone and high-contrast rule (hairline at the seen size; 0.5 CSS px screen and 0.25 pt print floors, doubled reversed; opsz by viewing size; Bodoni Moda measured at opsz 6 to 96; outlined wordmarks freeze opsz). The held-out poster's Bodoni Moda wordmark at opsz 48 rendered a 0.36 CSS px hairline in a 390 feed (`kb/tests/heldout.md`).
 - SKILL section 4 gains the high-contrast decision rule; section 5 gains move 23 (weight does not save a hairline).

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Operated checks fixture: every check fails once</title>
+<style>
+  :root { --c: #1a1d21; --bg: #fff; --line: #6b7280; --fill: #0b5cad; }
+  body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: var(--c); background: var(--bg); }
+  main { max-inline-size: 960px; margin: 0 auto; padding: 24px 16px 96px; }
+  section { margin-block: 32px; }
+  button { font: inherit; min-block-size: 44px; padding: 0 16px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--c); }
+  button:active { background: #e5e7eb; }
+  .filled { background: var(--fill); color: #fff; border-color: var(--fill); }
+  .filled:active { background: #2f74bd; }
+  .filled:disabled { background: #3b7cc0; }
+  /* press-state: no pressed look at all */
+  .flat, .flat:active { background: #fff; }
+  .stepper { display: flex; gap: 8px; align-items: center; }
+  .stepper input { inline-size: 6rem; min-block-size: 44px; font: inherit; }
+  details summary { min-block-size: 44px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; list-style: none; }
+  details summary::-webkit-details-marker { display: none; }
+  details summary .i { transition: rotate 200ms; }
+  details[open] summary .i { rotate: 45deg; }
+  @media (prefers-reduced-motion: reduce) { details summary .i { rotate: none !important; transition: none; } }
+  #drawer { position: fixed; inset: 0 auto 0 0; inline-size: 100%; background: #fff; display: none; padding: 16px; }
+  #drawer.open { display: block; }
+  dialog { border: 1px solid var(--line); border-radius: 12px; padding: 24px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Operated checks fixture</h1>
+  <p>Each section breaks one operated check. Expected fails: dead-control, press-state, disclosure, focus-obscured, stepper, countdown, label-number, stale-commit, contradiction.</p>
+
+  <section aria-labelledby="h-dead">
+    <h2 id="h-dead">Dead control and no pressed state</h2>
+    <button type="button" class="flat" id="dead">Download report</button>
+  </section>
+
+  <section aria-labelledby="h-step">
+    <h2 id="h-step">Stepper that disables the wrong button</h2>
+    <div class="stepper" id="calc">
+      <button type="button" id="minus" aria-label="One fewer seat">−</button>
+      <input id="seats" type="number" min="1" max="20" step="1" value="5" aria-label="Seats">
+      <button type="button" id="plus" aria-label="One more seat">+</button>
+    </div>
+    <p id="price">$50 a month for 5 seats</p>
+  </section>
+
+  <section aria-labelledby="h-faq">
+    <h2 id="h-faq">Questions</h2>
+    <details><summary>Can I cancel? <span class="i" aria-hidden="true">+</span></summary><p>Yes, any time.</p></details>
+  </section>
+
+  <section aria-labelledby="h-menu">
+    <h2 id="h-menu">Menu that does not hold focus</h2>
+    <button type="button" id="menu" aria-expanded="false" aria-controls="drawer">Menu</button>
+    <p><a href="#h-list">A link behind the drawer</a></p>
+  </section>
+
+  <section aria-labelledby="h-lock">
+    <h2 id="h-lock">Rate lock</h2>
+    <p id="lock"><span id="mins">12</span> min left</p>
+    <button type="button" id="retry">Retry transfer</button>
+  </section>
+
+  <section aria-labelledby="h-list">
+    <h2 id="h-list">Invoices in this batch <span id="count">40</span></h2>
+    <dl><dt>Invoices in this batch</dt><dd>40</dd></dl>
+    <button type="button" id="flagged" aria-pressed="false">Flagged 4</button>
+  </section>
+
+  <section aria-labelledby="h-pay">
+    <h2 id="h-pay">Pay the batch</h2>
+    <p>Nothing is sent until you pay. Pay by Fri, 5 pm ET.</p>
+    <button type="button" class="filled" id="pay-open">Pay $12,400.00</button>
+  </section>
+</main>
+
+<div id="drawer"><nav aria-label="Main"><a href="#h-dead">Reports</a> <a href="#h-step">Pricing</a></nav></div>
+
+<dialog id="confirm" aria-labelledby="c-h">
+  <h2 id="c-h">Pay $12,400.00?</h2>
+  <p>Everyone in this batch is paid on Friday.</p>
+  <p>Acme Ltd has no bank details, so its invoice is not sent.</p>
+  <button type="button" id="cancel">Keep reviewing</button>
+  <button type="button" class="filled" id="pay">Pay batch</button>
+</dialog>
+
+<script>
+  // stepper: buttons look up the wrong element, and the max disables "fewer"
+  const seats = document.getElementById('seats');
+  const sync = () => { const v = Number(seats.value); document.getElementById('minus').disabled = v >= 20; };
+  seats.addEventListener('change', sync);
+  // menu opens a drawer over the page but leaves the page focusable
+  const menu = document.getElementById('menu'), drawer = document.getElementById('drawer');
+  menu.addEventListener('click', () => { const o = menu.getAttribute('aria-expanded') !== 'true'; menu.setAttribute('aria-expanded', String(o)); drawer.classList.toggle('open', o); });
+  // retry resets the lock to a longer one
+  document.getElementById('retry').addEventListener('click', () => { document.getElementById('mins').textContent = '30'; });
+  // filter changes the heading count but not the summary
+  document.getElementById('flagged').addEventListener('click', (e) => { e.target.setAttribute('aria-pressed', 'true'); document.getElementById('count').textContent = '4'; });
+  // pay: the dialog contradicts itself; after paying, the page still says "until you pay"
+  const dlg = document.getElementById('confirm');
+  document.getElementById('pay-open').addEventListener('click', () => dlg.showModal());
+  document.getElementById('cancel').addEventListener('click', () => dlg.close());
+  document.getElementById('pay').addEventListener('click', () => { dlg.close(); document.getElementById('h-pay').textContent = 'Batch paid'; });
+</script>
+</body>
+</html>

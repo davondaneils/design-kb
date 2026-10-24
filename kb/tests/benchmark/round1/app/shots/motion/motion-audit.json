@@ -1,0 +1,231 @@
+{
+  "date": "2026-10-13T14:42:47.065Z",
+  "tokensMs": [
+    100,
+    150,
+    200,
+    250,
+    300,
+    400,
+    500,
+    600,
+    800
+  ],
+  "scenarios": [
+    {
+      "name": "approve-dialog-pointer",
+      "url": "kb/tests/benchmark/round1/app/run-review.html",
+      "strip": "kb/tests/benchmark/round1/app/shots/motion/approve-dialog-pointer.png",
+      "result": "PASS",
+      "findings": [],
+      "rows": [
+        {
+          "mode": "no-preference",
+          "end": 200,
+          "animations": [
+            {
+              "i": 0,
+              "type": "CSSTransition",
+              "name": "background-color",
+              "target": "button#approve.btn.btn-primary",
+              "duration": 100,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.2, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 3411,
+              "offset": 0,
+              "curve": "standard",
+              "props": [
+                "backgroundColor"
+              ]
+            },
+            {
+              "i": 1,
+              "type": "CSSTransition",
+              "name": "opacity",
+              "target": "dialog#approve-dialog.modal",
+              "duration": 200,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "cubic-bezier(0, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 153502,
+              "offset": 0,
+              "curve": "enter",
+              "props": [
+                "opacity"
+              ]
+            },
+            {
+              "i": 2,
+              "type": "CSSTransition",
+              "name": "transform",
+              "target": "dialog#approve-dialog.modal",
+              "duration": 200,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "cubic-bezier(0, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 153502,
+              "offset": 0,
+              "curve": "enter",
+              "props": [
+                "transform"
+              ]
+            }
+          ]
+        },
+        {
+          "mode": "reduce",
+          "end": 150,
+          "animations": [
+            {
+              "i": 0,
+              "type": "CSSTransition",
+              "name": "background-color",
+              "target": "button#approve.btn.btn-primary",
+              "duration": 100,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.2, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 3411,
+              "offset": 0,
+              "curve": "standard",
+              "props": [
+                "backgroundColor"
+              ]
+            },
+            {
+              "i": 1,
+              "type": "CSSTransition",
+              "name": "opacity",
+              "target": "dialog#approve-dialog.modal",
+              "duration": 150,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.2, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 166560,
+              "offset": 0,
+              "curve": "standard",
+              "props": [
+                "opacity"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "approve-dialog-keyboard",
+      "url": "kb/tests/benchmark/round1/app/run-review.html",
+      "strip": "kb/tests/benchmark/round1/app/shots/motion/approve-dialog-keyboard.png",
+      "result": "PASS",
+      "findings": [],
+      "rows": [
+        {
+          "mode": "no-preference",
+          "end": 0,
+          "animations": []
+        },
+        {
+          "mode": "reduce",
+          "end": 0,
+          "animations": []
+        }
+      ]
+    },
+    {
+      "name": "drawer-pointer-390",
+      "url": "kb/tests/benchmark/round1/app/run-review.html",
+      "strip": "kb/tests/benchmark/round1/app/shots/motion/drawer-pointer-390.png",
+      "result": "PASS",
+      "findings": [],
+      "rows": [
+        {
+          "mode": "no-preference",
+          "end": 100,
+          "animations": [
+            {
+              "i": 0,
+              "type": "CSSTransition",
+              "name": "background-color",
+              "target": "button#menu-open.btn.btn-quiet",
+              "duration": 100,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.2, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 1936,
+              "offset": 0,
+              "curve": "standard",
+              "paint": true,
+              "props": [
+                "backgroundColor"
+              ]
+            }
+          ]
+        },
+        {
+          "mode": "reduce",
+          "end": 100,
+          "animations": [
+            {
+              "i": 0,
+              "type": "CSSTransition",
+              "name": "background-color",
+              "target": "button#menu-open.btn.btn-quiet",
+              "duration": 100,
+              "delay": 0,
+              "iterations": 1,
+              "easing": "cubic-bezier(0.2, 0, 0, 1)",
+              "keyframeEasings": [
+                "linear"
+              ],
+              "area": 1936,
+              "offset": 0,
+              "curve": "standard",
+              "paint": true,
+              "props": [
+                "backgroundColor"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "approve-confirm-keyboard",
+      "url": "kb/tests/benchmark/round1/app/run-review.html",
+      "strip": "kb/tests/benchmark/round1/app/shots/motion/approve-confirm-keyboard.png",
+      "result": "PASS",
+      "findings": [],
+      "rows": [
+        {
+          "mode": "no-preference",
+          "end": 0,
+          "animations": []
+        },
+        {
+          "mode": "reduce",
+          "end": 0,
+          "animations": []
+        }
+      ]
+    }
+  ]
+}

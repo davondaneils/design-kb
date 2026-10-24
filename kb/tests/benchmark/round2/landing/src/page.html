@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ferry: cross-border payroll from one balance</title>
+<meta name="description" content="Pay employees and contractors in 13 countries in their own currency the same day, from one dollar balance. $12 per person per month, first 3 people free.">
+<link rel="canonical" href="https://ferry.example/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:title" content="Ferry: cross-border payroll from one balance">
+<meta property="og:description" content="Fund one dollar balance. Ferry pays everyone in their own currency the same day, at the rate locked when you approve.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ferry.example/">
+<meta property="og:site_name" content="Ferry">
+<meta property="og:image" content="https://ferry.example/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ferry wordmark above one orange line that splits into seven currency lanes: USD, CAD, GBP, EUR, MXN, BRL and INR.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1217" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="{{FAVICON_SVG}}" type="image/svg+xml">
+<link rel="icon" href="{{FAVICON_PNG}}" type="image/png" sizes="32x32">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebSite","@id":"https://ferry.example/#website","name":"Ferry","url":"https://ferry.example/","publisher":{"@id":"https://ferry.example/#org"}},
+{"@type":"Organization","@id":"https://ferry.example/#org","name":"Ferry","url":"https://ferry.example/","logo":"https://ferry.example/logo.png","description":"Cross-border payroll for teams of 5 to 200."}
+]}
+</script>
+<style>
+{{FONTFACE}}
+{{CSS}}
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.75 2.75L16 10"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.5v.01"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-spin" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="header">
+  <div class="wrap header__bar">
+    <a class="logo" href="https://ferry.example/" aria-label="Ferry home">
+      {{LOGO}}
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul role="list">
+        <li><a href="https://ferry.example/product">Product</a></li>
+        <li><a href="https://ferry.example/coverage">Coverage</a></li>
+        <li><a href="https://ferry.example/pricing">Pricing</a></li>
+        <li><a href="https://ferry.example/customers">Customers</a></li>
+      </ul>
+    </nav>
+    <div class="header__actions">
+      <a class="header__signin" href="https://ferry.example/login">Sign in</a>
+      <a class="btn btn--outline btn--md header__cta" href="https://ferry.example/signup">Start free trial</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" data-menu>Menu</button>
+    </div>
+  </div>
+  <div class="wrap menu" id="menu" hidden>
+    <ul role="list">
+      <li><a href="https://ferry.example/product">Product</a></li>
+      <li><a href="https://ferry.example/coverage">Coverage</a></li>
+      <li><a href="https://ferry.example/pricing">Pricing</a></li>
+      <li><a href="https://ferry.example/customers">Customers</a></li>
+      <li><a href="https://ferry.example/login">Sign in</a></li>
+    </ul>
+    <a class="btn btn--primary" href="https://ferry.example/signup">Start free trial</a>
+    <p class="menu__note">14 days free, no card needed.</p>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap grid">
+      <div class="hero__copy">
+        <h1 id="hero-title">Cross-border payroll from one balance.</h1>
+        <p class="hero__sub">Fund one dollar balance. Ferry pays your employees and contractors in their own currency the same day, at the rate locked when you approve. Built for teams of 5&nbsp;to&nbsp;200.</p>
+
+        <form class="signup" id="signup" action="https://ferry.example/signup" method="post" novalidate data-signup>
+          <label class="signup__label" for="email">Work email</label>
+          <div class="signup__row">
+            <input id="email" name="email" type="email" autocomplete="email" inputmode="email" spellcheck="false" placeholder="name@company.com" aria-describedby="email-terms">
+            <button class="btn btn--primary" type="submit">
+              <span class="btn__label">Start free trial</span>
+              <svg class="icon btn__spinner" aria-hidden="true"><use href="#i-spin"/></svg>
+            </button>
+          </div>
+          <p class="signup__msg" id="email-error" hidden><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg><span>Enter a work email, like name@company.com.</span></p>
+          <p class="terms" id="email-terms">14 days free, no card needed. Then $12 per person per month, first 3&nbsp;people free, billed monthly from day&nbsp;15. Cancel online any time.</p>
+        </form>
+        <div class="signup__done" id="signup-done" role="status" tabindex="-1" hidden>
+          <svg class="icon icon--lg" aria-hidden="true"><use href="#i-check-circle"/></svg>
+          <div>
+            <p><b>Check <span data-email>you@company.com</span> for your sign-in link.</b></p>
+            <p>Your 14-day trial starts when you open it. Wrong address? <button type="button" data-reset>Change it</button></p>
+          </div>
+        </div>
+        <p class="hero__alt">Want a walkthrough first? <a class="link" href="https://ferry.example/demo">Book a demo <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+      </div>
+
+      <figure class="hero__art">
+        <div class="run">
+          <div class="run__top">
+            <div class="run__org"><span class="run__avatar" aria-hidden="true">L</span> Lumen Studio <span class="tag">Sample</span></div>
+            <div class="run__title">October payroll</div>
+          </div>
+          <div class="run__sum">
+            <div>
+              <span class="run__label">Paid from your USD balance</span>
+              <span class="run__total num">$74,537.54</span>
+            </div>
+            <span class="tag run__lock"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-lock"/></svg>Rates locked</span>
+          </div>
+          <ol class="steps" role="list">
+            <li><b><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Funded</b><span><time datetime="2026-10-29">Thu, Oct&nbsp;29</time></span></li>
+            <li><b><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Approved</b><span><time datetime="2026-10-30T09:14-04:00">Fri, Oct&nbsp;30, 9:14&nbsp;am&nbsp;ET</time></span></li>
+            <li data-step="now"><b><span class="pulse" aria-hidden="true"></span>Paying</b><span>4 of 7 currencies paid</span></li>
+          </ol>
+          <table class="ledger">
+            <caption class="sr-only">October payroll for Lumen Studio, a sample company: 12 people in 7 currencies</caption>
+            <thead>
+              <tr><th class="lane" scope="col"><span class="sr-only">Route</span></th><th scope="col">Currency</th><th class="r col-people" scope="col">People</th><th class="r" scope="col">They receive</th><th class="r col-rate" scope="col">Locked rate</th><th scope="col">Status</th></tr>
+            </thead>
+            <tbody>
+              <tr style="--i:0"><td class="lane"></td><td><span class="cur"><span class="dot"></span><b>USD</b><span>United States</span></span></td><td class="r col-people muted">3</td><td class="r amt">24,500.00</td><td class="r col-rate muted">1.0000</td><td><span class="status"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Paid</span></td></tr>
+              <tr style="--i:1"><td class="lane"></td><td><span class="cur"><span class="dot"></span><b>CAD</b><span>Canada</span></span></td><td class="r col-people muted">1</td><td class="r amt">9,200.00</td><td class="r col-rate muted">1.3745</td><td><span class="status"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Paid</span></td></tr>
+              <tr style="--i:2"><td class="lane"></td><td><span class="cur"><span class="dot"></span><b>GBP</b><span>United Kingdom</span></span></td><td class="r col-people muted">2</td><td class="r amt">11,400.00</td><td class="r col-rate muted">0.7470</td><td><span class="status"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Paid</span></td></tr>
+              <tr style="--i:3"><td class="lane"></td><td><span class="cur"><span class="dot"></span><b>EUR</b><span>Portugal</span></span></td><td class="r col-people muted">2</td><td class="r amt">10,850.00</td><td class="r col-rate muted">0.8566</td><td><span class="status"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Paid</span></td></tr>
+              <tr style="--i:4"><td class="lane"></td><td><span class="cur"><span class="dot"></span><b>MXN</b><span>Mexico</span></span></td><td class="r col-people muted">1</td><td class="r amt">78,000.00</td><td class="r col-rate muted">18.3264</td><td><span class="status status--sending"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>Sending</span></td></tr>
+              <tr style="--i:5"><td class="lane"></td><td><span class="cur"><span class="dot"></span><b>BRL</b><span>Brazil</span></span></td><td class="r col-people muted">2</td><td class="r amt">41,000.00</td><td class="r col-rate muted">5.3784</td><td><span class="status status--sending"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>Sending</span></td></tr>
+              <tr style="--i:6"><td class="lane"></td><td><span class="cur"><span class="dot"></span><b>INR</b><span>India</span></span></td><td class="r col-people muted">1</td><td class="r amt">310,000.00</td><td class="r col-rate muted">87.6480</td><td><span class="status status--sending"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>Sending</span></td></tr>
+            </tbody>
+          </table>
+          <div class="run__foot"><span>12 people, 7 currencies, no transfer fees</span><span>Rates are per 1 USD, sample data</span></div>
+        </div>
+        <figcaption class="hero__cap">A sample October run: one dollar balance splits into a lane for each currency, all paid on <time datetime="2026-10-30">Fri, Oct&nbsp;30</time>.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="proof" aria-label="Customer story (sample)">
+    <div class="wrap grid">
+      <figure>
+        <blockquote><p>We paid 12 people in 7 countries in one run. It used to take three tools and most of a day.</p></blockquote>
+        <figcaption><span><b>Dana Ortiz</b>, COO, Lumen Studio</span><span class="tag">Sample quote</span></figcaption>
+      </figure>
+      <dl class="proof__stats">
+        <div><dt>payroll tools replaced</dt><dd class="num">3</dd></div>
+        <div><dt>people in 7 countries</dt><dd class="num">12</dd></div>
+        <div><dt>run, approved once</dt><dd class="num">1</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section how" id="how" aria-labelledby="how-title">
+    <div class="wrap grid">
+      <div class="how__head">
+        <span class="eyebrow">How a run works</span>
+        <h2 class="h2" id="how-title">Fund once, approve once, everyone is paid.</h2>
+      </div>
+      <ol class="how__steps" role="list">
+        <li class="how__step rise">
+          <svg aria-hidden="true" focusable="false"><line class="route-line" x1="21" y1="24" x2="100%" y2="24"/><circle class="route-fill" cx="12" cy="24" r="9"/><circle class="route-node" cx="12" cy="24" r="3"/></svg>
+          <h3><span class="n">01</span> Fund</h3>
+          <p>Send dollars to your Ferry balance by ACH or wire. One balance covers every country you pay.</p>
+        </li>
+        <li class="how__step rise">
+          <svg aria-hidden="true" focusable="false"><line class="route-line" x1="0" y1="24" x2="4" y2="24"/><line class="route-line" x1="28" y1="24" x2="100%" y2="24"/><rect class="route-tag" x="4" y="12" width="24" height="24" rx="8"/><rect x="11" y="23" width="10" height="7" rx="1.5" class="route-line" style="stroke-width:1.5"/><path d="M13 23v-2a3 3 0 0 1 6 0v2" class="route-line" style="stroke-width:1.5"/></svg>
+          <h3><span class="n">02</span> Approve</h3>
+          <p>Check what each person receives in their currency and what it costs you. The rate locks when you approve.</p>
+        </li>
+        <li class="how__step rise">
+          <svg aria-hidden="true" focusable="false"><path class="route-line" d="M0 24H24M24 24C40 24 40 8 56 8H116M24 24H116M24 24C40 24 40 40 56 40H116"/><circle class="route-node" cx="120" cy="8" r="4"/><circle class="route-node" cx="120" cy="24" r="4"/><circle class="route-node" cx="120" cy="40" r="4"/><line class="route-ghost" x1="132" y1="24" x2="100%" y2="24"/></svg>
+          <h3><span class="n">03</span> Everyone paid</h3>
+          <p>Ferry pays each person in their local currency the same day. You get one receipt for the whole run.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section band" id="rates" aria-labelledby="rates-title">
+    <div class="wrap grid">
+      <div class="band__copy">
+        <span class="eyebrow">Exchange rates</span>
+        <h2 class="h2" id="rates-title">The rate locks when you approve.</h2>
+        <p class="lead">You see the exact amount each person receives, and the dollar cost, before you approve. Nothing moves after that. Ferry charges the <span class="nowrap">mid-market</span> rate plus 0.4%, shown on every line, and no transfer fees.</p>
+      </div>
+      <dl class="band__eq">
+        <div><dt>You approve</dt><dd class="num">$15,261.04</dd></div>
+        <div class="locked"><dt>Locked rate</dt><dd class="num">0.7470<small>GBP per USD</small></dd></div>
+        <div><dt>They receive</dt><dd class="num">£11,400.00</dd></div>
+      </dl>
+      <p class="band__note">Sample: two people in the United Kingdom from the October run above. Rates are examples, not quotes.</p>
+    </div>
+  </section>
+
+  <section class="section cover" id="coverage" aria-labelledby="cover-title">
+    <div class="wrap grid">
+      <div class="cover__copy">
+        <span class="eyebrow">Coverage</span>
+        <h2 class="h2" id="cover-title">7 currencies, 13 countries.</h2>
+        <p class="lead">Pay employees and contractors in each currency below, the same day you approve.</p>
+        <p class="more"><a class="link" href="https://ferry.example/coverage">Ask for a country <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+      </div>
+      <table class="board">
+        <caption class="sr-only">Currencies and countries Ferry pays</caption>
+        <thead><tr><th scope="col">Code</th><th scope="col" class="name">Currency</th><th scope="col">Countries</th></tr></thead>
+        <tbody>
+          <tr><td class="code">USD</td><td class="name">US dollar</td><td>United States</td></tr>
+          <tr><td class="code">CAD</td><td class="name">Canadian dollar</td><td>Canada</td></tr>
+          <tr><td class="code">GBP</td><td class="name">British pound</td><td>United Kingdom</td></tr>
+          <tr><td class="code">EUR</td><td class="name">Euro</td><td>Germany, France, Spain, Portugal, the Netherlands, Ireland and Italy</td></tr>
+          <tr><td class="code">MXN</td><td class="name">Mexican peso</td><td>Mexico</td></tr>
+          <tr><td class="code">BRL</td><td class="name">Brazilian real</td><td>Brazil</td></tr>
+          <tr><td class="code">INR</td><td class="name">Indian rupee</td><td>India</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section section--tint price" id="pricing" aria-labelledby="price-title">
+    <div class="wrap grid">
+      <div class="price__copy">
+        <span class="eyebrow">Pricing</span>
+        <h2 class="h2" id="price-title">One price per person. Your first 3 are free.</h2>
+        <p class="price__big"><b class="price">$12</b><span>per person<br>per month</span></p>
+        <ul class="price__list" role="list">
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>All 7 currencies and 13 countries</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Employees and contractors on the same run</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>As many runs a month as you need</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>No transfer fees; the rate is shown before you approve</span></li>
+        </ul>
+      </div>
+      <div class="calc" data-calc>
+        <div class="calc__row">
+          <div>
+            <label for="people">People you pay</label>
+            <p class="calc__hint" id="people-hint">From 1 to 200</p>
+          </div>
+          <div class="stepper">
+            <button type="button" data-step="-1" aria-label="One fewer person" aria-controls="people"><svg class="icon" aria-hidden="true"><use href="#i-minus"/></svg></button>
+            <input id="people" type="number" inputmode="numeric" min="1" max="200" step="1" value="12" aria-describedby="people-hint">
+            <button type="button" data-step="1" aria-label="One more person" aria-controls="people"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+          </div>
+        </div>
+        <div class="calc__out" aria-live="polite">
+          <p class="calc__total price"><span data-total>$108</span> <small>a month</small></p>
+          <p class="calc__math" data-math>9 people at $12. Your first 3 are free.</p>
+        </div>
+        <a class="btn btn--primary" href="https://ferry.example/signup" data-focus-email>Start free trial</a>
+        <p class="terms">14 days free, no card needed. Then $12 per person per month, first 3&nbsp;people free, billed monthly from day&nbsp;15 for the people you paid. Cancel online any time.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faqs" id="faq" aria-labelledby="faq-title">
+    <div class="wrap grid">
+      <div class="faq__head">
+        <span class="eyebrow">Questions</span>
+        <h2 class="h2" id="faq-title">Before you run payroll with us.</h2>
+        <p>Something else? <a class="link" href="https://ferry.example/demo">Book a demo</a> and ask a person.</p>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>When exactly does the rate lock?<svg class="icon icon--lg" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p class="faq__a">When you approve the run. From that moment the amount each person receives and your dollar cost are fixed, even if the market moves before the money lands.</p>
+        </details>
+        <details>
+          <summary>How fast do people get paid?<svg class="icon icon--lg" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p class="faq__a">The same day you approve, in all 13 countries. Each person gets the money in their local currency, into their own bank account.</p>
+        </details>
+        <details>
+          <summary>Is Ferry an employer of record?<svg class="icon icon--lg" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p class="faq__a">No. Ferry pays people you already employ or contract. If you need to hire in a country where you have no company, you need an employer of record first; Ferry can still pay your contractors there.</p>
+        </details>
+        <details>
+          <summary>What does it cost?<svg class="icon icon--lg" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p class="faq__a">$12 per person per month, first 3&nbsp;people free. You pay only for the people you paid that month. Exchange is the <span class="nowrap">mid-market</span> rate plus 0.4%, with no transfer fees.</p>
+        </details>
+        <details>
+          <summary>Can I cancel?<svg class="icon icon--lg" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p class="faq__a">Yes, online any time from Settings. There is no contract and no cancellation fee. Money left in your balance goes back to your bank.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section final" aria-labelledby="final-title">
+    <div class="wrap grid">
+      <div class="final__inner rise">
+        <h2 id="final-title">Your next payroll, in one run.</h2>
+        <div class="final__actions">
+          <a class="btn btn--primary" href="https://ferry.example/signup" data-focus-email>Start free trial</a>
+          <a class="btn btn--outline" href="https://ferry.example/demo">Book a demo</a>
+        </div>
+        <p class="terms">14 days free, no card needed. Then $12 per person per month, first 3&nbsp;people free, billed monthly from day&nbsp;15. Cancel online any time.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap grid">
+    <div class="footer__brand">
+      <a class="logo" href="https://ferry.example/" aria-label="Ferry home">{{LOGO}}</a>
+      <p>Cross-border payroll for teams of 5&nbsp;to&nbsp;200, paid from one balance.</p>
+    </div>
+    <div class="footer__cols">
+      <div><h2>Product</h2><ul role="list"><li><a href="https://ferry.example/product">How it works</a></li><li><a href="https://ferry.example/coverage">Coverage</a></li><li><a href="https://ferry.example/pricing">Pricing</a></li><li><a href="https://ferry.example/security">Security</a></li></ul></div>
+      <div><h2>Company</h2><ul role="list"><li><a href="https://ferry.example/about">About</a></li><li><a href="https://ferry.example/customers">Customers</a></li><li><a href="https://ferry.example/careers">Careers</a></li><li><a href="https://ferry.example/contact">Contact</a></li></ul></div>
+      <div><h2>Help</h2><ul role="list"><li><a href="https://ferry.example/demo">Book a demo</a></li><li><a href="https://ferry.example/help">Help center</a></li><li><a href="https://ferry.example/status">Status</a></li></ul></div>
+      <div><h2>Legal</h2><ul role="list"><li><a href="https://ferry.example/privacy">Privacy</a></li><li><a href="https://ferry.example/terms">Terms</a></li><li><a href="https://ferry.example/licenses">Licenses</a></li></ul></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="footer__sign" aria-hidden="true">{{WORDMARK_OUTLINE}}</div>
+    <div class="footer__legal">
+      <span>&copy; 2026 Ferry. A sample company for a design benchmark; names, numbers and quotes on this page are sample content.</span>
+      <span>Prices in US dollars.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+{{JS}}
+</script>
+</body>
+</html>

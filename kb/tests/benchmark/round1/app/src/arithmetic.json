@@ -1,0 +1,81 @@
+{
+  "total": 265195.92,
+  "sepTotal": 262162.43,
+  "delta": 3033.49,
+  "hireUsd": 3328.89,
+  "fx": -295.4,
+  "brlAtAvg": 4697.51,
+  "brlVsAvgPct": 2.63,
+  "currencies": [
+    {
+      "code": "USD",
+      "count": 14,
+      "local": 131041.67,
+      "rate": 1,
+      "usd": 131041.67,
+      "sepRate": 1,
+      "usdSep": 131041.67,
+      "share": 49.4
+    },
+    {
+      "code": "CAD",
+      "count": 5,
+      "local": 42150,
+      "rate": 1.399,
+      "usd": 30128.66,
+      "sepRate": 1.3925,
+      "usdSep": 30269.3,
+      "share": 11.4
+    },
+    {
+      "code": "GBP",
+      "count": 5,
+      "local": 26050,
+      "rate": 0.751,
+      "usd": 34687.08,
+      "sepRate": 0.7468,
+      "usdSep": 31534.55,
+      "share": 13.1
+    },
+    {
+      "code": "EUR",
+      "count": 6,
+      "local": 35950,
+      "rate": 0.8605,
+      "usd": 41778.04,
+      "sepRate": 0.8571,
+      "usdSep": 41943.76,
+      "share": 15.8
+    },
+    {
+      "code": "MXN",
+      "count": 4,
+      "local": 251500,
+      "rate": 18.452,
+      "usd": 13629.96,
+      "sepRate": 18.613,
+      "usdSep": 13512.06,
+      "share": 5.1
+    },
+    {
+      "code": "BRL",
+      "count": 1,
+      "local": 26400,
+      "rate": 5.476,
+      "usd": 4821.04,
+      "sepRate": 5.584,
+      "usdSep": 4727.79,
+      "share": 1.8
+    },
+    {
+      "code": "INR",
+      "count": 3,
+      "local": 803000,
+      "rate": 88.15,
+      "usd": 9109.47,
+      "sepRate": 87.92,
+      "usdSep": 9133.3,
+      "share": 3.4
+    }
+  ]
+}

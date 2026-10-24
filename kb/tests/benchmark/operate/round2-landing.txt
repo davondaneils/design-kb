@@ -1,0 +1,53 @@
+Operated checks: round2/landing/ferry.html  ->  FAIL (10 fail, 1 warn)
+
+  FAIL  dead-control
+        x clicking "One fewer person" changes nothing on the page (no DOM, attribute, value or URL change)  [div.calc > div.calc__row > div.stepper > button]
+        x clicking "One more person" changes nothing on the page (no DOM, attribute, value or URL change)  [div.calc > div.calc__row > div.stepper > button]
+  pass  press-state
+  FAIL  disclosure
+        x under reduced motion, "When exactly does the rate lock?" looks the same open as closed; remove the transition, not the end state  [div.wrap.grid > div.faq > details > summary]
+        x under reduced motion, "How fast do people get paid?" looks the same open as closed; remove the transition, not the end state  [div.wrap.grid > div.faq > details > summary]
+        x under reduced motion, "Is Ferry an employer of record?" looks the same open as closed; remove the transition, not the end state  [div.wrap.grid > div.faq > details > summary]
+        x under reduced motion, "What does it cost?" looks the same open as closed; remove the transition, not the end state  [div.wrap.grid > div.faq > details > summary]
+        x under reduced motion, "Can I cancel?" looks the same open as closed; remove the transition, not the end state  [div.wrap.grid > div.faq > details > summary]
+  pass  focus-obscured
+  FAIL  stepper
+        x "One more person" moves #people from 12 to 12, not 13  [#people]
+        x "One fewer person" moves #people from 12 to 12, not 11  [#people]
+        x at the max (200) "One fewer person" disables and "One more person" stays enabled; the button that would leave the range is the one that disables  [#people]
+        ! at the min (1) "One fewer person" stays enabled; disable it so the limit is visible  [#people]
+  pass  countdown
+  pass  label-number
+  pass  stale-commit
+  pass  contradiction
+
+  1440px "Start free trial"
+    + Enter a work email, like name@company.com.
+
+
+  1440px "When exactly does the rate lock?"
+    + When you approve the run. From that moment the amount each person receives and your dollar cost are fixed, even if the market moves before the money lands.
+
+
+  1440px "How fast do people get paid?"
+    + The same day you approve, in all 13 countries. Each person gets the money in their local currency, into their own bank account.
+
+
+  1440px "Is Ferry an employer of record?"
+    + No. Ferry pays people you already employ or contract. If you need to hire in a country where you have no company, you need an employer of record first; Ferry can still pay your contractors there.
+
+
+  1440px "What does it cost?"
+    + $12 per person per month, first 3 people free. You pay only for the people you paid that month. Exchange is the mid-market rate plus 0.4%, with no transfer fees.
+
+
+  1440px "Can I cancel?"
+    + Yes, online any time from Settings. There is no contract and no cancellation fee. Money left in your balance goes back to your bank.
+
+
+  390px "Menu"
+    + Close
+    + Sign in
+    + 14 days free, no card needed.
+    - Menu
+

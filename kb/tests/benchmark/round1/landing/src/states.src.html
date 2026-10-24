@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en-US" data-lint-page="state-sheet">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ferry state sheet</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="@@FAVICON_SVG_URI@@" type="image/svg+xml">
+<style>
+/* @inline fonts.css */
+/* @inline ferry.css */
+@layer components {
+  .sheet { padding-block: var(--space-8); }
+  .sheet h1 { font-family: var(--font-serif); font-size: var(--text-3xl); line-height: var(--leading-tight); }
+  .sheet > .wrap > p { color: var(--color-text-muted); margin-block: var(--space-3) var(--space-7); max-inline-size: var(--size-measure); }
+  .sheet h2 { font-size: var(--text-sm); font-weight: var(--weight-semibold); margin-block: var(--space-7) var(--space-4); }
+  .row { display: flex; flex-wrap: wrap; gap: var(--space-6); align-items: flex-start; padding: var(--space-6); border-radius: var(--radius-lg); background: var(--color-surface); box-shadow: var(--elevation-card); }
+  .row.on-band { background: var(--color-feature-bg); }
+  .cell { display: grid; gap: var(--space-3); justify-items: start; }
+  .cell > span { font-size: var(--text-xs); color: var(--color-text-muted); }
+  .on-band .cell > span { color: var(--color-feature-text); }
+  .is-focus { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+  .stepper .is-focus, .stepper input.is-focus { outline-offset: -2px; }
+  .faq-demo { inline-size: min(560px, 100%); }
+}
+</style>
+</head>
+<body>
+<main class="sheet" id="main">
+  <div class="wrap">
+    <h1>Ferry state sheet</h1>
+    <p>Every control on ferry.html in every state, side by side: rest, hover, focus, pressed, disabled, busy, invalid and open. Hover and pressed are forced with classes; focus is drawn with the same ring the page uses.</p>
+
+    <h2>Primary button, on a surface</h2>
+    <div class="row">
+      <div class="cell"><span>Rest</span><a class="btn btn-primary" href="/signup/">Start free trial</a></div>
+      <div class="cell"><span>Hover</span><a class="btn btn-primary is-hover" href="/signup/">Start free trial</a></div>
+      <div class="cell"><span>Focus</span><a class="btn btn-primary is-focus" href="/signup/">Start free trial</a></div>
+      <div class="cell"><span>Pressed</span><a class="btn btn-primary is-pressed" href="/signup/">Start free trial</a></div>
+      <div class="cell"><span>Disabled</span><button class="btn btn-primary" type="button" disabled>Start free trial</button></div>
+      <div class="cell"><span>Busy</span><button class="btn btn-primary" type="button" aria-busy="true">Start free trial<svg class="spinner" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2a6 6 0 1 1-6 6"/></svg></button></div>
+    </div>
+
+    <h2>Secondary button</h2>
+    <div class="row">
+      <div class="cell"><span>Rest</span><a class="btn btn-secondary" href="/demo/">Book a demo</a></div>
+      <div class="cell"><span>Hover</span><a class="btn btn-secondary is-hover" href="/demo/">Book a demo</a></div>
+      <div class="cell"><span>Focus</span><a class="btn btn-secondary is-focus" href="/demo/">Book a demo</a></div>
+      <div class="cell"><span>Pressed</span><a class="btn btn-secondary is-pressed" href="/demo/">Book a demo</a></div>
+      <div class="cell"><span>Disabled</span><button class="btn btn-secondary" type="button" disabled>Book a demo</button></div>
+      <div class="cell"><span>Header size, rest</span><a class="btn btn-secondary btn-sm" href="/demo/">Book a demo</a></div>
+      <div class="cell"><span>Header size, focus</span><a class="btn btn-secondary btn-sm is-focus" href="/demo/">Book a demo</a></div>
+    </div>
+
+    <h2>Price card on the orange band</h2>
+    <div class="row on-band">
+      <div class="cell"><span>Band behind the card</span>
+        <div class="price-card" style="inline-size:min(420px,100%)"><div class="card">
+          <label class="field-label" for="s1">People you pay in a month</label>
+          <div class="stepper"><button type="button" aria-label="One fewer person"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8h9"/></svg></button><input id="s1" type="number" value="12" min="1" max="200"><button type="button" class="is-hover" aria-label="One more person"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8h9M8 3.5v9"/></svg></button></div>
+          <p class="hint">Plus button shown in hover.</p>
+          <div class="cta-row"><a class="btn btn-primary is-focus" href="/signup/">Start free trial</a></div>
+        </div></div>
+      </div>
+    </div>
+
+    <h2>Team size stepper</h2>
+    <div class="row">
+      <div class="cell"><span>Rest</span><div class="stepper"><button type="button" aria-label="One fewer person"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8h9"/></svg></button><input aria-label="People, rest" type="number" value="12" min="1" max="200"><button type="button" aria-label="One more person"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8h9M8 3.5v9"/></svg></button></div></div>
+      <div class="cell"><span>Field focus</span><div class="stepper"><button type="button" aria-label="One fewer person"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8h9"/></svg></button><input class="is-focus" aria-label="People, focus" type="number" value="12" min="1" max="200"><button type="button" aria-label="One more person"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8h9M8 3.5v9"/></svg></button></div></div>
+      <div class="cell"><span>Minus pressed</span><div class="stepper"><button type="button" class="is-pressed" aria-label="One fewer person"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8h9"/></svg></button><input aria-label="People, pressed" type="number" value="11" min="1" max="200"><button type="button" aria-label="One more person"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8h9M8 3.5v9"/></svg></button></div></div>
+      <div class="cell"><span>At 1: minus disabled</span><div class="stepper"><button type="button" disabled aria-label="One fewer person"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8h9"/></svg></button><input aria-label="People, minimum" type="number" value="1" min="1" max="200"><button type="button" aria-label="One more person"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8h9M8 3.5v9"/></svg></button></div></div>
+      <div class="cell"><span>Invalid</span><div class="stepper"><button type="button" aria-label="One fewer person"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8h9"/></svg></button><input aria-label="People, invalid" type="number" value="250" min="1" max="200" aria-invalid="true" aria-describedby="s-err"><button type="button" aria-label="One more person"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8h9M8 3.5v9"/></svg></button></div>
+        <p class="error" id="s-err"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M8 5v3.5M8 11h0"/></svg><span>Enter a whole number from 1 to 200.</span></p></div>
+    </div>
+
+    <h2>Questions (disclosure)</h2>
+    <div class="row">
+      <div class="faq-list faq-demo">
+        <details><summary>Closed, rest<svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4.5v11M4.5 10h11"/></svg></summary><div><p>Answer.</p></div></details>
+        <details><summary class="is-focus">Closed, focus<svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4.5v11M4.5 10h11"/></svg></summary><div><p>Answer.</p></div></details>
+        <details open><summary>Open<svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4.5v11M4.5 10h11"/></svg></summary><div><p>Approve the run by 9&nbsp;am&nbsp;ET on a business day and each payment lands that day in the person’s own time zone.</p></div></details>
+      </div>
+    </div>
+
+    <h2>Header menu, theme switch and links</h2>
+    <div class="row">
+      <div class="cell"><span>Menu, rest</span><details class="menu" style="display:block"><summary>Menu</summary></details></div>
+      <div class="cell"><span>Menu, focus</span><details class="menu" style="display:block"><summary class="is-focus">Menu</summary></details></div>
+      <div class="cell"><span>Theme switch, Light chosen, Dark focused</span>
+        <fieldset class="theme-switch"><legend>Theme</legend><label><input type="radio" name="t" value="system">System</label><label><input type="radio" name="t" value="light" checked>Light</label><label class="is-focus"><input type="radio" name="t" value="dark">Dark</label></fieldset></div>
+      <div class="cell"><span>Text link, rest and focus</span><a class="more" href="/docs/">Read the docs</a><a class="more is-focus" href="/docs/">Read the docs</a></div>
+    </div>
+  </div>
+</main>
+</body>
+</html>

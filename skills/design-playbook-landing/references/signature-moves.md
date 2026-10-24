@@ -1,6 +1,6 @@
 # Landing pages: closest exemplars and signature moves
 
-**Status of this file: opinion, unmeasured.** The moves below come from the judge's knowledge of the public sites, not from measured CSS: every exemplar host was blocked from this environment on 2026-10-09 (see `kb/exemplars.md`). Each move gets confirmed or corrected by a teardown in `kb/teardowns/`; until then, treat the token values as our recommended translation, not as the exemplar's own numbers.
+**Status of this file: opinion, now checked against the teardowns.** The moves were first written from knowledge of the public sites while every exemplar host was blocked (2026-10-09, `kb/exemplars.md`); the measured values now live in `kb/teardowns/` (`INDEX.md`), which win where they differ. Token values here are our translation, not the exemplar's own numbers.
 
 ## Pick the closest exemplar
 | Site type | Compare against |
@@ -26,6 +26,9 @@ Name two in the brief and compare against both.
 9. **Real data in every mockup.** Names, prices, dates and numbers that look true, with tabular numerals; no "Lorem" or "$XX".
 10. **Motion that explains, not decorates.** Small, fast reveals tied to the product (a cursor, a state change), all removed under reduced motion.
 11. **One section shape, repeated.** The same header pattern (label carrying a fact, H2, one short paragraph, one picture) in every section, so the eye learns the page once; vary the picture, not the frame (Scrolltide catalogue, captured 2026-10-23; `references/build-spec.md`).
+
+## The first-screen reject test (run it on the 1440 and 390 renders)
+Hide the logo and the brand name. Can you still tell whose page it is from the first screen alone? Reject the hero unless the page's motif (the concept the art direction named) is **visible and drawn** in that first screen: a mark, a picture, a data drawing or the product carrying the idea, not only a word in the headline. Round 1's concept, "every picture is a crossing", lived in the copy and in a chart below the fold; with the logo hidden the hero was a generic serif fintech table, rated clearly below (`kb/reviews/benchmark-round1-landing.md` scorecard Imagery, item 11). Exemplars pass at a glance: Stripe's gradient carried into every card, Linear's full-width live product (`kb/teardowns/INDEX.md` section 3). On a phone the motif may crop or shrink, never disappear.
 
 ## Where pages fall short (from the color pilot)
 The pilot's coffee page passed the gate and still rated clearly below the exemplars: no real imagery (a CSS bag stood in), a fallback serif instead of a chosen face, no signature layout move, no motion (`kb/tests/design-color.md`). Moves 1, 2 and 8 are the ones to check first.

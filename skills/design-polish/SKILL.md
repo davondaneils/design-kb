@@ -14,7 +14,7 @@ Polish never trades against the FOUNDATIONS gate. Then these hold on every page,
 
 1. **Focus ring on everything focusable**: `outline: 2px solid var(--color-focus-ring); outline-offset: 2px` on `:focus-visible`, 3:1 against its neighbor (WCAG 2.4.7, 1.4.11). The focus rule changes nothing else visible: no border width, padding or weight, and no radius on anything that paints. Do not transition the ring in (opinion: a fading ring is a ring a keyboard user waits for).
 2. **No state changes the box.** Hover, focus, pressed, selected, error and loading keep width and height. A thicker border is `box-shadow: inset 0 0 0 1px`, never `border-width: 2px`.
-3. **Every custom button has a pressed state** (Apple HIG), declared after `:hover` so it wins while held (LVHA order, MDN), and it replaces the mobile tap highlight if you remove that. Every interactive element has distinct rest, hover (pointer), focus and pressed faces, and selected differs from hover.
+3. **Every custom button has a pressed state** (Apple HIG), declared after `:hover` so it wins while held (LVHA order, MDN), and it replaces the mobile tap highlight if you remove that. Every interactive element has distinct rest, hover (pointer), focus and pressed faces, and selected differs from hover. Pressed moves away from disabled: delta E (CIE76) 15 or more between the two, checked side by side on the state sheet; never disable a brand fill with `opacity` (round 1: pressed and disabled 6.5 apart, `kb/reviews/benchmark-round1-landing.md` gate 15). Hover adds emphasis and never lowers text contrast (round 1 dimmed an FAQ question to muted on hover).
 4. **Hover that moves or lifts is gated** to `@media (hover: hover) and (pointer: fine)`; touch emulates hover on long tap (MDN). Hover is never the only way to reveal an action.
 5. **Loading keeps the label's width and name** (label at `opacity: 0`, never `visibility: hidden`, which deletes the accessible name; spinner on top; `aria-busy`), after a 150 to 300ms delay and shown for at least 300 to 500ms (design-ux 04). Disabled says why or is not disabled (`aria-disabled` keeps it focusable).
 6. **One separation per boundary**: a border, or an elevation token, or a surface step. Never a border plus a separate shadow plus a fill change.
@@ -47,16 +47,16 @@ Polish never trades against the FOUNDATIONS gate. Then these hold on every page,
 | Inputs, outline buttons, checkboxes | 1px `--color-border-strong` |
 | Sticky header | translucent surface plus `backdrop-filter` plus 1px border; no shadow |
 
-**Shadow recipes** (opinion, built on Comeau and Tailwind v4; full file `assets/polish-tokens.css`): tint with the darkest neutral (`--shadow-rgb`); y offsets 1, 4, 12, 24 by level; blur about 2x y; negative spread about half y on the ambient layer; alpha under 0.25; ring `0 0 0 1px` at 8%; dark mode: shadows none, ring white 8%, highlight `inset 0 1px 0` white 5%.
+**Shadow recipes** (opinion, built on Comeau and Tailwind v4; full file `assets/polish-tokens.css`): tint with the darkest neutral (`--shadow-rgb`); y offsets 1, 4, 12, 24 by level; blur about 2x y; negative spread about half y on the ambient layer; alpha under 0.25; ring `0 0 0 1px` at 8%; dark mode: shadows `0 0 0 0 transparent` (never `none` inside a token, FOUNDATIONS), ring white 8%, highlight `inset 0 1px 0` white 6%.
 
 **States** (colors from design-color, timing from design-motion)
 | State | Filled button | Neutral control (row, nav, ghost) | Input |
 |---|---|---|---|
-| Hover (pointer) | `--color-primary-hover`, 150ms | text color at 8%; rows and menus 0ms in, 150ms out (opinion) | border one step stronger |
+| Hover (pointer) | `--color-primary-hover`, `--motion-hover` (100ms, FOUNDATIONS) | text color at 8%; rows and menus 0ms in, 100ms out (opinion) | border one step stronger |
 | Focus-visible | 2px ring, 2px offset | ring; inset (`outline-offset: -2px`) in dense lists | 2px ring outside the border |
-| Pressed | 800 step plus `scale(0.97)` (0.98 above about 200px wide), 100ms | text color at 10% | n/a |
-| Selected | n/a | selected bg and text plus a non-color mark (weight 600, bar, check) | n/a |
-| Disabled | sunken fill, muted label, no hover or press | muted label | sunken fill |
+| Pressed | 800 step plus `scale(0.97)` (0.98 above about 200px wide), 100ms; on a dark-ink fill either direction, but delta E 15 or more from disabled | text color at 10% | n/a |
+| Selected | n/a | selected face 3:1 against its unselected neighbor in fill, ink or border, or +200 weight, a 2px bar or a check (lint `selected-state`) | n/a |
+| Disabled | sunken fill, muted label, no hover or press; never `opacity` on a brand fill | muted label | sunken fill |
 | Loading | label `opacity: 0` in place, 16px spinner, `aria-busy` | same | trailing spinner |
 | Error | n/a | n/a | `inset 0 0 0 1px` danger plus icon plus message |
 

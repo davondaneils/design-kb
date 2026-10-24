@@ -5,16 +5,16 @@ description: Foundation layer of design-kb, always loaded first by design-direct
 
 # design-foundations
 
-The floor under every design job. Nothing a playbook or domain reference teaches earns credit until this layer passes. Source of truth: `kb/FOUNDATIONS.md` (contract v0.4.5) in the design-kb repo. The reference files here mirror it; if they ever differ, FOUNDATIONS wins.
+The floor under every design job. Nothing a playbook or domain reference teaches earns credit until this layer passes. Source of truth: `kb/FOUNDATIONS.md` (contract v0.4.6) in the design-kb repo. The reference files here mirror it; if they ever differ, FOUNDATIONS wins.
 
 ## 1. Non-negotiable rules
 1. **Tokens only.** Components use semantic tokens (`--color-text-muted`, `--space-gap-md`, `--radius-control`), never raw values or primitives. Names follow `--{category}-{role}-{variant}`.
 2. **One scale per idea.** Spacing 0, 2, 4, 8, 12, 16, 24, 32, 48, 64, 96, 128. Type 12, 14, 16, 20, 25, 31, 39, 49, 61 (ratio 1.25, root 16). Radius 0, 4, 8, 12, 16, full. Off-scale values are deliberate optical corrections, and you say so.
-3. **Accessibility is the floor, not a feature.** WCAG 2.2 AA in light and dark: 4.5:1 body text, 3:1 large text, UI parts and focus rings; 24x24 CSS px targets (44x44 on touch); keyboard operable; visible focus; never color alone; reduced motion respected. Full rules: `references/accessibility.md`.
+3. **Accessibility is the floor, not a feature.** WCAG 2.2 AA in light and dark: 4.5:1 body text, 3:1 large text, UI parts, selected states and focus rings (control borders keep 3.3:1 on raised and tinted dark surfaces); 24x24 CSS px targets (44x44 on touch); keyboard operable; visible focus; never color alone; reduced motion respected. Full rules: `references/accessibility.md`.
 4. **The checklist is a gate.** Every rendered page passes all 16 items in `references/fundamentals-checklist.md`. One miss fails the page, however good the rest is.
 5. **Light and dark remap the same roles.** Never invert; dark surfaces get lighter as they rise.
-6. **Body measure** 45 to 75 characters; default `max-inline-size: 52ch` (63 to 68 characters in every text face measured), then confirm with the lint. Never `66ch` (81 to 86 characters).
-7. **Copy is a fundamental.** Every number matches its source; the audience's locale on `<html lang>` picks dates, clock, money and spelling (en-US "Tue, Oct 13", "2:05 pm", "$75.50"; en-GB "Fri 15 January 2027", "5:30pm", "£75.50"; others through `Intl`); one clock; weekday-checked dates; no line break inside a date, price, range or number and unit. Run `skills/design-copy/assets/claims_inventory.mjs` and tick every claim (item 16).
+6. **Body measure** 45 to 75 characters (35 to 75 at 390); default `max-inline-size: 52ch` (63 to 68 characters in every text face measured), then confirm with the lint. Never `66ch` (81 to 86 characters).
+7. **Copy is a fundamental.** Every number matches its source; the audience's locale on `<html lang>` picks dates, clock, money and spelling (en-US "Tue, Oct 13", "2:05 pm", "$75.50"; en-GB "Fri 15 January 2027", "5:30pm", "£75.50"; others through `Intl`); one clock; every time carries its zone when the page shows more than one zone; weekday-checked dates; no line break inside a date, price, range, number and unit, or number and count noun ("12&nbsp;people"). The screen stays true after its own primary action: render each post-action state as its own `?state=`. Run `skills/design-copy/assets/claims_inventory.mjs` and tick every claim (item 16).
 8. **Never `none` inside a shadow token** (dark levels are `0 0 0 0 transparent`) and never `em` in a container query (use `rem`): both silently break.
 
 ## 2. Defaults at a glance
@@ -27,8 +27,8 @@ The floor under every design job. Nothing a playbook or domain reference teaches
 | Icons | 12, 16, 20, 24px (`--size-icon-sm` to `-xl`), `--icon-stroke` 1.5px, one cap and one join, `currentColor` |
 | Sizes | controls and rows 32, 40, 48 (`--size-control-sm` to `-lg`) |
 | Elevation | ring plus tinted two-layer shadow, levels 0 to 4 (`references/tokens.md`); dark themes lift with lighter surfaces, a ring and a top highlight |
-| Motion | fast 150ms, base 200 to 250ms, slow 300 to 400ms, page ceiling 600ms (one hero reveal per marketing page may reach 800ms, opinion); `--motion-hover`, `-enter`, `-exit` pairs; `linear` only for loops, scroll and time axes; under reduce no movement, fades up to 150ms |
-| Content | locale from `<html lang>`: en-US "Tue, Oct 13", "2:05 pm", "$1,250"; en-GB "Tue 13 Oct", "Friday 15 January 2027" (no comma, no ordinals), "10am", "5:30pm", "£75.50"; weekday checked against the year in the date; numerals, sentence case, no breaks inside dates, prices and units |
+| Motion | hover 100ms, fast 150ms, base 200 to 250ms, slow 300 to 400ms, page 400ms, ceiling 600ms (one hero reveal per marketing page may reach 800ms, opinion); `--motion-hover`, `-enter`, `-exit` pairs; `linear` only for loops, scroll and time axes; under reduce no movement, fades up to 150ms |
+| Content | locale from `<html lang>`: en-US "Tue, Oct 13", "2:05 pm", "$1,250"; en-GB "Tue 13 Oct", "Friday 15 January 2027" (no comma, no ordinals), "10am", "5:30pm", "£75.50"; weekday checked against the year in the date; every time zoned on a page with more than one zone; numerals, sentence case, no breaks inside dates, prices, units and counts |
 | Focus | 2px solid `--color-focus-ring`, 2px offset, on `:focus-visible` |
 
 ## 3. Reference map

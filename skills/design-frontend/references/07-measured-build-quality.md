@@ -44,7 +44,7 @@ Rules behind those checks:
 2. **Important user preferences go in the first layer.** Important declarations reverse the layer order (C24), so `prefers-reduced-motion` and `forced-colors` overrides with `!important` in `reset` beat every later layer. Put them in `utilities` and they lose to `reset` and win only over nothing.
 3. **Colors through `light-dark()`**, with `color-scheme: light dark` on `:root` (C21; Baseline 2024, C22). Only colors (and images in newer engines) can go through it. Opacity, blend modes and other non-color theme values stay in one `@media (prefers-color-scheme: dark)` block in the tokens layer.
 4. **Components read roles, not primitives.** Illustration and chart colors are roles too (`--color-illustration-object`, `--color-on-danger-mark`). A primitive in a component is a theme bug waiting for the second scheme.
-5. **Range media syntax in em**: `(width >= 48em)`, `(40em <= width < 48em)` (C30, C31). No `max-width: 767px` pairs.
+5. **Range media syntax in rem**: `(width >= 48rem)`, `(40rem <= width < 48rem)` (C30, C31; rem per FOUNDATIONS, which resolves like em in a media query). No `max-width: 767px` pairs.
 
 ## Part 2. The ceiling (what a top build team knows)
 

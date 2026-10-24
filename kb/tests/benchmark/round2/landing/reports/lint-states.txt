@@ -1,0 +1,57 @@
+
+Fundamentals lint: ferry-states.html  ->  PASS (0 fail, 39 warn)
+
+  pass  axe
+  pass  overlay
+  pass  targets  (36 warn)
+        ! touch target under 44x44 at 390px  [#e1]
+        ! touch target under 44x44 at 390px  [div.cell.wide > form.signup > div.signup__row > button.btn.btn--primary]
+        ! touch target under 44x44 at 390px  [#e2]
+        ! touch target under 44x44 at 390px  [div.cell.wide > form.signup > div.signup__row.is-focus > button.btn.btn--primary]
+        ! touch target under 44x44 at 390px  [#e3]
+        ... 31 more warnings
+  pass  measure
+  pass  type-scale
+  pass  spacing
+  pass  overflow
+  pass  heading-wrap
+  pass  svg-overlap
+  pass  reading-size
+  pass  selected-state
+  pass  primary
+  pass  radius
+  pass  color-scheme
+  pass  typography
+  pass  tabular
+  pass  shadows
+  pass  icons
+  pass  icon-stroke
+  pass  weight
+  pass  occlusion
+  pass  squash
+  pass  sticky-header
+  pass  run-together
+  pass  word-break
+  pass  grid-edge
+  pass  hidden-content
+  pass  double-space
+  pass  undefined-var
+  pass  state-layer
+  pass  primitive-in-component
+  pass  error-icon
+  pass  state-sheet
+  pass  truth
+  pass  proportion
+  pass  nav-parity
+  pass  focus
+  pass  focus-shape
+  pass  sticky-focus
+  pass  skip-link
+  pass  state-shift
+  pass  fallback  (2 warn)
+        ! layout moves -24px at 390px when the web fonts fail (worst: #main > div.wrap > section); add metric fallbacks (size-adjust, ascent-override). Line count changed in 1 elements: #main > div.wrap > p "Every interactive control on ferry.html " 7 to 6 lines (one element near a wrap point is a copy fix; many is a font metrics fix)  [#main > div.wrap > section]
+        ! layout moves 24px at 1440px when the web fonts fail (worst: #main > div.wrap > section); add metric fallbacks (size-adjust, ascent-override). Line count changed in 2 elements: #main > div.wrap > p "Every interactive control on ferry.html " 4 to 5 lines; div.cell.wide > div.signup__done > div > p "Your 14-day trial starts when you open i" 2 to 1 lines (one element near a wrap point is a copy fix; many is a font metrics fix)  [#main > div.wrap > section]
+  pass  motion  (1 warn)
+        ! 3 movement transitions still over 100ms with reduced motion  [[object Object], [object Object], [object Object]]
+
+  JSON: kb/tests/benchmark/round2/landing/ferry-states.lint.json

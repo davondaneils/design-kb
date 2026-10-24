@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en-US" data-lint-page="state-sheet">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ferry state sheet</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1217" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="{{FAVICON_SVG}}" type="image/svg+xml">
+<style>
+{{FONTFACE}}
+{{CSS}}
+/* state sheet only: hover and focus pinned with classes so one screenshot shows every state */
+@layer sheet {
+  .sheet { padding-block: var(--space-8) var(--space-9); }
+  .sheet h1 { font-size: var(--text-heading-2); line-height: var(--leading-tight); letter-spacing: -0.015em; }
+  .sheet > .wrap > p { margin-block-start: var(--space-3); color: var(--color-text-muted); max-inline-size: var(--size-measure); }
+  .sheet section { margin-block-start: var(--space-8); }
+  .sheet h2 { font-size: var(--text-lg); margin-block-end: var(--space-5); padding-block-end: var(--space-3); border-block-end: 1px solid var(--color-border); }
+  .row { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: var(--space-6) var(--space-6); align-items: start; }
+  .cell { display: grid; gap: var(--space-3); justify-items: start; }
+  .cell > small { font-size: var(--text-xs); color: var(--color-text-muted); font-weight: var(--weight-semibold); }
+  .btn--primary.is-hover { background: var(--color-primary-hover); }
+  .btn--primary.is-pressed { background: var(--color-primary-active); transform: scale(0.97); }
+  .btn--outline.is-hover, .menu-btn.is-hover, .stepper button.is-hover { background: var(--state-hover); }
+  .btn--outline.is-pressed, .menu-btn.is-pressed { background: var(--state-pressed); transform: scale(0.97); }
+  .is-focus { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+  .nav-demo { display: flex; gap: var(--space-2); }
+  .nav-demo a { display: inline-flex; align-items: center; min-block-size: var(--size-control-md); padding-inline: var(--space-4); border-radius: var(--radius-control);
+    font-size: var(--text-sm); font-weight: var(--weight-medium); color: var(--color-text-muted); text-decoration: none; }
+  .nav-demo a.is-hover { background: var(--state-hover); color: var(--color-text); }
+  .nav-demo a[aria-current="page"] { color: var(--color-text); text-decoration: underline; text-underline-offset: 0.45em; text-decoration-thickness: 2px; }
+  .signup input:disabled { cursor: not-allowed; color: var(--color-disabled-text); }
+  .signup__row:has(input:disabled) { background: var(--color-disabled-bg); border-color: var(--color-border); }
+  .signup__row.is-focus { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+  .faq-demo { inline-size: 100%; max-inline-size: 36rem; }
+  .faq-demo .faq { margin-block-start: 0; }
+  .wide { grid-column: 1 / -1; }
+}
+</style>
+</head>
+<body>
+<main class="sheet" id="main" tabindex="-1">
+  <div class="wrap">
+    <h1>Ferry state sheet</h1>
+    <p>Every interactive control on ferry.html in each state it can take. Hover, focus and pressed are pinned with classes so they show in one capture (pinned-focus demo fields are taken out of the tab order); the live page uses :hover (gated to fine pointers), :focus-visible and :active.</p>
+
+    <section aria-labelledby="s-primary">
+      <h2 id="s-primary">Primary button</h2>
+      <div class="row">
+        <div class="cell"><small>Rest</small><button class="btn btn--primary" type="button"><span class="btn__label">Start free trial</span></button></div>
+        <div class="cell"><small>Hover (orange 700)</small><button class="btn btn--primary is-hover" type="button"><span class="btn__label">Start free trial</span></button></div>
+        <div class="cell"><small>Focus</small><button class="btn btn--primary is-focus" type="button"><span class="btn__label">Start free trial</span></button></div>
+        <div class="cell"><small>Pressed (orange 800, scale 0.97)</small><button class="btn btn--primary is-pressed" type="button"><span class="btn__label">Start free trial</span></button></div>
+        <div class="cell"><small>Disabled</small><button class="btn btn--primary" type="button" disabled><span class="btn__label">Start free trial</span></button></div>
+        <div class="cell"><small>Busy (label kept, hidden)</small><button class="btn btn--primary" type="button" aria-busy="true"><span class="btn__label">Start free trial</span><svg class="icon btn__spinner" aria-hidden="true"><use href="#i-spin"/></svg></button></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="s-outline">
+      <h2 id="s-outline">Outline button</h2>
+      <div class="row">
+        <div class="cell"><small>Rest</small><a class="btn btn--outline" href="https://ferry.example/demo">Book a demo</a></div>
+        <div class="cell"><small>Hover</small><a class="btn btn--outline is-hover" href="https://ferry.example/demo">Book a demo</a></div>
+        <div class="cell"><small>Focus</small><a class="btn btn--outline is-focus" href="https://ferry.example/demo">Book a demo</a></div>
+        <div class="cell"><small>Pressed</small><a class="btn btn--outline is-pressed" href="https://ferry.example/demo">Book a demo</a></div>
+        <div class="cell"><small>Disabled</small><button class="btn btn--outline" type="button" disabled>Book a demo</button></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="s-field">
+      <h2 id="s-field">Email field fused to the button</h2>
+      <div class="row">
+        <div class="cell wide"><small>Rest</small>
+          <form class="signup" action="https://ferry.example/signup" method="post" novalidate><label class="signup__label" for="e1">Work email</label><div class="signup__row"><input id="e1" type="email" autocomplete="email" placeholder="name@company.com"><button class="btn btn--primary" type="button"><span class="btn__label">Start free trial</span></button></div></form></div>
+        <div class="cell wide"><small>Focus (ring on the whole field)</small>
+          <form class="signup" action="https://ferry.example/signup" method="post" novalidate><label class="signup__label" for="e2">Work email</label><div class="signup__row is-focus"><input id="e2" tabindex="-1" type="email" autocomplete="email" value="dana@lumen.studio"><button class="btn btn--primary" type="button"><span class="btn__label">Start free trial</span></button></div></form></div>
+        <div class="cell wide"><small>Invalid (icon plus words, not color alone)</small>
+          <form class="signup" action="https://ferry.example/signup" method="post" novalidate><label class="signup__label" for="e3">Work email</label><div class="signup__row"><input id="e3" type="email" autocomplete="email" value="dana@lumen" aria-invalid="true" aria-describedby="e3-err"><button class="btn btn--primary" type="button"><span class="btn__label">Start free trial</span></button></div><p class="signup__msg" id="e3-err"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg><span>Enter a work email, like name@company.com.</span></p></form></div>
+        <div class="cell wide"><small>Busy</small>
+          <form class="signup" action="https://ferry.example/signup" method="post" novalidate><label class="signup__label" for="e4">Work email</label><div class="signup__row"><input id="e4" type="email" autocomplete="email" value="dana@lumen.studio"><button class="btn btn--primary" type="button" aria-busy="true"><span class="btn__label">Start free trial</span><svg class="icon btn__spinner" aria-hidden="true"><use href="#i-spin"/></svg></button></div></form></div>
+        <div class="cell wide"><small>Disabled</small>
+          <form class="signup" action="https://ferry.example/signup" method="post" novalidate><label class="signup__label" for="e5">Work email</label><div class="signup__row"><input id="e5" type="email" autocomplete="email" placeholder="name@company.com" disabled><button class="btn btn--primary" type="button" disabled><span class="btn__label">Start free trial</span></button></div></form></div>
+        <div class="cell wide"><small>Sent</small>
+          <div class="signup__done" role="status"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-check-circle"/></svg><div><p><b>Check dana@lumen.studio for your sign-in link.</b></p><p>Your 14-day trial starts when you open it. Wrong address? <button type="button">Change it</button></p></div></div></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="s-stepper">
+      <h2 id="s-stepper">Team size stepper</h2>
+      <div class="row">
+        <div class="cell"><small>Rest</small><div class="stepper"><button type="button" aria-label="One fewer person"><svg class="icon" aria-hidden="true"><use href="#i-minus"/></svg></button><input type="number" aria-label="People you pay" value="12"><button type="button" aria-label="One more person"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button></div></div>
+        <div class="cell"><small>Hover on plus</small><div class="stepper"><button type="button" aria-label="One fewer person"><svg class="icon" aria-hidden="true"><use href="#i-minus"/></svg></button><input type="number" aria-label="People you pay" value="12"><button type="button" class="is-hover" aria-label="One more person"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button></div></div>
+        <div class="cell"><small>Focus on the number</small><div class="stepper is-focus"><button type="button" aria-label="One fewer person"><svg class="icon" aria-hidden="true"><use href="#i-minus"/></svg></button><input tabindex="-1" type="number" aria-label="People you pay" value="12"><button type="button" aria-label="One more person"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button></div></div>
+        <div class="cell"><small>At 1 (minus disabled)</small><div class="stepper"><button type="button" disabled aria-label="One fewer person"><svg class="icon" aria-hidden="true"><use href="#i-minus"/></svg></button><input type="number" aria-label="People you pay" value="1"><button type="button" aria-label="One more person"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button></div></div>
+        <div class="cell"><small>At 200 (plus disabled)</small><div class="stepper"><button type="button" aria-label="One fewer person"><svg class="icon" aria-hidden="true"><use href="#i-minus"/></svg></button><input type="number" aria-label="People you pay" value="200"><button type="button" disabled aria-label="One more person"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button></div></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="s-nav">
+      <h2 id="s-nav">Header links and menu trigger</h2>
+      <div class="row">
+        <div class="cell wide"><small>Rest, hover, current page, focus</small>
+          <nav class="nav-demo" aria-label="Demo"><a href="https://ferry.example/product">Product</a><a class="is-hover" href="https://ferry.example/coverage">Coverage</a><a aria-current="page" href="https://ferry.example/pricing">Pricing</a><a class="is-focus" href="https://ferry.example/customers">Customers</a></nav></div>
+        <div class="cell"><small>Menu closed</small><button class="menu-btn" type="button" aria-expanded="false">Menu</button></div>
+        <div class="cell"><small>Menu hover</small><button class="menu-btn is-hover" type="button" aria-expanded="false">Menu</button></div>
+        <div class="cell"><small>Menu open (reads Close)</small><button class="menu-btn is-pressed" type="button" aria-expanded="true">Close</button></div>
+        <div class="cell"><small>Menu focus</small><button class="menu-btn is-focus" type="button" aria-expanded="false">Menu</button></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="s-faq">
+      <h2 id="s-faq">Question and answer</h2>
+      <div class="row">
+        <div class="cell wide faq-demo"><small>Closed, focused, open</small>
+          <div class="faq">
+            <details><summary>How fast do people get paid?<svg class="icon icon--lg" aria-hidden="true"><use href="#i-plus"/></svg></summary><p class="faq__a">The same day you approve.</p></details>
+            <details><summary class="is-focus">Is Ferry an employer of record?<svg class="icon icon--lg" aria-hidden="true"><use href="#i-plus"/></svg></summary><p class="faq__a">No.</p></details>
+            <details open><summary>When exactly does the rate lock?<svg class="icon icon--lg" aria-hidden="true"><use href="#i-plus"/></svg></summary><p class="faq__a">When you approve the run. From that moment the amount each person receives and your dollar cost are fixed.</p></details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="s-link">
+      <h2 id="s-link">Text link</h2>
+      <div class="row">
+        <div class="cell"><small>Rest</small><a class="link" href="https://ferry.example/demo">Book a demo</a></div>
+        <div class="cell"><small>Focus</small><a class="link is-focus" href="https://ferry.example/demo">Book a demo</a></div>
+      </div>
+    </section>
+  </div>
+</main>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.75 2.75L16 10"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.5v.01"/></symbol>
+  <symbol id="i-spin" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9"/></symbol>
+</svg>
+<script>{{JS}}</script>
+</body>
+</html>
