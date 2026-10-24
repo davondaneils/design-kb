@@ -1,6 +1,15 @@
 # design-kb
 
-A knowledge base that teaches Claude web, app and graphic design. It is built by the subagents in `.claude/agents/` and shipped as Claude skills in `skills/`.
+A knowledge base that teaches Claude web, app and graphic design. It is built by the subagents in `.claude/agents/` and shipped as Claude skills in `skills/` (also exposed in `.claude/skills/`, so every skill shows in a session's skill list).
+
+## Doing a design job? Start here
+Any page, screen, brand, font, color, motion or "make it better" request, in this repo or on project files elsewhere:
+1. Load the **design-director** skill and read `skills/design-director/references/preflight.md` before any decision. It gives the read order, the trigger table (a font decision means design-typography first; a cinematic page means design-motion 08 and the Scrolltide components, shaders and UI first) and the read log you keep in `design-log.md`.
+2. Where every resource lives (Scrolltide, easings.net, teardowns, patterns, galleries, tools): `skills/design-director/references/resource-index.md`.
+3. Hand over only after `node tools/check.mjs <page.html>` exits 0 (run `npm ci` in `tools/` once), the judged steps in its report are done, and a fresh-context critic has passed it or the hand-over says "gate not claimed: self-review only".
+4. When Davon corrects something, write the lesson back into the skill it belongs to in the same job (preflight section 5).
+
+The rest of this file is for building the knowledge base itself.
 
 ## House rules (apply to every file)
 - Never use em dashes.
