@@ -53,6 +53,10 @@ Everything in design-motion section 1 still applies. On a cinematic page these a
 14. **Video lazily, by intersection.** Preview video `preload="none"`, started by an IntersectionObserver with a 200px root margin and paused off screen (Scrolltide build spec).
 15. **No scrim only when the plate was made for type.** A plate with an unlit empty third can carry type with no overlay; otherwise run the overlay check (Scrolltide: Auralis, Arbor; design-art-direction 03).
 16. **Know the effect before building it.** Reflection needs an environment map and has no hue; diffraction is a repeating spectrum from regular grooves and needs only a 2D shader; thin film is one non-repeating sweep through hue. The wrong guess ships hundreds of KB of 3D for a 2D effect (Scrolltide eBook p273).
+17. **A pinned index earns its length or ships stacked.** Budget about 40svh of scroll per step; at 75svh, eight services added half again to a homepage and showed nothing a still could not (VGC job, round 4 critic). If the pin shows no change a still cannot, ship the stacked grid it falls back to.
+18. **A hover picture gets its own grid column.** A picture that swings in over the row must land in a reserved track, never on the hovered row's text; give its fade-out 150ms or less so a sweep down the list leaves no trail (VGC job: Scrolltide Hover List covered "Custom homes" at 1024).
+19. **A deck must say what it shows.** Each card is `role="group"`, `aria-roledescription="slide"`, `aria-label="n of N"`, and the stage is `aria-live="polite"`; a live counter alone tells a screen reader user "3 of 8" and never the quote (VGC job). Jumping to a slide from a thumbnail moves focus to that slide's link.
+20. **Judge hover from a page screenshot, not an element screenshot.** An element screenshot scrolls the page under a still pointer and hovers a different row mid-transition, which looks like a trail bug that is not there.
 
 ## 4. Do and don't
 - Do: one pinned stage where a kitchen goes from bare studs to finished room in four chapters, copy alternating sides, a "02 / 04" counter. Don't: four different devices (a phone, a chart, a mockup, a photo) for the same four steps.
