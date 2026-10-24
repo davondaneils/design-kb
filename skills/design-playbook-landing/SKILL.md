@@ -8,6 +8,7 @@ description: Job playbook for a marketing site or landing page at the level of s
 A landing page has one job: make the right visitor understand the offer and take one action. Everything below serves that.
 
 ## 1. Load in this order
+Preflight first, even when this playbook triggered on its own: design-director `references/preflight.md` (trigger table, read log in `design-log.md`, hand-over gate with `node tools/check.mjs`).
 1. **design-foundations** (always): tokens, the 16-item gate, `references/accessibility.md`.
 2. **design-strategy** (always, after foundations): the strategy brief at the depth its section 1 sets; one page for a new site, three lines for an event or campaign page, full (it routes to website-strategy stages 2 to 5) when audience, positioning or competitors are not given. The hero is written from its primary category entry point and category frame. No visual decisions before this. Then write the build spec (`references/build-spec.md`): the sixteen decisions as values and the never-list, in a file beside the brief, re-read before every edit pass.
 3. **Copy**, by the rule in section 2: design-copy `references/01-page-copy-structure.md`, `03-voice-and-tone.md` and `06-copy-in-context.md` (every number is a claim; content mechanics), or copywriting.

@@ -22,6 +22,8 @@ async function loadPlaywright() {
 function findChromium() {
   if (process.env.CHROMIUM_PATH && fs.existsSync(process.env.CHROMIUM_PATH)) return process.env.CHROMIUM_PATH;
   const root = process.env.PLAYWRIGHT_BROWSERS_PATH || '/opt/pw-browsers';
+  // The image's own `chromium` entry first: the versioned folders can lag the installed playwright-core.
+  if (fs.existsSync(path.join(root, 'chromium')) && fs.statSync(path.join(root, 'chromium')).isFile()) return path.join(root, 'chromium');
   try {
     for (const d of fs.readdirSync(root)) {
       const p = path.join(root, d, 'chrome-linux', 'chrome');

@@ -8,6 +8,7 @@ description: Job playbook for mobile app screens and flows on iOS, Android and m
 On a phone, the platform is half the design. People bring the habits of their system apps; break them only when the brand gains something measurable.
 
 ## 1. Load in this order
+Preflight first, even when this playbook triggered on its own: design-director `references/preflight.md` (trigger table, read log in `design-log.md`, hand-over gate with `node tools/check.mjs`).
 1. **design-foundations** (always): tokens, the 16-item gate, `references/accessibility.md`.
 2. **design-strategy** at inherit depth for a screen in an existing app, one page for a new app: the user's moment (section 2a's "main question" comes from it), the brand source, what must not change. Brand lives in the hero number and one control (section 2a), never in rebuilt platform chrome.
 3. **This playbook's** `references/platform-conventions.md`: touch numbers, the iOS vs Android vs web table, modality, porting rules. Decide the platform first.

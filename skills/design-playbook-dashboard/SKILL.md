@@ -8,6 +8,7 @@ description: Job playbook for SaaS app screens, dashboards and internal tools at
 Product UI is used for hours, not seconds. Every choice favors scanning speed, density with calm, and predictable behavior over first impressions.
 
 ## 1. Load in this order
+Preflight first, even when this playbook triggered on its own: design-director `references/preflight.md` (trigger table, read log in `design-log.md`, hand-over gate with `node tools/check.mjs`).
 1. **design-foundations** (always): tokens, the 16-item gate, `references/accessibility.md`.
 2. **design-strategy** at inherit depth (its section 1): the user's moment for this screen, the brand source inherited (tokens, voice), and what the screen must not change. Never rebrand inside a screen job. A new product with no brand on file gets the one-page brief.
 3. **design-ux**: `references/01-fundamentals.md` (the gate), `02-navigation-ia.md`, `03-forms.md`, `04-states-feedback.md`.
