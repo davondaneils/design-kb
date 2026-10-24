@@ -1,5 +1,8 @@
 # design-playbook-dashboard changelog
 
+## 2026-10-24 (editor-in-chief, operated checks, `kb/tests/benchmark/operate/TALLY.md`)
+- Done means 2: a second primary action (Retry, Resubmit) gets its own post-action state (lint `countdown` caught round 2's lock growing after Retry).
+
 ## 2026-10-13 (editor-in-chief, benchmark round 1, `kb/tests/benchmark/round1/RANKED.md`)
 - Done means 2: a post-action `?state=` URL for every primary action (`?state=approved`), rendered, linted and claim-checked.
 - Non-negotiable 10: true after the screen's own primary action, KPI labels true in every state. New 14: review-and-commit screens (largest figure, amount on the button, reachable commit, dialog restates every warning). design-conversion 04 loaded for any money-commit screen.

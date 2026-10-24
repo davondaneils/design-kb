@@ -1,0 +1,696 @@
+[
+  {
+    "target": "round2/app/run-review.html",
+    "checks": {
+      "dead-control": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "press-state": {
+        "fail": [
+          {
+            "message": "\"Person\" looks the same held down as at rest; every custom button has a pressed state (design-polish 01 rule 3)",
+            "sel": "thead > tr > th > button.sort",
+            "width": 1440
+          },
+          {
+            "message": "\"USD\" looks the same held down as at rest; every custom button has a pressed state (design-polish 01 rule 3)",
+            "sel": "thead > tr > th.r > button.sort",
+            "width": 1440
+          }
+        ],
+        "warn": [],
+        "pass": false
+      },
+      "disclosure": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "focus-obscured": {
+        "fail": [
+          {
+            "message": "after opening \"Menu\" at 390px: Tab 9 lands on \"Ask Tomás for details\", entirely covered by #sidebar (WCAG 2.4.11); make the open panel modal (showModal or inert on the rest) or keep focus clear of it",
+            "sel": "#alert-bank > div.body > div.act > a.btn.secondary",
+            "width": 390
+          }
+        ],
+        "warn": [],
+        "pass": false
+      },
+      "stepper": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "countdown": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "label-number": {
+        "fail": [
+          {
+            "message": "after \"Needs a look 3\", \"people in this run\" reads 38 and 3 on one screen; a filtered view says \"3 of 38\" and the label keeps one meaning",
+            "sel": "section.panel.commit > dl.counts > div > dt",
+            "width": 1440
+          }
+        ],
+        "warn": [],
+        "pass": false
+      },
+      "stale-commit": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "contradiction": {
+        "fail": [
+          {
+            "message": "after \"Approve $313,282.88\": \"Everyone is paid on Fri, Oct 30.\" shares a dialog with its exception \"Tomás Herrera has no bank details.\"; write \"37 of 38\" or name who is left out",
+            "sel": "#confirm",
+            "width": 1440
+          }
+        ],
+        "warn": [
+          {
+            "message": "\"Everyone is paid Fri, Oct 30\" and \"No bank details: Tomás Herrera can’t be paid yet.\" are on the same page; a universal never shares a screen with its exception",
+            "width": 1440
+          },
+          {
+            "message": "\"Everyone is paid Fri, Oct 30\" and \"Tomás Herrera’s pay is held for bank details.\" are on the same page; a universal never shares a screen with its exception",
+            "width": 1440
+          }
+        ],
+        "pass": false
+      }
+    },
+    "log": [
+      {
+        "width": 1440,
+        "action": "Approve $313,282.88",
+        "added": [
+          "Approve $313,282.88 for 38 people?",
+          "This locks the rates quoted at 10:48 am ET for 30 minutes and Ferry pulls $313,282.88 from Chase ••4410. Everyone is paid on Fri, Oct 30. You are also accepting:",
+          "Tomás Herrera has no bank details. MX$64,500.00 ($3,503.15) is held in your Ferry balance, not sent on Fri, Oct 30.",
+          "BRL costs 2.1% more than its 30-day average. +$147.67 on Lucas Moreira’s pay.",
+          "Aditi Rao is paid for 13 of 31 days. ₹150,967.74 ($1,703.06).",
+          "Keep reviewing"
+        ],
+        "removed": []
+      },
+      {
+        "width": 1440,
+        "action": "Keep reviewing",
+        "added": [],
+        "removed": [
+          "Approve $313,282.88 for 38 people?",
+          "This locks the rates quoted at 10:48 am ET for 30 minutes and Ferry pulls $313,282.88 from Chase ••4410. Everyone is paid on Fri, Oct 30. You are also accepting:",
+          "Tomás Herrera has no bank details. MX$64,500.00 ($3,503.15) is held in your Ferry balance, not sent on Fri, Oct 30.",
+          "BRL costs 2.1% more than its 30-day average. +$147.67 on Lucas Moreira’s pay.",
+          "Aditi Rao is paid for 13 of 31 days. ₹150,967.74 ($1,703.06).",
+          "Keep reviewing"
+        ]
+      },
+      {
+        "width": 1440,
+        "action": "Approve $313,282.88",
+        "added": [
+          "Approved at 10:52 am ET. Ferry is pulling $313,282.88 from Chase ••4410; 37 people get paid on Fri, Oct 30 and Tomás Herrera’s pay waits for his bank details.",
+          "Locked",
+          "Locked at 10:52 am ET for 30 minutes. Ferry is pulling it from Chase ••4410 now.",
+          "Held",
+          "1",
+          "Approved at 10:52 am ET",
+          "By you, Rachel Kim.",
+          "Funding in progress",
+          "Rates locked until 11:22 am ET.",
+          "29 min left",
+          "Hide countdown",
+          "Except Tomás Herrera, until he adds bank details."
+        ],
+        "removed": [
+          "Draft",
+          "Approve $313,282.88",
+          "38 people in 7 currencies get paid on Fri, Oct 30. 3 of them need a look before you approve: a missing bank account, a rate above your 2% alert, and a partial month.",
+          "Estimate",
+          "38 payments converted at the rates quoted at 10:48 am ET. Approving locks these rates for 30 minutes and Ferry pulls the total from Chase ••4410.",
+          "Need a look",
+          "3",
+          "You approve",
+          "Locks the rates for 30 minutes.",
+          "Ferry pulls $313,282.88",
+          "From Chase ••4410, by ACH debit.",
+          "In their own currency, to their own bank."
+        ]
+      },
+      {
+        "width": 1440,
+        "action": "All 38",
+        "added": [
+          "Showing all 38 people"
+        ],
+        "removed": []
+      },
+      {
+        "width": 1440,
+        "action": "Needs a look 3",
+        "added": [
+          "People in this run 3",
+          "Showing 3 people who need a look"
+        ],
+        "removed": [
+          "People in this run 38",
+          "Maya Okafor",
+          ", Head of Engineering",
+          "Head of Engineering United States $15,400.00 $15,400.00",
+          "Ready",
+          "Daniel Brooks",
+          ", Staff Engineer",
+          "Staff Engineer United States $13,850.00 $13,850.00",
+          "Ready",
+          "Samira Haddad",
+          ", Data Engineer",
+          "Data Engineer United States $12,100.00 $12,100.00"
+        ]
+      },
+      {
+        "width": 1440,
+        "action": "Person",
+        "added": [
+          "Sorted by person, ascending"
+        ],
+        "removed": []
+      },
+      {
+        "width": 1440,
+        "action": "USD",
+        "added": [
+          "Sorted by USD amount, ascending"
+        ],
+        "removed": []
+      },
+      {
+        "width": 390,
+        "action": "Menu",
+        "added": [
+          "Close",
+          "Northwind Labs",
+          "Sample workspace: example names and pay",
+          "Home",
+          "Payroll runs",
+          "People",
+          "Funding",
+          "Reports",
+          "Workspace",
+          "Settings",
+          "Help"
+        ],
+        "removed": [
+          "Menu"
+        ]
+      },
+      {
+        "width": 390,
+        "action": "Approve $313,282.88",
+        "added": [
+          "Approve $313,282.88 for 38 people?",
+          "This locks the rates quoted at 10:48 am ET for 30 minutes and Ferry pulls $313,282.88 from Chase ••4410. Everyone is paid on Fri, Oct 30. You are also accepting:",
+          "Tomás Herrera has no bank details. MX$64,500.00 ($3,503.15) is held in your Ferry balance, not sent on Fri, Oct 30.",
+          "BRL costs 2.1% more than its 30-day average. +$147.67 on Lucas Moreira’s pay.",
+          "Aditi Rao is paid for 13 of 31 days. ₹150,967.74 ($1,703.06).",
+          "Keep reviewing"
+        ],
+        "removed": []
+      },
+      {
+        "width": 390,
+        "action": "Keep reviewing",
+        "added": [],
+        "removed": [
+          "Approve $313,282.88 for 38 people?",
+          "This locks the rates quoted at 10:48 am ET for 30 minutes and Ferry pulls $313,282.88 from Chase ••4410. Everyone is paid on Fri, Oct 30. You are also accepting:",
+          "Tomás Herrera has no bank details. MX$64,500.00 ($3,503.15) is held in your Ferry balance, not sent on Fri, Oct 30.",
+          "BRL costs 2.1% more than its 30-day average. +$147.67 on Lucas Moreira’s pay.",
+          "Aditi Rao is paid for 13 of 31 days. ₹150,967.74 ($1,703.06).",
+          "Keep reviewing"
+        ]
+      },
+      {
+        "width": 390,
+        "action": "Approve $313,282.88",
+        "added": [
+          "Funding",
+          "Approved at 10:52 am ET. Ferry is pulling $313,282.88 from Chase ••4410; 37 people get paid on Fri, Oct 30 and Tomás Herrera’s pay waits for his bank details.",
+          "Locked",
+          "Locked at 10:52 am ET for 30 minutes. Ferry is pulling it from Chase ••4410 now.",
+          "Held",
+          "1",
+          "Approved at 10:52 am ET",
+          "By you, Rachel Kim.",
+          "Funding in progress",
+          "Rates locked until 11:22 am ET.",
+          "29 min left",
+          "Hide countdown"
+        ],
+        "removed": [
+          "Draft",
+          "38 people in 7 currencies get paid on Fri, Oct 30. 3 of them need a look before you approve: a missing bank account, a rate above your 2% alert, and a partial month.",
+          "Estimate",
+          "38 payments converted at the rates quoted at 10:48 am ET. Approving locks these rates for 30 minutes and Ferry pulls the total from Chase ••4410.",
+          "Need a look",
+          "3",
+          "You approve",
+          "Locks the rates for 30 minutes.",
+          "Ferry pulls $313,282.88",
+          "From Chase ••4410, by ACH debit.",
+          "In their own currency, to their own bank.",
+          "Needs a look 3"
+        ]
+      }
+    ]
+  },
+  {
+    "target": "round2/app/run-review.html?state=error",
+    "checks": {
+      "dead-control": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "press-state": {
+        "fail": [
+          {
+            "message": "\"Person\" looks the same held down as at rest; every custom button has a pressed state (design-polish 01 rule 3)",
+            "sel": "thead > tr > th > button.sort",
+            "width": 1440
+          },
+          {
+            "message": "\"USD\" looks the same held down as at rest; every custom button has a pressed state (design-polish 01 rule 3)",
+            "sel": "thead > tr > th.r > button.sort",
+            "width": 1440
+          }
+        ],
+        "warn": [],
+        "pass": false
+      },
+      "disclosure": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "focus-obscured": {
+        "fail": [
+          {
+            "message": "after opening \"Menu\" at 390px: Tab 9 lands on \"How to add the ID\", entirely covered by #sidebar (WCAG 2.4.11); make the open panel modal (showModal or inert on the rest) or keep focus clear of it",
+            "sel": "#alert-funding > div.body > div.act > a.btn.secondary",
+            "width": 390
+          }
+        ],
+        "warn": [],
+        "pass": false
+      },
+      "stepper": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "countdown": {
+        "fail": [
+          {
+            "message": "after \"Retry funding $313,282.88\" the countdown reads 29 min left where it read 24 before; a lock never grows after an action (give the action its own post-action state)",
+            "width": 1440
+          }
+        ],
+        "warn": [],
+        "pass": false
+      },
+      "label-number": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "stale-commit": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "contradiction": {
+        "fail": [],
+        "warn": [
+          {
+            "message": "\"Everyone is paid Fri, Oct 30\" and \"Tomás Herrera’s pay is held for bank details.\" are on the same page; a universal never shares a screen with its exception",
+            "width": 1440
+          }
+        ],
+        "pass": true
+      }
+    },
+    "log": [
+      {
+        "width": 1440,
+        "action": "Retry funding $313,282.88",
+        "added": [
+          "Approved at 10:52 am ET. Ferry is pulling $313,282.88 from Chase ••4410; 37 people get paid on Fri, Oct 30 and Tomás Herrera’s pay waits for his bank details.",
+          "Locked at 10:52 am ET for 30 minutes. Ferry is pulling it from Chase ••4410 now.",
+          "Funding in progress",
+          "29 min left",
+          "Everyone is paid Fri, Oct 30",
+          "Except Tomás Herrera, until he adds bank details.",
+          "Pays Fri, Oct 30",
+          "Pays Fri, Oct 30",
+          "Pays Fri, Oct 30",
+          "Pays Fri, Oct 30",
+          "Pays Fri, Oct 30",
+          "Pays Fri, Oct 30"
+        ],
+        "removed": [
+          "Funding failed",
+          "Retry funding $313,282.88",
+          "Error: the bank rejected the funding transfer of $313,282.88 at 10:58 am ET.",
+          "Chase returned code R29: Ferry’s ACH company ID 1234567890 is not on this account’s debit allow list. Add it in Chase under ACH positive pay, then retry. Retrying keeps the locked rates until 11:22 am ET.",
+          "How to add the ID",
+          "Nobody has been paid. Chase rejected the funding transfer at 10:58 am ET; the rates stay locked until 11:22 am ET, so retry before then to keep this total.",
+          "Locked at 10:52 am ET for 30 minutes. The transfer from Chase ••4410 was rejected, so nothing has moved.",
+          "Funding failed at 10:58 am ET",
+          "24 min left",
+          "Pay on Fri, Oct 30 is on hold",
+          "It goes ahead once the funds arrive.",
+          "Waiting for funds"
+        ]
+      },
+      {
+        "width": 1440,
+        "action": "Hide countdown",
+        "added": [
+          "Show countdown"
+        ],
+        "removed": [
+          "24 min left",
+          "Hide countdown"
+        ]
+      },
+      {
+        "width": 1440,
+        "action": "Person",
+        "added": [
+          "Sorted by person, ascending"
+        ],
+        "removed": []
+      },
+      {
+        "width": 1440,
+        "action": "USD",
+        "added": [
+          "Sorted by USD amount, ascending"
+        ],
+        "removed": []
+      },
+      {
+        "width": 390,
+        "action": "Menu",
+        "added": [
+          "Close",
+          "Northwind Labs",
+          "Sample workspace: example names and pay",
+          "Home",
+          "Payroll runs",
+          "People",
+          "Funding",
+          "Reports",
+          "Workspace",
+          "Settings",
+          "Help"
+        ],
+        "removed": [
+          "Menu"
+        ]
+      },
+      {
+        "width": 390,
+        "action": "Retry funding $313,282.88",
+        "added": [
+          "Funding",
+          "Approved at 10:52 am ET. Ferry is pulling $313,282.88 from Chase ••4410; 37 people get paid on Fri, Oct 30 and Tomás Herrera’s pay waits for his bank details.",
+          "Locked at 10:52 am ET for 30 minutes. Ferry is pulling it from Chase ••4410 now.",
+          "Funding in progress",
+          "29 min left",
+          "Everyone is paid Fri, Oct 30",
+          "Except Tomás Herrera, until he adds bank details.",
+          "Pays Fri, Oct 30",
+          "Pays Fri, Oct 30",
+          "Pays Fri, Oct 30",
+          "Pays Fri, Oct 30",
+          "Pays Fri, Oct 30"
+        ],
+        "removed": [
+          "Funding failed",
+          "Error: the bank rejected the funding transfer of $313,282.88 at 10:58 am ET.",
+          "Chase returned code R29: Ferry’s ACH company ID 1234567890 is not on this account’s debit allow list. Add it in Chase under ACH positive pay, then retry. Retrying keeps the locked rates until 11:22 am ET.",
+          "How to add the ID",
+          "Nobody has been paid. Chase rejected the funding transfer at 10:58 am ET; the rates stay locked until 11:22 am ET, so retry before then to keep this total.",
+          "Locked at 10:52 am ET for 30 minutes. The transfer from Chase ••4410 was rejected, so nothing has moved.",
+          "Funding failed at 10:58 am ET",
+          "24 min left",
+          "Pay on Fri, Oct 30 is on hold",
+          "It goes ahead once the funds arrive.",
+          "Waiting for funds",
+          "Waiting for funds"
+        ]
+      }
+    ]
+  },
+  {
+    "target": "round2/app/run-review.html?state=approved",
+    "checks": {
+      "dead-control": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "press-state": {
+        "fail": [
+          {
+            "message": "\"Person\" looks the same held down as at rest; every custom button has a pressed state (design-polish 01 rule 3)",
+            "sel": "thead > tr > th > button.sort",
+            "width": 1440
+          },
+          {
+            "message": "\"USD\" looks the same held down as at rest; every custom button has a pressed state (design-polish 01 rule 3)",
+            "sel": "thead > tr > th.r > button.sort",
+            "width": 1440
+          }
+        ],
+        "warn": [],
+        "pass": false
+      },
+      "disclosure": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "focus-obscured": {
+        "fail": [
+          {
+            "message": "after opening \"Menu\" at 390px: Tab 9 lands on \"Hide countdown\", entirely covered by #sidebar (WCAG 2.4.11); make the open panel modal (showModal or inert on the rest) or keep focus clear of it",
+            "sel": "li.is-now > div > p.countdown > button.btn.ghost",
+            "width": 390
+          }
+        ],
+        "warn": [],
+        "pass": false
+      },
+      "stepper": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "countdown": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "label-number": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "stale-commit": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "contradiction": {
+        "fail": [],
+        "warn": [
+          {
+            "message": "\"Everyone is paid Fri, Oct 30\" and \"Tomás Herrera’s pay is held for bank details.\" are on the same page; a universal never shares a screen with its exception",
+            "width": 1440
+          }
+        ],
+        "pass": true
+      }
+    },
+    "log": [
+      {
+        "width": 1440,
+        "action": "Hide countdown",
+        "added": [
+          "Show countdown"
+        ],
+        "removed": [
+          "29 min left",
+          "Hide countdown"
+        ]
+      },
+      {
+        "width": 1440,
+        "action": "Person",
+        "added": [
+          "Sorted by person, ascending"
+        ],
+        "removed": []
+      },
+      {
+        "width": 1440,
+        "action": "USD",
+        "added": [
+          "Sorted by USD amount, ascending"
+        ],
+        "removed": []
+      },
+      {
+        "width": 390,
+        "action": "Menu",
+        "added": [
+          "Close",
+          "Northwind Labs",
+          "Sample workspace: example names and pay",
+          "Home",
+          "Payroll runs",
+          "People",
+          "Reports",
+          "Workspace",
+          "Settings",
+          "Help"
+        ],
+        "removed": [
+          "Menu"
+        ]
+      }
+    ]
+  },
+  {
+    "target": "round2/app/run-review.html?state=confirm",
+    "checks": {
+      "dead-control": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "press-state": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "disclosure": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "focus-obscured": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "stepper": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "countdown": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "label-number": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "stale-commit": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "contradiction": {
+        "fail": [
+          {
+            "message": "\"Everyone is paid on Fri, Oct 30.\" shares a dialog with its exception \"Tomás Herrera has no bank details.\"; write \"37 of 38\" or name who is left out",
+            "sel": "#confirm",
+            "width": 1440
+          }
+        ],
+        "warn": [
+          {
+            "message": "\"Everyone is paid Fri, Oct 30\" and \"No bank details: Tomás Herrera can’t be paid yet.\" are on the same page; a universal never shares a screen with its exception",
+            "width": 1440
+          },
+          {
+            "message": "\"Everyone is paid Fri, Oct 30\" and \"Tomás Herrera’s pay is held for bank details.\" are on the same page; a universal never shares a screen with its exception",
+            "width": 1440
+          }
+        ],
+        "pass": false
+      }
+    },
+    "log": [
+      {
+        "width": 1440,
+        "action": "Keep reviewing",
+        "added": [],
+        "removed": [
+          "Approve $313,282.88 for 38 people?",
+          "This locks the rates quoted at 10:48 am ET for 30 minutes and Ferry pulls $313,282.88 from Chase ••4410. Everyone is paid on Fri, Oct 30. You are also accepting:",
+          "Tomás Herrera has no bank details. MX$64,500.00 ($3,503.15) is held in your Ferry balance, not sent on Fri, Oct 30.",
+          "BRL costs 2.1% more than its 30-day average. +$147.67 on Lucas Moreira’s pay.",
+          "Aditi Rao is paid for 13 of 31 days. ₹150,967.74 ($1,703.06).",
+          "Keep reviewing"
+        ]
+      },
+      {
+        "width": 1440,
+        "action": "Approve $313,282.88",
+        "added": [
+          "Approved at 10:52 am ET. Ferry is pulling $313,282.88 from Chase ••4410; 37 people get paid on Fri, Oct 30 and Tomás Herrera’s pay waits for his bank details.",
+          "Locked",
+          "Locked at 10:52 am ET for 30 minutes. Ferry is pulling it from Chase ••4410 now.",
+          "Held",
+          "1",
+          "Approved at 10:52 am ET",
+          "By you, Rachel Kim.",
+          "Funding in progress",
+          "Rates locked until 11:22 am ET.",
+          "29 min left",
+          "Hide countdown",
+          "Except Tomás Herrera, until he adds bank details."
+        ],
+        "removed": [
+          "Draft",
+          "Approve $313,282.88",
+          "38 people in 7 currencies get paid on Fri, Oct 30. 3 of them need a look before you approve: a missing bank account, a rate above your 2% alert, and a partial month.",
+          "Estimate",
+          "38 payments converted at the rates quoted at 10:48 am ET. Approving locks these rates for 30 minutes and Ferry pulls the total from Chase ••4410.",
+          "Need a look",
+          "3",
+          "You approve",
+          "Locks the rates for 30 minutes.",
+          "Ferry pulls $313,282.88",
+          "From Chase ••4410, by ACH debit.",
+          "In their own currency, to their own bank."
+        ]
+      }
+    ]
+  }
+]

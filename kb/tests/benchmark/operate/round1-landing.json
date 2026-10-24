@@ -1,0 +1,154 @@
+[
+  {
+    "target": "round1/landing/ferry.html",
+    "checks": {
+      "dead-control": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "press-state": {
+        "fail": [
+          {
+            "message": "\"Start free trial\" pressed fill is delta E 6.4 from its disabled fill (need 15 or more); a press reads as switching off",
+            "sel": "div.wrap.grid > div.hero-copy > div.cta-row > a.btn.btn-primary",
+            "width": 1440
+          }
+        ],
+        "warn": [],
+        "pass": false
+      },
+      "disclosure": {
+        "fail": [
+          {
+            "message": "\"Menu\" looks the same open as closed at 390px; show the open state on the control (Close, an X, a turned chevron, minus for plus)",
+            "sel": "#menu > summary",
+            "width": 390
+          }
+        ],
+        "warn": [],
+        "pass": false
+      },
+      "focus-obscured": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "stepper": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "countdown": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "label-number": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "stale-commit": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "contradiction": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      }
+    },
+    "log": [
+      {
+        "width": 1440,
+        "action": "One fewer person",
+        "added": [
+          "$96 a month",
+          "11 people, 3 free: 8 × $12"
+        ],
+        "removed": [
+          "$108 a month",
+          "12 people, 3 free: 9 × $12"
+        ]
+      },
+      {
+        "width": 1440,
+        "action": "One more person",
+        "added": [
+          "$120 a month",
+          "13 people, 3 free: 10 × $12"
+        ],
+        "removed": [
+          "$108 a month",
+          "12 people, 3 free: 9 × $12"
+        ]
+      },
+      {
+        "width": 1440,
+        "action": "What does “the same day” mean?",
+        "added": [
+          "Approve the run by 9 am ET on a business day and each payment lands that day in the person’s own time zone. The run lists every landing time before you approve."
+        ],
+        "removed": []
+      },
+      {
+        "width": 1440,
+        "action": "Which exchange rate do my people get?",
+        "added": [
+          "The mid-market rate at the moment you approve, with no FX markup. The rate locks for that run, and each payslip shows it with the time it was locked."
+        ],
+        "removed": []
+      },
+      {
+        "width": 1440,
+        "action": "Does Ferry employ my people or file thei",
+        "added": [
+          "No. Ferry pays the people you already employ or contract with; it is not an employer of record. Local tax filings stay with your accountant or payroll provider, and Ferry gives them a file of every payment."
+        ],
+        "removed": []
+      },
+      {
+        "width": 1440,
+        "action": "How do I fund the balance?",
+        "added": [
+          "In US dollars, by ACH or wire. A wire arrives the same business day; ACH takes 1 to 3 business days, so fund ahead of payday. The run will not let you approve more than your balance."
+        ],
+        "removed": []
+      },
+      {
+        "width": 1440,
+        "action": "What does it cost?",
+        "added": [
+          "$12 per person a month, first 3 people free. You pay only for people paid that month. No FX markup, no setup fee and no transfer fees."
+        ],
+        "removed": []
+      },
+      {
+        "width": 1440,
+        "action": "Where is our money held?",
+        "added": [
+          "In a segregated account at a US partner bank, kept apart from Ferry’s own money. Your balance is only used for the runs you approve."
+        ],
+        "removed": []
+      },
+      {
+        "width": 1440,
+        "action": "Can we leave whenever we want?",
+        "added": [
+          "Yes. Cancel online at any time, and export every run, rate and payslip as CSV first. Any money left in your balance goes back to your bank account."
+        ],
+        "removed": []
+      },
+      {
+        "width": 390,
+        "action": "Menu",
+        "added": [
+          "Sign in"
+        ],
+        "removed": []
+      }
+    ]
+  }
+]

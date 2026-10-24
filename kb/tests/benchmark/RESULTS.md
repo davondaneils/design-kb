@@ -51,6 +51,9 @@ Date: 2026-10-13. Briefs: `briefs.md` (committed before any build). Each round: 
 | Spacing on the 4px grid | 51 to 100% | 100% | 100% | 99.8% | 100% |
 | Transition durations | 5 to 8 (site), 3 to 5 (app) | 1 | 1 | 1 | 1 |
 
+## Operated checks (2026-10-24)
+Davon picked this as the next round. `tools/operate.mjs` presses every control at 1440 and 390 (one level into dialogs, disclosures again under reduced motion) and re-reads the page each one leaves; `tools/lint.mjs` runs it on every target. On the round 1 and round 2 pages it **fails 12 of the 14 misses the critics found by operating the page or reading a state, warns on 1, and misses 1** (a state sheet cell, not a live control). It also found five dead buttons and a second "everyone" dialog in round 1 that no critic reported. Totals footed at displayed precision ($0.69) stay a hand check. Detail: `operate/TALLY.md`.
+
 ## What this says about the library
 1. **The gate is enforced only where a tool enforces it.** 10 of round 1's 14 misses were rules already in a skill. Round 2 fixed all of them because they became lint checks or hand-over checks, then missed new things no check covered. The next gains come from more operated checks (press every control, re-add every total after each action), not more prose.
 2. **The skills make correct pages, not memorable ones.** Imagery and motion were "clearly below" in both rounds on the marketing page. The concept and reveal rules exist; nothing yet pushes a builder from a correct single product card to Stripe's bento of live mock-ups or Linear's full product in the hero.
@@ -59,4 +62,4 @@ Date: 2026-10-13. Briefs: `briefs.md` (committed before any build). Each round: 
 ## Files
 - Round 1: `round1/` (pages, shots, `score-*.md`, `RANKED.md`, `FIXES.md`); critic reviews `kb/reviews/benchmark-round1-landing.md`, `-app.md`.
 - Round 2: `round2/`; critic reviews `kb/reviews/benchmark-round2-landing.md`, `-app.md`.
-- Tools: `score.py`; `kb/teardowns/measure.mjs` (oklch, `--scheme`); `tools/lint.mjs` checks `selected-state`, `reading-size`, `phone-facts`, `dead-control`, measure floor at 390, closed `<details>`, oklch in `overlay`.
+- Tools: `score.py`; `kb/teardowns/measure.mjs` (oklch, `--scheme`); `tools/lint.mjs` checks `selected-state`, `reading-size`, `phone-facts`, measure floor at 390, closed `<details>`, oklch in `overlay`; `tools/operate.mjs` (run by the lint) checks `dead-control`, `press-state`, `disclosure`, `focus-obscured`, `stepper`, `countdown`, `label-number`, `stale-commit`, `contradiction`.

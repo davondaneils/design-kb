@@ -1,5 +1,8 @@
 # design-copy changelog
 
+## 2026-10-24 (editor-in-chief, operated checks, `kb/tests/benchmark/operate/TALLY.md`)
+- Reference 06 fundamental 1: universals ("everyone", "all", "nobody") are claims and never share a screen with their exception (lint `contradiction`). Reference 02: a filtered view reads "Showing 3 of 38"; a repeated label never changes what it counts (lint `label-number`).
+
 ## 2026-10-13 (editor-in-chief, benchmark round 1, `kb/tests/benchmark/round1/RANKED.md`)
 - Reference 02: KPI and column labels true in every state ("People in this run", not "People paid" before payment); the commit dialog's confirm button carries the amount.
 - Reference 06: comparison words agree with the direction of the number beside them (FX quoted per USD); every time zoned when a page has more than one zone (`ZONE`, FOUNDATIONS v0.4.6); number plus count noun on the no-break list (also SKILL rule 16).

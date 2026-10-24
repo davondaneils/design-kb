@@ -1,0 +1,407 @@
+[
+  {
+    "target": "round1/app/run-review.html",
+    "checks": {
+      "dead-control": {
+        "fail": [
+          {
+            "message": "clicking \"Northwind Labs Sample workspace , switch\" changes nothing on the page (no DOM, attribute, value or URL change)",
+            "sel": "body > div.app > nav.sidebar > button.ws",
+            "width": 1440
+          },
+          {
+            "message": "clicking \"Send reminder\" changes nothing on the page (no DOM, attribute, value or URL change)",
+            "sel": "#alert-bank > button.btn.btn-secondary",
+            "width": 1440
+          },
+          {
+            "message": "clicking \"Review rate\" changes nothing on the page (no DOM, attribute, value or URL change)",
+            "sel": "#alert-rate > button.btn.btn-secondary",
+            "width": 1440
+          },
+          {
+            "message": "clicking \"Check proration\" changes nothing on the page (no DOM, attribute, value or URL change)",
+            "sel": "#alert-hire > button.btn.btn-secondary",
+            "width": 1440
+          }
+        ],
+        "warn": [],
+        "pass": false
+      },
+      "press-state": {
+        "fail": [
+          {
+            "message": "\"Status\" looks the same held down as at rest; every custom button has a pressed state (design-polish 01 rule 3)",
+            "sel": "thead > tr > th > button.sort",
+            "width": 1440
+          },
+          {
+            "message": "\"All 38\" looks the same held down as at rest; every custom button has a pressed state (design-polish 01 rule 3)",
+            "sel": "#f-all",
+            "width": 1440
+          }
+        ],
+        "warn": [
+          {
+            "message": "\"Send reminder\" pressed looks the same as hover; pressed moves one step past hover",
+            "sel": "#alert-bank > button.btn.btn-secondary",
+            "width": 1440
+          },
+          {
+            "message": "\"Review rate\" pressed looks the same as hover; pressed moves one step past hover",
+            "sel": "#alert-rate > button.btn.btn-secondary",
+            "width": 1440
+          },
+          {
+            "message": "\"Check proration\" pressed looks the same as hover; pressed moves one step past hover",
+            "sel": "#alert-hire > button.btn.btn-secondary",
+            "width": 1440
+          },
+          {
+            "message": "\"Name\" pressed looks the same as hover; pressed moves one step past hover",
+            "sel": "thead > tr > th > button.sort",
+            "width": 1440
+          },
+          {
+            "message": "\"Country\" pressed looks the same as hover; pressed moves one step past hover",
+            "sel": "thead > tr > th.hide-md > button.sort",
+            "width": 1440
+          },
+          {
+            "message": "\"Currency\" pressed looks the same as hover; pressed moves one step past hover",
+            "sel": "thead > tr > th > button.sort",
+            "width": 1440
+          }
+        ],
+        "pass": false
+      },
+      "disclosure": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "focus-obscured": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "stepper": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "countdown": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "label-number": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "stale-commit": {
+        "fail": [
+          {
+            "message": "after \"Approve run\" the page still says \"Rates as of 9:41 am ET, Tue, Oct 27, estimates until you app\", \"Up $3,033.49 from September. Amara Okafor’s first, partial m\", \"Approve by Wed, Oct 28, 5 pm ET\"; every sentence is true after the action",
+            "width": 1440
+          }
+        ],
+        "warn": [],
+        "pass": false
+      },
+      "contradiction": {
+        "fail": [
+          {
+            "message": "after \"Approve run\": \"Ferry then debits Chase operating ··4417 and pays everyone on Fri, Oct\" shares a dialog with its exception \"Lucía Fernández’s pay is held in your Ferry balance until she adds ban\"; write \"37 of 38\" or name who is left out",
+            "sel": "#approve-dialog",
+            "width": 1440
+          }
+        ],
+        "warn": [
+          {
+            "message": "\"Everyone is paid Fri, Oct 30\" and \"Lucía Fernández’s pay is held in your Ferry balance until she adds ban\" are on the same page; a universal never shares a screen with its exception",
+            "width": 1440
+          }
+        ],
+        "pass": false
+      }
+    },
+    "log": [
+      {
+        "width": 1440,
+        "action": "Approve run",
+        "added": [
+          "Approve the October 2026 run?",
+          "Rates lock for 30 minutes when you approve. Ferry then debits Chase operating ··4417 and pays everyone on Fri, Oct 30.",
+          "Debit, at current rates",
+          "Lucía Fernández’s pay is held in your Ferry balance until she adds bank details.",
+          "Keep reviewing"
+        ],
+        "removed": []
+      },
+      {
+        "width": 1440,
+        "action": "Keep reviewing",
+        "added": [],
+        "removed": [
+          "Approve the October 2026 run?",
+          "Rates lock for 30 minutes when you approve. Ferry then debits Chase operating ··4417 and pays everyone on Fri, Oct 30.",
+          "Debit, at current rates",
+          "Lucía Fernández’s pay is held in your Ferry balance until she adds bank details.",
+          "Keep reviewing"
+        ]
+      },
+      {
+        "width": 1440,
+        "action": "Approve run",
+        "added": [
+          "Approved",
+          "Approved. Rates are locked for 30 minutes while Ferry debits Chase operating ··4417."
+        ],
+        "removed": [
+          "Draft",
+          "Approve run",
+          "Approve the October 2026 run?",
+          "Rates lock for 30 minutes when you approve. Ferry then debits Chase operating ··4417 and pays everyone on Fri, Oct 30.",
+          "Debit, at current rates",
+          "Lucía Fernández’s pay is held in your Ferry balance until she adds bank details.",
+          "Keep reviewing",
+          "Approve run"
+        ]
+      },
+      {
+        "width": 1440,
+        "action": "Name",
+        "added": [
+          "Sorted by Name, ascending"
+        ],
+        "removed": []
+      },
+      {
+        "width": 1440,
+        "action": "Country",
+        "added": [
+          "Sorted by Country, ascending"
+        ],
+        "removed": []
+      },
+      {
+        "width": 1440,
+        "action": "Currency",
+        "added": [
+          "Sorted by Currency, ascending"
+        ],
+        "removed": []
+      },
+      {
+        "width": 1440,
+        "action": "Status",
+        "added": [
+          "Sorted by Status, descending"
+        ],
+        "removed": []
+      },
+      {
+        "width": 390,
+        "action": "Open navigation",
+        "added": [
+          "Northwind Labs",
+          "Sample workspace",
+          "Home",
+          "Payments",
+          "Funding",
+          "Reports",
+          "Workspace",
+          "Settings",
+          "Help"
+        ],
+        "removed": []
+      },
+      {
+        "width": 390,
+        "action": "Close navigation",
+        "added": [],
+        "removed": [
+          "Northwind Labs",
+          "Sample workspace",
+          "Home",
+          "Payments",
+          "Funding",
+          "Reports",
+          "Workspace",
+          "Settings",
+          "Help"
+        ]
+      }
+    ]
+  },
+  {
+    "target": "round1/app/run-review.html?state=error",
+    "checks": {
+      "dead-control": {
+        "fail": [
+          {
+            "message": "clicking \"Northwind Labs Sample workspace , switch\" changes nothing on the page (no DOM, attribute, value or URL change)",
+            "sel": "body > div.app > nav.sidebar > button.ws",
+            "width": 1440
+          },
+          {
+            "message": "clicking \"Use another account\" changes nothing on the page (no DOM, attribute, value or URL change)",
+            "sel": "#actions > button.btn.btn-secondary",
+            "width": 1440
+          }
+        ],
+        "warn": [],
+        "pass": false
+      },
+      "press-state": {
+        "fail": [
+          {
+            "message": "\"Status\" looks the same held down as at rest; every custom button has a pressed state (design-polish 01 rule 3)",
+            "sel": "thead > tr > th > button.sort",
+            "width": 1440
+          },
+          {
+            "message": "\"All 38\" looks the same held down as at rest; every custom button has a pressed state (design-polish 01 rule 3)",
+            "sel": "#f-all",
+            "width": 1440
+          }
+        ],
+        "warn": [
+          {
+            "message": "\"Name\" pressed looks the same as hover; pressed moves one step past hover",
+            "sel": "thead > tr > th > button.sort",
+            "width": 1440
+          },
+          {
+            "message": "\"Country\" pressed looks the same as hover; pressed moves one step past hover",
+            "sel": "thead > tr > th.hide-md > button.sort",
+            "width": 1440
+          },
+          {
+            "message": "\"Currency\" pressed looks the same as hover; pressed moves one step past hover",
+            "sel": "thead > tr > th > button.sort",
+            "width": 1440
+          }
+        ],
+        "pass": false
+      },
+      "disclosure": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "focus-obscured": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "stepper": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "countdown": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "label-number": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "stale-commit": {
+        "fail": [],
+        "warn": [],
+        "pass": true
+      },
+      "contradiction": {
+        "fail": [
+          {
+            "message": "\"Nobody has been paid\" sits on the same screen as \"People paid 38\"",
+            "sel": "div.page > dl.kpis > div.kpi > dt",
+            "width": 1440
+          }
+        ],
+        "warn": [],
+        "pass": false
+      }
+    },
+    "log": [
+      {
+        "width": 1440,
+        "action": "Retry funding",
+        "added": [
+          "Retrying the debit"
+        ],
+        "removed": []
+      },
+      {
+        "width": 1440,
+        "action": "Name",
+        "added": [
+          "Sorted by Name, ascending"
+        ],
+        "removed": []
+      },
+      {
+        "width": 1440,
+        "action": "Country",
+        "added": [
+          "Sorted by Country, ascending"
+        ],
+        "removed": []
+      },
+      {
+        "width": 1440,
+        "action": "Currency",
+        "added": [
+          "Sorted by Currency, ascending"
+        ],
+        "removed": []
+      },
+      {
+        "width": 1440,
+        "action": "Status",
+        "added": [
+          "Sorted by Status, descending"
+        ],
+        "removed": []
+      },
+      {
+        "width": 390,
+        "action": "Open navigation",
+        "added": [
+          "Northwind Labs",
+          "Sample workspace",
+          "Home",
+          "Payments",
+          "Funding",
+          "Reports",
+          "Workspace",
+          "Settings",
+          "Help"
+        ],
+        "removed": []
+      },
+      {
+        "width": 390,
+        "action": "Close navigation",
+        "added": [],
+        "removed": [
+          "Northwind Labs",
+          "Sample workspace",
+          "Home",
+          "Payments",
+          "Funding",
+          "Reports",
+          "Workspace",
+          "Settings",
+          "Help"
+        ]
+      }
+    ]
+  }
+]
