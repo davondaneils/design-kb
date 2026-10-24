@@ -25,6 +25,7 @@ Name two in the brief and compare against both.
 8. **One idea per section, alternating density.** A dense feature grid is followed by a single large statement or visual; the eye gets a rest every screen.
 9. **Real data in every mockup.** Names, prices, dates and numbers that look true, with tabular numerals; no "Lorem" or "$XX".
 10. **Motion that explains, not decorates.** Small, fast reveals tied to the product (a cursor, a state change), all removed under reduced motion.
+11. **One section shape, repeated.** The same header pattern (label carrying a fact, H2, one short paragraph, one picture) in every section, so the eye learns the page once; vary the picture, not the frame (Scrolltide catalogue, captured 2026-10-23; `references/build-spec.md`).
 
 ## Where pages fall short (from the color pilot)
 The pilot's coffee page passed the gate and still rated clearly below the exemplars: no real imagery (a CSS bag stood in), a fallback serif instead of a chosen face, no signature layout move, no motion (`kb/tests/design-color.md`). Moves 1, 2 and 8 are the ones to check first.

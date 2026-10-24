@@ -80,6 +80,14 @@ Where to go deeper on logos, identity systems, icons and poster or editorial com
 - **Tier:** 1 (Apple, Google); 4 (Lucide)
 - **Checked:** fetched all four pages; noted Apple's rule that SF Symbols may not be used in app icons or logos. Accessed 2026-10-10.
 
+### Iconly (gallery)
+- **Who / what:** A curated library of about 2,400 real app, game and web app icons, filterable by type, category and colour.
+- **Best for:** app icon and favicon research: what the icons in one category look like on a home screen, which colours are taken, how a mark survives at small sizes.
+- **Why it meets the bar:** shipped icons only, credited to their owners. Opinion: use it for the competitor wall of an icon, not as a style to copy.
+- **Link:** https://iconly.design/
+- **Tier:** 4
+- **Checked:** home page filters and sample icons. Lead from the Bardhyl Bytyqi X post (tier 5). Accessed 2026-10-23.
+
 ## Considered and dropped
 - **Josef Muller-Brockmann, Grid Systems in Graphic Design (Niggli):** verified and canonical, but it belongs in layout.md; link there instead of duplicating.
 - **Karl Gerstner, Designing Programmes (Lars Muller, facsimile edition):** verified and strong on systematic identity thinking, but dense and niche next to Identify and the NASA manual.

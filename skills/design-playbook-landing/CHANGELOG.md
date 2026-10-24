@@ -1,5 +1,10 @@
 # design-playbook-landing changelog
 
+## 2026-10-23 (from Davon's references: Scrolltide and an X post of resource sites)
+- New `references/build-spec.md`: decide in values before the first line; the sixteen decisions mapped to the skills that answer them, a house never-list, a six-block spec skeleton on our tokens, five expert moves. Loaded at step 2, after the strategy brief.
+- Load step 10 adds design-motion `08-cinematic-scroll.md` for scroll-driven pages; reference map links the build spec, the cinematic reference and the gallery lists.
+- Signature move 11: one section shape, repeated.
+
 ## 2026-10-11 (editor-in-chief, from the held-out test)
 - Section 3b, event and editorial pages: the hero carries the identity at full strength (scale, color field, crop), restraint belongs to the body sections, the hero screenshot must work as the social post, and the hero still owes the category word, locale-correct dates, place and one action. The skilled festival hero came out quieter than the baseline's (`kb/tests/heldout.md`).
 
