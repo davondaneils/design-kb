@@ -80,6 +80,8 @@ Each move has a number from these two pages or a source.
 
 11. **`:has()` and container queries are Baseline; scope `:has()` tightly** (C26). `:has()` anchored on `body`, `:root` or `*` re-evaluates on every DOM change; anchor it on the component.
 
+12. **Render traps on `file://` pages** (VGC homepage, 2026-10; measured in the check.mjs renders). CSS `mask-image` with a file URL is a CORS request (MDN, mask-image) and fails on `file://`, so the art disappears from renders: ship line art as an ink-coloured RGBA image instead. `loading="lazy"` and `decoding="async"` images below the fold were missing from full-page renders: drop them in prototypes the renderer judges, and restore lazy loading in production for images far below the fold.
+
 ## Part 3. What done looks like
 - Pixel diff 0 at 4 widths, 2 schemes and every state, with intended changes listed and shown.
 - Lint 0 fails before and after, every state.

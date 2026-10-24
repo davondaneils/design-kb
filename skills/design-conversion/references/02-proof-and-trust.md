@@ -63,5 +63,12 @@ Which proof answers which doubt, where it sits, and how to set it so a careful b
 ## Worked example: coffee subscription
 Doubt: "Will I like a new coffee every two weeks?" Proof: rating 4.7 from 1,284 subscriber reviews beside the price, distribution bars, one mixed review with the reply, guarantee sentence under the button. Placement: the band's right column, between the price block and the CTA, so the eye passes proof on the way to the button. Not used: stars on the shop cards (the cards already carry tasting notes and price; three ratings in a grid turn the shop into a marketplace; opinion).
 
+## Verify proof before it ships (VGC homepage, 2026-10)
+- **Rating and count come from the business's own structured data or the review platform on the day you build**, and the page, meta and JSON-LD say the same number. VGC's Figma said 93 reviews; the live JSON-LD said 91.
+- **Review widgets show relative or shuffled dates.** Do not print a month unless the platform shows that review's date. Drop the date before you guess one.
+- **A quote found only in the client's design file is unverified.** Cite it as "<name>, <client> client", list it in the ledger as "client to confirm", and never label it "Google review" until you find it there.
+- **An offer amount from a design file ("financing up to $100,000") is not a fact** until the live site or the client confirms it. Cut the number, keep the offer.
+- **A team line needs a count.** "The names clients mention most" was false for one of four names when a critic counted the reviews. Write what you can show: "the same names you just read in the reviews".
+
 ## Hand-offs
 - Testimonial copy: design-copy (premium), copywriting (direct response). Review schema: design-search 03. Rating bars as data: dataviz rules on bar charts. Color of stars and bars: design-color (never status colors).

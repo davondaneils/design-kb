@@ -85,6 +85,11 @@ Photos: two phone shots of the roaster, one of green beans in a sack, one of a c
 3. Treatment: mixed sources, so warm monochrome (shadow warm 990, highlight warm 50) for people and places; the beans stay in true color because the material is the product. The roast curve stays the one orange element.
 4. Sequence: farm (wide) then beans (detail) then roaster (medium), matching the hill-to-fire story.
 
+## When the proof image does not exist (VGC homepage, 2026-10)
+- **The headline's promise needs its picture or an honest slot beside it.** "See your renovation in 3D" with no render failed playbook rule "proof next to the claim" twice. When the client has not supplied the image, set a labelled slot on `--color-surface-sunken` with a dashed `--color-border-strong` edge: what it is ("3D render of this kitchen") and its status ("Requested from VGC, same camera angle as the photo"), paired with the real photo, and put it on the photo request list.
+- **Never let a stand-in pass as the thing.** Line drawings traced from finished photos (edge detection) are not design renders: caption them "traced from the finished photo for this page", and never number them like real drawing sheets.
+- **Captions state only what a source says.** "A 1970s home renovation" had no source and failed copy truth. Name a person only from the client's own material (a staff page, their own video title); otherwise "a VGC designer", and crop out anyone you cannot name.
+
 ## Hand-offs
 - design-graphic 03: shot briefs, stock selection, AI imagery and provenance.
 - design-frontend 05: srcset, formats, LCP.
