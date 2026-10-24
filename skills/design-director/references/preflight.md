@@ -43,6 +43,7 @@ Before the first line of build, write `design-log.md` beside the work:
 Job: <one line>   Playbook: <name>   Strategy depth: <inherit | three lines | one page | full>
 Exemplars: <first pick, then>   (kb/teardowns/INDEX.md table 1)
 Triggers matched: <font, cinematic, sells, ...>
+First screen after this pass: <what changes at the top of the page, or "unchanged on purpose: <reason>">
 Read (path, one line on what it decided):
 - skills/design-foundations/references/tokens.md: spacing and type steps
 - skills/design-typography/references/02-selection-pairing.md: chose X over Y because ...
@@ -64,3 +65,6 @@ When Davon corrects something, the lesson goes back into the knowledge base in t
 Project work (for example `/mnt/project-files/<client>/`) still uses this repo: read the skills from `skills/` (or `.claude/skills/`, the same files) and run the tools from the repo root against the page's absolute path. Keep `design-log.md` and the check report beside the page.
 
 **Publishing a page as a hosted preview (an Artifact link):** inline every image as a data URI in the published copy, and check it in a browser opened from that copy alone (every `<img>` has `naturalWidth > 0`). Relative `img/` paths that work on the local server came up blank on the hosted link twice for the Stand Firm pages (Davon, 2026-10-24). Keep the relative-path version as the source and hand-off file; the inlined copy is only for the preview.
+
+## 7. An "improve it" brief on an existing page
+"Make it better", "one more pass" and "one last time" are visible-leap briefs (director section 2 step 5). Plan the pass from the top of the page down: decide what the first screen becomes and what one visual idea the sections carry, then do the fixes the gate asks for. Fill the "First screen after this pass" line of the read log before the first edit; if it says "unchanged", say so in the hand-over's first sentence and expect to be asked why. The hand-over opens with before and after pictures of the first screen at 1440 and 390 (director section 5, hand-over rule). Evidence: Stand Firm v4, 2026-10-24, where a pass that rebuilt every section below the fold and shortened the buy page by 1,300px read as "you didn't even change anything" because the first screens were v3's.
