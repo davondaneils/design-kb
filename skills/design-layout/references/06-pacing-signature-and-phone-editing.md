@@ -27,6 +27,8 @@ The first five references make a page correct. This one makes it hold attention 
 ### Decision rules
 - **If a page has more than four sections**, write its flatplan before any CSS: one line per section with its job, its loudness (loud, medium, quiet) and its kind of loudness (type, color, data, image). Then apply the pacing rules below.
 - **If the flatplan has a section without a named component** (ledger strip, ruled index, quote set as type, receipt, pinned stage), name one before any CSS. **If two sections name the same component or the same body layout**, change one. A page built from one reused frame reads as "the exact same" however good the copy is (Stand Firm v2 review, 2026-10-24).
+- **If a page body holds more than one ruled list** (rows on hairlines with a right-aligned figure), the list is one component however its cells vary. Turn every list but one into an object or a map: a contents list became a spine map (seven ink blocks, each as wide as its part's page count; the plan part in the accent); an offer list became a paper slip on the colour field with a total line; the questions kept the rows. Stand Firm v3 had three ruled lists in a row on the buy page and the client read them as the same component (v4 design log, 2026-10-24).
+- **If a pinned stage has chapters, size each chapter by its content** (one picture at 21:9 or 2:1 plus 60 to 90 words), never by a viewport fraction. Four chapters at `min-height: 78svh` for 60 words each made a 3,300px column that was mostly field (Stand Firm v3); content-sized chapters made about 2,700px with no empty screen, and the price row rides in the sticky column beside the figure so the longest section is never without the action (v4).
 - **If two loud sections of the same kind are adjacent** (two color bands, two display headlines), separate them with a quiet or medium section, or change one's kind.
 - **If the third and fourth sections are both quiet**, the page dies in the middle. Move the second loud moment there: a band, a big number, a chart, a full-bleed artifact.
 - **If you want rhythm, change scale, density and tone. Do not flip image sides.** Zigzag image-text layouts slow scanning (NN/g, research 06 claim 7).
@@ -82,6 +84,7 @@ Write it as a table in the hand-over. Verbs, in order of preference: **keep, reo
 | Chart | 240px tall instead of 400; the optional middle annotation hidden; two labelled points stay |
 | Footer | Link lists side by side instead of stacked |
 | Result | 6,738px to 5,574px at 390 (17 percent shorter); the primary action ends at 476px instead of 1,078px |
+| Stand Firm v4 buy page (2026-10-24) | Stage: 21:9 chapter photos become 88px square thumbnails beside the heading (thumbnail); the sticky plan and price row are dropped and the dock carries the action (defer). Spine map: horizontal blocks become a vertical stack whose row heights stay proportional to page count (reorder, keep the fact). Gallery on the quiz page: 4:3 photos become 96px squares left of the text (thumbnail). Section padding 96 at desktop, not 128, on both pages |
 
 ### Do and don't
 | Do | Don't |

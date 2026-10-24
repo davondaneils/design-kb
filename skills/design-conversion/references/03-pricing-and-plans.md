@@ -56,6 +56,7 @@ How to set a price, a choice and its terms so the right choice is easy and nothi
 4. **Per-use price as the second number, never the first.** "About $0.90 a cup" under $18 a bag. Opinion: as a lead it reads as a pitch; as a footnote it reframes calmly.
 5. **No decoy tier.** If a plan exists only to make another look good, delete it. Decoy effects rarely survive real product experience (C38); the reputational cost when buyers notice is real (opinion).
 6. **The live summary.** Every control in the price block updates one summary sentence and the CTA's adjacent term line in place, without layout shift (reserve the line's height).
+7. **The price stays beside the longest read.** On a long sales page the price sentence and the one primary sit in the sticky column of the pinned section (under the figure and its counter, over a hairline), so the deal is on screen through the 2,000 to 3,000px where the buyer is deciding, without a second filled button on the same screen (Apple MacBook Air: price and Buy in the first screen; Stand Firm v4: "$27 until Nov 30, then $37" beside the plan, 2026-10-24).
 
 ## Do and don't
 | Do | Don't |
