@@ -26,6 +26,7 @@ The first five references make a page correct. This one makes it hold attention 
 
 ### Decision rules
 - **If a page has more than four sections**, write its flatplan before any CSS: one line per section with its job, its loudness (loud, medium, quiet) and its kind of loudness (type, color, data, image). Then apply the pacing rules below.
+- **If the flatplan has a section without a named component** (ledger strip, ruled index, quote set as type, receipt, pinned stage), name one before any CSS. **If two sections name the same component or the same body layout**, change one. A page built from one reused frame reads as "the exact same" however good the copy is (Stand Firm v2 review, 2026-10-24).
 - **If two loud sections of the same kind are adjacent** (two color bands, two display headlines), separate them with a quiet or medium section, or change one's kind.
 - **If the third and fourth sections are both quiet**, the page dies in the middle. Move the second loud moment there: a band, a big number, a chart, a full-bleed artifact.
 - **If you want rhythm, change scale, density and tone. Do not flip image sides.** Zigzag image-text layouts slow scanning (NN/g, research 06 claim 7).
@@ -85,6 +86,7 @@ Write it as a table in the hand-over. Verbs, in order of preference: **keep, reo
 ### Do and don't
 | Do | Don't |
 |---|---|
+| Give every section its own named component under a shared header system | Re-use one section frame (label, H2, split, cards) and change only the words |
 | Change the kind of loudness between neighbours | Put two color bands or two display headlines back to back |
 | Keep one body edge down the page | Give each section its own left edge |
 | Break the grid once, toward one edge | Bleed everything, or nothing ever |
