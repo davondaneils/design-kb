@@ -17,6 +17,9 @@
 | Native iOS and Android | 3 to 5 | Tab bar / navigation bar | Full rules: design-playbook-mobile `references/platform-conventions.md` |
 | Deep content (docs, settings) | many | Sidebar tree plus in-page table of contents plus search | Breadcrumbs on deep pages |
 
+## Phone menu as a disclosure (VGC homepage, 2026-10)
+A `<details>` menu is fine for a prototype, but `<details>` alone does not close the way people expect. Add a few lines of script: close on Escape and return focus to the summary, close on a click outside, close when focus leaves the panel (WAI-ARIA APG, Disclosure navigation menu, keyboard section). Hide the closed panel with `.menu:not([open]) .menu-panel { display: none }` so the lint occlusion check does not see links under other content. Show the menu closed and open, with a focused link, on the state sheet.
+
 ## Decision rules
 - **If there are more than 5 primary destinations on mobile:** cut or regroup to 5, ranked by usage data; overflow to "More". Never put actions in navigation. Native details: design-playbook-mobile.
 - **If the brand wants a hamburger on desktop:** decline. Desktops have room; NN/g recommends showing top-level nav across the top or down the left.
