@@ -5,12 +5,15 @@ Pages where scroll drives a film, a pinned object or a sequence of chapters: pro
 ## 1. Fundamentals (non-negotiable, check first)
 Everything in design-motion section 1 still applies. On a cinematic page these are the ones that fail:
 1. **The scene must earn its place.** Before building one, answer "should this scene exist at all?" (Scrolltide's stage 6 question). It exists only when the motion shows something a still cannot: how a thing opens, how it is built, what it looks like from the other side, how a space feels to walk through. Atmosphere alone is a still.
-2. **Three moments move, no more.** Name the three scroll moments that move before building; the rest of the page is still (Scrolltide's stage 5 decision, "which three moments move"). Opinion: a renovator, clinic or law firm page usually needs one.
+2. **Three moments move, no more.** Name the three scroll moments that move before building; the rest of the page is still (Scrolltide's stage 5 decision, "which three moments move"). Opinion: a renovator, clinic or law firm page usually needs one. The count is of scroll-scrubbed stages; components the reader steps through (a deck, a stack) and one ambient ground do not count, because they move only when asked or never compete with the copy (Stand Firm v4: film, lie and walls scrubbed; deck, stack and dawn not).
 3. **The first paint is visible.** The hero headline never starts at opacity 0 (it hides the LCP element); if it moves, it moves by transform only (Scrolltide build spec; web.dev LCP). A frame sequence shows its first frame as a real `<img>` poster before the canvas takes over.
 4. **Scroll stays native.** Scroll is the playhead, never a hijacked wheel (03, "never scroll-jack"). Pinned stages use `position: sticky` and native scroll; no smooth-scroll library.
 5. **Reduced motion gets the story, not the film.** Each chapter shows its key still with its copy; the pinned stage becomes a stacked series of stills; crossfades replace travel; nothing flashes to black (03; motionin "Iris" reduce path).
 6. **The phone gets a plan.** 3D and frame sequences have a budget and a fallback for a stranger on a slow phone (Scrolltide stage 7). Opinion: hero plate and first frames under 2 MB total (Scrolltide chapter 12, "the two-megabyte hero"), frames lazy-decoded past the first chapter.
 7. **Text over motion passes contrast on the worst frame**, not the poster (design-art-direction `references/03-composition-and-overlays.md`).
+8. **Structure first, motion second.** Plan the page as a sequence of story beats and give each beat the mechanism or component that tells it; the cinematic spine is the layout. Adding a zoom or a parallax to a page designed static fails (Stand Firm v3, rated mediocre by the client for exactly this; research G1).
+9. **Judge motion moving.** Screenshots and the lint render with reduced motion, so they show stills. Record a scroll-driven screen video at `prefers-reduced-motion: no-preference` and judge timing from that; send the video, not screenshots, when someone signs off on motion (research G10).
+10. **Every transient state passes too.** Blurred, dimmed or half-revealed text is still text: keep it at 3:1 or better (opinion: opacity 0.55 or more on a dark ground), and check the phone, where copy sits over a different part of the picture than on desktop (research G6).
 
 ## 2. Decision rules
 
@@ -36,6 +39,17 @@ Everything in design-motion section 1 still applies. On a cinematic page these a
 - A card that grows from its rectangle to the viewport and back (FLIP): `--ease-standard`, or easeInOutCubic `cubic-bezier(0.65, 0, 0.35, 1)` as the motionin sections use (opinion).
 - Never Back, Elastic or Bounce on a calm brand (they overshoot), and never on opacity or colour (expert move 3).
 
+**Pick a component by job** (Scrolltide components, shaders and UI previews; research G)
+| Job on the page | Component | Build note |
+|---|---|---|
+| Enter a chapter stage from a headline | Zoom Reveal: a picture pill between two words of the headline opens to full bleed | clip-path `inset()` with a radius, from about 40% each side to 0; flanking words `flex: 1`, aligned toward the gap, so the pill is centred |
+| Correct a belief | Strike the old line, then Focus Reveal: a corner-bracket frame travels word to word and each word turns sharp | Ease the frame between word boxes with easeInOutCubic; unrevealed words blurred at opacity 0.55 or more |
+| Five to seven chapters of an offer | Scroll Index: full-bleed photo, one giant word, a thumbnail strip with the current one outlined, a counter | Giant word sized `min(19vw, calc(110vw / letters))` on phones, where the strip goes horizontal above the word, and `calc(96vw / letters)` on desktop, where the strip sits at the side and the longest word must clear it |
+| A few stories or people | Photo Stack: the top print swings out and tucks under, over a ghosted word | Button steps; the prints are decoration (`aria-hidden`), the story text is live and `aria-live="polite"` |
+| Testimonials | Quote Deck: fanned cards, focused card upright | Arrows and swipe, never auto-advance; reset `<figure>` margins; clip the section `overflow-x: clip` |
+| A score | Segmented arc gauge (20 segments on 270 degrees) | Drawn in SVG; the number is live text beside it |
+| A quiet moving ground | Aurora or mesh shader | Half resolution, dithered, paused off screen; loud families (chrome, flame, halftone) only when the brand is built on them |
+
 ## 3. Expert moves
 1. **Copy changes sides so the subject is never covered.** Each chapter's text alternates left and right of the film (Scrolltide: Rann Mahal).
 2. **Pin callouts to points in the source frame**, not to the viewport, so they stay on the subject at any crop (Scrolltide: Katana).
@@ -53,6 +67,14 @@ Everything in design-motion section 1 still applies. On a cinematic page these a
 14. **Video lazily, by intersection.** Preview video `preload="none"`, started by an IntersectionObserver with a 200px root margin and paused off screen (Scrolltide build spec).
 15. **No scrim only when the plate was made for type.** A plate with an unlit empty third can carry type with no overlay; otherwise run the overlay check (Scrolltide: Auralis, Arbor; design-art-direction 03).
 16. **Know the effect before building it.** Reflection needs an environment map and has no hue; diffraction is a repeating spectrum from regular grooves and needs only a 2D shader; thin film is one non-repeating sweep through hue. The wrong guess ships hundreds of KB of 3D for a 2D effect (Scrolltide eBook p273).
+17. **Build a film from a keyframe chain.** Make 3 to 5 keyframe stills in one look, each generated with the previous one as an image reference, then one clip per neighbouring pair with start and end frames set. Neighbouring clips share a seam frame, so the film plays as one take (research G2).
+18. **Step through generated clips frame by frame.** Generators cross-fade between unlike frames, and a 0.85 s dissolve can hide in a clip whose thumbnail looks clean. Extract the frames and look at every one near each change before building (research G3).
+19. **Hide an unavoidable cut under something the story provides.** A lightning flash, a door swinging past, headlights: peak at the cut frame and fall off over about 1.5 frames each side. It is "swap under cover" with cover that belongs in the scene (research G3).
+20. **Load frames coarse to fine.** Every 8th frame, then 4th, 2nd and 1st; draw the nearest loaded frame. Scrubbing works in a second and sharpens as the rest arrive (research G4).
+21. **Cut a portrait frame set for phones.** Crop 9:16 frames from the source with the crop centre following the subject, rather than cover-cropping 16:9 frames on a tall screen (research G4).
+22. **A diegetic progress readout.** A clock, an altimeter or a distance that advances with the film tells the reader how far through they are and adds story; a bar adds neither (research G5).
+23. **A scrim belongs to the copy, not the film.** On phones, give the beat that needs it its own gradient (it fades with the beat), so later beats keep the full picture (research G6).
+24. **Copy beats keyed to frames.** Each beat has four frame numbers: start in, fully in, start out, gone. Hold at least a third of its range still (move 6), and alternate the side of each beat (move 1).
 
 ## 4. Do and don't
 - Do: one pinned stage where a kitchen goes from bare studs to finished room in four chapters, copy alternating sides, a "02 / 04" counter. Don't: four different devices (a phone, a chart, a mockup, a photo) for the same four steps.

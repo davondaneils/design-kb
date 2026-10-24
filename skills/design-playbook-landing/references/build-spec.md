@@ -6,7 +6,8 @@ A landing page drifts toward the average when its decisions are adjectives ("pre
 1. **Values, not adjectives.** Every line of the spec is a number, a hex, a token, a named mechanism or a "do not". "Feel premium" is not a line; "display tracking -0.02em, one accent on 3 elements or fewer per screen" is (Scrolltide: "name a mechanism and it gets copied; name an appearance and it gets averaged").
 2. **The spec lives in a file in the project**, next to the strategy brief, and is read before every edit pass. Chat instructions stop being seen once a session is long and the page drifts back one edit at a time (Scrolltide eBook p61). The file doubles as the scope the client signs (same source).
 3. **Negatives are written down.** A "never-list" for the project, plus the house never-list in section 3. Negatives leave nothing to interpret (Scrolltide eBook p25).
-4. **Tokens come from FOUNDATIONS.** The spec picks from the scales; it never invents a value between steps ("a closed spacing scale, nothing between": Scrolltide p25; our scale is FOUNDATIONS Spacing).
+4. **Token names and values both come from FOUNDATIONS.** `--space-5` is 16px because FOUNDATIONS says so; a page that renames the scale (Stand Firm v2 used `--space-4` for 16px and 52px controls) cannot be checked against the gate and drifts on every edit. The spec picks from the scales and never invents a value between steps ("a closed spacing scale, nothing between": Scrolltide p25; our scale is FOUNDATIONS Spacing).
+5. **Pages in one funnel share chrome, never content blocks.** The quiz page and the buy page share header, footer, tokens and type; they do not share a proof block, FAQ or offer. Each page's proof answers that page's question (quiz: "is this test worth 60 seconds"; buy: "is this book worth $27"), so a copied block is answering the wrong one (Stand Firm v2 review, 2026-10-24).
 
 ## 2. The sixteen decisions (fill every row before layout)
 From Scrolltide's "decided before you paste" list, mapped to where our skills answer each one.
@@ -58,6 +59,13 @@ Moving moments: <1. hero clip plays once, holds last frame> <2. pinned how-it-wo
 Reveals below the fold: opacity + 12px rise, 600ms, --ease-reveal, once.
 Hero H1 never starts at opacity 0. Reduced motion: stills and crossfades.
 
+FILM (only when scroll drives a frame sequence; design-motion 08)
+Source: 4 keyframes in one look, 3 clips with shared seam frames, cut at frame 29.5 under a lightning flash.
+Frames: 137, 1600x900 WebP q52 (about 4.8 MB) plus 540x960 portrait crops for phones (about 1.7 MB).
+Load order: every 8th, 4th, 2nd, 1st. Poster <img> for frame 0. Input smoothing cur += (target - cur) * 0.2.
+Beats (frames in, full, out, gone): b0 -1 -1 5 14 | b1 33 40 58 64 | b2 80 88 100 106 | b3 127 134 end.
+Track 640svh on JS with motion allowed; reduced motion and no JS get stacked stills.
+
 SECTIONS (one block each, in order)
 01 Hero: H1 (value line), one supporting line, one filled action, one proof line.
 02 Proof: one ruled row of three numbers with sources.
@@ -68,8 +76,9 @@ Focus ring 2px, offset 2px, --color-focus-ring. Contrast 4.5:1 body, 3:1 display
 ```
 
 ## 5. Expert moves
-1. **Spec the section shape once and repeat it.** One header pattern (label with a fact, H2 left, one short paragraph top right, one picture) used by every section reads as a system and lets the eye learn the page once (Scrolltide catalogue pages, measured 2026-10-23). Vary the picture, never the frame.
+1. **Spec the header system once; never the section body.** One header pattern (label with a fact, H2, one short paragraph) can repeat so the eye learns the page once (Scrolltide catalogue pages, measured 2026-10-23). The body under it must change: each section gets its own named component (ledger strip, ruled index, quote set as type, receipt, pinned stage), and no two sections share a body layout. "Vary the picture, never the frame" failed in review: Stand Firm v2 reused one frame (label, H2, paragraph, 2-column split, cards with a top rule and a Sample pill) on every section of two pages, and the client's verdict was "these sections and components look the exact same" (Davon, 2026-10-24; v3 design log, section 2). Test: cover the headings and copy; if two sections are indistinguishable as shapes, one of them fails.
 2. **Withhold from the first build.** Specify ground, type, sections and the never-list first; add motion and depth after the static page passes the gate (Scrolltide stage 4: "what to withhold from the first prompt"). Motion added to a page that fails fundamentals hides the failure.
 3. **Plan where the empty third goes** before any image is made: which side of each hero or chapter image stays empty and unlit for type (Scrolltide stage 3; design-motion 08, "make the frames").
 4. **Log two columns in the critique loop**: what the build got right on its own, and what a person had to decide. Count turns, not hours (Scrolltide eBook p296). The second column is the material for the next skill update.
 5. **Versions in one place.** Tool and model names live in one dated line of the spec; everything else is mechanism, so the spec survives a tool change (Scrolltide eBook p6).
+6. **Each section names its component.** On a cinematic page the SECTIONS block names the mechanism per beat ("Lie: strike, then Focus Reveal"; "Walls: Zoom Reveal into Scroll Index, 5 chapters"), chosen from design-motion 08's component table. A section with no named component is a still on purpose (Stand Firm v4, `kb/research/motion/08-cinematic-scroll.md` section G).

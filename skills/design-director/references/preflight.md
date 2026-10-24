@@ -62,3 +62,5 @@ When Davon corrects something, the lesson goes back into the knowledge base in t
 
 ## 6. Working on files outside this repo
 Project work (for example `/mnt/project-files/<client>/`) still uses this repo: read the skills from `skills/` (or `.claude/skills/`, the same files) and run the tools from the repo root against the page's absolute path. Keep `design-log.md` and the check report beside the page.
+
+**Publishing a page as a hosted preview (an Artifact link):** inline every image as a data URI in the published copy, and check it in a browser opened from that copy alone (every `<img>` has `naturalWidth > 0`). Relative `img/` paths that work on the local server came up blank on the hosted link twice for the Stand Firm pages (Davon, 2026-10-24). Keep the relative-path version as the source and hand-off file; the inlined copy is only for the preview.
