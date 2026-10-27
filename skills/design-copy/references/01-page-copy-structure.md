@@ -42,6 +42,8 @@ For awareness-level selection beyond this table, use `copywriting` (Schwartz).
 
 **Service or studio site:** hero (what you make, for whom); selected work with outcomes; services as deliverables; process in 3 to 5 steps; proof; pricing or "starting at"; CTA to a specific next step (book a 15 minute call, request a quote).
 
+**High-ticket local service homepage (renovation, custom build, trades):** hook (hero with the action); authority (third-party endorsement, then named reviews); one story of a solved problem (a client in their finished home); features and benefits (what you build, then how it works with the person who owns each step); the deal restated in one block with the action; objections (more clients on video, then an FAQ that includes "is the price really fixed", permits, financing, "do you work in my city"); the form; risk reversal directly under the form (no obligation, when the price can move, price match, warranty). Drop scarcity unless it is true. The failure this order fixes: proof stacked before the visitor knows the offer, no how-it-works, the same client shown twice, and the guarantee read far from the form. Source: Davon's correction on the VGC homepage, Oct 2026 (his 8-beat order, a classic direct-response sequence; opinion of a practising digital marketer).
+
 ### Feature blocks
 - Header: a short benefit statement with a concrete noun or number, not a label. "Matches 9 in 10 invoices automatically", not "Smart matching".
 - Body: 1 to 3 sentences, max 40 words. Says what it does, then kills the matching objection.
