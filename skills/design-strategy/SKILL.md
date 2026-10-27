@@ -20,6 +20,12 @@ Design without a strategy is decoration; a strategy nobody can trace to a pixel 
 | New brand, rebrand, brand system, or audience, positioning or competitors missing | **Full** | website-strategy stages 2 to 5 as inputs, then the one-page template as the summary, plus the asset audit for a rebrand; a portfolio or new-offer job adds the architecture decision (ref 01) |
 | Client proposal, job post, pitch | **Proposal** | website-strategy, all six stages; add this skill's identity table and checks only when design is in scope |
 
+**Redesign proposal for a client you already work with** (Davon's correction, 2026-10; opinion): the reader trusts you already, so the document should feel calm, not like an audit.
+- One idea per page, about 8 pages: goal, before and after (desktop, then phone), at most five changes, search, the site diagram, three next steps.
+- Show the improvement side by side. Don't list what's wrong with the current site, and don't use technical counts such as scripts, schema copies or sitemap duplicates.
+- Use one goal number, labelled as an estimate, with a promise to measure. Leave out benchmark tables and scenario grids.
+- Keep the full audit for a separate document if anyone asks for it.
+
 If two rows fit, take the shallower and say what you skipped. A deliverable the brief names (a voice guide, a strategy document) sets the depth. Name what was not built. **Naming** is out of depth: brief the name from the positioning, then route to a naming specialist and trademark counsel (ref 01).
 
 | Brief field | Read by |
