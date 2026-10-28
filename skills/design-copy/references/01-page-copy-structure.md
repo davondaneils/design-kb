@@ -35,6 +35,8 @@ Persuasion strategy (awareness levels, big idea, leads, offers) lives in the `co
 
 For awareness-level selection beyond this table, use `copywriting` (Schwartz).
 
+**Map the whole scent chain before judging a headline (lesson, Stand Firm quiz cover, 2026-10-28).** On a funnel page the visitor arrives carrying words: the video's spoken ask, the caption, the bio, the DM, the share card. Write that chain down from the client's own files first. If one phrase runs through every link (here "What kind of strong are you?"), the H1 repeats it, and new headlines compete only as challengers in a later split test. Any headline test, simulated or real, must show readers the inbound chain; a test that shows the page cold will score the echo as "generic" and pick the wrong line (it did). Opinion from that job, consistent with the message match row above.
+
 ### Section sequences
 **SaaS or product homepage (default):** nav, hero (headline, sub, CTA, risk reducer), proof strip, problem or "before" (optional, 1 short block), 3 to 6 feature or benefit blocks each tied to one objection, how it works (3 steps), deeper proof (case study numbers, testimonials with name and role), pricing teaser or plans, FAQ (top 5 to 8 objections), final CTA repeating the hero promise, footer.
 
