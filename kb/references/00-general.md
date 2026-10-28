@@ -168,6 +168,14 @@ Where to look when a question spans domains: the X accounts whose shipped work e
 - **Tier:** 4
 - **Checked:** home page and filters. Accessed 2026-10-10.
 
+### Navbar Gallery (gallery/teardown)
+- **Who / what:** A gallery of website navigation bars by type: static, dropdown, mega menu, side bar, search bar, announcement, full screen, breadcrumbs. Each entry has a desktop capture, a mobile menu capture, designer and site type.
+- **Best for:** headers and logo bars on landing and brand pages; how a nav sits over a full-bleed image.
+- **Why it meets the bar:** live sites by named studios, filterable by nav type; the mobile menu shot is shown next to the desktop one. Opinion: strongest on studio and brand sites; check that links meet contrast before borrowing.
+- **Link:** https://www.navbar.gallery/
+- **Tier:** 4
+- **Checked:** home page and the static type page (82 entries), rendered live; six entries studied with screenshots in `kb/references/patterns/shots/12-site-headers/`. Accessed 2026-10-28. Shared by Davon.
+
 ### Landdding (gallery/teardown)
 - **Who / what:** A daily, community-upvoted gallery of landing pages and website templates (about 2.5k designs, 40 categories), across Webflow, Framer, WordPress, Wix and Squarespace.
 - **Best for:** finding landing pages by industry that Land-book is thin on: Real Estate, Architecture, Furniture and Interiors, Medical, Non-Profit.
