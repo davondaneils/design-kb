@@ -70,5 +70,11 @@ One page for a single product or subscription; a stepped flow when shipping meth
 ## Worked example: coffee subscription checkout
 Dialog opened by "Start a subscription". Header: "Ethiopia Guji, every 2 weeks". Express row: "Apple Pay", "Google Pay" (neutral buttons in tests; real ones use the providers' official assets). Divider "or pay with card". Fields: email, full name, street address, city, postal code, card block (number, expiry, CVC), country preset to United States. Collapsed: "Apartment, suite (optional)", "Have a code?". Summary: "1 bag every 2 weeks $18.00 / Shipping Free / Tax calculated from your address: $0.00 in Oregon / Today $18.00". Term line and "Pay $18 and subscribe". Below: guarantee sentence. Account offered on the confirmation screen.
 
+## Prototype forms tell the truth (VGC homepage, 2026-10)
+A design prototype with no backend must never show the success state for a real submit. Three round 2 critics failed the same form for it.
+- **Never treat an opaque response as delivered.** `fetch(url, { mode: 'no-cors' })` returns an opaque response whose status is always 0 and unreadable (MDN, Request.mode), so "sent" fires whether or not a lead exists. Posting to a client's live contact page also fails silently: Contact Form 7 needs its hidden fields and its own field names, and WordPress answers 404 to a POST field called `name` (critic test, 2026-10-24).
+- **Rule:** a prototype submit validates, then shows a plain "This is a design prototype, so nothing was sent" panel with the phone number. Show the designed success state only through a demo switch (`?state=sent`) for the state sheet and renders.
+- **Production spec in the hand-over:** post to the form plugin's own endpoint (Contact Form 7: `POST /wp-json/contact-form-7/v1/contact-forms/<id>/feedback`, success when the JSON `status` is `mail_sent`; contactform7.com docs), add a timeout that shows the failed state, and keep the visitor's answers on failure ("Your answers are still in the form", not "Nothing was saved").
+
 ## Hand-offs
 - Form mechanics and error copy: design-ux 03, design-copy 02. Dialog behavior: design-ux 04, design-frontend (native `<dialog>`). Payment integration and PCI: design-frontend; never build card fields yourself in production, use the processor's hosted fields.

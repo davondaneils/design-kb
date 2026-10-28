@@ -76,6 +76,10 @@ Use `<picture>` with `type` sources when you need format fallbacks or art-direct
 - Ask the printer for profile and PDF standard; PDF/X-4 is the modern default, some require PDF/X-1a [E8].
 - Black: small text in 100K only; large solid areas in a rich black the printer specifies (a common recipe is C60 M40 Y40 K100); respect the total ink limit (often about 300%) [E8].
 - Spot colors: define Pantone in the kit; check CMYK builds on a proof before a large run.
+- HTML printed to PDF (Chromium `page.pdf`): don't use blurred `box-shadow`, translucent `rgb(... / a)` fills or translucent gradients.
+  - Chromium writes these as transparency groups. Some viewers draw them as dark see-through blocks around images, while poppler-based previews look clean (seen 2026-10 on the VGC proposal).
+  - Use solid borders and solid fills.
+  - Check the exported PDF itself with `pdftoppm`, not the browser screenshot.
 
 ## Expert moves
 - **Export the reversed logo from its own artwork,** never by recoloring the positive (see 01).
