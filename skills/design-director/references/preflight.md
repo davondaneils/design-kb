@@ -64,6 +64,10 @@ When Davon corrects something, the lesson goes back into the knowledge base in t
 ## 6. Working on files outside this repo
 Project work (for example `/mnt/project-files/<client>/`) still uses this repo: read the skills from `skills/` (or `.claude/skills/`, the same files) and run the tools from the repo root against the page's absolute path. Keep `design-log.md` and the check report beside the page.
 
+**Multi-file sites (shared CSS and JS files):** the check tools open pages from disk with `--allow-file-access-from-files` (tools/browser.mjs), so linked stylesheets and fonts are read. Before that flag, Chromium treated each file: URL as its own origin: the token lints saw only inline `<style>` and failed every token as undefined, and a primitive used in a linked sheet was never caught (Stand Firm web build, 2026-10-28). Theme blocks must be named so the lint knows them: `.theme-<name>`, `.dark`, `.light`, `[data-*]` or `:root` variants; `.on-lapis` reads as a component.
+
+**Merge fields in approved copy:** render every value of every field into every line that uses it before hand-over and read them. A field that switches number ("the people you love" to "your wife") breaks the verbs around it, and the fix is the client's, not ours: flag it (Stand Firm web build, 2026-10-28, seven lines on the Married stage).
+
 **Publishing a page as a hosted preview (an Artifact link):** inline every image as a data URI in the published copy, and check it in a browser opened from that copy alone (every `<img>` has `naturalWidth > 0`). Relative `img/` paths that work on the local server came up blank on the hosted link twice for the Stand Firm pages (Davon, 2026-10-24). Keep the relative-path version as the source and hand-off file; the inlined copy is only for the preview.
 
 ## 7. An "improve it" brief on an existing page

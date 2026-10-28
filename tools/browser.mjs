@@ -18,13 +18,17 @@ function findChromium() {
   return candidates.find((p) => fs.existsSync(p));
 }
 
+// --allow-file-access-from-files: a page opened from disk can read its own linked stylesheets (cssRules) and fonts.
+// Without it Chromium treats every file: URL as its own origin, so the token lints saw only inline <style> and a
+// multi-file site (cs.css plus pages.css) failed undefined-var on every token (Stand Firm web build, 2026-10-28).
+const ARGS = ['--allow-file-access-from-files'];
 export async function launch() {
   try {
-    return await chromium.launch();
+    return await chromium.launch({ args: ARGS });
   } catch (err) {
     const executablePath = findChromium();
     if (!executablePath) throw err;
-    return chromium.launch({ executablePath });
+    return chromium.launch({ executablePath, args: ARGS });
   }
 }
 
