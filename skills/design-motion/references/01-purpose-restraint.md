@@ -20,6 +20,7 @@
 - If you cannot name which of the five jobs the motion does, cut it.
 - If the motion serves the brand only, it belongs on a rare moment or a marketing page, never in a task flow (Carbon: expressive "sparingly for significant moments").
 - If the motion pulls attention away from the task (pulsing badges, shaking upsell buttons, countdown motion), treat it as a dark pattern and cut it (NN/g).
+- Exception, the one primary CTA on a one-action page (a squeeze page, an opt-in, a quiz front door): a slow breathing pulse is allowed, because there the button is the task. Measured on Davon's CRO exemplar (`kb/teardowns/monetise-aic-lp.md`): scale 1.00 to 1.05 and back, about a 1.3s period, plus a static glow. One element only, never on a page with a second action competing. Stop it under `prefers-reduced-motion: reduce` (the static glow stays), which also covers WCAG 2.2.2.
 - If the product is a productivity tool, default to Carbon's "productive" character: short, subtle, ease-out. If it is a consumer brand moment, "expressive" is allowed for that moment only.
 
 **Context lenses** (practitioner opinion, compiled from Kowalski, Krehel, Tompkins): utility and pro tools ask "should this animate at all?"; polished consumer apps ask "is this subtle enough?"; playful or portfolio work asks "what could this become?". Pick one lens per product, not per screen.

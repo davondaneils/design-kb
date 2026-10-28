@@ -35,6 +35,11 @@ This list is the quality bar. Test outputs are rendered and judged side by side 
 24. teenage.engineering
 25. the-brandidentity.com
 
+## Direct response and funnel pages
+Added by Davon, 2026-10-28 ("this is a example of world class" for conversion; thread: Monetise landing page review). The bar for cold-traffic opt-ins, squeeze pages, free event and challenge registrations and quiz front doors. Teardown: `kb/teardowns/monetise-aic-lp.md`.
+
+26. event.monetise.com/lp (Monetise AI Income Challenge), with its long-form root page
+
 ## Screenshots
 Target: homepage of each marketing exemplar at 1440 and 390px, JPEG, in `kb/exemplars/shots/`, made with
 `node tools/render.mjs https://<site> kb/exemplars/shots --name <site> --jpeg 60 --schemes light --max-height 6000`.

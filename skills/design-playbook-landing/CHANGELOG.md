@@ -1,5 +1,9 @@
 # design-playbook-landing changelog
 
+## 2026-10-28 (from Davon's world-class CRO pick: the Monetise AI Income Challenge page)
+- New section 3c, direct response pages for cold paid traffic: page length from the ad's job, the first line continues the ad, no nav, sticky CTA, outcome-plus-timeframe headline with the accent on the number, three "without"s and one proof line, reassurance under the button, two-step opt-in with a 2 or 3 field budget and the measured field attributes, a real date as the urgency, the long page order, one breathing CTA, UTMs from click to sale, the paid step after the opt-in.
+- Section 2 routes every cold-traffic page to 3c and its exemplar; done means compares funnel pages with `kb/teardowns/monetise-aic-lp.md` first.
+
 ## 2026-10-23 (from Davon's references: Scrolltide and an X post of resource sites)
 - New `references/build-spec.md`: decide in values before the first line; the sixteen decisions mapped to the skills that answer them, a house never-list, a six-block spec skeleton on our tokens, five expert moves. Loaded at step 2, after the strategy brief.
 - Load step 10 adds design-motion `08-cinematic-scroll.md` for scroll-driven pages; reference map links the build spec, the cinematic reference and the gallery lists.

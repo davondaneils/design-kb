@@ -11,6 +11,7 @@ How to use it (the Critic's step "compare to exemplars"): pick the job first (ta
 | Landing page, product or SaaS | [stripe-home](stripe-home.md) | [linear-home](linear-home.md), [vercel-home](vercel-home.md), [ramp-home](ramp-home.md) | Hero, proof, CTA system and product shown as code; one light, one dark, one monochrome, one warm |
 | Landing page, consumer or brand-led | [apple-macbook-air](apple-macbook-air.md) | [cashapp-home](cashapp-home.md), [family-home](family-home.md), [arc-home](arc-home.md) | Photography, one-color brands, illustration systems |
 | Landing page, dark theme | [linear-home](linear-home.md) | [raycast-home](raycast-home.md), [framer-home](framer-home.md), [mercury-home](mercury-home.md) | Surface steps, alpha borders, light text tuning |
+| Landing page, direct response or funnel step (cold paid social, opt-in, free event or challenge, quiz front door) | [monetise-aic-lp](monetise-aic-lp.md) | the long root page in the same file | Davon's world-class CRO pick (2026-10-28): one-screen squeeze, two-step opt-in, dated event, measured 2026-10-28 |
 | Landing page, small business or service | [designjoy-home](designjoy-home.md) | [pitch-home](pitch-home.md) | One offer, one person, pricing on the page |
 | Dashboard or app UI | [linear-app](linear-app.md) | [stripe-dashboard](stripe-dashboard.md), [vercel-dashboard](vercel-dashboard.md) | Density, row heights, status color, 12 to 13px type |
 | Consumer app or to-do style UI | [things-home](things-home.md) | [notion-product](notion-product.md), [superhuman-home](superhuman-home.md) | Calm UI, keyboard-first, published app shots |
@@ -49,6 +50,7 @@ How to use it (the Critic's step "compare to exemplars"): pick the job first (ta
 | [nytimes-feature](nytimes-feature.md) | (unmeasured) |  |  |  |  |  |  |  |  |  |  | (unmeasured) |
 | [teenage-engineering-home](teenage-engineering-home.md) |  |  | ● |  | ● |  |  |  |  |  | ● |  |
 | [brandidentity-home](brandidentity-home.md) | ● |  |  | ● |  |  |  |  |  |  |  | ● |
+| [monetise-aic-lp](monetise-aic-lp.md) |  |  |  | ● |  |  | ● | ● |  |  |  |  |
 
 ## 3. Patterns the set shares (measured, with where to look)
 - **Two-tone headings at one size:** ink sentence plus a muted continuation, hierarchy by color not size. Stripe (32px, `#061b31` then `#64748d`), Linear (48px, `#f7f8f8` then `#8a8f98`), Vercel (24px), Apple (21px/600), Raycast (20px, fails AA), Ramp (ink at 100% then 60% alpha).
