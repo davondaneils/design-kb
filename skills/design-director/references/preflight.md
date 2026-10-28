@@ -34,6 +34,7 @@ Read these even when the playbook did not reach that step yet, and even inside a
 | "Make it look like <site>" | that site's teardown in `kb/teardowns/` if it exists; otherwise measure it with `kb/teardowns/measure.mjs` before borrowing |
 | Charts, KPIs, dashboards | the dataviz skill, then design-product-ui |
 | Shadows, borders, radius, finish, "looks cheap" | design-polish `SKILL.md`, `references/06-polish-checklist.md` |
+| Options for Davon to choose between (any "A, B or C" set, even a small part like a logo bar) | `kb/teardowns/INDEX.md` for the job and domain, the exemplar shots in `kb/exemplars/shots/` side by side, and the pattern or skill reference for that part. Every option names the exemplar it is borrowed from and what was taken; an option invented from habit is not shown. Evidence: Stand Firm logo bar, 2026-10-28. Three home-made options drew "try more, look at the resources ... you should be pulling from that constantly"; the second round took Mercury (seal plus small caps over a painted sky), The Brand Identity (the name joined by a centered rule), Cash App and Apple (icon only) and Pentagram (wordmark only), and sized every lockup by design-graphic 01 |
 | A resource, site or library Davon names | `references/resource-index.md` first: it may be mined already. If it is new, mine it into a research note and the skill it belongs to; never use it once and lose it |
 
 ## 3. The read log (proof you read it)
