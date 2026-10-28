@@ -95,6 +95,7 @@ Polish never trades against the FOUNDATIONS gate. Then these hold on every page,
 14. **Remove one thing per screen** before calling it done.
 15. **Ring color on colored bands** is the band's text color, never `currentColor` (the pilot's band CTA ring measured 1.02:1 in dark).
 16. **Scope `scrollbar-gutter: stable`** to containers that change height; on the root it leaves an empty strip beside full-bleed bands.
+17. **Boxes read as cheap; marks, rules and raised paper read as made.** A grid of square tiles with hard 1 to 3px dark borders and 3px corners, outlined pay buttons and a dashed panel around every block make a premium page look like a form (Davon on Stand Firm, 2026-10-28: "it looks cheap, it looks amateur, and it ruins the spell"). Before you box something, try in this order: open space, a hairline rule at 12 to 20% ink, a round or brand-shaped mark (beads, arches, a pen ring around a numeral), then a raised card with 12 to 16px radius and a soft two-layer shadow. Never box at the same weight everywhere. Payment buttons use the platform's own style (black, 12px radius), never an outlined box with the words typed in.
 
 ## 5. The polish pass (run inside design-director's loop)
 1. Lint gate passes (`node tools/lint.mjs page.html`).
