@@ -29,6 +29,8 @@ One table for "where do I look for X". Each row points at the file that holds th
 | Iconly | Icon sets | `kb/references/graphic.md`; design-graphic `references/02-icon-systems.md` |
 | Font In Logo, Typewolf, Fonts In Use | Identify and see faces in use | `kb/references/typography.md` |
 | Web Interface Guidelines (Vercel), Emil Kowalski, Rauno Freiberg | Interaction and polish detail | `kb/references/00-general.md`, `motion.md`, `frontend-a11y.md` |
+| MicroKit UI (microkit.co) | Copy-paste button and nav microinteractions (shine, edge glow, rim light, hold to confirm) | `kb/research/motion/microkit-buttons.md`; `kb/references/motion.md` |
+| Uiverse (uiverse.io/buttons) | Community CSS button gallery. Shared 2026-10-28; not mined (Cloudflare blocks automated reads) | `kb/references/motion.md` |
 | Baymard, NN/g, GOV.UK | Evidence for UX and conversion rules | `kb/references/ux.md`, `conversion.md` |
 
 ## 3. Tools
