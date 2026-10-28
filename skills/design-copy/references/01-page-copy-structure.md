@@ -40,7 +40,18 @@ For awareness-level selection beyond this table, use `copywriting` (Schwartz).
 
 **Single-offer landing page:** no main nav; hero; proof; benefits; mechanism or how it works; offer details; FAQ; final CTA. One goal, one CTA verb repeated.
 
+**Squeeze page (the ad already told the story):** banner line that continues the ad; outcome H1 with timeframe; three "without" clauses and one proof line; one CTA; two reassurance lines under it. One phone screen. Exemplar: `kb/teardowns/monetise-aic-lp.md` (Davon's world-class CRO pick, 2026-10-28).
+
+**Free event or challenge registration (long form):** hero; the news or partner hook ("here's what that means for you"); dated curriculum, one curiosity title per session; proof as a rising sequence; What, When, Where; fascination bullets; messenger story; "Why is it free?"; recap; final CTA that says what happens next. A CTA about once per screen (same exemplar, root page).
+
 **Service or studio site:** hero (what you make, for whom); selected work with outcomes; services as deliverables; process in 3 to 5 steps; proof; pricing or "starting at"; CTA to a specific next step (book a 15 minute call, request a quote).
+
+### Direct response hero moves (from the Monetise exemplar)
+- **"Without" stack:** "...without needing to quit your job, without needing to get on camera, and without needing prior experience." Three clauses, each one objection in the viewer's words, then one line of proof. Fits the subheadline budget.
+- **Specific number, accented alone:** colour only the number and the timeframe in the H1 ("$373 Per Day", "5 Days"). A specific figure reads as measured (Caples, *Tested Advertising Methods*); it must be true and match every other place the page says it.
+- **CTA claims a thing:** first person plus what it costs and what they get ("Save my free spot"); the form's button upgrades the noun ("Get my free ticket").
+- **Reason why as a section:** headline the sceptic's exact thought ("If this works, why is it free?") and answer with your own interest, plainly (Hopkins, *Scientific Advertising*, 1923). Place it before the final CTA. It beats a testimonial for a free offer from a seller (opinion).
+- **The first line continues the ad:** on a page an ad sends traffic to, an eyebrow or banner in the ad's voice that ends where the H1 picks up ("To celebrate my investment in Higgsfield AI, I'm hosting a 5-Day Challenge...").
 
 ### Feature blocks
 - Header: a short benefit statement with a concrete noun or number, not a label. "Matches 9 in 10 invoices automatically", not "Smart matching".

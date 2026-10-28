@@ -1,5 +1,8 @@
 # design-motion changelog
 
+## 2026-10-28
+- `references/01-purpose-restraint.md`: the pulsing-CTA rule gets one exception, the single primary on a one-action page (scale 1.00 to 1.05, about 1.3s, static under reduced motion), measured on Davon's CRO exemplar `kb/teardowns/monetise-aic-lp.md`.
+
 ## 0.3 draft (2026-10-23)
 - New `references/08-cinematic-scroll.md`: scroll-driven films, frame sequences, pinned stages and chapters. Fundamentals (the scene must earn its place, three moments move, visible first paint, native scroll, reduced motion tells the story, a phone budget, contrast on the worst frame), a mechanism picker, making the frames (plate and layout, photographer's slots, one change between frames), easing on a cinematic page, 16 expert moves. From Scrolltide, motionin.design and easings.net (`kb/research/motion/08-cinematic-scroll.md`). Not yet through critic or tester.
 - `--ease-reveal: cubic-bezier(0.22, 1, 0.36, 1)` (easeOutQuint) added for marketing reveals, FOUNDATIONS v0.4.5; in the SKILL token block, `assets/motion-tokens.css` and `motion-audit.mjs`.

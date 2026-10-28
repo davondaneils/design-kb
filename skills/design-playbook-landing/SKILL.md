@@ -28,6 +28,7 @@ Preflight first, even when this playbook triggered on its own: design-director `
 - **design-copy** for premium product and brand sites, SaaS marketing sites, studio and portfolio sites, pricing pages, and every piece of UI text. Short, specific, calm. No hype stacks, countdowns or fake scarcity.
 - Quick test: if the closest exemplar is on the marketing list in `kb/exemplars.md` (Stripe, Linear, Apple, Mercury and so on), it is not direct response. Use design-copy. (Opinion; the exemplar teams write this way.)
 - Mixed case (a paid-ads landing page for a premium brand): structure from copywriting's awareness levels, voice and sentence craft from design-copy.
+- Any page cold paid traffic lands on, premium brand or not: the page shape follows section 3c, and its closest exemplar is `kb/teardowns/monetise-aic-lp.md`, not the marketing list.
 
 ## 3. Non-negotiables for this job
 1. One primary action per view, the same verb everywhere it appears.
@@ -54,13 +55,29 @@ Festivals, conferences, exhibitions, launches, magazines and feature stories sel
 5. **Facts the hero still owes:** what (the category word), when (dates with weekday checked, in the audience's locale: "Sat 17 to Sun 18 April 2027" for en-GB), where (city and venue), and the one action (tickets). A loud hero that hides the dates has failed.
 6. **Fundamentals do not relax:** text over key art passes the `overlay` worst-pixel check; display type keeps its hairline (design-typography `references/08-high-contrast-faces.md`); motion stays under the 800ms hero reveal.
 
+## 3c. Direct response pages for cold paid traffic
+Opt-in pages, squeeze pages, free event and challenge registrations, quiz front doors and any page an ad sends cold traffic to. Exemplar: `kb/teardowns/monetise-aic-lp.md`, Davon's world-class pick for conversion (2026-10-28). Copy depth from copywriting and sales-funnels (section 2); this section is the page's shape.
+1. **Decide page length from the ad's job, before layout.** If the ad tells the story (a story, testimonial or explainer ad), the landing page is one screen at 390x844 plus the footer: Monetise /lp is 981px tall at 390. If the ad only hooks, build the long page, with a CTA about once per screen (the Monetise root: 9 CTAs in 13,006px). Keep both as separate URLs and send each ad to the one that fits. Never make cold traffic scroll past a film or six screens of atmosphere to reach the argument (opinion; the Stand Firm waitlist page scored 5 out of 10 for cold traffic for this reason, cold-traffic review 2026-10-24).
+2. **The first line continues the ad.** A banner or eyebrow in the ad's own voice, first person if the ad was, ending where the headline picks up ("To celebrate my investment in Higgsfield AI, I'm hosting a 5-Day Challenge..."). Message match by voice, not only by repeated keywords (design-copy 01).
+3. **No nav, two exits.** Only the legal links leave the page; every other target is the opt-in.
+4. **The action never leaves the screen.** A sticky banner with the CTA, plus the hero CTA. On a phone the sticky CTA is full width.
+5. **Headline: outcome, then timeframe, with only the number and the timeframe in the accent** ("Build A **$373 Per Day** Online Income In Just **5 Days** With AI"). Use a specific, true number; never round a real figure up to look bigger.
+6. **Subhead: three "without" clauses, then one proof line.** Each "without" names an objection the ad's viewer already holds, in their words.
+7. **Reassurance under the button.** The top two objections, again, 3 to 5 words each, directly under the CTA (design-copy 01, risk reducer).
+8. **Two-step opt-in.** The page shows one button; the form opens in a modal or the next step after the tap. Field budget 2 for a lead (first name, email), 3 when a phone number buys show-up (WhatsApp or SMS reminders for a live event). Copy the Monetise field attributes (`autocomplete`, `inputmode`, `enterkeyhint`, 16px input text, geo-preset dial code) and add a visible or floating label. The submit button names what they now own ("Get my free ticket", "Show my score").
+9. **A real date is the urgency.** A live pill with the dates ("LIVE: JAN 5 TO FEB 3"). Never a countdown timer (design-conversion 06, no dark patterns).
+10. **Long page order** (Monetise root, **opinion** on the order as a default): hero, partner or news hook, dated curriculum, rising proof, What, When, Where, fascinations, messenger story, "Why is it free?", recap, final CTA with what happens next ("You'll get the confirmation by email").
+11. **One CTA may breathe.** On a one-action page the primary button may run the slow scale pulse (design-motion 01). Stop it under `prefers-reduced-motion: reduce`.
+12. **Measure from click to sale.** Store UTMs on first touch, write them onto every internal link, form hidden field, checkout link and group invite, and run one split-test tool and one session recorder. A funnel that drops UTMs at the first redirect cannot learn.
+13. **The paid step lives after the opt-in.** A low-priced upgrade on the thank-you page (Monetise: $15), split-tested; offer design goes to sales-funnels.
+
 ## 4. Done means
 1. `node tools/lint.mjs page.html` exits 0 at its default widths (390, 768, 1024, 1440), and so does every state URL and the state sheet. `claims_inventory.mjs` `PROMISE` warnings are fixed or named in the hand-over.
 2. `node tools/render.mjs page.html out/ --widths 390,768,1024,1440` and every `[judged]` row holds on the screenshots, plus the state sheet (every control in every state) rendered and linted.
 3. `claims_inventory.mjs` exits 0 and every claim is ticked against its source; `search-check.mjs` exits 0; `conversion-audit.mjs` exits 0 when the page sells (design-director section 5).
 4. At 390: the category word and the primary action sit in the first 844px; when the page sells, the price and the primary action are both there. At 1440: the next section peeks above 900px. Measure with `kb/tests/design-layout/measure-layout.mjs`.
 5. A term line (renews when, at what price, how to cancel online) sits beside any renewal or subscription CTA (design-conversion).
-6. Side by side with the named closest exemplars, rated close (not clearly below) on hierarchy, type, imagery, rhythm and craft. Event and editorial pages also pass section 3b item 4 (the hero screenshot works as the social post). Pick them from `kb/teardowns/INDEX.md` (Stripe first, then Linear, Vercel, Ramp for product and SaaS) and `references/signature-moves.md`; compare measured numbers, not impressions.
+6. Side by side with the named closest exemplars, rated close (not clearly below) on hierarchy, type, imagery, rhythm and craft. Event and editorial pages also pass section 3b item 4 (the hero screenshot works as the social post). Direct response and funnel pages are compared with `kb/teardowns/monetise-aic-lp.md` first and pass section 3c items 1 to 9. Pick them from `kb/teardowns/INDEX.md` (Stripe first, then Linear, Vercel, Ramp for product and SaaS) and `references/signature-moves.md`; compare measured numbers, not impressions.
 7. The strategy brief exists at the right depth and `node skills/design-strategy/assets/brief_lint.mjs` passes; the word swap test, covered competitor wall and five-second test are recorded; every public claim has a ledger row with evidence held.
 8. A fresh-context critic has judged the gate (design-director section 5, step 13); a self-review alone does not claim it.
 9. The hand-over names what is still short of the exemplar.
