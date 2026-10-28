@@ -240,23 +240,30 @@ const helpers = `
       return hit;
     },
     // Lines of an element's text, as word counts per rendered line.
+    // Words in document order; a word joins the current line when its vertical middle sits inside that line's box.
+    // Grouping by box bottom alone splits one line in two when a word is set larger (a name in display type, a drop cap).
     lines(el) {
-      const lines = new Map();
+      const lines = [];
       const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
       const range = document.createRange();
       for (let n = walker.nextNode(); n; n = walker.nextNode()) {
         const re = /\\S+/g; let m;
         while ((m = re.exec(n.textContent))) {
           range.setStart(n, m.index); range.setEnd(n, m.index + m[0].length);
-          const rc = range.getClientRects()[0];
+          const rcs = range.getClientRects(); // last box: a drop cap is the first box of its word
+          const rc = rcs[rcs.length - 1];
           if (!rc || !rc.width) continue;
-          const key = Math.round(rc.bottom / 4);
-          const cur = lines.get(key) || { words: 0, chars: 0 };
+          const mid = (rc.top + rc.bottom) / 2;
+          let cur = lines[lines.length - 1];
+          if (!cur || mid < cur.top || mid > cur.bottom) {
+            cur = { words: 0, chars: 0, top: rc.top, bottom: rc.bottom };
+            lines.push(cur);
+          }
+          cur.top = Math.min(cur.top, rc.top); cur.bottom = Math.max(cur.bottom, rc.bottom);
           cur.words++; cur.chars += m[0].length + 1;
-          lines.set(key, cur);
         }
       }
-      return [...lines.entries()].sort((a, b) => a[0] - b[0]).map((e) => e[1]);
+      return lines.map(({ words, chars }) => ({ words, chars }));
     },
   };
 `;
