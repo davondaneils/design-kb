@@ -45,6 +45,10 @@ Fill every field; a vague brief returns stock-looking results. Fields match comm
 - Inspect every AI image at 100 percent for hands, teeth, text, logos, reflections, product details and physics.
 - Check the tool's terms for commercial use and indemnity.
 - Keep the house grade: run AI images through the same preset as photos.
+- **Paid generations need a yes first.** Show the client the prompt and get their go before every paid run; one image per shot unless they ask for options; no model comparisons on their credits unless they ask. (Davon, 2026-10-29: ten versions of one porch shot, a six-image model test plus four retries for a fade he then dropped, cost 21.24 credits and read as waste; research 03, row 15.)
+- **Fakes give themselves away in five places:** anatomy (look at hands first), style (plastic skin, an overly cinematic look, hyper-real detail), things that don't work (garbled text, merged or floating parts), physics (shadows and reflections that disagree) and context [P12]. Check all five before an AI image ships.
+- **Models lean pretty, so cast against it.** Stable Diffusion v1 was trained on LAION's 5+ aesthetic-score subset [P13], Midjourney's default style applies "automatic beautification" [P14], and in one study 74% of generated people were rated young [P15]. Name the age, build and real flaws in the prompt.
+- **For a snapshot, prompt the phone, not the photoshoot:** main camera at 1x (26 mm on iPhone 16 [P16]), the default 4:3 frame [P17], most of the scene in focus, the phone's flat bright processing [P18], framed a little badly. Leave out cinematic, 8K, bokeh and golden hour. (opinion on the word list)
 
 ## Expert moves
 - **Brief the moment as a verb.** It is the single biggest difference between a stock-looking and a documentary-looking shoot. (opinion)
@@ -86,3 +90,10 @@ Brief: calm, trustworthy B2B forecasting tool for finance teams.
 - [P9] Contently, photo shoot brief: https://support.contently.com/article/822-how-do-i-make-a-brief-for-a-photo-shoot
 - [P10] Ocus, brand photography guidelines: https://www.ocus.com/resources/brand-photography-guidelines
 - [P11] Penn State Smeal photography standards: https://brand.smeal.psu.edu/photography
+- [P12] Kamali et al., How to Distinguish AI-Generated Images from Authentic Photographs (2024): https://arxiv.org/pdf/2406.08651
+- [P13] LAION-Aesthetics: https://laion.ai/blog/laion-aesthetics/
+- [P14] Midjourney, Style Raw: https://docs.midjourney.com/docs/style-1
+- [P15] Dinkar et al., Erasing 'Ugly' from the Internet (2025): https://arxiv.org/abs/2511.00749v1
+- [P16] Apple, iPhone 16 technical specifications: https://apple.com/iphone-16/specs/
+- [P17] TechRadar, iPhone aspect ratios: https://techradar.com/phones/iphone/how-to-take-different-aspect-ratio-images-on-your-iphone
+- [P18] Lux (Halide), Process Zero: https://lux.camera/introducing-process-zero-for-iphone
