@@ -44,6 +44,8 @@ For awareness-level selection beyond this table, use `copywriting` (Schwartz).
 
 **Service or studio site:** hero (what you make, for whom); selected work with outcomes; services as deliverables; process in 3 to 5 steps; proof; pricing or "starting at"; CTA to a specific next step (book a 15 minute call, request a quote).
 
+**Quiz results page that sells (lesson, Stand Firm results v1, 2026-10-29):** the reveal; what the type means; a receipt of his own answers; strengths; the blind spot; why other plans failed; the mechanism; the dated plan with the first price; inside the plan; proof; the offer; price; guarantee; FAQ; the close. Two copy moves the client picked from two builds side by side: the blind spot ends on his own quiz answer about what it costs him, pulled out under a small label ("You said it costs you" over "My kids learn what a man is from someone else"), and the close sets that same answer against starting "right now". Davon changed the close's "Or tomorrow" to "Or right now"; our reading is that buying is the act that happens now even when Day 1 is tomorrow, and "tomorrow" is the word a man puts things off with, so Day 1 moves to its date ("Day 1 is Fri, Oct 30"). Opinion from one job.
+
 ### Feature blocks
 - Header: a short benefit statement with a concrete noun or number, not a label. "Matches 9 in 10 invoices automatically", not "Smart matching".
 - Body: 1 to 3 sentences, max 40 words. Says what it does, then kills the matching objection.

@@ -24,6 +24,8 @@ Status key: **C** consensus, **R** research-backed (single study or dataset), **
 | 16 | Copy at grade 5 to 7 converted at 11.1%, 56% higher than grade 8 to 9 (7.1%) and about double professional level (5.3%). Difficult words are the factor most linked to lower conversion. | Unbounce Conversion Benchmark Report 2024 (about 41,000 pages, 57M conversions), via DMN summary | R (correlation, not causation) |
 | 17 | First-person CTA ("Start my free trial") beat second person ("your") by about 90% in one ContentVerve test. | Michael Aagaard / ContentVerve, widely re-cited | X (single test, rarely replicated) |
 | 18 | Button copy tests are context dependent: "Submit" beat "Become a maven" and "I want in" in one WiderFunnel test; a supporting line above the button ("Join 110,023 Geek + Gamers Just Like YOU!") lifted conversion 14.1%. | Content Marketing Institute summary of WiderFunnel tests | R (unreported samples) |
+| 19 | Picking between two builds of the Stand Firm quiz results page section by section, the client cut the sticky contents rail ("get rid of the section pills") and the "Sound like you?" confirmation taps ("get rid of the selection pills here"), kept the blind spot section ending on his own quiz answer about the cost ("I like the quote pull at the end of the Fable version"), and changed the close's "tomorrow" to "right now". 18 of 24 rows went to one build, 4 to the other, 1 mixed, 1 cut; the story order was not changed. | Davon's notes on the side-by-side board, 2026-10-29 (private artifact https://claude.ai/artifact/39fncsFLujdtSGXAih6ChW) | P (one client, one page) |
+| 20 | Attention ratio is "the ratio of links on a landing page to the number of campaign conversion goals"; "in an optimized campaign, your attention ratio should be 1:1", with "only one call to action". | Unbounce conversion glossary, accessed 2026-10-29 | P |
 
 ## Conflicting views
 - Clever vs clear: practitioners split. NN/g data and the Unbounce correlation favor clear. Brand studios use clever lines, but almost always with a plain subheadline doing the explaining. Rule adopted: clever is allowed only when the subheadline alone passes the "only this text" test.
@@ -44,3 +46,4 @@ Status key: **C** consensus, **R** research-backed (single study or dataset), **
 - https://www.indiehackers.com/post/just-launched-the-new-designjoy-landing-page-roast-it-614e69f85d
 - https://dmn.ca/unbounces-2024-conversion-benchmark-report-proves-that-attention-spans-are-declining-and-so-are-conversion-rates/
 - https://contentmarketinginstitute.com/articles/words-convert-test/
+- https://unbounce.com/conversion-glossary/definition/attention-ratio/
