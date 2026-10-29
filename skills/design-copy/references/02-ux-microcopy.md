@@ -119,3 +119,8 @@ Never show "No data" while loading; show progress (NN/g 2021).
 - design-frontend: aria-live, error focus management, button width stability.
 - design-color: `--color-danger`, `--color-success` roles; never color alone.
 - design-motion: how messages enter; respect reduced motion.
+
+## Quiz answers that ask for an admission (lesson, Stand Firm quiz, 2026-10-29)
+- **If** a quiz answer asks him to admit a struggle **then** write the fight as a plain, blameless label ("Temptation I keep giving in to", "Feeling like I don't measure up"), not a vivid scene ("Late at night, I give in to what I swore off"). Breakoff and dishonest answers come from threat (Tourangeau and Yan 2007; [Duke sensitive-questions tipsheet](https://dism.duke.edu/files/2020/05/Tipsheet-Sensitive_Questions.pdf)), and a general label lets each man fill in his own specific (Forer 1949, the Barnum effect).
+- **Then** add one normalizing line under the question ("Every man is fighting something."), the survey literature's fix for sensitive items ([ACF brief](https://rpg-cse.acf.gov/sites/default/files/2024-03/RPGBriefCollectingSensitiveInfo.pdf)).
+- Situational answers ("Work and bills eat every hour") read as vague to the client; primal ones (temptation, shame, loneliness, exhaustion) earned "powerful". Commitment comes from him choosing the answer, not from how graphic it is. (Client feedback from one job; opinion.)
