@@ -23,6 +23,7 @@ What the best shipped dashboard and mobile products actually do, pattern by patt
 | 09 | [Notifications](09-notifications.md) | `skills/design-ux/references/04-states-feedback.md` |
 | 10 | [Permission and error states](10-permission-and-error-states.md) | `skills/design-ux/references/04-states-feedback.md`, `skills/design-product-ui/references/05-states-bulk.md` |
 | 11 | [Checkout and upgrade](11-checkout-and-upgrade.md) | `anthropic-skills:sales-funnels` for offer logic; this file covers the UI |
+| 12 | [Site headers and logo bars](12-site-headers.md) | `skills/design-graphic/references/01-logo-identity.md` (lockup, clear space, minimum size); `skills/design-art-direction/references/03-composition-and-overlays.md` (type and marks over images) |
 
 ## Where the gap is widest (opinion)
 Gap score 1 to 5: how far the average shipped product sits below the best example. Each file explains its score in its "Gap" section.

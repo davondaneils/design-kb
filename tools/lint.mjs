@@ -20,9 +20,10 @@
 //              fails and under 7pt x distance / 40cm warns. Sources in canvasText() below
 //
 // Rotated, mirrored and vertical text (rotate, transform, scale -1, writing-mode) is exempt from the geometry checks
-// (measure, squash, run-together, word-break, grid-edge, heading-wrap, svg-overlap, double-space): its client rects
-// are the turned box, not the lines. Contrast, overlay, canvas-text and focus still run on it. A skip link parked off
-// screen or clipped is not counted by primary.
+// (measure, squash, run-together, word-break, grid-edge, heading-wrap, svg-overlap): its client rects are the turned
+// box, not the lines. Contrast, overlay, canvas-text, focus and double-space still run on it (double-space reads the
+// DOM, not rects: a card tilted 0.6deg hid "10&nbsp;" plus a 12px flex gap from it, results-max critic 7). A skip
+// link parked off screen or clipped is not counted by primary.
 //
 // Hard gates (fail):
 //   axe          axe-core WCAG 2.0/2.1/2.2 A and AA rules, light and dark, 390 and 1440 (includes contrast)
@@ -151,7 +152,7 @@ const helpers = `
       if (this.GEOMETRY.includes(check) && this.transformed(el)) return true;
       return false;
     },
-    GEOMETRY: ['measure', 'squash', 'run-together', 'word-break', 'grid-edge', 'heading-wrap', 'svg-overlap', 'double-space'],
+    GEOMETRY: ['measure', 'squash', 'run-together', 'word-break', 'grid-edge', 'heading-wrap', 'svg-overlap'],
     // 'rotated', 'mirrored' or 'vertical' when the element or an ancestor turns or flips its text, else null.
     transformed(el) {
       for (let n = el; n && n.nodeType === 1; n = n.parentElement) {
@@ -240,23 +241,30 @@ const helpers = `
       return hit;
     },
     // Lines of an element's text, as word counts per rendered line.
+    // Words in document order; a word joins the current line when its vertical middle sits inside that line's box.
+    // Grouping by box bottom alone splits one line in two when a word is set larger (a name in display type, a drop cap).
     lines(el) {
-      const lines = new Map();
+      const lines = [];
       const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
       const range = document.createRange();
       for (let n = walker.nextNode(); n; n = walker.nextNode()) {
         const re = /\\S+/g; let m;
         while ((m = re.exec(n.textContent))) {
           range.setStart(n, m.index); range.setEnd(n, m.index + m[0].length);
-          const rc = range.getClientRects()[0];
+          const rcs = range.getClientRects(); // last box: a drop cap is the first box of its word
+          const rc = rcs[rcs.length - 1];
           if (!rc || !rc.width) continue;
-          const key = Math.round(rc.bottom / 4);
-          const cur = lines.get(key) || { words: 0, chars: 0 };
+          const mid = (rc.top + rc.bottom) / 2;
+          let cur = lines[lines.length - 1];
+          if (!cur || mid < cur.top || mid > cur.bottom) {
+            cur = { words: 0, chars: 0, top: rc.top, bottom: rc.bottom };
+            lines.push(cur);
+          }
+          cur.top = Math.min(cur.top, rc.top); cur.bottom = Math.max(cur.bottom, rc.bottom);
           cur.words++; cur.chars += m[0].length + 1;
-          lines.set(key, cur);
         }
       }
-      return [...lines.entries()].sort((a, b) => a[0] - b[0]).map((e) => e[1]);
+      return lines.map(({ words, chars }) => ({ words, chars }));
     },
   };
 `;

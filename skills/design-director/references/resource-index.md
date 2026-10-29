@@ -10,7 +10,7 @@ One table for "where do I look for X". Each row points at the file that holds th
 | Measured numbers from an exemplar (type steps, tracking, radii, shadows, durations, 390 hero) | `kb/teardowns/INDEX.md` table 1 (by job) and table 2 (by domain), then the teardown's "Measured values" |
 | What the best sites in a job category share | each playbook's `references/signature-moves.md` |
 | Decide a landing page in values before building | design-playbook-landing `references/build-spec.md` |
-| What shipped products do for a UI pattern (onboarding, empty states, tables, filters, settings, command palettes, notifications, checkout) | `kb/references/patterns/` (one file per pattern, with shots) |
+| What shipped products do for a UI pattern (onboarding, empty states, tables, filters, settings, command palettes, notifications, checkout, site headers) | `kb/references/patterns/` (one file per pattern, with shots) |
 | Mobile platform rules (HIG, Material) | design-playbook-mobile `references/platform-conventions.md` |
 | The research behind any skill rule, with quotes and dates | `kb/research/<domain>/` (same file names as the skill references) |
 | Past critic findings to not repeat | `kb/reviews/` (start with `round3-critic.md`) |
@@ -24,10 +24,13 @@ One table for "where do I look for X". Each row points at the file that holds th
 | motionin.design (Motion sections) | Interactive section prompts, reduced-motion paths | design-motion 08; `kb/references/motion.md` |
 | 60fps | Mobile motion gallery | `kb/references/motion.md` |
 | Recent (formerly Godly), Land-book, Landdding, Footer | Landing page and section galleries for inspiration | `kb/references/00-general.md` (gallery section) |
+| Navbar Gallery (navbar.gallery) | Site headers and logo bars by type (static, dropdown, mega menu, full screen) | `kb/references/patterns/12-site-headers.md` with shots; `kb/references/00-general.md` |
 | Mobbin, Refero, Page Flows | Real app screens and flows | `kb/references/00-general.md`, `kb/references/ux.md`; when a session has the Mobbin connector, search screens and flows directly |
 | Iconly | Icon sets | `kb/references/graphic.md`; design-graphic `references/02-icon-systems.md` |
 | Font In Logo, Typewolf, Fonts In Use | Identify and see faces in use | `kb/references/typography.md` |
 | Web Interface Guidelines (Vercel), Emil Kowalski, Rauno Freiberg | Interaction and polish detail | `kb/references/00-general.md`, `motion.md`, `frontend-a11y.md` |
+| MicroKit UI (microkit.co) | Copy-paste button and nav microinteractions (shine, edge glow, rim light, hold to confirm) | `kb/research/motion/microkit-buttons.md`; `kb/references/motion.md` |
+| Uiverse (uiverse.io/buttons) | Community CSS button gallery. Shared 2026-10-28; not mined (Cloudflare blocks automated reads) | `kb/references/motion.md` |
 | Baymard, NN/g, GOV.UK | Evidence for UX and conversion rules | `kb/references/ux.md`, `conversion.md` |
 
 ## 3. Tools

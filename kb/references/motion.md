@@ -111,3 +111,18 @@ Where to go deeper on when to animate, timing and easing, gestures, and reduced 
 - **kylezantos/design-motion-principles (GitHub):** a compilation of others' rules; tier 5.
 - **Disney's 12 principles as blog listicles:** duplicates of The Illusion of Life; go to the source.
 - **Material 1 motion page (m1.material.io):** superseded and marked unmaintained; use M3.
+
+### MicroKit UI (component library)
+- **Who / what:** copy-paste React and CSS microinteractions, 54 components, published as a shadcn registry.
+- **Best for:** button feedback recipes: shine, edge glow, rim light, hold to delete, processing state.
+- **Why it meets the bar:** inspectable CSS; recipes captured in kb/research/motion/microkit-buttons.md. Opinion: good recipes, hover-first, so adapt for touch.
+- **Link:** https://microkit.co/
+- **Tier:** 4
+- **Checked:** home page and live CSS, accessed 2026-10-28.
+
+### Uiverse (community gallery)
+- **Who / what:** open-source community gallery of CSS and Tailwind UI elements.
+- **Best for:** browsing many button styles fast. Quality varies by author.
+- **Link:** https://uiverse.io/buttons
+- **Tier:** 5
+- **Checked:** shared by Davon 2026-10-28; automated access blocked by Cloudflare, not mined.

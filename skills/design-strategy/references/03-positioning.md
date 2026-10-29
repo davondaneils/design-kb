@@ -86,6 +86,7 @@ Never list a perfect-world criterion the product does not meet; the page then ar
 6. **When nothing is only, narrow the who or the where.** Neumeier's what, how, who, where, why, when lets a commodity win a specific audience in a specific place ("the only same-day denture repair in Tacoma") [C10]. If even that fails, say so in the brief (fix the company [C9]).
 7. **Make the page argue in Dunford's order.** Most landing pages open on the product; a comparer needs the insight and the alternatives first, so the product arrives as the answer to criteria they already agreed with [C23]. The hero carries the insight, not the feature (opinion on the page mapping).
 8. **A trend explains "why now", never "what we are".** Layer one only when the product's value rides it, keep the category frame you chose for its assumptions, and drop the trend before it dates the hero [C20][C21][C22] (opinion on the dating).
+9. **Strip the costume before you write a line.** A niche or identity brand (faith, heritage, a subculture) can hide that it has no buyable category: "become a stronger Christian" is a value, not something anyone shops for. Ask "strip away the identity, what is this?" and name the market it really competes in (here: a men's discipline program, the 75 Hard market). The identity becomes the reason and the differentiator; the category sets every promise, benefit and pain, which should all point back to it. Show the category in scenes rather than naming it on the cover (Davon, Stand Firm quiz funnel, 2026-10-29; opinion).
 
 ## Do and don't
 | Do | Don't |
