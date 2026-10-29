@@ -2,8 +2,8 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Bad tokens fixture</title>
 <!-- Each block reproduces one class the round 4 critic caught by eye (kb/reviews/round4-critic.md). Expected lint fails:
      undefined-var (the meter fill and ring use --color-warning-mark, declared nowhere), state-layer (a raw 4 percent
-     hover and a --state-hover of 4 percent), double-space (a flex gap plus a leading no-break space, and two spaces in a
-     row), truth (a caveat whose data-explained-by alert is hidden), proportion (a 78 percent meter that paints nothing). -->
+     hover and a --state-hover of 4 percent), double-space (a flex gap plus a leading no-break space, the same inside a card tilted 0.6deg, and two
+     spaces in a row), truth (a caveat whose data-explained-by alert is hidden), proportion (a 78 percent meter that paints nothing). -->
 <style>
   :root { color-scheme: light; --color-bg: #ffffff; --color-text: #1d1d1f; --color-muted: #5c5f66; --color-primary: #1f5fd1; --color-warning: #8a5a00; --color-surface: #ffffff;
     --state-hover: color-mix(in oklch, var(--color-text) 4%, transparent); }
@@ -21,11 +21,14 @@
   .alert { padding: 12px; border: 1px solid #8a8d93; border-radius: 8px; }
   .alert[hidden] { display: none; }
   .caveat { font-size: 14px; color: var(--color-muted); }
+  .card { rotate: -0.6deg; padding: 16px; }
+  .tick { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; }
 </style></head>
 <body><main>
   <h1>Bad tokens fixture</h1>
   <p><button class="btn" type="button">Invite<span>&nbsp;a teammate</span></button></p>
   <p>Two spaces&nbsp; in a row.</p>
+  <div class="card"><label class="tick"><input type="checkbox">10&nbsp;<span style="white-space: nowrap">push-ups</span></label></div>
   <p><button class="btn opt" type="button">Pour-over</button></p>
   <div class="usage"><span>Events this month</span><span class="meter" role="meter" aria-label="Events this month" aria-valuemin="0" aria-valuemax="10000000" aria-valuenow="7800000" aria-valuetext="7.8 million of 10 million"><i></i></span><span>7.8M of 10M</span></div>
   <p>Revenue <span class="caveat" data-explained-by="#alert-checkout">Partial since 2:05&nbsp;pm</span></p>

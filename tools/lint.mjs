@@ -20,9 +20,10 @@
 //              fails and under 7pt x distance / 40cm warns. Sources in canvasText() below
 //
 // Rotated, mirrored and vertical text (rotate, transform, scale -1, writing-mode) is exempt from the geometry checks
-// (measure, squash, run-together, word-break, grid-edge, heading-wrap, svg-overlap, double-space): its client rects
-// are the turned box, not the lines. Contrast, overlay, canvas-text and focus still run on it. A skip link parked off
-// screen or clipped is not counted by primary.
+// (measure, squash, run-together, word-break, grid-edge, heading-wrap, svg-overlap): its client rects are the turned
+// box, not the lines. Contrast, overlay, canvas-text, focus and double-space still run on it (double-space reads the
+// DOM, not rects: a card tilted 0.6deg hid "10&nbsp;" plus a 12px flex gap from it, results-max critic 7). A skip
+// link parked off screen or clipped is not counted by primary.
 //
 // Hard gates (fail):
 //   axe          axe-core WCAG 2.0/2.1/2.2 A and AA rules, light and dark, 390 and 1440 (includes contrast)
@@ -151,7 +152,7 @@ const helpers = `
       if (this.GEOMETRY.includes(check) && this.transformed(el)) return true;
       return false;
     },
-    GEOMETRY: ['measure', 'squash', 'run-together', 'word-break', 'grid-edge', 'heading-wrap', 'svg-overlap', 'double-space'],
+    GEOMETRY: ['measure', 'squash', 'run-together', 'word-break', 'grid-edge', 'heading-wrap', 'svg-overlap'],
     // 'rotated', 'mirrored' or 'vertical' when the element or an ancestor turns or flips its text, else null.
     transformed(el) {
       for (let n = el; n && n.nodeType === 1; n = n.parentElement) {
