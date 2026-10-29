@@ -49,6 +49,7 @@ Brief: `kb/briefs/layout/06-pacing-signature-and-phone-editing.md`. Researcher p
 | 16 | `52ch` renders 63 to 68 characters in eight faces; `66ch` 81 to 86 | Derived: `node kb/research/typography/measure-cpl.mjs`, re-run 2026-10-10, same table as the typography research | `kb/research/typography/measure-cpl.mjs` | 2026-10-10 | derived | C (measured) |
 | 18 | `ch` is measured in the font of the element that uses it | "the advance measure of the glyph `0` (zero, the Unicode character U+0030) in the element's font." | https://developer.mozilla.org/en-US/docs/Web/CSS/length | 2026-10-10 | 1 | C |
 | 17 | Layout metrics of the before and after test pages | Derived: `node kb/tests/design-layout/measure-layout.mjs` | `kb/tests/design-layout/measure-layout.mjs` | 2026-10-10 | derived | measured |
+| 19 | Two dark bands back to back after a reorder read as a seam; the second's ground run from the first band's color into its own over 40rem, its picture's top faded, read as one passage | Observed in renders at 390 and 1280, before and after | Stand Firm results v1, design-log.md (private) | 2026-10-29 | derived | O |
 
 Reused from earlier layout research (not re-fetched here): NN/g cards versus lists (research 05 #3), NN/g scrolling and attention and the false floor (05 #8, 03 #5), WCAG 1.3.2 meaningful sequence and 1.4.10 reflow (04), MDN subgrid (01), Josh Comeau full-bleed grid (01).
 

@@ -91,6 +91,7 @@ Write it as a table in the hand-over. Verbs, in order of preference: **keep, reo
 |---|---|
 | Give every section its own named component under a shared header system | Re-use one section frame (label, H2, split, cards) and change only the words |
 | Change the kind of loudness between neighbours | Put two color bands or two display headlines back to back |
+| When two dark grounds must meet and the story runs one into the other (the problem into the stakes), join them: the second's ground starts at the first's color and darkens, its picture fading in at the top (opinion, Stand Firm results v1) | Leave a hard seam between two near-same darks; it reads as a mistake, not a change |
 | Keep one body edge down the page | Give each section its own left edge |
 | Break the grid once, toward one edge | Bleed everything, or nothing ever |
 | Edit the phone page section by section | Stack the desktop and call it responsive |
