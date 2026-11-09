@@ -57,6 +57,9 @@ Add to it as the job goes: each new trigger, each file read, each decision a per
 3. A fresh-context critic pass (director section 5 step 13), or the hand-over says "gate not claimed: self-review only".
 4. The hand-over attaches `design-log.md` and `check-report.md`, then names the three biggest gaps against the exemplars.
 
+5. Passing the check is the floor, not the job. Before building a page that has references (links the client gave, the playbook exemplars, the resource index), open them and measure them: type family, weight and tracking per role, button and nav anatomy, section rhythm, and motion timing (a GSAP tween hook gives real durations and eases). Write a component, copy and motion spec from those numbers, share it, then build. A draft that only clears the lint reads as formulaic (Davon, VGC round 2, November 2026).
+6. Motion made with GSAP or any JavaScript tween is invisible to `motion-audit.mjs`, which reads Web Animations only. Film it instead: Playwright frame strips at fixed scroll points (wait out any scrub lag before each shot) plus a scroll-through recording. In scrubbed timelines use `fromTo()` with explicit end values; a `from()` in a scrubbed timeline can render at its start state when the page jumps (VGC round 3: the line items stayed invisible).
+
 ## 5. Close the loop
 When Davon corrects something, the lesson goes back into the knowledge base in the same job: the skill reference it belongs to, plus a research note with the evidence, in a pull request (as `kb/research/motion/08-cinematic-scroll.md` section G did for the Stand Firm rebuild). A correction that lives only in a chat thread is made again by the next thread.
 
