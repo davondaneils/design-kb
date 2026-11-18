@@ -54,6 +54,13 @@ Everything in design-motion section 1 still applies. On a cinematic page these a
 15. **No scrim only when the plate was made for type.** A plate with an unlit empty third can carry type with no overlay; otherwise run the overlay check (Scrolltide: Auralis, Arbor; design-art-direction 03).
 16. **Know the effect before building it.** Reflection needs an environment map and has no hue; diffraction is a repeating spectrum from regular grooves and needs only a 2D shader; thin film is one non-repeating sweep through hue. The wrong guess ships hundreds of KB of 3D for a 2D effect (Scrolltide eBook p273).
 
+17. **Design the scene at 390px first; the phone is not the fallback** (Davon, Eastview Homes concept, 18 Nov 2026: a desktop-first build "loses all its wow factor on mobile"). Every pinned scene still pins and scrubs at 390 with a no-preference motion setting; only `prefers-reduced-motion` gets the stacked stills. What that took on the Eastview page:
+    - A separate 9:16 cut of the hero film (crop 608 x 1080 from 1080p, framed per shot on its subject, about 2.2 MB for 18 s), picked by `(max-aspect-ratio: 4/5)`. A 16:9 film cropped by `object-fit` on a phone loses the subject.
+    - The phone scrim clears the top half of the film and sits only under the type; a full-frame 86% scrim kills the footage it was meant to show.
+    - Phone-native cues: story bars across the top for the cut, full-width buttons, the H1 at about 14cqi (55px at 390) with lines that split apart on scroll.
+    - Scenes that read on a tall screen: a circle that opens from 30vmin to cover the viewport, then words fill over the photo; cards sized to `100svh` minus the header so each one is a full-screen stop as it stacks.
+    - Film it at 390 first (screenshots at 20 or more scroll positions), then check 1440.
+
 ## 4. Do and don't
 - Do: one pinned stage where a kitchen goes from bare studs to finished room in four chapters, copy alternating sides, a "02 / 04" counter. Don't: four different devices (a phone, a chart, a mockup, a photo) for the same four steps.
 - Do: a hero clip that plays once and holds the finished room. Don't: a looping hero that cuts every six seconds.
