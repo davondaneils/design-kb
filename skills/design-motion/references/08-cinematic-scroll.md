@@ -58,6 +58,7 @@ Everything in design-motion section 1 still applies. On a cinematic page these a
 - Do: one pinned stage where a kitchen goes from bare studs to finished room in four chapters, copy alternating sides, a "02 / 04" counter. Don't: four different devices (a phone, a chart, a mockup, a photo) for the same four steps.
 - Do: a hero clip that plays once and holds the finished room. Don't: a looping hero that cuts every six seconds.
 - Do: a frame sequence with a real poster image and the H1 as live text, visible at first paint. Don't: a preloader that hides the headline until 240 frames decode.
+- Don't: a hero that wipes a drawing traced from the finished photo into that photo. Davon rejected it on the Sunday Morning Kitchen and Bath homepage (18 Nov 2026) as a gimmick; what replaced it was a reveal built from the brand's own shape (the logo's rising sun as an arch window opening to the full-bleed room). Opinion, one client review: make the reveal from a brand asset, and show a rendering only if it is the client's real one.
 - Don't copy from these libraries: countdown banners, mid-scroll pop-ups, count-up stats, smooth-scroll hijacking, cursor toys as the hero's point (opinion; `kb/research/motion/08-cinematic-scroll.md` section F).
 
 ## 5. Spec it as values
