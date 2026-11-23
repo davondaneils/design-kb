@@ -62,7 +62,7 @@ Polish never trades against the FOUNDATIONS gate. Then these hold on every page,
 
 **Soft glow focus rings fail.** A 25% teal-600 ring on white composites near 1.4:1 (WCAG 1.4.11 needs 3:1). Keep the solid 2px ring.
 
-**Icon stroke vs text** (Inter stems measured, `kb/research/polish/scripts/measure.mjs`): stem = size x 0.088 (400), 0.107 (500), 0.127 (600), 0.147 (700). Rendered stroke of a 24-grid icon = `stroke-width x size / 24`, or exact px with `vector-effect: non-scaling-stroke`.
+**Icon stroke vs text** (Inter stems measured, `kb/research/polish/scripts/measure.mjs`): stem = size x 0.088 (400), 0.107 (500), 0.127 (600), 0.147 (700). Figtree (glyph l, measured with fontTools, VGC build): 0.080 (400), 0.094 (500), 0.112 (600), 0.132 (700), so 16px labels want 1.25, 1.5, 1.75 and 2px strokes. Rendered stroke of a 24-grid icon = `stroke-width x size / 24`, or exact px with `vector-effect: non-scaling-stroke`.
 | Text | Icon | Rendered stroke |
 |---|---|---|
 | 12px 500 | 12 to 14px | 1.25 to 1.3 |
