@@ -77,6 +77,7 @@ Stylistic sets (`ss01` to `ss20`) and character variants (`cv01` and up) are fon
 Default `sup` and `sub` push their line apart, so one footnote marker creates an uneven gap in a paragraph. Fix: `sup, sub { line-height: 0; }`. Better, where the font has real superior figures: `font-variant-position: super` (uses `sups`), which keeps the line box intact and draws properly weighted figures.
 
 ## Links and emphasis
+- **Accent words live inside the heading, never beside it.** Style the word with `<em>` (or a span) in the same element so it shares the line's baseline. Building it as a second element (or a second Figma text layer) with its own line height floats it off the baseline by the line-height difference; top or center alignment hides nothing (VGC Foundations, 2026-11-23). Fallback when two elements are forced: `align-items: baseline` and matched line heights.
 - Links underlined in body text (color alone fails WCAG 1.4.1 in body copy). Refine: `text-decoration-thickness: 0.06em; text-underline-offset: 0.18em;` (opinion: thinner, lower underlines read as crafted; tune per font). `text-decoration-skip-ink: auto` is the default and keeps descenders clean.
 - Emphasis: italic in prose, weight in UI. Never bold and italic together; never underline for emphasis (Butterick).
 
