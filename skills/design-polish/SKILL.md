@@ -96,6 +96,8 @@ Polish never trades against the FOUNDATIONS gate. Then these hold on every page,
 15. **Ring color on colored bands** is the band's text color, never `currentColor` (the pilot's band CTA ring measured 1.02:1 in dark).
 16. **Scope `scrollbar-gutter: stable`** to containers that change height; on the root it leaves an empty strip beside full-bleed bands.
 
+17. **Shadows need room: never clip their parent.** A shadow paints outside its box by blur + offset - spread (shadow-card `0 24px 64px -32px` reaches 56px below and 32px to the sides; shadow-media reaches 64px below). Any ancestor that clips cuts it off with a hard edge. In Figma, auto layout frames clip content by default: turn Clip content off on every container that holds a shadowed, ringed or overhanging child, and clip only the page frame and deliberate image masks. In CSS, `overflow: hidden` on a parent does the same; use padding at least as large as the shadow's reach, or `overflow: clip` with `overflow-clip-margin`. Leave space below a shadowed specimen before its caption so the shadow does not sit on the text (Davon's correction on the VGC Foundations page, 2026-11-23).
+
 ## 5. The polish pass (run inside design-director's loop)
 1. Lint gate passes (`node tools/lint.mjs page.html`).
 2. `node skills/design-polish/assets/polish-audit.mjs page.html`: radius census, nested radius, shadow direction and count, focus shape, hover layout shift, hover gating, icon stroke vs stem, SVG hairlines, `color-scheme`, tabular figures, heading wrap, forced-colors edges. Fails are bugs.
