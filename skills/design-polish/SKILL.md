@@ -62,7 +62,7 @@ Polish never trades against the FOUNDATIONS gate. Then these hold on every page,
 
 **Soft glow focus rings fail.** A 25% teal-600 ring on white composites near 1.4:1 (WCAG 1.4.11 needs 3:1). Keep the solid 2px ring.
 
-**Icon stroke vs text** (Inter stems measured, `kb/research/polish/scripts/measure.mjs`): stem = size x 0.088 (400), 0.107 (500), 0.127 (600), 0.147 (700). Rendered stroke of a 24-grid icon = `stroke-width x size / 24`, or exact px with `vector-effect: non-scaling-stroke`.
+**Icon stroke vs text** (Inter stems measured, `kb/research/polish/scripts/measure.mjs`): stem = size x 0.088 (400), 0.107 (500), 0.127 (600), 0.147 (700). Figtree (glyph l, measured with fontTools, VGC build): 0.080 (400), 0.094 (500), 0.112 (600), 0.132 (700), so 16px labels want 1.25, 1.5, 1.75 and 2px strokes. Rendered stroke of a 24-grid icon = `stroke-width x size / 24`, or exact px with `vector-effect: non-scaling-stroke`.
 | Text | Icon | Rendered stroke |
 |---|---|---|
 | 12px 500 | 12 to 14px | 1.25 to 1.3 |
@@ -95,6 +95,8 @@ Polish never trades against the FOUNDATIONS gate. Then these hold on every page,
 14. **Remove one thing per screen** before calling it done.
 15. **Ring color on colored bands** is the band's text color, never `currentColor` (the pilot's band CTA ring measured 1.02:1 in dark).
 16. **Scope `scrollbar-gutter: stable`** to containers that change height; on the root it leaves an empty strip beside full-bleed bands.
+
+17. **Shadows need room: never clip their parent.** A shadow paints outside its box by blur + offset - spread (shadow-card `0 24px 64px -32px` reaches 56px below and 32px to the sides; shadow-media reaches 64px below). Any ancestor that clips cuts it off with a hard edge. In Figma, auto layout frames clip content by default: turn Clip content off on every container that holds a shadowed, ringed or overhanging child, and clip only the page frame and deliberate image masks. In CSS, `overflow: hidden` on a parent does the same; use padding at least as large as the shadow's reach, or `overflow: clip` with `overflow-clip-margin`. Leave space below a shadowed specimen before its caption so the shadow does not sit on the text (Davon's correction on the VGC Foundations page, 2026-11-23).
 
 ## 5. The polish pass (run inside design-director's loop)
 1. Lint gate passes (`node tools/lint.mjs page.html`).

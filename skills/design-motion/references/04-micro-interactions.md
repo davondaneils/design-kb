@@ -29,6 +29,13 @@
 | Hold to confirm (destructive) | Fill via `clip-path: inset(0 100% 0 0)` to `inset(0 0 0 0)` over 1.5 to 2 s `linear` while held; release reverts at `--duration-base`, `--ease-enter`. Show the remaining time in text for screen readers, and offer a non-hold alternative (confirm dialog) reachable by keyboard. | Kowalski (P); WCAG 2.1.1 Keyboard (C) |
 | Drag to reorder | Picked item lifts (scale 1.02, raised shadow) instantly; siblings move at `--duration-base` with `--ease-standard`; drop settles with a spring. Keyboard alternative required (WCAG 2.5.7). | Opinion; WCAG 2.2 (C) |
 
+## Light passes across a button (expert layer)
+A light band swept across a button on hover (a sheen or "window light"). Lessons from a client build (VGC, 2026-11); values are opinion, tuned by eye with the client.
+- **Make it read as light, not gloss.** A flat, even patch with soft edges (plateau gradient, 2 to 4 px blur, warm tint, `mix-blend-mode: screen`) reads as sun on a wall. A thin bright peak reads as shine on plastic.
+- **The pass goes all the way through.** Never let the band stop on the button and then fade out: a stop-then-vanish looks broken. Fade in over the first 20% only, then carry the band off the far edge.
+- **With ease-out, travel must end exactly where the visible tail clears the edge.** An ease-out covers most of its distance early, so too short a travel makes the band park on the button and fade, and too long a travel spends the slow tail off-screen as dead time. Measure the band's visible trailing edge (inside its transparent fade and skew slant), not the box.
+- **Play once and finish.** Trigger on `pointerenter` and keyboard focus, add a class, remove it on `animationend`, so leaving early never cuts the pass mid-way. No colour change on hover is needed when the pass is the cue. Under reduced motion, show the band still mid-button.
+
 ## Gesture physics (expert layer)
 - Track 1:1 while the pointer is down. Never apply a CSS transition to the property being dragged.
 - Commit light actions during the gesture (show an overlay); commit destructive ones only on release so a change of mind costs nothing (Freiberg).

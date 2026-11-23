@@ -104,6 +104,8 @@ Run this list on every answer, spec or review before anything else. State any ru
 22. **Units keep their case.** A caps label turns `340 g` into `340 G` (a different unit). Wrap units in `text-transform: none`; join number and unit with U+202F.
 23. **Weight does not save a hairline; optical size does.** In Bodoni Moda the hairline is identical at wght 400 and 700 (3.6/1000 em at opsz 48) while the stem grows 50 percent, so bolding a Didone raises contrast and dazzle. Lower `opsz` instead: the hairline grows 18 times from opsz 96 to 6. On a canvas, `font-optical-sizing: auto` maps opsz to canvas px, so a 200px poster line seen at 72px gets opsz 96: pin it by hand (reference 08).
 
+24. **One heading, one text run: the accent word is a span, not a sibling.** A mixed-style headline ("Built to *last.*") is one text node with the accent styled inside it (`<h2>Built to <em>last.</em></h2>`; in Figma, one text layer with `setRangeFontName` on the range). Two side-by-side boxes with different line heights, aligned top or center in auto layout, put the words on different baselines: the italic sat 3px high in the VGC Foundations build (Davon's correction, 2026-11-23). If two elements are unavoidable, align them on the baseline (`align-items: baseline`, Figma auto layout `BASELINE`) and give both the same line height.
+
 ## 6. Output format for type specs
 
 When delivering a type system, give, in this order:

@@ -105,6 +105,7 @@ Decision: on the web, default to solid 1px `--color-border`. Lower contrast does
 ### Do and don't
 - Do `box-shadow: var(--elevation-card)`. Don't `border: 1px solid #eee; box-shadow: 0 2px 8px rgba(0,0,0,.15)` on the same card.
 - Do keep every shadow pointing down. Don't add `-2px` x offsets on some cards for "variety".
+- Do re-tint a raised control's shadow per surface. A navy or grey shadow at 6 to 10% that reads on a light page vanishes on a saturated blue or navy band; on those, keep the same geometry but switch to black at roughly 3 to 6 times the alpha, and add a faint glow in the control's own colour for a bright, lit control. In Figma, bind each effect colour to a variable with one value per surface mode so the section's mode switches it (VGC button, 2026-11, values tuned by eye; opinion).
 - Do step dark surfaces up for menus. Don't put a big black shadow under a menu on a near-black page.
 - Do give inputs `--color-border-strong`. Don't use the card border on inputs.
 
