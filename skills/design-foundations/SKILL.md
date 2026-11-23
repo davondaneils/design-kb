@@ -37,6 +37,7 @@ The floor under every design job. Nothing a playbook or domain reference teaches
 | Every token name and value, the token schema, icons, sizes, content mechanics and the locale table, a starter token file | `references/tokens.md` |
 | The 16-item gate and how to run lint, render and the claims inventory | `references/fundamentals-checklist.md` |
 | WCAG 2.2 AA checklist, focus, targets, live regions, forms, testing protocol, and where each domain keeps its own accessibility detail | `references/accessibility.md` |
+| Documenting the foundations in Figma for a developer: page structure, section visuals, expert moves and pre-handoff checks (reuse the starter file) | `references/figma-foundations-page.md` |
 | Design systems: component contracts, token tiers, theming, versioning | planned (`references/design-systems.md`; see `kb/status/systems.md`) |
 
 ## 4. Who owns what
