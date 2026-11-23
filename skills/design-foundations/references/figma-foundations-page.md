@@ -56,4 +56,15 @@ A starter file exists (a neutral copy of the VGC page). Duplicate it, change the
 5. Curly quotes, no em dashes, project spelling, sentence case.
 6. A fresh-context critic reviews screenshots of every Section plus the token files. Expect a second round: the first fixes surface new issues.
 
+## 6. The Components page that follows
+
+Same layout as Foundations: a Contents Section, then one Section per family, each a 1440 frame with rules on top and the component set underneath, laid out as a labelled matrix (states across, variants down). Lessons from the VGC build:
+
+- **Draw focus as a child, not an effect.** A drop shadow with spread did not render on a component with Clip content off. Use an absolute-positioned rectangle, 4 larger on each side, 2px stroke inside bound to the focus-ring role, constraints Stretch so it follows the hugged width.
+- **One Secondary that follows the surface.** Bind the outline and label to the text role and the same component works on light, brand and dark modes; no “on dark” variant to keep in sync.
+- **Full-width parts need a full-width row.** Header and footer are 1440 wide, so their Section frame has no side padding; text blocks carry their own 96 inset.
+- **A text property sets one default for every variant.** Use generic defaults (“Label”, “Card title”) and show real copy in an “In use” row of instances.
+- **Descriptions are stored with HTML entities.** A curly-quote pass must decode `&quot;` first.
+- **White logo needs a dark band.** Give the logo set banded fills (light, dark, white) so every colour version is visible.
+
 Source: VGC Foundations build and its two critic reviews, recorded in the project's `brand/design-log.md`. Contrast per WCAG 2.2 (1.4.3, 1.4.11, 1.4.1 for links).
