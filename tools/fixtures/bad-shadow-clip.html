@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fixture: clipped shadows</title>
+<style>
+  :root { --bg: #f5f7fa; --text: #101010; --surface: #fff; --shadow: 0 2px 4px rgb(15 39 71 / .12), 0 18px 32px rgb(15 39 71 / .12); }
+  body { margin: 0; padding: 32px; background: var(--bg); color: var(--text); font: 16px/1.5 system-ui, sans-serif; }
+  .card { padding: 24px; border-radius: 12px; background: var(--surface); box-shadow: var(--shadow); }
+  .clip { overflow: hidden; margin-bottom: 64px; }           /* FAIL: the wrapper is exactly the card's size and clips */
+  .room { overflow: hidden; padding: 16px 32px 48px; margin-bottom: 64px; }   /* pass: the clip has room for the shadow */
+  .open { margin-bottom: 64px; }                              /* pass: nothing clips */
+  .row { display: flex; gap: 16px; overflow-x: auto; }        /* FAIL top and bottom: a scrolling row cuts the cards' shadows above and below */
+  .row .card { flex: none; width: 280px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Clipped shadows</h1>
+  <div class="clip"><div class="card" id="cut">Cut on every side</div></div>
+  <div class="room"><div class="card" id="room">Room for the shadow</div></div>
+  <div class="open"><div class="card" id="open">Nothing clips</div></div>
+  <div class="row"><div class="card" id="row1">One</div><div class="card">Two</div><div class="card">Three</div><div class="card">Four</div><div class="card">Five</div><div class="card">Six</div></div>
+</main>
+</body>
+</html>

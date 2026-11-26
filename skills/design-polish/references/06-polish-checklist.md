@@ -14,7 +14,7 @@ Each item: what to look for, then the fix. A tick needs evidence: a screenshot r
 
 ### A. System audits (fix once, fixes everywhere)
 1. **Radius census.** Every radius is 0, 4, 8, 12, 16 or full; nested radii computed (outer minus gap). Fix: map strays to the family; compute nested.
-2. **Shadow inventory.** At most five distinct shadows (the tokens), all falling down, alpha under 0.25 in light; none on large dark surfaces. Fix: replace with `--elevation-*`.
+2. **Shadow inventory.** At most five distinct shadows (the tokens), all falling down, alpha under 0.25 in light; none on large dark surfaces. Fix: replace with `--elevation-*`. No shadow cut off by a clipping ancestor (`shadow-clip` in `tools/lint.mjs`; in Figma, `tools/figma/shadow-clip-audit.js`). Fix: unclip the wrapper or give it padding the shadow fits in (02 Fundamentals).
 3. **Border roles.** Two border tokens only: decorative (about 1.2:1) and interactive (3:1). Inputs use the strong one. Fix: retoken.
 4. **One separation per boundary.** No card with border plus separate shadow plus fill change. Fix: pick one or an elevation token.
 5. **Icon census.** One family, one cap and join style, stroke within 0.25px of the adjacent text stem (chapter 03 table). Fix: adjust stroke or label weight.

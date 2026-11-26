@@ -56,6 +56,7 @@ Add to it as the job goes: each new trigger, each file read, each decision a per
 2. Do every judged step the report lists (director section 5 steps 1, 3, 7 to 13), ticking each with what you saw. Motion is judged from a recording, never from screenshots.
 3. A fresh-context critic pass (director section 5 step 13), or the hand-over says "gate not claimed: self-review only".
 4. The hand-over attaches `design-log.md` and `check-report.md`, then names the three biggest gaps against the exemplars.
+5. When the job also builds the design in Figma: create every wrapper and section frame with `clipsContent = false` (the Plugin API default is on), then run `tools/figma/shadow-clip-audit.js` through use_figma on each frame you built or changed. `stillCut` may hold only screen edges and crops made on purpose; say so in the log. Look at one screenshot of each size beside the page before handing over.
 
 ## 5. Close the loop
 When Davon corrects something, the lesson goes back into the knowledge base in the same job: the skill reference it belongs to, plus a research note with the evidence, in a pull request (as `kb/research/motion/08-cinematic-scroll.md` section G did for the Stand Firm rebuild). A correction that lives only in a chat thread is made again by the next thread.

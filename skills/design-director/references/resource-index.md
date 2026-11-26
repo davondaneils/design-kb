@@ -35,6 +35,7 @@ One table for "where do I look for X". Each row points at the file that holds th
 |---|---|
 | `tools/check.mjs` | The whole automated hand-over gate in one command, with a report (preflight section 4) |
 | `tools/render.mjs`, `tools/lint.mjs` | Screenshots and the fundamentals lint on their own |
+| `tools/figma/shadow-clip-audit.js` | After any Figma build: paste into use_figma to list drop shadows cut by a clipping frame (FIX = true unclips safe wrappers) |
 | `skills/design-strategy/assets/brief_lint.mjs` | The strategy brief |
 | `skills/design-copy/assets/claims_inventory.mjs` | Every number, date and promise on the page |
 | `skills/design-search/assets/search-check.mjs` | Head, social card, structured data |

@@ -39,6 +39,9 @@
 //   state-shift  hover never changes a control's size or border width
 //   radius       every border radius on the family 0 4 8 12 16 full (or a nested outer-minus-inset value)
 //   color-scheme a page with dark styles sets color-scheme (property or meta)
+//   shadow-clip  no drop shadow is cut off by an ancestor that clips (overflow other than visible, contain: paint,
+//                clip-path), at 390 and 1440. Reach per side is spread + half the blur, moved by the offset; the box's own
+//                cut sides, the scroll axis of a real scroller and the viewport are not counted
 //   motion       if the page animates, prefers-reduced-motion removes movement: under reduce, no animation whose
 //                keyframes move, scale, rotate or resize anything; opacity and color animations up to 150ms are allowed
 //                (FOUNDATIONS Motion and accessibility.md), longer ones warn
@@ -568,6 +571,48 @@ async function lintOne(browser, target, outPath) {
         if (h.startsWith('#') && h.length > 1) { let t = null; try { t = document.getElementById(decodeURIComponent(h.slice(1))); } catch { /* bad id */ } if (t && L.visible(t)) out.nav.reachable.push(hrefOf(a)); }
       }
 
+      // Shadow clip: a drop shadow cut off by an ancestor that clips (overflow other than visible, contain: paint, clip-path).
+      // Reach on each side is spread + blur / 2 -/+ offset: half the blur is where a shadow is still seen (the blur radius is twice the
+      // Gaussian's standard deviation, CSS Backgrounds 3). The clip edge is the ancestor's padding box. Not counted: a side where the box
+      // itself is cut (a deliberate bleed or a scrolling row), the scroll axis of a real scroller, the viewport.
+      out.shadowClip = [];
+      for (const el of all) {
+        if (el.closest('svg')) continue;
+        const cs = getComputedStyle(el);
+        const sh = cs.boxShadow;
+        if (!sh || sh === 'none' || !L.visible(el) || cs.position === 'fixed') continue;
+        const ext = { l: 0, r: 0, t: 0, b: 0 };
+        for (const layer of sh.split(/,(?![^(]*\))/)) {
+          if (/inset/.test(layer)) continue;
+          const am = layer.match(/rgba?\(([^)]*)\)/);
+          if (am) { const parts = am[1].split(/[\s,/]+/).filter(Boolean); if (parts.length >= 4 && parseFloat(parts[3]) === 0) continue; }
+          const [x = 0, y = 0, blur = 0, spread = 0] = (layer.replace(/rgba?\([^)]*\)|oklch\([^)]*\)|color\([^)]*\)|color-mix\(.*\)/g, '').match(/-?[\d.]+px/g) || []).map(parseFloat);
+          if (blur === 0 && x === 0 && y === 0) continue; // ring
+          const reach = spread + blur / 2;
+          ext.l = Math.max(ext.l, reach - x); ext.r = Math.max(ext.r, reach + x); ext.t = Math.max(ext.t, reach - y); ext.b = Math.max(ext.b, reach + y);
+        }
+        if (Math.max(ext.l, ext.r, ext.t, ext.b) < 3) continue;
+        const r = el.getBoundingClientRect();
+        let skipStatic = cs.position === 'absolute';
+        for (let p = el.parentElement; p && p !== document.body && p !== document.documentElement; p = p.parentElement) {
+          const ps = getComputedStyle(p);
+          if (skipStatic) { if (ps.position === 'static' && ps.transform === 'none') continue; skipStatic = false; } // an absolute box is not clipped by ancestors inside its containing block
+          const paint = /paint|strict|content/.test(ps.contain) || ps.clipPath !== 'none';
+          const cx = paint || ps.overflowX !== 'visible', cy = paint || ps.overflowY !== 'visible';
+          if (cx || cy) {
+            const b = p.getBoundingClientRect();
+            const c = { l: b.left + parseFloat(ps.borderLeftWidth), r: b.right - parseFloat(ps.borderRightWidth), t: b.top + parseFloat(ps.borderTopWidth), b: b.bottom - parseFloat(ps.borderBottomWidth) };
+            const scrollX = p.scrollWidth > p.clientWidth + 1 && /auto|scroll/.test(ps.overflowX), scrollY = p.scrollHeight > p.clientHeight + 1 && /auto|scroll/.test(ps.overflowY);
+            const cut = { left: 0, right: 0, top: 0, bottom: 0 };
+            if (cx && !scrollX) { if (r.left >= c.l - 0.5) cut.left = c.l - (r.left - ext.l); if (r.right <= c.r + 0.5) cut.right = r.right + ext.r - c.r; }
+            if (cy && !scrollY) { if (r.top >= c.t - 0.5) cut.top = c.t - (r.top - ext.t); if (r.bottom <= c.b + 0.5) cut.bottom = r.bottom + ext.b - c.b; }
+            const sides = Object.entries(cut).filter(([, v]) => v >= 3).map(([k, v]) => `${k} ${Math.round(v)}px`);
+            if (sides.length && r.right > c.l && r.left < c.r && r.bottom > c.t && r.top < c.b) { out.shadowClip.push({ sel: L.sel(el), by: L.sel(p), sides: sides.join(', ') }); break; }
+          }
+          if (ps.position === 'absolute') skipStatic = true; else if (ps.position === 'fixed') break;
+        }
+      }
+
       if (width !== WIDE) return out;
 
       // ---- 1440-only static checks ----
@@ -791,6 +836,11 @@ async function lintOne(browser, target, outPath) {
     for (const x of r.primary) add('primary', 'fail', `${x.labels.length} filled calls to action in screen ${x.screen} at ${width}px (${x.labels.map((l) => '"' + l + '"').join(', ')}); one primary per view`, { sel: x.sel });
     if (r.stateSheet) report.summary.stateSheet = true;
     navByWidth[width] = r.nav;
+
+    ok('shadow-clip');
+    { const seen = new Set();
+      for (const x of r.shadowClip) { const k = x.sel + x.by; if (seen.has(k) || seen.size >= 12) continue; seen.add(k);
+        add('shadow-clip', 'fail', `drop shadow cut off at ${width}px (${x.sides}) by a clipping ancestor: give the ancestor padding the shadow fits in, or do not clip it`, { sel: x.sel, by: x.by }); } }
 
     if (width === WIDE) {
       ok('radius');
