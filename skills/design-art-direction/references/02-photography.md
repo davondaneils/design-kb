@@ -32,6 +32,7 @@ Research notes: `kb/research/art-direction/02-photography.md` (Ph-numbers). Buil
 - **Crop to the verb.** Keep the hands and the object being worked on; cut empty room. (opinion)
 - **Crop tighter than feels safe on phones.** MDN's own example: on mobile, "zooms in on the person" [Ph5]. A 390px-wide hero cannot show a room.
 - **Keep one wide establishing frame per set** so tight crops still read as a real place. (opinion)
+- **A before and after (comparison) frame takes the ratio of the photos, at every width.** This overrides "phone 4:5" above. The two photos must stay registered to each other, and a second, taller crop moves their features apart (RevelRaw: export both "with an identical crop, pixel size and color space, or the seam will lie"). If the client's photos have a house ratio, the frame uses it; find the ratio out before drawing the frame. Correction on record: VGC Home section 5, Nov. 26, 2026, tall 4:5 and square frames were sent back ("needs to be a 16:9 aspect ratio to match the images"). Slider behaviour: design-ux 06. Evidence: `kb/research/ux/08-image-comparison-slider.md`.
 
 ### Treat
 | Situation | Treatment |
