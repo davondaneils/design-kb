@@ -21,6 +21,7 @@ Platform conventions (touch numbers, iOS vs Android vs web table, modality, port
 ## Expert moves
 - **Disabled is a last resort.** Prefer enabled plus explanation; if disabled is unavoidable, provide the reason nearby (Silver; Apple: do not disable tabs).
 - **Style, not size, marks the preferred choice** in a button group (Apple HIG Buttons).
+- **One look per control role on a page.** Before drawing a tab row, a filter row or a toggle, look up the page for a control that already does the same job and reuse its look (shape, selected colour, hover), changing only what the content needs (size, an avatar, a second line). A second tab style on the same page reads as a different kind of control, so the reader has to learn it again (Nielsen heuristic 4, consistency and standards: https://www.nngroup.com/articles/consistency-and-standards/). When exploring options for a new section, show the page's existing style as one of the options and say so. Field note, VGC Home, Nov. 26, 2026: section 3 had pill tabs; section 5 was first built with underlined word tabs and the designer asked for the pills "so there's more consistency".
 - **Hit area decoupled from visual size:** a 20 px icon gets 44 px of invisible padding; layouts plan for it.
 - **Floating bars cover the last item.** Reserve bottom padding equal to the bar plus the safe area so the last item and its focus stay visible (WCAG 2.4.11); platform specifics in design-playbook-mobile.
 - **Tokens follow the DTCG 2025.10 format** so Figma variables, code and docs stay in sync (design-frontend).
