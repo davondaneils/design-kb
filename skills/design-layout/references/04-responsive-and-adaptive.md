@@ -23,6 +23,7 @@ Cross-check for native and Android apps: Material compact under 600dp uses a bot
 - Default to intrinsic: `repeat(auto-fit, minmax(min(16rem, 100%), 1fr))` for card grids, the Sidebar pattern for media plus text, `flex-wrap` clusters for tags and buttons. The `min(16rem, 100%)` stops overflow below 16rem.
 - Use `@container (inline-size > 30rem)` when a component needs a different arrangement (stacked vs side-by-side), not just reflow. Name containers for clarity.
 - Breakpoints where content breaks: if a component looks wrong at 700px, add a container query at the width where it breaks, not the nearest device size (content-out, opinion widely held).
+- Do the column arithmetic before going side-by-side inside a card: column = (viewport - 2 x gutter - 2 x card padding - gap) / 2. At 768 with 32 gutters, 32 padding and a 24 gap that is 308px, so a "tablet" media column is no wider than the phone's full-width photo (302px at 390) and the text beside it runs to 8 short lines. Rule: if a side-by-side media column would be narrower than the same media on the phone layout, keep the stacked card at that breakpoint, give the media the full width, and split only the text (title left, copy right). Move the photo beside the words at the next breakpoint (opinion, from a corrected job: VGC Home section 4, Nov. 26, 2026, "The layout is weird on tablet for the cards").
 
 ### Hard minimums
 | Requirement | Value | Source |
